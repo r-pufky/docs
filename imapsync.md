@@ -72,9 +72,29 @@ gmail-archive --minage 30 --exitwhenover 2500000000 --delete --expunge1 \
 * 3 * * * ~/bin/gmail_to_imap_sync
 ```
 
+Removing duplicates on local maildir
+====================================
+When sync'ing imap servers, you may end up with duplicates (e.g. if you
+have copied a message to multiple accounts and they are now all synced to
+one account.)
+
+### Generate a list of [duplicates][7]
+```bash
+sudo apt install fdupes
+find USER_MAIL -type d -name cur -print0 | xargs -0 /usr/bin/fdupes -n > out
+```
+
+### Download / configure / run imap-de-dupe.go
+```go
+go get github.com/r-rpufky/docs/imap-de-dupe.go
+go build src/github.com/r-rpufky/doc/imap-de-dupe.go
+./imap-de-dupe.go
+```
+
 [1]: https://github.com/imapsync/imapsync
 [2]: http://askubuntu.com/questions/539102/error-install-imapsync
 [3]: http://imapsync.lamiral.info/FAQ.d/FAQ.Gmail.txt
 [4]: https://security.google.com/settings/security/apppasswords
 [5]: https://letsencrypt.org/
 [6]: https://en.wikipedia.org/wiki/Cron
+[7]: http://blog.christosoft.de/2015/03/maildir-remove-duplicates/
