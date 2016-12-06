@@ -25,6 +25,9 @@ setup to be massive services either -- don't use these scripts to setup your
 business or corporate environment -- you're doing it wrong. For the home gamer,
 proceed.
 
+Although I haven't done anything malicious, you should never blindly run
+scripts & commands from the internet.
+
 Bugs & Security Concerns
 ------------------------
 If you find any bugs or security concerns, file a bug against this project on
