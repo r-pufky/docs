@@ -11,15 +11,15 @@ git clone https://github.com/imapsync/imapsync
 
 ### Install [perl dependencies][2]
 ```bash
-  sudo apt-get install libio-tee-perl libmail-imapclient-perl
-  libterm-readkey-perl libunicode-string-perl libcrypt-openssl-rsa-perl
-  libdata-uniqid-perl libjson-perl liblwp-online-perl libreadonly-perl
+sudo apt-get install libio-tee-perl libmail-imapclient-perl
+libterm-readkey-perl libunicode-string-perl libcrypt-openssl-rsa-perl
+libdata-uniqid-perl libjson-perl liblwp-online-perl libreadonly-perl
 ```
 
 ### Create secured password files, enter passwords
 ```bash
-  touch .ssh/imapsync_{local,remote}
-  chmod 0600 .ssh/imapsync_{local,remote}
+touch .ssh/imapsync_{local,remote}
+chmod 0600 .ssh/imapsync_{local,remote}
 ```
   * Remote server is gmail, uses application specific password. [Setup here.][4]
   * Local server is your personal IMAP server. Use IMAP password.
@@ -27,17 +27,17 @@ git clone https://github.com/imapsync/imapsync
 
 ### Set password files readonly
 ```bash
-  chmod 0400 .ssh/imapsync_{local,remote}
+chmod 0400 .ssh/imapsync_{local,remote}
 ```
 
 ### Test sync to ensure connecting properly
 ```bash
-  ./imapsync --dry --host1 imap.gmail.com --port1 993 --user1 
-  **GMAIL_EMAIL_USER** --passfile1 ~/.ssh/imapsync_remote --ssl1 --host2
-  **YOUR_IMAP_SERVER** --port2 993 --user2
-  **LOCAL_IMAP_USER** --passfile2 ~/.ssh/imapsync_local --sslargs2
-  SSL_verify_mode=0 --ssl2 --subfolder2 gmail-archive --minage
-  30 --exitwhenover 2500000000 --delete --expunge1
+./imapsync --dry --host1 imap.gmail.com --port1 993 --user1 
+**GMAIL_EMAIL_USER** --passfile1 ~/.ssh/imapsync_remote --ssl1 --host2
+**YOUR_IMAP_SERVER** --port2 993 --user2
+**LOCAL_IMAP_USER** --passfile2 ~/.ssh/imapsync_local --sslargs2
+SSL_verify_mode=0 --ssl2 --subfolder2 gmail-archive --minage
+30 --exitwhenover 2500000000 --delete --expunge1
 ```
   * This will sync mail older than 30 days, and remove it from [gmail][3]
   * Gmail has a download limit of 2.5GB's a day, this will safetly exit when 
@@ -50,26 +50,26 @@ git clone https://github.com/imapsync/imapsync
 
 ### Install imapsync to /opt/imapsync
 ```bash
-  sudo git checkout-index -a -f --prefix=/opt/imapsync/
+sudo git checkout-index -a -f --prefix=/opt/imapsync/
 ```
   * Set /opt/imapsync permissions according to your system, ensure imapsync 
     is executable
 
 ### Create bash script using /opt/imapsync, typically in ~/bin
 ```bash
-  #!/bin/bash
+#!/bin/bash
 
-  /opt/imapsync/imapsync --host1 imap.gmail.com --port1 993 --user1 \
-  **GMAIL_EMAIL_USER** --passfile1 ~/.ssh/imapsync_remote --ssl1 --host2 \
-  **YOUR_IMAP_SERVER --port2 993 --user2 **YOUR_IMAP_USER** --passfile2 \
-  ~/.ssh/imapsync_local --sslargs2 SSL_verify_mode=0 --ssl2 --subfolder2 \
-  gmail-archive --minage 30 --exitwhenover 2500000000 --delete --expunge1 \
-  --nolog &>/dev/null
+/opt/imapsync/imapsync --host1 imap.gmail.com --port1 993 --user1 \
+**GMAIL_EMAIL_USER** --passfile1 ~/.ssh/imapsync_remote --ssl1 --host2 \
+**YOUR_IMAP_SERVER --port2 993 --user2 **YOUR_IMAP_USER** --passfile2 \
+~/.ssh/imapsync_local --sslargs2 SSL_verify_mode=0 --ssl2 --subfolder2 \
+gmail-archive --minage 30 --exitwhenover 2500000000 --delete --expunge1 \
+--nolog &>/dev/null
 ```
 
 ### Add to [local crontab][6] to run nightly
 ```crontab
-  * 3 * * * ~/bin/gmail_to_imap_sync
+* 3 * * * ~/bin/gmail_to_imap_sync
 ```
 
 [1]: https://github.com/imapsync/imapsync
