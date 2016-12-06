@@ -61,7 +61,7 @@ sudo git checkout-index -a -f --prefix=/opt/imapsync/
 
 /opt/imapsync/imapsync --host1 imap.gmail.com --port1 993 --user1 \
 **GMAIL_EMAIL_USER** --passfile1 ~/.ssh/imapsync_remote --ssl1 --host2 \
-**YOUR_IMAP_SERVER --port2 993 --user2 **YOUR_IMAP_USER** --passfile2 \
+**YOUR_IMAP_SERVER** --port2 993 --user2 **YOUR_IMAP_USER** --passfile2 \
 ~/.ssh/imapsync_local --sslargs2 SSL_verify_mode=0 --ssl2 --subfolder2 \
 gmail-archive --minage 30 --exitwhenover 2500000000 --delete --expunge1 \
 --nolog &>/dev/null
