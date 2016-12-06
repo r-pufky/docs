@@ -8,9 +8,9 @@ package main
 import (
 	"bufio"
 	"fmt"
-  "path"
 	"log"
 	"os"
+	"path"
 	"strings"
 )
 
@@ -18,14 +18,15 @@ import (
 // find USER_MAIL -type d -name cur -print0 | xargs -0 /usr/bin/fdupes -n > out
 // If you think you have dupes in new, then also run for new
 const fdupes_file_dump = "/tmp/cur-dupes"
+
 // Where to move your dupes, create standard maildir (dir/{cur,new,tmp})
 const dupe_move = "/USER/Maildir/.detected-dupes/cur"
 
 func main() {
-  // Preference for directories in which to keep email. Here, if a dupe is
-  // detected in Computer and Shopping, Computer is kept. If no preferences are
-  // specified, the first duplicate mail to appear is choosen.
-  e_paths := excludedPaths{path: []string{
+	// Preference for directories in which to keep email. Here, if a dupe is
+	// detected in Computer and Shopping, Computer is kept. If no preferences are
+	// specified, the first duplicate mail to appear is choosen.
+	e_paths := excludedPaths{path: []string{
 		"gmail-archive.Computer",
 		"gmail-archive.Shopping",
 		"gmail-archive.Travel",
@@ -67,19 +68,19 @@ func main() {
 	}
 	fmt.Printf("\n\nMoving %v duplicates.\n", len(discards))
 	for _, file := range discards {
-    target := path.Join(dupe_move, path.Base(file))
-    fmt.Printf("%v => %v\n", file, target)
-    _, err := os.Stat(target)
-    if err != nil {
-      if os.IsNotExist(err) {
-        err := os.Rename(file, path.Join(dupe_move, path.Base(file)))
-        if err != nil {
-          log.Fatal(err)
-        }
-      } else {
-        log.Fatal(err)
-      }
-    }
+		target := path.Join(dupe_move, path.Base(file))
+		fmt.Printf("%v => %v\n", file, target)
+		_, err := os.Stat(target)
+		if err != nil {
+			if os.IsNotExist(err) {
+				err := os.Rename(file, path.Join(dupe_move, path.Base(file)))
+				if err != nil {
+					log.Fatal(err)
+				}
+			} else {
+				log.Fatal(err)
+			}
+		}
 	}
 }
 
