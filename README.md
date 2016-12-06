@@ -7,6 +7,7 @@ so that you can implement these services and setups with relative ease.
 Assumptions
 -----------
 These notes make the following assumptions
+
 1. You have a advanced to expert competency in Windows, OSX, and Linux
 2. You are comfortable with the following shells: bash, cmd and powershell
 3. You are familiar with how services work on all three platforms (see #1)
