@@ -73,7 +73,7 @@ gmail-archive --minage 30 --exitwhenover 2500000000 --delete --expunge1 \
 ```
 
 Removing duplicates on local maildir
-====================================
+------------------------------------
 When sync'ing imap servers, you may end up with duplicates (e.g. if you
 have copied a message to multiple accounts and they are now all synced to
 one account.)
