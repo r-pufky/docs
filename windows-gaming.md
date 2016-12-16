@@ -9,7 +9,7 @@ Execution Policy: **Unrestricted** (See: Setting Execution Policy)
 Assumes Admin Rights
 
 [Setting Execution Policy][8]
---------------------------
+-----------------------------
 Powershell scripts require unrestricted exectuion policy to be set to
 execute. By default this is **disabled** and is the **correct choice**.
 Once you've executed scripts, you **must** manually reset this to restricted
@@ -29,7 +29,7 @@ Y
 ```
 
 Removing pre-installed [Windows packages][6]
----------------------------------------
+--------------------------------------------
 Certain packages (and windows store applications) cannot be removed with
 [programs & applications][7]. This removes those applications using Windows
 built-in package manager.
@@ -81,6 +81,26 @@ format fs=refs quick
 ```Get-Item X:\<file> | Get-FileIntegrity```
 * Enabled and Enforced should be set to True
 
+Resolving group policy ['Windows location provider is already defined'][9] errors
+---------------------------------------------------------------------------------
+The current Windows 10 build did not set permissions properly for the
+built-in location provider, meaning you'll randomly get these error messages
+when using windows 10:
+> Windows Location Provider is Already Defined ... line 5, column 110
+
+* Navigate to ```c:\windows\policydefinitions```
+* Take ownership of
+  * LocationProviderAdm.admx
+  * Microsoft-Windows-Geolocation-WLPAdm.admx
+  * en-US\LocationProviderAdm.adml
+  * en-US\Microsoft-Windows-Geolocation-WLPAdm.adml
+* Delete
+  * LocationProviderAdm.admx
+  * en-US\LocationProviderAdm.adml
+* Rename
+  * Microsoft-Windows-Geolocation-WLPAdm.admx -> LocationProviderAdm.admx
+  * en-US\Microsoft-Windows-Geolocation-WLPAdm.adml -> en-US\LocationProviderAdm.adml
+
 Force upgrade licenses to Windows 10
 ------------------------------------
 This will force your system to [check in for Windows 10 eligibility][4], instead
@@ -114,3 +134,4 @@ slmgr.vbs /ato
 [6]: https://thomas.vanhoutte.be/miniblog/delete-windows-10-apps/
 [7]: http://www.makeuseof.com/tag/3-clever-powershell-functions-upgrading-windows-10/
 [8]: http://stackoverflow.com/questions/4037939/powershell-says-execution-of-scripts-is-disabled-on-this-system
+[9]: https://technet.microsoft.com/en-us/windows/dn764773.aspx
