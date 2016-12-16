@@ -2,11 +2,11 @@ Windows Setup
 ---------------------
 Standard Windows setup used for gaming. Removes known tracking.
 
-Windows 10 pro.
+Windows 10 pro
 
 Execution Policy: **Unrestricted** (See: Setting Execution Policy)
 
-Assumes Admin Rights.
+Assumes Admin Rights
 
 [Setting Execution Policy][8]
 --------------------------
@@ -32,14 +32,13 @@ Removing pre-installed [Windows packages][6]
 ---------------------------------------
 Certain packages (and windows store applications) cannot be removed with
 [programs & applications][7]. This removes those applications using Windows
-built-in package manager. Run [remove-crapware.ps1](remove-crapware.ps1) in
-an unrestricted powershell as admin.
+built-in package manager.
 * _Remove-AppxProvisionedPackage_ will remove packages for newly provisioned
   accounts
 * _Remove-AppxPackage_ removes for the current user
 * _Get-AppxPackage -AllUsers_ will return results for all users on system
 
-### Remove packages (powershell as admin)
+### Remove packages with [remove-crapware.ps1](remove-crapware.ps1) (powershell as admin)
 ```powershell
 remove-crapware.ps1
 ```
@@ -87,9 +86,9 @@ Force upgrade licenses to Windows 10
 This will force your system to [check in for Windows 10 eligibility][4], instead
 of randomly waiting up to a month.
 
-### clone force-upgrade-to-10.cmd from [github][1]
+### [force-upgrade-to-10.cmd](force-upgrade-to-10.cmd) (cmd as admin)
 ```cmd
-git clone https://github.com/r-pufky/docs/
+force-upgrade-to-10.cmd
 ```
 
 ### Upgrade
@@ -102,7 +101,7 @@ git clone https://github.com/r-pufky/docs/
 * Verify activation status
 * Grab the windows key with the [ShowKeyPlus][5]
 
-### Forcing Activation Checks
+### Forcing Activation Checks (cmd as admin)
 ```cmd
 slmgr.vbs /ato
 ```
