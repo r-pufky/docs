@@ -2,8 +2,47 @@ Windows Setup
 ---------------------
 Standard Windows setup used for gaming. Removes known tracking.
 
-Windows 10 pro. Assumes admin rights.
+Windows 10 pro.
 
+Execution Policy: **Unrestricted** (See: Setting Execution Policy)
+
+Assumes Admin Rights.
+
+[Setting Execution Policy][8]
+--------------------------
+Powershell scripts require unrestricted exectuion policy to be set to
+execute. By default this is **disabled** and is the **correct choice**.
+Once you've executed scripts, you **must** manually reset this to restricted
+or you leave yourself open to bad things. This persists across sessions.
+
+### Check and set unrestricted policy (powershell as admin)
+```powershell
+get-executionpolicy
+set-executionpolicy unrestricted
+Y
+```
+
+### Set restricted policy (powershell as admin)
+```powershell
+set-executionpolicy restricted
+Y
+```
+
+Removing pre-installed [Windows packages][6]
+---------------------------------------
+Certain packages (and windows store applications) cannot be removed with
+[programs & applications][7]. This removes those applications using Windows
+built-in package manager. Run [remove-crapware.ps1](remove-crapware.ps1) in
+an unrestricted powershell as admin.
+* _Remove-AppxProvisionedPackage_ will remove packages for newly provisioned
+  accounts
+* _Remove-AppxPackage_ removes for the current user
+* _Get-AppxPackage -AllUsers_ will return results for all users on system
+
+### Remove packages (powershell as admin)
+```powershell
+remove-crapware.ps1
+```
 
 Format ReFS on using a [single drive][1]
 ----------------------------------------
@@ -73,3 +112,6 @@ slmgr.vbs /ato
 [3]: https://github.com/r-pufky/docs/blob/master/force-upgrade-to-10.cmd
 [4]: http://www.tenforums.com/tutorials/5705-activate-windows-10-a.html
 [5]: http://www.tenforums.com/tutorials/7745-product-key-view-windows-10-a.html
+[6]: https://thomas.vanhoutte.be/miniblog/delete-windows-10-apps/
+[7]: http://www.makeuseof.com/tag/3-clever-powershell-functions-upgrading-windows-10/
+[8]: http://stackoverflow.com/questions/4037939/powershell-says-execution-of-scripts-is-disabled-on-this-system
