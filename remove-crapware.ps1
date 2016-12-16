@@ -31,5 +31,6 @@ $apps_to_remove =
 	'getstarted'
 
 foreach ($app in $apps_to_remove) {
-	Get-AppxPackage -AllUsers ('*%s*' -replace '%s', $app) | Remove-AppxPackage 
+	Get-AppxPackage ('*%s*' -replace '%s', $app) | Remove-AppxPackage
+	Get-AppxPackage -AllUsers ('*%s*' -replace '%s', $app) | Remove-AppxProvisionedPackage
 }
