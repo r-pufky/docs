@@ -1,5 +1,5 @@
-*Windows Setup
----------------------
+Windows Setup
+-------------
 Standard Windows setup used for gaming. Removes known tracking.
 
 Windows 10 pro
@@ -11,6 +11,7 @@ Assumes Admin Rights
 1. [Setting Execution Policy](#setting-execution-policy)
 2. [Creating a UEFI USB Boot disk](#creating-a-uefi-usb-boot-disk)
 3. [Installing Windows 10 Without Live Account](#installing-windows-10-without-live-account)
+4. [Securing Windows Installation](#securing-windows-installation)
 3. [Removing pre-installed Windows packages](#removing-pre-installed-windows-packages)
 4. [Format ReFS on using a single drive](#format-refs-on-using-a-single-drive)
 5. [Resolving group policy 'Windows location provider is already defined' errors](#resolving-group-policy-windows-location-provider-is-already-defined-errors)
@@ -38,6 +39,14 @@ Installing Windows 10 Without Live Account
 * Create a **local account** (on sign in with microsoft account)
   * Create new account
   * Sign-in *without* a microsoft account
+
+Securing Windows Installation
+-----------------------------
+### [Disable silent windows store app installs][12] (regedit as admin)
+> Key: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager
+
+> **DWORD**: SilentInstalledAppsEnabled = 0
+
 
 [Setting Execution Policy][8]
 -----------------------------
@@ -168,3 +177,4 @@ slmgr.vbs /ato
 [9]: https://technet.microsoft.com/en-us/windows/dn764773.aspx
 [10]: http://windows.microsoft.com/en-us/windows-10/media-creation-tool-install
 [11]: https://rufus.akeo.ie/
+[12]: https://youtu.be/wgKJMsJ-6XU?t=4m47s
