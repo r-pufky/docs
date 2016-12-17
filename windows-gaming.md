@@ -59,7 +59,7 @@ start > run > services.msc
 
 ### Set reasonable Privacy Settings
 ```start > settings > privacy```
-* Disable all options on all 13 pages. Re-enable to taste.
+* Disable [all options on all 13 pages][20]. Re-enable to taste.
 * Disable ad-tracking, go here: https://choice.microsoft.com/en-gb/opt-out
 
 ### [Disable silent windows store app installs][12] (regedit as admin)
@@ -218,3 +218,4 @@ slmgr.vbs /ato
 [17]: https://www.maketecheasier.com/remove-quick-access-file-explorer/
 [18]: https://www.cnet.com/au/how-to/how-to-get-the-windows-10-upgrade-icon-if-its-missing/
 [19]: https://answers.microsoft.com/en-us/windows/forum/windows_10-win_upgrade/i-want-to-reserve-my-free-copy-of-windows-10-but-i/848b5cce-958b-49ae-a132-a999a883265b
+[20]: http://bgr.com/2015/07/31/windows-10-upgrade-spying-how-to-opt-out/
