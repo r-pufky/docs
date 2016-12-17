@@ -8,6 +8,12 @@ Execution Policy: **Unrestricted** (See: Setting Execution Policy)
 
 Assumes Admin Rights
 
+1. [Setting Execution Policy](#setting-execution-policy)
+2. [Removing pre-installed Windows packages](#removing-pre-installed-windows-packages)
+3. [Format ReFS on using a single drive](#format-refs-on-using-a-single-drive)
+4. [Resolving group policy 'Windows location provider is already defined' errors](#resolving-group-policy-windows-location-provider-is-already-defined-errors)
+5. [Force upgrade licenses to Windows 10](#force-upgrade-licenses-to-windows-10)
+
 [Setting Execution Policy][8]
 -----------------------------
 Powershell scripts require unrestricted exectuion policy to be set to
