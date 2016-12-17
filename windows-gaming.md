@@ -52,6 +52,15 @@ Securing Windows Installation
 
 > **DWORD**: System.IsPinnedToNameSpaceTree = 0
 
+### [Disable quick access pane in Windows Explorer][14] (regedit as admin)
+* Set explorer to use **this pc** instead of quick access, or this will break
+* ```Explorer > file > folder options > Open File Explorer To = This PC```
+
+> Key: HKEY_CLASSES_ROOT\CLSID\{679f85cb-0220-4080-b29b-5540cc05aab6}\ShellFolder
+
+> **DWORD**: Attributes = a0600000
+
+* You may need to take ownership of ShellFolder to set value (```right-click > permissions```)
 
 [Setting Execution Policy][8]
 -----------------------------
@@ -184,3 +193,4 @@ slmgr.vbs /ato
 [11]: https://rufus.akeo.ie/
 [12]: https://youtu.be/wgKJMsJ-6XU?t=4m47s
 [13]: https://www.tekrevue.com/tip/remove-onedrive-file-explorer-sidebar-windows-10/
+[14]: https://www.maketecheasier.com/remove-quick-access-file-explorer/
