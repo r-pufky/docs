@@ -10,6 +10,7 @@ Assumes Admin Rights
 
 1. [Setting Execution Policy](#setting-execution-policy)
 2. [Creating a UEFI USB Boot disk](#creating-a-uefi-usb-boot-disk)
+3. [Installing Windows 10 Without Live Account](#installing-windows-10-without-live-account)
 3. [Removing pre-installed Windows packages](#removing-pre-installed-windows-packages)
 4. [Format ReFS on using a single drive](#format-refs-on-using-a-single-drive)
 5. [Resolving group policy 'Windows location provider is already defined' errors](#resolving-group-policy-windows-location-provider-is-already-defined-errors)
@@ -29,6 +30,14 @@ this will be using MBR. This specific setup will create a UEFI USB boot disk.
   * Other options are OK for defaults
   * Once image is applied, dump decompressed Windows 10 drivers to USB drive
     as well
+
+Installing Windows 10 Without Live Account
+------------------------------------------
+* Delete all existing partitions
+* Skip / check later all attempts to enter product key
+* Create a **local account** (on sign in with microsoft account)
+  * Create new account
+  * Sign-in *without* a microsoft account
 
 [Setting Execution Policy][8]
 -----------------------------
