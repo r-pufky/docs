@@ -42,6 +42,8 @@ Installing Windows 10 Without Live Account
 
 Securing Windows Installation
 -----------------------------
+A reboot is required once these changes are made
+
 ### [Disable silent windows store app installs][12] (regedit as admin)
 > Key: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager
 
@@ -56,11 +58,10 @@ Securing Windows Installation
 * Set explorer to use **this pc** instead of quick access, or this will break
 * ```Explorer > file > folder options > Open File Explorer To = This PC```
 
-> Key: HKEY_CLASSES_ROOT\CLSID\{679f85cb-0220-4080-b29b-5540cc05aab6}\ShellFolder
+> Key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer
 
-> **DWORD**: Attributes = a0600000
+> New **DWORD**: HubMode = 1
 
-* You may need to take ownership of ShellFolder to set value (```right-click > permissions```)
 
 [Setting Execution Policy][8]
 -----------------------------
@@ -193,4 +194,4 @@ slmgr.vbs /ato
 [11]: https://rufus.akeo.ie/
 [12]: https://youtu.be/wgKJMsJ-6XU?t=4m47s
 [13]: https://www.tekrevue.com/tip/remove-onedrive-file-explorer-sidebar-windows-10/
-[14]: https://www.maketecheasier.com/remove-quick-access-file-explorer/
+[14]: http://www.winhelponline.com/blog/remove-quick-access-other-shell-folders-file-explorer/#quickaccess_v1607
