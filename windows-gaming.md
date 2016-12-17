@@ -1,18 +1,34 @@
-Windows Setup
+*Windows Setup
 ---------------------
 Standard Windows setup used for gaming. Removes known tracking.
 
 Windows 10 pro
 
-Execution Policy: **Unrestricted** (See: Setting Execution Policy)
+Execution Policy: **Unrestricted** (See: [Setting Execution Policy](#setting-execution-policy))
 
 Assumes Admin Rights
 
 1. [Setting Execution Policy](#setting-execution-policy)
-2. [Removing pre-installed Windows packages](#removing-pre-installed-windows-packages)
-3. [Format ReFS on using a single drive](#format-refs-on-using-a-single-drive)
-4. [Resolving group policy 'Windows location provider is already defined' errors](#resolving-group-policy-windows-location-provider-is-already-defined-errors)
-5. [Force upgrade licenses to Windows 10](#force-upgrade-licenses-to-windows-10)
+2. [Creating a UEFI USB Boot disk](#creating-a-uefi-usb-boot-disk)
+3. [Removing pre-installed Windows packages](#removing-pre-installed-windows-packages)
+4. [Format ReFS on using a single drive](#format-refs-on-using-a-single-drive)
+5. [Resolving group policy 'Windows location provider is already defined' errors](#resolving-group-policy-windows-location-provider-is-already-defined-errors)
+6. [Force upgrade licenses to Windows 10](#force-upgrade-licenses-to-windows-10)
+
+Creating a UEFI USB Boot Disk
+-----------------------------
+Using the [windows Media Creation Tool][10] will create a USB boot disk, however
+this will be using MBR. This specific setup will create a UEFI USB boot disk.
+* Download full windows 10 ISO image with [Windows Media Creation Tool][10]
+  * Create installation media for a different PC
+  * Select correct options (typically, english, windows 10 pro, 64-bit)
+  * Select save location for the ISO file
+* Create bootable media with [Rufus][11]
+  * GPT partition scheme for UEFI
+  * NTFS
+  * Other options are OK for defaults
+  * Once image is applied, dump decompressed Windows 10 drivers to USB drive
+    as well
 
 [Setting Execution Policy][8]
 -----------------------------
@@ -141,3 +157,5 @@ slmgr.vbs /ato
 [7]: http://www.makeuseof.com/tag/3-clever-powershell-functions-upgrading-windows-10/
 [8]: http://stackoverflow.com/questions/4037939/powershell-says-execution-of-scripts-is-disabled-on-this-system
 [9]: https://technet.microsoft.com/en-us/windows/dn764773.aspx
+[10]: http://windows.microsoft.com/en-us/windows-10/media-creation-tool-install
+[11]: https://rufus.akeo.ie/
