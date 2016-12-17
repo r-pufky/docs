@@ -136,6 +136,10 @@ Don't turn this off unless you know what you are doing.
 > Key: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\StartupApproved\Run
 * Delete values after disabling
 
+### Cleanup default profiles, set as non-admin user
+* Create a new account, set to admin
+* Remove admin access from your primary account
+
 [Setting Execution Policy][8]
 -----------------------------
 Powershell scripts require unrestricted exectuion policy to be set to
