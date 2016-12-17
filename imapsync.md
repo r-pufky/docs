@@ -1,5 +1,5 @@
-imapsync setup
----------------------
+imapsync Setup
+--------------
 Syncing from gmail to local imap server
 
 ubuntu 16.04
