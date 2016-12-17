@@ -44,6 +44,19 @@ Securing Windows Installation
 -----------------------------
 A reboot is required once these changes are made
 
+### Disable Services
+These services either do user data tracking, or are a major performance hit for
+SSD's. Disable by ```right-click > stop``` and ```right-click > properties > disable```
+
+```
+start > run > services.msc
+```
+* [Connected User Experiences and Telemetry][16]
+* [Diagnostic Tracking Services][16]
+* [Windows Search][15]
+* [Superfetch][15]
+* Razer Game Scanner
+
 ### [Disable silent windows store app installs][12] (regedit as admin)
 > Key: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager
 
@@ -195,3 +208,5 @@ slmgr.vbs /ato
 [12]: https://youtu.be/wgKJMsJ-6XU?t=4m47s
 [13]: https://www.tekrevue.com/tip/remove-onedrive-file-explorer-sidebar-windows-10/
 [14]: http://www.winhelponline.com/blog/remove-quick-access-other-shell-folders-file-explorer/#quickaccess_v1607
+[15]: http://superuser.com/questions/1016152/100-ssd-activity-0-r-w-speed-system-hang-issue
+[16]: http://www.forbes.com/sites/gordonkelly/2015/11/24/windows-10-automatic-spying-begins-again/#5f0b888d2d97
