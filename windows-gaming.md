@@ -47,6 +47,11 @@ Securing Windows Installation
 
 > **DWORD**: SilentInstalledAppsEnabled = 0
 
+### [Remove OneDrive from Windows Explorer][13] (regedit as admin)
+> Key: HKEY_USERS\S-1-5-21-1755613722-1100249042-486067580-1001\SOFTWARE\Classes\CLSID\{018D5C66-4533-4307-9B53-224DE2ED1FE6}
+
+> **DWORD**: System.IsPinnedToNameSpaceTree = 0
+
 
 [Setting Execution Policy][8]
 -----------------------------
@@ -178,3 +183,4 @@ slmgr.vbs /ato
 [10]: http://windows.microsoft.com/en-us/windows-10/media-creation-tool-install
 [11]: https://rufus.akeo.ie/
 [12]: https://youtu.be/wgKJMsJ-6XU?t=4m47s
+[13]: https://www.tekrevue.com/tip/remove-onedrive-file-explorer-sidebar-windows-10/
