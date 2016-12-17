@@ -14,8 +14,6 @@ Assumes Admin Rights
 4. [Securing Windows Installation](#securing-windows-installation)
 3. [Removing pre-installed Windows packages](#removing-pre-installed-windows-packages)
 4. [Format ReFS on using a single drive](#format-refs-on-using-a-single-drive)
-5. [Resolving group policy 'Windows location provider is already defined' errors](#resolving-group-policy-windows-location-provider-is-already-defined-errors)
-6. [Force upgrade licenses to Windows 10](#force-upgrade-licenses-to-windows-10)
 
 Creating a UEFI USB Boot Disk
 -----------------------------
