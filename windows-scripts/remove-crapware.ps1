@@ -7,7 +7,7 @@
 #  http://www.makeuseof.com/tag/3-clever-powershell-functions-upgrading-windows-10/
 #  http://stackoverflow.com/questions/4037939/powershell-says-execution-of-scripts-is-disabled-on-this-system
 #
-#
+
 $apps_to_remove =
 	'zune',
 	'bing',
