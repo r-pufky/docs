@@ -170,7 +170,7 @@ built-in package manager.
 * _Remove-AppxPackage_ removes for the current user
 * _Get-AppxPackage -AllUsers_ will return results for all users on system
 
-### Remove packages with [remove-crapware.ps1](remove-crapware.ps1) (powershell as admin)
+### Remove packages with [remove-crapware.ps1](windows-scripts/remove-crapware.ps1) (powershell as admin)
 ```powershell
 remove-crapware.ps1
 ```
@@ -222,7 +222,7 @@ Get-Item X:\<file> | Get-FileIntegrity
 This will force your system to [check in for Windows 10 eligibility][4], instead
 of randomly waiting up to a month.
 
-### [force-upgrade-to-10.cmd](force-upgrade-to-10.cmd) (cmd as admin)
+### [force-upgrade-to-10.cmd](windows-scripts/force-upgrade-to-10.cmd) (cmd as admin)
 ```cmd
 force-upgrade-to-10.cmd
 ```

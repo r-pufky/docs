@@ -1,3 +1,4 @@
+REM Script to force run compatibility check for Windows 10 upgrade
 REG QUERY "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\UpgradeExperienceIndicators" /v UpgEx | findstr UpgEx
 if "%errorlevel%" == "0" GOTO RunGWX
 reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Appraiser" /v UtcOnetimeSend /t REG_DWORD /d 1 /f
