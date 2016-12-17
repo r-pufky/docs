@@ -57,6 +57,11 @@ start > run > services.msc
 * [Superfetch][15]
 * Razer Game Scanner
 
+### Set reasonable Privacy Settings
+```start > settings > privacy```
+* Disable all options on all 13 pages. Re-enable to taste.
+* Disable ad-tracking, go here: https://choice.microsoft.com/en-gb/opt-out
+
 ### [Disable silent windows store app installs][12] (regedit as admin)
 > Key: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager
 
@@ -68,7 +73,7 @@ start > run > services.msc
 > **DWORD**: System.IsPinnedToNameSpaceTree = 0
 
 ### [Disable quick access pane in Windows Explorer][14] (regedit as admin)
-* Set explorer to use **this pc** instead of quick access, or this will break
+* Set [explorer to use **this pc**][17] instead of quick access, or this will break
 * ```Explorer > file > folder options > Open File Explorer To = This PC```
 
 > Key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer
@@ -210,3 +215,4 @@ slmgr.vbs /ato
 [14]: http://www.winhelponline.com/blog/remove-quick-access-other-shell-folders-file-explorer/#quickaccess_v1607
 [15]: http://superuser.com/questions/1016152/100-ssd-activity-0-r-w-speed-system-hang-issue
 [16]: http://www.forbes.com/sites/gordonkelly/2015/11/24/windows-10-automatic-spying-begins-again/#5f0b888d2d97
+[17]: https://www.maketecheasier.com/remove-quick-access-file-explorer/
