@@ -62,6 +62,27 @@ start > run > services.msc
 * Disable [all options on all 13 pages][20]. Re-enable to taste.
 * Disable ad-tracking, go here: https://choice.microsoft.com/en-gb/opt-out
 
+### Disable Wi-Fi Sharing
+```start > settings > change network settings > manage wifi settings```
+* Uncheck all boxes for sharing
+
+### Remove unused optional Windows features
+```start > settings > optional features```
+* English (united states) retail demo content (remove)
+* Neutral retail demo content (cortana demo) (remove)
+* News hub (remove)
+
+### [Disable Cortana][21]
+```start > Cortana & Search Settings```
+* Disable all options
+* Clear all data
+
+```start > gpedit.msc```
+> Key: Computer Configuration > Administrative Templates > Windows Components > Search
+
+> **Policy**: Allow Cortana = Disabled
+
+
 ### [Disable silent windows store app installs][12] (regedit as admin)
 > Key: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager
 
@@ -219,3 +240,4 @@ slmgr.vbs /ato
 [18]: https://www.cnet.com/au/how-to/how-to-get-the-windows-10-upgrade-icon-if-its-missing/
 [19]: https://answers.microsoft.com/en-us/windows/forum/windows_10-win_upgrade/i-want-to-reserve-my-free-copy-of-windows-10-but-i/848b5cce-958b-49ae-a132-a999a883265b
 [20]: http://bgr.com/2015/07/31/windows-10-upgrade-spying-how-to-opt-out/
+[21]: http://www.howtogeek.com/265027/how-to-disable-cortana-in-windows-10/
