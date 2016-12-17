@@ -217,36 +217,10 @@ Get-Item X:\<file> | Get-FileIntegrity
 ```
 * Enabled and Enforced should be set to True
 
-[Force upgrade licenses to Windows 10][18]
-------------------------------------
-This will force your system to [check in for Windows 10 eligibility][4], instead
-of randomly waiting up to a month.
-
-### [force-upgrade-to-10.cmd](windows-scripts/force-upgrade-to-10.cmd) (cmd as admin)
-```cmd
-force-upgrade-to-10.cmd
-```
-
-### Upgrade
-* Ensure latest Windows updates are applied, system rebooted
-* Run [force-upgrade-to-10.cmd][3] as admin, this will force upgrade checks
-* Once the upgrade is verified, you must upgrade via upgrade utility to transfer license
-  * Once the upgrade finishes, the license is tied to the hardware
-
-```start > settings > update & security > activation```
-* Verify activation status
-* Grab the windows key with the [ShowKeyPlus][5]
-
-### Forcing Activation Checks (cmd as admin)
-```cmd
-slmgr.vbs /ato
-```
 
 [1]: http://winaero.com/blog/how-to-format-any-drive-in-windows-8-1-with-refs/
 [2]: http://blog.architecting.it/2012/07/10/windows-server-2012-windows-server-8-resilient-file-system/w8-refs-2/
 [3]: https://github.com/r-pufky/docs/blob/master/force-upgrade-to-10.cmd
-[4]: http://www.tenforums.com/tutorials/5705-activate-windows-10-a.html
-[5]: http://www.tenforums.com/tutorials/7745-product-key-view-windows-10-a.html
 [6]: https://thomas.vanhoutte.be/miniblog/delete-windows-10-apps/
 [7]: http://www.makeuseof.com/tag/3-clever-powershell-functions-upgrading-windows-10/
 [8]: http://stackoverflow.com/questions/4037939/powershell-says-execution-of-scripts-is-disabled-on-this-system
@@ -258,7 +232,6 @@ slmgr.vbs /ato
 [15]: http://superuser.com/questions/1016152/100-ssd-activity-0-r-w-speed-system-hang-issue
 [16]: http://www.forbes.com/sites/gordonkelly/2015/11/24/windows-10-automatic-spying-begins-again/#5f0b888d2d97
 [17]: https://www.maketecheasier.com/remove-quick-access-file-explorer/
-[18]: https://www.cnet.com/au/how-to/how-to-get-the-windows-10-upgrade-icon-if-its-missing/
 [20]: http://bgr.com/2015/07/31/windows-10-upgrade-spying-how-to-opt-out/
 [21]: http://www.howtogeek.com/265027/how-to-disable-cortana-in-windows-10/
 [22]: https://www.autoitscript.com/forum/topic/177749-stopping-windows-10-from-auto-closing-programs-to-free-up-ram/
