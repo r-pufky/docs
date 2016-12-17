@@ -52,7 +52,7 @@ SSD's. Disable by ```right-click > stop``` and ```right-click > properties > dis
 * [Connected User Experiences and Telemetry][16]
 * [Diagnostic Tracking Services][16]
 * [Windows Search][15]
-* [Superfetch][15]
+* [Superfetch][15] ([causes 100% CPU usage][25], [system & compressed memory service][26])
 * Razer Game Scanner
 
 ### Set reasonable Privacy Settings
@@ -130,6 +130,11 @@ Don't turn this off unless you know what you are doing.
 
 > New **DWORD**: HubMode = 1
 
+### [Remove services from being listed in Task Manager][27] (regedit as admin)
+> Key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\StartupApproved\Run
+
+> Key: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\StartupApproved\Run
+* Delete values after disabling
 
 [Setting Execution Policy][8]
 -----------------------------
@@ -277,3 +282,6 @@ slmgr.vbs /ato
 [22]: https://www.autoitscript.com/forum/topic/177749-stopping-windows-10-from-auto-closing-programs-to-free-up-ram/
 [23]: http://www.outsidethebox.ms/why-windows-8-defragments-your-ssd-and-how-you-can-avoid-this/#_Toc352763197
 [24]: https://www.tenforums.com/tutorials/5918-windows-defender-turn-off-windows-10-a.html
+[25]: https://answers.microsoft.com/en-us/windows/forum/windows_10-performance/system-and-compressed-memory-service-high-cpu/421c32bd-e65b-4339-9473-db775e50096a?page=21
+[26]: https://usefulpcguide.com/18428/system-and-compressed-memory-high-cpu/
+[27]: https://www.tenforums.com/tutorials/2944-startup-items-add-delete-enable-disable-windows-10-a.html
