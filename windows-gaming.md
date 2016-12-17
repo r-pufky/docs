@@ -98,6 +98,20 @@ fill up. Prevent Windows from being dumb.
 
 > **Policy**: Windows Resource Exhaustion = Disabled
 
+### [Disable defrag for SSD drives][23]
+By default Windows will schedule defrags, even for SSD's, which shorten SSD lifetime.
+
+```win + r > dfrgui```
+*  Turn Off for all SSD drives
+
+### [Disable Windows Defender Service][24]
+Don't turn this off unless you know what you are doing.
+
+```win + r > gpedit.msc```
+> Key: Computer Configuration > Administrative Templates > Windows Components
+
+> **Policy**: Windows Defender = Enabled
+
 ### [Disable silent windows store app installs][12] (regedit as admin)
 > Key: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager
 
@@ -261,3 +275,5 @@ slmgr.vbs /ato
 [20]: http://bgr.com/2015/07/31/windows-10-upgrade-spying-how-to-opt-out/
 [21]: http://www.howtogeek.com/265027/how-to-disable-cortana-in-windows-10/
 [22]: https://www.autoitscript.com/forum/topic/177749-stopping-windows-10-from-auto-closing-programs-to-free-up-ram/
+[23]: http://www.outsidethebox.ms/why-windows-8-defragments-your-ssd-and-how-you-can-avoid-this/#_Toc352763197
+[24]: https://www.tenforums.com/tutorials/5918-windows-defender-turn-off-windows-10-a.html
