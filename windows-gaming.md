@@ -90,7 +90,7 @@ SSD's. Disable by ```right-click > stop``` and ```right-click > properties > dis
 ```start > view advanced system settings > hardware > device installation settings```
 * No (Disable)
 
-### [Disable automatic reseource exhaustion resolution][22]
+### [Disable automatic resource exhaustion resolution][22]
 By default, windows will automatically force close applications when memory starts to
 fill up. Prevent Windows from being dumb.
 ```win + r > gpedit.msc```
@@ -217,26 +217,6 @@ Get-Item X:\<file> | Get-FileIntegrity
 ```
 * Enabled and Enforced should be set to True
 
-Resolving group policy ['Windows location provider is already defined'][9] errors
----------------------------------------------------------------------------------
-The current Windows 10 build did not set permissions properly for the
-built-in location provider, meaning you'll randomly get these error messages
-when using windows 10:
-> Windows Location Provider is Already Defined ... line 5, column 110
-
-* Navigate to ```c:\windows\policydefinitions```
-* Take ownership of
-  * LocationProviderAdm.admx
-  * Microsoft-Windows-Geolocation-WLPAdm.admx
-  * en-US\LocationProviderAdm.adml
-  * en-US\Microsoft-Windows-Geolocation-WLPAdm.adml
-* Delete
-  * LocationProviderAdm.admx
-  * en-US\LocationProviderAdm.adml
-* Rename
-  * Microsoft-Windows-Geolocation-WLPAdm.admx -> LocationProviderAdm.admx
-  * en-US\Microsoft-Windows-Geolocation-WLPAdm.adml -> en-US\LocationProviderAdm.adml
-
 [Force upgrade licenses to Windows 10][18]
 ------------------------------------
 This will force your system to [check in for Windows 10 eligibility][4], instead
@@ -270,7 +250,6 @@ slmgr.vbs /ato
 [6]: https://thomas.vanhoutte.be/miniblog/delete-windows-10-apps/
 [7]: http://www.makeuseof.com/tag/3-clever-powershell-functions-upgrading-windows-10/
 [8]: http://stackoverflow.com/questions/4037939/powershell-says-execution-of-scripts-is-disabled-on-this-system
-[9]: https://technet.microsoft.com/en-us/windows/dn764773.aspx
 [10]: http://windows.microsoft.com/en-us/windows-10/media-creation-tool-install
 [11]: https://rufus.akeo.ie/
 [12]: https://youtu.be/wgKJMsJ-6XU?t=4m47s
@@ -280,7 +259,6 @@ slmgr.vbs /ato
 [16]: http://www.forbes.com/sites/gordonkelly/2015/11/24/windows-10-automatic-spying-begins-again/#5f0b888d2d97
 [17]: https://www.maketecheasier.com/remove-quick-access-file-explorer/
 [18]: https://www.cnet.com/au/how-to/how-to-get-the-windows-10-upgrade-icon-if-its-missing/
-[19]: https://answers.microsoft.com/en-us/windows/forum/windows_10-win_upgrade/i-want-to-reserve-my-free-copy-of-windows-10-but-i/848b5cce-958b-49ae-a132-a999a883265b
 [20]: http://bgr.com/2015/07/31/windows-10-upgrade-spying-how-to-opt-out/
 [21]: http://www.howtogeek.com/265027/how-to-disable-cortana-in-windows-10/
 [22]: https://www.autoitscript.com/forum/topic/177749-stopping-windows-10-from-auto-closing-programs-to-free-up-ram/
