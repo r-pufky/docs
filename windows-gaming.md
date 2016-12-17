@@ -174,7 +174,7 @@ when using windows 10:
   * Microsoft-Windows-Geolocation-WLPAdm.admx -> LocationProviderAdm.admx
   * en-US\Microsoft-Windows-Geolocation-WLPAdm.adml -> en-US\LocationProviderAdm.adml
 
-Force upgrade licenses to Windows 10
+[Force upgrade licenses to Windows 10][18]
 ------------------------------------
 This will force your system to [check in for Windows 10 eligibility][4], instead
 of randomly waiting up to a month.
@@ -216,3 +216,5 @@ slmgr.vbs /ato
 [15]: http://superuser.com/questions/1016152/100-ssd-activity-0-r-w-speed-system-hang-issue
 [16]: http://www.forbes.com/sites/gordonkelly/2015/11/24/windows-10-automatic-spying-begins-again/#5f0b888d2d97
 [17]: https://www.maketecheasier.com/remove-quick-access-file-explorer/
+[18]: https://www.cnet.com/au/how-to/how-to-get-the-windows-10-upgrade-icon-if-its-missing/
+[19]: https://answers.microsoft.com/en-us/windows/forum/windows_10-win_upgrade/i-want-to-reserve-my-free-copy-of-windows-10-but-i/848b5cce-958b-49ae-a132-a999a883265b
