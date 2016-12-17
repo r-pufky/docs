@@ -48,9 +48,7 @@ A reboot is required once these changes are made
 These services either do user data tracking, or are a major performance hit for
 SSD's. Disable by ```right-click > stop``` and ```right-click > properties > disable```
 
-```
-start > run > services.msc
-```
+```win + r > services.msc```
 * [Connected User Experiences and Telemetry][16]
 * [Diagnostic Tracking Services][16]
 * [Windows Search][15]
@@ -77,11 +75,28 @@ start > run > services.msc
 * Disable all options
 * Clear all data
 
-```start > gpedit.msc```
+```win + r > gpedit.msc```
 > Key: Computer Configuration > Administrative Templates > Windows Components > Search
 
 > **Policy**: Allow Cortana = Disabled
 
+### Disable paging, restore points, automatic driver updates
+```start > view advanced system settings > advanced > performance```
+* Disable all paging on all drives
+
+```start > view advanced system settings > system protection```
+* Disable protection for all drives
+
+```start > view advanced system settings > hardware > device installation settings```
+* No (Disable)
+
+### [Disable automatic reseource exhaustion resolution][22]
+By default, windows will automatically force close applications when memory starts to
+fill up. Prevent Windows from being dumb.
+```win + r > gpedit.msc```
+> Key: Computer Configuration > Administrative Templates > System > Troubleshooting and Diagnostics
+
+> **Policy**: Windows Resource Exhaustion = Disabled
 
 ### [Disable silent windows store app installs][12] (regedit as admin)
 > Key: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager
@@ -167,12 +182,16 @@ format fs=refs quick
 * Mount ReFS partition to a drive letter
 * Reformat drive with [integrity enabled][2]
 
-```format X: /fs:refs /i:enabled /q```
+```powershell
+format X: /fs:refs /i:enabled /q
+```
 
 ### Verifiy ReFS with Integrity is working (powershell as admin)
 * Write a temporary file the drive and use this to lookup on the filesystem.
 
-```Get-Item X:\<file> | Get-FileIntegrity```
+```powershell
+Get-Item X:\<file> | Get-FileIntegrity
+```
 * Enabled and Enforced should be set to True
 
 Resolving group policy ['Windows location provider is already defined'][9] errors
@@ -241,3 +260,4 @@ slmgr.vbs /ato
 [19]: https://answers.microsoft.com/en-us/windows/forum/windows_10-win_upgrade/i-want-to-reserve-my-free-copy-of-windows-10-but-i/848b5cce-958b-49ae-a132-a999a883265b
 [20]: http://bgr.com/2015/07/31/windows-10-upgrade-spying-how-to-opt-out/
 [21]: http://www.howtogeek.com/265027/how-to-disable-cortana-in-windows-10/
+[22]: https://www.autoitscript.com/forum/topic/177749-stopping-windows-10-from-auto-closing-programs-to-free-up-ram/
