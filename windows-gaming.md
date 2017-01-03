@@ -138,6 +138,19 @@ Don't turn this off unless you know what you are doing.
 * Create a new account, set to admin
 * Remove admin access from your primary account
 
+### [Remove win+g key prompt when starting game][28] (regedit as admin)
+This happens because of the xbox app on Windows 10. Removing the app will fix this.
+(see [Removing pre-installed Windows Packages](#removing-pre-installed-windows-packages))
+> Key: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\GameDVR
+
+> **DWORD**: AppCapturedEnabled = 0
+
+
+> Key: HKEY_CURRENT_USER\System\GameConfigStore
+
+> **DWORD**: GameDVR_Enabled = 0
+
+
 [Setting Execution Policy][8]
 -----------------------------
 Powershell scripts require unrestricted exectuion policy to be set to
@@ -238,3 +251,4 @@ Get-Item X:\<file> | Get-FileIntegrity
 [25]: https://answers.microsoft.com/en-us/windows/forum/windows_10-performance/system-and-compressed-memory-service-high-cpu/421c32bd-e65b-4339-9473-db775e50096a?page=21
 [26]: https://usefulpcguide.com/18428/system-and-compressed-memory-high-cpu/
 [27]: https://www.tenforums.com/tutorials/2944-startup-items-add-delete-enable-disable-windows-10-a.html
+[28]: https://www.tenforums.com/tutorials/8637-game-bar-turn-off-windows-10-a.html
