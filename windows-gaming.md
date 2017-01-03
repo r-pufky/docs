@@ -134,10 +134,6 @@ Don't turn this off unless you know what you are doing.
 > Key: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\StartupApproved\Run
 * Delete values after disabling
 
-### Cleanup default profiles, set as non-admin user
-* Create a new account, set to admin
-* Remove admin access from your primary account
-
 ### [Remove win+g key prompt when starting game][28] (regedit as admin)
 This happens because of the xbox app on Windows 10. Removing the app will fix this.
 (see [Removing pre-installed Windows Packages](#removing-pre-installed-windows-packages))
@@ -150,6 +146,9 @@ This happens because of the xbox app on Windows 10. Removing the app will fix th
 
 > **DWORD**: GameDVR_Enabled = 0
 
+### Cleanup default profiles, set as non-admin user
+* Create a new account, set to admin
+* Remove admin access from your primary account
 
 [Setting Execution Policy][8]
 -----------------------------
