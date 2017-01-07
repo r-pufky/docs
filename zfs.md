@@ -8,6 +8,7 @@ Ubunutu 16.04
 2. [Mounting Existing ZFS Pool](#mounting-existing-zfs-pool)
 3. [Creating New ZFS Pool](#creating-new-zfs-pool)
 4. [Upgrading ZFS with Larger Disks](#upgrading-zfs-with-larger-disks)
+5. [Setup Monthly ZFS Scrub](#setup-monthly-zfs-scrub)
 
 [Installing Base Packages, Existing Drive Mappings][3]
 ------------------------------------------------------
@@ -89,6 +90,28 @@ sudo zpool replace CONTAINER sdb
 
 * Ensure right drive - this is __data destructive__
 
+[Setup Monthly ZFS Scrub][8]
+----------------------------
+Scrubbing verifies all blocks can be read, and marks then bad if not. This
+is done while the filesystem is online, but may slightly impact performance.
+
+#### /root/bin/scrub-zpool-monthly
+```bash
+#!/bin/bash
+#
+# Scrubs zpool set at the beginning of the month
+# Note: cronjob should run set to run on a day of the week
+
+if [ $(date +\%d) -le 07 ]; then
+  /sbin/zpool scrub CONTAINER
+fi
+```
+
+### Add to [root crontab][9] to run monthly
+```crontab
+@weekly /root/bin/scrub-zpool-monthly
+```
+
 [1]: https://launchpad.net/~zfs-native/+archive/stable
 [2]: http://www.cyberciti.biz/tips/fdisk-unable-to-create-partition-greater-2tb.html
 [3]: http://flux.org.uk/howto/solaris/zfs_tutorial_01
@@ -96,3 +119,5 @@ sudo zpool replace CONTAINER sdb
 [5]: http://www.itsacon.net/computers/unix/growing-a-zfs-pool/
 [6]: https://github.com/zfsonlinux/pkg-zfs/wiki/Ubuntu-ZFS-mountall-FAQ-and-troubleshooting
 [7]: http://forums.freebsd.org/showthread.php?t=29539
+[8]: https://docs.oracle.com/cd/E23823_01/html/819-5461/gbbwa.html
+[9]: https://en.wikipedia.org/wiki/Cron
