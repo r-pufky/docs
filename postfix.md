@@ -19,7 +19,7 @@ Standard Definitions
 * MTA = Mail Transport Agent: handles mail server to server (e.g. other domains)
 * MDA = Mail Delivery Agent: handles user access to email (e.g. IMAP)
 * MUA = Mail User Agent: user client to check email (e.g. thunderbird/outlook)
-* Disable ports **25/465/993** on firewall until configuration is final 
+* Disable ports **25 (stmp)/587 (smtps)/993 (imaps)** on firewall until configuration is final 
   otherwise you may get email delivered while you are configuring server
 * example.com = your primary domain
 * example2.com = your secondary domain, if applicable
