@@ -151,6 +151,7 @@ policy-spf  unix  -       n       n       -       -       spawn
 ```
 * Place this command in the first section of services near the bottom, before the
   _Interfaces to non-Postfix_ software section.
+* Newline, two spaces for user= line.
 
 ```bash
 sudo postconf -e 'smtpd_recipient_restrictions = permit_sasl_authenticated,permit_mynetworks,reject_unauth_destination,check_policy_service inet:127.0.0.1:10023,check_policy_service unix:private/policy-spf'
@@ -237,6 +238,7 @@ smtp      inet  n       -       -       -       -       smtpd
 ```
 
 * This is the first line in the master.cf configuration
+* Newline, two spaces for -o line.
 
 #### /etc/postfix/master.cf
 ```config
@@ -246,6 +248,7 @@ spamassassin unix -     n       n       -       -       pipe
 ```
 
 * This is the last line in the master.cf configuration
+* Newline, two spaces for additional lines.
 
 ```bash
 sudo postfix reload
