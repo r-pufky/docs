@@ -149,7 +149,8 @@ sudo postconf -e “policy-spf_time_limit = 3600s”
 policy-spf  unix  -       n       n       -       -       spawn
      user=nobody argv=/usr/bin/policyd-spf
 ```
-* Place this command in the first section of services
+* Place this command in the first section of services near the bottom, before the
+  _Interfaces to non-Postfix_ software section.
 
 ```bash
 sudo postconf -e 'smtpd_recipient_restrictions = permit_sasl_authenticated,permit_mynetworks,reject_unauth_destination,check_policy_service inet:127.0.0.1:10023,check_policy_service unix:private/policy-spf'
