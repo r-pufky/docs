@@ -247,7 +247,7 @@ spamassassin unix -     n       n       -       -       pipe
         /usr/sbin/sendmail -oi -f ${sender} ${recipient}
 ```
 
-* This is the last line in the master.cf configuration
+* This is the last line (EOF) in the master.cf configuration
 * Newline, two spaces for additional lines.
 
 ```bash
