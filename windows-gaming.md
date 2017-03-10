@@ -146,6 +146,12 @@ This happens because of the xbox app on Windows 10. Removing the app will fix th
 
 > **DWORD**: GameDVR_Enabled = 0
 
+### [Disable Ads in Windows Explorer from Sync Providers][29] (windows explorer)
+Sync providers for windows explorer can now show Ads. Disable it.
+
+```win + e > view > options > view```
+* Uncheck show sync provider notifications
+
 ### Cleanup default profiles, set as non-admin user
 * Create a new account, set to admin
 * Remove admin access from your primary account
@@ -251,3 +257,4 @@ Get-Item X:\<file> | Get-FileIntegrity
 [26]: https://usefulpcguide.com/18428/system-and-compressed-memory-high-cpu/
 [27]: https://www.tenforums.com/tutorials/2944-startup-items-add-delete-enable-disable-windows-10-a.html
 [28]: https://www.tenforums.com/tutorials/8637-game-bar-turn-off-windows-10-a.html
+[29]: https://www.extremetech.com/computing/245553-microsoft-now-puts-ads-windows-file-explorer
