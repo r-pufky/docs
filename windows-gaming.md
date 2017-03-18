@@ -78,6 +78,12 @@ SSD's. Disable by ```right-click > stop``` and ```right-click > properties > dis
 
 > **Policy**: Allow Cortana = Disabled
 
+### Disable [OneDrive from storing files][30]
+```win + r > gpedit.msc```
+> Key: Computer Configuration > Administrative Templates > Windows Components > OneDrive
+
+> **Prevent the usage of OneDrive for file storage** = Enabled
+
 ### Disable paging, restore points, automatic driver updates
 ```start > view advanced system settings > advanced > performance```
 * Disable all paging on all drives
@@ -258,3 +264,4 @@ Get-Item X:\<file> | Get-FileIntegrity
 [27]: https://www.tenforums.com/tutorials/2944-startup-items-add-delete-enable-disable-windows-10-a.html
 [28]: https://www.tenforums.com/tutorials/8637-game-bar-turn-off-windows-10-a.html
 [29]: https://www.extremetech.com/computing/245553-microsoft-now-puts-ads-windows-file-explorer
+[30]: https://support.office.com/en-us/article/Turn-off-or-uninstall-OneDrive-f32a17ce-3336-40fe-9c38-6efb09f944b0
