@@ -104,6 +104,7 @@ SSD's. Disable by ```right-click > stop``` and ```right-click > properties > dis
 ### [Disable automatic resource exhaustion resolution][22]
 By default, windows will automatically force close applications when memory starts to
 fill up. Prevent Windows from being dumb.
+
 ```win + r > gpedit.msc```
 > Key: Computer Configuration > Administrative Templates > System > Troubleshooting and Diagnostics
 
