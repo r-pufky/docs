@@ -40,7 +40,8 @@ Installing Windows 10 Without Live Account
 
 Securing Windows Installation
 -----------------------------
-A reboot is required once these changes are made
+A reboot is required once these changes are made. If you are a home user, see 
+links for registry edits instead of using group policy.
 
 ### Disable Services
 These services either do user data tracking, or are a major performance hit for
@@ -82,7 +83,13 @@ SSD's. Disable by ```right-click > stop``` and ```right-click > properties > dis
 ```win + r > gpedit.msc```
 > Key: Computer Configuration > Administrative Templates > Windows Components > OneDrive
 
-> **Prevent the usage of OneDrive for file storage** = Enabled
+> **Policy**: Prevent the usage of OneDrive for file storage = Enabled
+
+### Disable [suggested apps in Windows][31]
+```win + r > gpedit.msc```
+> Key: Computer Configuration > Administrative Templates > Windows Components > Cloud Content
+
+> **Policy**: Turn off Microsoft consumer experiences = Enabled
 
 ### Disable paging, restore points, automatic driver updates
 ```start > view advanced system settings > advanced > performance```
@@ -265,3 +272,4 @@ Get-Item X:\<file> | Get-FileIntegrity
 [28]: https://www.tenforums.com/tutorials/8637-game-bar-turn-off-windows-10-a.html
 [29]: https://www.extremetech.com/computing/245553-microsoft-now-puts-ads-windows-file-explorer
 [30]: https://support.office.com/en-us/article/Turn-off-or-uninstall-OneDrive-f32a17ce-3336-40fe-9c38-6efb09f944b0
+[31]: https://www.howtogeek.com/259946/how-to-get-rid-of-suggested-apps-in-windows-10/
