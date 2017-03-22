@@ -122,9 +122,9 @@ By default Windows will schedule defrags, even for SSD's, which shorten SSD life
 Don't turn this off unless you know what you are doing.
 
 ```win + r > gpedit.msc```
-> Key: Computer Configuration > Administrative Templates > Windows Components
+> Key: Computer Configuration > Administrative Templates > Windows Components > Windows Defender
 
-> **Policy**: Windows Defender = Enabled
+> **Policy**: Turn off Windows Defender = Enabled
 
 ### [Disable silent windows store app installs][12] (regedit as admin)
 > Key: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager
