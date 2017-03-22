@@ -108,9 +108,9 @@ By default, windows will automatically force close applications when memory star
 fill up. Prevent Windows from being dumb.
 
 ```win + r > gpedit.msc```
-> Key: Computer Configuration > Administrative Templates > System > Troubleshooting and Diagnostics
+> Key: Computer Configuration > Administrative Templates > System > Troubleshooting and Diagnostics > Windows Resource Exhaustion Detection and Resolution
 
-> **Policy**: Windows Resource Exhaustion = Disabled
+> **Policy**: Configure Scenario Execution Level = Disabled
 
 ### [Disable defrag for SSD drives][23]
 By default Windows will schedule defrags, even for SSD's, which shorten SSD lifetime.
