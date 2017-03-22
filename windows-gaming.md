@@ -68,6 +68,8 @@ SSD's. Disable by ```right-click > stop``` and ```right-click > properties > dis
 * English (united states) retail demo content (remove)
 * Neutral retail demo content (cortana demo) (remove)
 * News hub (remove)
+* Microsoft Quick Assist (remove)
+* Contact Support (remove)
 
 ### [Disable Cortana][21]
 ```start > Cortana & Search Settings```
