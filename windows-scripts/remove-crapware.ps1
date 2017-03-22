@@ -28,7 +28,12 @@ $apps_to_remove =
 	'windowssoundrecorder',
 	'windowscamera',
 	'windows.photos',
-	'getstarted'
+	'getstarted',
+	'WindowsAlarms',
+	'MinecraftUWP',
+	'CandyCrushSodaSaga',
+	'ParadiseBay',
+	'SlingTV'S
 
 foreach ($app in $apps_to_remove) {
 	Get-AppxPackage ('*%s*' -replace '%s', $app) | Remove-AppxPackage
