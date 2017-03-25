@@ -87,6 +87,13 @@ SSD's. Disable by ```right-click > stop``` and ```right-click > properties > dis
 
 > **Policy**: Prevent the usage of OneDrive for file storage = Enabled
 
+### Disable OneDrive scheduled update task
+This will sometimes randomly re-enable OneDrive when it is updated.
+
+```start > Task Scheduler > Task Scheduler Library```
+
+> Key: OneDrive Standalone Update Task v2 = Disabled
+
 ### Disable [suggested apps in Windows][31]
 ```win + r > gpedit.msc```
 > Key: Computer Configuration > Administrative Templates > Windows Components > Cloud Content
@@ -175,6 +182,17 @@ This happens because of the xbox app on Windows 10. Removing the app will fix th
 > Key: HKEY_CURRENT_USER\System\GameConfigStore
 
 > **DWORD**: GameDVR_Enabled = 0
+
+### [Disable ReFS scheduled tasks][33]
+By default ReFS will schedule integrity checks (as well as automatic integrity checks after windows crashes),
+which cause 100% disk usage on system PID 4. Disabling these prevents these from automatically being scheduled
+but you can still manually run them.
+
+```start > Task Scheduler > Task Scheduler Library > Microsoft > Windows > Data Integrity Scan```
+
+> Key: Data Integrity Scan = Disabled
+
+> Key: Data Integrity Scan for Crash Recovery = Disabled
 
 ### [Disable Ads in Windows Explorer from Sync Providers][29] (windows explorer)
 Sync providers for windows explorer can now show Ads. Disable it.
@@ -291,3 +309,4 @@ Get-Item X:\<file> | Get-FileIntegrity
 [30]: https://support.office.com/en-us/article/Turn-off-or-uninstall-OneDrive-f32a17ce-3336-40fe-9c38-6efb09f944b0
 [31]: https://www.howtogeek.com/259946/how-to-get-rid-of-suggested-apps-in-windows-10/
 [32]: http://www.thewindowsclub.com/disable-superfetch-prefetch-ssd
+[33]: http://bakins-bits.com/wordpress/?p=195
