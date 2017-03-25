@@ -119,12 +119,18 @@ By default Windows will schedule defrags, even for SSD's, which shorten SSD life
 *  Turn Off for all SSD drives
 
 ### [Disable Windows Defender Service][24]
-Don't turn this off unless you know what you are doing.
+Don't turn this off unless you know what you are doing. You should first disable all of the options for windows defender before
+disabling the service, as cloud-based protection will cause 100% disk usage (in settings).
 
 ```win + r > gpedit.msc```
 > Key: Computer Configuration > Administrative Templates > Windows Components > Windows Defender
 
 > **Policy**: Turn off Windows Defender = Enabled
+
+```win + r > gpedit.msc```
+> Key: Computer Configuration > Administrative Templates > Windows Components > Windows Defender > Real-time Protection
+
+> **Policy**: Turn off real-time protection = Enabled
 
 ### [Disable prefetch and superfetch][32] (regedit as admin)
 This addresses 100% disk usage during idle in windows 10, even if you've already disabled the superfetching service.
