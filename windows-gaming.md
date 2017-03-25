@@ -126,6 +126,14 @@ Don't turn this off unless you know what you are doing.
 
 > **Policy**: Turn off Windows Defender = Enabled
 
+### [Disable prefetch and superfetch][32] (regedit as admin)
+This addresses 100% disk usage during idle in windows 10, even if you've already disabled the superfetching service.
+> Key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters
+
+> **DWORD**: EnablePrefetcher = 0
+
+> New **DWORD**: EnableSuperfetcher = 0
+
 ### [Disable silent windows store app installs][12] (regedit as admin)
 > Key: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager
 
@@ -276,3 +284,4 @@ Get-Item X:\<file> | Get-FileIntegrity
 [29]: https://www.extremetech.com/computing/245553-microsoft-now-puts-ads-windows-file-explorer
 [30]: https://support.office.com/en-us/article/Turn-off-or-uninstall-OneDrive-f32a17ce-3336-40fe-9c38-6efb09f944b0
 [31]: https://www.howtogeek.com/259946/how-to-get-rid-of-suggested-apps-in-windows-10/
+[32]: http://www.thewindowsclub.com/disable-superfetch-prefetch-ssd
