@@ -134,7 +134,6 @@ disabling the service, as cloud-based protection will cause 100% disk usage (in 
 
 > **Policy**: Turn off Windows Defender = Enabled
 
-```win + r > gpedit.msc```
 > Key: Computer Configuration > Administrative Templates > Windows Components > Windows Defender > Real-time Protection
 
 > **Policy**: Turn off real-time protection = Enabled
@@ -206,7 +205,7 @@ Sync providers for windows explorer can now show Ads. Disable it.
 
 [Setting Execution Policy][8]
 -----------------------------
-Powershell scripts require unrestricted exectuion policy to be set to
+Powershell scripts require unrestricted execution policy to be set to
 execute. By default this is **disabled** and is the **correct choice**.
 Once you've executed scripts, you **must** manually reset this to restricted
 or you leave yourself open to bad things. This persists across sessions.
