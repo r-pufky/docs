@@ -33,7 +33,7 @@ $apps_to_remove =
 	'MinecraftUWP',
 	'CandyCrushSodaSaga',
 	'ParadiseBay',
-	'SlingTV'S
+	'SlingTV'
 
 foreach ($app in $apps_to_remove) {
 	Get-AppxPackage ('*%s*' -replace '%s', $app) | Remove-AppxPackage
