@@ -199,6 +199,15 @@ Sync providers for windows explorer can now show Ads. Disable it.
 ```win + e > view > options > view```
 * Uncheck show sync provider notifications
 
+### [Disable hibernation for Windows 10 sleep resume problems][34] (cmd as admin)
+If your system doesn't seem to be resuming from sleep properly (e.g. power is on, but keyboard/mouse won't resume it), disable hibernation. This does affect power consumption and probably shouldn't be used on laptops.
+
+```cmd
+powercfg /h off
+```
+
+Reboot machine to apply policy
+
 ### Cleanup default profiles, set as non-admin user
 * Create a new account, set to admin
 * Remove admin access from your primary account
@@ -309,3 +318,4 @@ Get-Item X:\<file> | Get-FileIntegrity
 [31]: https://www.howtogeek.com/259946/how-to-get-rid-of-suggested-apps-in-windows-10/
 [32]: http://www.thewindowsclub.com/disable-superfetch-prefetch-ssd
 [33]: http://bakins-bits.com/wordpress/?p=195
+[34]: https://www.tenforums.com/general-support/5265-turn-off-wake-up-problems.html
