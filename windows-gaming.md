@@ -175,7 +175,7 @@ This happens because of the xbox app on Windows 10. Removing the app will fix th
 (see [Removing pre-installed Windows Packages](#removing-pre-installed-windows-packages))
 > Key: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\GameDVR
 
-> **DWORD**: AppCapturedEnabled = 0
+> **DWORD**: AppCaptureEnabled = 0
 
 
 > Key: HKEY_CURRENT_USER\System\GameConfigStore
