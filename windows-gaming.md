@@ -190,6 +190,15 @@ This happens because of the xbox app on Windows 10. Removing the app will fix th
 
 > **DWORD**: GameDVR_Enabled = 0
 
+### Disable Microsoft Game Broadcasting Suite
+Nearly every program on windows now wants to record your games and broadcast them. This disables the built-in
+windows game broadcasting and recording software.
+
+```win + r > gpedit.msc```
+> Key: Computer Configuration > Administrative Templates > Windows Components > Windows Game Recording and Broadcasting
+
+> **Policy**: Enables or disables Windows Game Recording and Broadcasting = Disabled
+
 ### [Disable ReFS scheduled tasks][33]
 By default ReFS will schedule integrity checks (as well as automatic integrity checks after windows crashes),
 which cause 100% disk usage on system PID 4. Disabling these prevents these from automatically being scheduled
