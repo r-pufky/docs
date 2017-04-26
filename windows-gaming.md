@@ -130,13 +130,21 @@ Don't turn this off unless you know what you are doing. You should first disable
 disabling the service, as cloud-based protection will cause 100% disk usage (in settings).
 
 ```win + r > gpedit.msc```
-> Key: Computer Configuration > Administrative Templates > Windows Components > Windows Defender
+> Key: Computer Configuration > Administrative Templates > Windows Components > Windows Defender Antivirus
 
 > **Policy**: Turn off Windows Defender = Enabled
 
-> Key: Computer Configuration > Administrative Templates > Windows Components > Windows Defender > Real-time Protection
+> Key: Computer Configuration > Administrative Templates > Windows Components > Windows Defender Antivirus > Real-time Protection
 
 > **Policy**: Turn off real-time protection = Enabled
+
+> Key: Computer Configuration > Administrative Templates > Windows Components > Windows Defender Antivirus > Client Interface
+
+> **Policy**: Suppress all notifications = Enabled
+
+> Key: Computer Configuration > Administrative Templates > Windows Components > Windows Defender Antivirus > Reporting
+
+> **Policy**: Turn off enhanced notifications = Enabled
 
 ### [Disable prefetch and superfetch][32] (regedit as admin)
 This addresses 100% disk usage during idle in windows 10, even if you've already disabled the superfetching service.
