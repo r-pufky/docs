@@ -146,6 +146,11 @@ disabling the service, as cloud-based protection will cause 100% disk usage (in 
 
 > **Policy**: Turn off enhanced notifications = Enabled
 
+```win + r > taskmgr > More details > Startup```
+
+* [Windows Defender notification icon][35] = Disabled
+
+
 ### [Disable prefetch and superfetch][32] (regedit as admin)
 This addresses 100% disk usage during idle in windows 10, even if you've already disabled the superfetching service.
 > Key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters
@@ -340,3 +345,4 @@ Get-Item X:\<file> | Get-FileIntegrity
 [32]: http://www.thewindowsclub.com/disable-superfetch-prefetch-ssd
 [33]: http://bakins-bits.com/wordpress/?p=195
 [34]: https://www.tenforums.com/general-support/5265-turn-off-wake-up-problems.html
+[35]: https://www.howtogeek.com/264796/how-to-remove-the-windows-defender-icon-from-your-notification-area/
