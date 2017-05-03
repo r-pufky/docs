@@ -100,6 +100,8 @@ This will sometimes randomly re-enable OneDrive when it is updated.
 
 > **Policy**: Turn off Microsoft consumer experiences = Enabled
 
+> **Policy**: Do not show Windows tips = Enabled
+
 ### Disable paging, restore points, automatic driver updates
 ```start > view advanced system settings > advanced > performance```
 * Disable all paging on all drives
