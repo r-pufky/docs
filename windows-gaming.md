@@ -14,6 +14,7 @@ Assumes Admin Rights
 4. [Securing Windows Installation](#securing-windows-installation)
 3. [Removing pre-installed Windows packages](#removing-pre-installed-windows-packages)
 4. [Format ReFS on using a single drive](#format-refs-on-using-a-single-drive)
+5. Addressing 100% disk usage issues(#addressing-100-disk-usage-issues)
 
 Creating a UEFI USB Boot Disk
 -----------------------------
@@ -51,7 +52,6 @@ SSD's. Disable by ```right-click > stop``` and ```right-click > properties > dis
 * [Connected User Experiences and Telemetry][16]
 * [Diagnostic Tracking Services][16]
 * [Windows Search][15]
-* [Superfetch][15] ([causes 100% CPU usage][25], [system & compressed memory service][26])
 * Razer Game Scanner
 
 ### Set reasonable Privacy Settings
@@ -152,15 +152,6 @@ disabling the service, as cloud-based protection will cause 100% disk usage (in 
 
 * [Windows Defender notification icon][35] = Disabled
 
-
-### [Disable prefetch and superfetch][32] (regedit as admin)
-This addresses 100% disk usage during idle in windows 10, even if you've already disabled the superfetching service.
-> Key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters
-
-> **DWORD**: EnablePrefetcher = 0
-
-> New **DWORD**: EnableSuperfetcher = 0
-
 ### [Disable silent windows store app installs][12] (regedit as admin)
 > Key: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager
 
@@ -209,17 +200,6 @@ windows game broadcasting and recording software.
 > Key: Computer Configuration > Administrative Templates > Windows Components > Windows Game Recording and Broadcasting
 
 > **Policy**: Enables or disables Windows Game Recording and Broadcasting = Disabled
-
-### [Disable ReFS scheduled tasks][33]
-By default ReFS will schedule integrity checks (as well as automatic integrity checks after windows crashes),
-which cause 100% disk usage on system PID 4. Disabling these prevents these from automatically being scheduled
-but you can still manually run them.
-
-```start > Task Scheduler > Task Scheduler Library > Microsoft > Windows > Data Integrity Scan```
-
-> Key: Data Integrity Scan = Disabled
-
-> Key: Data Integrity Scan for Crash Recovery = Disabled
 
 ### [Disable Ads in Windows Explorer from Sync Providers][29] (windows explorer)
 Sync providers for windows explorer can now show Ads. Disable it.
@@ -316,6 +296,38 @@ format X: /fs:refs /i:enabled /q
 Get-Item X:\<file> | Get-FileIntegrity
 ```
 * Enabled and Enforced should be set to True
+
+
+Addressing 100% Disk Usage Issues
+------------------------------------------
+Generally speaking, 100% disk usage issues usually means there's a Filesystem check happening, or another service
+is hammering the disk. These will address this but may break functionality of your system.
+
+### Disable Services
+Disable by ```right-click > stop``` and ```right-click > properties > disable```
+
+```win + r > services.msc```
+* [Windows Search][15]
+* [Superfetch][15] ([causes 100% CPU usage][25], [system & compressed memory service][26])
+
+### [Disable prefetch and superfetch][32] (regedit as admin)
+This addresses 100% disk usage during idle in windows 10, even if you've already disabled the superfetching service.
+> Key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters
+
+> **DWORD**: EnablePrefetcher = 0
+
+> New **DWORD**: EnableSuperfetcher = 0
+
+### [Disable ReFS scheduled tasks][33]
+By default ReFS will schedule integrity checks (as well as automatic integrity checks after windows crashes),
+which cause 100% disk usage on system PID 4. Disabling these prevents these from automatically being scheduled
+but you can still manually run them.
+
+```start > Task Scheduler > Task Scheduler Library > Microsoft > Windows > Data Integrity Scan```
+
+> Key: Data Integrity Scan = Disabled
+
+> Key: Data Integrity Scan for Crash Recovery = Disabled
 
 
 [1]: http://winaero.com/blog/how-to-format-any-drive-in-windows-8-1-with-refs/
