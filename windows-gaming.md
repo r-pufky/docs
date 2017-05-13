@@ -121,12 +121,6 @@ fill up. Prevent Windows from being dumb.
 
 > **Policy**: Configure Scenario Execution Level = Disabled
 
-### [Disable defrag for SSD drives][23]
-By default Windows will schedule defrags, even for SSD's, which shorten SSD lifetime.
-
-```win + r > dfrgui```
-*  Turn Off for all SSD drives
-
 ### [Disable Windows Defender Service][24]
 Don't turn this off unless you know what you are doing. You should first disable all of the options for windows defender before
 disabling the service, as cloud-based protection will cause 100% disk usage (in settings).
