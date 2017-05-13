@@ -14,7 +14,7 @@ Assumes Admin Rights
 4. [Securing Windows Installation](#securing-windows-installation)
 3. [Removing pre-installed Windows packages](#removing-pre-installed-windows-packages)
 4. [Format ReFS on using a single drive](#format-refs-on-using-a-single-drive)
-5. Addressing 100% disk usage issues(#addressing-100-disk-usage-issues)
+5. Addressing 100% disk usage issues(#addressing-100%-disk-usage-issues)
 
 Creating a UEFI USB Boot Disk
 -----------------------------
@@ -293,7 +293,7 @@ Get-Item X:\<file> | Get-FileIntegrity
 
 
 Addressing 100% Disk Usage Issues
-------------------------------------------
+---------------------------------
 Generally speaking, 100% disk usage issues usually means there's a Filesystem check happening, or another service
 is hammering the disk. These will address this but may break functionality of your system.
 
