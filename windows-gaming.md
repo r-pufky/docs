@@ -14,7 +14,7 @@ Assumes Admin Rights
 4. [Securing Windows Installation](#securing-windows-installation)
 3. [Removing pre-installed Windows packages](#removing-pre-installed-windows-packages)
 4. [Format ReFS on using a single drive](#format-refs-on-using-a-single-drive)
-5. Addressing 100% disk usage issues(#addressing-100%-disk-usage-issues)
+5. [Addressing 100% disk usage issues](#addressing-100-disk-usage-issues)
 
 Creating a UEFI USB Boot Disk
 -----------------------------
