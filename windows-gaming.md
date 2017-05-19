@@ -347,11 +347,11 @@ open a connection, then locally connect to remote desktop to hide your current s
 ### [Block inbound RDP connections with Windows Firewall][37]
 ```start > Control Panel > System and Security > Windows Firewall > Advanced settings > Inbound Rules```
 
-**Rule**: Remote Desktop - Shadow (TCP-in) = Disable
+**Rule**: Remote Desktop - Shadow (TCP-in) = Block
 
-**Rule**: Remote Desktop - User Mode (TCP-in) = Disable
+**Rule**: Remote Desktop - User Mode (TCP-in) = Block
 
-**Rule**: Remote Desktop - User Mode (UDP-in) = Disable
+**Rule**: Remote Desktop - User Mode (UDP-in) = Block
 
 
 [1]: http://winaero.com/blog/how-to-format-any-drive-in-windows-8-1-with-refs/
