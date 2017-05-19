@@ -15,6 +15,7 @@ Assumes Admin Rights
 3. [Removing pre-installed Windows packages](#removing-pre-installed-windows-packages)
 4. [Format ReFS on using a single drive](#format-refs-on-using-a-single-drive)
 5. [Addressing 100% disk usage issues](#addressing-100-disk-usage-issues)
+6. [Hiding local desktop for Chrome Remote Desktop](#hiding-local-desktop-for-chrome-remote-desktop)
 
 Creating a UEFI USB Boot Disk
 -----------------------------
@@ -324,6 +325,35 @@ but you can still manually run them.
 > Key: Data Integrity Scan for Crash Recovery = Disabled
 
 
+Hiding local desktop for Chrome Remote Desktop
+----------------------------------------------
+By default Chrome Remote Desktop will always show locally what is happening when you remotely connect. This
+disables this feature and presents a login screen instead, allowing you to work privately remotely. CRD will
+open a connection, then locally connect to remote desktop to hide your current session.
+
+### Edit Windows Registry (regedit as admin)
+> Key: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\RemoteAccessHostRequireCurtain
+
+> New **DWORD**: RemoteAccessHostRequireCurtain = 1
+
+> Key: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp
+
+> **DWORD**: SecurityLayer = 1
+
+```start > Control Panel > System and Security > System > Remote Settings > Remote```
+* Check 'Allow remote connections to this computer'
+* Uncheck 'Allow connections only from computers runing Remote Desktop with Network Level Authentication'
+
+### [Block inbound RDP connections with Windows Firewall][37]
+```start > Control Panel > System and Security > Windows Firewall > Advanced settings > Inbound Rules```
+
+**Rule**: Remote Desktop - Shadow (TCP-in) = Disable
+
+**Rule**: Remote Desktop - User Mode (TCP-in) = Disable
+
+**Rule**: Remote Desktop - User Mode (UDP-in) = Disable
+
+
 [1]: http://winaero.com/blog/how-to-format-any-drive-in-windows-8-1-with-refs/
 [2]: http://blog.architecting.it/2012/07/10/windows-server-2012-windows-server-8-resilient-file-system/w8-refs-2/
 [3]: https://github.com/r-pufky/docs/blob/master/force-upgrade-to-10.cmd
@@ -354,3 +384,5 @@ but you can still manually run them.
 [33]: http://bakins-bits.com/wordpress/?p=195
 [34]: https://www.tenforums.com/general-support/5265-turn-off-wake-up-problems.html
 [35]: https://www.howtogeek.com/264796/how-to-remove-the-windows-defender-icon-from-your-notification-area/
+[36]: https://support.google.com/chrome/a/answer/2799701?hl=en&vid=0-243350879834-1495198101821
+[37]: https://superuser.com/questions/723832/windows-firewall-blocks-remote-desktop-with-custom-port
