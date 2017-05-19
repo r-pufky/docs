@@ -52,7 +52,6 @@ SSD's. Disable by ```right-click > stop``` and ```right-click > properties > dis
 ```win + r > services.msc```
 * [Connected User Experiences and Telemetry][16]
 * [Diagnostic Tracking Services][16]
-* [Windows Search][15]
 * Razer Game Scanner
 
 ### Set reasonable Privacy Settings
