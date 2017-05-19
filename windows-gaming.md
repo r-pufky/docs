@@ -325,8 +325,8 @@ but you can still manually run them.
 > Key: Data Integrity Scan for Crash Recovery = Disabled
 
 
-Hiding local desktop for Chrome Remote Desktop
-----------------------------------------------
+[Hiding local desktop for Chrome Remote Desktop][36]
+----------------------------------------------------
 By default Chrome Remote Desktop will always show locally what is happening when you remotely connect. This
 disables this feature and presents a login screen instead, allowing you to work privately remotely. CRD will
 open a connection, then locally connect to remote desktop to hide your current session.
