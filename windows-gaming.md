@@ -156,7 +156,7 @@ disabling the service, as cloud-based protection will cause 100% disk usage (in 
 > **DWORD**: (all suggested apps) = 0
 
 ### [Remove OneDrive from Windows Explorer][13] (regedit as admin)
-> Key: HKEY_USERS\S-1-5-21-1755613722-1100249042-486067580-1001\SOFTWARE\Classes\CLSID\\{018D5C66-4533-4307-9B53-224DE2ED1FE6}
+> Key: HKEY_CLASSES_ROOT\\CLSID\\{018D5C66-4533-4307-9B53-224DE2ED1FE6}
 
 > **DWORD**: System.IsPinnedToNameSpaceTree = 0
 
