@@ -364,6 +364,18 @@ Get-AppXPackage -AllUsers | Foreach {Add-AppxPackage -DisableDevelopmentMode -Re
 ```
 
 
+[Enable Bitlocker on USB drives over RDP][39]
+---------------------------------------------
+By default, bitlocker does not allow encryption to be enabled on USB devices over RDP connections -- this happens
+because RDP treats USB drives as mapped network drives and not external drives. This enables direct drive access
+for RDP connections. This is probably unsafe.
+
+```win + r > gpedit.msc```
+> Key: Computer Configuration > Administrative Templates > System > Removable Storage Access
+
+> **Policy**: All Removable Storage: Allow direct access in remote sessions = Enabled
+
+
 [1]: http://winaero.com/blog/how-to-format-any-drive-in-windows-8-1-with-refs/
 [2]: http://blog.architecting.it/2012/07/10/windows-server-2012-windows-server-8-resilient-file-system/w8-refs-2/
 [3]: https://github.com/r-pufky/docs/blob/master/force-upgrade-to-10.cmd
@@ -397,3 +409,4 @@ Get-AppXPackage -AllUsers | Foreach {Add-AppxPackage -DisableDevelopmentMode -Re
 [36]: https://support.google.com/chrome/a/answer/2799701?hl=en&vid=0-243350879834-1495198101821
 [37]: https://superuser.com/questions/723832/windows-firewall-blocks-remote-desktop-with-custom-port
 [38]: https://community.spiceworks.com/how_to/122006-windows-10-your-trial-period-for-this-app-has-expired-visit-the-windows-store-to-purchase-the-full-app-problem
+[39]: https://superuser.com/questions/962125/bitlocker-refuses-to-enable-via-rdp-on-data-drive-but-ok-on-the-os-drive
