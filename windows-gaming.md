@@ -376,6 +376,18 @@ for RDP connections. This is probably unsafe.
 > **Policy**: All Removable Storage: Allow direct access in remote sessions = Enabled
 
 
+[Fix Windows Applications not appearing in start menu searches][40]
+-------------------------------------------------------------------
+Background Tasks need to be enabled for the application index to be updated when new programs are installed. By
+disabling all background tasks (global toggle) this index is never updated, and therefore apps will stop appearing
+in start menu searches. You can still disable all apps in the background, however the service still needs to be
+enabled.
+
+```start > Settings > Background Apps```
+
+> Key: Let apps run in the background = Enabled
+
+
 [1]: http://winaero.com/blog/how-to-format-any-drive-in-windows-8-1-with-refs/
 [2]: http://blog.architecting.it/2012/07/10/windows-server-2012-windows-server-8-resilient-file-system/w8-refs-2/
 [3]: https://github.com/r-pufky/docs/blob/master/force-upgrade-to-10.cmd
@@ -410,3 +422,4 @@ for RDP connections. This is probably unsafe.
 [37]: https://superuser.com/questions/723832/windows-firewall-blocks-remote-desktop-with-custom-port
 [38]: https://community.spiceworks.com/how_to/122006-windows-10-your-trial-period-for-this-app-has-expired-visit-the-windows-store-to-purchase-the-full-app-problem
 [39]: https://superuser.com/questions/962125/bitlocker-refuses-to-enable-via-rdp-on-data-drive-but-ok-on-the-os-drive
+[40]: https://superuser.com/questions/947392/windows-10-search-cant-find-any-applications-even-calculator
