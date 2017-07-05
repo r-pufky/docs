@@ -16,6 +16,9 @@ Assumes Admin Rights
 4. [Format ReFS on using a single drive](#format-refs-on-using-a-single-drive)
 5. [Addressing 100% disk usage issues](#addressing-100-disk-usage-issues)
 6. [Hiding local desktop for Chrome Remote Desktop](#hiding-local-desktop-for-chrome-remote-desktop)
+7. [Fixing non-working Windows store apps / 'trial expired' apps](#fixing-non-working-windows-store-apps-trial-expired-apps)
+8. [Enable Bitlocker on USB drives over RDP](#enable-bitlocker-on-usb-drives-over-rdp)
+9. [Fix Windows Applications not appearing in start menu searches](#fix-windows-applications-not-appearing-in-start-menu-searches)
 
 Creating a UEFI USB Boot Disk
 -----------------------------
