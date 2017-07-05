@@ -353,7 +353,10 @@ open a connection, then locally connect to remote desktop to hide your current s
 **Rule**: Remote Desktop - User Mode (UDP-in) = Block
 
 [Fixing non-working Windows store apps / 'trial expired' apps][38]
-Default windows 10 applications may stop working if you remove dependent apps from the system; as such, apps like xbox controller config will never load, or calculator will prompt you with trial expired. This resets your system to the default app installation state for windows 10.
+------------------------------------------------------------------
+Default windows 10 applications may stop working if you remove dependent apps from the system; as such, apps
+like xbox controller config will never load, or calculator will prompt you with trial expired. This resets your
+system to the default app installation state for windows 10.
 
 ### Powershell (as admin)
 ```powershell
