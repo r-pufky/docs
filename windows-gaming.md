@@ -352,6 +352,14 @@ open a connection, then locally connect to remote desktop to hide your current s
 
 **Rule**: Remote Desktop - User Mode (UDP-in) = Block
 
+[Fixing non-working Windows store apps / 'trial expired' apps][38]
+Default windows 10 applications may stop working if you remove dependent apps from the system; as such, apps like xbox controller config will never load, or calculator will prompt you with trial expired. This resets your system to the default app installation state for windows 10.
+
+### Powershell (as admin)
+```powershell
+Get-AppXPackage -AllUsers | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
+```
+
 
 [1]: http://winaero.com/blog/how-to-format-any-drive-in-windows-8-1-with-refs/
 [2]: http://blog.architecting.it/2012/07/10/windows-server-2012-windows-server-8-resilient-file-system/w8-refs-2/
@@ -385,3 +393,4 @@ open a connection, then locally connect to remote desktop to hide your current s
 [35]: https://www.howtogeek.com/264796/how-to-remove-the-windows-defender-icon-from-your-notification-area/
 [36]: https://support.google.com/chrome/a/answer/2799701?hl=en&vid=0-243350879834-1495198101821
 [37]: https://superuser.com/questions/723832/windows-firewall-blocks-remote-desktop-with-custom-port
+[38]: https://community.spiceworks.com/how_to/122006-windows-10-your-trial-period-for-this-app-has-expired-visit-the-windows-store-to-purchase-the-full-app-problem
