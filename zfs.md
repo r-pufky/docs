@@ -13,17 +13,25 @@ Ubunutu 16.04
 [Installing Base Packages, Existing Drive Mappings][3]
 ------------------------------------------------------
 This is now in the default repositories for ubuntu. The old PPA [archive is
-here][1]
+here][1].
+
+Note: The new HWE kernel currently does not build properly, you need to use the 
+generic kernel until [the bug is resolved.][10]
 
 ```bash
+sudo apt install linux-headers-$(uname -r) build-essential
+sudo apt install spl-dkms
 sudo apt install zfs-dkms zfsutils-linux
 sudo modprobe zfs
 ls -l /dev/disk/by-id
 ```
 
-* Fine the serial for the drives, match to the sd# address, then map to the WWN
+* Find the serial for the drives, match to the sd# address, then map to the WWN
   (world wide name) of that device -- that will be unique to that drive across
   any system you put the drive in
+* This is no longer needed for the latest ZFS packages for ubuntu; containers are
+  automatically identified on boot and mounted. However, this still does provide
+  an easy to use reference mapping for physical drives, should one go bad.
 
 #### /etc/zfs/vdev_id.conf
 ```config
@@ -121,3 +129,4 @@ fi
 [7]: http://forums.freebsd.org/showthread.php?t=29539
 [8]: https://docs.oracle.com/cd/E23823_01/html/819-5461/gbbwa.html
 [9]: https://en.wikipedia.org/wiki/Cron
+[10]: https://bugs.launchpad.net/ubuntu/+source/linux-hwe/+bug/1693757
