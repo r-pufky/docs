@@ -15,6 +15,7 @@ passwd <username>
 ```
 
 * Enable sudo access for new user
+
 visudo
 ```bash
 <username>  ALL=(ALL)  ALL
