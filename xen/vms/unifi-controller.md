@@ -1,6 +1,6 @@
 Unifi AP Controller
 -------------------
-Uses [Ubuntu 16.04 base Xen template.](../templates/ubuntu-server.md), and post template setup scripts have been run.
+Uses [Ubuntu 16.04 base Xen template](../templates/ubuntu-server.md), and assumes post template setup scripts have been run.
 
 1. [Ports Exposed](#ports-exposed)
 2. [Service Setup](#service-setup)
@@ -20,12 +20,12 @@ Ports Exposed
 
 Service Setup
 -------------
-### Add unifi Apt repository
+### Add ubiquiti apt repository
 sudo vim /etc/apt/sources.list.d/100-unifi-controller.list
 ```bash
 deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti
 ```
-
+Install the service and start
 ```bash
 sudo chmod 0644 /etc/apt/sources.list.d/100-unifi-controller.list
 sudo chown root:root /etc/apt/sources.list.d/100-unifi-controller.list
@@ -44,7 +44,7 @@ This is a sample configuration for a WPA2 single AP setup with basic filtering.
 Settings (lower left gear)
 Site
 - Site Configuration
-  * Site Name: <sitename>
+  * Site Name: [sitename]
 - Services
   * Automatic Upgrades: Automaticall Upgrade Firmware
   * LED: Disable enable status LED
@@ -54,10 +54,10 @@ Site
 
 Wireless Networks
 - Wireless Network
-  * SSID: <WIFI name>
+  * SSID: [WIFI name]
   * Enabled: Enable this wireless network
   * Security: WPA Personal
-  * Security KEy: <WIFI password>
+  * Security KEy: [WIFI password]
 - Advanced Options
   * Multicast and Broadcast Filtering: Block LAN to WLAN multicast and broadcast data
   * WPA Mode: WPA2 Only, AES/CCMP Only
@@ -70,19 +70,22 @@ Networks
   * Name: WIFI
   * Purpose: Corporate
   * Parent Interface: LAN
-  * Gateway/Subnet: 10.10.10.1/24 _not just subnet, gateway ip and bitmask_
+  * Gateway/Subnet: 10.10.10.1/24
+      _not just subnet, gateway ip and bitmask; this is an example IP_
   * DHCP Server: Disable DHCP
   * Domain Name: localdomain
 
 Guest Control
 - Access Control
-  * Pre-Authorization Access: Remove all (any networks accessible without auth)
-  * Post-Authorization Restrictions: Add networks you don't want accessed (this will block wifi clients from accessing these networks. Valie to use the gateway network (10.10.10.0/24) as well -- gateway is always accessible)
+  * Pre-Authorization Access: Remove All
+      _any networks accessible without auth_
+  * Post-Authorization Restrictions: Add networks you don't want accessed
+      _This will block wifi clients from accessing these networks. Valid to use the gateway network (10.10.10.0/24) as well -- gateway is always accessible_
 
 Controller
 - Controller Settings
-  * Controller Name: <hostname>
-  * Controller Hostname/IP: <FQDN>
+  * Controller Name: [hostname]
+  * Controller Hostname/IP: [FQDN]
   * Controller Hostname/IP: Override inform host with Controller Hostname/IP
   * Network Discovery: Remove make controller discoverable on L2 network
   * Support Messaging: Disable live support for all users
@@ -102,12 +105,13 @@ Devices (upper left Circles)
   - WLANS
     * WLAN 2G (11N/B/G)
       * Group: Default
-      * Name: <WIFI name>
+      * Name: [WIFI name]
     * WLAN 5G (11N/A/AC)
       * Group: Default
-      * Name: <WIFI name>
+      * Name: [WIFI name]
   - Network
-    * Configure IP: Using DHCP _this is the AP IP_
+    * Configure IP: Using DHCP
+        _This is the AP IP_
 
 
 Migrating existing AP's to a new controller
