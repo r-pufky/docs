@@ -2,7 +2,12 @@ Xen Server Template
 -------------------
 Ubuntu 16.04 base Xen template.
 
-### Base Install
+1. [Base Install](#base-install)
+2. [Manual Crypt/LUKS commands](#manual-cryptluks-commands)
+3. [References](#references)
+
+Base Install
+------------
 * Template: ubuntu 16.04
 * 10GB default disk
 * All ethernet devices
@@ -161,8 +166,9 @@ chmod -Rv go-rwx /root
 * VM: right-click > Convert to Template
 * Template: Custom Fields: Final Setup = setup-server-setup; configure-server; setup-server-finish
 
-
-#### Manually determining crypt block device
+Manual Crypt/LUKS commands
+--------------------------
+### Manually determining crypt block device
 * List encrypted disks that are mounted through crypt. The root block device is prepended to \_crypt
 ```bash
 dmsetup ls --target crypt
@@ -170,18 +176,20 @@ dmsetup ls --target crypt
 * /var/log/syslog will show crypt block device during boot as well
 * Generally LUKS containers are on partition 5 if auto created
 
-#### Manually dumping LUKS container on crypt device
+### Manually dumping LUKS container on crypt device
 This will show all the current slots and usage.
 ```bash
 cryptsetup luksDump /dev/xvda5
 ```
 * Default key is usually in slot 0
 
-#### Manually changing existing passphrase in LUKS
+### Manually changing existing passphrase in LUKS
 ```bash
 cryptsetup --verify-passphrase luksChangeKey /dev/xvda5 --key-slot 0
 ```
 
+References
+----------
 [Expanding a LVM after expanding virtual machine disk](https://www.rootusers.com/how-to-increase-the-size-of-a-linux-lvm-by-expanding-the-virtual-machine-disk/)
 
 [Manually changing a password on a dmcrypt / LUKS volume](https://unix.stackexchange.com/questions/185390/list-open-dm-crypt-luks-volumes)
