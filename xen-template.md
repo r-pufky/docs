@@ -30,11 +30,11 @@ sudo apt install python-software-properties inotify-tools curl unattended-upgrad
 ```
 
 ### Disable sshd and set sshd_config
-* Copy the 'secure' sshd config to the machine. This just enforces cert-based auth only. [LINK](https://raw.githubusercontent.com/r-pufky/docs/master/xen/etc/ssh/sshd_config.secure)
+* Copy the 'secure' sshd config to the machine. This just enforces cert-based auth only. [LINK.](https://raw.githubusercontent.com/r-pufky/docs/master/xen/etc/ssh/sshd_config.secure)
 ```bash
 sudo systemctl disable ssh.service
 sudo mv /etc/ssh/sshd_config /etc/ssh/sshd_config.insecure
-sudo ln -s /etc/ssh/sshd_config.insecure /etc/ssh/sshd_config
+sudo ln -s /etc/ssh/sshd_config.secure /etc/ssh/sshd_config
 sudo chown root:root /etc/ssh/sshd_config*
 ```
 
@@ -68,6 +68,7 @@ APT::Periodic::Update-Package-Lists "1";
 APT::Periodic::Download-Upgradeable-Packages "1";
 APT::Periodic::AutocleanInterval "7";
 APT::Periodic::Unattended-Upgrade "1";
+```
 
 ```bash
 sudo service unattended-upgrades restart
@@ -106,6 +107,7 @@ chmod 0700 ~/.ssh ~/bin
 
 * Copy the following configuration files to system, these are
   preconfigured preferences.
+
 | File                    | Perm | Link                    |
 |-------------------------|------|-------------------------|
 | .bashrc                 | 0600 | [LINK](https://raw.githubusercontent.com/r-pufky/docs/master/xen/home/.bashrc) |
@@ -132,6 +134,7 @@ chmod 0700 ~/.ssh ~/bin
 
 * Copy the following configuration files to system, these are
   preconfigured preferences.
+
 | File                 | Perm | Link                    |
 |----------------------|------|-------------------------|
 | .bashrc              | 0600 | [LINK](https://raw.githubusercontent.com/r-pufky/docs/master/xen/root/.bashrc) |
