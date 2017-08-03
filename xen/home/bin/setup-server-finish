@@ -1,0 +1,7 @@
+#!/bin/bash
+#
+# Finishin server configuration
+# 
+echo 'Locking root account password (default ubuntu root configuration) ...'
+sudo passwd -l root
+echo 'Done!'

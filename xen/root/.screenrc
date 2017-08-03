@@ -1,0 +1,9 @@
+# See http://linux.die.net/man/1/screen for color coding information
+shell -bash
+autodetach on
+vbell off
+escape ^Aa
+startup_message off
+defmonitor on
+defscrollback 30000
+hardstatus alwayslastline '%{= kc}[%{M}%H%{c}|%{Y}%l%{c}][%=%w%=%][%{R}%Y-%m-%d %{G}%c%{c}]'

@@ -1,0 +1,49 @@
+#!/bin/bash
+#
+# Finishes server configuration from image. This assumes the existing user
+# account is 'template' and hostname is 'ubuntu'
+#
+default_user='template'
+default_host='ubuntu'
+
+echo -e -n "\nEnter new Hostname: "
+read hostname
+echo -n 'Enter new username for template: '
+read username
+
+echo -e -n "\n\nHostname: ${hostname}\nUsername: ${username}\n\nAny key to continue, ctrl-c to abort: "
+read
+
+
+echo 'Updating hostname ...'
+hostname ${hostname}
+sed -i "s/${default_host}/${hostname}/g" /etc/hosts
+sed -i "s/${default_host}/${hostname}/g" /etc/hostname
+
+
+echo -e 'Updating user account ...'
+usermod -l ${username} ${default_user}
+usermod -d /home/${username} -m ${username}
+chgrp -Rv ${username} /home/${username}
+groupmod --new-name ${username} ${default_user}
+echo -e "Enter new password for ${username}"
+passwd ${username}
+
+
+echo 'Updating Full Disk Encryption ...'
+block_device=`dmsetup ls --target crypt | cut -f1 | cut -d '_' -f1`
+echo -e "Found block device: ${block_device}, dumping luks container ..."
+device_status=`cryptsetup luksDump /dev/${block_device} | awk -F 'Key Slot' '{print $2}' | sed '/^$/d' | sed '1!d' | awk '{$1=$1};1'`
+if [ "${device_status}" != '0: ENABLED' ]; then
+  echo -e "\nEncrypted device /dev/${block_device} does not have a key in slot 0, aborting."
+  exit 2
+fi
+echo -e "Found key in Key Slot 0 for /dev/${block_device}. Updating crypto password ..."
+cryptsetup --verify-passphrase luksChangeKey "/dev/${block_device}" --key-slot 0
+
+if [ $? -ne 0 ]; then
+  echo -e "\nFailed changing full disk encryption password; please manually do this."
+  exit 3
+fi
+
+echo 'Server configured. Please reboot, and run setup-server-finish from ${username}'
