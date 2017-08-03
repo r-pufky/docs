@@ -81,6 +81,7 @@ sudo chmod a-x /etc/update-motd.d/10-help-text
 ```
 
 * Add uptime reboot warning message. [LINK.](https://raw.githubusercontent.com/r-pufky/docs/master/xen/etc/update-motd.d/98-reboot-required)
+
 sudo vim /etc/update-motd.d/98-reboot-required
 ```vim
 #!/bin/bash
