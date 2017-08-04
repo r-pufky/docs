@@ -24,8 +24,8 @@ sed -i "s/${default_host}/${hostname}/g" /etc/hostname
 echo -e 'Updating user account ...'
 usermod -l ${username} ${default_user}
 usermod -d /home/${username} -m ${username}
-chgrp -Rv ${username} /home/${username}
 groupmod --new-name ${username} ${default_user}
+chgrp -Rv ${username} /home/${username}
 echo -e "Enter new password for ${username}"
 passwd ${username}
 
@@ -46,4 +46,4 @@ if [ $? -ne 0 ]; then
   exit 3
 fi
 
-echo 'Server configured. Please reboot, and run setup-server-finish from ${username}'
+echo -e "Server configured. Please reboot, and run setup-server-finish from ${username}"
