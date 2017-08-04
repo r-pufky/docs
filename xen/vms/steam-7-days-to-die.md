@@ -7,8 +7,9 @@ Uses [Ubuntu 16.04 base Xen template](../templates/ubuntu-server.md), and assume
 1. [Ports Exposed](#ports-exposed)
 2. [Server Setup](#server-setup)
 3. [Important File Locations](#important-file-locations)
-4. [Starting the Server](#starting-the-server)
-3. [References](#references)
+4. [Disable Insecure Services](#disable-insecure-services)
+5. [Starting the Server](#starting-the-server)
+6. [References](#references)
 
 
 Ports Exposed
@@ -34,7 +35,7 @@ steamcmd
 ```
 
 From steamcmd, install the server
-* -beta <version> will load beta channels
+* -beta \<version> will load beta channels
 ```steam
 login anonymous
 app_update 294420
@@ -54,6 +55,7 @@ Important File Locations
 Disable Insecure Services
 -------------------------
 Disable these services and set long random passwords.
+
 vim .steam/SteamApps/common/7 Days to Die Dedicated Server/serverconfig.xml
 ```xml
 <property name="ControlPanelEnabled" value="false"/>
