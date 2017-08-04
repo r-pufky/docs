@@ -4,6 +4,7 @@ Ubuntu 16.04 base Xen template.
 
 1. [Base Install](#base-install)
 2. [Manual Crypt/LUKS commands](#manual-cryptluks-commands)
+3. [Enabling Secure SSH Config](#enabling-secure-ssh-config)
 3. [References](#references)
 
 Base Install
@@ -187,6 +188,23 @@ cryptsetup luksDump /dev/xvda5
 ```bash
 cryptsetup --verify-passphrase luksChangeKey /dev/xvda5 --key-slot 0
 ```
+
+Enabling Secure SSH Config
+--------------------------
+The secure config requires that users are added to the `ssh` group before publickey auth will work. Add user:
+```bash
+usermod -a G ssh <username>
+```
+
+Then generate certs for use.
+```bash
+cd .ssh
+ssh-keygen -b 4096 -t rsa -f <intended-certificate-name>
+cat <intended-certificate-name>.pub >> ~/.ssh/authorized_keys
+chmod 0600 ~/.ssh/*
+chmod 0640 ~/.ssh/*.pub
+```
+_remember to copy private key to intended system to use it on._
 
 References
 ----------
