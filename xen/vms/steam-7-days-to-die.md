@@ -51,6 +51,9 @@ Important File Locations
 | .steam/SteamApps/common/7 Days to Die Dedicated Server/serverconfig.xml | server configuration                                      |
 | .steam/SteamApps/common/7 Days to Die Dedicated Server/startserver.sh   | starts server                                             |
 
+serveradmin.xml does not exist by default in game saves, and needs to be created. A template
+is here: [LINK](steam-7-days-to-die/serveradmin.xml)
+
 
 Disable Insecure Services
 -------------------------
