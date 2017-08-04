@@ -5,7 +5,8 @@ Ubuntu 16.04 base Xen template.
 1. [Base Install](#base-install)
 2. [Manual Crypt/LUKS commands](#manual-cryptluks-commands)
 3. [Enabling Secure SSH Config](#enabling-secure-ssh-config)
-3. [References](#references)
+4. [Modifying a VM Template](#modifying-a-vm-template)
+5. [References](#references)
 
 Base Install
 ------------
@@ -206,6 +207,17 @@ chmod 0640 ~/.ssh/*.pub
 ```
 _remember to copy private key to intended system to use it on._
 
+Modifying a VM Template
+-----------------------
+* Copy the UUID from the template image `General > Properties > UUID`
+* SSH to the XenServer, change to root
+* Convert template to VM and start it
+```bash
+xe vm-param-set uuid=<UUID> is-a-template=false
+xe vm-start uuid=<UUID>
+```
+* After changes, convert back to a template in the GUI.
+
 References
 ----------
 [Expanding a LVM after expanding virtual machine disk](https://www.rootusers.com/how-to-increase-the-size-of-a-linux-lvm-by-expanding-the-virtual-machine-disk/)
@@ -215,3 +227,5 @@ References
 [Reseting a password on an encrypted FS](https://unix.stackexchange.com/questions/126180/how-to-reset-password-on-an-encrypted-fs)
 
 [Howto change LUKS passphrase](https://askubuntu.com/questions/95137/how-to-change-luks-passphrase)
+
+[Converting template to a VM on XenServer](https://discussions.citrix.com/topic/241867-guest-best-pratice-copy-vm-or-convert-to-template/)
