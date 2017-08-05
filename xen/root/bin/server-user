@@ -2,6 +2,12 @@
 #
 # Wrapper to setup a new user. 
 #
+echo -e -n '\nEnter new username (^[a-z][-a-z0-9_]*\$): '
+read username
+
+echo -e -n "\n\nUsername: ${username}\n\nAny key to continue, ctrl-c to abort: "
+read
+
 echo -e 'Adding user account ...'
 adduser ${username}
 echo -e 'Enabling SUDO access ...'
