@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# Sets system hostname
+#
+default_host='ubuntu'
+
+echo -e -n "\nEnter new Hostname: "
+read hostname
+
+echo -e -n "\n\nHostname: ${hostname}\n\nAny key to continue, ctrl-c to abort: "
+read
+
+echo 'Updating hostname ...'
+hostname ${hostname}
+sed -i "s/${default_host}/${hostname}/g" /etc/hosts
+sed -i "s/${default_host}/${hostname}/g" /etc/hostname

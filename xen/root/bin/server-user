@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+# Wrapper to setup a new user. 
+#
+echo -e 'Adding user account ...'
+adduser ${username}
+echo -e 'Enabling SUDO access ...'
+usermod -a -G sudo ${username}
+
+echo -e "\n\n'usermod -a -G ssh ${username}' for ssh access."
+echo "'deluser template --remove-home' to remove template account."
+echo -e "\nLogin with ${username}"

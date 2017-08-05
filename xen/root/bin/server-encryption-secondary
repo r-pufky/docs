@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# Sets encryption password
+
+echo 'Updating Full Disk Encryption ...'
+cryptsetup --verify-passphrase luksChangeKey /dev/xvdb --key-slot 0
+
+if [ $? -ne 0 ]; then
+  echo -e "\nFailed changing full disk encryption password; please manually do this."
+  exit 1
+fi

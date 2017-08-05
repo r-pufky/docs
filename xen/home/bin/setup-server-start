@@ -1,8 +1,0 @@
-#!/bin/bash
-#
-# Prep system for configuring server.
-#
-echo 'Enabling root account temporarily for setup ...'
-sudo passwd root
-echo 'You must logout of this account and login as root; then execute'
-echo '  /root/bin/configure-server'
