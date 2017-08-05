@@ -194,7 +194,7 @@ Enabling Secure SSH Config
 --------------------------
 The secure config requires that users are added to the `ssh` group before publickey auth will work. Add user:
 ```bash
-usermod -a G ssh <username>
+usermod -a -G ssh <username>
 ```
 
 Then generate certs for use.
