@@ -47,7 +47,7 @@ Important File Locations
 
 | File                                                                    | Purpose                                                   |
 |-------------------------------------------------------------------------|-----------------------------------------------------------|
-| .local/share/7DaysToDie/Saves/<gametype>/<gameseed>/serveradmin.xml     | defines user bans, whitelists, admins and server commands |
+| .local/share/7DaysToDie/Saves/[gametype]/[gameseed]/serveradmin.xml     | defines user bans, whitelists, admins and server commands |
 | .steam/SteamApps/common/7 Days to Die Dedicated Server/serverconfig.xml | server configuration                                      |
 | .steam/SteamApps/common/7 Days to Die Dedicated Server/startserver.sh   | starts server                                             |
 
