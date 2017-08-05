@@ -4,6 +4,7 @@ Uses [Ubuntu 16.04 base Xen template](../templates/ubuntu-server.md), and assume
 
 1. [Ports Exposed](#ports-exposed)
 2. [Service Setup](#service-setup)
+3. [Important File Locations](#important-file-locations)
 3. [Simple AP Configuration](#simple-ap-configuration)
 4. [Migrating existing AP's to a new controller](#migrating-existing-aps-to-a-new-controller)
 3. [References](#references)
@@ -35,6 +36,14 @@ sudo service unifi start
 ```
 
 If you have an existing backup of a controller, you can import it immediately and not have to manually re-configure anything.
+
+
+Important File Locations
+------------------------
+
+| File                              | Purpose                            |
+|-----------------------------------|------------------------------------|
+| /var/libs/unifi/backup/autobackup | Location of configuration backups. |
 
 
 Simple AP Configuration
