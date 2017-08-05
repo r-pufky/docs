@@ -1,7 +1,7 @@
 Run the following to finish install:
 
 sudo /root/bin/server-hostname
-sudo /root/bin/server-user
+sudo /root/bin/server-user (kill user processes before)
 sudo /root/bin/server-encryption-primary
 sudo /root/bin/server-encryption-secondary (if attached another drive)
 
