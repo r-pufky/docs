@@ -6,7 +6,9 @@ Ubuntu 16.04 base Xen template.
 2. [Manual Crypt/LUKS commands](#manual-cryptluks-commands)
 3. [Enabling Secure SSH Config](#enabling-secure-ssh-config)
 4. [Modifying a VM Template](#modifying-a-vm-template)
+5. [Creating an Encrypted Volume](#creating-an-encrypted-volume)
 5. [References](#references)
+
 
 Base Install
 ------------
@@ -169,6 +171,7 @@ chmod -Rv go-rwx /root
 * VM: right-click > Convert to Template
 * Template: Custom Fields: Final Setup = setup-server-setup; configure-server; setup-server-finish
 
+
 Manual Crypt/LUKS commands
 --------------------------
 ### Manually determining crypt block device
@@ -191,6 +194,7 @@ cryptsetup luksDump /dev/xvda5
 cryptsetup --verify-passphrase luksChangeKey /dev/xvda5 --key-slot 0
 ```
 
+
 Enabling Secure SSH Config
 --------------------------
 The secure config requires that users are added to the `ssh` group before publickey auth will work; as well as enabling the secure config
@@ -211,6 +215,7 @@ chmod 0640 ~/.ssh/*.pub
 ```
 _remember to copy private key to intended system to use it on._
 
+
 Modifying a VM Template
 -----------------------
 * Copy the UUID from the template image `General > Properties > UUID`
@@ -221,6 +226,52 @@ xe vm-param-set uuid=<UUID> is-a-template=false
 xe vm-start uuid=<UUID>
 ```
 * After changes, convert back to a template in the GUI.
+
+
+Creating an Encrypted Volume
+----------------------------
+This assumes that an additional virtual disk has already been attached to the VM, and resides at /dev/xvdb
+
+### Find the new block device and setup encrpytion
+```bash
+lsblk
+sudo cryptsetup luksFormat --hash=sha256 --key-size=512 --cipher=aes-xts-plain64 --verify-passphrase /dev/xvdb
+```
+* This is not the most secure encryption, however, it's the default settings that ubuntu uses when it installs; use stronger encryption if desired.
+
+### Create the LVM physical volume, volume group and logical volume
+```bash
+sudo cryptsetup luksOpen /dev/xvdb xvdb_crypt
+sudo pvcreate /dev/mapper/xvdb_crypt
+sudo vgcreate data /dev/mapper/xvdb_crypt
+sudo lvcreate -n data -l +100%FREE data
+```
+
+### Format and mount the encrypted volume to /data
+```bash
+sudo mkfs.ext4 -m 0 /dev/data/data
+sudo mkdir /data
+sudo mount /dev/data/data /data
+```
+
+### Add volume to crypttab
+* Find the *ROOT* device UUID (/dev/xvdb)
+```bash
+sudo blkid
+```
+
+sudo vim /etc/crypttab
+```vim
+xvdb_crypt UUID=<UUID from xvdb> none luks,discard
+```
+* Generally, using discard for SSD's is preferred, even though there are security issues related with it. See reference.
+
+### Add to fstab
+sudo vim /etc/fstab
+```vim
+/dev/mapper/data-data /data ext4 defaults 0 2
+```
+
 
 References
 ----------
@@ -233,3 +284,13 @@ References
 [Howto change LUKS passphrase](https://askubuntu.com/questions/95137/how-to-change-luks-passphrase)
 
 [Converting template to a VM on XenServer](https://discussions.citrix.com/topic/241867-guest-best-pratice-copy-vm-or-convert-to-template/)
+
+[Full encryption with LVM and LUKS](https://www.linux.com/blog/how-full-encrypt-your-linux-system-lvm-luks)
+
+[Mounting LVM partitions](http://ask.xmodulo.com/mount-lvm-partition-linux.html)
+
+[Mounting LVM logical volumes](https://blog.sleeplessbeastie.eu/2015/11/16/how-to-mount-encrypted-lvm-logical-volume/)
+
+[Mounting encrypted LUKS drive at boot](https://askubuntu.com/questions/450895/mount-luks-encrypted-hard-drive-at-boot)
+
+[Data Exposure when using 'discard' option with SSD's on dm-crypt](http://asalor.blogspot.de/2011/08/trim-dm-crypt-problems.html)
