@@ -17,8 +17,8 @@ Ports Exposed
 
 | Port        | Protocol |Purpose                     |
 |-------------|----------|----------------------------|
-| 8080        | TCP      | Control Panel              |
-| 8081        | TCP      | Telnet Port                |
+| 8080        | TCP      | Control Panel (Disabled)   |
+| 8081        | TCP      | Telnet Port (Disabled)     |
 | 26900       | TCP      | Dedicated Server (steam)   |
 | 26900-26902 | UDP      | Dedicated Server (clients) |
 * Control Panel and Telnet are insecure and should be
