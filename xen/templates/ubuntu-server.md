@@ -6,8 +6,9 @@ Ubuntu 16.04 base Xen template.
 2. [Manual Crypt/LUKS commands](#manual-cryptluks-commands)
 3. [Enabling Secure SSH Config](#enabling-secure-ssh-config)
 4. [Modifying a VM Template](#modifying-a-vm-template)
-5. [Creating an Encrypted Volume](#creating-an-encrypted-volume)
-5. [References](#references)
+5. [Manually Creating New VM from Template](#manually-creating-new-vm-from-template)
+6. [Creating an Encrypted Volume](#creating-an-encrypted-volume)
+7. [References](#references)
 
 
 Base Install
@@ -227,6 +228,15 @@ xe vm-start uuid=<UUID>
 ```
 * After changes, convert back to a template in the GUI.
 
+
+Manually Ceating New VM from Template
+-------------------------------------
+Determine the template name, and create a new VM from that template, start it.
+```bash
+xe template-list
+xe vm-install template="<template name>" new-name-label="<vm name>"
+xe vm-start uuid=<new VM>
+```
 
 Creating an Encrypted Volume
 ----------------------------
