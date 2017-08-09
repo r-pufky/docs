@@ -229,8 +229,8 @@ xe vm-start uuid=<UUID>
 * After changes, convert back to a template in the GUI.
 
 
-Manually Ceating New VM from Template
--------------------------------------
+Manually Creating New VM from Template
+--------------------------------------
 Determine the template name, and create a new VM from that template, start it.
 ```bash
 xe template-list
