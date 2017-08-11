@@ -3,6 +3,7 @@ Steam - 7 Days to Die Dedicated Server
 Uses [Ubuntu 16.04 base Xen template](../templates/ubuntu-server.md), and assumes post template setup scripts have been run.
 
 * Memory: 2048MB-8096MB
+* Disk: 20GB ([Encrypted volume setup](../templates/ubuntu-server.md#creating-an-encrypted-volume))
 
 1. [Ports Exposed](#ports-exposed)
 2. [Server Setup](#server-setup)
@@ -27,11 +28,17 @@ Ports Exposed
 
 Server Setup
 -------------
-Install steamCMD and dedicated server
+Install steamCMD and dedicated server; then migrate data to secondary disk.
 
 ```bash
 sudo apt install steamcmd
 steamcmd
+exit
+mv ~/.steam /data/steam
+mv ~/.local /data/local
+ln -s /data/steam .steam
+ln -s /data/local .local
+mkdir /data/saves /data/config
 ```
 
 From steamcmd, install the server
@@ -54,6 +61,7 @@ Important File Locations
 
 serveradmin.xml does not exist by default in game saves, and needs to be created. A template
 is here: [LINK](steam-7-days-to-die/serveradmin.xml)
+* It might be pertinient to link directories to home directory.
 
 
 Disable Insecure Services
