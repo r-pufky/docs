@@ -42,7 +42,7 @@ mkdir /data/saves /data/config
 ```
 
 From steamcmd, install the server
-* -beta \<version> will load beta channels
+* `-beta latest_experimental` will load beta channels
 ```steam
 login anonymous
 app_update 294420
