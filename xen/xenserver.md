@@ -74,6 +74,13 @@ xapi:<IP> <IP>
 xe pool-disable-ssl-legacy
 ```
 
+### Only keep 2 days of logs
+* Keep 2 days of log rotations, instead of 31 by default.
+* sudo vi /etc/logrotate.conf
+```
+rotate 2
+```
+
 References
 ----------
 [Basic XenServer Security Tips](http://burm.net/2012/01/29/xenserver-basic-security-tips-how-do-you-secure-your-xenserver/)
