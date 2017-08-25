@@ -88,3 +88,5 @@ References
 [Adding new usergroups to XenServer](https://discussions.citrix.com/topic/154063-add-new-usersgroup-to-xenserver/)
 
 [XenServer 7.0 release notes](http://docs.citrix.com/content/dam/docs/en-us/xenserver/xenserver-7-0/downloads/xenserver-7-0-release-notes.pdf)
+
+[Modifying XenServer logging](https://discussions.citrix.com/topic/299016-how-to-disable-xenserver-logging/)
