@@ -48,6 +48,31 @@ login anonymous
 app_update 294420
 ```
 
+Create a systemd service
+* Assumes server directory is symlinked to steam server location
+
+vim /etc/systemd/system/7days.service
+```systemd
+[Unit]
+Description=7 Days to Die Dedicated Server
+After=network.target nss-lookup.target
+
+[Service]
+Type=simple
+PIDFile=/run/7days.pid
+ExecStart=/home/7days/server/startserver.sh -configfile=/home/7days/server/serverconfig.xml
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s QUIT $MAINPID
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
+```bash
+systemctl enable 7days
+```
+
+
 
 Important File Locations
 ------------------------
@@ -79,7 +104,12 @@ vim .steam/SteamApps/common/7 Days to Die Dedicated Server/serverconfig.xml
 
 Starting the Server
 -------------------
-Start or resume a screen session and launch server with configuration file
+Use systemd to start the service
+```bash
+service 7days start
+```
+
+or manually
 ```bash
 src
 cd .steam/SteamApps/common/7 Days to Die Dedicated Server/
