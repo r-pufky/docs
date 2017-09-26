@@ -12,13 +12,14 @@ Assumes Admin Rights
 2. [Creating a UEFI USB Boot disk](#creating-a-uefi-usb-boot-disk)
 3. [Installing Windows 10 Without Live Account](#installing-windows-10-without-live-account)
 4. [Securing Windows Installation](#securing-windows-installation)
-3. [Removing pre-installed Windows packages](#removing-pre-installed-windows-packages)
-4. [Format ReFS on using a single drive](#format-refs-on-using-a-single-drive)
-5. [Addressing 100% disk usage issues](#addressing-100-disk-usage-issues)
-6. [Hiding local desktop for Chrome Remote Desktop](#hiding-local-desktop-for-chrome-remote-desktop)
-7. [Fixing non-working Windows store apps / 'trial expired' apps](#fixing-non-working-windows-store-apps-trial-expired-apps)
-8. [Enable Bitlocker on USB drives over RDP](#enable-bitlocker-on-usb-drives-over-rdp)
-9. [Fix Windows Applications not appearing in start menu searches](#fix-windows-applications-not-appearing-in-start-menu-searches)
+5. [Moving User Profile Locations to Alternate Location](#moving-user-profile-locations-to-alternate-location)
+6. [Removing pre-installed Windows packages](#removing-pre-installed-windows-packages)
+7. [Format ReFS on using a single drive](#format-refs-on-using-a-single-drive)
+8. [Addressing 100% disk usage issues](#addressing-100-disk-usage-issues)
+9. [Hiding local desktop for Chrome Remote Desktop](#hiding-local-desktop-for-chrome-remote-desktop)
+10. [Fixing non-working Windows store apps / 'trial expired' apps](#fixing-non-working-windows-store-apps-trial-expired-apps)
+11. [Enable Bitlocker on USB drives over RDP](#enable-bitlocker-on-usb-drives-over-rdp)
+11. [Fix Windows Applications not appearing in start menu searches](#fix-windows-applications-not-appearing-in-start-menu-searches)
 
 Creating a UEFI USB Boot Disk
 -----------------------------
@@ -236,6 +237,20 @@ Y
 set-executionpolicy restricted
 Y
 ```
+
+
+Moving User Profile Locations to Alternate Location
+---------------------------------------------------
+Relocate certain portions of your user profile to alternate location, to make reinstallation easier, as
+well as keep music and media folders on separate drives.
+
+```
+win + e > Select location > Right Click > Properties > Location Tab > Move ...
+```
+* Select new (or existing) location to relocate
+* Move existing files into the new location
+* Apply
+
 
 Removing pre-installed [Windows packages][6]
 --------------------------------------------
