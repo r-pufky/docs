@@ -58,6 +58,8 @@ Description=7 Days to Die Dedicated Server
 After=network.target nss-lookup.target
 
 [Service]
+User=7days
+Group=7days
 Type=simple
 PIDFile=/run/7days.pid
 ExecStart=/home/7days/server/startserver.sh -configfile=/home/7days/server/serverconfig.xml
