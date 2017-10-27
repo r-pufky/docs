@@ -349,7 +349,7 @@ disables this feature and presents a login screen instead, allowing you to work 
 open a connection, then locally connect to remote desktop to hide your current session.
 
 ### Edit Windows Registry (regedit as admin)
-> Key: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\RemoteAccessHostRequireCurtain
+> Key: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome
 
 > New **DWORD**: RemoteAccessHostRequireCurtain = 1
 
