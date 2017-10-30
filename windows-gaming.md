@@ -20,6 +20,7 @@ Assumes Admin Rights
 10. [Fixing non-working Windows store apps / 'trial expired' apps](#fixing-non-working-windows-store-apps-trial-expired-apps)
 11. [Enable Bitlocker on USB drives over RDP](#enable-bitlocker-on-usb-drives-over-rdp)
 11. [Fix Windows Applications not appearing in start menu searches](#fix-windows-applications-not-appearing-in-start-menu-searches)
+12. [Enabling SSH Access](#enabling-ssh-access)
 
 Creating a UEFI USB Boot Disk
 -----------------------------
@@ -406,6 +407,36 @@ enabled.
 > Key: Let apps run in the background = Enabled
 
 
+[Enabling SSH Access][41]
+-------------------------
+Windows 10 has a beta which allows for SSHd and SSH-agent use to access the windows system. This covers the manual
+installation process, there is also a beta you may install via optional features.
+
+* [Download] and extract the latest binaries to ```c:\Program Files\```
+* Install the SSHd service, generate host keys, lock down files and allow inbound SSH connections
+
+### Powershell (as admin)
+```powershell
+cd c:\Program Files\OpenSSH
+powershell.exe -ExecutionPolicy Bypass -File install-sshd.ps1
+./ssh-keygen.exe -A
+powershell.exe -ExecutionPolicy Bypass -File ./FixHostFilePermissions.ps1
+New-NetFirewallRule -Protocol TCP -LocalPort 22 -Direction Inbound -Action Allow -DisplayName SSH
+```
+
+### Enable SSHD Service and set for Automatic Startup
+```win + r > services.msc```
+* SSHD
+
+### Setting up publickey authentication
+
+* Create ```c:\Users\<username>\.ssh```
+* Grant SSHD service read permissions
+
+```powershell
+icacls C:\users\<username>\.ssh /grant "NT Service\sshd:R" /T
+```
+
 [1]: http://winaero.com/blog/how-to-format-any-drive-in-windows-8-1-with-refs/
 [2]: http://blog.architecting.it/2012/07/10/windows-server-2012-windows-server-8-resilient-file-system/w8-refs-2/
 [3]: https://github.com/r-pufky/docs/blob/master/force-upgrade-to-10.cmd
@@ -441,3 +472,5 @@ enabled.
 [38]: https://community.spiceworks.com/how_to/122006-windows-10-your-trial-period-for-this-app-has-expired-visit-the-windows-store-to-purchase-the-full-app-problem
 [39]: https://superuser.com/questions/962125/bitlocker-refuses-to-enable-via-rdp-on-data-drive-but-ok-on-the-os-drive
 [40]: https://superuser.com/questions/947392/windows-10-search-cant-find-any-applications-even-calculator
+[41]: https://winscp.net/eng/docs/guide_windows_openssh_server
+[42]: https://github.com/PowerShell/Win32-OpenSSH/releases
