@@ -103,7 +103,7 @@ if [ ${days} -gt ${DAYS_BEFORE_PROMPT} ]; then
   echo "System up for ${days} days. Perhaps a manual update, upgrade & reboot is in order?"
 fi
 
-fi [ -x /usr/lib/update-notifier/update-motd-reboot-required ]; then
+if [ -x /usr/lib/update-notifier/update-motd-reboot-required ]; then
   exec /usr/lib/update-notifier/update-motd-reboot-required
 fi
 ```
