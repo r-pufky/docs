@@ -126,7 +126,7 @@ fi
 sudo rm /etc/skel/.profile
 sudo mkdir /etc/skel/.ssh /etc/skel/bin
 sudo chmod 0700 /etc/skel/.ssh /etc/skel/bin
-sudo chmod go-rwx /etc/skel/{*,.*}
+sudo chmod -Rv go-rwx /etc/skel/
 ```
 
 * Secure user directory
