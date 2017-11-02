@@ -218,7 +218,7 @@ chmod 0700 /etc/ssh/<username>
 Move user's ssh directory and generate certs for use.
 ```bash
 mv ~/.ssh/* /etc/ssh/<username>
-ln -s /etc/ssh/<username> .ssh
+ln -s /etc/ssh/<username> /home/<username>/.ssh
 cd .ssh
 ssh-keygen -b 4096 -t rsa -f <intended-certificate-name>
 cat <intended-certificate-name>.pub >> ~/.ssh/authorized_keys
