@@ -203,6 +203,20 @@ cryptsetup luksDump /dev/xvda5
 cryptsetup --verify-passphrase luksChangeKey /dev/xvda5 --key-slot 0
 ```
 
+#### Bug in debian/ubuntu using keyscript
+There is currently an open issue with all latest releases of debian/ubuntu, where systemd does not respect the keyscript option in crypttab. This breaks any easy use for automatic unlocking through USB keys.
+https://news.ycombinator.com/item?id=8477913
+
+https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=618862
+
+https://askubuntu.com/questions/906870/luks-keyscript-being-ignored-asks-for-password
+
+https://github.com/systemd/systemd/pull/3007/
+
+
+Potential manual solution using ubuntu 16.04 with systemd workaround, though seems to be very hacky:
+https://www.len.ro/work/luks-disk-encryption-with-usb-key-on-ubuntu-14-04/
+
 
 Enabling Secure SSH Config
 --------------------------
