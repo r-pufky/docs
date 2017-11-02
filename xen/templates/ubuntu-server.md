@@ -205,6 +205,7 @@ cryptsetup --verify-passphrase luksChangeKey /dev/xvda5 --key-slot 0
 
 #### Bug in debian/ubuntu using keyscript
 There is currently an open issue with all latest releases of debian/ubuntu, where systemd does not respect the keyscript option in crypttab. This breaks any easy use for automatic unlocking through USB keys.
+
 https://news.ycombinator.com/item?id=8477913
 
 https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=618862
