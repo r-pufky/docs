@@ -198,7 +198,27 @@ cryptsetup --verify-passphrase luksChangeKey /dev/xvda5 --key-slot 0
 
 Enabling Secure SSH Config
 --------------------------
-The secure config requires that users are added to the `ssh` group before publickey auth will work; as well as enabling the secure config
+The secure config requires that users are added to the `ssh` group before publickey auth will work; as well as enabling the secure config.
+
+Create /etc/ssh/<username> directories
+```bash
+mkdir /etc/ssh/<username>
+chown <username>:<username> /etc/ssh/<username>
+chmod 0700 /etc/ssh/<username>
+```
+  
+Move user's ssh directory and generate certs for use.
+```bash
+mv ~/.ssh/* /etc/ssh/<username>
+ln -s /etc/ssh/<username> .ssh
+cd .ssh
+ssh-keygen -b 4096 -t rsa -f <intended-certificate-name>
+cat <intended-certificate-name>.pub >> ~/.ssh/authorized_keys
+chmod 0600 ~/.ssh/*
+chmod 0640 ~/.ssh/*.pub
+```
+
+Enable ssh for the user and the secure ssh config
 ```bash
 usermod -a -G ssh <username>
 rm /etc/ssh/sshd_config
@@ -206,14 +226,7 @@ ln -s /etc/ssh/sshd_config.secure /etc/ssh/sshd_config
 service sshd restart
 ```
 
-Then generate certs for use.
-```bash
-cd .ssh
-ssh-keygen -b 4096 -t rsa -f <intended-certificate-name>
-cat <intended-certificate-name>.pub >> ~/.ssh/authorized_keys
-chmod 0600 ~/.ssh/*
-chmod 0640 ~/.ssh/*.pub
-```
+
 _remember to copy private key to intended system to use it on._
 
 
