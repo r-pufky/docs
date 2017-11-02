@@ -108,6 +108,14 @@ if [ -x /usr/lib/update-notifier/update-motd-reboot-required ]; then
 fi
 ```
 
+### Disable mdadm array
+* Add at end of file to ignore software raid detection at boot
+
+sudo vim /etc/mdadm/mdadm.conf
+```vim
+ARRAY <ignore> devices=/dev/null
+```
+
 ### Setup skeleton user profile
 * Copy the following configuration files to system, these are
   preconfigured preferences.
