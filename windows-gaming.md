@@ -412,7 +412,7 @@ enabled.
 Windows 10 has a beta which allows for SSHd and SSH-agent use to access the windows system. This covers the manual
 installation process, there is also a beta you may install via optional features.
 
-* [Download] and extract the latest binaries to ```c:\Program Files\```
+* [Download][42] and extract the latest binaries to ```c:\Program Files\```
 * Install the SSHd service, generate host keys, lock down files and allow inbound SSH connections
 
 ### Powershell (as admin)
