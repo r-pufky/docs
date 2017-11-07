@@ -3,6 +3,7 @@ Xen Server Setup
 Basic XenServer 7.2 Setup & lockdown.
 
 1. [Console Setup](#console-setup)
+2. [Creating a Local ISO Repository](#creating-a-local-iso-repository)
 2. [References](#references)
 
 Console Setup
@@ -81,6 +82,17 @@ xe pool-disable-ssl-legacy
 rotate 2
 ```
 
+Creating A Local ISO Repository
+-------------------------------
+This will allow the use of ISO's on dom0 to be used during VM creation.
+
+* From an SSH session, create a directory and create a Storage Repository on top of it
+
+```bash
+mkdir -p /var/opt/xen/iso_import
+xe sr-create name-label=LocalISO type=iso device-config:location=/var/opt/xen/iso_import device-config:legacy_mode=true content-type=iso
+```
+
 References
 ----------
 [Basic XenServer Security Tips](http://burm.net/2012/01/29/xenserver-basic-security-tips-how-do-you-secure-your-xenserver/)
@@ -90,3 +102,5 @@ References
 [XenServer 7.0 release notes](http://docs.citrix.com/content/dam/docs/en-us/xenserver/xenserver-7-0/downloads/xenserver-7-0-release-notes.pdf)
 
 [Modifying XenServer logging](https://discussions.citrix.com/topic/299016-how-to-disable-xenserver-logging/)
+
+[Creating A Local ISO Repository](https://xen-orchestra.com/blog/creating-a-local-iso-repository-in-xenserver/)
