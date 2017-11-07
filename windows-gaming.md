@@ -160,6 +160,17 @@ disabling the service, as cloud-based protection will cause 100% disk usage (in 
 
 > **DWORD**: (all suggested apps) = 0
 
+### [Disable Windows Store App Installs][43]
+
+```win + r > Store```
+> Click User Icon (or ... if signed in) > Settings
+
+> Update apps automatically = Disabled
+
+> Show products on tile = Disabled
+
+
+
 ### [Remove OneDrive from Windows Explorer][13] (regedit as admin)
 > Key: HKEY_CLASSES_ROOT\\CLSID\\{018D5C66-4533-4307-9B53-224DE2ED1FE6}
 
@@ -474,3 +485,4 @@ icacls C:\users\<username>\.ssh /grant "NT Service\sshd:R" /T
 [40]: https://superuser.com/questions/947392/windows-10-search-cant-find-any-applications-even-calculator
 [41]: https://winscp.net/eng/docs/guide_windows_openssh_server
 [42]: https://github.com/PowerShell/Win32-OpenSSH/releases
+[43]: https://www.easeus.com/computer-instruction/stop-windows-10-installing-apps.html
