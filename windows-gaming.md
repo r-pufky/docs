@@ -67,7 +67,8 @@ Installing Windows 10 Without Live Account
 ------------------------------------------
 * Delete all existing partitions
 * Skip / check later all attempts to enter product key
-* Create a **local account** (on sign in with microsoft account)
+* Select **use a personal account** (non-organizational)
+* Create a **local account** (lower left on the create account screen)
   * Create new account
   * Sign-in *without* a microsoft account
 
