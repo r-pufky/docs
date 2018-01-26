@@ -26,6 +26,28 @@ Assumes Admin Rights
 8. [Disable hibernation for Windows 10 sleep resume problems](#disable-hibernation-for-windows-10-sleep-resume-problems)
 9. [Enabling SSH Access](#enabling-ssh-access)
 
+
+[Setting Execution Policy][8]
+-----------------------------
+Powershell scripts require unrestricted execution policy to be set to
+execute. By default this is **disabled** and is the **correct choice**.
+Once you've executed scripts, you **must** manually reset this to restricted
+or you leave yourself open to bad things. This persists across sessions.
+
+### Check and set unrestricted policy (powershell as admin)
+```powershell
+get-executionpolicy
+set-executionpolicy unrestricted
+Y
+```
+
+### Set restricted policy (powershell as admin)
+```powershell
+set-executionpolicy restricted
+Y
+```
+
+
 Creating a UEFI USB Boot Disk
 -----------------------------
 Using the [windows Media Creation Tool][10] will create a USB boot disk, however
@@ -237,26 +259,6 @@ built-in package manager.
 ### Remove packages with [remove-crapware.ps1](windows-scripts/remove-crapware.ps1) (powershell as admin)
 ```powershell
 remove-crapware.ps1
-```
-
-[Setting Execution Policy][8]
------------------------------
-Powershell scripts require unrestricted execution policy to be set to
-execute. By default this is **disabled** and is the **correct choice**.
-Once you've executed scripts, you **must** manually reset this to restricted
-or you leave yourself open to bad things. This persists across sessions.
-
-### Check and set unrestricted policy (powershell as admin)
-```powershell
-get-executionpolicy
-set-executionpolicy unrestricted
-Y
-```
-
-### Set restricted policy (powershell as admin)
-```powershell
-set-executionpolicy restricted
-Y
 ```
 
 
