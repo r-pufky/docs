@@ -243,6 +243,17 @@ Sync providers for windows explorer can now show Ads. Disable it.
 ```win + e > view > options > view```
 * Uncheck show sync provider notifications
 
+### [Enable patching for meltdown and spectre][44]
+Windows 10 will not automatically patch for meltdown and spectre due to anti-virus software
+causing BSOD's. If you are running anti-virus software ensure you are not affected by
+checking [this list][45] then adding the following key to the registry:
+
+> Key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\QualityCompat
+
+> **DWORD**: cadca5fe-87d3-4b96-b7fb-a231484277cc = 0
+
+Force updates and ensure it's applied using [InSpectre][46]
+
 
 Reboot machine to apply policy
 
@@ -500,3 +511,6 @@ icacls C:\users\<username>\.ssh /grant "NT Service\sshd:R" /T
 [41]: https://winscp.net/eng/docs/guide_windows_openssh_server
 [42]: https://github.com/PowerShell/Win32-OpenSSH/releases
 [43]: https://www.easeus.com/computer-instruction/stop-windows-10-installing-apps.html
+[44]: https://support.microsoft.com/en-us/help/4056892/windows-10-update-kb4056892
+[45]: https://docs.google.com/spreadsheets/d/184wcDt9I9TUNFFbsAVLpzAtckQxYiuirADzf3cL42FQ/htmlview?usp=sharing&sle=true
+[46]: https://www.grc.com/inspectre.htm
