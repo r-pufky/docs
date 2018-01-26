@@ -15,7 +15,7 @@ Assumes Admin Rights
 5. [Removing pre-installed Windows packages](#removing-pre-installed-windows-packages)
 
 
-HERE BE DRAGONS.
+[HERE BE DRAGONS.](#here-be-dragons)
 1. [Moving User Profile Locations to Alternate Location](#moving-user-profile-locations-to-alternate-location)
 2. [Format ReFS on using a single drive](#format-refs-on-using-a-single-drive)
 3. [Addressing 100% disk usage issues](#addressing-100-disk-usage-issues)
