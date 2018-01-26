@@ -12,15 +12,19 @@ Assumes Admin Rights
 2. [Creating a UEFI USB Boot disk](#creating-a-uefi-usb-boot-disk)
 3. [Installing Windows 10 Without Live Account](#installing-windows-10-without-live-account)
 4. [Securing Windows Installation](#securing-windows-installation)
-5. [Moving User Profile Locations to Alternate Location](#moving-user-profile-locations-to-alternate-location)
-6. [Removing pre-installed Windows packages](#removing-pre-installed-windows-packages)
-7. [Format ReFS on using a single drive](#format-refs-on-using-a-single-drive)
-8. [Addressing 100% disk usage issues](#addressing-100-disk-usage-issues)
-9. [Hiding local desktop for Chrome Remote Desktop](#hiding-local-desktop-for-chrome-remote-desktop)
-10. [Fixing non-working Windows store apps / 'trial expired' apps](#fixing-non-working-windows-store-apps-trial-expired-apps)
-11. [Enable Bitlocker on USB drives over RDP](#enable-bitlocker-on-usb-drives-over-rdp)
-11. [Fix Windows Applications not appearing in start menu searches](#fix-windows-applications-not-appearing-in-start-menu-searches)
-12. [Enabling SSH Access](#enabling-ssh-access)
+5. [Removing pre-installed Windows packages](#removing-pre-installed-windows-packages)
+
+
+HERE BE DRAGONS.
+1. [Moving User Profile Locations to Alternate Location](#moving-user-profile-locations-to-alternate-location)
+2. [Format ReFS on using a single drive](#format-refs-on-using-a-single-drive)
+3. [Addressing 100% disk usage issues](#addressing-100-disk-usage-issues)
+4. [Hiding local desktop for Chrome Remote Desktop](#hiding-local-desktop-for-chrome-remote-desktop)
+5. [Fixing non-working Windows store apps / 'trial expired' apps](#fixing-non-working-windows-store-apps-trial-expired-apps)
+6. [Enable Bitlocker on USB drives over RDP](#enable-bitlocker-on-usb-drives-over-rdp)
+7. [Fix Windows Applications not appearing in start menu searches](#fix-windows-applications-not-appearing-in-start-menu-searches)
+8. [Disable hibernation for Windows 10 sleep resume problems](#disable-hibernation-for-windows-10-sleep-resume-problems)
+9. [Enabling SSH Access](#enabling-ssh-access)
 
 Creating a UEFI USB Boot Disk
 -----------------------------
@@ -217,18 +221,23 @@ Sync providers for windows explorer can now show Ads. Disable it.
 ```win + e > view > options > view```
 * Uncheck show sync provider notifications
 
-### [Disable hibernation for Windows 10 sleep resume problems][34] (cmd as admin)
-If your system doesn't seem to be resuming from sleep properly (e.g. power is on, but keyboard/mouse won't resume it), disable hibernation. This does affect power consumption and probably shouldn't be used on laptops.
-
-```cmd
-powercfg /h off
-```
 
 Reboot machine to apply policy
 
-### Cleanup default profiles, set as non-admin user
-* Create a new account, set to admin
-* Remove admin access from your primary account
+Removing pre-installed [Windows packages][6]
+--------------------------------------------
+Certain packages (and windows store applications) cannot be removed with
+[programs & applications][7]. This removes those applications using Windows
+built-in package manager.
+* _Remove-AppxProvisionedPackage_ will remove packages for newly provisioned
+  accounts
+* _Remove-AppxPackage_ removes for the current user
+* _Get-AppxPackage -AllUsers_ will return results for all users on system
+
+### Remove packages with [remove-crapware.ps1](windows-scripts/remove-crapware.ps1) (powershell as admin)
+```powershell
+remove-crapware.ps1
+```
 
 [Setting Execution Policy][8]
 -----------------------------
@@ -251,6 +260,16 @@ Y
 ```
 
 
+HERE BE DRAGONS.
+----------------
+All changes listed below are for very specific use cases, and should not be applied by default or
+without thought. These can seriously break your shit if you blindly execute these.
+
+My default recommendation here is not apply these.
+
+Catch that dragon.
+
+
 Moving User Profile Locations to Alternate Location
 ---------------------------------------------------
 Relocate certain portions of your user profile to alternate location, to make reinstallation easier, as
@@ -263,21 +282,6 @@ win + e > Select location > Right Click > Properties > Location Tab > Move ...
 * Move existing files into the new location
 * Apply
 
-
-Removing pre-installed [Windows packages][6]
---------------------------------------------
-Certain packages (and windows store applications) cannot be removed with
-[programs & applications][7]. This removes those applications using Windows
-built-in package manager.
-* _Remove-AppxProvisionedPackage_ will remove packages for newly provisioned
-  accounts
-* _Remove-AppxPackage_ removes for the current user
-* _Get-AppxPackage -AllUsers_ will return results for all users on system
-
-### Remove packages with [remove-crapware.ps1](windows-scripts/remove-crapware.ps1) (powershell as admin)
-```powershell
-remove-crapware.ps1
-```
 
 Format ReFS on using a [single drive][1]
 ----------------------------------------
@@ -417,6 +421,14 @@ enabled.
 
 > Key: Let apps run in the background = Enabled
 
+
+[Disable hibernation for Windows 10 sleep resume problems][34] (cmd as admin)
+-----------------------------------------------------------------------------
+If your system doesn't seem to be resuming from sleep properly (e.g. power is on, but keyboard/mouse won't resume it), disable hibernation. This does affect power consumption and probably shouldn't be used on laptops.
+
+```cmd
+powercfg /h off
+```
 
 [Enabling SSH Access][41]
 -------------------------
