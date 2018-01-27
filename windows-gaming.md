@@ -276,7 +276,7 @@ remove-crapware.ps1
 Manually removing applications may be faster, since these applications are updated with each
 major update to windows 10.
 
-```start ? Add or remove programs > Apps & features```
+```start > Add or remove programs > Apps & features```
 
 
 
