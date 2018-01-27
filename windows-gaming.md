@@ -90,6 +90,8 @@ SSD's. Disable by ```right-click > stop``` and ```right-click > properties > dis
 ```start > settings > privacy```
 * Disable [all options on all 13 pages][20]. Re-enable to taste.
 * Disable ad-tracking, go here: https://choice.microsoft.com/en-gb/opt-out
+* Background Apps: Leave background service enable, but disable all apps. This will prevent
+  [searching from the start menu from breaking](#fix-windows-applications-not-appearing-in-start-menu-searches).
 
 ### Disable Wi-Fi Sharing
 ```start > settings > change network settings > manage wifi settings```
