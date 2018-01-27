@@ -191,7 +191,7 @@ disabling the service, as cloud-based protection will cause 100% disk usage (in 
 
 ### [Disable Windows Store App Installs][43]
 
-```win + r > Store```
+```start > Store```
 > Click User Icon (or ... if signed in) > Settings
 
 > Update apps automatically = Disabled
