@@ -249,13 +249,14 @@ Sync providers for windows explorer can now show Ads. Disable it.
 ### [Enable patching for meltdown and spectre][44]
 Windows 10 will not automatically patch for meltdown and spectre due to anti-virus software
 causing BSOD's. If you are running anti-virus software ensure you are not affected by
-checking [this list][45] then adding the following key to the registry:
+checking [this list][45] then adding the [following key](windows-scripts/enable-meltdown-spectre-update.reg)
+to the registry:
 
 > Key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\QualityCompat
 
 > **DWORD**: cadca5fe-87d3-4b96-b7fb-a231484277cc = 0
 
-Force updates and ensure it's applied using [InSpectre][46]
+Force check for new updates and ensure it's applied using [InSpectre][46]
 
 
 Reboot machine to apply policy
