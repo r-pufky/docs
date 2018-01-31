@@ -21,18 +21,21 @@ Generally, you should never have to modify file directly; you can copy and paste
 directly with the menu settings.
 
 Windows
+
 | File                                                                | Purpose                             |
 |---------------------------------------------------------------------|-------------------------------------|
 | %appdata%\Sublime Text 3                                            | configuration and package locations |
 | %appdata%\Sublime Text 3\Packages\User\Preferences.sublime-settings | User preferences                    |
 
 Linux
+
 | File                                                                | Purpose                             |
 |---------------------------------------------------------------------|-------------------------------------|
 | ~/.config/sublime-text-3                                            | configuration and package locations |
 | ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings | user preferences                    |
 
 OSX
+
 | File                                                                | Purpose                                                 |
 |---------------------------------------------------------------------|---------------------------------------------------------|
 | ~/Library/Application Support/Sublime Text 3                                            | configuration and package locations |
