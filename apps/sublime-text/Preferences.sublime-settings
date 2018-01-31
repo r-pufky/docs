@@ -5,6 +5,8 @@
   [
     "Vintage"
   ],
+  "rulers": [80],
+  "word_wrap": false,
   "tab_size": 2,
   "translate_tabs_to_spaces": true
 }
