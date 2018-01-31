@@ -5,10 +5,8 @@ Ubuntu 16.04 base Xen template.
 1. [Base Install](#base-install)
 2. [Manual Crypt/LUKS commands](#manual-cryptluks-commands)
 3. [Enabling Secure SSH Config](#enabling-secure-ssh-config)
-4. [Modifying a VM Template](#modifying-a-vm-template)
-5. [Manually Creating New VM from Template](#manually-creating-new-vm-from-template)
-6. [Creating an Encrypted Volume](#creating-an-encrypted-volume)
-7. [References](#references)
+4. [Creating an Encrypted Volume](#creating-an-encrypted-volume)
+5. [References](#references)
 
 
 Base Install
@@ -253,27 +251,6 @@ service sshd restart
 _remember to copy private key to intended system to use it on._
 
 
-Modifying a VM Template
------------------------
-* Copy the UUID from the template image `General > Properties > UUID`
-* SSH to the XenServer, change to root
-* Convert template to VM and start it
-```bash
-xe vm-param-set uuid=<UUID> is-a-template=false
-xe vm-start uuid=<UUID>
-```
-* After changes, convert back to a template in the GUI.
-
-
-Manually Creating New VM from Template
---------------------------------------
-Determine the template name, and create a new VM from that template, start it.
-```bash
-xe template-list
-xe vm-install template="<template name>" new-name-label="<vm name>"
-xe vm-start uuid=<new VM>
-```
-
 Creating an Encrypted Volume
 ----------------------------
 This assumes that an additional virtual disk has already been attached to the VM, and resides at /dev/xvdb
@@ -328,8 +305,6 @@ References
 [Reseting a password on an encrypted FS](https://unix.stackexchange.com/questions/126180/how-to-reset-password-on-an-encrypted-fs)
 
 [Howto change LUKS passphrase](https://askubuntu.com/questions/95137/how-to-change-luks-passphrase)
-
-[Converting template to a VM on XenServer](https://discussions.citrix.com/topic/241867-guest-best-pratice-copy-vm-or-convert-to-template/)
 
 [Full encryption with LVM and LUKS](https://www.linux.com/blog/how-full-encrypt-your-linux-system-lvm-luks)
 

@@ -4,7 +4,9 @@ Basic XenServer 7.2 Setup & lockdown.
 
 1. [Console Setup](#console-setup)
 2. [Creating a Local ISO Repository](#creating-a-local-iso-repository)
-2. [References](#references)
+3. [Modifying a VM Template](#modifying-a-vm-template)
+4. [Manually Creating New VM from Template](#manually-creating-new-vm-from-template)
+5. [References](#references)
 
 Console Setup
 -------------
@@ -93,6 +95,27 @@ mkdir -p /var/opt/xen/iso_import
 xe sr-create name-label=LocalISO type=iso device-config:location=/var/opt/xen/iso_import device-config:legacy_mode=true content-type=iso
 ```
 
+Modifying a VM Template
+-----------------------
+* Copy the UUID from the template image `General > Properties > UUID`
+* SSH to the XenServer, change to root
+* Convert template to VM and start it
+```bash
+xe vm-param-set uuid=<UUID> is-a-template=false
+xe vm-start uuid=<UUID>
+```
+* After changes, convert back to a template in the GUI.
+
+
+Manually Creating New VM from Template
+--------------------------------------
+Determine the template name, and create a new VM from that template, start it.
+```bash
+xe template-list
+xe vm-install template="<template name>" new-name-label="<vm name>"
+xe vm-start uuid=<new VM>
+```
+
 References
 ----------
 [Basic XenServer Security Tips](http://burm.net/2012/01/29/xenserver-basic-security-tips-how-do-you-secure-your-xenserver/)
@@ -104,3 +127,5 @@ References
 [Modifying XenServer logging](https://discussions.citrix.com/topic/299016-how-to-disable-xenserver-logging/)
 
 [Creating A Local ISO Repository](https://xen-orchestra.com/blog/creating-a-local-iso-repository-in-xenserver/)
+
+[Converting template to a VM on XenServer](https://discussions.citrix.com/topic/241867-guest-best-pratice-copy-vm-or-convert-to-template/)
