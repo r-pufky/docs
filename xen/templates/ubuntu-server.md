@@ -172,14 +172,6 @@ chmod 0700 /root
 chmod -Rv go-rwx /root
 ```
 
-### Convert VM to Template
-* Clear command history from root/user
-* shutdown cleanly
-* VM: set vCPU priority to lowest
-* VM: set Memory to dynamic, 512-1024MB
-* VM: right-click > Convert to Template
-* Template: Custom Fields: Final Setup = setup-server-setup; configure-server; setup-server-finish
-
 
 Manual Crypt/LUKS commands
 --------------------------
@@ -222,7 +214,6 @@ Potential manual solution using ubuntu 16.04 with systemd workaround, though
 seems to be very hacky:
 https://www.len.ro/work/luks-disk-encryption-with-usb-key-on-ubuntu-14-04/
 
-
 Enabling Secure SSH Config
 --------------------------
 The secure config requires that users are added to the `ssh` group before 
@@ -256,7 +247,6 @@ service sshd restart
 
 
 _remember to copy private key to intended system to use it on._
-
 
 Creating an Encrypted Volume
 ----------------------------
@@ -315,7 +305,6 @@ sudo apt install fontconfig
 
 Copy font files to /usr/local/share/fonts/<font> and set appropriate permissions
 ```bash
-sudo chown -R root:staff /usr/local/share/fonts/<font>
 sudo find /usr/local/share/fonts -type f -exec chown root:staff {} \;
 sudo find /usr/local/share/fonts -type d -exec chmod o+rx {} \;
 ```

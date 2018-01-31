@@ -4,9 +4,10 @@ Basic XenServer 7.2 Setup & lockdown.
 
 1. [Console Setup](#console-setup)
 2. [Creating a Local ISO Repository](#creating-a-local-iso-repository)
-3. [Modifying a VM Template](#modifying-a-vm-template)
-4. [Manually Creating New VM from Template](#manually-creating-new-vm-from-template)
-5. [References](#references)
+3. [Convert VM to a Template](#convert-vm-to-a-template)
+4. [Modifying a VM Template](#modifying-a-vm-template)
+5. [Manually Creating New VM from Template](#manually-creating-new-vm-from-template)
+6. [References](#references)
 
 Console Setup
 -------------
@@ -95,6 +96,15 @@ mkdir -p /var/opt/xen/iso_import
 xe sr-create name-label=LocalISO type=iso device-config:location=/var/opt/xen/iso_import device-config:legacy_mode=true content-type=iso
 ```
 
+Convert VM to a Template
+------------------------
+* Clear command history from root/user
+* shutdown cleanly
+* VM: set vCPU priority to lowest (if reasonable)
+* VM: set Memory to dynamic, 512-1024MB (if reasonable)
+* VM: right-click > Convert to Template
+* Template: Custom Fields: add custom fields as needed
+
 Modifying a VM Template
 -----------------------
 * Copy the UUID from the template image `General > Properties > UUID`
@@ -105,7 +115,6 @@ xe vm-param-set uuid=<UUID> is-a-template=false
 xe vm-start uuid=<UUID>
 ```
 * After changes, convert back to a template in the GUI.
-
 
 Manually Creating New VM from Template
 --------------------------------------
