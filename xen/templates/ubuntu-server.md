@@ -3,10 +3,11 @@ Xen Server Template
 Ubuntu 16.04 base Xen template.
 
 1. [Base Install](#base-install)
-2. [Manual Crypt/LUKS commands](#manual-cryptluks-commands)
+2. [Manual Crypt/LUKS Commands](#manual-cryptluks-commands)
 3. [Enabling Secure SSH Config](#enabling-secure-ssh-config)
 4. [Creating an Encrypted Volume](#creating-an-encrypted-volume)
-5. [References](#references)
+5. [Adding Custom Fonts](#adding-custom-fonts)
+6. [References](#references)
 
 
 Base Install
@@ -38,7 +39,8 @@ sudo apt install python-software-properties inotify-tools curl unattended-upgrad
 ```
 
 ### Set base sshd_config
-* Copy the 'secure' sshd config to the machine. This just enforces cert-based auth only. [LINK.](https://raw.githubusercontent.com/r-pufky/docs/master/xen/etc/ssh/sshd_config.secure).
+* Copy the 'secure' sshd config to the machine. This just enforces cert-based 
+auth only. [LINK.](https://raw.githubusercontent.com/r-pufky/docs/master/xen/etc/ssh/sshd_config.secure).
 ```bash
 sudo mv /etc/ssh/sshd_config /etc/ssh/sshd_config.insecure
 sudo ln -s /etc/ssh/sshd_config.insecure /etc/ssh/sshd_config
@@ -182,7 +184,8 @@ chmod -Rv go-rwx /root
 Manual Crypt/LUKS commands
 --------------------------
 ### Manually determining crypt block device
-* List encrypted disks that are mounted through crypt. The root block device is prepended to \_crypt
+* List encrypted disks that are mounted through crypt. The root block device is 
+prepended to \_crypt
 ```bash
 dmsetup ls --target crypt
 ```
@@ -202,7 +205,9 @@ cryptsetup --verify-passphrase luksChangeKey /dev/xvda5 --key-slot 0
 ```
 
 #### Bug in debian/ubuntu using keyscript
-There is currently an open issue with all latest releases of debian/ubuntu, where systemd does not respect the keyscript option in crypttab. This breaks any easy use for automatic unlocking through USB keys.
+There is currently an open issue with all latest releases of debian/ubuntu, 
+where systemd does not respect the keyscript option in crypttab. This breaks 
+any easy use for automatic unlocking through USB keys.
 
 https://news.ycombinator.com/item?id=8477913
 
@@ -213,13 +218,15 @@ https://askubuntu.com/questions/906870/luks-keyscript-being-ignored-asks-for-pas
 https://github.com/systemd/systemd/pull/3007/
 
 
-Potential manual solution using ubuntu 16.04 with systemd workaround, though seems to be very hacky:
+Potential manual solution using ubuntu 16.04 with systemd workaround, though 
+seems to be very hacky:
 https://www.len.ro/work/luks-disk-encryption-with-usb-key-on-ubuntu-14-04/
 
 
 Enabling Secure SSH Config
 --------------------------
-The secure config requires that users are added to the `ssh` group before publickey auth will work; as well as enabling the secure config.
+The secure config requires that users are added to the `ssh` group before 
+publickey auth will work; as well as enabling the secure config.
 
 Create /etc/ssh/<username> directories
 ```bash
@@ -253,14 +260,16 @@ _remember to copy private key to intended system to use it on._
 
 Creating an Encrypted Volume
 ----------------------------
-This assumes that an additional virtual disk has already been attached to the VM, and resides at /dev/xvdb
+This assumes that an additional virtual disk has already been attached to the 
+VM, and resides at /dev/xvdb
 
 ### Find the new block device and setup encrpytion
 ```bash
 lsblk
 sudo cryptsetup luksFormat --hash=sha256 --key-size=512 --cipher=aes-xts-plain64 --verify-passphrase /dev/xvdb
 ```
-* This is not the most secure encryption, however, it's the default settings that ubuntu uses when it installs; use stronger encryption if desired.
+* This is not the most secure encryption, however, it's the default settings 
+that ubuntu uses when it installs; use stronger encryption if desired.
 
 ### Create the LVM physical volume, volume group and logical volume
 ```bash
@@ -287,7 +296,8 @@ sudo vim /etc/crypttab
 ```vim
 xvdb_crypt UUID=<UUID from xvdb> none luks,discard
 ```
-* Generally, using discard for SSD's is preferred, even though there are security issues related with it. See reference.
+* Generally, using discard for SSD's is preferred, even though there are
+security issues related with it. See reference.
 
 ### Add to fstab
 sudo vim /etc/fstab
@@ -295,6 +305,26 @@ sudo vim /etc/fstab
 /dev/mapper/data-data /data ext4 defaults 0 2
 ```
 
+Adding Custom Fonts
+-------------------
+Fonts must be imported for use in applications, such as sublime text.
+
+```bash
+sudo apt install fontconfig
+```
+
+Copy font files to /usr/local/share/fonts/<font> and set appropriate permissions
+```bash
+sudo chown -R root:staff /usr/local/share/fonts/<font>
+sudo find /usr/local/share/fonts -type f -exec chown root:staff {} \;
+sudo find /usr/local/share/fonts -type d -exec chmod o+rx {} \;
+```
+
+Refresh the font cache and list loaded fonts, you should see your new fonts.
+```bash
+fc-cache -f -v
+fc-list
+```
 
 References
 ----------
@@ -315,3 +345,5 @@ References
 [Mounting encrypted LUKS drive at boot](https://askubuntu.com/questions/450895/mount-luks-encrypted-hard-drive-at-boot)
 
 [Data Exposure when using 'discard' option with SSD's on dm-crypt](http://asalor.blogspot.de/2011/08/trim-dm-crypt-problems.html)
+
+[Adding custom fonts to ubuntu](https://askubuntu.com/questions/3697/how-do-i-install-fonts)
