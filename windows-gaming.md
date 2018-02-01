@@ -387,6 +387,20 @@ By default Chrome Remote Desktop will always show locally what is happening when
 disables this feature and presents a login screen instead, allowing you to work privately remotely. CRD will
 open a connection, then locally connect to remote desktop to hide your current session.
 
+### Installing CRD (Chrome Remote Desktop)
+* Sign in to Chrome
+* Disable all sync'ing with account (if wanted)
+* Install the [Chrome Remote Desktop Extension][47]
+* Launch the installer
+
+```share (green button) > accept and install > Run MSI installer```
+
+* On Authorize screen click ```continue```
+
+```CRD > My Computers > Enable remote connections```
+* Create a PIN for connection
+* Uncheck Improve CRD
+
 ### Edit Windows Registry (regedit as admin)
 > Key: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome
 
@@ -524,3 +538,4 @@ icacls C:\users\<username>\.ssh /grant "NT Service\sshd:R" /T
 [44]: https://support.microsoft.com/en-us/help/4056892/windows-10-update-kb4056892
 [45]: https://docs.google.com/spreadsheets/d/184wcDt9I9TUNFFbsAVLpzAtckQxYiuirADzf3cL42FQ/htmlview?usp=sharing&sle=true
 [46]: https://www.grc.com/inspectre.htm
+[47]: https://chrome.google.com/webstore/detail/chrome-remote-desktop/gbchcmhmhahfdphkhkmpfmihenigjmpp
