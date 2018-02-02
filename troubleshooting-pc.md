@@ -180,6 +180,10 @@ remain the same. Get your motherboard model in the BIOS, usually by pressing
   * Bluetooth
 * If power supplied to the motherboard (and other components) is consistently
   low, or jumps around a lot, replace your power supply.
+* Verify your RAM and SSD's (*especially NVME*) are listed as compatible with
+  your specific motherboard. These are listed usually as *hardware qualification
+  lists*. In recent years, I've noticed that motherboards are *much more 
+  sensitive* to RAM and SSD's used, even though they are based on a standard.
 
 Utilities
 ---------
