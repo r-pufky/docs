@@ -34,9 +34,9 @@ section.
 
 Random "Crashes"
 ----------------
-In most cases I've seen, this is due to hardware not connect properly, or actual
-defective hardware. Most BSOD's I've seen in Windows 10 are actually hardware
-related and not due to funky Windows installs.
+In most cases I've seen, this is due to hardware not connected properly, or 
+actual defective hardware. Most BSOD's I've seen in Windows 10 are actually 
+hardware related and not due to funky Windows installs.
 
 First, make sure when you run tests, you log everything. When you crash you will
 probably not be paying attention to specific values. This also helps you to
