@@ -1,8 +1,8 @@
 Troubleshooting PC Issues
 -------------------------
 I'm asked this all the time, so I put together a list of all the common things
-to look for when a PC is flakey and crashing. Even if you 'know what you're 
-doing', you should run through these steps. You'd be surprised.
+to look for when a PC is flaky and crashing. Even if you _know what you're 
+doing_, you should run through these steps. You'd be surprised.
 
 General Maintenance
 -------------------
@@ -35,7 +35,7 @@ section.
 Random "Crashes"
 ----------------
 In most cases I've seen, this is due to hardware not connect properly, or actual
-defective hardware. Most BSOD's I've seen in Windows 10 are actuall hardware
+defective hardware. Most BSOD's I've seen in Windows 10 are actually hardware
 related and not due to funky Windows installs.
 
 First, make sure when you run tests, you log everything. When you crash you will
@@ -75,7 +75,7 @@ options > torture test > In-place large FFT's
 
 This will allow you to test your CPU under load.
 
-* Ensure your CPU power (4/8 pin power near CPU) is actuall connected
+* Ensure your CPU power (4/8 pin power near CPU) is actually connected
 * Search for and check voltages for your specific CPU. Watch these numbers as
   you do the task that crashes your machine. Do they dip? Are they low? You may
   need to tweak motherboard BIOS to supply the right amount of power, or replace
@@ -89,8 +89,8 @@ This will allow you to test your CPU under load.
 
 ### GPU's
 Setup [GPUZ][2] and [Furmark][3]. Use GPUZ to get information on the GPU, and
-run a stress test on your video card. A stable system should be able to run this
-at max without crashing, indefinitely.
+run a stress test on your video card with Furmark. A stable system should be
+able to run this at max settings for your PC without crashing, indefinitely.
 
 * Ensure Windows drivers for the video card are the most recent version. 
   [Clean install][8] your drivers if you crash
@@ -107,6 +107,9 @@ at max without crashing, indefinitely.
 * Is the GPU running hot at idle/load? (generally, 85c is the limit on GPU heat)
   If it is, ensure that fans/heatsink are clean and connected. Some drivers will
   bluescreen if the GPU temperature remains too hot.
+* SLI? Test each card indepently, in each slot. Verify that both cards and slots
+  are functioning properly
+* Use a different PCIe slot. Your 16x might be borked
 
 ### HDD's
 Setup [CrystalDiskInfo][7] and run it. It should detect all of your HDD's and
@@ -117,20 +120,20 @@ Setup [CrystalDiskMark][7]. After analyzing info results, if you believe your
 crashes related to disk, run the CrystalDiskMark bench on your disks -- this
 will prematurely wear your SSD's. A crash (BSOD) running this software usually
 means the disk in question is bad (test a different disk) or the motherboard
-SATA drivers need to be installed or updated.
+SATA/chipset drivers need to be installed or updated.
 
-Sound isn't necessarily a signal of failure. Some drives (like WD's) are
-notorious for being loud on spin-up and seeking. This is normal. You need to
+Sound isn't necessarily a signal of failure. Some drives (like Western Digitals)
+are notorious for being loud on spin-up and seeking. This is normal. You need to
 make a determination if the sound you are hearing is normal or not. Check
 youtube for videos of your specific drive / manufacturer. Bad sounds generally
 entail loud clicking/clacking and are obvious.
 
 * Generally, HDD's should be [pretty tolerant][9] to high temperatures, though
   excessive temperatures for prolonged periods of time (>~55c) could cause
-  pre-mature failure. Fix this by re-locating drives or adding some cooling.
+  premature failure. Fix this by re-locating drives or adding some cooling.
 * SSD drives (especially M.2 NVME) perform better at higher temperatures and
   have internal throttling mechanisms. It's generally OK to see them operating
-  [at ~60c][10].
+  [around ~60c][10].
 * Check on the drive in question. In the detailed SMART report, look for
   indicators of failing drives. NOTE: SMART still may report GOOD, but high
   rates of the following failures is an indication your drive is failing. It is
@@ -175,6 +178,8 @@ remain the same. Get your motherboard model in the BIOS, usually by pressing
   * LAN
   * Wireless
   * Bluetooth
+* If power supplied to the motherboard (and other components) is consistently
+  low, or jumps around a lot, replace your power supply.
 
 Utilities
 ---------
