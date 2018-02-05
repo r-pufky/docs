@@ -46,6 +46,9 @@ Additionally, pay attention to what you are doing when you crash. It can give
 you a good jump-off point for quickly debugging the issue. Gaming? Maybe start
 with power/connections/airflow. BSOD's? What does the screen infer?
 
+Basic utilities to monitor system include [HWinfo][11] and [HWmonitor][4]. Both
+of these provide monitoring and logging for many computer components.
+
 ### Memory
 Setup [memtest86][5] on a USB drive and set it to run the standard tests. Faulty
 memory will be apparent either immediately, or within a few minutes. In most
@@ -194,10 +197,11 @@ and keep them handy.
 2. [GPU-Z][2] (GPU specific info)
 3. [Furmark][3] (GPU stress testing)
 4. [HWmonitor][4] (CPU/GPU/Motherboard info)
-5. [memtest86][5] (Memory stress testing)
-6. [prime95][6] (CPU stress testing)
-7. [CrystalDiskInfo][7] (Disk specific info)
-8. [CrystalDiskMark][7] (Disk stress testing)
+5. [HWinfo][11] (CPU/GPU/Motherboard info)
+7. [memtest86][5] (Memory stress testing)
+8. [prime95][6] (CPU stress testing)
+9. [CrystalDiskInfo][7] (Disk specific info)
+10. [CrystalDiskMark][7] (Disk stress testing)
 
 [1]: https://www.cpuid.com/softwares/cpu-z.html
 [2]: https://www.techpowerup.com/gpuz/
@@ -209,3 +213,4 @@ and keep them handy.
 [8]: http://www.tomshardware.com/faq/id-2767677/perform-clean-install-video-card-drivers.html
 [9]: https://static.googleusercontent.com/media/research.google.com/en//archive/disk_failures.pdf
 [10]: https://www.amplicon.com/docs/white-papers/SSD-vs-HDD-white-paper.pdf
+[11]: https://www.hwinfo.com/download.php
