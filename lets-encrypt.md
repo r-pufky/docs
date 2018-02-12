@@ -13,7 +13,7 @@ and it enables use of verifed SSL for things like mail and web services.
 3. [Important File Locations](#important-file-locations)
 4. [Installing](#installing)
 5. [Generate a Certificate](#generate-a-certificate)
-6. [Renewing a Certificate](#renewing-a-certificate)
+6. [Renewing Certificates](#renewing-certificates)
 
 Port Exposed
 ------------
