@@ -165,7 +165,7 @@ chmod 0700 ~/.ssh ~/bin
 | bin/server-user                 | 0700 | [LINK](https://raw.githubusercontent.com/r-pufky/docs/master/xen/root/bin/server-user)                 |
 | bin/server-hostname             | 0700 | [LINK](https://raw.githubusercontent.com/r-pufky/docs/master/xen/root/bin/server-hostname)             |
 | bin/server-encryption-primary   | 0700 | [LINK](https://raw.githubusercontent.com/r-pufky/docs/master/xen/root/bin/server-encryption-primary)   |
-| bin/server-encryption-secondary | 0700 | [LINK](https://raw.githubusercontent.com/r-pufky/docs/master/xen/root/bin/server-encrpytion-secondary) |
+| bin/server-encryption-secondary | 0700 | [LINK](https://raw.githubusercontent.com/r-pufky/docs/master/xen/root/bin/server-encryption-secondary) |
 
 * Delete .profile
 
