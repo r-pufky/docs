@@ -67,7 +67,7 @@ Unattended-Upgrade::Allowed-Origins {
 
 Unattended-Upgrade::Mail "root";
 Unattended-Upgrade::Remove-Unused-Dependencies "true";
-Unattended-Upgrade::Automatic-Rebot "true";
+Unattended-Upgrade::Automatic-Reboot "true";
 Unattended-Upgrade::Automatic-Reboot-Time "05:00";
 ```
 
