@@ -107,6 +107,9 @@ if [ -x /usr/lib/update-notifier/update-motd-reboot-required ]; then
   exec /usr/lib/update-notifier/update-motd-reboot-required
 fi
 ```
+```bash
+sudo chmod a+x /etc/update-motd.d/98-reboot-required
+```
 
 ### Disable mdadm array
 * Add at end of file to ignore software raid detection at boot
