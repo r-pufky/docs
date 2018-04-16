@@ -228,9 +228,9 @@ New-NetFirewallRule -Protocol TCP -LocalPort 22 -Direction Inbound -Action Allow
 icacls C:\users\<username>\.ssh /grant "NT Service\sshd:R" /T
 ```
 
-NTFS File Ownership Access Denied[14]
--------------------------------------
-When reinstalling windows, or moving a drive to another system, sometimes the NTFS file system will deny access to files you own. This is generally because the default [well-known SID's][15] were removed from the file permissions, and replaced with a specific user SID that no longer exists. You can fix this by replacing the old SID with the new SID:
+[NTFS File Ownership Access Denied][14]
+---------------------------------------
+When reinstalling windows, or moving a drive to another system, sometimes the NTFS file system will deny access to files you own. This is generally because the default [well-known SID's][15] were removed from the file permissions, and replaced with a specific user SID that no longer exists (and now can no longer be removed, prompting this perms error everytime you access it). You can fix this by replacing the old SID with the new SID:
 
 ```powershell
 setacl.exe -on C:\ 
@@ -239,7 +239,10 @@ setacl.exe -on C:\
            -rec cont
 ```
 
-Additionally, the drive should really be nuked and re-formatted [using well-known SID's][15] which will remove this issue.
+or by taking ownership and copying the files to a NTFS partition with proper SID's set.
+
+The affected NTFS partition should really be nuked and re-formatted [using well-known SID's or defaults][15] which will remove this issue.
+
 
 [1]: http://blog.architecting.it/2012/07/10/windows-server-2012-windows-server-8-resilient-file-system/w8-refs-2/
 [2]: http://www.thewindowsclub.com/disable-superfetch-prefetch-ssd
