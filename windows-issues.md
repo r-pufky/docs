@@ -20,6 +20,7 @@ Execution Policy: **Unrestricted** (See: [Setting Execution Policy](windows-gami
 7. [Fix Windows Applications not appearing in start menu searches](#fix-windows-applications-not-appearing-in-start-menu-searches)
 8. [Disable hibernation for Windows 10 sleep resume problems](#disable-hibernation-for-windows-10-sleep-resume-problems)
 9. [Enabling SSH Access](#enabling-ssh-access)
+10. [NTFS File Ownership Access Denied](#ntfs-file-ownership-access-denied)
 
 
 Moving User Profile Locations to Alternate Location
@@ -227,6 +228,19 @@ New-NetFirewallRule -Protocol TCP -LocalPort 22 -Direction Inbound -Action Allow
 icacls C:\users\<username>\.ssh /grant "NT Service\sshd:R" /T
 ```
 
+NTFS File Ownership Access Denied[14]
+-------------------------------------
+When reinstalling windows, or moving a drive to another system, sometimes the NTFS file system will deny access to files you own. This is generally because the default [well-known SID's][15] were removed from the file permissions, and replaced with a specific user SID that no longer exists. You can fix this by replacing the old SID with the new SID:
+
+```powershell
+setacl.exe -on C:\ 
+           -ot file 
+           -actn trustee -trst "n1:S-old-501;n2:S-new-501;ta:repltrst" 
+           -rec cont
+```
+
+Additionally, the drive should really be nuked and re-formatted [using well-known SID's][15] which will remove this issue.
+
 [1]: http://blog.architecting.it/2012/07/10/windows-server-2012-windows-server-8-resilient-file-system/w8-refs-2/
 [2]: http://www.thewindowsclub.com/disable-superfetch-prefetch-ssd
 [3]: http://bakins-bits.com/wordpress/?p=195
@@ -240,3 +254,5 @@ icacls C:\users\<username>\.ssh /grant "NT Service\sshd:R" /T
 [11]: https://github.com/PowerShell/Win32-OpenSSH/releases
 [12]: https://support.microsoft.com/en-us/help/4056892/windows-10-update-kb4056892
 [13]: https://chrome.google.com/webstore/detail/chrome-remote-desktop/gbchcmhmhahfdphkhkmpfmihenigjmpp
+[14]: https://superuser.com/questions/439675/how-to-bind-old-users-sid-to-new-user-to-remain-ntfs-file-ownership-and-permiss
+[15]: http://support.microsoft.com/kb/243330
