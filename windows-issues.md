@@ -21,7 +21,7 @@ Execution Policy: **Unrestricted** (See: [Setting Execution Policy](windows-gami
 8. [Disable hibernation for Windows 10 sleep resume problems](#disable-hibernation-for-windows-10-sleep-resume-problems)
 9. [Enabling SSH Access](#enabling-ssh-access)
 10. [NTFS File Ownership Access Denied](#ntfs-file-ownership-access-denied)
-11. [OEM Partition / Low disk space warning after 1803 update](#oem-partition-low-disk-space-warning-after-1803-update)
+11. [OEM Partition / Low disk space warning after 1803 update](#oem-partition--low-disk-space-warning-after-1803-update)
 
 
 Moving User Profile Locations to Alternate Location
@@ -246,7 +246,7 @@ The affected NTFS partition should really be nuked and re-formatted [using well-
 
 [OEM Partition / Low disk space warning after 1803 update][16]
 --------------------------------------------------------------
-After updating to Windows 10 1803, a consistent low disk space warning appears. This happens as the upgrade now set the OEM partition (~450MB) to be mounted on boot. This drive is almost entirely full (~400MB) and triggers a low disk warning.
+After updating to Windows 10 1803, a consistent low disk space warning appears. This happens as the upgrade now sets the OEM partition (~450MB) to be mounted on boot. This drive is almost entirely full (~400MB) and triggers a low disk warning.
 
 ### [Unmount OEM partition from drive (as admin)][16]
 ```powershell
