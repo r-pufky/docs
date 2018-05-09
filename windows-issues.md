@@ -245,9 +245,10 @@ or by taking ownership and copying the files to a NTFS partition with proper SID
 The affected NTFS partition should really be nuked and re-formatted [using well-known SID's or defaults][15] which will remove this issue.
 
 [OEM Partition / Low disk space warning after 1803 update][16]
+--------------------------------------------------------------
 After updating to Windows 10 1803, a consistent low disk space warning appears. This happens as the upgrade now set the OEM partition (~450MB) to be mounted on boot. This drive is almost entirely full (~400MB) and triggers a low disk warning.
 
-### [Unmount OEM partition from drive (as admin)][[16]
+### [Unmount OEM partition from drive (as admin)][16]
 ```powershell
 mountvol <driveletter>: /d
 ```
