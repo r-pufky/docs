@@ -6,8 +6,22 @@ Sublime Text Configuration
 
 Installation
 ------------
-* Download [latest binary here][1]
-* No special install instructions
+* Any Platform Manual Download [latest binary here][1]
+
+### Ubuntu Apt Repository
+
+Add the sublime repository and key
+```bash
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+sudo apt install apt-transport-https
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo apt update
+```
+
+Install sublime-text
+```bash
+sudo apt-get install sublime-text
+```
 
 Important File Locations
 ------------------------
