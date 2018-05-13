@@ -85,6 +85,7 @@ SSD's. Disable by ```right-click > stop``` and ```right-click > properties > dis
 * Disable ad-tracking, go here: https://choice.microsoft.com/en-gb/opt-out
 * Background Apps: Leave background service enable, but disable all apps. This will prevent
   [searching from the start menu from breaking](#fix-windows-applications-not-appearing-in-start-menu-searches).
+* Microphone: Leave enabled, but disable all apps. This will allow mumble to use the microphone. [1803 update breaks microphone][25]
 
 ### Disable Wi-Fi Sharing
 ```start > settings > change network settings > manage wifi settings```
@@ -299,3 +300,4 @@ major update to windows 10.
 [22]: https://support.microsoft.com/en-us/help/4056892/windows-10-update-kb4056892
 [23]: https://docs.google.com/spreadsheets/d/184wcDt9I9TUNFFbsAVLpzAtckQxYiuirADzf3cL42FQ/htmlview?usp=sharing&sle=true
 [24]: https://www.grc.com/inspectre.htm
+[25]: https://www.ghacks.net/2018/05/01/all-the-issues-of-windows-10-version-1803-you-may-run-into/
