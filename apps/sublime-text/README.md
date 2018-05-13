@@ -36,24 +36,31 @@ directly with the menu settings.
 
 Windows
 
-| File                                                                | Purpose                             |
-|---------------------------------------------------------------------|-------------------------------------|
-| %appdata%\Sublime Text 3                                            | configuration and package locations |
-| %appdata%\Sublime Text 3\Packages\User\Preferences.sublime-settings | User preferences                    |
+| File                                                                        | Purpose                             |
+|-----------------------------------------------------------------------------|-------------------------------------|
+| %appdata%\Sublime Text 3                                                    | configuration and package locations |
+| %appdata%\Sublime Text 3\Packages\User\Preferences.sublime-settings         | user preferences                    |
+| %appdata%\Sublime Text 3\Packages\User\Package Control.sublime-settings     | user installed packages             |
+| %appdata%\Sublime Text 3\Installed Packages\Package Control.sublime-package | package control                     |
+
 
 Linux
 
-| File                                                                | Purpose                             |
-|---------------------------------------------------------------------|-------------------------------------|
-| ~/.config/sublime-text-3                                            | configuration and package locations |
-| ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings | user preferences                    |
+| File                                                                        | Purpose                             |
+|-----------------------------------------------------------------------------|-------------------------------------|
+| ~/.config/sublime-text-3                                                    | configuration and package locations |
+| ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings         | user preferences                    |
+| ~/.config/sublime-text-3/Packages/User/Package Control.sublime-settings     | user installed packages             |
+| ~/.config/sublime-text-3/Installed Packages/Package Control.sublime-package | package control binary              |
 
 OSX
 
-| File                                                                | Purpose                                                 |
-|---------------------------------------------------------------------|---------------------------------------------------------|
-| ~/Library/Application Support/Sublime Text 3                                            | configuration and package locations |
-| ~/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings | user preferences                    |
+| File                                                                                            | Purpose                                                 |
+|-------------------------------------------------------------------------------------------------|---------------------------------------------------------|
+| ~/Library/Application Support/Sublime Text 3                                                    | configuration and package locations |
+| ~/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings         | user preferences                    |
+| ~/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings     | user installed packages             |
+| ~/Library/Application Support/Sublime Text 3/Installed Packages/Package Control.sublime-package | package control binary              |
 
 
 Configuration
@@ -64,6 +71,27 @@ Copy and paste the custom config below into user preferences
 ```
 preferences > settings
 ```
+
+Or directly copy the preferences file
+```bash
+cp Preferences.sublime-settings <sublime config>/Packages/User
+```
+
+[Automatically Installing Packages][6]
+--------------------------------------
+Sublime will automatically keep packages up to date if they are listed as Installed. You can use this to automatically installed Package Control, as well as packages on a fresh installation. Some [recommended packages are here][7].
+
+Directly download the package control binary
+```bash
+wget https://packagecontrol.io/Package%20Control.sublime-package <sublime config>/Installed\ Packages/
+```
+
+Add installed packages
+```bash
+cp Package\ Control.sublime-settings <sublime config>/Packages/User
+```
+
+Upon startup of sublime, it will automatically install the missing packages now listed in your installed packages.
 
 
 References
@@ -76,3 +104,6 @@ References
 [2]: https://www.sublimetext.com/docs/3/settings.html
 [3]: http://docs.sublimetext.info/en/latest/customization/settings.html
 [4]: Preferences.sublime-settings
+[5]: Package%20Control.sublime-settings
+[6]: https://github.com/mrmartineau/SublimeTextSetupWiki/issues/3
+[7]: http://txfx.net/2014/11/08/my-sublime-text-3-packages/
