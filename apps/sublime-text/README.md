@@ -97,8 +97,12 @@ Upon startup of sublime, it will automatically install the missing packages now 
 References
 ----------
 [Download Sublime Text 3][1]
+
 [Settings Files][2]
+
 [Customizing Settings Files][3]
+
+[Package Control Binary][8]
 
 [1]: https://www.sublimetext.com/3
 [2]: https://www.sublimetext.com/docs/3/settings.html
@@ -107,3 +111,4 @@ References
 [5]: Package%20Control.sublime-settings
 [6]: https://github.com/mrmartineau/SublimeTextSetupWiki/issues/3
 [7]: http://txfx.net/2014/11/08/my-sublime-text-3-packages/
+[8]: https://packagecontrol.io/Package%20Control.sublime-package
