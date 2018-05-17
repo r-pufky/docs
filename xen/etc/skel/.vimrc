@@ -18,6 +18,8 @@ set hlsearch       "Highlight my search matches
 set background=dark
 set guioptions=agirt  "no menu, no toolbar
 set guifont=Lucida\ Terminal
+"" clear highlights with \
+nnoremap \ :noh<return>
 
 ""  CONSOLE AND GUI OPTIONS:
 ""  -----------------------
