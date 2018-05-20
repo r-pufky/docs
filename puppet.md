@@ -205,6 +205,7 @@ Development References
 ### Testing
  * [Puppet Development Kit Testing][24]
  * [Rspec tutorials][25]
+ * [Puppetlabs spec tutorial][26]
 
 [1]: https://puppet.com/docs/puppet/5.5/system_requirements.html
 [2]: https://puppet.com/docs/puppet/5.5/install_pre.html
@@ -233,3 +234,4 @@ Development References
 [23]: https://puppet.com/docs/puppet/5.3/lang_data_abstract.html#struct
 [24]: https://puppet.com/docs/pdk/1.x/pdk_testing.html
 [25]: https://codingbee.net/tutorials/rspec-puppet/puppet-what-is-rspec
+[26]: http://rspec-puppet.com/tutorial/
