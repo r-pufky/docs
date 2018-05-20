@@ -171,11 +171,26 @@ puppet agent -t
 puppet agent -t -d
 ```
 
+Interesting Alternative Core Modules
+------------------------------------
+Alternative 'core' modules for puppet which enhanced basic features to make
+puppet less of an ass-disaster.
+
+| Module                   | Purpose                                                                                                  |
+|--------------------------|----------------------------------------------------------------------------------------------------------|
+| [pltraining-dirtree][13] | Expand multi-level directory into Array; including directory mask. Useful for recursively creating dirs. |
+
+
 Module Development References
 -----------------------------
- * [Writing Modules][13]
- * [How puppet works overview][14]
-
+ * [Best Practices for Puppet Modules][14]
+ * [Writing Better Modules][15]
+ * [Writing Modules][16]
+ * [Writing First Module][17]
+ * [Puppet Basic Task Examples][18]
+ * [Writing and Publishing Modules][19]
+ * [Adding Array elements in a loop using map][20]
+ * [How puppet works overview (super simple examples)][21]
 
 [1]: https://puppet.com/docs/puppet/5.5/system_requirements.html
 [2]: https://puppet.com/docs/puppet/5.5/install_pre.html
@@ -189,5 +204,14 @@ Module Development References
 [10]: https://downloads.puppetlabs.com/windows/puppet5/puppet-agent-x64-latest.msi
 [11]: https://superuser.com/questions/784471/how-to-reject-certificate-request-on-puppet-master
 [12]: http://downloads.puppetlabs.com/mac/
-[13]: https://www.digitalocean.com/community/tutorials/getting-started-with-puppet-code-manifests-and-modules
-[14]: https://www.example42.com/tutorials/PuppetTutorial/#slide-57
+
+[13]: https://github.com/puppetlabs/pltraining-dirtree
+
+[14]: https://puppet.com/blog/best-practices-for-building-puppet-modules
+[15]: https://elatov.github.io/2014/09/writing-better-puppet-modules/
+[16]: https://www.digitalocean.com/community/tutorials/getting-started-with-puppet-code-manifests-and-modules
+[17]: http://fullstack-puppet-docs.readthedocs.io/en/latest/puppet_modules.html
+[18]: http://www.bogotobogo.com/DevOps/Puppet/puppet_basic_tasks_with_ec2_master_agent_nodes.php
+[19]: https://www.youtube.com/watch?v=cA33Q3ms5mE
+[20]: https://stackoverflow.com/questions/41041549/puppet-adding-array-elements-in-a-loop
+[21]: https://www.example42.com/tutorials/PuppetTutorial/#slide-57
