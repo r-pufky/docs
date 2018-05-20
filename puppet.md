@@ -11,7 +11,7 @@ Puppet: Everything works great, until it doesn't. God I hate Ruby.
 7. [Signing Cert Requests](#signing-cert-requests)
 8. [Revoking Certs](#revoking-certs)
 9. [Manually Running Agents](#manually-running-agents)
-10. [Module Development References](#module-development-references)
+10. [Development References](#development-references)
 
 
 [Requirements][1]
@@ -181,16 +181,30 @@ puppet less of an ass-disaster.
 | [pltraining-dirtree][13] | Expand multi-level directory into Array; including directory mask. Useful for recursively creating dirs. |
 
 
-Module Development References
------------------------------
+Development References
+----------------------
+
+### Overviews
+ * [How puppet works overview (super simple examples)][21]
+
+### Writing Modules
  * [Best Practices for Puppet Modules][14]
  * [Writing Better Modules][15]
  * [Writing Modules][16]
  * [Writing First Module][17]
- * [Puppet Basic Task Examples][18]
  * [Writing and Publishing Modules][19]
+
+### Examples
+ * [Puppet Basic Task Examples][18]
  * [Adding Array elements in a loop using map][20]
- * [How puppet works overview (super simple examples)][21]
+
+### Datatypes and Parameters
+ * [Puppet Data Types][22]
+ * [Puppet using structures to validate Hash parameters][23]
+
+### Testing
+ * [Puppet Development Kit Testing][24]
+ * [Rspec tutorials][25]
 
 [1]: https://puppet.com/docs/puppet/5.5/system_requirements.html
 [2]: https://puppet.com/docs/puppet/5.5/install_pre.html
@@ -215,3 +229,7 @@ Module Development References
 [19]: https://www.youtube.com/watch?v=cA33Q3ms5mE
 [20]: https://stackoverflow.com/questions/41041549/puppet-adding-array-elements-in-a-loop
 [21]: https://www.example42.com/tutorials/PuppetTutorial/#slide-57
+[22]: https://puppet.com/docs/puppet/5.3/lang_data_type.html
+[23]: https://puppet.com/docs/puppet/5.3/lang_data_abstract.html#struct
+[24]: https://puppet.com/docs/pdk/1.x/pdk_testing.html
+[25]: https://codingbee.net/tutorials/rspec-puppet/puppet-what-is-rspec
