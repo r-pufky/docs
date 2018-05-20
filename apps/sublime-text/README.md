@@ -20,7 +20,7 @@ sudo apt update
 
 Install sublime-text
 ```bash
-sudo apt-get install sublime-text
+sudo apt install libgtk2.0-0 sublime-text
 ```
 
 Important File Locations
@@ -112,3 +112,4 @@ References
 [6]: https://github.com/mrmartineau/SublimeTextSetupWiki/issues/3
 [7]: http://txfx.net/2014/11/08/my-sublime-text-3-packages/
 [8]: https://packagecontrol.io/Package%20Control.sublime-package
+[9]: https://medium.com/@pck/how-to-use-sublime-text-3-from-command-line-with-ubuntu-bash-terminal-in-windows-10-subsystems-for-aa2ad59d088c
