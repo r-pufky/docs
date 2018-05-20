@@ -1,6 +1,8 @@
 Puppet Server Setup
 -------------------
-Puppet: Everything works great, until it doesn't. God I hate Ruby.
+Puppet: Everything works great, until it doesn't; a.k.a.: 'WCGW with using 3 different DSL's & Ruby?'
+
+God I hate Ruby.
 
 1. [Requirements](#requirements)
 2. [Ports Exposed](#ports-exposed)
@@ -204,8 +206,10 @@ Development References
 
 ### Testing
  * [Puppet Development Kit Testing][24]
+ * [Puppet rspec testing walkthrough][27]
  * [Rspec tutorials][25]
  * [Puppetlabs spec tutorial][26]
+ * [Puppet next-gen module testing][28]
 
 [1]: https://puppet.com/docs/puppet/5.5/system_requirements.html
 [2]: https://puppet.com/docs/puppet/5.5/install_pre.html
@@ -235,3 +239,5 @@ Development References
 [24]: https://puppet.com/docs/pdk/1.x/pdk_testing.html
 [25]: https://codingbee.net/tutorials/rspec-puppet/puppet-what-is-rspec
 [26]: http://rspec-puppet.com/tutorial/
+[27]: http://terrarum.net/blog/puppet-testing-part-1.html#smoke-testing
+[28]: https://puppet.com/blog/next-generation-of-puppet-module-testing
