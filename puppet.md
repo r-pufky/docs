@@ -210,6 +210,7 @@ Development References
  * [Rspec tutorials][25]
  * [Puppetlabs spec tutorial][26]
  * [Puppet next-gen module testing][28]
+ * [Puppet rspec testing walkthrough][29]
 
 [1]: https://puppet.com/docs/puppet/5.5/system_requirements.html
 [2]: https://puppet.com/docs/puppet/5.5/install_pre.html
@@ -241,3 +242,4 @@ Development References
 [26]: http://rspec-puppet.com/tutorial/
 [27]: http://terrarum.net/blog/puppet-testing-part-1.html#smoke-testing
 [28]: https://puppet.com/blog/next-generation-of-puppet-module-testing
+[29]: https://dzone.com/articles/unit-testing-with-rspec-puppet-for-beginners
