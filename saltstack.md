@@ -11,11 +11,15 @@ services required.
 3. [Important File Locations](#important-file-locations)
 4. [Service Setup](#service-setup)
 5. [Salt-Master Setup](#salt-master-setup)
-6. [Setup Agents](#setup-agents)
-7. [Signing Cert Requests](#signing-cert-requests)
-8. [Revoking Certs](#revoking-certs)
-9. [Manually Running Agents](#manually-running-agents)
-10. [Development References](#development-references)
+6. [Managing States](#managing-states)
+7. [Using Pillar](#using-pillar)
+8. [Installing Formulae](#installing-formulae)
+9. [Setup Minions](#setup-minions)
+10. [Signing Cert Requests](#signing-cert-requests)
+11. [Revoking Certs](#revoking-certs)
+12. [Master Frequent Commands](#master-frequent-commands)
+12. [Manually Running Minions](#manually-running-minions)
+13. [Development References](#development-references)
 
 
 [Requirements][1]
@@ -46,15 +50,14 @@ as a DNS name or IP address.
 Important File Locations
 ------------------------
 
-| File                                                            | Purpose                                                                                                          |
-|-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------|
-| /var/log/salt/master  | Master logging/error messages. Useful for debuggin module errors. When setup with encryption and no-minion reporting, errors will appear here for minions. |
-| /var/log/salt/minion  | Minion logging/error messages. Less useful if using encrpytion (check server)                                                                              |
-| /etc/salt             | Salt configuration, both master and minion                                                                                                                 |
-| /etc/salt/gpgkeys     | Master private GPG keys for decrypting data. Hard coded.                                                                                                   |
-| /srv/salt             | Master file directory for hosting files, forumlae and data.                                                                                                |
-| /etc/salt/pki/minions | Keyfile data for minions. Deleted minions should be automatically removed.                                                                                 |
-
+| File                                                            | Purpose                                                                                                           |
+|-----------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| /var/log/salt/master  | Master logging/error messages. Useful for debugging module errors. When setup with encryption and no-minion reporting, errors will appear here for minions. |
+| /var/log/salt/minion  | Minion logging/error messages. Less useful if using encrpytion (check server)                                                                               |
+| /etc/salt             | Salt configuration, both master and minion                                                                                                                  |
+| /etc/salt/gpgkeys     | Master private GPG keys for decrypting data. Hard coded.                                                                                                    |
+| /srv/salt             | Master file directory for hosting files, forumlae and data.                                                                                                 |
+| /etc/salt/pki/minions | Keyfile data for minions. Deleted minions should be automatically removed.                                                                                  |
 
 [Service Setup][3]
 ------------------
@@ -77,7 +80,7 @@ manage itself.
 sudo apt update && sudo apt install salt-master
 ```
 
-## [Use TLS for protocol encryption][6]
+### [Use TLS for protocol encryption][6]
 Communication is automatically encrypted, but TCP is not. Force TLS encryption.
 
 ```bash
@@ -86,7 +89,7 @@ openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out salt.crt -
 chmod 0400 salt.key
 ```
 
-## [Non-root User][6]
+### [Non-root User][6]
 By default salt-master runs as root. Nothing the master does requires root.
 
 Create `salt` user for master and set permissions.
@@ -107,7 +110,7 @@ Changes can be made in `/etc/salt/master`, however making changes in
 `/etc/salt/master.d/` is preferred to clarify server changes, as well as
 enabling easy management on the config. Any file with `.conf` will be loaded.
 
-## File Roots
+### File Roots
 /etc/salt/master.d/file.conf
 ```saltstack
 file_roots:
@@ -127,7 +130,7 @@ This will create three branches, layering the single `formulae` directory on
 those environments for shared formulas. Base is applied to all environments and
 is unused in this config.
 
-## [Pillar Roots][9]
+### [Pillar Roots][9]
 /etc/sale/master.d/pillar.conf
 ```saltstack
 pillar_roots:
@@ -145,7 +148,7 @@ a formula application, and prevents error messages on minions (reported on
 server). This prevents leaking potentially sensitive data users shouldn't have
 access to if a formula fails.
 
-## Primary Configuration
+### Primary Configuration
 /etc/salt/master.d/primary.conf
 ```saltstack
 user: salt
@@ -154,12 +157,12 @@ enable_gpu_grains: True
 ping_on_rotate: True
 allow_minion_key_revoke: False
 ```
-Primary configuration for salt-master. This forces the master to run as `salt`
+Primary configuration for salt-master. This forces the master to run as `salt`,
 ensures the master is validated before started (perms, etc), pings minions on
 AES key rotation and prevents minions from unmanaging themselves. See
 [non-root user](#non-root-user) for setup instructions.
 
-## Security
+### Security
 /etc/salt/master.d/security.conf
 ```saltstack
 keysize: 4096
@@ -181,18 +184,18 @@ creation.
 verifiable signing certs, which self-signed certs cannot provide. Otherwise this
 option will drop any message that does not verify.
 
-## State
+### State
 /etc/salt/master.d/state.conf
 ```saltstack
 failhard: True
 ```
-State applicatin to minions. Minions will immediately fail with an error,
+State applicatin to minions. Minions will immediately fail is there is an error,
 instead of continuing to apply state.
 
 
 [Managing States][12]
 ---------------------
-States apply specific configurations to minions.
+States apply specific configurations to minions. See [State Reference][13].
 
 Any `.sls` file in the [File Roots](#file-roots) will be evaluated as a SaLt
 State file. Subdirectories can be referenced as packages if there is an
@@ -220,7 +223,7 @@ prod:
     - other.app
 ```
 
-### Install a package
+#### Install a package
 
 ```saltstack
 apache2:
@@ -228,7 +231,7 @@ apache2:
     - installed
 ```
 
-### Set a file with contents from server
+#### Set a file with contents from server
 
 ```bash
 ls -1 /srv/salt/env/prod/config
@@ -255,7 +258,7 @@ enables you to store your configuration in a repository without worrying about
 leaking secrets. See [Pillar Roots](#pillar-roots) for master pillar directory
 setup.
 
-## Pillar top.sls
+### Pillar top.sls
 These specify minion matching to determine what environment a minion gets data
 for. These should be matched to the structure in [File Roots](#file-roots).
 `top.sls` files must exist for each environment, and additional ones may be used
@@ -264,7 +267,7 @@ to [logically categorize data to be consumed.][8]
 By default data is merged and applied based on where the minion is defined in
 top files.
 
-## [Setup GPG][10]
+### [Setup GPG][10]
 [Alternative Reference][11].
 
 `/etc/salt/gpgkeys` is a required hard-coded directory. Ensure only the
@@ -273,7 +276,7 @@ salt-master user has access to this.
 Note: salt-master requires no password for GPG decryption to work. Secure your
 certs. You may want to enforce expiration on certs as well.
 
-### Generate GPG keys for salt-master encryption/decryption
+#### Generate GPG keys for salt-master encryption/decryption
 ```bash
 mkdir -p /etc/salt/gpgkeys
 chmod 0700 /etc/salt/gpgkeys
@@ -286,12 +289,12 @@ gpg --gen-key --homedir /etc/salt/gpgkeys
  * salty (salt@example.com)
  * no password.
 
-### Export public key for signing data.
+#### Export public key for signing data.
 ```bash
 gpg --homedir /etc/salt/gpgkeys --armor --export > public_key.gpg
 ```
-This is used by anyone on any system to created encrypted data that only the
-server can read.
+This (`public_key.gpg`) is used by anyone on any system to created encrypted
+data that only the server can read.
 
 Import the public key for siginng usage
 ```bash
@@ -299,15 +302,15 @@ gpg --import public_key.gpg
 ```
 These are stored in `~/.gnupg/`
 
-## Using encrypted data in Pillar
+### Using encrypted data in Pillar
 
-### Encrypting Data
+#### Encrypting Data
 ```bash
 echo -n "super_secret_server_stuff" | gpg --armor --batch --trust-model always --encrypt -r salty
 ```
 `salty` is the name of the recipient of the data (see GPG key creation).
 
-### Add to Pillar
+#### Add to Pillar
 
 Prefix any Pillar file using GPG encryped data with:
 ```yaml
@@ -335,9 +338,9 @@ secret-stuff: |
 some-other-key: data
 ```
 
-### Refresh Pillar and Push Data
+#### Refresh Pillar and Push Data
 Pillar will automatically refresh and push, however this allows you to
-immediately push new pillar values to minions.
+immediately regenerate pillar data and push new values to minions.
 
 ```bash
 salt '*' saltutil.refresh_pillar
@@ -345,7 +348,7 @@ salt pillar.items
 ```
  * You should see the decrypted original text in the items list.
 
-## Pillar Environment Data
+### Pillar Environment Data
 By default data is merged and applied based on where the minion is defined in
 top files. You can specify a specific environment (and are required to when
 using `pillar_source_merging_strategy: none`) to get pillar values for that
@@ -360,16 +363,19 @@ pillarenv=prod
 ```
 
 
-[Installing Formulas][6]
+[Installing Formulae][6]
 ------------------------
 Forumlas are pre-defined salt modules that are defined by users to manage a
-service or setup. Usually easier than writing your own.
+service or setup. [A curated list from Saltstack is here.][14]
 
 These are stored in `srv/salt/env/formulae` and are directly accessing from the
 same base scope, based on configuration:
 
 ```bash
 ls -1 /srv/salt/env/formulae/some_formula
+init.sls
+pillar_config.sls
+service.sls
 ```
 
 top.sls
@@ -377,6 +383,11 @@ top.sls
 dev:
   'my_host':
     - some_formula
+
+  'other_host':
+    - some_formula
+    - some_formula.pillar_config
+    - some_formual.service
 ```
 
 
@@ -448,29 +459,29 @@ Master Frequent Commands
 Most commands support globbing and regex matching on minions, as well as on
 Grains to match minions to execute commands.
 
-## Run command on minions
+### Run command on minions
 ```bash
 salt '*' cmd.run 'ifconfig'
 
 salt -G os:ubuntu cmd.run 'df -h'
 ```
 
-## Get status of all minions
+### Get status of all minions
 ```bash
 salt-run manage.status
 ```
 
-## Show minions on a subnet
+### Show minions on a subnet
 ```bash
 salt -S '10.5.5.0/24' network.ip_addrs
 ```
 
-## Show avaliable grains on minions
+### Show avaliable grains on minions
 ```bash
 salt '*' grains.items
 ```
 
-## Debug leve logging on salt-master
+### Debug level logging on salt-master
 ```bash
 salt-master -l debug
 ```
@@ -481,7 +492,7 @@ Manually Running Minions
 Useful for testing as well as immediately applying changes outside of the run
 window.
 
-## Manual minion run
+### Manual minion run
 Just match the minion and apply the highstate. By default it will apply the
 current environments.
 
@@ -489,7 +500,7 @@ current environments.
 salt 'my_minion' state.highstate
 ```
 
-## Manual minion run, with specific environment
+### Manual minion run, with specific environment
 ```bash
 salt 'my_minion' state.highstate pillarenv=dev stateenv=dev
 ```
@@ -503,7 +514,7 @@ salt-minion -l debug
 Development References
 ----------------------
 
-## Raw notes
+### Raw notes
 using chocolately for windows.
 
 This will use iexplore to download chocolatey and install it via a powershell
@@ -536,3 +547,5 @@ and restart this to change name (systemctl salt-minion restart)
 [10]: http://joshbolling.com/2017/05/28/protect-pillar-data-with-gpg/
 [11]: https://docs.saltstack.com/en/latest/ref/renderers/all/salt.renderers.gpg.html
 [12]: https://docs.saltstack.com/en/2016.11/topics/tutorials/starting_states.html
+[13]: https://docs.saltstack.com/en/latest/ref/states/
+[14]: https://github.com/saltstack-formulas
