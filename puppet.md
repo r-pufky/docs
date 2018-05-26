@@ -205,12 +205,20 @@ Development References
  * [Puppet using structures to validate Hash parameters][23]
 
 ### Testing
+Build libraries need to be installed to avoid bundler and spec issues during testing.
+
+```bash
+sudo apt install build-essential bison openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libxml2-dev autoconf libc6-dev ncurses-dev automake libtool ruby-dev ruby-rspec
+sudo gem install puppetlabs_spec_helper bundler puppet-lint puppet-syntax
+```
+
  * [Puppet Development Kit Testing][24]
  * [Puppet rspec testing walkthrough][27]
  * [Rspec tutorials][25]
  * [Puppetlabs spec tutorial][26]
  * [Puppet next-gen module testing][28]
  * [Puppet rspec testing walkthrough][29]
+ * [Puppet Smoked Testing][31]
  
 ### Devops Platform Evaluations
  * [Saltstack, Chef, Ansible, Puppet. Pretty much concurs with my opinions on them][30]
@@ -247,3 +255,4 @@ Development References
 [28]: https://puppet.com/blog/next-generation-of-puppet-module-testing
 [29]: https://dzone.com/articles/unit-testing-with-rspec-puppet-for-beginners
 [30]: https://old.reddit.com/r/sysadmin/comments/5uwwjo/opinions_ansible_vs_puppet_vs_chef/?st=j9k2mbq3&sh=53a50c64
+[31]: http://terrarum.net/blog/puppet-testing-part-1.html#smoke-testing
