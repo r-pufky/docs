@@ -118,10 +118,12 @@ file_roots:
     - /srv/salt/env/base
   dev:
     - /srv/salt/env/dev
-    - /srv/salt/env/formulae/<dir>
+    - /srv/salt/env/formulae/<formulae1>
+    - /srv/salt/env/formulae/<formulae2>
   prod:
     - /srv/salt/env/prod
-    - /srv/salt/env/formulae/<dir>
+    - /srv/salt/env/formulae/<formulae1>
+    - /srv/salt/env/formulae/<formulae2>
 top_file_merging_strategy: same
 default_top: dev
 hash_type: sha512
