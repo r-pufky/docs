@@ -118,17 +118,21 @@ file_roots:
     - /srv/salt/env/base
   dev:
     - /srv/salt/env/dev
-    - /srv/salt/env/formulae
+    - /srv/salt/env/formulae/<dir>
   prod:
     - /srv/salt/env/prod
-    - /srv/salt/env/formulae
+    - /srv/salt/env/formulae/<dir>
 top_file_merging_strategy: same
 default_top: dev
 hash_type: sha512
 ```
-This will create three branches, layering the single `formulae` directory on
+This will create three branches, layering the single `formulae/<dir>` directory on
 those environments for shared formulas. Base is applied to all environments and
 is unused in this config.
+
+Formula's can be directly checked out from a revision system (like git) into
+/formulae. Once added to file roots, this can be directly accessed in these
+environments with no additional changes.
 
 ### [Pillar Roots][9]
 /etc/sale/master.d/pillar.conf
