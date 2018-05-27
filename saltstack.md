@@ -422,6 +422,31 @@ Install salt.
 sudo apt update && sudo apt install salt-minion
 ```
 
+### [Windows][16]
+Download the latest [version of salt-minion here][15].
+
+You can execute the installer from the CLI or GUI. If any dependencies are
+needed, they can be downloaded and installed from `dependencies` as well.
+
+[CLI][17]
+```powershell
+Salt-Minion-2018.3.0-Py3-AMD64-Setup.exe /S /master=<yoursaltmaster> /minion-name=<yourminionname> /start-minion-delayed
+```
+
+[GUI][17]
+ * Specify the master name.
+ * Specify the minion name.
+ * Optionally provide a default configuration file.
+ * Enable delayed start (allows highstates requiring reboots to work)
+
+The minion will be installed to `c:\salt`
+
+salt-minion can be managed like a normal windows service:
+```powershell
+sc start salt-minion
+net start salt-minion
+```
+
 
 Signing Cert Requests
 ---------------------
@@ -549,3 +574,6 @@ and restart this to change name (systemctl salt-minion restart)
 [12]: https://docs.saltstack.com/en/2016.11/topics/tutorials/starting_states.html
 [13]: https://docs.saltstack.com/en/latest/ref/states/
 [14]: https://github.com/saltstack-formulas
+[15]: https://repo.saltstack.com/windows/
+[16]: https://repo.saltstack.com/#windows
+[17]: https://docs.saltstack.com/en/latest/topics/installation/windows.html
