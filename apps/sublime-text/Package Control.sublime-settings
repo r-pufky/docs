@@ -15,8 +15,9 @@
 		"Package Control",
 		"PowerShell",
 		"Powershell Help Generator",
-		"Puppet",
 		"Theme - Soda",
+		"Restructured Text (RST) Snippets",
+		"SaltStack-related syntax highlighting and snippets",
 		"TrailingSpaces"
 	]
 }
