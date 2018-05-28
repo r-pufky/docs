@@ -282,6 +282,9 @@ salt-master user has access to this.
 Note: salt-master requires no password for GPG decryption to work. Secure your
 certs. You may want to enforce expiration on certs as well.
 
+If entropy generation is slow (typical on VM's), install [`haveged`][18] to
+speed up entropy collection.
+
 #### Generate GPG keys for salt-master encryption/decryption
 ```bash
 mkdir -p /etc/salt/gpgkeys
@@ -583,3 +586,4 @@ and restart this to change name (systemctl salt-minion restart)
 [15]: https://repo.saltstack.com/windows/
 [16]: https://repo.saltstack.com/#windows
 [17]: https://docs.saltstack.com/en/latest/topics/installation/windows.html
+[18]: https://www.digitalocean.com/community/tutorials/how-to-setup-additional-entropy-for-cloud-servers-using-haveged
