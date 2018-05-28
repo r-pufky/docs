@@ -277,7 +277,7 @@ By default data is merged and applied based on where the minion is defined in
 top files.
 
 ### [Setup GPG][10]
-[Alternative Reference][11].
+[Alternative Reference][11]. [CLI Reference][19]
 
 `/etc/salt/gpgkeys` is a required hard-coded directory. Ensure only the
 salt-master user has access to this.
@@ -317,8 +317,15 @@ These are stored in `~/.gnupg/`
 ### Using encrypted data in Pillar
 
 #### Encrypting Data
+
+A password or text material
 ```bash
-echo -n "super_secret_server_stuff" | gpg --armor --batch --trust-model always --encrypt -r salty
+echo -n "super_secret_server_stuff" | gpg --armor --batch --trust-model always --encrypt --recipient salty
+```
+
+A cert or file material
+```bash
+gpg --armor --batch --trust-model always --encrypt --recipient salty <file>
 ```
 `salty` is the name of the recipient of the data (see GPG key creation).
 
@@ -595,3 +602,4 @@ and restart this to change name (systemctl salt-minion restart)
 [16]: https://repo.saltstack.com/#windows
 [17]: https://docs.saltstack.com/en/latest/topics/installation/windows.html
 [18]: https://www.digitalocean.com/community/tutorials/how-to-setup-additional-entropy-for-cloud-servers-using-haveged
+[19]: http://blog.ghostinthemachines.com/2015/03/01/how-to-use-gpg-command-line/
