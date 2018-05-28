@@ -13,6 +13,7 @@ services required.
 5. [Salt-Master Setup](#salt-master-setup)
 6. [Managing States](#managing-states)
 7. [Using Pillar](#using-pillar)
+   * [Setup GPG](#setup-gpg)
 8. [Installing Formulae](#installing-formulae)
 9. [Setup Minions](#setup-minions)
 10. [Signing Cert Requests](#signing-cert-requests)
