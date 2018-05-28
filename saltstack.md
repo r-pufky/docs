@@ -94,11 +94,13 @@ By default salt-master runs as root. Nothing the master does requires root.
 
 Create `salt` user for master and set permissions.
 ```bash
-adduser --shell /bin/false --no-create-home --disabled-password --disabled-login salt
+adduser --shell /bin/bash --no-create-home --disabled-password --disabled-login salt
 chown -R salt:salt /etc/salt /var/cache/salt /var/log/salt /var/run/salt /srv/salt
 systemctl restart salt-master
 ```
 * verify any custom directories are modified as well.
+
+salt-master does require a shell, to run commands such as `salt-run`
 
 Minions require root to properly install software, update apt and execute
 commands.
@@ -542,6 +544,11 @@ salt 'my_minion' state.highstate pillarenv=dev stateenv=dev
 ### Manual Agent Run with Debugging
 ```bash
 salt-minion -l debug
+```
+
+### Show avaliable files to minions
+```bash
+salt-run fileserver.file_list saltenv=dev
 ```
 
 
