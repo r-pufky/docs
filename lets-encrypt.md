@@ -54,6 +54,8 @@ certbot certonly --standalone --preferred-challenges tls-sni --tls-sni-01-port 4
 * Port 443 is still required to be forwarded to whatever port is set here, if
   your cert server is not publically facing.
 
+Note: TLS-SNI-01 authenication has been disabled due to vulnerabilities with
+shared hosting resources. See [here][4] and [here][5].
 
 ### Renewing Certificates
 Renewing certificates will automatically refresh all current certificates up for
@@ -76,3 +78,5 @@ certbot renew --tls-sni-01-port 4343
 [1]: https://www.reddit.com/r/PFSENSE/comments/4qwp8i/do_we_really_have_to_lock_every_thread_that/d4wuymx/?st=iwy5oece&sh=a2a3c939
 [2]: https://certbot.eff.org/#ubuntuxenial-other
 [3]: https://certbot.eff.org/all-instructions
+[4]: https://community.letsencrypt.org/t/important-what-you-need-to-know-about-tls-sni-validation-issues/50811
+[5]: https://community.letsencrypt.org/t/2018-01-11-update-regarding-acme-tls-sni-and-shared-hosting-infrastructure/50188
