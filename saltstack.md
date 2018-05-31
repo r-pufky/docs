@@ -14,6 +14,7 @@ services required.
 6. [Managing States](#managing-states)
 7. [Using Pillar](#using-pillar)
    * [Setup GPG](#setup-gpg)
+     * [GPG encrypting shadow passwords](#gpg-encrypting-shadow-passwords)
 8. [Installing Formulae](#installing-formulae)
 9. [Setup Minions](#setup-minions)
 10. [Signing Cert Requests](#signing-cert-requests)
@@ -318,16 +319,28 @@ These are stored in `~/.gnupg/`
 
 #### Encrypting Data
 
-A password or text material
+##### A password or text material
 ```bash
 echo -n "super_secret_server_stuff" | gpg --armor --batch --trust-model always --encrypt --recipient salty
 ```
 
-A cert or file material
+##### A cert or file material
 ```bash
 gpg --armor --batch --trust-model always --encrypt --recipient salty <file>
 ```
 `salty` is the name of the recipient of the data (see GPG key creation).
+
+##### GPG encrypting shadow passwords
+The [salt user state documentation][20] recommends using `openssl passwd -1` to
+generate a bash passwd has. This **only hashes MD5**, modern distributuions of
+linux hash **sha512**. Use the [python script][21] below to generate a _salted, sha512
+hash_ in the correct format for consumption in `/etc/shadow`. Then just run that
+through the GPG encryption to store in pillar; _storing password hashes in
+pillar that are not additionally GPG encrypted is probably a **BAD** idea._
+
+```bash
+python3 -c "import crypt, getpass; print(crypt.crypt(getpass.getpass('password to hash: '), crypt.mksalt(crypt.METHOD_SHA512)))"
+```
 
 #### Add to Pillar
 
@@ -603,3 +616,5 @@ and restart this to change name (systemctl salt-minion restart)
 [17]: https://docs.saltstack.com/en/latest/topics/installation/windows.html
 [18]: https://www.digitalocean.com/community/tutorials/how-to-setup-additional-entropy-for-cloud-servers-using-haveged
 [19]: http://blog.ghostinthemachines.com/2015/03/01/how-to-use-gpg-command-line/
+[20]: https://docs.saltstack.com/en/latest/ref/states/all/salt.states.user.html
+[21]: https://serverfault.com/questions/330069/how-to-create-an-sha-512-hashed-password-for-shadow
