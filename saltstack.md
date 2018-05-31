@@ -332,11 +332,13 @@ gpg --armor --batch --trust-model always --encrypt --recipient salty <file>
 
 ##### GPG encrypting shadow passwords
 The [salt user state documentation][20] recommends using `openssl passwd -1` to
-generate a bash passwd has. This **only hashes MD5**, modern distributuions of
+generate a bash passwd hash. This **only hashes MD5**, modern distributuions of
 linux hash **sha512**. Use the [python script][21] below to generate a _salted, sha512
 hash_ in the correct format for consumption in `/etc/shadow`. Then just run that
-through the GPG encryption to store in pillar; _storing password hashes in
-pillar that are not additionally GPG encrypted is probably a **BAD** idea._
+through the GPG encryption to store in pillar.
+
+_storing password hashes in pillar that are not additionally GPG encrypted is
+probably a **BAD** idea._
 
 ```bash
 python3 -c "import crypt, getpass; print(crypt.crypt(getpass.getpass('password to hash: '), crypt.mksalt(crypt.METHOD_SHA512)))"
