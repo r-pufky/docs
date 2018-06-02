@@ -456,6 +456,14 @@ Install salt.
 sudo apt update && sudo apt install salt-minion
 ```
 
+Setup minion security requirements
+```bash
+verify_env: True
+hash_type: 512
+keysize: 4096
+minion_sign_messages: True
+```
+
 ### [Windows][16]
 Download the latest [version of salt-minion here][15].
 
