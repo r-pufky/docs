@@ -340,6 +340,13 @@ through the GPG encryption to store in pillar.
 _storing password hashes in pillar that are not additionally GPG encrypted is
 probably a **BAD** idea._
 
+###### Using utility
+```bash
+apt install whois
+mkpasswd -m sha-512
+```
+
+###### Python3 version
 ```bash
 python3 -c "import crypt, getpass; print(crypt.crypt(getpass.getpass('password to hash: '), crypt.mksalt(crypt.METHOD_SHA512)))"
 ```
