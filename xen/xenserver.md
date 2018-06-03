@@ -96,6 +96,13 @@ mkdir -p /var/opt/xen/iso_import
 xe sr-create name-label=LocalISO type=iso device-config:location=/var/opt/xen/iso_import device-config:legacy_mode=true content-type=iso
 ```
 
+### Refresh ISO library contents
+```bash
+xe sr-list
+xe sr-scan uuid=<UUID of ISO repository>
+```
+
+
 Convert VM to a Template
 ------------------------
 * Clear command history from root/user
