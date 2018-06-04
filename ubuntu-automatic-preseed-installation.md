@@ -32,7 +32,7 @@ Use this option if you want a booted ISO image to immediately start the install
 process. This will immediately drop you into the debian installer with required
 options pre-selected.
 
-isolinux/isolinux.cfg
+custom-iso/isolinux/isolinux.cfg
 ```bash
 default custom-saltstack
 label custom-saltstack
