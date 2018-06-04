@@ -86,7 +86,7 @@ This provides answers for the debconf installer during installation. Providing
 these answers enables the installation to complete without interaction. Most of
 the options here are required for automated installation.
 
-See [ubuntu-preseed.seed](#ubuntu-preseed.seed) for a complete example fil, or
+See [ubuntu-preseed.seed](#ubuntu-preseed.seed) for a complete example file, or
 read [the preseed manual][4].
 
 To get avaliable parameters for a section, use:
@@ -215,6 +215,7 @@ d-i partman/confirm_nooverwrite boolean true
    [here][14] which explains why these cause automated partitioning to fail.
  * Create a [single partition][12] with no swap, EXT4, on block device
    /dev/xvda.
+ * See [umount /media fails!](#execution-of-umount-on-media-failed)
 
 ### Kernel
 ```
@@ -265,8 +266,8 @@ tasksel --task-packages <package>
 apt --dry-run install <task>
 ```
  * the task includes ^, e.g. `server^`
- * From ubuntu 16.04, --task-packages returns the meta-package name, not the
-   list of packages. Other versions you can just use --task-packages.
+ * From ubuntu 16.04, `--task-packages` returns the meta-package name, not the
+   list of packages. Other versions you can just use `--task-packages`.
  * Can also see [task packages from the germinate templates here][15].
 
 ### Console
@@ -383,6 +384,11 @@ You can still `ctrl-alt-F1` to get to the console from the blank screen.
 ### pkgsel/upgrade string full-upgrade not working
 This is [broken in ubuntu 16.04][17]. You need to manually run late_command
 tasks to update the packages.
+
+### Execution of umount on /media failed!
+This fails because there was no pre-existing partitions to umount. You can
+ignore this message or remove the umount command if you are sure you will not
+run into systems requiring to unmount /media.
 
 [10]: https://github.com/dsgnr/Ubuntu-16.04-Unattended-Install/blob/master/README.md
 [1]: https://askubuntu.com/questions/813058/preseed-ubuntu-16-04-not-working-preseed-file-not-found
