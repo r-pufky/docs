@@ -5,6 +5,15 @@ selections already made, setting up specific base packages so that it can be
 automatically installed on boot and immediately used afterwards. This is great
 for VM's and pre-setup of configuration management agents.
 
+1. [Install pre-req packages](#install-package-pre-reqs)
+2. [Extract ISO for modification](#extract-iso-for-modification-to-custom-iso)
+3. [Setup auto-install on boot](#setup-auto-installation-preseed-preferences)
+4. [Setup preseed file](#create-preseed-installation-file)
+5. [Write ISO](#build-custom-iso)
+6. [Build commands](#build-testing-commands)
+7. [Gotchas](#gotchas)
+
+
 ## Install package pre-reqs
 These include a utility to manipulate ISO images, debconf utilities and a
 password hash utility for /etc/shadow.
