@@ -440,6 +440,11 @@ salt-master. This can be changed.
 Minions should be run as `root`. Minions require root to properly install
 software, update apt and execute commands.
 
+Note: if you plan on installing docker, you need to use
+`source_interface_name` or `source_address` when configuring the minion,
+otherwise it could pick up the Docker interface and try to use that. This will
+cause the minion to be unable to respond to the master.
+
 ### [Ubuntu][7]
 A minion will not send the initial cert request until the minion is started.
 By default `salt` should resolve, though this can be changes in the minion
