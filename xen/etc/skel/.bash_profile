@@ -11,7 +11,7 @@
 shopt -s checkwinsize
 
 # Get first adapter IP with a connection (fail to localhost)
-IP=`ifconfig | grep inet\ addr | tr '\n' ' ' | cut -d : -f 2 | cut -d ' ' -f 1`
+IP=`ifconfig | grep ^eth -A 2 | grep inet\ addr | tr '\n' ' ' | cut -d : -f 3 | cut -d ' ' -f 1`
 
 # Use colors/export terminal title if not dumb terminal
 if [ "$TERM" != "dumb" ]; then
