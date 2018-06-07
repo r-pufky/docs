@@ -17,7 +17,7 @@ Standard Definitions
 * MTA = Mail Transport Agent: handles mail server to server (e.g. other domains)
 * MDA = Mail Delivery Agent: handles user access to email (e.g. IMAP)
 * MUA = Mail User Agent: user client to check email (e.g. thunderbird/outlook)
-* Disable ports **25/465/993** on firewall until configuration is final 
+* Disable ports **25/465/993** on firewall until configuration is final
   otherwise you may get email delivered while you are configuring server
 * example.com = your primary domain
 * example2.com = your secondary domain, if applicable
@@ -179,8 +179,8 @@ openssl s_client -starttls smtp -crlf -connect localhost:465
 
 Adding a [user/password for imap.passwd][9]
 -------------------------------------------
-This will add a separate IMAP password for a [given user][6], instead of using 
-their main account password. This [file is formatted exactly like 
+This will add a separate IMAP password for a [given user][6], instead of using
+their main account password. This [file is formatted exactly like
 [/etc/passwd][8], but password is included and no login shell is required. The
 IMAP password created should be different from the login password for that user.
 
@@ -197,8 +197,8 @@ doveadm pw -s SHA512-CRYPT
 Setting Up [Server-Side Mail Filtering (sieve)][10]
 ---------------------------------------------------
 This will enable users to setup server-side per-mailbox filters that are applied
-automatically when email is [delivered by the MDA][11], which removes the need 
-for the user to setup a filtering on each MUA they use. This is in addition to 
+automatically when email is [delivered by the MDA][11], which removes the need
+for the user to setup a filtering on each MUA they use. This is in addition to
 any filtering already applied at the MTA level.
 
 Sieve filtering uses a [standard mail filtering language][12] and is [fairly

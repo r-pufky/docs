@@ -4,12 +4,21 @@ I created this repository as a response to people requesting I share my setup
 notes for services I run in my home. These notes have been made generic enough
 so that you can implement these services and setups with relative ease.
 
+Where'd everything go?
+----------------------
+Docs were re-organized to keep the growing documentation clean. You should link
+to the core doc repo and browse files.
+
+* [Windows Gaming](operating-systems/windows/10/README.md)
+* [Troubleshooting PC](operating-systems/windows/troubleshooting-pc-hardware.md)
+
 Assumptions
 -----------
 These notes make the following assumptions
 
 1. You have a advanced to expert competency in Windows, OSX, and Linux
-2. You are comfortable with the following shells/languages: bash, go, cmd, powershell
+2. You are comfortable with the following shells/languages: bash, go, cmd,
+   powershell
 3. You are familiar with how services work on all three platforms (see #1)
 4. You are comfortable writing scripts
 5. You can take a generalized command and figure out the specifics

@@ -32,7 +32,7 @@ chmod 0400 .ssh/imapsync_{local,remote}
 
 ### Test sync to ensure connecting properly
 ```bash
-./imapsync --dry --host1 imap.gmail.com --port1 993 --user1 
+./imapsync --dry --host1 imap.gmail.com --port1 993 --user1
 **GMAIL_EMAIL_USER** --passfile1 ~/.ssh/imapsync_remote --ssl1 --host2
 **YOUR_IMAP_SERVER** --port2 993 --user2
 **LOCAL_IMAP_USER** --passfile2 ~/.ssh/imapsync_local --sslargs2
@@ -40,10 +40,10 @@ SSL_verify_mode=0 --ssl2 --subfolder2 gmail-archive --minage
 30 --exitwhenover 2500000000 --delete --expunge1
 ```
   * This will sync mail older than 30 days, and remove it from [gmail][3]
-  * Gmail has a download limit of 2.5GB's a day, this will safetly exit when 
+  * Gmail has a download limit of 2.5GB's a day, this will safetly exit when
     reached
   * SSL Verification is disabled for local IMAP (assuming self-signed cert) -
-    this will allow for MITM attacks, you should get a [letsencrypt cert][5] 
+    this will allow for MITM attacks, you should get a [letsencrypt cert][5]
 	and	remove this
   * Ensure connections work, folders are identified, and local folder is set
     properly
@@ -52,7 +52,7 @@ SSL_verify_mode=0 --ssl2 --subfolder2 gmail-archive --minage
 ```bash
 sudo git checkout-index -a -f --prefix=/opt/imapsync/
 ```
-  * Set /opt/imapsync permissions according to your system, ensure imapsync 
+  * Set /opt/imapsync permissions according to your system, ensure imapsync
     is executable
 
 ### Create bash script using /opt/imapsync, typically in ~/bin
@@ -86,8 +86,8 @@ find USER_MAIL -type d -name cur -print0 | xargs -0 /usr/bin/fdupes -n > out
 
 ### Download / configure / run imap-de-dupe.go
 ```go
-go get github.com/r-rpufky/docs/imap-de-dupe.go
-go build src/github.com/r-rpufky/doc/imap-de-dupe.go
+go get github.com/r-rpufky/docs/services/imapsync/imap-de-dupe.go
+go build src/github.com/r-rpufky/doc/services/imapsync/imap-de-dupe.go
 ./imap-de-dupe.go
 ```
 

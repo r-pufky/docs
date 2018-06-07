@@ -15,7 +15,7 @@ Assumes Admin Rights
 5. [Removing pre-installed Windows packages](#removing-pre-installed-windows-packages)
 
 
-[PC Hardware Troubleshooting](troubleshooting-pc-hardware.md)
+[PC Hardware Troubleshooting](../troubleshooting-pc-hardware.md)
 
 [Addition Windows 10 Issue Fixes](windows-issues.md)
 
@@ -243,7 +243,7 @@ Sync providers for windows explorer can now show Ads. Disable it.
 ### [Enable patching for meltdown and spectre][22]
 Windows 10 will not automatically patch for meltdown and spectre due to anti-virus software
 causing BSOD's. If you are running anti-virus software ensure you are not affected by
-checking [this list][23] then adding the [following key](windows-scripts/enable-meltdown-spectre-update.reg)
+checking [this list][23] then adding the [following key](scripts/enable-meltdown-spectre-update.reg)
 to the registry:
 
 > Key: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\QualityCompat
@@ -265,7 +265,7 @@ built-in package manager.
 * _Remove-AppxPackage_ removes for the current user
 * _Get-AppxPackage -AllUsers_ will return results for all users on system
 
-### Remove packages with [remove-crapware.ps1](windows-scripts/remove-crapware.ps1) (powershell as admin)
+### Remove packages with [remove-crapware.ps1](scripts/remove-crapware.ps1) (powershell as admin)
 ```powershell
 remove-crapware.ps1
 ```

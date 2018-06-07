@@ -29,7 +29,7 @@ Base Install
 ### Change apt repository
 sudo vim /etc/apt/sources.list
 ```vim
-%s/us\.archive\.ubuntu\.com/ubuntu\.media\.mit\.edu/g
+%s/us\.archive\.ubuntu\.com/mirrors\.mit\.edu/g
 ```
 
 ### Install base packages
@@ -39,8 +39,8 @@ sudo apt install python-software-properties inotify-tools curl unattended-upgrad
 ```
 
 ### Set base sshd_config
-* Copy the 'secure' sshd config to the machine. This just enforces cert-based 
-auth only. [LINK.](https://raw.githubusercontent.com/r-pufky/docs/master/xen/etc/ssh/sshd_config.secure).
+* Copy the 'secure' sshd config to the machine. This just enforces cert-based
+auth only. [LINK.](https://raw.githubusercontent.com/r-pufky/docs/master/operating-systems/ubuntu/etc/ssh/sshd_config.secure).
 ```bash
 sudo mv /etc/ssh/sshd_config /etc/ssh/sshd_config.insecure
 sudo ln -s /etc/ssh/sshd_config.insecure /etc/ssh/sshd_config
@@ -89,7 +89,7 @@ sudo service unattended-upgrades restart
 sudo chmod a-x /etc/update-motd.d/10-help-text
 ```
 
-* Add uptime reboot warning message. [LINK.](https://raw.githubusercontent.com/r-pufky/docs/master/xen/etc/update-motd.d/98-reboot-required)
+* Add uptime reboot warning message. [LINK.](https://raw.githubusercontent.com/r-pufky/docs/master/operating-systems/ubuntu/etc/update-motd.d/98-reboot-required)
 
 sudo vim /etc/update-motd.d/98-reboot-required
 ```vim
@@ -125,12 +125,12 @@ ARRAY <ignore> devices=/dev/null
 
 | File                    | Perm | Link                                                                                     |
 |-------------------------|------|------------------------------------------------------------------------------------------|
-| .bashrc                 | 0600 | [LINK](https://raw.githubusercontent.com/r-pufky/docs/master/xen/etc/skel/.bashrc)       |
-| .bash_profile           | 0600 | [LINK](https://raw.githubusercontent.com/r-pufky/docs/master/xen/etc/skel/.bash_profile) |
-| .bash_logout            | 0600 | [LINK](https://raw.githubusercontent.com/r-pufky/docs/master/xen/etc/skel/.bash_logout)  |
-| .vimrc                  | 0600 | [LINK](https://raw.githubusercontent.com/r-pufky/docs/master/xen/etc/skel/.vimrc)        |
-| .screenrc               | 0600 | [LINK](https://raw.githubusercontent.com/r-pufky/docs/master/xen/etc/skel/.screenrc)     |
-| README                  | 0600 | [LINK](https://raw.githubusercontent.com/r-pufky/docs/master/xen/etc/skel/README)        |
+| .bashrc                 | 0600 | [LINK](https://raw.githubusercontent.com/r-pufky/docs/master/operating-systems/ubuntu/etc/skel/.bashrc)       |
+| .bash_profile           | 0600 | [LINK](https://raw.githubusercontent.com/r-pufky/docs/master/operating-systems/ubuntu/etc/skel/.bash_profile) |
+| .bash_logout            | 0600 | [LINK](https://raw.githubusercontent.com/r-pufky/docs/master/operating-systems/ubuntu/etc/skel/.bash_logout)  |
+| .vimrc                  | 0600 | [LINK](https://raw.githubusercontent.com/r-pufky/docs/master/operating-systems/ubuntu/etc/skel/.vimrc)        |
+| .screenrc               | 0600 | [LINK](https://raw.githubusercontent.com/r-pufky/docs/master/operating-systems/ubuntu/etc/skel/.screenrc)     |
+| README                  | 0600 | [LINK](https://raw.githubusercontent.com/r-pufky/docs/master/operating-systems/ubuntu/etc/skel/README)        |
 
 * Create ssh and bin directories, secure
 ```bash
@@ -157,15 +157,15 @@ chmod 0700 ~/.ssh ~/bin
 
 | File                            | Perm | Link                                                                                                   |
 |---------------------------------|------|--------------------------------------------------------------------------------------------------------|
-| .bashrc                         | 0600 | [LINK](https://raw.githubusercontent.com/r-pufky/docs/master/xen/root/.bashrc)                         |
-| .bash_profile                   | 0600 | [LINK](https://raw.githubusercontent.com/r-pufky/docs/master/xen/root/.bash_profile)                   |
-| .bash_logout                    | 0600 | [LINK](https://raw.githubusercontent.com/r-pufky/docs/master/xen/root/.bash_logout)                    |
-| .vimrc                          | 0600 | [LINK](https://raw.githubusercontent.com/r-pufky/docs/master/xen/root/.vimrc)                          |
-| .screenrc                       | 0600 | [LINK](https://raw.githubusercontent.com/r-pufky/docs/master/xen/root/.screenrc)                       |
-| bin/server-user                 | 0700 | [LINK](https://raw.githubusercontent.com/r-pufky/docs/master/xen/root/bin/server-user)                 |
-| bin/server-hostname             | 0700 | [LINK](https://raw.githubusercontent.com/r-pufky/docs/master/xen/root/bin/server-hostname)             |
-| bin/server-encryption-primary   | 0700 | [LINK](https://raw.githubusercontent.com/r-pufky/docs/master/xen/root/bin/server-encryption-primary)   |
-| bin/server-encryption-secondary | 0700 | [LINK](https://raw.githubusercontent.com/r-pufky/docs/master/xen/root/bin/server-encryption-secondary) |
+| .bashrc                         | 0600 | [LINK](https://raw.githubusercontent.com//r-pufky/docs/master/operating-systems/ubuntu/root/.bashrc)                         |
+| .bash_profile                   | 0600 | [LINK](https://raw.githubusercontent.com//r-pufky/docs/master/operating-systems/ubuntu/root/.bash_profile)                   |
+| .bash_logout                    | 0600 | [LINK](https://raw.githubusercontent.com//r-pufky/docs/master/operating-systems/ubuntu/root/.bash_logout)                    |
+| .vimrc                          | 0600 | [LINK](https://raw.githubusercontent.com//r-pufky/docs/master/operating-systems/ubuntu/root/.vimrc)                          |
+| .screenrc                       | 0600 | [LINK](https://raw.githubusercontent.com//r-pufky/docs/master/operating-systems/ubuntu/root/.screenrc)                       |
+| bin/server-user                 | 0700 | [LINK](https://raw.githubusercontent.com//r-pufky/docs/master/operating-systems/ubuntu/root/bin/server-user)                 |
+| bin/server-hostname             | 0700 | [LINK](https://raw.githubusercontent.com//r-pufky/docs/master/operating-systems/ubuntu/root/bin/server-hostname)             |
+| bin/server-encryption-primary   | 0700 | [LINK](https://raw.githubusercontent.com//r-pufky/docs/master/operating-systems/ubuntu/root/bin/server-encryption-primary)   |
+| bin/server-encryption-secondary | 0700 | [LINK](https://raw.githubusercontent.com//r-pufky/docs/master/operating-systems/ubuntu/root/bin/server-encryption-secondary) |
 
 * Delete .profile
 
@@ -179,7 +179,7 @@ chmod -Rv go-rwx /root
 Manual Crypt/LUKS commands
 --------------------------
 ### Manually determining crypt block device
-* List encrypted disks that are mounted through crypt. The root block device is 
+* List encrypted disks that are mounted through crypt. The root block device is
 prepended to \_crypt
 ```bash
 dmsetup ls --target crypt
@@ -200,8 +200,8 @@ cryptsetup --verify-passphrase luksChangeKey /dev/xvda5 --key-slot 0
 ```
 
 #### Bug in debian/ubuntu using keyscript
-There is currently an open issue with all latest releases of debian/ubuntu, 
-where systemd does not respect the keyscript option in crypttab. This breaks 
+There is currently an open issue with all latest releases of debian/ubuntu,
+where systemd does not respect the keyscript option in crypttab. This breaks
 any easy use for automatic unlocking through USB keys.
 
 https://news.ycombinator.com/item?id=8477913
@@ -213,13 +213,13 @@ https://askubuntu.com/questions/906870/luks-keyscript-being-ignored-asks-for-pas
 https://github.com/systemd/systemd/pull/3007/
 
 
-Potential manual solution using ubuntu 16.04 with systemd workaround, though 
+Potential manual solution using ubuntu 16.04 with systemd workaround, though
 seems to be very hacky:
 https://www.len.ro/work/luks-disk-encryption-with-usb-key-on-ubuntu-14-04/
 
 Enabling Secure SSH Config
 --------------------------
-The secure config requires that users are added to the `ssh` group before 
+The secure config requires that users are added to the `ssh` group before
 publickey auth will work; as well as enabling the secure config.
 
 Create /etc/ssh/<username> directories
@@ -228,7 +228,7 @@ mkdir /etc/ssh/<username>
 chown <username>:<username> /etc/ssh/<username>
 chmod 0700 /etc/ssh/<username>
 ```
-  
+
 Move user's ssh directory and generate certs for use.
 ```bash
 mv ~/.ssh/* /etc/ssh/<username>
@@ -253,7 +253,7 @@ _remember to copy private key to intended system to use it on._
 
 Creating an Encrypted Volume
 ----------------------------
-This assumes that an additional virtual disk has already been attached to the 
+This assumes that an additional virtual disk has already been attached to the
 VM, and resides at /dev/xvdb
 
 ### Find the new block device and setup encrpytion
@@ -261,7 +261,7 @@ VM, and resides at /dev/xvdb
 lsblk
 sudo cryptsetup luksFormat --hash=sha256 --key-size=512 --cipher=aes-xts-plain64 --verify-passphrase /dev/xvdb
 ```
-* This is not the most secure encryption, however, it's the default settings 
+* This is not the most secure encryption, however, it's the default settings
 that ubuntu uses when it installs; use stronger encryption if desired.
 
 ### Create the LVM physical volume, volume group and logical volume

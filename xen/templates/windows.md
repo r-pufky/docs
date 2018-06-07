@@ -19,7 +19,7 @@ Base Install
 * Otherwise, follow [windows-gaming build documentation][1]
 
 ### Activating Windows
-Generally, you'll need a VM license for activating windows 10 on a VM. 
+Generally, you'll need a VM license for activating windows 10 on a VM.
 Homegamers can probably get away with running one windows VM at a time. YMMV, I
 am not a lawyer. Act in good faith.
 
