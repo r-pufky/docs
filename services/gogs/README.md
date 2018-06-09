@@ -3,6 +3,15 @@ gogs
 [A painless self-hosted Git service.][1] This provides a github-like service for
 private repository use. Can be exposed and use publicly as well.
 
+[Docker repository][5]
+
+1. [Docker Ports Exposed](#docker-ports-exposed)
+2. [Important File Locations](#important-file-locations)
+3. [Docker Creation](#docker-creation)
+4. [Initial Setup](#initial-setup)
+5. [Importing Git Repositories](#importing-git-epositories)
+6. [Other Options](#other-options)
+
 Docker Ports Exposed
 --------------------
 
@@ -12,12 +21,21 @@ Docker Ports Exposed
 | 22          | TCP      | ssh connections.           |
  * You can disable both http and ssh connections depending on your setup.
 
+Important File Locations
+------------------------
+Relative to docker container
+
+| File                    | Purpose           |
+|-------------------------|-------------------|
+| /data/gogs/conf/app.ini | Settings          |
+| /data/gogs/git          | Git repo location |
+
 Docker Creation
 ---------------
-
 If first-run, just launch the docker container to generate the correct
 configuration directory structure, afterwards you can re-create with a mapped
 git repository.
+
 ```bash
 docker run --name=gogs -p 10080:3000 -e /etc/localtime:/etc/localtime:ro -v /data/services/gogs:/data gogs/gogs:latest
 ```
@@ -98,14 +116,14 @@ mv /data/services/gogs/git/* <git date store>
 rm /data/services/gogs/git
 ```
  * Only need to do this if initially creating gogs git repository.
- * Recreate the docker container, mapping `/data/git` to your data store.  
+ * Recreate the docker container, mapping `/data/git` to your data store.
 
 Then restart gogs
 ```bash
 docker start gogs
 ```
 
-Importing git repositories
+Importing Git Repositories
 --------------------------
 You can import other git repositories, including local and cloned ones:
 
@@ -132,3 +150,4 @@ a lot more features then gogs. Gogs is maintained by a single developer.
 [2]: https://stackoverflow.com/questions/5181845/git-push-existing-repo-to-a-new-and-different-remote-repo-server
 [3]: https://stackoverflow.com/questions/11621768/how-can-i-make-git-accept-a-self-signed-certificate
 [4]: https://gitea.io/en-US/
+[5]: https://hub.docker.com/r/gogs/gogs/

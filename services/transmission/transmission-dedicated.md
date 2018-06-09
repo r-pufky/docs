@@ -11,7 +11,6 @@ Uses [Ubuntu 16.04 base Xen template](../templates/ubuntu-server.md), and assume
 5. [Starting the Server](#starting-the-server)
 6. [References](#references)
 
-
 Ports Exposed
 -------------
 
@@ -20,7 +19,6 @@ Ports Exposed
 | 49152-65535 | TCP      | Random Peer Port (Disabled) |
 | 49160       | TCP      | Peer Port                   |
 | 9092        | TCP      | webface                     |
-
 
 Server Setup
 -------------
@@ -44,7 +42,6 @@ sudo mkdir /data/{complete,incomplete,watched}
 sudo chown -Rv debian-transmission:debian-transmission /data/{complete,incomplete,watched}
 ```
 
-
 Important File Locations
 ------------------------
 
@@ -52,8 +49,7 @@ Important File Locations
 |-------------------------------------------|----------|
 | /etc/transmission-daemon/settings.json    | Settings |
 | /var/lib/transmission-daemon              | State    |
-* Settings.json is created after launching the GUI, or just use the template here. [LINK.](transmission/settings.json)
-
+* Settings.json is created after launching the GUI, or just use the template here. [LINK.](settings.json)
 
 Modifying Settings
 ------------------
@@ -75,7 +71,6 @@ sudo vim /etc/transmission-daemon/settings.json
   "rpc-whitelist": "<ALLOWED COMPUTERS>,127.0.0.1",
   "watch-dir": "/data/watched",
 ```
-
 
 Starting the Server
 -------------------
