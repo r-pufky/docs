@@ -19,17 +19,17 @@ If first-run, just launch the docker container to generate the correct
 configuration directory structure, afterwards you can re-create with a mapped
 git repository.
 ```bash
-docker run --name=gogs -p 10080:3000 -v /data/services/gogs:/data gogs/gogs:latest
+docker run --name=gogs -p 10080:3000 -e /etc/localtime:/etc/localtime:ro -v /data/services/gogs:/data gogs/gogs:latest
 ```
 
 Specify your own git repository location
 ```bash
-docker run --name=gogs -p 10080:3000 -v /data/services/gogs:/data -v /data/services/git:/data/git:ro gogs/gogs:latest
+docker run --name=gogs -p 10080:3000 -e /etc/localtime:/etc/localtime:ro -v /data/services/gogs:/data -v /data/services/git:/data/git gogs/gogs:latest
 ```
 
 Initial Setup
 -------------
-This will initiall setup gogs with restricted permissions during configuration.
+This will initially setup gogs with restricted permissions during configuration.
 
 ```
 <IP>:10080/install
@@ -39,7 +39,7 @@ database:
  * database: sqlite3 (only used for web frontend, tracking is done in git)
 
 Application general settings:
- * site title: <your site name>
+ * site title: your-site-name
 
 Optional settings:
  * server and other services settings:
@@ -49,7 +49,7 @@ Optional settings:
  * admin account settings:
    * enter user/pass/email (email can be a fake).
 
-## Generate self-singed certificate (if needed)
+## Generate self-signed certificate (if needed)
 This will generate self-signed certificates, skip if you have these.
 
 ```bash
@@ -98,7 +98,7 @@ Importing git repositories
 You can import other git repositories, including local and cloned ones:
 
  * Create an aptly named repository on gogs, intialize it empty.
- * [Push mirror][2] to this repository. All information will be retained.
+ * [Push a mirror][2] to this repository. All information will be retained.
  * Disable [SSL verification][3] if using self-signed certs.
 
  ```bash
@@ -108,7 +108,7 @@ git -c http.sslVerify=false push --mirror https://<IP>:10080/<user>/<reponame>.g
 As this is a mirror, you want to commit the git metadata and not just the files.
 
 The git repository is stored in /data/gogs/git as a stand git repository.
-Importing this way sets up the database metadata for the project.
+Importing this way sets up the gogs fronend database metadata for the project.
 
 Other Options
 -------------
