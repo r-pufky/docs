@@ -18,6 +18,7 @@ and it enables use of verifed SSL for things like mail and web services.
 4. [Installing](#installing)
 5. [Generate a Certificate](#generate-a-certificate)
 6. [Renewing Certificates](#renewing-certificates)
+8. [Migrating from tls-sni-01 to nginx](#migrating-from-tls-sni-01-to-nginx)
 
 Port Exposed
 ------------
@@ -52,7 +53,7 @@ Install nginx for cert verification
 apt install nginx
 ```
 
-## Setup [nginx for domain validation][7]
+### Setup [nginx for domain validation][7]
 
 /etc/nginx/conf.d
 ```nginx
