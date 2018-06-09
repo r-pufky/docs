@@ -40,6 +40,7 @@ database:
 
 Application general settings:
  * site title: your-site-name
+ * git repository: /data/git
 
 Optional settings:
  * server and other services settings:
@@ -75,6 +76,7 @@ docker stop gogs
 PROTOCOL = https
 DOMAIN = <IP>
 ROOT_URL = https://<IP>:10080/
+DISABLE_SSH = true
 CERT_FILE = /data/gogs/conf/cert.pem
 CERT_KEY = /data/gogs/conf/key.pem
 
