@@ -10,7 +10,7 @@ Docker Ports Exposed
 |-------------|----------|----------------------------|
 | 3000        | TCP      | http/https connections.    |
 | 22          | TCP      | ssh connections.           |
-You can disable both http and ssh connections depending on your setup.
+ * You can disable both http and ssh connections depending on your setup.
 
 Docker Creation
 ---------------
