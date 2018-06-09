@@ -90,6 +90,16 @@ COOKIE_SECURE = true
    Docker's host IP and accessible port.
  * ROOT_URL: note httpS. This is required.
 
+## Alternative git repo location
+Map the git repository backing to data store not in docker config.
+
+```bash
+mv /data/services/gogs/git/* <git date store>
+rm /data/services/gogs/git
+```
+ * Only need to do this if initially creating gogs git repository.
+ * Recreate the docker container, mapping `/data/git` to your data store.  
+
 Then restart gogs
 ```bash
 docker start gogs
