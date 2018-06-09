@@ -107,6 +107,7 @@ Follow [Setup nginx for domain validation](#setup-nginx-for-domain-validation).
 When you get to renewal, follow these steps:
 
 Add the following lines (replace with your information for domains).
+
 /etc/letsencrypt/renewal/example.com.conf
 ```bash
 installer = nginx
