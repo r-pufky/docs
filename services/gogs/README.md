@@ -37,13 +37,30 @@ configuration directory structure, afterwards you can re-create with a mapped
 git repository.
 
 ```bash
-docker run --name=gogs -p 10080:3000 -e /etc/localtime:/etc/localtime:ro -v /data/services/gogs:/data gogs/gogs:latest
+docker run -d \
+  --name=gogs \
+  --net=host \
+  --restart=unless-stopped \
+  -p 10080:3000 \
+  -e /etc/localtime:/etc/localtime:ro \
+  -v /data/services/gogs:/data \
+  gogs/gogs:latest
 ```
 
 Specify your own git repository location
 ```bash
-docker run --name=gogs -p 10080:3000 -e /etc/localtime:/etc/localtime:ro -v /data/services/gogs:/data -v /data/backup/git:/data/git gogs/gogs:latest
+docker run -d \
+  --name=gogs \
+  --net=host \
+  --restart=unless-stopped \
+  -p 10080:3000 \
+  -e /etc/localtime:/etc/localtime:ro \
+  -v /data/services/gogs:/data \
+  -v /data/backup/git:/data/git \
+  gogs/gogs:latest
 ```
+
+gogs specify a UID/GID to run under - files must be accessible to docker.
 
 Initial Setup
 -------------

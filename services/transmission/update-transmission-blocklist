@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+# Copies all current iplist blocklist filters to transmission.
+IPLIST_LIST_DIR='/var/cache/iplist'
+TRANSMISSION_LIST_DIR='/var/lib/transmission-daemon/info/blocklists/'
+cp -f ${IPLIST_LIST_DIR}/*.p2p ${TRANSMISSION_LIST_DIR}
+cp -f ${IPLIST_LIST_DIR}/*.gz ${TRANSMISSION_LIST_DIR}
+for gz_file in `ls -1 ${TRANSMISSION_LIST_DIR}*.gz`; do
+  gzip -d -c ${gz_file} > ${gz_file}.p2p
+done

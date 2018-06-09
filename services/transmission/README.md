@@ -39,7 +39,21 @@ configuration directory structure, afterwards you can re-create with a mapped
 directories.
 
 ```bash
-docker run -d --name=transmission -v /data/services/transmission:/config -v /data/downloads:/downloads -v /data/downloads/watched:/watch -e PGID=1001 -e PUID=1001 -e TZ=America/Los_Angeles -v /etc/localtime:/etc/localtime:ro -p 9092:9092 -p 49160:49160 -p 49160:49160/udp linuxserver/transmission:latest
+docker run -d \
+  --name=transmission \
+  --net=host \
+  --restart=unless-stopped \
+  -p 9092:9092 \
+  -p 49160:49160 \
+  -p 49160:49160/udp \
+  -e PGID=1001 \
+  -e PUID=1001 \
+  -e TZ=America/Los_Angeles \
+  -v /etc/localtime:/etc/localtime:ro \
+  -v /data/services/transmission:/config \
+  -v /data/downloads:/downloads \
+  -v /data/downloads/watched:/watch \
+  linuxserver/transmission:latest
 ```
  * This assumes that the docker container is running as 1001:1001.
 

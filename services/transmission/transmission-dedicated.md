@@ -42,6 +42,13 @@ sudo mkdir /data/{complete,incomplete,watched}
 sudo chown -Rv debian-transmission:debian-transmission /data/{complete,incomplete,watched}
 ```
 
+## Add blocklist management
+Copy [update script](update-transmission-blocklist) to `/root/bin`.
+Install [crontab](update-transmission-blocklist-crontab).
+
+This requires `iplist` to be installed and updating blocklists.
+
+
 Important File Locations
 ------------------------
 
