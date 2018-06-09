@@ -3,7 +3,11 @@ Let's Encrypt Setup
 Setting up a stand-alone signed SSL certificate for use on personal systems,
 using Let's Encrypt.
 
-Note: This is for personal use only, and doesn't account for specific
+Note: **TLS-SNI-01 authenication has been disabled due to vulnerabilities with
+shared hosting resources. See [here][4] and [here][5]**. You now must use ports
+80 and 443.
+
+This is for personal use only, and doesn't account for specific
 nation-state attacks, which could include MITM or a compromise of Let's
 Encrypt servers or the ACME protocol. [Don't consider this secure][1]. It is
 better than having people get used to accepting self-signed certificates,
@@ -18,10 +22,10 @@ and it enables use of verifed SSL for things like mail and web services.
 Port Exposed
 ------------
 
-| Port | Protocol | Purpose                                                                        |
-|------|----------|--------------------------------------------------------------------------------|
-| 443  | TCP      | External port ACME protocol verifies domain ownership with. Cannot be changed. |
-| 4343 | TCP      | Internal port certbot listens on for ACME challenge/response.                  |
+| Port | Protocol | Purpose                                                          |
+|------|----------|------------------------------------------------------------------|
+| 443  | TCP      | ACME protocol verifies domain ownership with. Cannot be changed. |
+| 80   | TCP      | Certbot listens ACME challenge/response.                         |
 
 Important File Locations
 ------------------------
@@ -31,31 +35,50 @@ Important File Locations
 
 Installing
 ----------
-certbot maintains [a PPA specifically for ubuntu][2], just use that. Certbot
-documentation [is located here][3].
+Certbot documentation [is located here][3]. Install the auto-updating certbot,
+which provides ACMEv2 enabling new features post `tls-sni-*` exploits.
 
+Download [certbot-auto and verify][6]
 ```bash
-sudo apt update && sudo apt install software-properties-common
-sudo add-apt-repository ppa:certbot/certbot
-sudo apt update && sudo apt install certbot 
+wget -N https://dl.eff.org/certbot-auto.asc
+gpg2 --recv-key A2CFB51FA275A7286234E7B24D17C995CD9775F2
+wget https://dl.eff.org/certbot-auto
+gpg2 --trusted-key 4D17C995CD9775F2 --verify certbot-auto.asc certbot-auto
+chmod a+x ./certbot-auto
 ```
 
-### Generate a certificate
-We want to specify a specific port to use for the challenge so we don't have
-to do any specifc changes for webservers. Also force https (tls-sni-01) and
-generate a 4096bit RSA key instead of the default 2048bit key.
+Install nginx for cert verification
 ```bash
-certbot certonly --standalone --preferred-challenges tls-sni --tls-sni-01-port 4343 --rsa-key-size 4096 --agree-tos --email **YOUR-EMAIL** --domains example.com,mail.example.com,example2.com,subdomain.example2.com
+apt install nginx
 ```
-* Make sure port is set properly on router/firewall
-* DNS-01 is a more secure method, but your DNS host must support it
-* Without an email specified, if you lose your generated keys, the domain is
-  effectively locked out
-* Port 443 is still required to be forwarded to whatever port is set here, if
-  your cert server is not publically facing.
 
-Note: TLS-SNI-01 authenication has been disabled due to vulnerabilities with
-shared hosting resources. See [here][4] and [here][5].
+## Setup [nginx for domain validation][7]
+
+/etc/nginx/conf.d
+```nginx
+server {
+  listen 80 default_server;
+  listen [::]:80 default_server;
+  root /var/www/html;
+  server_name example.com www.example.com;
+}
+```
+
+Verify syntax is ok and reload nginx:
+```bash
+nginx -t && nginx -s reload
+```
+
+## Generate a certificate
+Using nginx validate a 4096bit key cert request for domains, using a given email.
+
+```bash
+certbot --authenticator webroot --installer nginx --webroot-path /var/www/html --rsa-key-size 4096 --agree-tos --email **YOUR-EMAIL** --domains example.com,mail.example.com,example2.com,subdomain.example2.com
+```
+ * Make sure ports are set properly on router/firewall
+ * [DNS-01 is][8] a more secure method, but your DNS host must support it (domains.google.com does not)
+ * Without an email specified, if you lose your generated keys, the domain is
+   effectively locked out
 
 ### Renewing Certificates
 Renewing certificates will automatically refresh all current certificates up for
@@ -66,17 +89,52 @@ read your challenge responses. This will not count against your number of
 renewal attempts, and will verify your configuration is good to go.
 
 ```bash
-certbot renew --dry-run --tls-sni-01-port 4343
+certbot renew --dry-run --authenticator webroot --installer nginx --webroot-path /var/www/html/
 ```
 
 Renew your certificates.
 ```bash
-certbot renew --tls-sni-01-port 4343
+certbot renew --authenticator webroot --installer nginx --webroot-path /var/www/html/
 ```
-* All stipulations from generating a certificate apply here
+ * All stipulations from generating a certificate apply here
+
+## Migrating from tls-sni-01 to nginx
+Certs currently pulled with tls-sni-01 can be manully updated to enable nginx
+validation. Once this is applied, no further changes are needed.
+
+Follow [Setup nginx for domain validation](#setup-nginx-for-domain-validation).
+When you get to renewal, follow these steps:
+
+Add the following lines (replace with your information for domains).
+/etc/letsencrypt/renewal/example.com.conf
+```bash
+installer = nginx
+authenticator = webroot
+pref_challs = http-01
+webroot_path = /var/www/html
+[[webroot_map]]
+example.com = /var/www/html
+mail.example.com = /var/www/html
+example2.com = /var/www/html
+subdomain.example2.com = /var/www/html
+```
+
+Comment out the following lines.
+```bash
+installer = None
+authenticator = standalone
+tls_sni_01_port = 4343
+pref_challs = tls-sni-01
+```
+ * Keep this information until you confirm renewal works with the new setup.
+
+Then force a renewal as specified in
+[renewing certificates](#renewing-certificates).
 
 [1]: https://www.reddit.com/r/PFSENSE/comments/4qwp8i/do_we_really_have_to_lock_every_thread_that/d4wuymx/?st=iwy5oece&sh=a2a3c939
-[2]: https://certbot.eff.org/#ubuntuxenial-other
 [3]: https://certbot.eff.org/all-instructions
 [4]: https://community.letsencrypt.org/t/important-what-you-need-to-know-about-tls-sni-validation-issues/50811
 [5]: https://community.letsencrypt.org/t/2018-01-11-update-regarding-acme-tls-sni-and-shared-hosting-infrastructure/50188
+[6]: https://certbot.eff.org/docs/install.html#certbot-auto
+[7]: https://www.nginx.com/blog/using-free-ssltls-certificates-from-lets-encrypt-with-nginx/
+[7]: https://serverfault.com/questions/750902/how-to-use-lets-encrypt-dns-challenge-validation
