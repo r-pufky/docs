@@ -24,7 +24,7 @@ docker run --name=gogs -p 10080:3000 -e /etc/localtime:/etc/localtime:ro -v /dat
 
 Specify your own git repository location
 ```bash
-docker run --name=gogs -p 10080:3000 -e /etc/localtime:/etc/localtime:ro -v /data/services/gogs:/data -v /data/services/git:/data/git gogs/gogs:latest
+docker run --name=gogs -p 10080:3000 -e /etc/localtime:/etc/localtime:ro -v /data/services/gogs:/data -v /data/backup/git:/data/git gogs/gogs:latest
 ```
 
 Initial Setup
