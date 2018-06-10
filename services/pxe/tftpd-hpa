@@ -1,0 +1,5 @@
+RUN_DAEMON="yes"
+TFTP_USERNAME=”tftp”
+TFTP_DIRECTORY=”/var/lib/tftpboot”
+TFTP_ADDRESS=”<SERVER_ADDRESS>:69”
+TFTP_OPTIONS=”--secure”
