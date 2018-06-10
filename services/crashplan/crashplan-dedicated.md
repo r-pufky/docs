@@ -86,12 +86,12 @@ Alternative instructions [here][5].
 
 Make a backup of the [local `.ui_info`][4] file and edit
 
-c:\ProgramData\CrashPlan\.ui_info
+c:\ProgramData\CrashPlan\\.ui_info
 ```bash
 4200, <auth token from crashplan system>,<untouched ip>
 ```
- * use port 4200 for remot system
- * leave ip untouched, and set authentication token
+ * use port 4200 for remote system
+ * leave IP untouched, and set authentication token
 
 ### Setup crashplan remotely
 
