@@ -47,8 +47,7 @@ adduser sonarr media
 ```
  * Add your user account to media if needed
 
-### Copy [systemd service template](sonarr.service) to
-`/etc/systemd/system/sonarr.service`.
+### Copy [systemd service template](sonarr.service) to `/etc/systemd/system/sonarr.service`.
  * Ensure options are updated with your settings in file
 
 Enable the sonarr service

@@ -47,7 +47,7 @@ docker run -d \
   -v /data/downloads:/data/downloads \
   linuxserver/sonarr:latest
 ```
- * The UID/GID should be set to a user/group that have access to your media.
+ * The UID/GID should be set to a user/group that has access to your media.
  * See [sonarr config example](sonarr.config.md) for example configuration.
 
 Add pre-existing series to Sonarr
@@ -67,4 +67,5 @@ updated
  * Select all series that had location changes
  * Select `Root Folder` (lower right) and enter new folder location
  * Click `Save`
+
 [1]: https://hub.docker.com/r/linuxserver/sonarr/

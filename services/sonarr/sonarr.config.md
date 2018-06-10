@@ -4,7 +4,7 @@ An example of how to setup sonarr.
 
 Settings
 --------
-Be sure to toggle `advanced settings` to on; toggle bakc and forth to set both.
+Be sure to toggle `advanced settings` to on; toggle back and forth to set both.
 
 ### Media Management
 
