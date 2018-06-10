@@ -103,12 +103,12 @@ Be sure to toggle `advanced settings` to on; toggle back and forth to set both.
 | Bluray-2160p | Bluray-2160p | 0B 0B Unlimited Unlimited |
 
 ### Indexers
- * Name: <YOUR INDEXER NAME>
+ * Name: <YOUR_INDEXER_NAME>
  * Enable RSS Sync: yes
  * Enable Search: yes
- * URL: <INDEXER API URI>
+ * URL: <INDEXER_API_URI>
  * API Path: /api
- * API Key: <YOUR API KEY>
+ * API Key: <YOUR_API_KEY>
  * Categories: 5030,5040
 
 #### Options
@@ -123,8 +123,8 @@ Be sure to toggle `advanced settings` to on; toggle back and forth to set both.
 ### Download Client
  * Name: nzbget
  * Enable: yes
- * Host: <YOUR NZBGET IP>
- * Port: <YOUR NZBGET PORT>
+ * Host: <YOUR_NZBGET_IP>
+ * Port: <YOUR_NZBGET_PORT>
  * Username: <API_USERNAME>
  * Password: <API_PASSWORD>
  * Category: tv
@@ -151,8 +151,8 @@ Be sure to toggle `advanced settings` to on; toggle back and forth to set both.
  * On Rename: yes
  * Host: <PLEX IP>
  * Port: 32400
- * Username: <YOUR PLEX EMAIL>
- * Password: <YOUR PLEX PASSWORD>
+ * Username: <YOUR_PLEX_EMAIL>
+ * Password: <YOUR_PLEX_PASSWORD>
  * Update Library: yes
  * Use SSL: yes
 
@@ -166,7 +166,7 @@ Be sure to toggle `advanced settings` to on; toggle back and forth to set both.
 
 #### Security
  * Authentication: none
- * API Key: <GENERATE API KEY>
+ * API Key: <GENERATE_API_KEY>
 
 #### Proxy Settings
  * Use Proxy: no
