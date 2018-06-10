@@ -51,8 +51,8 @@ Be sure to toggle `advanced settings` to on; toggle back and forth to set both.
  * Set Permissions: yes
  * File chmod mask: 2660
  * Folder chmod mask: 2770
- * chown User: sonarr
- * chown Group: media
+ * chown User: sonarr <OR DOCKER UID>
+ * chown Group: media <OR DOCKER GID>
 
 ### Profiles
  * Any:
