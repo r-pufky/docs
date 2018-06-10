@@ -2,7 +2,7 @@ Transmission
 ------------
 Transmission docker instalation.
 
-[Indepedent server setup](transmission-dedicated.md)
+[Dedicated server setup](transmission-dedicated.md)
 
 [Docker repository][1]
 
