@@ -81,11 +81,10 @@ On the docker host:
 ```bash
 tmpfs  /tmp  tmpfs  defaults,size=4G  0  0
 ```
- * Setup /tmp to use at most 4G of RAM for storage (note: tmpfs only allocates
-   space from actual items stored).
- * Note: Ensure that **/transcode** is set on the plex server to properl map to
-   the docker host /tmp directory, otherwise you will map to where the docker
-   container is being run from.
+ * Setup /tmp to use at most 4G of RAM for storage (tmpfs only allocates space
+   from actual items stored).
+ * Note: Ensure that **/transcode** is set on the plex server to properly map to
+   the docker host /tmp directory.
 
 Reboot to enable.
 

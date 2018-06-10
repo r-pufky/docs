@@ -57,8 +57,8 @@ On the docker host:
 ```bash
 tmpfs  /tmp  tmpfs  defaults,size=4G  0  0
 ```
- * Setup /tmp to use at most 4G of RAM for storage (note: tmpfs only allocates
-   space from actual items stored).
+ * Setup /tmp to use at most 4G of RAM for storage (tmpfs only allocates space
+   from actual items stored).
 
 Reboot to enable.
 
