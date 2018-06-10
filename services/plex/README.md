@@ -112,3 +112,4 @@ docker start plex
 [1]: https://hub.docker.com/r/plexinc/pms-docker/
 [2]: https://support.plex.tv/articles/201543147-what-network-ports-do-i-need-to-allow-through-my-firewall/
 [3]: https://support.plex.tv/articles/206225077-how-to-use-secure-server-connections/
+[4]: https://www.cb-net.co.uk/linux/running-plex-from-a-docker-container-on-ubuntu-16-04-lts-16-10/
