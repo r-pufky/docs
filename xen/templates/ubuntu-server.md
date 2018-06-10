@@ -35,7 +35,7 @@ sudo vim /etc/apt/sources.list
 ### Install base packages
 ```bash
 sudo apt update && sudo apt upgrade
-sudo apt install python-software-properties inotify-tools curl unattended-upgrades sysstat  nmon screen ssh
+sudo apt install python-software-properties inotify-tools curl unattended-upgrades sysstat nmon screen ssh ffpmeg
 ```
 
 ### Set base sshd_config
@@ -339,3 +339,5 @@ References
 [Data Exposure when using 'discard' option with SSD's on dm-crypt](http://asalor.blogspot.de/2011/08/trim-dm-crypt-problems.html)
 
 [Adding custom fonts to ubuntu](https://askubuntu.com/questions/3697/how-do-i-install-fonts)
+
+[Automatic Security Updates](https://help.ubuntu.com/community/AutomaticSecurityUpdates)
