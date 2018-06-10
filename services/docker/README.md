@@ -35,7 +35,7 @@ exposed docker ports appear as if they are on the host). Needs to be manully run
 every time to create a container.
 
 ```bash
-docker run -d \
+docker run -t -d \
   --name <conatiner name> \
   --network host \
   --restart unless-stopped \
@@ -51,6 +51,9 @@ docker run -d \
  * If the container is not found, it will automatically be pulled
  * Using `create` instead of `run -d` will create the container but not start it
    in the background automatically
+ * Use should use [`-t -d`][3] is needed to keep the container in interactive mode
+   otherwise as soon as the container is idle it will sleep, which will stop
+   background running services.
 
 ## Pull a docker container to use:
 
@@ -110,3 +113,4 @@ docker logs -f <name>
 
 [1]: https://docs.docker.com/get-started/
 [2]: https://github.com/wsargent/docker-cheat-sheet
+[3]: https://stackoverflow.com/questions/30209776/docker-container-will-automatically-stop-after-docker-run-d
