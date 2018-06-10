@@ -102,9 +102,13 @@ ssh -L 6791:localhost:6791 <user>@<host>
 References
 ----------
 [Nzbget PPA installation][1]
+
 [Nzbget github repository][2]
+
 [Nzbget documentation][3]
+
 [Nzbget systemd configuration][4]
+
 [Configuring two provider backbonese][5]
 
 [1]: https://launchpad.net/~modriscoll/+archive/ubuntu/nzbget
