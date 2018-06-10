@@ -11,8 +11,8 @@ Usenet downloader.
 3. [Docker Creation](#docker-creation)
 4. [SSH Tunneling](#ssh-tunneling)
 
-[Docker Ports Exposed][2]
--------------------------
+Docker Ports Exposed
+--------------------
 
 | Port | Protocol | Purpose                           |
 |------|----------|-----------------------------------|
