@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+# Converts playon videos to mkv format, preserving encoding and stripping metadata.
+# Playon adds a 4 second video pertaining to account and IP address, strip this.
+# Playon adds metadata pertaining to account for video, strip this.
+#
+# For multiple: find -type f -exec ~/bin/playon-to-mkv {}
+#
+
+filename=$(basename "$1")
+extension="${filename##*.}"
+basename="${filename%.*}"
+
+echo 'Stripping Playon Overlay ...'
+ffmpeg -i "$1" -ss 00:00:04.000 -acodec copy -vcodec copy -map_metadata -1 "${basename}.stripped.${extension}"
+echo 'Packing into mkv ...'
+mkvmerge -o "${basename}.mkv" "${basename}.stripped.${extension}"
+echo 'Setting media permssions ...'
+chown ${USER}:${USER} "${basename}.mkv"
+chmod 0640 "${basename}.mkv"
