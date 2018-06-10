@@ -37,7 +37,7 @@ Be sure to toggle `advanced settings` to on; toggle back and forth to set both.
 
 #### Importing
  * Skip Free Space Check: no
- * Use Hardlink instead of Copy: yes
+ * Use Hardlink instead of Copy: no
  * Import Extra Files: no
 
 #### File Management
@@ -45,7 +45,7 @@ Be sure to toggle `advanced settings` to on; toggle back and forth to set both.
  * Download Propers: yes
  * Analyze video files: yes
  * Change File Date: None
- * Recycling Bin: <DIRECTORY TO MOVE DELETED ITEMS TO>
+ * Recycling Bin: /data/downloads/sonarr-recycle
 
 #### Permissions
  * Set Permissions: yes
@@ -151,6 +151,8 @@ Be sure to toggle `advanced settings` to on; toggle back and forth to set both.
  * On Rename: yes
  * Host: <PLEX IP>
  * Port: 32400
+ * Username: <YOUR PLEX EMAIL>
+ * Password: <YOUR PLEX PASSWORD>
  * Update Library: yes
  * Use SSL: yes
 
