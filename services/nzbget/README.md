@@ -35,7 +35,7 @@ You can copy your existing configuration to docker `/config` directory
 adjusting for paths.
 
 ```bash
-docker run -d \
+docker run -t -d \
   --name nzbget \
   --network host \
   --restart unless-stopped \
@@ -51,6 +51,10 @@ docker run -d \
  * Map your media directly to where it was before on the docker container to
    prevent needing to modify any libraries. This should be read-only.
  * See [nzbget.conf](nzbget.conf) for example configuration (adjust paths).
+ * Use should use [`-t -d`][3] is needed to keep the container in interactive
+   mode otherwise as soon as the container is idle it will sleep, which will
+   stop background running services.
+
 
 ### Create OpenSSL certificates for https
 This will creat self-signed certificates, you can use actual ones if you have

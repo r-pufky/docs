@@ -37,7 +37,7 @@ configuration directory structure, afterwards you can stop and inject your
 current certificates into the configuration directory.
 
 ```bash
-docker run -d \
+docker run -t -d \
   --name=crashplan \
   --net=host \
   --restart=unless-stopped \
@@ -59,6 +59,10 @@ docker run -d \
  * `/` is mapped to `/root-mount` to enable backup of any files on `/` for the
    host that also exist in the docker image.
  * Map your backup drives as *read only*.
+ * Use should use [`-t -d`][3] is needed to keep the container in interactive
+   mode otherwise as soon as the container is idle it will sleep, which will
+   stop background running services.
+
 
 ```bash
 docker stop crashplan

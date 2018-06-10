@@ -34,7 +34,7 @@ You can copy your existing configuration to docker `/config` directory
 adjusting for paths.
 
 ```bash
-docker run -d \
+docker run -t -d \
   --name sonarr \
   --network host \
   --restart unless-stopped \
@@ -57,6 +57,9 @@ Add pre-existing series to Sonarr
  * Be sure to search for correct match for episode if needed
  * Add all existing shows (even no longer aired), these are all scanned when
    adding shows and will be crufty if not set
+ * Use should use [`-t -d`][3] is needed to keep the container in interactive
+   mode otherwise as soon as the container is idle it will sleep, which will
+   stop background running services.
 
 Changing Media Location in Series
 ---------------------------------

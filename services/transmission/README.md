@@ -39,7 +39,7 @@ configuration directory structure, afterwards you can re-create with a mapped
 directories.
 
 ```bash
-docker run -d \
+docker run -t -d \
   --name=transmission \
   --net=host \
   --restart=unless-stopped \
@@ -56,6 +56,9 @@ docker run -d \
   linuxserver/transmission:latest
 ```
  * This assumes that the docker container is running as 1001:1001.
+ * Use should use [`-t -d`][3] is needed to keep the container in interactive
+   mode otherwise as soon as the container is idle it will sleep, which will
+   stop background running services.
 
 Modifying Settings
 ------------------

@@ -37,7 +37,7 @@ configuration directory structure, afterwards you can re-create with a mapped
 git repository.
 
 ```bash
-docker run -d \
+docker run -t -d \
   --name=gogs \
   --net=host \
   --restart=unless-stopped \
@@ -49,7 +49,7 @@ docker run -d \
 
 Specify your own git repository location
 ```bash
-docker run -d \
+docker run -t -d \
   --name=gogs \
   --net=host \
   --restart=unless-stopped \
@@ -59,8 +59,12 @@ docker run -d \
   -v /data/backup/git:/data/git \
   gogs/gogs:latest
 ```
+ * Cannot specify a UID/GID to run under - git files must be accessible to
+   docker.
+ * Use should use [`-t -d`][3] is needed to keep the container in interactive
+   mode otherwise as soon as the container is idle it will sleep, which will
+   stop background running services.
 
-gogs specify a UID/GID to run under - files must be accessible to docker.
 
 Initial Setup
 -------------

@@ -42,7 +42,7 @@ You can copy your existing library from `/var/lib/plexmediaserver/*` to docker
 `/config` directory to auto-import your existing plex library.
 
 ```bash
-docker run -d \
+docker run -t -d \
   --name plex \
   --network host \
   --restart unless-stopped \
@@ -65,6 +65,9 @@ docker run -d \
  * PLEX_CLAIM token is used to identify the server for your account. This is
    only used on initial startup without a pre-existing config. Generate a token
    here: https://www.plex.tv/claim
+ * Use should use [`-t -d`][3] is needed to keep the container in interactive
+   mode otherwise as soon as the container is idle it will sleep, which will
+   stop background running services.
 
 ```bash
 docker stop plex

@@ -51,9 +51,9 @@ docker run -t -d \
  * If the container is not found, it will automatically be pulled
  * Using `create` instead of `run -d` will create the container but not start it
    in the background automatically
- * Use should use [`-t -d`][3] is needed to keep the container in interactive mode
-   otherwise as soon as the container is idle it will sleep, which will stop
-   background running services.
+ * Use should use [`-t -d`][3] is needed to keep the container in interactive
+   mode otherwise as soon as the container is idle it will sleep, which will
+   stop background running services.
 
 ## Pull a docker container to use:
 
