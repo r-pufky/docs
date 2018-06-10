@@ -8,10 +8,10 @@ crashplan.
 [Docker repository][1]
 
 1. [Docker Ports Exposed](#docker-ports-exposed)
-2. [Important File Locations](#important-file-locations)
-3. [Docker Creation](#docker-creation)
-4. [Initial Setup](#initial-setup)
-5. [Taking over existing backups](#taking-over-existing-backups)
+1. [Important File Locations](#important-file-locations)
+1. [Docker Creation](#docker-creation)
+1. [Initial Setup](#initial-setup)
+1. [Taking over existing backups](#taking-over-existing-backups)
 
 Docker Ports Exposed
 --------------------

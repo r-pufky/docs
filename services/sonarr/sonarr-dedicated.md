@@ -3,11 +3,11 @@ Sonarr Server
 Media Management.
 
 1. [Ports Exposed](#ports-exposed)
-2. [Important File Locations](#important-file-locations)
-3. [Server Setup](#server-setup)
-4. [Add pre-existing series to Sonarr](#add-pre-existing-series-to-sonarr)
-5. [Changing Media Location in Series](#changing-media-location-in-series)
-6. [References](#references)
+1. [Important File Locations](#important-file-locations)
+1. [Server Setup](#server-setup)
+1. [Add pre-existing series to Sonarr](#add-pre-existing-series-to-sonarr)
+1. [Changing Media Location in Series](#changing-media-location-in-series)
+1. [References](#references)
 
 [Ports Exposed][1]
 ------------------

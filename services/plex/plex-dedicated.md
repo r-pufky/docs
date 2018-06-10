@@ -3,9 +3,9 @@ Plex Media Server
 Media streaming service.
 
 1. [Ports Exposed](#ports-exposed)
-2. [Important File Locations](#important-file-locations)
-3. [Server Setup](#server-setup)
-4. [Legacy Plex Fixes](#legacy-plex-fixes)
+1. [Important File Locations](#important-file-locations)
+1. [Server Setup](#server-setup)
+1. [Legacy Plex Fixes](#legacy-plex-fixes)
 
 [Ports Exposed][1]
 ------------------
@@ -79,7 +79,6 @@ Then nagivate to `http://localhost:32400/web` to finish setup.
 
 Legacy Plex Fixes
 -----------------
-
 ### [Backup state configuration][4]
 
 ```bash

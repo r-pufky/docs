@@ -7,8 +7,8 @@ Media streaming service.
 [Docker repository][1]
 
 1. [Docker Ports Exposed](#docker-ports-exposed)
-2. [Important File Locations](#important-file-locations)
-3. [Docker Creation](#docker-creation)
+1. [Important File Locations](#important-file-locations)
+1. [Docker Creation](#docker-creation)
 
 [Docker Ports Exposed][2]
 -------------------------
@@ -105,7 +105,6 @@ ssh -L 32400:<Server IP>:32400 -N <user>@<host>
 ```
 
 Then nagivate to `http://localhost:32400/web` to finish setup.
-
 
 ```bash
 docker start plex

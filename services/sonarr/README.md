@@ -7,10 +7,10 @@ Media Management.
 [Docker repository][1]
 
 1. [Docker Ports Exposed](#docker-ports-exposed)
-2. [Important File Locations](#important-file-locations)
-3. [Docker Creation](#docker-creation)
-4. [Add pre-existing series to Sonarr](#add-pre-existing-series-to-sonarr)
-5. [Changing Media Location in Series](#changing-media-location-in-series)
+1. [Important File Locations](#important-file-locations)
+1. [Docker Creation](#docker-creation)
+1. [Add pre-existing series to Sonarr](#add-pre-existing-series-to-sonarr)
+1. [Changing Media Location in Series](#changing-media-location-in-series)
 
 Docker Ports Exposed
 --------------------

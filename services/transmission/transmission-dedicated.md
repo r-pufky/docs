@@ -1,15 +1,16 @@
 Transmission Dedicated Server
 -----------------------------
-Uses [Ubuntu 16.04 base Xen template](../templates/ubuntu-server.md), and assumes post template setup scripts have been run.
+Uses [Ubuntu 16.04 base Xen template](../templates/ubuntu-server.md), and
+assumes post template setup scripts have been run.
 
 * Disk: 20GB ([Encrypted volume setup](../templates/ubuntu-server.md#creating-an-encrypted-volume))
 
 1. [Ports Exposed](#ports-exposed)
-2. [Server Setup](#server-setup)
-3. [Important File Locations](#important-file-locations)
-4. [Disable Insecure Services](#disable-insecure-services)
-5. [Starting the Server](#starting-the-server)
-6. [References](#references)
+1. [Server Setup](#server-setup)
+1. [Important File Locations](#important-file-locations)
+1. [Disable Insecure Services](#disable-insecure-services)
+1. [Starting the Server](#starting-the-server)
+1. [References](#references)
 
 Ports Exposed
 -------------
@@ -48,7 +49,6 @@ Install [crontab](update-transmission-blocklist-crontab).
 
 This requires `iplist` to be installed and updating blocklists.
 
-
 Important File Locations
 ------------------------
 
@@ -56,11 +56,14 @@ Important File Locations
 |-------------------------------------------|----------|
 | /etc/transmission-daemon/settings.json    | Settings |
 | /var/lib/transmission-daemon              | State    |
-* Settings.json is created after launching the GUI, or just use the template here. [LINK.](settings.json)
+* Settings.json is created after launching the GUI, or just use the template
+  here. [LINK.](settings.json)
 
 Modifying Settings
 ------------------
-Transmission will overwrite the settings.json file when it is shutdown. Therefore stop transmission before editing settings. Most settings (after these initial ones) can be modified in the webface once launched.
+Transmission will overwrite the settings.json file when it is shutdown.
+Therefore stop transmission before editing settings. Most settings (after these
+initial ones) can be modified in the webface once launched.
 
 sudo vim /etc/transmission-daemon/settings.json
 ```vim

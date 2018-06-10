@@ -6,27 +6,29 @@ automatically installed on boot and immediately used afterwards. This is great
 for VM's and pre-setup of configuration management agents.
 
 1. [Install pre-req packages](#install-package-pre-reqs)
-2. [Extract ISO for modification](#extract-iso-for-modification-to-custom-iso)
-3. [Setup auto-install on boot](#setup-auto-installation-preseed-preferences)
-4. [Setup preseed file](#create-preseed-installation-file)
-5. [Write ISO](#build-custom-iso)
-6. [Build commands](#build-testing-commands)
-7. [Gotchas](#gotchas)
+1. [Extract ISO for modification](#extract-iso-for-modification-to-custom-iso)
+1. [Setup auto-install on boot](#setup-auto-installation-preseed-preferences)
+1. [Setup preseed file](#create-preseed-installation-file)
+1. [Write ISO](#build-custom-iso)
+1. [Build commands](#build-testing-commands)
+1. [Gotchas](#gotchas)
 
-
-## Install package pre-reqs
+Install package pre-reqs
+------------------------
 These include a utility to manipulate ISO images, debconf utilities and a
 password hash utility for /etc/shadow.
 ```bash
 apt install debconf-utils whois xorriso
 ```
 
-## Extract ISO for modification to custom-iso
+Extract ISO for modification to custom-iso
+------------------------------------------
 ```bash
 xorriso -osirrox on -indev <ubuntu>.iso -extract / custom-iso
 ```
 
-## Setup auto-installation (preseed) preferences
+Setup auto-installation (preseed) preferences
+---------------------------------------------
 Depending on how you would like to preseed the automatic install:
 
  * [Fully Automatic Installation](#isolinux.cfg)
@@ -90,7 +92,8 @@ menuentry "Install Ubuntu Server w/ Saltstack minion" {
  * If you only want an automatic install, modify [isolinux.cfg](#isolinux.cfg)
    instead.
 
-## Create preseed installation file.
+Create preseed installation file
+--------------------------------
 This provides answers for the debconf installer during installation. Providing
 these answers enables the installation to complete without interaction. Most of
 the options here are required for automated installation.
@@ -322,8 +325,8 @@ d-i finish-install/reboot_in_progress note
 Eject the CD before booting, don't prompt for reboot.
 
 
-## Build custom ISO
-
+Build custom ISO
+----------------
 ### Copy custom files
 ```bash
 cp ubuntu-saltstack.seed custom-iso/preseed/ubuntu-saltstack.seed
@@ -366,8 +369,8 @@ custom-ubuntu.iso2       4028    8763    4736  2.3M ef EFI (FAT-12/16/32)
 This will confirm that there's an EFI and non-EFI ISO in the image.
 
 
-## Build / Testing commands
-
+Build / Testing commands
+------------------------
 Checksum, build and push the latest image to xen:
 ```bash
 sudo md5sum $(find -type f) > md5sum.txt; sudo xorriso -as mkisofs -isohybrid-mbr isolinux/isohdpfx.bin -c isolinux/boot.cat -b isolinux/isolinux.bin -no-emul-boot -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e boot/grub/efi.img -no-emul-boot -isohybrid-gpt-basdat -o ../custom-ubuntu.iso .; scp ../custom-ubuntu.iso Xen:~
@@ -380,9 +383,8 @@ rm -f custom-ubuntu.iso; mv /home/<xenuser>/custom-ubuntu.iso /var/opt/xen/iso_i
 ```
  * Assumes root user.
 
-
-## Gotchas
-
+Gotchas
+-------
 ### Blank screen on reboot
 Everything works fine, but [blank screen on boot?][16] You need to setup a
 proper GUI login (e.g. probable need to install `desktop` task) or enable the

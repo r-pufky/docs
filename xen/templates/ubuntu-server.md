@@ -3,12 +3,11 @@ Xen Server Template
 Ubuntu 16.04 base Xen template.
 
 1. [Base Install](#base-install)
-2. [Manual Crypt/LUKS Commands](#manual-cryptluks-commands)
-3. [Enabling Secure SSH Config](#enabling-secure-ssh-config)
-4. [Creating an Encrypted Volume](#creating-an-encrypted-volume)
-5. [Adding Custom Fonts](#adding-custom-fonts)
-6. [References](#references)
-
+1. [Manual Crypt/LUKS Commands](#manual-cryptluks-commands)
+1. [Enabling Secure SSH Config](#enabling-secure-ssh-config)
+1. [Creating an Encrypted Volume](#creating-an-encrypted-volume)
+1. [Adding Custom Fonts](#adding-custom-fonts)
+1. [References](#references)
 
 Base Install
 ------------
@@ -175,7 +174,6 @@ chmod 0700 /root
 chmod -Rv go-rwx /root
 ```
 
-
 Manual Crypt/LUKS commands
 --------------------------
 ### Manually determining crypt block device
@@ -248,7 +246,6 @@ ln -s /etc/ssh/sshd_config.secure /etc/ssh/sshd_config
 service sshd restart
 ```
 
-
 _remember to copy private key to intended system to use it on._
 
 Creating an Encrypted Volume
@@ -320,24 +317,36 @@ fc-list
 
 References
 ----------
-[Expanding a LVM after expanding virtual machine disk](https://www.rootusers.com/how-to-increase-the-size-of-a-linux-lvm-by-expanding-the-virtual-machine-disk/)
+[Expanding a LVM after expanding virtual machine disk][1]
 
-[Manually changing a password on a dmcrypt / LUKS volume](https://unix.stackexchange.com/questions/185390/list-open-dm-crypt-luks-volumes)
+[Manually changing a password on a dmcrypt / LUKS volume][2]
 
-[Reseting a password on an encrypted FS](https://unix.stackexchange.com/questions/126180/how-to-reset-password-on-an-encrypted-fs)
+[Reseting a password on an encrypted FS][3]
 
-[Howto change LUKS passphrase](https://askubuntu.com/questions/95137/how-to-change-luks-passphrase)
+[Howto change LUKS passphrase][4]
 
-[Full encryption with LVM and LUKS](https://www.linux.com/blog/how-full-encrypt-your-linux-system-lvm-luks)
+[Full encryption with LVM and LUKS][5]
 
-[Mounting LVM partitions](http://ask.xmodulo.com/mount-lvm-partition-linux.html)
+[Mounting LVM partitions][6]
 
-[Mounting LVM logical volumes](https://blog.sleeplessbeastie.eu/2015/11/16/how-to-mount-encrypted-lvm-logical-volume/)
+[Mounting LVM logical volumes][7]
 
-[Mounting encrypted LUKS drive at boot](https://askubuntu.com/questions/450895/mount-luks-encrypted-hard-drive-at-boot)
+[Mounting encrypted LUKS drive at boot][8]
 
-[Data Exposure when using 'discard' option with SSD's on dm-crypt](http://asalor.blogspot.de/2011/08/trim-dm-crypt-problems.html)
+[Data Exposure when using 'discard' option with SSD's on dm-crypt][9]
 
-[Adding custom fonts to ubuntu](https://askubuntu.com/questions/3697/how-do-i-install-fonts)
+[Adding custom fonts to ubuntu][10]
 
-[Automatic Security Updates](https://help.ubuntu.com/community/AutomaticSecurityUpdates)
+[Automatic Security Updates][11]
+
+[1]: https://www.rootusers.com/how-to-increase-the-size-of-a-linux-lvm-by-expanding-the-virtual-machine-disk/
+[2]: https://unix.stackexchange.com/questions/185390/list-open-dm-crypt-luks-volumes
+[3]: https://unix.stackexchange.com/questions/126180/how-to-reset-password-on-an-encrypted-fs
+[4]: https://askubuntu.com/questions/95137/how-to-change-luks-passphrase
+[5]: https://www.linux.com/blog/how-full-encrypt-your-linux-system-lvm-luks
+[6]: http://ask.xmodulo.com/mount-lvm-partition-linux.html
+[7]: https://blog.sleeplessbeastie.eu/2015/11/16/how-to-mount-encrypted-lvm-logical-volume/
+[8]: https://askubuntu.com/questions/450895/mount-luks-encrypted-hard-drive-at-boot
+[9]: http://asalor.blogspot.de/2011/08/trim-dm-crypt-problems.html
+[10]: https://askubuntu.com/questions/3697/how-do-i-install-fonts
+[11]: https://help.ubuntu.com/community/AutomaticSecurityUpdates

@@ -1,8 +1,10 @@
 Sublime Text Configuration
 
-1. Installation
-2. File Locations
-2. Configuration
+1. [Installation](#installation)
+1. [Important File Locations](#important-file-locations)
+1. [Configuration](#configuration)
+1. [Automatically Installing Packages](#automatically-installing-packages)
+1. [References](#references)
 
 Installation
 ------------
@@ -55,13 +57,12 @@ Linux
 
 OSX
 
-| File                                                                                            | Purpose                                                 |
-|-------------------------------------------------------------------------------------------------|---------------------------------------------------------|
+| File                                                                                            | Purpose                             |
+|-------------------------------------------------------------------------------------------------|-------------------------------------|
 | ~/Library/Application Support/Sublime Text 3                                                    | configuration and package locations |
 | ~/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings         | user preferences                    |
 | ~/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings     | user installed packages             |
 | ~/Library/Application Support/Sublime Text 3/Installed Packages/Package Control.sublime-package | package control binary              |
-
 
 Configuration
 -------------
@@ -92,7 +93,6 @@ cp Package\ Control.sublime-settings <sublime config>/Packages/User
 ```
 
 Upon startup of sublime, it will automatically install the missing packages now listed in your installed packages.
-
 
 References
 ----------

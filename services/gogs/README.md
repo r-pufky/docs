@@ -6,11 +6,11 @@ private repository use. Can be exposed and use publicly as well.
 [Docker repository][5]
 
 1. [Docker Ports Exposed](#docker-ports-exposed)
-2. [Important File Locations](#important-file-locations)
-3. [Docker Creation](#docker-creation)
-4. [Initial Setup](#initial-setup)
-5. [Importing Git Repositories](#importing-git-epositories)
-6. [Other Options](#other-options)
+1. [Important File Locations](#important-file-locations)
+1. [Docker Creation](#docker-creation)
+1. [Initial Setup](#initial-setup)
+1. [Importing Git Repositories](#importing-git-epositories)
+1. [Other Options](#other-options)
 
 Docker Ports Exposed
 --------------------
@@ -64,7 +64,6 @@ docker run -t -d \
  * Use should use [`-t -d`][3] is needed to keep the container in interactive
    mode otherwise as soon as the container is idle it will sleep, which will
    stop background running services.
-
 
 Initial Setup
 -------------

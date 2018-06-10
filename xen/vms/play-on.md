@@ -1,18 +1,15 @@
 Playon Dedicated Recorder
 -------------------------
-Uses [Windows 10 base Xen template](../templates/windows.md), and assumes post 
+Uses [Windows 10 base Xen template](../templates/windows.md), and assumes post
 template setup scripts have been run.
 
 * Memory: 8GB
-* Disk: 60GB 
+* Disk: 60GB
 
 1. [Ports Exposed](#ports-exposed)
-2. [Services Used](#services-used)
-2. [Server Setup](#server-setup)
-3. [Important File Locations](#important-file-locations)
-4. [Disable Insecure Services](#disable-insecure-services)
-5. [Starting the Server](#starting-the-server)
-6. [References](#references)
+1. [Services Used](#services-used)
+1. [Server Setup](#server-setup)
+1. [References](#references)
 
 Ports Exposed
 -------------
@@ -63,16 +60,15 @@ Channels Tab
 * Disable all channels not used
 * Login to channels
 
-
 References
 ----------
-[Playon Minimum requirements](https://www.playon.tv/support/minreqs#minreq-details)
-[Playon User Guide](https://www.playon.tv/user-guide/intro)
+[Playon Minimum requirements][5]
+[Playon User Guide][6]
 
 
 [1]: https://github.com/r-pufky/docs/blob/master/windows-gaming.md#hiding-local-desktop-for-chrome-remote-desktop
 [2]: https://github.com/r-pufky/docs/blob/master/windows-gaming.md#enabling-ssh-access
 [3]: https://www.playon.tv/getplayon
 [4]: https://forums.webosnation.com/webos-apps-games/297294-port-forwarding-playon.html
-
-
+[5]: https://www.playon.tv/support/minreqs#minreq-details
+[6]: https://www.playon.tv/user-guide/intro

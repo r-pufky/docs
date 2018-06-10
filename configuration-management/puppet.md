@@ -5,16 +5,16 @@ Puppet: Everything works great, until it doesn't; a.k.a.: 'WCGW with using 3 dif
 God I hate Ruby.
 
 1. [Requirements](#requirements)
-2. [Ports Exposed](#ports-exposed)
-3. [Important File Locations](#important-file-locations)
-4. [Service Setup](#service-setup)
-5. [Installing Puppet Modules](#installing-puppet-modules)
-6. [Setup Agents](#setup-agents)
-7. [Signing Cert Requests](#signing-cert-requests)
-8. [Revoking Certs](#revoking-certs)
-9. [Manually Running Agents](#manually-running-agents)
-10. [Development References](#development-references)
-
+1. [Ports Exposed](#ports-exposed)
+1. [Important File Locations](#important-file-locations)
+1. [Service Setup](#service-setup)
+1. [Installing Puppet Modules](#installing-puppet-modules)
+1. [Setup Agents](#setup-agents)
+1. [Signing Cert Requests](#signing-cert-requests)
+1. [Revoking Certs](#revoking-certs)
+1. [Manually Running Agents](#manually-running-agents)
+1. [Interesting Alternative Core Modules](#interesting-alternative-core-modules)
+1. [Development References](#development-references)
 
 [Requirements][1]
 -----------------
@@ -23,7 +23,6 @@ God I hate Ruby.
 |----------|----------|
 | RAM: 2GB | RAM: 2GB |
 | CPU: 2   | CPU: 2-4 |
-
 
 [Ports Exposed][2]
 ------------------
@@ -35,7 +34,6 @@ God I hate Ruby.
 
 Forward and Reverse DNS must work for `puppet`.
 
-
 Important File Locations
 ------------------------
 
@@ -46,7 +44,6 @@ Important File Locations
 | /etc/puppetlabs/code/environments/production/modules            | Install modules. Both custom and puppet provided.             |
 | /etc/puppetlabs/code/environments/production/manifests/profiles | Defines profiles to use for nodes.                            |
 | /etc/puppetlabs/code/environments/production/manifests/roles    | Defines roles to use for nodes.                               |
-
 
 [Service Setup][3]
 ------------------
@@ -67,7 +64,6 @@ sudo service puppetserver start
 sudo systemctl enable puppetserver
 ```
 
-
 [Installing Puppet Modules][6]
 ------------------------------
 Modules are pre-defined puppet manifests that are defined by users. Usually
@@ -81,7 +77,6 @@ puppet module install <module>
 
 You can install your own private modules by copying them to the `modules`
 location specified in [Important File Locations](#important-file-locations)
-
 
 [Setup Agents][5]
 -----------------
@@ -120,7 +115,6 @@ for version of OSX.
 
 Run GUI installer and setup host and puppet server name.
 
-
 Signing Cert Requests
 ---------------------
 A puppet agent cannot connect and apply puppet manifests until the cert is
@@ -138,7 +132,6 @@ Show *all* certs on server. A *+* indicates the certificate is already signed.
 puppet cert list -all
 ```
 
-
 [Revoking Certs][11]
 --------------------
 To disable puppet access for a specific agent, or remove non-approved certs.
@@ -154,7 +147,6 @@ If that doesn't work, use a hammer. This is deprecated.
 ```bash
 puppet ca destroy <host>
 ```
-
 
 Manually Running Agents
 -----------------------
@@ -181,7 +173,6 @@ puppet less of an ass-disaster.
 | Module                   | Purpose                                                                                                  |
 |--------------------------|----------------------------------------------------------------------------------------------------------|
 | [pltraining-dirtree][13] | Expand multi-level directory into Array; including directory mask. Useful for recursively creating dirs. |
-
 
 Development References
 ----------------------
@@ -219,7 +210,7 @@ sudo gem install puppetlabs_spec_helper bundler puppet-lint puppet-syntax
  * [Puppet next-gen module testing][28]
  * [Puppet rspec testing walkthrough][29]
  * [Puppet Smoked Testing][31]
- 
+
 ### Devops Platform Evaluations
  * [Saltstack, Chef, Ansible, Puppet. Pretty much concurs with my opinions on them][30]
 

@@ -3,9 +3,9 @@ Windows 10 Template
 Windows 10 base Xen template.
 
 1. [Base Install](#base-install)
-2. [Default Applications](#default-applications)
-5. [Adding Custom Fonts](#adding-custom-fonts)
-6. [References](#references)
+1. [Default Applications](#default-applications)
+1. [Adding Custom Fonts](#adding-custom-fonts)
+1. [References](#references)
 
 Base Install
 ------------
@@ -65,7 +65,6 @@ right click > install
 ```
 
 * Delete fonts copied over. These are now installed in the font directory.
-
 
 References
 ----------

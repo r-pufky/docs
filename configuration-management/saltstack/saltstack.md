@@ -1,5 +1,5 @@
 SaltStack Setup
--------------------
+---------------
 Configuration management for Linux, Windows, OSX.
 
 Salt encrypts data communications, as well as providing only minion data needed
@@ -7,22 +7,21 @@ to minions. Supports GPG encryption of sensitive data out of the box, no special
 services required.
 
 1. [Requirements](#requirements)
-2. [Ports Exposed](#ports-exposed)
-3. [Important File Locations](#important-file-locations)
-4. [Service Setup](#service-setup)
-5. [Salt-Master Setup](#salt-master-setup)
-6. [Managing States](#managing-states)
-7. [Using Pillar](#using-pillar)
+1. [Ports Exposed](#ports-exposed)
+1. [Important File Locations](#important-file-locations)
+1. [Service Setup](#service-setup)
+1. [Salt-Master Setup](#salt-master-setup)
+1. [Managing States](#managing-states)
+1. [Using Pillar](#using-pillar)
    * [Setup GPG](#setup-gpg)
      * [GPG encrypting shadow passwords](#gpg-encrypting-shadow-passwords)
-8. [Installing Formulae](#installing-formulae)
-9. [Setup Minions](#setup-minions)
-10. [Signing Cert Requests](#signing-cert-requests)
-11. [Revoking Certs](#revoking-certs)
-12. [Master Frequent Commands](#master-frequent-commands)
-12. [Manually Running Minions](#manually-running-minions)
-13. [Development References](#development-references)
-
+1. [Installing Formulae](#installing-formulae)
+1. [Setup Minions](#setup-minions)
+1. [Signing Cert Requests](#signing-cert-requests)
+1. [Revoking Certs](#revoking-certs)
+1. [Master Frequent Commands](#master-frequent-commands)
+1. [Manually Running Minions](#manually-running-minions)
+1. [Development References](#development-references)
 
 [Requirements][1]
 -----------------
@@ -36,7 +35,6 @@ requirements as:
 | CPU: 1     | CPU: 4     |
 | DISK: 20GB | DISK: 20GB |
 
-
 [Ports Exposed][2]
 ------------------
 
@@ -47,7 +45,6 @@ requirements as:
 
 By default `salt` should resolve, although this can be configured in the minion
 as a DNS name or IP address.
-
 
 Important File Locations
 ------------------------
@@ -106,7 +103,6 @@ salt-master does require a shell, to run commands such as `salt-run`
 
 Minions require root to properly install software, update apt and execute
 commands.
-
 
 [Salt-Master Setup][4]
 ----------------------
@@ -202,7 +198,6 @@ failhard: True
 State applicatin to minions. Minions will immediately fail is there is an error,
 instead of continuing to apply state.
 
-
 [Managing States][12]
 ---------------------
 States apply specific configurations to minions. See [State Reference][13].
@@ -258,7 +253,6 @@ prod:
       - mode: 0600
       - source: salt://bachrc/bashrc
 ```
-
 
 [Using Pillar][8]
 -----------------
@@ -403,7 +397,6 @@ pillarenv=dev
 pillarenv=prod
 ```
 
-
 [Installing Formulae][6]
 ------------------------
 Forumlas are pre-defined salt modules that are defined by users to manage a
@@ -430,7 +423,6 @@ dev:
     - some_formula.pillar_config
     - some_formual.service
 ```
-
 
 [Setup Minions][5]
 -----------------
@@ -501,7 +493,6 @@ sc start salt-minion
 net start salt-minion
 ```
 
-
 Signing Cert Requests
 ---------------------
 A minion cannot connect and apply salt states until the cert is approved on the
@@ -520,7 +511,6 @@ Show *all* certs on server.
 salt-key -L
 ```
 
-
 [Revoking Certs][11]
 --------------------
 To disable salt access for a specific minion, or remove non-approved certs.
@@ -531,7 +521,6 @@ See [Show All Certs](#show-all-certs) for getting a cert list.
 salt-key -d <host>
 ```
 Salt should remove the key automatically.
-
 
 Master Frequent Commands
 ------------------------
@@ -565,7 +554,6 @@ salt '*' grains.items
 salt-master -l debug
 ```
 
-
 Manually Running Minions
 ------------------------
 Useful for testing as well as immediately applying changes outside of the run
@@ -593,7 +581,6 @@ salt-minion -l debug
 ```bash
 salt-run fileserver.file_list saltenv=dev
 ```
-
 
 Development References
 ----------------------

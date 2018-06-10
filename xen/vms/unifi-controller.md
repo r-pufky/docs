@@ -1,14 +1,14 @@
 Unifi AP Controller
 -------------------
-Uses [Ubuntu 16.04 base Xen template](../templates/ubuntu-server.md), and assumes post template setup scripts have been run.
+Uses [Ubuntu 16.04 base Xen template](../templates/ubuntu-server.md), and
+assumes post template setup scripts have been run.
 
 1. [Ports Exposed](#ports-exposed)
-2. [Service Setup](#service-setup)
-3. [Important File Locations](#important-file-locations)
-3. [Simple AP Configuration](#simple-ap-configuration)
-4. [Migrating existing AP's to a new controller](#migrating-existing-aps-to-a-new-controller)
-3. [References](#references)
-
+1. [Service Setup](#service-setup)
+1. [Important File Locations](#important-file-locations)
+1. [Simple AP Configuration](#simple-ap-configuration)
+1. [Migrating existing AP's to a new controller](#migrating-existing-aps-to-a-new-controller)
+1. [References](#references)
 
 Ports Exposed
 -------------
@@ -17,7 +17,6 @@ Ports Exposed
 |------|----------|------------------------|
 | 8443 | TCP      | webface management     |
 | 8080 | TCP      | AP management / inform |
-
 
 Service Setup
 -------------
@@ -35,8 +34,8 @@ sudo apt update && sudo apt upgrade && sudo apt install unifi
 sudo service unifi start
 ```
 
-If you have an existing backup of a controller, you can import it immediately and not have to manually re-configure anything.
-
+If you have an existing backup of a controller, you can import it immediately
+and not have to manually re-configure anything.
 
 Important File Locations
 ------------------------
@@ -44,7 +43,6 @@ Important File Locations
 | File                              | Purpose                            |
 |-----------------------------------|------------------------------------|
 | /var/libs/unifi/backup/autobackup | Location of configuration backups. |
-
 
 Simple AP Configuration
 -----------------------
@@ -68,7 +66,8 @@ Wireless Networks
   * Security: WPA Personal
   * Security KEy: [WIFI password]
 - Advanced Options
-  * Multicast and Broadcast Filtering: Block LAN to WLAN multicast and broadcast data
+  * Multicast and Broadcast Filtering: Block LAN to WLAN multicast and broadcast
+    data
   * WPA Mode: WPA2 Only, AES/CCMP Only
   * User Group: Default
 - 802.11 Rate and Beacon Controls
@@ -89,7 +88,9 @@ Guest Control
   * Pre-Authorization Access: Remove All
       _any networks accessible without auth_
   * Post-Authorization Restrictions: Add networks you don't want accessed
-      _This will block wifi clients from accessing these networks. Valid to use the gateway network (10.10.10.0/24) as well -- gateway is always accessible_
+      _This will block wifi clients from accessing these networks. Valid to use
+       the gateway network (10.10.10.0/24) as well -- gateway is always
+       accessible_
 
 Controller
 - Controller Settings
@@ -98,7 +99,6 @@ Controller
   * Controller Hostname/IP: Override inform host with Controller Hostname/IP
   * Network Discovery: Remove make controller discoverable on L2 network
   * Support Messaging: Disable live support for all users
-
 
 Devices (upper left Circles)
 - adopt if needed and upgrade firmware
@@ -122,7 +122,6 @@ Devices (upper left Circles)
     * Configure IP: Using DHCP
         _This is the AP IP_
 
-
 Migrating existing AP's to a new controller
 -------------------------------------------
 This will adopt the AP to the new controller
@@ -131,13 +130,17 @@ This will adopt the AP to the new controller
 set-inform http://<new controller>:8080/inform
 syswrapper.sh restore-default
 ```
-The system will reset and reboot to factory settings; AP should appear in the controller device listing
-
+The system will reset and reboot to factory settings; AP should appear in the
+controller device listing.
 
 References
 ----------
-[Unifi Apt install with Ubuntu](https://help.ubnt.com/hc/en-us/articles/220066768-UniFi-How-to-Install-Update-via-APT-on-Debian-or-Ubuntu)
+[Unifi Apt install with Ubuntu][1]
 
-[Unifi Ports](https://help.ubnt.com/hc/en-us/articles/218506997-UniFi-Ports-Used)
+[Unifi Ports][2]
 
-[Migrating Unifi AP's to New Controller](https://community.ubnt.com/t5/UniFi-Wireless/Migrating-UNIFI-APs-to-new-controller/td-p/308741)
+[Migrating Unifi AP's to New Controller][3]
+
+[1]: https://help.ubnt.com/hc/en-us/articles/220066768-UniFi-How-to-Install-Update-via-APT-on-Debian-or-Ubuntu
+[2]: https://help.ubnt.com/hc/en-us/articles/218506997-UniFi-Ports-Used
+[3]: https://community.ubnt.com/t5/UniFi-Wireless/Migrating-UNIFI-APs-to-new-controller/td-p/308741

@@ -5,17 +5,17 @@ Setting up and maintaining a ZFS pool
 Ubunutu 16.04
 
 1. [Installing Base Packages, Existing Drive Mappings](#installing-base-packages-existing-drive-mappings)
-2. [Mounting Existing ZFS Pool](#mounting-existing-zfs-pool)
-3. [Creating New ZFS Pool](#creating-new-zfs-pool)
-4. [Upgrading ZFS with Larger Disks](#upgrading-zfs-with-larger-disks)
-5. [Setup Monthly ZFS Scrub](#setup-monthly-zfs-scrub)
+1. [Mounting Existing ZFS Pool](#mounting-existing-zfs-pool)
+1. [Creating New ZFS Pool](#creating-new-zfs-pool)
+1. [Upgrading ZFS with Larger Disks](#upgrading-zfs-with-larger-disks)
+1. [Setup Monthly ZFS Scrub](#setup-monthly-zfs-scrub)
 
 [Installing Base Packages, Existing Drive Mappings][3]
 ------------------------------------------------------
 This is now in the default repositories for ubuntu. The old PPA [archive is
 here][1].
 
-Note: The new HWE kernel currently does not build properly, you need to use the 
+Note: The new HWE kernel currently does not build properly, you need to use the
 generic kernel until [the bug is resolved.][10]
 
 ```bash
@@ -25,7 +25,6 @@ sudo apt install zfs-dkms zfsutils-linux
 sudo modprobe zfs
 ls -l /dev/disk/by-id
 ```
-
 * Find the serial for the drives, match to the sd# address, then map to the WWN
   (world wide name) of that device -- that will be unique to that drive across
   any system you put the drive in

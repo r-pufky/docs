@@ -4,23 +4,23 @@ Mail Transport Agent (MTA) setup
 
 Ubunutu 16.04
 
-
 1. [Standard Definitions](#standard-definitions)
-2. [Base postfix Setup](#base-postfix-setup)
-3. [Configuring email Aliases for Users](#configuring-email-aliases-for-users)
-4. [Testing Initial postfix Setup](#testing-initial-postfix-setup)
-3. [Installing postgrey](#installing-postgrey)
-4. [Installing Sender Policy Framework (SPF) Validation](#installing-sender-policy-framework-spf-validation)
-5. [Installing spamassassin](#installing-spamassassin)
-6. [Disable Login notifications for Email](#disable-login-notifications-for-email)
+1. [Base postfix Setup](#base-postfix-setup)
+1. [Configuring email Aliases for Users](#configuring-email-aliases-for-users)
+1. [Testing Initial postfix Setup](#testing-initial-postfix-setup)
+1. [Installing postgrey](#installing-postgrey)
+1. [Installing Sender Policy Framework (SPF) Validation](#installing-sender-policy-framework-spf-validation)
+1. [Installing spamassassin](#installing-spamassassin)
+1. [Disable Login notifications for Email](#disable-login-notifications-for-email)
 
 Standard Definitions
 --------------------
 * MTA = Mail Transport Agent: handles mail server to server (e.g. other domains)
 * MDA = Mail Delivery Agent: handles user access to email (e.g. IMAP)
 * MUA = Mail User Agent: user client to check email (e.g. thunderbird/outlook)
-* Disable ports **25 (smtp)/587 (smtps)/993 (imaps)** on firewall until configuration is final 
-  otherwise you may get email delivered while you are configuring server
+* Disable ports **25 (smtp)/587 (smtps)/993 (imaps)** on firewall until
+  configuration is final otherwise you may get email delivered while you are
+  configuring server
 * example.com = your primary domain
 * example2.com = your secondary domain, if applicable
 * X.X.X.X/24 = your server subnet (this is defaulting to a class C CIDR)
@@ -149,8 +149,8 @@ sudo postconf -e “policy-spf_time_limit = 3600s”
 policy-spf  unix  -       n       n       -       -       spawn
      user=nobody argv=/usr/bin/policyd-spf
 ```
-* Place this command in the first section of services near the bottom, before the
-  _Interfaces to non-Postfix_ software section.
+* Place this command in the first section of services near the bottom, before
+  the _Interfaces to non-Postfix_ software section.
 * Newline, two spaces for user= line.
 
 ```bash
@@ -243,7 +243,7 @@ smtp      inet  n       -       -       -       -       smtpd
 #### /etc/postfix/master.cf
 ```config
 spamassassin unix -     n       n       -       -       pipe
-        user=spamd argv=/usr/bin/spamc -f -e  
+        user=spamd argv=/usr/bin/spamc -f -e
         /usr/sbin/sendmail -oi -f ${sender} ${recipient}
 ```
 
@@ -264,7 +264,6 @@ sudo tail -f /var/log/mail.log
   external account works well)
 * sa-learn --backup > backup.txt; sa-learn --restore backup.txt to backup
   database and restore it
-
 
 Disable Login notifications for Email
 -------------------------------------

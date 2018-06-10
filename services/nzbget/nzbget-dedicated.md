@@ -3,10 +3,10 @@ Nzbget Server
 Usenet downloader.
 
 1. [Ports Exposed](#ports-exposed)
-2. [Important File Locations](#important-file-locations)
-3. [Server Setup](#server-setup)
-4. [SSH Tunneling](#ssh-tunneling)
-5. [References](#references)
+1. [Important File Locations](#important-file-locations)
+1. [Server Setup](#server-setup)
+1. [SSH Tunneling](#ssh-tunneling)
+1. [References](#references)
 
 [Ports Exposed][1]
 ------------------
@@ -27,7 +27,6 @@ Important File Locations
 
 Server Setup
 ------------
-
 ### Add PPA and install nzbget and dependencies
 ```bash
 add-apt-repository ppa:modriscoll/nzbget

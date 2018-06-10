@@ -3,11 +3,11 @@ Xen Server Setup
 Basic XenServer 7.2 Setup & lockdown.
 
 1. [Console Setup](#console-setup)
-2. [Creating a Local ISO Repository](#creating-a-local-iso-repository)
-3. [Convert VM to a Template](#convert-vm-to-a-template)
-4. [Modifying a VM Template](#modifying-a-vm-template)
-5. [Manually Creating New VM from Template](#manually-creating-new-vm-from-template)
-6. [References](#references)
+1. [Creating a Local ISO Repository](#creating-a-local-iso-repository)
+1. [Convert VM to a Template](#convert-vm-to-a-template)
+1. [Modifying a VM Template](#modifying-a-vm-template)
+1. [Manually Creating New VM from Template](#manually-creating-new-vm-from-template)
+1. [References](#references)
 
 Console Setup
 -------------
@@ -102,7 +102,6 @@ xe sr-list
 xe sr-scan uuid=<UUID of ISO repository>
 ```
 
-
 Convert VM to a Template
 ------------------------
 * Clear command history from root/user
@@ -134,14 +133,21 @@ xe vm-start uuid=<new VM>
 
 References
 ----------
-[Basic XenServer Security Tips](http://burm.net/2012/01/29/xenserver-basic-security-tips-how-do-you-secure-your-xenserver/)
+[Basic XenServer Security Tips][1]
 
-[Adding new usergroups to XenServer](https://discussions.citrix.com/topic/154063-add-new-usersgroup-to-xenserver/)
+[Adding new usergroups to XenServer][2]
 
-[XenServer 7.0 release notes](http://docs.citrix.com/content/dam/docs/en-us/xenserver/xenserver-7-0/downloads/xenserver-7-0-release-notes.pdf)
+[XenServer 7.0 release notes][3]
 
-[Modifying XenServer logging](https://discussions.citrix.com/topic/299016-how-to-disable-xenserver-logging/)
+[Modifying XenServer logging][4]
 
-[Creating A Local ISO Repository](https://xen-orchestra.com/blog/creating-a-local-iso-repository-in-xenserver/)
+[Creating A Local ISO Repository][5]
 
-[Converting template to a VM on XenServer](https://discussions.citrix.com/topic/241867-guest-best-pratice-copy-vm-or-convert-to-template/)
+[Converting template to a VM on XenServer][6]
+
+[1]: http://burm.net/2012/01/29/xenserver-basic-security-tips-how-do-you-secure-your-xenserver/
+[2]: https://discussions.citrix.com/topic/154063-add-new-usersgroup-to-xenserver/
+[3]: http://docs.citrix.com/content/dam/docs/en-us/xenserver/xenserver-7-0/downloads/xenserver-7-0-release-notes.pdf
+[4]: https://discussions.citrix.com/topic/299016-how-to-disable-xenserver-logging/
+[5]: https://xen-orchestra.com/blog/creating-a-local-iso-repository-in-xenserver/
+[6]: https://discussions.citrix.com/topic/241867-guest-best-pratice-copy-vm-or-convert-to-template/

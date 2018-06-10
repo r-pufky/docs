@@ -1,8 +1,17 @@
 Troubleshooting PC Issues
 -------------------------
 I'm asked this all the time, so I put together a list of all the common things
-to look for when a PC is flaky and crashing. Even if you _know what you're 
+to look for when a PC is flaky and crashing. Even if you _know what you're
 doing_, you should run through these steps. You'd be surprised.
+
+1. [General Maintenance](#general-maintenance)
+1. [Random 'Crashes'](#random-crashes)
+   * [Memory](#memory)
+   * [CPU's](#cpus)
+   * [GPU's](#gpus)
+   * [HDD's](#hdds)
+   * [Motherboards](#motherboards)
+1. [Utilities](#utilities)
 
 General Maintenance
 -------------------
@@ -34,8 +43,8 @@ section.
 
 Random "Crashes"
 ----------------
-In most cases I've seen, this is due to hardware not connected properly, or 
-actual defective hardware. Most BSOD's I've seen in Windows 10 are actually 
+In most cases I've seen, this is due to hardware not connected properly, or
+actual defective hardware. Most BSOD's I've seen in Windows 10 are actually
 hardware related and not due to funky Windows installs.
 
 First, make sure when you run tests, you log everything. When you crash you will
@@ -84,8 +93,8 @@ This will allow you to test your CPU under load.
   need to tweak motherboard BIOS to supply the right amount of power, or replace
   the power supply
 * Is the CPU running hot at idle/load? (generally, 85c is the limit on CPU heat)
-  If it is, ensure that fans/heatsink are clean and connected. Remove heatsink, 
-  clean both CPU and heatsink with isopropel alcohol, and replace heatsink 
+  If it is, ensure that fans/heatsink are clean and connected. Remove heatsink,
+  clean both CPU and heatsink with isopropel alcohol, and replace heatsink
   compound. Ensure heatsink is contacting CPU correctly.
 * Is your BIOS configured to shutdown automatically when a temperature limit is
   hit? By default this is for extreme cases, but you may be hitting it.
@@ -95,9 +104,9 @@ Setup [GPUZ][2] and [Furmark][3]. Use GPUZ to get information on the GPU, and
 run a stress test on your video card with Furmark. A stable system should be
 able to run this at max settings for your PC without crashing, indefinitely.
 
-* Ensure Windows drivers for the video card are the most recent version. 
+* Ensure Windows drivers for the video card are the most recent version.
   [Clean install][8] your drivers if you crash
-* If you just started crashing and you recently updated drivers, 
+* If you just started crashing and you recently updated drivers,
   [clean install][8] older versions of your drivers
 * Re-seat GPU, ensure you are locking the card into the slot
 * Ensure that Power cables are connected to the GPU if they have connections for
@@ -185,7 +194,7 @@ remain the same. Get your motherboard model in the BIOS, usually by pressing
   low, or jumps around a lot, replace your power supply.
 * Verify your RAM and SSD's (*especially NVME*) are listed as compatible with
   your specific motherboard. These are listed usually as *hardware qualification
-  lists*. In recent years, I've noticed that motherboards are *much more 
+  lists*. In recent years, I've noticed that motherboards are *much more
   sensitive* to RAM and SSD's used, even though they are based on a standard.
 
 Utilities

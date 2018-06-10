@@ -4,13 +4,12 @@ Mail Delivery Agent (MDA) Setup.
 
 Ubunutu 16.04
 
-
 1. [Standard Definitions](#standard-definitions)
-2. [Base dovecot Installation](#base-dovecot-installation)
-3. [Testing dovecot](#testing-dovecot)
-3. [Adding a user/password for imap.passwd](#adding-a-userpassword-for-imappasswd)
-4. [Setting Up Server-Side Mail Filtering (sieve)](#setting-up-server-side-mail-filtering-sieve)
-5. [Migrating from Courier to Dovecot](#migrating-from-courier-to-dovecot)
+1. [Base dovecot Installation](#base-dovecot-installation)
+1. [Testing dovecot](#testing-dovecot)
+1. [Adding a user/password for imap.passwd](#adding-a-userpassword-for-imappasswd)
+1. [Setting Up Server-Side Mail Filtering (sieve)](#setting-up-server-side-mail-filtering-sieve)
+1. [Migrating from Courier to Dovecot](#migrating-from-courier-to-dovecot)
 
 Standard Definitions
 --------------------
@@ -144,7 +143,6 @@ sudo service dovecot restart
 *	LDA (local delivery agent) is what dovecot uses for it’s MDA; it also provides imaps
 *	Tailing mail.log and watching for incoming message delivery, should be sent to /usr/lib/dovecot/deliver and appear in your maildir
 
-
 Testing dovecot
 ---------------
 These are basic tests to ensure dovecot is working properly as an IMAPS MDA.
@@ -175,7 +173,6 @@ openssl s_client -starttls smtp -crlf -connect localhost:465
 *	telnet (non-encrypted) logins should fail (imap, pop3, pop3s)
 *	openssl logins should present certificate, connection (imaps)
 *	C logout to quit
-
 
 Adding a [user/password for imap.passwd][9]
 -------------------------------------------

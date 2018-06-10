@@ -1,17 +1,17 @@
 Steam - 7 Days to Die Dedicated Server
 --------------------------------------
-Uses [Ubuntu 16.04 base Xen template](../templates/ubuntu-server.md), and assumes post template setup scripts have been run.
+Uses [Ubuntu 16.04 base Xen template](../templates/ubuntu-server.md), and
+assumes post template setup scripts have been run.
 
 * Memory: 2048MB-8096MB
 * Disk: 20GB ([Encrypted volume setup](../templates/ubuntu-server.md#creating-an-encrypted-volume))
 
 1. [Ports Exposed](#ports-exposed)
-2. [Server Setup](#server-setup)
-3. [Important File Locations](#important-file-locations)
-4. [Disable Insecure Services](#disable-insecure-services)
-5. [Starting the Server](#starting-the-server)
-6. [References](#references)
-
+1. [Server Setup](#server-setup)
+1. [Important File Locations](#important-file-locations)
+1. [Disable Insecure Services](#disable-insecure-services)
+1. [Starting the Server](#starting-the-server)
+1. [References](#references)
 
 Ports Exposed
 -------------
@@ -24,7 +24,6 @@ Ports Exposed
 | 26900-26902 | UDP      | Dedicated Server (clients) |
 * Control Panel and Telnet are insecure and should be
   disabled and blocked.
-
 
 Server Setup
 -------------
@@ -74,22 +73,19 @@ WantedBy=multi-user.target
 systemctl enable 7days
 ```
 
-
-
 Important File Locations
 ------------------------
 
-| File                                                                    | Purpose                                                   |
-|------------------------------------------------------------------------------|-------------------------------------------------------------|
+| File                                                                         | Purpose                                                   |
+|------------------------------------------------------------------------------|-----------------------------------------------------------|
 | .local/share/7DaysToDie/Saves/[gametype]/[gameseed]/serveradmin.xml          | defines user bans, whitelists, admins and server commands |
-| .steam/SteamApps/common/7 Days to Die Dedicated Server/serverconfig.xml      | server configuration                                         |
-| .steam/SteamApps/common/7 Days to Die Dedicated Server/startserver.sh        | starts server                                               |
-| .steam/SteamApps/common/7 Days to Die Dedicated Server/7DaysToDieServer_Data | server logs                                                 |
+| .steam/SteamApps/common/7 Days to Die Dedicated Server/serverconfig.xml      | server configuration                                      |
+| .steam/SteamApps/common/7 Days to Die Dedicated Server/startserver.sh        | starts server                                             |
+| .steam/SteamApps/common/7 Days to Die Dedicated Server/7DaysToDieServer_Data | server logs                                               |
 
-serveradmin.xml does not exist by default in game saves, and needs to be created. A template
-is here: [LINK](steam-7-days-to-die/serveradmin.xml)
+serveradmin.xml does not exist by default in game saves, and needs to be
+created. A template is here: [LINK](steam-7-days-to-die/serveradmin.xml)
 * It might be pertinient to link directories to home directory.
-
 
 Disable Insecure Services
 -------------------------
@@ -102,7 +98,6 @@ vim .steam/SteamApps/common/7 Days to Die Dedicated Server/serverconfig.xml
 <property name="TelnetEnabled" value="false"/>
 <property name="TelnetPassword" value="<enter-a-password-scramble>"/>
 ```
-
 
 Starting the Server
 -------------------
@@ -118,10 +113,11 @@ cd .steam/SteamApps/common/7 Days to Die Dedicated Server/
 ./startserver.sh -configfile=serverconfig.xml
 ```
 
-
 References
 ----------
-[7 Days to Die Dedicated Server](
-https://developer.valvesoftware.com/wiki/7_Days_to_Die_Dedicated_Server#Installation)
+[7 Days to Die Dedicated Server][1]
 
-[SteamCMD Reference](https://developer.valvesoftware.com/wiki/SteamCMD)
+[SteamCMD Reference][2]
+
+[1]: https://developer.valvesoftware.com/wiki/7_Days_to_Die_Dedicated_Server#Installation
+[2]: https://developer.valvesoftware.com/wiki/SteamCMD

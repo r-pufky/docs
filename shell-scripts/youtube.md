@@ -8,7 +8,6 @@ Download and extract data from youtube videos.
 
 Installing Utilities
 --------------------
-
 ```bash
 curl http://yt-dl.org/latest/youtube-dl -o /usr/local/bin/youtube-dl
 chmod +x /usr/local/bin/youtube-dl
@@ -17,7 +16,6 @@ apt install lame libav-tools
 
 Snippets
 --------
-
 ### Extract 320kbps Audio From Video
 ```bash
 youtube-dl <url> --extract-audio --audio-format mp3 --audio-quality 320K --keep-video --add-metadata

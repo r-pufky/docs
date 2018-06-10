@@ -3,10 +3,10 @@ Crashplan Service
 Installing crashplan as an independent service.
 
 1. [Ports Exposed](#ports-exposed)
-3. [Important File Locations](#important-file-locations)
-2. [Server Setup](#server-setup)
-4. [Connect to Crashplan using X11](#connect-to-crashplan-using-x11)
-5. [Connect to Crashplan using SSH Port Forwarding](#connect-to-crashplan-using-ssh-port-forwarding)
+1. [Important File Locations](#important-file-locations)
+1. [Server Setup](#server-setup)
+1. [Connect to Crashplan using X11](#connect-to-crashplan-using-x11)
+1. [Connect to Crashplan using SSH Port Forwarding](#connect-to-crashplan-using-ssh-port-forwarding)
 
 [Ports Exposed][1]
 ------------------
@@ -56,7 +56,6 @@ Then reload `sysctl` or `reboot`.
 sysctl -p /etc/sysctl.conf
 ```
 
-
 Connect to Crashplan using X11
 ------------------------------
 A minimal X11 installation is needed to setup crashplan via X11.
@@ -100,7 +99,7 @@ Start a SSH session with port forwarding
 ssh -L 4200:localhost:4243 <user>@<crashplan-machine>
 ```
 
-Open localt crashplan app and proceed as normal.
+Open local crashplan app and proceed as normal.
 
 [1]: https://support.code42.com/Administrator/5/Planning_and_installing/TCP_and_UDP_ports_used_by_the_Code42_platform
 [2]: https://web-ham-msp.crashplanpro.com/console/#/app-downloads

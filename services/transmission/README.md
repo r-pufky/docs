@@ -7,11 +7,9 @@ Transmission docker instalation.
 [Docker repository][1]
 
 1. [Docker Ports Exposed](#docker-ports-exposed)
-2. [Important File Locations](#important-file-locations)
-3. [Docker Creation](#docker-creation)
-4. [Initial Setup](#initial-setup)
-5. [Importing Git Repositories](#importing-git-epositories)
-6. [Other Options](#other-options)
+1. [Important File Locations](#important-file-locations)
+1. [Docker Creation](#docker-creation)
+1. [Modifying Settings](#modifying-settings)
 
 Docker Ports Exposed
 --------------------

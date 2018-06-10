@@ -14,11 +14,11 @@ better than having people get used to accepting self-signed certificates,
 and it enables use of verifed SSL for things like mail and web services.
 
 1. [Ports Exposed](#ports-exposed)
-3. [Important File Locations](#important-file-locations)
-4. [Installing](#installing)
-5. [Generate a Certificate](#generate-a-certificate)
-6. [Renewing Certificates](#renewing-certificates)
-8. [Migrating from tls-sni-01 to nginx](#migrating-from-tls-sni-01-to-nginx)
+1. [Important File Locations](#important-file-locations)
+1. [Installing](#installing)
+1. [Generate a Certificate](#generate-a-certificate)
+1. [Renewing Certificates](#renewing-certificates)
+1. [Migrating from tls-sni-01 to nginx](#migrating-from-tls-sni-01-to-nginx)
 
 Port Exposed
 ------------
@@ -71,13 +71,15 @@ nginx -t && nginx -s reload
 ```
 
 ## Generate a certificate
-Using nginx validate a 4096bit key cert request for domains, using a given email.
+Using nginx validate a 4096bit key cert request for domains, using a given
+email.
 
 ```bash
 certbot --authenticator webroot --installer nginx --webroot-path /var/www/html --rsa-key-size 4096 --agree-tos --email **YOUR-EMAIL** --domains example.com,mail.example.com,example2.com,subdomain.example2.com
 ```
  * Make sure ports are set properly on router/firewall
- * [DNS-01 is][8] a more secure method, but your DNS host must support it (domains.google.com does not)
+ * [DNS-01 is][8] a more secure method, but your DNS host must support it
+   (domains.google.com does not)
  * Without an email specified, if you lose your generated keys, the domain is
    effectively locked out
 

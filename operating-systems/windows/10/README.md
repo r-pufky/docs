@@ -9,16 +9,14 @@ Execution Policy: **Unrestricted** (See: [Setting Execution Policy](#setting-exe
 Assumes Admin Rights
 
 1. [Setting Execution Policy](#setting-execution-policy)
-2. [Creating a UEFI USB Boot disk](#creating-a-uefi-usb-boot-disk)
-3. [Installing Windows 10 Without Live Account](#installing-windows-10-without-live-account)
-4. [Securing Windows Installation](#securing-windows-installation)
-5. [Removing pre-installed Windows packages](#removing-pre-installed-windows-packages)
-
+1. [Creating a UEFI USB Boot disk](#creating-a-uefi-usb-boot-disk)
+1. [Installing Windows 10 Without Live Account](#installing-windows-10-without-live-account)
+1. [Securing Windows Installation](#securing-windows-installation)
+1. [Removing pre-installed Windows packages](#removing-pre-installed-windows-packages)
 
 [PC Hardware Troubleshooting](../troubleshooting-pc-hardware.md)
 
 [Addition Windows 10 Issue Fixes](windows-issues.md)
-
 
 [Setting Execution Policy][3]
 -----------------------------
@@ -39,7 +37,6 @@ Y
 set-executionpolicy restricted
 Y
 ```
-
 
 Creating a UEFI USB Boot Disk
 -----------------------------
@@ -191,8 +188,6 @@ disabling the service, as cloud-based protection will cause 100% disk usage (in 
 > Update apps automatically = Disabled
 
 > Show products on tile = Disabled
-
-
 
 ### [Remove OneDrive from Windows Explorer][7] (regedit as admin)
 > Key: HKEY_CLASSES_ROOT\\CLSID\\{018D5C66-4533-4307-9B53-224DE2ED1FE6}

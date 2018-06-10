@@ -12,17 +12,16 @@ Windows 10 pro
 Execution Policy: **Unrestricted** (See: [Setting Execution Policy](windows-gaming.md#setting-execution-policy))
 
 1. [Moving User Profile Locations to Alternate Location](#moving-user-profile-locations-to-alternate-location)
-2. [Format ReFS on using a single drive](#format-refs-on-using-a-single-drive)
-3. [Addressing 100% disk usage issues](#addressing-100-disk-usage-issues)
-4. [Hiding local desktop for Chrome Remote Desktop](#hiding-local-desktop-for-chrome-remote-desktop)
-5. [Fixing non-working Windows store apps / 'trial expired' apps](#fixing-non-working-windows-store-apps-trial-expired-apps)
-6. [Enable Bitlocker on USB drives over RDP](#enable-bitlocker-on-usb-drives-over-rdp)
-7. [Fix Windows Applications not appearing in start menu searches](#fix-windows-applications-not-appearing-in-start-menu-searches)
-8. [Disable hibernation for Windows 10 sleep resume problems](#disable-hibernation-for-windows-10-sleep-resume-problems)
-9. [Enabling SSH Access](#enabling-ssh-access)
-10. [NTFS File Ownership Access Denied](#ntfs-file-ownership-access-denied)
-11. [OEM Partition / Low disk space warning after 1803 update](#oem-partition--low-disk-space-warning-after-1803-update)
-
+1. [Format ReFS on using a single drive](#format-refs-on-using-a-single-drive)
+1. [Addressing 100% disk usage issues](#addressing-100-disk-usage-issues)
+1. [Hiding local desktop for Chrome Remote Desktop](#hiding-local-desktop-for-chrome-remote-desktop)
+1. [Fixing non-working Windows store apps / 'trial expired' apps](#fixing-non-working-windows-store-apps-trial-expired-apps)
+1. [Enable Bitlocker on USB drives over RDP](#enable-bitlocker-on-usb-drives-over-rdp)
+1. [Fix Windows Applications not appearing in start menu searches](#fix-windows-applications-not-appearing-in-start-menu-searches)
+1. [Disable hibernation for Windows 10 sleep resume problems](#disable-hibernation-for-windows-10-sleep-resume-problems)
+1. [Enabling SSH Access](#enabling-ssh-access)
+1. [NTFS File Ownership Access Denied](#ntfs-file-ownership-access-denied)
+1. [OEM Partition / Low disk space warning after 1803 update](#oem-partition--low-disk-space-warning-after-1803-update)
 
 Moving User Profile Locations to Alternate Location
 ---------------------------------------------------
@@ -35,7 +34,6 @@ win + e > Select location > Right Click > Properties > Location Tab > Move ...
 * Select new (or existing) location to relocate
 * Move existing files into the new location
 * Apply
-
 
 Format ReFS on using a [single drive][1]
 ----------------------------------------
@@ -79,7 +77,6 @@ Get-Item X:\<file> | Get-FileIntegrity
 ```
 * Enabled and Enforced should be set to True
 
-
 Addressing 100% Disk Usage Issues
 ---------------------------------
 Generally speaking, 100% disk usage issues usually means there's a Filesystem check happening, or another service
@@ -110,7 +107,6 @@ but you can still manually run them.
 > Key: Data Integrity Scan = Disabled
 
 > Key: Data Integrity Scan for Crash Recovery = Disabled
-
 
 [Hiding local desktop for Chrome Remote Desktop][5]
 ----------------------------------------------------
@@ -154,7 +150,6 @@ open a connection, then locally connect to remote desktop to hide your current s
 
 **Rule**: Remote Desktop - User Mode (UDP-in) = Block
 
-
 [Fixing non-working Windows store apps / 'trial expired' apps][7]
 ------------------------------------------------------------------
 Default windows 10 applications may stop working if you remove dependent apps from the system; as such, apps
@@ -165,7 +160,6 @@ system to the default app installation state for windows 10.
 ```powershell
 Get-AppXPackage -AllUsers | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
 ```
-
 
 [Enable Bitlocker on USB drives over RDP][8]
 ---------------------------------------------
@@ -178,7 +172,6 @@ for RDP connections. This is probably unsafe.
 
 > **Policy**: All Removable Storage: Allow direct access in remote sessions = Enabled
 
-
 [Fix Windows Applications not appearing in start menu searches][9]
 -------------------------------------------------------------------
 Background Tasks need to be enabled for the application index to be updated when new programs are installed. By
@@ -189,7 +182,6 @@ enabled.
 ```start > Settings > Background Apps```
 
 > Key: Let apps run in the background = Enabled
-
 
 [Disable hibernation for Windows 10 sleep resume problems][4] (cmd as admin)
 -----------------------------------------------------------------------------

@@ -2,12 +2,11 @@ Docker Setup
 ------------
 Setting up docker on ubuntu 16.04. See [getting started][1]
 
-4. [Installing](#installing)
-5. [Common Management Tasks](#common-management-tasks)
+1. [Installing](#installing)
+1. [Common Management Tasks](#common-management-tasks)
 
 Installing
 ----------
-
 Add docker repository for latest docker packages.
 ```bash
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
