@@ -3,11 +3,10 @@ Crashplan Service
 Installing crashplan as an independent service.
 
 1. [Ports Exposed](#ports-exposed)
-2. [Server Setup](#server-setup)
 3. [Important File Locations](#important-file-locations)
-4. [Disable Insecure Services](#disable-insecure-services)
-5. [Starting the Server](#starting-the-server)
-6. [References](#references)
+2. [Server Setup](#server-setup)
+4. [Connect to Crashplan using X11](#connect-to-crashplan-using-x11)
+5. [Connect to Crashplan using SSH Port Forwarding](#connect-to-crashplan-using-ssh-port-forwarding)
 
 [Ports Exposed][1]
 ------------------
@@ -21,6 +20,14 @@ Installing crashplan as an independent service.
 | 1900        | UDP      | (Optional) Standard UPnP ports required for computer-to-computer connections   |
 | 2869        | TCP      | (Optional) Standard UPnP ports required for computer-to-computer connections   |
 | 5351        | UDP      | (Optional) Standard NAT-PMP port required for computer-to-computer connections |
+
+Important File Locations
+------------------------
+
+| File                 | Purpose                  |
+|----------------------|--------------------------|
+| /var/lib/crashplan/* | Crashplan identity certs |
+| /usr/local/crashplan | Default install location |
 
 Server Setup
 -------------
@@ -37,7 +44,7 @@ cd crashplan-install
    installation
  * defaults are fine
 
-Bump inotify limits for crashplan
+### Bump inotify limits for crashplan
 
 /etc/sysctl.conf
 ```bash
