@@ -1,12 +1,18 @@
 Copying Data
 ------------
-Securely delete data.
+Copy data with verification.
+
+Installing Utilities
+--------------------
+
+```bash
+apt install md5deep rsync
+```
 
 ### Install md5deep and Archive Copy Data
 ```bash
-sudo aptitude install md5deep rsync
 cd /X/
-sudo rsync -avxhHAX <DIRECTORY> /Y
+rsync -avxhHAX <DIRECTORY> /Y
 ```
  * -a archive (-rlptgoD)
  * -v verbose
@@ -19,7 +25,7 @@ sudo rsync -avxhHAX <DIRECTORY> /Y
 ### Creating a Hashfile of All Original Files and Sort
 ```bash
 cd /X/
-sudo md5deep -l -r -e <DIRECTORY> | sort > /tmp/<DIRECTORY>.md5
+md5deep -l -r -e <DIRECTORY> | sort > /tmp/<DIRECTORY>.md5
 ```
  * -l use relative file paths
  * -r recursive
@@ -30,7 +36,7 @@ Rsync verifies copied files, this is a manual verification.
 
 ```bash
 cd /Y/
-sudo md5deep -l -r -e <DIRECTORY> | sort > /tmp/<DIRECTORY>2.md5
+md5deep -l -r -e <DIRECTORY> | sort > /tmp/<DIRECTORY>2.md5
 md5sum /tmp/<DIRECTORY>.md5 /tmp/<DIRECTORY>2.md5
 diff /tmp/<DIRECTORY>.md5 /tmp/<DIRECTORY>2.md5
 ```
