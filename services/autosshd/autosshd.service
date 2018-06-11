@@ -1,0 +1,17 @@
+[Unit]
+Description=AutoSSHD (AutoSSH Remote)
+After=network.target auditd.service
+ConditionPathExists=!/etc/autosshd/autosshd_not_to_be_run
+
+[Service]
+EnvironmentFile=-/etc/default/ssh
+ExecStart=/usr/sbin/autosshd -D -f /etc/autosshd/sshd_config
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
+RestartPreventExitStatus=255
+Type=notify
+
+[Install]
+WantedBy=multi-user.target
+Alias=autosshd.service
