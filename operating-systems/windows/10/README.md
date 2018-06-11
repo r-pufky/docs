@@ -18,6 +18,8 @@ Assumes Admin Rights
 
 [Addition Windows 10 Issue Fixes](windows-issues.md)
 
+[Reinstalling Windows 10](windows-reinstall.md)
+
 [Setting Execution Policy][3]
 -----------------------------
 Powershell scripts require unrestricted execution policy to be set to
