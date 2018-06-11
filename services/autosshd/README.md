@@ -4,10 +4,10 @@ Reverse SSH tunnel for managing systems via autosshd.
 
 **DEPRECATED**: See [Configuration Management Tools](../../configuration-management)
 
-1. [Docker Ports Exposed](#docker-ports-exposed)
+1. [Ports Exposed](#ports-exposed)
 1. [Important File Locations](#important-file-locations)
-1. [Docker Creation](#docker-creation)
-1. [Modifying Settings](#modifying-settings)
+1. [Server Setup](#server-setup)
+1. [References](#references)
 
 Ports Exposed
 -------------
