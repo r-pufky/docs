@@ -1,6 +1,9 @@
 Mumble Server Administration
 ----------------------------
 
+1. [Adding New Member](#adding-new-member)
+1. [Create New Channel](#create-new-channel)
+
 Adding New Member
 -----------------
  * `Right-Click user > Register`
