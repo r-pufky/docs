@@ -12,10 +12,14 @@ easier central management of keys.
 See [example configuration](#sshd_config)
 
 Only allow users in SSH group to access
-`AllowGroups ssh`
+```bash
+AllowGroups ssh
+```
 
 Use authorized_keys file in /etc/ssh/<user> for authenticating <user>
-`AuthorizedKeysFile /etc/ssh/%u/authorized_keys`
+```bash
+AuthorizedKeysFile /etc/ssh/%u/authorized_keys
+```
 
 Ensure to add users to `ssh` group
 ```bash
