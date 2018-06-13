@@ -7,7 +7,7 @@ Basic XenServer 7.2 Setup & lockdown.
 1. [Convert VM to a Template](#convert-vm-to-a-template)
 1. [Modifying a VM Template](#modifying-a-vm-template)
 1. [Manually Creating New VM from Template](#manually-creating-new-vm-from-template)
-1. [PCI Passthrough for Direct Hardware Access)(#pci-passthrough-for-direct-hardware-access)
+1. [PCI Passthrough for Direct Hardware Access](#pci-passthrough-for-direct-hardware-access)
 1. [References](#references)
 
 Console Setup
