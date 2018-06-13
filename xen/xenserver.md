@@ -7,6 +7,7 @@ Basic XenServer 7.2 Setup & lockdown.
 1. [Convert VM to a Template](#convert-vm-to-a-template)
 1. [Modifying a VM Template](#modifying-a-vm-template)
 1. [Manually Creating New VM from Template](#manually-creating-new-vm-from-template)
+1. [PCI Passthrough for Direct Hardware Access)(#pci-passthrough-for-direct-hardware-access)
 1. [References](#references)
 
 Console Setup
@@ -131,6 +132,44 @@ xe vm-install template="<template name>" new-name-label="<vm name>"
 xe vm-start uuid=<new VM>
 ```
 
+PCI Passthrough for Direct Hardware Access
+------------------------------------------
+Used for direct hardware access needs, like disks for ZFS and GPU's for 
+plex.
+
+### Find Device IDs
+On XenServer as root, list PCI devices and determine the device ID's that
+you want. They are in the format B:D.f (beginging of line)
+```bash
+lspci
+```
+
+### Prevent dom0 driver binding
+This prevents dom0 from binding to hardware and presenting via a meta-layer.
+
+```bash
+/opt/xensource/libexec/xen-cmdline --set-dom0 "xen-pciback.hide=(04:00.0)"
+```
+
+Note: for multiple devices
+```bash
+/opt/xensource/libexec/xen-cmdline --set-dom0 "xen-pciback.hide=(04:00.0)(00:02.0)"
+```
+**Reboot XenServer**
+
+### Add PCI device passthrough
+With target VM off, determine UUID of vm with `xe vm-list`, then passthrough
+PCI devices. You only have to do this once.
+
+```bash
+xe vm-param-set other-config:pci=0/0000:<B:D.f> uuid=<vm uuid>
+```
+
+Note: for multiple devices
+```bash
+xe vm-param-set other-config:pci=0/0000:<B:D.f>,0/0000:<B:D.f> uuid=<vm uuid>
+```
+
 References
 ----------
 [Basic XenServer Security Tips][1]
@@ -145,9 +184,18 @@ References
 
 [Converting template to a VM on XenServer][6]
 
+[PCI Passthrough][7]
+
+[Multiple PCI Passthrough][8]
+
+[PCI Passthrough Reference][9]
+
 [1]: http://burm.net/2012/01/29/xenserver-basic-security-tips-how-do-you-secure-your-xenserver/
 [2]: https://discussions.citrix.com/topic/154063-add-new-usersgroup-to-xenserver/
 [3]: http://docs.citrix.com/content/dam/docs/en-us/xenserver/xenserver-7-0/downloads/xenserver-7-0-release-notes.pdf
 [4]: https://discussions.citrix.com/topic/299016-how-to-disable-xenserver-logging/
 [5]: https://xen-orchestra.com/blog/creating-a-local-iso-repository-in-xenserver/
 [6]: https://discussions.citrix.com/topic/241867-guest-best-pratice-copy-vm-or-convert-to-template/
+[7]: https://xenserver.org/blog/entry/pci-pass-through-on-xenserver-7-0.html
+[8]: https://discussions.citrix.com/topic/355675-xenserver-pci-passthrough-pv-hvm-multiple-devices/
+[9]: https://wiki.xen.org/wiki/Xen_PCI_Passthrough
