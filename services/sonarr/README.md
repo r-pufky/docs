@@ -44,10 +44,13 @@ docker run -t -d \
   -e /etc/localtime:/etc/localtime:ro \
   -v /data/services/sonarr:/config \
   -v /data/media/tv:/tv \
-  -v /data/downloads:/data/downloads \
+  -v /data/downloads:/downloads \
   linuxserver/sonarr:latest
 ```
  * The UID/GID should be set to a user/group that has access to your media.
+ * Your downloader will report the download path **mapped in the downloader
+   docker/service**. You need to map this exact path in sonarr for it to be
+   able to post-process downloads properly.
  * See [sonarr config example](sonarr.config.md) for example configuration.
 
 Add pre-existing series to Sonarr
