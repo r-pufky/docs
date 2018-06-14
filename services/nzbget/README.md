@@ -39,7 +39,7 @@ docker run -t -d \
   --name nzbget \
   --network host \
   --restart unless-stopped \
-  -e UGID=1001 \
+  -e PUID=1001 \
   -e PGID=1001 \
   -e TZ=America/Los_Angeles \
   -e /etc/localtime:/etc/localtime:ro \
