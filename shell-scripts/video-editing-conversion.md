@@ -4,6 +4,7 @@ Shell scripts and utilites for editing/converting videos.
 
 1. [Installing Utilities](#installing-utilities)
 1. [Snippets](#snippets)
+1. [Download m3u8 playlist](#download-m3u8-playlist)
 1. [References](#references)
 
 Installing Utilities
@@ -83,6 +84,25 @@ avconv -i <input.flv> output.mp3
 ```bash
 ffmpeg -i <input.flv> -vcodec copy -acodec copy out.mkv
 ```
+
+Download M3U8 Playlist
+----------------------
+For videos that are sitched together in short increments,
+usually TS (video stream).
+
+### Turn on developer tools
+ * ` ... > More Tools > Developer Tools`
+ * Load Video URL
+ * `Developer Tools > Network > All`
+ * Filter by `m3u8`
+ * Determine stream URL to use
+ * `Right click > Copy > Copy link address`
+
+### Use ffpmeg to download and stitch stream together
+```bash
+ffmpeg -i https://<URI>.m3u8 -c:v copy -c:a copy -f mpegts output.ts
+```
+
 
 References
 ----------
