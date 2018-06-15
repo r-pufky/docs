@@ -85,6 +85,11 @@ avconv -i <input.flv> output.mp3
 ffmpeg -i <input.flv> -vcodec copy -acodec copy out.mkv
 ```
 
+### Convert webm to mkv
+```bash
+ffmpeg -i your_input_filename.webm -qscale 0 your_outfile_name.mkv
+```
+
 Download M3U8 Playlist
 ----------------------
 For videos that are sitched together in short increments,

@@ -36,11 +36,6 @@ youtube-dl <url> 'bestvideo[height<=1080]+bestaudio/best[height<=1080]'
 youtube-dl https://youtube.com/playlist?list=<LID> --yes-playlist
 ```
 
-### Convert webm to mkv
-```bash
-ffmpeg -i your_input_filename.webm -qscale 0 your_outfile_name.mkv
-```
-
 References
 ----------
 [youtube-dl Source download (latest)][1]
