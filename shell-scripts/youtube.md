@@ -21,6 +21,21 @@ Snippets
 youtube-dl <url> --extract-audio --audio-format mp3 --audio-quality 320K --keep-video --add-metadata
 ```
 
+### List all formats for a video
+```bash
+youtube-dl <url> -F
+```
+
+### Download only the 1080p vidoe/audio stream from a video
+```bash
+youtube-dl <url> 'bestvideo[height<=1080]+bestaudio/best[height<=1080]'
+```
+
+### Download a playlist
+```bash
+youtube-dl https://youtube.com/playlist?list=<LID> --yes-playlist
+```
+
 ### Convert webm to mkv
 ```bash
 ffmpeg -i your_input_filename.webm -qscale 0 your_outfile_name.mkv
