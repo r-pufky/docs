@@ -60,7 +60,7 @@ find . -name "*.flv" -exec mencoder {} -o {}.mkv -of lavf -oac copy -ovc lavc \;
 
 ### Convert Entire Directory to MKV Containers
 ```bash
-for x in `ls -1`;do mkvmerge -o ${x}.mkv ${x}; done
+find . -type f -exec mkvmerge -o {}.mkv {} \;
 ```
 
 ### Convert Animated GIF to AVI/MPG
