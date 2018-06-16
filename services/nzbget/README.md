@@ -2,7 +2,7 @@ Nzbget Server
 -------------
 Usenet downloader.
 
-Plex/Sonarr/NZB/Torrent clients should run under the same user to run correctly.
+All media clients should run under the same user to run correctly.
 
 [Dedicated server setup / service notes](nzbget-dedicated.md)
 

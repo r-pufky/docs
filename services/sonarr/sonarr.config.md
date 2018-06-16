@@ -153,7 +153,7 @@ Be sure to toggle `advanced settings` to on; toggle back and forth to set both.
  * Port: 32400
  * Username: <YOUR_PLEX_EMAIL>
  * Password: <YOUR_PLEX_PASSWORD>
- * Update Library: yes
+ * Update Library: no
  * Use SSL: yes
 
 ### General

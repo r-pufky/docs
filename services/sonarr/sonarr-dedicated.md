@@ -2,7 +2,7 @@ Sonarr Server
 -------------
 Media Management.
 
-Plex/Sonarr/NZB/Torrent clients should run under the same user to run correctly.
+All media clients should run under the same user to run correctly.
 
 1. [Ports Exposed](#ports-exposed)
 1. [Important File Locations](#important-file-locations)
@@ -44,7 +44,7 @@ apt update && apt install mono-runtime libmono-cil-dev libmediainfo0v5 nzbdrone
 
 ### Create `sonarr` user and `media` group for running the service
 ```bash
-adduser --disabled-password --system --home /data/services/sonarr --gecos "nzbget" --group sonarr
+adduser --disabled-password --system --home /data/services/sonarr --gecos "sonarr" --group sonarr
 addgroup media
 adduser sonarr media
 ```

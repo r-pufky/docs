@@ -1,0 +1,17 @@
+[Unit]
+Description=Radarr
+Documentation=https://github.com/Radarr/Radarr
+After=syslog.target
+After=network.target
+
+[Service]
+User=radarr
+Group=media
+Type=simple
+ExecStart=/usr/bin/mono /opt/Radarr/Radarr.exe -nobrowser
+TimeoutStopSec=20
+KillMode=process
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

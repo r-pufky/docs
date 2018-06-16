@@ -2,7 +2,7 @@ Plex Media Server
 -----------------
 Media streaming service.
 
-Plex/Sonarr/NZB/Torrent clients should run under the same user to run correctly.
+All media clients should run under the same user to run correctly.
 
 [Dedicated server setup / service notes](plex-dedicated.md)
 
