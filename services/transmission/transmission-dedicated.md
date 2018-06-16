@@ -1,9 +1,7 @@
 Transmission Dedicated Server
 -----------------------------
-Uses [Ubuntu 16.04 base Xen template](../templates/ubuntu-server.md), and
-assumes post template setup scripts have been run.
 
-* Disk: 20GB ([Encrypted volume setup](../templates/ubuntu-server.md#creating-an-encrypted-volume))
+Plex/Sonarr/NZB/Torrent clients should run under the same user to run correctly.
 
 1. [Ports Exposed](#ports-exposed)
 1. [Important File Locations](#important-file-locations)

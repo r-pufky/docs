@@ -2,7 +2,9 @@ Plex Media Server
 -----------------
 Media streaming service.
 
-[Dedicated server setup](plex-dedicated.md)
+Plex/Sonarr/NZB/Torrent clients should run under the same user to run correctly.
+
+[Dedicated server setup / service notes](plex-dedicated.md)
 
 [Docker repository][1]
 

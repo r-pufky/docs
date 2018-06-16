@@ -2,7 +2,9 @@ Sonarr Server
 -------------
 Media Management.
 
-[Dedicated server setup](sonarr-dedicated.md)
+Plex/Sonarr/NZB/Torrent clients should run under the same user to run correctly.
+
+[Dedicated server setup / service notes](sonarr-dedicated.md)
 
 [Docker repository][1]
 
@@ -10,6 +12,7 @@ Media Management.
 1. [Important File Locations](#important-file-locations)
 1. [Docker Creation](#docker-creation)
 1. [Add pre-existing series to Sonarr](#add-pre-existing-series-to-sonarr)
+1. [Ensure no Duplicate Plex Updates](#ensure-no-duplicate-plex-updates)
 1. [Changing Media Location in Series](#changing-media-location-in-series)
 
 Docker Ports Exposed
@@ -52,26 +55,5 @@ docker run -t -d \
    docker/service**. You need to map this exact path in sonarr for it to be
    able to post-process downloads properly.
  * See [sonarr config example](sonarr.config.md) for example configuration.
-
-Add pre-existing series to Sonarr
----------------------------------
- * Import Existing Series On Disk: /data/tv
- * Be sure to set appropriate import behavior
- * Be sure to search for correct match for episode if needed
- * Add all existing shows (even no longer aired), these are all scanned when
-   adding shows and will be crufty if not set
- * Use should use [`-t -d`][3] is needed to keep the container in interactive
-   mode otherwise as soon as the container is idle it will sleep, which will
-   stop background running services.
-
-Changing Media Location in Series
----------------------------------
-If series were imported under a different directory initially, these can be
-updated
-
- * Series -> Series Editor
- * Select all series that had location changes
- * Select `Root Folder` (lower right) and enter new folder location
- * Click `Save`
 
 [1]: https://hub.docker.com/r/linuxserver/sonarr/

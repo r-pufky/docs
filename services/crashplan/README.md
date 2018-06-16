@@ -3,7 +3,7 @@ Crashplan Pro
 Crashplan Pro (For Small Business) is now the only 'consumer' level option for
 crashplan.
 
-[Dedicated server setup](crashplan-dedicated.md)
+[Dedicated server setup / service notes](crashplan-dedicated.md)
 
 [Docker repository][1]
 

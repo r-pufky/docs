@@ -2,7 +2,9 @@ Transmission
 ------------
 Transmission docker instalation.
 
-[Dedicated server setup](transmission-dedicated.md)
+Plex/Sonarr/NZB/Torrent clients should run under the same user to run correctly.
+
+[Dedicated server setup / service notes](transmission-dedicated.md)
 
 [Docker repository][1]
 

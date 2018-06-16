@@ -2,11 +2,14 @@ Sonarr Server
 -------------
 Media Management.
 
+Plex/Sonarr/NZB/Torrent clients should run under the same user to run correctly.
+
 1. [Ports Exposed](#ports-exposed)
 1. [Important File Locations](#important-file-locations)
 1. [Server Setup](#server-setup)
 1. [Add pre-existing series to Sonarr](#add-pre-existing-series-to-sonarr)
 1. [Changing Media Location in Series](#changing-media-location-in-series)
+1. [Ensure no Duplicate Plex Updates](#ensure-no-duplicate-plex-updates)
 1. [References](#references)
 
 [Ports Exposed][1]
@@ -85,6 +88,12 @@ updated
  * Select all series that had location changes
  * Select `Root Folder` (lower right) and enter new folder location
  * Click `Save`
+
+Ensure no Duplicate Plex Updates
+--------------------------------
+Plex will trigger updates on inotify events if configured to do so. If that is
+the case, disable `update library` in `Connect > Plex` menu. Otherwise
+duplicate items will appear on single files.
 
 References
 ----------

@@ -2,9 +2,12 @@ Plex Media Server
 -----------------
 Media streaming service.
 
+Plex/Sonarr/NZB/Torrent clients should run under the same user to run correctly.
+
 1. [Ports Exposed](#ports-exposed)
 1. [Important File Locations](#important-file-locations)
 1. [Server Setup](#server-setup)
+1. [Managing Duplicates](#managing-duplicates)
 1. [Legacy Plex Fixes](#legacy-plex-fixes)
 
 [Ports Exposed][1]
@@ -76,6 +79,30 @@ ssh -L 32400:<Server IP>:32400 -N <user>@<host>
 ```
 
 Then nagivate to `http://localhost:32400/web` to finish setup.
+
+Managing Duplicates
+-------------------
+### Duplicate Files for Single Files
+This happens when two refreshes for a new file happen at the same time.
+Generally this occurs because inotify detection is turned on in Plex, and
+Sonarr is set to push a manual `update library` command to plex on completion.
+Only one of these things should be enabled at once.
+
+To correct this
+ * Move 'duplicate' file out of Plex library
+ * Wait for episode refresh trigger / trigger manually (episode should be
+   removed)
+ * Move 'duplicate' file into Plex library
+ * Wait for episode refresh trigger / trigger manually (episode should be
+   removed). Dupe should be removed.
+
+### Finding Duplicates
+To show all 'detected' duplicates in plex:
+
+`Plex > TV Shows > [TV Shows Dropdown in main window] > Episodes`
+`Plex > TV Shows > [All in main window] > Duplicates`
+
+From there you can Inspect all shows.
 
 Legacy Plex Fixes
 -----------------

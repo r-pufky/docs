@@ -2,7 +2,9 @@ Nzbget Server
 -------------
 Usenet downloader.
 
-[Dedicated server setup](nzbget-dedicated.md)
+Plex/Sonarr/NZB/Torrent clients should run under the same user to run correctly.
+
+[Dedicated server setup / service notes](nzbget-dedicated.md)
 
 [Docker repository][1]
 
@@ -54,33 +56,5 @@ docker run -t -d \
  * Use should use [`-t -d`][3] is needed to keep the container in interactive
    mode otherwise as soon as the container is idle it will sleep, which will
    stop background running services.
-
-
-### Create OpenSSL certificates for https
-This will creat self-signed certificates, you can use actual ones if you have
-one.
-
-```bash
-apt install openssl
-sudo openssl req -x509 -nodes -days 36500 -newkey rsa:4096 -keyout /data/services/nzbget/nzbget.key -out /data/services/nzbget/nzbget.crt
-```
-
-SSH Tunneling
--------------
-If you don't want to expose any service ports, you can enable local only access
-then tunnel with SSH.
-
-### Only allow localhost access to webface
-
-nzbget.conf
-```
-ControlIP=127.0.0.1
-```
-
-### Tunnel with SSH
-
-```bash
-ssh -L 6791:localhost:6791 <user>@<host>
-```
 
 [1]: https://hub.docker.com/r/linuxserver/nzbget/
