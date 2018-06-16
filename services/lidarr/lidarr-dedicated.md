@@ -1,13 +1,13 @@
-Radarr Server
+Lidarr Server
 -------------
-Movie Management.
+Music Management.
 
 All media clients should run under the same user to run correctly.
 
 1. [Ports Exposed](#ports-exposed)
 1. [Important File Locations](#important-file-locations)
 1. [Server Setup](#server-setup)
-1. [Add pre-existing series to Radarr](#add-pre-existing-series-to-radarr)
+1. [Add pre-existing series to Lidarr](#add-pre-existing-series-to-lidarr)
 1. [Changing Media Location in Series](#changing-media-location-in-series)
 1. [Ensure no Duplicate Plex Updates](#ensure-no-duplicate-plex-updates)
 1. [References](#references)
@@ -17,20 +17,20 @@ All media clients should run under the same user to run correctly.
 
 | Port | Protocol | Purpose           |
 |------|----------|-------------------|
-| 7878 | TCP      | Radarr webservice |
+| 8686 | TCP      | Lidarr webservice |
 
 Important File Locations
 ------------------------
 
 | File                  | Purpose                              |
 |-----------------------|--------------------------------------|
-| /data/services/radarr | Radarr main service directory        |
-| /data/downloads       | Radarr monitored downloads directory |
+| /data/services/lidarr | Lidarr main service directory        |
+| /data/downloads       | Lidarr monitored downloads directory |
 
 Server Setup
 ------------
 
-### Add PPA and install radarr dependencies
+### Add PPA and install lidarr dependencies
 /etc/apt/sources.list.d/mono-offical.list
 ```
 deb http://download.mono-project.com/repo/ubuntu xenial main
@@ -41,45 +41,44 @@ $ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E03
 apt update && apt install mono-runtime libmono-cil-dev libmediainfo0v5 curl mediainfo mono-devel mediainfo sqlite3 libmono-cil-dev
 ```
 
-### Create `radarr` user and `media` group for running the service
+### Create `lidarr` user and `media` group for running the service
 ```bash
-adduser --disabled-password --system --home /data/services/radarr --gecos "radarr" --group radarr
+adduser --disabled-password --system --home /data/services/lidarr --gecos "lidarr" --group lidarr
 addgroup media
-adduser radarr media
+adduser lidarr media
 ```
  * Add your user account to media if needed
 
-### Install radarr
+### Install lidarr
 
 ```bash
 cd /opt
-curl -L -O $( curl -s https://api.github.com/repos/Radarr/Radarr/releases | grep linux.tar.gz | grep browser_download_url | head -1 | cut -d \" -f 4 )
-tar -xvzf Radarr.develop.*.linux.tar.gz
-sudo chown -R radarr:media /opt/Radarr
+curl -L -O $( curl -s https://api.github.com/repos/Lidarr/Lidarr/releases | grep linux.tar.gz | grep browser_download_url | head -1 | cut -d \" -f 4 )
+tar -xvzf Lidarr.develop.*.linux.tar.gz
+sudo chown -R lidarr:media /opt/Lidarr
 ```
 
-### Copy [systemd service template](radarr.service) to `/etc/systemd/system/radarr.service`.
+### Copy [systemd service template](lidarr.service) to `/etc/systemd/system/lidarr.service`.
  * Ensure options are updated with your settings in file
 
-Enable the radarr service
+Enable the lidarr service
 ```bash
-systemctl enable radarr.service
+systemctl enable lidarr.service
 ```
 
 ```bash
-systemctl start radarr
+systemctl start lidarr
 ```
 
-See [radarr configuration](radarr.config.md) for example configuration.
+See [lidarr configuration](lidarr.config.md) for example configuration.
 
-Add pre-existing series to Radarr
+Add pre-existing series to Lidarr
 ---------------------------------
  * Existing files should be in a folder for each movie.
- * Import Existing Series On Disk: /data/movies
+ * Import Existing Series On Disk: /data/music
  * Be sure to set appropriate import behavior
- * Be sure to search for correct match for episode if needed
- * Add all existing shows (even no longer aired), these are all scanned when
-   adding shows and will be crufty if not set
+ * Add all existing music (even tapings), these are all scanned when adding
+   music and will be crufty if not set.
 
 Ensure no Duplicate Plex Updates
 --------------------------------
@@ -89,9 +88,9 @@ duplicate items will appear on single files.
 
 References
 ----------
-[radarr website][1]
+[lidarr website][1]
 
-[Installing Radarr on Ubuntu][2]
+[Installing Lidarr on Ubuntu][2]
 
-[1]: https://github.com/Radarr/Radarr/wiki/Installation
-[4]: https://www.htpcguides.com/install-radarr-on-debian-8-jessie/
+[1]: https://github.com/lidarr/Lidarr
+[2]: https://github.com/Lidarr/Lidarr/wiki/Installation

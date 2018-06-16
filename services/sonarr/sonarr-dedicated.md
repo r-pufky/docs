@@ -1,6 +1,6 @@
 Sonarr Server
 -------------
-Media Management.
+TV Management.
 
 All media clients should run under the same user to run correctly.
 

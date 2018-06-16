@@ -125,7 +125,7 @@ Be sure to toggle `advanced settings` to on; toggle back and forth to set both.
  * Retention: 0
  * Maximum Size: 0
  * Prefer Special Indexer Flags: no
- * RSS Sync Interval: 240
+ * RSS Sync Interval: 0
  * Whitelisted Subtitle Tags: <empty>
  * Allow Hardcoded Subs: no
  * Parser Leniency: Strict
