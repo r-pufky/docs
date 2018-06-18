@@ -125,7 +125,7 @@ Fixing Playback Issues
 Generally this happens when you are playing media on Plex Home Theater or Plex
 app, where `transcoding` is being used. The app will crash generally with a
 message of `Conversation failed. Transcoder crashed or failed to start up`. This
-usuall happens because the transcoder was not able to write to the transcoding
+usually happens because the transcoder was not able to write to the transcoding
 directory.
 
  * Ensure `Transcoding` directory is setup properly on Plex Server.

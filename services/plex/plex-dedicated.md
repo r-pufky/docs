@@ -87,25 +87,12 @@ Fixing Playback Issues
 Generally this happens when you are playing media on Plex Home Theater or Plex
 app, where `transcoding` is being used. The app will crash generally with a
 message of `Conversation failed. Transcoder crashed or failed to start up`. This
-usuall happens because the transcoder was not able to write to the transcoding
+usually happens because the transcoder was not able to write to the transcoding
 directory.
 
  * Ensure `Transcoding` directory is setup properly on Plex Server.
  * Ensure `/tmp/Transcode` is owned by the right user. Changing the running user
    on docker without re-creating this directory will cause this to happen.
-
-### [Spinning playback icon, no playback][5]
-Generally if `transcoding` is setup right, then this is related to the `audio
-transcoding` failing. Turn on `debug logging` on the server and look for the
-`EAE timeout! EAE not running, or wrong folder? Could not read` error. This
-means you need to remap the docker `/tmp` directory to your transcoding
-directory, as plex updated transcoding and split out audio and video encoding
-into separate locations. Video transcodes in `/transcode` while audio transcodes
-in `/tmp`. Mapping `/tmp` in docker to the transcoding directory fixes this.
-
-```docker
--v /tmp/Transcode/tmp:/tmp
-```
 
 Managing Duplicates
 -------------------
