@@ -74,12 +74,12 @@ See [radarr configuration](radarr.config.md) for example configuration.
 
 Add pre-existing series to Radarr
 ---------------------------------
- * Existing files should be in a folder for each movie.
+ * Existing files should be in a folder for each movie
  * Import Existing Series On Disk: /data/movies
  * Be sure to set appropriate import behavior
  * Be sure to search for correct match for episode if needed
- * Add all existing shows (even no longer aired), these are all scanned when
-   adding shows and will be crufty if not set
+ * Import may timeout if initial import library is large. If this happens, just
+   goto `Movies` and run `Update Library`
 
 Ensure no Duplicate Plex Updates
 --------------------------------
