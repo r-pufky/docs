@@ -7,7 +7,7 @@ All media clients should run under the same user to run correctly.
 1. [Ports Exposed](#ports-exposed)
 1. [Important File Locations](#important-file-locations)
 1. [Server Setup](#server-setup)
-1. [Playback Fails / App Crashes](#playback-fails-app-crashes)
+1. [Fixing Playback Issues](#fixing-playback-issues)
 1. [Managing Duplicates](#managing-duplicates)
 1. [Legacy Plex Fixes](#legacy-plex-fixes)
 
@@ -81,8 +81,9 @@ ssh -L 32400:<Server IP>:32400 -N <user>@<host>
 
 Then nagivate to `http://localhost:32400/web` to finish setup.
 
-Playback Fails / App Crashes
-----------------------------
+Fixing Playback Issues
+----------------------
+### Playback Fails / App Crashes
 Generally this happens when you are playing media on Plex Home Theater or Plex
 app, where `transcoding` is being used. The app will crash generally with a
 message of `Conversation failed. Transcoder crashed or failed to start up`. This
@@ -92,6 +93,19 @@ directory.
  * Ensure `Transcoding` directory is setup properly on Plex Server.
  * Ensure `/tmp/Transcode` is owned by the right user. Changing the running user
    on docker without re-creating this directory will cause this to happen.
+
+### [Spinning playback icon, no playback][5]
+Generally if `transcoding` is setup right, then this is related to the `audio
+transcoding` failing. Turn on `debug logging` on the server and look for the
+`EAE timeout! EAE not running, or wrong folder? Could not read` error. This
+means you need to remap the docker `/tmp` directory to your transcoding
+directory, as plex updated transcoding and split out audio and video encoding
+into separate locations. Video transcodes in `/transcode` while audio transcodes
+in `/tmp`. Mapping `/tmp` in docker to the transcoding directory fixes this.
+
+```docker
+-v /tmp/Transcode/tmp:/tmp
+```
 
 Managing Duplicates
 -------------------
@@ -156,3 +170,4 @@ sudo reboot
 [2]: https://support.plex.tv/articles/235974187-enable-repository-updating-for-supported-linux-server-distributions/
 [3]: https://support.plex.tv/articles/206225077-how-to-use-secure-server-connections/
 [4]: https://plexapp.zendesk.com/hc/en-us/articles/201154527-Move-Viewstate-Ratings-from-One-Install-to-Another
+[5]: https://forums.plex.tv/discussion/265492/transcoder-fails-when-transcode-is-on-a-network-share/p4

@@ -11,6 +11,7 @@ All media clients should run under the same user to run correctly.
 1. [Docker Ports Exposed](#docker-ports-exposed)
 1. [Important File Locations](#important-file-locations)
 1. [Docker Creation](#docker-creation)
+1. [Fixing Playback Issues](#fixing-playback-issues)
 
 [Docker Ports Exposed][2]
 -------------------------
@@ -56,6 +57,7 @@ docker run -t -d \
   -v /data/services/plexmediaserver:/config \
   -v /data/media:/data/media:ro \
   -v /tmp:/transcode \
+  -v /tmp/Transcode/tmp:/tmp \
   plexinc/pms-docker:plexpass
 ```
  * The UID/GID should be set to a user/group that have access to your media.
@@ -64,6 +66,11 @@ docker run -t -d \
  * `/transcode` needs to be mapped to a **fast** drive. See
    [setup /transcode with tempfs](#setup-transcode-with-tempfs) to run
    transcoding in memory.
+ * We additionally map the plex `/tmp` directory to a subdirectory for the
+   transcoding directory. Plex updated the transcoding to split video encoding
+   to `/transcode` while the audio encoding is transcoded in `/tmp`. This causes
+   the `EAE timeout! EAE not running, or wrong folder? Could not read` Error.
+   Moving /tmp fixes this.
  * PLEX_CLAIM token is used to identify the server for your account. This is
    only used on initial startup without a pre-existing config. Generate a token
    here: https://www.plex.tv/claim
@@ -112,7 +119,34 @@ Then nagivate to `http://localhost:32400/web` to finish setup.
 docker start plex
 ```
 
+Fixing Playback Issues
+----------------------
+### Playback Fails / App Crashes
+Generally this happens when you are playing media on Plex Home Theater or Plex
+app, where `transcoding` is being used. The app will crash generally with a
+message of `Conversation failed. Transcoder crashed or failed to start up`. This
+usuall happens because the transcoder was not able to write to the transcoding
+directory.
+
+ * Ensure `Transcoding` directory is setup properly on Plex Server.
+ * Ensure `/tmp/Transcode` is owned by the right user. Changing the running user
+   on docker without re-creating this directory will cause this to happen.
+
+### [Spinning playback icon, no playback][5]
+Generally if `transcoding` is setup right, then this is related to the `audio
+transcoding` failing. Turn on `debug logging` on the server and look for the
+`EAE timeout! EAE not running, or wrong folder? Could not read` error. This
+means you need to remap the docker `/tmp` directory to your transcoding
+directory, as plex updated transcoding and split out audio and video encoding
+into separate locations. Video transcodes in `/transcode` while audio transcodes
+in `/tmp`. Mapping `/tmp` in docker to the transcoding directory fixes this.
+
+```docker
+-v /tmp/Transcode/tmp:/tmp
+```
+
 [1]: https://hub.docker.com/r/plexinc/pms-docker/
 [2]: https://support.plex.tv/articles/201543147-what-network-ports-do-i-need-to-allow-through-my-firewall/
 [3]: https://support.plex.tv/articles/206225077-how-to-use-secure-server-connections/
 [4]: https://www.cb-net.co.uk/linux/running-plex-from-a-docker-container-on-ubuntu-16-04-lts-16-10/
+[5]: https://forums.plex.tv/discussion/265492/transcoder-fails-when-transcode-is-on-a-network-share/p4
