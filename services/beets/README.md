@@ -76,7 +76,7 @@ beet import /path/to/music
    fairly in accurate
  * Use `i` for musicbrainz ID if the top guesses are not accurate. This is
    helpful to force a specific ID
- * Pay attentions to `Unknown` tracks, these will **not** be imported if the
+ * Pay attentions to `unmatched` tracks, these will **not** be imported if the
    current selection is choosen
 
 ### Re-importing music
