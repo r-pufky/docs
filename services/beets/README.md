@@ -7,7 +7,8 @@ Music organizer.
 1. [Docker Ports Exposed](#docker-ports-exposed)
 1. [Important File Locations](#important-file-locations)
 1. [Docker Creation](#docker-creation)
-1. [Fixing Playback Issues](#fixing-playback-issues)
+1. [Managing Library](#managing-library)
+1. [Importing Gotchas](#importing-gotchas)
 
 [Docker Ports Exposed][2]
 -------------------------
