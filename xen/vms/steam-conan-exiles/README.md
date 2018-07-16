@@ -55,7 +55,7 @@ steamcmd +@sSteamCmdForcePlatformType windows +force_install_dir /data/conan-exi
 #### vim /data/conan-exiles-server/ConanSandbox/Saved/Config/WindowsServer/[Engine.ini](Engine.ini)
 ```vim
 [URL]
-Port=7777                 The Port for your Server
+Port=7777
 
 [OnlineSubsystemSteam]
 ServerName=Conan Exiles
@@ -85,7 +85,7 @@ If it runs correctly in a shell but not as a service, this is why.
 #### Create conan system user and set permissions
 
 ```bash
-sudo adduser --system --home /data/conan-exiles-server conan
+adduser --system --home /data/conan-exiles-server conan
 cp -av ~/.wine /data/conan-exiles/server/.wine
 chown -R conan /data/conan-exiles-server
 ```
