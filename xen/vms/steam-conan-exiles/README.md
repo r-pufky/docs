@@ -9,7 +9,7 @@ assumes post template setup scripts have been run.
 1. [Ports Exposed](#ports-exposed)
 1. [Server Setup](#server-setup)
 1. [Important File Locations](#important-file-locations)
-1. [Starting the Server](#starting-the-server)
+1. [Running as a Service](#running-as-a-service)
 1. [References](#references)
 
 Ports Exposed
@@ -78,11 +78,12 @@ AdminPassword=<ADMIN_PASSWORD>
  * all other settings can be changed in `admin panel` when connected
  * see `<target>/ConanSandbox/Config` for all options
 
-### Running as service
+Running as service
+------------------
 Use xvfb to emulate correct environment for wine to function as a server.
 If it runs correctly in a shell but not as a service, this is why.
 
-#### Create conan system user and set permissions
+### Create conan system user and set permissions
 
 ```bash
 adduser --system --home /data/conan-exiles-server conan
@@ -90,7 +91,7 @@ cp -av ~/.wine /data/conan-exiles/server/.wine
 chown -R conan /data/conan-exiles-server
 ```
 
-#### vim /etc/systemd/system/[conan.service](conan.service)
+### vim /etc/systemd/system/[conan.service](conan.service)
 ```bash
 [Unit]
 Description=Conan Exiles
@@ -109,6 +110,7 @@ RestartSec=42s
 WantedBy=multi-user.target
 ```
 
+Reload the service, start and watch the logs
 ```bash
 systemctl daemon-reload
 systemctl enable conan.service
