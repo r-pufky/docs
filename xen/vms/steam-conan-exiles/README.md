@@ -78,8 +78,8 @@ AdminPassword=<ADMIN_PASSWORD>
  * all other settings can be changed in `admin panel` when connected
  * see `<target>/ConanSandbox/Config` for all options
 
-Running as service
-------------------
+Running as a Service
+--------------------
 Use xvfb to emulate correct environment for wine to function as a server.
 If it runs correctly in a shell but not as a service, this is why.
 
