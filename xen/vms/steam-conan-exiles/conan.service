@@ -1,0 +1,15 @@
+[Unit]
+Description=Conan Exiles
+After=syslog.target network.target
+
+[Service]
+Environment="WINEPREFIX=/data/conan-exiles-server/.wine"
+ExecStart=/usr/bin/xvfb-run --auto-servernum --server-args='-screen 0 640x480x24:32' /opt/wine-stable/bin/wine /data/conan-exiles-server/ConanSandboxServer.exe -log
+WorkingDirectory=/data/conan-exiles-server/
+User=conan
+Type=simple
+Restart=on-failure
+RestartSec=42s
+
+[Install]
+WantedBy=multi-user.target
