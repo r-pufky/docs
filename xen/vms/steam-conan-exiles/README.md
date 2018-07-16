@@ -27,7 +27,7 @@ Important File Locations
 |---------------------------------------------------------------------|-----------------------------------|
 | <target>/ConanSandbox/Saved/Config/WindowsServer/Engine.ini         | Core engine settings, e.g. ports. |
 | <target>/ConanSandbox/Saved/Config/WindowsServer/ServerSettings.ini | Specific game instance settings.  |
-| <target>/ConanSandbox/Saved/                                        | Game database and saves.          |
+| <target>/ConanSandbox/Saved/game.db                                 | Game database and saves.          |
  * See `<target>/ConanSandbox/Config/` for default files with all avaliable options
 
 Server Setup
