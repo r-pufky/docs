@@ -110,6 +110,19 @@ docker inspect <name>
 docker logs -f <name>
 ```
 
+## Interactive docker shell that respects terminal size
+
+.bash_profile
+```bash
+docker-shell() {
+  sudo docker exec -it -u $2 $1 /bin/bash -c "stty cols $COLUMNS rows $LINES && /bin/bash";
+}
+export -f docker-shell
+```
+ * use: `docker-shell [instance] [user]`
+
+
 [1]: https://docs.docker.com/get-started/
 [2]: https://github.com/wsargent/docker-cheat-sheet
 [3]: https://stackoverflow.com/questions/30209776/docker-container-will-automatically-stop-after-docker-run-d
+[4]: https://stackoverflow.com/questions/38786615/docker-number-of-lines-in-terminal-changing-inside-docker/49281526#49281526
