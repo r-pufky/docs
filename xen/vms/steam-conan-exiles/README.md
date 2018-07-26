@@ -170,9 +170,6 @@ chown -R conan /data/conan-exiles-server
 systemctl start conan
 ```
 
-chown -R conan /data/conan-exiles-server/ConanSandbox/Mods
-```
-
 References
 ----------
 [Conan Exiles Dedicated Server][1]
