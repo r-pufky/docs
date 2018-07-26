@@ -10,15 +10,22 @@ assumes post template setup scripts have been run.
 1. [Server Setup](#server-setup)
 1. [Important File Locations](#important-file-locations)
 1. [Running as a Service](#running-as-a-service)
+1. [Installing Mods](#installing-mods)
 1. [References](#references)
 
 Ports Exposed
 -------------
 
-| Port  | Protocol | Purpose                    |
-|-------|----------|----------------------------|
-| 27015 | UDP      | Dedicated Server (steam)   |
-| 7777  | UDP      | Dedicated Server (clients) |
+| Port  | Protocol | Purpose                             |
+|-------|----------|-------------------------------------|
+| 27015 | UDP      | Dedicated Server (steam)            |
+| 27016 | UDP      | Dedicated Server (steam announce)   |
+| 7777  | UDP      | Dedicated Server (clients direct)   |
+| 7778  | UDP      | Dedicated Server (client via steam) |
+ * 7778,27016 should be opened for server to appear in steam public lists or
+   in player's history. Public lists are buggy and will not always appear.
+ * If connecting on local network, use the private IP of the server, not the
+   public IP address.
 
 Important File Locations
 ------------------------
@@ -57,10 +64,16 @@ steamcmd +@sSteamCmdForcePlatformType windows +force_install_dir /data/conan-exi
 [URL]
 Port=7777
 
+[OnlineSubsystem]
+bHasVoiceEnabled=False                   Global disable/enable voice.
+ServerPassword=<PASSWORD>                Global platform independent password.
+ServerName=<YOUR_SERVER_NAME>            Global platform independent name.
+
 [OnlineSubsystemSteam]
-ServerName=Conan Exiles
 ServerQueryPort=27015
-ServerPassword=<PASSWORD>
+
+[Voice]
+bEnabled=False
 ```
  * add sections if they do not exist
  * on initial creation, most options will be removed and stored in the game
@@ -72,6 +85,10 @@ MaxNudity=2                              2=Full, 1=Partial, 0=None
 LogoutCharactersRemainInTheWorld=False   This option currently should be
                                          disabled as there is an issue with
                                          bodies.
+IsBattleEyeEnabled=False                 Disable for linux.
+IsVACEnabled=False                       Disable for linux.
+serverRegion=2                           3=Asia, 2=Americas, 1/0=Europe. Tested
+                                         as of 2018-06-19.
 PVPEnabled=False
 AdminPassword=<ADMIN_PASSWORD> 
 ```
@@ -118,6 +135,44 @@ systemctl start conan
 journalctl -f -u conan
 ```
 
+Installing Mods
+---------------
+Mods can be used for conan running on linux; though installing these mods
+automatically from the workshop with wine doesn't work consistently.
+
+### Obtain workshop mods
+ * Download the mods wanted using the steam workshop and your game client
+ * These should appear in `<STEAM>/content/440900/<MOD_ID>/MOD_NAME.pak`
+ * Copy all `pak` files to linux server
+
+### Setup linux server with mods
+Create a `Mods` folder within `ConanSandbox` and place all `pak` files within.
+
+```bash
+mkdir /data/conan-exiles-server/ConanSandbox/Mods
+cp *.pak /data/conan-exiles-server/ConanSandbox/Mods
+```
+
+### Enable modlist
+Place each mod on a separate line, prefaced with '*', which will enable the
+server to find the mod in this directory.
+
+vim /data/conan-exiles/server/ConanSandbox/Mods/modlist.txt
+```vim
+*MyAwesomeMod.pak
+*MyAwesomeOtherMod.pak
+```
+
+Ensure permissions are correct and start server
+
+```bash
+chown -R conan /data/conan-exiles-server
+systemctl start conan
+```
+
+chown -R conan /data/conan-exiles-server/ConanSandbox/Mods
+```
+
 References
 ----------
 [Conan Exiles Dedicated Server][1]
@@ -126,3 +181,4 @@ References
 
 [1]: https://conanexiles.gamepedia.com/Dedicated_Server_Setup:_Linux_and_Windows#Linux
 [2]: https://steamcommunity.com/sharedfiles/filedetails/?id=858035949
+[3]: https://old.reddit.com/r/ConanExiles/comments/5tgbsh/lets_discuss_ports/
