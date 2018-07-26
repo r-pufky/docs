@@ -104,7 +104,7 @@ If it runs correctly in a shell but not as a service, this is why.
 
 ```bash
 adduser --system --home /data/conan-exiles-server conan
-cp -av ~/.wine /data/conan-exiles/server/.wine
+cp -av ~/.wine /data/conan-exiles-server/.wine
 chown -R conan /data/conan-exiles-server
 ```
 
