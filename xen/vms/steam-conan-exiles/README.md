@@ -53,7 +53,7 @@ steamcmd +@sSteamCmdForcePlatformType windows +force_install_dir /data/conan-exi
 
 #### Run initial server to create config templates
 ```bash
-/opt/wine-stable/bin/wine ConanExilesServer.exe -log
+/opt/wine-stable/bin/wine /data/conan-exiles-server/ConanExilesServer.exe -log
 ```
  * run for about 5 minutes for all configs to be generated
  * should run through 2 cycles (two report cycles after loading/errors)
