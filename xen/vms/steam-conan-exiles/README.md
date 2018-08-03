@@ -185,8 +185,8 @@ cp -av /data/conan-exiles-server /data/backups/<date>-conan-exiles-server
 steamcmd +@sSteamCmdForcePlatformType windows +force_install_dir /data/conan-exiles-server +login anonymous +app_update 443030 validate +quit
 systemctl start conan
 ```
- * If you get 0x0 or disk write errors, you need to explicitly own the files
-   to modify them via steamcmd. Su to the user or temporarily chown them.
+ * If you get `0x0` or `disk write errors`, you need to explicitly own the files
+   to modify them via steamcmd. `su` to the user or temporarily chown them.
 
 References
 ----------
