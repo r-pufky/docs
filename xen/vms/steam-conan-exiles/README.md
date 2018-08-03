@@ -11,6 +11,7 @@ assumes post template setup scripts have been run.
 1. [Important File Locations](#important-file-locations)
 1. [Running as a Service](#running-as-a-service)
 1. [Installing Mods](#installing-mods)
+1. [Updating Server](#updating-server)
 1. [References](#references)
 
 Ports Exposed
@@ -169,6 +170,23 @@ Ensure permissions are correct and start server
 chown -R conan /data/conan-exiles-server
 systemctl start conan
 ```
+
+Updating Server
+---------------
+The server may be updated by stopping it, and running the update command. You will
+need permissions to the directory to do the update.
+
+It's a good idea to backup the install incase something goes wrong.
+
+```bash
+systemctl stop conan
+su - conan
+cp -av /data/conan-exiles-server /data/backups/<date>-conan-exiles-server
+steamcmd +@sSteamCmdForcePlatformType windows +force_install_dir /data/conan-exiles-server +login anonymous +app_update 443030 validate +quit
+systemctl start conan
+```
+ * If you get 0x0 or disk write errors, you need to explicitly own the files
+   to modify them via steamcmd. Su to the user or temporarily chown them.
 
 References
 ----------
