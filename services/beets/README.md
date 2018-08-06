@@ -124,7 +124,7 @@ beet modify artist='single artist feat. other artist' [query]
 
 Re-run ftintitle
 ```bash
-beet -v ftintitle
+beet -v ftintitle [query]
 ```
  * This should pickup your artist changes and act appropriately
 
