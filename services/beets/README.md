@@ -78,6 +78,9 @@ beet import /path/to/music
    helpful to force a specific ID
  * Pay attentions to `unmatched` tracks, these will **not** be imported if the
    current selection is choosen
+ * **Duplicate** albums that need to be disambiguated should be imported as
+   normal. When prompted `This album is already in the library`, select the
+   **K**eep option. This will use aunique to disambiguate the albums.
 
 ### Re-importing music
 Music may be re-imported if already existing. just use the library path.
