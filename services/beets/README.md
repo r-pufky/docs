@@ -236,6 +236,26 @@ Useful for matching duplicates in beets, or track lengths to albums
 avprobe [file]
 ```
 
+### Force import a track as a single specific track
+This will resolve tracks that are consistently mis-identified even
+after munging the metadata.
+
+Find the recording ID for musicbrains (the individual track ID on
+musicbrainz), and import singleton track
+```bash
+beet import /import/album/track.mp3
+```
+ * **T** option to specify a single track
+ * **I** to select a `recording ID`
+
+Re-import the now correct track into the existing album. Find the
+album ID from musicbrains or existing album in beets.
+```beets
+beet import /data/media/music/Non-Albums/imported-track-from-above.mp3
+```
+ * **I** to select a `release ID`
+ * **M** merge tracks into album
+
 [1]: https://hub.docker.com/r/linuxserver/beets/
 [2]: https://beets.readthedocs.io/en/latest/reference/index.html
 [3]: https://github.com/beetbox/beets/issues/1766
