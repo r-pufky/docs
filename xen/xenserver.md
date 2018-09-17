@@ -8,6 +8,7 @@ Basic XenServer 7.2 Setup & lockdown.
 1. [Modifying a VM Template](#modifying-a-vm-template)
 1. [Manually Creating New VM from Template](#manually-creating-new-vm-from-template)
 1. [PCI Passthrough for Direct Hardware Access](#pci-passthrough-for-direct-hardware-access)
+1. [Fix Missing OS Templates](#fix-missing-os-templates)
 1. [References](#references)
 
 Console Setup
@@ -144,6 +145,16 @@ you want. They are in the format B:D.f (beginging of line)
 lspci
 ```
 
+Fix Missing OS Templates
+------------------------
+If there are missing OS templates when creating a VM, it generally means that
+the `create-guest-templates` script hasn't been run. Running it manually as
+root on the server will add/update all OS templates and populate the dropdown.
+
+```bash
+/usr/bin/create-guest-templates
+```
+
 ### Prevent dom0 driver binding
 This prevents dom0 from binding to hardware and presenting via a meta-layer.
 
@@ -190,6 +201,8 @@ References
 
 [PCI Passthrough Reference][9]
 
+[Missing Templates][10]
+
 [1]: http://burm.net/2012/01/29/xenserver-basic-security-tips-how-do-you-secure-your-xenserver/
 [2]: https://discussions.citrix.com/topic/154063-add-new-usersgroup-to-xenserver/
 [3]: http://docs.citrix.com/content/dam/docs/en-us/xenserver/xenserver-7-0/downloads/xenserver-7-0-release-notes.pdf
@@ -199,3 +212,4 @@ References
 [7]: https://xenserver.org/blog/entry/pci-pass-through-on-xenserver-7-0.html
 [8]: https://discussions.citrix.com/topic/355675-xenserver-pci-passthrough-pv-hvm-multiple-devices/
 [9]: https://wiki.xen.org/wiki/Xen_PCI_Passthrough
+[10]: https://www.reddit.com/r/XenServer/comments/607pbi/my_xenserver_is_missing_templates/
