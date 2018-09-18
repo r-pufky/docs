@@ -86,7 +86,7 @@ beet import /path/to/music
 Music may be re-imported if already existing. just use the library path.
 
 ```bash
-beet import /data/media/music/existing/artist/album
+beet import -L /data/media/music/existing/artist/album
 ```
  * If you have `incremental` enabled, you may have to remove the metadata
    from the library before importing
@@ -243,9 +243,9 @@ after munging the metadata.
 Find the recording ID for musicbrains (the individual track ID on
 musicbrainz), and import singleton track
 ```bash
-beet import /import/album/track.mp3
+beet import -s /import/album/track.mp3
 ```
- * **T** option to specify a single track
+ * **S** option to import singleton
  * **I** to select a `recording ID`
 
 Re-import the now correct track into the existing album. Find the
