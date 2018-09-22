@@ -140,19 +140,11 @@ plex.
 
 ### Find Device IDs
 On XenServer as root, list PCI devices and determine the device ID's that
-you want. They are in the format B:D.f (beginging of line)
+you want. They are in the format B:D.f (beginging of line). You can see current
+drives attached to these PCI devices by [listing system block devices][11].
 ```bash
 lspci
-```
-
-Fix Missing OS Templates
-------------------------
-If there are missing OS templates when creating a VM, it generally means that
-the `create-guest-templates` script hasn't been run. Running it manually as
-root on the server will add/update all OS templates and populate the dropdown.
-
-```bash
-/usr/bin/create-guest-templates
+ls -a /sys/block
 ```
 
 ### Prevent dom0 driver binding
@@ -179,6 +171,16 @@ xe vm-param-set other-config:pci=0/0000:<B:D.f> uuid=<vm uuid>
 Note: for multiple devices
 ```bash
 xe vm-param-set other-config:pci=0/0000:<B:D.f>,0/0000:<B:D.f> uuid=<vm uuid>
+```
+
+Fix Missing OS Templates
+------------------------
+If there are missing OS templates when creating a VM, it generally means that
+the `create-guest-templates` script hasn't been run. Running it manually as
+root on the server will add/update all OS templates and populate the dropdown.
+
+```bash
+/usr/bin/create-guest-templates
 ```
 
 References
@@ -213,3 +215,4 @@ References
 [8]: https://discussions.citrix.com/topic/355675-xenserver-pci-passthrough-pv-hvm-multiple-devices/
 [9]: https://wiki.xen.org/wiki/Xen_PCI_Passthrough
 [10]: https://www.reddit.com/r/XenServer/comments/607pbi/my_xenserver_is_missing_templates/
+[11]: https://willhaley.com/blog/find-correspond-disk-belongs-which-hard-drive-controller-linux/
