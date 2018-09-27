@@ -463,7 +463,7 @@ sudo apt update && sudo apt install salt-minion
 Setup minion security requirements
 ```bash
 verify_env: True
-hash_type: 512
+hash_type: sha512
 keysize: 4096
 minion_sign_messages: True
 ```
@@ -569,7 +569,34 @@ salt 'my_minion' state.highstate
 
 ### Manual minion run, with specific environment
 ```bash
-salt 'my_minion' state.highstate pillarenv=dev stateenv=dev
+salt 'my_minion' state.highstate pillarenv=dev saltenv=dev
+salt 'my_minion' state.highstate saltenv=dev
+```
+ * You can typically just use `saltenv`
+ 
+### No Top file or external nodes data matches found.
+Typically caused by bad file resolution or default environment the minion
+is running in.
+
+Run minion in debug mode
+```bash
+systemctl stop salt-minion
+salt-minion -l debug
+```
+
+Run master in debug mode
+```bash
+systemctl stop salt-master
+salt-master -l debug
+```
+
+Attempt to force highstate from master, if fails, run the call manually
+on the minion
+```bash
+salt 'my_minion' state.highstate saltenv=prod
+```
+```bash
+salt-call -l debug state.apply saltenv=prod
 ```
 
 ### Manual Agent Run with Debugging
