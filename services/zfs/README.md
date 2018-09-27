@@ -59,6 +59,8 @@ sudo zpool status CONTAINER
 sudo zpool scrub CONTAINER
 ```
 
+* A container name does not need to be used to identify a ZFS container,
+  it will be detected automatically. `sudo zpool import`
 * Ensure low-level disks are setup properly
 * Search for the pool, then mount it, use -f if it wasn't exported before. Scrub.
 
