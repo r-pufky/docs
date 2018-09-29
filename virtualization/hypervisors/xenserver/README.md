@@ -1,6 +1,6 @@
-Xen Server Setup
--------------------
-Basic XenServer 7.2 Setup & lockdown.
+XenServer Setup
+---------------
+XenServer Setup & Lockdown (XCP-NG, Citrix XenServer)
 
 1. [Console Setup](#console-setup)
 1. [Creating a Local ISO Repository](#creating-a-local-iso-repository)
