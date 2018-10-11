@@ -1,0 +1,34 @@
+# This file describes the network interfaces available on your system
+# For more information, see netplan(5).
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    eno1:
+      dhcp4: false
+      dhcp6: false
+    eno2:
+      dhcp4: false
+      dhcp6: false
+    enp7s0:
+      dhcp4: false
+      dhcp6: false
+
+  bonds:
+    bond0:
+      interfaces:
+        - enp7s0
+        - eno2
+      dhcp4: true
+      parameters:
+        mode: active-backup
+        primary: enp7s0
+
+  bridges:
+    br0:
+      interfaces:
+        - eno1
+      dhcp4: true
+      parameters:
+        stp: false
+        forward-delay: 0
