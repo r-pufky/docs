@@ -23,7 +23,7 @@ network:
     br0:
       interfaces:
         - bond0
-      dhcp4: yes
+      dhcp4: true
       parameters:
         stp: false
         forward-delay: 0
