@@ -40,6 +40,11 @@ adduser <user> libvirt-qemu
 ```
  * This is so a normal user can run virt-manager, instead of logging in as root
 
+KVM Networking
+--------------
+By default KVM creates its own NAT network for VMs, howver using a bridge will
+allow these VMs to directly use your physical network.
+
 ###Create a Network Bridge
 This is so VM's can get IP's on the network, instead of using NAT.
 
@@ -74,14 +79,66 @@ networkctl status -a
  * `ip a` should also display corresponding information
  * `ifconfig` not as useful
 
+###Add bridge to KVM menu drop down.
+By default if you add a bridge, you will have to select `Specify Shared Device
+Name` then entering your bridge (typically `br0`). This will add the bridge
+directly to the dropdown menu instead.
+
+Create an xml configuration file with your settings
+
+/etc/libvertd/qemu/networks/br0.xml
+```xml
+<network>
+  <name>br0</name>
+  <bridge name='br0'/>
+  <forward mode='bridge'/>
+</network>
+```
+ * See [network XML file format][11]
+ * See bug for creating [bridged netplan interfaces for libvirtd][13]
+
+Import the network into KVM, start it and set to autostart
+To define a network from an XML file without starting it, use:
+
+```bash
+virsh net-define /etc/libvertd/qemu/networks/br0.xml
+virsh net-start br0
+virsh net-autostart br0
+```
+
+Show virtual networks, persistent should read `yes` for it to autostart
+```bash
+virsh net-list --all
+```
+
+###Remove pre-made NAT virtual bridge
+This network is un-needed if using bridging.
+
+Identify the NAT virtual network
+```bash
+virsh net-list -all
+```
+
+Set network inactive, remove it and restart libvirtd
+```bash
+virsh net-destroy br1
+virsh net-undefine br1
+service libvirtd restart
+```
+
+Confirm the network no longer exists
+```bash
+virch net-list --all
+```
+
 Important File Locations
 ------------------------
 Basic locations of important files for KVM
 
-| File                            | Purpose                       |
-|---------------------------------|-------------------------------|
-| /etc/libvirtd/                  | KVM and VM configuration data |
-| /var/lib/libvirt/images         | Default Disk Image Location   |
+| File                            | Purpose                           |
+|---------------------------------|-----------------------------------|
+| /etc/libvirtd/                  | KVM and VM configuration data     |
+| /var/lib/libvirt/images         | Default KVM image pool Location   |
 
 Creating New VM
 ---------------
@@ -183,8 +240,8 @@ virsh create vm-name.xml
 
 Moving KVM Storage Pool
 -----------------------
-The default image location makes sense for linux (/var), but not for servers
-centralizing data to storage pools.
+The default image storage location makes sense for linux (/var), but not for
+servers centralizing data to storage pools.
 
 Dump Disk Image Pool
 ```bash
@@ -220,6 +277,14 @@ References
 
 [Moving KVM Storage Pool][9]
 
+[Remove KVM NAT Virtual Bridge][10]
+
+[Network XML configuration for KVM][11]
+
+[KVM Networking Overview][12]
+
+[Configuring KVM libvirtd networking with netplan][13]
+
 [1]: https://www.linuxtechi.com/install-configure-kvm-ubuntu-18-04-server/
 [2]: https://linuxconfig.org/install-and-set-up-kvm-on-ubuntu-18-04-bionic-beaver-linux
 [3]: https://netplan.io/examples#bridging
@@ -229,3 +294,7 @@ References
 [7]: https://unix.stackexchange.com/questions/227792/are-there-any-benefits-of-using-qcow2-over-img-and-which-is-recommended-for-ma
 [8]: https://ask.fedoraproject.org/en/question/29704/how-do-i-move-a-virtual-machine-in-gnome-boxes-to-another-host/
 [9]: http://ask.xmodulo.com/change-default-location-libvirt-vm-images.html
+[10]: https://www.cyberciti.biz/faq/linux-kvm-disable-virbr0-nat-interface/
+[11]: https://libvirt.org/formatnetwork.html
+[12]: https://wiki.libvirt.org/page/Networking
+[13]: https://bugs.launchpad.net/ubuntu/+source/libvirt/+bug/1770345
