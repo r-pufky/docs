@@ -47,7 +47,7 @@ configured for an IP address, the resulting bonded or bridged device should.
   dhcp, ipv4, a specific MAC address with spanning tree and forward delay
   disabled. [Original Reference.][5]
 
-[Example](01-netcfg-bonde-bridged-networks.yaml): Two nics bonded together in
+[Example](01-netcfg-bonded-bridged-networks.yaml): Two nics bonded together in
   the default configuration, with a bridge created on top of the bonded
   interface. [Original Reference.][4]
 
