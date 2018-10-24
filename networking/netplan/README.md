@@ -61,9 +61,29 @@ There seems to be an issue with Netplan bridging, KVM, and using the same
 bridged for host networking traffic as well as VM traffic. The workaround is to
 have a separate bridged adapter.
 
+### Docker adds -P FORWARD DROP rule to iptables
+By default Docker will add `-P FORWARD DROP` rule to iptables to prevent
+specific exploitation vectors for containers. Unfortunately, this is applied to
+**all** interfaces, regardless of whatever interface docker uses; this rule is
+re-applied everytime the service is started. [iptables by default filters
+bridged interfaces][7]
+
+This will result in KVM virtual machines on a system with Docker to not be able
+to use a Bridge for network communication. As a bridge is a layer 2 device, it
+really shouldn't be filtering IP packets anyways. You can just disable bridged
+ adapters from applying the iptables. If you still use the bridge adaptor for
+ system traffic, consider munging the filter instead:
+
+Disable IP filtering on bridged interfaces
+```bash
+echo "0" /proc/sys/net/bridge/bridge-nf-call-iptables
+echo "0" /proc/sys/net/bridge/bridge-nf-call-ip6tables
+```
+
 [1]: https://netplan.io/reference
 [2]: https://webby.land/2018/04/27/bridging-under-ubuntu-18-04/
 [3]: https://ubuntuforums.org/showthread.php?t=2391884
 [4]: https://serverfault.com/questions/910955/problems-with-setting-up-bonding-on-netplan-ubuntu-server-18-04
 [5]: https://www.tomechangosubanana.com/2018/kvm-bridged-to-the-lan-with-dhcp/
 [6]: https://askubuntu.com/questions/971126/17-10-netplan-config-with-bridge
+[7]: https://serverfault.com/questions/162366/iptables-bridge-and-forward-chain

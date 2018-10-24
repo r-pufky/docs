@@ -2,6 +2,7 @@ KVM Server Setup
 ----------------
 Basic KVM server setup on ubuntu (18.04).
 1. [Install Service](#install-service)
+1. [KVM Networking](#kvm-networking)
 1. [Important File Locations](#important-file-locations)
 1. [Creating New VM](#creating-new-vm)
 1. [Convert XenServer XVA to KVM Image](#convert-xenserver-xva-to-kvm-template)
@@ -12,7 +13,7 @@ Basic KVM server setup on ubuntu (18.04).
 Install Service
 ---------------
 
-###Ensure hardware can support virtualization
+### Ensure hardware can support virtualization
 ```bash
 egrep -c '(vmx|svm)' /proc/cpuinfo
 ```
@@ -21,19 +22,19 @@ egrep -c '(vmx|svm)' /proc/cpuinfo
  * Check BIOS, ensure `IMMOU` and `SVM` is enabled for AMD processors
  * Check BIOS, ensure `IMMOU` and `VT-d` is enabled for Intel processors
 
-###Verify KVM accleration can be used
+### Verify KVM accleration can be used
 ```bash
 apt install cpu-checker
 kvm-ok
 ```
  * This should clearly state if accleration can be used
 
-###Install KVM packages
+### Install KVM packages
 ```bash
 apt install qemu qemu-kvm qemu-efi qemu-utils libvirt-bin libvirt-clients libvirt-daemon-system virt-manager
 ```
 
-###Set user group permissions
+### Set user group permissions
 ```bash
 adduser <user> libvirt
 adduser <user> libvirt-qemu
@@ -45,7 +46,26 @@ KVM Networking
 By default KVM creates its own NAT network for VMs, howver using a bridge will
 allow these VMs to directly use your physical network.
 
-###Create a Network Bridge
+### Docker adds -P FORWARD DROP rule to iptables
+By default Docker will add `-P FORWARD DROP` rule to iptables to prevent
+specific exploitation vectors for containers. Unfortunately, this is applied to
+**all** interfaces, regardless of whatever interface docker uses; this rule is
+re-applied everytime the service is started. [iptables by default filters
+bridged interfaces][14]
+
+This will result in KVM virtual machines on a system with Docker to not be able
+to use a Bridge for network communication. As a bridge is a layer 2 device, it
+really shouldn't be filtering IP packets anyways. You can just disable bridged
+ adapters from applying the iptables. If you still use the bridge adapter for
+ system traffic, consider munging the filter instead:
+
+Disable IP filtering on bridged interfaces
+```bash
+echo "0" /proc/sys/net/bridge/bridge-nf-call-iptables
+echo "0" /proc/sys/net/bridge/bridge-nf-call-ip6tables
+```
+
+### Create a Network Bridge
 This is so VM's can get IP's on the network, instead of using NAT.
 
 /etc/netplan/01-netcfg.yaml
@@ -79,7 +99,7 @@ networkctl status -a
  * `ip a` should also display corresponding information
  * `ifconfig` not as useful
 
-###Add bridge to KVM menu drop down.
+### Add bridge to KVM menu drop down.
 By default if you add a bridge, you will have to select `Specify Shared Device
 Name` then entering your bridge (typically `br0`). This will add the bridge
 directly to the dropdown menu instead.
@@ -298,3 +318,4 @@ References
 [11]: https://libvirt.org/formatnetwork.html
 [12]: https://wiki.libvirt.org/page/Networking
 [13]: https://bugs.launchpad.net/ubuntu/+source/libvirt/+bug/1770345
+[14]: https://serverfault.com/questions/162366/iptables-bridge-and-forward-chain

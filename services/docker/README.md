@@ -4,6 +4,7 @@ Setting up docker on ubuntu 16.04. See [getting started][1]
 
 1. [Installing](#installing)
 1. [Common Management Tasks](#common-management-tasks)
+1. [Bridged Adapters](#bridged-adapters)
 
 Installing
 ----------
@@ -121,8 +122,30 @@ export -f docker-shell
 ```
  * use: `docker-shell [instance] [user]`
 
+Bridged Adapters
+----------------
+### Docker adds -P FORWARD DROP rule to iptables
+By default Docker will add `-P FORWARD DROP` rule to iptables to prevent
+specific exploitation vectors for containers. Unfortunately, this is applied to
+**all** interfaces, regardless of whatever interface docker uses; this rule is
+re-applied everytime the service is started. [iptables by default filters
+bridged interfaces][5]
+
+This will result in KVM virtual machines on a system with Docker to not be able
+to use a Bridge for network communication. As a bridge is a layer 2 device, it
+really shouldn't be filtering IP packets anyways. You can just disable bridged
+ adapters from applying the iptables. If you still use the bridge adaptor for
+ system traffic, consider munging the filter instead:
+
+Disable IP filtering on bridged interfaces
+```bash
+echo "0" /proc/sys/net/bridge/bridge-nf-call-iptables
+echo "0" /proc/sys/net/bridge/bridge-nf-call-ip6tables
+```
+
 
 [1]: https://docs.docker.com/get-started/
 [2]: https://github.com/wsargent/docker-cheat-sheet
 [3]: https://stackoverflow.com/questions/30209776/docker-container-will-automatically-stop-after-docker-run-d
 [4]: https://stackoverflow.com/questions/38786615/docker-number-of-lines-in-terminal-changing-inside-docker/49281526#49281526
+[5]: https://serverfault.com/questions/162366/iptables-bridge-and-forward-chain
