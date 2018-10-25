@@ -41,6 +41,20 @@ adduser <user> libvirt-qemu
 ```
  * This is so a normal user can run virt-manager, instead of logging in as root
 
+### Add/Update storage pools
+By default a single location is used for VM's and ISO images. Create/map
+additional locations for storage pools to mount ISO images to keep separate from
+VM images.
+
+Launch VM manager with X11 forwarding enabled
+```bash
+virt-manager
+```
+ * Edit > connection details > storage
+ * '+' to add a pool
+ * Choose a name, median (dir for directory mapping, device for block device)
+ * Virtual machines should typically **not** have their own storage pool defined
+
 KVM Networking
 --------------
 By default KVM creates its own NAT network for VMs, howver using a bridge will
@@ -139,7 +153,7 @@ Show virtual networks, persistent should read `yes` for it to autostart
 virsh net-list --all
 ```
 
-###Remove pre-made NAT virtual bridge
+### Remove pre-made NAT virtual bridge
 This network is un-needed if using bridging.
 
 Identify the NAT virtual network
@@ -163,10 +177,10 @@ Important File Locations
 ------------------------
 Basic locations of important files for KVM
 
-| File                            | Purpose                           |
-|---------------------------------|-----------------------------------|
-| /etc/libvirtd/                  | KVM and VM configuration data     |
-| /var/lib/libvirt/images         | Default KVM image pool Location   |
+| File                            | Purpose                                  |
+|---------------------------------|------------------------------------------|
+| /etc/libvirtd/                  | KVM and VM configuration data            |
+| /var/lib/libvirt/images         | Default KVM VM/ISO image pool Location   |
 
 Creating New VM
 ---------------
@@ -270,6 +284,8 @@ Moving KVM Storage Pool
 -----------------------
 The default image storage location makes sense for linux (/var), but not for
 servers centralizing data to storage pools.
+
+By default, a single pool `default` is used for both VM images and ISO images.
 
 Dump Disk Image Pool
 ```bash
