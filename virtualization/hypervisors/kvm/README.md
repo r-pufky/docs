@@ -313,6 +313,12 @@ References
 
 [Configuring KVM libvirtd networking with netplan][13]
 
+[Iptables, Forwarding, Docker, KVM issues][14]
+
+[Netplan bridges and KVM][15]
+
+[Netplan, KVM bridges with DHCP, STP, forward-delay on Ubuntu][16]
+
 [1]: https://www.linuxtechi.com/install-configure-kvm-ubuntu-18-04-server/
 [2]: https://linuxconfig.org/install-and-set-up-kvm-on-ubuntu-18-04-bionic-beaver-linux
 [3]: https://netplan.io/examples#bridging
@@ -327,3 +333,5 @@ References
 [12]: https://wiki.libvirt.org/page/Networking
 [13]: https://bugs.launchpad.net/ubuntu/+source/libvirt/+bug/1770345
 [14]: https://serverfault.com/questions/162366/iptables-bridge-and-forward-chain
+[15]: https://askubuntu.com/questions/1054350/netplan-bridge-for-kvm-on-ubuntu-server-18-04-with-static-ips
+[16]: https://askubuntu.com/questions/971126/17-10-netplan-config-with-bridge
