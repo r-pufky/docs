@@ -50,19 +50,27 @@ allow these VMs to directly use your physical network.
 By default Docker will add `-P FORWARD DROP` rule to iptables to prevent
 specific exploitation vectors for containers. Unfortunately, this is applied to
 **all** interfaces, regardless of whatever interface docker uses; this rule is
-re-applied everytime the service is started. [iptables by default filters
+re-applied everytime the service is started. [Iptables by default filters
 bridged interfaces][14]
 
 This will result in KVM virtual machines on a system with Docker to not be able
 to use a Bridge for network communication. As a bridge is a layer 2 device, it
 really shouldn't be filtering IP packets anyways. You can just disable bridged
  adapters from applying the iptables. If you still use the bridge adapter for
- system traffic, consider munging the filter instead:
+ system traffic, consider munging the filter instead.
 
-Disable IP filtering on bridged interfaces
+Disable IP filtering on bridged interfaces:
 ```bash
 echo "0" /proc/sys/net/bridge/bridge-nf-call-iptables
 echo "0" /proc/sys/net/bridge/bridge-nf-call-ip6tables
+```
+
+### List Network Adapters
+Show all network adapters (including currently unassigned) for usage.
+
+```bash
+ip link show
+lspci | grep ethernet
 ```
 
 ### Create a Network Bridge
