@@ -173,6 +173,23 @@ Confirm the network no longer exists
 virch net-list --all
 ```
 
+### Ensure UFW is allowing connections to be made
+UFW may be configured by [default to block connections][17], verify this is not the
+case. The general default is to deny incoming connections, allow outgoing, and
+enable SSH.
+
+Get current status
+```bash
+ufw status
+```
+
+Set a generic default state
+```bash
+ufw default deny incoming
+ufw default allow outgoing
+ufw allow ssh
+```
+
 Important File Locations
 ------------------------
 Basic locations of important files for KVM
@@ -335,6 +352,8 @@ References
 
 [Netplan, KVM bridges with DHCP, STP, forward-delay on Ubuntu][16]
 
+[Ubuntu 18.04 UFW defaults blocking connections][17]
+
 [1]: https://www.linuxtechi.com/install-configure-kvm-ubuntu-18-04-server/
 [2]: https://linuxconfig.org/install-and-set-up-kvm-on-ubuntu-18-04-bionic-beaver-linux
 [3]: https://netplan.io/examples#bridging
@@ -351,3 +370,4 @@ References
 [14]: https://serverfault.com/questions/162366/iptables-bridge-and-forward-chain
 [15]: https://askubuntu.com/questions/1054350/netplan-bridge-for-kvm-on-ubuntu-server-18-04-with-static-ips
 [16]: https://askubuntu.com/questions/971126/17-10-netplan-config-with-bridge
+[17]: https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-18-04
