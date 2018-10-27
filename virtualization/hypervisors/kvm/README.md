@@ -174,9 +174,9 @@ virch net-list --all
 ```
 
 ### Ensure UFW is allowing connections to be made
-UFW may be configured by [default to block connections][17], verify this is not the
-case. The general default is to deny incoming connections, allow outgoing, and
-enable SSH.
+UFW may be configured by [default to block connections][17], verify this is not
+the case. The general default is to deny incoming connections, allow outgoing,
+and enable SSH.
 
 Get current status
 ```bash
@@ -281,9 +281,9 @@ Hostname
 grep -o '.\{0,40\}hostname.\{0,40\}' my_vm/ova.xml
 ```
 
-Moving KVM Images
------------------
-KVM images are stored in two locations, configuration and disk images.
+Export KVM Image
+----------------
+Useful for a configuration backup or moving to a new system.
 
 Dump the Current VM configuration
 ```bash
@@ -297,14 +297,48 @@ virsh create vm-name.xml
 ```
  * Update disk location in XML file if location has changed
 
+Moving KVM Images
+-----------------
+KVM images are stored in two locations, configuration and disk images.
+
+ 1. **Ensure VM is stopped.**
+ 1. Move VM disk images to new location
+ 1. Update location information in XML file `/etc/libvirtd/qemu/<VM>.xml`
+ 1. Restart service `service libvirtd restart`
+
 Moving KVM Storage Pool
 -----------------------
 The default image storage location makes sense for linux (/var), but not for
 servers centralizing data to storage pools.
 
 By default, a single pool `default` is used for both VM images and ISO images.
+Service requires a restart on changes.
 
-Dump Disk Image Pool
+### List all pools
+```bash
+virsh pool-list
+virsh pool-info <POOLNAME>
+```
+
+### Delete a pool
+This will only remove the pool in KVM, not delete the underlying data.
+
+```bash
+virsh pool-destroy <POOLNAME>
+```
+ * Alternatively, you can just delete the definition in /etc/libvirtd/storage
+   and corresponding autostart file if existing /etc/libvirtd/storage/autostart
+
+### Move pool while running
+VM's should probably be off and data move to new locaiton already.
+
+```bash
+virsh pool-edit <POOLNAME>
+```
+ * Update location for storage
+ * Generally need to restart `libvirtd` for changes to apply
+
+### Dump Disk Image Pool
 ```bash
 virsh pool-dumpxml default > pool.xml
 ```
@@ -312,7 +346,7 @@ virsh pool-dumpxml default > pool.xml
  * Make sure disk images are moved to new location
  * Update disk image locations in XML file
 
-Destroy existing pool, import new pool
+Destroy existing pool, import new pool from XML dump
 ```bash
 virsh pool-destory default
 virsh pool-create pool.xml
