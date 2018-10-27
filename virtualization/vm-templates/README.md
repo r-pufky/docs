@@ -11,6 +11,7 @@ Standard Ubuntu VM
 | Disk   | 10 GB                |
 
 Standard Windows VM
+-------------------
 | Type   | Value                  |
 |--------|------------------------|
 | CPU    | 8 (4 sockets, 2 cores) |
