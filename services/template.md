@@ -4,9 +4,9 @@ Background notes on service, VM requirements. TOC is a rought layout adjust as
 needed (e.g. docker setups, xen setups, etc).
 
 [docker example](gogs/README.md)
-[xen example](../xen/templates/steam-7-days-to-die.md)
+[xen example](../virtualization/vm-templates/steam-7-days-to-die/README.md)
 
-* Disk: 20GB ([Encrypted volume setup](../templates/ubuntu-server.md#creating-an-encrypted-volume))
+* Disk: 20GB ([Encrypted volume setup](../operating-systems/ubuntu/ubuntu-server.md#creating-an-encrypted-volume))
 
 1. [Ports Exposed](#ports-exposed)
 1. [Important File Locations](#important-file-locations)

@@ -1,10 +1,10 @@
 Steam - 7 Days to Die Dedicated Server
 --------------------------------------
-Uses [Ubuntu 16.04 base Xen template](../../templates/ubuntu-server.md), and
+Uses [Ubuntu 16.04 base Xen template](../../../oparating-systems/ubuntu/ubuntu-server.md), and
 assumes post template setup scripts have been run.
 
 * Memory: 2048MB-8096MB
-* Disk: 20GB ([Encrypted volume setup](../../templates/ubuntu-server.md#creating-an-encrypted-volume))
+* Disk: 20GB ([Encrypted volume setup](../../../oparating-systems/ubuntu/ubuntu-server.md#creating-an-encrypted-volume))
 
 1. [Ports Exposed](#ports-exposed)
 1. [Server Setup](#server-setup)
