@@ -22,6 +22,7 @@ Execution Policy: **Unrestricted** (See: [Setting Execution Policy](windows-gami
 1. [Enabling SSH Access](#enabling-ssh-access)
 1. [NTFS File Ownership Access Denied](#ntfs-file-ownership-access-denied)
 1. [OEM Partition / Low disk space warning after 1803 update](#oem-partition--low-disk-space-warning-after-1803-update)
+1. [Application using the wrong audio output device](#application-using-the-wrong-audio-output-device)
 
 Moving User Profile Locations to Alternate Location
 ---------------------------------------------------
@@ -250,6 +251,18 @@ mountvol <driveletter>: /d
 
 > New **DWORD**: NoLowDiskSpaceChecks = 1
 
+[Application using the wrong audio output device][18]
+-----------------------------------------------------
+Some applications will not respect the default output device in Windows 10 and
+output to the wrong device.
+
+Output settings can be set for specific applications via the settings menu.
+
+`start > settings > audio settings`
+ * Change the device or app volume
+ * Other sound options > App volume and device preferences
+ * Set preferred output for device (application must be running)
+
 
 [1]: http://blog.architecting.it/2012/07/10/windows-server-2012-windows-server-8-resilient-file-system/w8-refs-2/
 [2]: http://www.thewindowsclub.com/disable-superfetch-prefetch-ssd
@@ -268,3 +281,4 @@ mountvol <driveletter>: /d
 [15]: http://support.microsoft.com/kb/243330
 [16]: https://answers.microsoft.com/en-us/insider/forum/insider_wintp-insider_install-insiderplat_pc/new-oem-partition-appears-in-file-explorer-after/29a0a95c-fe51-41a5-a345-72773c437b39
 [17]: http://www.thewindowsclub.com/faq-low-disk-space-notification-or-warning-in-windows-7-how-to-disable-etc
+[18]: https://www.intowindows.com/set-different-audio-output-devices-for-different-programs-in-windows-10/
