@@ -9,17 +9,13 @@ Ubuntu 16.04 server configuration notes.
 1. [Adding Custom Fonts](#adding-custom-fonts)
 1. [References](#references)
 
-Base Install
-------------
-* Template: ubuntu 16.04
-* 10GB default disk
-* All ethernet devices
+### Base Install
 * Hostname: ubuntu
 * Full Name: None
 * Username: template
 * Password: template
 * No encrypted home directory
-* Partitioning: Guided, Full with Encrypted LVM
+* Partitioning: Guided, Full disk, no encryption
 * Set default encryption passphrase: template
 * Size: max
 * Automatic security updates

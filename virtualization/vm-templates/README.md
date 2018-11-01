@@ -13,13 +13,7 @@ Ubuntu
 | Memory | 1 GB                 |
 | Disk   | 10 GB                |
 
-
-Xen Server Template
--------------------
-Ubuntu base VM template.
-
-Base Configuration
-------------------
+### Base Configuration
 | Type          | Value                      |
 |---------------|----------------------------|
 | BIOS          | Copy BIOS strings to VM    |
@@ -37,9 +31,8 @@ Base Configuration
 | Updates       | Automatic Security Updates |
 | Packages      | Standard System Utilities  |
  * Ubuntu VM's are managed with saltstack
- * Follow [documentation here][../../operating-systems/ubuntu] for manual system
+ * Follow [documentation here](../../operating-systems/ubuntu) for manual system
    configuration (all of these steps are automatically applied with saltstack).
-
 
 Windows 10
 ----------
@@ -50,8 +43,7 @@ Windows 10 base VM template.
 1. [Adding Custom Fonts](#adding-custom-fonts)
 1. [References](#references)
 
-Base Configuration
-------------------
+### Base Configuration
 | Type         | Value                   |
 |--------------|-------------------------|
 | BIOS         | Copy BIOS strings to VM |

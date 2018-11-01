@@ -9,17 +9,13 @@ Ubuntu 18.04 server configuration notes.
 1. [Adding Custom Fonts](#adding-custom-fonts)
 1. [References](#references)
 
-Base Install
-------------
-* Template: ubuntu 18.04
-* 10GB default disk
-* All ethernet devices
+### Base Install
 * Hostname: ubuntu
 * Full Name: None
 * Username: template
 * Password: template
 * No encrypted home directory
-* Partitioning: Guided, Full with Encrypted LVM
+* Partitioning: Guided, Full disk, no encryption
 * Set default encryption passphrase: template
 * Size: max
 * Automatic security updates
@@ -83,9 +79,13 @@ sudo service unattended-upgrades restart
 ```
 
 ### Setup Message of the Day
-* Disable documentation listing
+* Disable [documentation listing][12]
 ```bash
 sudo chmod a-x /etc/update-motd.d/10-help-text
+sudo chmod a-x /etc/update-motd.d/50-landscape-info
+sudo chmod a-x /etc/update-motd.d/50-motd-news
+sudo chmod a-x /etc/update-motd.d/50-landscape-sysinfo
+sudo chmod a-x /etc/update-motd.d/80-livepatch
 ```
 
 * Add uptime reboot warning message. [LINK.](https://raw.githubusercontent.com/r-pufky/docs/master/operating-systems/ubuntu/etc/update-motd.d/98-reboot-required)
@@ -350,3 +350,4 @@ References
 [9]: http://asalor.blogspot.de/2011/08/trim-dm-crypt-problems.html
 [10]: https://askubuntu.com/questions/3697/how-do-i-install-fonts
 [11]: https://help.ubuntu.com/community/AutomaticSecurityUpdates
+[12]: https://www.cyberciti.biz/faq/how-to-disable-ssh-motd-welcome-message-on-ubuntu-linux/
