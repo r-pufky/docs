@@ -573,7 +573,17 @@ salt 'my_minion' state.highstate pillarenv=dev saltenv=dev
 salt 'my_minion' state.highstate saltenv=dev
 ```
  * You can typically just use `saltenv`
- 
+
+### Print only [changes or errors][22]
+By default `state.highstate` will print detailed information. This will focus
+output on changes and errors.
+```bash
+salt 'my_minion' state.highstate saltenv=prod --state-output=changes
+salt 'my_minion' state.highstate saltenv=prod --state-output=mixed
+```
+ * `changes` will log standard messages on changes and errors
+ * `mixed` will log terse messages for changes and standard messages for errors
+
 ### No Top file or external nodes data matches found.
 Typically caused by bad file resolution or default environment the minion
 is running in.
@@ -654,3 +664,4 @@ and restart this to change name (systemctl salt-minion restart)
 [19]: http://blog.ghostinthemachines.com/2015/03/01/how-to-use-gpg-command-line/
 [20]: https://docs.saltstack.com/en/latest/ref/states/all/salt.states.user.html
 [21]: https://serverfault.com/questions/330069/how-to-create-an-sha-512-hashed-password-for-shadow
+[22]: https://stackoverflow.com/questions/15953082/is-there-a-way-to-display-only-changes-and-errors
