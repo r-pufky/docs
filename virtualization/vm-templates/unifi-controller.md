@@ -1,6 +1,6 @@
 Unifi AP Controller
 -------------------
-Uses [Ubuntu 16.04 base Xen template](../../oparating-systems/ubuntu/ubuntu-server.md), and
+Uses [Ubuntu 16.04 base Xen template](../../oparating-systems/ubuntu/16.04/server.md), and
 assumes post template setup scripts have been run.
 
 1. [Ports Exposed](#ports-exposed)

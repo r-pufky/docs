@@ -1,6 +1,6 @@
-Xen Server Template
+Ubuntu 18.04 Server
 -------------------
-Ubuntu 16.04 base Xen template.
+Ubuntu 18.04 server configuration notes.
 
 1. [Base Install](#base-install)
 1. [Manual Crypt/LUKS Commands](#manual-cryptluks-commands)
@@ -11,7 +11,7 @@ Ubuntu 16.04 base Xen template.
 
 Base Install
 ------------
-* Template: ubuntu 16.04
+* Template: ubuntu 18.04
 * 10GB default disk
 * All ethernet devices
 * Hostname: ubuntu

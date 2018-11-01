@@ -1,7 +1,7 @@
 Steam - Conan Exiles (Linux) Dedicated Server
 ---------------------------------------------
-Uses [Ubuntu 16.04 base Xen template](../../../operating-systems/ubuntu/preseed/README.md), and
-assumes post template setup scripts have been run.
+Uses [Ubuntu 16.04 VM template](../../../operating-systems/ubuntu/16.04/server.md),
+and assumes post template setup scripts have been run.
 
 * Memory: 2048MB-8096MB
 * Disk: 20GB

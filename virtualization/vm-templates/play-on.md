@@ -1,7 +1,7 @@
 Playon Dedicated Recorder
 -------------------------
-Uses [Windows 10 base Xen template](../../operating-systems/windows/windows.md), and assumes post
-template setup scripts have been run.
+Uses [Windows 10 base Xen template](README.md#windows-10), and assumes
+post template setup scripts have been run.
 
 * Memory: 8GB
 * Disk: 60GB
