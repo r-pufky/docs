@@ -315,6 +315,27 @@ fc-cache -f -v
 fc-list
 ```
 
+Update UFW Rules
+----------------
+Uncomplicated FireWall is setup by default in 18.04. Consideration should be
+made on whether to keep this or disable this
+
+### Allow a well-know service
+```bash
+ufw allow ssh
+```
+
+### Get current status
+```base
+ufw status
+ufw status verbose
+```
+
+### Disable UFW
+```bash
+ufw disable
+```
+
 References
 ----------
 [Expanding a LVM after expanding virtual machine disk][1]
@@ -339,6 +360,8 @@ References
 
 [Automatic Security Updates][11]
 
+[Configuring UFW in Ubuntu 18.04][13]
+
 [1]: https://www.rootusers.com/how-to-increase-the-size-of-a-linux-lvm-by-expanding-the-virtual-machine-disk/
 [2]: https://unix.stackexchange.com/questions/185390/list-open-dm-crypt-luks-volumes
 [3]: https://unix.stackexchange.com/questions/126180/how-to-reset-password-on-an-encrypted-fs
@@ -351,3 +374,4 @@ References
 [10]: https://askubuntu.com/questions/3697/how-do-i-install-fonts
 [11]: https://help.ubuntu.com/community/AutomaticSecurityUpdates
 [12]: https://www.cyberciti.biz/faq/how-to-disable-ssh-motd-welcome-message-on-ubuntu-linux/
+[13]: https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-18-04
