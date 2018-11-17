@@ -81,9 +81,10 @@ echo "0" /proc/sys/net/bridge/bridge-nf-call-iptables
 echo "0" /proc/sys/net/bridge/bridge-nf-call-ip6tables
 echo "0" /proc/sys/net/bridge/bridge-nf-call-arptables
 ```
- * This will not persist across reboots, but good to validate it works
+ * This will not persist across reboots, but to validate bridging is fixed
 
 Update settings for sysctl as well as [UFW sysctl][9].
+
 /etc/sysctl.conf
 ```bash
 net.bridge.bridge-nf-call-ip6tables = 0
