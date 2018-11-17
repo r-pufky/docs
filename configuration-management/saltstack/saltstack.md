@@ -210,7 +210,7 @@ require `.sls` files for traversal.
 These can be directly applied on CLI as
 
 ```bash
-salt '*' state.sls <state_file_name>
+salt '*' state.sls <state_file_name> saltenv=prod
 ```
 
 Any state files may be referenced in other state files, using dotted access
