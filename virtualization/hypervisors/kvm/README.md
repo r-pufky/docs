@@ -55,17 +55,19 @@ virt-manager
  * Choose a name, median (dir for directory mapping, device for block device)
  * Virtual machines should typically **not** have their own storage pool defined
 
-KVM Networking
---------------
-By default KVM creates its own NAT network for VMs, howver using a bridge will
-allow these VMs to directly use your physical network.
+KVM Specific Issues
+-------------------
+There seems to be an issue with Netplan bridging, KVM, and using the same
+bridged for host networking traffic as well as VM traffic. The workaround is to
+have a separate bridged adapter. Thi is a [longstanding bug][18] with KVM and can
+be fixed by modifying [sysctl settings][19]
 
 ### Docker adds -P FORWARD DROP rule to iptables
 By default Docker will add `-P FORWARD DROP` rule to iptables to prevent
 specific exploitation vectors for containers. Unfortunately, this is applied to
 **all** interfaces, regardless of whatever interface docker uses; this rule is
 re-applied everytime the service is started. [Iptables by default filters
-bridged interfaces][14]
+bridged interfaces][7]
 
 This will result in KVM virtual machines on a system with Docker to not be able
 to use a Bridge for network communication. As a bridge is a layer 2 device, it
@@ -77,6 +79,38 @@ Disable IP filtering on bridged interfaces:
 ```bash
 echo "0" /proc/sys/net/bridge/bridge-nf-call-iptables
 echo "0" /proc/sys/net/bridge/bridge-nf-call-ip6tables
+echo "0" /proc/sys/net/bridge/bridge-nf-call-arptables
+```
+ * This will not persist across reboots, but good to validate it works
+
+Update settings for sysctl as well as [UFW sysctl][19].
+/etc/sysctl.conf
+```bash
+net.bridge.bridge-nf-call-ip6tables = 0
+net.bridge.bridge-nf-call-iptables = 0
+net.bridge.bridge-nf-call-arptables = 0
+```
+
+/etc/ufw/sysctl.conf
+```bash
+net.bridge.bridge-nf-call-ip6tables = 0
+net.bridge.bridge-nf-call-iptables = 0
+net.bridge.bridge-nf-call-arptables = 0
+```
+
+There is a [longstanding bug][18] bug with sysctl in debian/ubuntu not applying
+sysctl.conf properly with network settings. This can be resolved using a root
+cronjob
+
+sudo crontab -e
+```bash
+@reboot sleep 15; /sbin/sysctl -p
+```
+
+Ensure settings are applied by rebooting and checking settings are set.
+```bash
+reboot
+sysctl -a | grep bridge
 ```
 
 ### List Network Adapters
@@ -405,3 +439,5 @@ References
 [15]: https://askubuntu.com/questions/1054350/netplan-bridge-for-kvm-on-ubuntu-server-18-04-with-static-ips
 [16]: https://askubuntu.com/questions/971126/17-10-netplan-config-with-bridge
 [17]: https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-18-04
+[18]: https://bugs.launchpad.net/ubuntu/+source/procps/+bug/50093
+[19]: https://serverfault.com/questions/431590/how-to-make-sysctl-network-bridge-settings-persist-after-a-reboot

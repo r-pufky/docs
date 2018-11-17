@@ -59,7 +59,8 @@ KVM Specific Issues
 -------------------
 There seems to be an issue with Netplan bridging, KVM, and using the same
 bridged for host networking traffic as well as VM traffic. The workaround is to
-have a separate bridged adapter.
+have a separate bridged adapter. Thi is a [longstanding bug][8] with KVM and can
+be fixed by modifying [sysctl settings][9]
 
 ### Docker adds -P FORWARD DROP rule to iptables
 By default Docker will add `-P FORWARD DROP` rule to iptables to prevent
@@ -78,7 +79,40 @@ Disable IP filtering on bridged interfaces:
 ```bash
 echo "0" /proc/sys/net/bridge/bridge-nf-call-iptables
 echo "0" /proc/sys/net/bridge/bridge-nf-call-ip6tables
+echo "0" /proc/sys/net/bridge/bridge-nf-call-arptables
 ```
+ * This will not persist across reboots, but good to validate it works
+
+Update settings for sysctl as well as [UFW sysctl][9].
+/etc/sysctl.conf
+```bash
+net.bridge.bridge-nf-call-ip6tables = 0
+net.bridge.bridge-nf-call-iptables = 0
+net.bridge.bridge-nf-call-arptables = 0
+```
+
+/etc/ufw/sysctl.conf
+```bash
+net.bridge.bridge-nf-call-ip6tables = 0
+net.bridge.bridge-nf-call-iptables = 0
+net.bridge.bridge-nf-call-arptables = 0
+```
+
+There is a [longstanding bug][8] bug with sysctl in debian/ubuntu not applying
+sysctl.conf properly with network settings. This can be resolved using a root
+cronjob
+
+sudo crontab -e
+```bash
+@reboot sleep 15; /sbin/sysctl -p
+```
+
+Ensure settings are applied by rebooting and checking settings are set.
+```bash
+reboot
+sysctl -a | grep bridge
+```
+
 
 [1]: https://netplan.io/reference
 [2]: https://webby.land/2018/04/27/bridging-under-ubuntu-18-04/
@@ -87,3 +121,5 @@ echo "0" /proc/sys/net/bridge/bridge-nf-call-ip6tables
 [5]: https://www.tomechangosubanana.com/2018/kvm-bridged-to-the-lan-with-dhcp/
 [6]: https://askubuntu.com/questions/971126/17-10-netplan-config-with-bridge
 [7]: https://serverfault.com/questions/162366/iptables-bridge-and-forward-chain
+[8]: https://bugs.launchpad.net/ubuntu/+source/procps/+bug/50093
+[9]: https://serverfault.com/questions/431590/how-to-make-sysctl-network-bridge-settings-persist-after-a-reboot

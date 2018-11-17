@@ -129,7 +129,7 @@ By default Docker will add `-P FORWARD DROP` rule to iptables to prevent
 specific exploitation vectors for containers. Unfortunately, this is applied to
 **all** interfaces, regardless of whatever interface docker uses; this rule is
 re-applied everytime the service is started. [Iptables by default filters
-bridged interfaces][5]
+bridged interfaces][7]
 
 This will result in KVM virtual machines on a system with Docker to not be able
 to use a Bridge for network communication. As a bridge is a layer 2 device, it
@@ -141,6 +141,38 @@ Disable IP filtering on bridged interfaces:
 ```bash
 echo "0" /proc/sys/net/bridge/bridge-nf-call-iptables
 echo "0" /proc/sys/net/bridge/bridge-nf-call-ip6tables
+echo "0" /proc/sys/net/bridge/bridge-nf-call-arptables
+```
+ * This will not persist across reboots, but good to validate it works
+
+Update settings for sysctl as well as [UFW sysctl][7].
+/etc/sysctl.conf
+```bash
+net.bridge.bridge-nf-call-ip6tables = 0
+net.bridge.bridge-nf-call-iptables = 0
+net.bridge.bridge-nf-call-arptables = 0
+```
+
+/etc/ufw/sysctl.conf
+```bash
+net.bridge.bridge-nf-call-ip6tables = 0
+net.bridge.bridge-nf-call-iptables = 0
+net.bridge.bridge-nf-call-arptables = 0
+```
+
+There is a [longstanding bug][6] bug with sysctl in debian/ubuntu not applying
+sysctl.conf properly with network settings. This can be resolved using a root
+cronjob
+
+sudo crontab -e
+```bash
+@reboot sleep 15; /sbin/sysctl -p
+```
+
+Ensure settings are applied by rebooting and checking settings are set.
+```bash
+reboot
+sysctl -a | grep bridge
 ```
 
 
@@ -149,3 +181,5 @@ echo "0" /proc/sys/net/bridge/bridge-nf-call-ip6tables
 [3]: https://stackoverflow.com/questions/30209776/docker-container-will-automatically-stop-after-docker-run-d
 [4]: https://stackoverflow.com/questions/38786615/docker-number-of-lines-in-terminal-changing-inside-docker/49281526#49281526
 [5]: https://serverfault.com/questions/162366/iptables-bridge-and-forward-chain
+[6]: https://bugs.launchpad.net/ubuntu/+source/procps/+bug/50093
+[7]: https://serverfault.com/questions/431590/how-to-make-sysctl-network-bridge-settings-persist-after-a-reboot
