@@ -122,6 +122,16 @@ export -f docker-shell
 ```
  * use: `docker-shell [instance] [user]`
 
+## Update all docker images already downloaded
+```bash
+docker images | grep -v REPOSITORY | awk '{print $1}' | xargs -L1 docker pull
+```
+
+## Stop all docker containers
+```bash
+docker stop $(docker ps -aq)
+```
+
 Bridged Adapters
 ----------------
 ### Docker adds -P FORWARD DROP rule to iptables
