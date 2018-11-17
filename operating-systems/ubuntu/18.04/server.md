@@ -220,6 +220,9 @@ Enabling Secure SSH Config
 The secure config requires that users are added to the `ssh` group before
 publickey auth will work; as well as enabling the secure config.
 
+Longstanding SSH options have been [removed in this release and your SSH config
+will not carry over unchanged.][14]
+
 Create /etc/ssh/<username> directories
 ```bash
 mkdir /etc/ssh/<username>
@@ -375,3 +378,4 @@ References
 [11]: https://help.ubuntu.com/community/AutomaticSecurityUpdates
 [12]: https://www.cyberciti.biz/faq/how-to-disable-ssh-motd-welcome-message-on-ubuntu-linux/
 [13]: https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-18-04
+[14]: https://www.openssh.com/releasenotes.html
