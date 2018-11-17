@@ -466,7 +466,9 @@ verify_env: True
 hash_type: sha512
 keysize: 4096
 minion_sign_messages: True
+startup_states: highstate
 ```
+ * startup state will run [highstate automatically][23] on minion start.
 
 ### [Windows][16]
 Download the latest [version of salt-minion here][15].
@@ -665,3 +667,4 @@ and restart this to change name (systemctl salt-minion restart)
 [20]: https://docs.saltstack.com/en/latest/ref/states/all/salt.states.user.html
 [21]: https://serverfault.com/questions/330069/how-to-create-an-sha-512-hashed-password-for-shadow
 [22]: https://stackoverflow.com/questions/15953082/is-there-a-way-to-display-only-changes-and-errors
+[23]: https://docs.saltstack.com/en/latest/ref/states/startup.html
