@@ -423,6 +423,8 @@ References
 
 [Ubuntu 18.04 UFW defaults blocking connections][17]
 
+[Spice Guest Tools][20]
+
 [1]: https://www.linuxtechi.com/install-configure-kvm-ubuntu-18-04-server/
 [2]: https://linuxconfig.org/install-and-set-up-kvm-on-ubuntu-18-04-bionic-beaver-linux
 [3]: https://netplan.io/examples#bridging
@@ -442,3 +444,4 @@ References
 [17]: https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-18-04
 [18]: https://bugs.launchpad.net/ubuntu/+source/procps/+bug/50093
 [19]: https://serverfault.com/questions/431590/how-to-make-sysctl-network-bridge-settings-persist-after-a-reboot
+[20]: https://www.spice-space.org/download.html
