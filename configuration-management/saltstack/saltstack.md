@@ -561,7 +561,7 @@ Manually Running Minions
 Useful for testing as well as immediately applying changes outside of the run
 window.
 
-### Manual minion run
+### Manual minion run (from salt-master)
 Just match the minion and apply the highstate. By default it will apply the
 current environments.
 
@@ -569,12 +569,19 @@ current environments.
 salt 'my_minion' state.highstate
 ```
 
-### Manual minion run, with specific environment
+### Manual minion run, with specific environment (from salt-master)
 ```bash
 salt 'my_minion' state.highstate pillarenv=dev saltenv=dev
 salt 'my_minion' state.highstate saltenv=dev
 ```
  * You can typically just use `saltenv`
+
+### Manually minion run (local)
+Locally run the minion to apply a state.
+
+```bash
+salt-call -l trace --local state.highstate
+```
 
 ### Print only [changes or errors][22]
 By default `state.highstate` will print detailed information. This will focus
