@@ -8,6 +8,7 @@ Basic KVM server setup on ubuntu (18.04).
 1. [Convert XenServer XVA to KVM Image](#convert-xenserver-xva-to-kvm-template)
 1. [Moving KVM Images](#moving-kvm-images)
 1. [Moving KVM Storage Pool](#moving-kvm-storage-pool)
+1. [Remote Display](#remote-display)
 1. [References](#references)
 
 Install Service
@@ -257,6 +258,17 @@ virt-manager
    * Virtual Hardware details
    * Disk - link to existing disks, or create a new disk using `RAW`
 
+### Install Guest OS Tools
+These are only needed if you want to use a GUI in linux (required for windows).
+
+Linux
+```
+apt install spice-vdagent xserver-org-video-qxl
+```
+
+Windows
+[Install Guest Tools][22]
+
 Convert XenServer XVA to KVM Image
 ----------------------------------
 XenServer images cannot be directly imported, they must be converted first.
@@ -445,3 +457,5 @@ References
 [18]: https://bugs.launchpad.net/ubuntu/+source/procps/+bug/50093
 [19]: https://serverfault.com/questions/431590/how-to-make-sysctl-network-bridge-settings-persist-after-a-reboot
 [20]: https://www.spice-space.org/download.html
+[21]: https://www.spice-space.org/download/windows/spice-guest-tools/spice-guest-tools-latest.exe
+[22]: http://virt-manager.org/download
