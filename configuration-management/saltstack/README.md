@@ -591,6 +591,14 @@ Locally run the minion to connect to master and apply state.
 salt-call state.highstate
 ```
 
+### Minon frequently times out or doesn't connect
+There is a bug where pillar data needs to be refreshed before a minion can
+connect. This is solved by [forcing a pillar refresh then applying state][25]
+
+```bash
+salt 'my_minion' saltutil.refresh_pillar
+```
+
 ### Print only [changes or errors][22]
 By default `state.highstate` will print detailed information. This will focus
 output on changes and errors.
@@ -684,3 +692,4 @@ and restart this to change name (systemctl salt-minion restart)
 [22]: https://stackoverflow.com/questions/15953082/is-there-a-way-to-display-only-changes-and-errors
 [23]: https://docs.saltstack.com/en/latest/ref/states/startup.html
 [24]: https://docs.saltstack.com/en/latest/ref/runners/all/salt.runners.jobs.html#salt.runners.jobs.list_job
+[25]: https://github.com/saltstack/salt/issues/32144
