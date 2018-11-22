@@ -556,6 +556,14 @@ salt '*' grains.items
 salt-master -l debug
 ```
 
+### List active jobs
+Useful for long-running comamnds (e.g. salt 'no response' commands) where the
+command won't return before `timeout` is reached. See [jobs][24]
+
+```bash
+salt-run jobs.active
+```
+
 Manually Running Minions
 ------------------------
 Useful for testing as well as immediately applying changes outside of the run
@@ -675,3 +683,4 @@ and restart this to change name (systemctl salt-minion restart)
 [21]: https://serverfault.com/questions/330069/how-to-create-an-sha-512-hashed-password-for-shadow
 [22]: https://stackoverflow.com/questions/15953082/is-there-a-way-to-display-only-changes-and-errors
 [23]: https://docs.saltstack.com/en/latest/ref/states/startup.html
+[24]: https://docs.saltstack.com/en/latest/ref/runners/all/salt.runners.jobs.html#salt.runners.jobs.list_job
