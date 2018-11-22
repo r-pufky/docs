@@ -577,10 +577,10 @@ salt 'my_minion' state.highstate saltenv=dev
  * You can typically just use `saltenv`
 
 ### Manually minion run (local)
-Locally run the minion to apply a state.
+Locally run the minion to connect to master and apply state.
 
 ```bash
-salt-call -l trace --local state.highstate
+salt-call state.highstate
 ```
 
 ### Print only [changes or errors][22]
