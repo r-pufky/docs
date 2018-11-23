@@ -7,6 +7,8 @@ Ubuntu 18.04 server configuration notes.
 1. [Enabling Secure SSH Config](#enabling-secure-ssh-config)
 1. [Creating an Encrypted Volume](#creating-an-encrypted-volume)
 1. [Adding Custom Fonts](#adding-custom-fonts)
+1. [Update UFW Rules](#update-ufw-rules)
+1. [NXDOMAIN Errors in Syslog](#nxdomain-errors-in-syslog)
 1. [References](#references)
 
 ### Base Install
@@ -339,6 +341,20 @@ ufw status verbose
 ufw disable
 ```
 
+NXDOMAIN Errors in Syslog
+-------------------------
+This is caused by the systemd resolver not properly resolving local DNS. This
+has been [resolved in `systemd - 239-7ubuntu4`][15], but it is currently not
+avaliable to install.
+
+### Workaround
+Redirect the systemd resolver to the resolver specified from DHCP.
+
+```
+mv /etc/resolv.conf /etc/resolv.conf.broken
+ls -s /etc/run/systemd/resolve/resolv.conf resolv.conf
+```
+
 References
 ----------
 [Expanding a LVM after expanding virtual machine disk][1]
@@ -379,3 +395,4 @@ References
 [12]: https://www.cyberciti.biz/faq/how-to-disable-ssh-motd-welcome-message-on-ubuntu-linux/
 [13]: https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-18-04
 [14]: https://www.openssh.com/releasenotes.html
+[15]: https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1766969
