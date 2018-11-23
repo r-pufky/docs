@@ -55,6 +55,31 @@ configured for an IP address, the resulting bonded or bridged device should.
   with a custom mode and primary set. The bridged network is a single card with
   spanning tree and forward delay disabled.
 
+Default Route Issues
+--------------------
+Netplan does not [currently allow route or metric configuration][10] for DHCP
+enabled device. This creates issues when there are multiple adapters all
+connected at the same time -- the default route is last brought up. This works
+around the issue by [manually setting networkd][11] **after** netplan is run.
+
+### Configure netplan as normal
+Setup however you like. Remember your interface designation. Apply your config.
+
+### Copy desired default route adapter setting to /etc
+
+```bash
+cp /run/systemd/network/10-netplan-<ADAPTER>.network /etc/systemd/network
+```
+
+vi /etc/systemd/network/10-netplan-<ADAPTER>.network
+```yaml
+[DHCP]
+RouteMetric=101
+```
+ * Add `RouteMetric`, higher number is lower priority. Default is 100.
+ * Whenever you **apply a new netplan configuration** you will need to ensure
+   this is still correct.
+
 KVM Specific Issues
 -------------------
 There seems to be an issue with Netplan bridging, KVM, and using the same
@@ -124,3 +149,5 @@ sysctl -a | grep bridge
 [7]: https://serverfault.com/questions/162366/iptables-bridge-and-forward-chain
 [8]: https://bugs.launchpad.net/ubuntu/+source/procps/+bug/50093
 [9]: https://serverfault.com/questions/431590/how-to-make-sysctl-network-bridge-settings-persist-after-a-reboot
+[10]: https://bugs.launchpad.net/netplan/+bug/1781652
+[11]: https://askubuntu.com/questions/1042582/how-to-set-default-route-with-netplan-ubuntu-18-04-server-2-nic
