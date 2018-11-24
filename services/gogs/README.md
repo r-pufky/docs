@@ -160,6 +160,25 @@ As this is a mirror, you want to commit the git metadata and not just the files.
 The git repository is stored in /data/gogs/git as a stand git repository.
 Importing this way sets up the gogs fronend database metadata for the project.
 
+Dashboard not updating on commits
+---------------------------------
+If the dashboard stop updating when commits are made, it generally means the
+(sole) developer missed a database conversion with a version upgrade. The
+solution to this is to re-create the repository on gogs. This is non-destructive
+to the git data, however, GOGS specific data (e.g. issues, wiki) may be
+destroyed.
+
+1. Create bare repo clone `git clone --bare https://gogs:10080/user/repo.git`
+1. Copy any metadata from repo
+1. Delete GOGS repo `repo > settings > Delete this Repository`
+1. Create GOGS repo, same name. Init **bare** (do not init with selected files)
+1. Push mirror to GOGS
+
+```bash
+cd repo.git
+git -c http.SslVerify=false push --mirror https://gogs:10080/user/repo.git
+```
+
 Other Options
 -------------
 [gitea][4] is a better option (gogs community managed forked), but is currently

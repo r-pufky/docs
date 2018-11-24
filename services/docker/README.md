@@ -132,6 +132,12 @@ docker images | grep -v REPOSITORY | awk '{print $1}' | xargs -L1 docker pull
 docker stop $(docker ps -aq)
 ```
 
+### Show docker container stats
+```bash
+docker stats <container>
+```
+ * Use no `container` to display all running services
+
 Bridged Adapters
 ----------------
 ### Docker adds -P FORWARD DROP rule to iptables
