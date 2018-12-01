@@ -644,6 +644,16 @@ salt-minion -l debug
 salt-run fileserver.file_list saltenv=dev
 ```
 
+### Clear minion cache
+Stopping the minion and deleting cache `/var/cache/salt/minion` for a hammer.
+
+```bash
+salt-call saltutil.clear_cache
+salt 'my_minion' saltutil.clear-cache
+```
+ * Only the local or remote call needs to be made
+ * Must run with root perms to execute
+
 Development References
 ----------------------
 
