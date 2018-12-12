@@ -18,38 +18,18 @@ here][1].
 Note: The new HWE kernel currently does not build properly, you need to use the
 generic kernel until [the bug is resolved.][10]
 
-```bash
-sudo apt install linux-headers-$(uname -r) build-essential
-sudo apt install spl-dkms
-sudo apt install zfs-dkms zfsutils-linux
-sudo modprobe zfs
-ls -l /dev/disk/by-id
-```
-* Find the serial for the drives, match to the sd# address, then map to the WWN
-  (world wide name) of that device -- that will be unique to that drive across
-  any system you put the drive in
-* This is no longer needed for the latest ZFS packages for ubuntu; containers are
-  automatically identified on boot and mounted. However, this still does provide
-  an easy to use reference mapping for physical drives, should one go bad.
-
-#### /etc/zfs/vdev_id.conf
-```config
-#<type> <label> <location> #<comment>
-
-# ZFS disk set
-alias zfs1 wwn-XXXXXXXXXXXXXXXXXX # drive serial (location)
-alias zfs2 wwn-XXXXXXXXXXXXXXXXXX # drive serial (location)
-alias zfs3 wwn-XXXXXXXXXXXXXXXXXX # drive serial (location)
-alias zfs4 wwn-XXXXXXXXXXXXXXXXXX # drive serial (location)
-alias zfs5 wwn-XXXXXXXXXXXXXXXXXX # drive serial (location)
-````
+[Ubuntu 16.04+ has native ZFS kernel level support built in][11]. Only user
+tools need to be installed.
 
 ```bash
-sudo udevadm trigger
-ls -l /dev/disk/by-vdev/
+apt install zfsutils-linux
 ```
 
-* Verify by-vdevs is populated with zfs disks properly
+Install RAM FS tools if ZFS is to be used for the _root_ filesystem as well.
+
+```bash
+apt install zfs-initramfs
+```
 
 Mounting Existing ZFS Pool
 --------------------------
@@ -58,7 +38,6 @@ sudo zpool import CONTAINER
 sudo zpool status CONTAINER
 sudo zpool scrub CONTAINER
 ```
-
 * A container name does not need to be used to identify a ZFS container,
   it will be detected automatically. `sudo zpool import`
 * Ensure low-level disks are setup properly
@@ -66,23 +45,36 @@ sudo zpool scrub CONTAINER
 
 Creating New ZFS Pool
 ---------------------
+Create a GPT partition for each disk to be used.
+
 ```bash
-for x in `seq 5`; do
-  sudo parted /dev/disk/by-vdev/zfs${x} mklabel gpt quit;
+ls -l /dev/disk/by-id
+for x in `ls -1 /dev/disk/by-id/ata-*`; do
+  sudo parted /dev/disk/by-id/${x} mklabel gpt quit;
 done
-sudo zpool create -o autoexpand=on -o ashift=12 -m /data CONTAINER raidz /dev/disk/by-vdev/disk{1..5}
+```
+* by-id is the easiest to use as it identifies drives by the WWN (World Wide
+  Name) or a composite of the model and serial number.
+* Use GPT partitions for [2TB+ disk support][2].
+* Use [`smartctl -i <dev>`][12] to get detailed information on disk.
+
+Create a ZFS container
+
+```
+sudo zpool create -o autoexpand=on -o ashift=12 -m /data CONTAINER raidz /dev/disk/by-id/ata-*
 sudo zpool list
 sudo zpool status CONTAINER
 sudo zdb -C CONTAINER
 ```
-
-* Use GPT partitions for [2TB+ disk support][2]
 * autoexpand=on - enable auto-expanding of ZFS pool when new disks are added
 * ashift=12 - [Enable 4K sectors][7]. All > 2011 drives should have 4K sectors.
   This cannot be changed once set in the pool, and will lead to severe
   performance degradation if mis-matched for FS/drives. Cannot hotswap/replace
   512 with 4K drives in pool
 * With -C option, ensure ashift=12 is enabled
+* _ata-*_ should be replaced with a filter to match drives to use. Can specify
+  multiple drives explicitly.
+* ZFS will automatically create partitions on drives.
 
 [Upgrading ZFS with Larger Disks][5]
 ------------------------------------
@@ -131,3 +123,5 @@ fi
 [8]: https://docs.oracle.com/cd/E23823_01/html/819-5461/gbbwa.html
 [9]: https://en.wikipedia.org/wiki/Cron
 [10]: https://bugs.launchpad.net/ubuntu/+source/linux-hwe/+bug/1693757
+[11]: https://wiki.ubuntu.com/ZFS
+[12]: https://www.techrepublic.com/blog/linux-and-open-source/using-smartctl-to-get-smart-status-information-on-your-hard-drives/
