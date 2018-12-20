@@ -8,6 +8,7 @@ Ubuntu 18.04 server configuration notes.
 1. [Creating an Encrypted Volume](#creating-an-encrypted-volume)
 1. [Adding Custom Fonts](#adding-custom-fonts)
 1. [Update UFW Rules](#update-ufw-rules)
+1. [Grub OS Prober](#grub-os-prober)
 1. [NXDOMAIN Errors in Syslog](#nxdomain-errors-in-syslog)
 1. [References](#references)
 
@@ -341,6 +342,19 @@ ufw status verbose
 ufw disable
 ```
 
+Grub OS Prober
+--------------
+Grub with throw `device-mapper reload ioctl on osprober-linux` errors when
+updating kernels 4.9+ with systems running VM's on block devices or ZFS. These
+devices are attempted to be unmounted while in use to detect other OS's on those
+partitions. This may be [safely disabled if you are only running one OS.][16]
+
+/etc/default/grub
+```bash
+GRUB_DISABLE_OS_PROBER=true
+```
+* If previously failed, re-run `apt update && apt upgrade`
+
 NXDOMAIN Errors in Syslog
 -------------------------
 This is caused by the systemd resolver not properly resolving local DNS. This
@@ -396,3 +410,4 @@ References
 [13]: https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-18-04
 [14]: https://www.openssh.com/releasenotes.html
 [15]: https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1766969
+[16]: https://unix.stackexchange.com/questions/347466/debian-new-error-message-upgrading-kernel-to-4-9-reload-ioctl-error
