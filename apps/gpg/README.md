@@ -2,7 +2,7 @@ Using GPG with multiple Yubikeys.
 
 Great detailed step-by-step [security-focused instructions are here][1]. These
 instructions are an abbreviated version, which also includes a photo for your
-GPG master key. See [instructions above[1] for detailed walkthrough.
+GPG master key. See [instructions above][1] for detailed walkthrough.
 
 Required Materials
 ------------------
@@ -14,7 +14,7 @@ Required Materials
 1. Copy of these instructions or secondary device Internet access.
 1. A photo to associate with your GPG master key.
 
-This assumes usage of an ironkey with Yubukeys.
+This assumes usage of an Ironkey with Yubikeys.
 
 Tails Setup
 -----------
@@ -26,7 +26,7 @@ minimize secret key exposure.
 1. Open browser, click on `IRONKEY` to automount to `/media/amnesia/IRONKEY`.
 
 ### Reset Ironkey
-Do this if fresh ironkey, or creating a new master key. **Data destructive**.
+Do this if fresh Ironkey, or creating a new master key. **Data destructive**.
 
 Initalize Device
 ```bash
@@ -114,7 +114,7 @@ Generate Master Key
 Create your GPG master key. GPG 2.1 and higher will automatically create a
 revocation certificate in `$GNUPGHOME/openpgp-revocs.d`; using the revocation
 certificate is better mechanism than an expiry date for [protecting the master
-key][11]
+key][11].
 
 ```bash
 gpg --full-generate-key
@@ -147,9 +147,9 @@ removed, [instructions here.][3]
 gpg --edit-key $KEYID
 ```
 1. `addphoto`.
-1. Enter filename `photo.jpg` (may not be displayed if no program installed)
+1. Enter filename `photo.jpg` (may not be displayed if no program installed).
 1. Select `y` for correct photo.
-1. `save`
+1. `save`.
 
 ### Add Additional Identities
 Useful if you have multiple emails used, etc.
@@ -164,9 +164,9 @@ gpg --edit-key $KEYID
 1. Select `o` `(O)kay` to confirm identity.
 1. `uid 1` to select the first identity.
 1. `primary` to set _uid 1_ as primary identity.
-1. `save`
+1. `save`.
 
-### Create Signing, Encrpytion & Authentication Subkeys
+### Create Signing, Encryption & Authentication Subkeys
 Subkeys are issued from the master key and are used for specific actions
 essentially 'on behalf of' the master identity. These subkeys are loaded onto
 Yubukeys for everyday use. As they are subkeys, these can be revoked as needed
@@ -206,7 +206,6 @@ Authenicate to systems (e.g. SSH).
 1. Select `s e a` to toggle signing/encryption off and authentication on.
 1. Select `q` after confirming this is only set to "authentication".
 1. `4096` bit keysize.
-
 1. Select `0` "0 = key does not expire".
 1. Select `y` to Confirm correct values.
 
@@ -229,7 +228,7 @@ Exporting subkeys to a Yubukey device will delete the key locally. Backing up
 the same subkeys. Make your own determination on if this security practice is
 acceptable to you.
 
-*** Store on a (hardware) encrypted device. ***
+**Store on a (hardware) encrypted device.**
 
 ### Confirm Key State on Keyring
 Ensure master and subkeys are created and locally stored before exporting.
@@ -300,11 +299,11 @@ gpg --card-edit
 1. `login` to set account name.
 1. account name: `email`.
 1. Press `enter` to see updated information.
-1. `quit`
+1. `quit`.
 
 ### Load Subkeys to Yubikey
 This is **data destructive** for local subkeys. Ensure a backup has been made
-before doing this. See [Export GPG Keys & Backup](#export-gpg-Keys---backup).
+before doing this. See [Export GPG Keys & Backup](#export-gpg-Keys--backup).
 
 ```bash
 gpg --edit-key $KEYID
@@ -349,7 +348,7 @@ cp -avi $GPGBACKUP $GNUPGHOME
 
 Publish Public Key
 ------------------
-Export the public key to public keyservers for GPG encrypt/descrypt/signing.
+Export the public key to public keyservers for GPG encrypt/decrypt/signing.
 Without publishing you can still use SSH.
 
 ```bash
@@ -367,9 +366,7 @@ gpg --send-key $KEYID --keyserver keys.gnupg.net
 * Also consider exporting public key to [keybase.io](http://keybase.io).
 
 ### Cleanup
-Make sure your private info remains private.
-
-Confirm
+Make sure your private info remains private. Confirm that
 * Yubikey has Encryption, Signing and Authentication subkeys.
 * Yubikey PINs are **not default PINS**.
 * Password for Master Key is safe.
@@ -381,7 +378,7 @@ Confirm
 
 Just reboot if using **tails** or a live image.
 
-Securely delete otherwise
+Otherwise securely delete private data
 ```bash
 sudo srm -r $GNUPGHOME || sudo rm -rf $GNUPGHOME
 sudo srm -r $GPGBACKUP || sudo rm -rf $GPGBACKUP
