@@ -47,23 +47,23 @@ Do this if fresh Ironkey, or creating a new master key. **Data destructive**.
 
 Initalize Device
 ```bash
-/media/<user>/IRONKEY/linux/linux64/ikd300_initalize
+/media/user/IRONKEY/linux/linux64/ikd300_initalize
 ```
 * Only needed on first use.
 
 Reset Device
 ```bash
-/media/<user>/IRONKEY/linux/linux64/ikd300_resetdevice
+/media/user/IRONKEY/linux/linux64/ikd300_resetdevice
 ```
 * Max 16 character password. Ironkey will wipe device after 10 failed attempts
   and force phsyical re-insertion after every 3 failed attempts.
 
 ### Unlock Ironkey
 ```bash
-sudo /media/<user>/IRONKEY/linux/linux64/ikd300_login
+sudo /media/user/IRONKEY/linux/linux64/ikd300_login
 ```
-* Open browser, click on `KINGSTON` to automount to `/media/<user>/KINGSTON`.
-* This is your hardware-backed encrypted storage. **store secret material
+* Open browser, click on `KINGSTON` to automount to `/media/user/KINGSTON`.
+* This is your hardware-backed encrypted storage. **Store secret material
   here**.
 
 GnuPG Configuration
@@ -71,17 +71,17 @@ GnuPG Configuration
 Setup GPG to store configuration on encrypted storage and setup secure
 cross-platform preferences.
 
-**Ensure machine is air-gapped (no transmission devices on) during this step.**.
+**Ensure machine is air-gapped (no transmission devices on) during this step.**
 
 ### Create Base Directory Structure
 ```bash
-mkdir /media/<user>/KINGSTON/gnupghome
-mkdir /media/<user>/KINGSTON/gnupgbackup
-export GNUPGHOME=/media/<user>/KINGSTON/gnupghome
-export GPGBACKUP=/media/<user>/KINGSTON/gnupgbackup
+mkdir /media/user/KINGSTON/gnupghome
+mkdir /media/user/KINGSTON/gnupgbackup
+export GNUPGHOME=/media/user/KINGSTON/gnupghome
+export GPGBACKUP=/media/user/KINGSTON/gnupgbackup
 ```
 
-/media/<user>/KINGSTON/gnupghome/gpg.conf
+/media/user/KINGSTON/gnupghome/gpg.conf
 ```bash
 personal-cipher-preferences AES256 AES192 AES
 personal-digest-preferences SHA512 SHA384 SHA256
@@ -250,7 +250,7 @@ Exporting subkeys to a Yubikey device will delete the key locally. Backing up
 the same subkeys. Make your own determination on if this security practice is
 acceptable to you.
 
-**Ensure machine is air-gapped (no transmission devices on) during this step.**.
+**Ensure machine is air-gapped (no transmission devices on) during this step.**
 **Store on a (hardware) encrypted device.**
 
 ### Confirm Key State on Keyring
@@ -269,8 +269,8 @@ Master and Subkeys will be encrypted with your passphrase when exported. The
 manual Public key export can be used to manually import into other GPG clients
 if you do not want to use keyservers.
 ```bash
-mkdir /media/<user>/KINGSTON/gnupgbackup
-export GPGBACKUP=/media/<user>/KINGSTON/gnupgbackup
+mkdir /media/user/KINGSTON/gnupgbackup
+export GPGBACKUP=/media/user/KINGSTON/gnupgbackup
 gpg --armor --export-secret-keys $KEYID > $GPGBACKUP/$KEYID.master.private.asc
 gpg --armor --export-secret-subkeys $KEYID > $GPGBACKUP/$KEYID.subkey.private.asc
 gpg --armor --export $KEYID > $GPGBACKUP/$KEYID.public.asc
@@ -289,8 +289,8 @@ gpg --export-ssh-key $KEYID > $GPGBACKUP/$KEYID.ssh.pub
 ### Backup GNUPG
 Backup GNUPG state for multiple Yubikey initalizations.
 ```bash
-mkdir /media/<user>/KINGSTON/gnupgbackup
-export GPGBACKUP=/media/<user>/KINGSTON/gnupgbackup
+mkdir /media/user/KINGSTON/gnupgbackup
+export GPGBACKUP=/media/user/KINGSTON/gnupgbackup
 sudo cp -avi $GNUPGHOME $KBACKUP
 ```
 
@@ -308,7 +308,7 @@ managed by respective apps, in this case `GPG`.
   touch preferences.
 * `gpg --edit-card` will set openpgp configuration, like PGP name, login, url.
 
-**Ensure machine is air-gapped (no transmission devices on) during this step.**.
+**Ensure machine is air-gapped (no transmission devices on) during this step.**
 
 ### Initalize Yubikey
 Confirm Yubikey status.
@@ -347,8 +347,8 @@ gpg --card-edit
 1. `login` to set account name.
 1. account name: `email`.
 1. Optionally `forcesig` to force PIN to be entered for every [GPG
-   operation][20] otherwise it will prompt once and only reprompt when the cache
-   expires.
+   operation][20]. Otherwise it will prompt once and only reprompt when the
+   cache expires.
 1. Press `enter` to see updated information.
 1. `quit`.
 
@@ -417,13 +417,10 @@ Export to [SKS keyservers][4]
 ```bash
 gpg --keyserver hkp://pgp.mit.edu --send-key $KEYID
 ```
-* This will export to major keyservers. These are all syncronized however so
-  only a single server is needed.
+* This will export to major keyservers. These are all syncronized so only a
+  single server is needed.
 * Also consider exporting public key to [keybase.io](http://keybase.io).
 * The default gpg server is `hkps.pool.sks-keyservers.net`
-
-Additionally, you may want to add your public GPG key to
-[keybase.io](https://keybase.io).
 
 ### Cleanup
 Make sure your private info remains private. Confirm that
