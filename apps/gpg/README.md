@@ -7,63 +7,81 @@ configuring [multi-platform GPG/Yubikey SSH usage are here][16].
 
 Required Materials
 ------------------
-1. Tails Live USB [Setup instructions][5] (most secure) or other live USB os
-   (less secure).
-1. Hardware-backed Encrypted USB drive [Ironkey][6] (preferred), or USB drive
-   with software encryption [using VeraCrypt][7] (less-preferred).
+1. Live USB OS, with persistent storage to setup additional packages. Tails Live
+   USB [Setup instructions][5] is preferred (most secure), other [live USB][22]
+   will work but be less secure. Instructions assume Debian-based system.
+1. Hardware-backed Encrypted USB drive [Ironkey][6] (most secure), or USB drive
+   with software encryption [using VeraCrypt][7] (less secure).
 1. Yubikey (or other hardware security key support 4096bit RSA certificates)
    [nano][8] or [5][9].
 1. Copy of these instructions or secondary device Internet access.
 1. A photo to associate with your GPG master key.
 
-This assumes usage of an Ironkey with Yubikeys.
+This assumes usage of an Ironkey with Yubikeys on a Debian-base system for
+configuration.
 
-Tails Setup
------------
+Live USB Setup
+--------------
 GPG generation should be done on a air-gapped, temporal, encrypted OS to
 minimize secret key exposure. Persistent disk should be created so that packages
-may be installed / updated as needed (e.g. yubikey manager).
+may be installed / updated as needed (e.g. yubikey manager). All GPG operations
+should be done offline with the exception of uploading public keys to services.
 
-1. On login, click `+`, setup temporary _root_ password.
-1. Ensure wifi is disabled (upper-right).
-1. Open browser, click on `IRONKEY` to automount to `/media/amnesia/IRONKEY`.
+* Enusre a _root_ password is set to install additiona software.
+
+### Configure Persistent Disk
+This will enable the installation of packages (e.g. Yubikey Manager) to manage
+physical keys. Do **not** store secret material on this.
+
+Configure / Install a Persistent volume per USB distro then
+```bash
+apt update && apt upgrade
+apt install software-properties-common
+apt-add-repository ppa:yubico/stable
+apt update
+apt install yubikey-manager
+```
 
 ### Reset Ironkey
 Do this if fresh Ironkey, or creating a new master key. **Data destructive**.
 
 Initalize Device
 ```bash
-/media/amnesia/IRONKEY/linux/linux64/ikd300_initalize
+/media/<user>/IRONKEY/linux/linux64/ikd300_initalize
 ```
 * Only needed on first use.
 
 Reset Device
 ```bash
-/media/amnesia/IRONKEY/linux/linux64/ikd300_reset
+/media/<user>/IRONKEY/linux/linux64/ikd300_resetdevice
 ```
-* Max 16 character password.
+* Max 16 character password. Ironkey will wipe device after 10 failed attempts
+  and force phsyical re-insertion after every 3 failed attempts.
 
 ### Unlock Ironkey
 ```bash
-sudo /media/amnesia/IRONKEY/linux/linux64/ikd300_login
+sudo /media/<user>/IRONKEY/linux/linux64/ikd300_login
 ```
-* Open browser, click on `KINGSTON` to automount to `/media/amnesia/KINGSTON`.
-* This is your hardware-backed encrypted storage.
+* Open browser, click on `KINGSTON` to automount to `/media/<user>/KINGSTON`.
+* This is your hardware-backed encrypted storage. **store secret material
+  here**.
 
 GnuPG Configuration
 -------------------
 Setup GPG to store configuration on encrypted storage and setup secure
 cross-platform preferences.
 
+**Ensure machine is air-gapped (no transmission devices on) during this step.**.
+
 ### Create Base Directory Structure
 ```bash
-mkdir /media/amnesia/KINGSTON/gnupghome
-mkdir /media/amnesia/KINGSTON/gnupgbackup
-export GNUPGHOME=/media/amnesia/KINGSTON/gnupghome
-export GPGBACKUP=/media/amnesia/KINGSTON/gnupgbackup
+mkdir /media/<user>/KINGSTON/gnupghome
+mkdir /media/<user>/KINGSTON/gnupgbackup
+export GNUPGHOME=/media/<user>/KINGSTON/gnupghome
+export GPGBACKUP=/media/<user>/KINGSTON/gnupgbackup
 ```
 
-/media/amnesia/KINGSTON/gnupghome/gpg.conf
+/media/<user>/KINGSTON/gnupghome/gpg.conf
 ```bash
 personal-cipher-preferences AES256 AES192 AES
 personal-digest-preferences SHA512 SHA384 SHA256
@@ -174,7 +192,7 @@ gpg --edit-key $KEYID
 ### Create Signing, Encryption & Authentication Subkeys
 Subkeys are issued from the master key and are used for specific actions
 essentially 'on behalf of' the master identity. These subkeys are loaded onto
-Yubukeys for everyday use. As they are subkeys, these can be revoked as needed
+Yubikeys for everyday use. As they are subkeys, these can be revoked as needed
 or the master key can be revoked/changed to invalidate all subkeys at once.
 
 Only export **one** key at a time. GPG uses a toggling system to select which
@@ -227,11 +245,12 @@ gpg --export $KEYID | hokey lint
 
 Export GPG Keys & Backup
 ------------------------
-Exporting subkeys to a Yubukey device will delete the key locally. Backing up
-`$GNUPGHOME` before exporting will allow the creation of multiple Yubukeys with
+Exporting subkeys to a Yubikey device will delete the key locally. Backing up
+`$GNUPGHOME` before exporting will allow the creation of multiple Yubikeys with
 the same subkeys. Make your own determination on if this security practice is
 acceptable to you.
 
+**Ensure machine is air-gapped (no transmission devices on) during this step.**.
 **Store on a (hardware) encrypted device.**
 
 ### Confirm Key State on Keyring
@@ -241,22 +260,22 @@ Ensure master and subkeys are created and locally stored before exporting.
 gpg --list-keys
 ```
 * `>` indicates a key is exported to card already (e.g. 'ssb>').
-* `sec#` indicates only stubs created, not subkeys (e.g. private cert on
-  different machine).
-* The master and subkeys should be listed if properly setup to export to key.
+* `sec#` indicates only stubs created (e.g. private cert on different machine).
+* The master and subkeys should be listed with no modifiers if properly setup to
+  export to key.
 
 ### Export Keys
 Master and Subkeys will be encrypted with your passphrase when exported. The
 manual Public key export can be used to manually import into other GPG clients
 if you do not want to use keyservers.
 ```bash
-mkdir /media/amnesia/KINGSTON/gnupgbackup
-export GPGBACKUP=/media/amnesia/KINGSTON/gnupgbackup
+mkdir /media/<user>/KINGSTON/gnupgbackup
+export GPGBACKUP=/media/<user>/KINGSTON/gnupgbackup
 gpg --armor --export-secret-keys $KEYID > $GPGBACKUP/$KEYID.master.private.asc
 gpg --armor --export-secret-subkeys $KEYID > $GPGBACKUP/$KEYID.subkey.private.asc
 gpg --armor --export $KEYID > $GPGBACKUP/$KEYID.public.asc
 ```
-* The exported public key may be used in keybase, and manually imported into
+* The exported public key may be used in keybase.io, and manually imported into
   other GPG programs.
 
 ### Export SSH RSA Public Key
@@ -268,10 +287,10 @@ gpg --export-ssh-key $KEYID > $GPGBACKUP/$KEYID.ssh.pub
   `openpgp:0x2C518E44`).
 
 ### Backup GNUPG
-Backup GNUPG state for multiple Yubukey initalizations.
+Backup GNUPG state for multiple Yubikey initalizations.
 ```bash
-mkdir /media/amnesia/KINGSTON/gnupgbackup
-export GPGBACKUP=/media/amnesia/KINGSTON/gnupgbackup
+mkdir /media/<user>/KINGSTON/gnupgbackup
+export GPGBACKUP=/media/<user>/KINGSTON/gnupgbackup
 sudo cp -avi $GNUPGHOME $KBACKUP
 ```
 
@@ -280,27 +299,35 @@ Export Subkeys to Yubikeys
 Read the [technical manual][19] to understand how yubikeys work. This will setup
 the yubikey to use the `CCID` interface to setup `openpgp` on the key.
 
+Understand conceptually how Yubikeys are managed. [Yubikey-manager][14] is an
+application that is used to manage the yubikey itself (`ykman`) and sets _how_
+applets are used on the key. The configuration of the applets themselves are
+managed by respective apps, in this case `GPG`.
+![Yubikey Organization](yubikey.png)
+* `ykman` will set preferences like number of applet PIN attempts, PINs, and
+  touch preferences.
+* `gpg --edit-card` will set openpgp configuration, like PGP name, login, url.
+
+**Ensure machine is air-gapped (no transmission devices on) during this step.**.
+
 ### Initalize Yubikey
-Confirm Yubukey status.
+Confirm Yubikey status.
 
 Default `PIN` is **123456** and default `admin PIN` is **12345678**. PINs may be
 up to 127 ASCII characters long.
 
 If the device is not new follow [these instructions][15] to wipe the device and
 start new.
-
 ```bash
 gpg --card-status
 ```
 * If not found, re-insert the key. There is a known race condition that may
   occur with older gpg libraries.
-* Ensure firmware version `3.1.8` or later using [Yubukey manager][14] or
+* Ensure firmware version `3.1.8` or later using [Yubikey manager][14] or
   [commandline tool][13].
-* Ensure device has `CCID` mode enabled using [Yubukey manager][14] or
+* Ensure device has `CCID` mode enabled using [Yubikey manager][14] or
   [commandline tool][13].
 
-The PINs may be changed after loading the keys to card to make it quicker, if
-not concerned about default PINs when loading.
 ```bash
 gpg --card-edit
 ```
@@ -319,7 +346,9 @@ gpg --card-edit
    [keybase][16] and enter that URL, or provide your own.
 1. `login` to set account name.
 1. account name: `email`.
-1. `forcesig` to force PIN to be entered for every [GPG operation][20].
+1. Optionally `forcesig` to force PIN to be entered for every [GPG
+   operation][20] otherwise it will prompt once and only reprompt when the cache
+   expires.
 1. Press `enter` to see updated information.
 1. `quit`.
 
@@ -330,8 +359,7 @@ ykman openpgp touch sig fixed
 ykman openpgp touch enc fixed
 ```
 * `Fixed` is the same as `on` but requires a new certificate to be loaded if
-  it is changed.
-
+  this option or PINs are changed.
 
 ### Load Subkeys to Yubikey
 This is **data destructive** for local subkeys. Ensure a backup has been made
@@ -362,7 +390,7 @@ gpg --edit-key $KEYID
 1. `key 3` to deselect key.
 
 ### Verify Subkeys Loaded
-Ensure keys are offloaded to the Yubukey. Offloaded keys will have `>` next to
+Ensure keys are offloaded to the Yubikey. Offloaded keys will have `>` next to
 the key, showing that the key is on the card.
 
 ```bash
@@ -383,6 +411,8 @@ Publish Public Key
 Export the public key to public keyservers for GPG encrypt/decrypt/signing.
 Without publishing you can still use SSH.
 
+**Network is required for this step.**
+
 Export to [SKS keyservers][4]
 ```bash
 gpg --keyserver hkp://pgp.mit.edu --send-key $KEYID
@@ -391,6 +421,9 @@ gpg --keyserver hkp://pgp.mit.edu --send-key $KEYID
   only a single server is needed.
 * Also consider exporting public key to [keybase.io](http://keybase.io).
 * The default gpg server is `hkps.pool.sks-keyservers.net`
+
+Additionally, you may want to add your public GPG key to
+[keybase.io](https://keybase.io).
 
 ### Cleanup
 Make sure your private info remains private. Confirm that
@@ -413,19 +446,19 @@ gpg --delete-secret-key $KEYID
 ```
 
 [1]: https://github.com/drduh/YubiKey-Guide
-[2]: https://codingnest.com/how-to-use-gpg-with-Yubukey-wsl/
+[2]: https://codingnest.com/how-to-use-gpg-with-Yubikey-wsl/
 [3]: http://blog.josefsson.org/2014/06/19/creating-a-small-jpeg-photo-for-your-openpgp-key/
 [4]: https://superuser.com/questions/227991/where-to-upload-pgp-public-key-are-keyservers-still-surviving
 [5]: https://tails.boum.org/install/win/usb-download/index.en.html
 [6]: https://www.kingston.com/us/usb/encrypted_security/IKD300
 [7]: https://github.com/drduh/YubiKey-Guide#backup-keys
-[8]: https://www.yubico.com/product/Yubukey-5-nano/#Yubukey-5-nano
-[9]: https://www.yubico.com/product/Yubukey-5-nfc/#Yubukey-5-nfc
+[8]: https://www.yubico.com/product/Yubikey-5-nano/#Yubikey-5-nano
+[9]: https://www.yubico.com/product/Yubikey-5-nfc/#Yubikey-5-nfc
 [10]: https://debian-administration.org/users/dkg/weblog/97
 [11]: https://security.stackexchange.com/questions/14718/does-openpgp-key-expiration-add-to-security/79386
-[12]: https://support.yubico.com/support/solutions/articles/15000006420-using-your-Yubukey-with-openpgp
-[13]: https://developers.yubico.com/Yubukey-personalization/
-[14]: https://www.yubico.com/products/services-software/download/Yubukey-manager/
+[12]: https://support.yubico.com/support/solutions/articles/15000006420-using-your-Yubikey-with-openpgp
+[13]: https://developers.yubico.com/Yubikey-personalization/
+[14]: https://developers.yubico.com/yubikey-manager/
 [15]: https://developers.yubico.com/PIV/Guides/Device_setup.html
 [16]: https://www.forgesi.net/gpg-smartcard/
 [17]: https://www.linode.com/docs/security/authentication/gpg-key-for-ssh-authentication/
@@ -433,3 +466,4 @@ gpg --delete-secret-key $KEYID
 [19]: https://support.yubico.com/support/solutions/articles/15000014219-yubikey-5-series-technical-manual
 [20]: https://www.gnupg.org/howtos/card-howto/en/ch03.html
 [21]: https://suchsecurity.com/gpg-and-ssh-with-yubikey-on-windows.html
+[22]: https://www.ubuntu.com/#download
