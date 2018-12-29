@@ -2,11 +2,13 @@ Using GPG with multiple Yubikeys.
 
 Great detailed step-by-step [security-focused instructions are here][1]. These
 instructions are an abbreviated version, which also includes a photo for your
-GPG master key. See [instructions above][1] for detailed walkthrough.
+GPG master key. Additional step-by-step walkthrough instructions for
+configuring [multi-platform GPG/Yubikey SSH usage are here][16].
 
 Required Materials
 ------------------
-1. Tails Live USB [Setup instructions][5].
+1. Tails Live USB [Setup instructions][5] (most secure) or other live USB os
+   (less secure).
 1. Hardware-backed Encrypted USB drive [Ironkey][6] (preferred), or USB drive
    with software encryption [using VeraCrypt][7] (less-preferred).
 1. Yubikey (or other hardware security key support 4096bit RSA certificates)
@@ -19,7 +21,8 @@ This assumes usage of an Ironkey with Yubikeys.
 Tails Setup
 -----------
 GPG generation should be done on a air-gapped, temporal, encrypted OS to
-minimize secret key exposure.
+minimize secret key exposure. Persistent disk should be created so that packages
+may be installed / updated as needed (e.g. yubikey manager).
 
 1. On login, click `+`, setup temporary _root_ password.
 1. Ensure wifi is disabled (upper-right).
@@ -131,6 +134,8 @@ gpg --full-generate-key
 Export the master key ID for easier manipulations
 * `Revocation Certificate` will be listed in output.
 * Master Key ID will be listed under `pub  rsa4096/0x################`.
+* If "No agent running error" occurs, restart gpg-agent with `gpg-agent
+  --daemon`
 
 ```bash
 export KEYID=0x################
@@ -203,8 +208,7 @@ Authenicate to systems (e.g. SSH).
 
 1. `addkey`.
 1. Select `8` "(8) RSA (set your own capabilities)".
-1. Select `s e a` to toggle signing/encryption off and authentication on.
-1. Select `q` after confirming this is only set to "authentication".
+1. Enter `=a` to set only authentication capability, this will auto-advance.
 1. `4096` bit keysize.
 1. Select `0` "0 = key does not expire".
 1. Select `y` to Confirm correct values.
@@ -234,32 +238,47 @@ acceptable to you.
 Ensure master and subkeys are created and locally stored before exporting.
 
 ```bash
-gpg --list-keys $GNUPGHOME/pubring.gpg
-gpg --list-secret-keys $GNUPGHOME/secring.gpg
+gpg --list-keys
 ```
 * `>` indicates a key is exported to card already (e.g. 'ssb>').
-* `sec#` indicates only stubs created, not subkeys.
-* The master and subkeys should be listed if properly setup.
+* `sec#` indicates only stubs created, not subkeys (e.g. private cert on
+  different machine).
+* The master and subkeys should be listed if properly setup to export to key.
 
 ### Export Keys
-The Master and sub-keys will be encrypted with your passphrase when exported.
+Master and Subkeys will be encrypted with your passphrase when exported. The
+manual Public key export can be used to manually import into other GPG clients
+if you do not want to use keyservers.
 ```bash
-mkdir /media/amnesia/KINGSTON/gnupghome/backup
-export KEYBACKUP=/media/amnesia/KINGSTON/gnupghome/backup
-gpg --armor --export-secret-keys $KEYID > $KEYBACKUP/master.key
-gpg --armor --export-secret-subkeys $KEYID > $KEYBACKUP/sub.key
+mkdir /media/amnesia/KINGSTON/gnupgbackup
+export GPGBACKUP=/media/amnesia/KINGSTON/gnupgbackup
+gpg --armor --export-secret-keys $KEYID > $GPGBACKUP/$KEYID.master.private.asc
+gpg --armor --export-secret-subkeys $KEYID > $GPGBACKUP/$KEYID.subkey.private.asc
+gpg --armor --export $KEYID > $GPGBACKUP/$KEYID.public.asc
 ```
+* The exported public key may be used in keybase, and manually imported into
+  other GPG programs.
+
+### Export SSH RSA Public Key
+Generate and export the [RSA Public Key][18] used for SSH.
+```bash
+gpg --export-ssh-key $KEYID > $GPGBACKUP/$KEYID.ssh.pub
+```
+* The SSH key comment will use the authentication short key ID (e.g.
+  `openpgp:0x2C518E44`).
 
 ### Backup GNUPG
 Backup GNUPG state for multiple Yubukey initalizations.
 ```bash
 mkdir /media/amnesia/KINGSTON/gnupgbackup
 export GPGBACKUP=/media/amnesia/KINGSTON/gnupgbackup
-sudo cp -avi $GNUPGHOME $GPGBACKUP
+sudo cp -avi $GNUPGHOME $KBACKUP
 ```
 
 Export Subkeys to Yubikeys
 --------------------------
+Read the [technical manual][19] to understand how yubikeys work. This will setup
+the yubikey to use the `CCID` interface to setup `openpgp` on the key.
 
 ### Initalize Yubikey
 Confirm Yubukey status.
@@ -277,7 +296,7 @@ gpg --card-status
   occur with older gpg libraries.
 * Ensure firmware version `3.1.8` or later using [Yubukey manager][14] or
   [commandline tool][13].
-* Ensure device is in `OTP/CCID` or `CCID` mode  using [Yubukey manager][14] or
+* Ensure device has `CCID` mode enabled using [Yubukey manager][14] or
   [commandline tool][13].
 
 The PINs may be changed after loading the keys to card to make it quicker, if
@@ -296,10 +315,23 @@ gpg --card-edit
 1. given name: `first`.
 1. `lang`.
 1. `en` to set the preferred language.
+1. `url` to set public key retrival url, can upload gpg public key to
+   [keybase][16] and enter that URL, or provide your own.
 1. `login` to set account name.
 1. account name: `email`.
+1. `forcesig` to force PIN to be entered for every [GPG operation][20].
 1. Press `enter` to see updated information.
 1. `quit`.
+
+Require touch each [time authentication, encryption or sign request occurs][21].
+```bash
+ykman openpgp touch aut fixed
+ykman openpgp touch sig fixed
+ykman openpgp touch enc fixed
+```
+* `Fixed` is the same as `on` but requires a new certificate to be loaded if
+  it is changed.
+
 
 ### Load Subkeys to Yubikey
 This is **data destructive** for local subkeys. Ensure a backup has been made
@@ -351,19 +383,14 @@ Publish Public Key
 Export the public key to public keyservers for GPG encrypt/decrypt/signing.
 Without publishing you can still use SSH.
 
-```bash
-gpg --armor --export $KEYID > /media/UNENCRYPTED_USB_KEY/pubkey.gpg
-```
-
 Export to [SKS keyservers][4]
 ```bash
-gpg --send-key $KEYID
-gpg --send-key $KEYID --keyserver pgp.mit.edu
-gpg --send-key $KEYID --keyserver keys.gnupg.net
+gpg --keyserver hkp://pgp.mit.edu --send-key $KEYID
 ```
 * This will export to major keyservers. These are all syncronized however so
   only a single server is needed.
 * Also consider exporting public key to [keybase.io](http://keybase.io).
+* The default gpg server is `hkps.pool.sks-keyservers.net`
 
 ### Cleanup
 Make sure your private info remains private. Confirm that
@@ -400,3 +427,9 @@ gpg --delete-secret-key $KEYID
 [13]: https://developers.yubico.com/Yubukey-personalization/
 [14]: https://www.yubico.com/products/services-software/download/Yubukey-manager/
 [15]: https://developers.yubico.com/PIV/Guides/Device_setup.html
+[16]: https://www.forgesi.net/gpg-smartcard/
+[17]: https://www.linode.com/docs/security/authentication/gpg-key-for-ssh-authentication/
+[18]: https://lists.gnupg.org/pipermail/gnupg-devel/2016-January/030682.html
+[19]: https://support.yubico.com/support/solutions/articles/15000014219-yubikey-5-series-technical-manual
+[20]: https://www.gnupg.org/howtos/card-howto/en/ch03.html
+[21]: https://suchsecurity.com/gpg-and-ssh-with-yubikey-on-windows.html
