@@ -263,6 +263,24 @@ Output settings can be set for specific applications via the settings menu.
  * Other sound options > App volume and device preferences
  * Set preferred output for device (application must be running)
 
+Windows Bootloader Missing / Multiple OS
+----------------------------------------
+Fix the UEFI bootloader if it is missing or has extra entries.
+
+Restart in Diagnostics Mode
+* Hold `shift` then restart machine (or `shift` when booting).
+* Select `troubleshooting > command prompt`
+
+On reboot run
+```cmd
+bootrec /fixmbr
+bootrec /scanos
+bootrec /rebuildbcd
+```
+* Then restart machine
+
+If there are extra menu options, you may edit UEFI boot options in firmware or
+use [EasyUEFI][19] to do it in windows directly.
 
 [1]: http://blog.architecting.it/2012/07/10/windows-server-2012-windows-server-8-resilient-file-system/w8-refs-2/
 [2]: http://www.thewindowsclub.com/disable-superfetch-prefetch-ssd
@@ -282,3 +300,4 @@ Output settings can be set for specific applications via the settings menu.
 [16]: https://answers.microsoft.com/en-us/insider/forum/insider_wintp-insider_install-insiderplat_pc/new-oem-partition-appears-in-file-explorer-after/29a0a95c-fe51-41a5-a345-72773c437b39
 [17]: http://www.thewindowsclub.com/faq-low-disk-space-notification-or-warning-in-windows-7-how-to-disable-etc
 [18]: https://www.intowindows.com/set-different-audio-output-devices-for-different-programs-in-windows-10/
+[19]: https://www.easyuefi.com/index-us.html
