@@ -40,10 +40,11 @@ Configure a Persistent volume then install yubikey management.
 apt update && apt upgrade
 apt-add-repository ppa:yubico/stable
 apt update
-apt install software-properties-common yubikey-manager yubikey-manager-qt
+apt install software-properties-common yubikey-manager yubikey-manager-qt scdaemon
 ```
-* yubikey-manager-qt is a GUI frontend which has limited functionality but
+* `yubikey-manager-qt` is a GUI frontend which has limited functionality but
   does provide easy ways to ensure specific applets are enabled.
+* `scdaemon` enables smartcard support for gpg.
 
 ### Reset Ironkey
 Do this if fresh Ironkey, or creating a new master key. **Data destructive**.
@@ -66,8 +67,8 @@ Reset Device
 sudo /media/user/IRONKEY/linux/linux64/ikd300_login
 ```
 * Open browser, click on `KINGSTON` to automount to `/media/user/KINGSTON`.
-* This is your hardware-backed encrypted storage. **Store secret material
-  here**.
+* This is your hardware-backed encrypted storage.
+* **Store secret material here**.
 
 GnuPG Configuration
 -------------------
@@ -76,13 +77,16 @@ cross-platform preferences.
 
 **Ensure machine is air-gapped (no transmission devices on) during this step.**
 
-### Create Base Directory Structure
+### Environment Variables & Base Directory Structure
 ```bash
 mkdir /media/user/KINGSTON/gnupghome
-mkdir /media/user/KINGSTON/gnupgbackup
+mkdir -p /media/user/KINGSTON/backup/public /media/user/KINGSTON/backup/private
 export GNUPGHOME=/media/user/KINGSTON/gnupghome
-export GPGBACKUP=/media/user/KINGSTON/gnupgbackup
+export GPGBACKUP=/media/user/KINGSTON/backup
 ```
+* `GNUPGHOME` directs gpg where to find key material.
+* `GPGBACKUP` will be used to direct backups of key material.
+* `public` and `private` will be used to store respective key and cert material.
 
 /media/user/KINGSTON/gnupghome/gpg.conf
 ```bash
@@ -267,24 +271,22 @@ gpg --list-keys
 * The master and subkeys should be listed with no modifiers if properly setup to
   export to key.
 
-### Export Keys
-Master and Subkeys will be encrypted with your passphrase when exported. The
-manual Public key export can be used to manually import into other GPG clients
-if you do not want to use keyservers.
+### Export GPG Keys
+Master and Subkeys will be encrypted with your passphrase when exported.
 ```bash
-mkdir /media/user/KINGSTON/gnupgbackup
-export GPGBACKUP=/media/user/KINGSTON/gnupgbackup
-gpg --armor --export-secret-keys $KEYID > $GPGBACKUP/$KEYID.master.private.asc
-gpg --armor --export-secret-subkeys $KEYID > $GPGBACKUP/$KEYID.subkey.private.asc
-gpg --armor --export $KEYID > $GPGBACKUP/$KEYID.public.asc
+gpg --armor --export-secret-keys $KEYID > $GPGBACKUP/private/$KEYID.master.asc
+gpg --armor --export-secret-subkeys $KEYID > $GPGBACKUP/private/$KEYID.subkey.asc
+gpg --armor --export $KEYID > $GPGBACKUP/public/$KEYID.asc
 ```
 * The exported public key may be used in keybase.io, and manually imported into
   other GPG programs.
+* GPG Public key export can be used to manually import into other GPG clients if
+  you do not want to use keyservers.
 
 ### Export SSH RSA Public Key
 Generate and export the [RSA Public Key][18] used for SSH.
 ```bash
-gpg --export-ssh-key $KEYID > $GPGBACKUP/$KEYID.ssh.pub
+gpg --export-ssh-key $KEYID > $GPGBACKUP/public/$KEYID.ssh.pub
 ```
 * The SSH key comment will use the authentication short key ID (e.g.
   `openpgp:0x2C518E44`).
@@ -292,9 +294,7 @@ gpg --export-ssh-key $KEYID > $GPGBACKUP/$KEYID.ssh.pub
 ### Backup GNUPG
 Backup GNUPG state for multiple Yubikey initalizations.
 ```bash
-mkdir /media/user/KINGSTON/gnupgbackup
-export GPGBACKUP=/media/user/KINGSTON/gnupgbackup
-sudo cp -avi $GNUPGHOME $KBACKUP
+sudo cp -avi $GNUPGHOME $GPGBACKUP
 ```
 
 Export Subkeys to Yubikeys
@@ -306,7 +306,7 @@ Understand conceptually how Yubikeys are managed. [Yubikey-manager][14] is an
 application that is used to manage the yubikey itself (`ykman`) and sets _how_
 applets are used on the key. The configuration of the applets themselves are
 managed by respective apps, in this case `GPG`.
-![Yubikey Organization](yubikey.png)
+![Yubikey Organization](yubikey-concept.png)
 * `ykman` will set preferences like number of applet PIN attempts, PINs, and
   touch preferences.
 * `gpg --edit-card` will set openpgp configuration, like PGP name, login, url.
@@ -405,7 +405,7 @@ The original GPG state needs to be reloaded to export subkeys to additional
 Yuibkeys. If not exporting to additional keys, this step may be skipped.
 
 ```bash
-cp -avi $GPGBACKUP $GNUPGHOME
+cp -avi $GPGBACKUP/* $GNUPGHOME
 ```
 * Repeat the steps in this section to export to another key.
 
@@ -423,7 +423,7 @@ gpg --keyserver hkp://pgp.mit.edu --send-key $KEYID
 * This will export to major keyservers. These are all syncronized so only a
   single server is needed.
 * Also consider exporting public key to [keybase.io](http://keybase.io).
-* The default gpg server is `hkps.pool.sks-keyservers.net`
+* The default gpg server is `hkps://hkps.pool.sks-keyservers.net`
 
 ### Cleanup
 Make sure your private info remains private. Confirm that
