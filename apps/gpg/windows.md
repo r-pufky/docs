@@ -1,14 +1,19 @@
 Windows GPG Yubikey Config for Putty/SSH
 ----------------------------------------
 Configure yubikey for SSH authentication on windows. Assumes [Yubikey has GPG
-key pre-loaded](README.md).
+Subkeys pre-loaded](README.md).
+
+1. [Creating GPG Keys][1]
+1. [Export GPG Subkeys to Yubikey][2]
+1. [Windows GPG Yubikey Setup][3]
+1. [Ubuntu GPG Yubikey Setup][4]
 
 Required Materials
 ------------------
-1. [gpg4win][1] downloaded. **Verify Integrity**.
-1. [Yubikey Manager][2] installed. Only required if you are changing keypress
+1. [gpg4win][5] downloaded. **Verify Integrity**.
+1. [Yubikey Manager][6] installed. Only required if you are changing keypress
    and NFC settings.
-1. [Putty][3] installed.
+1. [Putty][7] installed.
 1. Pre-configured Yubikey.
 
 ### Install GPG4Win on machine
@@ -43,11 +48,8 @@ Results should look like this:
 
 Configure GPG Agent
 -------------------
-This will configure the GPG agent on the windows machine to provide certificates
-from the Yubikey.
-
 ### Import & Ultimate Trust Your Certificate
-This will set ultimate trust for the [GPG public][6] certificate you created
+This will set ultimate trust for the [GPG public][12] certificate you created
 when making your GPG key.
 
 Open a command shell `win+x > command prompt`
@@ -77,7 +79,7 @@ enable-putty-support
 ```
 
 ### Restart GPG Agent and Connect Agent
-This will apply [configuration changes][4] made.
+This will apply [configuration changes][9] made.
 ```cmd
 gpgconf --kill gpg-agent
 "c:\Program Files (x86)\GnuPG\bin\gpg-connect-agent.exe" /bye
@@ -117,7 +119,7 @@ Be sure to **save** your configuration changes.
 
 Run GPG Agent on Login
 ----------------------
-Setup a [scheduled job][7] to ensure gpg-agent is automatically running on
+Setup a [scheduled job][10] to ensure gpg-agent is automatically running on
 login.
 
 Powershell as Admin
@@ -151,7 +153,7 @@ Happens because of a standard publickey not provided / matched failure.
 ![PinEntry wrong key](pinentry-wrong-key.png)
 
 Occurs because the original key used for authentication is not the key being
-used now. [GPG Agent caches the serial number][5] of the card for the KeyStub
+used now. [GPG Agent caches the serial number][11] of the card for the KeyStub
 used. This just needs to be removed.
 
 1. Show all keygrips in GPG, these will be used to match cache in private store.
@@ -161,17 +163,21 @@ used. This just needs to be removed.
 1. Identify keygrip in `%appdata%\gnupg\private-keys-v1.d\` and delete it, or
    you can just remove all keys in that directory.
 
-[1]: https://www.gpg4win.org/package-integrity.html
-[2]: https://www.yubico.com/products/services-software/download/yubikey-manager/
-[3]: https://www.putty.org/
-[4]: https://superuser.com/questions/1075404/how-can-i-restart-gpg-agent
-[5]: https://security.stackexchange.com/questions/165286/how-to-use-multiple-smart-cards-with-gnupg
-[6]: https://stackoverflow.com/questions/31784368/how-to-give-highest-trust-level-to-an-openpgp-certificate-in-kleopatra
-[7]: https://www.kaylyn.ink/journal/windows-using-gpg-for-ssh-authentication-and-git/
+[1]: README.md
+[2]: yubikey.md
+[3]: windows.md
+[4]: ubuntu.md
+[5]: https://www.gpg4win.org/package-integrity.html
+[6]: https://www.yubico.com/products/services-software/download/yubikey-manager/
+[7]: https://www.putty.org/
 [8]: https://withinboredom.info/2017/11/18/signing-commits-ssh-with-yubikey-and-windows/
+[9]: https://superuser.com/questions/1075404/how-can-i-restart-gpg-agent
+[10]: https://www.kaylyn.ink/journal/windows-using-gpg-for-ssh-authentication-and-git/
+[11]: https://security.stackexchange.com/questions/165286/how-to-use-multiple-smart-cards-with-gnupg
+[12]: https://stackoverflow.com/questions/31784368/how-to-give-highest-trust-level-to-an-openpgp-certificate-in-kleopatra
 
-[8]: https://developers.yubico.com/PGP/SSH_authentication/Windows.html
-[9]: https://www.linode.com/docs/security/authentication/gpg-key-for-ssh-authentication/
-[10]: https://codingnest.com/how-to-use-gpg-with-yubikey-wsl/
-[11]: https://ttmm.io/tech/yubikey/
-[12]: https://occamy.chemistry.jhu.edu/references/pubsoft/YubikeySSH/index.php
+[ref1]: https://developers.yubico.com/PGP/SSH_authentication/Windows.html
+[ref2]: https://www.linode.com/docs/security/authentication/gpg-key-for-ssh-authentication/
+[ref3]: https://codingnest.com/how-to-use-gpg-with-yubikey-wsl/
+[ref4]: https://ttmm.io/tech/yubikey/
+[ref5]: https://occamy.chemistry.jhu.edu/references/pubsoft/YubikeySSH/index.php

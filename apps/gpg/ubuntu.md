@@ -1,10 +1,15 @@
 Ubuntu GPG Yubikey Config for SSH
 ---------------------------------
 Configure yubikey for SSH authentication on Ubuntu. Assumes [Yubikey has GPG
-key pre-loaded](README.md).
+Subkeys pre-loaded][1].
+
+1. [Creating GPG Keys][1]
+1. [Export GPG Subkeys to Yubikey][2]
+1. [Windows GPG Yubikey Setup][3]
+1. [Ubuntu GPG Yubikey Setup][4]
 
 Gnome-keyring implements both ssh-agent and gpg-agent with a [broken
-implementation][2] that does not support smart cards. This will be disabled.
+implementation][5] that does not support smart cards. This will be disabled.
 
 Required Materials
 ------------------
@@ -47,11 +52,8 @@ Results should look like this:
 
 Configure GPG Agent
 -------------------
-This will configure the GPG agent on the ubuntu machine to provide certificates
-from the Yubikey.
-
 ### Import & Ultimate Trust Your Certificate
-This will set ultimate trust for the [GPG public][4] certificate you created
+This will set ultimate trust for the [GPG public][7] certificate you created
 when making your GPG key.
 
 ```bash
@@ -64,7 +66,7 @@ save
 gpg --list-secret-keys
 ```
 * `gpg --card-edit; fetch` will pull the GPG public key from the [URL
-  provided][5] on the yubikey. This is better if you are using from multiple or
+  provided][8] on the yubikey. This is better if you are using from multiple or
   new machines.
 * KEYID is listed from `--list-key`
 * `--list-secret-keys` should show `#` for private cert not on machine, and `>`
@@ -169,7 +171,7 @@ Happens because of a standard publickey not provided / matched failure.
 ![PinEntry wrong key](pinentry-wrong-key.png)
 
 Occurs because the original key used for authentication is not the key being
-used now. [GPG Agent caches the serial number][3] of the card for the KeyStub
+used now. [GPG Agent caches the serial number][6] of the card for the KeyStub
 used. This just needs to be removed.
 
 1. Show all keygrips in GPG, these will be used to match cache in private store.
@@ -179,8 +181,13 @@ used. This just needs to be removed.
 1. Identify keygrip in `./gnupg/private-keys-v1.d/` and delete it, or
    you can just remove all keys in that directory.
 
-[1]: https://occamy.chemistry.jhu.edu/references/pubsoft/YubikeySSH/index.php
-[2]: https://www.forgesi.net/gpg-smartcard/
-[3]: https://security.stackexchange.com/questions/165286/how-to-use-multiple-smart-cards-with-gnupg
-[4]: https://stackoverflow.com/questions/31784368/how-to-give-highest-trust-level-to-an-openpgp-certificate-in-kleopatra
-[5]: https://withinboredom.info/2017/11/18/signing-commits-ssh-with-yubikey-and-windows/
+[1]: README.md
+[2]: yubikey.md
+[3]: windows.md
+[4]: ubuntu.md
+[5]: https://www.forgesi.net/gpg-smartcard/
+[6]: https://security.stackexchange.com/questions/165286/how-to-use-multiple-smart-cards-with-gnupg
+[7]: https://stackoverflow.com/questions/31784368/how-to-give-highest-trust-level-to-an-openpgp-certificate-in-kleopatra
+[8]: https://withinboredom.info/2017/11/18/signing-commits-ssh-with-yubikey-and-windows/
+
+[ref1]: https://occamy.chemistry.jhu.edu/references/pubsoft/YubikeySSH/index.php
