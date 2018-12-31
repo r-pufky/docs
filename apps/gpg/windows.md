@@ -1,7 +1,7 @@
 Windows GPG Yubikey Config for Putty/SSH.
 
 Configure yubikey for SSH authentication on windows. Assumes [Yubikey has GPG
-key pre-loaded](README.md)
+key pre-loaded](README.md).
 
 Required Materials
 ------------------
@@ -52,12 +52,12 @@ making your GPG key.
 
 Open a command shell `win+x > command prompt`
 ```cmd
-gpg --import YOUR_PUBLIC_GPG_KEY.gpg
+gpg --import YOUR_PUBLIC_GPG_KEY.asc
 gpg --list-key
-gpg --edit-key $KEYID
-`trust`
-`5`
-`save`
+gpg --edit-key KEYID
+trust
+5
+save
 gpg --list-secret-keys
 ```
 * KEYID is listed from `--list-key`
@@ -77,7 +77,7 @@ enable-putty-support
 This will apply [configuration changes][4] made.
 ```cmd
 gpgconf --kill gpg-agent
-c:\program files (x86)\gnupg\bin>gpg-connect-agent.exe /bye
+"c:\Program Files (x86)\GnuPG\bin\gpg-connect-agent.exe" /bye
 ```
 
 Configure Putty
@@ -127,6 +127,7 @@ Happens because of a standard publickey not provided / matched failure.
 
 ### Please insert card with serial number
 ![PinEntry wrong key](pinentry-wrong-key.png)
+
 Occurs because the original key used for authentication is not the key being
 used now. [GPG Agent caches the serial number][5] of the card for the KeyStub
 used. This just needs to be removed.
