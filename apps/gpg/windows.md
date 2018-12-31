@@ -112,6 +112,26 @@ Be sure to **save** your configuration changes.
 
 1. There _will be no prompt_. **Tap Your Key**. If successful you will login.
 
+Run GPG Agent on Login
+----------------------
+Setup a [scheduled job][7] to ensure gpg-agent is automatically running on
+ogin.
+
+Powershell as Admin
+```powershell
+$job = Register-ScheduledJob `
+   -Name GpgAgent `
+   -ScriptBlock { gpg-connect-agent.exe /bye } `
+   -Trigger (New-JobTrigger -AtLogOn -User $([System.Security.Principal.WindowsIdentity]::GetCurrent().Name)) `
+   -ScheduledJobOption (New-ScheduledJobOption -StartIfOnBattery -ContinueIfGoingOnBattery) `
+   -RunNow
+
+# Change principal to run only on interactive logon instead of S4A.
+$principal = New-ScheduledTaskPrincipal -LogonType Interactive -UserId $([System.Security.Principal.WindowsIdentity]::GetCurrent().Name)
+Set-ScheduledTask -TaskPath \Microsoft\Windows\PowerShell\ScheduledJobs\ -TaskName $job.Name -Principal $principal
+```
+* This also ensures it is started on power resume / on battery.
+
 Errors & Problems
 -----------------
 
@@ -145,9 +165,10 @@ used. This just needs to be removed.
 [4]: https://superuser.com/questions/1075404/how-can-i-restart-gpg-agent
 [5]: https://security.stackexchange.com/questions/165286/how-to-use-multiple-smart-cards-with-gnupg
 [6]: https://stackoverflow.com/questions/31784368/how-to-give-highest-trust-level-to-an-openpgp-certificate-in-kleopatra
+[7]: https://www.kaylyn.ink/journal/windows-using-gpg-for-ssh-authentication-and-git/
 
-[7]: https://developers.yubico.com/PGP/SSH_authentication/Windows.html
-[8]: https://www.linode.com/docs/security/authentication/gpg-key-for-ssh-authentication/
-[9]: https://codingnest.com/how-to-use-gpg-with-yubikey-wsl/
-[10]: https://ttmm.io/tech/yubikey/
-[11]: https://occamy.chemistry.jhu.edu/references/pubsoft/YubikeySSH/index.php
+[8]: https://developers.yubico.com/PGP/SSH_authentication/Windows.html
+[9]: https://www.linode.com/docs/security/authentication/gpg-key-for-ssh-authentication/
+[10]: https://codingnest.com/how-to-use-gpg-with-yubikey-wsl/
+[11]: https://ttmm.io/tech/yubikey/
+[12]: https://occamy.chemistry.jhu.edu/references/pubsoft/YubikeySSH/index.php

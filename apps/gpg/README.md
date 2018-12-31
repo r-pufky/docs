@@ -1,4 +1,7 @@
-Using GPG with multiple Yubikeys.
+Using GPG with multiple Yubikeys
+--------------------------------
+
+1. [Windows GPG Yubikey Setup](windows.md)
 
 Great detailed step-by-step [security-focused instructions are here][1]. These
 instructions are an abbreviated version, which also includes a photo for your
