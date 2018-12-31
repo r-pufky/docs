@@ -298,3 +298,5 @@ major update to windows 10.
 [23]: https://docs.google.com/spreadsheets/d/184wcDt9I9TUNFFbsAVLpzAtckQxYiuirADzf3cL42FQ/htmlview?usp=sharing&sle=true
 [24]: https://www.grc.com/inspectre.htm
 [25]: https://www.ghacks.net/2018/05/01/all-the-issues-of-windows-10-version-1803-you-may-run-into/
+
+[ref1]: https://ss64.com/nt/run.html

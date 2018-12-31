@@ -22,6 +22,15 @@ to putty, winscp, etc.
 
 1. Only install **gnupg**
 
+### Add GPG to User Path
+This will enable you to use commands anywhere on the system. Path is modified
+using the [System Preferences][ref6] control panel plugin.
+
+1. `win+r > sysdm.cpl > Advanced > Environment Variables`
+1. Select `Path` under `User Variables`, click `edit`
+1. Click `new` add `C:\Program Files (x86)\GnuPG\bin`
+1. Ensure path is added at end of list and save.
+
 Configure Yubikey
 -----------------
 Configure behavior of Yubikey so short touches will provide GPG material, while
@@ -181,3 +190,4 @@ used. This just needs to be removed.
 [ref3]: https://codingnest.com/how-to-use-gpg-with-yubikey-wsl/
 [ref4]: https://ttmm.io/tech/yubikey/
 [ref5]: https://occamy.chemistry.jhu.edu/references/pubsoft/YubikeySSH/index.php
+[ref6]: https://ss64.com/nt/run.html
