@@ -27,20 +27,23 @@ minimize secret key exposure. Persistent disk should be created so that packages
 may be installed / updated as needed (e.g. yubikey manager). All GPG operations
 should be done offline with the exception of uploading public keys to services.
 
-* Enusre a _root_ password is set to install additiona software.
+* Enusre a _root_ password is set to install additional software.
 
 ### Configure Persistent Disk
 This will enable the installation of packages (e.g. Yubikey Manager) to manage
 physical keys. Do **not** store secret material on this.
 
-Configure / Install a Persistent volume per USB distro then
+**Network is required for this step. Disable after packages are installed.**
+
+Configure a Persistent volume then install yubikey management.
 ```bash
 apt update && apt upgrade
-apt install software-properties-common
 apt-add-repository ppa:yubico/stable
 apt update
-apt install yubikey-manager
+apt install software-properties-common yubikey-manager yubikey-manager-qt
 ```
+* yubikey-manager-qt is a GUI frontend which has limited functionality but
+  does provide easy ways to ensure specific applets are enabled.
 
 ### Reset Ironkey
 Do this if fresh Ironkey, or creating a new master key. **Data destructive**.
@@ -433,7 +436,7 @@ Make sure your private info remains private. Confirm that
   location.
 * Public key is saved somewhere easily accessible.
 
-Just reboot if using **tails** or a live image.
+Just reboot if using live image.
 
 Otherwise securely delete private data
 ```bash
