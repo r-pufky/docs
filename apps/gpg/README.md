@@ -1,12 +1,13 @@
 Using GPG with multiple Yubikeys
 --------------------------------
-
 1. [Windows GPG Yubikey Setup](windows.md)
 
-Great detailed step-by-step [security-focused instructions are here][1]. These
-instructions are an abbreviated version, which also includes a photo for your
-GPG master key. Additional step-by-step walkthrough instructions for
-configuring [multi-platform GPG/Yubikey SSH usage are here][16].
+This document details setting up a GPG Master Key with a photo, and
+sub-documents detail Yubikey conifguration and platform setups.
+
+Core (out of date) [instructions are here][1]. Additional step-by-step
+walkthrough instructions for configuring [multi-platform GPG/Yubikey SSH usage
+are here][16].
 
 Required Materials
 ------------------

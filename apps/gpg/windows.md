@@ -1,5 +1,5 @@
-Windows GPG Yubikey Config for Putty/SSH.
-
+Windows GPG Yubikey Config for Putty/SSH
+----------------------------------------
 Configure yubikey for SSH authentication on windows. Assumes [Yubikey has GPG
 key pre-loaded](README.md).
 
@@ -11,7 +11,7 @@ Required Materials
 1. [Putty][3] installed.
 1. Pre-configured Yubikey.
 
-### Instal GPG4Win on machine
+### Install GPG4Win on machine
 This will provide GPG interactions as well as an agent to provide key material
 to putty, winscp, etc.
 
@@ -47,8 +47,8 @@ This will configure the GPG agent on the windows machine to provide certificates
 from the Yubikey.
 
 ### Import & Ultimate Trust Your Certificate
-This will set ultimate trust for the [GPG public][6] certificate you created when
-making your GPG key.
+This will set ultimate trust for the [GPG public][6] certificate you created
+when making your GPG key.
 
 Open a command shell `win+x > command prompt`
 ```cmd
@@ -115,7 +115,7 @@ Be sure to **save** your configuration changes.
 Run GPG Agent on Login
 ----------------------
 Setup a [scheduled job][7] to ensure gpg-agent is automatically running on
-ogin.
+login.
 
 Powershell as Admin
 ```powershell
@@ -134,7 +134,6 @@ Set-ScheduledTask -TaskPath \Microsoft\Windows\PowerShell\ScheduledJobs\ -TaskNa
 
 Errors & Problems
 -----------------
-
 ### SSH connection failed, Server sent: publickey
 Happens because of a standard publickey not provided / matched failure.
 
