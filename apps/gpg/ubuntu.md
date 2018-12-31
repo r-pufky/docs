@@ -11,8 +11,7 @@ Required Materials
 1. Pre-configured Yubikey.
 
 ### Install GPG On Machine
-This will provide GPG interactions as well as an agent to provide key material
-to putty, winscp, etc.
+This will provide GPG interactions as well as an agent to provide key material.
 
 ```cmd
 apt update && apt upgrade
@@ -64,6 +63,9 @@ trust
 save
 gpg --list-secret-keys
 ```
+* `gpg --card-edit; fetch` will pull the GPG public key from the [URL
+  provided][5] on the yubikey. This is better if you are using from multiple or
+  new machines.
 * KEYID is listed from `--list-key`
 * `--list-secret-keys` should show `#` for private cert not on machine, and `>`
   for your signing, authentication and encryption certs on the Yubikey.
@@ -126,6 +128,8 @@ services on startup
 ```
 * Disable use-ssh-agent
 
+**reboot**
+
 SSH
 ---
 Ensure yubikey is readable by GPG. This assumes you have setup your _exported
@@ -179,3 +183,4 @@ used. This just needs to be removed.
 [2]: https://www.forgesi.net/gpg-smartcard/
 [3]: https://security.stackexchange.com/questions/165286/how-to-use-multiple-smart-cards-with-gnupg
 [4]: https://stackoverflow.com/questions/31784368/how-to-give-highest-trust-level-to-an-openpgp-certificate-in-kleopatra
+[5]: https://withinboredom.info/2017/11/18/signing-commits-ssh-with-yubikey-and-windows/

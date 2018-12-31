@@ -1,13 +1,15 @@
 Using GPG with multiple Yubikeys
 --------------------------------
 1. [Windows GPG Yubikey Setup](windows.md)
+1. [Ubuntu GPG Yubikey Setup](ubuntu.md)
 
 This document details setting up a GPG Master Key with a photo, and
 sub-documents detail Yubikey conifguration and platform setups.
 
-Core (out of date) [instructions are here][1]. Additional step-by-step
+Core (out of date) [instructions are here][1]. Alternative step-by-step
 walkthrough instructions for configuring [multi-platform GPG/Yubikey SSH usage
-are here][16].
+are here][16]. [OpenPGP for Beginners][23] is a good starting point if you have
+no understanding of what this is.
 
 Required Materials
 ------------------
@@ -471,3 +473,4 @@ gpg --delete-secret-key $KEYID
 [20]: https://www.gnupg.org/howtos/card-howto/en/ch03.html
 [21]: https://suchsecurity.com/gpg-and-ssh-with-yubikey-on-windows.html
 [22]: https://www.ubuntu.com/#download
+[23]: https://zacharyvoase.com/2009/08/20/openpgp/

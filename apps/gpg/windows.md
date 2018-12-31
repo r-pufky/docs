@@ -60,6 +60,9 @@ trust
 save
 gpg --list-secret-keys
 ```
+* `gpg --card-edit; fetch` will pull the GPG public key from the [URL
+  provided][8] on the yubikey. This is better if you are using from multiple or
+  new machines.
 * KEYID is listed from `--list-key`
 * `--list-secret-keys` should show `#` for private cert not on machine, and `>`
   for your signing, authentication and encryption certs on the Yubikey.
@@ -165,6 +168,7 @@ used. This just needs to be removed.
 [5]: https://security.stackexchange.com/questions/165286/how-to-use-multiple-smart-cards-with-gnupg
 [6]: https://stackoverflow.com/questions/31784368/how-to-give-highest-trust-level-to-an-openpgp-certificate-in-kleopatra
 [7]: https://www.kaylyn.ink/journal/windows-using-gpg-for-ssh-authentication-and-git/
+[8]: https://withinboredom.info/2017/11/18/signing-commits-ssh-with-yubikey-and-windows/
 
 [8]: https://developers.yubico.com/PGP/SSH_authentication/Windows.html
 [9]: https://www.linode.com/docs/security/authentication/gpg-key-for-ssh-authentication/
