@@ -286,6 +286,7 @@ Master and Subkeys will be encrypted with your passphrase when exported.
 gpg --armor --export-secret-keys $KEYID > $GPGBACKUP/private/$KEYID.master.asc
 gpg --armor --export-secret-subkeys $KEYID > $GPGBACKUP/private/$KEYID.subkey.asc
 gpg --armor --export $KEYID > $GPGBACKUP/public/$KEYID.asc
+cp $GNUPGHOME/openpgp-revocs.d/* $GPGBACKUP/private
 ```
 * The exported public key may be used in keybase.io, and manually imported into
   other GPG programs.
@@ -330,19 +331,22 @@ Manually verify this information to ensure you do not accidently lose data or
 access/control to your GPG identity.
 
 1. Encrypted Media has the following
-   * $GPGBACKUP/private/$KEYID.master.asc
-   * $GPGBACKUP/private/$KEYID.subkey.asc
-   * $GPGBACKUP/public/$KEYID.asc
-   * $GPGBACKUP/public/$KEYID.ssh.pub
+   * `$GPGBACKUP/private/$KEYID.master.asc`
+   * `$GPGBACKUP/private/$KEYID.subkey.asc`
+   * `$GPGBACKUP/private/$KEYID.rev`
+   * `$GPGBACKUP/public/$KEYID.asc`
+   * `$GPGBACKUP/public/$KEYID.ssh.pub`
 1. A backup of GPG Master Key (with all keys locally present)
-   * $GPGBACKUP/gnupghome
+   * `$GPGBACKUP/gnupghome`
 1. Your Master Key password is stored **away** from your encrypted media, in a
    controlled space.
 1. Your Encrypted Media password is stored **away** from your encrypted media,
    in a controlled space.
 1. **The encrypted media is stored offline, in a controlled space.**
 1. The public keys are stored or published, and are readily accessible.
-   * $GPGBACKUP/public/*
+   * `$GPGBACKUP/public/*`
+1. It is generally a good idea to print a copy of the revocation certificate and
+   give it to a trusted third-party.
 
 ### Next Steps
 1. [Export Keys to Yubikey][1].
