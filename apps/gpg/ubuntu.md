@@ -152,6 +152,7 @@ gpg --card-status
    ![PinEntry](pinentry.png)
    * Number is the Yubikey serial number.
    * Holder is the First/Last name of the GPG certificate on the key.
+   * Your key will blink when waiting for password or touch.
 
 1. There _will be no prompt_. **Tap Your Key**. If successful you will login.
 

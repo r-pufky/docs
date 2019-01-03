@@ -123,6 +123,7 @@ Be sure to **save** your configuration changes.
    ![PinEntry](pinentry.png)
    * Number is the Yubikey serial number.
    * Holder is the First/Last name of the GPG certificate on the key.
+   * Your key will blink when waiting for password or touch.
 
 1. There _will be no prompt_. **Tap Your Key**. If successful you will login.
 
@@ -145,6 +146,44 @@ $principal = New-ScheduledTaskPrincipal -LogonType Interactive -UserId $([System
 Set-ScheduledTask -TaskPath \Microsoft\Windows\PowerShell\ScheduledJobs\ -TaskName $job.Name -Principal $principal
 ```
 * This also ensures it is started on power resume / on battery.
+* This job will appear in `Task Scheduler` as `GpgAgent` under
+  `Task Scheduler Library > Microsoft > Windows > PowerShell > ScheduledJobs`
+
+Forward GPG Agent to Multiple Sub-Servers
+-----------------------------------------
+This is effectively using a single server as an SSH Bastion and SSH'ing to
+additional machines through the bastion. Please note that while the connection
+is active, it is possible to [**use them as you while you are connected**][13];
+so a secured and monitored system should be used, if at all. Machines are
+referred to as `putty` for your client machine, `bastion` for the machine you
+will be SSH'ing through and `target` for remote SSH targets.
+
+![Bastion](bastion.png)
+
+### Putty
+* Ensure `Connection > SSH > Auth > Allow agent forwarding` is enabled.
+
+### Bastion
+* GPG should be installed on this machine.
+
+/etc/ssh/sshd_config
+```bash
+StreamLocalBindUnlink yes
+AllowAgentForwarding yes
+```
+* This will allow you to forward your credentials again to the next server.
+* Removes current socket file for forwarding before creating a new one.
+* Confirm new settings loaded with `sshd -T | grep -i allowagent`
+
+### Target
+* GPG should be installed on this machine.
+* _Exported GPG ssh key_ add to `~/.ssh/authorized_keys` file.
+
+/etc/ssh/sshd_config
+```bash
+AllowAgentForwarding no
+```
+* Target does not need to enable outbound agent forwarding for this to work.
 
 Errors & Problems
 -----------------
@@ -184,6 +223,7 @@ used. This just needs to be removed.
 [10]: https://www.kaylyn.ink/journal/windows-using-gpg-for-ssh-authentication-and-git/
 [11]: https://security.stackexchange.com/questions/165286/how-to-use-multiple-smart-cards-with-gnupg
 [12]: https://stackoverflow.com/questions/31784368/how-to-give-highest-trust-level-to-an-openpgp-certificate-in-kleopatra
+[13]: http://www.unixwiz.net/techtips/ssh-agent-forwarding.html
 
 [ref1]: https://developers.yubico.com/PGP/SSH_authentication/Windows.html
 [ref2]: https://www.linode.com/docs/security/authentication/gpg-key-for-ssh-authentication/
@@ -191,3 +231,4 @@ used. This just needs to be removed.
 [ref4]: https://ttmm.io/tech/yubikey/
 [ref5]: https://occamy.chemistry.jhu.edu/references/pubsoft/YubikeySSH/index.php
 [ref6]: https://ss64.com/nt/run.html
+[ref7]: https://superuser.com/questions/161973/how-can-i-forward-a-gpg-key-via-ssh-agent
