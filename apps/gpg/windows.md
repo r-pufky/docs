@@ -164,20 +164,18 @@ will be SSH'ing through and `target` for remote SSH targets.
 * Ensure `Connection > SSH > Auth > Allow agent forwarding` is enabled.
 
 ### Bastion
-* GPG should be installed on this machine.
-
 /etc/ssh/sshd_config
 ```bash
 StreamLocalBindUnlink yes
 AllowAgentForwarding yes
 ```
+* _Exported GPG ssh key_ added to `authorized_keys` file for user.
 * This will allow you to forward your credentials again to the next server.
 * Removes current socket file for forwarding before creating a new one.
 * Confirm new settings loaded with `sshd -T | grep -i allowagent`
 
 ### Target
-* GPG should be installed on this machine.
-* _Exported GPG ssh key_ add to `~/.ssh/authorized_keys` file.
+* _Exported GPG ssh key_ added to `authorized_keys` file for user.
 
 /etc/ssh/sshd_config
 ```bash
