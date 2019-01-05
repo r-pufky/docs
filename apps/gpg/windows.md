@@ -129,8 +129,66 @@ Be sure to **save** your configuration changes.
 
 Run GPG Agent on Login
 ----------------------
+Scheduled Tasks are inconsistently applied and therefore you will run into
+issues if you depend on the scheduled tasks to always run at login to refresh
+your GPG agent. This is remedied by triggering on screen unlock events and
+refreshing the GPG agent, ensuring that the agent is always ready and preventing
+the need for manual restarts.
+
+### Enable [Event Logging of Screen Lock & Unlock][14]
+Configure Group Policy to log login/logout events so we can trigger.
+
+```win + r > gpedit.msc```
+> Key: Computer Configuration > Windows Settings > Security Settings > Advanced Audit Policy Configuration > System Audit Policies - Local Group Policy Object > Logon/Logoff >
+> Policy: Audit Other Login/Logoff Events > Success = Enabled
+> Policy: Audit Other Login/Logoff Events > Failure = Enabled4.
+* Successful unlock events will be `4801`, and failures will be `4800`.
+
+### Add Task Triggered on Unlock Events
+This task will trigger on unlock events, even when logging in the first time.
+
+```start > Task Scheduler > Task Scheduler Library```
+* `Action > Create Task`
+  1. General
+    * Name: `GpgAgentUnlockRestart`.
+    * Description: `Restarts GPG agent on windows unlock`.
+    * Check: `Run only when user is logged on`.
+    * Configure for: `Windows 10`.
+    * Check: `Hidden`.
+  1. Triggers
+    * `New`.
+    * Being the task: `On an event`.
+    * Check: `Basic`.
+    * Log: `Security`.
+    * Source: `Microsoft Windows security auditing`.
+    * Event ID: `4801`.
+    * Check: `Enabled`.
+  1. Actions
+    1. `New`
+      * Action: `Start a program`.
+      * Program/Script: `gpgconf`.
+      * Add arguments (optional): `--kill gpg-agent`.
+    2. `New`
+      * Action: `Start a program`.
+      * Program/Script: `gpg-connect-agent`.
+      * Add arguments (optional): `/bye`.
+    * Ensure order is correct.
+  1. Conditions
+    * Uncheck: `ALL`.
+  1. Settings
+    * Check: `Allow task to be run on demand`.
+    * Check: `Stop the task if it runs longer than` `3 days`.
+    * Uncheck: `All Remaining`.
+
+This can be verified to work by restarting your machine or killing the current
+agent `gpgconf --kill gpg-agent` and locking/unlocking your screen then
+attempting to use putty.
+
+### Deprecated Scheduled Job Instructions
 Setup a [scheduled job][10] to ensure gpg-agent is automatically running on
 login.
+* These are deprecated in favor of above, and will remain until above
+  instructions are converted to powershell commands to run once.
 
 Powershell as Admin
 ```powershell
@@ -222,6 +280,7 @@ used. This just needs to be removed.
 [11]: https://security.stackexchange.com/questions/165286/how-to-use-multiple-smart-cards-with-gnupg
 [12]: https://stackoverflow.com/questions/31784368/how-to-give-highest-trust-level-to-an-openpgp-certificate-in-kleopatra
 [13]: http://www.unixwiz.net/techtips/ssh-agent-forwarding.html
+[14]: https://superuser.com/questions/1214736/windows-10-scheduled-tasks-with-workstation-lock-unlock-not-being-triggered/1217125
 
 [ref1]: https://developers.yubico.com/PGP/SSH_authentication/Windows.html
 [ref2]: https://www.linode.com/docs/security/authentication/gpg-key-for-ssh-authentication/
