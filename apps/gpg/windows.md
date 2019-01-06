@@ -131,83 +131,31 @@ Run GPG Agent on Login
 ----------------------
 Scheduled Tasks are inconsistently applied and therefore you will run into
 issues if you depend on the scheduled tasks to always run at login to refresh
-your GPG agent. This is remedied by triggering on screen unlock events and
-refreshing the GPG agent, ensuring that the agent is always ready and preventing
-the need for manual restarts.
+your GPG agent. This is compounded by GPG agent occasionally hanging and needing
+to be force restarted. This is remedied by triggering GPG agent refresh on
+screen unlock events, ensuring that the agent is always ready.
 
-### Enable [Event Logging of Screen Lock & Unlock][14]
-Configure Group Policy to log login/logout events so we can trigger.
+[See in-depth instructions here][10]; or just follow these.
+
+### Enable Login/Logoff Events
+Logon/Logoff events are not configured to log by default. When enabled,
+successful unlock events will have an ID of `4801`, and event login failures
+will have an ID of `4800`. The unlock event will trigger at screen unlock as
+well as logging into the machine.
 
 ```win + r > gpedit.msc```
-> Key: Computer Configuration > Windows Settings > Security Settings > Advanced Audit Policy Configuration > System Audit Policies - Local Group Policy Object > Logon/Logoff >
+> Key: Computer Configuration > Windows Settings > Security Settings > Advanced Audit Policy Configuration > System Audit Policies - Local Group Policy Object > Logon/Logoff
 
 > Policy: Audit Other Login/Logoff Events > Success = Enabled
 
 > Policy: Audit Other Login/Logoff Events > Failure = Enabled4.
-* Successful unlock events will be `4801`, and failures will be `4800`.
 
-### Add Task Triggered on Unlock Events
-This task will trigger on unlock events, even when logging in the first time.
+### Create Event Triggered Scheduled Task
+See [detailed documentation][10] for setup and additional details. This will
+create a scheduled task that will refresh the GPG agent on screen unlock.
 
-```start > Task Scheduler > Task Scheduler Library```
-* `Action > Create Task`
-  1. General
-    * Name: `GpgAgentUnlockRestart`.
-    * Description: `Restarts GPG agent on windows unlock`.
-    * Check: `Run only when user is logged on`.
-    * Configure for: `Windows 10`.
-    * Check: `Hidden`.
-  1. Triggers
-    * `New`.
-    * Being the task: `On an event`.
-    * Check: `Basic`.
-    * Log: `Security`.
-    * Source: `Microsoft Windows security auditing`.
-    * Event ID: `4801`.
-    * Check: `Enabled`.
-  1. Actions
-    1. `New`
-      * Action: `Start a program`.
-      * Program/Script: `gpgconf`.
-      * Add arguments (optional): `--kill gpg-agent`.
-    2. `New`
-      * Action: `Start a program`.
-      * Program/Script: `gpg-connect-agent`.
-      * Add arguments (optional): `/bye`.
-    * Ensure order is correct.
-  1. Conditions
-    * Uncheck: `ALL`.
-  1. Settings
-    * Check: `Allow task to be run on demand`.
-    * Check: `Stop the task if it runs longer than` `3 days`.
-    * Uncheck: `All Remaining`.
-
-This can be verified to work by restarting your machine or killing the current
-agent `gpgconf --kill gpg-agent` and locking/unlocking your screen then
-attempting to use putty.
-
-### Deprecated Scheduled Job Instructions
-Setup a [scheduled job][10] to ensure gpg-agent is automatically running on
-login.
-* These are deprecated in favor of above, and will remain until above
-  instructions are converted to powershell commands to run once.
-
-Powershell as Admin
-```powershell
-$job = Register-ScheduledJob `
-   -Name GpgAgent `
-   -ScriptBlock { gpg-connect-agent.exe /bye } `
-   -Trigger (New-JobTrigger -AtLogOn -User $([System.Security.Principal.WindowsIdentity]::GetCurrent().Name)) `
-   -ScheduledJobOption (New-ScheduledJobOption -StartIfOnBattery -ContinueIfGoingOnBattery) `
-   -RunNow
-
-# Change principal to run only on interactive logon instead of S4U.
-$principal = New-ScheduledTaskPrincipal -LogonType Interactive -UserId $([System.Security.Principal.WindowsIdentity]::GetCurrent().Name)
-Set-ScheduledTask -TaskPath \Microsoft\Windows\PowerShell\ScheduledJobs\ -TaskName $job.Name -Principal $principal
-```
-* This also ensures it is started on power resume / on battery.
-* This job will appear in `Task Scheduler` as `GpgAgent` under
-  `Task Scheduler Library > Microsoft > Windows > PowerShell > ScheduledJobs`
+Run [this script][14] in powershell as admin. [Don't blindy trust and assume the
+script is not malicious][10] -- vet the script first.
 
 Forward GPG Agent to Multiple Sub-Servers
 -----------------------------------------
@@ -278,11 +226,11 @@ used. This just needs to be removed.
 [7]: https://www.putty.org/
 [8]: https://withinboredom.info/2017/11/18/signing-commits-ssh-with-yubikey-and-windows/
 [9]: https://superuser.com/questions/1075404/how-can-i-restart-gpg-agent
-[10]: https://www.kaylyn.ink/journal/windows-using-gpg-for-ssh-authentication-and-git/
+[10]: ../../operating-systems/windows/10/scheduled-tasks/README.md
 [11]: https://security.stackexchange.com/questions/165286/how-to-use-multiple-smart-cards-with-gnupg
 [12]: https://stackoverflow.com/questions/31784368/how-to-give-highest-trust-level-to-an-openpgp-certificate-in-kleopatra
 [13]: http://www.unixwiz.net/techtips/ssh-agent-forwarding.html
-[14]: https://superuser.com/questions/1214736/windows-10-scheduled-tasks-with-workstation-lock-unlock-not-being-triggered/1217125
+[14]: ../../operating-systems/windows/10/scheduled-tasks/gpg-agent-refresh-unlock.ps1
 
 [ref1]: https://developers.yubico.com/PGP/SSH_authentication/Windows.html
 [ref2]: https://www.linode.com/docs/security/authentication/gpg-key-for-ssh-authentication/

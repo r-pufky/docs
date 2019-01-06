@@ -12,10 +12,10 @@ This will run through configuring a gpg-agent to refresh on screen unlock (
 include initial login) manually and using a powershell script, and assumes GPG
 agents have been added to the user's PATH environment variable already.
 
-1. Manually Adding Event Triggered Scheduled Task](Manually Adding Event Triggered Scheduled Task)
-1. Powershell to Create Event Triggered Scheduled Task](Powershell to Create Event Triggered Scheduled Task)
+1. [Manually Adding Event Triggered Scheduled Task](#manually-adding-event-triggered-scheduled-task)
+1. [Powershell to Create Event Triggered Scheduled Task](#powershell-to-create-event-triggered-scheduled-task)
 1. [Hiding Command Windows](#hiding-command-windows)]
-1. [Demonstration of Scheduled Task At Login](Demonstration of Scheduled Task At Login)
+1. [Demonstration of Scheduled Task At Login](#demonstration-of-scheduled-task-at-login)
 
 Enable Logon/Logoff Events
 --------------------------
@@ -87,7 +87,7 @@ the Event Trigger and the task. A password is required when adding the task.
 
 This re-creates the same task as manually specified above.
 
-Powershell as Admin
+Powershell as Admin ([script here][8])
 ```powershell
 $Hostname = $Env:computername
 
@@ -164,7 +164,7 @@ $password = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto([System.Ru
 Hiding Command Windows
 ----------------------
 Windows may appear during the execution of actions involving `cmd`. However, the
-build in method to hide windows [`start /b`][6] -- will fail as this is not the
+build in method to hide windows [`start /b`][6] will fail as this is not the
 first thing that executed in the scheduled task (it runs a command shell, then
 executes start), or fail with the error `The operator or administrator has
 refused the request`. The solution to this is to create a small visual basic
@@ -217,6 +217,7 @@ Set-ScheduledTask -TaskPath \Microsoft\Windows\PowerShell\ScheduledJobs\ -TaskNa
 [5]: https://blogs.technet.microsoft.com/wincat/2011/08/25/trigger-a-powershell-script-from-a-windows-event/
 [6]: https://ss64.com/nt/start.html
 [7]: https://www.kaylyn.ink/journal/windows-using-gpg-for-ssh-authentication-and-git/
+[8]: gpg-agent-refresh-unlock.ps1
 
 [ref1]: https://stackoverflow.com/questions/42801733/creating-a-scheduled-task-which-uses-a-specific-event-log-entry-as-a-trigger
 [ref2]: https://community.spiceworks.com/topic/1030490-task-scheduler-vb-script-help?page=1#entry-4758670
