@@ -13,8 +13,8 @@ Subkeys pre-loaded](README.md).
 1. [Configure GPG Agent](#configure-gpg-agent)
 1. [Configure Putty](#configure-putty)
 1. [Run GPG Agent on Login](#run-gpg-agent-on-login)
-1. [Forward GPG Agent Through Multiple Servers](#foward-gpg-agent-through-multiple-servers)
-1. [Errors & Problems](#errors---problems)
+1. [Forward GPG Agent Through Multiple Servers](#forward-gpg-agent-through-multiple-servers)
+1. [Errors & Problems](#errors--problems)
 
 Required Materials
 ------------------
