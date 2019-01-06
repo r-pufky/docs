@@ -8,6 +8,14 @@ Subkeys pre-loaded](README.md).
 1. [Windows GPG Yubikey Setup][3]
 1. [Ubuntu GPG Yubikey Setup][4]
 
+1. [Required Materials](#required-materials)
+1. [Configure Yubikey](#configure-yubikey)
+1. [Configure GPG Agent](#configure-gpg-agent)
+1. [Configure Putty](#configure-putty)
+1. [Run GPG Agent on Login](#run-gpg-agent-on-login)
+1. [Forward GPG Agent to Multiple Sub-Servers](#foward-gpg-agent-to-multiple-sub-servers)
+1. [Errors & Problems](#errors---problems)
+
 Required Materials
 ------------------
 1. [gpg4win][5] downloaded. **Verify Integrity**.
