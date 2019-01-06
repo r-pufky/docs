@@ -43,4 +43,4 @@ $GpgRestartAction.Path = 'gpg-connect-agent'
 $GpgRestartAction.Arguments = '/bye'
 
 $Credentials = Get-Credential
-$TaskFolder.RegisterTaskDefinition('GpgAgentUnlockRestartNew',$TaskDefinition,6,$credentials.username,[System.Runtime.InteropServices.Marshal]::PtrToStringAuto([System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($Credentials.password)),3)
+$TaskFolder.RegisterTaskDefinition('GpgAgentRefreshUnlock',$TaskDefinition,6,$credentials.username,[System.Runtime.InteropServices.Marshal]::PtrToStringAuto([System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($Credentials.password)),3)

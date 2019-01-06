@@ -148,7 +148,7 @@ well as logging into the machine.
 
 > Policy: Audit Other Login/Logoff Events > Success = Enabled
 
-> Policy: Audit Other Login/Logoff Events > Failure = Enabled4.
+> Policy: Audit Other Login/Logoff Events > Failure = Enabled.
 
 ### Create Event Triggered Scheduled Task
 See [detailed documentation][10] for setup and additional details. This will

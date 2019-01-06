@@ -14,7 +14,7 @@ agents have been added to the user's PATH environment variable already.
 
 1. [Manually Adding Event Triggered Scheduled Task](#manually-adding-event-triggered-scheduled-task)
 1. [Powershell to Create Event Triggered Scheduled Task](#powershell-to-create-event-triggered-scheduled-task)
-1. [Hiding Command Windows](#hiding-command-windows)]
+1. [Hiding Command Windows](#hiding-command-windows)
 1. [Demonstration of Scheduled Task At Login](#demonstration-of-scheduled-task-at-login)
 
 Enable Logon/Logoff Events
@@ -37,7 +37,7 @@ Manually Adding Event Triggered Scheduled Task
 * `Action > Create Task`
 
 General
-* Name: `GpgAgentUnlockRestart`.
+* Name: `GpgAgentRefreshUnlock`.
 * Description: `Restarts GPG agent on windows unlock`.
 * Check: `Run only when user is logged on`.
 * Configure for: `Windows 10`.
@@ -74,7 +74,7 @@ Settings
 This can be verified to work by restarting your machine or killing the current
 agent with `gpgconf --kill gpg-agent` and locking/unlocking your screen then
 attempting to use Putty. It is registered in `Task Scheduler Library` as
-`GPGAgentUnlockRestart`.
+`GPGAgentRefreshUnlock`.
 
 You may noticed occasionsally that _command windows_ pop-up while the scheduled
 task is executing. If this should be completely hidden, see [Hiding Command
@@ -134,9 +134,9 @@ $GpgRestartAction.Path = 'gpg-connect-agent'
 $GpgRestartAction.Arguments = '/bye'
 
 $Credentials = Get-Credential
-$TaskFolder.RegisterTaskDefinition('GpgAgentUnlockRestartNew',$TaskDefinition,6,$credentials.username,[System.Runtime.InteropServices.Marshal]::PtrToStringAuto([System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($Credentials.password)),3)
+$TaskFolder.RegisterTaskDefinition('GpgAgentRefreshUnlock',$TaskDefinition,6,$credentials.username,[System.Runtime.InteropServices.Marshal]::PtrToStringAuto([System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($Credentials.password)),3)
 ```
-* This is registered in `Task Scheduler Library` as `GPGAgentUnlockRestart`.
+* This is registered in `Task Scheduler Library` as `GPGAgentRefreshUnlock`.
 * The `Subscription` query is [extracted from the manually][5] created scheduled
   task, instead of manually generating it. Just `Right Click > Export` and look
   in the XML file for `Subscription`.
