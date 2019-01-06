@@ -140,7 +140,9 @@ Configure Group Policy to log login/logout events so we can trigger.
 
 ```win + r > gpedit.msc```
 > Key: Computer Configuration > Windows Settings > Security Settings > Advanced Audit Policy Configuration > System Audit Policies - Local Group Policy Object > Logon/Logoff >
+
 > Policy: Audit Other Login/Logoff Events > Success = Enabled
+
 > Policy: Audit Other Login/Logoff Events > Failure = Enabled4.
 * Successful unlock events will be `4801`, and failures will be `4800`.
 
@@ -199,7 +201,7 @@ $job = Register-ScheduledJob `
    -ScheduledJobOption (New-ScheduledJobOption -StartIfOnBattery -ContinueIfGoingOnBattery) `
    -RunNow
 
-# Change principal to run only on interactive logon instead of S4A.
+# Change principal to run only on interactive logon instead of S4U.
 $principal = New-ScheduledTaskPrincipal -LogonType Interactive -UserId $([System.Security.Principal.WindowsIdentity]::GetCurrent().Name)
 Set-ScheduledTask -TaskPath \Microsoft\Windows\PowerShell\ScheduledJobs\ -TaskName $job.Name -Principal $principal
 ```
