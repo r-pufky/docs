@@ -29,7 +29,7 @@ well as logging into the machine.
 
 > Policy: Audit Other Login/Logoff Events > Success = Enabled
 
-> Policy: Audit Other Login/Logoff Events > Failure = Enabled.
+> Policy: Audit Other Login/Logoff Events > Failure = Enabled
 
 Manually Adding Event Triggered Scheduled Task
 ----------------------------------------------
@@ -165,7 +165,7 @@ $password = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto([System.Ru
 Hiding Command Windows
 ----------------------
 Windows may appear during the execution of actions involving `cmd`. However, the
-built in method to hide windows [`start /b`][6] will fail as this is not the
+built in method to hide windows ([`start /b`][6]) will fail as this is not the
 first thing that executed in the scheduled task (it runs a command shell, then
 executes start), or fail with the error `The operator or administrator has
 refused the request`. The solution to this is to create a small visual basic
