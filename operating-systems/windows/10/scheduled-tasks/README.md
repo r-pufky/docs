@@ -1,20 +1,21 @@
 
 Scheduled Tasks
 ---------------
-Scheduled Tasks are inconsistently applied [at login triggers][1], additionally
-this does not cover cases where long-running process may hang, like gpg-agent.
-The remedy for this is to trigger the Scheduled Task on an Event trigger.
-However, Event Triggers cannot be created using the [current powershell
-cmdlet][2] -- they can only be created interactively or via a [com object][3].
+Scheduled Tasks are inconsistently applied [at login triggers][1], and does not
+cover cases where long-running process like gpg-agent may hang. The remedy for
+this is to trigger the Scheduled Task on an Event. Event Triggers cannot be
+created using the [current powershell cmdlet][2] -- and can only be created
+interactively or via a [com object][3].
 
 This will run through configuring a gpg-agent to refresh on screen unlock
-(including initial login) manually and using a powershell script, and assumes
-GPG agents have been added to the user's PATH environment variable already.
+(including initial login) using both GUI and using a powershell script options,
+and assumes GPG agents have been added to the user's PATH environment variable
+already.
 
 1. [Manually Adding Event Triggered Scheduled Task](#manually-adding-event-triggered-scheduled-task)
 1. [Powershell to Create Event Triggered Scheduled Task](#powershell-to-create-event-triggered-scheduled-task)
 1. [Hiding Command Windows](#hiding-command-windows)
-1. [Demonstration of Scheduled Task At Login](#demonstration-of-scheduled-task-at-login)
+1. [Demonstration of Scheduled Task At Login Failure](#demonstration-of-scheduled-task-at-login-failure)
 
 Enable Logon/Logoff Events
 --------------------------
@@ -163,7 +164,7 @@ $password = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto([System.Ru
 Hiding Command Windows
 ----------------------
 Windows may appear during the execution of actions involving `cmd`. However, the
-build in method to hide windows [`start /b`][6] will fail as this is not the
+built in method to hide windows [`start /b`][6] will fail as this is not the
 first thing that executed in the scheduled task (it runs a command shell, then
 executes start), or fail with the error `The operator or administrator has
 refused the request`. The solution to this is to create a small visual basic
@@ -185,8 +186,8 @@ Then modify Actions so that:
 * Program/Script: `quiet_launcher.vbs`.
 * Add arguments (optional): `full command with args`.
 
-Demonstration of Scheduled Task at Login
-----------------------------------------
+Demonstration of Scheduled Task at Login Failure
+------------------------------------------------
 As GPG agent can hangup [occasionally][7], only executing the restart on initial
 login will produce problems with long-running systems, or surface scheduling
 errors within Task Scheduler itself. This task will work, but will
