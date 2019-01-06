@@ -1,18 +1,18 @@
 $Hostname = $Env:computername
-
+$UserDomain = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
 $Service = new-object -ComObject ("Schedule.Service")
 $Service.Connect($Hostname)
 $TaskFolder = $Service.GetFolder("\")
 $TaskDefinition = $Service.NewTask(0)
 $RegistrationInfo = $TaskDefinition.RegistrationInfo
 $RegistrationInfo.Description = 'Restarts GPG agent on windows unlock'
-$RegistrationInfo.Author = $([System.Security.Principal.WindowsIdentity]::GetCurrent().Name)
+$RegistrationInfo.Author = $UserDomain
 
 $Principal = $TaskDefinition.Principal
 $Principal.LogonType = 3
-$Principal.UserId = $([System.Security.Principal.WindowsIdentity]::GetCurrent().Name)
+$Principal.UserId = $UserDomain
 
-$Settings = $taskDefinition.Settings
+$Settings = $TaskDefinition.Settings
 $Settings.Enabled = $true
 $Settings.Hidden = $true
 $Settings.Compatibility = 2
@@ -43,4 +43,4 @@ $GpgRestartAction.Path = 'gpg-connect-agent'
 $GpgRestartAction.Arguments = '/bye'
 
 $Credentials = Get-Credential
-$TaskFolder.RegisterTaskDefinition('GpgAgentRefreshUnlock',$TaskDefinition,6,$credentials.username,[System.Runtime.InteropServices.Marshal]::PtrToStringAuto([System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($Credentials.password)),3)
+$TaskFolder.RegisterTaskDefinition('GpgAgentRefreshUnlock',$TaskDefinition,6,$UserDomain,[System.Runtime.InteropServices.Marshal]::PtrToStringAuto([System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($Credentials.password)),3)

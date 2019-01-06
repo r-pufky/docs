@@ -20,6 +20,8 @@ Assumes Admin Rights
 
 [Reinstalling Windows 10](windows-reinstall.md)
 
+[Task Scheduler Issues](scheduled-tasks.md)
+
 [Setting Execution Policy][3]
 -----------------------------
 Powershell scripts require unrestricted execution policy to be set to

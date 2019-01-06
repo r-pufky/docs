@@ -13,7 +13,7 @@ Subkeys pre-loaded](README.md).
 1. [Configure GPG Agent](#configure-gpg-agent)
 1. [Configure Putty](#configure-putty)
 1. [Run GPG Agent on Login](#run-gpg-agent-on-login)
-1. [Forward GPG Agent to Multiple Sub-Servers](#foward-gpg-agent-to-multiple-sub-servers)
+1. [Forward GPG Agent Through Multiple Servers](#foward-gpg-agent-through-multiple-servers)
 1. [Errors & Problems](#errors---problems)
 
 Required Materials
@@ -165,14 +165,15 @@ create a scheduled task that will refresh the GPG agent on screen unlock.
 Run [this script][14] in powershell as admin. [Don't blindy trust and assume the
 script is not malicious][10] -- vet the script first.
 
-Forward GPG Agent to Multiple Sub-Servers
------------------------------------------
+Forward GPG Agent Through Multiple Servers
+------------------------------------------
 This is effectively using a single server as an SSH Bastion and SSH'ing to
-additional machines through the bastion. Please note that while the connection
-is active, it is possible to [**use them as you while you are connected**][13];
-so a secured and monitored system should be used, if at all. Machines are
-referred to as `putty` for your client machine, `bastion` for the machine you
-will be SSH'ing through and `target` for remote SSH targets.
+additional machines through the bastion. This keeps your private credentials on
+your local machine, however, while the connection is active it is possible for
+[**other to use them as you while you are connected**][13]; so a secured and
+monitored system should be used, if at all. Machines are referred to as `putty`
+for your client machine, `bastion` for the machine you will be SSH'ing through
+and `target` for remote SSH targets.
 
 ![Bastion](bastion.png)
 
