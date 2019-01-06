@@ -3,10 +3,10 @@ Windows GPG Yubikey Config for Putty/SSH
 Configure yubikey for SSH authentication on windows. Assumes [Yubikey has GPG
 Subkeys pre-loaded](README.md).
 
-1. [Creating GPG Keys][1]
-1. [Export GPG Subkeys to Yubikey][2]
-1. [Windows GPG Yubikey Setup][3]
-1. [Ubuntu GPG Yubikey Setup][4]
+* [Creating GPG Keys][1]
+* [Export GPG Subkeys to Yubikey][2]
+* [Windows GPG Yubikey Setup][3]
+* [Ubuntu GPG Yubikey Setup][4]
 
 1. [Required Materials](#required-materials)
 1. [Configure Yubikey](#configure-yubikey)
