@@ -325,7 +325,6 @@ gpg --keyserver hkp://pgp.mit.edu --send-key $KEYID
 
 Cleanup
 -------
-
 ### Critical Confirmations
 Manually verify this information to ensure you do not accidently lose data or
 access/control to your GPG identity.
@@ -364,6 +363,17 @@ backed up_
 sudo srm -r $GNUPGHOME || sudo rm -rf $GNUPGHOME
 sudo srm -r $GPGBACKUP || sudo rm -rf $GPGBACKUP
 gpg --delete-secret-key $KEYID
+```
+
+Cofirming GPG Password
+----------------------
+There is no built in method to confirm a GPG password is correct (e.g. if you
+want to verify your password works without doing an operation). Verification of
+passsword happens by checkin the exit code and printing 'Correct' if the command
+succeeded.
+
+```bash
+echo '1234' | gpg --batch --passphrase-fd 1 -o /dev/null --local-user $KEYID -as - && echo 'Correct.'
 ```
 
 [1]: README.md
