@@ -131,6 +131,8 @@ sudo certbot --server https://acme-v02.api.letsencrypt.org/directory --domains *
 * This can be run from an existing letsencrypt/certbot setup with no changes
   (e.g. the nginx setup).
 
+Remove `_acme-challenge` TXT records once certificates are issued.
+
 Migrating from tls-sni-01 to nginx
 ----------------------------------
 Certs currently pulled with tls-sni-01 can be manully updated to enable nginx
