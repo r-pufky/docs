@@ -8,7 +8,7 @@ Basic KVM server setup on ubuntu (18.04).
 1. [Convert XenServer XVA to KVM Image](#convert-xenserver-xva-to-kvm-template)
 1. [Moving KVM Images](#moving-kvm-images)
 1. [Moving KVM Storage Pool](#moving-kvm-storage-pool)
-1. [Remote Display](#remote-display)
+1. [Mount RAW Disk Image](#mount-raw-disk-image)
 1. [References](#references)
 
 Install Service
@@ -399,6 +399,34 @@ virsh pool-destory default
 virsh pool-create pool.xml
 ```
 
+Mount RAW Disk Image
+--------------------
+This will enable mounting of a RAW disk image [outside of the VM][23].
+
+Ensure the RAW image is readable.
+```bash
+fdisk -l /var/lib/libvirt/images/<image>.RAW
+```
+* Determine `Sector Size`
+* Determine `Start Sector` for partition to mount
+
+The sector offset is
+```
+Sector Sector * Sector Size = Sector Offset
+```
+
+Mount the partition as a block loop device
+```bash
+losetup -r -o <Sector Offset> /dev/loop0 /var/lib/libvirt/<image>.RAW
+```
+* `losetup -d /dev/loop0` can be used to detach device later.
+* `losetup -l` will show looped devices current mounted.
+
+Mount the Filesystem
+```bash
+mount /dev/loop0 /mnt/image
+```
+
 References
 ----------
 [KVM on Ubuntu 18.04 Bionic][1]
@@ -459,3 +487,4 @@ References
 [20]: https://www.spice-space.org/download.html
 [21]: https://www.spice-space.org/download/windows/spice-guest-tools/spice-guest-tools-latest.exe
 [22]: http://virt-manager.org/download
+[23]: http://whazenberg.blogspot.com/2012/12/mounting-raw-virtual-machine-disk-image.html
