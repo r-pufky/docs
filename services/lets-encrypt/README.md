@@ -18,6 +18,7 @@ and it enables use of verifed SSL for things like mail and web services.
 1. [Installing](#installing)
 1. [Generate a Certificate](#generate-a-certificate)
 1. [Renewing Certificates](#renewing-certificates)
+1. [Wildcard Certificates](#wildcard-certificates)
 1. [Migrating from tls-sni-01 to nginx](#migrating-from-tls-sni-01-to-nginx)
 
 Port Exposed
@@ -101,7 +102,37 @@ certbot renew --authenticator webroot --installer nginx --webroot-path /var/www/
 ```
  * All stipulations from generating a certificate apply here
 
-## Migrating from tls-sni-01 to nginx
+
+Wildcard Certificates
+---------------------
+Wildcard certificates were added recently and enable the easy use of multiple
+sub-domains. This requires a [separate non-nginx setup][8] (ACME DNS-01) to
+validate control of the DNS domains requested.
+
+### DNS Pre-setup
+The follow DNS records must be setup on the domain before requesting the certs.
+
+| Name | Type  | TTL | DATA       |
+|------|-------|-----|------------|
+| @    | A     | 1h  | IP Address |
+| *    | A     | 1h  | IP Address |
+| www  | CNAME | 6h  | @          |
+* www points to IP Address via @; this may be translated by your provider.
+* both @ and * point to IP Address.
+
+Request wildcard certs
+```bash
+sudo certbot --server https://acme-v02.api.letsencrypt.org/directory --domains *.example.com,*.example2.com --manual --preferred-challenges dns-01 certonly
+```
+* There will be one request per host listed in domains, even if the same host,
+  you only need to provide the wildcard; otherwise you will have to verify
+  muiltple TXT records at once, which may not be supported by provider.
+* Must update DNS TXT records with a hash to verify controls.
+* This can be run from an existing letsencrypt/certbot setup with no changes
+  (e.g. the nginx setup).
+
+Migrating from tls-sni-01 to nginx
+----------------------------------
 Certs currently pulled with tls-sni-01 can be manully updated to enable nginx
 validation. Once this is applied, no further changes are needed.
 
@@ -135,6 +166,8 @@ pref_challs = tls-sni-01
 Then force a renewal as specified in
 [renewing certificates](#renewing-certificates).
 
+
+
 [1]: https://www.reddit.com/r/PFSENSE/comments/4qwp8i/do_we_really_have_to_lock_every_thread_that/d4wuymx/?st=iwy5oece&sh=a2a3c939
 [3]: https://certbot.eff.org/all-instructions
 [4]: https://community.letsencrypt.org/t/important-what-you-need-to-know-about-tls-sni-validation-issues/50811
@@ -142,3 +175,4 @@ Then force a renewal as specified in
 [6]: https://certbot.eff.org/docs/install.html#certbot-auto
 [7]: https://www.nginx.com/blog/using-free-ssltls-certificates-from-lets-encrypt-with-nginx/
 [7]: https://serverfault.com/questions/750902/how-to-use-lets-encrypt-dns-challenge-validation
+[8]: https://medium.com/@utkarsh_verma/how-to-obtain-a-wildcard-ssl-certificate-from-lets-encrypt-and-setup-nginx-to-use-wildcard-cfb050c8b33f
