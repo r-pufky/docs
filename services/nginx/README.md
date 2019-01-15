@@ -151,16 +151,19 @@ nginx can update the proxy configuration without downtime.
 ```bash
 docker exec -it nginx-proxy nginx -s reload
 ```
-* If underlying services have changed `exposes` or `ports`, those containers
+* If underlying services have changed `expose` or `ports`, those containers
   will need to be restarted.
 
 Adding Reverse Proxies
 ----------------------
-See [services][ref2] for specific details. This will cover the basic usage of
-nginx as a reverse proxy. [Reference documentation][3] and [location block][4]
-references. This covers using the reverse proxy and placing services on the URI
-path, not as a custom subdomain see [subdomain reference][6]. These should be
-placed in the `server` section.
+This will cover the basic usage of nginx as a reverse proxy; covering services
+on the URI path, not as a custom subdomain. See [subdomain reverse proxy][6] for
+setting up subdomains.
+
+See [services][ref2] for specific details as well as [reference
+documentation][3] and [location block][4] reference.
+
+`location` blocks should be placed in the `server` block.
 
 ### Service Gotchas
 Ensure the services running behind the proxy are in a known configuration.
@@ -169,7 +172,7 @@ Ensure the services running behind the proxy are in a known configuration.
 * Externally accessible ports (e.g. non-proxied external requests) are setup as
   `ports`.
 * Internally accessible ports (e.g. proxied external requests) are setup as
-  `expose` ports. 
+  `expose` ports.
 
 See [expose versus ports][10].
 
