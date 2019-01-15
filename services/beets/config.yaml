@@ -152,3 +152,4 @@ types:
 web:
   host: 0.0.0.0
   port: 8337
+  reverse_proxy: yes

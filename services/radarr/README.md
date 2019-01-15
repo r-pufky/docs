@@ -11,9 +11,7 @@ All media clients should run under the same user to run correctly.
 1. [Docker Ports Exposed](#docker-ports-exposed)
 1. [Important File Locations](#important-file-locations)
 1. [Docker Creation](#docker-creation)
-1. [Add pre-existing series to Radarr](#add-pre-existing-series-to-radarr)
-1. [Ensure no Duplicate Plex Updates](#ensure-no-duplicate-plex-updates)
-1. [Changing Media Location in Series](#changing-media-location-in-series)
+1. [Reverse Proxy Setup](#reverse-proxy-setup)
 
 Docker Ports Exposed
 --------------------
@@ -36,6 +34,13 @@ Docker Creation
 You can copy your existing configuration to docker `/config` directory
 adjusting for paths.
 
+* The UID/GID should be set to a user/group that has access to your media.
+* Your downloader will report the download path **mapped in the downloader
+  docker/service**. You need to map this exact path in radarr for it to be able
+  to post-process downloads properly.
+* See [radarr config example](radarr.config.md) for example configuration.
+
+### Independent Container
 ```bash
 docker run -t -d \
   --name radarr \
@@ -50,10 +55,73 @@ docker run -t -d \
   -v /data/downloads:/downloads \
   linuxserver/radarr:latest
 ```
- * The UID/GID should be set to a user/group that has access to your media.
- * Your downloader will report the download path **mapped in the downloader
-   docker/service**. You need to map this exact path in radarr for it to be
-   able to post-process downloads properly.
- * See [radarr config example](radarr.config.md) for example configuration.
+* Use `-t -d` is needed to keep the container in interactive mode otherwise as
+  soon as the container is idle it will sleep, which will stop background
+  running services.
+
+### Docker Compose
+```yaml
+lidarr:
+  image: linuxserver/lidarr:latest
+  restart: unless-stopped
+  ports:
+    - "7878:7878"
+  environment:
+    - PGID=1001
+    - PUID=1001
+    - TZ=America/Los_Angeles
+  volumes:
+    - /data/downloads:/data/downloads
+    - /data/media/music:/data/media/music
+    - /data/services/lidarr:/config
+    - /etc/localtime:/etc/localtime:ro
+```
+
+Reverse Proxy Setup
+-------------------
+Allows you to isolate your containers as well as wrap connections in SSL. See
+[nginx][ref2] for more details. Recommended.
+
+[nginx/conf.d/reverse-proxy.conf][2]
+```nginx
+server {
+  location /radarr {
+    proxy_pass http://radarr:7878/radarr;
+    include /etc/nginx/conf.d/proxy-control.conf;
+  }
+}
+```
+* Set URL Base to `/radarr` in Radarr before enabling the reverse-proxy.
+* [proxy-control.conf][ref1] contains default proxy settings. Reload nginx.
+
+radarr/config.yaml
+```xml
+<Config>
+  <UrlBase>/radarr</UrlBase>
+</Config>
+```
+
+docker-compose.yml
+```yaml
+lidarr:
+  image: linuxserver/radarr:latest
+  restart: unless-stopped
+  depends_on:
+    - nzbget
+  environment:
+    - PGID=1001
+    - PUID=1001
+    - TZ=America/Los_Angeles
+  volumes:
+    - /data/downloads:/data/downloads
+    - /data/media/movies:/data/media/movies
+    - /data/services/radarr:/config
+    - /etc/localtime:/etc/localtime:ro
+```
+* Proxy will forward traffic to the container, so no ports need to be exposed.
 
 [1]: https://hub.docker.com/r/linuxserver/radarr/
+[2]: https://gist.github.com/IronicBadger/362c408d1f2c27a0503cb9252b508140#file-bash_aliases
+
+[ref1]: ../nginx/proxy-control.conf
+[ref2]: ../nginx/README.md

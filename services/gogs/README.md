@@ -9,6 +9,7 @@ private repository use. Can be exposed and use publicly as well.
 1. [Important File Locations](#important-file-locations)
 1. [Docker Creation](#docker-creation)
 1. [Initial Setup](#initial-setup)
+1. [Reverse Proxy Setup](#reverse-proxy-setup)
 1. [Importing Git Repositories](#importing-git-epositories)
 1. [Other Options](#other-options)
 
@@ -36,6 +37,10 @@ If first-run, just launch the docker container to generate the correct
 configuration directory structure, afterwards you can re-create with a mapped
 git repository.
 
+* Cannot specify a UID/GID to run under - git files must be accessible to
+  docker.
+
+### Independant Container
 ```bash
 docker run -t -d \
   --name=gogs \
@@ -46,8 +51,11 @@ docker run -t -d \
   -v /data/services/gogs:/data \
   gogs/gogs:latest
 ```
+* Use `-t -d` is needed to keep the container in interactive mode otherwise as
+  soon as the container is idle it will sleep, which will stop background
+  running services.
 
-Specify your own git repository location
+You may specify your own git repository location
 ```bash
 docker run -t -d \
   --name=gogs \
@@ -59,11 +67,21 @@ docker run -t -d \
   -v /data/backup/git:/data/git \
   gogs/gogs:latest
 ```
- * Cannot specify a UID/GID to run under - git files must be accessible to
-   docker.
- * Use should use [`-t -d`][3] is needed to keep the container in interactive
-   mode otherwise as soon as the container is idle it will sleep, which will
-   stop background running services.
+
+### Docker Compose
+```yaml
+gogs:
+  image: gogs/gogs:latest
+  restart: unless-stopped
+  ports:
+    - "10080:3000"
+  environment:
+    - TZ=America/Los_Angeles
+  volumes:
+    - /data/git/gogs:/data/git
+    - /data/services/gogs:/data
+    - /etc/localtime:/etc/localtime:ro
+```
 
 Initial Setup
 -------------
@@ -143,6 +161,45 @@ Then restart gogs
 docker start gogs
 ```
 
+Reverse Proxy Setup
+-------------------
+Allows you to isolate your containers as well as wrap connections in SSL. See
+[nginx][ref2] for more details. Recommended.
+
+[nginx/conf.d/reverse-proxy.conf][6]
+```nginx
+server {
+  location /gogs/ {
+    proxy_pass https://gogs:3000/;
+    client_max_body_size 1024m;
+  }
+}
+```
+* [proxy-control.conf][ref1] contains default proxy settings. Reload nginx.
+* Adjust `client_max_body_size` to expected max size of data in a git change.
+
+gogs/gogs/conf/app.ini
+```yaml
+[server]
+ROOT_URL = https://your.ssl.proxy.fqdn/gogs/
+```
+* `your.ssl.proxy.fqdn` is what an external user will see your reverse-proxy DNS
+  name.
+
+docker-compose.yml
+```yaml
+gogs:
+  image: gogs/gogs:latest
+  restart: unless-stopped
+  environment:
+    - TZ=America/Los_Angeles
+  volumes:
+    - /data/git/gogs:/data/git
+    - /data/services/gogs:/data
+    - /etc/localtime:/etc/localtime:ro
+```
+* Proxy will forward traffic to the container, so no ports need to be exposed.
+
 Importing Git Repositories
 --------------------------
 You can import other git repositories, including local and cloned ones:
@@ -190,3 +247,7 @@ a lot more features then gogs. Gogs is maintained by a single developer.
 [3]: https://stackoverflow.com/questions/11621768/how-can-i-make-git-accept-a-self-signed-certificate
 [4]: https://gitea.io/en-US/
 [5]: https://hub.docker.com/r/gogs/gogs/
+[6]: https://gogs.io/docs/intro/faqs
+
+[ref1]: ../nginx/proxy-control.conf
+[ref2]: ../nginx/README.md

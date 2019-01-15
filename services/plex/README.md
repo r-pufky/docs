@@ -44,6 +44,21 @@ Docker Creation
 You can copy your existing library from `/var/lib/plexmediaserver/*` to docker
 `/config` directory to auto-import your existing plex library.
 
+* The UID/GID should be set to a user/group that have access to your media.
+* Map your media directly to where it was before on the docker container to
+  prevent needing to modify any libraries. This should be read-only.
+* `/transcode` needs to be mapped to a **fast** drive. See
+  [setup /transcode with tempfs](#setup-transcode-with-tempfs) to run
+  transcoding in memory.
+* We additionally map the plex `/tmp` directory to a subdirectory for the
+  transcoding directory. Plex updated the transcoding to split video encoding
+  to `/transcode` while the audio encoding is transcoded in `/tmp`. This causes
+  the `EAE timeout! EAE not running, or wrong folder? Could not read` Error.
+  Moving /tmp fixes this.
+* PLEX_CLAIM token is used to identify the server for your account. This is
+  only used on initial startup without a pre-existing config. Generate a token
+  here: https://www.plex.tv/claim
+
 ```bash
 docker run -t -d \
   --name plex \
@@ -60,23 +75,29 @@ docker run -t -d \
   -v /tmp/Transcode/tmp:/tmp \
   plexinc/pms-docker:plexpass
 ```
- * The UID/GID should be set to a user/group that have access to your media.
- * Map your media directly to where it was before on the docker container to
-   prevent needing to modify any libraries. This should be read-only.
- * `/transcode` needs to be mapped to a **fast** drive. See
-   [setup /transcode with tempfs](#setup-transcode-with-tempfs) to run
-   transcoding in memory.
- * We additionally map the plex `/tmp` directory to a subdirectory for the
-   transcoding directory. Plex updated the transcoding to split video encoding
-   to `/transcode` while the audio encoding is transcoded in `/tmp`. This causes
-   the `EAE timeout! EAE not running, or wrong folder? Could not read` Error.
-   Moving /tmp fixes this.
- * PLEX_CLAIM token is used to identify the server for your account. This is
-   only used on initial startup without a pre-existing config. Generate a token
-   here: https://www.plex.tv/claim
- * Use should use [`-t -d`][3] is needed to keep the container in interactive
-   mode otherwise as soon as the container is idle it will sleep, which will
-   stop background running services.
+* Use `-t -d` is needed to keep the container in interactive mode otherwise as
+  soon as the container is idle it will sleep, which will stop background
+  running services.
+
+### Docker Compose
+```yaml
+plex:
+  image: plexinc/pms-docker:plexpass
+  restart: unless-stopped
+  network_mode: host
+  environment:
+    - CHANGE_CONFIG_DIR_OWNERSHIP=False
+    - PLEX_GID=1001
+    - PLEX_UID=1001
+    - PLEX_CLAIM="<claimToken>"
+    - TZ=America/Los_Angeles
+  volumes:
+    - /data/media:/data/media:ro
+    - /data/services/plexmediaserver:/config
+    - /etc/localtime:/etc/localtime:ro
+    - /tmp/Transcode/tmp:/tmp
+    - /tmp:/transcode
+```
 
 ```bash
 docker stop plex

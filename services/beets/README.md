@@ -7,6 +7,7 @@ Music organizer.
 1. [Docker Ports Exposed](#docker-ports-exposed)
 1. [Important File Locations](#important-file-locations)
 1. [Docker Creation](#docker-creation)
+1. [Reverse Proxy Setup](#reverse-proxy-setup)
 1. [Managing Library](#managing-library)
 1. [Importing Gotchas](#importing-gotchas)
 
@@ -28,14 +29,19 @@ Relative to docker container
 
 Docker Creation
 ---------------
+* The UID/GID should be set to a user/group that have access to your media.
+* Map your media directly to where it was before on the docker container to
+  prevent needing to modify any libraries.
+* See [config.yaml](config.yaml) for example beet configuration.
 
+### Independent Container
 ```bash
 docker run -t -d \
   --name beets \
   --restart unless-stopped \
   -p 8337:8337 \
-  -e PGID=5555 \
-  -e PUID=900 \
+  -e PGID=1001 \
+  -e PUID=1001 \
   -e TZ=America/Los_Angeles \
   -v /data/downloads/complete/music:/data/downloads/complete/music \
   -v /data/media/music:/data/media/music \
@@ -43,13 +49,71 @@ docker run -t -d \
   -v /etc/localtime:/etc/localtime:ro \
   linuxserver/beets:latest
 ```
- * The UID/GID should be set to a user/group that have access to your media.
- * Map your media directly to where it was before on the docker container to
-   prevent needing to modify any libraries.
- * See [config.yaml](config.yaml) for example configuration.
- * Use should use [`-t -d`][3] is needed to keep the container in interactive
-   mode otherwise as soon as the container is idle it will sleep, which will
-   stop background running services.
+* Use [`-t -d`][3] is needed to keep the container in interactive mode otherwise
+  as soon as the container is idle it will sleep, which will stop background
+  running services.
+
+### Docker Compose
+```yaml
+beets:
+  image: linuxserver/beets:latest
+  restart: unless-stopped
+  ports:
+    - "8337:8337"
+  environment:
+    - PGID=1001
+    - PUID=1001
+    - TZ=America/Los_Angeles
+  volumes:
+    - /data/downloads/complete/music:/data/downloads/complete/music
+    - /data/media/music:/data/media/music
+    - /data/services/beets:/config
+    - /etc/localtime:/etc/localtime:ro
+```
+
+Reverse Proxy Setup
+-------------------
+Allows you to isolate your containers as well as wrap connections in SSL. See
+[nginx][ref2] for more details. Recommended.
+
+[nginx/conf.d/reverse-proxy.conf][7]
+```nginx
+server {
+  location /beets {
+    proxy_pass http://beets:8337;
+    include /etc/nginx/conf.d/proxy-control.conf;
+    proxy_set_header Host $host;
+    proxy_set_header X-Scheme $scheme;
+    proxy_set_header X-Script-Name /beets;
+  }
+}
+```
+* [proxy-control.conf][ref1] contains default proxy settings. Reload nginx.
+
+beets/config.yaml
+```yaml
+web:
+  host: 0.0.0.0
+  port: 8337
+  reverse_proxy: yes
+```
+
+docker-compose.yml
+```yaml
+beets:
+  image: linuxserver/beets:latest
+  restart: unless-stopped
+  environment:
+    - PGID=1001
+    - PUID=1001
+    - TZ=America/Los_Angeles
+  volumes:
+    - /data/downloads/complete/music:/data/downloads/complete/music
+    - /data/media/music:/data/media/music
+    - /data/services/beets:/config
+    - /etc/localtime:/etc/localtime:ro
+```
+* Proxy will forward traffic to the container, so no ports need to be exposed.
 
 Managing Library
 ----------------
@@ -262,3 +326,7 @@ beet import /data/media/music/Non-Albums/imported-track-from-above.mp3
 [4]: https://beets.readthedocs.io/en/latest/reference/query.html
 [5]: http://beets.readthedocs.io/en/latest/guides/tagger.html
 [6]: https://unix.stackexchange.com/questions/4961/which-mp3-tagging-tool-for-linux
+[7]: https://github.com/beetbox/beets/blob/master/docs/plugins/web.rst
+
+[ref1]: ../nginx/proxy-control.conf
+[ref2]: ../nginx/README.md
