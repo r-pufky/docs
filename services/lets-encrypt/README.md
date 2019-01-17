@@ -1,180 +1,153 @@
-Let's Encrypt Setup
--------------------
+Let's Encrypt
+-------------
 Setting up a stand-alone signed SSL certificate for use on personal systems,
-using Let's Encrypt.
+using Let's Encrypt Docker container with DNS-01 verification.
 
-Note: **TLS-SNI-01 authenication has been disabled due to vulnerabilities with
-shared hosting resources. See [here][4] and [here][5]**. You now must use ports
-80 and 443.
+This is for personal use only, and doesn't account for specific nation-state
+attacks, which could include MITM or a compromise of Let's Encrypt servers or
+the ACME protocol. [Don't consider this secure][1]. It is better than having
+people get used to accepting self-signed certificates, and it enables use of
+verifed SSL for things like mail and web services.
 
-This is for personal use only, and doesn't account for specific
-nation-state attacks, which could include MITM or a compromise of Let's
-Encrypt servers or the ACME protocol. [Don't consider this secure][1]. It is
-better than having people get used to accepting self-signed certificates,
-and it enables use of verifed SSL for things like mail and web services.
+[Docker repository][2]
 
-1. [Ports Exposed](#ports-exposed)
+1. [Docker Ports Exposed](#docker-ports-exposed)
 1. [Important File Locations](#important-file-locations)
-1. [Installing](#installing)
-1. [Generate a Certificate](#generate-a-certificate)
-1. [Renewing Certificates](#renewing-certificates)
-1. [Wildcard Certificates](#wildcard-certificates)
-1. [Migrating from tls-sni-01 to nginx](#migrating-from-tls-sni-01-to-nginx)
+1. [Docker Creation](#docker-creation)
+1. [Initial Setup](#initial-setup)
+1. [Checking Certificates](#checking-certificates)
 
-Port Exposed
-------------
-
-| Port | Protocol | Purpose                                                          |
-|------|----------|------------------------------------------------------------------|
-| 443  | TCP      | ACME protocol verifies domain ownership with. Cannot be changed. |
-| 80   | TCP      | Certbot listens ACME challenge/response.                         |
+Docker Ports Exposed
+--------------------
+None. The container will automatically add a `_acme_challenge` `TXT` record to
+your DNS server, confirming you own the domain, and download the signed
+certificates. No exposed ports are required.
 
 Important File Locations
 ------------------------
-| File             | Purpose                                |
-|------------------|----------------------------------------|
-| /etc/letsencrypt | All certbot state and certs. root:root |
+Relative to docker container
 
-Installing
-----------
-Certbot documentation [is located here][3]. Install the auto-updating certbot,
-which provides ACMEv2 enabling new features post `tls-sni-*` exploits.
+| File                                    | Purpose                                         |
+|-----------------------------------------|-------------------------------------------------|
+| /etc/letsencrypt                        | Standard letencrypt directory. Can be imported. |
+| /etc/letsencrypt/domains.conf           | Domains to obtain certificates for.             |
+| /etc/letsencrypt/lexicon_<PROIVDER>.yml | DNS provider auth settings.                     |
 
-Download [certbot-auto and verify][6]
+Docker Creation
+---------------
+This container will automatically pull new certificates if none are found in the
+mapped `/etc/letsencrypt` directory. Renewal requests automatically happen every
+`12 hours`. Be sure to restart the contain if changes are made.
+
+* `LETSENCRYPT_STAGING` will run requests against the staging server, allowing
+  the ability to test setup.
+* `LEXICON_SLEEP_TIME` is the delay in seconds to validate DNS after making
+  auth challenge change to the domain. Set to `150` as Google Cloud DNS
+  guarantees updates in 120 seconds.
+
+### Independant Container
 ```bash
-wget -N https://dl.eff.org/certbot-auto.asc
-gpg2 --recv-key A2CFB51FA275A7286234E7B24D17C995CD9775F2
-wget https://dl.eff.org/certbot-auto
-gpg2 --trusted-key 4D17C995CD9775F2 --verify certbot-auto.asc certbot-auto
-chmod a+x ./certbot-auto
+docker run -t -d \
+  --name=letsencrypt \
+  --restart=unless-stopped \
+  -e LETSENCRYPT_STAGING=True \
+  -e LEXICON_SLEEP_TIME=150 \
+  -e LETSENCRYPT_USER_EMAIL=user@account.com \
+  -e CERTS_DIRS_MODE=0750 \
+  -e CERTS_FILES_MODE=0640 \
+  -e CERTS_USER_OWNER=root \
+  -e CERTS_GROUP_OWNER=root \
+  -e TZ=America/Los_Angeles \
+  -v /data/services/letsencrypt:/etc/letsencrypt \
+  -v /etc/localtime:/etc/localtime:ro
+  adferrand/letsencrypt-dns:latest
 ```
+* Use `-t -d` is needed to keep the container in interactive mode otherwise as
+  soon as the container is idle it will sleep, which will stop background
+  running services.
 
-Install nginx for cert verification
+### Docker Compose
+```yaml
+letsencrypt:
+  image: adferrand/letsencrypt-dns:latest
+  restart: unless-stopped
+  environment:
+    - LETSENCRYPT_STAGING=True
+    - LEXICON_SLEEP_TIME=150
+    - LETSENCRYPT_USER_EMAIL=user@account.com
+    - CERTS_DIRS_MODE=0750
+    - CERTS_FILES_MODE=0640
+    - CERTS_USER_OWNER=root
+    - CERTS_GROUP_OWNER=root
+    - TZ=America/Los_Angeles
+  volumes:
+    - /data/services/letsencrypt:/etc/letsencrypt
+    - /etc/localtime:/etc/localtime:ro
+```
+* Let's Encrypt local mount should just point the install location of let's
+  encrypt, typically `/etc/letsencrypt`.
+
+Initial Setup
+-------------
+### Create Domains to Manage
+[Read Documentation][2]. A certificate will be created for the contents of each
+line.
+
+/etc/letsencrypt/domains.conf
+```
+*.example.com
+*.example2.com
+*.example3.com *.example4.com
+```
+* This will produce three certificates, 1) *.example.com, 2) *.example2.com,
+  3) *.example3.com,*.example4.com
+
+### Setup Auth for DNS Provider.
+This will cover [Google Cloud DNS][3] (**not** domains.google.com; that has no
+API). Domains.google can be setup to use Google Cloud DNS servers for a domain.
+
+[Lexicon][4] is used to modify your domains, but requires specific
+authentication for each differ provider. To find out your provider options:
+
 ```bash
-apt install nginx
+docker run -it --rm adferrand/letsencrypt-dns lexicon --help
+docker run -it --rm adferrand/letsencrypt-dns lexicon <PROVIDER> --help
 ```
+* Find your provider in the list, then find the required AUTH items. Follwo
+  instructions.
+* These options are passed either to the environment container as
+  `LEXICON_<PROVIDER>_AUTH_SOMEVAR` or `<provider>_auth_somevar` in YAML.
 
-### Setup [nginx for domain validation][7]
+The provider options can be passed in container environment, or preferrably in
+`/etc/letsencrypt/lexicon_<PROVIDER>.yml`. Be sure to secure (`0750`) this file
+as it gives full control over your domain.
 
-/etc/nginx/conf.d
-```nginx
-server {
-  listen 80 default_server;
-  listen [::]:80 default_server;
-  root /var/www/html;
-  server_name example.com www.example.com;
-}
+/etc/letsencrypt/lexicon_googleclouddns.yml
+```yaml
+auth_service_account_info: >-
+  base64::asdfJDFDx99dsafd ...
 ```
+* Keys are `lexicon` provider options as lower_with_underscores.
+* Google Cloud auth token requires base64 encoding if used in YAML file (per
+  lexicon). `base64 cloud-dns-auth-token.json`.
 
-Verify syntax is ok and reload nginx:
-```bash
-nginx -t && nginx -s reload
-```
-
-## Generate a certificate
-Using nginx validate a 4096bit key cert request for domains, using a given
-email.
-
-```bash
-certbot --authenticator webroot --installer nginx --webroot-path /var/www/html --rsa-key-size 4096 --agree-tos --email **YOUR-EMAIL** --domains example.com,mail.example.com,example2.com,subdomain.example2.com
-```
- * Make sure ports are set properly on router/firewall
- * [DNS-01 is][8] a more secure method, but your DNS host must support it
-   (domains.google.com does not)
- * Without an email specified, if you lose your generated keys, the domain is
-   effectively locked out
-
-### Renewing Certificates
-Renewing certificates will automatically refresh all current certificates up for
-renewal unless you want to manually specify a domain to renew.
-
-First test the renewal to make sure that you can reach the servers and they can
-read your challenge responses. This will not count against your number of
-renewal attempts, and will verify your configuration is good to go.
+### View Status
+Watch the container logs for renewal status and messages.
 
 ```bash
-certbot renew --dry-run --authenticator webroot --installer nginx --webroot-path /var/www/html/
+docker logs -f letsencrypt
 ```
 
-Renew your certificates.
-```bash
-certbot renew --authenticator webroot --installer nginx --webroot-path /var/www/html/
-```
- * All stipulations from generating a certificate apply here
-
-
-Wildcard Certificates
+Checking Certificates
 ---------------------
-Wildcard certificates were added recently and enable the easy use of multiple
-sub-domains. This requires a [separate non-nginx setup][8] (ACME DNS-01) to
-validate control of the DNS domains requested.
+See the current certificates that are being managed by the container.
 
-### DNS Pre-setup
-The follow DNS records must be setup on the domain before requesting the certs.
-
-| Name | Type  | TTL | DATA       |
-|------|-------|-----|------------|
-| @    | A     | 1h  | IP Address |
-| *    | A     | 1h  | IP Address |
-| www  | CNAME | 6h  | @          |
-* www points to IP Address via @; this may be translated by your provider.
-* both @ and * point to IP Address.
-
-Request wildcard certs
 ```bash
-sudo certbot --server https://acme-v02.api.letsencrypt.org/directory --domains *.example.com,*.example2.com --manual --preferred-challenges dns-01 certonly
+docker exec -it letsencrypt sh
+certbot certificates
 ```
-* There will be one request per host listed in domains, even if the same host,
-  you only need to provide the wildcard; otherwise you will have to verify
-  muiltple TXT records at once, which may not be supported by provider.
-* Must update DNS TXT records with a hash to verify controls.
-* This can be run from an existing letsencrypt/certbot setup with no changes
-  (e.g. the nginx setup).
-
-Remove `_acme-challenge` TXT records once certificates are issued.
-
-Migrating from tls-sni-01 to nginx
-----------------------------------
-Certs currently pulled with tls-sni-01 can be manully updated to enable nginx
-validation. Once this is applied, no further changes are needed.
-
-Follow [Setup nginx for domain validation](#setup-nginx-for-domain-validation).
-When you get to renewal, follow these steps:
-
-Add the following lines (replace with your information for domains).
-
-/etc/letsencrypt/renewal/example.com.conf
-```bash
-installer = nginx
-authenticator = webroot
-pref_challs = http-01
-webroot_path = /var/www/html
-[[webroot_map]]
-example.com = /var/www/html
-mail.example.com = /var/www/html
-example2.com = /var/www/html
-subdomain.example2.com = /var/www/html
-```
-
-Comment out the following lines.
-```bash
-installer = None
-authenticator = standalone
-tls_sni_01_port = 4343
-pref_challs = tls-sni-01
-```
- * Keep this information until you confirm renewal works with the new setup.
-
-Then force a renewal as specified in
-[renewing certificates](#renewing-certificates).
-
-
 
 [1]: https://www.reddit.com/r/PFSENSE/comments/4qwp8i/do_we_really_have_to_lock_every_thread_that/d4wuymx/?st=iwy5oece&sh=a2a3c939
-[3]: https://certbot.eff.org/all-instructions
-[4]: https://community.letsencrypt.org/t/important-what-you-need-to-know-about-tls-sni-validation-issues/50811
-[5]: https://community.letsencrypt.org/t/2018-01-11-update-regarding-acme-tls-sni-and-shared-hosting-infrastructure/50188
-[6]: https://certbot.eff.org/docs/install.html#certbot-auto
-[7]: https://www.nginx.com/blog/using-free-ssltls-certificates-from-lets-encrypt-with-nginx/
-[7]: https://serverfault.com/questions/750902/how-to-use-lets-encrypt-dns-challenge-validation
-[8]: https://medium.com/@utkarsh_verma/how-to-obtain-a-wildcard-ssl-certificate-from-lets-encrypt-and-setup-nginx-to-use-wildcard-cfb050c8b33f
+[2]: https://github.com/adferrand/docker-letsencrypt-dns
+[3]: cloud.google.com
+[4]: https://github.com/AnalogJ/lexicon

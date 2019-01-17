@@ -58,6 +58,7 @@ docker run -t -d \
 ```yaml
 nginx-proxy:
   image: nginx
+  restart: unless-stopped
   ports:
     - '80:80'
     - '443:443'
@@ -113,6 +114,8 @@ server {
 ```
 * The `SERVER_DNS_NAME` should be in the SSL certificate; a [wildcard
   certificate][5] will work.
+* `ssl-dhparams.pem` may be generated with `sudo openssl dhparam -out
+  ssl-dhparams.pem 4096`.
 
 ### Setup Base Proxy Control
 A proxy control template will enable complex proxy configurations to be applied

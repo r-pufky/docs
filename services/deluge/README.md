@@ -67,6 +67,7 @@ docker run -t -d \
 ```yaml
 deluge:
   image: linuxserver/deluge:latest
+  restart: unless-stopped
   ports:
     - "49160:49160"
     - "49160:49160/udp"
