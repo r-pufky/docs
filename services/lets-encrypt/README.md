@@ -101,6 +101,9 @@ line.
 ```
 * This will produce three certificates, 1) *.example.com, 2) *.example2.com,
   3) *.example3.com,*.example4.com
+* Changing or removing domains in this file will result in a request for new
+  certificates (or deletion of existing ones) respectively on next renewal
+  checkin.
 
 ### Setup Auth for DNS Provider.
 This will cover [Google Cloud DNS][3] (**not** domains.google.com; that has no
