@@ -11,10 +11,12 @@ This will setup ad-blocking in the following manner:
 Clients can now be dynamically assigned DNS hostnames on multiple subnets, these
 clients will be able to locally resolve internal hosts on all subnets; and then
 send unknown DNS requets to pihole. Pihole will either block or foward those
-requests.
-
-The router will be able to forward DNS requests upstream if the Pi-hole server
+requests. The router will be able to forward DNS requests upstream if the Pi-hole server
 is unreachable.
+
+The intent of this setup is to provide 'DNS resolution at all costs'; meaning
+DNS should still resolve in a degraded state (e.g. pihole server or server is
+offline).
 
 [Docker repository][1]
 
@@ -24,7 +26,7 @@ is unreachable.
 1. [Reverse Proxy Setup](#reverse-proxy-setup)
 1. [Configuration](#configuration)
 1. [Ubuntu 18.04 Systemd](#ubuntu-1804-systemd)
-1. [Reset Password](#reset-password)
+1. [Slow Boot Times](#slow-boot-times)
 
 Docker Ports Exposed
 --------------------
@@ -178,14 +180,28 @@ Generic Configuration - will be located slightly differently for each server.
 
 Ubuntu 18.04 Systemd
 --------------------
-Systemd's stub DNS resolver [needs to be disabled][3] for pihole to work.
-However there is a [bug in systemd][2] which needs to be fixed by linking to the
-right resolv.conf file.
+Systemd DNS STUB Resolver has a [bug where disabling the STUB resolver does not
+re-link the appropriate resolve.conf file][2].
+
+There are two ways to fix this. You can either [disable systemd resolver][3] or
+manually set the [appropriate resolv.conf file][4].
+
+The preferred fix is re-linking resolv.conf to keep the system as close to
+vanilla as possible; choose **only one** based on needs.
+
+### Re-link correct resolv.conf file (preferred)
+This method will disable the STUB DNS server and link the correct resolv.conf
+file.
+
+/etc/systemd/resolved.conf
+```bash
+[Resolve]
+...
+DNSStubListener=no
+```
 
 ```bash
-systemctl disable systemd-resolved.service
-service systemd-resolved stop
-rm /etc/resolv.conf
+rm /etc/resolv.conf`
 ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
 ```
 * Originally, `resolv.conf` links to systemd stub resolver
@@ -198,9 +214,43 @@ search <your domain>
 ```
 * `nameserver` should use router DNS IP.
 
+### Disable systemd-resolved entirely (not-preferred)
+This will disble the systemd resolver entirely and create a static resolv.conf
+file.
+
+```bash
+systemctl disable systemd-resolved.service
+service systemd-resolved stop
+rm /etc/resolv.conf
+touch /etc/resolv.conf
+chmod 0644 /etc/resolv.conf
+chmod root:root /etc/resolve.conf
+```
+
+/etc/resolv.conf
+```bash
+nameserver x.x.x.x
+search <your domain>
+```
+* `nameserver` should use router DNS IP.
+
+Slow Boot Times
+---------------
+Any computer on the network using the pihole server (including the docker host),
+will appear to 'slow down' when the pihole server is unreachable, or the docker
+host is booting. This is due to the DNS request timing out and being forwarded
+to the next DNS server for resolution. This will appear to slow down boot times
+for systems with heavy DNS reoslution use and may result in some resolution
+failures (depending on how the application handles initial DNS failures) until
+the pihole server is back online.
+
+Resolving in a degraded state is intended behavior for this setup. See start of
+document.
+
 [1]: https://hub.docker.com/r/pihole/pihole/
 [2]: https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1624320/comments/8
 [3]: https://discourse.pi-hole.net/t/docker-reply-from-unexpected-source/5729/4
+[4]: https://old.reddit.com/r/pihole/comments/8sgro3/server_name_resolution_messed_up_when_running
 [ads1]: https://www.smarthomebeginner.com/pi-hole-tutorial-whole-home-ad-blocking/#Pi_Hole_Configuration_and_Customization
 [ads2]: https://old.reddit.com/r/pihole/comments/84luw8/blocking_youtube_ads/
 [ads3]: https://old.reddit.com/r/pihole/comments/7w4n81/having_trouble_blocking_youtube_ads_in_app_on_ios/dtyatmf/
