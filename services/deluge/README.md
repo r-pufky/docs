@@ -81,6 +81,7 @@ deluge:
     - /data/services/deluge:/config
     - /etc/localtime:/etc/localtime:ro
 ```
+* Port `49160` needs to be exposed for transfers.
 
 Reverse Proxy Setup
 -------------------
@@ -99,25 +100,6 @@ server {
 }
 ```
 * [proxy-control.conf][ref1] contains default proxy settings. Reload nginx.
-
-docker-compose.yml
-```yaml
-deluge:
-  image: linuxserver/deluge:latest
-  ports:
-    - "49160:49160"
-    - "49160:49160/udp"
-  environment:
-    - PGID=1001
-    - PUID=1001
-    - TZ=America/Los_Angeles
-  volumes:
-    - /data/downloads/watched:/watch
-    - /data/downloads:/data/downloads
-    - /data/services/deluge:/config
-    - /etc/localtime:/etc/localtime:ro
-```
-* Port `49160` needs to be exposed for transfers.
 
 Modifying Settings
 ------------------
