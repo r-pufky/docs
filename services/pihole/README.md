@@ -16,49 +16,108 @@ requests.
 The router will be able to forward DNS requests upstream if the Pi-hole server
 is unreachable.
 
-1. [Ports Exposed](#ports-exposed)
-1. [Important File Locations](#important-file-locations)
-1. [Installing](#installing)
-1. [Configuration](#configuration)
+[Docker repository][1]
 
-Port Exposed
-------------
-| Port | Protocol | Purpose                       |
-|------|----------|-------------------------------|
-| 443  | TCP      | HTTPS administration webface. |
-| 53   | TCP/UDP  | DNS Service.                  |
+1. [Docker Ports Exposed](#docker-ports-exposed)
+1. [Important File Locations](#important-file-locations)
+1. [Docker Creation](#docker-creation)
+1. [Reverse Proxy Setup](#reverse-proxy-setup)
+1. [Configuration](#configuration)
+1. [Ubuntu 18.04 Systemd](#ubuntu-1804-systemd)
+1. [Reset Password](#reset-password)
+
+Docker Ports Exposed
+--------------------
+
+| Port | Protocol | Purpose      |
+|------|----------|--------------|
+| 53   | TCP/UDP  | DNS Service. |
 
 Important File Locations
 ------------------------
-| File                          | Purpose                           |
-|-------------------------------|-----------------------------------|
-| /etc/pihole                   | Configuration Data.               |
-| /etc/pihole/SetupVars.conf    | Startup Configuration Settings.   |
-| /etc/lighthttpd/external.conf | Pi-Hole web server configuration. |
+Relative to docker container
 
-Installing
-----------
-Assume a working Debian installation. Pihole has an installer script on the
-[website][1], but you should never blindly execute scripts from the Internet.
+| File           | Purpose             |
+|----------------|---------------------|
+| /etc/pihole    | Service Data.       |
+| /etc/dnsmasq.d | Configuration Data. |
 
-Instead, download the GIT repository and run installer.
+Docker Creation
+---------------
+If first-run, just launch the docker container to generate the correct
+configuration directory structure, afterwards you can re-create with a mapped
+directories.
+
+* `NET_ADMIN` is required with FTLDNS now.
+* Docker container DNS is setup to resolve using pihole first, then `1.1.1.1`.
+* Pihole upstream DNS servers set to `1.1.1.1`,`8.8.8.8`.
+
+### Independent Container
 ```bash
-sudo apt install curl git
-git clone --depth 1 https://github.com/pi-hole/pi-hole
-cd 'pi-hole/automated install/'
-sudo bash basic-install.sh
+docker run -t -d \
+  --name=pihole \
+  --restart=unless-stopped \
+  --cap_add=NET_ADMIN \
+  --dns=127.0.0.1,1.1.1.1 \
+  -p 53:53 \
+  -p 53:53/udp \
+  -e ServerIP=<HOST IP> \
+  -e VIRTUAL_HOST=<HOST DNS NAME> \
+  -e DNS1=1.1.1.1 \
+  -e DNS2=8.8.8.8 \
+  -e TZ=America/Los_Angeles \
+  -v /data/services/pihole:/etc/pihole \
+  -v /data/services/pihole/dnsmasq.d:/etc/dnsmasq.d \
+  -v /etc/localtime:/etc/localtime:ro \
+  pihole/pihole:latest
 ```
-1. Upstream DNS Provider: `1.1.1.1,8.8.8.8`.
-1. Third Party Lists: All.
-1. Protocols: All.
-1. Static IP Address: Use current DHCP settings.
-1. Web admin interface: Yes.
-1. Web Server (required for webface if no other server): Yes.
-1. Log Queries: Yes.
-1. Privacy Mode: `0`.
+* Use `-t -d` is needed to keep the container in interactive mode otherwise as
+  soon as the container is idle it will sleep, which will stop background
+  running services.
 
-The _password_ will be listed on the summary page. This can be set using
-`pihole -a -p`.
+### Docker Compose
+```yaml
+pihole:
+  image: pihole/pihole:latest
+  restart: unless-stopped
+  ports:
+    - '53:53'
+    - '53:53/udp'
+  cap_add:
+    - NET_ADMIN
+  dns:
+    - 127.0.0.1
+    - 1.1.1.1
+  environment:
+    - ServerIP=<HOST IP>
+    - VIRTUAL_HOST=<HOST DNS NAME>
+    - DNS1=1.1.1.1
+    - DNS2=8.8.8.8
+    - TZ=America/Los_Angeles
+  volumes:
+    - /data/services/pihole:/etc/pihole
+    - /data/services/pihole/dnsmasq.d:/etc/dnsmasq.d
+    - /etc/localtime:/etc/localtime:ro
+```
+
+Reverse Proxy Setup
+-------------------
+Allows you to isolate your containers as well as wrap connections in SSL. See
+[nginx][ref2] for more details. Recommended.
+
+nginx/conf.d/reverse-proxy.conf
+```nginx
+server {
+  location /pihole/ {
+    proxy_pass http://pihole/admin/;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header X-Forwarded-Host $http_host;
+  }
+}
+```
+* [proxy-control.conf][ref1] contains default proxy settings. Reload nginx.
 
 Configuration
 -------------
@@ -66,48 +125,19 @@ Most static [Ads and domains][ads1] will be blocked. Dynamic content is
 continually changing and therefore ad-blocking for [youtube][ads2] is usually
 [hit-or-miss][ads3].
 
-### Force HTTPS for Pi-Hole Adminstration Page
-HTTPS should only be enabled for the FQDN of the pihole server; as the server is
-redirecting [traffic, you may get a bunch of cert wonkiness when DNS resolves
-return blocked domains][2].
+### Password
+The password is set randomly on container start. This can be found by searching
+the container logs and finding the latest password.
 
-Create a combined certificate
 ```bash
-sudo cat privkey.pem cert.pem | sudo tee combined.pem
-sudo chmod www-data -R combined.pem
-```
-* This contains private information and should not be placed in a web directory.
-
-/etc/lighthttpd/external.conf
-```
-$HTTP['host'] == 'pihole.example.com' {
-  # Ensure the Pi-hole Block Page knows that this is not a blocked domain
-  setenv.add-environment = ('fqdn' => 'true')
-
-  # Enable the SSL engine with a LE cert, only for this specific host
-  $SERVER['socket'] == ':443' {
-    ssl.engine = 'enable'
-    ssl.pemfile = 'combined.pem'
-    ssl.ca-file =  'fullchain.pem'
-    ssl.honor-cipher-order = 'enable'
-    ssl.cipher-list = 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH'
-    ssl.use-sslv2 = 'disable'
-    ssl.use-sslv3 = 'disable'
-  }
-
-  # Redirect HTTP to HTTPS
-  $HTTP['scheme'] == 'http' {
-    $HTTP['host'] =~ '.*' {
-      url.redirect = ('.*' => 'https://%0$0')
-    }
-  }
-}
+docker logs pihole | grep pass
 ```
 
-Restart services
+Alternatively, a password may be statically set from within the container.
 ```bash
-sudo service lighthttpd restart
+docker exec pihole pihole -a -p <PASSWORD>
 ```
+* `WEBPASSWORD` environment variable will set as well but exposes password.
 
 ### Pi-Hole Configuration
 `Settings > Blocklists`
@@ -146,9 +176,35 @@ Generic Configuration - will be located slightly differently for each server.
 1. `Firewall Policies` (Enable DNS traffic to Pi-Hole server)
   1. `x.x.x.x 53 udp/tcp` (Allow TCP/UDP traffic on port 53 to Pihole)
 
-[1]: https://pi-hole.net/
-[2]: https://discourse.pi-hole.net/t/enabling-https-for-your-pi-hole-web-interface/5771
+Ubuntu 18.04 Systemd
+--------------------
+Systemd's stub DNS resolver [needs to be disabled][3] for pihole to work.
+However there is a [bug in systemd][2] which needs to be fixed by linking to the
+right resolv.conf file.
+
+```bash
+systemctl disable systemd-resolved.service
+service systemd-resolved stop
+rm /etc/resolv.conf
+ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+```
+* Originally, `resolv.conf` links to systemd stub resolver
+  `/run/systemd/resolve/stub-resolv.conf`
+
+/etc/resolv.conf
+```bash
+nameserver x.x.x.x
+search <your domain>
+```
+* `nameserver` should use router DNS IP.
+
+[1]: https://hub.docker.com/r/pihole/pihole/
+[2]: https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1624320/comments/8
+[3]: https://discourse.pi-hole.net/t/docker-reply-from-unexpected-source/5729/4
 [ads1]: https://www.smarthomebeginner.com/pi-hole-tutorial-whole-home-ad-blocking/#Pi_Hole_Configuration_and_Customization
 [ads2]: https://old.reddit.com/r/pihole/comments/84luw8/blocking_youtube_ads/
 [ads3]: https://old.reddit.com/r/pihole/comments/7w4n81/having_trouble_blocking_youtube_ads_in_app_on_ios/dtyatmf/
 [ads4]: https://v.firebog.net/hosts/lists.php
+
+[ref1]: ../nginx/proxy-control.conf
+[ref2]: ../nginx/README.md
