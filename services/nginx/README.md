@@ -13,8 +13,7 @@ for all connections to docker containers using Let's Encrypt.
 1. [Important File Locations](#important-file-locations)
 1. [Docker Creation](#docker-creation)
 1. [Initial Setup](#initial-setup)
-1. [Importing Git Repositories](#importing-git-epositories)
-1. [Other Options](#other-options)
+1. [Adding Reverse Proxies](#adding-reverse-proxies)
 
 Docker Ports Exposed
 --------------------
@@ -306,6 +305,26 @@ location /crashplan/ {
   to enable the connection upgrade or close the connection.
 * `proxy_http_version 1.1` is required, but included in `proxy-control.conf`.
 
+### Rewrite reponses with sub-path
+Some applications are not [URI Path aware][11] and will re-write all responses
+behind the proxy using a static relative path or hostname; which will cause 404
+errors and the app to break. Partially fixed using [http_sub_module][12].
+
+Note: Re-writing the proxy respones generally won't fix a complicated
+application as there will be a large number of unknown responses that need to be
+re-written. Usually this is resolved using a sub-domain instead.
+
+```nginx
+sub_filter https://app:port/ https://reverse-proxy-server/subpath/;
+sub_filter 'href="/' 'href="https://reverse-proxy-server/subpath/';
+sub_filter_once off;
+```
+* First rule rewrites responses from the app: `https://app:port/page.html` to
+  `https://reverse-proxy-server/subpath/page.html`.
+* Second rules rewrites relative responses `href="/other-page.html"` to
+  `href="https://reverse-proxy-server/subpath/other-page.html".
+
+
 [1]: https://www.nginx.com/
 [2]: https://hub.docker.com/_/nginx
 [3]: https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/
@@ -316,6 +335,8 @@ location /crashplan/ {
 [8]: https://stackoverflow.com/questions/764247/why-are-regular-expressions-so-controversial
 [9]: http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass
 [10]: https://medium.freecodecamp.org/expose-vs-publish-docker-port-commands-explained-simply-434593dbc9a3
+[11]: https://stackoverflow.com/questions/32542282/how-do-i-rewrite-urls-in-a-proxy-response-in-nginx
+[12]: http://nginx.org/en/docs/http/ngx_http_sub_module.html
 
 [ref1]: proxy-control.conf
 [ref2]: ..
