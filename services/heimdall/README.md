@@ -79,7 +79,7 @@ nginx/conf.d/reverse-proxy.conf
 ```nginx
 server {
   listen 443 ssl http2;
-  server_name heimdall.<DOMAIN>
+  server_name heimdall.<DOMAIN> heimdall;
 
   location / {
     proxy_pass https://heimdall/;

@@ -128,14 +128,64 @@ Reverse Proxy Setup
 Allows you to isolate your containers as well as wrap connections in SSL. See
 [nginx][ref2] for more details. Recommended.
 
+docker-compose.yml
+```yaml
+crashplan:
+  image: jlesage/crashplan-pro:latest
+  restart: unless-stopped
+  environment:
+    - GROUP_ID=0
+    - KEEP_APP_RUNNING=1
+    - SECURE_CONNECTION=1
+    - TZ=America/Los_Angeles
+    - USER_ID=0
+  volumes:
+    - /:/root-mount:ro
+    - /data/services/crashplan:/config:rw
+    - /data:/data:ro
+    - /etc/localtime:/etc/localtime:ro
+```
+* Proxy will forward traffic to the container, so no ports need to be exposed.
+
+### Using Subdomains
 [nginx/conf.d/reverse-proxy.conf][4]
 ```nginx
 # Websockets: remap http_upgrade to 'upgrade' or 'close' based on
-# connection_upgrade being set; Crashplan.
+# connection_upgrade being set.
 map $http_upgrade $connection_upgrade {
     default upgrade;
     '' close;
 }
+
+server {
+  listen 443 ssl http2;
+  server_name crashplan.<DOMAIN> crashplan;
+
+  location / {
+    proxy_pass https://crashplan:5800/;
+    include /etc/nginx/conf.d/proxy-control.conf;
+  }
+
+  location /websockify {
+    proxy_pass https://crashplan:5800;
+    include /etc/nginx/conf.d/proxy-control.conf;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $connection_upgrade;
+  }
+}
+```
+* [proxy-control.conf][ref1] contains default proxy settings. Reload nginx.
+
+### Using Subpaths
+[nginx/conf.d/reverse-proxy.conf][4]
+```nginx
+# Websockets: remap http_upgrade to 'upgrade' or 'close' based on
+# connection_upgrade being set.
+map $http_upgrade $connection_upgrade {
+    default upgrade;
+    '' close;
+}
+
 server {
   listen 443 ssl http2;
 
@@ -159,26 +209,7 @@ server {
 * [proxy-control.conf][ref1] contains default proxy settings. Reload nginx.
 * The docker container uses [websockets][5] for the built in GUI display.
 
-docker-compose.yml
-```yaml
-crashplan:
-  image: jlesage/crashplan-pro:latest
-  restart: unless-stopped
-  environment:
-    - GROUP_ID=0
-    - KEEP_APP_RUNNING=1
-    - SECURE_CONNECTION=1
-    - TZ=America/Los_Angeles
-    - USER_ID=0
-  volumes:
-    - /:/root-mount:ro
-    - /data/services/crashplan:/config:rw
-    - /data:/data:ro
-    - /etc/localtime:/etc/localtime:ro
-```
-* Proxy will forward traffic to the container, so no ports need to be exposed.
-
-Taking over existing backups
+Taking Over Existing Backups
 ----------------------------
 Read [docker container documentation here][3].
 

@@ -82,25 +82,6 @@ Reverse Proxy Setup
 Allows you to isolate your containers as well as wrap connections in SSL. See
 [nginx][ref2] for more details. Recommended.
 
-[nginx/conf.d/reverse-proxy.conf][2]
-```nginx
-server {
-  location /lidarr {
-    proxy_pass http://lidarr:8686/lidarr;
-    include /etc/nginx/conf.d/proxy-control.conf;
-  }
-}
-```
-* Set URL Base to `/lidarr` in Lidarr before enabling the reverse-proxy.
-* [proxy-control.conf][ref1] contains default proxy settings. Reload nginx.
-
-lidarr/config.yaml
-```xml
-<Config>
-  <UrlBase>/lidarr</UrlBase>
-</Config>
-```
-
 docker-compose.yml
 ```yaml
 lidarr:
@@ -119,6 +100,41 @@ lidarr:
     - /etc/localtime:/etc/localtime:ro
 ```
 * Proxy will forward traffic to the container, so no ports need to be exposed.
+
+### Using Subdomains
+[nginx/conf.d/reverse-proxy.conf][2]
+```nginx
+server {
+  listen 443 ssl http2;
+  server_name lidarr.<DOMAIN> lidarr;
+
+  location / {
+    proxy_pass http://lidarr:8686;
+    include /etc/nginx/conf.d/proxy-control.conf;
+  }
+}
+```
+* [proxy-control.conf][ref1] contains default proxy settings. Reload nginx.
+
+### Using Subpaths
+[nginx/conf.d/reverse-proxy.conf][2]
+```nginx
+server {
+  location /lidarr {
+    proxy_pass http://lidarr:8686/lidarr;
+    include /etc/nginx/conf.d/proxy-control.conf;
+  }
+}
+```
+* Set URL Base to `/lidarr` in Lidarr before enabling the reverse-proxy.
+* [proxy-control.conf][ref1] contains default proxy settings. Reload nginx.
+
+lidarr/config.yaml
+```xml
+<Config>
+  <UrlBase>/lidarr</UrlBase>
+</Config>
+```
 
 [1]: https://hub.docker.com/r/linuxserver/lidarr/
 [2]: https://gist.github.com/IronicBadger/362c408d1f2c27a0503cb9252b508140#file-bash_aliases

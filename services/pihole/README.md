@@ -27,6 +27,7 @@ offline).
 1. [Configuration](#configuration)
 1. [Ubuntu 18.04 Systemd](#ubuntu-1804-systemd)
 1. [Slow Boot Times](#slow-boot-times)
+1. [Clear DNS Cache](#clear-dns-cache)
 
 Docker Ports Exposed
 --------------------
@@ -107,6 +108,25 @@ Reverse Proxy Setup
 Allows you to isolate your containers as well as wrap connections in SSL. See
 [nginx][ref2] for more details. Recommended.
 
+### Using Subdomains
+[nginx/conf.d/reverse-proxy.conf][2]
+```nginx
+server {
+  listen 443 ssl http2;
+  server_name pihole.<DOMAIN> pihole;
+
+  location / {
+    proxy_pass http://pihole/admin/;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header X-Forwarded-Host $http_host;
+  }
+}
+```
+* [proxy-control.conf][ref1] contains default proxy settings. Reload nginx.
+
+### Using Subpaths
 nginx/conf.d/reverse-proxy.conf
 ```nginx
 server {
@@ -214,6 +234,10 @@ search <your domain>
 ```
 * `nameserver` should use router DNS IP.
 
+```bash
+service systemd-resolved restart
+```
+
 ### Disable systemd-resolved entirely (not-preferred)
 This will disble the systemd resolver entirely and create a static resolv.conf
 file.
@@ -246,6 +270,13 @@ the pihole server is back online.
 
 Resolving in a degraded state is intended behavior for this setup. See start of
 document.
+
+Clear DNS Cache
+---------------
+Cache is automatically cleared by restarting the FTLDNS service.
+
+`Settings`
+* `Restart DNS resolver`
 
 [1]: https://hub.docker.com/r/pihole/pihole/
 [2]: https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1624320/comments/8

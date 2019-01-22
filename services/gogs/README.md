@@ -166,25 +166,7 @@ Reverse Proxy Setup
 Allows you to isolate your containers as well as wrap connections in SSL. See
 [nginx][ref2] for more details. Recommended.
 
-[nginx/conf.d/reverse-proxy.conf][6]
-```nginx
-server {
-  location /gogs/ {
-    proxy_pass https://gogs:3000/;
-    client_max_body_size 1024m;
-  }
-}
-```
-* [proxy-control.conf][ref1] contains default proxy settings. Reload nginx.
-* Adjust `client_max_body_size` to expected max size of data in a git change.
-
-gogs/gogs/conf/app.ini
-```yaml
-[server]
-ROOT_URL = https://your.ssl.proxy.fqdn/gogs/
-```
-* `your.ssl.proxy.fqdn` is what an external user will see your reverse-proxy DNS
-  name.
+If using heimdall, setup gogs using the `gitea` template.
 
 docker-compose.yml
 ```yaml
@@ -199,6 +181,53 @@ gogs:
     - /etc/localtime:/etc/localtime:ro
 ```
 * Proxy will forward traffic to the container, so no ports need to be exposed.
+
+### Using Subdomains
+[nginx/conf.d/reverse-proxy.conf][2]
+```nginx
+server {
+  listen 443 ssl http2;
+  server_name gogs.<DOMAIN> gogs;
+
+  location / {
+    proxy_pass https://gogs:3000/;
+    proxy_set_header X-Real-IP $remote_addr;
+    client_max_body_size 1024m;
+  }
+}
+```
+* [proxy-control.conf][ref1] contains default proxy settings. Reload nginx.
+
+gogs/gogs/conf/app.ini
+```yaml
+[server]
+DOMAIN   = your.ssl.proxy.fqdn
+ROOT_URL = https://your.ssl.proxy.fqdn/gogs/
+```
+* `your.ssl.proxy.fqdn` is what an external user will see your reverse-proxy DNS
+  name.
+
+### Using Subpaths
+[nginx/conf.d/reverse-proxy.conf][6]
+```nginx
+server {
+  location /gogs/ {
+    proxy_pass https://gogs:3000/;
+    proxy_set_header X-Real-IP $remote_addr;
+    client_max_body_size 1024m;
+  }
+}
+```
+* [proxy-control.conf][ref1] contains default proxy settings. Reload nginx.
+* Adjust `client_max_body_size` to expected max size of data in a git change.
+
+gogs/gogs/conf/app.ini
+```yaml
+[server]
+ROOT_URL = https://your.ssl.proxy.fqdn/gogs/
+```
+* `your.ssl.proxy.fqdn` is what an external user will see your reverse-proxy DNS
+  name.
 
 Importing Git Repositories
 --------------------------

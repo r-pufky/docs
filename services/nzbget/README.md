@@ -81,18 +81,6 @@ Reverse Proxy Setup
 Allows you to isolate your containers as well as wrap connections in SSL. See
 [nginx][ref2] for more details. Recommended.
 
-[nginx/conf.d/reverse-proxy.conf][2]
-```nginx
-server {
-  location /nzbget/ {
-    proxy_pass https://nzbget:6791/;
-    include /etc/nginx/conf.d/proxy-control.conf;
-    proxy_set_header Host $host;
-  }
-}
-```
-* [proxy-control.conf][ref1] contains default proxy settings. Reload nginx.
-
 docker-compose.yml
 ```yaml
 nzbget:
@@ -108,6 +96,35 @@ nzbget:
     - /etc/localtime:/etc/localtime:ro
 ```
 * Proxy will forward traffic to the container, so no ports need to be exposed.
+
+### Using Subdomains
+[nginx/conf.d/reverse-proxy.conf][2]
+```nginx
+server {
+  listen 443 ssl http2;
+  server_name nzbget.<DOMAIN> nzbget;
+
+  location / {
+    proxy_pass http://nzbget:6791;
+    include /etc/nginx/conf.d/proxy-control.conf;
+    proxy_set_header Host $host;
+  }
+}
+```
+* [proxy-control.conf][ref1] contains default proxy settings. Reload nginx.
+
+### Using Subpaths
+[nginx/conf.d/reverse-proxy.conf][2]
+```nginx
+server {
+  location /nzbget/ {
+    proxy_pass https://nzbget:6791/;
+    include /etc/nginx/conf.d/proxy-control.conf;
+    proxy_set_header Host $host;
+  }
+}
+```
+* [proxy-control.conf][ref1] contains default proxy settings. Reload nginx.
 
 [1]: https://hub.docker.com/r/linuxserver/nzbget/
 [2]: https://nzbget.net/behind-other-web-server

@@ -88,6 +88,23 @@ Reverse Proxy Setup
 Allows you to isolate your containers as well as wrap connections in SSL. See
 [nginx][ref2] for more details. Recommended.
 
+### Using Subdomains
+[nginx/conf.d/reverse-proxy.conf][2]
+```nginx
+server {
+  listen 443 ssl http2;
+  server_name deluge.<DOMAIN> deluge;
+
+  location / {
+    proxy_pass http://deluge:8112;
+    include /etc/nginx/conf.d/proxy-control.conf;
+    add_header X-Frame-Options SAMEORIGIN;
+  }
+}
+```
+* [proxy-control.conf][ref1] contains default proxy settings. Reload nginx.
+
+### Using Subpaths
 [nginx/conf.d/reverse-proxy.conf][3]
 ```nginx
 server {

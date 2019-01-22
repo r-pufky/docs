@@ -82,24 +82,6 @@ Reverse Proxy Setup
 Allows you to isolate your containers as well as wrap connections in SSL. See
 [nginx][ref2] for more details. Recommended.
 
-[nginx/conf.d/reverse-proxy.conf][2]
-```nginx
-server {
-  location /radarr {
-    proxy_pass http://radarr:7878/radarr;
-    include /etc/nginx/conf.d/proxy-control.conf;
-  }
-}
-```
-* Set URL Base to `/radarr` in Radarr before enabling the reverse-proxy.
-* [proxy-control.conf][ref1] contains default proxy settings. Reload nginx.
-
-radarr/config.yaml
-```xml
-<Config>
-  <UrlBase>/radarr</UrlBase>
-</Config>
-```
 
 docker-compose.yml
 ```yaml
@@ -119,6 +101,41 @@ lidarr:
     - /etc/localtime:/etc/localtime:ro
 ```
 * Proxy will forward traffic to the container, so no ports need to be exposed.
+
+### Using Subdomains
+[nginx/conf.d/reverse-proxy.conf][2]
+```nginx
+server {
+  listen 443 ssl http2;
+  server_name radarr.<DOMAIN> radarr;
+
+  location / {
+    proxy_pass http://radarr:7878;
+    include /etc/nginx/conf.d/proxy-control.conf;
+  }
+}
+```
+* [proxy-control.conf][ref1] contains default proxy settings. Reload nginx.
+
+### Using Subpaths
+[nginx/conf.d/reverse-proxy.conf][2]
+```nginx
+server {
+  location /radarr {
+    proxy_pass http://radarr:7878/radarr;
+    include /etc/nginx/conf.d/proxy-control.conf;
+  }
+}
+```
+* Set URL Base to `/radarr` in Radarr before enabling the reverse-proxy.
+* [proxy-control.conf][ref1] contains default proxy settings. Reload nginx.
+
+radarr/config.yaml
+```xml
+<Config>
+  <UrlBase>/radarr</UrlBase>
+</Config>
+```
 
 [1]: https://hub.docker.com/r/linuxserver/radarr/
 [2]: https://gist.github.com/IronicBadger/362c408d1f2c27a0503cb9252b508140#file-bash_aliases

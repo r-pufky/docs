@@ -82,6 +82,8 @@ This will setup a basic reverse-proxy that:
 * Import SSL certificate settings used in Let's Encrypt for strong validation of
   certifcate usage.
 
+[Automatic generator][13] to generate base configuration templates.
+
 /etc/nginx/conf.d/reverse-proxy.conf
 ```nginx
 # Forward all HTTP/HTTPS IPv4/6 traffic to HTTPS.
@@ -337,6 +339,7 @@ sub_filter_once off;
 [10]: https://medium.freecodecamp.org/expose-vs-publish-docker-port-commands-explained-simply-434593dbc9a3
 [11]: https://stackoverflow.com/questions/32542282/how-do-i-rewrite-urls-in-a-proxy-response-in-nginx
 [12]: http://nginx.org/en/docs/http/ngx_http_sub_module.html
+[13]: https://nginxconfig.io
 
 [ref1]: proxy-control.conf
 [ref2]: ..
