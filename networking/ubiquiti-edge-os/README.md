@@ -41,6 +41,22 @@ on your Registrar and it resolves to your public IP.
 1. Destination Address: Your external IP
 1. Destination Port: External Service Port
 
+Deleted DHCP host still resolve in DNS
+--------------------------------------
+When deleting a DHCP host, the DNS reservation should be [removed as well][4].
+However [there is a bug][5] in which these hosts are never deleted.
+
+CLI on EdgeOS (or SSH)
+```bash
+sudo su
+vi /etc/hosts
+```
+* Delete hosts which are no longer used.
+
+Then reboot the router.
+
 [1]: https://community.ubnt.com/t5/EdgeRouter/Create-DNS-enteries/td-p/468375
 [2]: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=316099
 [3]: https://help.ubnt.com/hc/en-us/articles/204952134-EdgeRouter-Hairpin-NAT
+[4]: https://community.ubnt.com/t5/EdgeRouter/DNS-resolution-of-local-hosts/m-p/1386378/highlight/true#M83801
+[5]: https://community.ubnt.com/t5/EdgeRouter/hostfile-update-enable-doesn-t-clear-expired-leases/td-p/969389
