@@ -183,6 +183,25 @@ gogs:
 * Proxy will forward traffic to the container, so no ports need to be exposed.
 
 ### Using Subdomains
+This requires a hard IP resolution. Hairpin NAT / NAT reflection will result in
+the web front working but git pull/push/clones failing. This is due to the way
+gogs [handles these requests with custom written handlers][7]. Setup DNS
+resolution or add to `hosts` file.
+
+gogs/gogs/conf/app.ini
+```ini
+[server]
+PROTOCOL = https
+HTTP_PORT = 3000
+DOMAIN = <gogs.DOMAIN IP>
+ROOT_URL = https://gogs.<DOMAIN>/
+DISABLE_SSH = true
+CERT_FILE = /data/gogs/conf/cert.pem
+CERT_KEY = /data/gogs/conf/key.pem
+```
+* Restart the docker container to apply changes `docker stop gogs; docker start
+  gogs`.
+
 [nginx/conf.d/reverse-proxy.conf][2]
 ```nginx
 server {
@@ -190,22 +209,13 @@ server {
   server_name gogs.<DOMAIN> gogs;
 
   location / {
-    proxy_pass https://gogs:3000/;
+    proxy_pass https://gogs:3000;
     proxy_set_header X-Real-IP $remote_addr;
     client_max_body_size 1024m;
   }
 }
 ```
 * [proxy-control.conf][ref1] contains default proxy settings. Reload nginx.
-
-gogs/gogs/conf/app.ini
-```yaml
-[server]
-DOMAIN   = your.ssl.proxy.fqdn
-ROOT_URL = https://your.ssl.proxy.fqdn/gogs/
-```
-* `your.ssl.proxy.fqdn` is what an external user will see your reverse-proxy DNS
-  name.
 
 ### Using Subpaths
 [nginx/conf.d/reverse-proxy.conf][6]
@@ -224,10 +234,9 @@ server {
 gogs/gogs/conf/app.ini
 ```yaml
 [server]
-ROOT_URL = https://your.ssl.proxy.fqdn/gogs/
+ROOT_URL = https://<DOMAIN>/gogs/
 ```
-* `your.ssl.proxy.fqdn` is what an external user will see your reverse-proxy DNS
-  name.
+* `DOMAIN` is what an external user will see your reverse-proxy DNS name.
 
 Importing Git Repositories
 --------------------------
@@ -277,6 +286,7 @@ a lot more features then gogs. Gogs is maintained by a single developer.
 [4]: https://gitea.io/en-US/
 [5]: https://hub.docker.com/r/gogs/gogs/
 [6]: https://gogs.io/docs/intro/faqs
+[7]: https://discuss.gogs.io/t/reverse-proxy-unauthorized-401-windows/2057
 
 [ref1]: ../nginx/proxy-control.conf
 [ref2]: ../nginx/README.md

@@ -55,6 +55,23 @@ vi /etc/hosts
 
 Then reboot the router.
 
+Multiple Hostnames to One IP
+----------------------------
+Simulates NAT Reflection by statically adding multiple hostnames to the hosts
+file. Works with subdomains as well. This will provide a hard IP resolution for
+a given DNS request.
+
+CLI on EdgeOS (or SSH)
+```bash
+sudo su
+vi /etc/hosts
+```
+
+```hosts
+12.12.12.12 sub1.domain.com # Hard IP Resolution
+12.12.12.12 sub2.domain.com # Hard IP Resolution
+```
+
 [1]: https://community.ubnt.com/t5/EdgeRouter/Create-DNS-enteries/td-p/468375
 [2]: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=316099
 [3]: https://help.ubnt.com/hc/en-us/articles/204952134-EdgeRouter-Hairpin-NAT
