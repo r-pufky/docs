@@ -163,10 +163,54 @@ docker exec pihole pihole -a -p <PASSWORD>
 
 ### Pi-Hole Configuration
 `Settings > Blocklists`
-* Add `https://v.firebog.net/hosts/lists.php?type=tick`
-  * This will block widely-accepted Ads sites. See [Wally's Lists][ads4] for
-    stricter lists.
-* Add `https://raw.githubusercontent.com/HenningVanRaumle/pihole-ytadblock/master/ytadblock.txt`
+```
+https://v.firebog.net/hosts/lists.php?type=tick
+
+https://raw.githubusercontent.com/HenningVanRaumle/pihole-ytadblock/master/ytadblock.txt
+
+https://hosts-file.net/grm.txt
+https://reddestdream.github.io/Projects/MinimalHosts/etc/MinimalHostsBlocker/minimalhosts
+https://raw.githubusercontent.com/StevenBlack/hosts/master/data/KADhosts/hosts
+https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.Spam/hosts
+https://v.firebog.net/hosts/static/w3kbl.txt
+
+https://adaway.org/hosts.txt
+https://v.firebog.net/hosts/AdguardDNS.txt
+https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt
+https://hosts-file.net/ad_servers.txt
+https://v.firebog.net/hosts/Easylist.txt
+https://raw.githubusercontent.com/StevenBlack/hosts/master/data/SpotifyAds/hosts
+https://raw.githubusercontent.com/StevenBlack/hosts/master/data/UncheckyAds/hosts
+
+https://v.firebog.net/hosts/Airelle-trc.txt
+https://v.firebog.net/hosts/Easyprivacy.txt
+https://v.firebog.net/hosts/Prigent-Ads.txt
+https://raw.githubusercontent.com/quidsup/notrack/master/trackers.txt
+https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.2o7Net/hosts
+https://raw.githubusercontent.com/StevenBlack/hosts/master/data/tyzbit/hosts
+
+https://v.firebog.net/hosts/Airelle-hrsk.txt
+https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt
+https://mirror1.malwaredomains.com/files/justdomains
+https://hosts-file.net/exp.txt
+https://hosts-file.net/emd.txt
+https://hosts-file.net/psh.txt
+https://mirror.cedia.org.ec/malwaredomains/immortal_domains.txt
+https://www.malwaredomainlist.com/hostslist/hosts.txt
+https://bitbucket.org/ethanr/dns-blacklists/raw/8575c9f96e5b4a1308f2f12394abd86d0927a4a0/bad_lists/Mandiant_APT1_Report_Appendix_D.txt
+https://v.firebog.net/hosts/Prigent-Malware.txt
+https://v.firebog.net/hosts/Prigent-Phishing.txt
+https://raw.githubusercontent.com/quidsup/notrack/master/malicious-sites.txt
+https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt
+https://v.firebog.net/hosts/Shalla-mal.txt
+https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.Risk/hosts
+https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist
+
+https://raw.githubusercontent.com/ZeroDot1/CoinBlockerLists/master/hosts
+```
+* These can be added all at once (one per line) then mass updated.
+* Wally's list has a good list of [stricter blocking][ads4].
+* Large list of [additional blocklists][ads5].
 
 `Settings > DNS`
 1. Upstream DNS Servers
@@ -286,6 +330,7 @@ Cache is automatically cleared by restarting the FTLDNS service.
 [ads2]: https://old.reddit.com/r/pihole/comments/84luw8/blocking_youtube_ads/
 [ads3]: https://old.reddit.com/r/pihole/comments/7w4n81/having_trouble_blocking_youtube_ads_in_app_on_ios/dtyatmf/
 [ads4]: https://v.firebog.net/hosts/lists.php
+[ads5]: http://www.ubuntuboss.com/how-to-install-pihole-on-ubuntu-16-04/
 
 [ref1]: ../nginx/proxy-control.conf
 [ref2]: ../nginx/README.md
