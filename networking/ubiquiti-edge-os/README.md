@@ -72,6 +72,11 @@ vi /etc/hosts
 12.12.12.12 sub2.domain.com # Hard IP Resolution
 ```
 
+Reload hosts file
+```bash
+/etc/init.d/dnsmasq force-reload
+```
+
 [1]: https://community.ubnt.com/t5/EdgeRouter/Create-DNS-enteries/td-p/468375
 [2]: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=316099
 [3]: https://help.ubnt.com/hc/en-us/articles/204952134-EdgeRouter-Hairpin-NAT
