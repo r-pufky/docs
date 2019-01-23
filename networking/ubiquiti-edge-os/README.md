@@ -77,8 +77,27 @@ Reload hosts file
 /etc/init.d/dnsmasq force-reload
 ```
 
+Let's [Encrypt SSL][6] for Webface
+----------------------------------
+A let's encrypt certifcate may be used to serve https router traffic. Turn on
+EdgeOS SSH.
+
+Combine private key and certifcate into one file, copy to server.
+```bash
+cat privkey.pem cert.pem > server.pem
+```
+
+Backup existing cert and restart webface.
+```bash
+cd /etc/lighttpd
+cp server.pem server.pem.Backup
+kill -SIGINT $(cat /var/run/lighttpd.pid)
+/usr/sbin/lighttpd -f /etc/lighttpd/lighttpd.conf
+```
+
 [1]: https://community.ubnt.com/t5/EdgeRouter/Create-DNS-enteries/td-p/468375
 [2]: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=316099
 [3]: https://help.ubnt.com/hc/en-us/articles/204952134-EdgeRouter-Hairpin-NAT
 [4]: https://community.ubnt.com/t5/EdgeRouter/DNS-resolution-of-local-hosts/m-p/1386378/highlight/true#M83801
 [5]: https://community.ubnt.com/t5/EdgeRouter/hostfile-update-enable-doesn-t-clear-expired-leases/td-p/969389
+[6]: https://www.stevejenkins.com/blog/2015/10/install-an-ssl-certificate-on-a-ubiquiti-edgemax-edgerouter/
