@@ -1,5 +1,5 @@
-XenServer Setup
----------------
+XenServer (XCP-NG) Setup
+------------------------
 XenServer Setup & Lockdown (XCP-NG, Citrix XenServer)
 
 1. [Console Setup](#console-setup)
@@ -9,6 +9,7 @@ XenServer Setup & Lockdown (XCP-NG, Citrix XenServer)
 1. [Manually Creating New VM from Template](#manually-creating-new-vm-from-template)
 1. [PCI Passthrough for Direct Hardware Access](#pci-passthrough-for-direct-hardware-access)
 1. [Fix Missing OS Templates](#fix-missing-os-templates)
+1. [Auto Start VM on Boot](#auto-start-vm-on-boot)
 1. [References](#references)
 
 Console Setup
@@ -95,7 +96,7 @@ This will allow the use of ISO's on dom0 to be used during VM creation.
 
 ```bash
 mkdir -p /var/opt/xen/iso_import
-xe sr-create name-label=LocalISO type=iso device-config:location=/var/opt/xen/iso_import device-config:legacy_mode=true content-type=iso
+xe sr-create name-label=LocalISO type=iso device-config:location=/var/opt/xen/isos device-config:legacy_mode=true content-type=iso
 ```
 
 ### Refresh ISO library contents
@@ -183,6 +184,18 @@ root on the server will add/update all OS templates and populate the dropdown.
 /usr/bin/create-guest-templates
 ```
 
+Auto Start VM on [Boot][12]
+---------------------------
+Start VM when Hypervisor is booted.
+
+Both the pool that the VM is in and the VM need to be enabled.
+```bash
+xe pool-list
+xe vm-param-set uuid=<POOL> other-config:auto_poweron=true
+xe vm-list
+xe vm-param-set uuid=<VM> other-config:auto_poweron=true
+```
+
 References
 ----------
 [Basic XenServer Security Tips][1]
@@ -216,3 +229,4 @@ References
 [9]: https://wiki.xen.org/wiki/Xen_PCI_Passthrough
 [10]: https://www.reddit.com/r/XenServer/comments/607pbi/my_xenserver_is_missing_templates/
 [11]: https://willhaley.com/blog/find-correspond-disk-belongs-which-hard-drive-controller-linux/
+[12]: https://xen-orchestra.com/blog/auto-start-vm-on-xenserver-boot/

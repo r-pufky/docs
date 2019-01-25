@@ -86,7 +86,7 @@ This will setup a basic reverse-proxy that:
 
 /etc/nginx/conf.d/reverse-proxy.conf
 ```nginx
-# Forward all HTTP/HTTPS IPv4/6 traffic to HTTPS.
+# Forward all HTTP IPv4/6 traffic to HTTPS.
 server {
   listen 80 default_server;
   listen [::]:80 default_server;
@@ -97,8 +97,8 @@ server {
 # Websockets: remap http_upgrade to 'upgrade' or 'close' based on
 # connection_upgrade being set.
 map $http_upgrade $connection_upgrade {
-    default upgrade;
-    '' close;
+  default upgrade;
+  '' close;
 }
 
 server {
@@ -107,8 +107,13 @@ server {
   # Import SSL certificate options from letsencrypt
   ssl_certificate /etc/nginx/ssl/live/<DOMAIN_NAME>/fullchain.pem;
   ssl_certificate_key /etc/nginx/ssl/live/<DOMAIN_NAME>/privkey.pem;
+  ssl_trusted_certificate /etc/nginx/ssl/live/<DOMAIN_NAME>/chain.pem;
   ssl_dhparam /etc/nginx/ssl/ssl-dhparams.pem;
   include /etc/nginx/ssl/options-ssl-nginx.conf;
+
+  # Enable OCSP stapling https://en.wikipedia.org/wiki/OCSP_stapling.
+  ssl_stapling on;
+  ssl_stapling_verify on;
 
   client_max_body_size 0;
 }
