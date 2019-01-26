@@ -21,6 +21,7 @@ services required.
 1. [Revoking Certs](#revoking-certs)
 1. [Master Frequent Commands](#master-frequent-commands)
 1. [Manually Running Minions](#manually-running-minions)
+1. [Connection Issues](#connection-issues)
 1. [Development References](#development-references)
 
 [Requirements][1]
@@ -653,6 +654,38 @@ salt 'my_minion' saltutil.clear-cache
 ```
  * Only the local or remote call needs to be made
  * Must run with root perms to execute
+
+Connection Issues
+-----------------
+Some common connection issues that have been encountered.
+
+###Minion did not return. [Not connected].
+Expresses as `salt-call` works correctly locally on minion, but issue a command
+from the `salt-master` fails with this message. Generally this is caused by the
+minion not checking in with the master in the timeout period, or the salt master
+being moved to another server.
+
+#### Fix
+salt-master
+```bash
+salt-key -d <minion>
+```
+
+salt-minion
+```bash
+service salt-minion restart
+```
+
+#### Troubleshooting
+Verify that ports used work and the salt minion can ping the master server.
+```bash
+service salt-minion stop
+salt-call test.ping
+nc -v -z <SALT MASTER> 4505
+nc -v -z <SALT MASTER> 4506
+```
+* Ping should be successful as well as ports being open. If deleting/re-adding
+  the salt key doesn't fix, run minion in `debug` mode for more info.
 
 Development References
 ----------------------
