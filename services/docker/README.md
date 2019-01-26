@@ -74,11 +74,18 @@ services:
 docker-compose up -d
 ```
 * `--remove-orphans` will delete containers removed from the config.
-* Any changes to containers will be re-configured automatically.
+* Any changes to containers will be re-configured automatically, including new
+  images.
 * services are auto labeled as `user_container_instance`; still refer to
   container name.
 * **Ensure you are the right user**; standard sudo will launch jobs with your
   username. _Switch Users_ or _sudo su - root -c "docker-compose up -d"_.
+
+### Pull new images for Services
+This will automatically pull any new images for containers.
+```bash
+docker-compose pull
+```
 
 ### List Running Services
 ```bash
