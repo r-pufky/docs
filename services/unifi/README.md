@@ -77,6 +77,8 @@ unifi:
     - '8880:8880'
     - '8843:8843'
   environment:
+    - PGID=1001
+    - PUID=1001
     - TZ=America/Los_Angeles
   volumes:
     - /data/services/unifi:/config
