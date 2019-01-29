@@ -14,6 +14,7 @@ for all connections to docker containers using Let's Encrypt.
 1. [Docker Creation](#docker-creation)
 1. [Initial Setup](#initial-setup)
 1. [Adding Reverse Proxies](#adding-reverse-proxies)
+1. [Debugging Headers](#debugging-headers)
 
 Docker Ports Exposed
 --------------------
@@ -329,8 +330,28 @@ sub_filter_once off;
 * First rule rewrites responses from the app: `https://app:port/page.html` to
   `https://reverse-proxy-server/subpath/page.html`.
 * Second rules rewrites relative responses `href="/other-page.html"` to
-  `href="https://reverse-proxy-server/subpath/other-page.html".
+  `href="https://reverse-proxy-server/subpath/other-page.html"`.
 
+Debugging Headers
+-----------------
+To validate parameters passed to upstream services, the request should be
+dumped by the service or intercepted by another service temporarily. There is a
+[docker container to do this][13]. This will dump the recieved headers from both
+http and https communication to the upstream service.
+
+docker-compose.yml
+```yaml
+http-echo:
+  image: mendhak/http-https-echo
+```
+
+```nginx
+location / {
+   ...
+   proxy_pass http://http-echo/;
+}
+```
+* Headers will be dumped directly to the page.
 
 [1]: https://www.nginx.com/
 [2]: https://hub.docker.com/_/nginx
@@ -345,6 +366,7 @@ sub_filter_once off;
 [11]: https://stackoverflow.com/questions/32542282/how-do-i-rewrite-urls-in-a-proxy-response-in-nginx
 [12]: http://nginx.org/en/docs/http/ngx_http_sub_module.html
 [13]: https://nginxconfig.io
+[14]: https://github.com/mendhak/docker-http-https-echo
 
 [ref1]: proxy-control.conf
 [ref2]: ..
