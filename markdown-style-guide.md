@@ -14,14 +14,13 @@ formatting / control interruptions.
 Markdown File Structure
 -----------------------
 * Always save _unix_ endings.
-* Always hard-wrap at _80 characters_.
-  * Exceptions:
-    1. Multi-line code blocks (**not** inline \`\` code blocks).
-    1. File listings in blocks.
-    1. URI's (used in the markdown link, not the link text itself).
-    1. Table contents.
-    1. TOC inline links.
-    1. Image links.
+* Always hard-wrap at _80 characters_. Exceptions:
+  * Multi-line code blocks (**not** inline \`\` code blocks).
+  * File listings in blocks.
+  * URI's (used in the markdown link, not the link text itself).
+  * Table contents.
+  * TOC inline links.
+  * Image links.
 * Keep document focused. If sections get excessively long, cut section into a
   separate file and link.
 * _README.md_ per directory level. This allows the directory to express context
@@ -125,23 +124,19 @@ on documentation itself.
 * Additional formatting is allowed within the quote block.
 
 ````
-> :warning:
->
+> :warning:  
 > This can be useful to callout specific context or warnings.
 ````
 
-> :warning:
->
+> :warning:  
 > This can be useful to callout specific context or warnings.
 
 ````
-> :key:
->
+> :key:  
 > Generate your password with `gpg --gen-random -a 0 64`
 ````
 
-> :key:
->
+> :key:  
 > Generate your password with `gpg --gen-random -a 0 64`
 
 ````
@@ -167,7 +162,7 @@ __Italics__: Always **underscores** `_italics_`.
 **Bold**: Always **double asterisk** `**bold**`.
 * Allows for nested, distinguished formatting. `**bold _italics_ text**`.
 
-Strikethrough: **double tides**. `~~strikethrough`.
+Strikethrough: **double tildes**. `~~strikethrough~~`.
 * Allows for nested, distinguished formatting. `**bold ~~strikethrough~~**`.
 
 ### Tables
@@ -300,7 +295,7 @@ additional_change=YYY
 ### Commands
 * Formatting per [all blocks style][sT].
 * Context helper in header block for command shell type.
-* inline blocks are allowed.
+* Inline blocks are allowed.
 * Never include user/permission elevation in command context (e.g. `sudo` etc).
   This adds to the length of the instruction without adding value. If the user
   should be operating in a different user context, call it out explicitly
@@ -351,9 +346,12 @@ GUI Interactions
 Use built in check/unchecked boxes with the GUI labels. No trailing peroids.
 
 ````
-[ ] option one
-[x] option two
+* [ ] option one
+* [x] option two
 ````
+
+* [ ] option one
+* [x] option two
 
 Windows Specific Instructions
 -----------------------------
