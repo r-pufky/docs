@@ -77,6 +77,13 @@ Reload hosts file
 /etc/init.d/dnsmasq force-reload
 ```
 
+DNS Hostnames not Resolving
+---------------------------
+DHCP server on the edgerouter needs to update the hosts file when new IP's are
+issued.
+
+`Config Tree > service > dhcp-server > dynamic-dns-update > enable` = `true`
+
 Let's [Encrypt SSL][6] for Webface
 ----------------------------------
 A let's encrypt certifcate may be used to serve https router traffic. Turn on
