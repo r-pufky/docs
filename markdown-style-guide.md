@@ -64,6 +64,7 @@ Sections
 
 Writing
 -------
+* Be consistent.
 * Active first-person short sentences are best.
 * Continue a link-break sentence at the start of the next line. A space will be
   inserted automatically with github, and mentally on the CLI.
@@ -226,6 +227,26 @@ Code/File/Commands
 Content should be visually distinguished from the rest of the document for clear
 interpretation of what is going on.
 
+### Variables & User Data
+Custom user data that should not be included in documentation, like passwords,
+per user accounts, and other potentially sensitive information.
+
+1. Use brackets `{}` with `CAPPED SPACES` to describe data to enter.
+1. No backticks (\`) should be used, as this is not data the user should
+   directly enter. The user needs to contextualize the notation _then_ enter
+   data.
+
+```
+{VARIBLE DATA HERE}
+```
+
+Current acceptable abbreviations:
+
+| Abbreviation | Word     |
+|--------------|----------|
+| PW           | Password |
+| USER         | Username |
+
 ### All Blocks
 A block is a strong callout for a single line, or a multi-line example. All
 blocks have:
@@ -352,6 +373,21 @@ Use built in check/unchecked boxes with the GUI labels. No trailing peroids.
 
 * [ ] option one
 * [x] option two
+
+### Section Headers
+Use no `:` and indent the section like a standard list.
+
+````
+* Section Header 1
+  * Data Key: `Data`
+* Section Header 2
+  * [x] Some Checkbox
+````
+
+* Section Header 1
+  * Data Key: `Data`
+* Section Header 2
+  * [x] Some Checkbox
 
 Windows Specific Instructions
 -----------------------------
