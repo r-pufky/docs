@@ -2,6 +2,20 @@ Ubiquiti Edge OS
 ----------------
 Setup notes for Edge OS.
 
+[Disable UBNT Discovery Service][x8]
+------------------------------------
+Helper service to enable other ubnt device discovery. Externally exposed and
+[exploitable][ne].
+
+CLI on EdgeOS (or SSH)
+```bash
+configure
+set service ubnt-discover disable
+set service ubnt-discover-server disable
+commit; save
+```
+* Delete hosts which are no longer used.
+
 Creating Duplicate DNS / Host Entries
 -------------------------------------
 Effectively cnames for IP lookups without DNS.
@@ -19,13 +33,13 @@ Effectively cnames for IP lookups without DNS.
 * Aliases should all resolve to the same IP (off aliased host)
 * Verify by resolving both names on your network. With later versions of debian
   based systems, entries in the local host file for the system will resolve to
-  `127.0.1.1`. [This is by design][2].
+  `127.0.1.1`. [This is by design][27].
    * The alias will resolve to network IP.
    * The hostname will resolve to 127.0.1.1.
 
 Internal Only NAT Reflection (Hairpin NAT)
 ------------------------------------------
-Generally split-DNS is better to use than [Hairpin NAT][3] as it allows more
+Generally split-DNS is better to use than [Hairpin NAT][UV] as it allows more
 control. This will enable you to redirect internal requests destined for your
 external IP to another internal destination based on selected criteria. You will
 need to do this for every subnet on the network.
@@ -43,8 +57,8 @@ on your Registrar and it resolves to your public IP.
 
 Deleted DHCP host still resolve in DNS
 --------------------------------------
-When deleting a DHCP host, the DNS reservation should be [removed as well][4].
-However [there is a bug][5] in which these hosts are never deleted.
+When deleting a DHCP host, the DNS reservation should be [removed as well][em].
+However [there is a bug][En] in which these hosts are never deleted.
 
 CLI on EdgeOS (or SSH)
 ```bash
@@ -84,7 +98,7 @@ issued.
 
 `Config Tree > service > dhcp-server > dynamic-dns-update > enable` = `true`
 
-Let's [Encrypt SSL][6] for Webface
+Let's [Encrypt SSL][0c] for Webface
 ----------------------------------
 A let's encrypt certifcate may be used to serve https router traffic. Turn on
 EdgeOS SSH.
@@ -102,9 +116,12 @@ kill -SIGINT $(cat /var/run/lighttpd.pid)
 /usr/sbin/lighttpd -f /etc/lighttpd/lighttpd.conf
 ```
 
-[1]: https://community.ubnt.com/t5/EdgeRouter/Create-DNS-enteries/td-p/468375
-[2]: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=316099
-[3]: https://help.ubnt.com/hc/en-us/articles/204952134-EdgeRouter-Hairpin-NAT
-[4]: https://community.ubnt.com/t5/EdgeRouter/DNS-resolution-of-local-hosts/m-p/1386378/highlight/true#M83801
-[5]: https://community.ubnt.com/t5/EdgeRouter/hostfile-update-enable-doesn-t-clear-expired-leases/td-p/969389
-[6]: https://www.stevejenkins.com/blog/2015/10/install-an-ssl-certificate-on-a-ubiquiti-edgemax-edgerouter/
+[js]: https://community.ubnt.com/t5/EdgeRouter/Create-DNS-enteries/td-p/468375
+[27]: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=316099
+[UV]: https://help.ubnt.com/hc/en-us/articles/204952134-EdgeRouter-Hairpin-NAT
+[em]: https://community.ubnt.com/t5/EdgeRouter/DNS-resolution-of-local-hosts/m-p/1386378/highlight/true#M83801
+[En]: https://community.ubnt.com/t5/EdgeRouter/hostfile-update-enable-doesn-t-clear-expired-leases/td-p/969389
+[0c]: https://www.stevejenkins.com/blog/2015/10/install-an-ssl-certificate-on-a-ubiquiti-edgemax-edgerouter/
+
+[ne]: https://www.zdnet.com/google-amp/article/over-485000-ubiquiti-devices-vulnerable-to-new-attack/
+[x8]: https://help.ubnt.com/hc/en-us/articles/204976244-EdgeRouter-UBNT-Device-Discovery
