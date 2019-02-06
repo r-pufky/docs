@@ -335,7 +335,8 @@ sub_filter_once off;
 
 Configuration Patterns
 ----------------------
-General ogod configuration patterns after using nginx as a reverse proxy.
+General good configuration practice patterns after using nginx as a reverse
+proxy for a while.
 
 ### One Site Per Config File
 Keep one site per configuration file to focus only on that site. This will help
@@ -350,6 +351,7 @@ mkdir /etc/nginx/conf.d/services
 1. Add each site to `/etc/nginx/conf.d/services/{SITE}.conf`.
 1. Modify default config to auto import sites / services:
 
+/etc/nginx/conf.d/default.conf
 ```nginx
 include /etc/nginx/conf.d/services/*.conf;
 ```
@@ -365,8 +367,9 @@ authentication consistency across multiple sites.
 
 /etc/nginx/conf.d/site-auth.conf
 ```nginx
+# Allow all on 10.1.1.0/24 through, and force auth for everyone else.
 satisfy any;
-allow 192.168.1.0/24;
+allow 10.1.1.0/24;
 deny all;
 auth_basic 'Your Site';
 auth_basic_user_file /etc/nginx/conf.d/your_site.pass
