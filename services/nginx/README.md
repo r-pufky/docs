@@ -14,6 +14,7 @@ for all connections to docker containers using Let's Encrypt.
 1. [Docker Creation](#docker-creation)
 1. [Initial Setup](#initial-setup)
 1. [Adding Reverse Proxies](#adding-reverse-proxies)
+1. [Configuration Patterns](#configuration-patterns)
 1. [Debugging Headers](#debugging-headers)
 
 Docker Ports Exposed
@@ -332,6 +333,58 @@ sub_filter_once off;
 * Second rules rewrites relative responses `href="/other-page.html"` to
   `href="https://reverse-proxy-server/subpath/other-page.html"`.
 
+Configuration Patterns
+----------------------
+General ogod configuration patterns after using nginx as a reverse proxy.
+
+### One Site Per Config File
+Keep one site per configuration file to focus only on that site. This will help
+reduce errors and allow fast lookup / disable of configurations.
+
+1. Create a services directory:
+
+```bash
+mkdir /etc/nginx/conf.d/services
+```
+
+1. Add each site to `/etc/nginx/conf.d/services/{SITE}.conf`.
+1. Modify default config to auto import sites / services:
+
+```nginx
+include /etc/nginx/conf.d/services/*.conf;
+```
+
+Adding a site in services and restart nginx will now automatically pickup that
+site.
+
+### Site-wide Auth File
+Keep authentication definitions for different services to one file to maintain
+authentication consistency across multiple sites.
+
+1. Create an authentication [block and store in a file][3].
+
+/etc/nginx/conf.d/site-auth.conf
+```nginx
+satisfy any;
+allow 192.168.1.0/24;
+deny all;
+auth_basic 'Your Site';
+auth_basic_user_file /etc/nginx/conf.d/your_site.pass
+```
+
+1. Include authentication block where authentication would be required:
+
+/etc/nginx/conf.d/services/my-site.conf
+```nginx
+location / {
+  ...
+
+  include /etc/nginx/conf.d/site-auth.conf;
+  proxy_pass ...
+  ...
+}
+```
+
 Debugging Headers
 -----------------
 To validate parameters passed to upstream services, the request should be
@@ -370,3 +423,4 @@ location / {
 
 [ref1]: proxy-control.conf
 [ref2]: ..
+[ref3]: site-auth.conf
