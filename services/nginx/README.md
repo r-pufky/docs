@@ -388,6 +388,45 @@ location / {
 }
 ```
 
+### Remove Auth Requirement for Docker Containers
+For docker containers running with nginx, the docker network or specific IP
+would need to be whitelisted. This allows dashboards and services to communicate
+using FQDNs without needing basic auth.
+
+#### [Whitelist All Containers][16]
+1. Determine network that containers are on:
+
+```bash
+docker network ls
+docker network inspect docker_default
+```
+
+1. Add IP range to the authorization file
+
+/etc/nginx/conf.d/site-auth.conf
+```nginx
+allow 172.18.0.0/16;
+```
+
+#### [Whitelist Single Container][15]
+1. Set static IP for docker container (otherwise it is random)
+
+docker-compose.yml
+```yaml
+container_name:
+  ...
+  networks:
+  agent:
+    ipv4_address: 172.18.0.101
+```
+
+1. Whitelist specific IP in auth file
+
+/etc/nginx/conf.d/site-auth.conf
+```nginx
+allow 172.18.0.101;
+```
+
 Debugging Headers
 -----------------
 To validate parameters passed to upstream services, the request should be
@@ -423,6 +462,8 @@ location / {
 [12]: http://nginx.org/en/docs/http/ngx_http_sub_module.html
 [13]: https://nginxconfig.io
 [14]: https://github.com/mendhak/docker-http-https-echo
+[15]: https://stackoverflow.com/questions/45358188/restrict-access-to-nginx-server-location-to-a-specific-docker-container-with-al
+[16]: https://docs.docker.com/v17.09/engine/userguide/networking/#the-default-bridge-network
 
 [ref1]: proxy-control.conf
 [ref2]: ..
