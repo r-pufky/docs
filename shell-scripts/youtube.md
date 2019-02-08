@@ -36,9 +36,16 @@ youtube-dl <url> 'bestvideo[height<=1080]+bestaudio/best[height<=1080]'
 youtube-dl https://youtube.com/playlist?list=<LID> --yes-playlist
 ```
 
+### Track Downloaded Videos for Archiving
+Download only videos not listed in file and adds any downloaded videos to the
+given file.
+```bash
+youtube-dl --download-archive <FILE>
+```
+
 References
 ----------
-[youtube-dl Source download (latest)][1]
+[yoSutube-dl Source download (latest)][1]
 
 [youtube-dl github repo][2]
 
