@@ -93,6 +93,24 @@ Writing
 1. Issued commands always block qouted '\`'; **not** capped starting sentence.
 1. Sentences single spaced.
 
+### Definitions
+Used to define terminology for later usage.
+
+1. Bold Acronym or word.
+1. If Acronym, Follow immediatel with a colon (:) and the expanded word, Bolding
+   letters used for the acronym.
+1. Write the definition directory below in quotes.
+
+````
+**PIF**: **P**hysical **I**nter**f**ace.
+> This defines the physical port of a piece of equipment. Also referred to as
+> **Native Network**, **Parent VLAN**.
+````
+
+**PIF**: **P**hysical **I**nter**f**ace.
+> This defines the physical port of a piece of equipment. Also referred to as
+> **Native Network**, **Parent VLAN**.
+
 ### Emojis
 Simplified emojis are allowed if they convey appropriate meaning within the
 [emoji text][df]. Placed at the beginning of new thought sections or within
@@ -200,12 +218,31 @@ Pictures are also not so useful on the command line.
 * Image linked directly with no line breaks.
 * Alternative text should be sufficient to understand the context of the image.
 * Vertical separator below image optional dependent on usage.
+* Text may be used in the alt text field to represent what is happening in the
+  image. Separate with a vertical space.
 
 ````
 ![Example](example.png)
 ````
 
 ![Example](example.png)
+
+````
+![
++------+            +--------+
+|      | +--------> |PIF ALL +---------->
+|      |  untagged  |VIF 20  | untagged
++------+            +--------+
+](example.png)
+````
+
+![
++------+            +--------+
+|      | +--------> |PIF ALL +---------->
+|      |  untagged  |VIF 20  | untagged
++------+            +--------+
+](example.png)
+
 
 ### Linking
 1. TOC links are inline. No line-wrapping.
