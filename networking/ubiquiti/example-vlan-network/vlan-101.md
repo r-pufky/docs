@@ -248,3 +248,4 @@ Important things to note:
 [ref9d]: https://help.ubnt.com/hc/en-us/articles/222183968-Intro-to-Networking-Introduction-to-Virtual-LANs-VLANs-and-Tagging#3
 [refk3]: https://community.ubnt.com/t5/UniFi-Wireless/Is-it-not-possible-to-have-a-tagged-VLAN-1-wireless-network/td-p/2477872
 [ref0d]: https://help.ubnt.com/hc/en-us/articles/219654087
+[refWd]: https://community.ubnt.com/t5/UniFi-Routing-Switching/A-non-expert-Guide-to-VLAN-and-Trunks-in-Unifi-Switches/td-p/1804481

@@ -218,3 +218,9 @@ profile_.
 [Wx]: https://community.ubnt.com/t5/UniFi-Routing-Switching/UniFI-Switch-8-POE-60-W-constant-high-CPU-utilization/td-p/2397994
 
 [ref4r]: https://dl.ubnt.com/guides/UniFi/UniFi_Controller_V5_UG.pdf
+[refFV]: https://www.youtube.com/watch?v=b2w1Ywt081o
+[refep]: https://www.youtube.com/watch?v=HcfIpTso_Ys
+[refoD]: https://www.youtube.com/watch?v=SKeFqFhBwJY&t=
+[refxc]: https://www.youtube.com/watch?v=L9gZQh1rAMc
+[refHm]: https://www.handymanhowto.com/ubiquiti-edgerouter-lite-soho-network-design/
+[refEw]: https://arstechnica.com/information-technology/2018/07/enterprise-wi-fi-at-home-part-two-reflecting-on-almost-three-years-with-pro-gear/5/

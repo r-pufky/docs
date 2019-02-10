@@ -136,3 +136,8 @@ Add all VLANS using [VLAN table in example network][Xv].
 [8l]: https://www.ui.com/download/?q=controller
 [0F]: https://help.ubnt.com/hc/en-us/articles/204909374-UniFi-Accounts-and-Passwords-for-Controller-Cloud-Key-and-Other-Devices
 [pD]: https://help.ubnt.com/hc/en-us/articles/204909754-UniFi-Device-Adoption-Methods-for-Remote-UniFi-Controllers#7
+
+[ref8d]: https://help.ubnt.com/hc/en-us/articles/219654087-UniFi-Using-VLANs-with-UniFi-Wireless-Routing-Switching-Hardware#UAP
+[refv2]: https://help.ubnt.com/hc/en-us/articles/204962144#1
+[refs0]: https://www.douglasisaksson.com/lessons-learned-from-deploying-a-unifi-network-at-home/
+[refRU]: https://www.youtube.com/watch?v=JblnjsnJNJU

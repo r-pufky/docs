@@ -116,3 +116,5 @@ Connect to Unifi GUI @ http://localhost:8443.
 
 [so]: README.md
 [xc]: README.md#unifi-device-troubleshooting
+
+[refiJ]: https://community.ubnt.com/t5/UniFi-Routing-Switching/Setting-Management-VLAN-for-Switches/td-p/2279619
