@@ -1,7 +1,6 @@
 Core Switch VLAN Setup
 ----------------------
-This will setup the edgerouter in a [router-on-a-stick][34] configuration using
-VLANs, with no subnet restrictions (these will be applied after setup). See
+This will setup the core switch using VLANs according to example network. See
 [full example network here][so].
 
 ![
@@ -106,4 +105,5 @@ Connect to Unifi GUI @ http://localhost:8443.
 > Switch will re-provision for each port modification. Wait for provisioning
 > to complete before proceeding through each port.
 
+[so]: README.md
 [xc]: README.md#unifi-device-troubleshooting
