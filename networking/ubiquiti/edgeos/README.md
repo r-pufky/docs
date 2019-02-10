@@ -98,6 +98,66 @@ issued.
 
 `Config Tree > service > dhcp-server > dynamic-dns-update > enable` = `true`
 
+Allow Subnet (Wifi) Traffic [Only Internet Access][7y]
+------------------------------------------------------
+May be applied to any subnet that should only have Internet access.
+
+### Create network group that contains all private IPv4 addresses.
+
+#### `Firewall/NAT > Firewall/NAT Groups > Add Group`
+* Name: `RFC1918`
+* Description: `Private IPv4 address space`
+* Type: `Network Group`
+
+#### `RFC1918 > Actions > Config`
+* Network: `192.168.0.0/16`, `172.16.0.0/12`, `10.0.0.0/8`
+
+### Prevent Wifi traffic from reaching internal networks:
+
+#### `Firewall/NAT > Firewall Policies > Add Ruleset`
+* Name: `WIFI_IN`
+* Description: `Wifi to LAN`
+* Default action: `Accept`
+* Default Log: ``
+
+#### `WIFI_IN > Actions > Edit Ruleset > Add New Rule`
+* `Basic`
+  * Description: `Drop Wifi to LAN`
+  * Action: `Drop`
+  * Protocol: `All protocols`
+* `Destination`
+  * Network Group: `Private IPv4 address space`
+
+#### `WIFI_IN > Interfaces`
+* Interface: `eth0.4`
+* Direction: `in`
+
+> :warning:
+> Ensure Interface is set to the appropriate interface or VLAN.
+
+### Allow DNS traffic for subnet clients
+
+#### `Firewall/NAT > Firewall Policies > Add Ruleset`
+* Name: `WIFI_LOCAL`
+* Description: `Wifi to Router`
+* Default action: `Drop`
+* Default Log: ``
+
+#### `WIFI_IN > Actions > Edit Ruleset > Add New Rule`
+* `Basic`
+  * Description: `Allow DNS`
+  * Action: `Accept`
+  * Protocol: `Both TCP and UDP`
+* `Destination`
+  * Port: `53`
+
+#### `WIFI_IN > Interfaces`
+* Interface: `eth0.4`
+* Direction: `local`
+
+> :warning:
+> Ensure Interface is set to the appropriate Wifi VLAN.
+
 Let's [Encrypt SSL][0c] for Webface
 ----------------------------------
 A let's encrypt certifcate may be used to serve https router traffic. Turn on
@@ -122,6 +182,6 @@ kill -SIGINT $(cat /var/run/lighttpd.pid)
 [em]: https://community.ubnt.com/t5/EdgeRouter/DNS-resolution-of-local-hosts/m-p/1386378/highlight/true#M83801
 [En]: https://community.ubnt.com/t5/EdgeRouter/hostfile-update-enable-doesn-t-clear-expired-leases/td-p/969389
 [0c]: https://www.stevejenkins.com/blog/2015/10/install-an-ssl-certificate-on-a-ubiquiti-edgemax-edgerouter/
-
+[7y]: https://help.ubnt.com/hc/en-us/articles/218889067-EdgeRouter-How-to-Create-a-Guest-LAN-Firewall-Rule
 [ne]: https://www.zdnet.com/google-amp/article/over-485000-ubiquiti-devices-vulnerable-to-new-attack/
 [x8]: https://help.ubnt.com/hc/en-us/articles/204976244-EdgeRouter-UBNT-Device-Discovery
