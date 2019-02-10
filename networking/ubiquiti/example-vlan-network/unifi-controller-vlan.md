@@ -85,7 +85,7 @@ Add all VLANS using [VLAN table in example network][Xv].
 * Gateway/Subnet: `10.1.1.1/24`
 * Domain Name: {YOUR DOMAIN}
 - [ ] Enable IGMP Snooping
-* DHCP Server: [x] None
+* DHCP Server: `None`
 - [ ] Enable DHCP gaurding
 - [ ] Enable UPnP LAN
 * IPv6 Interface Type: `None`
