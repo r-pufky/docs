@@ -404,12 +404,33 @@ GUI Interactions
 Use built in check/unchecked boxes with the GUI labels. No trailing peroids.
 
 ````
-* [ ] option one
-* [x] option two
+- [ ] option one
+- [x] option two
 ````
 
-* [ ] option one
-* [x] option two
+- [ ] option one
+- [x] option two
+
+#### Indentation changes
+Using checkboxes inline with numbered or unnumbered lists requires slight
+adjustments for proper indentation during rendering. Indent one level more than
+normal for checkboxes and sub-items in checkboxes for proper alignment.
+
+```
+* Internet (`eth3/SFP`)
+    - [x] Static IP
+        * Address: {YOUR PUBLIC IP} / {PUBLIC IP NETMASK}
+        * Gateware: {YOUR ISP GATEWAY}
+        * DNS: `1.1.1.1`
+    - [ ] Internet connection is on VLAN
+```
+
+* Internet (`eth3/SFP`)
+    - [x] Static IP
+        * Address: {YOUR PUBLIC IP} / {PUBLIC IP NETMASK}
+        * Gateware: {YOUR ISP GATEWAY}
+        * DNS: `1.1.1.1`
+    - [ ] Internet connection is on VLAN
 
 ### Section Headers
 Use no `:` and indent the section like a standard list.
@@ -418,13 +439,26 @@ Use no `:` and indent the section like a standard list.
 * Section Header 1
   * Data Key: `Data`
 * Section Header 2
-  * [x] Some Checkbox
+  - [x] Some Checkbox
 ````
 
 * Section Header 1
   * Data Key: `Data`
 * Section Header 2
-  * [x] Some Checkbox
+  - [x] Some Checkbox
+
+### Use Click/tab chains as a section header.
+Any chain containing a click sequence or tabbed menu sequence to get to a GUI
+window should be in it's own section, using backticks (\`) to denote user input.
+
+````
+#### `Dashboard > eth1 > Actions > Config`
+* ...
+````
+
+#### `Dashboard > eth1 > Actions > Config`
+* ...
+
 
 Windows Specific Instructions
 -----------------------------
