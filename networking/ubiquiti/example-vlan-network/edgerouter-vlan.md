@@ -40,7 +40,7 @@ Basic Setup (Basic Setup is the same as _WAN+2LAN2_).
     - [x] Create new admin user
         * Username: {USER}
         * Password: {PW}
-* Apply and reboot router
+* Apply and reboot router.
 
 > :thought_balloon:
 > The reason to use the SFP connection for Internet is to make it physically
@@ -55,23 +55,23 @@ Basic Setup (Basic Setup is the same as _WAN+2LAN2_).
 * Domain Name: {YOUR DOMAIN}
 * `Management Settings > SSH Server`
   - [x] Enable
-    * Port: `2222`
+    * Port: {SSH Port}
   - [ ] Ubnt Discovery
 
 #### `Dashboard > eth0 > Actions > Config`
 * Address: `Manually define IP address`
-    * `10.1.1.1/24`
+  * `10.1.1.1/24`
 
 > :warning:
 > This handles untagged traffic coming into the router; this is the
 > _management VLAN_ (VLAN1) network.
 
 #### `Dashboard > Add Interface > Add VLAN`
-  * VLANID: `2`
-  * Interface: `eth0`
-  * Description: {VLAN description}
-  * Address: `Manually define IP address`
-    * `10.2.2.1/24`
+* VLANID: `2`
+* Interface: `eth0`
+* Description: {VLAN description}
+* Address: `Manually define IP address`
+  * `10.2.2.1/24`
 
 > :warning:
 > Add all VLANS using [VLAN table in example network][Xv] to _eth0_. _Management
