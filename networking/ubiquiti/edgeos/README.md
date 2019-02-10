@@ -1,5 +1,5 @@
 Ubiquiti Edge OS
-----------------
+================
 Setup notes for Edge OS.
 
 [Disable UBNT Discovery Service][x8]
@@ -176,6 +176,25 @@ kill -SIGINT $(cat /var/run/lighttpd.pid)
 /usr/sbin/lighttpd -f /etc/lighttpd/lighttpd.conf
 ```
 
+Dump List of [Commands for Current Config][7b]
+----------------------------------------------
+Export the list of CLI commands to manually re-create the current configuration
+of the router.
+
+CLI on EdgeOS (or SSH)
+```bash
+show configuration commands
+```
+
+Dump Router [Configuration][7b]
+-------------------------------
+Show a JSON-like representation of the current router configuration.
+
+CLI on EdgeOS (or SSH)
+```bash
+show configuration all
+```
+
 [js]: https://community.ubnt.com/t5/EdgeRouter/Create-DNS-enteries/td-p/468375
 [27]: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=316099
 [UV]: https://help.ubnt.com/hc/en-us/articles/204952134-EdgeRouter-Hairpin-NAT
@@ -185,5 +204,6 @@ kill -SIGINT $(cat /var/run/lighttpd.pid)
 [7y]: https://help.ubnt.com/hc/en-us/articles/218889067-EdgeRouter-How-to-Create-a-Guest-LAN-Firewall-Rule
 [ne]: https://www.zdnet.com/google-amp/article/over-485000-ubiquiti-devices-vulnerable-to-new-attack/
 [x8]: https://help.ubnt.com/hc/en-us/articles/204976244-EdgeRouter-UBNT-Device-Discovery
+[7b]: https://community.ubnt.com/t5/EdgeRouter/Importing-and-exporting-configurations/td-p/1513041
 
 [ref7y]: https://help.ubnt.com/hc/en-us/articles/218889067-EdgeMAX-How-to-Protect-a-Guest-Network-on-EdgeRouter
