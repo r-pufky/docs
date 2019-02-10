@@ -30,7 +30,7 @@ This will be used to setup the Unifi APs. See [full example network here][so].
 
 #### `Devices > AP > Properties > Config > General`
 * Alias: {STATIC AP NAME}
-- [x] Use site settings
+* LED: `use site settings`
 
 #### `Devices > AP > Properties > Config > Network`
 * Configure IP: `Static`
