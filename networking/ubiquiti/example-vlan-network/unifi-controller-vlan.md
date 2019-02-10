@@ -5,7 +5,7 @@ network here][so]. Download and install the [Unifi Controller][8l] onto the
 setup laptop.
 
 ### Setup Wizard
-Connect to Unifi GUI @ http:/localhost:8443.
+Connect to Unifi GUI @ http://localhost:8443.
 
 * Select your Country: {COUNTRY}
 * Select your Timezone: {LOCAL TIMEZONE}
@@ -43,8 +43,8 @@ Connect to Unifi GUI @ http:/localhost:8443.
 > :warning:
 > L2 device discovery will help to adopt controllers which are not receiving
 > a [unifi controller DHCP option][pD]. These settings are only for initial
-> setup with the laptop and may want to be changed or disabled after initial
-> configuration to rely on DHCP or force specification.
+> setup with the laptop and may be changed or disabled after initial
+> configuration to rely on DHCP or set inform.
 
 #### `Settings > Site`
 * Site Configuration
@@ -88,7 +88,7 @@ Add all VLANS using [VLAN table in example network][Xv].
 * DHCP Server: [x] None
 - [ ] Enable DHCP gaurding
 - [ ] Enable UPnP LAN
-* IPv6 Interface Type: [x] None
+* IPv6 Interface Type: `None`
 
 > :warning:
 > This will be the default network when new devices are discovered before they
@@ -117,7 +117,7 @@ Add all VLANS using [VLAN table in example network][Xv].
 * Wired Trunk
   * Create New Switch Port Profile
     * Profile Name: `trunk-wired`
-      * PoE: [x] Off
+      * PoE: `Off`
   * Networks/VLANs
     * Native Network: `LAN`
     * Tagged Networks: `wifi`, `wired`
@@ -132,6 +132,7 @@ Add all VLANS using [VLAN table in example network][Xv].
     * Voice Network: `None`
 
 [so]: README.md
+[Xv]: README.md#vlan-table
 [8l]: https://www.ui.com/download/?q=controller
 [0F]: https://help.ubnt.com/hc/en-us/articles/204909374-UniFi-Accounts-and-Passwords-for-Controller-Cloud-Key-and-Other-Devices
 [pD]: https://help.ubnt.com/hc/en-us/articles/204909754-UniFi-Device-Adoption-Methods-for-Remote-UniFi-Controllers#7
