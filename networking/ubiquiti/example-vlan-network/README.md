@@ -151,9 +151,9 @@ is caused by the controller getting wedged.
 * _Restart_ the controller.
 
 ### Consistenly Failing Repeated Adoptions
-Once hardware has the _Management VLAN_ set in device configuration `Properties
-> config > services > vlan > management vlan`, the Unifi controller must be
-listening a _management vlan_ for the controller to be adopted.
+Once hardware has the _Management VLAN_ set in device configuration
+`Properties > config > services > vlan > management vlan`, the Unifi controller
+must be listening a _management vlan_ for the controller to be adopted.
 
 * Ensure controller is on port that allows same VLAN traffic as the _management
   vlan_ set in the hardware.
@@ -167,7 +167,7 @@ Port names cannot be the same name as the profile name being used.
 
 ### CPU Load is Extremely High on Unifi Switch
 Unifi Switches run a realtime OS, and you will see consistent CPU utilization
-[regardless of swtich load][Wx]. This is an artifact of how load is measured.
+[regardless of switch load][Wx]. This is an artifact of how load is measured.
 Nothing is wrong.
 
 ### DHCP Not Working
@@ -206,7 +206,7 @@ profile_.
   * Profle: Expected Switch Port Profile
 
 [p1]: example-network-diagram.md
-[dv]: vlans-101.md
+[dv]: vlan-101.md
 [1a]: edgerouter-vlan.md
 [8x]: unifi-controller-vlan.md
 [i9]: core-swtich.md
