@@ -325,6 +325,18 @@ some example text file listing
 some example text file listing
 ```
 
+````
+`sudo crontab -e`
+```bash
+@reboot sleep 15; /sbin/sysctl -p
+```
+````
+
+`sudo crontab -e`
+```bash
+@reboot sleep 15; /sbin/sysctl -p
+```
+
 #### Modifying File Lines
 * If the purpose of the listing is to show lines to be modified, a single line
   may be shown to reflect those changes.
@@ -354,10 +366,11 @@ additional_change=YYY
 * Formatting per [all blocks style][sT].
 * Context helper in header block for command shell type.
 * Inline blocks are allowed.
-* Never include user/permission elevation in command context (e.g. `sudo` etc).
-  This adds to the length of the instruction without adding value. If the user
-  should be operating in a different user context, call it out explicitly
-  above or below the block.
+* Never include user/permission elevation in command context (e.g. `sudo`),
+  unless is functionally required (e.g. in a bash script). This adds to the
+  length of the instruction without adding value. If the user should be
+  operating in a different user context, call it out explicitly above or below
+  the block.
 
 ````
 ```bash
