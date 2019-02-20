@@ -3,7 +3,10 @@ Docker Setup
 Setting up docker on Ubuntu. See [getting started][eg].
 
 1. [Installing](#installing)
+1. [Create A Standalone Container](#create-a-standalone-container)
+1. [Compose with Containers](#compose-with-containers)
 1. [Common Management Tasks](#common-management-tasks)
+1. [Interactive Docker Shell that Respects Terminal Size](#interactive-docker-shell-that-respects-terminal-size)
 1. [Bridged Adapters](#bridged-adapters)
 
 Installing
@@ -25,21 +28,48 @@ restrictions in mounted volumes for containers.
 adduser --system --home /etc/docker --shell /bin/false docker
 ```
 
-Common Management Tasks
------------------------
-See [cheetsheet][o3].
-
 Do **NOT** expose `docker.sock` to [containers, even in read-only][9w].
 
-### Docker [Compose for Multiple Containers][xi]
+Create A Standalone Container
+-----------------------------
+Enables the use of `host` network without additional networking options (e.g.
+exposed docker ports appear as if they are on the host). Needs to be manully run
+every time to create a container.
+
+Great for one-time usage; however _compose is preferred in almost all cases_.
+
+```bash
+docker run -t -d \
+  --name <conatiner name> \
+  --network host \
+  --restart unless-stopped \
+  -p 3000:3000 \
+  -p 4000:4000/udp \
+  -v /etc/localtime:/etc/localtime:ro \
+  <repo>/<container>:<tag>
+```
+* Runs a container detached, using host network exposing port 3000 and
+  port 4000 UDP.
+* Always restarts the container, unless explicitly stopped.
+* Map /etc/localtime to set the containers timezone properly.
+* If the container is not found, it will automatically be pulled.
+* Using `create` instead of `run -d` will create the container but not start it
+  in the background automatically.
+* Use should use [`-t -d`][rm] is needed to keep the container in interactive
+  mode otherwise as soon as the container is idle it will sleep, which will
+  stop background running services.
+
+[Compose with Containers][xi]
+-----------------------------
 Enables the management of multiple docker containers within a single YAML file
-to manage them as a 'service'. Additionally eases modification and updates of
-those containers. This is _preferred_ to running standalone containers.
+to manage them as a service unit. Additionally eases modification and updates of
+those containers. This is _preferred_ to running standalone containers. Commands
+mirror standard _docker_ commands but are called with _docker-compose_.
 
 Each YAML file represents a service and is generally stored in separate
 directory representing the _service name_.
 
-docker-compose.yml
+_service-name_/docker-compose.yml
 ```yaml
 version: "3"
 
@@ -77,53 +107,33 @@ services:
 docker-compose up -d
 ```
 * `--remove-orphans` will delete containers removed from the config.
+* Use in conjunction with `docker-compose pull` to automatically update images,
+  then restart containers with the new images.
 * Any changes to containers will be re-configured automatically, including new
   images.
-* services are auto labeled as `service_container_instance`. Service being the
-  directory name, container being the container name and instnace being the
+* services are auto labeled as _service_container_instance_. Service being the
+  directory name, container being the container name and instance being the
   specific numbered instance (typically 1).
 * **Ensure you are the right user**; standard sudo will launch jobs with your
   username. _Switch Users_ or `sudo su - root -c "docker-compose up -d"`.
 
-### Pull new images for Services
-This will automatically pull any new images for containers.
+Common Management Tasks
+-----------------------
+See [cheetsheet][o3]. Compose commands mirror standard _docker_ commands but are
+called with _docker-compose_. Individual _compose containers_ may be managed
+with the _docker_ command as well using the _service_container_instance_
+moniker.
+
+### Pull new images for composed Services
+This will automatically pull any new images for composed containers.
 ```bash
 docker-compose pull
 ```
 
 ### List Running Services
 ```bash
-docker-compose ps
+docker ps
 ```
-
-Create a standalone container
------------------------------
-Enables the use of `host` network without additional networking options (e.g.
-exposed docker ports appear as if they are on the host). Needs to be manully run
-every time to create a container.
-
-Great for one-time usage; however _compose is preferred in almost all cases_.
-
-```bash
-docker run -t -d \
-  --name <conatiner name> \
-  --network host \
-  --restart unless-stopped \
-  -p 3000:3000 \
-  -p 4000:4000/udp \
-  -v /etc/localtime:/etc/localtime:ro \
-  <repo>/<container>:<tag>
-```
-* Runs a container detached, using host network exposing port 3000 and
-  port 4000 UDP.
-* Always restarts the container, unless explicitly stopped.
-* Map /etc/localtime to set the containers timezone properly.
-* If the container is not found, it will automatically be pulled.
-* Using `create` instead of `run -d` will create the container but not start it
-  in the background automatically.
-* Use should use [`-t -d`][rm] is needed to keep the container in interactive
-  mode otherwise as soon as the container is idle it will sleep, which will
-  stop background running services.
 
 ### Pull a docker container to use:
 ```bash
@@ -173,17 +183,6 @@ docker inspect <name>
 docker logs -f <name>
 ```
 
-### Interactive docker shell that [respects terminal size][ul]
-
-.bash_profile
-```bash
-docker-shell() {
-  sudo docker exec -it -u $2 $1 /bin/bash -c "stty cols $COLUMNS rows $LINES && /bin/bash";
-}
-export -f docker-shell
-```
-* use: `docker-shell [instance] [user]`.
-
 ### Update all docker images already downloaded
 ```bash
 docker images | grep -v REPOSITORY | awk '{print $1}' | xargs -L1 docker pull
@@ -199,6 +198,20 @@ docker stop $(docker ps -aq)
 docker stats <container>
 ```
 * Remove _container_ to display all running services.
+
+Interactive Docker Shell that [Respects Terminal Size][ul]
+----------------------------------------------------------
+Dynamically re-size docker container shell terminal to whatever terminal you are
+using.
+
+.bash_profile
+```bash
+docker-shell() {
+  sudo docker exec -it -u $2 $1 /bin/bash -c "stty cols $COLUMNS rows $LINES && /bin/bash";
+}
+export -f docker-shell
+```
+* use: `docker-shell [instance] [user]`.
 
 Bridged Adapters
 ----------------
