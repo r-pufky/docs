@@ -292,8 +292,10 @@ blocks have:
 * Top-level indenting is stripped, so that characters start at X postiion 0 in
   the markdown document, maximizing space avaliable for content.
 * One trailing vertical space at the end.
+* Header text requires trailing colon(`:`) if it is a statement.
 
 ````
+Some statement explaining context:
 ```text
 some content
 
@@ -302,6 +304,7 @@ multi-line
 ```
 ````
 
+Some statement explaining context:
 ```text
 some content
 
