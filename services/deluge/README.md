@@ -15,12 +15,13 @@ All media clients should run under the same user to run correctly.
 
 Docker Ports Exposed
 --------------------
+Docker Compose
 
-| Port  | Protocol | Purpose                                    |
-|-------|----------|--------------------------------------------|
-| 49160 | UDP      | UDP Peer Port (standalone & reverse-proxy) |
-| 49160 | TCP      | Peer Port (standalone & reverse-proxy)     |
-| 8112  | TCP      | webface                                    |
+| Port  | Protocol | Exposed/Public | Purpose                                    |
+|-------|----------|----------------|--------------------------------------------|
+| 49160 | UDP      | Public         | UDP Peer Port (standalone & reverse-proxy) |
+| 49160 | TCP      | Public         | Peer Port (standalone & reverse-proxy)     |
+| 8112  | TCP      | Exposed        | Webface                                    |
 
 Important File Locations
 ------------------------
@@ -40,28 +41,6 @@ configuration directory structure, afterwards you can re-create with a mapped
 directories.
 
 * The UID/GID should be set to a user/group that have access to your media.
-
-### Independent Container
-```bash
-docker run -t -d \
-  --name=deluge \
-  --net=host \
-  --restart=unless-stopped \
-  -p 8112:8112 \
-  -p 49160:49160 \
-  -p 49160:49160/udp \
-  -e PGID=1001 \
-  -e PUID=1001 \
-  -e TZ=America/Los_Angeles \
-  -v /etc/localtime:/etc/localtime:ro \
-  -v /data/services/deluge:/config \
-  -v /data/downloads:/downloads \
-  -v /data/downloads/watched:/watch \
-  linuxserver/deluge:latest
-```
-* Use `-t -d` is needed to keep the container in interactive mode otherwise as
-  soon as the container is idle it will sleep, which will stop background
-  running services.
 
 ### Docker Compose
 ```yaml

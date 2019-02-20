@@ -45,27 +45,6 @@ mapped `/etc/letsencrypt` directory. Renewal requests automatically happen every
   auth challenge change to the domain. Set to `150` as Google Cloud DNS
   guarantees updates in 120 seconds.
 
-### Independant Container
-```bash
-docker run -t -d \
-  --name=letsencrypt \
-  --restart=unless-stopped \
-  -e LETSENCRYPT_STAGING=True \
-  -e LEXICON_SLEEP_TIME=150 \
-  -e LETSENCRYPT_USER_EMAIL=user@account.com \
-  -e CERTS_DIRS_MODE=0750 \
-  -e CERTS_FILES_MODE=0640 \
-  -e CERTS_USER_OWNER=root \
-  -e CERTS_GROUP_OWNER=root \
-  -e TZ=America/Los_Angeles \
-  -v /data/services/letsencrypt:/etc/letsencrypt \
-  -v /etc/localtime:/etc/localtime:ro
-  adferrand/letsencrypt-dns:latest
-```
-* Use `-t -d` is needed to keep the container in interactive mode otherwise as
-  soon as the container is idle it will sleep, which will stop background
-  running services.
-
 ### Docker Compose
 ```yaml
 letsencrypt:

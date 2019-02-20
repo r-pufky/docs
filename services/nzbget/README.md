@@ -15,11 +15,12 @@ All media clients should run under the same user to run correctly.
 
 Docker Ports Exposed
 --------------------
+Docker Compose
 
-| Port | Protocol | Purpose                           |
-|------|----------|-----------------------------------|
-| 6789 | TCP      | Default nzbget webservice (http)  |
-| 6791 | TCP      | Default nzbget webservice (https) |
+| Port | Protocol | Exposed/Public | Purpose                           |
+|------|----------|----------------|-----------------------------------|
+| 6789 | TCP      | Exposed        | Default nzbget webservice (http)  |
+| 6791 | TCP      | Exposed        | Default nzbget webservice (https) |
  * If https is enabled, http is disabled
 
 Important File Locations
@@ -40,24 +41,6 @@ adjusting for paths.
 * Map your media directly to where it was before on the docker container to
   prevent needing to modify any libraries. This should be read-only.
 * See [nzbget.conf](nzbget.conf) for example configuration (adjust paths).
-
-### Independent Container
-```bash
-docker run -t -d \
-  --name nzbget \
-  --network host \
-  --restart unless-stopped \
-  -e PUID=1001 \
-  -e PGID=1001 \
-  -e TZ=America/Los_Angeles \
-  -e /etc/localtime:/etc/localtime:ro \
-  -v /data/services/nzbget:/config \
-  -v /data/downloads:/downloads \
-  linuxserver/nzbget:latest
-```
-* Use `-t -d` is needed to keep the container in interactive mode otherwise as
-  soon as the container is idle it will sleep, which will stop background
-  running services.
 
 ### Docker Compose
 ```yaml

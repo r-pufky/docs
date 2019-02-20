@@ -14,10 +14,10 @@ High quality VOIP server with pub cert auth and ACLs.
 Ports Exposed
 -------------
 
-| Port  | Protocol | Purpose      |
-|-------|----------|--------------|
-| 64738 | TCP      | Server/Voice |
-| 64738 | UDP      | Voice        |
+| Port  | Protocol | Exposed/Public | Purpose      |
+|-------|----------|----------------|--------------|
+| 64738 | TCP      | Public         | Server/Voice |
+| 64738 | UDP      | Public         | Voice        |
 
 Important File Locations
 ------------------------

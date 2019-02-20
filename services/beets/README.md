@@ -13,10 +13,11 @@ Music organizer.
 
 [Docker Ports Exposed][2]
 -------------------------
+Docker Compose
 
-| Port | Protocol | Purpose                       |
-|------|----------|-------------------------------|
-| 8337 | TCP      | Web GUI frontend for playback |
+| Port | Protocol | Exposed/Public | Purpose                       |
+|------|----------|----------------|-------------------------------|
+| 8337 | TCP      | Exposed        | Web GUI frontend for playback |
 
 Important File Locations
 ------------------------
@@ -33,25 +34,6 @@ Docker Creation
 * Map your media directly to where it was before on the docker container to
   prevent needing to modify any libraries.
 * See [config.yaml](config.yaml) for example beet configuration.
-
-### Independent Container
-```bash
-docker run -t -d \
-  --name beets \
-  --restart unless-stopped \
-  -p 8337:8337 \
-  -e PGID=1001 \
-  -e PUID=1001 \
-  -e TZ=America/Los_Angeles \
-  -v /data/downloads/complete/music:/data/downloads/complete/music \
-  -v /data/media/music:/data/media/music \
-  -v /data/services/beets:/config \
-  -v /etc/localtime:/etc/localtime:ro \
-  linuxserver/beets:latest
-```
-* Use [`-t -d`][3] is needed to keep the container in interactive mode otherwise
-  as soon as the container is idle it will sleep, which will stop background
-  running services.
 
 ### Docker Compose
 ```yaml

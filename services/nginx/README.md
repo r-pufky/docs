@@ -19,11 +19,12 @@ for all connections to docker containers using Let's Encrypt.
 
 Docker Ports Exposed
 --------------------
+Docker Compose
 
-| Docker Port | Protocol |Purpose                                |
-|-------------|----------|---------------------------------------|
-| 80          | TCP      | http connection, redirected to https. |
-| 443         | TCP      | https connections.                    |
+| Docker Port | Protocol | Exposed/Public | Purpose                               |
+|-------------|----------|----------------|---------------------------------------|
+| 80          | TCP      | Public         | http connection, redirected to https. |
+| 443         | TCP      | Public         | https connections.                    |
 
 
 Important File Locations
@@ -37,24 +38,6 @@ Relative to docker container
 
 Docker Creation
 ---------------
-### Independant Container
-```bash
-docker run -t -d \
-  --name=nginx-proxy \
-  --net=host \
-  --restart=unless-stopped \
-  -p 80:80 \
-  -p 443:443 \
-  -e /etc/localtime:/etc/localtime:ro \
-  -v /data/services/nginx/conf.d:/etc/nginx/conf.d:ro \
-  -v /data/services/letsencrypt:/etc/nginx/ssl:ro \
-  -v /etc/localtime:/etc/localtime:ro
-  nginx
-```
-* Use `-t -d` is needed to keep the container in interactive mode otherwise as
-  soon as the container is idle it will sleep, which will stop background
-  running services.
-
 ### Docker Compose
 ```yaml
 nginx-proxy:

@@ -12,9 +12,9 @@ Reverse SSH tunnel for managing systems via autosshd.
 Ports Exposed
 -------------
 
-| Port  | Protocol | Purpose                         |
-|-------|----------|---------------------------------|
-| 55555 | TCP      | Accepts reverse SSH connections |
+| Port  | Protocol | Exposed/Public | Purpose                         |
+|-------|----------|----------------|---------------------------------|
+| 55555 | TCP      | Public         | Accepts reverse SSH connections |
 
 Important File Locations
 ------------------------

@@ -31,10 +31,11 @@ offline).
 
 Docker Ports Exposed
 --------------------
+Docker Compose
 
-| Port | Protocol | Purpose      |
-|------|----------|--------------|
-| 53   | TCP/UDP  | DNS Service. |
+| Port | Protocol | Exposed/Public | Purpose      |
+|------|----------|----------------|--------------|
+| 53   | TCP/UDP  | Public         | DNS Service. |
 
 Important File Locations
 ------------------------
@@ -54,29 +55,6 @@ directories.
 * `NET_ADMIN` is required with FTLDNS now.
 * Docker container DNS is setup to resolve using pihole first, then `1.1.1.1`.
 * Pihole upstream DNS servers set to `1.1.1.1`,`8.8.8.8`.
-
-### Independent Container
-```bash
-docker run -t -d \
-  --name=pihole \
-  --restart=unless-stopped \
-  --cap_add=NET_ADMIN \
-  --dns=127.0.0.1,1.1.1.1 \
-  -p 53:53 \
-  -p 53:53/udp \
-  -e ServerIP=<HOST IP> \
-  -e VIRTUAL_HOST=<HOST DNS NAME> \
-  -e DNS1=1.1.1.1 \
-  -e DNS2=8.8.8.8 \
-  -e TZ=America/Los_Angeles \
-  -v /data/services/pihole:/etc/pihole \
-  -v /data/services/pihole/dnsmasq.d:/etc/dnsmasq.d \
-  -v /etc/localtime:/etc/localtime:ro \
-  pihole/pihole:latest
-```
-* Use `-t -d` is needed to keep the container in interactive mode otherwise as
-  soon as the container is idle it will sleep, which will stop background
-  running services.
 
 ### Docker Compose
 ```yaml

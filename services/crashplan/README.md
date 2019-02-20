@@ -16,11 +16,12 @@ crashplan.
 
 Docker Ports Exposed
 --------------------
+Docker Compose
 
-| Port | Protocol | Purpose           |
-|------|----------|-------------------|
-| 5800 | TCP      | GUI web interface |
-| 5900 | TCP      | GUI via VNC       |
+| Port | Protocol | Exposed/Public | Purpose           |
+|------|----------|----------------|-------------------|
+| 5800 | TCP      | Exposed        | GUI web interface |
+| 5900 | TCP      | Exposed        | GUI via VNC       |
 
 Important File Locations
 ------------------------
@@ -43,29 +44,6 @@ current certificates into the configuration directory.
 * `/` is mapped to `/root-mount` to enable backup of any files on `/` for the
   host that also exist in the docker image.
 * Map your backup drives as *read only*.
-
-
-### Independent Container
-```bash
-docker run -t -d \
-  --name=crashplan \
-  --net=host \
-  --restart=unless-stopped \
-  -p 5800:5800 \
-  -e USER_ID=0 \
-  -e GROUP_ID=0 \
-  -e KEEP_APP_RUNNING=1 \
-  -e SECURE_CONNECTION=1 \
-  -e TZ=America/Los_Angeles \
-  -v /etc/localtime:/etc/localtime:ro \
-  -v /data/services/crashplan:/config:rw \
-  -v /data:/storage:ro \
-  -v /:/root-mount:ro \
-  jlesage/crashplan-pro:latest
-```
-* Use `-t -d` is needed to keep the container in interactive mode otherwise as
-  soon as the container is idle it will sleep, which will stop background
-  running services.
 
 ### Docker Compose
 ```yaml

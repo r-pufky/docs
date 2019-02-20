@@ -15,10 +15,11 @@ private repository use. Can be exposed and used publicly as well.
 
 Docker Ports Exposed
 --------------------
+Docker Compose
 
-| Docker Port | Protocol |Purpose                     |
-|-------------|----------|----------------------------|
-| 3000        | TCP      | http/https connections.    |
+| Docker Port | Protocol | Exposed/Public | Purpose                     |
+|-------------|----------|----------------|-----------------------------|
+| 3000        | TCP      | Exposed        | http/https connections.     |
 
 Important File Locations
 ------------------------

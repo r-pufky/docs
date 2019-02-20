@@ -2,6 +2,8 @@ Docker Setup
 ============
 Setting up docker on Ubuntu. See [getting started][eg].
 
+Do **NOT** expose `docker.sock` to [containers, even in read-only][9w].
+
 1. [Installing](#installing)
 1. [Create A Standalone Container](#create-a-standalone-container)
 1. [Compose with Containers](#compose-with-containers)
@@ -27,8 +29,6 @@ restrictions in mounted volumes for containers.
 ```bash
 adduser --system --home /etc/docker --shell /bin/false docker
 ```
-
-Do **NOT** expose `docker.sock` to [containers, even in read-only][9w].
 
 Create A Standalone Container
 -----------------------------
@@ -65,6 +65,11 @@ Enables the management of multiple docker containers within a single YAML file
 to manage them as a service unit. Additionally eases modification and updates of
 those containers. This is _preferred_ to running standalone containers. Commands
 mirror standard _docker_ commands but are called with _docker-compose_.
+
+_Expose_ ports are visible internally on the _docker network_ for the container.
+_Ports_ are ports that are publicly visible from _outside_ the _docker network_.
+Generally with compose only reverse-proxy ports are set as _Ports_ and the
+containers _Expose_ port internally for the proxy.
 
 Each YAML file represents a service and is generally stored in separate
 directory representing the _service name_.

@@ -12,10 +12,11 @@ Heimdall
 
 Docker Ports Exposed
 --------------------
+Docker Compose
 
-| Port | Protocol | Purpose             |
-|------|----------|---------------------|
-| 443  | TCP      | Heimdall webservice |
+| Port | Protocol | Exposed/Public | Purpose             |
+|------|----------|----------------|---------------------|
+| 443  | TCP      | Exposed        | Heimdall webservice |
 
 Important File Locations
 ------------------------
@@ -34,23 +35,6 @@ adjusting for paths.
 * Your downloader will report the download path **mapped in the downloader
   docker/service**. You need to map this exact path in sonarr for it to be able
   to post-process downloads properly.
-
-### Independent Container
-```bash
-docker run -t -d \
-  --name heimdall \
-  --restart unless-stopped \
-  -p 443:443 \
-  -e PUID=1001 \
-  -e PGID=1001 \
-  -e TZ=America/Los_Angeles \
-  -e /etc/localtime:/etc/localtime:ro \
-  -v /data/services/heimdall:/config \
-  linuxserver/heimdall:latest
-```
-* Use `-t -d` is needed to keep the container in interactive mode otherwise as
-  soon as the container is idle it will sleep, which will stop background
-  running services.
 
 ### Docker Compose
 ```yaml

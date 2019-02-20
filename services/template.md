@@ -16,12 +16,13 @@ needed (e.g. docker setups, xen setups, etc).
 
 Ports Exposed
 -------------
+[Docker Standalone|Docker Compose|Service]
 
-| Port        | Protocol |Purpose                      |
-|-------------|----------|-----------------------------|
-| 49152-65535 | TCP      | Random Peer Port (Disabled) |
-| 49160       | TCP      | Peer Port                   |
-| 9092        | TCP      | webface                     |
+| Port        | Protocol | Exposed/Public | Purpose                     |
+|-------------|----------|----------------|-----------------------------|
+| 49152-65535 | TCP      | Public         | Random Peer Port (Disabled) |
+| 49160       | TCP      | Public         | Peer Port                   |
+| 9092        | TCP      | Public         | Webface                     |
 
 Important File Locations
 ------------------------

@@ -11,14 +11,16 @@ Manage Ubiquity Unifi APs.
 1. [Configuration](#configuration)
 
 Docker [Ports Exposed][2]
---------------------
-| Port | Protocol | Purpose                                                    |
-|------|----------|------------------------------------------------------------|
-| 3478 | UDP      | Port used for STUN.                                        |
-| 8080 | TCP      | Port used for device and controller communication.         |
-| 8443 | TCP      | Port used for controller GUI/API as seen in a web browser. |
-| 8880 | TCP      | Port used for HTTP portal redirection.                     |
-| 8843 | TCP      | Port used for HTTPS portal redirection.                    |
+-------------------------
+Docker Compose
+
+| Port | Protocol | Exposed/Public | Purpose                                                    |
+|------|----------|----------------|------------------------------------------------------------|
+| 3478 | UDP      | Public         | Port used for STUN.                                        |
+| 8080 | TCP      | Public         | Port used for device and controller communication.         |
+| 8443 | TCP      | Public         | Port used for controller GUI/API as seen in a web browser. |
+| 8880 | TCP      | Public         | Port used for HTTP portal redirection.                     |
+| 8843 | TCP      | Public         | Port used for HTTPS portal redirection.                    |
 
 These ports are disabled in this configuration.
 | Port      | Protocol | Purpose                                                                            |
@@ -44,27 +46,6 @@ adjusting for paths.
 
 * `unstable` is the current release branch. `latest` is 5.6.x branch.
 
-### Independent Container
-```bash
-docker run -t -d \
-  --name unifi \
-  --restart unless-stopped \
-  -p 3478:3478/udp \
-  -p 8080:8080 \
-  -p 8443:8443 \
-  -p 8880:8880 \
-  -p 8843:8843 \
-  -e PUID=1001 \
-  -e PGID=1001 \
-  -e TZ=America/Los_Angeles \
-  -v /etc/localtime:/etc/localtime:ro \
-  -v /data/services/unifi:/config \
-  linuxserver/unifi:unstable
-```
-* Use `-t -d` is needed to keep the container in interactive mode otherwise
-  as soon as the container is idle it will sleep, which will stop background
-  running services.
-
 ### Docker Compose
 ```yaml
 unifi:
@@ -89,25 +70,6 @@ Reverse Proxy Setup
 -------------------
 Allows you to isolate your containers as well as wrap connections in SSL. See
 [nginx][ref2] for more details. Recommended.
-
-docker-compose.yml
-```yaml
-sonarr:
-  image: linuxserver/sonarr:latest
-  restart: unless-stopped
-  depends_on:
-    - nzbget
-  environment:
-    - PGID=1001
-    - PUID=1001
-    - TZ=America/Los_Angeles
-  volumes:
-    - /data/downloads:/data/downloads
-    - /data/media/tv:/data/media/tv
-    - /data/services/sonarr:/config
-    - /etc/localtime:/etc/localtime:ro
-```
-* Proxy will forward traffic to the container, so no ports need to be exposed.
 
 ### Using Subdomains
 nginx/conf.d/reverse-proxy.conf

@@ -15,10 +15,11 @@ All media clients should run under the same user to run correctly.
 
 Docker Ports Exposed
 --------------------
+Docker Compose
 
-| Port | Protocol | Purpose           |
-|------|----------|-------------------|
-| 7878 | TCP      | Radarr webservice |
+| Port | Protocol | Exposed/Public | Purpose           |
+|------|----------|----------------|-------------------|
+| 7878 | TCP      | Exposed        | Radarr webservice |
 
 Important File Locations
 ------------------------
@@ -39,25 +40,6 @@ adjusting for paths.
   docker/service**. You need to map this exact path in radarr for it to be able
   to post-process downloads properly.
 * See [radarr config example](radarr.config.md) for example configuration.
-
-### Independent Container
-```bash
-docker run -t -d \
-  --name radarr \
-  --network host \
-  --restart unless-stopped \
-  -e PUID=1001 \
-  -e PGID=1001 \
-  -e TZ=America/Los_Angeles \
-  -e /etc/localtime:/etc/localtime:ro \
-  -v /data/services/radarr:/config \
-  -v /data/media/movies:/movies \
-  -v /data/downloads:/downloads \
-  linuxserver/radarr:latest
-```
-* Use `-t -d` is needed to keep the container in interactive mode otherwise as
-  soon as the container is idle it will sleep, which will stop background
-  running services.
 
 ### Docker Compose
 ```yaml

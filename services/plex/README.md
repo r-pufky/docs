@@ -15,19 +15,20 @@ All media clients should run under the same user to run correctly.
 
 [Docker Ports Exposed][2]
 -------------------------
+Docker Compose
 
-| Port  | Protocol | Purpose                                                 |
-|-------|----------|---------------------------------------------------------|
-| 32400 | TCP      | Plex Media Server Access                                |
-| 1900  | UDP      | (Optional) Plex DLNA Server                             |
-| 3005  | TCP      | (Optional) Control Plex Home Theater via Plex Companion |
-| 5353  | UDP      | (Optional) Bonjour/Avahi discovery                      |
-| 8324  | TCP      | (Optional) Control Plex for Roku via Plex Companion     |
-| 32410 | UDP      | (Optional) GDM network discovery                        |
-| 32412 | UDP      | (Optional)  GDM network discovery                       |
-| 32413 | UDP      | (Optional) GDM network discovery                        |
-| 32414 | UDP      | (Optional) GDM network discovery                        |
-| 32469 | TCP      | (Optional) Plex DLNA Server                             |
+| Port  | Protocol | Exposed/Public | Purpose                                                 |
+|-------|----------|----------------|---------------------------------------------------------|
+| 32400 | TCP      | Public         | Plex Media Server Access                                |
+| 1900  | UDP      | Public         | (Optional) Plex DLNA Server                             |
+| 3005  | TCP      | Public         | (Optional) Control Plex Home Theater via Plex Companion |
+| 5353  | UDP      | Public         | (Optional) Bonjour/Avahi discovery                      |
+| 8324  | TCP      | Public         | (Optional) Control Plex for Roku via Plex Companion     |
+| 32410 | UDP      | Public         | (Optional) GDM network discovery                        |
+| 32412 | UDP      | Public         | (Optional)  GDM network discovery                       |
+| 32413 | UDP      | Public         | (Optional) GDM network discovery                        |
+| 32414 | UDP      | Public         | (Optional) GDM network discovery                        |
+| 32469 | TCP      | Public         | (Optional) Plex DLNA Server                             |
  * Using host networking will expose all of these ports. It may be better to
    specify just `32400`.
 
@@ -58,26 +59,6 @@ You can copy your existing library from `/var/lib/plexmediaserver/*` to docker
 * PLEX_CLAIM token is used to identify the server for your account. This is
   only used on initial startup without a pre-existing config. Generate a token
   here: https://www.plex.tv/claim
-
-```bash
-docker run -t -d \
-  --name plex \
-  --network host \
-  --restart unless-stopped \
-  -e PLEX_UID=1001 \
-  -e PLEX_GID=1001 \
-  -e PLEX_CLAIM="<claimToken>" \
-  -e TZ=America/Los_Angeles \
-  -e /etc/localtime:/etc/localtime:ro \
-  -v /data/services/plexmediaserver:/config \
-  -v /data/media:/data/media:ro \
-  -v /tmp:/transcode \
-  -v /tmp/Transcode/tmp:/tmp \
-  plexinc/pms-docker:plexpass
-```
-* Use `-t -d` is needed to keep the container in interactive mode otherwise as
-  soon as the container is idle it will sleep, which will stop background
-  running services.
 
 ### Docker Compose
 ```yaml

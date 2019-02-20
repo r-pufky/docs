@@ -10,9 +10,9 @@ PXE network boot server setup.
 [Ports Exposed][1]
 ------------------
 
-| Port | Protocol | Purpose                           |
-|------|----------|-----------------------------------|
-| 69   | UDP      | Main service port for TFTP boot   |
+| Port | Protocol | Exposed/Public | Purpose                         |
+|------|----------|----------------|---------------------------------|
+| 69   | UDP      | Public         | Main service port for TFTP boot |
 
 Important File Locations
 ------------------------

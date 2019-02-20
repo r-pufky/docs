@@ -12,10 +12,11 @@ Media request management.
 
 Docker Ports Exposed
 --------------------
+Docker Compose
 
-| Port | Protocol | Purpose      |
-|------|----------|--------------|
-| 3579 | TCP      | OMBI Webface |
+| Port | Protocol | Exposed/Public | Purpose      |
+|------|----------|----------------|--------------|
+| 3579 | TCP      | Exposed        | OMBI Webface |
 
 Important File Locations
 ------------------------
@@ -30,23 +31,7 @@ Docker Creation
 You can copy your existing configuration to docker `/config` directory
 adjusting for paths.
 
-* The UID/GID should be set to a user/group that restricted.
-
-### Independent Container
-```bash
-docker run -t -d \
-  --name ombi \
-  --restart unless-stopped \
-  -e PUID=1001 \
-  -e PGID=1001 \
-  -e TZ=America/Los_Angeles \
-  -v /etc/localtime:/etc/localtime:ro \
-  -v /data/services/sonarr:/config \
-  linuxserver/ombi:latest
-```
-* Use `-t -d` is needed to keep the container in interactive mode otherwise as
-  soon as the container is idle it will sleep, which will stop background
-  running services.
+* The UID/GID should be set to a user/group that is restricted.
 
 ### Docker Compose
 ```yaml
