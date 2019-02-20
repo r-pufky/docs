@@ -12,7 +12,7 @@ Basic KVM server setup on ubuntu (18.04).
 1. [Moving KVM Images](#moving-kvm-images)
 1. [Moving KVM Storage Pool](#moving-kvm-storage-pool)
 1. [Mount RAW Disk Image](#mount-raw-disk-image)
-1. [References](#references)
+1. [Threadripper BSOD Windows 10 1803+](#threadripper-bsod-windows-10-1803-)
 
 Important File Locations
 ------------------------
@@ -437,6 +437,36 @@ Mount the Filesystem:
 mount /dev/loop0 /mnt/image
 ```
 
+Threadripper BSOD Windows 10 1803+
+----------------------------------
+Windows 10 versions 1803+ will [BSOD on installation][to] due to a unavaliable
+[MSR][t2] [registers][tf] in KVM.
+
+A [patch has been created][tf] and will be avaliable in the _4.20_ kernel
+release.
+
+### Temporary Workaround
+Emulating a _Opteron Generation 5_ processer will prevent bluescreens from
+happening. This will be an emulated CPU instead of passthrough.
+
+Create a VM as normal and shutdown. Edit the VM definition to force emulate an
+Opteron processor, and reload the definition.
+
+/etc/libvirt/qemu/threadripper-vm.xml
+```xml
+<cpu mode='custom' match='exact' check='partial'>
+    <model fallback='allow'>Opteron_G5</model>
+    <topology sockets='1' cores='8' threads='1'/>
+    <feature policy='disable' name='xop'/>
+    <feature policy='disable' name='fma4'/>
+    <feature policy='disable' name='tbm'/>
+</cpu>
+```
+
+```bash
+virsh define /etc/libvirt/qemu/threadripper-vm.xml
+```
+
 [ld]: ../../../networking/netplan/README.md
 [ek]: https://libvirt.org/formatnetwork.html
 [qv]: https://bugs.launchpad.net/ubuntu/+source/libvirt/+bug/1770345
@@ -446,6 +476,9 @@ mount /dev/loop0 /mnt/image
 [zb]: https://docs.fedoraproject.org/en-US/quick-docs/creating-windows-virtual-machines-using-virtio-drivers/index.html
 [zy]: https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso
 [ym]: http://whazenberg.blogspot.com/2012/12/mounting-raw-virtual-machine-disk-image.html
+[to]: https://bugzilla.redhat.com/show_bug.cgi?id=1593190
+[tf]: https://bugzilla.redhat.com/show_bug.cgi?id=1592276
+[t2]: https://www.kernel.org/doc/Documentation/virtual/kvm/msr.txt
 
 [ref3d]: http://virt-manager.org/download
 [refw0]: https://www.linuxtechi.com/install-configure-kvm-ubuntu-18-04-server/
