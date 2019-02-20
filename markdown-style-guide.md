@@ -26,8 +26,6 @@ Markdown File Structure
 * _README.md_ per directory level. This allows the directory to express context
   and github to render the file in the subdirectory.
 * Sub-documents are _lower-with-dashes.md_.
-* If document is from a template, link to the template version at the bottom of
-  the document (commit version in github). e.g. [template.md]
 * See [Github Flavored Markdown][j3] for markdown langauge definitions.
 
 ### Markdown callouts
@@ -61,6 +59,53 @@ Sections
 * Table of Contents (TOC) must list all top-level sections; optionally 1-2
   levels of sub-sections. If more levels are required, the document probably
   needs a re-write. Title sections optional.
+
+### Deprecated Documents
+Used to keep documents for reference even though it is not actively deployed.
+
+* Place a _deprecated_ line below the title header. Add a single vertical space
+  between the _deprecated_ line and original content.
+* Place a _deprecated_ line above the references. Place above the _template_
+  link if the document is a templated document. Vertical spaces on both sides of
+  the _deprecated_ line.
+* If a _template_ line is present, no vertical spaces between _deprecated_ and
+  _template_ lines.
+
+Deprecated Line
+* Deprecated in all caps, bold. No trailing period.
+* If alternative link, add colon (`:`) then link reference with a period.
+````
+Example Title
+=============
+**DEPRECATED**: See [Alternative Reference][XX].
+
+...
+
+**DEPRECATED**: See [Alternative Reference][XX].
+
+[XX]:
+````
+
+### Templated Documents
+Documents using some standard template such as a service.
+
+* _template_ link is inserted between _deprecated_ line and above references.
+  Add one verticial space above and below the _template_ link.
+* If a _deprevation_ line is present do not use vertical spaces between
+  _deprecated_ and _template_ lines.
+
+Template Line
+* link to the template version at the bottom of the document.
+* Separate the document using at sign (`@`) then the commit version.
+* Specify the github commit version in the tag as well as the link.
+````
+
+[template.md@323434b2][XX]
+
+...
+
+[XX]: raw.gihub.com/master/323434b2/template.md
+````
 
 Writing
 -------
