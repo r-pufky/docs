@@ -1,36 +1,32 @@
-Crashplan Pro
--------------
-Crashplan Pro (For Small Business) is now the only 'consumer' level option for
+[Crashplan][4h] Pro
+===================
+Crashplan Pro (For Small Business) is now the only consumer level option for
 crashplan.
 
-[Dedicated server setup / service notes](crashplan-dedicated.md)
-
-[Docker repository][1]
-
-1. [Docker Ports Exposed](#docker-ports-exposed)
+1. [Ports](#ports)
 1. [Important File Locations](#important-file-locations)
 1. [Docker Creation](#docker-creation)
-1. [Initial Setup](#initial-setup)
 1. [Reverse Proxy Setup](#reverse-proxy-setup)
+1. [Initial Setup](#initial-setup)
 1. [Taking over existing backups](#taking-over-existing-backups)
 
-Docker Ports Exposed
---------------------
-Docker Compose
+Ports
+-----
+Docker reverse-proxy.
 
-| Port | Protocol | Exposed/Public | Purpose           |
-|------|----------|----------------|-------------------|
-| 5800 | TCP      | Exposed        | GUI web interface |
-| 5900 | TCP      | Exposed        | GUI via VNC       |
+| Port | Protocol | Exposed/Public | Purpose            |
+|------|----------|----------------|--------------------|
+| 5800 | TCP      | Exposed        | GUI web interface. |
+| 5900 | TCP      | Exposed        | GUI via VNC.       |
 
 Important File Locations
 ------------------------
-Relative to docker container
+Relative to docker container.
 
-| File        | Purpose                         |
-|-------------|---------------------------------|
-| /config/var | Crashplan identity certs        |
-| /storage    | Default map for backup location |
+| File        | Purpose                          |
+|-------------|----------------------------------|
+| /config/var | Crashplan identity certs.        |
+| /storage    | Default map for backup location. |
 
 Docker Creation
 ---------------
@@ -38,75 +34,14 @@ If first-run, just launch the docker container to generate the correct
 configuration directory structure, afterwards you can stop and inject your
 current certificates into the configuration directory.
 
-* Crashplan should run as root to be able to read/backup all files
-* `/storage` is the default location; however, you can mount any directory as
-  long as it doesn't overwrite docker image directories. `/data` is free to use
-* `/` is mapped to `/root-mount` to enable backup of any files on `/` for the
+* Crashplan should run as root to be able to read/backup all files.
+* _/storage_ is the default location; however, you can mount any directory as
+  long as it doesn't overwrite docker image directories. _/data_ is free to use.
+* _/_ is mapped to _/root-mount_ to enable backup of any files on _/_ for the
   host that also exist in the docker image.
-* Map your backup drives as *read only*.
+* Map your backup drives as _read only_.
 
 ### Docker Compose
-```yaml
-  crashplan:
-    image: jlesage/crashplan-pro:latest
-    restart: unless-stopped
-    ports:
-      - "5800:5800"
-    environment:
-      - GROUP_ID=0
-      - KEEP_APP_RUNNING=1
-      - SECURE_CONNECTION=1
-      - TZ=America/Los_Angeles
-      - USER_ID=0
-    volumes:
-      - /:/root-mount:ro
-      - /data/services/crashplan:/config:rw
-      - /data:/data:ro
-      - /etc/localtime:/etc/localtime:ro
-```
-
-Initial Setup
--------------
-```bash
-docker stop crashplan
-```
-
-## Add existing certs
-If you have a current crashplan installation, you can copy your crashplan
-identity to `/config/var`.
-
-/config/var
-```
-.identity
-service.pem
-.ui_info
-```
-
-## Bump inotify limits
-Increase [inotify max watch limits][2] on host so crashplan can watch monitored
-files.
-
-/etc/sysctl.conf
-```bash
-fs.inotify.max_user_watches=1048576
-```
-
-Then reload `sysctl` or `reboot`.
-```bash
-sysctl -p /etc/sysctl.conf
-```
-
-Then restart crashplan
-```bash
-docker start crashplan
-```
-
-Reverse Proxy Setup
--------------------
-Allows you to isolate your containers as well as wrap connections in SSL. See
-[nginx][ref2] for more details. Recommended.
-
-docker-compose.yml
 ```yaml
 crashplan:
   image: jlesage/crashplan-pro:latest
@@ -125,8 +60,13 @@ crashplan:
 ```
 * Proxy will forward traffic to the container, so no ports need to be exposed.
 
+Reverse Proxy Setup
+-------------------
+Allows you to isolate your containers as well as wrap connections in SSL. See
+[nginx][refud] for more details. Recommended.
+
 ### Using Subdomains
-[nginx/conf.d/reverse-proxy.conf][4]
+[nginx/conf.d/reverse-proxy.conf][dk]
 ```nginx
 # Websockets: remap http_upgrade to 'upgrade' or 'close' based on
 # connection_upgrade being set.
@@ -137,7 +77,7 @@ map $http_upgrade $connection_upgrade {
 
 server {
   listen 443 ssl http2;
-  server_name crashplan.<DOMAIN> crashplan;
+  server_name crashplan.{DOMAIN} crashplan;
 
   location / {
     proxy_pass https://crashplan:5800/;
@@ -152,10 +92,10 @@ server {
   }
 }
 ```
-* [proxy-control.conf][ref1] contains default proxy settings. Reload nginx.
+* [proxy-control.conf][refek] contains default proxy settings. Reload nginx.
 
 ### Using Subpaths
-[nginx/conf.d/reverse-proxy.conf][4]
+[nginx/conf.d/reverse-proxy.conf][dk]
 ```nginx
 # Websockets: remap http_upgrade to 'upgrade' or 'close' based on
 # connection_upgrade being set.
@@ -184,23 +124,62 @@ server {
   running it in the container (`SECURE_CONNECTION=`).
 * If a _black screen_ occurs, remove image and pull a new one. Ensure multiple
   containers are **not** running.
-* [proxy-control.conf][ref1] contains default proxy settings. Reload nginx.
-* The docker container uses [websockets][5] for the built in GUI display.
+* [proxy-control.conf][refek] contains default proxy settings. Reload nginx.
+* The docker container uses [websockets][uv] for the built in GUI display.
+
+Initial Setup
+-------------
+```bash
+docker-compose stop crashplan
+```
+
+### Add existing certs
+If you have a current crashplan installation, you can copy your crashplan
+identity to _/config/var_.
+
+/config/var
+```
+.identity
+service.pem
+.ui_info
+```
+
+### Bump inotify limits
+Increase [inotify max watch limits][8d] on host so crashplan can watch monitored
+files.
+
+/etc/sysctl.conf
+```bash
+fs.inotify.max_user_watches=1048576
+```
+
+`reload` sysctl or `reboot`:
+```bash
+sysctl -p /etc/sysctl.conf
+```
+
+Restart crashplan:
+```bash
+docker-compose start crashplan
+```
 
 Taking Over Existing Backups
 ----------------------------
-Read [docker container documentation here][3].
+Read [docker container documentation here][3k].
 
 Backup tasks will need to migrated if the locations have changed due to running
-in a docker container (these are usually `/` based backups like `/etc`).
+in a docker container (these are usually _/_ based backups like _/etc_).
 
-If identity was imported then no adoption of a backup set is needed.
+If identity imported then no adoption of a backup set is needed.
 
-[1]: https://github.com/jlesage/docker-crashplan-pro
-[2]: https://support.code42.com/CrashPlan/4/Troubleshooting/Linux_real-time_file_watching_errors
-[3]: https://github.com/jlesage/docker-crashplan-pro#taking-over-existing-backup
-[4]: https://hub.docker.com/r/jlesage/crashplan-pro/#routing-based-on-url-path
-[5]: https://stackoverflow.com/questions/15193743/nginx-reverse-proxy-websockets
+[docker-service-template.md@248d10f][XX]
 
-[ref1]: ../nginx/proxy-control.conf
-[ref2]: ../nginx/README.md
+[4h]: https://github.com/jlesage/docker-crashplan-pro
+[8d]: https://support.code42.com/CrashPlan/4/Troubleshooting/Linux_real-time_file_watching_errors
+[3k]: https://github.com/jlesage/docker-crashplan-pro#taking-over-existing-backup
+[dk]: https://hub.docker.com/r/jlesage/crashplan-pro/#routing-based-on-url-path
+[uv]: https://stackoverflow.com/questions/15193743/nginx-reverse-proxy-websockets
+[XX]: ../docker-service-template.md@248d10f
+
+[refek]: ../nginx/proxy-control.conf
+[refud]: ../nginx/README.md

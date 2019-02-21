@@ -13,9 +13,9 @@ Music organizer.
 ----------
 Docker reverse-proxy.
 
-| Port | Protocol | Exposed/Public | Purpose                       |
-|------|----------|----------------|-------------------------------|
-| 8337 | TCP      | Exposed        | Web GUI frontend for playback |
+| Port | Protocol | Exposed/Public | Purpose                        |
+|------|----------|----------------|--------------------------------|
+| 8337 | TCP      | Exposed        | Web GUI frontend for playback. |
 
 Important File Locations
 ------------------------

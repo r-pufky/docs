@@ -3,6 +3,8 @@
 Background notes on service, VM requirements. TOC is a rought layout adjust as
 needed (e.g. docker setups, xen setups, etc).
 
+[Dedicated server setup / service notes][7d].
+
 1. [Ports](#ports)
 1. [Important File Locations](#important-file-locations)
 1. [Docker Creation](#docker-creation)
@@ -13,9 +15,10 @@ needed (e.g. docker setups, xen setups, etc).
 -----------
 Docker reverse-proxy.
 
-| Port | Protocol | Exposed/Public | Purpose                       |
-|------|----------|----------------|-------------------------------|
-| 8337 | TCP      | Exposed        | Web GUI frontend for playback |
+| Port | Protocol | Exposed/Public | Purpose                        |
+|------|----------|----------------|--------------------------------|
+| 8337 | TCP      | Exposed        | Web GUI frontend for playback. |
+| 9999 | UDP      | Public         | (Optional) some other port.    |
 
 Important File Locations
 ------------------------
@@ -98,10 +101,11 @@ Add sections as needed for service-specific content.
 
 [docker-service-template.md@XXXXXX][XX]
 
-[3n]: this is a link to the docker container image used.
-[u1]: this is a link to all ports a service has if it is avaliable.
-[ya]: this is a link to reverse proxy docker setup for container if it exists.
-[XX]: this is a link to the commit for the current template used.
+[3n]: link to the docker container image used.
+[u1]: link to all ports a service has if it is avaliable.
+[ya]: link to reverse proxy docker setup for container if it exists.
+[XX]: link to the commit for the current template used.
+[7d]: link to dedicated server setup. Remove line if not used.
 
 [refdk]: ../nginx/proxy-control.conf
 [ref3k]: ../nginx/README.md

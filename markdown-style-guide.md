@@ -236,20 +236,23 @@ Tables are encased to present formatted data on both github and CLI.
 * One space buffer on either side of data required.
 * Pipes should be aligned.
 * Line-breaking not enforced.
+* Statements use periods. All other options do _not_ require periods.
 
 ````
-| test      | table  | example         |
-|-----------|--------|-----------------|
-| a         | b      | c               |
-| it's      | good   | spacing         |
-| long data | forces | table expansion |
+| test      | table  | example                      |
+|-----------|--------|------------------------------|
+| a         | b      | c                            |
+| it's      | good   | Spacing.                     |
+| long data | forces | Table expansion.             |
+| option    | option | Statement requiring periods. |
 ````
 
-| test      | table  | example         |
-|-----------|--------|-----------------|
-| a         | b      | c               |
-| it's      | good   | spacing         |
-| long data | forces | table expansion |
+| test      | table  | example                      |
+|-----------|--------|------------------------------|
+| a         | b      | c                            |
+| it's      | good   | Spacing.                     |
+| long data | forces | Table expansion.             |
+| option    | option | Statement requiring periods. |
 
 ### Images
 Always prefer written text to pictures. Pictures allowed for cases where it not
