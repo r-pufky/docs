@@ -35,8 +35,7 @@ configuration directory structure, afterwards you can re-create with a mapped
 git repository.
 
 * `:1` will use the [latest stable version of gitea][od].
-
-You may specify your own git repository location.
+* You may specify your own git repository location.
 
 Docker Compose:
 ```yaml
@@ -155,6 +154,8 @@ As this is a mirror, you want to commit the git metadata and not just the files.
 The git repository is stored in _/data/gitea/git_ as a standard git repository.
 Importing this way sets up the gitea frontend database metadata for the project.
 
+[docker-service-template.md@248d10f][XX]
+
 [i2]: https://docs.gitea.io/en-us/
 [3e]: https://hub.docker.com/r/gitea/gitea/
 [is]: https://docs.gitea.io/en-us/config-cheat-sheet/
@@ -163,6 +164,7 @@ Importing this way sets up the gitea frontend database metadata for the project.
 [ek]: https://stackoverflow.com/questions/11621768/how-can-i-make-git-accept-a-self-signed-certificate
 [od]: https://docs.gitea.io/en-us/install-with-docker/
 [fp]: https://discuss.gogs.io/t/reverse-proxy-unauthorized-401-windows/2057
+[XX]: ../docker-service-template.md@248d10f
 
 [refv3]: ../nginx/proxy-control.conf
 [ref9s]: ../nginx/README.md
