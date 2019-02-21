@@ -98,6 +98,7 @@ Template Line
 * link to the template version at the bottom of the document.
 * Separate the document using at sign (`@`) then the commit version.
 * Specify the github commit version in the tag as well as the link.
+* No trailing period.
 ````
 
 [template.md@323434b2][XX]

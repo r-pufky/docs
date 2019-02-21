@@ -41,7 +41,7 @@ current certificates into the configuration directory.
   host that also exist in the docker image.
 * Map your backup drives as _read only_.
 
-### Docker Compose
+Docker Compose:
 ```yaml
 crashplan:
   image: jlesage/crashplan-pro:latest
@@ -63,7 +63,7 @@ crashplan:
 Reverse Proxy Setup
 -------------------
 Allows you to isolate your containers as well as wrap connections in SSL. See
-[nginx][refud] for more details. Recommended.
+[nginx][refud] for more details.
 
 ### Using Subdomains
 [nginx/conf.d/reverse-proxy.conf][dk]

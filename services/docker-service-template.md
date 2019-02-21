@@ -55,7 +55,7 @@ beets:
 Reverse Proxy Setup
 -------------------
 Allows you to isolate your containers as well as wrap connections in SSL. See
-[nginx][ref3k] for more details. Recommended.
+[nginx][ref3k] for more details.
 
 {CONTAINER NAME}/important/file/to/modify/for/proxy
 ```text

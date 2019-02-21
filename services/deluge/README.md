@@ -1,38 +1,33 @@
-Deluge
-------
+[Deluge][8v]
+============
 Deluge docker instalation.
 
-All media clients should run under the same user to run correctly.
-
-[Docker repository][1]
-
-1. [Docker Ports Exposed](#docker-ports-exposed)
+1. [Ports](#ports)
 1. [Important File Locations](#important-file-locations)
 1. [Docker Creation](#docker-creation)
 1. [Reverse Proxy Setup](#reverse-proxy-setup)
 1. [Modifying Settings](#modifying-settings)
 1. [Reset Password](#reset-password)
 
-Docker Ports Exposed
---------------------
-Docker Compose
+Ports
+-----
+Docker reverse-proxy.
 
-| Port  | Protocol | Exposed/Public | Purpose                                    |
-|-------|----------|----------------|--------------------------------------------|
-| 49160 | UDP      | Public         | UDP Peer Port (standalone & reverse-proxy) |
-| 49160 | TCP      | Public         | Peer Port (standalone & reverse-proxy)     |
-| 8112  | TCP      | Exposed        | Webface                                    |
+| Port  | Protocol | Exposed/Public | Purpose                  |
+|-------|----------|----------------|--------------------------|
+| 49160 | UDP/TCP  | Public         | Peer Port for transfers. |
+| 8112  | TCP      | Exposed        | Webface.                 |
 
 Important File Locations
 ------------------------
-Relative to docker container
+Relative to docker container.
 
-| File                  | Purpose             |
-|-----------------------|---------------------|
-| /config/core.conf     | Daemon Settings     |
-| /config/web.conf      | WebUI Settings      |
-| /watch                | Watch direcotry     |
-| /downloads            | Downloads directory |
+| File                  | Purpose              |
+|-----------------------|----------------------|
+| /config/core.conf     | Daemon Settings.     |
+| /config/web.conf      | WebUI Settings.      |
+| /watch                | Watch direcotry.     |
+| /downloads            | Downloads directory. |
 
 Docker Creation
 ---------------
@@ -40,9 +35,10 @@ If first-run, just launch the docker container to generate the correct
 configuration directory structure, afterwards you can re-create with a mapped
 directories.
 
-* The UID/GID should be set to a user/group that have access to your media.
+* The UID/GID should be set to a user/group that have access to your media. All
+  media clients should run under the same user to run correctly.
 
-### Docker Compose
+Docker Compose:
 ```yaml
 deluge:
   image: linuxserver/deluge:latest
@@ -60,19 +56,19 @@ deluge:
     - /data/services/deluge:/config
     - /etc/localtime:/etc/localtime:ro
 ```
-* Port `49160` needs to be exposed for transfers.
+* Port _49160_ needs to be exposed for transfers.
 
 Reverse Proxy Setup
 -------------------
 Allows you to isolate your containers as well as wrap connections in SSL. See
-[nginx][ref2] for more details. Recommended.
+[nginx][refek] for more details.
 
 ### Using Subdomains
-[nginx/conf.d/reverse-proxy.conf][2]
+[nginx/conf.d/reverse-proxy.conf][ui]
 ```nginx
 server {
   listen 443 ssl http2;
-  server_name deluge.<DOMAIN> deluge;
+  server_name deluge.{DOMAIN} deluge;
 
   location / {
     proxy_pass http://deluge:8112;
@@ -81,10 +77,10 @@ server {
   }
 }
 ```
-* [proxy-control.conf][ref1] contains default proxy settings. Reload nginx.
+* [proxy-control.conf][refof] contains default proxy settings. Reload nginx.
 
 ### Using Subpaths
-[nginx/conf.d/reverse-proxy.conf][3]
+[nginx/conf.d/reverse-proxy.conf][kl]
 ```nginx
 server {
   location /deluge {
@@ -95,15 +91,15 @@ server {
   }
 }
 ```
-* [proxy-control.conf][ref1] contains default proxy settings. Reload nginx.
+* [proxy-control.conf][refof] contains default proxy settings. Reload nginx.
 
 Modifying Settings
 ------------------
-Deluge **must** be connected to the Daemon to [write configuration changes][2].
+Deluge **must** be connected to the Daemon to [write configuration changes][ui].
 Ensure you select `Connect` on `Connection Manager`.
 
 Required changes to minimally secure your configuration.
-[/config/core.conf][3]
+[/config/core.conf][kl]
 ```vim
   "enc_in_policy": 1,
   "enc_level": 1,
@@ -130,13 +126,16 @@ Required changes to minimally secure your configuration.
 
 Reset Password
 --------------
-Stop Deluge, remove `pwd_sh1` pasword line in `web.conf`, restart.
+Stop Deluge and remove _pwd_sh1_ pasword line in _web.conf_, restart.
 
 Default username/password is `admin` / `deluge`.
 
-[1]: https://hub.docker.com/r/linuxserver/deluge/
-[2]: https://forum.deluge-torrent.org/viewtopic.php?t=35117
-[3]: https://dev.deluge-torrent.org/wiki/UserGuide/WebUI/ReverseProxy
+[docker-service-template.md@248d10f][XX]
 
-[ref1]: ../nginx/proxy-control.conf
-[ref2]: ../nginx/README.md
+[8v]: https://hub.docker.com/r/linuxserver/deluge/
+[ui]: https://forum.deluge-torrent.org/viewtopic.php?t=35117
+[kl]: https://dev.deluge-torrent.org/wiki/UserGuide/WebUI/ReverseProxy
+[XX]: ../docker-service-template.md@248d10f
+
+[refof]: ../nginx/proxy-control.conf
+[refek]: ../nginx/README.md
