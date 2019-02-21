@@ -90,7 +90,7 @@ Example Title
 Documents using some standard template such as a service.
 
 * _template_ link is inserted between _deprecated_ line and above references.
-  Add one verticial space above and below the _template_ link.
+  Add one vertical space above and below the _template_ link.
 * If a _deprevation_ line is present do not use vertical spaces between
   _deprecated_ and _template_ lines.
 

@@ -1,5 +1,5 @@
 Service Configuration Template
-------------------------------
+==============================
 Background notes on service, VM requirements. TOC is a rought layout adjust as
 needed (e.g. docker setups, xen setups, etc).
 
@@ -16,7 +16,7 @@ needed (e.g. docker setups, xen setups, etc).
 
 Ports Exposed
 -------------
-[Docker Standalone|Docker Compose|Service]
+[Docker|Service] [reverse-proxy]
 
 | Port        | Protocol | Exposed/Public | Purpose                     |
 |-------------|----------|----------------|-----------------------------|
