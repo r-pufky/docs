@@ -96,9 +96,12 @@ Service Specific Content Sections
 ---------------------------------
 Add sections as needed for service-specific content.
 
+[docker-service-template.md@XXXXXX][XX]
+
 [3n]: this is a link to the docker container image used.
 [u1]: this is a link to all ports a service has if it is avaliable.
 [ya]: this is a link to reverse proxy docker setup for container if it exists.
+[XX]: this is a link to the commit for the current template used.
 
 [refdk]: ../nginx/proxy-control.conf
 [ref3k]: ../nginx/README.md
