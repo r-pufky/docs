@@ -127,7 +127,7 @@ docker exec -it letsencrypt sh
 certbot certificates
 ```
 
-[docker-service-template.md@c9027f2][XX]
+[docker-service-template.md|c9067f2][XX]
 
 [tu]: https://www.reddit.com/r/PFSENSE/comments/4qwp8i/do_we_really_have_to_lock_every_thread_that/d4wuymx/?st=iwy5oece&sh=a2a3c939
 [3g]: https://github.com/adferrand/docker-letsencrypt-dns

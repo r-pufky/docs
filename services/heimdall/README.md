@@ -93,7 +93,7 @@ server {
 * Restrict to specific IP / subnets and deny rest of traffic.
 * [proxy-control.conf][ref4c] contains default proxy settings. Reload nginx.
 
-[docker-service-template.md@c9067f2][XX]
+[docker-service-template.md|c9067f2][XX]
 
 [tm]: https://heimdall.site/
 [4j]: https://github.com/linuxserver/Heimdall

@@ -99,7 +99,7 @@ Service Specific Content Sections
 ---------------------------------
 Add sections as needed for service-specific content.
 
-[docker-service-template.md@XXXXXX][XX]
+[docker-service-template.md|XXXXXX][XX]
 
 [3n]: link to the docker container image used.
 [u1]: link to all ports a service has if it is avaliable.

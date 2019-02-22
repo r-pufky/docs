@@ -290,7 +290,7 @@ beet import /data/media/music/Non-Albums/imported-track-from-above.mp3
 * **I** to select a _release ID_.
 * **M** merge tracks into album.
 
-[docker-service-template.md@c9067f2][XX]
+[docker-service-template.md|c9067f2][XX]
 
 [xl]: config.yaml
 [3n]: https://hub.docker.com/r/linuxserver/beets/

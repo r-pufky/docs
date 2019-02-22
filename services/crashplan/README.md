@@ -172,7 +172,7 @@ in a docker container (these are usually _/_ based backups like _/etc_).
 
 If identity imported then no adoption of a backup set is needed.
 
-[docker-service-template.md@c9067f2][XX]
+[docker-service-template.md|c9067f2][XX]
 
 [4h]: https://github.com/jlesage/docker-crashplan-pro
 [8d]: https://support.code42.com/CrashPlan/4/Troubleshooting/Linux_real-time_file_watching_errors

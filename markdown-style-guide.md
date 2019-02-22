@@ -364,6 +364,7 @@ multi-line
 ### Files
 * Formatting per [all blocks style][sT].
 * List file full path with octal permissions in inline block above.
+* Directorie treated the same as files.
 
 ````
 /example/file/path.txt `root:root 0750`
