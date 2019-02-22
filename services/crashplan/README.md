@@ -172,14 +172,14 @@ in a docker container (these are usually _/_ based backups like _/etc_).
 
 If identity imported then no adoption of a backup set is needed.
 
-[docker-service-template.md@248d10f][XX]
+[docker-service-template.md@c9067f2][XX]
 
 [4h]: https://github.com/jlesage/docker-crashplan-pro
 [8d]: https://support.code42.com/CrashPlan/4/Troubleshooting/Linux_real-time_file_watching_errors
 [3k]: https://github.com/jlesage/docker-crashplan-pro#taking-over-existing-backup
 [dk]: https://hub.docker.com/r/jlesage/crashplan-pro/#routing-based-on-url-path
 [uv]: https://stackoverflow.com/questions/15193743/nginx-reverse-proxy-websockets
-[XX]: ../docker-service-template.md@248d10f
+[XX]: https://github.com/r-pufky/docs/blob/c9067f2bc3d0aeb0f2915e63f8cd9515c00640a2/services/docker-service-template.md
 
 [refek]: ../nginx/proxy-control.conf
 [refud]: ../nginx/README.md

@@ -130,12 +130,12 @@ Stop Deluge and remove _pwd_sh1_ pasword line in _web.conf_, restart.
 
 Default username/password is `admin` / `deluge`.
 
-[docker-service-template.md@248d10f][XX]
+[docker-service-template.md@9067f2][XX]
 
 [8v]: https://hub.docker.com/r/linuxserver/deluge/
 [ui]: https://forum.deluge-torrent.org/viewtopic.php?t=35117
 [kl]: https://dev.deluge-torrent.org/wiki/UserGuide/WebUI/ReverseProxy
-[XX]: ../docker-service-template.md@248d10f
+[XX]: https://github.com/r-pufky/docs/blob/c9067f2bc3d0aeb0f2915e63f8cd9515c00640a2/services/docker-service-template.md
 
 [refof]: ../nginx/proxy-control.conf
 [refek]: ../nginx/README.md

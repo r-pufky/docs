@@ -62,7 +62,7 @@ server {
 ```
 * [proxy-control.conf][ref4c] contains default proxy settings. Reload nginx.
 
-Add [Password Authentication][3]
+Add [Password Authentication][rm]
 --------------------------------
 A reverse proxy setup is **required**.
 
@@ -93,12 +93,12 @@ server {
 * Restrict to specific IP / subnets and deny rest of traffic.
 * [proxy-control.conf][ref4c] contains default proxy settings. Reload nginx.
 
-[docker-service-template.md@248d10f][XX]
+[docker-service-template.md@c9067f2][XX]
 
 [tm]: https://heimdall.site/
 [4j]: https://github.com/linuxserver/Heimdall
-[3]: https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/#pass
-[XX]: ../docker-service-template.md@248d10f
+[rm]: https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/#pass
+[XX]: https://github.com/r-pufky/docs/blob/c9067f2bc3d0aeb0f2915e63f8cd9515c00640a2/services/docker-service-template.md
 
 [ref4c]: ../nginx/proxy-control.conf
 [ref7v]: ../nginx/README.md

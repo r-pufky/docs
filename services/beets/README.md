@@ -290,7 +290,7 @@ beet import /data/media/music/Non-Albums/imported-track-from-above.mp3
 * **I** to select a _release ID_.
 * **M** merge tracks into album.
 
-[docker-service-template.md@248d10f][XX]
+[docker-service-template.md@c9067f2][XX]
 
 [xl]: config.yaml
 [3n]: https://hub.docker.com/r/linuxserver/beets/
@@ -300,7 +300,7 @@ beet import /data/media/music/Non-Albums/imported-track-from-above.mp3
 [os]: http://beets.readthedocs.io/en/latest/guides/tagger.html
 [x8]: https://unix.stackexchange.com/questions/4961/which-mp3-tagging-tool-for-linux
 [ya]: https://github.com/beetbox/beets/blob/master/docs/plugins/web.rst
-[XX]: ../docker-service-template.md@248d10f
+[XX]: https://github.com/r-pufky/docs/blob/c9067f2bc3d0aeb0f2915e63f8cd9515c00640a2/services/docker-service-template.md
 
 [refdk]: ../nginx/proxy-control.conf
 [ref3k]: ../nginx/README.md

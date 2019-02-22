@@ -101,7 +101,7 @@ docker run -it --rm adferrand/letsencrypt-dns lexicon <PROVIDER> --help
   `LEXICON_{PROVIDER}_AUTH_SOMEVAR` or `{provider}_auth_somevar` in YAML.
 
 The provider options can be passed in container environment, or preferrably in
-`/etc/letsencrypt/lexicon_{PROVIDER}.yml`. Be sure to secure (`0750`) this file
+`/etc/letsencrypt/lexicon_{PROVIDER}.yml`. Be sure to secure (`0640`) this file
 as it gives full control over your domain.
 
 /etc/letsencrypt/lexicon_googleclouddns.yml `root:root 0640`
@@ -127,7 +127,10 @@ docker exec -it letsencrypt sh
 certbot certificates
 ```
 
+[docker-service-template.md@c9027f2][XX]
+
 [tu]: https://www.reddit.com/r/PFSENSE/comments/4qwp8i/do_we_really_have_to_lock_every_thread_that/d4wuymx/?st=iwy5oece&sh=a2a3c939
 [3g]: https://github.com/adferrand/docker-letsencrypt-dns
 [wp]: cloud.google.com
 [iv]: https://github.com/AnalogJ/lexicon
+[XX]: https://github.com/r-pufky/docs/blob/c9067f2bc3d0aeb0f2915e63f8cd9515c00640a2/services/docker-service-template.md

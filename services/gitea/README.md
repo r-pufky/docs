@@ -154,7 +154,7 @@ As this is a mirror, you want to commit the git metadata and not just the files.
 The git repository is stored in _/data/gitea/git_ as a standard git repository.
 Importing this way sets up the gitea frontend database metadata for the project.
 
-[docker-service-template.md@248d10f][XX]
+[docker-service-template.md@c9027f2][XX]
 
 [i2]: https://docs.gitea.io/en-us/
 [3e]: https://hub.docker.com/r/gitea/gitea/
@@ -164,7 +164,7 @@ Importing this way sets up the gitea frontend database metadata for the project.
 [ek]: https://stackoverflow.com/questions/11621768/how-can-i-make-git-accept-a-self-signed-certificate
 [od]: https://docs.gitea.io/en-us/install-with-docker/
 [fp]: https://discuss.gogs.io/t/reverse-proxy-unauthorized-401-windows/2057
-[XX]: ../docker-service-template.md@248d10f
+[XX]: https://github.com/r-pufky/docs/blob/c9067f2bc3d0aeb0f2915e63f8cd9515c00640a2/services/docker-service-template.md
 
 [refv3]: ../nginx/proxy-control.conf
 [ref9s]: ../nginx/README.md
