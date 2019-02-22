@@ -66,7 +66,7 @@ Allows you to isolate your containers as well as wrap connections in SSL. See
 [nginx][refud] for more details.
 
 ### Using Subdomains
-[nginx/conf.d/reverse-proxy.conf][dk]
+[nginx/conf.d/reverse-proxy.conf][dk] `root:root 0644`
 ```nginx
 # Websockets: remap http_upgrade to 'upgrade' or 'close' based on
 # connection_upgrade being set.
@@ -95,7 +95,7 @@ server {
 * [proxy-control.conf][refek] contains default proxy settings. Reload nginx.
 
 ### Using Subpaths
-[nginx/conf.d/reverse-proxy.conf][dk]
+[nginx/conf.d/reverse-proxy.conf][dk] `root:root 0644`
 ```nginx
 # Websockets: remap http_upgrade to 'upgrade' or 'close' based on
 # connection_upgrade being set.
@@ -137,7 +137,7 @@ docker-compose stop crashplan
 If you have a current crashplan installation, you can copy your crashplan
 identity to _/config/var_.
 
-/config/var
+/config/var `root:root 0750`
 ```
 .identity
 service.pem
@@ -148,7 +148,7 @@ service.pem
 Increase [inotify max watch limits][8d] on host so crashplan can watch monitored
 files.
 
-/etc/sysctl.conf
+/etc/sysctl.conf `root:root 0644`
 ```bash
 fs.inotify.max_user_watches=1048576
 ```

@@ -48,7 +48,7 @@ Allows you to isolate your containers as well as wrap connections in SSL. See
 
 Heimdall is not subpath aware, and should be hosted from a subdomain.
 
-nginx/conf.d/reverse-proxy.conf
+nginx/conf.d/reverse-proxy.conf `root:root 0644`
 ```nginx
 server {
   listen 443 ssl http2;
@@ -72,7 +72,7 @@ apt install apache2-utils
 sudo htpasswd -c /data/services/nginx/heimdall.pass <user>
 ```
 
-nginx/conf.d/reverse-proxy.conf
+nginx/conf.d/reverse-proxy.conf `root:root 0644`
 ```nginx
 server {
   listen 443 ssl http2;

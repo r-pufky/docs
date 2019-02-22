@@ -64,7 +64,7 @@ Allows you to isolate your containers as well as wrap connections in SSL. See
 [nginx][refek] for more details.
 
 ### Using Subdomains
-[nginx/conf.d/reverse-proxy.conf][ui]
+[nginx/conf.d/reverse-proxy.conf][ui] `root:root 0644`
 ```nginx
 server {
   listen 443 ssl http2;
@@ -80,7 +80,7 @@ server {
 * [proxy-control.conf][refof] contains default proxy settings. Reload nginx.
 
 ### Using Subpaths
-[nginx/conf.d/reverse-proxy.conf][kl]
+[nginx/conf.d/reverse-proxy.conf][kl] `root:root 0644`
 ```nginx
 server {
   location /deluge {
@@ -99,7 +99,7 @@ Deluge **must** be connected to the Daemon to [write configuration changes][ui].
 Ensure you select `Connect` on `Connection Manager`.
 
 Required changes to minimally secure your configuration.
-[/config/core.conf][kl]
+[/config/core.conf][kl] `1001:1001 0644`
 ```vim
   "enc_in_policy": 1,
   "enc_level": 1,

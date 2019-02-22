@@ -67,7 +67,7 @@ the web front working but git pull/push/clones failing. This is due to the way
 gitea [handles these requests with custom written handlers][fp]. Setup DNS
 resolution or add to `hosts` file.
 
-[nginx/conf.d/reverse-proxy.conf][fi]
+[nginx/conf.d/reverse-proxy.conf][fi] `root:root 0644`
 ```nginx
 server {
   listen 443 ssl http2;
@@ -82,7 +82,7 @@ server {
 * [proxy-control.conf][refv3] contains default proxy settings. Reload nginx.
 
 ### Using Subpaths
-[nginx/conf.d/reverse-proxy.conf][fi]
+[nginx/conf.d/reverse-proxy.conf][fi] `root:root 0644`
 ```nginx
 server {
   location /gitea/ {

@@ -55,7 +55,7 @@ Reverse Proxy Setup
 Allows you to isolate your containers as well as wrap connections in SSL. See
 [nginx][ref3k] for more details.
 
-beets/config.yaml
+beets/config.yaml `1001:1001 0644`
 ```yaml
 web:
   host: 0.0.0.0
@@ -64,7 +64,7 @@ web:
 ```
 
 ### Using Subdomains
-[nginx/conf.d/reverse-proxy.conf][ya]
+[nginx/conf.d/reverse-proxy.conf][ya] `root:root 0644`
 ```nginx
 server {
   listen 443 ssl http2;
@@ -82,7 +82,7 @@ server {
 * [proxy-control.conf][refdk] contains default proxy settings. Reload nginx.
 
 ### Using Subpaths
-[nginx/conf.d/reverse-proxy.conf][ya]
+[nginx/conf.d/reverse-proxy.conf][ya] `root:root 0644`
 ```nginx
 server {
   location /beets {

@@ -74,7 +74,7 @@ containers _Expose_ port internally for the proxy.
 Each YAML file represents a service and is generally stored in separate
 directory representing the _service name_.
 
-_service-name_/docker-compose.yml
+_service-name_/docker-compose.yml `root:staff 0640`
 ```yaml
 version: "3"
 
@@ -209,7 +209,7 @@ Interactive Docker Shell that [Respects Terminal Size][ul]
 Dynamically re-size docker container shell terminal to whatever terminal you are
 using.
 
-.bash_profile
+.bash_profile `{USER}:{USER} 0700`
 ```bash
 docker-shell() {
   sudo docker exec -it -u $2 $1 /bin/bash -c "stty cols $COLUMNS rows $LINES && /bin/bash";
@@ -242,14 +242,14 @@ echo "0" /proc/sys/net/bridge/bridge-nf-call-arptables
 
 Update settings for sysctl as well as [UFW sysctl][yv]:
 
-/etc/sysctl.conf
+/etc/sysctl.conf `root:root 0644`
 ```bash
 net.bridge.bridge-nf-call-ip6tables = 0
 net.bridge.bridge-nf-call-iptables = 0
 net.bridge.bridge-nf-call-arptables = 0
 ```
 
-/etc/ufw/sysctl.conf
+/etc/ufw/sysctl.conf `root:root 0644`
 ```bash
 net.bridge.bridge-nf-call-ip6tables = 0
 net.bridge.bridge-nf-call-iptables = 0
