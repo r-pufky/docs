@@ -63,7 +63,7 @@ example
 ```
 
 ### Using Subdomains
-[nginx/conf.d/reverse-proxy.conf][u1]
+[nginx/conf.d/reverse-proxy.conf][u1] `root:root 0644`
 ```nginx
 server {
   listen 443 ssl http2;
@@ -81,7 +81,7 @@ server {
 * [proxy-control.conf][refdk] contains default proxy settings. Reload nginx.
 
 ### Using Subpaths
-[nginx/conf.d/reverse-proxy.conf][ya]
+[nginx/conf.d/reverse-proxy.conf][ya] `root:root 0644`
 ```nginx
 server {
   location /beets {
