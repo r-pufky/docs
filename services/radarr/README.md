@@ -60,7 +60,7 @@ lidarr:
 Reverse Proxy Setup
 -------------------
 Allows you to isolate your containers as well as wrap connections in SSL. See
-[nginx][refdi] for more details. Recommended.
+[nginx][refdi] for more details.
 
 ### Using Subdomains
 [nginx/conf.d/reverse-proxy.conf][ni] `root:root 0644`
