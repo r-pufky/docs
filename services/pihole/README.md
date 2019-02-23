@@ -1,5 +1,5 @@
-Pi-Hole
--------
+[Pi-Hole][gh]
+=============
 Block nefarious websites & Ads.
 
 This will setup ad-blocking in the following manner:
@@ -11,16 +11,14 @@ This will setup ad-blocking in the following manner:
 Clients can now be dynamically assigned DNS hostnames on multiple subnets, these
 clients will be able to locally resolve internal hosts on all subnets; and then
 send unknown DNS requets to pihole. Pihole will either block or foward those
-requests. The router will be able to forward DNS requests upstream if the Pi-hole server
-is unreachable.
+requests. The router will be able to forward DNS requests upstream if the
+Pi-hole server is unreachable.
 
 The intent of this setup is to provide 'DNS resolution at all costs'; meaning
 DNS should still resolve in a degraded state (e.g. pihole server or server is
 offline).
 
-[Docker repository][1]
-
-1. [Docker Ports Exposed](#docker-ports-exposed)
+1. [Ports](#ports)
 1. [Important File Locations](#important-file-locations)
 1. [Docker Creation](#docker-creation)
 1. [Reverse Proxy Setup](#reverse-proxy-setup)
@@ -29,9 +27,9 @@ offline).
 1. [Slow Boot Times](#slow-boot-times)
 1. [Clear DNS Cache](#clear-dns-cache)
 
-Docker Ports Exposed
---------------------
-Docker Compose
+Ports
+-----
+Docker reverse-proxy.
 
 | Port | Protocol | Exposed/Public | Purpose      |
 |------|----------|----------------|--------------|
@@ -39,7 +37,7 @@ Docker Compose
 
 Important File Locations
 ------------------------
-Relative to docker container
+Relative to docker container.
 
 | File           | Purpose             |
 |----------------|---------------------|
@@ -56,7 +54,7 @@ directories.
 * Docker container DNS is setup to resolve using pihole first, then `1.1.1.1`.
 * Pihole upstream DNS servers set to `1.1.1.1`,`8.8.8.8`.
 
-### Docker Compose
+Docker Compose:
 ```yaml
 pihole:
   image: pihole/pihole:latest
@@ -70,8 +68,8 @@ pihole:
     - 127.0.0.1
     - 1.1.1.1
   environment:
-    - ServerIP=<HOST IP>
-    - VIRTUAL_HOST=<HOST DNS NAME>
+    - ServerIP={HOST IP}
+    - VIRTUAL_HOST={HOST DNS NAME}
     - DNS1=1.1.1.1
     - DNS2=8.8.8.8
     - TZ=America/Los_Angeles
@@ -84,14 +82,14 @@ pihole:
 Reverse Proxy Setup
 -------------------
 Allows you to isolate your containers as well as wrap connections in SSL. See
-[nginx][ref2] for more details. Recommended.
+[nginx][refkk] for more details.
 
 ### Using Subdomains
-[nginx/conf.d/reverse-proxy.conf][2]
+[nginx/conf.d/reverse-proxy.conf][4t] `root:root 0644`
 ```nginx
 server {
   listen 443 ssl http2;
-  server_name pihole.<DOMAIN> pihole;
+  server_name pihole.{DOMAIN} pihole;
 
   location / {
     proxy_pass http://pihole/admin/;
@@ -102,10 +100,10 @@ server {
   }
 }
 ```
-* [proxy-control.conf][ref1] contains default proxy settings. Reload nginx.
+* [proxy-control.conf][refju] contains default proxy settings. Reload nginx.
 
 ### Using Subpaths
-nginx/conf.d/reverse-proxy.conf
+nginx/conf.d/reverse-proxy.conf `root:root 0644`
 ```nginx
 server {
   location /pihole/ {
@@ -117,13 +115,13 @@ server {
   }
 }
 ```
-* [proxy-control.conf][ref1] contains default proxy settings. Reload nginx.
+* [proxy-control.conf][refju] contains default proxy settings. Reload nginx.
 
 Configuration
 -------------
-Most static [Ads and domains][ads1] will be blocked. Dynamic content is
-continually changing and therefore ad-blocking for [youtube][ads2] is usually
-[hit-or-miss][ads3].
+Most static [Ads and domains][ao] will be blocked. Dynamic content is
+continually changing and therefore ad-blocking for [youtube][af] is usually
+[hit-or-miss][ab].
 
 ### Password
 The password is set randomly on container start. This can be found by searching
@@ -135,7 +133,7 @@ docker logs pihole | grep pass
 
 Alternatively, a password may be statically set from within the container.
 ```bash
-docker exec pihole pihole -a -p <PASSWORD>
+docker exec pihole pihole -a -p {PASSWORD}
 ```
 * `WEBPASSWORD` environment variable will set as well but exposes password.
 
@@ -187,26 +185,26 @@ https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist
 https://raw.githubusercontent.com/ZeroDot1/CoinBlockerLists/master/hosts
 ```
 * These can be added all at once (one per line) then mass updated.
-* Wally's list has a good list of [stricter blocking][ads4].
-* Large list of [additional blocklists][ads5].
+* Wally's list has a good list of [stricter blocking][a7].
+* Large list of [additional blocklists][an].
 
 `Settings > DNS`
 1. Upstream DNS Servers
   * Custom 1: `1.1.1.1`
   * Custom 2: `8.8.8.8`
 1. Interface Listening Behavior
-  * Check `Listen only on interface XXX`
+  - [x] Listen only on interface XXX
 1. Advanced DNS Settings
-  * Check `Never forward non-FQDNs`
-  * Check `Never forward reverse lookups for private IP ranges`
+  - [x] Never forward non-FQDNs
+  - [x] Never forward reverse lookups for private IP ranges
 
 `Settings > DHCP`
 1. DHCP Settings
-  * Uncheck `DHCP Server Enabled`
+  - [ ] DHCP Server Enabled
 
 `Settings > Privacy`
 1. DNS resolver privacy level
-  * `Show everything and record everything`
+  - [x] Show everything and record everything
 
 ### Router Configuration
 Generic Configuration - will be located slightly differently for each server.
@@ -215,7 +213,7 @@ Generic Configuration - will be located slightly differently for each server.
   1. `x.x.x.x` (Pihole IP)
   1. `1.1.1.1` (cloudflare DNS resolver)
   1. `8.8.8.8` (google DNS resolver)
-1. `Config Tree > Service > dhcp-server > shared-network-name > <NETWORK> > subnet > <IP Range>` (DNS server assigned for DHCP clients)
+1. `Config Tree > Service > dhcp-server > shared-network-name > {NETWORK} > subnet > <IP Range>` (DNS server assigned for DHCP clients)
   1. `x.x.x.x` (Router IP for given subnet)
 1. `Firewall Policies` (Enable DNS traffic to Pi-Hole server)
   1. `x.x.x.x 53 udp/tcp` (Allow TCP/UDP traffic on port 53 to Pihole)
@@ -223,10 +221,10 @@ Generic Configuration - will be located slightly differently for each server.
 Ubuntu 18.04 Systemd
 --------------------
 Systemd DNS STUB Resolver has a [bug where disabling the STUB resolver does not
-re-link the appropriate resolve.conf file][2].
+re-link the appropriate resolve.conf file][4t].
 
-There are two ways to fix this. You can either [disable systemd resolver][3] or
-manually set the [appropriate resolv.conf file][4].
+There are two ways to fix this. You can either [disable systemd resolver][8i] or
+manually set the [appropriate resolv.conf file][vj].
 
 The preferred fix is re-linking resolv.conf to keep the system as close to
 vanilla as possible; choose **only one** based on needs.
@@ -235,7 +233,7 @@ vanilla as possible; choose **only one** based on needs.
 This method will disable the STUB DNS server and link the correct resolv.conf
 file.
 
-/etc/systemd/resolved.conf
+/etc/systemd/resolved.conf `root:root 0644`
 ```bash
 [Resolve]
 ...
@@ -247,9 +245,9 @@ rm /etc/resolv.conf`
 ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
 ```
 * Originally, `resolv.conf` links to systemd stub resolver
-  `/run/systemd/resolve/stub-resolv.conf`
+  `/run/systemd/resolve/stub-resolv.conf`.
 
-/etc/resolv.conf
+/etc/resolv.conf `root:root 0644`
 ```bash
 nameserver x.x.x.x
 search <your domain>
@@ -273,7 +271,7 @@ chmod 0644 /etc/resolv.conf
 chmod root:root /etc/resolve.conf
 ```
 
-/etc/resolv.conf
+/etc/resolv.conf `root:root 0644`
 ```bash
 nameserver x.x.x.x
 search <your domain>
@@ -300,15 +298,18 @@ Cache is automatically cleared by restarting the FTLDNS service.
 `Settings`
 * `Restart DNS resolver`
 
-[1]: https://hub.docker.com/r/pihole/pihole/
-[2]: https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1624320/comments/8
-[3]: https://discourse.pi-hole.net/t/docker-reply-from-unexpected-source/5729/4
-[4]: https://old.reddit.com/r/pihole/comments/8sgro3/server_name_resolution_messed_up_when_running
-[ads1]: https://www.smarthomebeginner.com/pi-hole-tutorial-whole-home-ad-blocking/#Pi_Hole_Configuration_and_Customization
-[ads2]: https://old.reddit.com/r/pihole/comments/84luw8/blocking_youtube_ads/
-[ads3]: https://old.reddit.com/r/pihole/comments/7w4n81/having_trouble_blocking_youtube_ads_in_app_on_ios/dtyatmf/
-[ads4]: https://v.firebog.net/hosts/lists.php
-[ads5]: http://www.ubuntuboss.com/how-to-install-pihole-on-ubuntu-16-04/
+[docker-service-template.md|c9067f2][XX]
 
-[ref1]: ../nginx/proxy-control.conf
-[ref2]: ../nginx/README.md
+[gh]: https://hub.docker.com/r/pihole/pihole/
+[4t]: https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1624320/comments/8
+[8i]: https://discourse.pi-hole.net/t/docker-reply-from-unexpected-source/5729/4
+[vj]: https://old.reddit.com/r/pihole/comments/8sgro3/server_name_resolution_messed_up_when_running
+[ao]: https://www.smarthomebeginner.com/pi-hole-tutorial-whole-home-ad-blocking/#Pi_Hole_Configuration_and_Customization
+[af]: https://old.reddit.com/r/pihole/comments/84luw8/blocking_youtube_ads/
+[ab]: https://old.reddit.com/r/pihole/comments/7w4n81/having_trouble_blocking_youtube_ads_in_app_on_ios/dtyatmf/
+[a7]: https://v.firebog.net/hosts/lists.php
+[an]: http://www.ubuntuboss.com/how-to-install-pihole-on-ubuntu-16-04/
+[XX]: https://github.com/r-pufky/docs/blob/c9067f2bc3d0aeb0f2915e63f8cd9515c00640a2/services/docker-service-template.md
+
+[refju]: ../nginx/proxy-control.conf
+[refkk]: ../nginx/README.md
