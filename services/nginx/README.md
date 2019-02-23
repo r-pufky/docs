@@ -1,15 +1,13 @@
-nginx
------
-[Reverse proxy and load balancer][1] This provides a way to place services
+[nginx][3k]
+==========
+[Reverse proxy and load balancer][co] This provides a way to place services
 behind a proxy and enforce SSL for those applications, as well as being able to
 offer a clean namespace for multiple microservices.
 
 This setup will focus on creating a docker-based reverse proxy, enforcing SSL
 for all connections to docker containers using Let's Encrypt.
 
-[Docker repository][5]
-
-1. [Docker Ports Exposed](#docker-ports-exposed)
+1. [Ports](#ports)
 1. [Important File Locations](#important-file-locations)
 1. [Docker Creation](#docker-creation)
 1. [Initial Setup](#initial-setup)
@@ -17,19 +15,18 @@ for all connections to docker containers using Let's Encrypt.
 1. [Configuration Patterns](#configuration-patterns)
 1. [Debugging Headers](#debugging-headers)
 
-Docker Ports Exposed
---------------------
-Docker Compose
+Ports
+-----
+Docker reverse-proxy.
 
 | Docker Port | Protocol | Exposed/Public | Purpose                               |
 |-------------|----------|----------------|---------------------------------------|
 | 80          | TCP      | Public         | http connection, redirected to https. |
 | 443         | TCP      | Public         | https connections.                    |
 
-
 Important File Locations
 ------------------------
-Relative to docker container
+Relative to docker container.
 
 | File                    | Purpose                       |
 |-------------------------|-------------------------------|
@@ -38,7 +35,7 @@ Relative to docker container
 
 Docker Creation
 ---------------
-### Docker Compose
+Docker Compose:
 ```yaml
 nginx-proxy:
   image: nginx
@@ -52,24 +49,23 @@ nginx-proxy:
     - /etc/localtime:/etc/localtime:ro
 ```
 * Let's Encrypt local mount should just point the install location of let's
-  encrypt, typically `/etc/letsencrypt`.
+  encrypt, typically _/etc/letsencrypt_.
 
 Initial Setup
 -------------
 ### Setup Base Reverse Proxy
 This will setup a basic reverse-proxy that:
-
-* Force HTTP to HTTPS connections for IPv4/6 with a permenant redirect.
-* Serve traffic only over SSL (443).
-* Enable HTTP2 if the service behind the proxy supports it.
+* Forces HTTP to HTTPS connections for IPv4/6 with a permenant redirect.
+* Serves traffic only over SSL (443).
+* Enables HTTP2 if the service behind the proxy supports it.
 * Ability to upgrade a connection to a websocket if a service requires it.
 * Direct requests to the proxy cannot contain data.
 * Import SSL certificate settings used in Let's Encrypt for strong validation of
   certifcate usage.
 
-[Automatic generator][13] to generate base configuration templates.
+[Automatic generator][v9] to generate base configuration templates.
 
-/etc/nginx/conf.d/reverse-proxy.conf
+/etc/nginx/conf.d/reverse-proxy.conf `root:root 0644`
 ```nginx
 # Forward all HTTP IPv4/6 traffic to HTTPS.
 server {
@@ -104,15 +100,15 @@ server {
 }
 ```
 * The `SERVER_DNS_NAME` should be in the SSL certificate; a [wildcard
-  certificate][5] will work.
-* `ssl-dhparams.pem` may be generated with `sudo openssl dhparam -out
+  certificate][3l] will work.
+* _ssl-dhparams.pem_ may be generated with `openssl dhparam -out
   ssl-dhparams.pem 4096`.
 
 ### Setup Base Proxy Control
-A proxy control template will enable complex proxy configurations to be applied
-easily to proxies.
+A proxy control template will enable complex proxy configurations to be
+consistenly applied to multiple proxy sites.
 
-[/etc/nginx/conf.d/proxy-control.conf][ref1]
+[/etc/nginx/conf.d/proxy-control.conf][refss]
 ```nginx
 client_max_body_size 10m;
 client_body_buffer_size 128k;
@@ -145,37 +141,35 @@ nginx can update the proxy configuration without downtime.
 ```bash
 docker exec -it nginx-proxy nginx -s reload
 ```
-* If underlying services have changed `expose` or `ports`, those containers
-  will need to be restarted.
+* If underlying services have changed _expose_ or _ports_, those containers will
+  need to be restarted.
 
 Adding Reverse Proxies
 ----------------------
 This will cover the basic usage of nginx as a reverse proxy; covering services
-on the URI path, not as a custom subdomain. See [subdomain reverse proxy][6] for
-setting up subdomains.
+on the URI path, not as a custom subdomain. See [subdomain reverse proxy][kd]
+for setting up subdomains.
 
-See [services][ref2] for specific details as well as [reference
-documentation][3] and [location block][4] reference.
+See [services][refew] for specific details as well as [reference
+documentation][io] and [location block][ff] reference.
 
-`location` blocks should be placed in the `server` block.
+_location_ blocks should be placed in the _server_ block.
 
 ### Service Gotchas
 Ensure the services running behind the proxy are in a known configuration.
-
 * Running on expected protocols (http or https).
 * Externally accessible ports (e.g. non-proxied external requests) are setup as
-  `ports`.
+  _ports_.
 * Internally accessible ports (e.g. proxied external requests) are setup as
-  `expose` ports.
+  _expose_ ports.
 
-See [expose versus ports][10].
+See [expose versus ports][dj].
 
-### [Trailing Slash Gotchas][7]
-See [proxy_pass reference documentation][9].
+### [Trailing Slash Gotchas][ik]
+See [proxy_pass reference documentation][op].
 
 In Short:
-
-* Services already using URI paths for the services should leaving **off**
+* Services already using URI paths for the services should leave **off**
   trailing slashes in `location` and `proxy_pass`.
 * Services using **no** additional URI paths for services should use trailing
   slashes in `location` and `proxy_pass`.
@@ -190,9 +184,9 @@ location /name/ {
   proxy_pass http://app/remote/;
 }
 ```
-* Assume request: http://proxy/name/path?params=1
-* http://app/remote/ sees request as https://app/remote/path?params=1
-* Essentially, the matched URI path is remove and the rest is passed as though
+* Assume request: _http://proxy/name/path?params=1_
+* http://app/remote/ sees request as _https://app/**remote**/path?params=1_
+* Essentially, the matched URI path is removed and the rest is passed as though
   it was called from app's page.
 
 If proxy_pass is specified without a URI, the request URI is passed to the
@@ -205,17 +199,17 @@ location /name/ {
     proxy_pass http://app/remote;
 }
 ```
-* Assume request: http://proxy/name/path?params=1
-* http://app/remote/ sees request as https://app/remote/name/path?params=1
+* Assume request: _http://proxy/name/path?params=1_
+* http://app/remote/ sees request as _https://app/**remote**/name/path?params=1_
 * Essentially, the URI path is concatenated to the end of the remote path.
 
 ### Regex Versus Trailing Slashes
 Most examples on the web use regex, but regex is generally [slow, error prone
-and hard to read][8]. In nginx most regexes may be replaced with trailing slash
+and hard to read][xv]. In nginx most regexes may be replaced with trailing slash
 ability to replace the matched URI path instead. It's cleaner and easier to
 read, and usually covers the regex case.
 
-Web Regex Example (bad) that proxies /nzbget to https://nzbget:6791/
+Web Regex Example (_bad_) that proxies /nzbget to https://nzbget:6791/:
 ```nginx
 location ~ ^/nzbget$ {
   return 302 $scheme://$host$request_uri/;
@@ -227,13 +221,13 @@ location ~ ^/nzbget($|./*) {
   proxy_set_header Host $host;
 }
 ```
-* First rule regex matches `nzbget` and returns a 302 to the same URI with a
+* First rule regex matches `nzbget` and returns a _302_ to the same URI with a
   trailing slash.
 * Second rule accepts `/nzbget` with parameters and proxies to the service.
 * This results in two proxy hits and two regex comprehensions; it's also hard to
   understand what the regex is doing immediately.
 
-Using trailing slashes (good) that proxies /nzbget to https://nzbget:6791/
+Using trailing slashes (_good_) that proxies /nzbget to https://nzbget:6791/:
 ```nginx
 location /nzbget/ {
   proxy_pass https://nzbget:6791/;
@@ -264,7 +258,7 @@ location /sonarr {
 * Note **no** trailing slashes.
 
 ### Custom Path for Service
-This will allow you to hit the same service using shortcuts, `tv` & `sonarr`.
+This will allow you to hit the same service using shortcuts, _tv_ & _sonarr_.
 
 ```nginx
 location /tv {
@@ -275,7 +269,7 @@ location /sonarr {
   include /etc/nginx/conf.d/proxy-control.conf;
 }
 ```
-* `tv` will automatically redirect to `sonarr`.
+* _tv_ will automatically redirect to _sonarr_.
 
 ### Enable Websockets
 This will allow for apps requiring websockets to be used.
@@ -298,9 +292,9 @@ location /crashplan/ {
 * `proxy_http_version 1.1` is required, but included in `proxy-control.conf`.
 
 ### Rewrite reponses with sub-path
-Some applications are not [URI Path aware][11] and will re-write all responses
+Some applications are not [URI Path aware][wm] and will re-write all responses
 behind the proxy using a static relative path or hostname; which will cause 404
-errors and the app to break. Partially fixed using [http_sub_module][12].
+errors and the app to break. Partially fixed using [http_sub_module][o3].
 
 Note: Re-writing the proxy respones generally won't fix a complicated
 application as there will be a large number of unknown responses that need to be
@@ -325,30 +319,29 @@ proxy for a while.
 Keep one site per configuration file to focus only on that site. This will help
 reduce errors and allow fast lookup / disable of configurations.
 
-1. Create a services directory:
-
+Create a services directory:
 ```bash
 mkdir /etc/nginx/conf.d/services
 ```
 
-1. Add each site to `/etc/nginx/conf.d/services/{SITE}.conf`.
-1. Modify default config to auto import sites / services:
+Add each site to `/etc/nginx/conf.d/services/{SITE}.conf`. Then modify default
+config to auto import sites / services.
 
-/etc/nginx/conf.d/default.conf
+/etc/nginx/conf.d/default.conf `root:root 0644`
 ```nginx
 include /etc/nginx/conf.d/services/*.conf;
 ```
 
-Adding a site in services and restart nginx will now automatically pickup that
-site.
+Adding a site in services and restarting nginx will now automatically pickup
+that site.
 
 ### Site-wide Auth File
 Keep authentication definitions for different services to one file to maintain
 authentication consistency across multiple sites.
 
-1. Create an authentication [block and store in a file][3].
+Create an authentication [block and store in a file][io].
 
-/etc/nginx/conf.d/site-auth.conf
+/etc/nginx/conf.d/site-auth.conf `root:root 0644`
 ```nginx
 # Allow all on 10.1.1.0/24 through, and force auth for everyone else.
 satisfy any;
@@ -358,9 +351,9 @@ auth_basic 'Your Site';
 auth_basic_user_file /etc/nginx/conf.d/your_site.pass
 ```
 
-1. Include authentication block where authentication would be required:
+Include authentication block where authentication would be required.
 
-/etc/nginx/conf.d/services/my-site.conf
+/etc/nginx/conf.d/services/my-site.conf `root:root 0644`
 ```nginx
 location / {
   ...
@@ -376,23 +369,22 @@ For docker containers running with nginx, the docker network or specific IP
 would need to be whitelisted. This allows dashboards and services to communicate
 using FQDNs without needing basic auth.
 
-#### [Whitelist All Containers][16]
-1. Determine network that containers are on:
-
+#### [Whitelist All Containers][7m]
+Determine network that containers are on:
 ```bash
 docker network ls
 docker network inspect docker_default
 ```
 
-1. Add IP range to the authorization file
+Add IP range to the authorization file.
 
-/etc/nginx/conf.d/site-auth.conf
+/etc/nginx/conf.d/site-auth.conf `root:root 0644`
 ```nginx
 allow 172.18.0.0/16;
 ```
 
-#### [Whitelist Single Container][15]
-1. Set static IP for docker container (otherwise it is random)
+#### [Whitelist Single Container][0f]
+Set static IP for docker container (otherwise it is random).
 
 docker-compose.yml
 ```yaml
@@ -403,7 +395,7 @@ container_name:
     ipv4_address: 172.18.0.101
 ```
 
-1. Whitelist specific IP in auth file
+Whitelist specific IP in auth file.
 
 /etc/nginx/conf.d/site-auth.conf
 ```nginx
@@ -414,7 +406,7 @@ Debugging Headers
 -----------------
 To validate parameters passed to upstream services, the request should be
 dumped by the service or intercepted by another service temporarily. There is a
-[docker container to do this][13]. This will dump the recieved headers from both
+[docker container to do this][8k]. This will dump the recieved headers from both
 http and https communication to the upstream service.
 
 docker-compose.yml
@@ -431,23 +423,25 @@ location / {
 ```
 * Headers will be dumped directly to the page.
 
-[1]: https://www.nginx.com/
-[2]: https://hub.docker.com/_/nginx
-[3]: https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/
-[4]: https://www.digitalocean.com/community/tutorials/understanding-nginx-server-and-location-block-selection-algorithms
-[5]: https://medium.com/@utkarsh_verma/how-to-obtain-a-wildcard-ssl-certificate-from-lets-encrypt-and-setup-nginx-to-use-wildcard-cfb050c8b33f
-[6]: https://community.home-assistant.io/t/nginx-reverse-proxy-set-up-guide-docker/54802
-[7]: https://stackoverflow.com/questions/22759345/nginx-trailing-slash-in-proxy-pass-url
-[8]: https://stackoverflow.com/questions/764247/why-are-regular-expressions-so-controversial
-[9]: http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass
-[10]: https://medium.freecodecamp.org/expose-vs-publish-docker-port-commands-explained-simply-434593dbc9a3
-[11]: https://stackoverflow.com/questions/32542282/how-do-i-rewrite-urls-in-a-proxy-response-in-nginx
-[12]: http://nginx.org/en/docs/http/ngx_http_sub_module.html
-[13]: https://nginxconfig.io
-[14]: https://github.com/mendhak/docker-http-https-echo
-[15]: https://stackoverflow.com/questions/45358188/restrict-access-to-nginx-server-location-to-a-specific-docker-container-with-al
-[16]: https://docs.docker.com/v17.09/engine/userguide/networking/#the-default-bridge-network
+[docker-service-template.md|c9067f2][XX]
 
-[ref1]: proxy-control.conf
-[ref2]: ..
-[ref3]: site-auth.conf
+[co]: https://www.nginx.com/
+[3k]: https://hub.docker.com/_/nginx
+[io]: https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/
+[ff]: https://www.digitalocean.com/community/tutorials/understanding-nginx-server-and-location-block-selection-algorithms
+[3l]: https://medium.com/@utkarsh_verma/how-to-obtain-a-wildcard-ssl-certificate-from-lets-encrypt-and-setup-nginx-to-use-wildcard-cfb050c8b33f
+[kd]: https://community.home-assistant.io/t/nginx-reverse-proxy-set-up-guide-docker/54802
+[ik]: https://stackoverflow.com/questions/22759345/nginx-trailing-slash-in-proxy-pass-url
+[xv]: https://stackoverflow.com/questions/764247/why-are-regular-expressions-so-controversial
+[op]: http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass
+[dj]: https://medium.freecodecamp.org/expose-vs-publish-docker-port-commands-explained-simply-434593dbc9a3
+[wm]: https://stackoverflow.com/questions/32542282/how-do-i-rewrite-urls-in-a-proxy-response-in-nginx
+[o3]: http://nginx.org/en/docs/http/ngx_http_sub_module.html
+[v9]: https://nginxconfig.io
+[8k]: https://github.com/mendhak/docker-http-https-echo
+[0f]: https://stackoverflow.com/questions/45358188/restrict-access-to-nginx-server-location-to-a-specific-docker-container-with-al
+[7m]: https://docs.docker.com/v17.09/engine/userguide/networking/#the-default-bridge-network
+[XX]: https://github.com/r-pufky/docs/blob/c9067f2bc3d0aeb0f2915e63f8cd9515c00640a2/services/docker-service-template.md
+
+[refss]: proxy-control.conf
+[refew]: ..
