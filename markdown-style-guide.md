@@ -301,8 +301,13 @@ Pictures are also not so useful on the command line.
 #### Reference Text
 Optimized to handle modification post-creation.
 
-1. use `[XX]` where XX is a unique two digit alpha-numeric hash ([1260][kl]
+1. Use `[XX]` where XX is a unique two digit alpha-numeric hash ([1260][kl]
    possible links in a single doc).
+1. Use `[bugXX]` where XX is a unique two digit alpha-numeric hash ([1260][kl]
+   possible links in a single doc) specifically to document known bugs:
+   * Below reference text links, above unused reference links.
+   * One vertical space.
+   * Format `[bugXX]`.
 1. Unused reference / context links:
    * Below reference text links.
    * One vertical space.

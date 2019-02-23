@@ -87,9 +87,12 @@ server {
 ```
 * [proxy-control.conf][refjk] contains default proxy settings. Reload nginx.
 
+[docker-service-template.md|c9067f2][XX]
+
 [sy]: https://hub.docker.com/r/linuxserver/nzbget/
 [ui]: https://nzbget.net/behind-other-web-server
 [af]: nzbget.conf
+[XX]: https://github.com/r-pufky/docs/blob/c9067f2bc3d0aeb0f2915e63f8cd9515c00640a2/services/docker-service-template.md
 
 [refjk]: ../nginx/proxy-control.conf
 [refc8]: ../nginx/README.md

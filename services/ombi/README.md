@@ -1,39 +1,37 @@
-OMBI
-----
+[OMBI][ek]
+==========
 Media request management.
 
-[Docker repository][1]
-
-1. [Docker Ports Exposed](#docker-ports-exposed)
+1. [Ports](#ports)
 1. [Important File Locations](#important-file-locations)
 1. [Docker Creation](#docker-creation)
 1. [Reverse Proxy Setup](#reverse-proxy-setup)
 1. [Plex SSL Errors](#plex-ssl-errors)
 
-Docker Ports Exposed
---------------------
-Docker Compose
+Ports
+-----
+Docker reverse-proxy.
 
-| Port | Protocol | Exposed/Public | Purpose      |
-|------|----------|----------------|--------------|
-| 3579 | TCP      | Exposed        | OMBI Webface |
+| Port | Protocol | Exposed/Public | Purpose       |
+|------|----------|----------------|---------------|
+| 3579 | TCP      | Exposed        | OMBI Webface. |
 
 Important File Locations
 ------------------------
-Relative to docker container
+Relative to docker container.
 
-| File       | Purpose                     |
-|------------|-----------------------------|
-| /config    | OMBI main service directory |
+| File       | Purpose                      |
+|------------|------------------------------|
+| /config    | OMBI main service directory. |
 
 Docker Creation
 ---------------
-You can copy your existing configuration to docker `/config` directory
+You can copy your existing configuration to docker _/config_ directory
 adjusting for paths.
 
 * The UID/GID should be set to a user/group that is restricted.
 
-### Docker Compose
+Docker Compose:
 ```yaml
 sonarr:
   image: linuxserver/ombi:latest
@@ -50,14 +48,14 @@ sonarr:
 Reverse Proxy Setup
 -------------------
 Allows you to isolate your containers as well as wrap connections in SSL. See
-[nginx][ref2] for more details. Recommended.
+[nginx][refhu] for more details.
 
 ### Using Subdomains
-[nginx/conf.d/reverse-proxy.conf][2]
+[nginx/conf.d/reverse-proxy.conf][vb] `root:root 0644`
 ```nginx
 server {
   listen 443 ssl http2;
-  server_name ombi.<DOMAIN> ombi;
+  server_name ombi.{DOMAIN} ombi;
 
   location / {
     proxy_pass http://ombi:3579;
@@ -73,10 +71,10 @@ server {
   }
 }
 ```
-* [proxy-control.conf][ref1] contains default proxy settings. Reload nginx.
+* [proxy-control.conf][refio] contains default proxy settings. Reload nginx.
 
 ### Using Subpaths
-[nginx/conf.d/reverse-proxy.conf][2]
+[nginx/conf.d/reverse-proxy.conf][vb] `root:root 0644`
 ```nginx
 server {
   location /ombi/ {
@@ -92,7 +90,7 @@ server {
   }
 }
 ```
-* [proxy-control.conf][ref1] contains default proxy settings. Reload nginx.
+* [proxy-control.conf][refio] contains default proxy settings. Reload nginx.
 
 Plex SSL Errors
 ---------------
@@ -101,7 +99,7 @@ being used. This is due to the internal container IP not matching the SSL
 certificate issued by Plex that is used by default for connections. Workaround
 is to continue to require SSL, but disable SSL validation.
 
-OMBI does not save [all settings on save][bug1]. Some require the container to
+OMBI does not save [all settings on save][bugdk]. Some require the container to
 be restarted (for whatever reason, requiring SSL for connections is one of
 them).
 
@@ -110,14 +108,17 @@ them).
 1. Restart OMBI container
   * `docker stop ombi; docker start ombi`
 1. `Settings > Media Server > Plex`
-  * Check `SSL`
-  * Use Plex container external IP
-  * Auto generated token is fine
+  - [x] `SSL`
+  * Use Plex container external IP.
+  * Auto generated token is fine.
 
-[1]: https://github.com/linuxserver/docker-ombi
-[2]: https://github.com/tidusjar/Ombi/wiki/Reverse-Proxy-Examples
-[3]: https://forums.unraid.net/topic/53520-support-linuxserverio-ombi/?page=12
-[4]: https://github.com/tidusjar/Ombi/issues/2762
+[docker-service-template.md|c9067f2][XX]
 
-[ref1]: ../nginx/proxy-control.conf
-[ref2]: ../nginx/README.md
+[ek]: https://github.com/linuxserver/docker-ombi
+[vb]: https://github.com/tidusjar/Ombi/wiki/Reverse-Proxy-Examples
+[XX]: https://github.com/r-pufky/docs/blob/c9067f2bc3d0aeb0f2915e63f8cd9515c00640a2/services/docker-service-template.md
+
+[bugdk]: https://github.com/tidusjar/Ombi/issues/2762
+
+[refio]: ../nginx/proxy-control.conf
+[refhu]: ../nginx/README.md
