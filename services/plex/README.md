@@ -6,6 +6,8 @@ Media streaming service.
 1. [Important File Locations](#important-file-locations)
 1. [Docker Creation](#docker-creation)
 1. [Fixing Playback Issues](#fixing-playback-issues)
+1. [Managing Duplicates](#managing-duplicates)
+1. [Legacy Plex Fixes](#legacy-plex-fixes)
 
 [Ports][dp]
 -----------
