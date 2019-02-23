@@ -189,33 +189,33 @@ https://raw.githubusercontent.com/ZeroDot1/CoinBlockerLists/master/hosts
 * Large list of [additional blocklists][an].
 
 `Settings > DNS`
-1. Upstream DNS Servers
+* Upstream DNS Servers
   * Custom 1: `1.1.1.1`
   * Custom 2: `8.8.8.8`
-1. Interface Listening Behavior
+* Interface Listening Behavior
   - [x] Listen only on interface XXX
-1. Advanced DNS Settings
+* Advanced DNS Settings
   - [x] Never forward non-FQDNs
   - [x] Never forward reverse lookups for private IP ranges
 
 `Settings > DHCP`
-1. DHCP Settings
+* DHCP Settings
   - [ ] DHCP Server Enabled
 
 `Settings > Privacy`
-1. DNS resolver privacy level
+* DNS resolver privacy level
   - [x] Show everything and record everything
 
 ### Router Configuration
 Generic Configuration - will be located slightly differently for each server.
 
-1. `System > DNS Servers` (Upstream DNS servers for router)
+* `System > DNS Servers` (Upstream DNS servers for router)
   1. `x.x.x.x` (Pihole IP)
   1. `1.1.1.1` (cloudflare DNS resolver)
   1. `8.8.8.8` (google DNS resolver)
-1. `Config Tree > Service > dhcp-server > shared-network-name > {NETWORK} > subnet > <IP Range>` (DNS server assigned for DHCP clients)
+* `Config Tree > Service > dhcp-server > shared-network-name > {NETWORK} > subnet > <IP Range>` (DNS server assigned for DHCP clients)
   1. `x.x.x.x` (Router IP for given subnet)
-1. `Firewall Policies` (Enable DNS traffic to Pi-Hole server)
+* `Firewall Policies` (Enable DNS traffic to Pi-Hole server)
   1. `x.x.x.x 53 udp/tcp` (Allow TCP/UDP traffic on port 53 to Pihole)
 
 Ubuntu 18.04 Systemd
