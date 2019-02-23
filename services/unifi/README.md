@@ -23,7 +23,8 @@ Docker reverse-proxy.
 | 8880 | TCP      | Public         | Port used for HTTP portal redirection.                     |
 | 8843 | TCP      | Public         | Port used for HTTPS portal redirection.                    |
 
-These ports are disabled in this configuration.
+These ports are disabled in this configuration:
+
 | Port      | Protocol | Purpose                                                                            |
 |-----------|----------|------------------------------------------------------------------------------------|
 | 6789      | TCP      | Port used for UniFi mobile speed test.                                             |
