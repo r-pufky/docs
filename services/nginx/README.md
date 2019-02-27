@@ -402,6 +402,25 @@ Whitelist specific IP in auth file.
 allow 172.18.0.101;
 ```
 
+### Disable Auth for a specific location
+Explicitly disable auth and allow all to remove any auth enforcement for a
+specific location. This is for proxied sites that do their own authentication
+(e.g. git) or for specific locations which shouldn't be auth'ed.
+
+Explicitly set no authentication and allow all to prevent any configuration
+carried over from the default site.
+
+/etc/nginx/conf.d/services/my-site.conf `root:root 0644`
+```nginx
+location / {
+  ...
+  auth_basic off;
+  allow all;
+  proxy_pass ...
+  ...
+}
+```
+
 Debugging Headers
 -----------------
 To validate parameters passed to upstream services, the request should be
