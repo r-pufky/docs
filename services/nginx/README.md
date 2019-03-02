@@ -421,6 +421,26 @@ location / {
 }
 ```
 
+### Accessing Networks from Other Compose Containers
+Custom networks may be explicitly accessed by other containers (e.g. a
+reverse-proxy) by explicitly defining them within the compose definition.
+
+_service-name_/docker-compose.yml `root:staff 0640`
+```yaml
+networks:
+  custom_net_name:
+    external: true
+...
+services:
+  my_proxy:
+    networks:
+      my_proxy_network:
+      custom_net_name:
+```
+* _custom_net_name_ is a network defined in another container. Once this is
+  added, the proxy container will be able to do DNS resolution of container
+  names as usual, including proxying traffic to that network.
+
 Debugging Headers
 -----------------
 To validate parameters passed to upstream services, the request should be

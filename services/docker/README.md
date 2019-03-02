@@ -10,6 +10,7 @@ Do **NOT** expose `docker.sock` to [containers, even in read-only][9w].
 1. [Common Management Tasks](#common-management-tasks)
 1. [Interactive Docker Shell that Respects Terminal Size](#interactive-docker-shell-that-respects-terminal-size)
 1. [Bridged Adapters](#bridged-adapters)
+1. [Compose Containers on Different Networks](#compose-containers-on-different-networks)
 
 Installing
 ----------
@@ -271,6 +272,59 @@ reboot
 sysctl -a | grep bridge
 ```
 
+Compose Containers on [Different Networks][vo]
+----------------------------------------------
+Setup network isolation of compose containers to minimize exposure. By default
+all containers will end up on the same default network. This enables network
+[isolation][d9] of containers.
+
+Create a custom network named _custom_net_name_ on the subnet _172.40.0.0/16_
+for this compose container. Containers will automatically recieve an IP on this
+network when turning up.
+
+_service-name_/docker-compose.yml `root:staff 0640`
+```yaml
+...
+networks:
+  custom_net_name:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.40.0.0/16
+```
+
+Containers can be specified with static IP's within the compose definition.
+
+_service-name_/docker-compose.yml `root:staff 0640`
+```yaml
+services:
+  my_container:
+    ...
+    networks:
+      custom_net_name:
+        - ipv4_address: 172.40.1.1
+```
+
+### Accessing Networks from Other Compose Containers
+Custom networks may be explicitly accessed by other containers (e.g. a
+reverse-proxy) by explicitly defining them within the compose definition.
+
+_service-name_/docker-compose.yml `root:staff 0640`
+```yaml
+networks:
+  custom_net_name:
+    external: true
+...
+services:
+  my_proxy:
+    networks:
+      my_proxy_network:
+      custom_net_name:
+```
+* _custom_net_name_ is a network defined in another container. Once this is
+  added, the proxy container will be able to do DNS resolution of container
+  names as usual, including proxying traffic to that network.
+
 [oq]: #remove-an-image
 [eg]: https://docs.docker.com/get-started/
 [o3]: https://github.com/wsargent/docker-cheat-sheet
@@ -282,3 +336,5 @@ sysctl -a | grep bridge
 [9w]: https://www.lvh.io/posts/dont-expose-the-docker-socket-not-even-to-a-container.html
 [xi]: https://docs.docker.com/v17.09/compose/overview/
 [wl]: https://docs.docker.com/v17.09/compose/compose-file/#service-configuration-reference
+[vo]: https://runnable.com/docker/docker-compose-networking
+[d9]: https://blog.docker.com/2016/03/docker-networking-design-philosophy/
