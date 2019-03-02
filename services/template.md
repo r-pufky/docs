@@ -9,6 +9,7 @@ needed (e.g. docker setups, xen setups, etc).
 * Disk: 20GB ([Encrypted volume setup](../operating-systems/ubuntu/16.04/server.md#creating-an-encrypted-volume))
 
 1. [Ports Exposed](#ports-exposed)
+1. [Docker Capabilities](#docker-capabilities)
 1. [Important File Locations](#important-file-locations)
 1. [Server Setup](#server-setup)
 1. [Starting the Server](#starting-the-server)
@@ -23,6 +24,13 @@ Ports Exposed
 | 49152-65535 | TCP      | Public         | Random Peer Port (Disabled) |
 | 49160       | TCP      | Public         | Peer Port                   |
 | 9092        | TCP      | Public         | Webface                     |
+
+Docker Capabilities
+-------------------
+
+| Capability | Action |
+|------------|--------|
+| NET_ADMIN  | ADD    |
 
 Important File Locations
 ------------------------
