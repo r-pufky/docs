@@ -6,6 +6,7 @@ needed (e.g. docker setups, xen setups, etc).
 [Dedicated server setup / service notes][7d].
 
 1. [Ports](#ports)
+1. [Docker Capabilities](#docker-capabilities)
 1. [Important File Locations](#important-file-locations)
 1. [Docker Creation](#docker-creation)
 1. [Reverse Proxy Setup](#reverse-proxy-setup)
@@ -19,6 +20,13 @@ Docker reverse-proxy.
 |------|----------|----------------|--------------------------------|
 | 8337 | TCP      | Exposed        | Web GUI frontend for playback. |
 | 9999 | UDP      | Public         | (Optional) some other port.    |
+
+Docker Capabilities
+-------------------
+
+| Capability | Action |
+|------------|--------|
+| NET_ADMIN  | ADD    |
 
 Important File Locations
 ------------------------
