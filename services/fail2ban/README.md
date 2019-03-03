@@ -100,7 +100,7 @@ logpath = /var/log/auth.log
 maxretry = 5
 ```
 * Restart _f2b-system_.
-* Attempt and invalid ssh login and watch the docker logs to see if ssh is
+* Attempt an invalid ssh login and watch the docker logs to see if ssh is
   getting properly identified `docker logs f2b-system`.
 
 Docker Setup
@@ -183,7 +183,7 @@ datepattern = ^[^\[]*\[({DATE})
 #
 # Author: Yaroslav Halchenko
 ```
-* This is a direct copy of the [apache-badbots filter][fp]
+* This is a direct copy of the [apache-badbots filter][fp].
 
 fail2ban/docker/filter.d/nginx-http-auth.conf `root:root 0644`
 ```conf
