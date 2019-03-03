@@ -19,6 +19,7 @@ DNS should still resolve in a degraded state (e.g. pihole server or server is
 offline).
 
 1. [Ports](#ports)
+1. [Docker Capabilities](#docker-capabilities)
 1. [Important File Locations](#important-file-locations)
 1. [Docker Creation](#docker-creation)
 1. [Reverse Proxy Setup](#reverse-proxy-setup)
@@ -34,6 +35,13 @@ Docker reverse-proxy.
 | Port | Protocol | Exposed/Public | Purpose      |
 |------|----------|----------------|--------------|
 | 53   | TCP/UDP  | Public         | DNS Service. |
+
+Docker Capabilities
+-------------------
+
+| Capability | Action |
+|------------|--------|
+| NET_ADMIN  | ADD    |
 
 Important File Locations
 ------------------------
@@ -298,7 +306,7 @@ Cache is automatically cleared by restarting the FTLDNS service.
 `Settings`
 * `Restart DNS resolver`
 
-[docker-service-template.md|c9067f2][XX]
+[docker-service-template.md|14f2197][XX]
 
 [gh]: https://hub.docker.com/r/pihole/pihole/
 [4t]: https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1624320/comments/8
@@ -309,7 +317,7 @@ Cache is automatically cleared by restarting the FTLDNS service.
 [ab]: https://old.reddit.com/r/pihole/comments/7w4n81/having_trouble_blocking_youtube_ads_in_app_on_ios/dtyatmf/
 [a7]: https://v.firebog.net/hosts/lists.php
 [an]: http://www.ubuntuboss.com/how-to-install-pihole-on-ubuntu-16-04/
-[XX]: https://github.com/r-pufky/docs/blob/c9067f2bc3d0aeb0f2915e63f8cd9515c00640a2/services/docker-service-template.md
+[XX]: https://github.com/r-pufky/docs/blob/14f219752a17cf0017eccef6157c7957c16a9f78/services/docker-service-template.md
 
 [refju]: ../nginx/proxy-control.conf
 [refkk]: ../nginx/README.md
