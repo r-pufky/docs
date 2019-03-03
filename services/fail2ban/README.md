@@ -53,6 +53,7 @@ f2b-docker:
     - TZ=America/Los_Angeles
   volumes:
     - /data/services/fail2ban/docker:/data
+    - /etc/localtime:/etc/localtime:ro
     - /var/log:/var/log:ro
 f2b-system:
   image: crazymax/fail2ban:latest
@@ -70,6 +71,7 @@ f2b-system:
     - TZ=America/Los_Angeles
   volumes:
     - /data/services/fail2ban/system:/data
+    - /etc/localtime:/etc/localtime:ro
     - /var/log:/var/log:ro
 ```
 
