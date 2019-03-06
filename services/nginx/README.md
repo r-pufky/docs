@@ -462,6 +462,29 @@ location / {
 ```
 * Headers will be dumped directly to the page.
 
+Nginx queries Originate from Wrong Gateway
+------------------------------------------
+[Docker does not provide a way][bugdx] to set the [appropriate default
+gateway][bugfk] for multi-network containers. This results in
+[non-deterministic][bugsf] source IP [routing][buge9].
+
+Per [documentation][bugdx]:
+> :warning:
+> When a container is connected to multiple networks, its external connectivity
+> is provided via the first non-internal network, in lexical order.
+
+Nginx expresses this bug by forwarding/proxying any traffic _over_ the default
+gateway for the first lexical named network that appears.
+
+The current fix is to inspect the container and find the first _gateway_ listed
+in the connected networks. This will be the _default gateway_ for the container.
+
+There is currently no clean way to set a default gateway via compose.
+
+```bash
+docker inspect proxy_nginx_1
+```
+
 [docker-service-template.md|c9067f2][XX]
 
 [co]: https://www.nginx.com/
@@ -481,6 +504,11 @@ location / {
 [0f]: https://stackoverflow.com/questions/45358188/restrict-access-to-nginx-server-location-to-a-specific-docker-container-with-al
 [7m]: https://docs.docker.com/v17.09/engine/userguide/networking/#the-default-bridge-network
 [XX]: https://github.com/r-pufky/docs/blob/c9067f2bc3d0aeb0f2915e63f8cd9515c00640a2/services/docker-service-template.md
+
+[bugdx]: https://github.com/docker/libnetwork/issues/1141#issuecomment-215522809
+[bugsf]: https://dustymabe.com/2016/05/25/non-deterministic-docker-networking-and-source-based-ip-routing/
+[bugfk]: https://stackoverflow.com/questions/36882945/change-default-route-in-docker-container
+[buge9]: https://github.com/moby/moby/issues/21741
 
 [refss]: proxy-control.conf
 [refew]: ..

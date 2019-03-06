@@ -325,6 +325,25 @@ services:
   added, the proxy container will be able to do DNS resolution of container
   names as usual, including proxying traffic to that network.
 
+### Default Gateway is Not Correct
+[Docker does not provide a way][bugdx] to set the [appropriate default
+gateway][bugfk] for multi-network containers. This results in
+[non-deterministic][bugsf] source IP [routing][buge9].
+
+Per [documentation][bugdx]:
+> :warning:
+> When a container is connected to multiple networks, its external connectivity
+> is provided via the first non-internal network, in lexical order.
+
+The current fix is to inspect the container and find the first _gateway_ listed
+in the connected networks. This will be the _default gateway_ for the container.
+
+There is currently no clean way to set a default gateway via compose.
+
+```bash
+docker inspect proxy_nginx_1
+```
+
 [oq]: #remove-an-image
 [eg]: https://docs.docker.com/get-started/
 [o3]: https://github.com/wsargent/docker-cheat-sheet
@@ -338,3 +357,8 @@ services:
 [wl]: https://docs.docker.com/v17.09/compose/compose-file/#service-configuration-reference
 [vo]: https://runnable.com/docker/docker-compose-networking
 [d9]: https://blog.docker.com/2016/03/docker-networking-design-philosophy/
+
+[bugdx]: https://github.com/docker/libnetwork/issues/1141#issuecomment-215522809
+[bugsf]: https://dustymabe.com/2016/05/25/non-deterministic-docker-networking-and-source-based-ip-routing/
+[bugfk]: https://stackoverflow.com/questions/36882945/change-default-route-in-docker-container
+[buge9]: https://github.com/moby/moby/issues/21741
