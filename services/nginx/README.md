@@ -95,6 +95,7 @@ server {
   # Enable OCSP stapling https://en.wikipedia.org/wiki/OCSP_stapling.
   ssl_stapling on;
   ssl_stapling_verify on;
+  resolver 127.0.0.1;
 
   client_max_body_size 0;
 }
@@ -103,6 +104,8 @@ server {
   certificate][3l] will work.
 * _ssl-dhparams.pem_ may be generated with `openssl dhparam -out
   ssl-dhparams.pem 4096`.
+* _resolver_ should be set to a [DNS resolver][rm]. localhost, gateway or pihole
+  are all viable options. Check logs to ensure resolution works.
 
 ### Setup Base Proxy Control
 A proxy control template will enable complex proxy configurations to be
@@ -503,6 +506,7 @@ docker inspect proxy_nginx_1
 [8k]: https://github.com/mendhak/docker-http-https-echo
 [0f]: https://stackoverflow.com/questions/45358188/restrict-access-to-nginx-server-location-to-a-specific-docker-container-with-al
 [7m]: https://docs.docker.com/v17.09/engine/userguide/networking/#the-default-bridge-network
+[rm]: https://community.letsencrypt.org/t/no-resolver-defined-to-resolve-ocsp-int-x3-letsencrypt-org-while-requesting-certificate-status-responder-ocsp-int-x3-letsencrypt-org/21427
 [XX]: https://github.com/r-pufky/docs/blob/c9067f2bc3d0aeb0f2915e63f8cd9515c00640a2/services/docker-service-template.md
 
 [bugdx]: https://github.com/docker/libnetwork/issues/1141#issuecomment-215522809
