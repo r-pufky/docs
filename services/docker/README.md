@@ -302,7 +302,7 @@ services:
     ...
     networks:
       custom_net_name:
-        - ipv4_address: 172.40.1.1
+        ipv4_address: 172.40.1.1
 ```
 
 ### Accessing Networks from Other Compose Containers
