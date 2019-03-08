@@ -1,151 +1,82 @@
-[Pi-Hole][gh]
+[Pi-Hole][3m]
 =============
 Block nefarious websites & Ads.
 
 This will setup ad-blocking in the following manner:
 
-1. Router upstream DNS servers set to: `pihole`, `1.1.1.1`, `8.8.8.8`.
-1. Router DHCP Assigns Router as primary DNS server for clients.
-1. Pihole upstream DNS servers set to: `1.1.1.1`, `8.8.8.8`.
+1. Router upstream DNS servers set to `1.1.1.1`, `8.8.8.8`.
+1. Router DHCP Assigns _Pi-Hole_ as primary DNS server for clients.
+1. Router uses DNAT to force all DNS requests to _Pi-Hole_ (optional).
+1. Pihole upstream DNS server set to _router_.
 
-Clients can now be dynamically assigned DNS hostnames on multiple subnets, these
-clients will be able to locally resolve internal hosts on all subnets; and then
-send unknown DNS requets to pihole. Pihole will either block or foward those
-requests. The router will be able to forward DNS requests upstream if the
-Pi-hole server is unreachable.
+Clients will send DNS requets to Pi-Hole. Pi-Hole will either block, resolve or
+foward those requests to the router. The router will be able to resolve local
+DNS names and forward remaining unknown queries to upstream DNS servers.
 
-The intent of this setup is to provide 'DNS resolution at all costs'; meaning
-DNS should still resolve in a degraded state (e.g. pihole server or server is
-offline).
+Optionally, if the router supports _desitination NATS_, all DNS traffic will be
+routed directly to _Pi-Hole_. This catches hard-coded DNS servers that many
+phone apps, IoT devices, and applications use.
+
+Pihole will have static hosts set in _/etc/hosts_ to resolve multiple hostnames
+resolving to the same IP.
 
 1. [Ports](#ports)
-1. [Docker Capabilities](#docker-capabilities)
 1. [Important File Locations](#important-file-locations)
-1. [Docker Creation](#docker-creation)
-1. [Reverse Proxy Setup](#reverse-proxy-setup)
+1. [Installing](#installing)
 1. [Configuration](#configuration)
-1. [Ubuntu 18.04 Systemd](#ubuntu-1804-systemd)
-1. [Slow Boot Times](#slow-boot-times)
-1. [Clear DNS Cache](#clear-dns-cache)
+1. [Force HTTPS Admin Page](#force-https-admin-page)
 
-Ports
------
-Docker reverse-proxy.
-
-| Port | Protocol | Exposed/Public | Purpose      |
-|------|----------|----------------|--------------|
-| 53   | TCP/UDP  | Public         | DNS Service. |
-
-Docker Capabilities
--------------------
-
-| Capability | Action |
-|------------|--------|
-| NET_ADMIN  | ADD    |
+Port
+----
+| Port | Protocol | Purpose                       |
+|------|----------|-------------------------------|
+| 443  | TCP      | HTTPS administration webface. |
+| 80   | TCP      | HTTP administration webface.  |
+| 53   | TCP/UDP  | DNS Service.                  |
 
 Important File Locations
 ------------------------
-Relative to docker container.
+| File                          | Purpose                           |
+|-------------------------------|-----------------------------------|
+| /etc/hosts                    | Static host/IP lookup.            |
+| /etc/pihole                   | Configuration Data.               |
+| /etc/pihole/SetupVars.conf    | Startup Configuration Settings.   |
+| /etc/lighthttpd/external.conf | Pi-Hole web server configuration. |
 
-| File           | Purpose             |
-|----------------|---------------------|
-| /etc/pihole    | Service Data.       |
-| /etc/dnsmasq.d | Configuration Data. |
+Installing
+----------
+Assume a working Debian installation. Pihole has an installer script on the
+[website][3m], but you should never blindly execute scripts from the Internet.
 
-Docker Creation
----------------
-If first-run, just launch the docker container to generate the correct
-configuration directory structure, afterwards you can re-create with a mapped
-directories.
-
-* `NET_ADMIN` is required with FTLDNS now.
-* Docker container DNS is setup to resolve using pihole first, then `1.1.1.1`.
-* Pihole upstream DNS servers set to `1.1.1.1`,`8.8.8.8`.
-
-Docker Compose:
-```yaml
-pihole:
-  image: pihole/pihole:latest
-  restart: unless-stopped
-  ports:
-    - '53:53'
-    - '53:53/udp'
-  cap_add:
-    - NET_ADMIN
-  dns:
-    - 127.0.0.1
-    - 1.1.1.1
-  environment:
-    - ServerIP={HOST IP}
-    - VIRTUAL_HOST={HOST DNS NAME}
-    - DNS1=1.1.1.1
-    - DNS2=8.8.8.8
-    - TZ=America/Los_Angeles
-  volumes:
-    - /data/services/pihole:/etc/pihole
-    - /data/services/pihole/dnsmasq.d:/etc/dnsmasq.d
-    - /etc/localtime:/etc/localtime:ro
+Instead, download the GIT repository and run installer.
+```bash
+sudo apt install curl git
+git clone --depth 1 https://github.com/pi-hole/pi-hole
+cd 'pi-hole/automated install/'
+sudo bash basic-install.sh
 ```
+1. Upstream DNS Provider: `1.1.1.1,8.8.8.8`.
+1. Third Party Lists: All.
+1. Protocols: All.
+1. Static IP Address: Use current DHCP settings.
+1. Web admin interface: Yes.
+1. Web Server (required for webface if no other server): Yes.
+1. Log Queries: Yes.
+1. Privacy Mode: `0`.
 
-Reverse Proxy Setup
--------------------
-Allows you to isolate your containers as well as wrap connections in SSL. See
-[nginx][refkk] for more details.
-
-### Using Subdomains
-[nginx/conf.d/reverse-proxy.conf][4t] `root:root 0644`
-```nginx
-server {
-  listen 443 ssl http2;
-  server_name pihole.{DOMAIN} pihole;
-
-  location / {
-    proxy_pass http://pihole/admin/;
-    proxy_set_header X-Real-IP $remote_addr;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header X-Forwarded-Proto $scheme;
-    proxy_set_header X-Forwarded-Host $http_host;
-  }
-}
-```
-* [proxy-control.conf][refju] contains default proxy settings. Reload nginx.
-
-### Using Subpaths
-nginx/conf.d/reverse-proxy.conf `root:root 0644`
-```nginx
-server {
-  location /pihole/ {
-    proxy_pass http://pihole/admin/;
-    proxy_set_header X-Real-IP $remote_addr;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header X-Forwarded-Proto $scheme;
-    proxy_set_header X-Forwarded-Host $http_host;
-  }
-}
-```
-* [proxy-control.conf][refju] contains default proxy settings. Reload nginx.
+The _password_ will be listed on the summary page. This can be set using
+`pihole -a -p` and reached via http://pi.hole/admin, once DNS is set to pihole.
 
 Configuration
 -------------
-Most static [Ads and domains][ao] will be blocked. Dynamic content is
-continually changing and therefore ad-blocking for [youtube][af] is usually
-[hit-or-miss][ab].
-
-### Password
-The password is set randomly on container start. This can be found by searching
-the container logs and finding the latest password.
-
-```bash
-docker logs pihole | grep pass
-```
-
-Alternatively, a password may be statically set from within the container.
-```bash
-docker exec pihole pihole -a -p {PASSWORD}
-```
-* `WEBPASSWORD` environment variable will set as well but exposes password.
+Most static [Ads and domains][6d] will be blocked. Dynamic content is
+continually changing and therefore ad-blocking for [youtube][cu] is usually
+[hit-or-miss][c8].
 
 ### Pi-Hole Configuration
+Navigate to Pi-Hole admin interface: http://pi.hole/admin or use static IP if
+not using Pi-Hole DNS server yet.
+
 `Settings > Blocklists`
 ```
 https://adaway.org/hosts.txt
@@ -204,16 +135,17 @@ https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist
 * These can be added all at once (one per line) then mass updated.
 * Wally's list has a good list of [stricter blocking][a7].
 * Large list of [additional blocklists][an].
+* Ensure _all_ lists have a check after loading. If there is an _X_ then the
+  list could not be obtained.
 
 `Settings > DNS`
 * Upstream DNS Servers
-  * Custom 1: `1.1.1.1`
-  * Custom 2: `8.8.8.8`
+  * Custom 1: {ROUTER DNS IP}
 * Interface Listening Behavior
   - [x] Listen only on interface XXX
 * Advanced DNS Settings
-  - [x] Never forward non-FQDNs
-  - [x] Never forward reverse lookups for private IP ranges
+  - [ ] Never forward non-FQDNs
+  - [ ] Never forward reverse lookups for private IP ranges
 
 `Settings > DHCP`
 * DHCP Settings
@@ -223,90 +155,76 @@ https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist
 * DNS resolver privacy level
   - [x] Show everything and record everything
 
+### Static Host IP Resolution
+Useful for hosts with multiple hostnames per IP (e.g. docker containers); or
+static hosts that the router cannot resolve (e.g. the static address is not
+defined in the router itself).
+
+/etc/hosts `root:root 0644`
+```hosts
+1.2.3.4    app1.host.com app1  # docker app 1
+1.2.3.4    app2.host.com app2  # docker app 2
+```
+* Restarting Pi-Hole may be required.
+
 ### Router Configuration
 Generic Configuration - will be located slightly differently for each server.
 
 * `System > DNS Servers` (Upstream DNS servers for router)
-  1. `x.x.x.x` (Pihole IP)
   1. `1.1.1.1` (cloudflare DNS resolver)
   1. `8.8.8.8` (google DNS resolver)
 * `Config Tree > Service > dhcp-server > shared-network-name > {NETWORK} > subnet > <IP Range>` (DNS server assigned for DHCP clients)
-  1. `x.x.x.x` (Router IP for given subnet)
+  1. `x.x.x.x` (Pi-Hole IP)
 * `Firewall Policies` (Enable DNS traffic to Pi-Hole server)
   1. `x.x.x.x 53 udp/tcp` (Allow TCP/UDP traffic on port 53 to Pihole)
 
-Ubuntu 18.04 Systemd
---------------------
-Systemd DNS STUB Resolver has a [bug where disabling the STUB resolver does not
-re-link the appropriate resolve.conf file][4t].
+### Clients
+Ensure DNS cache is flushed and new DNS server is set to start resolution via
+Pi-Hole.
 
-There are two ways to fix this. You can either [disable systemd resolver][8i] or
-manually set the [appropriate resolv.conf file][vj].
+Force HTTPS Admin Page
+----------------------
+HTTPS should only be enabled for the FQDN of the Pi-Hole server; as the server is
+redirecting [traffic, you may get a bunch of cert wonkiness when DNS resolves
+return blocked domains][do].
 
-The preferred fix is re-linking resolv.conf to keep the system as close to
-vanilla as possible; choose **only one** based on needs.
-
-### Re-link correct resolv.conf file (preferred)
-This method will disable the STUB DNS server and link the correct resolv.conf
-file.
-
-/etc/systemd/resolved.conf `root:root 0644`
+Create a combined certificate
 ```bash
-[Resolve]
-...
-DNSStubListener=no
+sudo cat privkey.pem cert.pem | sudo tee combined.pem
+sudo chmod www-data -R combined.pem
+```
+* This contains private information and should not be placed in a web directory.
+
+/etc/lighthttpd/external.conf
+```
+$HTTP['host'] == 'pihole.example.com' {
+  # Ensure the Pi-hole Block Page knows that this is not a blocked domain
+  setenv.add-environment = ('fqdn' => 'true')
+
+  # Enable the SSL engine with a LE cert, only for this specific host
+  $SERVER['socket'] == ':443' {
+    ssl.engine = 'enable'
+    ssl.pemfile = 'combined.pem'
+    ssl.ca-file =  'fullchain.pem'
+    ssl.honor-cipher-order = 'enable'
+    ssl.cipher-list = 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH'
+    ssl.use-sslv2 = 'disable'
+    ssl.use-sslv3 = 'disable'
+  }
+
+  # Redirect HTTP to HTTPS
+  $HTTP['scheme'] == 'http' {
+    $HTTP['host'] =~ '.*' {
+      url.redirect = ('.*' => 'https://%0$0')
+    }
+  }
+}
 ```
 
+Restart services
 ```bash
-rm /etc/resolv.conf`
-ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+sudo service lighthttpd restart
 ```
-* Originally, `resolv.conf` links to systemd stub resolver
-  `/run/systemd/resolve/stub-resolv.conf`.
-
-/etc/resolv.conf `root:root 0644`
-```bash
-nameserver x.x.x.x
-search <your domain>
-```
-* `nameserver` should use router DNS IP.
-
-```bash
-service systemd-resolved restart
-```
-
-### Disable systemd-resolved entirely (not-preferred)
-This will disble the systemd resolver entirely and create a static resolv.conf
-file.
-
-```bash
-systemctl disable systemd-resolved.service
-service systemd-resolved stop
-rm /etc/resolv.conf
-touch /etc/resolv.conf
-chmod 0644 /etc/resolv.conf
-chmod root:root /etc/resolve.conf
-```
-
-/etc/resolv.conf `root:root 0644`
-```bash
-nameserver x.x.x.x
-search <your domain>
-```
-* `nameserver` should use router DNS IP.
-
-Slow Boot Times
----------------
-Any computer on the network using the pihole server (including the docker host),
-will appear to 'slow down' when the pihole server is unreachable, or the docker
-host is booting. This is due to the DNS request timing out and being forwarded
-to the next DNS server for resolution. This will appear to slow down boot times
-for systems with heavy DNS reoslution use and may result in some resolution
-failures (depending on how the application handles initial DNS failures) until
-the pihole server is back online.
-
-Resolving in a degraded state is intended behavior for this setup. See start of
-document.
 
 Clear DNS Cache
 ---------------
@@ -315,18 +233,11 @@ Cache is automatically cleared by restarting the FTLDNS service.
 `Settings`
 * `Restart DNS resolver`
 
-[docker-service-template.md|14f2197][XX]
-
-[gh]: https://hub.docker.com/r/pihole/pihole/
-[4t]: https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1624320/comments/8
-[8i]: https://discourse.pi-hole.net/t/docker-reply-from-unexpected-source/5729/4
-[vj]: https://old.reddit.com/r/pihole/comments/8sgro3/server_name_resolution_messed_up_when_running
-[ao]: https://www.smarthomebeginner.com/pi-hole-tutorial-whole-home-ad-blocking/#Pi_Hole_Configuration_and_Customization
-[af]: https://old.reddit.com/r/pihole/comments/84luw8/blocking_youtube_ads/
-[ab]: https://old.reddit.com/r/pihole/comments/7w4n81/having_trouble_blocking_youtube_ads_in_app_on_ios/dtyatmf/
 [a7]: https://v.firebog.net/hosts/lists.php
 [an]: http://www.ubuntuboss.com/how-to-install-pihole-on-ubuntu-16-04/
-[XX]: https://github.com/r-pufky/docs/blob/14f219752a17cf0017eccef6157c7957c16a9f78/services/docker-service-template.md
-
-[refju]: ../nginx/proxy-control.conf
-[refkk]: ../nginx/README.md
+[3m]: https://pi-hole.net/
+[do]: https://discourse.pi-hole.net/t/enabling-https-for-your-pi-hole-web-interface/5771
+[6d]: https://www.smarthomebeginner.com/pi-hole-tutorial-whole-home-ad-blocking/#Pi_Hole_Configuration_and_Customization
+[cu]: https://old.reddit.com/r/pihole/comments/84luw8/blocking_youtube_ads/
+[c8]: https://old.reddit.com/r/pihole/comments/7w4n81/having_trouble_blocking_youtube_ads_in_app_on_ios/dtyatmf/
+[si]: https://v.firebog.net/hosts/lists.php
