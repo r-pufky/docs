@@ -11,21 +11,24 @@ This will setup ad-blocking in the following manner:
 Clients can now be dynamically assigned DNS hostnames on multiple subnets, these
 clients will be able to locally resolve internal hosts on all subnets; and then
 send unknown DNS requets to pihole. Pihole will either block or foward those
-requests.
+requests. The router will be able to forward DNS requests upstream if the
+Pi-hole server is unreachable.
 
-The router will be able to forward DNS requests upstream if the Pi-hole server
-is unreachable.
+The intent of this setup is to provide 'DNS resolution at all costs'; meaning
+DNS should still resolve in a degraded state (e.g. pihole server or server is
+offline).
 
-1. [Ports Exposed](#ports-exposed)
+1. [Ports](#ports)
 1. [Important File Locations](#important-file-locations)
 1. [Installing](#installing)
 1. [Configuration](#configuration)
 
-Port Exposed
-------------
+Port
+----
 | Port | Protocol | Purpose                       |
 |------|----------|-------------------------------|
 | 443  | TCP      | HTTPS administration webface. |
+| 80   | TCP      | HTTP administration webface.  |
 | 53   | TCP/UDP  | DNS Service.                  |
 
 Important File Locations
@@ -39,7 +42,7 @@ Important File Locations
 Installing
 ----------
 Assume a working Debian installation. Pihole has an installer script on the
-[website][1], but you should never blindly execute scripts from the Internet.
+[website][3m], but you should never blindly execute scripts from the Internet.
 
 Instead, download the GIT repository and run installer.
 ```bash
@@ -62,14 +65,14 @@ The _password_ will be listed on the summary page. This can be set using
 
 Configuration
 -------------
-Most static [Ads and domains][ads1] will be blocked. Dynamic content is
-continually changing and therefore ad-blocking for [youtube][ads2] is usually
-[hit-or-miss][ads3].
+Most static [Ads and domains][6d] will be blocked. Dynamic content is
+continually changing and therefore ad-blocking for [youtube][cu] is usually
+[hit-or-miss][c8].
 
 ### Force HTTPS for Pi-Hole Adminstration Page
 HTTPS should only be enabled for the FQDN of the pihole server; as the server is
 redirecting [traffic, you may get a bunch of cert wonkiness when DNS resolves
-return blocked domains][2].
+return blocked domains][do].
 
 Create a combined certificate
 ```bash
@@ -111,44 +114,106 @@ sudo service lighthttpd restart
 
 ### Pi-Hole Configuration
 `Settings > Blocklists`
-* Add `https://v.firebog.net/hosts/lists.php?type=tick`
-  * This will block widely-accepted Ads sites. See [Wally's Lists][ads4] for
-    stricter lists.
-* Add `https://raw.githubusercontent.com/HenningVanRaumle/pihole-ytadblock/master/ytadblock.txt`
+```
+https://adaway.org/hosts.txt
+
+https://bitbucket.org/ethanr/dns-blacklists/raw/8575c9f96e5b4a1308f2f12394abd86d0927a4a0/bad_lists/Mandiant_APT1_Report_Appendix_D.txt
+
+https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-blocklist.txt
+https://gitlab.com/quidsup/notrack-blocklists/raw/master/notrack-malware.txt
+
+https://hosts-file.net/ad_servers.txt
+https://hosts-file.net/emd.txt
+https://hosts-file.net/exp.txt
+https://hosts-file.net/grm.txt
+https://hosts-file.net/psh.txt
+
+https://mirror1.malwaredomains.com/files/justdomains
+
+https://mirror.cedia.org.ec/malwaredomains/immortal_domains.txt
+
+https://www.malwaredomainlist.com/hostslist/hosts.txt
+
+https://ransomwaretracker.abuse.ch/downloads/RW_DOMBL.txt
+
+https://raw.githubusercontent.com/HenningVanRaumle/pihole-ytadblock/master/ytadblock.txt
+https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-social/hosts
+https://raw.githubusercontent.com/StevenBlack/hosts/master/data/adaway.org/hosts
+https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.2o7Net/hosts
+https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.Risk/hosts
+https://raw.githubusercontent.com/StevenBlack/hosts/master/data/add.Spam/hosts
+https://raw.githubusercontent.com/StevenBlack/hosts/master/data/Badd-Boyz-Hosts/hosts
+https://raw.githubusercontent.com/StevenBlack/hosts/master/data/CoinBlockerList/hosts
+https://raw.githubusercontent.com/StevenBlack/hosts/master/data/KADhosts/hosts
+https://raw.githubusercontent.com/StevenBlack/hosts/master/data/malwaredomainlist.com/hosts
+https://raw.githubusercontent.com/StevenBlack/hosts/master/data/UncheckyAds/hosts
+https://raw.githubusercontent.com/StevenBlack/hosts/master/data/yoyo.org/hosts
+
+https://reddestdream.github.io/Projects/MinimalHosts/etc/MinimalHostsBlocker/minimalhosts
+
+https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt
+https://s3.amazonaws.com/lists.disconnect.me/simple_malvertising.txt
+
+https://v.firebog.net/hosts/AdguardDNS.txt
+https://v.firebog.net/hosts/Airelle-hrsk.txt
+https://v.firebog.net/hosts/Airelle-trc.txt
+https://v.firebog.net/hosts/Easylist.txt
+https://v.firebog.net/hosts/Easyprivacy.txt
+https://v.firebog.net/hosts/lists.php?type=tick
+https://v.firebog.net/hosts/Prigent-Ads.txt
+https://v.firebog.net/hosts/Prigent-Malware.txt
+https://v.firebog.net/hosts/Prigent-Phishing.txt
+https://v.firebog.net/hosts/Shalla-mal.txt
+https://v.firebog.net/hosts/static/w3kbl.txt
+
+https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist
+```
+* These can be added all at once (one per line) then mass updated.
+* Wally's list has a good list of [stricter blocking][a7].
+* Large list of [additional blocklists][an].
 
 `Settings > DNS`
-1. Upstream DNS Servers
+* Upstream DNS Servers
   * Custom 1: `1.1.1.1`
   * Custom 2: `8.8.8.8`
-1. Interface Listening Behavior
-  * Check `Listen only on interface XXX`
-1. Advanced DNS Settings
-  * Check `Never forward non-FQDNs`
-  * Check `Never forward reverse lookups for private IP ranges`
+* Interface Listening Behavior
+  - [x] Listen only on interface XXX
+* Advanced DNS Settings
+  - [x] Never forward non-FQDNs
+  - [x] Never forward reverse lookups for private IP ranges
 
 `Settings > DHCP`
-1. DHCP Settings
-  * Uncheck `DHCP Server Enabled`
+* DHCP Settings
+  - [ ] DHCP Server Enabled
 
 `Settings > Privacy`
-1. DNS resolver privacy level
-  * `Show everything and record everything`
+* DNS resolver privacy level
+  - [x] Show everything and record everything
 
 ### Router Configuration
 Generic Configuration - will be located slightly differently for each server.
 
-1. `System > DNS Servers` (Upstream DNS servers for router)
+* `System > DNS Servers` (Upstream DNS servers for router)
   1. `x.x.x.x` (Pihole IP)
   1. `1.1.1.1` (cloudflare DNS resolver)
   1. `8.8.8.8` (google DNS resolver)
-1. `Config Tree > Service > dhcp-server > shared-network-name > <NETWORK> > subnet > <IP Range>` (DNS server assigned for DHCP clients)
+* `Config Tree > Service > dhcp-server > shared-network-name > {NETWORK} > subnet > <IP Range>` (DNS server assigned for DHCP clients)
   1. `x.x.x.x` (Router IP for given subnet)
-1. `Firewall Policies` (Enable DNS traffic to Pi-Hole server)
+* `Firewall Policies` (Enable DNS traffic to Pi-Hole server)
   1. `x.x.x.x 53 udp/tcp` (Allow TCP/UDP traffic on port 53 to Pihole)
 
-[1]: https://pi-hole.net/
-[2]: https://discourse.pi-hole.net/t/enabling-https-for-your-pi-hole-web-interface/5771
-[ads1]: https://www.smarthomebeginner.com/pi-hole-tutorial-whole-home-ad-blocking/#Pi_Hole_Configuration_and_Customization
-[ads2]: https://old.reddit.com/r/pihole/comments/84luw8/blocking_youtube_ads/
-[ads3]: https://old.reddit.com/r/pihole/comments/7w4n81/having_trouble_blocking_youtube_ads_in_app_on_ios/dtyatmf/
-[ads4]: https://v.firebog.net/hosts/lists.php
+Clear DNS Cache
+---------------
+Cache is automatically cleared by restarting the FTLDNS service.
+
+`Settings`
+* `Restart DNS resolver`
+
+[a7]: https://v.firebog.net/hosts/lists.php
+[an]: http://www.ubuntuboss.com/how-to-install-pihole-on-ubuntu-16-04/
+[3m]: https://pi-hole.net/
+[do]: https://discourse.pi-hole.net/t/enabling-https-for-your-pi-hole-web-interface/5771
+[6d]: https://www.smarthomebeginner.com/pi-hole-tutorial-whole-home-ad-blocking/#Pi_Hole_Configuration_and_Customization
+[cu]: https://old.reddit.com/r/pihole/comments/84luw8/blocking_youtube_ads/
+[c8]: https://old.reddit.com/r/pihole/comments/7w4n81/having_trouble_blocking_youtube_ads_in_app_on_ios/dtyatmf/
+[si]: https://v.firebog.net/hosts/lists.php
