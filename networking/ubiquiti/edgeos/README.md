@@ -158,8 +158,49 @@ May be applied to any subnet that should only have Internet access.
 > :warning:
 > Ensure Interface is set to the appropriate Wifi VLAN.
 
+DNAT for [Captive DNS][cp]
+--------------------------
+Force [all DNS][fg] queries regardless of destination server to a specific DNS
+server.
+
+Do _not_ enable this for the custom DNS server!
+
+### Add Destination NAT [Rule][lx] Per Interface
+Interface is the interface the Network is served on.
+
+`Firewall/NAT > NAT > Add Destination Rule`
+* Description: {NETWORK} `Captive DNS`
+- [x] Enable
+* Inbound Interface: `ethX`
+* Translations:
+  * Address: {PI-HOLE DNS SERVER}
+  * Port: 53
+- [ ] Exclude from NAT
+- [ ] Enable logging
+- [x] Both TCP and UDP
+* Src Address: {NETWORK RANGE CIDR}
+* Dest Port: `53`
+
+### Add Masquerade NAT [Rule][pv]
+Enables appropriate transparent DNS lookups (e.g. the clients will think that
+they are resolving from the requested DNS server, not the actual one).
+
+Interface is the interface the Network is served on.
+
+`Firewall/NAT > NAT > Add Source NAT Rule`
+* Description: {NETWORK} `Masquerade Captive DNS`
+- [x] Enable
+* Inbound Interface: `ethX`
+- [x] Use Masquerade
+- [ ] Exclude from NAT
+- [ ] Enable logging
+- [x] Both TCP and UDP
+* Src Address: {NETWORK RANGE CIDR}
+* Dest Address: {PI-HOLE DNS SERVER}
+* Dest Port: `53`
+
 Let's [Encrypt SSL][0c] for Webface
-----------------------------------
+-----------------------------------
 A let's encrypt certifcate may be used to serve https router traffic. Turn on
 EdgeOS SSH.
 
@@ -205,5 +246,9 @@ show configuration all
 [ne]: https://www.zdnet.com/google-amp/article/over-485000-ubiquiti-devices-vulnerable-to-new-attack/
 [x8]: https://help.ubnt.com/hc/en-us/articles/204976244-EdgeRouter-UBNT-Device-Discovery
 [7b]: https://community.ubnt.com/t5/EdgeRouter/Importing-and-exporting-configurations/td-p/1513041
+[cp]: https://old.reddit.com/r/pihole/comments/ahmg14/finally_set_up_a_dnat_for_hardcoded_dns/eeg114d/
+[pv]: https://i.imgur.com/IFYUX2T.png
+[fg]: https://community.ubnt.com/t5/EdgeRouter/Intercepting-and-Re-Directing-DNS-Queries/td-p/1554378
+[lx]: https://old.reddit.com/r/Ubiquiti/comments/6lndq4/question_redirect_port_53_to_internal_dns_server/
 
 [ref7y]: https://help.ubnt.com/hc/en-us/articles/218889067-EdgeMAX-How-to-Protect-a-Guest-Network-on-EdgeRouter

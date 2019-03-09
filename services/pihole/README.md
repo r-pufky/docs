@@ -24,6 +24,7 @@ resolving to the same IP.
 1. [Important File Locations](#important-file-locations)
 1. [Installing](#installing)
 1. [Configuration](#configuration)
+1. [DNAT for Captive DNS](#dnat-for-captive-dns)
 1. [Force HTTPS Admin Page](#force-https-admin-page)
 
 Port
@@ -182,6 +183,48 @@ Generic Configuration - will be located slightly differently for each server.
 Ensure DNS cache is flushed and new DNS server is set to start resolution via
 Pi-Hole.
 
+
+DNAT for [Captive DNS][cp]
+--------------------------
+Force [all DNS][fg] queries regardless of destination server to use Pi-Hole DNS
+server.
+
+Do _not_ enable this for the Pi-Hole DNS server!
+
+### Add Destination NAT [Rule][lx] Per Interface
+Interface is the interface the Network is served on.
+
+`Firewall/NAT > NAT > Add Destination Rule`
+* Description: {NETWORK} `Captive DNS`
+- [x] Enable
+* Inbound Interface: `ethX`
+* Translations:
+  * Address: {PI-HOLE DNS SERVER}
+  * Port: 53
+- [ ] Exclude from NAT
+- [ ] Enable logging
+- [x] Both TCP and UDP
+* Src Address: {NETWORK RANGE CIDR}
+* Dest Port: `53`
+
+### Add Masquerade NAT [Rule][pv]
+Enables appropriate transparent DNS lookups (e.g. the clients will think that
+they are resolving from the requested DNS server, not the actual one).
+
+Interface is the interface the Network is served on.
+
+`Firewall/NAT > NAT > Add Source NAT Rule`
+* Description: {NETWORK} `Masquerade Captive DNS`
+- [x] Enable
+* Inbound Interface: `ethX`
+- [x] Use Masquerade
+- [ ] Exclude from NAT
+- [ ] Enable logging
+- [x] Both TCP and UDP
+* Src Address: {NETWORK RANGE CIDR}
+* Dest Address: {PI-HOLE DNS SERVER}
+* Dest Port: `53`
+
 Force HTTPS Admin Page
 ----------------------
 HTTPS should only be enabled for the FQDN of the Pi-Hole server; as the server is
@@ -241,3 +284,7 @@ Cache is automatically cleared by restarting the FTLDNS service.
 [cu]: https://old.reddit.com/r/pihole/comments/84luw8/blocking_youtube_ads/
 [c8]: https://old.reddit.com/r/pihole/comments/7w4n81/having_trouble_blocking_youtube_ads_in_app_on_ios/dtyatmf/
 [si]: https://v.firebog.net/hosts/lists.php
+[cp]: https://old.reddit.com/r/pihole/comments/ahmg14/finally_set_up_a_dnat_for_hardcoded_dns/eeg114d/
+[pv]: https://i.imgur.com/IFYUX2T.png
+[fg]: https://community.ubnt.com/t5/EdgeRouter/Intercepting-and-Re-Directing-DNS-Queries/td-p/1554378
+[lx]: https://old.reddit.com/r/Ubiquiti/comments/6lndq4/question_redirect_port_53_to_internal_dns_server/

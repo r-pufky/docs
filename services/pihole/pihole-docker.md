@@ -5,6 +5,7 @@
 Block nefarious websites & Ads.
 
 > :skull:
+>
 > Dedicated hardware is **Highly Recommended** to run Pi-Hole; as this is a
 > critical service that needs to remain on for every other service to function.
 > The documentation below works, but **will** lead to _many, many_ problems.
