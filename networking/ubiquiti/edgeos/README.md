@@ -179,7 +179,11 @@ Interface is the interface the Network is served on.
 - [ ] Enable logging
 - [x] Both TCP and UDP
 * Src Address: {NETWORK RANGE CIDR}
+* Dest Address: `!`{PI-HOLE DNS SERVER}
 * Dest Port: `53`
+
+> :warning:
+> Note the _!_ to negate matching for destination address.
 
 ### Add Masquerade NAT [Rule][pv]
 Enables appropriate transparent DNS lookups (e.g. the clients will think that
