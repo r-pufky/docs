@@ -138,6 +138,7 @@ https://zeustracker.abuse.ch/blocklist.php?download=domainblocklist
 * Large list of [additional blocklists][an].
 * Ensure _all_ lists have a check after loading. If there is an _X_ then the
   list could not be obtained.
+* Check [this list][f8] for common services to whitelist.
 
 `Settings > DNS`
 * Upstream DNS Servers
@@ -292,3 +293,4 @@ Cache is automatically cleared by restarting the FTLDNS service.
 [pv]: https://i.imgur.com/IFYUX2T.png
 [fg]: https://community.ubnt.com/t5/EdgeRouter/Intercepting-and-Re-Directing-DNS-Queries/td-p/1554378
 [lx]: https://old.reddit.com/r/Ubiquiti/comments/6lndq4/question_redirect_port_53_to_internal_dns_server/
+[f8]: https://discourse.pi-hole.net/t/commonly-whitelisted-domains/212
