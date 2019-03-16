@@ -203,6 +203,56 @@ Interface is the interface the Network is served on.
 * Dest Address: {PI-HOLE DNS SERVER}
 * Dest Port: `53`
 
+DNAT for Captive DNS Exceptions
+-------------------------------
+Allow for specific clients exceptions to DNAT rule.
+
+This should be an _exception_ and not the rule. Keep this list small.
+
+### Add Source Address Group
+Group to manage all clients for the exception.
+
+`Firewall/NAT > Firewall/NAT Groups > Add Group`
+* Name: {NETWORK}`-dnat-exception-group`
+* Description: `Disable DNAT / Captive DNS for exceptions`
+- [x] Address Group
+
+`Firewall/Nat > Firewall/NAT Groups > {CREATED GROUP > actions > edit`
+* Address: {CLIENT IP}
+
+### Add Destination NAT [Rule][lx] Per Interface
+Interface is the interface the Network is served on.
+
+`Firewall/NAT > NAT > Add Destination Rule`
+* Description: {NETWORK} `DNAT Client Disable Exception`
+- [x] Enable
+* Inbound Interface: `ethX`
+* Translations:
+  * Address: {ROUTER DNS SERVER}
+  * Port: 53
+- [ ] Exclude from NAT
+- [ ] Enable logging
+- [x] Both TCP and UDP
+* Src Address: {DISABLE SOURCE ADDRESS GROUP}
+* Dest Address: `!`{PI-HOLE DNS SERVER}
+* Dest Port: `53`
+
+> :warning:
+> Note the _!_ to negate matching for destination address.
+
+> :warning:
+> Set rule above the captive DNS rule for the specific network for the
+> exception to apply.
+
+### Add Masquerade NAT [Rule][pv]
+Enables appropriate transparent DNS lookups (e.g. the clients will think that
+they are resolving from the requested DNS server, not the actual one).
+
+Interface is the interface the Network is served on.
+
+`Firewall/NAT > NAT > Add Source NAT Rule`
+* Description: {NETWORK} `Masquerade Captive DNS`
+
 Let's [Encrypt SSL][0c] for Webface
 -----------------------------------
 A let's encrypt certifcate may be used to serve https router traffic. Turn on
