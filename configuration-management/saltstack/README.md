@@ -689,20 +689,40 @@ States can now be applied to nodegroups and layered based on setup.
 prod:
   linux-base:
     - match: nodegroup
-    - {{ STANDARD STATES }}
+    - {STANDARD STATES}
 
   debian:
     - match: nodegroup
-    - {{ DEBIAN SPECIFIC STATES }}
+    - {DEBIAN SPECIFIC STATES}
 
   'host1':
-    - {{ HOST SPECIFIC STATES }}
+    - {HOST SPECIFIC STATES}
 ```
 * If _host1_ is a _Debian_ machine, it will have _linux-base_ then _debian_ and
   finally _host1_ applied.
 * If another host is added that is a _Debian_ install, it will have _linux-base_
   then _debian_ applied.
 * An _Ubuntu_ machine will only have _linux-base_ applied.
+
+/srv/salt/pillar/prod/top.sls `salt:salt 0644`
+```yaml
+prod:
+  linux-base:
+    - match: nodegroup
+    - {STANDARD PILLAR DATA TO EXPOSE}
+
+  debian:
+    - match: nodegroup
+    - {DEBIAN SPECIFIC DATA TO EXPOSE}
+
+  'host':
+    - {HOST SPECIFIC DATA TO EXPOSE}
+```
+
+> :warning:
+> Be sure to expose the required pillar data for the nodegroups as well, if each
+> host is not explicitly listed in pillar, otherwise states will fail with an
+> _Rendering SLS '{PILLAR DATA}' failed: Jinja variable ..._
 
 Connection Issues
 -----------------
