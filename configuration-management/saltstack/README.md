@@ -693,10 +693,10 @@ prod:
 
   debian:
     - match: nodegroup
-    - {{ DEBIAN SPECIFIC STATES}}
+    - {{ DEBIAN SPECIFIC STATES }}
 
   'host1':
-    - {{ HOST SPECIFIC STATES}}
+    - {{ HOST SPECIFIC STATES }}
 ```
 * If _host1_ is a _Debian_ machine, it will have _linux-base_ then _debian_ and
   finally _host1_ applied.
