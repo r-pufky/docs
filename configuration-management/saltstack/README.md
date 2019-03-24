@@ -21,6 +21,7 @@ services required.
 1. [Revoking Certs](#revoking-certs)
 1. [Master Frequent Commands](#master-frequent-commands)
 1. [Manually Running Minions](#manually-running-minions)
+1. [Nodegroups](#nodegroups)
 1. [Connection Issues](#connection-issues)
 1. [Development References](#development-references)
 
@@ -655,6 +656,54 @@ salt 'my_minion' saltutil.clear-cache
  * Only the local or remote call needs to be made
  * Must run with root perms to execute
 
+[Nodegroups][26]
+----------------
+Nodegroups allow the auto grouping and application of states to minions based on
+attribute. These are applied for all matches. Commonly used to apply a based
+configuration to specific types of OS, environment, or setup.
+
+### Create Nodegroups
+Add node configuration to the salt master and restart for the nodegroups to be
+picked up.
+
+/etc/salt/master.d/nodegroups.conf `root:root 0644`
+```yaml
+nodegroups:
+  - linux-base: 'G@os_family:Debian'
+  - debian: 'G@os:Debian'
+```
+* This will create two nodegroups, one matching `os_family` grian to a debian
+  based (e.g. will apply to debian, ubuntu, etc), and one matching debian
+  specifically.
+* See [Compound Matchers][27] for matching syntax.
+
+```bash
+service salt-master restart
+```
+
+### Apply State to Nodgroups
+States can now be applied to nodegroups and layered based on setup.
+
+/srv/salt/env/prod/top.sls `salt:salt 0644`
+```yaml
+prod:
+  linux-base:
+    - match: nodegroup
+    - {{ STANDARD STATES }}
+
+  debian:
+    - match: nodegroup
+    - {{ DEBIAN SPECIFIC STATES}}
+
+  'host1':
+    - {{ HOST SPECIFIC STATES}}
+```
+* If _host1_ is a _Debian_ machine, it will have _linux-base_ then _debian_ and
+  finally _host1_ applied.
+* If another host is added that is a _Debian_ install, it will have _linux-base_
+  then _debian_ applied.
+* An _Ubuntu_ machine will only have _linux-base_ applied.
+
 Connection Issues
 -----------------
 Some common connection issues that have been encountered.
@@ -736,3 +785,5 @@ and restart this to change name (systemctl salt-minion restart)
 [23]: https://docs.saltstack.com/en/latest/ref/states/startup.html
 [24]: https://docs.saltstack.com/en/latest/ref/runners/all/salt.runners.jobs.html#salt.runners.jobs.list_job
 [25]: https://github.com/saltstack/salt/issues/32144
+[26]: https://docs.saltstack.com/en/latest/topics/targeting/nodegroups.html
+[27]: https://docs.saltstack.com/en/latest/topics/targeting/compound.html#targeting-compound
