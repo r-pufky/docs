@@ -449,8 +449,11 @@ initial install / connection.
 
 /etc/apt/sources.list.d/saltstack.list
 ```bash
-deb http://repo.saltstack.com/py3/ubuntu/16.04/amd64/latest xenial main
+deb [arch=amd64] http://repo.saltstack.com/py3/ubuntu/16.04/amd64/latest xenial main
 ```
+* `[arch=amd64]` is required to prevent the _skipping acquire of configured file
+  main/binary-i386/packages_ message for [32bit binaries on 64bit systems][28].
+* Debian packages can be found at: http://repo.saltstack.com/py3/debian.
 
 Add the salt repository signing key
 ```
@@ -807,3 +810,4 @@ and restart this to change name (systemctl salt-minion restart)
 [25]: https://github.com/saltstack/salt/issues/32144
 [26]: https://docs.saltstack.com/en/latest/topics/targeting/nodegroups.html
 [27]: https://docs.saltstack.com/en/latest/topics/targeting/compound.html#targeting-compound
+[28]: https://askubuntu.com/questions/741410/skipping-acquire-of-configured-file-main-binary-i386-packages-as-repository-x
