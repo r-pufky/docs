@@ -513,7 +513,7 @@ services:
 
 ```nginx
 location / {
-  proxy_bind {NGINX NETWORK IP}
+  proxy_bind {NGINX NETWORK IP};
   proxy_pass ...
 }
 ```
