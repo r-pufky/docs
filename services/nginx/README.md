@@ -488,6 +488,36 @@ There is currently no clean way to set a default gateway via compose.
 docker inspect proxy_nginx_1
 ```
 
+### Forward Traffic via Specific Interfaces
+Nginx can forward traffic via [specific interfaces][dm] for _location_
+definitions.
+
+_service-name_/docker-compose.yml `root:staff 0640`
+```yaml
+networks:
+  custom_net_name:
+    external: true
+...
+services:
+  my_proxy:
+    networks:
+      my_proxy_network:
+        ipv4_address: 172.1.1.1
+      custom_net_name:
+        ipv4_address: 172.2.1.1
+```
+* _custom_net_name_ is a network defined in another container. Once this is
+  added, the proxy container will be able to do DNS resolution of container
+  names as usual, including proxying traffic to that network.
+* Use IPv4 address for _proxy_bind_ command for specific locations.
+
+```nginx
+location / {
+  proxy_bind {NGINX NETWORK IP}
+  proxy_pass ...
+}
+```
+
 [docker-service-template.md|c9067f2][XX]
 
 [co]: https://www.nginx.com/
@@ -507,6 +537,7 @@ docker inspect proxy_nginx_1
 [0f]: https://stackoverflow.com/questions/45358188/restrict-access-to-nginx-server-location-to-a-specific-docker-container-with-al
 [7m]: https://docs.docker.com/v17.09/engine/userguide/networking/#the-default-bridge-network
 [rm]: https://community.letsencrypt.org/t/no-resolver-defined-to-resolve-ocsp-int-x3-letsencrypt-org-while-requesting-certificate-status-responder-ocsp-int-x3-letsencrypt-org/21427
+[dm]: https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/#proxy_bind
 [XX]: https://github.com/r-pufky/docs/blob/c9067f2bc3d0aeb0f2915e63f8cd9515c00640a2/services/docker-service-template.md
 
 [bugdx]: https://github.com/docker/libnetwork/issues/1141#issuecomment-215522809
