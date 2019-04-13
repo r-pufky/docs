@@ -348,7 +348,7 @@ access/control to your GPG identity.
    give it to a trusted third-party.
 
 ### Next Steps
-1. [Export Keys to Yubikey][1].
+1. [Export Keys to Yubikey][2].
 1. Setup Yubikey on [windows][3] or [ubuntu][4].
 
 ### Cleaning Up
