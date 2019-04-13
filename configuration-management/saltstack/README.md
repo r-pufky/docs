@@ -644,6 +644,13 @@ salt-call -l debug state.apply saltenv=prod
 salt-minion -l debug
 ```
 
+### Debug jinja templates
+This will enable debug logging with custom messages and variables.
+
+```jinja
+{%- do salt.log.debug('my_var: ' ~ my_var) %}
+```
+
 ### Show avaliable files to minions
 ```bash
 salt-run fileserver.file_list saltenv=dev
