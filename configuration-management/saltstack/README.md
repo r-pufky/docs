@@ -439,6 +439,16 @@ Note: if you plan on installing docker, you need to use
 otherwise it could pick up the Docker interface and try to use that. This will
 cause the minion to be unable to respond to the master.
 
+### [Bootstrap Install][29]
+Bootstrap install will automatically setup and install salt.
+
+```bash
+curl https://bootstrap.saltstack.com -o salt.sh
+salt.sh -x python3
+```
+* See bootstrap instructions for validating download. Don't run unvalidated
+  code directly from the internet.
+
 ### [Ubuntu][7]
 A minion will not send the initial cert request until the minion is started.
 By default `salt` should resolve, though this can be changes in the minion
@@ -818,3 +828,4 @@ and restart this to change name (systemctl salt-minion restart)
 [26]: https://docs.saltstack.com/en/latest/topics/targeting/nodegroups.html
 [27]: https://docs.saltstack.com/en/latest/topics/targeting/compound.html#targeting-compound
 [28]: https://askubuntu.com/questions/741410/skipping-acquire-of-configured-file-main-binary-i386-packages-as-repository-x
+[29]: https://github.com/saltstack/salt-bootstrap
