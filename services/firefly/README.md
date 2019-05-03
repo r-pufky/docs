@@ -43,14 +43,14 @@ firefly:
   environment:
     - FF_DB_HOST=firefly_iii_db
     - FF_DB_NAME=firefly
-    - FF_DB_USER={DB_USER}
-    - FF_DB_PASSWORD={DB_PASS}
-    - FF_APP_KEY={32_CHAR_APP_KEY_WITHOUT_%*#$&}
+    - FF_DB_USER={DB USER}
+    - FF_DB_PASSWORD={DB PASS}
+    - FF_APP_KEY={32 CHAR APP KEY WITHOUT %*#$&}
     - FF_APP_ENV=local
     - FF_DB_CONNECTION=pgsql
     - TZ=America/Los_Angeles
     - APP_URL=https://firefly.{DOMAIN}
-    - TRUSTED_PROXIES=172.41.1.1
+    - TRUSTED_PROXIES={PROXY IP ADDRESS}
     - APP_LOG_LEVEL=debug
   image: jc5x/firefly-iii
   volumes:
@@ -59,8 +59,8 @@ firefly:
     - /etc/localtime:/etc/localtime:ro
 firefly_db:
   environment:
-    - POSTGRES_PASSWORD={DB_PASS}
-    - POSTGRES_USER={DB_USER}
+    - POSTGRES_PASSWORD={DB PASS}
+    - POSTGRES_USER={DB USER}
     - TZ=America/Los_Angeles
   image: "postgres:10"
   volumes:
@@ -113,6 +113,9 @@ docker-compose exec firefly php artisan firefly:verify
 docker-compose exec firefly php artisan cache:clear
 ```
 
+Login to Site, first user created is administrator.
+- [x] Verify [password security][d0]
+
 [docker-service-template.md|c9067f2][XX]
 
 [f8]: https://firefly-iii.org/
@@ -120,6 +123,7 @@ docker-compose exec firefly php artisan cache:clear
 [di]: https://firefly-iii.readthedocs.io/en/latest/support/faq.html#i-am-using-nginx-and-want-to-expose-firefly-iii-under-budget
 [3k]: https://github.com/firefly-iii/firefly-iii/blob/master/.deploy/docker/.env.docker
 [El]: https://github.com/firefly-iii/firefly-iii/issues/2109
+[d0]: https://github.com/firefly-iii/help/wiki/Secure-password
 [XX]: https://github.com/r-pufky/docs/blob/c9067f2bc3d0aeb0f2915e63f8cd9515c00640a2/services/docker-service-template.md
 
 [ref0p]: ../nginx/proxy-control.conf
