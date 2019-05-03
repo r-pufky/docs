@@ -10,6 +10,7 @@ for all connections to docker containers using Let's Encrypt.
 1. [Docker Creation](#docker-creation)
 1. [Adding Reverse Proxies](#adding-reverse-proxies)
 1. [Initial Setup](#initial-setup)
+1. [Usage Gotchas](#usage-gotchas)
 
 Ports
 -----
@@ -116,6 +117,13 @@ docker-compose exec firefly php artisan cache:clear
 Login to Site, first user created is administrator.
 - [x] Verify [password security][d0]
 
+Usage Gotchas
+-------------
+
+### Attachment disappears
+There is a hard 2MB limit from `lavarel`. This will be displayed as uploading
+successfully but will be [sliently dropped][sk].
+
 [docker-service-template.md|c9067f2][XX]
 
 [f8]: https://firefly-iii.org/
@@ -124,6 +132,7 @@ Login to Site, first user created is administrator.
 [3k]: https://github.com/firefly-iii/firefly-iii/blob/master/.deploy/docker/.env.docker
 [El]: https://github.com/firefly-iii/firefly-iii/issues/2109
 [d0]: https://github.com/firefly-iii/help/wiki/Secure-password
+[sk]: https://github.com/firefly-iii/firefly-iii/issues/960
 [XX]: https://github.com/r-pufky/docs/blob/c9067f2bc3d0aeb0f2915e63f8cd9515c00640a2/services/docker-service-template.md
 
 [ref0p]: ../nginx/proxy-control.conf
