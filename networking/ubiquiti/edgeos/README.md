@@ -234,7 +234,6 @@ Interface is the interface the Network is served on.
 - [ ] Enable logging
 - [x] Both TCP and UDP
 * Src Address: {DISABLE SOURCE ADDRESS GROUP}
-* Dest Address: `!`{PI-HOLE DNS SERVER}
 * Dest Port: `53`
 
 > :warning:
