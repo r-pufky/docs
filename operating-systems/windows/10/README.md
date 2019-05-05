@@ -13,6 +13,7 @@ Assumes Admin Rights
 1. [Installing Windows 10 Without Live Account](#installing-windows-10-without-live-account)
 1. [Securing Windows Installation](#securing-windows-installation)
 1. [Removing pre-installed Windows packages](#removing-pre-installed-windows-packages)
+1. [Run from a USB Drive](#run-from-a-usb-drive)
 
 [PC Hardware Troubleshooting](../troubleshooting-pc-hardware.md)
 
@@ -274,6 +275,19 @@ major update to windows 10.
 
 ```start > Add or remove programs > Apps & features```
 
+[Run From A USB Drive][26]
+--------------------------
+Down [WinToUSB][27] tool and install. If not registering, use a Windows 10 ISO
+that is one version behind the current version (can update after running it).
+
+1. Select the windows ISO to use.
+1. Set appropriate Windows 10 version for your hardware license.
+1. Set `GPT for UEFI`.
+1. Create disk. This will take a few minutes as Windows 10 is actually being
+   installed to the USB drive.
+
+Once done, just select the `Windows Boot Manager` label for the USB disk to boot
+into a clean Windows 10 install.
 
 [1]: https://thomas.vanhoutte.be/miniblog/delete-windows-10-apps/
 [2]: http://www.makeuseof.com/tag/3-clever-powershell-functions-upgrading-windows-10/
@@ -300,5 +314,7 @@ major update to windows 10.
 [23]: https://docs.google.com/spreadsheets/d/184wcDt9I9TUNFFbsAVLpzAtckQxYiuirADzf3cL42FQ/htmlview?usp=sharing&sle=true
 [24]: https://www.grc.com/inspectre.htm
 [25]: https://www.ghacks.net/2018/05/01/all-the-issues-of-windows-10-version-1803-you-may-run-into/
+[26]: https://www.pcmag.com/article/352209/how-to-run-windows-10-from-a-usb-drive
+[27]: https://www.easyuefi.com/wintousb/
 
 [ref1]: https://ss64.com/nt/run.html
