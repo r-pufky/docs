@@ -123,6 +123,9 @@ Required changes to minimally secure your configuration.
   "download_location": "/downloads/incomplete",
   "autoadd_location": "/watched",
 ```
+> :thought_balloon:  
+> _Max upload speed_ should be set to a non-zero number to enable downloads.
+
 
 Reset Password
 --------------
