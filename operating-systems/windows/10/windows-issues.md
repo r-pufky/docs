@@ -23,6 +23,7 @@ Execution Policy: **Unrestricted** (See: [Setting Execution Policy](windows-gami
 1. [NTFS File Ownership Access Denied](#ntfs-file-ownership-access-denied)
 1. [OEM Partition / Low disk space warning after 1803 update](#oem-partition--low-disk-space-warning-after-1803-update)
 1. [Application using the wrong audio output device](#application-using-the-wrong-audio-output-device)
+1. [Display driver has been restarted](#display-driver-has-been-restarted)
 
 Moving User Profile Locations to Alternate Location
 ---------------------------------------------------
@@ -282,6 +283,23 @@ bootrec /rebuildbcd
 If there are extra menu options, you may edit UEFI boot options in firmware or
 use [EasyUEFI][19] to do it in windows directly.
 
+Display Driver Has Been Restarted
+---------------------------------
+Windows Vista+ has a feature called [_Timeout Detection and Recovery_][20],
+which detects if the GPU becomes unresponsive and restarts the driver. The GPU
+running at 100% load can inadvertantly trip this reset the driver, causing
+applications to crash. This can saftely be increased from the default `2
+seconds` to a larger value with the only negative impact being that an actual
+crashing driver will take that much longer to be reset. A bump to _8 to 10_
+seconds is generally ok; it is **not** recommended to disable TDR entirely.
+
+`start > regedit` (as admin)
+> :key:: `HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\GraphicsDrivers`
+>
+> | Type  | Name     | Value |
+> |-------|----------|-------|
+> | DWORD | TdrDelay | 8     |
+
 [1]: http://blog.architecting.it/2012/07/10/windows-server-2012-windows-server-8-resilient-file-system/w8-refs-2/
 [2]: http://www.thewindowsclub.com/disable-superfetch-prefetch-ssd
 [3]: http://bakins-bits.com/wordpress/?p=195
@@ -301,3 +319,4 @@ use [EasyUEFI][19] to do it in windows directly.
 [17]: http://www.thewindowsclub.com/faq-low-disk-space-notification-or-warning-in-windows-7-how-to-disable-etc
 [18]: https://www.intowindows.com/set-different-audio-output-devices-for-different-programs-in-windows-10/
 [19]: https://www.easyuefi.com/index-us.html
+[20]: https://www.pugetsystems.com/labs/hpc/Working-around-TDR-in-Windows-for-a-better-GPU-computing-experience-777/
