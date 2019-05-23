@@ -11,6 +11,8 @@ Do **NOT** expose `docker.sock` to [containers, even in read-only][9w].
 1. [Interactive Docker Shell that Respects Terminal Size](#interactive-docker-shell-that-respects-terminal-size)
 1. [Bridged Adapters](#bridged-adapters)
 1. [Compose Containers on Different Networks](#compose-containers-on-different-networks)
+1. [Explore Image Filesystem](#explore-image-filesystem)
+1. [GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown Error](#gdbus.error:org.freedesktop.dbus.error.serviceunknown-error)
 
 Installing
 ----------
@@ -344,6 +346,30 @@ There is currently no clean way to set a default gateway via compose.
 docker inspect proxy_nginx_1
 ```
 
+Explore [Image Filesystem][fb]
+------------------------------
+Container filesystems can be explored without launching the container by 
+specifying a replacement entrypoint. This is helpful for debugging issues.
+
+```bash
+docker run --rm -it --entrypoint=/bin/sh {IMAGE NAME}
+```
+* `--rm` will automatically remove the container when finished executing.
+* `-it` will launch an interactive terminal.
+* `-entrypoint` will override the existing entrypoint for the image.
+
+[GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown Error][ji]
+-----------------------------------------------------------------
+Docker push requires *gnome-keyring* to login by default and will fail without
+it producing the error: *GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown*.
+This can be bypassed by replacing the functionality with `gnupg2` and `pass`.
+
+```bash
+apt install gnupg2 pass
+docker login
+docker push
+```
+
 [oq]: #remove-an-image
 [eg]: https://docs.docker.com/get-started/
 [o3]: https://github.com/wsargent/docker-cheat-sheet
@@ -357,6 +383,9 @@ docker inspect proxy_nginx_1
 [wl]: https://docs.docker.com/v17.09/compose/compose-file/#service-configuration-reference
 [vo]: https://runnable.com/docker/docker-compose-networking
 [d9]: https://blog.docker.com/2016/03/docker-networking-design-philosophy/
+[fb]: https://stackoverflow.com/questions/20813486/exploring-docker-containers-file-system
+[ji]: https://stackoverflow.com/questions/50151833/cannot-login-to-docker-account
+
 
 [bugdx]: https://github.com/docker/libnetwork/issues/1141#issuecomment-215522809
 [bugsf]: https://dustymabe.com/2016/05/25/non-deterministic-docker-networking-and-source-based-ip-routing/
