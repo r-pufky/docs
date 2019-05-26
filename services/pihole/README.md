@@ -26,6 +26,7 @@ resolving to the same IP.
 1. [Configuration](#configuration)
 1. [DNAT for Captive DNS](#dnat-for-captive-dns)
 1. [Force HTTPS Admin Page](#force-https-admin-page)
+1. [Failed Upgrade](#failed-upgrade)
 
 Port
 ----
@@ -280,6 +281,34 @@ Cache is automatically cleared by restarting the FTLDNS service.
 
 `Settings`
 * `Restart DNS resolver`
+
+Failed Upgrade
+--------------
+This may happen with major changes between pi-hole versions, especially with
+FTL DNS; which may leave the system with a permenant 'DNS server not started'
+error.
+
+You should backup the following locations
+* `/etc/hosts` - custom hostname lookups
+* `/etc/dnsmasq.d/*` - all DNS masqerade settings
+* `/etc/pihole` - all existing pihole configurations
+
+Reinstall the pihole server and setup vanilla. Then copy the following files to
+do a manual _teleporter_ install.
+
+* `/etc/hosts` - hostname resolutions.
+* `/etc/pihole/adlists.txt` - adlist URI's to sync.
+* `/etc/pihole/whitelist.txt` - Manual whitelist overrides.
+* `/etc/pihole/blacklist.txt` - Manual blacklist overrides.
+* `/etc/pihole/gravity.list` - Current sync of adlist sources.
+* `/etc/pihole/dhcp.leases` - Current DHCP leases (optional).
+* `/etc/pihole/pihole-FTL.db` - SQLite DNS resolution log (optional).
+
+> :warning:  
+> `setupVars.conf`, `pihole-FTL.conf` and anything in `dnsmasq.d` are probably
+> different if the upgrade failed. Diff these and make a determination to copy.
+
+Restart the system to finish.
 
 [a7]: https://v.firebog.net/hosts/lists.php
 [an]: http://www.ubuntuboss.com/how-to-install-pihole-on-ubuntu-16-04/
