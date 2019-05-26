@@ -443,7 +443,7 @@ cause the minion to be unable to respond to the master.
 Bootstrap install will automatically setup and install salt.
 
 ```bash
-curl https://bootstrap.saltstack.com -o salt.sh
+curl https://bootstrap.saltstack.com/stable/bootstrap-salt.sh -o salt.sh
 salt.sh -x python3
 ```
 * See bootstrap instructions for validating download. Don't run unvalidated
