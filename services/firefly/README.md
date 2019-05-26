@@ -41,6 +41,8 @@ Firefly runs a frontend webservice with a backend postgres SQL database.
 Docker Compose:
 ```yaml
 firefly:
+  image: jc5x/firefly-iii
+  restart: unless-stopped
   environment:
     - FF_DB_HOST=firefly_iii_db
     - FF_DB_NAME=firefly
@@ -53,17 +55,17 @@ firefly:
     - APP_URL=https://firefly.{DOMAIN}
     - TRUSTED_PROXIES={PROXY IP ADDRESS}
     - APP_LOG_LEVEL=debug
-  image: jc5x/firefly-iii
   volumes:
     - /data/services/firefly/export:/var/www/firefly-iii/storage/export
     - /data/services/firefly/upload:/var/www/firefly-iii/storage/upload
     - /etc/localtime:/etc/localtime:ro
 firefly_db:
+  image: postgres:10
+  restart: unless-stopped
   environment:
     - POSTGRES_PASSWORD={DB PASS}
     - POSTGRES_USER={DB USER}
     - TZ=America/Los_Angeles
-  image: "postgres:10"
   volumes:
     - /data/services/firefly/db:/var/lib/postgresql/data
     - /etc/localtime:/etc/localtime:ro

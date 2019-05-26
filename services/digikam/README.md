@@ -44,6 +44,7 @@ Docker Compose:
 ```yaml
 digiKam:
   image: rpufky/digiKam:6.1.0
+  restart: unless-stopped
   environment:
     - USER_ID=1000
     - GROUP_ID=1000
