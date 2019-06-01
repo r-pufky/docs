@@ -346,6 +346,36 @@ There is currently no clean way to set a default gateway via compose.
 docker inspect proxy_nginx_1
 ```
 
+### Forward Traffic via Specific Interfaces
+Nginx can forward traffic via [specific interfaces][dm] for _location_
+definitions which may workaround this issue for specific containers.
+
+_service-name_/docker-compose.yml `root:staff 0640`
+```yaml
+networks:
+  custom_net_name:
+    external: true
+...
+services:
+  my_proxy:
+    networks:
+      my_proxy_network:
+        ipv4_address: 172.1.1.1
+      custom_net_name:
+        ipv4_address: 172.2.1.1
+```
+* _custom_net_name_ is a network defined in another container. Once this is
+  added, the proxy container will be able to do DNS resolution of container
+  names as usual, including proxying traffic to that network.
+* Use IPv4 address for _proxy_bind_ command for specific locations.
+
+```nginx
+location / {
+  proxy_bind {NGINX NETWORK IP};
+  proxy_pass ...
+}
+```
+
 Explore [Image Filesystem][fb]
 ------------------------------
 Container filesystems can be explored without launching the container by 
