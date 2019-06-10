@@ -12,6 +12,7 @@ Do **NOT** expose `docker.sock` to [containers, even in read-only][9w].
 1. [Bridged Adapters](#bridged-adapters)
 1. [Compose Containers on Different Networks](#compose-containers-on-different-networks)
 1. [Explore Image Filesystem](#explore-image-filesystem)
+1. [Copy Data From Container](#copy-data-from-container)
 1. [GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown Error](#gdbus.error:org.freedesktop.dbus.error.serviceunknown-error)
 
 Installing
@@ -387,6 +388,14 @@ docker run --rm -it --entrypoint=/bin/sh {IMAGE NAME}
 * `--rm` will automatically remove the container when finished executing.
 * `-it` will launch an interactive terminal.
 * `-entrypoint` will override the existing entrypoint for the image.
+
+Copy Data From Container
+------------------------
+Files can be copied directly out of containers.
+
+```bash
+docker {CONTAINER NAME}:/local/container/file .
+```
 
 [GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown Error][ji]
 -----------------------------------------------------------------
