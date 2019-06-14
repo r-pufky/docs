@@ -120,7 +120,8 @@ fail2ban/docker/jail.d/nginx.conf `root:root 0644`
 enabled = true
 filter  = nginx-http-auth
 port    = http,https
-logpath = /var/log/nginx/access.log
+logpath = /var/log/nginx/error.log
+maxretry = 2
 
 # Ban clients looking for scripts.
 [nginx-noscript]
