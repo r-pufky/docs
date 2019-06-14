@@ -99,11 +99,15 @@ enabled = true
 port = ssh
 filter = sshd[mode=aggressive]
 logpath = /var/log/auth.log
+bantime = -1
+findtime = 86400
 maxretry = 5
 ```
 * Restart _f2b-system_.
 * Attempt an invalid ssh login and watch the docker logs to see if ssh is
   getting properly identified `docker logs f2b-system`.
+* `bantime` of `-1` means forever.
+* `findtime` of `86400` is one day.
 
 Docker Setup
 ------------
@@ -121,6 +125,8 @@ enabled = true
 filter  = nginx-http-auth
 port    = http,https
 logpath = /var/log/nginx/error.log
+bantime = -1
+findtime = 86400
 maxretry = 2
 
 # Ban clients looking for scripts.
@@ -129,6 +135,8 @@ enabled  = true
 port     = http,https
 filter   = nginx-noscript
 logpath  = /var/log/nginx/access.log
+bantime = -1
+findtime = 86400
 maxretry = 6
 
 # Ban known malicious bad bots.
@@ -137,6 +145,8 @@ enabled  = true
 port     = http,https
 filter   = nginx-badbots
 logpath  = /var/log/nginx/access.log
+bantime = -1
+findtime = 86400
 maxretry = 2
 
 # Ban requests for user home directories.
@@ -145,6 +155,8 @@ enabled  = true
 port     = http,https
 filter   = nginx-nohome
 logpath  = /var/log/nginx/access.log
+bantime = -1
+findtime = 86400
 maxretry = 2
 
 # Ban attempts to use as an open proxy.
@@ -153,6 +165,8 @@ enabled  = true
 port     = http,https
 filter   = nginx-noproxy
 logpath  = /var/log/nginx/access.log
+bantime = -1
+findtime = 86400
 maxretry = 2
 ```
 
@@ -256,6 +270,12 @@ fail2ban-client status {F2B JAIL NAME}
 ```bash
 docker exec -it f2b sh
 fail2ban-client set {F2B JAIL NAME} unbanip {IP}
+```
+
+### Show current config value
+```bash
+docker exec -it f2b sh
+fail2ban-client get {F2B JAIL NAME} {CONFIG SETTING}
 ```
 
 ### Show iptables rules
