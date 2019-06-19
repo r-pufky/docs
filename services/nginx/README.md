@@ -444,6 +444,14 @@ services:
   added, the proxy container will be able to do DNS resolution of container
   names as usual, including proxying traffic to that network.
 
+### Show Loaded nginx Configuration
+This will show the loaded configuration files, what ordered they were loaded in
+and any issues loading them.
+
+```bash
+sudo nginx -T
+```
+
 Debugging Headers
 -----------------
 To validate parameters passed to upstream services, the request should be
