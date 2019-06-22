@@ -331,6 +331,7 @@ server {
   ...
 }
 ```
+* This assumes _http_ is redirected to _https_; so no error block needed.
 
 Set root web folder for https server, and redirect all errors to custom page.
 ```bash
@@ -344,6 +345,7 @@ server {
   }
 }
 ```
+* This _must_ be defined for each server block.
 * `internal` marks the location as internal redirect only.
 * root is defined to enable image file serving for the error. Static error pages
   do not need this, but a root should be defined regardless for predicatable
