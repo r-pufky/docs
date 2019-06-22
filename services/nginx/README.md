@@ -12,6 +12,7 @@ for all connections to docker containers using Let's Encrypt.
 1. [Docker Creation](#docker-creation)
 1. [Initial Setup](#initial-setup)
 1. [Adding Reverse Proxies](#adding-reverse-proxies)
+1. [Custom Error Pages](#custom-error-pages)
 1. [Configuration Patterns](#configuration-patterns)
 1. [Debugging Headers](#debugging-headers)
 
@@ -313,6 +314,76 @@ sub_filter_once off;
 * Second rules rewrites relative responses `href="/other-page.html"` to
   `href="https://reverse-proxy-server/subpath/other-page.html"`.
 
+Custom Error Pages
+------------------
+Setup a custom [error page][v7] to serve [all errors][9x].
+
+> :warning:  
+> The _root_ for web serving must be set for both the http and https server,
+> otherwise it will default to what nginx was built with. This will produce
+> hard to debug errors with the page not loading.
+
+Set root web folder for http server:
+```bash
+server {
+  ...
+  root /www;
+  ...
+}
+```
+
+Set root web folder for https server, and redirect all errors to custom page.
+```bash
+server {
+  root /www;
+  error_page 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415 416 417 418 421 422 423 424 426 428 429 431 451 500 501 502 503 504 505 506 507 508 510 511 /error.html;
+  location = /error.html {
+    allow all;
+    internal;
+    root /www;
+  }
+}
+```
+* `internal` marks the location as internal redirect only.
+* root is defined to enable image file serving for the error. Static error pages
+  do not need this, but a root should be defined regardless for predicatable
+  behavior.
+* This should be defined in the server block before other rules.
+
+/www/error.html `root:root 0644`
+```bash
+<html>
+<head>
+<style type=text/css>
+div {
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 3em;
+  position: absolute;
+  top: 410px;
+  width: 100%;
+}
+body {
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-image: 1.png;
+}
+</style>
+<script type='text/javascript'>
+function background(){
+  var BG = Math.ceil(Math.random() * 12);
+  document.body.background = 'img/' + BG + '.png';
+}
+</script>
+</head>
+</html>
+<body onload='background();'>
+<div>Whoops.</div>
+</html>
+```
+* this example randomly loads a background image when the page is loaded.
+
 Configuration Patterns
 ----------------------
 General good configuration practice patterns after using nginx as a reverse
@@ -546,7 +617,8 @@ location / {
 [7m]: https://docs.docker.com/v17.09/engine/userguide/networking/#the-default-bridge-network
 [rm]: https://community.letsencrypt.org/t/no-resolver-defined-to-resolve-ocsp-int-x3-letsencrypt-org-while-requesting-certificate-status-responder-ocsp-int-x3-letsencrypt-org/21427
 [dm]: https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/#proxy_bind
-[XX]: https://github.com/r-pufky/docs/blob/c9067f2bc3d0aeb0f2915e63f8cd9515c00640a2/services/docker-service-template.md
+[v7]: https://stackoverflow.com/questions/27610979/nginx-custom-error-page-502-with-css-and-image-files
+[9x]: https://blog.adriaan.io/one-nginx-error-page-to-rule-them-all.html
 
 [bugdx]: https://github.com/docker/libnetwork/issues/1141#issuecomment-215522809
 [bugsf]: https://dustymabe.com/2016/05/25/non-deterministic-docker-networking-and-source-based-ip-routing/
