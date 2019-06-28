@@ -748,7 +748,7 @@ Connection Issues
 -----------------
 Some common connection issues that have been encountered.
 
-###Minion did not return. [Not connected].
+### Minion did not return. [Not connected].
 Expresses as `salt-call` works correctly locally on minion, but issue a command
 from the `salt-master` fails with this message. Generally this is caused by the
 minion not checking in with the master in the timeout period, or the salt master
