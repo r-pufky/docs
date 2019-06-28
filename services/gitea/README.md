@@ -47,7 +47,7 @@ gitea:
     - USER_GID=1001
     - RUN_MODE=prod
     - DISABLE_SSH=true
-    - ROOT_URL='{YOUR SUBDOMMAIN OR DOMAIN/PATH}'
+    - ROOT_URL='https://{YOUR SUBDOMMAIN OR DOMAIN/PATH}/'
     - TZ=America/Los_Angeles
   volumes:
     - /data/services/gitea:/data
@@ -114,8 +114,14 @@ General Settings:
 * SSH Server Domain: `localhost`
 * SSH Server Port: `22`
 * Gitea HTTP Listen Port: `3000`
-* Gitea Base URL: `http://localhost:3000/`
+* Gitea Base URL: `https://{YOUR SUBDOMMAIN OR DOMAIN/PATH}/`
 * Log Path: `/data/gitea/log`
+
+> :warning:  
+> If the base URL in web admin configuration page is not set to your domain, it
+> will appear that everything is working, however intersite links will fail
+> (such as issue updates). This can be changed by editing `ROOT_URL` in the
+> `/data/services/gitea/conf/app.ini` file post initial configuration.
 
 Optional Settings:
 * [x] Enable Local Mode
