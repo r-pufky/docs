@@ -7,6 +7,8 @@ offer a clean namespace for multiple microservices.
 This setup will focus on creating a docker-based reverse proxy, enforcing SSL
 for all connections to docker containers using Let's Encrypt.
 
+A detailed [Nginx Administration Handbook is here][ls].
+
 1. [Ports](#ports)
 1. [Important File Locations](#important-file-locations)
 1. [Docker Creation](#docker-creation)
@@ -621,6 +623,7 @@ location / {
 [dm]: https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/#proxy_bind
 [v7]: https://stackoverflow.com/questions/27610979/nginx-custom-error-page-502-with-css-and-image-files
 [9x]: https://blog.adriaan.io/one-nginx-error-page-to-rule-them-all.html
+[ls]: https://github.com/trimstray/nginx-admins-handbook/blob/master/README.md
 
 [bugdx]: https://github.com/docker/libnetwork/issues/1141#issuecomment-215522809
 [bugsf]: https://dustymabe.com/2016/05/25/non-deterministic-docker-networking-and-source-based-ip-routing/
