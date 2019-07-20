@@ -527,8 +527,10 @@ and any issues loading them.
 sudo nginx -T
 ```
 
-Debugging Headers
------------------
+Debugging
+---------
+
+### Validating upstream parameters
 To validate parameters passed to upstream services, the request should be
 dumped by the service or intercepted by another service temporarily. There is a
 [docker container to do this][8k]. This will dump the recieved headers from both
@@ -547,6 +549,24 @@ location / {
 }
 ```
 * Headers will be dumped directly to the page.
+
+### Debug nginx configs
+There is no existing logging functionality in nginx to write directly to logs
+from configuration files. This can be worked aorund by directly injecting
+[debugging headers][h5] in configuration files to dump information to logs.
+
+```nginx
+add-header X-debug-message "some message to write" always;
+```
+
+### If is Evil
+If operates as a rewrite and is [inherently misunderstood][h6].
+
+Within a location block the only **safe** operations are
+* `return`
+* `rewrite`
+
+All if operations must be explicitly tested for [appropropriate behavior.][h7]
 
 Nginx queries Originate from Wrong Gateway
 ------------------------------------------
@@ -624,6 +644,9 @@ location / {
 [v7]: https://stackoverflow.com/questions/27610979/nginx-custom-error-page-502-with-css-and-image-files
 [9x]: https://blog.adriaan.io/one-nginx-error-page-to-rule-them-all.html
 [ls]: https://github.com/trimstray/nginx-admins-handbook/blob/master/README.md
+[h5]: https://serverfault.com/questions/404626/how-to-output-variable-in-nginx-log-for-debugging
+[h6]: https://www.nginx.com/resources/wiki/start/topics/depth/ifisevil/
+[h7]: https://serverfault.com/questions/687033/nginx-use-geo-module-with-allow-deny-directives
 
 [bugdx]: https://github.com/docker/libnetwork/issues/1141#issuecomment-215522809
 [bugsf]: https://dustymabe.com/2016/05/25/non-deterministic-docker-networking-and-source-based-ip-routing/
