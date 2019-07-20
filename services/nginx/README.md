@@ -16,7 +16,7 @@ A detailed [Nginx Administration Handbook is here][ls].
 1. [Adding Reverse Proxies](#adding-reverse-proxies)
 1. [Custom Error Pages](#custom-error-pages)
 1. [Configuration Patterns](#configuration-patterns)
-1. [Debugging Headers](#debugging-headers)
+1. [Debugging](#debugging)
 
 Ports
 -----
@@ -556,7 +556,7 @@ from configuration files. This can be worked aorund by directly injecting
 [debugging headers][h5] in configuration files to dump information to logs.
 
 ```nginx
-add-header X-debug-message "some message to write" always;
+add_header X-debug-message "some message to write" always;
 ```
 
 ### If is Evil
