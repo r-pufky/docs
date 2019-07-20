@@ -568,6 +568,14 @@ Within a location block the only **safe** operations are
 
 All if operations must be explicitly tested for [appropropriate behavior.][h7]
 
+### Dump loaded configuration
+Dump the currently loaded configuration in config file formatting. Useful to
+inspect [current nginx state.][h8]
+
+```bash
+nginx -T
+```
+
 Nginx queries Originate from Wrong Gateway
 ------------------------------------------
 [Docker does not provide a way][bugdx] to set the [appropriate default
@@ -647,6 +655,7 @@ location / {
 [h5]: https://serverfault.com/questions/404626/how-to-output-variable-in-nginx-log-for-debugging
 [h6]: https://www.nginx.com/resources/wiki/start/topics/depth/ifisevil/
 [h7]: https://serverfault.com/questions/687033/nginx-use-geo-module-with-allow-deny-directives
+[h8]: https://stackoverflow.com/questions/12832033/dump-conf-from-running-nginx-process
 
 [bugdx]: https://github.com/docker/libnetwork/issues/1141#issuecomment-215522809
 [bugsf]: https://dustymabe.com/2016/05/25/non-deterministic-docker-networking-and-source-based-ip-routing/
