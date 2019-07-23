@@ -167,6 +167,7 @@ change in the gitea configuration. The git client itself will need to be updated
 to handle this authentication:
 
 /home/user/{MACHINE}.crt `user:user 0400`
+
 /home/user/{MACHINE}.key `user:user 0400`
 
 ### [Git Cert Auth for Specific Repo][8v]

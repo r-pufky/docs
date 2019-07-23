@@ -16,7 +16,7 @@ A detailed [Nginx Administration Handbook is here][ls].
 1. [Initial Setup](#initial-setup)
 1. [Adding Reverse Proxies](#adding-reverse-proxies)
 1. [Custom Error Pages](#custom-error-pages)
-1. [Cert Based Authentication](#-cert-based-authentication)
+1. [Cert Based Authentication](#cert-based-authentication)
    * [Server Certificates](#server-certificates)
    * [Client Certificates](#client-certificates)
    * [Nginx Configuration](#nginx-configuration)
@@ -424,8 +424,8 @@ openssl req -new -x509 -days 365 -key {SERVER}.key -out {SERVER}.crt
 * Blanks for everything else.
 
 > :thought_balloon:  
-> These are the bare minimum values to make certification authentication work
-> in reality, you should fill most of this out.
+> These are the bare minimum values to make certification authentication work.
+> In reality, you should fill most of this out.
 
 You can verify creation parameters with text output:
 ```bash
@@ -454,26 +454,24 @@ openssl req -new -key {MACHINE}.key -out {MACHINE}.csr
 * _A challenge password_ and following items should be blank.
 
 > :thought_balloon:  
-> These are the bare minimum values to make certification authentication work
-> in reality, you should fill most of this out. If a challenge password is used
+> These are the bare minimum values to make certification authentication work.
+> In reality, you should fill most of this out. If a challenge password is used
 > it must be entered when signing the request.
 
 #### Sign CSR with Server Key
 Validates the certificate, it will now pass client certification authentication.
 
 ```bash
-openssl x509 -req -days 365 -in {MACHINE}.csr -CA {SERVER}.crt -CAkey
-{SERVER}.key -set_serial 01 -out {MACHINE}.crt
+openssl x509 -req -days 365 -in {MACHINE}.csr -CA {SERVER}.crt -CAkey {SERVER}.key -set_serial 01 -out {MACHINE}.crt
 ```
 
 #### Create PKCS #12 PFX Certificate
 PKCS #12 PFX (Personal Information Exchange Certificate) is an encrypted
 singular file archive format used to distribute a bundle of certificates
-securely to a client.
+securely to a client. Send this to the client to install and use.
 
 ```bash
-openssl pkcs12 -export -out {MACHINE}.pfx -inkey {MACHINE}.key -in {MACHINE}.crt
--certfile {SERVER}.crt
+openssl pkcs12 -export -out {MACHINE}.pfx -inkey {MACHINE}.key -in {MACHINE}.crt -certfile {SERVER}.crt
 ```
 * Set a strong _export password_. Prevents bundle from being installed and used
   without knowing password.
@@ -553,7 +551,7 @@ server {
 * If statements should only be used to for `rewrite` and `return` (`proxy_pass`
   is a `rewrite` statement). See [if is evil][u3], [examples][up].
 * Access can be provided based on client certificate presented as well (e.g.
-  specific access for specific certificates.) See [here][um]
+  specific access for specific certificates.) See [here][um].
 * Disabling for a specific host may be required for backend hosts communicating
   with each other via the proxy. Most backend services do not support client
   authentication. The address here should be the proxy `gateway` address as that
@@ -562,7 +560,7 @@ server {
   clients. Always be sure to enforce client verification and test assumptions.
 
 #### Proxy-specific Client Certificate
-In cases where a backend **requires** a certificate but the client using the
+For cases where a backend **requires** a certificate but the client using the
 proxy does not have one. This is _dangerous_ if used without layering additional
 security measures. Explicitly specify a certificate that the proxy will use to
 authenticate to backends for requests.
@@ -582,6 +580,7 @@ Accessing a https based git repository behind a nginx proxy requiring client
 certification authentication is supported both locally and via URI matching.
 
 /home/user/{MACHINE}.crt `user:user 0400`
+
 /home/user/{MACHINE}.key `user:user 0400`
 
 #### [Git Cert Auth for Repo Site][ul]
@@ -605,13 +604,13 @@ git config --local http.sslKey "/home/user/{MACHINE}.key"
 server.
 
 #### `chrome://settings > Settings > Advanced > Privacy and security > Manage certificates > Import`
-* Use export password to decrypt and import.
 - [ ] Enable strong private key protection.
 - [ ] Mark this key as exportable.
 - [x] Include all extended properties.
 - [x] Place all certificates in the following store: `Personal`.
+* Use export password to decrypt and import.
 
-Restart chrome. Nagivate to a proxied site and the certificate prompt should
+Restart Chrome. Nagivate to a proxied site and the certificate prompt should
 appear to select which cert to authenticate with. If nginx has been reloaded and
 setup, then this should allow you to passthrough.
 
@@ -628,7 +627,7 @@ authentication for proxied sites. Enabled via Group Policy or [Reg Edit][n8].
 * `1` incremental counter for which matching patterns to apply. If using
   multiple certificates this will represent the resolution order.
 * `O` is used to match the _Organizational Name_ of the server CA `{SERVER}`.
-  This will use this certificate for all '{SERVER}' cert auth requests.
+  This will use this certificate for all `{SERVER}` cert auth requests.
 * If using a _reg_ file, ensure proper escaping:
 
 ```
