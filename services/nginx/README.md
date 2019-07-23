@@ -23,7 +23,20 @@ A detailed [Nginx Administration Handbook is here][ls].
    * [Git Configuration](#git-configuration)
    * [Chrome Client Certifcate](#chrome-client-certificate)
 1. [Configuration Patterns](#configuration-patterns)
+   * [One Proxy File Per Site](#one-proxy-file-per-site)
+   * [One Server Site Per Config File](#one-server-site-per-config-file)
+   * [Site-wide Auth File](#site-wide-auth-file)
+   * [Remove Auth Requirement for Docker Containers](#remove-auth-requirement-for-docker-containers)
+   * [Whitelist All Containers](#whitelist-all-containers)
+   * [Whitelist Single Container](#whitelist-single-container)
+   * [Disable Auth for a specific location](#disable-auth-for-a-specific-location)
+   * [Accessing Networks from Other Compose Containers](#accessing-networks-from-other-compose-containers)
+   * [Classify Networks to Variables](#classify-networks-to-variables)
 1. [Debugging](#debugging)
+   * [Validating upstream parameters](#validating-upstream-parameters)
+   * [Debug nginx configs](#debug-nginx-configs)
+   * [If is Evil](#if-is-evil)
+   * [Dump loaded configuration](#dump-loaded-configuration)
 1. [Nginx queries Originate from Wrong Gateway](nginx-queries-originate-from-wrong-gateway)
 
 Ports
@@ -641,27 +654,38 @@ Configuration Patterns
 General good configuration practice patterns after using nginx as a reverse
 proxy for a while.
 
-### One Site Per Config File
+#### One Proxy File Per Site
+Minimizes errors by keeping proxy configuration in one location. Useful when
+needing the same proxy config multiple times in a site.
+
+Create a proxy directory:
+```bash
+mkdir /etc/nginx/conf.d/include/proxy
+```
+
+Add each site proxy config to '/etc/nginx/conf.d/include/proxy/{SITE}'.
+
+#### One Server Site Per Config File
 Keep one site per configuration file to focus only on that site. This will help
 reduce errors and allow fast lookup / disable of configurations.
 
-Create a services directory:
+Create a server directory:
 ```bash
-mkdir /etc/nginx/conf.d/services
+mkdir /etc/nginx/conf.d/include/server
 ```
 
-Add each site to `/etc/nginx/conf.d/services/{SITE}.conf`. Then modify default
+Add each site to `/etc/nginx/conf.d/include/server/{SITE}`. Then modify default
 config to auto import sites / services.
 
 /etc/nginx/conf.d/default.conf `root:root 0644`
 ```nginx
-include /etc/nginx/conf.d/services/*.conf;
+include /etc/nginx/conf.d/include/server/*;
 ```
 
 Adding a site in services and restarting nginx will now automatically pickup
 that site.
 
-### Site-wide Auth File
+#### Site-wide Auth File
 Keep authentication definitions for different services to one file to maintain
 authentication consistency across multiple sites.
 
@@ -690,12 +714,12 @@ location / {
 }
 ```
 
-### Remove Auth Requirement for Docker Containers
+#### Remove Auth Requirement for Docker Containers
 For docker containers running with nginx, the docker network or specific IP
 would need to be whitelisted. This allows dashboards and services to communicate
 using FQDNs without needing basic auth.
 
-#### [Whitelist All Containers][7m]
+##### [Whitelist All Containers][7m]
 Determine network that containers are on:
 ```bash
 docker network ls
@@ -709,7 +733,7 @@ Add IP range to the authorization file.
 allow 172.18.0.0/16;
 ```
 
-#### [Whitelist Single Container][0f]
+##### [Whitelist Single Container][0f]
 Set static IP for docker container (otherwise it is random).
 
 docker-compose.yml
@@ -728,7 +752,7 @@ Whitelist specific IP in auth file.
 allow 172.18.0.101;
 ```
 
-### Disable Auth for a specific location
+#### Disable Auth for a specific location
 Explicitly disable auth and allow all to remove any auth enforcement for a
 specific location. This is for proxied sites that do their own authentication
 (e.g. git) or for specific locations which shouldn't be auth'ed.
@@ -747,7 +771,7 @@ location / {
 }
 ```
 
-### Accessing Networks from Other Compose Containers
+#### Accessing Networks from Other Compose Containers
 Custom networks may be explicitly accessed by other containers (e.g. a
 reverse-proxy) by explicitly defining them within the compose definition.
 
@@ -767,12 +791,34 @@ services:
   added, the proxy container will be able to do DNS resolution of container
   names as usual, including proxying traffic to that network.
 
-### Show Loaded nginx Configuration
-This will show the loaded configuration files, what ordered they were loaded in
-and any issues loading them.
+#### Classify Networks to Variables
+Determine remote address subnet / IP and set variable specifically for match.
+Enables use of logic within nginx to make decisions based on remote IP address.
 
-```bash
-sudo nginx -T
+```nginx
+geo $client {
+  default        default;
+  172.1.1.1      nginx-proxy-host;
+  172.10.0.0/16  subnet-one;
+  172.11.0.0/16  subnet-two;
+}
+```
+* `$client` will store a value based on the most specific match and can be
+  checked in other sections.
+* There is essentiall no cost for a large list of matches; [only evaluated when
+  used][g0].
+
+```nginx
+server {
+  ...
+  location / {
+    ...
+    if ($client = subnet-one) {
+      return 403;
+      break;
+    }
+  }
+}
 ```
 
 Debugging
@@ -915,6 +961,7 @@ location / {
 [n8]: https://www.chromium.org/administrators/policy-list-3#AutoSelectCertificateForUrls
 [n7]: https://gist.github.com/mtigas/952344
 [n1]: https://serverfault.com/questions/622855/nginx-proxy-to-back-end-with-ssl-client-certificate-authentication/746816
+[g0]: http://nginx.org/en/docs/http/ngx_http_geo_module.html
 
 [bugdx]: https://github.com/docker/libnetwork/issues/1141#issuecomment-215522809
 [bugsf]: https://dustymabe.com/2016/05/25/non-deterministic-docker-networking-and-source-based-ip-routing/
