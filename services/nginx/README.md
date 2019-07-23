@@ -5,7 +5,8 @@ behind a proxy and enforce SSL for those applications, as well as being able to
 offer a clean namespace for multiple microservices.
 
 This setup will focus on creating a docker-based reverse proxy, enforcing SSL
-for all connections to docker containers using Let's Encrypt.
+for all connections to docker containers using Let's Encrypt; and enforcing
+client certification authentication.
 
 A detailed [Nginx Administration Handbook is here][ls].
 
@@ -15,8 +16,15 @@ A detailed [Nginx Administration Handbook is here][ls].
 1. [Initial Setup](#initial-setup)
 1. [Adding Reverse Proxies](#adding-reverse-proxies)
 1. [Custom Error Pages](#custom-error-pages)
+1. [Cert Based Authentication](#-cert-based-authentication)
+   * [Server Certificates](#server-certificates)
+   * [Client Certificates](#client-certificates)
+   * [Nginx Configuration](#nginx-configuration)
+   * [Git Configuration](#git-configuration)
+   * [Chrome Client Certifcate](#chrome-client-certificate)
 1. [Configuration Patterns](#configuration-patterns)
 1. [Debugging](#debugging)
+1. [Nginx queries Originate from Wrong Gateway](nginx-queries-originate-from-wrong-gateway)
 
 Ports
 -----
@@ -326,7 +334,7 @@ Setup a custom [error page][v7] to serve [all errors][9x].
 > hard to debug errors with the page not loading.
 
 Set root web folder for http server:
-```bash
+```nginx
 server {
   ...
   root /www;
@@ -336,7 +344,7 @@ server {
 * This assumes _http_ is redirected to _https_; so no error block needed.
 
 Set root web folder for https server, and redirect all errors to custom page.
-```bash
+```nginx
 server {
   root /www;
   error_page 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415 416 417 418 421 422 423 424 426 428 429 431 451 500 501 502 503 504 505 506 507 508 510 511 /error.html;
@@ -377,7 +385,7 @@ body {
 <script type='text/javascript'>
 function background(){
   var BG = Math.ceil(Math.random() * 12);
-  document.body.background = 'img/' + BG + '.png';
+  document.body.background = 'https://example.com/img/' + BG + '.png';
 }
 </script>
 </head>
@@ -387,6 +395,247 @@ function background(){
 </html>
 ```
 * this example randomly loads a background image when the page is loaded.
+
+[Cert Based Authentication][u4]
+-------------------------------
+Configure nginx to verify client certifcate before responding to requests. This
+provides another security layer to nginx enabling only known certificates access
+to make requests for the proxy. Generally, these should be considered _machine
+certificates_ as they don't identify a particular user, just a machine with a
+certificate.
+
+### Server Certificates
+#### Create Server Cert Private Key
+Creates the server private key which is used to create the certificate authority
+as well as sign client certificate requests (all certificates that clients will
+use to access the proxy). This should be different from all other private keys.
+
+```bash
+openssl genrsa -aes256 -out {SERVER}.key 4096
+```
+
+#### Create Server CA certificate
+Challenge certificate the server issues to clients as well as sign requests.
+
+```bash
+openssl req -new -x509 -days 365 -key {SERVER}.key -out {SERVER}.crt
+```
+* Set name for _Organizational Name_.
+* Blanks for everything else.
+
+> :thought_balloon:  
+> These are the bare minimum values to make certification authentication work
+> in reality, you should fill most of this out.
+
+You can verify creation parameters with text output:
+```bash
+openssl x509 -in {SERVER}.crt -noout -text
+```
+
+### Client Certificates
+#### Create Client Private Key
+Used to uniquely identify the client. No password will be set as this will act
+as a machine certificate.
+
+```bash
+openssl genrsa -out {MACHINE}.key 4096
+```
+* Removing the encryption flag will produce a passwordless certificate.
+
+#### Create Client Certificate Signing Request (CSR)
+Request the client certificate to be signed by the server. Only signed requests
+will be allowed through the proxy.
+
+```bash
+openssl req -new -key {MACHINE}.key -out {MACHINE}.csr
+```
+* Set machine name for _Organizational Name_.
+* Blanks for everything else.
+* _A challenge password_ and following items should be blank.
+
+> :thought_balloon:  
+> These are the bare minimum values to make certification authentication work
+> in reality, you should fill most of this out. If a challenge password is used
+> it must be entered when signing the request.
+
+#### Sign CSR with Server Key
+Validates the certificate, it will now pass client certification authentication.
+
+```bash
+openssl x509 -req -days 365 -in {MACHINE}.csr -CA {SERVER}.crt -CAkey
+{SERVER}.key -set_serial 01 -out {MACHINE}.crt
+```
+
+#### Create PKCS #12 PFX Certificate
+PKCS #12 PFX (Personal Information Exchange Certificate) is an encrypted
+singular file archive format used to distribute a bundle of certificates
+securely to a client.
+
+```bash
+openssl pkcs12 -export -out {MACHINE}.pfx -inkey {MACHINE}.key -in {MACHINE}.crt
+-certfile {SERVER}.crt
+```
+* Set a strong _export password_. Prevents bundle from being installed and used
+  without knowing password.
+
+### [Nginx Configuration][ub]
+By standards if the `default_server` is set to not require cert-based
+authentication and additional server blocks do, clients that do not support it
+will fall back to the `default_server` and be **able** to make valid requests.
+Therefore the default server should act as a _catch all_ for non-cert based
+requests and specifically respond to those requests. In this case we will
+respond immediately with a _403_.
+
+> :warning:  
+> You are entering a dangerous space. Once a client has a valid SSL connection,
+> certificate validation needs to be explicitly enforced; otherwise a client can
+> access other SSL areas (due to a pre-existing valid SSL connection).
+> **ALWAYS** explicitly check for valid client certificates and do penetration
+> testing to verify your assumptions.
+
+Setup nginx SSL server with client cert authentication:
+```nginx
+server {
+  # Security-related headers (cross-site/domain, referrer)
+  # https://geekflare.com/http-header-implementation/
+  # https://geekflare.com/nginx-webserver-security-hardening-guide/
+  # https://www.cyberciti.biz/tips/linux-unix-bsd-nginx-webserver-security.html
+  add_header X-Content-Type-Options            nosniff;
+  add_header X-XSS-Protection                  "1; mode=block";
+  add_header X-Robots-Tag                      none;
+  add_header X-Download-Options                noopen;
+  add_header X-Permitted-Cross-Domain-Policies none;
+  add_header Referrer-Policy                   no-referrer;
+  add_header Strict-Transport-Security         "max-age=15768000; includeSubDomains; preload;";
+  # Enable basic SSL security settings.
+  ssl_certificate         /etc/nginx/ssl/letsencrypt-fullchain.pem;
+  ssl_certificate_key     /etc/nginx/ssl/letsencrypt-privkey.pem;
+  ssl_trusted_certificate /etc/nginx/ssl/letsencrypt-chain.pem;
+  ssl_dhparam             /etc/nginx/ssl/letsencrypt-ssl-dhparams.pem;
+  # Enable OCSP stapling https://en.wikipedia.org/wiki/OCSP_stapling.
+  ssl_stapling            on;
+  ssl_stapling_verify     on;
+
+  # make client certificate verification optional, so we can display a 403
+  # message to those who fail authentication. All loctions **must** explicitly
+  # validate ssl_client_verify for restricted access to work. Alternatively the
+  # `on` option will force client auth for all connections, including error
+  # pages.
+  ssl_client_certificate /etc/nginx/auth/{SERVER}.crt;
+  ssl_verify_client optional;
+
+  # One error page for everything. Does not require client cert.
+  root /www;
+  error_page 400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415 416 417 418 421 422 423 424 426 428 429 431 451 500 501 502 503 504 505 506 507 508 510 511 /error.html;
+  location = /error.html {
+    allow all;
+    internal;
+    root /www;
+  }
+
+  # if no cert auth is used, 403.
+  location /secured_site {
+    # Disable client certificate authentication for a specific host. See geo
+    # module for catching subnets.
+    if ($remote_addr = 10.10.10.10) {
+      proxy_pass http://some-backend;
+      break;
+    }
+
+    if ($ssl_client_verify != SUCCESS) {
+      return 403;
+      break;
+    }
+    proxy_pass http://some-backend;
+  }
+}
+```
+* If statements should only be used to for `rewrite` and `return` (`proxy_pass`
+  is a `rewrite` statement). See [if is evil][u3], [examples][up].
+* Access can be provided based on client certificate presented as well (e.g.
+  specific access for specific certificates.) See [here][um]
+* Disabling for a specific host may be required for backend hosts communicating
+  with each other via the proxy. Most backend services do not support client
+  authentication. The address here should be the proxy `gateway` address as that
+  is where those proxied requests will be _coming from_. This will only
+  allow traffic _originating_ from the proxy through, not proxied requests from
+  clients. Always be sure to enforce client verification and test assumptions.
+
+#### Proxy-specific Client Certificate
+In cases where a backend **requires** a certificate but the client using the
+proxy does not have one. This is _dangerous_ if used without layering additional
+security measures. Explicitly specify a certificate that the proxy will use to
+authenticate to backends for requests.
+
+Create a client ceritifcate as normal and configure nginx with:
+```nginx
+server {
+  ...
+  proxy_ssl_certificate         /etc/nginx/auth/nginx.crt;
+  proxy_ssl_certificate_key     /etc/nginx/auth/nginx.key;
+  proxy_ssl_trusted_certificate /etc/nginx/auth/{BACKEND}.crt;
+}
+```
+
+### Git Configuration
+Accessing a https based git repository behind a nginx proxy requiring client
+certification authentication is supported both locally and via URI matching.
+
+/home/user/{MACHINE}.crt `user:user 0400`
+/home/user/{MACHINE}.key `user:user 0400`
+
+#### [Git Cert Auth for Repo Site][ul]
+~/.gitconfig `user:user 0400`
+```git
+[http "https://git.example.com"]
+  sslCert = /home/user/{MACHINE}.crt
+  sslKey = /home/user/{MACHINE}.key
+```
+
+#### [Git Cert Auth for Specific Repo][up]
+```bash
+git config --local http.sslCert "/home/user/{MACHINE}.crt"
+git config --local http.sslKey "/home/user/{MACHINE}.key"
+```
+* `--global` will force certification authentication for all repositories. This
+  is probably not what you want to do.
+
+### Chrome Client Certificate
+[Setup chrome][k3] to auto present correct certificate when challenged by proxy
+server.
+
+#### `chrome://settings > Settings > Advanced > Privacy and security > Manage certificates > Import`
+* Use export password to decrypt and import.
+- [ ] Enable strong private key protection.
+- [ ] Mark this key as exportable.
+- [x] Include all extended properties.
+- [x] Place all certificates in the following store: `Personal`.
+
+Restart chrome. Nagivate to a proxied site and the certificate prompt should
+appear to select which cert to authenticate with. If nginx has been reloaded and
+setup, then this should allow you to passthrough.
+
+#### Auto-select Client Certificate
+Auto selecting the [correct][m2] certificate will enable transparent
+authentication for proxied sites. Enabled via Group Policy or [Reg Edit][n8].
+
+`start > regedit` (as admin)
+> :key:: `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls`
+>
+> | Type   | Name | Value                                                                              |
+> |--------|------|------------------------------------------------------------------------------------|
+> | REG_SZ | 1    | ````{"pattern":"https://[*.]example.com","filter":{"ISSUER":{"O":"{SERVER}"}}}```` |
+* `1` incremental counter for which matching patterns to apply. If using
+  multiple certificates this will represent the resolution order.
+* `O` is used to match the _Organizational Name_ of the server CA `{SERVER}`.
+  This will use this certificate for all '{SERVER}' cert auth requests.
+* If using a _reg_ file, ensure proper escaping:
+
+```
+"1"="{\"pattern\":\"https://[*.]example.com\",\"filter\":{\"ISSUER\":{\"O\":\"{SERVER}\"}}}"`
+```
+
+Restarting chrome will pickup the configuration changes.
 
 Configuration Patterns
 ----------------------
@@ -529,7 +778,6 @@ sudo nginx -T
 
 Debugging
 ---------
-
 ### Validating upstream parameters
 To validate parameters passed to upstream services, the request should be
 dumped by the service or intercepted by another service temporarily. There is a
@@ -656,6 +904,18 @@ location / {
 [h6]: https://www.nginx.com/resources/wiki/start/topics/depth/ifisevil/
 [h7]: https://serverfault.com/questions/687033/nginx-use-geo-module-with-allow-deny-directives
 [h8]: https://stackoverflow.com/questions/12832033/dump-conf-from-running-nginx-process
+[u4]: https://fardog.io/blog/2017/12/30/client-side-certificate-authentication-with-nginx/
+[ub]: https://tech.mendix.com/linux/2014/10/29/nginx-certs-sni/
+[u3]: https://www.nginx.com/resources/wiki/start/topics/depth/ifisevil/
+[up]: https://agentzh.blogspot.com/2011/03/how-nginx-location-if-works.html
+[ul]: https://stackoverflow.com/questions/9008309/how-do-i-set-git-ssl-no-verify-for-specific-repos-only
+[ug]: http://www.wakoond.hu/2013/07/using-git-with-https-client-certificate.html
+[um]: https://stackoverflow.com/questions/41513400/nginx-authorization-based-on-client-certificates
+[k3]: https://www.tbs-certificates.co.uk/FAQ/en/installer_certificat_client_google_chrome.html
+[m2]: https://blogs.sap.com/2014/01/30/avoid-certification-selection-popup-in-chrome/
+[n8]: https://www.chromium.org/administrators/policy-list-3#AutoSelectCertificateForUrls
+[n7]: https://gist.github.com/mtigas/952344
+[n1]: https://serverfault.com/questions/622855/nginx-proxy-to-back-end-with-ssl-client-certificate-authentication/746816
 
 [bugdx]: https://github.com/docker/libnetwork/issues/1141#issuecomment-215522809
 [bugsf]: https://dustymabe.com/2016/05/25/non-deterministic-docker-networking-and-source-based-ip-routing/

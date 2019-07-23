@@ -9,7 +9,7 @@ private repository use. Can be exposed and used publicly as well.
 1. [Reverse Proxy Setup](#reverse-proxy-setup)
 1. [Initial Setup](#initial-setup)
 1. [Importing Git Repositories](#importing-git-epositories)
-1. [Other Options](#other-options)
+1. [SSL Client Cert Authentication](#ssl-client-cert-authentication)
 
 Ports
 -----
@@ -160,6 +160,33 @@ As this is a mirror, you want to commit the git metadata and not just the files.
 The git repository is stored in _/data/gitea/git_ as a standard git repository.
 Importing this way sets up the gitea frontend database metadata for the project.
 
+SSL Client Cert Authentication
+------------------------------
+A reverse proxy requiring SSL client certification authentication requires no
+change in the gitea configuration. The git client itself will need to be updated
+to handle this authentication:
+
+/home/user/{MACHINE}.crt `user:user 0400`
+/home/user/{MACHINE}.key `user:user 0400`
+
+### [Git Cert Auth for Specific Repo][8v]
+```bash
+git config --local http.sslCert "/home/user/{MACHINE}.crt"
+git config --local http.sslKey "/home/user/{MACHINE}.key"
+```
+* `--global` will force certification authentication for all repositories. This
+  is probably not what you want to do.
+
+### [Git Cert Auth for Repo Site][8s]
+Applies cert authentication to all repositories matched in base URI.
+
+~/.gitconfig `user:user 0400`
+```config
+[http "https://gitea.example.com"]
+  sslCert = /home/user/mono.crt
+  sslKey = /home/user/mono.key
+```
+
 [docker-service-template.md|c9067f2][XX]
 
 [i2]: https://docs.gitea.io/en-us/
@@ -170,6 +197,8 @@ Importing this way sets up the gitea frontend database metadata for the project.
 [ek]: https://stackoverflow.com/questions/11621768/how-can-i-make-git-accept-a-self-signed-certificate
 [od]: https://docs.gitea.io/en-us/install-with-docker/
 [fp]: https://discuss.gogs.io/t/reverse-proxy-unauthorized-401-windows/2057
+[8v]: http://www.wakoond.hu/2013/07/using-git-with-https-client-certificate.html
+[8s]: https://stackoverflow.com/questions/9008309/how-do-i-set-git-ssl-no-verify-for-specific-repos-only
 [XX]: https://github.com/r-pufky/docs/blob/c9067f2bc3d0aeb0f2915e63f8cd9515c00640a2/services/docker-service-template.md
 
 [refv3]: ../nginx/proxy-control.conf
