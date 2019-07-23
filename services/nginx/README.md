@@ -663,7 +663,16 @@ Create a proxy directory:
 mkdir /etc/nginx/conf.d/include/proxy
 ```
 
-Add each site proxy config to '/etc/nginx/conf.d/include/proxy/{SITE}'.
+Add each site proxy config to `/etc/nginx/conf.d/include/proxy/{SITE}`. These
+can be imported in server/location blocks as needed:
+
+/etc/nginx/conf.d/include/server/{SITE} `root:root 0644`
+```nginx
+server {
+  include /etc/nginx/conf.d/include/proxy/{SITE};
+  ...
+}
+```
 
 #### One Server Site Per Config File
 Keep one site per configuration file to focus only on that site. This will help
