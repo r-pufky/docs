@@ -475,8 +475,9 @@ openssl req -new -key {MACHINE}.key -out {MACHINE}.csr
 Validates the certificate, it will now pass client certification authentication.
 
 ```bash
-openssl x509 -req -days 365 -in {MACHINE}.csr -CA {SERVER}.crt -CAkey {SERVER}.key -set_serial 01 -out {MACHINE}.crt
+openssl x509 -req -days 365 -in {MACHINE}.csr -CA {SERVER}.crt -CAkey {SERVER}.key -CAcreateserial -CAserial {MACHINE}.srl -out {MACHINE}.crt
 ```
+* `CAserial` will automatically track and increment certificate serial numbers.
 
 #### Create PKCS #12 PFX Certificate
 PKCS #12 PFX (Personal Information Exchange Certificate) is an encrypted
