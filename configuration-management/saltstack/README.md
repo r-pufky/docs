@@ -313,6 +313,12 @@ These are stored in `~/.gnupg/`
 
 ### Using encrypted data in Pillar
 
+> :warning:  
+> Binary data cannot be stored gpg encrypted in pillar for python3 versions of
+> saltstack due to python3 strict handling of text vs. binary data type. This
+> results in a binary data render error for gpg on salt. Binary support is being
+> explicitly added. https://github.com/saltstack/salt/issues/51879
+
 #### Encrypting Data
 
 ##### A password or text material
@@ -324,7 +330,8 @@ echo -n "super_secret_server_stuff" | gpg --armor --batch --trust-model always -
 ```bash
 gpg --armor --batch --trust-model always --encrypt --recipient salty <file>
 ```
-`salty` is the name of the recipient of the data (see GPG key creation).
+* The contents of this file should be what is placed in pillar.
+* `salty` is the name of the recipient of the data (see GPG key creation).
 
 ##### GPG encrypting shadow passwords
 The [salt user state documentation][20] recommends using `openssl passwd -1` to
@@ -361,7 +368,6 @@ GPG message. Indentation matters.
 secret-stuff: |
   -----BEGIN PGP MESSAGE-----
   Version: GnuPG v2.0.22 (GNU/Linux)
-
   hQEMA4Pr9QJhL3umAQgAnZtS7lTyDR3kjr+VjCIADutmxyjrxbyaNnPEs3eJRi9G
   N6LtiFlUt24Jgdgupu/CG2IS815V0Vx3EbBknpNNwq0Yrs2joMnm92ZRv4AI6ZTo
   yQqGICetmBOS+vGk4jS8mj9qRjLamvPDOBPyNpKiRCFqu1TPKYw0a8xssO/j/pzW
@@ -374,6 +380,7 @@ secret-stuff: |
   -----END PGP MESSAGE-----
 some-other-key: data
 ```
+* Blank lines between the begin/version and body can be removed.
 
 #### Refresh Pillar and Push Data
 Pillar will automatically refresh and push, however this allows you to
