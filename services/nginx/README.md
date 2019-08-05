@@ -17,8 +17,6 @@ A detailed [Nginx Administration Handbook is here][ls].
 1. [Adding Reverse Proxies](#adding-reverse-proxies)
 1. [Custom Error Pages](#custom-error-pages)
 1. [Cert Based Authentication](#cert-based-authentication)
-   * [Server Certificates](#server-certificates)
-   * [Client Certificates](#client-certificates)
    * [Nginx Configuration](#nginx-configuration)
    * [Git Configuration](#git-configuration)
    * [Chrome Client Certifcate](#chrome-client-certificate)
@@ -417,86 +415,17 @@ to make requests for the proxy. Generally, these should be considered _machine
 certificates_ as they don't identify a particular user, just a machine with a
 certificate.
 
-### Server Certificates
-#### Create Server Cert Private Key
-Creates the server private key which is used to create the certificate authority
-as well as sign client certificate requests (all certificates that clients will
-use to access the proxy). This should be different from all other private keys.
-
-```bash
-openssl genrsa -aes256 -out {SERVER}.key 4096
-```
-
-#### Create Server CA certificate
-Challenge certificate the server issues to clients as well as sign requests.
-
-```bash
-openssl req -new -x509 -days 365 -key {SERVER}.key -out {SERVER}.crt
-```
-* Set name for _Organizational Name_.
-* Blanks for everything else.
-
-> :thought_balloon:  
-> These are the bare minimum values to make certification authentication work.
-> In reality, you should fill most of this out.
-
-You can verify creation parameters with text output:
-```bash
-openssl x509 -in {SERVER}.crt -noout -text
-```
-
-### Client Certificates
-#### Create Client Private Key
-Used to uniquely identify the client. No password will be set as this will act
-as a machine certificate.
-
-```bash
-openssl genrsa -out {MACHINE}.key 4096
-```
-* Removing the encryption flag will produce a passwordless certificate.
-
-#### Create Client Certificate Signing Request (CSR)
-Request the client certificate to be signed by the server. Only signed requests
-will be allowed through the proxy.
-
-```bash
-openssl req -new -key {MACHINE}.key -out {MACHINE}.csr
-```
-* Set machine name for _Organizational Name_.
-* Blanks for everything else.
-* _A challenge password_ and following items should be blank.
-
-> :thought_balloon:  
-> These are the bare minimum values to make certification authentication work.
-> In reality, you should fill most of this out. If a challenge password is used
-> it must be entered when signing the request.
-
-#### Sign CSR with Server Key
-Validates the certificate, it will now pass client certification authentication.
-
-```bash
-openssl x509 -req -days 365 -in {MACHINE}.csr -CA {SERVER}.crt -CAkey {SERVER}.key -CAcreateserial -CAserial {MACHINE}.srl -out {MACHINE}.crt
-```
-* `CAserial` will automatically track and increment certificate serial numbers.
-
-#### Create PKCS #12 PFX Certificate
-PKCS #12 PFX (Personal Information Exchange Certificate) is an encrypted
-singular file archive format used to distribute a bundle of certificates
-securely to a client. Send this to the client to install and use.
-
-```bash
-openssl pkcs12 -export -out {MACHINE}.pfx -inkey {MACHINE}.key -in {MACHINE}.crt -certfile {SERVER}.crt
-```
-* Set a strong _export password_. Prevents bundle from being installed and used
-  without knowing password.
+See [Certificate Authority][l4] for instructions on setting up required
+certificates used here. This is an [**excellent reference** for basic
+certificate usage][kx] and should be well understood before proceeding.
 
 ### [Nginx Configuration][ub]
-By standards if the `default_server` is set to not require cert-based
-authentication and additional server blocks do, clients that do not support it
-will fall back to the `default_server` and be **able** to make valid requests.
-Therefore the default server should act as a _catch all_ for non-cert based
-requests and specifically respond to those requests. In this case we will
-respond immediately with a _403_.
+If the `default_server` is set to not require cert-based authentication and
+additional server blocks do, clients that do not support it will fall back to
+the `default_server` and be **able** to make valid requests. Therefore the
+default server should act as a _catch all_ for non-cert based requests and
+specifically respond to those requests. In this case we will respond immediately
+ with a _403_.
 
 > :warning:  
 > You are entering a dangerous space. Once a client has a valid SSL connection,
@@ -533,7 +462,8 @@ server {
   # validate ssl_client_verify for restricted access to work. Alternatively the
   # `on` option will force client auth for all connections, including error
   # pages.
-  ssl_client_certificate /etc/nginx/auth/{SERVER}.crt;
+  ssl_client_certificate /etc/nginx/auth/ca-chain.cert.pem;
+  ssl_crl /etc/nginx/auth/inter.crl.pem;
   ssl_verify_client optional;
 
   # One error page for everything. Does not require client cert.
@@ -583,32 +513,33 @@ Create a client ceritifcate as normal and configure nginx with:
 ```nginx
 server {
   ...
-  proxy_ssl_certificate         /etc/nginx/auth/nginx.crt;
-  proxy_ssl_certificate_key     /etc/nginx/auth/nginx.key;
-  proxy_ssl_trusted_certificate /etc/nginx/auth/{BACKEND}.crt;
+  proxy_ssl_certificate         /etc/nginx/auth/nginx.crt.pem;
+  proxy_ssl_certificate_key     /etc/nginx/auth/nginx.key.pem;
+  proxy_ssl_trusted_certificate /etc/nginx/auth/{BACKEND}.crt.pem;
 }
 ```
 
 ### Git Configuration
-Accessing a https based git repository behind a nginx proxy requiring client
-certification authentication is supported both locally and via URI matching.
+Accessing a [https based][up] git repository behind a nginx proxy requiring
+client certificate authentication is supported both locally and via URI
+matching.
 
-/home/user/{MACHINE}.crt `user:user 0400`
+/home/user/{MACHINE}.crt.pem `user:user 0400`
 
-/home/user/{MACHINE}.key `user:user 0400`
+/home/user/{MACHINE}.key.pem `user:user 0400`
 
 #### [Git Cert Auth for Repo Site][ul]
 ~/.gitconfig `user:user 0400`
 ```git
 [http "https://git.example.com"]
-  sslCert = /home/user/{MACHINE}.crt
-  sslKey = /home/user/{MACHINE}.key
+  sslCert = /home/user/{MACHINE}.crt.pem
+  sslKey = /home/user/{MACHINE}.key.pem
 ```
 
 #### [Git Cert Auth for Specific Repo][up]
 ```bash
-git config --local http.sslCert "/home/user/{MACHINE}.crt"
-git config --local http.sslKey "/home/user/{MACHINE}.key"
+git config --local http.sslCert "/home/user/{MACHINE}.crt.pem"
+git config --local http.sslKey "/home/user/{MACHINE}.key.pem"
 ```
 * `--global` will force certification authentication for all repositories. This
   is probably not what you want to do.
@@ -969,9 +900,9 @@ location / {
 [k3]: https://www.tbs-certificates.co.uk/FAQ/en/installer_certificat_client_google_chrome.html
 [m2]: https://blogs.sap.com/2014/01/30/avoid-certification-selection-popup-in-chrome/
 [n8]: https://www.chromium.org/administrators/policy-list-3#AutoSelectCertificateForUrls
-[n7]: https://gist.github.com/mtigas/952344
-[n1]: https://serverfault.com/questions/622855/nginx-proxy-to-back-end-with-ssl-client-certificate-authentication/746816
 [g0]: http://nginx.org/en/docs/http/ngx_http_geo_module.html
+[l4]: ../certificate-authority/README.md
+[kx]: https://jamielinux.com/docs/openssl-certificate-authority/introduction.html
 
 [bugdx]: https://github.com/docker/libnetwork/issues/1141#issuecomment-215522809
 [bugsf]: https://dustymabe.com/2016/05/25/non-deterministic-docker-networking-and-source-based-ip-routing/
