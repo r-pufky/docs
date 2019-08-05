@@ -34,7 +34,29 @@ stty erase ^H
  * Sets the correct escape sequence
  * Generally should press the key instead of manually typing it
 
+Forwarding X Windows
+--------------------
+Use [VcXsrv][vj] instead of xming. This set is fully functional and does not
+have copy/paste or resizing disabled. Install as normal.
+
+### Save X window server settings to config file.
+`start > xlaunch`
+* Run through the configuration and save options to file `config.xlaunch`.
+* Move `config.xlaunch` `c:\Program Files\VcXsrv\`.
+
+### Edit xlaunch shortcut
+`C:\ProgramData\Microsoft\Windows\Start Menu\Programs\VcXsrv`
+* `XLaunch` > `Right Click` > `Target`
+
+```properties
+"C:\Program Files\VcXsrv\xlaunch.exe" -run config.xlaunch
+```
+* Save and launch `XLaunch`. Settings should load automatically and start
+  xserver.
+
+
 
 References
 ----------
-[1]: https://unix.stackexchange.com/questions/43103/backspace-tab-not-working-in-terminal-using-ssh
+[xg]: https://unix.stackexchange.com/questions/43103/backspace-tab-not-working-in-terminal-using-ssh
+[vj]: https://sourceforge.net/projects/vcxsrv/files/vcxsrv/
