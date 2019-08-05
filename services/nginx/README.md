@@ -903,6 +903,7 @@ location / {
 [g0]: http://nginx.org/en/docs/http/ngx_http_geo_module.html
 [l4]: ../certificate-authority/README.md
 [kx]: https://jamielinux.com/docs/openssl-certificate-authority/introduction.html
+[XX]: https://github.com/r-pufky/docs/blob/c9067f2bc3d0aeb0f2915e63f8cd9515c00640a2/services/docker-service-template.md
 
 [bugdx]: https://github.com/docker/libnetwork/issues/1141#issuecomment-215522809
 [bugsf]: https://dustymabe.com/2016/05/25/non-deterministic-docker-networking-and-source-based-ip-routing/

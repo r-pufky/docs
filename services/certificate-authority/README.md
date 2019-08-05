@@ -356,8 +356,8 @@ chmod 444 /root/ca/inter/certs/ca-chain.cert.pem
 -------------------------
 Used for providing SSL connections with services / servers. The Root CA must be
 in the trusted Root CAs or the ca-chain deployed with clients for servers
-presenting these SSL connections to be validate (green lock). These certificates
-only have `serverAuth` extensions added.
+presenting SSL connections using these certificates to be validated (green
+lock). These certificates only have `serverAuth` extensions added.
 
 Letsencrypt certificates should be used here instead of self-signed certs.
 
@@ -381,7 +381,7 @@ openssl req -config /root/ca/inter/inter.ca -key /root/ca/inter/private/{SERVER}
 > Requiring a password `-aes256` for the private key will require that password
 > to be entered everytime the certifcate is used (e.g. service is started).
 > Given the short lived nature of these certificates, generally no password is
-> used and CRL/OSCP are used to invalidate any exposed certifiates.
+> used and CRL/OSCP are used to invalidate any exposed certificates.
 
 Sign certificate signing request:
 ```bash
@@ -532,6 +532,7 @@ openssl ca -config /root/ca/inter/inter.ca -gencrl -out /root/ca/inter/crl/inter
 [j3]: https://jamielinux.com/docs/openssl-certificate-authority/appendix/intermediate-configuration-file.html
 [kd]: https://jamielinux.com/docs/openssl-certificate-authority/sign-server-and-client-certificates.html
 [r4]: https://jamielinux.com/docs/openssl-certificate-authority/certificate-revocation-lists.html
+[XX]: https://github.com/r-pufky/docs/blob/c9067f2bc3d0aeb0f2915e63f8cd9515c00640a2/services/docker-service-template.md
 
 [refss]: proxy-control.conf
 [refew]: ..
