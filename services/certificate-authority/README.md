@@ -252,7 +252,7 @@ default_bits        = 4096
 distinguished_name  = req_distinguished_name
 string_mask         = utf8only
 default_md          = sha512
-x509_extensions     = v3_intermediate_ca
+x509_extensions     = machine_cert
 
 [ req_distinguished_name ]
 # CSR information required, prompts and defaults.
