@@ -77,96 +77,96 @@ specified when issuing Root CA operations otherwise the systemwide
 # https://jamielinux.com/docs/openssl-certificate-authority/create-the-root-pair.html
 
 [ ca ]
-default_ca = CA_default
+default_ca                     = CA_default
 
 [ CA_default ]
 # Directory and file locations.
-dir               = /root/ca/root
-certs             = $dir/certs
-crl_dir           = $dir/crl
-new_certs_dir     = $dir/newcerts
-database          = $dir/index.txt
-serial            = $dir/serial
-RANDFILE          = $dir/private/.rand
+dir                            = /root/ca/root
+certs                          = $dir/certs
+crl_dir                        = $dir/crl
+new_certs_dir                  = $dir/newcerts
+database                       = $dir/index.txt
+serial                         = $dir/serial
+RANDFILE                       = $dir/private/.rand
 
 # The root key and root certificate.
-private_key       = $dir/private/root.key.pem
-certificate       = $dir/certs/root.cert.pem
+private_key                    = $dir/private/root.key.pem
+certificate                    = $dir/certs/root.cert.pem
 
 # For certificate revocation lists.
-crlnumber         = $dir/crlnumber
-crl               = $dir/crl/root.crl.pem
-crl_extensions    = crl_ext
-default_crl_days  = 375
+crlnumber                      = $dir/crlnumber
+crl                            = $dir/crl/root.crl.pem
+crl_extensions                 = crl_ext
+default_crl_days               = 375
 
-default_md        = sha512
-name_opt          = ca_default
-cert_opt          = ca_default
-default_days      = 375
-preserve          = no
-policy            = policy_strict
+default_md                     = sha512
+name_opt                       = ca_default
+cert_opt                       = ca_default
+default_days                   = 375
+preserve                       = no
+policy                         = policy_strict
 
 [ policy_strict ]
 # The root CA should only sign intermediate certificates that match.
-countryName             = match
-stateOrProvinceName     = match
-organizationName        = match
-organizationalUnitName  = optional
-commonName              = supplied
-emailAddress            = optional
+countryName                    = match
+stateOrProvinceName            = match
+organizationName               = match
+organizationalUnitName         = optional
+commonName                     = supplied
+emailAddress                   = optional
 
 [ req ]
 # Applied when creating / signing certificates.
-default_bits        = 4096
-distinguished_name  = req_distinguished_name
-string_mask         = utf8only
-default_md          = sha512
-x509_extensions     = v3_ca
+default_bits                   = 4096
+distinguished_name             = req_distinguished_name
+string_mask                    = utf8only
+default_md                     = sha512
+x509_extensions                = v3_ca
 
 [ req_distinguished_name ]
 # CSR information required, prompts and defaults.
-countryName                     = Country Name (2 letter code)
-stateOrProvinceName             = State or Province Name
-localityName                    = Locality Name
-0.organizationName              = Organization Name
-organizationalUnitName          = Organizational Unit Name
-commonName                      = Common Name
-emailAddress                    = Email Address
+countryName                    = Country Name (2 letter code)
+stateOrProvinceName            = State or Province Name
+localityName                   = Locality Name
+0.organizationName             = Organization Name
+organizationalUnitName         = Organizational Unit Name
+commonName                     = Common Name
+emailAddress                   = Email Address
 
 # Default values for certification generation.
-countryName_default             = XX
-stateOrProvinceName_default     = XX
-localityName_default            = XX
-0.organizationName_default      = {CA NAME}
-organizationalUnitName_default  = {CA NAME} Certificate Authority
-commonName_default              = {CA NAME} Root CA
-emailAddress_default            = XX
+countryName_default            = XX
+stateOrProvinceName_default    = XX
+localityName_default           = XX
+0.organizationName_default     = {CA NAME}
+organizationalUnitName_default = {CA NAME} Certificate Authority
+commonName_default             = {CA NAME} Root CA
+emailAddress_default           = XX
 
 [ v3_ca ]
 # Root CA extenstions: man x509v3_config '-extensions v3_ca'
-subjectKeyIdentifier = hash
-authorityKeyIdentifier = keyid:always,issuer
-basicConstraints = critical, CA:true
-keyUsage = critical, digitalSignature, cRLSign, keyCertSign
+subjectKeyIdentifier           = hash
+authorityKeyIdentifier         = keyid:always,issuer
+basicConstraints               = critical, CA:true
+keyUsage                       = critical, digitalSignature, cRLSign, keyCertSign
 
 [ v3_intermediate_ca ]
 # Intermediate CA extensions: man x509v3_config '-extensions v3_intermediate_ca'
-subjectKeyIdentifier = hash
-authorityKeyIdentifier = keyid:always,issuer
-basicConstraints = critical, CA:true, pathlen:0
-keyUsage = critical, digitalSignature, cRLSign, keyCertSign
+subjectKeyIdentifier           = hash
+authorityKeyIdentifier         = keyid:always,issuer
+basicConstraints               = critical, CA:true, pathlen:0
+keyUsage                       = critical, digitalSignature, cRLSign, keyCertSign
 
 [ crl_ext ]
 # Certificate revocation list extensions: man x509v3_config
-authorityKeyIdentifier=keyid:always
+authorityKeyIdentifier         = keyid:always
 
 [ ocsp ]
 # OCSP signing certificate extensions: man ocsp
-basicConstraints = CA:FALSE
-subjectKeyIdentifier = hash
-authorityKeyIdentifier = keyid,issuer
-keyUsage = critical, digitalSignature
-extendedKeyUsage = critical, OCSPSigning
+basicConstraints               = CA:FALSE
+subjectKeyIdentifier           = hash
+authorityKeyIdentifier         = keyid,issuer
+keyUsage                       = critical, digitalSignature
+extendedKeyUsage               = critical, OCSPSigning
 ```
 
 ### Create Root CA Private Key and Certificate
@@ -207,71 +207,71 @@ specified when issuing Intermediate CA operations otherwise the systemwide
 # https://jamielinux.com/docs/openssl-certificate-authority/create-the-intermediate-pair.html
 
 [ ca ]
-default_ca = CA_default
+default_ca                     = CA_default
 
 [ CA_default ]
 # Directory and file locations.
-dir               = /root/ca/inter
-certs             = $dir/certs
-crl_dir           = $dir/crl
-new_certs_dir     = $dir/newcerts
-database          = $dir/index.txt
-serial            = $dir/serial
-RANDFILE          = $dir/private/.rand
+dir                            = /root/ca/inter
+certs                          = $dir/certs
+crl_dir                        = $dir/crl
+new_certs_dir                  = $dir/newcerts
+database                       = $dir/index.txt
+serial                         = $dir/serial
+RANDFILE                       = $dir/private/.rand
 
 # The root key and root certificate.
-private_key       = $dir/private/inter.key.pem
-certificate       = $dir/certs/inter.cert.pem
+private_key                    = $dir/private/inter.key.pem
+certificate                    = $dir/certs/inter.cert.pem
 
 # For certificate revocation lists.
-crlnumber         = $dir/crlnumber
-crl               = $dir/crl/inter.crl.pem
-crl_extensions    = crl_ext
-default_crl_days  = 375
+crlnumber                      = $dir/crlnumber
+crl                            = $dir/crl/inter.crl.pem
+crl_extensions                 = crl_ext
+default_crl_days               = 375
 
-default_md        = sha512
-name_opt          = ca_default
-cert_opt          = ca_default
-default_days      = 375
-preserve          = no
-policy            = policy_loose
+default_md                     = sha512
+name_opt                       = ca_default
+cert_opt                       = ca_default
+default_days                   = 375
+preserve                       = no
+policy                         = policy_loose
 
 [ policy_loose ]
 # Allow the intermediate CA to sign a more diverse range of certificates.
-countryName             = optional
-stateOrProvinceName     = optional
-localityName            = optional
-organizationName        = optional
-organizationalUnitName  = optional
-commonName              = supplied
-emailAddress            = optional
+countryName                    = optional
+stateOrProvinceName            = optional
+localityName                   = optional
+organizationName               = optional
+organizationalUnitName         = optional
+commonName                     = supplied
+emailAddress                   = optional
 
 [ req ]
 # Options for the 'openssl req' tool: man req
-default_bits        = 4096
-distinguished_name  = req_distinguished_name
-string_mask         = utf8only
-default_md          = sha512
-x509_extensions     = machine_cert
+default_bits                   = 4096
+distinguished_name             = req_distinguished_name
+string_mask                    = utf8only
+default_md                     = sha512
+x509_extensions                = machine_cert
 
 [ req_distinguished_name ]
 # CSR information required, prompts and defaults.
-countryName                     = Country Name (2 letter code)
-stateOrProvinceName             = State or Province Name
-localityName                    = Locality Name
-0.organizationName              = Organization Name
-organizationalUnitName          = Organizational Unit Name
-commonName                      = Common Name
-emailAddress                    = Email Address
+countryName                    = Country Name (2 letter code)
+stateOrProvinceName            = State or Province Name
+localityName                   = Locality Name
+0.organizationName             = Organization Name
+organizationalUnitName         = Organizational Unit Name
+commonName                     = Common Name
+emailAddress                   = Email Address
 
 # Default values for certification generation.
-countryName_default             = XX
-stateOrProvinceName_default     = XX
-localityName_default            = XX
-0.organizationName_default      = {CA NAME}
-organizationalUnitName_default  = {CA NAME} Certificate Authority
-commonName_default              = {CA NAME} Intermediate CA
-emailAddress_default            = XX
+countryName_default            = XX
+stateOrProvinceName_default    = XX
+localityName_default           = XX
+0.organizationName_default     = {CA NAME}
+organizationalUnitName_default = {CA NAME} Certificate Authority
+commonName_default             = {CA NAME} Intermediate CA
+emailAddress_default           = XX
 
 [ user_cert ]
 # User certificate extensions: man x509v3_config '-extensions user_cert'
@@ -329,7 +329,7 @@ chmod 0400 /root/ca/inter/private/inter.key.pem
 Create the Intermediate CA Certficate:
 ```bash
 openssl req -config /root/ca/inter/inter.ca -new -sha512 -key /root/ca/inter/private/inter.key.pem -out /root/ca/inter/csr/inter.csr.pem
-openssl ca -config /root/ca/root/root.ca -extensions v3_intermediate_ca -days 3650 -notext -mb sha512 -in /root/ca/inter/csr/inter.csr.pem -out /root/ca/inter/certs/inter.cert.pem
+openssl ca -config /root/ca/root/root.ca -extensions v3_intermediate_ca -days 3650 -notext -md sha512 -in /root/ca/inter/csr/inter.csr.pem -out /root/ca/inter/certs/inter.cert.pem
 chmod 444 /root/ca/inter/certs/inter.cert.pem
 openssl x509 -noout -text -in /root/ca/inter/certs/inter.cert.pem
 openssl verify -CAfile /root/ca/root/certs/root.cert.pem /root/ca/inter/certs/inter.cert.pem
@@ -498,16 +498,20 @@ openssl pkcs12 -export -out /root/ca/pfx/{CLIENT}.pfx -inkey /root/ca/inter/priv
 ----------------------------------
 Certificate Revocation Lists (CRLs) are used to invalidate certificates in the
 wild which have been compromised. This covers server-side revocation
-enforcement.
+enforcement. A CRL should include all of the CRL's up to the Root CA.
 
 Create CRL:
 ```bash
+openssl ca -config /root/ca/root/root.ca -gencrl -out /root/ca/root/crl/root.crl.pem
 openssl ca -config /root/ca/inter/inter.ca -gencrl -out /root/ca/inter/crl/inter.crl.pem
+cat /root/ca/root/crl/root.crl.pem /root/ca/inter/crl/inter.crl.pem > /root/ca/ca-chain.crl.pem
 ```
 
 Check Current CRL Status:
 ```bash
-openssl crl -in ca/inter/crl/inter.crl.pem -noout -text
+openssl crl -in /root/ca/root/crl/root.crl.pem -noout -text
+openssl crl -in /root/ca/inter/crl/inter.crl.pem -noout -text
+openssl crl -in /root/ca/ca-chain.crl.pem -noout -text
 ```
 
 ### Revoking Certificate
@@ -518,9 +522,11 @@ Revoke Certificate and Update CRL:
 ```bash
 openssl ca -config /root/ca/inter/inter.ca -revoke /root/ca/inter/certs/{TARGET}.cert.pem
 openssl ca -config /root/ca/inter/inter.ca -gencrl -out /root/ca/inter/crl/inter.crl.pem
+cat /root/ca/root/crl/root.crl.pem /root/ca/inter/crl/inter.crl.pem > /root/ca/ca-chain.crl.pem
 ```
 * The new CRL needs to be deployed to any service using the Intermediate CA.
 * This can also be applied at the Root CA level to revoke intermediate CA's.
+* The combined CRL needs to be re-created as well.
 
 [docker-service-template.md|c9067f2][XX]
 
