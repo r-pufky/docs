@@ -1,0 +1,122 @@
+# -------- Localization --------
+d-i debian-installer/locale string en_US.UTF-8
+
+# -------- Keyboard --------
+d-i console-setup/ask_detect boolean false
+d-i console-setup/layoutcode string us
+d-i keyboard-configuration/xkb-keymap select us
+
+# -------- Network --------
+d-i netcfg/choose_interface select auto
+d-i netcfg/link_wait_timeout string 10
+d-i netcfg/dhcp_timeout string 10
+d-i netcfg/dhcpv6_timeout string 1
+
+# Set default names to prevent prompts, overwritten by DHCP names.
+d-i netcfg/get_hostname string unassigned-hostname
+d-i netcfg/get_domain string unassigned-domain
+
+# Disable that annoying WEP key dialog.
+d-i netcfg/wireless_wep string
+
+# -------- Hardware Firmware --------
+d-i hw-detect/load_firmware boolean true
+
+# -------- Apt Mirror --------
+d-i mirror/country string manual
+d-i mirror/http/hostname string mirrors.mit.edu
+d-i mirror/http/directory string /ubuntu
+d-i mirror/http/proxy string
+d-i mirror/udeb/components multiselect main, restricted, multiverse, universe
+
+# -------- Accounts --------
+# disable root user
+d-i passwd/root-login boolean false
+
+# base user for system
+d-i passwd/user-fullname string
+d-i passwd/username string {USERNAME}
+d-i passwd/user-password-crypted password {PRE HASHED PASSWORD}
+d-i passwd/user-uid string 1000
+d-i passwd/user-default-groups string cdrom video sudo ssh plugdev
+d-i user-setup/encrypt-home boolean false
+
+# -------- Clock and Timezone --------
+d-i clock-setup/utc boolean false
+d-i time/zone string America/Los_Angeles
+d-i clock-setup/ntp boolean true
+
+# -------- Partitioning --------
+# Auto remove existing LVM/RAID partitions on disk
+d-i partman-lvm/device_remove_lvm boolean true
+d-i partman-lvm/confirm boolean true
+d-i partman-lvm/confirm_nooverwrite boolean true
+d-i partman-md/device_remove_md boolean true
+d-i partman-md/confirm boolean true
+
+# Unmount auto-mounted existing partitions on disks, if any
+d-i preseed/early_command string umount /media
+
+# Disable no-swap warning, create / with at least 1GB for entire disk.
+d-i partman-auto/disk string /dev/{BLOCK DEVICE}
+d-i partman-auto/method string regular
+d-i partman-basicfilesystems/no_swap boolean false
+d-i partman-auto/expert_recipe string root :: 1000 50 -1 ext4 \
+     $primary{ } $bootable{ } method{ format } \
+     format{ } use_filesystem{ } filesystem{ ext4 } \
+     mountpoint{ / } \
+    .
+d-i partman-auto/choose_recipe select root
+
+# Apply partitioning info with confirmation
+d-i partman-partitioning/confirm_write_new_label boolean true
+d-i partman/choose_partition select finish
+d-i partman/confirm boolean true
+d-i partman/confirm_nooverwrite boolean true
+
+# -------- Base System Installation --------
+d-i base-installer/kernel/image string linux-generic
+
+# -------- Apt Setup -------
+d-i apt-setup/restricted boolean true
+d-i apt-setup/universe boolean true
+d-i apt-setup/multiverse boolean true
+d-i apt-setup/backports boolean true
+
+# -------- Package Selection --------
+# Main tasksel server packages
+tasksel tasksel/first multiselect server, openssh-server
+
+# Additional packages to install
+d-i pkgsel/include string openssh-server python-software-properties inotify-tools curl unattended-upgrades sysstat nmon tmux ssh vim haveged
+
+# Upgrade packages after bootstrap
+d-i pkgsel/upgrade select full-upgrade
+
+# Install security updates automatically
+d-i pkgsel/update-policy select unattended-upgrades
+
+# -------- Console Setup --------
+# Verbose startup output, drop to console (text) login by default.
+d-i debian-installer/quiet  boolean false
+d-i debian-installer/splash boolean false
+
+# -------- Boot Loader Installation --------
+# Assume one OS, install to default device, add other OS's if found.
+d-i grub-installer/only_debian boolean true
+d-i grub-installer/with_other_os boolean true
+d-i grub-installer/bootdev  string default
+d-i grub-installer/timeout  string 2
+
+# -------- Finish Installation --------
+d-i cdrom-detect/eject boolean true
+d-i finish-install/reboot_in_progress note
+
+# -------- Post Installation --------
+# After system is setup (before reboot), run post-install script.
+#
+# This command is run just before the install finishes, but when there is
+# still a usable /target directory. You can chroot to /target and use it
+# directly, or use the apt-install and in-target commands to easily install
+# packages and run commands in the target system.
+d-i preseed/late_command string cp -R /cdrom/post-install/* /target/tmp; in-target /tmp/post-preseed-complete
