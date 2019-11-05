@@ -194,6 +194,11 @@ References
 
 [Conan Exiles CentOS][2]
 
+Open references:
+https://steamcommunity.com/sharedfiles/filedetails/?id=858035949
+https://hub.docker.com/r/alinmear/docker-conanexiles/
+https://tecadmin.net/install-wine-on-ubuntu/
+
 [1]: https://conanexiles.gamepedia.com/Dedicated_Server_Setup:_Linux_and_Windows#Linux
 [2]: https://steamcommunity.com/sharedfiles/filedetails/?id=858035949
 [3]: https://old.reddit.com/r/ConanExiles/comments/5tgbsh/lets_discuss_ports/

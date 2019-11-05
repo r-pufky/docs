@@ -406,7 +406,7 @@ Docker Container Not Getting Interrupt Signals
 ----------------------------------------------
 Caused by the container Dockerfile not properly using the 'Exec' specification
 for [the entrypoint script][6d]. Exec will hand over the process and enable
-signals to propagate into the container when `docker stop` is issues.
+signals to propagate into the container when `docker stop` is issued.
 
 ```Dockerfile
 ENTRYPOINT ["/my/entrypoint/script/with/signals"]
