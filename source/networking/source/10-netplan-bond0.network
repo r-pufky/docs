@@ -1,0 +1,11 @@
+[Match]
+Name=bond0
+
+[Network]
+DHCP=ipv4
+LinkLocalAddressing=ipv6
+ConfigureWithoutCarrier=yes
+
+[DHCP]
+RouteMetric=100
+UseMTU=true
