@@ -63,7 +63,7 @@ Basic Setup (Basic Setup is the same as *WAN+2LAN2*).
     happens.
 
 .. uctree:: Configure New Admin User.
-  :key: User Setup
+  :key:   User Setup
   :names: Username,
           Password
   :data:  {USERNAME},
@@ -83,62 +83,82 @@ Setup VLANs on eth0
 #. Set laptop DHCP. Connect to *eth2*.
 #. Connect to Edgerouter GUI @ http://192.168.1.1.
 
-.. uctree:: Configure Domain.
-  :key: System
+.. uctree:: Configure Host and Domain.
+  :key:   Management Settings --> System
   :names: Host Name,
           Domain Name,
-          SSH Server,
-          › Enable,
-          › Port,
-          Ubntu Discovery
+          ☐
   :data:  {ROUTER HOSTNAME},
           {YOUR DOMAIN},
-          
+          Ubntu Discovery
   :no_section:
   :hide_gui:
 
-   * Host Name: {ROUTER HOSTNAME}
-   * Domain Name: {YOUR DOMAIN}
-   * :cmdmenu:`Management Settings > SSH Server`
-      * ☑ Enable
-         * Port: {SSH Port}
-      * ☐ Ubnt Discovery
+.. uctree:: Configure SSH Server.
+  :key:   Management Settings --> SSH Server
+  :names: ☑,
+          Port
+  :data:  Enable,
+          {SSH PORT}
+  :no_section:
+  :hide_gui:
 
-:cmdmenu:`Dashboard > eth0 > Actions > Config`
-
-   * Address: ``Manually define IP address``
-      * ``10.1.1.1/24``
+.. uctree:: Define Management Network on Interfaces.
+  :key:   Dashboard --> eth0 --> Actions --> Config
+  :names: Address,
+          Address
+  :data:  Manually define IP address,
+          10.1.1.1/24
+  :no_section:
+  :hide_gui:
 
 .. important::
   This handles untagged traffic coming into the router; this is the
   :term:`Management VLAN` network.
 
-:cmdmenu:`Dashboard > Add Interface > Add VLAN`
-
-   * VLANID: ``2``
-   * Interface: ``eth0``
-   * Description: {VLAN DESCRIPTION}
-   * Address: ``Manually define IP address``
-     * ``10.2.2.1/24``
+.. uctree:: Add Wired Network VLAN.
+  :key:   Dashboard --> Add Interface --> Add VLAN
+  :names: VLANID,
+          Interface,
+          Description,
+          Address,
+          Address
+  :data:  2,
+          eth0,
+          {VLAN DESCRIPTION},
+          Manually define IP address,
+          10.2.2.1/24
+  :no_section:
+  :hide_gui:
 
 .. warning::
   Add all VLANS using :ref:`vlan-table` to *eth0*. :term:`Management VLAN` is
   not explicitly defined as a VLAN -- untagged traffic coming into *eth0* IS
   management traffic.
 
-
 Setup DHCP & DNS for VLANs
 **************************
-:cmdmenu:`Services > DHCP Server > Add DHCP Server`
 
-   * DHCP Name: ``Wired``
-   * Subnet: ``10.2.2.0/24``
-   * Range Start: ``10.2.2.10``
-   * Range End: ``10.2.2.240``
-   * Router: ``10.2.2.1``
-   * DNS 1: ``10.2.2.1``
-   * Domain: {YOUR DOMAIN}
-      * ☑ Enable
+.. uctree:: Add DHCP Server for Each Network.
+  :key:   Services --> DHCP Server --> Add DHCP Server
+  :names: DHCP Name,
+          Subnet,
+          Range Start,
+          Range End,
+          Router,
+          DNS 1,
+          Domain,
+          Domain
+  :data:  Wired,
+          10.2.2.0/24,
+          10.2.2.10,
+          10.2.2.240,
+          10.2.2.1,
+          10.2.2.1,
+          {YOUR DOMAIN},
+          ☑ Enable
+  :no_section:
+  :hide_gui:
 
 .. warning::
   Add DHCP for all VLANS. For the *management* DHCP server, set the *Unifi
@@ -146,7 +166,9 @@ Setup DHCP & DNS for VLANs
   laptop.
 
 :cmdmenu:`Services > DNS > Interface > Add Listen Interface`
-* Add for all networks and VLANS. VLANS will appear as *eth0.vlanid*.
+
+.. note::
+  Add for all networks and VLANS. VLANS will appear as *eth0.vlanid*.
 
 Confirm Management Network Working
 **********************************
