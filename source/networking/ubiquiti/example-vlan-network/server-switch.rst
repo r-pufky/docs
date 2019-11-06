@@ -1,35 +1,32 @@
-.. _core-switch-vlan-setup:
+.. _server-switch-vlan-setup:
 
-Core Switch VLAN Setup
-######################
-This will setup the core switch using VLANs according to example network. See
+Server Switch VLAN Setup
+########################
+This will setup the server switch using VLANs according to example network. See
 :ref:`example-network-diagram`.
 
 .. aafig::
-  :name: Unifi US-8-60W (Core).
+  :name: Unifi US-8-60W (Server)
 
-     |    'Unifi US-8-60W (Core)'
+     |   'Unifi US-8-60W (Server)
   +--+------------------------------+
   | +-+ +-+ +-+ +-+ +-+ +-+ +-+ +-+ |
-  | |A| |D| |W| |S| |D| |D| |A| |I| |
+  | |A| |s| |s| |s| |i| |s| |A| |D| |
   | +-+ +-+ +-+ +-+ +-+ +-+ +-+ +-+ |
-  +----------+---+---------------+--+
-             |   |               |
-             |   |           'Unifi AP 1 (8)'
+  +---------------------------------+
 
-Setup Core Switch
-*****************
-This switch handles trunking to the router upstream and connections downstream
-to switches/APs.
+Setup Server Switch
+*******************
+This switch handles trunking server connections upstream to core switch.
 
 #. Factory reset switch.
 #. Connect laptop directly to *port 7* on new switch. Any port that is not going
    to be used for trunking or VLANs is fine.
-#. Connect switch trunk *port 1* to *eth0* on edgerouter.
+#. Connect switch trunk *port 1* to *port 4* (Server Trunk) on core switch.
 #. Connect to Unifi Controller @ http://localhost:8443.
 
-Adopt Core Switch
-=================
+Adopt Server Switch
+===================
 :cmdmenu:`Devices --> Switch --> Adopt`
 
 .. warning::
@@ -40,7 +37,7 @@ Adopt Core Switch
 
 Set Static Switch IP
 ====================
-#. Connect to Edgerouter GUI @ http://192.168.1.1.
+#. Connect to Edgerouter GUI @ http://10.1.1.1.
 #. Reserve a static DHCP address for the switch.
 
 .. uctree:: Add Static Reservation for Switch Management
@@ -49,8 +46,8 @@ Set Static Switch IP
           › IP Address,
           › Name
   :data:  ,
-          10.1.1.5,
-          core
+          10.1.1.6,
+          server
   :no_section:
   :hide_gui:
 
@@ -65,7 +62,7 @@ Connect to Unifi Controller @ http://localhost:8443.
           › Gateway,
           › DNS Suffix
   :data:  Static,
-          10.1.1.5,
+          10.1.1.6,
           10.1.1.1,
           255.255.255.0,
           10.1.1.1,
@@ -77,21 +74,21 @@ Connect to Unifi Controller @ http://localhost:8443.
     :cmdmenu:`Queue Changes --> Apply`
 
     * Wait for provisioning to finish.
-    * Ensure switch is pingable. ``ping 10.1.1.5``.
+    * Ensure switch is pingable. ``ping 10.1.1.6``.
     * Apply any firmware updates if needed.
 
-Configure Core Switch Management
-********************************
-.. ucontroller:: General Core Switch Setup
+Configure Server Switch Management
+**********************************
+.. ucontroller:: General Server Switch Setup
   :key:   Devices --> Switch --> Properties --> Config --> General
   :names: Alias,
           LED
-  :data:  core,
+  :data:  server,
           use site settings
   :no_section:
   :hide_gui:
 
-.. ucontroller:: Core Switch Services Setup
+.. ucontroller::  Server Switch Services Setup
   :key:   Devices --> Switch --> Properties --> Config --> Services
   :names: VLAN,
           › Management VLAN,
@@ -123,18 +120,19 @@ Configure VLANs on Ports
   :names: Port 1,
           › Name,
           › Switch Port Profile,
-          Port 2,
+          Port 2-4,
           › Name,
           › Switch Port Profile,
-          Port 3,
+          Port 5,
           › Name,
           › Switch Port Profile,
-          Port 4,
+          › › Profile Overrides,
+          › › › PoE,
+          Port 6,
           › Name,
           › Switch Port Profile,
-          Port 5-6,
-          › Name,
-          › Switch Port Profile,
+          › › Profile Overrides,
+          › › › PoE,
           Port 7,
           › Name,
           › Switch Port Profile,
@@ -145,33 +143,45 @@ Configure VLANs on Ports
           › Switch Port Profile
   :data:  ,
           trunk,
-          All,
-          ,
-          disable,
-          Disabled,
-          ,
-          wired,
-          trunk-wired,
-          ,
-          server,
           trunk-server,
           ,
-          disable,
-          Disabled,
+          serve,
+          server (5),
+          ,
+          infra,
+          infrastructure (9),
+          ,
+          Off,
+          ,
+          serve,
+          server (5),
+          ,
+          Off,
           ,
           management,
           All,
           ,
           Off,
           ,
-          wifi,
-          trunk-wifi
+          disable,
+          Disabled
   :no_section:
   :hide_gui:
 
   .. warning::
     Switch will re-provision for each port modification. Wait for provisioning
     to complete before proceeding through each port.
+
+Confirm Server/Infrastructure Network Working
+*********************************************
+* Connect laptop to *server* port.
+* Laptop should pull a *10.5.5.0/24* network address, with the gateway
+  *10.5.5.1*. This means it is properly working on the *server VLAN*.
+  Internet should work.
+* Connect laptop to *infrastructure* port.
+* Laptop should pull a *10.9.9.0/24* network address, with the gateway
+  *10.9.9.1*. This means it is properly working on the *infrastructure VLAN*.
+  Internet should work.
 
 .. rubric:: References
 

@@ -142,7 +142,7 @@ Apply changes.
 
 VLAN Configuration
 ******************
-Add all VLANS using :ref:`vlan-table`.
+Add all VLANS using the :ref:`VLAN Table <vlan-table>`.
 
 .. ucontroller:: Default LAN Network
   :key:   Settings --> Networks --> LAN
@@ -184,9 +184,9 @@ Add all VLANS using :ref:`vlan-table`.
   :hide_gui:
 
   .. note::
-    Add all VLANS using :ref:`vlan-table`. :term:`Management VLAN` is not
-    explicitly defined as a VLAN -- untagged traffic coming into *eth0* IS
-    management traffic.
+    Add all VLANS using the :ref:`VLAN Table <vlan-table>`. :term:`Management
+    VLAN` is not explicitly defined as a VLAN -- untagged traffic coming into
+    *eth0* IS management traffic.
 
 Add Trunk Port Profiles
 ***********************

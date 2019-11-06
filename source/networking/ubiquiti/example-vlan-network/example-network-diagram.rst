@@ -41,5 +41,3 @@ Example Network Diagram
   'w = wired'
   's = server'
   'i = infrastructure'
-
-Back to :ref:`example-vlan-overview`.

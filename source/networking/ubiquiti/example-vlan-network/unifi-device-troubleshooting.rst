@@ -12,6 +12,8 @@ to finish.
 
 * *Wait* 3-5 minutes or 2-3 cycles.
 
+.. _unifi-adoption-failure:
+
 Adoption Failure
 ****************
 Controller is directly connected device, but consistently fails adoption. This

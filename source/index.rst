@@ -80,7 +80,7 @@ git hub, or submit a CL :)
 
   Netplan <networking/netplan>
   EdgeOS <networking/ubiquiti/edge-os>
-  Unifi VLAN <networking/ubiquiti/example-vlan-network/index>
+  Example Unifi VLAN <networking/ubiquiti/example-vlan-network/index>
 
 .. toctree::
   :caption: Operating Systems

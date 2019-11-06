@@ -12,6 +12,7 @@ Basic Concepts
     Defines the physical port of a piece of equipment.
 
   :abbr:`PVID (Parent Vlan IDentification)`
+  :abbr:`PVLAN (Parent VLAN)`
     Defines the default VLAN for traffic leaving a specified interface. Also
     referred to as **Native Network**, **Parent VLAN**. Untagged traffic will be
     tagged with this ID leaving the port.

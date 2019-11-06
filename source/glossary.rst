@@ -53,6 +53,15 @@ Glossary
     u+22EE
     https://www.fileformat.info/info/unicode/char/22ee/index.htm
 
+  ' '
+    Punctuation Space. Blank space used to hold a position where no text is
+    required, but a non-whitespace value must be present for content to be
+    generated correctly. Typically used for config tables at then end of a data
+    List. (See :ref:`core-switch-vlan-setup`).
+
+    u+2008
+    https://www.fileformat.info/info/unicode/char/2008/index.htm
+
   UBNT
     Ubiquiti Networks. This is a common Acronym used for their devices.
 
