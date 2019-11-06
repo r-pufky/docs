@@ -15,6 +15,9 @@ This will setup the wired switch using VLANs according to example network. See
   | +-+ +-+ +-+ +-+ +-+ +-+ +-+ +-+ |
   +---------------------------------+
 
+.. figure:: source/wired-switch.png
+  :width: 90%
+
 Setup Wired Switch
 ******************
 This switch handles trunking wired and wifi connections upstream to the core

@@ -17,6 +17,9 @@ This will setup the core switch using VLANs according to example network. See
              |   |               |
              |   |           'Unifi AP 1 (8)'
 
+.. figure:: source/core-switch.png
+  :width: 90%
+
 Setup Core Switch
 *****************
 This switch handles trunking to the router upstream and connections downstream

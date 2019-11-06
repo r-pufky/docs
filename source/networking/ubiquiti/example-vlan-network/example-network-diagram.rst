@@ -41,3 +41,6 @@ Example Network Diagram
   'w = wired'
   's = server'
   'i = infrastructure'
+
+.. figure:: source/example-network.png
+  :width: 90%

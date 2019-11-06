@@ -15,6 +15,9 @@ This will setup the server switch using VLANs according to example network. See
   | +-+ +-+ +-+ +-+ +-+ +-+ +-+ +-+ |
   +---------------------------------+
 
+.. figure:: source/server-switch.png
+  :width: 90%
+
 Setup Server Switch
 *******************
 This switch handles trunking server connections upstream to core switch.

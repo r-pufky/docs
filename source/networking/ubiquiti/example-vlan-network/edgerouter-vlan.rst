@@ -18,6 +18,9 @@ VLANs, with no subnet restrictions (these will be applied after setup).
       |                    |
      ++                'Internet (eth3)'
 
+.. figure:: source/edgerouter.png
+  :width: 90%
+
 Reset & Login to Router
 ***********************
 #. Factory reset edgerouter.
