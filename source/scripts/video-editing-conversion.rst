@@ -114,8 +114,8 @@ Turn on developer tools (Chrome):
 #. `ffmpeg for slicing video files (2) <http://www.mydigitallife.info/convert-flash-video-flv-files-to-mpg-or-avi-and-other-media-formats/>`_
 #. `Convert static images to video files <http://jupiter.ethz.ch/~pjt/makingMovies.html>`_
 #. `Convert animated GIF’s to video files (1) <http://stackoverflow.com/questions/3212821/animated-gif-to-avi-on-linux>`_
-#. `Convert animated GIF’s to video files (1) <http://www.catswhocode.com/blog/19-ffmpeg-commands-for-all-needs>`_
-#. `Convert animated GIF’s to video files (1) <http://www.imagemagick.org/discourse-server/viewtopic.php?f=1&t=14743&view=next>`_
+#. `Convert animated GIF’s to video files (2) <http://www.catswhocode.com/blog/19-ffmpeg-commands-for-all-needs>`_
+#. `Convert animated GIF’s to video files (3) <http://www.imagemagick.org/discourse-server/viewtopic.php?f=1&t=14743&view=next>`_
 #. `Splitting MKV’s into smaller MKV’s <http://www.bunkus.org/videotools/mkvtoolnix/doc/mkvmerge.html>`_
 #. `Combining multiple videos parts into one file <https://askubuntu.com/questions/637074/merging-multiple-more-than-two-videos-on-ubuntu>`_
 

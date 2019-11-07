@@ -116,9 +116,9 @@ cmdmenu: all lowercase. except:
    * Host Name: {ROUTER HOSTNAME}
    * Domain Name: {YOUR DOMAIN}
    * :cmdmenu:`Management Settings > SSH Server`
-     * ☑ Enable
-       * Port: {SSH Port}
-     * ☐ Ubnt Discovery
+      * ☑ Enable
+         * Port: {SSH Port}
+      * ☐ Ubnt Discovery
 
 see: https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html
 

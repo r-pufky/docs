@@ -105,7 +105,10 @@ git hub, or submit a CL :)
   :includehidden:
   :maxdepth: -1
 
-  Windows 10 <operating-systems/windows/10/index>
+  scripts/copying-data
+  scripts/video-editing-conversion
+  scripts/wiping-data
+  scripts/youtube
 
 .. toctree::
   :caption: Virtualization
