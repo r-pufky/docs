@@ -62,7 +62,12 @@ git hub, or submit a CL :)
   :includehidden:
   :maxdepth: -1
 
-  Windows 10 <operating-systems/windows/10/index>
+  apps/authy
+  apps/chrome
+  apps/mutt
+  apps/putty
+  apps/sublime-text/sublime
+  apps/taskwarrior
 
 .. toctree::
   :caption: Configuration Management

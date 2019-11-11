@@ -244,7 +244,7 @@ Unifi APs transmit both *tagged* and *untagged* data at the same time.
   :term:`Untagged` traffic will be sent on.
 
 Implementation Concepts
------------------------
+***********************
 Fundamental concepts about VLANS need to be clarified before proceeding. VLANS
 allow the separation of networks on the phyiscal switch level (L2/L3); which can
 be thought of as applying switch-level filters to prevent specific traffic from

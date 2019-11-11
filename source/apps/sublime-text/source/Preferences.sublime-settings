@@ -1,0 +1,12 @@
+{
+  "font_face": "SF Mono Bold",
+  "font_size": 12,
+  "ignored_packages":
+  [
+    "Vintage"
+  ],
+  "rulers": [80],
+  "word_wrap": false,
+  "tab_size": 2,
+  "translate_tabs_to_spaces": true
+}
