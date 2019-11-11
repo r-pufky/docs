@@ -61,6 +61,8 @@ apt install software-properties-common yubikey-manager yubikey-manager-qt scdaem
 * `yubikey-manager-qt` is a GUI frontend which has limited functionality but
   does provide easy ways to ensure specific applets are enabled.
 * `scdaemon` enables smartcard support for gpg.
+* Ubuntu **18.04+** needs to add `universe multiverse` to all apt sources first
+  `/etc/apt/sources.list`.
 
 Export Subkeys to Yubikeys
 --------------------------
@@ -72,8 +74,8 @@ Confirm Yubikey status.
 Default `PIN` is **123456** and default `admin PIN` is **12345678**. PINs may be
 up to 127 ASCII characters long.
 
-If the device is not new follow [these instructions][10] to wipe the device and
-start new.
+If the device is not new follow [these instructions][17] (alternative
+[here][10]) to wipe the device and start new.
 ```bash
 gpg --card-status
 ```
@@ -84,14 +86,21 @@ gpg --card-status
 * Ensure device has `CCID` mode enabled using [Yubikey manager][9] or
   [commandline tool][11].
 
+Reset Yubikey -- this will destory any openpgp material on the key and reset to
+the default key state.
+```bash
+ykman openpgp reset
+```
+
 ```bash
 gpg --card-edit
 ```
 1. `admin` to enter administration mode.
 1. `passwd` to enter PIN password change mode.
 1. `3` to change admin PIN. Be sure to enter the _initial_ **12345678** pin
-   first.
+   first. This is the `Admin Password` and can be up to 127 ASCII characters.
 1. `1` to change PIN. Be sure to enter the _initial_ **123456** pin first.
+   This is the `User Password` and can be up to 127 ASCII characters.
 1. `q` to return to main menu.
 1. `name` to set owners first and last name.
 1. surname: `last`.
@@ -108,9 +117,9 @@ gpg --card-edit
 
 Require touch each [time authentication, encryption or sign request occurs][13].
 ```bash
-ykman openpgp touch aut fixed
-ykman openpgp touch sig fixed
-ykman openpgp touch enc fixed
+ykman openpgp set-touch aut fixed
+ykman openpgp set-touch sig fixed
+ykman openpgp set-touch enc fixed
 ```
 * `Fixed` is the same as `on` but requires a [new certificate to be loaded][14]
   if this option is disabled.
@@ -128,18 +137,24 @@ gpg --edit-key $KEYID
 #### Load Signing Key
 1. `key 1` (ensure _*_ only appears next to signing key).
 1. `keytocard` to export key.
+   1. First Password: GPG private key password.
+   1. Second Password: Yubikey user password.
 1. Select `1` "(1) Signature key".
 1. `key 1` to deselect key.
 
 #### Load Encryption Key
 1. 'key 2' (ensure _*_ only appears next to encryption key).
 1. `keytocard` to export key.
+   1. First Password: GPG private key password.
+   1. Second Password: Yubikey user password.
 1. Select `2` "(2) Encryption key".
 1. `key 2` to deselect key.
 
 #### Load Authentication Key
 1. 'key 3' (ensure _*_ only appears next to authentication key).
 1. `keytocard` to export key.
+   1. First Password: GPG private key password.
+   1. Second Password: Yubikey user password.
 1. Select `3` "(3) Authentication key".
 1. `key 3` to deselect key.
 
@@ -186,3 +201,4 @@ gpg --delete-secret-key $KEYID
 [14]: https://developers.yubico.com/PGP/Card_edit.html
 [15]: README.md#export-gpg-Keys--backup
 [16]: https://www.gnupg.org/howtos/card-howto/en/ch03.html
+[17]: https://support.yubico.com/support/solutions/articles/15000006421-resetting-the-openpgp-applet-on-the-yubikey
