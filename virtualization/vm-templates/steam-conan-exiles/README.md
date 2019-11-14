@@ -64,7 +64,7 @@ steamcmd +@sSteamCmdForcePlatformType windows +force_install_dir /data/conan-exi
 
 #### Run initial server to create config templates
 ```bash
-/opt/wine-stable/bin/wine64 /data/conan-exiles-server/ConanSandbox/Binaries/Win64/ConanExilesServer-Win64-Test.exe -log -nosteam
+/opt/wine-stable/bin/wine64 /data/conan-exiles-server/ConanSandbox/Binaries/Win64/ConanExilesServer-Win64-Test.exe -nosteamclient -game -server -log
 ```
  * run for about 5 minutes for all configs to be generated
  * should run through 2 cycles (two report cycles after loading/errors)
@@ -127,7 +127,7 @@ After=syslog.target network.target
 
 [Service]
 Environment="WINEPREFIX=/data/conan-exiles-server/.wine"
-ExecStart=/usr/bin/xvfb-run --auto-servernum /opt/wine-stable/bin/wine64 /data/conan-exiles-server/ConanSandbox/Binaries/Win64/ConanSandboxServer-Win64-Test.exe -log -nosteam
+ExecStart=/usr/bin/xvfb-run --auto-servernum /opt/wine-stable/bin/wine64 /data/conan-exiles-server/ConanSandbox/Binaries/Win64/ConanSandboxServer-Win64-Test.exe -nosteamclient -game -server -log
 WorkingDirectory=/data/conan-exiles-server/
 User=conan
 Type=simple

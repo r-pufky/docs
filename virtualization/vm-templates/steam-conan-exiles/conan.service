@@ -4,7 +4,7 @@ After=syslog.target network.target
 
 [Service]
 Environment="WINEPREFIX=/data/conan-exiles-server/.wine"
-ExecStart=/usr/bin/xvfb-run --auto-servernum --server-args='-screen 0 640x480x24:32' /opt/wine-stable/bin/wine /data/conan-exiles-server/ConanSandboxServer.exe -log
+ExecStart=/usr/bin/xvfb-run --auto-servernum /opt/wine-stable/bin/wine64 /data/conan-exiles-server/ConanSandbox/Binaries/Win64/ConanSandboxServer-Win64-Test.exe -nosteamclient -game -server -log
 WorkingDirectory=/data/conan-exiles-server/
 User=conan
 Type=simple
