@@ -80,7 +80,7 @@ the installer. The minion will be installed to ``C:\salt``.
 Windows CLI Install
 ===================
 .. code-block:: powershell
-  :caption: Installing Windows Minion from powershell (as admin)
+  :caption: Installing Windows Minion from powershell (as admin).
 
   Salt-Minion-2019.2.0-Py3-AMD64-Setup.exe /S /master={SALT MASTER} /minion-name={MINION NAME} /start-minion-delayed
 

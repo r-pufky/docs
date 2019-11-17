@@ -5,7 +5,7 @@
 Salt can run on both Python 2 and 3. Prefer Python 3. See `Best Practices`_.
 
 .. code-block::
-  :caption: **0644 root root** /etc/apt/sources.list.d/saltstack.list
+  :caption: **0644 root root** ``/etc/apt/sources.list.d/saltstack.list``
 
   deb http://repo.saltstack.com/py3/ubuntu/16.04/amd64/latest bionic main
 

@@ -52,7 +52,7 @@ Basic changes here will lock down SSH connections to require public key
 authentication, remove root user SSH logins, and disable password auth.
 
 .. literalinclude:: source/sshd_config
-  :caption: **0644 root root** /etc/ssh/sshd_config
+  :caption: **0644 root root** ``/etc/ssh/sshd_config``
   :linenos:
   :emphasize-lines: 12,15,22
 
@@ -103,11 +103,11 @@ Reboot the system to apply changes.
 =====================================
 
 .. literalinclude:: source/50unattended-upgrades
-  :caption: **0644 root root** /etc/apt/apt.conf.d/50unattended-upgrades
+  :caption: **0644 root root** ``/etc/apt/apt.conf.d/50unattended-upgrades``
   :emphasize-lines: 2-5,8,12,16-20
 
 .. literalinclude:: source/10periodic
-  :caption: **0644 root root** /etc/apt/apt.conf.d/10periodic
+  :caption: **0644 root root** ``/etc/apt/apt.conf.d/10periodic``
 
 .. code-block:: bash
   :caption: Restart unattended upgrades.
@@ -131,7 +131,7 @@ messages`_.
 Add MOTD to warn if the system has been up for a long period of time:
 
 .. literalinclude:: source/98-reboot-required
-  :caption: **0755 root root** /etc/update-motd.d/98-reboot-required
+  :caption: **0755 root root** ``/etc/update-motd.d/98-reboot-required``
   :emphasize-lines: 2
 
 Setup Skeleton User Profile

@@ -114,6 +114,7 @@ git hub, or submit a CL :)
   scripts/video-editing-conversion
   scripts/wiping-data
   scripts/youtube
+  scripts/scripts
 
 .. toctree::
   :caption: Virtualization

@@ -48,9 +48,12 @@ Always prefer ' to " for quotes.
 
 code blocks
 ***********
+* File list: no period.
+* File list with extra context text: trailing periods.
+* Text only: trailing period.
 
 .. code-block:: python
-  :caption: title above block can be wrapped
+  :caption: title above block can be wrapped.
   :emphasize-lines: 1
   :linenos:
 
@@ -107,9 +110,11 @@ GUI
 Use :cmdmenu:`action` for all actions
 chain with '-->'
 
-cmdmenu: all lowercase. except:
+cmdmenu: **all lowercase**. except:
+
 * one component depth (e.g. Application Name)
 * Mouse action / shortcut.
+* cmdmenu in lists: no trailing period, unless combine with text.
 
 :cmdmenu:`System`
 

@@ -9,7 +9,7 @@ shred
 Tool to overwrite single file contents and optionall delete file.
 
 .. code-block:: bash
-  :caption: 35 pass random data, zero then remove file
+  :caption: 35 pass random data, zero then remove file.
 
   shred --iterations=35 --verbose --zero --remove <FILE>
 
@@ -27,12 +27,12 @@ Tool to securely delete files and block devices.
   apt install wipe
 
 .. code-block:: bash
-  :caption: Recursively delete files, 35 pass random data
+  :caption: Recursively delete files, 35 pass random data.
 
   wipe -r -c -f -Q 35 <FILE_OR_DIR>
 
 .. code-block:: bash
-  :caption: Wipe a block device, 35 pass random data
+  :caption: Wipe a block device, 35 pass random data.
 
   wipe -k -Q 35 <BLOCK_DEVICE>
 
@@ -41,32 +41,30 @@ dd
 Using dd to zero disks. Good for testing/setup of new drives.
 
 .. code-block:: bash
-  :caption: Writing all Zero’s to Drive (quick)
+  :caption: Writing all Zero’s to Drive (quick).
 
   dd if=/dev/zero of=/dev/sdX bs=1M &
 
-  .. note::
-    ~3-4 hours @ 1.5TB
+.. note::
+  ~3-4 hours @ 1.5TB
 
 .. code-block:: bash
-  :caption: Writing all One’s to Drive (quick)
+  :caption: Writing all One’s to Drive (quick).
 
   tr '\000' '\377' < /dev/zero | dd of=/dev/sdX bs=1M &
 
-  .. note::
-    ~4-5hours @ 1.5TB
+.. note::
+  ~4-5hours @ 1.5TB
 
 .. code-block:: bash
-  :caption: Checking Status on DD
+  :caption: Checking Status on DD.
 
   ps -ef | grep dd
   kill -USR1 <pid>
 
 DBAN
 ****
-Download `DBAN boot & nuke`_
-
-Run DoD 3 pass
+Download `DBAN boot & nuke`_ then run *DoD 3 pass*.
 
 .. rubric:: References
 

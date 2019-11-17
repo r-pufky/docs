@@ -52,13 +52,13 @@ Encrypting Data
   can be removed. ``salty`` is the name of the recipient of the data.
 
 .. code-block:: bash
-  :caption: Text
+  :caption: Text.
 
   echo -n "super_secret_server_stuff" | gpg --armor --batch --trust-model always --encrypt --recipient salty
 
 .. code-block:: bash
-  :caption: Files
-  
+  :caption: Files.
+
   gpg --armor --batch --trust-model always --encrypt --recipient salty {FILE}
 
 .. note::

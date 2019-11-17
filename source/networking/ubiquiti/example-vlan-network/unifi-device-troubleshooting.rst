@@ -79,4 +79,11 @@ profile*.
            {EXPECTED SWITCH PORT PROFILE}
   :no_section:
 
+.. ucontroller:: Add Static Host.
+  :key:    devices --> {DOWNSTREAM SWITCH} --> properties --> ports --> ✋ status
+  :names:  Downlink,
+           Profile
+  :data:   {EXPECTED SWITCH},
+           {EXPECTED SWITCH PORT PROFILE}
+  :no_section:
 .. _regardless of switch load: https://community.ubnt.com/t5/UniFi-Routing-Switching/UniFI-Switch-8-POE-60-W-constant-high-CPU-utilization/td-p/2397994

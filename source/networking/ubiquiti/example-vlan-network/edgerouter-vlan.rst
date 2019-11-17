@@ -137,7 +137,7 @@ Setup VLANs on eth0
 .. warning::
   Add all VLANS using the :ref:`VLAN Table <vlan-table>` to *eth0*.
   :term:`Management VLAN` is not explicitly defined as a VLAN -- untagged
-  traffic coming into *eth0* IS management traffic.
+  traffic coming into *eth0* **IS** management traffic.
 
 Setup DHCP & DNS for VLANs
 **************************

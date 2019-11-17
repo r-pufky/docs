@@ -3,9 +3,8 @@
 Migrate Unifi Controller to Docker
 ##################################
 * Reset Unifi Controller to fresh install on Docker.
-
-Setup Unifi Docker `Container IP on DHCP`_.
-* Connect to Edgerouter GUI @ ``http://10.1.1.1``.
+* Setup Unifi Docker `Container IP on DHCP`_.
+* Connect to Edgerouter GUI @ http://10.1.1.1.
 
 .. uctree:: Add Docker Container IP for Controller.
   :key:    services --> dhcp server --> management --> action --> view details

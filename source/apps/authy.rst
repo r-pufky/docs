@@ -29,6 +29,7 @@ Authy TOTP Format
 Authy uses a **7 digit**, **10 second** period for TOTP.
 
 This is know to work with the following authenticators:
+
 * `Google Authenticator`_
 * `Lastpass Authenticator`_
 * `1Password`_
@@ -38,14 +39,15 @@ Export TOTP from Authy
 **********************
 #. Open chrome authy extension, nagivate to Two Factor site to extract.
 #. :cmdmenu:`chrome --> more tools --> extensions`
-   #. Enable *Developer Mode*.
-   #. :cmdmenu:`LMB --> Details` on *Authy* extension.
-   #. :cmdmenu:`Inspect Views --> main.html`.
-   #. Switch to ``Console`` tab
-   #. Insert following code (not my work) and generate TOTP QR codes:
+
+   * Enable *Developer Mode*.
+   * :cmdmenu:`LMB --> Details` on *Authy* extension.
+   * :cmdmenu:`Inspect Views --> main.html`
+   * Switch to ``Console`` tab.
+   * Insert following code (not my work) and generate TOTP QR codes:
 
       .. code-block:: javascript
-        :caption: Generate TOTP QR codes from extension seed
+        :caption: Generate TOTP QR codes from extension seed.
 
         function hex_to_b32(hex) {
           let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
@@ -87,11 +89,12 @@ Export TOTP from Authy
         });
 
       .. note::
-        `Original step-by-step here`_, `source code here`_
+        `Original step-by-step here`_, `source code here`_.
 
-   #. Scan the ``TOTP URI`` code. This will program your Two Factor app with the
-      correct number of digits and period. The ``TOTP secret`` QR is the hash
-      for manually entering data.
+   * Scan the ``TOTP URI`` code. This will program your Two Factor app with the
+     correct number of digits and period. The ``TOTP secret`` QR is the hash for
+     manually entering data.
+
 #. Confirm Two Factor works with a token from the new Two Factor device. It is
    **OK** if tokens for Authy and new device do not line up. Confirm login works.
 
@@ -100,7 +103,8 @@ Cleanup
 #. Remove Authy app.
 #. Remove Authy Extension.
 #. :cmdmenu:`chrome --> more tools --> extensions`
-   #. Disable *Developer Mode*.
+
+   * Disable *Developer Mode*.
 
 .. _Original step-by-step here: https://medium.com/@dubistkomisch/set-up-2fa-two-factor-authentication-for-twitch-with-google-authenticator-or-other-totp-client-f19af32df68a
 .. _Github repo with Script: https://gist.github.com/gboudreau/94bb0c11a6209c82418d01a59d958c93

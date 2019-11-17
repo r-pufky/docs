@@ -5,7 +5,7 @@ Youtube Extractor
 Download and extract data from youtube videos.
 
 .. code-block:: bash
-  :caption: Installing Utilities
+  :caption: Install Utilities.
 
   curl http://yt-dl.org/latest/youtube-dl -o /usr/local/bin/youtube-dl
   chmod +x /usr/local/bin/youtube-dl
@@ -15,33 +15,33 @@ Snippets
 ********
 
 .. code-block:: bash
-  :caption: Extract 320kbps Audio From Video
+  :caption: Extract 320kbps Audio From Video.
 
   youtube-dl <url> --extract-audio --audio-format mp3 --audio-quality 320K --keep-video --add-metadata
 
 .. code-block:: bash
-  :caption: List all formats for a video
+  :caption: List all formats for a video.
 
   youtube-dl <url> -F
 
 .. code-block:: bash
-  :caption: Download only the 1080p vidoe/audio stream from a video
+  :caption: Download only the 1080p video/audio stream from a video.
 
   youtube-dl <url> 'bestvideo[height<=1080]+bestaudio/best[height<=1080]'
 
 .. code-block:: bash
-  :caption: Download a playlist
+  :caption: Download a playlist.
 
   youtube-dl https://youtube.com/playlist?list=<LID> --yes-playlist
 
 .. code-block:: bash
-  :caption: Track Downloaded Videos for Archiving
+  :caption: Track Downloaded Videos for Archiving.
 
   youtube-dl --download-archive <FILE>
 
-  .. note::
-    Download only videos not listed in file and adds any downloaded videos to
-    the given file.
+.. note::
+  Download only videos not listed in file and adds any downloaded videos to
+  the given file.
 
 .. rubric:: References
 

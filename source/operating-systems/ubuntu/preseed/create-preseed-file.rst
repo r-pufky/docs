@@ -15,7 +15,7 @@ file here: :download:`ubuntu-template.seed <../source/ubuntu-template.seed>`.
   debconf-get-selections | grep <option>
 
 .. literalinclude:: ../source/ubuntu-template.seed
-  :caption: Localization Section
+  :caption: Localization Section.
   :lineno-start: 1
   :lines: 1-2
 
@@ -23,7 +23,7 @@ file here: :download:`ubuntu-template.seed <../source/ubuntu-template.seed>`.
   Set the installer's locale.
 
 .. literalinclude:: ../source/ubuntu-template.seed
-  :caption: Keyboard Section
+  :caption: Keyboard Section.
   :lineno-start: 4
   :lines: 4-7
 
@@ -31,7 +31,7 @@ file here: :download:`ubuntu-template.seed <../source/ubuntu-template.seed>`.
   Set keyboard to US and remove detection prompt.
 
 .. literalinclude:: ../source/ubuntu-template.seed
-  :caption: Network Section
+  :caption: Network Section.
   :lineno-start: 9
   :lines: 9-20
 
@@ -41,7 +41,7 @@ file here: :download:`ubuntu-template.seed <../source/ubuntu-template.seed>`.
   template hostname for initial installation. Disable WEP dialog.
 
 .. literalinclude:: ../source/ubuntu-template.seed
-  :caption: Firmware Section
+  :caption: Firmware Section.
   :lineno-start: 22
   :lines: 22-23
 
@@ -49,7 +49,7 @@ file here: :download:`ubuntu-template.seed <../source/ubuntu-template.seed>`.
   Enable installation of close-sourced firmware updates for hardware.
 
 .. literalinclude:: ../source/ubuntu-template.seed
-  :caption: Apt Mirror Section
+  :caption: Apt Mirror Section.
   :lineno-start: 25
   :lines: 25-30
 
@@ -58,12 +58,12 @@ file here: :download:`ubuntu-template.seed <../source/ubuntu-template.seed>`.
   ubuntu mirror, and enable all for components.
 
 .. literalinclude:: ../source/ubuntu-template.seed
-  :caption: Accounts Section
+  :caption: Accounts Section.
   :lineno-start: 32
   :lines: 32-42
 
 .. code-block:: bash
-  :caption: Creating {PRE HASHED PASSWORD}
+  :caption: Creating {PRE HASHED PASSWORD}.
 
   mkpasswd -m sha-512
 
@@ -74,7 +74,7 @@ file here: :download:`ubuntu-template.seed <../source/ubuntu-template.seed>`.
   The password used should be an **installation password** and not a real one.
 
 .. literalinclude:: ../source/ubuntu-template.seed
-  :caption: Clock & Time Section
+  :caption: Clock & Time Section.
   :lineno-start: 44
   :lines: 44-47
 
@@ -82,7 +82,7 @@ file here: :download:`ubuntu-template.seed <../source/ubuntu-template.seed>`.
   Read hardware clock as non-UTC, set timezone and enable NTP.
 
 .. literalinclude:: ../source/ubuntu-template.seed
-  :caption: Partition Section
+  :caption: Partition Section.
   :lineno-start: 49
   :lines: 49-75
 
@@ -100,7 +100,7 @@ file here: :download:`ubuntu-template.seed <../source/ubuntu-template.seed>`.
   which explains why these cause automated partitioning to fail.
 
 .. literalinclude:: ../source/ubuntu-template.seed
-  :caption: Kernel Section
+  :caption: Kernel Section.
   :lineno-start: 77
   :lines: 77-78
 
@@ -108,7 +108,7 @@ file here: :download:`ubuntu-template.seed <../source/ubuntu-template.seed>`.
   Install the generic kernel. Use ``linux-server`` for server kernel.
 
 .. literalinclude:: ../source/ubuntu-template.seed
-  :caption: Apt Setup Section
+  :caption: Apt Setup Section.
   :lineno-start: 80
   :lines: 80-84
 
@@ -116,7 +116,7 @@ file here: :download:`ubuntu-template.seed <../source/ubuntu-template.seed>`.
   Set system to use all four standard repos.
 
 .. literalinclude:: ../source/ubuntu-template.seed
-  :caption: Package Selection Section
+  :caption: Package Selection Section.
   :lineno-start: 80
   :lines: 86-97
 
@@ -148,7 +148,7 @@ file here: :download:`ubuntu-template.seed <../source/ubuntu-template.seed>`.
   * See task packages from the `germinate output`_ templates here.
 
 .. literalinclude:: ../source/ubuntu-template.seed
-  :caption: Console Setup Section
+  :caption: Console Setup Section.
   :lineno-start: 99
   :lines: 99-102
 
@@ -164,7 +164,7 @@ file here: :download:`ubuntu-template.seed <../source/ubuntu-template.seed>`.
   You can still ``ctrl-alt-F1`` to get to the console from the blank screen.
 
 .. literalinclude:: ../source/ubuntu-template.seed
-  :caption: Boot Loader Installation Section
+  :caption: Boot Loader Installation Section.
   :lineno-start: 104
   :lines: 104-109
 
@@ -173,7 +173,7 @@ file here: :download:`ubuntu-template.seed <../source/ubuntu-template.seed>`.
   needed. Default boot this OS in 2 seconds.
 
 .. literalinclude:: ../source/ubuntu-template.seed
-  :caption: Finish Installation Section
+  :caption: Finish Installation Section.
   :lineno-start: 111
   :lines: 111-113
 
@@ -181,7 +181,7 @@ file here: :download:`ubuntu-template.seed <../source/ubuntu-template.seed>`.
   Eject the CD before booting, don't prompt for reboot.
 
 .. literalinclude:: ../source/ubuntu-template.seed
-  :caption: Post Installation Section
+  :caption: Post Installation Section.
   :lineno-start: 115
   :lines: 115-122
 

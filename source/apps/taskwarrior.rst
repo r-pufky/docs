@@ -6,7 +6,7 @@ Taskwarrior Configuration
 Installation
 ************
 .. code-block:: bash
-  :caption: Install base packages and setup environment redirection
+  :caption: Install base packages and setup environment redirection.
 
   apt install taskwarrior timewarrior libjson-perl
 
@@ -20,12 +20,12 @@ Add environment variables to bash.
   alias taskopen='taskopen -c ~/task/taskopen/.taskopenrc'
 
 .. code-block:: bash
-  :caption: Create a default taskwarrior configuration
+  :caption: Create a default taskwarrior configuration.
 
   task
 
 .. code-block:: bash
-  :caption: Install taskopen
+  :caption: Install taskopen.
 
   git clone https://github.com/ValiValpas/taskopen
   cd taskopen
@@ -34,13 +34,14 @@ Add environment variables to bash.
   taskopen -c ~/.task/taskopen/.taskopenrc
 
 .. code-block:: bash
-  :caption: Copy timewarrior hook to auto track tasks
+  :caption: Copy timewarrior hook to auto track tasks.
 
   cp /usr/share/doc/timewarrior/ext/on-modify.timewarrior ~/task/hooks
   chmod +x ~/task/hooks/on-modify.timewarrior
 
 .. code-block:: bash
-  :caption: Verify it loads, should see Hooks Enabled
+  :caption: Verify it loads, should see Hooks Enabled.
+  :emphasize-lines: 3-4
 
   task diagnostics
 
@@ -55,7 +56,7 @@ Customize Taskwarrior
 Displayed without comments / unchanged lines.
 
 .. literalinclude:: source/.taskrc
-  :caption: **0644 user user** ~/task/.taskrc
+  :caption: **0644 user user** ``~/task/.taskrc``
   :linenos:
 
 Customized Timewarrior
@@ -63,7 +64,7 @@ Customized Timewarrior
 Displayed without comments / unchanged lines.
 
 .. literalinclude:: source/timewarrior.cfg
-  :caption: **0644 user user** ~/task/timew/timewarrior.cfg
+  :caption: **0644 user user** ``~/task/timew/timewarrior.cfg``
   :linenos:
 
 Customize Taskopen
@@ -71,7 +72,7 @@ Customize Taskopen
 Displayed without comments / unchanged lines.
 
 .. literalinclude:: source/.taskopenrc
-  :caption: **0644 user user** ~/task/taskopen/.taskopenrc
+  :caption: **0644 user user** ``~/task/taskopen/.taskopenrc``
   :linenos:
   :emphasize-lines: 2,4,9,12,16
 
