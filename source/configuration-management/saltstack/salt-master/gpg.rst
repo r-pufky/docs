@@ -55,12 +55,12 @@ Encrypting Data
   be removed. ``salty`` is the name of the recipient of the data.
 
 .. code-block:: bash
-  :caption: Text
+  :caption: Text.
 
   echo -n "super_secret_server_stuff" | gpg --armor --batch --trust-model always --encrypt --recipient salty
 
 .. code-block:: bash
-  :caption: Files
+  :caption: Files.
 
   gpg --armor --batch --trust-model always --encrypt --recipient salty {FILE}
 
@@ -105,7 +105,7 @@ the GPG message block as the value for a key. Use a pipe (``|``) to denote a GPG
 message. Blank lines between the begin/version and body can be removed. Standard
 YAML indentation rules for long text blocks apply.
 
-.. literalinclude:: ../source/gpg.sls
+.. literalinclude:: source/gpg.sls
   :linenos:
   :emphasize-lines: 1,3
 

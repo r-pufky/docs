@@ -113,14 +113,15 @@ Show Avaliable Files to Minions
 
 Clear Minion Cache
 ******************
-Stopping the minion and deleting cache ``/var/cache/salt/minion``.
+Stop the minion and delete cache in ``/var/cache/salt/minion``.
 
 .. code-block:: bash
 
   salt-call saltutil.clear_cache
   salt {MINION} saltutil.clear_cache
 
-* Only the local or remote call needs to be made.
-* Must run with ``root`` perms to execute.
+.. note::
+  * Only the local or remote call needs to be made.
+  * Must run with ``root`` perms to execute.
 
 .. _forcing a pillar refresh then applying state: https://github.com/saltstack/salt/issues/32144

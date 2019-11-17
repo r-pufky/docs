@@ -2,7 +2,7 @@
 
 `Service Setup`_
 ################
-Salt can run on both Python 2 and 3. Prefer Python 3. See `Best Practices`_.
+Salt can run on both Python 2 and 3. Use Python 3. See `Best Practices`_.
 
 .. code-block::
   :caption: **0644 root root** ``/etc/apt/sources.list.d/saltstack.list``
@@ -50,7 +50,7 @@ By default salt-master runs as root. Nothing the master does requires root.
   Verify any custom directories are modified as well. ``salt-master`` does
   require a shell to run commands such as ``salt-run``.
 
-Minions *require* root to properly install software, update apt and execute
+Minions **require root** to properly install software, update apt and execute
 commands.
 
 .. _Service Setup: https://repo.saltstack.com/#ubuntu

@@ -33,10 +33,10 @@ Related Material:
    :hidden:
    :maxdepth: -1
 
-   Salt Master Configuration <setup>
-   Pillar <pillar>
-   Nodegroups <nodegroups>
-   State Management <state-management>
-   Formula Management <formula-management>
-   Minion Management <minion-management>
-   GPG Encryption <gpg>
+   setup
+   pillar
+   nodegroups
+   state-management
+   formula-management
+   minion-management
+   gpg

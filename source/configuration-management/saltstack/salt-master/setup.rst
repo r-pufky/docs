@@ -19,7 +19,7 @@ Files are compared using *sha512* hashing.
 Files can be directly checked out from a revision system (like git). Adding or
 removing file paths require a reload of the master server.
 
-.. literalinclude:: ../source/master/file.conf
+.. literalinclude:: source/file.conf
   :caption: **0644 root root** ``/etc/salt/master.d/file.conf``
   :linenos:
 
@@ -33,7 +33,7 @@ requested by a minion to halt state application, and prevents error messages on
 minions (reported on server). This prevents leaking potentially sensitive data
 users shouldn't have access to if a formula fails.
 
-.. literalinclude:: ../source/master/pillar.conf
+.. literalinclude:: source/pillar.conf
   :caption: **0644 root root** ``/etc/salt/master.d/pillar.conf``
   :linenos:
 
@@ -44,7 +44,7 @@ Primary configuration for salt-master. This forces the master to run as
 minions on AES key rotation and prevents minions from unmanaging themselves. See
 :ref:`salt-non-root-user` for setup instructions.
 
-.. literalinclude:: ../source/master/primary.conf
+.. literalinclude:: source/primary.conf
   :caption: **0644 root root** ``/etc/salt/master.d/primary.conf``
   :linenos:
 
@@ -58,7 +58,7 @@ encryption. See :ref:`salt-tls-protocol` for cert creation.
 have verifiable signing certs, which self-signed certs cannot provide. Otherwise
 this option will drop any message that is not verified to a root CA.
 
-.. literalinclude:: ../source/master/security.conf
+.. literalinclude:: source/security.conf
   :caption: **0644 root root** ``/etc/salt/master.d/security.conf``
   :linenos:
 
@@ -67,7 +67,7 @@ State Section
 Defines how states are applied to minions. Minions will immediately fail is
 there is an error, instead of continuing to apply state.
 
-.. literalinclude:: ../source/master/state.conf
+.. literalinclude:: source/state.conf
   :caption: **0644 root root** ``/etc/salt/master.d/state.conf``
   :linenos:
 

@@ -66,11 +66,11 @@ Important File Locations
 |                       | are logged on the server side, especially for        |
 |                       | encrypted Pillar data.                               |
 +-----------------------+------------------------------------------------------+
-| C:\salt\conf\minion   | Minion configuration flat file for Windows. This     |
+| c:/salt/conf/minion   | Minion configuration flat file for Windows. This     |
 |                       | should be untouched for sane defaults. Set custom    |
 |                       | configuration in the master configuration directory. |
 +-----------------------+------------------------------------------------------+
-| C:\salt\conf\minion.d | Minion configuration directory.                      |
+| c:/salt/conf/minion.d | Minion configuration directory.                      |
 +-----------------------+------------------------------------------------------+
 
 .. _salt-service-directory-best-practices:

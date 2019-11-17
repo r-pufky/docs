@@ -11,13 +11,13 @@ Create Nodegroups
 Add node configuration to the salt master and restart for the nodegroups to be
 picked up.
 
-.. literalinclude:: ../source/master/nodegroups.conf
+.. literalinclude:: source/nodegroups.conf
   :caption: **0644 root root** ``/etc/salt/master.d/nodegroups.conf``
   :linenos:
 
-* This will create two nodegroups, one matching ``os_family`` grain to a debian
-  based system (e.g. will apply to debian, ubuntu, etc), and one matching debian
-  specifically.
+* This will create four nodegroups, one matching ``os_family`` grain to a debian
+  based system (e.g. will apply to debian, ubuntu, etc), and one matching other
+  specific releases for those platforms.
 * See `Compound Matchers`_ for matching syntax.
 
 .. code-block:: bash
@@ -28,7 +28,7 @@ Apply State to Nodegroups
 *************************
 States can now be applied to nodegroups and layered based on setup.
 
-.. literalinclude:: ../source/top.sls
+.. literalinclude:: source/top.sls
   :caption: **0644 salt salt** ``/srv/salt/env/prod/top.sls``
   :linenos:
 

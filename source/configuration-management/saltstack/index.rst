@@ -34,10 +34,10 @@ Related Material:
    :hidden:
    :maxdepth: -1
 
-   Requirements <requirements>
+   requirements
    service-setup
-   Salt Master <salt-master/index>
-   Salt Minion <salt-minion>
+   salt-master/index
+   salt-minion/index
    frequent-commands
    common-issues
    working-notes

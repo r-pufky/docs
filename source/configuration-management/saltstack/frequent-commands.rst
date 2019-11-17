@@ -50,6 +50,7 @@ Manual Minion Run with Specific Environments
 .. code-block:: bash
 
   salt {MINION} state.highstate pillarenv=dev saltenv=dev
+  salt-call state.highstate pillarenv=dev saltenv=dev
 
 Print Only `Changes or Errors`_
 *******************************
@@ -61,9 +62,10 @@ output on changes and errors.
   salt {MINION} state.highstate saltenv=prod --state-output=changes
   salt {MINION} state.highstate saltenv=prod --state-output=mixed
 
-* ``changes`` will log standard messages on changes and errors.
-* ``mixed`` will log terse messages for changes and standard messages for
-  errors.
+.. note::
+  * ``changes`` will log standard messages on changes and errors.
+  * ``mixed`` will log terse messages for changes and standard messages for
+    errors.
 
 .. _Changes or Errors: https://stackoverflow.com/questions/15953082/is-there-a-way-to-display-only-changes-and-errors
 .. _jobs: https://docs.saltstack.com/en/latest/ref/runners/all/salt.runners.jobs.html#salt.runners.jobs.list_job

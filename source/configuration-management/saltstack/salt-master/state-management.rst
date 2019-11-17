@@ -26,6 +26,7 @@ notation from that environments root to access them.
 
 .. code-block:: yaml
   :caption: **0644 salt salt** ``/srv/salt/static/prod/top.sls``
+  :emphasize-lines: 3
 
   prod:
     'my_host';
@@ -46,11 +47,12 @@ Deploy File with Content from Server
 
 .. code-block:: bash
 
-  ls -1 /srv/salt/static/prod/config
+  ls -1 /srv/salt/static/prod/files/config
   .bashrc
 
 .. code-block:: yaml
   :caption: **0644 salt salt** ``/srv/salt/static/prod/top.sls``
+  :emphasize-lines: 7
 
   prod:
     /root/.bashrc
@@ -58,7 +60,7 @@ Deploy File with Content from Server
         - user: root
         - group: root
         - mode: 0600
-        - source: salt://bachrc/bashrc
+        - source: salt://files/config/.bashrc
 
 .. _State Management: https://docs.saltstack.com/en/2016.11/topics/tutorials/starting_states.html
 .. _State Reference: https://docs.saltstack.com/en/latest/ref/states/
