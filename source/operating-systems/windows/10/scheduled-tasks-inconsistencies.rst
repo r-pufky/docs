@@ -13,6 +13,8 @@ This will run through configuring a gpg-agent to refresh on screen unlock
 and assumes GPG agents have been added to the user's PATH environment variable
 already.
 
+.. _scheduled-tasks-logon-logoff:
+
 Enable Logon/Logoff Events
 **************************
 Logon/Logoff events are not configured to log by default. When enabled,
@@ -34,12 +36,14 @@ well as logging into the machine.
           Enabled
   :no_section:
 
+.. _scheduled-tasks-event-trigger:
+
 Manually Adding Event Triggered Scheduled Task
 **********************************************
 Setup triggered events to refresh GPG agent on screen unlocks.
 
-See :ref:`powershell-create-event` for a powershell script that does this for
-you.
+See :ref:`scheduled-tasks-powershell-create-event` for a powershell script that
+does this for you.
 
 .. wtschedule:: manually add general section schedule
   :key:   action --> create task --> general
@@ -127,7 +131,7 @@ You may noticed occasionsally that command windows pop-up while the scheduled
 task is executing. If this should be completely hidden, see
 :ref:`hiding-command-windows`.
 
-.. _powershell-create-event:
+.. _scheduled-tasks-powershell-create-event:
 
 Powershell to Create Event Triggered Scheduled Task
 ***************************************************

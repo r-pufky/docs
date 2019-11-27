@@ -127,6 +127,12 @@ cmdmenu: **all lowercase**. except:
 
 see: https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html
 
+Config Tables:
+
+* Only use custom configuration tables for generic configurations on systems
+  (e.g. regedit, unifi controllers) where *repeated, distinct* uses occur.
+* Applications and one-offs use a static inline table for configuration.
+
 gpolicy:
 title: lowercase if using no_section. Otherwise follow section formatting.
 keys: follow actual key cap formatting.

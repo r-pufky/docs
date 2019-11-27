@@ -12,6 +12,7 @@ from .windows import wregedit
 from .windows import wservice
 from .windows import wtmanager
 from .windows import wtschedule
+from .windows import wsysprop
 
 from .ubnt import uctree
 from .ubnt import ufirewall
@@ -28,6 +29,7 @@ def setup(app):
   wservice.setup(app)
   wtmanager.setup(app)
   wtschedule.setup(app)
+  wsysprop.setup(app)
 
   uctree.setup(app)
   ufirewall.setup(app)

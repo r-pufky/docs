@@ -64,6 +64,7 @@ git hub, or submit a CL :)
 
   apps/authy
   apps/chrome
+  apps/gpg/index
   apps/mutt
   apps/putty
   apps/sublime-text/sublime
