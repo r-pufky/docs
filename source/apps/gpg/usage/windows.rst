@@ -1,7 +1,7 @@
 .. _gpg-windows:
 
-Windows GPG Yubikey Config for Putty/SSH
-########################################
+Windows GPG Yubikey
+###################
 Configure Yubikey for SSH authentication on windows.
 
 Required Materials

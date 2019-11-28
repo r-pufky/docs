@@ -1,13 +1,13 @@
 .. _gpg-troubleshooting:
 
-GPG Troubleshooting
-###################
+Troubleshooting
+###############
 
 .. _gpg-no-agent-running:
 
 No agent running error
 **********************
-``gpg-agent`` can sometimes die in the backgroun, just restart it.
+``gpg-agent`` can sometimes die in the background, just restart it.
 
 .. code-block:: bash
 
@@ -38,8 +38,6 @@ Yubikey Not Appearing
 gpg-agent can lose the key if the daemon was restarted in the background or if
 the Yubikey is not seated properly.
 
-Re-insert the Yubikey
-
 .. code-block:: bash
   :caption: Re-insert the Yubikey, then run command to verify key returns data.
 
@@ -47,13 +45,13 @@ Re-insert the Yubikey
 
 SSH connection failed, Server sent: publickey
 *********************************************
-Happens because of a standard publickey not provided / matched failure.
+SSH public key not provided or was not matched on the server.
 
-#. SSH public key is not loaded on the SSH server. Confirm your public SSH key
-   (see :ref:`gpg-export-keys`) is added to `authorized_keys` for the user you
-   are attempting to login with.
-#. GPG agent configuration is not reloaded. Ensure ssh and putty support in
-   configuration is set and `gpg-agent` and `gpg-connect-agent` are both
+#. SSH public key is not loaded on the SSH server. Confirm your GPG public SSH
+   key (see :ref:`gpg-export-keys`) is added to ``~/.ssh/authorized_keys`` for
+   the user you are attempting to login with.
+#. GPG agent configuration is not reloaded. Ensure SSH and Putty support in
+   configuration is set, ``gpg-agent``, and ``gpg-connect-agent`` are both
    restarted. See: :ref:`gpg-windows-restart-agent`.
 
 Please insert card with serial number

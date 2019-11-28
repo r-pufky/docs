@@ -213,9 +213,3 @@ Prepare Yubikey to load GPG key material.
 .. _authentication, encryption or signing request: https://suchsecurity.com/gpg-and-ssh-with-yubikey-on-windows.html
 .. _destroy any openpgp material: https://support.yubico.com/support/solutions/articles/15000006421-resetting-the-openpgp-applet-on-the-yubikey>
 .. _Yubikey Personalization Tool: https://www.yubico.com/products/services-software/download/yubikey-personalization-tools/
-
-.. rubric:: References
-
-#. `Yubikey Device Setup <https://developers.yubico.com/PIV/Guides/Device_setup.html>`_
-#. `GPG Yubikey 5 <https://zeos.ca/post/2018/gpg-yubikey5/>`_
-#. `GPG Card Administration <https://www.gnupg.org/howtos/card-howto/en/ch03.html>`_

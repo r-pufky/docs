@@ -13,12 +13,18 @@ or the master key can be revoked/changed to invalidate all subkeys at once. The
 master key should be kept offline and encrypted and **only** the subkeys used in
 day to day usage.
 
+Setup Instructions:
+
+#. Setup :ref:`gpg-prerequisites`.
+#. :ref:`gpg-key-setup` to create your digital identity.
+#. :ref:`gpg-usage`.
+
+Be sure to see :ref:`gpg-troubleshooting` to resolve any issues.
+
 Core (out of date) `instructions are here`_. Alternative step-by-step
 walkthrough instructions for configuring `multi-platform GPG/Yubikey SSH usage
 are here`_. `OpenPGP for Beginners`_ is a good starting point if you have no
 understanding of what this is.
-
-insert links here.
 
 .. rubric:: References
 
@@ -35,15 +41,8 @@ insert links here.
    :hidden:
    :maxdepth: -1
 
-   prerequisites
-   prep-yubikey
-   gpg-master
-   gpg-subkeys
-   gpg-backup
-   export-to-yubikey
-   gpg-cleanup
-   gpg-import
-   windows
-   ubuntu
-   errors
+   pre-requisites/index
+   key-setup/index
+   usage/index
+   troubleshooting
    glossary

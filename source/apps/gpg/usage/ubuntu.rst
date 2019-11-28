@@ -1,5 +1,7 @@
-Ubuntu GPG Yubikey Config for SSH
----------------------------------
+.. _gpg-ubuntu:
+
+Ubuntu GPG Yubikey
+##################
 Configure Yubikey for SSH authentication on Ubuntu.
 
 Gnome-keyring implements both ssh-agent and gpg-agent with a `broken
