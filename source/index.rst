@@ -126,6 +126,14 @@ git hub, or submit a CL :)
   Windows 10 <operating-systems/windows/10/index>
 
 .. toctree::
+  :caption: Containerization
+  :hidden:
+  :includehidden:
+  :maxdepth: -1
+
+  Docker <containerization/docker/index>
+
+.. toctree::
   :hidden:
   :includehidden:
   :maxdepth: -1
