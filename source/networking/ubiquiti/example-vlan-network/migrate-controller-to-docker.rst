@@ -6,19 +6,21 @@ Migrate Unifi Controller to Docker
 * Setup Unifi Docker `Container IP on DHCP`_.
 * Connect to Edgerouter GUI @ http://10.1.1.1.
 
-.. uctree:: Add Docker Container IP for Controller.
-  :key:    services --> dhcp server --> management --> action --> view details
-  :names:  Unifi Controller
-  :data:   {DOCKER UNIFI CONTAINER IP}
+.. uctree::   Add Docker Container IP for Controller
+  :key_title: Services --> DHCP Server --> Management --> Action --> View Details
+  :option:    Unifi Controller
+  :setting:   {DOCKER UNIFI CONTAINER IP}
   :no_section:
+  :no_caption:
 
 Export laptop Unifi Controller settings.
 
-.. ucontroller:: Add Docker Container IP on Original Unifi Controller.
-  :key:        settings --> maintenance --> backup
-  :names:      Backup Data Rentention
-  :data:       Settings Only
+.. ucontroller:: Add Docker Container IP on Original Unifi Controller
+  :key_title:    Settings --> Maintenance --> Backup
+  :option:       Backup Data Rentention
+  :setting:      Settings Only
   :no_section:
+  :no_caption:
 
     .. note::
       Download the backup and ``shutdown`` the original Unifi Controller.
@@ -26,12 +28,13 @@ Export laptop Unifi Controller settings.
 Startup Docker Unifi Controller and import config, then set the correct inform
 IP in docker container.
 
-.. ucontroller:: Set Inform IP on docker Unifi Controller.
-  :controller: http://{DOCKER UNIFI CONTAINER IP}:8443
-  :key:        settings --> controller
-  :names:      Controller Hostname/IP
-  :data:       {DOCKER UNIFI CONTROLLER IP}
+.. ucontroller:: Set Inform IP on docker Unifi Controller
+  :controller:   http://{DOCKER UNIFI CONTAINER IP}:8443
+  :key_title:    Settings --> Controller
+  :option:       Controller Hostname/IP
+  :setting:      {DOCKER UNIFI CONTROLLER IP}
   :no_section:
+  :no_caption:
 
 .. note::
   If the Controller IP is different, manually update inform URI for each device

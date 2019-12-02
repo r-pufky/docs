@@ -1,29 +1,3 @@
-# .. ucontroller:: Enable Dynamic DNS
-#   :key:    service --> dhcp-server --> dynamic-dns-update
-#   :names:  Enable
-#   :data:   true
-#
-#    .. note::
-#       This is a free-form RST processed content for any additional
-#       information pertaining to this controller change.
-#
-#       Metadata can be split over multiple lines.
-#
-# A controller section can be setup to show multiple controller tables without
-# additional data if multiple values are changed.
-#
-# .. ucontroller:: Enable Dynamic DNS
-#   :key:    service --> dhcp-server --> dynamic-dns-update
-#   :names:  Enable
-#   :data:   true
-#
-# .. ucontroller:: Enable Dynamic DNS Option 2
-#   :key:    service --> dhcp-server
-#   :names:  shared-network-name
-#   :data:   IOT
-#   :no_section:
-#   :hide_gui:
-
 from .. import config
 from .. import config_table
 from docutils import nodes
@@ -40,50 +14,55 @@ class UControllerData(config_table.ConfigTableData):
 class UController(config_table.ConfigTable):
   """Generate UBNT controller elements in a sphinx document.
 
+  Directives:
+    See ConfigTable for core Directives.
+
+    :controller: Directive specifying an alternative controller for launch.
+
+  .. ucontroller:: Create Wifi User Group
+    :key_title:    Settings --> User Groups --> Create New User Group
+    :option:       Name,
+                   ☑,
+                   ☑
+    :setting:      throttled-wifi,
+                   Limit download bandwidth 10 Mbps,
+                   Limit upload bandwidth 10 Mbps
+    :controller:   http://{IP}
+
+      .. note::
+        This is a free-form RST processed content contained within the rendered
+        block.
+
+        Metadata can be split over multiple lines.
+
   conf.py options:
-    ct_controller_separator: Unicode separator to use for GUI menuselection.
-        This uses the Unicode Character Name resolve a glyph.
+    ct_ucontroller_separator: Unicode separator to use for :cmdmenu:/:guilabel:
+        directive. This uses the Unicode Character Name to resolve a glyph.
         Default: '\N{TRIANGULAR BULLET}'.
         Suggestions: http://xahlee.info/comp/unicode_arrows.html
-        Setting this over-rides ct_separator value for controller display.
-    ct_controller_separator_replace: String separator to replace with Unicode
-        separator. Default: '-->'.
-    ct_controller_admin: String 'requires admin' modifier for GUI menuselection.
-        Default: ' (as admin)'.
-    ct_controller_content: String default GUI menuselection for opening group
-        policy. Default: 'controller'.
-    ct_controller_key_gui: Boolean True to enable GUI menuselection display of
-        controller key. Default: True.
-
-  Directive Options:
-    controller: String one-off ct_controller_content replacement.
-        e.g. 'https://unifi.ubnt.com --> {SITE}'. Optional.
-    key: String main controller key to modify. Required.
-        e.g. service --> dhcp-server.
-    names: String or List of controller names. Required.
-        e.g. Enable.
-    data: String or List of subkey data. Required.
-        e.g. true.
-    admin: Flag enable admin requirement display in GUI menuselection.
-    no_section: Flag disable the creation of section using the controller
-        arguments, instead of a 'ctree docutils container' block.
-    show_title: Flag show controller table caption (caption is arguments
-        title).
-    hide_gui: Flag hide GUI menuselection. This also disables :admin:.
+        Setting this overrides ct_{CLASS}_separator value for display.
+    ct_ucontroller_separator_replace: String separator to replace with
+        ct_{CLASS}_separator.
+        Default: '-->'.
+    ct_ucontroller_launch: String default :cmdmenu:/:guilabel: title for
+        launching application.
+        Default: 'https://unifi.ubnt.com --> {SITE}'.
+    ct_ucontroller_key_title_gui: Boolean True to render :key_title: as a
+        :cmdmenu:/:guilabel:.
+        Default: True.
   """
   required_arguments = 1
   optional_arguments = 1
   final_argument_whitespace = True
   option_spec = {
+    'key_title': directives.unchanged_required,
+    'option': directives.unchanged_required,
+    'setting': directives.unchanged_required,
     'controller': directives.unchanged,
-    'key': directives.unchanged_required,
-    'names': directives.unchanged_required,
-    'types': directives.unchanged_required,
-    'data': directives.unchanged_required,
-    'admin': directives.flag,
     'no_section': directives.flag,
-    'show_title': directives.flag,
-    'hide_gui': directives.flag,
+    'no_launch': directives.flag,
+    'no_caption': directives.flag,
+    'no_key_title': directives.flag,
   }
   has_content = True
   add_index = True
@@ -92,25 +71,23 @@ class UController(config_table.ConfigTable):
     """Initalize base Table class and generate separators."""
     super().__init__(*args, **kwargs)
     self.sep = config.get_sep(
-      self.state.document.settings.env.config.ct_controller_separator,
+      self.state.document.settings.env.config.ct_ucontroller_separator,
       self.state.document.settings.env.config.ct_separator)
     self.rep = config.get_rep(
-      self.state.document.settings.env.config.ct_controller_separator_replace,
+      self.state.document.settings.env.config.ct_ucontroller_separator_replace,
       self.state.document.settings.env.config.ct_separator_replace)
 
-    self.text_content = (
-        self.state.document.settings.env.config.ct_controller_content)
-    self.key_gui = self.state.document.settings.env.config.ct_controller_key_gui
+    self.text_launch = (
+        self.state.document.settings.env.config.ct_ucontroller_launch)
+    self.key_title_gui = (
+        self.state.document.settings.env.config.ct_ucontroller_key_title_gui)
 
-    if 'admin' in self.options:
-      self.key_mod = self.state.document.settings.env.config.ct_controller_admin
-    else:
-      self.key_mod = ''
+    self.key_title_admin_text = ''
 
   def _sanitize_options(self):
     """Sanitize directive user input data.
 
-    * Strips whitespace from controller component key.
+    * Strips whitespace from key_title.
     * Converts names, data to python lists with whitespace stripped;
       ensures that the lists are of the same length.
     * Parses directive arguments for title.
@@ -119,26 +96,24 @@ class UController(config_table.ConfigTable):
       UControllerData object containing sanitized directive data.
     """
     if 'controller' in self.options:
-      self.text_content = self.options['controller']
+      self.text_launch = self.options['controller']
 
-    key = ''.join([x.strip() for x in self.options['key'].split('\n')])
-    names_list = [x.strip() for x in self.options['names'].split(',')]
-    data_list = [x.strip() for x in self.options['data'].split(',')]
+    key_title = ''.join([x.strip() for x in self.options['key_title'].split('\n')])
+    option_list = [x.strip() for x in self.options['option'].split(',')]
+    setting_list = [x.strip() for x in self.options['setting'].split(',')]
     title, _ = self.make_title()
 
-    return UControllerData(key,
-                           [names_list, data_list],
+    return UControllerData(key_title,
+                           [option_list, setting_list],
                            title,
-                           cols=2,
-                           gui=self.key_gui,
-                           key_mod=self.key_mod)
+                           key_title_gui=self.key_title_gui,
+                           key_title_admin_text=self.key_title_admin_text)
 
 
 def setup(app):
-  app.add_config_value('ct_controller_admin', ' (as admin)', '')
-  app.add_config_value('ct_controller_content', 'https://unifi.ubnt.com --> {SITE}', '')
-  app.add_config_value('ct_controller_key_gui', True, '')
-  app.add_config_value('ct_controller_separator', config.DEFAULT_SEPARATOR, '')
-  app.add_config_value('ct_controller_separator_replace', config.DEFAULT_REPLACE, '')
+  app.add_config_value('ct_ucontroller_separator', config.DEFAULT_SEPARATOR, '')
+  app.add_config_value('ct_ucontroller_separator_replace', config.DEFAULT_REPLACE, '')
+  app.add_config_value('ct_ucontroller_launch', 'https://unifi.ubnt.com --> {SITE}', '')
+  app.add_config_value('ct_ucontroller_key_title_gui', True, '')
 
   app.add_directive('ucontroller', UController)

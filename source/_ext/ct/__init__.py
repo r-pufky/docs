@@ -6,13 +6,17 @@ import re
 from . import cmdmenu
 from . import config
 
+from .generic import gui
+from .generic import flocation
+from .generic import port
+
 from .windows import wfirewall
 from .windows import wgpolicy
 from .windows import wregedit
 from .windows import wservice
+from .windows import wsysprop
 from .windows import wtmanager
 from .windows import wtschedule
-from .windows import wsysprop
 
 from .ubnt import uctree
 from .ubnt import ufirewall
@@ -23,13 +27,17 @@ def setup(app):
   app.add_config_value('ct_separator_replace', config.DEFAULT_REPLACE, '')
   cmdmenu.setup(app)
 
+  gui.setup(app)
+  flocation.setup(app)
+  port.setup(app)
+
   wfirewall.setup(app)
   wgpolicy.setup(app)
   wregedit.setup(app)
   wservice.setup(app)
+  wsysprop.setup(app)
   wtmanager.setup(app)
   wtschedule.setup(app)
-  wsysprop.setup(app)
 
   uctree.setup(app)
   ufirewall.setup(app)

@@ -1,40 +1,3 @@
-# .. ufirewall:: Define RFC1918 Private Address Space.
-#   :key:   firewall/nat groups --> add group
-#   :names: Name,
-#           Description,
-#           Type
-#   :data:  RFC1918,
-#           Private IPv4 address space,
-#           ☑ Network Group
-#
-#    .. note::
-#       This is a free-form RST processed content for any additional
-#       information pertaining to this firewall change.
-#
-#       Metadata can be split over multiple lines.
-#
-# A firewall section can be setup to show multiple firewall tables without
-# additional data if multiple values are changed.
-#
-# .. ufirewall:: Define RFC1918 Private Address Space.
-#   :key:   firewall/nat groups --> add group
-#   :names: Name,
-#           Description,
-#           Type
-#   :data:  RFC1918,
-#           Private IPv4 address space,
-#           ☑ Network Group
-#
-# .. ufirewall:: Define RFC1918 Private Address Space.
-#   :key:   firewall/nat groups --> add group
-#   :names: Name,
-#           Description,
-#           Type
-#   :data:  RFC1918,
-#           Private IPv4 address space,
-#           ☑ Network Group
-#   :no_section:
-
 from .. import config
 from .. import config_table
 from docutils import nodes
@@ -51,47 +14,49 @@ class UFirewallData(config_table.ConfigTableData):
 class UFirewall(config_table.ConfigTable):
   """Generate UBNT firewall elements in a sphinx document.
 
+  Directives:
+    See ConfigTable for core Directives.
+
+  .. ufirewall:: Drop Wifi to LAN Interface.
+    :key:   firewall policies --> WIFI_LOCAL --> actions --> interfaces
+    :names: Interface,
+            Direction
+    :data:  {WIFI INTERFACE},
+            local
+
+      .. note::
+        This is a free-form RST processed content contained within the rendered
+        block.
+
+        Metadata can be split over multiple lines.
+
   conf.py options:
-    ct_ufirewall_separator: Unicode separator to use for GUI menuselection.
-        This uses the Unicode Character Name resolve a glyph.
+    ct_ufirewall_separator: Unicode separator to use for :cmdmenu:/:guilabel:
+        directive. This uses the Unicode Character Name to resolve a glyph.
         Default: '\N{TRIANGULAR BULLET}'.
         Suggestions: http://xahlee.info/comp/unicode_arrows.html
-        Setting this over-rides ct_separator value for firewall display.
-    ct_ufirewall_separator_replace: String separator to replace with Unicode
-        separator. Default: '-->'.
-    ct_ufirewall_admin: String 'requires admin' modifier for GUI menuselection.
-        Default: ' (as admin)'.
-    ct_ufirewall_content: String default GUI menuselection for opening group
-        policy. Default: 'firewall/nat'.
-    ct_ufirewall_key_gui: Boolean True to enable GUI menuselection display of
-        firewall key. Default: True.
-
-  Directive Options:
-    key: String main firewall key to modify. Required.
-        e.g. service --> dhcp-server.
-    names: String or List of firewall names. Required.
-        e.g. Enable.
-    data: String or List of subkey data. Required.
-        e.g. true.
-    admin: Flag enable admin requirement display in GUI menuselection.
-    no_section: Flag disable the creation of section using the firewall
-        arguments, instead of a 'ctree docutils container' block.
-    show_title: Flag show firewall table caption (caption is arguments
-        title).
-    hide_gui: Flag hide GUI menuselection. This also disables :admin:.
+        Setting this overrides ct_{CLASS}_separator value for display.
+    ct_ufirewall_separator_replace: String separator to replace with
+        ct_{CLASS}_separator.
+        Default: '-->'.
+    ct_ufirewall_launch: String default :cmdmenu:/:guilabel: title for launching
+        application.
+        Default: 'firewall/nat'.
+    ct_ufirewall_key_title_gui: Boolean True to render :key_title: as a
+        :cmdmenu:/:guilabel:.
+        Default: True.
   """
   required_arguments = 1
   optional_arguments = 0
   final_argument_whitespace = True
   option_spec = {
-    'key': directives.unchanged_required,
-    'names': directives.unchanged_required,
-    'types': directives.unchanged_required,
-    'data': directives.unchanged_required,
-    'admin': directives.flag,
+    'key_title': directives.unchanged_required,
+    'option': directives.unchanged_required,
+    'setting': directives.unchanged_required,
     'no_section': directives.flag,
-    'show_title': directives.flag,
-    'hide_gui': directives.flag,
+    'no_launch': directives.flag,
+    'no_caption': directives.flag,
+    'no_key_title': directives.flag,
   }
   has_content = True
   add_index = True
@@ -106,19 +71,17 @@ class UFirewall(config_table.ConfigTable):
       self.state.document.settings.env.config.ct_ufirewall_separator_replace,
       self.state.document.settings.env.config.ct_separator_replace)
 
-    self.text_content = (
-        self.state.document.settings.env.config.ct_ufirewall_content)
-    self.key_gui = self.state.document.settings.env.config.ct_ufirewall_key_gui
+    self.text_launch = (
+        self.state.document.settings.env.config.ct_ufirewall_launch)
+    self.key_title_gui = (
+        self.state.document.settings.env.config.ct_ufirewall_key_title_gui)
 
-    if 'admin' in self.options:
-      self.key_mod = self.state.document.settings.env.config.ct_ufirewall_admin
-    else:
-      self.key_mod = ''
+    self.key_title_admin_text = ''
 
   def _sanitize_options(self):
     """Sanitize directive user input data.
 
-    * Strips whitespace from firewall component key.
+    * Strips whitespace from key_title.
     * Converts names, data to python lists with whitespace stripped;
       ensures that the lists are of the same length.
     * Parses directive arguments for title.
@@ -126,24 +89,22 @@ class UFirewall(config_table.ConfigTable):
     Returns:
       UFirewallData object containing sanitized directive data.
     """
-    key = ''.join([x.strip() for x in self.options['key'].split('\n')])
-    names_list = [x.strip() for x in self.options['names'].split(',')]
-    data_list = [x.strip() for x in self.options['data'].split(',')]
+    key_title = ''.join([x.strip() for x in self.options['key_title'].split('\n')])
+    option_list = [x.strip() for x in self.options['option'].split(',')]
+    setting_list = [x.strip() for x in self.options['setting'].split(',')]
     title, _ = self.make_title()
 
-    return UFirewallData(key,
-                         [names_list, data_list],
+    return UFirewallData(key_title,
+                         [option_list, setting_list],
                          title,
-                         cols=2,
-                         gui=self.key_gui,
-                         key_mod=self.key_mod)
+                         key_title_gui=self.key_title_gui,
+                         key_title_admin_text=self.key_title_admin_text)
 
 
 def setup(app):
-  app.add_config_value('ct_ufirewall_admin', ' (as admin)', '')
-  app.add_config_value('ct_ufirewall_content', 'firewall/nat', '')
-  app.add_config_value('ct_ufirewall_key_gui', True, '')
   app.add_config_value('ct_ufirewall_separator', config.DEFAULT_SEPARATOR, '')
   app.add_config_value('ct_ufirewall_separator_replace', config.DEFAULT_REPLACE, '')
+  app.add_config_value('ct_ufirewall_launch', 'Firewall/NAT', '')
+  app.add_config_value('ct_ufirewall_key_title_gui', True, '')
 
   app.add_directive('ufirewall', UFirewall)

@@ -71,19 +71,30 @@ working before final placement, it is probably a swapped connection.
 Verify the device downstream is the *correct device* using the *same trunk port
 profile*.
 
-.. ucontroller:: Add Static Host.
-  :key:    devices --> {UPSTREAM SWITCH} --> properties --> ports --> ✋ status
-  :names:  Downlink,
-           Profile
-  :data:   {EXPECTED SWITCH},
-           {EXPECTED SWITCH PORT PROFILE}
+.. ucontroller:: Add Static Host
+  :key_title:    Devices -->
+                 {UPSTREAM SWITCH} -->
+                 Properties -->
+                 Ports -->
+                 Status
+  :option:       Downlink,
+                 Profile
+  :setting:      {EXPECTED SWITCH},
+                 {EXPECTED SWITCH PORT PROFILE}
   :no_section:
+  :no_caption:
 
-.. ucontroller:: Add Static Host.
-  :key:    devices --> {DOWNSTREAM SWITCH} --> properties --> ports --> ✋ status
-  :names:  Downlink,
-           Profile
-  :data:   {EXPECTED SWITCH},
-           {EXPECTED SWITCH PORT PROFILE}
+.. ucontroller:: Add Static Host
+  :key_title:    Devices -->
+                 {DOWNSTREAM SWITCH} -->
+                 Properties -->
+                 Ports -->
+                 Status
+  :option:       Downlink,
+                 Profile
+  :setting:      {EXPECTED SWITCH},
+                 {EXPECTED SWITCH PORT PROFILE}
   :no_section:
+  :no_caption:
+
 .. _regardless of switch load: https://community.ubnt.com/t5/UniFi-Routing-Switching/UniFI-Switch-8-POE-60-W-constant-high-CPU-utilization/td-p/2397994

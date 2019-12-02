@@ -10,35 +10,38 @@ Disable Services
 These services either do user data tracking, or are an unnecessary performance
 hit. See `Telemetry Info`_.
 
-.. wservice:: disable connected user telemtry service
-  :key:   Connected User Experiences and Telemetry --> General
-  :names: Startup type,
-          Service status
-  :data:  Disabled,
-          Stopped
+.. wservice:: Disable connected user telemetry service
+  :key_title: Connected User Experiences and Telemetry --> General
+  :option:    Startup type,
+              Service status
+  :setting:   Disabled,
+              Stopped
   :no_section:
+  :no_caption:
 
-.. wservice:: disable diagnostic tracking telemtry service
-  :key:   Diagnostic Tracking Services --> General
-  :names: Startup type,
-          Service status
-  :data:  Disabled,
-          Stopped
+.. wservice:: Disable diagnostic tracking telemtry service
+  :key_title: Diagnostic Tracking Services --> General
+  :option:    Startup type,
+              Service status
+  :setting:   Disabled,
+              Stopped
   :no_section:
-  :hide_gui:
+  :no_launch:
+  :no_caption:
 
     .. note::
       This is the old version of telemetry data collection in earlier versions
       of Windows 10. May not exist in recent versions.
 
-.. wservice:: disable razer game scanner service
-  :key:   Razer Game Scanner --> General
-  :names: Startup type,
-          Service status
-  :data:  Disabled,
-          Stopped
+.. wservice:: Disable razer game scanner service
+  :key_title: Razer Game Scanner --> General
+  :option:    Startup type,
+              Service status
+  :setting:   Disabled,
+              Stopped
   :no_section:
-  :hide_gui:
+  :no_launch:
+  :no_caption:
 
 Set Reasonable Privacy Settings
 *******************************
@@ -80,52 +83,57 @@ Remove Unused Optional Windows Features
    * Clear all data.
 
 .. wgpolicy:: Disable Cortana Policy
-  :key:   Computer Configuration -->
-          Administrative Templates -->
-          Windows Components -->
-          Search
-  :names: Allow Cortana
-  :data:  Disabled
+  :key_title: Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Search
+  :option:    Allow Cortana
+  :setting:   Disabled
   :no_section:
+  :no_caption:
 
 `Disable OneDrive`_
 *******************
 .. wgpolicy:: Disable one-drive from storing files
-  :key:   Computer Configuration -->
-          Administrative Templates -->
-          Windows Components -->
-          OneDrive
-  :names: Prevent the usage of OneDrive for file storage
-  :data:  Enabled
+  :key_title: Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              OneDrive
+  :option:    Prevent the usage of OneDrive for file storage
+  :setting:   Enabled
+  :no_caption:
 
 .. wtschedule:: Disable OneDrive schedule update task
-  :key:   OneDrive Standalone Update Task v2
-  :names: Task
-  :data:  Disabled
+  :key_title:   OneDrive Standalone Update Task v2
+  :option:      Task
+  :setting:     Disabled
+  :no_caption:
 
-  This will sometimes randomly re-enable OneDrive when it is updated.
+    This will sometimes randomly re-enable OneDrive when it is updated.
 
 .. wregedit:: Remove OneDrive from Windows Explorer
-  :key:   HKEY_CLASSES_ROOT\\CLSID\\{018D5C66-4533-4307-9B53-224DE2ED1FE6}
-  :names: System.IsPinnedToNameSpaceTree
-  :types: DWORD
-  :data:  0
+  :key_title: HKEY_CLASSES_ROOT\\CLSID\\{018D5C66-4533-4307-9B53-224DE2ED1FE6}
+  :names:     System.IsPinnedToNameSpaceTree
+  :types:     DWORD
+  :data:      0
   :admin:
+  :no_caption:
 
     `See removing onedrive from windows explorer`_.
 
 `Disable Suggested Apps in Windows`_
 ************************************
 .. wgpolicy:: Disable suggested apps in Windows
-  :key:   Computer Configuration -->
-          Administrative Templates -->
-          Windows Components -->
-          Cloud Content
-  :names: Turn off Microsoft consumer experiences,
-          Do not show Windows tips
-  :data:  Enabled,
-          Enabled
+  :key_title: Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Cloud Content
+  :option:    Turn off Microsoft consumer experiences,
+              Do not show Windows tips
+  :setting:   Enabled,
+              Enabled
   :no_section:
+  :no_caption:
 
 Disable Paging, Restore Points, and Automatic Driver Updates
 ************************************************************
@@ -147,14 +155,15 @@ By default, windows will automatically force close applications when memory
 starts to fill up. Prevent Windows from being dumb.
 
 .. wgpolicy:: Disable automatic resource exhaustion policy
-  :key:   Computer Configuration -->
-          Administrative Templates -->
-          System -->
-          Troubleshooting and Diagnostics -->
-          Windows Resource Exhaustion Detection and Resolution
-  :names: Configure Scenario Execution Level
-  :data:  Disabled
+  :key_title: Computer Configuration -->
+              Administrative Templates -->
+              System -->
+              Troubleshooting and Diagnostics -->
+              Windows Resource Exhaustion Detection and Resolution
+  :option:    Configure Scenario Execution Level
+  :setting:   Disabled
   :no_section:
+  :no_caption:
 
 `Disable Windows Defender Service`_
 ***********************************
@@ -162,76 +171,83 @@ Don't turn this off unless you know what you are doing. You should first disable
 all of the options for windows defender before disabling the service, as
 cloud-based protection will cause 100% disk usage (in settings).
 
-.. wgpolicy:: turn off windows defender policy
-  :key:   Computer Configuration -->
-          Administrative Templates -->
-          Windows Components -->
-          Windows Defender Antivirus
-  :names: Turn off Windows Defender
-  :data:  Enabled
+.. wgpolicy:: Turn off windows defender policy
+  :key_title: Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Windows Defender Antivirus
+  :option:    Turn off Windows Defender
+  :setting:   Enabled
   :no_section:
+  :no_caption:
 
-.. wgpolicy:: disable windows defender service real-time policy
-  :key:   Computer Configuration -->
-          Administrative Templates -->
-          Windows Components -->
-          Windows Defender Antivirus -->
-          Real-time Protection
-  :names: Turn off real-time protection
-  :data:  Enabled
+.. wgpolicy:: Disable windows defender service real-time policy
+  :key_title: Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Windows Defender Antivirus -->
+              Real-time Protection
+  :option:    Turn off real-time protection
+  :setting:   Enabled
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
-.. wgpolicy:: disable windows defender service real-time policy
-  :key:   Computer Configuration -->
-          Administrative Templates -->
-          Windows Components -->
-          Windows Defender Antivirus -->
-          Client Interface
-  :names: Suppress all notifications
-  :data:  Enabled
+.. wgpolicy:: Disable windows defender service real-time policy
+  :key_title: Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Windows Defender Antivirus -->
+              Client Interface
+  :option:    Suppress all notifications
+  :setting:   Enabled
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
-.. wgpolicy:: disable windows defender service real-time policy
-  :key:   Computer Configuration -->
-          Administrative Templates -->
-          Windows Components -->
-          Windows Defender Antivirus -->
-          Reporting
-  :names: Turn off enhanced notifications
-  :data:  Enabled
+.. wgpolicy:: Disable windows defender service real-time policy
+  :key_title: Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Windows Defender Antivirus -->
+              Reporting
+  :option:    Turn off enhanced notifications
+  :setting:   Enabled
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
-.. wtmanager:: disable windows defender notification icon manager
-  :key:   more details --> startup
-  :names: Windows Defender notification icon
-  :data:  Disabled
+.. wtmanager:: Disable windows defender notification icon manager
+  :key_title:  More Details --> Startup
+  :option:     Windows Defender notification icon
+  :setting:    Disabled
   :no_section:
+  :no_caption:
 
     `See disabling windows defender icon`_.
 
 `Disable Silent Windows Store App Installs`_
 ********************************************
-.. wregedit:: disable silent app install regedit
-  :key:   HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
-          ContentDeliveryManager
-  :names: SilentInstalledAppsEnabled
-  :types: DWORD
-  :data:  0
+.. wregedit:: Disable silent app install regedit
+  :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
+              ContentDeliveryManager
+  :names:     SilentInstalledAppsEnabled
+  :types:     DWORD
+  :data:      0
   :admin:
   :no_section:
+  :no_caption:
 
-.. wregedit:: disable all suggested apps regedit
-  :key:   HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\
-          ContentDeliveryManager\SuggestedApps
-  :names: *
-  :types: DWORD
-  :data:  0
+.. wregedit:: Disable all suggested apps regedit
+  :key_title: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\
+              ContentDeliveryManager\SuggestedApps
+  :names:     *
+  :types:     DWORD
+  :data:      0
   :admin:
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
     .. note::
       Set all applications listed here; this list changes over time as Microsoft
@@ -256,12 +272,14 @@ Disable Windows Explorer Ads
    * ☐ show sync provider notifications.
 
 .. wregedit:: Disable Quick Access Pane
-  :key:   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer
-  :names: HubMode
-  :types: DWORD
-  :data:  1
+  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
+              Explorer
+  :names:     HubMode
+  :types:     DWORD
+  :data:      1
   :admin:
   :no_section:
+  :no_caption:
 
     .. danger::
       Set `explorer to use this pc`_ instead of quick access **before** setting
@@ -273,32 +291,34 @@ Disable Windows Explorer Ads
 
 `Remove Services from Being Listed in Task Manager`_
 ****************************************************
-.. wregedit:: remove local machine startup services regedit
-  :key:   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\
-          StartupApproved\Run
-  :names: *
-  :types: REG_BINARY
-  :data:  Delete
+.. wregedit:: Remove local machine startup services regedit
+  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
+              Explorer\StartupApproved\Run
+  :names:     *
+  :types:     REG_BINARY
+  :data:      Delete
   :admin:
   :no_section:
+  :no_caption:
 
     .. note::
       Delete entries that should not appear (or can't be removed from startup by
-      other means). This applies to the *entire system*.
+      other means). This applies to the entire **system**.
 
-.. wregedit:: remove local user startup services regedit
-  :key:   HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\
-          StartupApproved\Run
-  :names: *
-  :types: REG_BINARY
-  :data:  Delete
+.. wregedit:: Remove local user startup services regedit
+  :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
+              Explorer\StartupApproved\Run
+  :names:     *
+  :types:     REG_BINARY
+  :data:      Delete
   :admin:
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
     .. note::
       Delete entries that should not appear (or can't be removed from startup by
-      other means). This applies to the *current user*.
+      other means). This applies to the current **user**.
 
 
 Disable Microsoft Game Broadcasting Suite
@@ -313,28 +333,32 @@ This occurs because of the xbox app on Windows 10. Removing the app will also
 fix this.
 (see [Removing pre-installed Windows Packages](#removing-pre-installed-windows-packages))
 
-.. wgpolicy:: disable game broadcasting suite policy
-  :key:   Computer Configuration -->
-          Administrative Templates -->
-          Windows Components -->
-          Windows Game Recording and Broadcasting
-  :names: Enables or disables Windows Game Recording and Broadcasting
-  :data:  Disabled
+.. wgpolicy:: Disable game broadcasting suite policy
+  :key_title: Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Windows Game Recording and Broadcasting
+  :option:    Enables or disables Windows Game Recording and Broadcasting
+  :setting:   Disabled
   :no_section:
+  :no_caption:
 
 .. wregedit:: Removing ⌘ + g Prompt on Game Launch
-  :key:   HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\GameDVR
-  :names: AppCaptureEnabled
-  :types: DWORD
-  :data:  0
+  :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
+              GameDVR
+  :names:     AppCaptureEnabled
+  :types:     DWORD
+  :data:      0
   :admin:
+  :no_caption:
 
 .. wregedit:: Disable xbox Game DVR
-  :key:   HKEY_CURRENT_USER\System\GameConfigStore
-  :names: GameDVR_Enabled
-  :types: DWORD
-  :data:  0
+  :key_title: HKEY_CURRENT_USER\System\GameConfigStore
+  :names:     GameDVR_Enabled
+  :types:     DWORD
+  :data:      0
   :admin:
+  :no_caption:
 
 `Meltdown and Spectre Patch`_
 *****************************
@@ -344,14 +368,15 @@ ensure you are not affected by checking the `anti-virus compatibly list`_.
 
 `InSpectre`_ can be used to validate patches are applied.
 
-.. wregedit:: meltdown and sepctre patch regedit
-  :key:   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-          QualityCompat
-  :names: cadca5fe-87d3-4b96-b7fb-a231484277cc
-  :types: DWORD
-  :data:  0
+.. wregedit:: Meltdown and sepctre patch regedit
+  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
+              QualityCompat
+  :names:     cadca5fe-87d3-4b96-b7fb-a231484277cc
+  :types:     DWORD
+  :data:      0
   :admin:
   :no_section:
+  :no_caption:
 
     Reboot to apply changes.
 

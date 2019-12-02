@@ -34,15 +34,16 @@ Recently `ReFS create moved to Windows 10 Workstation`_, effectively removing
 the ability to create ReFS containers in Windows 10 Pro, but they can still be
 read.
 
-.. wregedit:: refs single drive regedit
-  :key:   HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\MiniNT
-  :names: AllowRefsFormatOverNonmirrorVolume
-  :types: DWORD
-  :data:  1
+.. wregedit:: REFS single drive regedit
+  :key_title: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\MiniNT
+  :names:     AllowRefsFormatOverNonmirrorVolume
+  :types:     DWORD
+  :data:      1
   :admin:
   :no_section:
+  :no_caption:
 
-  Reboot to enable changes.
+    Reboot to enable changes.
 
 .. code-block:: powershell
   :caption: Setup disk for ReFS (powershell as admin).
@@ -77,14 +78,14 @@ checks after windows crashes), which cause 100% disk usage on system PID 4.
 Disabling prevents these from automatically being scheduled, but can still be
 manually run.
 
-.. wtschedule:: disable refs scheduled tasks task
-  :key:   Microsoft --> Windows --> Data Integrity Scan
-  :names: Data Integrity Scan,
-          Data Integrity Scan for Crash Recovery
-  :data:  Disabled,
-          Disabled
+.. wtschedule:: Disable REFS scheduled tasks task
+  :key_title:   Microsoft --> Windows --> Data Integrity Scan
+  :option:      Data Integrity Scan,
+                Data Integrity Scan for Crash Recovery
+  :setting:     Disabled,
+                Disabled
   :no_section:
-
+  :no_caption:
 
 Addressing 100% Disk Usage Issues
 *********************************
@@ -96,24 +97,24 @@ These services either do user data tracking, or are a major performance hit for
 SSD's. Disable by :cmdmenu:`RMB --> stop` and
 :cmdmenu:`RMB --> properties --> disable`.
 
-.. wservice:: disable search service
-  :key:   Windows Search --> General
-  :names: Startup type,
-          Service status
-  :data:  Disabled,
-          Stopped
+.. wservice:: Disable search service
+  :key_title: Windows Search --> General
+  :option:    Startup type,
+              Service status
+  :setting:   Disabled,
+              Stopped
   :no_section:
 
     See `SSD activity issue`_.
 
-.. wservice:: disable superfetch service
-  :key:   Windows Search --> General
-  :names: Startup type,
-          Service status
-  :data:  Disabled,
-          Stopped
+.. wservice:: Disable superfetch service
+  :key_title: Windows Search --> General
+  :option:    Startup type,
+              Service status
+  :setting:   Disabled,
+              Stopped
   :no_section:
-  :hide_gui:
+  :no_launch:
 
     See `100% CPU usage issue`_ and `System & Compressed Memory Service issue`_.
 
@@ -122,17 +123,18 @@ SSD's. Disable by :cmdmenu:`RMB --> stop` and
 This addresses 100% disk usage during idle in windows 10, even if you've already
 disabled the superfetching service.
 
-.. wregedit:: disable prefetch and superfetch regedit
-  :key:   HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\
-          Memory Management\PrefetchParameters
-  :names: EnablePrefetcher,
-          EnableSuperfetcher
-  :types: DWORD,
-          DWORD
-  :data:  0,
-          0
+.. wregedit:: Disable prefetch and superfetch regedit
+  :key_title: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\
+              Session Manager\Memory Management\PrefetchParameters
+  :names:     EnablePrefetcher,
+              EnableSuperfetcher
+  :types:     DWORD,
+              DWORD
+  :data:      0,
+              0
   :admin:
   :no_section:
+  :no_caption:
 
 `Hiding Local Desktop for Chrome Remote Desktop`_
 *************************************************
@@ -152,27 +154,30 @@ Installing CRD (Chrome Remote Desktop):
 
 * On Authorize screen click :cmdmenu:`continue`
 
-:cmdmenu:`crd --> my computers --> enable remote connections`
+:cmdmenu:`CRD --> my computers --> enable remote connections`
 
 * Create a PIN for connection.
 * ☐ Improve CRD.
 
-.. wregedit:: enable remote access curtain for crd regedit
-  :key:   HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome
-  :names: RemoteAccessHostRequireCurtain
-  :types: DWORD
-  :data:  1
+.. wregedit:: Enable remote access curtain for CRD regedit
+  :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome
+  :names:     RemoteAccessHostRequireCurtain
+  :types:     DWORD
+  :data:      1
   :admin:
   :no_section:
+  :no_caption:
 
-.. wregedit:: enable rdp security regedit
-  :key:   HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp
-  :names: SecurityLayer
-  :types: DWORD
-  :data:  1
+.. wregedit:: Enable RDP security regedit
+  :key_title: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\
+              Terminal Server\WinStations\RDP-Tcp
+  :names:     SecurityLayer
+  :types:     DWORD
+  :data:      1
   :admin:
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
 :cmdmenu:`start --> control panel --> system and security --> system --> remote settings --> remote`
 
@@ -180,16 +185,17 @@ Installing CRD (Chrome Remote Desktop):
 * ☐ Allow connections only from computers running Remote Desktop with Network
   Level Authentication.
 
-.. wfirewall:: block inbound rdp connections firewall
-  :key:   Advanced Settings --> Inbound Rules
-  :names: Remote Desktop - Shadow (TCP-in),
-          Remote Desktop - User Mode (TCP-in),
-          Remote Desktop - User Mode (UDP-in)
-  :data:  Block,
-          Block,
-          Block
+.. wfirewall:: Block inbound rdp connections firewall
+  :key_title: Advanced Settings --> Inbound Rules
+  :option:    Remote Desktop - Shadow (TCP-in),
+              Remote Desktop - User Mode (TCP-in),
+              Remote Desktop - User Mode (UDP-in)
+  :setting:   Block,
+              Block,
+              Block
   :admin:
   :no_section:
+  :no_caption:
 
     `See block inbound RDP connections with Windows Firewall`_.
 
@@ -212,14 +218,15 @@ over RDP connections -- this happens because RDP treats USB drives as mapped
 network drives and not external drives. This enables direct drive access for RDP
 connections. This is unsafe.
 
-.. wgpolicy:: enable bitlocker on usb drives over rdp policy
-  :key:   Computer Configuration -->
-          Administrative Templates -->
-          System -->
-          Removable Storage Access
-  :names: All Removable Storage: Allow direct access in remote sessions
-  :data:  Enabled
+.. wgpolicy:: Enable bitlocker on usb drives over rdp policy
+  :key_title: Computer Configuration -->
+              Administrative Templates -->
+              System -->
+              Removable Storage Access
+  :option:    All Removable Storage: Allow direct access in remote sessions
+  :setting:   Enabled
   :no_section:
+  :no_caption:
 
 .. _windows-background-apps:
 
@@ -265,12 +272,12 @@ and extract to ``C:\Program Files\``.
   powershell.exe -ExecutionPolicy Bypass -File ./FixHostFilePermissions.ps1
   New-NetFirewallRule -Protocol TCP -LocalPort 22 -Direction Inbound -Action Allow -DisplayName SSH
 
-.. wservice:: enable sshd service
-  :key:   SSHD --> General
-  :names: Startup type,
-          Service status
-  :data:  Automatic,
-          Started
+.. wservice:: Enable sshd service
+  :key_title: SSHD --> General
+  :option:    Startup type,
+              Service status
+  :setting:   Automatic,
+              Started
   :no_section:
 
 Set up publickey authentication:
@@ -314,14 +321,15 @@ warning.
 
   mountvol {OEM PARTITION DRIVE}: /d
 
-.. wregedit:: disable disk space warning checks for partition regedit
-  :key:   HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\
-          Explorer
-  :names: NoLowDiskSpaceChecks
-  :types: DWORD
-  :data:  1
+.. wregedit:: Disable disk space warning checks for partition regedit
+  :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
+              Policies\Explorer
+  :names:     NoLowDiskSpaceChecks
+  :types:     DWORD
+  :data:      1
   :admin:
   :no_section:
+  :no_caption:
 
 `Application Using the Wrong Audio Output Device`_
 **************************************************
@@ -391,13 +399,15 @@ value with the only negative impact being that an actual crashing driver will
 take that much longer to be reset. A bump to *8 to 10* seconds is generally ok;
 it is **not** recommended to disable TDR entirely.
 
-.. wregedit:: increase tdr delay to 8 seconds
-  :key:   HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\GraphicsDrivers
-  :names: TdrDelay
-  :types: DWORD
-  :data:  8
+.. wregedit:: Increase TDR delay to 8 seconds
+  :key_title: HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\
+              GraphicsDrivers
+  :names:     TdrDelay
+  :types:     DWORD
+  :data:      8
   :admin:
   :no_section:
+  :no_caption:
 
 .. _integrity enabled: !http://blog.architecting.it/2012/07/10/windows-server-2012-windows-server-8-resilient-file-system/w8-refs-2/
 .. _ReFS create moved to Windows 10 Workstation: https://arstechnica.com/gadgets/2017/08/microsoft-to-remove-full-refs-support-from-windows-10-pro-push-workstation-sku/

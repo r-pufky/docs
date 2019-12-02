@@ -204,8 +204,10 @@ using.
 
 * usage: ``docker-shell {INSTANCE} {USER}``.
 
-Bridged Adapters
-****************
+.. _docker-bridged-adatpers:
+
+Docker Bridged Adapters
+***********************
 By default Docker will add ``-P FORWARD DROP`` rule to `iptables to prevent`_
 specific exploitation vectors for containers. Unfortunately, this is applied to
 **all** interfaces, regardless of whatever interface docker uses; this rule is

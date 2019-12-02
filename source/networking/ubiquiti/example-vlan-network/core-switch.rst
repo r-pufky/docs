@@ -46,135 +46,140 @@ Set Static Switch IP
 #. Connect to Edgerouter GUI @ http://192.168.1.1.
 #. Reserve a static DHCP address for the switch.
 
-.. uctree:: Add Static Reservation for Switch Management
-  :key:   Services --> DHCP Server --> Management --> Action --> Leases
-  :names: Map Static IP,
-          › IP Address,
-          › Name
-  :data:  ,
-          10.1.1.5,
-          core
+.. uctree::   Add Static Reservation for Switch Management
+  :key_title: Services --> DHCP Server --> Management --> Action --> Leases
+  :option:    Map Static IP,
+              › IP Address,
+              › Name
+  :setting:   ,
+              10.1.1.5,
+              core
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
 Connect to Unifi Controller @ http://localhost:8443.
 
-.. ucontroller:: Set Static Switch IP.
-  :key:   Devices --> Switch --> Properties --> Config --> Network
-  :names: Configure IP,
-          › IP Address,
-          › Preferred DNS,
-          › Subnet Mask,
-          › Gateway,
-          › DNS Suffix
-  :data:  Static,
-          10.1.1.5,
-          10.1.1.1,
-          255.255.255.0,
-          10.1.1.1,
-          {YOUR DOMAIN}
+.. ucontroller:: Set Static Switch IP
+  :key_title:    Devices --> Switch --> Properties --> Config --> Network
+  :option:       Configure IP,
+                 › IP Address,
+                 › Preferred DNS,
+                 › Subnet Mask,
+                 › Gateway,
+                 › DNS Suffix
+  :setting:      Static,
+                 10.1.1.5,
+                 10.1.1.1,
+                 255.255.255.0,
+                 10.1.1.1,
+                 {YOUR DOMAIN}
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
-  .. note::
-    :cmdmenu:`Queue Changes --> Apply`
+    .. note::
+      :cmdmenu:`Queue Changes --> Apply`
 
-    * Wait for provisioning to finish.
-    * Ensure switch is pingable. ``ping 10.1.1.5``.
-    * Apply any firmware updates if needed.
+      * Wait for provisioning to finish.
+      * Ensure switch is pingable. ``ping 10.1.1.5``.
+      * Apply any firmware updates if needed.
 
 Configure Core Switch Management
 ********************************
 .. ucontroller:: General Core Switch Setup
-  :key:   Devices --> Switch --> Properties --> Config --> General
-  :names: Alias,
-          LED
-  :data:  core,
-          use site settings
+  :key_title:    Devices --> Switch --> Properties --> Config --> General
+  :option:       Alias,
+                 LED
+  :setting:      core,
+                 use site settings
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
 .. ucontroller:: Core Switch Services Setup
-  :key:   Devices --> Switch --> Properties --> Config --> Services
-  :names: VLAN,
-          › Management VLAN,
-          › Spanning Tree,
-          › Priority,
-          Security,
-          › ☐,
-          SNMP,
-          › Location,
-          › Contact
-  :data:  ,
-          LAN,
-          RSTP,
-          32768,
-          ,
-          Enable 802.1x control,
-          ,
-          ,
-          ​ 
+  :key_title:    Devices --> Switch --> Properties --> Config --> Services
+  :option:       VLAN,
+                 › Management VLAN,
+                 › Spanning Tree,
+                 › Priority,
+                 Security,
+                 › ☐,
+                 SNMP,
+                 › Location,
+                 › Contact
+  :setting:      ,
+                 LAN,
+                 RSTP,
+                 32768,
+                 ,
+                 Enable 802.1x control,
+                 ,
+                 ,
+                 ​ 
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
 :cmdmenu:`Queue Changes --> Apply`
 
 Configure VLANs on Ports
 ************************
 .. ucontroller:: Configure Switch VLANs
-  :key:   Devices --> Switch --> Properties --> Ports
-  :names: Port 1,
-          › Name,
-          › Switch Port Profile,
-          Port 2,
-          › Name,
-          › Switch Port Profile,
-          Port 3,
-          › Name,
-          › Switch Port Profile,
-          Port 4,
-          › Name,
-          › Switch Port Profile,
-          Port 5-6,
-          › Name,
-          › Switch Port Profile,
-          Port 7,
-          › Name,
-          › Switch Port Profile,
-          › › Profile Overrides,
-          › › › PoE,
-          Port 8,
-          › Name,
-          › Switch Port Profile
-  :data:  ,
-          trunk,
-          All,
-          ,
-          disable,
-          Disabled,
-          ,
-          wired,
-          trunk-wired,
-          ,
-          server,
-          trunk-server,
-          ,
-          disable,
-          Disabled,
-          ,
-          management,
-          All,
-          ,
-          Off,
-          ,
-          wifi,
-          trunk-wifi
+  :key_title:    Devices --> Switch --> Properties --> Ports
+  :option:       Port 1,
+                 › Name,
+                 › Switch Port Profile,
+                 Port 2,
+                 › Name,
+                 › Switch Port Profile,
+                 Port 3,
+                 › Name,
+                 › Switch Port Profile,
+                 Port 4,
+                 › Name,
+                 › Switch Port Profile,
+                 Port 5-6,
+                 › Name,
+                 › Switch Port Profile,
+                 Port 7,
+                 › Name,
+                 › Switch Port Profile,
+                 › › Profile Overrides,
+                 › › › PoE,
+                 Port 8,
+                 › Name,
+                 › Switch Port Profile
+  :setting:      ,
+                 trunk,
+                 All,
+                 ,
+                 disable,
+                 Disabled,
+                 ,
+                 wired,
+                 trunk-wired,
+                 ,
+                 server,
+                 trunk-server,
+                 ,
+                 disable,
+                 Disabled,
+                 ,
+                 management,
+                 All,
+                 ,
+                 Off,
+                 ,
+                 wifi,
+                 trunk-wifi
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
-  .. warning::
-    Switch will re-provision for each port modification. Wait for provisioning
-    to complete before proceeding through each port.
+    .. warning::
+      Switch will re-provision for each port modification. Wait for provisioning
+      to complete before proceeding through each port.
 
 .. rubric:: References
 

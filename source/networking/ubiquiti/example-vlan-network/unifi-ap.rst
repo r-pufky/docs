@@ -17,16 +17,17 @@ Set Static AP IP
 * Connect to Edgerouter GUI @ http://10.1.1.1.
 * Reserve a static DHCP address for the switch.
 
-.. uctree:: Add Static Reservation for Switch Management
-  :key:   Services --> DHCP Server --> Management --> Action --> Leases
-  :names: Map Static IP,
-          › IP Address,
-          › Name
-  :data:  ,
-          {AP IP},
-          {AP NAME}
+.. uctree::   Add Static Reservation for Switch Management
+  :key_title: Services --> DHCP Server --> Management --> Action --> Leases
+  :option:    Map Static IP,
+              › IP Address,
+              › Name
+  :setting:   ,
+              {AP IP},
+              {AP NAME}
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
 Configure Unifi AP
 ******************
@@ -40,30 +41,32 @@ Configure Unifi AP
 :cmdmenu:`Devices --> AP --> Adopt`
 
 .. ucontroller:: General Switch Setup
-  :key:   Devices --> Switch --> Properties --> Config --> General
-  :names: Alias,
-          LED
-  :data:  {AP NAME},
-          use site settings
+  :key_title:    Devices --> Switch --> Properties --> Config --> General
+  :option:       Alias,
+                 LED
+  :setting:      {AP NAME},
+                 use site settings
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
-.. ucontroller:: Set Static Switch IP.
-  :key:   Devices --> Switch --> Properties --> Config --> Network
-  :names: Configure IP,
-          › IP Address,
-          › Preferred DNS,
-          › Subnet Mask,
-          › Gateway,
-          › DNS Suffix
-  :data:  Static,
-          {AP IP},
-          10.1.1.1,
-          255.255.255.0,
-          10.1.1.1,
-          {YOUR DOMAIN}
+.. ucontroller:: Set Static Switch IP
+  :key_title:    Devices --> Switch --> Properties --> Config --> Network
+  :option:       Configure IP,
+                 › IP Address,
+                 › Preferred DNS,
+                 › Subnet Mask,
+                 › Gateway,
+                 › DNS Suffix
+  :setting:      Static,
+                 {AP IP},
+                 10.1.1.1,
+                 255.255.255.0,
+                 10.1.1.1,
+                 {YOUR DOMAIN}
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
   .. note::
     :cmdmenu:`Queue Changes --> Apply`
@@ -72,19 +75,21 @@ Configure Unifi AP
     * Ensure switch is pingable. ``ping {AP IP}``.
     * Apply any firmware updates if needed.
 
-.. ucontroller:: Set WLAN Group.
-  :key:   Devices --> AP --> Properties --> Config --> WLANS
-  :names: WLAN Group
-  :data:  wifi
+.. ucontroller:: Set WLAN Group
+  :key_title:    Devices --> AP --> Properties --> Config --> WLANS
+  :option:       WLAN Group
+  :setting:      wifi
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
-.. ucontroller:: Set Management VLAN.
-  :key:   Devices --> AP --> Properties --> Config --> Services --> VLAN
-  :names: Management VLAN
-  :data:  LAN
+.. ucontroller:: Set Management VLAN
+  :key_title:    Devices --> AP --> Properties --> Config --> Services --> VLAN
+  :option:       Management VLAN
+  :setting:      LAN
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
 Confirm Wireless Network Working
 ********************************

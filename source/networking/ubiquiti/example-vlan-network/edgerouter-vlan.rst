@@ -33,46 +33,49 @@ Basic Setup Wizard
 ******************
 Basic Setup (Basic Setup is the same as *WAN+2LAN2*).
 
-.. uctree:: Configure WAN / Internet port.
-  :key:    Internet (eth3/SFP)
-  :names:  ☑,
-           › Address,
-           › Gateway,
-           › DNS,
-           ☐,
-           ☑,
-           ☐,
-           ☐
-  :data:   Static IP,
-           {YOUR PUBLIC IP} / {PUBLIC IP NETMASK},
-           {YOUR ISP GATEWAY},
-           1.1.1.1,
-           Internet connection is on VLAN,
-           Enable the default firewall,
-           Enable DHCPv6 Prefix Delegation,
-           Bridge LAN interfaces into a single network
+.. uctree::   Configure WAN / Internet port
+  :key_title: Internet (eth3/SFP)
+  :option:    ☑,
+              › Address,
+              › Gateway,
+              › DNS,
+              ☐,
+              ☑,
+              ☐,
+              ☐
+  :setting:   Static IP,
+              {YOUR PUBLIC IP} / {PUBLIC IP NETMASK},
+              {YOUR ISP GATEWAY},
+              1.1.1.1,
+              Internet connection is on VLAN,
+              Enable the default firewall,
+              Enable DHCPv6 Prefix Delegation,
+              Bridge LAN interfaces into a single network
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
-.. uctree:: Configure LAN Management Ports.
-  :key:    LAN Ports (eth2)
-  :names:  Address
-  :data:   192.168.2.1 / 255.255.255.0
+.. uctree::   Configure LAN Management Ports
+  :key_title: LAN Ports (eth2)
+  :option:    Address
+  :setting:   192.168.2.1 / 255.255.255.0
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
-  .. note::
-    This will become static management port for the router, in case anything
-    happens.
+    .. note::
+      This will become static management port for the router, in case anything
+      happens.
 
-.. uctree:: Configure New Admin User.
-  :key:   User Setup
-  :names: Username,
-          Password
-  :data:  {USERNAME},
-          {PASSWORD}
+.. uctree::   Configure New Admin User
+  :key_title: User Setup
+  :option:    Username,
+              Password
+  :setting:   {USERNAME},
+              {PASSWORD}
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
 Apply and reboot router.
 
@@ -86,53 +89,57 @@ Setup VLANs on eth0
 #. Set laptop DHCP. Connect to *eth2*.
 #. Connect to Edgerouter GUI @ http://192.168.1.1.
 
-.. uctree:: Configure Host and Domain.
-  :key:   Management Settings --> System
-  :names: Host Name,
-          Domain Name,
-          ☐
-  :data:  {ROUTER HOSTNAME},
-          {YOUR DOMAIN},
-          Ubntu Discovery
+.. uctree::   Configure Host and Domain
+  :key_title: Management Settings --> System
+  :option:    Host Name,
+              Domain Name,
+              ☐
+  :setting:   {ROUTER HOSTNAME},
+              {YOUR DOMAIN},
+              Ubntu Discovery
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
-.. uctree:: Configure SSH Server.
-  :key:   Management Settings --> SSH Server
-  :names: ☑,
-          Port
-  :data:  Enable,
-          {SSH PORT}
+.. uctree::   Configure SSH Server
+  :key_title: Management Settings --> SSH Server
+  :option:    ☑,
+              Port
+  :setting:   Enable,
+              {SSH PORT}
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
-.. uctree:: Define Management Network on Interfaces.
-  :key:   Dashboard --> eth0 --> Actions --> Config
-  :names: Address,
-          Address
-  :data:  Manually define IP address,
-          10.1.1.1/24
+.. uctree::   Define Management Network on Interfaces
+  :key_title: Dashboard --> eth0 --> Actions --> Config
+  :option:    Address,
+              Address
+  :setting:   Manually define IP address,
+              10.1.1.1/24
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
 .. important::
   This handles untagged traffic coming into the router; this is the
   :term:`Management VLAN` network.
 
-.. uctree:: Add Wired Network VLAN.
-  :key:   Dashboard --> Add Interface --> Add VLAN
-  :names: VLANID,
-          Interface,
-          Description,
-          Address,
-          Address
-  :data:  2,
-          eth0,
-          {VLAN DESCRIPTION},
-          Manually define IP address,
-          10.2.2.1/24
+.. uctree::   Add Wired Network VLAN
+  :key_title: Dashboard --> Add Interface --> Add VLAN
+  :option:    VLANID,
+              Interface,
+              Description,
+              Address,
+              Address
+  :setting:   2,
+              eth0,
+              {VLAN DESCRIPTION},
+              Manually define IP address,
+              10.2.2.1/24
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
 .. warning::
   Add all VLANS using the :ref:`VLAN Table <vlan-table>` to *eth0*.
@@ -142,26 +149,27 @@ Setup VLANs on eth0
 Setup DHCP & DNS for VLANs
 **************************
 
-.. uctree:: Add DHCP Server for Each Network.
-  :key:   Services --> DHCP Server --> Add DHCP Server
-  :names: DHCP Name,
-          Subnet,
-          Range Start,
-          Range End,
-          Router,
-          DNS 1,
-          Domain,
-          Domain
-  :data:  Wired,
-          10.2.2.0/24,
-          10.2.2.10,
-          10.2.2.240,
-          10.2.2.1,
-          10.2.2.1,
-          {YOUR DOMAIN},
-          ☑ Enable
+.. uctree::   Add DHCP Server for Each Network
+  :key_title: Services --> DHCP Server --> Add DHCP Server
+  :option:    DHCP Name,
+              Subnet,
+              Range Start,
+              Range End,
+              Router,
+              DNS 1,
+              Domain,
+              Domain
+  :setting:   Wired,
+              10.2.2.0/24,
+              10.2.2.10,
+              10.2.2.240,
+              10.2.2.1,
+              10.2.2.1,
+              {YOUR DOMAIN},
+              ☑ Enable
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
 .. warning::
   Add DHCP for all VLANS. For the *management* DHCP server, set the *Unifi

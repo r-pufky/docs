@@ -123,7 +123,8 @@ git hub, or submit a CL :)
   :includehidden:
   :maxdepth: -1
 
-  Windows 10 <operating-systems/windows/10/index>
+  Xenserver / XCP-NP <virtualization/hypervisors/xenserver-xcpng/index>
+  KVM <virtualization/hypervisors/kvm/index>
 
 .. toctree::
   :caption: Containerization

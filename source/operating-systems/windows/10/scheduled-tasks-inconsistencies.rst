@@ -22,19 +22,23 @@ successful unlock events will have an ID of **4801**, and event login failures
 will have an ID of **4800**. The unlock event will trigger at screen unlock as
 well as logging into the machine.
 
-.. wgpolicy:: enable logon logoff events policy policy
-  :key:   Computer Configuration -->
-          Windows Settings -->
-          Security Settings -->
-          Advanced Audit Policy Configuration -->
-          System Audit Policies - Local Group Policy Object -->
-          Logon/Logoff -->
-          Audit Other Login/Logoff Events
-  :names: Success,
-          Failure
-  :data:  Enabled,
-          Enabled
+.. wgpolicy:: Enable logon logoff events policy
+  :key_title: Computer Configuration -->
+              Windows Settings -->
+              Security Settings -->
+              Advanced Audit Policy Configuration -->
+              System Audit Policies - Local Group Policy Object -->
+              Logon/Logoff -->
+              Audit Other Login/Logoff Events
+  :option:    ☑,
+              ☑,
+              ☑
+  :setting:   Configure the following audit events,
+              Success,
+              Failure
+  :admin:
   :no_section:
+  :no_caption:
 
 .. _scheduled-tasks-event-trigger:
 
@@ -45,82 +49,88 @@ Setup triggered events to refresh GPG agent on screen unlocks.
 See :ref:`scheduled-tasks-powershell-create-event` for a powershell script that
 does this for you.
 
-.. wtschedule:: manually add general section schedule
-  :key:   action --> create task --> general
-  :names: Name,
-          Description,
-          Check,
-          Configure for,
-          Check
-  :data:  GpgAgentRefreshUnlock,
-          Restarts GPG agent on windows unlock,
-          Run only when user is logged on,
-          Windows 10,
-          Hidden
+.. wtschedule:: Manually add general section schedule
+  :key_title:   Action --> Create Task --> General
+  :option:      Name,
+                Description,
+                Check,
+                Configure for,
+                Check
+  :setting:     GpgAgentRefreshUnlock,
+                Restarts GPG agent on windows unlock,
+                Run only when user is logged on,
+                Windows 10,
+                Hidden
   :no_section:
+  :no_caption:
 
-.. wtschedule:: manually add triggers section schedule
-  :key:   triggers --> new
-  :names: Begin the task,
-          Check,
-          Log,
-          Source,
-          Event ID,
-          Check
-  :data:  On an event,
-          Basic,
-          Security,
-          Microsoft Windows security auditing,
-          4801,
-          Enabled
+.. wtschedule:: Manually add triggers section schedule
+  :key_title:   Triggers --> New
+  :option:      Begin the task,
+                Check,
+                Log,
+                Source,
+                Event ID,
+                Check
+  :setting:     On an event,
+                Basic,
+                Security,
+                Microsoft Windows security auditing,
+                4801,
+                Enabled
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
-.. wtschedule:: manually add actions section gpg kill schedule
-  :key:   actions --> new
-  :names: Action,
-          Program/Script,
-          Add arguments (optional)
-  :data:  Start a program,
-          gpgconf,
-          --kill gpg-agent
+.. wtschedule:: Manually add actions section gpg kill schedule
+  :key_title:   Actions --> New
+  :option:      Action,
+                Program/Script,
+                Add arguments (optional)
+  :setting:     Start a program,
+                gpgconf,
+                --kill gpg-agent
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
-.. wtschedule:: manually add actions section gpg agent schedule
-  :key:   actions --> new
-  :names: Action,
-          Program/Script,
-          Add arguments (optional)
-  :data:  Start a program,
-          gpg-connect-agent,
-          /bye
+.. wtschedule:: Manually add actions section gpg agent schedule
+  :key_title:   Actions --> New
+  :option:      Action,
+                Program/Script,
+                Add arguments (optional)
+  :setting:     Start a program,
+                gpg-connect-agent,
+                /bye
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
     .. note::
       ``gpgconf --kill gpg-agent`` action should always be executed before
       restarting the connect agent.
 
-.. wtschedule:: manually add conditions section schedule
-  :key:   conditions
-  :names: *
-  :data:  ☐
+.. wtschedule:: Manually add conditions section schedule
+  :key_title:   Conditions
+  :option:      *
+  :setting:     ☐
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
-.. wtschedule:: manually add settings section schedule
-  :key:   settings
-  :names: Allow task to be run on demand,
-          Stop the task if it runs longer than,
-          Stop the task if it runs longer than,
-          All Remaining
-  :data:  ☑,
-          ☑,
-          3 days,
-          ☐
+.. wtschedule:: Manually add settings section schedule
+  :key_title:   Settings
+  :option:      Allow task to be run on demand,
+                Stop the task if it runs longer than,
+                Stop the task if it runs longer than,
+                All Remaining
+  :setting:     ☑,
+                ☑,
+                3 days,
+                ☐
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
 This can be verified to work by restarting your machine or killing the current
 agent with ``gpgconf --kill gpg-agent`` and locking/unlocking your screen then
@@ -203,22 +213,24 @@ this**.
 
   CreateObject("Wscript.Shell").Run "" & WScript.Arguments(0) & "", 0, False
 
-.. wtschedule:: use wrapper script for gpg conf task
-  :key:   GPGAgentRefreshUnlock --> actions --> edit --> Start a program
-  :names: Program/Script,
-          Add arguments
-  :data:  quiet_launcher.vbs,
-          gpgconf --kill gpg-agent
+.. wtschedule:: Use wrapper script for GPG conf task
+  :key_title:   GPGAgentRefreshUnlock --> Actions --> Edit --> Start a Program
+  :option:      Program/Script,
+                Add arguments
+  :setting:     quiet_launcher.vbs,
+                gpgconf --kill gpg-agent
   :no_section:
+  :no_caption:
 
-.. wtschedule:: use wrapper script for gpg connect task
-  :key:   GPGAgentRefreshUnlock --> actions --> edit --> Start a program
-  :names: Program/Script,
-          Add arguments
-  :data:  quiet_launcher.vbs,
-          gpg-connect-agent /bye
+.. wtschedule:: Use wrapper script for GPG connect task
+  :key_title:   GPGAgentRefreshUnlock --> actions --> edit --> Start a program
+  :option:      Program/Script,
+                Add arguments
+  :setting:     quiet_launcher.vbs,
+                gpg-connect-agent /bye
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
 Demonstration of Scheduled Task at Login Failure
 ************************************************

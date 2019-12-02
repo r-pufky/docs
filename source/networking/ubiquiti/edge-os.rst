@@ -24,11 +24,12 @@ Creating Duplicate DNS / Host Entries
 *************************************
 Effectively cnames for IP lookups without DNS.
 
-.. uctree:: Add Static Host.
-  :key:   system --> static-host-mapping --> host-name --> add
-  :names: host-name
-  :data:  {FQDN HOSTNAME}
+.. uctree::   Add Static Host
+  :key_title: System --> static-host-mapping --> host-name --> Add
+  :option:    host-name
+  :setting:   {FQDN HOSTNAME}
   :no_section:
+  :no_caption:
 
     .. note::
       :cmdmenu:`preview` and :cmdmenu:`Apply`. When doing the initial leaf
@@ -36,16 +37,17 @@ Effectively cnames for IP lookups without DNS.
       an alias or network address yet. This is normal.
 
 
-.. uctree:: Add Static Host.
-  :key:    system --> static-host-mapping --> host-name --> {FQDN HOSTNAME}
-  :names:  alias,
-           alias,
-           inet
-  :data:   {FQDN HOSTNAME},
-           {ALIAS HOSTNAME},
-           {HOST NETWORK ADDRESS}
+.. uctree::   Add Static Host
+  :key_title: System --> static-host-mapping --> host-name --> {FQDN HOSTNAME}
+  :option:    alias,
+              alias,
+              inet
+  :setting:   {FQDN HOSTNAME},
+              {ALIAS HOSTNAME},
+              {HOST NETWORK ADDRESS}
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
     .. note::
       :cmdmenu:`preview` and :cmdmenu:`Apply`. Aliases should all resolve to the
@@ -68,19 +70,20 @@ need to do this for every subnet on the network.
 This may be used for *faking* subdomains, assuming there is a wildcard DNS setup
 on your Registrar and it resolves to your public IP.
 
-.. ufirewall:: Hairpin NAT (Internal Only NAT Reflection).
-  :key:   nat --> add destination nat rule
-  :names: Inbound Interface,
-          Translations Address,
-          Translations Port,
-          Destination Address,
-          Destination Port
-  :data:  {INTERFACE},
-          {INTERNAL DESTINATION IP},
-          {INTERNAL DESTINATION PORT},
-          {EXTERNAL IP},
-          {EXTERNAL PORT}
+.. ufirewall:: Hairpin NAT (Internal Only NAT Reflection)
+  :key_title:  NAT --> Add Destination NAT Rule
+  :option:     Inbound Interface,
+               Translations Address,
+               Translations Port,
+               Destination Address,
+               Destination Port
+  :setting:    {INTERFACE},
+               {INTERNAL DESTINATION IP},
+               {INTERNAL DESTINATION PORT},
+               {EXTERNAL IP},
+               {EXTERNAL PORT}
   :no_section:
+  :no_caption:
 
     .. note::
       Do not use WAN interface for the *Inbound Interface*. Defaults for
@@ -118,11 +121,12 @@ DNS Hostnames not Resolving
 DHCP server on the edgerouter needs to update the hosts file when new IP's are
 issued.
 
-.. uctree:: Enable Dynamic DNS.
-  :key:    service --> dhcp-server --> dynamic-dns-update
-  :names:  Enable
-  :data:   true
+.. uctree::   Enable Dynamic DNS
+  :key_title: Service --> dhcp-server --> dynamic-dns-update
+  :option:    Enable
+  :setting:   true
   :no_section:
+  :no_caption:
 
 Allow Subnet (Wifi) Traffic `Internet Only Access`_
 ***************************************************
@@ -130,26 +134,28 @@ May be applied to any subnet that should only have Internet access.
 
 Create network group that contains all private IPv4 addresses.
 
-.. ufirewall:: Define RFC1918 Private Address Group.
-  :key:   firewall/nat groups --> add group
-  :names: Name,
-          Description,
-          Group Type
-  :data:  RFC1918,
-          Private IPv4 address space,
-          ☑ Network Group
+.. ufirewall:: Define RFC1918 Private Address Group
+  :key_title:  Firewall/NAT Groups --> Add Group
+  :option:     Name,
+               Description,
+               Group Type
+  :setting:    RFC1918,
+               Private IPv4 address space,
+               ☑ Network Group
   :no_section:
+  :no_caption:
 
-.. ufirewall:: Define Networks within RFC 1918.
-  :key:   firewall/nat groups --> RFC1918 --> actions --> config
-  :names: Network,
-          Network,
-          Network
-  :data:  192.168.0.0/16,
-          172.16.0.0/12,
-          10.0.0.0/8
+.. ufirewall:: Define Networks within RFC 1918
+  :key_title:  Firewall/NAT Groups --> RFC1918 --> Actions --> Config
+  :option:     Network,
+               Network,
+               Network
+  :setting:    192.168.0.0/16,
+               172.16.0.0/12,
+               10.0.0.0/8
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
     .. note::
       Use :cmdmenu:`add new` to add each individual network. Be sure to
@@ -157,94 +163,129 @@ Create network group that contains all private IPv4 addresses.
 
 Prevent Wifi Traffic from Reaching Internal Networks
 ====================================================
-.. ufirewall:: WIFI_IN Creation.
-  :key:   firewall policies --> add ruleset
-  :names: Name,
-          Description,
-          Default action,
-          Default Log
-  :data:  WIFI_IN,
-          Wifi to LAN,
-          ☑ Accept,
-          ☐
+.. ufirewall:: WIFI_IN Creation
+  :key_title:  Firewall Policies --> Add Ruleset
+  :option:     Name,
+               Description,
+               Default action,
+               Default Log
+  :setting:    WIFI_IN,
+               Wifi to LAN,
+               ☑ Accept,
+               ☐
   :no_section:
+  :no_caption:
 
-.. ufirewall:: Drop Wifi to LAN Basic.
-  :key:   firewall policies --> WIFI_IN --> actions --> edit ruleset --> add new rule --> basic
-  :names: Description,
-          Action,
-          Protocol
-  :data:  Drop Wifi to LAN,
-          ☑ Drop,
-          ☑ All protocols
+.. ufirewall:: Drop Wifi to LAN Basic
+  :key_title:  Firewall Policies -->
+               WIFI_IN -->
+               Actions -->
+               Edit Ruleset -->
+               Add New Rule -->
+               Basic
+  :option:     Description,
+               Action,
+               Protocol
+  :setting:    Drop Wifi to LAN,
+               ☑ Drop,
+               ☑ All protocols
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
-.. ufirewall:: Drop Wifi to LAN Destination.
-  :key:   firewall policies --> WIFI_IN --> actions --> edit ruleset --> Drop Wifi to LAN --> actions --> destination
-  :names: Network Group
-  :data:  Private IPv4 address space
+.. ufirewall:: Drop Wifi to LAN Destination
+  :key_title:  Firewall Policies -->
+               WIFI_IN -->
+               Actions -->
+               Edit Ruleset -->
+               Drop Wifi to LAN -->
+               Actions -->
+               Destination
+  :option:     Network Group
+  :setting:    Private IPv4 address space
   :no_section:
-  :hide_gui:
+  :no_launch:
 
     .. note::
       This can be done in the previous step by switching tabs.
 
-.. ufirewall:: Drop Wifi to LAN Interface.
-  :key:   firewall policies --> WIFI_IN --> actions --> interfaces
-  :names: Interface,
-          Direction
-  :data:  {WIFI INTERFACE},
-          in
+.. ufirewall:: Drop Wifi to LAN Interface
+  :key_title:  Firewall Policies -->
+               WIFI_IN -->
+               Actions -->
+               Interfaces
+  :option:     Interface,
+               Direction
+  :setting:    {WIFI INTERFACE},
+               in
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
-.. warning::
-  Ensure Interface is set to the appropriate Wifi interface or VLAN.
+  .. warning::
+    Ensure Interface is set to the appropriate Wifi interface or VLAN.
 
 Allow DNS Traffic to Router
 ===========================
-.. ufirewall:: Allow only DNS Traffic to Router.
-  :key:   firewall policies --> add ruleset
-  :names: Name,
-          Description,
-          Default action,
-          Default Log
-  :data:  WIFI_LOCAL,
-          Wifi to Router,
-          ☑ Drop,
-          ☐
+.. ufirewall:: Allow only DNS Traffic to Router
+  :key_title:  Firewall Policies --> Add Ruleset
+  :option:     Name,
+               Description,
+               Default action,
+               Default Log
+  :setting:    WIFI_LOCAL,
+               Wifi to Router,
+               ☑ Drop,
+               ☐
   :no_section:
+  :no_caption:
 
-.. ufirewall:: Drop Wifi to LAN Basic.
-  :key:   firewall policies --> WIFI_LOCAL --> actions --> edit ruleset --> add new rule --> basic
-  :names: Description,
-          Action,
-          Protocol
-  :data:  Allow DNS,
-          ☑ Accept,
-          ☑ Both TCP and UDP
+.. ufirewall:: Drop Wifi to LAN Basic
+  :key_title:  Firewall Policies -->
+               WIFI_LOCAL -->
+               Actions -->
+               Edit Ruleset -->
+               Add New Rule -->
+               Basic
+  :option:     Description,
+               Action,
+               Protocol
+  :setting:    Allow DNS,
+               ☑ Accept,
+               ☑ Both TCP and UDP
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
-.. ufirewall:: Drop Wifi to LAN Destination.
-  :key:   firewall policies --> WIFI_LOCAL --> actions --> edit ruleset --> Drop Wifi to LAN --> actions --> destination
-  :names: Destination
-  :data:  53
+.. ufirewall:: Drop Wifi to LAN Destination
+  :key_title:  Firewall Policies -->
+               WIFI_LOCAL -->
+               Actions -->
+               Edit Ruleset -->
+               Drop Wifi to LAN -->
+               Actions -->
+               Destination
+  :option:     Destination
+  :setting:    53
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
     .. note::
       This can be done in the previous step by switching tabs.
 
-.. ufirewall:: Drop Wifi to LAN Interface.
-  :key:   firewall policies --> WIFI_LOCAL --> actions --> interfaces
-  :names: Interface,
-          Direction
-  :data:  {WIFI INTERFACE},
-          local
+.. ufirewall:: Drop Wifi to LAN Interface
+  :key_title:  Firewall Policies -->
+               WIFI_LOCAL -->
+               Actions -->
+               Interfaces
+  :option:     Interface,
+               Direction
+  :setting:    {WIFI INTERFACE},
+               local
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
     .. warning::
       Ensure Interface is set to the appropriate Wifi interface or VLAN.
@@ -261,31 +302,32 @@ server.
 
 Add a `Destination NAT Rule`_ for each interface serving internal networks:
 
-.. ufirewall:: Captive DNS Destination Setup.
-  :key:   nat --> add destination nat rule
-  :names: Description,
-          Enable,
-          Inbound Interface,
-          Translations Address,
-          Translations Port,
-          Exclude from NAT,
-          Enable Logging,
-          Protocol,
-          Source Address,
-          Destination Address,
-          Destination Port
-  :data:  {NETWORK} Destination Captive DNS,
-          ☑,
-          {INTERFACE},
-          {CUSTOM DNS SERVER IP},
-          53,
-          ☐,
-          ☐,
-          ☑ Both TCP and UDP,
-          {CIDR NETWORK RANGE},
-          !{CUSTOM DNS SERVER IP},
-          53
+.. ufirewall:: Captive DNS Destination Setup
+  :key_title:  NAT --> Add Destination NAT Rule
+  :option:     Description,
+               Enable,
+               Inbound Interface,
+               Translations Address,
+               Translations Port,
+               Exclude from NAT,
+               Enable Logging,
+               Protocol,
+               Source Address,
+               Destination Address,
+               Destination Port
+  :setting:    {NETWORK} Destination Captive DNS,
+               ☑,
+               {INTERFACE},
+               {CUSTOM DNS SERVER IP},
+               53,
+               ☐,
+               ☐,
+               ☑ Both TCP and UDP,
+               {CIDR NETWORK RANGE},
+               !{CUSTOM DNS SERVER IP},
+               53
   :no_section:
+  :no_caption:
 
     .. note::
       Note the **!** to negate matching for destination address.
@@ -295,29 +337,30 @@ enables appropriate transparent DNS lookups (Clients will think that they are
 resolving from the DNS they requested, not the actual DNS server serving
 responses):
 
-.. ufirewall:: Captive DNS Masquerade Setup.
-  :key:   nat --> add source nat rule
-  :names: Description,
-          Enable,
-          Outbound Interface,
-          Translation,
-          Exclude from NAT,
-          Enable Logging,
-          Protocol,
-          Source Address,
-          Destination Address,
-          Destination Port
-  :data:  {NETWORK} Masquerade Captive DNS,
-          ☑,
-          {INTERFACE},
-          ☑ Use Masquerade,
-          ☐,
-          ☐,
-          ☑ Both TCP and UDP,
-          {CIDR NETWORK RANGE},
-          {CUSTOM DNS SERVER IP},
-          53
+.. ufirewall:: Captive DNS Masquerade Setup
+  :key_title:  NAT --> Add Source NAT Rule
+  :option:     Description,
+               Enable,
+               Outbound Interface,
+               Translation,
+               Exclude from NAT,
+               Enable Logging,
+               Protocol,
+               Source Address,
+               Destination Address,
+               Destination Port
+  :setting:    {NETWORK} Masquerade Captive DNS,
+               ☑,
+               {INTERFACE},
+               ☑ Use Masquerade,
+               ☐,
+               ☐,
+               ☑ Both TCP and UDP,
+               {CIDR NETWORK RANGE},
+               {CUSTOM DNS SERVER IP},
+               53
   :no_section:
+  :no_caption:
 
 Captive DNS Exceptions
 ======================
@@ -326,49 +369,55 @@ Allow for specific client exceptions to DNAT rules. These should be an
 
 Create a *Source Address Group* to manage all clients for the exception:
 
-.. ufirewall:: Create Captive DNS Exceptions Group.
-  :key:   firewall/nat groups --> add group
-  :names: Name,
-          Description,
-          Group Type
-  :data:  {NETWORK}-dnat-exception-group,
-          Disable DNAT / Captive DNS for exceptions,
-          ☑ Address Group
+.. ufirewall:: Create Captive DNS Exceptions Group
+  :key_title:  Firewall/NAT Groups --> Add Group
+  :option:     Name,
+               Description,
+               Group Type
+  :setting:    {NETWORK}-dnat-exception-group,
+               Disable DNAT / Captive DNS for exceptions,
+               ☑ Address Group
   :no_section:
+  :no_caption:
 
-.. ufirewall:: Add Clients to Exceptions Group.
-  :key: firewall/nat groups --> {NETWORK}-dnat-exception-group --> actions --> edit
-  :names: Address
-  :data: {CLIENT IP}
+.. ufirewall:: Add Clients to Exceptions Group
+  :key_title:  Firewall/NAT Groups -->
+               {NETWORK}-dnat-exception-group -->
+               Actions -->
+               Edit
+  :option:     Address
+  :setting:    {CLIENT IP}
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
 Add an additional `Destination NAT Rule`_ for each interface serving internal
 networks:
 
-.. ufirewall:: Captive DNS Destination Exceptions Setup.
-  :key:   nat --> add destination nat rule
-  :names: Description,
-          Enable,
-          Inbound Interface,
-          Translations Address,
-          Translations Port,
-          Exclude from NAT,
-          Enable Logging,
-          Protocol,
-          Source Address,
-          Destination Port
-  :data:  {NETWORK} Destination Captive DNS Exceptions,
-          ☑,
-          {INTERFACE},
-          {ROUTER DNS SERVER IP},
-          53,
-          ☐,
-          ☐,
-          ☑ Both TCP and UDP,
-          {NETWORK}-dnat-exception-group,
-          53
+.. ufirewall:: Captive DNS Destination Exceptions Setup
+  :key_title:  NAT --> Add Destination NAT Rule
+  :option:     Description,
+               Enable,
+               Inbound Interface,
+               Translations Address,
+               Translations Port,
+               Exclude from NAT,
+               Enable Logging,
+               Protocol,
+               Source Address,
+               Destination Port
+  :setting:    {NETWORK} Destination Captive DNS Exceptions,
+               ☑,
+               {INTERFACE},
+               {ROUTER DNS SERVER IP},
+               53,
+               ☐,
+               ☐,
+               ☑ Both TCP and UDP,
+               {NETWORK}-dnat-exception-group,
+               53
   :no_section:
+  :no_caption:
 
     .. warning::
       Set rule above the captive DNS rule for the specific network for the

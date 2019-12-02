@@ -110,11 +110,16 @@ GUI
 Use :cmdmenu:`action` for all actions
 chain with '-->'
 
-cmdmenu: **all lowercase**. except:
+cmdmenu:
+
+#. GUI Options should appear as cased in UI.
+#. **Any** user typed actions should be all lowercase.
 
 * one component depth (e.g. Application Name)
 * Mouse action / shortcut.
 * cmdmenu in lists: no trailing period, unless combine with text.
+
+
 
 :cmdmenu:`System`
 

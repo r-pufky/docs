@@ -15,60 +15,62 @@ Connect to Unifi Controller @ http://localhost:8443.
   configuration.
 
 .. ucontroller:: Basic Unifi Controller Setup
-  :key:    Setup Wizard
-  :names:  Select your Country,
-           Select your Timezone,
-           › ☑
-  :data:   {COUNTRY},
-           {YOUR TIMEZONE},
-           Enable Auto Backup
+  :key_title:    Setup Wizard
+  :option:       Select your Country,
+                 Select your Timezone,
+                 › ☑
+  :setting:      {COUNTRY},
+                 {YOUR TIMEZONE},
+                 Enable Auto Backup
   :no_section:
-  :hide_gui:
-
+  :no_caption:
+  :no_launch:
 
 .. ucontroller:: Basic Unifi Controller Access Setup
-  :key:    Setup Wizard --> Controller Access
-  :names:  Admin Name,
-           Admin Email,
-           Admin Password,
-           Device Authentication,
-           Device Password
-  :data:   {ADMIN USER},
-           {EMAIL},
-           {ADMIN PW},
-           {DEVICE USER},
-           {DEVICE PW}
+  :key_title:    Setup Wizard --> Controller Access
+  :option:       Admin Name,
+                 Admin Email,
+                 Admin Password,
+                 Device Authentication,
+                 Device Password
+  :setting:      {ADMIN USER},
+                 {EMAIL},
+                 {ADMIN PW},
+                 {DEVICE USER},
+                 {DEVICE PW}
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
-  .. warning::
-    The *admin name* account is the `super admin`_ for the controller, meaning
-    that account can manage multiple sites as well as devices. The *device
-    authentication* account is used to manage physical devices via the UI or SSH
-    on that device.
+    .. warning::
+      The *admin name* account is the `super admin`_ for the controller, meaning
+      that account can manage multiple sites as well as devices. The *device
+      authentication* account is used to manage physical devices via the UI or
+      SSH on that device.
 
 Basic Controller Setup
 **********************
 .. ucontroller:: Basic Unifi Controller Setup
-  :key:    Settings --> Controller --> Controller Settings
-  :names:  Controller Name,
-           Controller Hostname/IP,
-           › ☐,
-           › ☑,
-           Store,
-           Support Messaging,
-           Real-time Updates in Web Browser,
-           › ☐
-  :data:   {CONTROLLER DNS NAME},
-           {CONTROLLER IP},
-           Override inform host with controller hostname/IP,
-           Make controller discoverable on L2 network,
-           Disable store for all users,
-           Disable live support for all users,
-           Automatically adapt rates of real-time updates,
-           Enable mail server
+  :key_title:    Settings --> Controller --> Controller Settings
+  :option:       Controller Name,
+                 Controller Hostname/IP,
+                 › ☐,
+                 › ☑,
+                 Store,
+                 Support Messaging,
+                 Real-time Updates in Web Browser,
+                 › ☐
+  :setting:      {CONTROLLER DNS NAME},
+                 {CONTROLLER IP},
+                 Override inform host with controller hostname/IP,
+                 Make controller discoverable on L2 network,
+                 Disable store for all users,
+                 Disable live support for all users,
+                 Automatically adapt rates of real-time updates,
+                 Enable mail server
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
 .. warning::
   L2 device discovery will help to adopt controllers which are not receiving a
@@ -77,66 +79,70 @@ Basic Controller Setup
   rely on DHCP or set inform.
 
 .. ucontroller:: Site Configuration
-  :key:   Settings --> Site --> Site Configuration
-  :names: Site Name,
-          Country,
-          Timezone
-  :data:  {YOUR SITE NAME},
-          {COUNTRY},
-          {LOCAL TIMEZONE}
+  :key_title:    Settings --> Site --> Site Configuration
+  :option:       Site Name,
+                 Country,
+                 Timezone
+  :setting:      {YOUR SITE NAME},
+                 {COUNTRY},
+                 {LOCAL TIMEZONE}
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
 .. ucontroller:: Service Configuration
-  :key:   Settings --> Site --> Services
-  :names: ☐,
-          ☑,
-          ☐,
-          ☐,
-          ☐,
-          ☑,
-          ☑,
-          ☐,
-          ☐
-  :data:  Advanced Features,
-          Automatically upgrade AP firmware,
-          Enable status LED,
-          Enable alert emails,
-          Enable periodic speed test every,
-          Enable connectivity monitor and wireless uplink,
-          Default gateway,
-          Enable remote Syslog server,
-          Enable Netconsole logging server
+  :key_title:    Settings --> Site --> Services
+  :option:       ☐,
+                 ☑,
+                 ☐,
+                 ☐,
+                 ☐,
+                 ☑,
+                 ☑,
+                 ☐,
+                 ☐
+  :setting:      Advanced Features,
+                 Automatically upgrade AP firmware,
+                 Enable status LED,
+                 Enable alert emails,
+                 Enable periodic speed test every,
+                 Enable connectivity monitor and wireless uplink,
+                 Default gateway,
+                 Enable remote Syslog server,
+                 Enable Netconsole logging server
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
-  .. warning::
-    Alerts and advanced logging disabled for initial setup, change these after
-    finishing configuration.
+    .. warning::
+      Alerts and advanced logging disabled for initial setup, change these after
+      finishing configuration.
 
 .. ucontroller:: Provider Capabilities
-  :key:   Settings --> Site --> Provider Capabilities
-  :names: Download,
-          Upload
-  :data:  1 Gbps,
-          1 Gbps
+  :key_title:    Settings --> Site --> Provider Capabilities
+  :option:       Download,
+                 Upload
+  :setting:      1 Gbps,
+                 1 Gbps
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
-  .. warning::
-    Upload/Download settings should be reflective of your Internet connection
-    for proper scaling of graphing data. It is *not* a throttle.
+    .. warning::
+      Upload/Download settings should be reflective of your Internet connection
+      for proper scaling of graphing data. It is *not* a throttle.
 
 .. ucontroller:: Device Authentication
-  :key:   Settings --> Site --> Device Authentication
-  :names: ☑,
-          Username,
-          Password
-  :data:  Enable SSH Authentication,
-          {DEVICE USER},
-          {DEVICE PW}
+  :key_title:    Settings --> Site --> Device Authentication
+  :option:       ☑,
+                 Username,
+                 Password
+  :setting:      Enable SSH Authentication,
+                 {DEVICE USER},
+                 {DEVICE PW}
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
 Apply changes.
 
@@ -145,101 +151,118 @@ VLAN Configuration
 Add all VLANS using the :ref:`VLAN Table <vlan-table>`.
 
 .. ucontroller:: Default LAN Network
-  :key:   Settings --> Networks --> LAN
-  :names: ☑,
-          ☑,
-          Gateway/Subnet,
-          Domain Name,
-          › ☐,
-          DHCP Server,
-          › ☐,
-          › ☐,
-          IPv6 Interface Type
-  :data:  Corporate,
-          LAN,
-          10.1.1.1/24,
-          {YOUR DOMAIN},
-          Enable IGMP Snooping,
-          None,
-          Enable DHCP gaurding,
-          Enable UPnP LAN,
-          None
+  :key_title:    Settings --> Networks --> LAN
+  :option:       ☑,
+                 ☑,
+                 Gateway/Subnet,
+                 Domain Name,
+                 › ☐,
+                 DHCP Server,
+                 › ☐,
+                 › ☐,
+                 IPv6 Interface Type
+  :setting:      Corporate,
+                 LAN,
+                 10.1.1.1/24,
+                 {YOUR DOMAIN},
+                 Enable IGMP Snooping,
+                 None,
+                 Enable DHCP gaurding,
+                 Enable UPnP LAN,
+                 None
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
-  .. warning::
-    This will be the default network when new devices are discovered before they
-    are adopted. This is also the untagged :term:`Management VLAN` network.
-    Configure with :term:`Management VLAN` settings.
+    .. warning::
+      This will be the default network when new devices are discovered before
+      they are adopted. This is also the untagged :term:`Management VLAN`
+      network. Configure with :term:`Management VLAN` settings.
 
 .. ucontroller:: Create All VLAN Networks
-  :key:   Settings --> Networks --> Create New Network
-  :names: Name,
-          ☑,
-          VLAN
-  :data:  Wired,
-          VLAN Only,
-          2
+  :key_title:    Settings --> Networks --> Create New Network
+  :option:       Name,
+                 ☑,
+                 VLAN
+  :setting:      Wired,
+                 VLAN Only,
+                 2
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
-  .. note::
-    Add all VLANS using the :ref:`VLAN Table <vlan-table>`. :term:`Management
-    VLAN` is not explicitly defined as a VLAN -- untagged traffic coming into
-    *eth0* IS management traffic.
+    .. note::
+      Add all VLANS using the :ref:`VLAN Table <vlan-table>`. :term:`Management
+      VLAN` is not explicitly defined as a VLAN -- untagged traffic coming into
+      *eth0* IS management traffic.
 
 Add Trunk Port Profiles
 ***********************
 .. ucontroller:: Add AP Wireless Trunk Port Profiles
-  :key:   Settings --> Profiles --> Switch Ports --> Add New Port Profile --> Create New Switch Port Profile
-  :names: Profile Name,
-          › POE,
-          Networks/VLANs,
-          › Native Network,
-          › Tagged Networks,
-          › Voice Network
-  :data:  trunk-wifi,
-          PoE/PoE+,
-          ,
-          LAN,
-          wifi,
-          None
+  :key_title:    Settings -->
+                 Profiles -->
+                 Switch Ports -->
+                 Add New Port Profile -->
+                 Create New Switch Port Profile
+  :option:       Profile Name,
+                 › POE,
+                 Networks/VLANs,
+                 › Native Network,
+                 › Tagged Networks,
+                 › Voice Network
+  :setting:      trunk-wifi,
+                 PoE/PoE+,
+                 ,
+                 LAN,
+                 wifi,
+                 None
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
 .. ucontroller:: Add Wired Trunk Port Profiles
-  :key:   Settings --> Profiles --> Switch Ports --> Add New Port Profile --> Create New Switch Port Profile
-  :names: Profile Name,
-          › POE,
-          Networks/VLANs,
-          › Native Network,
-          › Tagged Networks,
-          › Voice Network
-  :data:  trunk-wired,
-          Off,
-          ,
-          LAN,
-          wifi wired,
-          None
+  :key_title:    Settings -->
+                 Profiles -->
+                 Switch Ports -->
+                 Add New Port Profile -->
+                 Create New Switch Port Profile
+  :option:       Profile Name,
+                 › POE,
+                 Networks/VLANs,
+                 › Native Network,
+                 › Tagged Networks,
+                 › Voice Network
+  :setting:      trunk-wired,
+                 Off,
+                 ,
+                 LAN,
+                 wifi wired,
+                 None
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
 .. ucontroller:: Add Server Trunk Port Profiles
-  :key:   Settings --> Profiles --> Switch Ports --> Add New Port Profile --> Create New Switch Port Profile
-  :names: Profile Name,
-          › POE,
-          Networks/VLANs,
-          › Native Network,
-          › Tagged Networks,
-          › Voice Network
-  :data:  trunk-server,
-          Off,
-          ,
-          LAN,
-          server infrastructure,
-          None
+  :key_title:    Settings -->
+                 Profiles -->
+                 Switch Ports -->
+                 Add New Port Profile -->
+                 Create New Switch Port Profile
+  :option:       Profile Name,
+                 › POE,
+                 Networks/VLANs,
+                 › Native Network,
+                 › Tagged Networks,
+                 › Voice Network
+  :setting:      trunk-server,
+                 Off,
+                 ,
+                 LAN,
+                 server infrastructure,
+                 None
   :no_section:
-  :hide_gui:
+  :no_caption:
+  :no_launch:
 
 .. rubric:: References
 

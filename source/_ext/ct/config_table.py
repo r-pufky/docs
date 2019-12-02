@@ -8,17 +8,17 @@ from docutils.parsers.rst.directives.tables import Table
 
 
 class ConfigTableData(object):
-  """Structure to hold MS table data and provide convience methods.
+  """Structure to hold config table data and provide convience methods.
 
   Attributes:
-    LENGTH_MISMATCH: String detailed explanation of data mismatch.
-    key: String whitespace striped main key.
-    data: List of Lists containing string data to display in table. Order is
-        preserved. Minimum one list.
+    LENGTH_MISMATCH: String explanation of data mismatch.
+    key: String whitespace striped text for 'KEY_TITLE:'. See ConfigTable.
+    data: List of Lists containing string data to display in table per column.
+        Order is preserved. Minimum one list, all lists need at least one
+        element.
     title: nodes.title object containing parsed directive arguments as title.
-    cols: Integer number of colums for table.
-    use_gui_key: Boolean True to render table key as a menuselection role.
-    key_mod: String title modifier for GUI key display.
+    key_title_gui: Boolean True to render table key as a menuselection role.
+    key_title_admin_text: String title modifier for GUI key display.
   """
   LENGTH_MISMATCH = ('Abstract ConfigTableData length mismatch error. You '
                      'should not see this.')
@@ -27,30 +27,28 @@ class ConfigTableData(object):
                key=None,
                data=None,
                title=None,
-               cols=3,
-               gui=False,
-               key_mod=None):
+               key_title_gui=False,
+               key_title_admin_text=None):
     """Initialize config table data structure with data or defaults.
 
     Args:
-      key: String directive option key. Default: None.
-      data: List of Lists containing string data to display in table.
-          Order is preserved. Minimum one list.
+      key_title: String directive option key. Default: None.
+      data: List of Lists containing string data to display in table (each list
+          is rendered as a column). Order is preserved. Minimum one list.
       title: nodes.title object. Default: nodes.title().
-      cols: Integer number of colums for table. Default: 3.
-      gui: Boolean True to render table key as a menuselection role.
+      key_title_gui: Boolean True to render table key as a menuselection role.
           Default: False (render as normal text).
-      key_mod: String key modifier for GUI display. Default: ''.
+      key_title_admin_text: String key modifier for GUI display. Default: ''.
 
     Raises:
       ValueError if names, types and data lists lengths do not match.
     """
+    # TODO: convert to key_title when all converted.
     self.key = key
     self.data = data or [[]]
     self.title = title or nodes.title()
-    self.cols = cols
-    self.use_gui_key = gui
-    self.key_mod = key_mod or ''
+    self.key_title_gui = key_title_gui
+    self.key_title_admin_text = key_title_admin_text or ''
 
     required_length = len(self.data[0])
     if not all(len(lst) == required_length for lst in self.data[1:]):
@@ -70,6 +68,35 @@ class ConfigTableData(object):
 
 
 class ConfigTable(Table):
+  """ Abstract config table encapulsation of Table.
+
+  .. configtable:: {DIRECTIVE TITLE}
+    :data.key_title:   {KEY TITLE}
+    :data.data[0]: {COL 1}
+    ...
+    :data.data[4]: {COL 4}
+
+
+  A table is rendered using the following template, implementations of
+  ConfigTable should set these options as needed:
+
+  SECTION: {DIRECTIVE TITLE}
+  LAUNCH: {self.text_launch (always rendered with :cmdmenu:)}
+  CAPTION: {DIRECTIVE TITLE}
+  +-----------------------------+
+  | KEY_TITLE: {data.key_title} |
+  +---------+-----+-------------+
+  | {COL 1} | ... | {COL 4}     |
+  +---------+-----+-------------+
+
+    SUBTEXT: {ANY ADDTIONAL RST TEXT TO RENDER}
+
+  Directives:
+    :no_section: Flag to disable creation of 'SECTION:'.
+    :no_launch: Flag to disable creation of 'LAUNCH:'.
+    :no_caption: Flag to disable creation of 'CAPTION:'.
+    :no_key_title: Flag to disable creation of row 'KEY_TITLE:'.
+  """
 
   def run(self):
     """Run the config table generation directive.
@@ -101,8 +128,8 @@ class ConfigTable(Table):
       directive = [section_target, section]
       container = section
 
-    if not 'hide_gui' in self.options:
-      container += self._gui_command('%s%s' % (self.text_content, data.key_mod),
+    if 'no_launch' not in self.options:
+      container += self._gui_command('%s%s' % (self.text_launch, data.key_title_admin_text),
                                      self.sep,
                                      self.rep)
 
@@ -125,25 +152,26 @@ class ConfigTable(Table):
       nodes.table constructed with source data.
     """
     table = nodes.table()
-    table_group = nodes.tgroup(cols=data.cols)
+    table_group = nodes.tgroup(cols=len(data.data))
     table += table_group
 
     table_group.extend(
-        [nodes.colspec(colwidth=1, colname='c%s' % i) for i in range(data.cols)]
+        [nodes.colspec(colwidth=1, colname='c%s' % i) for i in range(len(data.data))]
     )
 
     table_body = nodes.tbody()
     table_group += table_body
     rows = []
 
-    key_row = nodes.row()
-    key_entry = nodes.entry(morecols=data.cols)
-    if data.use_gui_key:
-      key_entry += self._gui_command(data.key, self.sep, self.rep)
-    else:
-      key_entry += nodes.paragraph(text=data.key)
-    key_row += key_entry
-    rows.append(key_row)
+    if 'no_key_title' not in self.options:
+      key_row = nodes.row()
+      key_entry = nodes.entry(morecols=len(data.data))
+      if data.key_title_gui:
+        key_entry += self._gui_command(data.key, self.sep, self.rep)
+      else:
+        key_entry += nodes.paragraph(text=data.key)
+      key_row += key_entry
+      rows.append(key_row)
 
     for element in data.zip():
       reg_row = nodes.row()
@@ -155,7 +183,7 @@ class ConfigTable(Table):
     table_body.extend(rows)
 
     self.add_name(table)
-    if 'show_title' in self.options:
+    if 'no_caption' not in self.options:
       table.insert(0, data.title)
 
     return table
