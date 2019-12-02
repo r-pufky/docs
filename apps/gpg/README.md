@@ -54,6 +54,8 @@ apt install software-properties-common yubikey-manager yubikey-manager-qt scdaem
 * `yubikey-manager-qt` is a GUI frontend which has limited functionality but
   does provide easy ways to ensure specific applets are enabled.
 * `scdaemon` enables smartcard support for gpg.
+* Ubuntu **18.04+** needs to add `universe multiverse` to all apt sources first
+  `/etc/apt/sources.list`.
 
 ### Reset Ironkey
 Do this if fresh Ironkey, or creating a new master key. **Data destructive**.

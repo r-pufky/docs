@@ -1,0 +1,16 @@
+#BROWSER='xdg-open $FILE &>/dev/null'
+EDITOR='subl'
+#FILE_CMD='xdg-open'
+TASKBIN='task'
+
+# If you sync tasks NOTES_FOLDER should be a location that syncs and is available to
+# other computers, i.e. /users/dropbox/tasknotes
+# NOTES_FOLDER to store notes in, must already exist!
+NOTES_FOLDER="$HOME/task/tasknotes/"
+
+# Preferred extension for tasknotes
+NOTES_EXT=".md"
+
+# Regular expression that referes to the NOTES_FILE.
+# Default is: Notes
+NOTES_REGEX="notes"

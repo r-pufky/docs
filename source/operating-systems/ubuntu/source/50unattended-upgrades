@@ -1,0 +1,20 @@
+Unattended-Upgrade::Allowed-Origins {
+        "${distro_id}:${distro_codename}";
+        "${distro_id}:${distro_codename}-security";
+        "${distro_id}ESM:${distro_codename}";
+        "${distro_id}:${distro_codename}-updates";
+};
+Unattended-Upgrade::Origins-Pattern {
+        "origin=*";
+};
+Unattended-Upgrade::Package-Blacklist {
+};
+Unattended-Upgrade::AutoFixInterruptedDpkg "True";
+Unattended-Upgrade::MinimalSteps "True";
+Unattended-Upgrade::InstallOnShutdown "False";
+Unattended-Upgrade::Mail "root";
+Unattended-Upgrade::MailOnlyOnError "True";
+Unattended-Upgrade::Remove-Unused-Dependencies "True";
+Unattended-Upgrade::Automatic-Reboot "True";
+Unattended-Upgrade::Automatic-Reboot-Time "05:00";
+Acquire::http::Dl-Limit "0";

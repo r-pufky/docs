@@ -44,7 +44,17 @@ Since the dedicated server only runs on windows, force steam to detect windows
 and run under wine.
 
 ```bash
-sudo apt install --install-recommends steamcmd lib32gcc1 wine-stable xvfb
+dpkg --add-architecture i386
+apt install --install-recommends steamcmd lib32gcc1 wine-stable wine32 wine64 xvfb 
+```
+
+Alternatively, you can install from the more current wineHQ repository:
+```bash
+dpkg --add-architecture i386
+wget -qO - https://dl.winehq.org/wine-builds/winehq.key | apt-key add -
+apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ bionic main'
+apt-get  update && apt-get upgrade
+apt-get install --install-recommends steamcmd lib32gcc1 winehq-stable xvfb
 ```
 
 #### Force steam to detect 'windows' platform, download dedicated server to target
@@ -54,7 +64,7 @@ steamcmd +@sSteamCmdForcePlatformType windows +force_install_dir /data/conan-exi
 
 #### Run initial server to create config templates
 ```bash
-/opt/wine-stable/bin/wine /data/conan-exiles-server/ConanExilesServer.exe -log
+/opt/wine-stable/bin/wine64 /data/conan-exiles-server/ConanSandbox/Binaries/Win64/ConanExilesServer-Win64-Test.exe -nosteamclient -game -server -log
 ```
  * run for about 5 minutes for all configs to be generated
  * should run through 2 cycles (two report cycles after loading/errors)
@@ -117,7 +127,7 @@ After=syslog.target network.target
 
 [Service]
 Environment="WINEPREFIX=/data/conan-exiles-server/.wine"
-ExecStart=/usr/bin/xvfb-run --auto-servernum --server-args='-screen 0 640x480:32' /opt/wine-stable/bin/wine /data/conan-exiles-server/ConanSandboxServer.exe -log
+ExecStart=/usr/bin/xvfb-run --auto-servernum /opt/wine-stable/bin/wine64 /data/conan-exiles-server/ConanSandbox/Binaries/Win64/ConanSandboxServer-Win64-Test.exe -nosteamclient -game -server -log
 WorkingDirectory=/data/conan-exiles-server/
 User=conan
 Type=simple
@@ -188,11 +198,38 @@ systemctl start conan
  * If you get `0x0` or `disk write errors`, you need to explicitly own the files
    to modify them via steamcmd. `su` to the user or temporarily chown them.
 
+
+Wine Taking Long Time for First Start
+-------------------------------------
+winehq may potentially take ~5 minutes on first boot to launch, due to blocking
+on boot events:
+
+> _"0014:err:ole:get_local_server_stream Failed: 80004002"_
+> _"__wine_kernel_init boot event wait timed out"_
+
+Subsequent boots will not see the delay. We can mitigate this by updating wine
+before our first use.
+
+```bash
+wineboot --update
+xvfb-run --autoservernum wineboot --update
+```
+
+This is a suspected issue with the GCC build toolchain, but has not been
+resolved yet. See:
+* https://ubuntuforums.org/archive/index.php/t-1499348.html
+* https://bugs.winehq.org/show_bug.cgi?id=38653
+
 References
 ----------
 [Conan Exiles Dedicated Server][1]
 
 [Conan Exiles CentOS][2]
+
+Open references:
+https://steamcommunity.com/sharedfiles/filedetails/?id=858035949
+https://hub.docker.com/r/alinmear/docker-conanexiles/
+https://tecadmin.net/install-wine-on-ubuntu/
 
 [1]: https://conanexiles.gamepedia.com/Dedicated_Server_Setup:_Linux_and_Windows#Linux
 [2]: https://steamcommunity.com/sharedfiles/filedetails/?id=858035949

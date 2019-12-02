@@ -5,6 +5,7 @@ Sublime Text Configuration
 1. [Configuration](#configuration)
 1. [Automatically Installing Packages](#automatically-installing-packages)
 1. [Force Unix Line Endings on Save](#force-unix-line-endings-on-save)
+1. [Markdown Editing](#markdown-editing)
 1. [References](#references)
 
 Installation
@@ -103,6 +104,19 @@ Copy [set_unix_line_endings.py](set_unix_line_endings.py) to
 <sublime config>/Packages/User.
 
 Remove to disable.
+
+Markdown Editing
+----------------
+Install `MarkdownEditing` and `MonokaiC` packages.
+
+`preferences > package settings > markdown editing > markdown GFM Settings >
+user-Markdown.sublime-settings`
+
+```json
+{
+  "color_scheme": "Packages/MonokaiC/themes/ME-MonokaiC.tmTheme",
+}
+```
 
 References
 ----------

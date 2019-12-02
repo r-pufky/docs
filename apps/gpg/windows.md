@@ -43,12 +43,13 @@ Configure Yubikey
 -----------------
 Configure behavior of Yubikey so short touches will provide GPG material, while
 long touches will provide Yubico OTP. This prevents accidental touches spewing
-keystrokes into whatever is open. NFC is also disable.
+keystrokes into whatever is open. NFC is also disabled.
 
 1. Open Yubikey Manager
 1. Select `Applications > OTP`
 1. Delete `Slot 1`
-1. Configure `Slot 2` to use `Yubico OTP`
+1. Configure `Slot 2` to use `Yubico OTP
+* Alternatively, newer keys can just use the swap button.
 
 Results should look like this:
 ![Yubikey OTP setup](yubikey-otp.png)

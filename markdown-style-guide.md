@@ -1,3 +1,5 @@
+.. _style-guide:
+
 Markdown Documentation Style Guide
 ==================================
 Covers the standard way to write documentation using markdown that is easily

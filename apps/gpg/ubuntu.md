@@ -25,6 +25,8 @@ apt update
 apt install software-properties-common yubikey-manager yubikey-manager-qt scdaemon gnupg2 pcscd
 apt remove libpam-gnome-keyring
 ```
+* Ubuntu **18.04+** needs to add `universe multiverse` to all apt sources first
+  `/etc/apt/sources.list`.
 
 Configure Yubikey
 -----------------
@@ -36,6 +38,7 @@ keystrokes into whatever is open. NFC is also disable.
 1. Select `Applications > OTP`
 1. Delete `Slot 1`
 1. Configure `Slot 2` to use `Yubico OTP`
+* Alternatively, newer keys can just use the swap button.
 
 Results should look like this:
 ![Yubikey OTP setup](yubikey-otp.png)
@@ -179,7 +182,7 @@ used. This just needs to be removed.
    ```bash
    gpg --with-keygrip --list-keys
    ```
-1. Identify keygrip in `./gnupg/private-keys-v1.d/` and delete it, or
+1. Identify keygrip in `~/.gnupg/private-keys-v1.d/` and delete it, or
    you can just remove all keys in that directory.
 
 [1]: README.md

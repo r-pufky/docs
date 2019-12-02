@@ -13,6 +13,7 @@ Do **NOT** expose `docker.sock` to [containers, even in read-only][9w].
 1. [Compose Containers on Different Networks](#compose-containers-on-different-networks)
 1. [Explore Image Filesystem](#explore-image-filesystem)
 1. [Copy Data From Container](#copy-data-from-container)
+1. [Docker Container Not Getting Interrupt Signals](#docker-container-not-getting-interrupt-signals)
 1. [GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown Error](#gdbus.error:org.freedesktop.dbus.error.serviceunknown-error)
 
 Installing
@@ -87,6 +88,7 @@ services:
     image: <repo>/<container>:<tag>
     network_mode: host
     restart: unless-stopped
+    stop_grace_period: 1m
     ports:
       - '3000:3000'
       - '4000:4000/udp'
@@ -110,6 +112,9 @@ services:
   other services to use, it is not publically accessible.
 * `depends_on` will require other named docker container to start before this
   container.
+* `stop_grace_period` is optional, but [enables a longer shutdown time][j4] for
+  a given docker container, if shutdown requires more than 10 seconds (e.g.
+  writing data to database, etc).
 
 ### Turnup Composed Services
 ```bash
@@ -397,6 +402,16 @@ Files can be copied directly out of containers.
 docker {CONTAINER NAME}:/local/container/file .
 ```
 
+Docker Container Not Getting Interrupt Signals
+----------------------------------------------
+Caused by the container Dockerfile not properly using the 'Exec' specification
+for [the entrypoint script][6d]. Exec will hand over the process and enable
+signals to propagate into the container when `docker stop` is issued.
+
+```Dockerfile
+ENTRYPOINT ["/my/entrypoint/script/with/signals"]
+```
+
 [GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown Error][ji]
 -----------------------------------------------------------------
 Docker push requires *gnome-keyring* to login by default and will fail without
@@ -424,7 +439,8 @@ docker push
 [d9]: https://blog.docker.com/2016/03/docker-networking-design-philosophy/
 [fb]: https://stackoverflow.com/questions/20813486/exploring-docker-containers-file-system
 [ji]: https://stackoverflow.com/questions/50151833/cannot-login-to-docker-account
-
+[6d]: https://hynek.me/articles/docker-signals/
+[j4]: https://docs.docker.com/compose/compose-file/#stop_grace_period
 
 [bugdx]: https://github.com/docker/libnetwork/issues/1141#issuecomment-215522809
 [bugsf]: https://dustymabe.com/2016/05/25/non-deterministic-docker-networking-and-source-based-ip-routing/
