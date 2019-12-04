@@ -17,6 +17,8 @@ class GPort(config_table.ConfigTable):
   Directives:
     See ConfigTable for core Directives.
 
+    :header: Flag to render headers in the port table, below key_title.
+
   .. gport::    Ports Exposed
     :port:      80, 443
     :protocol:  TCP, TCP
@@ -24,6 +26,7 @@ class GPort(config_table.ConfigTable):
     :purpose:   HTTP webface,
                 HTTPS webface
     :no_key_title:
+    :header:
 
       .. note::
         This is a free-form RST processed content contained within the rendered
@@ -55,6 +58,7 @@ class GPort(config_table.ConfigTable):
     'protocol': directives.unchanged_required,
     'type': directives.unchanged_required,
     'purpose': directives.unchanged_required,
+    'header': directives.flag,
     'no_section': directives.flag,
     'no_launch': directives.flag,
     'no_caption': directives.flag,
@@ -91,14 +95,17 @@ class GPort(config_table.ConfigTable):
     Returns:
       FileLocationData object containing sanitized directive data.
     """
-    port_list = [x.strip() for x in self.options['port'].split(',')]
-    port_list.insert(0, 'Port')
-    protocol_list = [x.strip() for x in self.options['protocol'].split(',')]
-    protocol_list.insert(0, 'Protocol')
-    type_list = [x.strip() for x in self.options['type'].split(',')]
-    type_list.insert(0, 'Type')
-    purpose_list = [x.strip() for x in self.options['purpose'].split(',')]
-    purpose_list.insert(0, 'Purpose')
+    port_list = self._parse_list('port')
+    protocol_list = self._parse_list('protocol')
+    type_list = self._parse_list('type')
+    purpose_list = self._parse_list('purpose')
+
+    if 'header' in self.options:
+      port_list.insert(0, 'Port')
+      protocol_list.insert(0, 'Protocol')
+      type_list.insert(0, 'Type')
+      purpose_list.insert(0, 'Purpose')
+
     title, _ = self.make_title()
 
     return GPortData(None,

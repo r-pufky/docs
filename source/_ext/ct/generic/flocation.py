@@ -17,6 +17,8 @@ class GFileLocation(config_table.ConfigTable):
   Directives:
     See ConfigTable for core Directives.
 
+    :header: Flag to render headers in the file location table, below key_title.
+
   .. gflocation:: Import File Locations
     :key_title: Linux File Locations
     :files:   /etc/libvirtd/,
@@ -53,6 +55,7 @@ class GFileLocation(config_table.ConfigTable):
     'key_title': directives.unchanged_required,
     'files': directives.unchanged_required,
     'purpose': directives.unchanged_required,
+    'header': directives.flag,
     'no_section': directives.flag,
     'no_launch': directives.flag,
     'no_caption': directives.flag,
@@ -89,9 +92,14 @@ class GFileLocation(config_table.ConfigTable):
     Returns:
       FileLocationData object containing sanitized directive data.
     """
-    key_title = ''.join([x.strip() for x in self.options['key_title'].split('\n')])
-    files_list = [x.strip() for x in self.options['files'].split(',')]
-    purpose_list = [x.strip() for x in self.options['purpose'].split(',')]
+    key_title = ''.join(self._parse_list('key_title','\n'))
+    files_list = self._parse_list('files')
+    purpose_list = self._parse_list('purpose')
+
+    if 'header' in self.options:
+      files_list.insert(0, 'Location')
+      purpose_list.insert(0, 'Purpose')
+
     title, _ = self.make_title()
 
     return GFileLocationData(key_title,

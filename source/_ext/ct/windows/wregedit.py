@@ -99,10 +99,10 @@ class WRegEdit(config_table.ConfigTable):
     Returns:
       WRegEditData object containing sanitized directive data.
     """
-    key_title = ''.join([x.strip() for x in self.options['key_title'].split('\n')])
-    names_list = [x.strip() for x in self.options['names'].split(',')]
-    types_list = [x.strip() for x in self.options['types'].split(',')]
-    data_list = [x.strip() for x in self.options['data'].split(',')]
+    key_title = ''.join(self._parse_list('key_title','\n'))
+    names_list = self._parse_list('names')
+    types_list = self._parse_list('types')
+    data_list = self._parse_list('data')
     title, _ = self.make_title()
 
     return WRegEditData(key_title,

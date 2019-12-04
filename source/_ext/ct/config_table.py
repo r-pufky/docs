@@ -188,6 +188,19 @@ class ConfigTable(Table):
 
     return table
 
+  def _parse_list(self, key, split=','):
+    """Parse directive list and returned sanitized python list.
+
+    Args:
+      key: String key to use for self.options dictionary.
+      split: String character to split list on. Default: ','.
+
+    Returns:
+      List containing directive option with whitespace stripped,
+      split on the split value.
+    """
+    return [x.strip() for x in self.options[key].split(split)]
+
   def _gui_command(self, text, sep, rep):
     """Render a menuselection node specifically for given text.
 

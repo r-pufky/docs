@@ -101,9 +101,9 @@ class WFirewall(config_table.ConfigTable):
     Returns:
       WFirewallData object containing sanitized directive data.
     """
-    key_title = ''.join([x.strip() for x in self.options['key_title'].split('\n')])
-    option_list = [x.strip() for x in self.options['option'].split(',')]
-    setting_list = [x.strip() for x in self.options['setting'].split(',')]
+    key_title = ''.join(self._parse_list('key_title', '\n'))
+    option_list = self._parse_list('option')
+    setting_list = self._parse_list('setting')
     title, _ = self.make_title()
 
     return WFirewallData(key_title,
