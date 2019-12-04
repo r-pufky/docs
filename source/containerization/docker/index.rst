@@ -204,7 +204,7 @@ using.
 
 * usage: ``docker-shell {INSTANCE} {USER}``.
 
-.. _docker-bridged-adatpers:
+.. _docker-bridged-adapters:
 
 Docker Bridged Adapters
 ***********************

@@ -1,0 +1,14 @@
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    eno1:
+      dhcp4: yes
+    eno2:
+      dhcp4: no
+
+  bridges:
+    br0:
+      interfaces: [eno2]
+      dhcp4: no
+      macaddress: A0:B1:C2:D3:E4:F5
