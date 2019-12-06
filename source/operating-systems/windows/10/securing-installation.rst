@@ -360,6 +360,8 @@ fix this.
   :admin:
   :no_caption:
 
+.. _meltdown-spectre-patch:
+
 `Meltdown and Spectre Patch`_
 *****************************
 Windows 10 will not automatically patch for meltdown and spectre due to

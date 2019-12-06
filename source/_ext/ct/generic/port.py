@@ -17,7 +17,7 @@ class GPort(config_table.ConfigTable):
   Directives:
     See ConfigTable for core Directives.
 
-    :header: Flag to render headers in the port table, below key_title.
+    :no_header: Flag to disable rendering headers in table, below key_title.
 
   .. gport::    Ports Exposed
     :port:      80, 443
@@ -26,7 +26,7 @@ class GPort(config_table.ConfigTable):
     :purpose:   HTTP webface,
                 HTTPS webface
     :no_key_title:
-    :header:
+    :no_header:
 
       .. note::
         This is a free-form RST processed content contained within the rendered
@@ -58,7 +58,7 @@ class GPort(config_table.ConfigTable):
     'protocol': directives.unchanged_required,
     'type': directives.unchanged_required,
     'purpose': directives.unchanged_required,
-    'header': directives.flag,
+    'no_header': directives.flag,
     'no_section': directives.flag,
     'no_launch': directives.flag,
     'no_caption': directives.flag,
@@ -100,7 +100,7 @@ class GPort(config_table.ConfigTable):
     type_list = self._parse_list('type')
     purpose_list = self._parse_list('purpose')
 
-    if 'header' in self.options:
+    if 'no_header' not in self.options:
       port_list.insert(0, 'Port')
       protocol_list.insert(0, 'Protocol')
       type_list.insert(0, 'Type')

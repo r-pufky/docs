@@ -4,9 +4,9 @@ KVM Server Setup
 ################
 Basic KVM server setup on ubuntu (18.04).
 
-.. gflocation:: Import File Locations
+.. gflocation:: Important File Locations (KVM)
   :key_title:   Linux File Locations
-  :files:       /etc/libvirtd/,
+  :file:        /etc/libvirtd/,
                 /var/lib/libvirt/images
   :purpose:     KVM and VM configuration data.,
                 Default KVM VM/ISO image pool Location.
@@ -445,7 +445,7 @@ Opteron processor, and reload the definition.
 #. `Virt Manager <http://virt-manager.org/download>`_
 #. `KVM on Ubuntu 18.04 Server <https://www.linuxtechi.com/install-configure-kvm-ubuntu-18-04-server/>`_
 #. `Alternative KVM on Ubuntu 18.04 Server <https://linuxconfig.org/install-and-set-up-kvm-on-ubuntu-18-04-bionic-beaver-linux>`_
-#. `Netplan bridging <https://netplan.io/examples#bridging>`_]
+#. `Netplan bridging <https://netplan.io/examples#bridging>`_
 #. `Netplan example with bridge <https://askubuntu.com/questions/971126/17-10-netplan-config-with-bridge>`_
 #. `Static IP address on Ubuntu 18.04 <https://websiteforstudents.com/configure-static-ip-addresses-on-ubuntu-18-04-beta/>`_
 #. `Netplan Ubtuntu 18.04 Static IP <https://askubuntu.com/questions/1054350/netplan-bridge-for-kvm-on-ubuntu-server-18-04-with-static-ips>`_

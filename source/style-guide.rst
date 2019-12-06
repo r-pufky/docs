@@ -79,8 +79,7 @@ captions may contain double backticks for paths.
   :caption: **0644 root root** ``/etc/ssh/sshd_config``
   :linenos:
   :emphasize-lines: 2,3
-  :start-after: 2
-  :end-before: 25
+  :lines: 2-25
 
 * Always inline all headers, and settings.
 * always add TOC section to bottom below links, hidden.

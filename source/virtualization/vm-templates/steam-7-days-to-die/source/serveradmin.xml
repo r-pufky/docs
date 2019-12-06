@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	 This file holds the settings for who is banned, whitelisted,
+   admins and server command permissions.
+   Steam ID can be found using http://steamid.co/
+
+   STEAM ID INSTRUCTIONS:
+   ===============================================================
+   http://steamid.co/ instructions:
+   Input the player's name in the search field. example: Kinyajuu
+   If the name doesn't work, you can also use the url of their steam page.
+   Also you may add/remove admins, mods, whitelist, blacklist using in game commands.
+   You will want the STEAM64ID. example: 76561198021925107
+
+	 PERMISSION LEVEL INSTRUCTIONS:
+   ===============================================================
+   permission level : 0-1000, a user may run any command equal to or above their permission level.
+   Users not given a permission level in this file will have a default permission level of 1000!
+
+	 COMMAND PERMISSIONS INSTRUCTIONS:
+   ===============================================================
+   cmd : This is the command name, any command not in this list will not be usable by anyone but the server.
+   permission level : 0-1000, a user may run any command equal to or above their permission level.
+   Commands not specified in this file will have a default permission level of 0!
+
+  EVERYTHING BETWEEN <!- - and - -> IS COMMENTED OUT! THE ENTRIES BELOW ARE EXAMPLES THAT ARE NOT ACTIVE!!!
+-->
+
+<adminTools>
+    <admins>
+        <!-- <admin steamID="76561198021925107" permission_level="0" /> -->
+    </admins>
+
+    <permissions>
+        <!-- <permission cmd="dm" permission_level="0" /> -->
+        <!-- <permission cmd="kick" permission_level="1" /> -->
+        <!-- <permission cmd="say" permission_level="1000" /> -->
+        <permission cmd="chunkcache" permission_level="1000" />
+        <permission cmd="debugweather" permission_level="1000" />
+        <permission cmd="getgamepref" permission_level="1000" />
+        <permission cmd="getgamestat" permission_level="1000" />
+        <permission cmd="gettime" permission_level="1000" />
+        <permission cmd="help" permission_level="1000" />
+        <permission cmd="listplayerids" permission_level="1000" />
+        <permission cmd="listthreads" permission_level="1000" />
+        <permission cmd="memcl" permission_level="1000" />
+        <permission cmd="settempunit" permission_level="1000" />
+    </permissions>
+
+    <!-- ONLY PUT ITEMS IN WHITELIST IF YOU WANT WHITELIST ONLY ENABLED!!! -->
+    <!-- If there are any items in the whitelist, the whitelist only mode is enabled -->
+    <!-- Nobody can join that ISN'T in the whitelist or admins once whitelist only mode is enabled -->
+
+    <whitelist>
+        <!-- <whitelisted steamID="" /> -->
+    </whitelist>
+
+    <blacklist>
+        <!-- <blacklisted steamID="" unbandate="" /> -->
+    </blacklist>
+</adminTools>

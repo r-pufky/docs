@@ -29,14 +29,7 @@ Create a non-root user account with sudo access.
 
   sudo su -
 
-.. code-block:: bash
-  :caption: Generate pubkey cert for new user.
-
-  cd ~; mkdir .ssh; chmod 0700 .ssh; cd .ssh
-  ssh-keygen -b 4096 -t rsa -f {CERTIFICATE NAME}
-  cat {CERTIFICATE NAME}.pub >> ~/.ssh/authorized_keys
-  chmod 0600 ~/.ssh/*
-  chmod 0640 ~/.ssh/*.pub
+:ref:`ubuntu-generate-certificates` for the new user.
 
 Enforce cert-only SSH logins:
 
@@ -100,8 +93,8 @@ Keep 2 days of log rotations, instead of 31 by default.
 
 Creating A `Local ISO Repository`_
 **********************************
-This will allow the use of ISO's on dom0 to be used during VM creation. From an
-SSH session, create a directory and create a Storage Repository on top of it.
+This will allow the use of ISO's on ``dom0`` to be used during VM creation. From
+an SSH session, create a directory and create a Storage Repository on top of it.
 
 .. code-block:: bash
   :caption: Create Local ISO repository.

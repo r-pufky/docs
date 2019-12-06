@@ -53,6 +53,12 @@ Glossary
     u+22EE
     https://www.fileformat.info/info/unicode/char/22ee/index.htm
 
+  ⚙
+    Gear icon. Generally used in mobile for system settings.
+
+    u+2699
+    https://www.fileformat.info/info/unicode/char/2699/index.htm
+
   ' '
     Punctuation Space. Blank space used to hold a position where no text is
     required, but a non-whitespace value must be present for content to be

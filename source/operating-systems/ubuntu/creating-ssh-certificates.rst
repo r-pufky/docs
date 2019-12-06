@@ -25,14 +25,16 @@ configured independently.
   mv /home/{USERNAME}/.ssh/* /etc/ssh/authorized_keys/{USERNAME}
   ln -s /etc/ssh/authorized_keys/{USERNAME} /home/{USERNAME}/.ssh
 
+.. _ubuntu-generate-certificates:
+
 Generate Certificates
 =====================
 
 .. code-block:: bash
   :caption: Generate 4096 bit RSA certificates & add user to SSH group.
 
-  ssh-keygen -b 4096 -t rsa -f /home/{USERNAME}/{USERNAME}
-  cat /home/{USERNAME}/{USERNAME}.pub >> home/{USERNAME}/.ssh/authorized_keys
+  ssh-keygen -b 4096 -t rsa -f /home/{USERNAME}/.ssh/{USERNAME}
+  cat /home/{USERNAME}/.ssh/{USERNAME}.pub >> home/{USERNAME}/.ssh/authorized_keys
   chmod 0600 /home/{USERNAME}/.ssh/*
   chmod 0640 /home/{USERNAME}/.ssh/*.pub
   usermod -a -G ssh {USERNAME}

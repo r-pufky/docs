@@ -17,14 +17,15 @@ class GFileLocation(config_table.ConfigTable):
   Directives:
     See ConfigTable for core Directives.
 
-    :header: Flag to render headers in the file location table, below key_title.
+    :no_header: Flag to disable rendering headers in table, below key_title.
 
   .. gflocation:: Import File Locations
     :key_title: Linux File Locations
-    :files:   /etc/libvirtd/,
-              /var/lib/libvirt/images
-    :purpose: KVM and VM configuration data.,
-              Default KVM VM/ISO image pool Location.
+    :file:      /etc/libvirtd/,
+                /var/lib/libvirt/images
+    :purpose:   KVM and VM configuration data.,
+                Default KVM VM/ISO image pool Location.
+    :no_header:
 
       .. note::
         This is a free-form RST processed content contained within the rendered
@@ -53,9 +54,9 @@ class GFileLocation(config_table.ConfigTable):
   final_argument_whitespace = True
   option_spec = {
     'key_title': directives.unchanged_required,
-    'files': directives.unchanged_required,
+    'file': directives.unchanged_required,
     'purpose': directives.unchanged_required,
-    'header': directives.flag,
+    'no_header': directives.flag,
     'no_section': directives.flag,
     'no_launch': directives.flag,
     'no_caption': directives.flag,
@@ -92,18 +93,21 @@ class GFileLocation(config_table.ConfigTable):
     Returns:
       FileLocationData object containing sanitized directive data.
     """
-    key_title = ''.join(self._parse_list('key_title','\n'))
-    files_list = self._parse_list('files')
+    if 'key_title' in self.options:
+      key_title = ''.join(self._parse_list('key_title','\n'))
+    else:
+      key_title = ''
+    file_list = self._parse_list('file')
     purpose_list = self._parse_list('purpose')
 
-    if 'header' in self.options:
-      files_list.insert(0, 'Location')
+    if 'no_header' not in self.options:
+      file_list.insert(0, 'Location')
       purpose_list.insert(0, 'Purpose')
 
     title, _ = self.make_title()
 
     return GFileLocationData(key_title,
-                             [files_list, purpose_list],
+                             [file_list, purpose_list],
                              title,
                              key_title_gui=self.key_title_gui,
                              key_title_admin_text=self.key_title_admin_text)

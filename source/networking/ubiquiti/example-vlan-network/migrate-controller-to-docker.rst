@@ -16,7 +16,7 @@ Migrate Unifi Controller to Docker
 Export laptop Unifi Controller settings.
 
 .. ucontroller:: Add Docker Container IP on Original Unifi Controller
-  :key_title:    Settings --> Maintenance --> Backup
+  :key_title:    ⚙ --> Maintenance --> Backup
   :option:       Backup Data Rentention
   :setting:      Settings Only
   :no_section:
@@ -30,7 +30,7 @@ IP in docker container.
 
 .. ucontroller:: Set Inform IP on docker Unifi Controller
   :controller:   http://{DOCKER UNIFI CONTAINER IP}:8443
-  :key_title:    Settings --> Controller
+  :key_title:    ⚙ --> Controller
   :option:       Controller Hostname/IP
   :setting:      {DOCKER UNIFI CONTROLLER IP}
   :no_section:

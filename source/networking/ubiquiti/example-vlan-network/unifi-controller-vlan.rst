@@ -48,10 +48,12 @@ Connect to Unifi Controller @ http://localhost:8443.
       authentication* account is used to manage physical devices via the UI or
       SSH on that device.
 
+.. _basic-controller-setup:
+
 Basic Controller Setup
 **********************
 .. ucontroller:: Basic Unifi Controller Setup
-  :key_title:    Settings --> Controller --> Controller Settings
+  :key_title:    ⚙ --> Controller --> Controller Settings
   :option:       Controller Name,
                  Controller Hostname/IP,
                  › ☐,
@@ -79,7 +81,7 @@ Basic Controller Setup
   rely on DHCP or set inform.
 
 .. ucontroller:: Site Configuration
-  :key_title:    Settings --> Site --> Site Configuration
+  :key_title:    ⚙ --> Site --> Site Configuration
   :option:       Site Name,
                  Country,
                  Timezone
@@ -91,7 +93,7 @@ Basic Controller Setup
   :no_launch:
 
 .. ucontroller:: Service Configuration
-  :key_title:    Settings --> Site --> Services
+  :key_title:    ⚙ --> Site --> Services
   :option:       ☐,
                  ☑,
                  ☐,
@@ -119,7 +121,7 @@ Basic Controller Setup
       finishing configuration.
 
 .. ucontroller:: Provider Capabilities
-  :key_title:    Settings --> Site --> Provider Capabilities
+  :key_title:    ⚙ --> Site --> Provider Capabilities
   :option:       Download,
                  Upload
   :setting:      1 Gbps,
@@ -133,7 +135,7 @@ Basic Controller Setup
       for proper scaling of graphing data. It is *not* a throttle.
 
 .. ucontroller:: Device Authentication
-  :key_title:    Settings --> Site --> Device Authentication
+  :key_title:    ⚙ --> Site --> Device Authentication
   :option:       ☑,
                  Username,
                  Password
@@ -151,7 +153,7 @@ VLAN Configuration
 Add all VLANS using the :ref:`VLAN Table <vlan-table>`.
 
 .. ucontroller:: Default LAN Network
-  :key_title:    Settings --> Networks --> LAN
+  :key_title:    ⚙ --> Networks --> LAN
   :option:       ☑,
                  ☑,
                  Gateway/Subnet,
@@ -180,7 +182,7 @@ Add all VLANS using the :ref:`VLAN Table <vlan-table>`.
       network. Configure with :term:`Management VLAN` settings.
 
 .. ucontroller:: Create All VLAN Networks
-  :key_title:    Settings --> Networks --> Create New Network
+  :key_title:    ⚙ --> Networks --> Create New Network
   :option:       Name,
                  ☑,
                  VLAN
@@ -199,7 +201,7 @@ Add all VLANS using the :ref:`VLAN Table <vlan-table>`.
 Add Trunk Port Profiles
 ***********************
 .. ucontroller:: Add AP Wireless Trunk Port Profiles
-  :key_title:    Settings -->
+  :key_title:    ⚙ -->
                  Profiles -->
                  Switch Ports -->
                  Add New Port Profile -->
@@ -221,7 +223,7 @@ Add Trunk Port Profiles
   :no_launch:
 
 .. ucontroller:: Add Wired Trunk Port Profiles
-  :key_title:    Settings -->
+  :key_title:    ⚙ -->
                  Profiles -->
                  Switch Ports -->
                  Add New Port Profile -->
@@ -243,7 +245,7 @@ Add Trunk Port Profiles
   :no_launch:
 
 .. ucontroller:: Add Server Trunk Port Profiles
-  :key_title:    Settings -->
+  :key_title:    ⚙ -->
                  Profiles -->
                  Switch Ports -->
                  Add New Port Profile -->

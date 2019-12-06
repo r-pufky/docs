@@ -136,6 +136,8 @@ disabled the superfetching service.
   :no_section:
   :no_caption:
 
+.. _hiding-local-desktop-crd:
+
 `Hiding Local Desktop for Chrome Remote Desktop`_
 *************************************************
 By default Chrome Remote Desktop will always show locally what is happening when
@@ -252,6 +254,8 @@ power consumption and probably shouldn't be used on laptops.
   :caption: Disable hibernation (powershell as admin).
 
   powercfg /h off
+
+.. _enabling-ssh-access:
 
 `Enabling SSH Access`_
 **********************

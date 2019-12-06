@@ -98,6 +98,24 @@ git hub, or submit a CL :)
   Ubuntu <operating-systems/ubuntu/index>
 
 .. toctree::
+  :caption: Virtualization
+  :hidden:
+  :includehidden:
+  :maxdepth: -1
+
+  Xenserver / XCP-NP <virtualization/hypervisors/xenserver-xcpng/index>
+  KVM <virtualization/hypervisors/kvm/index>
+  virtualization/vm-templates/index
+
+.. toctree::
+  :caption: Containerization
+  :hidden:
+  :includehidden:
+  :maxdepth: -1
+
+  Docker <containerization/docker/index>
+
+.. toctree::
   :caption: Services
   :hidden:
   :includehidden:
@@ -118,23 +136,7 @@ git hub, or submit a CL :)
   scripts/scripts
 
 .. toctree::
-  :caption: Virtualization
-  :hidden:
-  :includehidden:
-  :maxdepth: -1
-
-  Xenserver / XCP-NP <virtualization/hypervisors/xenserver-xcpng/index>
-  KVM <virtualization/hypervisors/kvm/index>
-
-.. toctree::
-  :caption: Containerization
-  :hidden:
-  :includehidden:
-  :maxdepth: -1
-
-  Docker <containerization/docker/index>
-
-.. toctree::
+  :caption: Appendix
   :hidden:
   :includehidden:
   :maxdepth: -1

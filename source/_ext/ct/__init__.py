@@ -6,9 +6,10 @@ import re
 from . import cmdmenu
 from . import config
 
-from .generic import gui
 from .generic import flocation
+from .generic import gui
 from .generic import port
+from .generic import table
 
 from .windows import wfirewall
 from .windows import wgpolicy
@@ -27,9 +28,10 @@ def setup(app):
   app.add_config_value('ct_separator_replace', config.DEFAULT_REPLACE, '')
   cmdmenu.setup(app)
 
-  gui.setup(app)
   flocation.setup(app)
+  gui.setup(app)
   port.setup(app)
+  table.setup(app)
 
   wfirewall.setup(app)
   wgpolicy.setup(app)

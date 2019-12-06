@@ -18,7 +18,6 @@ Base Install
 * Automatic security updates
 * Packages: Standard system utilities
 
-
 .. code-block:: bash
   :caption: Change to faster default apt repositories & install base packages.
 
@@ -198,6 +197,8 @@ Fonts must be imported for use in applications, such as sublime text.
   find /usr/local/share/fonts -type d -exec chmod o+rx {} \;
   fc-cache -f -v
   fc-list
+
+.. _create-an-encrypted-volume-ubuntu:
 
 Creating an Encrypted Volume
 ****************************
