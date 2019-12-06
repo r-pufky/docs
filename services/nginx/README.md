@@ -30,6 +30,7 @@ A detailed [Nginx Administration Handbook is here][ls].
    * [Disable Auth for a specific location](#disable-auth-for-a-specific-location)
    * [Accessing Networks from Other Compose Containers](#accessing-networks-from-other-compose-containers)
    * [Classify Networks to Variables](#classify-networks-to-variables)
+   * [Rate Limiting](#rate-limiting)
 1. [Debugging](#debugging)
    * [Validating upstream parameters](#validating-upstream-parameters)
    * [Debug nginx configs](#debug-nginx-configs)
@@ -463,8 +464,8 @@ server {
   # `on` option will force client auth for all connections, including error
   # pages.
   ssl_client_certificate /etc/nginx/auth/ca-chain.cert.pem;
-  ssl_crl /etc/nginx/auth/inter.crl.pem;
-  ssl_verify_client optional;
+  ssl_crl                /etc/nginx/auth/ca-chain.crl.pem;
+  ssl_verify_client      optional;
 
   # One error page for everything. Does not require client cert.
   root /www;
@@ -502,6 +503,9 @@ server {
   is where those proxied requests will be _coming from_. This will only
   allow traffic _originating_ from the proxy through, not proxied requests from
   clients. Always be sure to enforce client verification and test assumptions.
+* The Certificate Revocation List must include all CRL's up to the Root CA for
+  the CRL to work, otherwise all CRL checks will be invalid and block access
+  even for valid clients.
 
 #### Proxy-specific Client Certificate
 For cases where a backend **requires** a certificate but the client using the
@@ -699,6 +703,7 @@ specific location. This is for proxied sites that do their own authentication
 (e.g. git) or for specific locations which shouldn't be auth'ed.
 
 Explicitly set no authentication and allow all to prevent any configuration
+
 carried over from the default site.
 
 /etc/nginx/conf.d/services/my-site.conf `root:root 0644`
@@ -761,6 +766,36 @@ server {
   }
 }
 ```
+
+#### Rate Limiting
+Restrict the amount of requests a user can simultaneously issue to the nginx
+proxy and determine how to throttle or drop requests over that limit. Read
+[in-depth documentation][nw] to fully understand rate limiting.
+
+```nginx
+limit_req_zone $binary_remote_addr zone=binip:10m rate=10r/s;
+```
+* Place this in the http context block, outside of server blocks.
+* 10 MB of memory is reserved in the zone `binip` to match the binary ip address
+  requests. This is shared across all threads.
+* The rate limit specified is 10 requests / second. (1 request every 100
+  milliseconds). No bursting is defined here so requests between 100 millisecond
+  increments will be dropped.
+
+
+```nginx
+location / {
+    limit_req zone=binip burst=20 nodelay;
+    ...
+}
+```
+* Enable bursting of up to 20 requests a second and immediate queue those
+  requests without delay. This will handle requests between 100 millisecond
+  increments, however, the 21st request will be delayed until the queue has
+  space.
+* `delay=10` will enable bursting of up to 10 requests a second, then delay any
+  request amount over 10 until the queue is cleared. Excessive queries will be
+  dropped.
 
 Debugging
 ---------
@@ -903,6 +938,7 @@ location / {
 [g0]: http://nginx.org/en/docs/http/ngx_http_geo_module.html
 [l4]: ../certificate-authority/README.md
 [kx]: https://jamielinux.com/docs/openssl-certificate-authority/introduction.html
+[nw]: https://www.nginx.com/blog/rate-limiting-nginx/
 [XX]: https://github.com/r-pufky/docs/blob/c9067f2bc3d0aeb0f2915e63f8cd9515c00640a2/services/docker-service-template.md
 
 [bugdx]: https://github.com/docker/libnetwork/issues/1141#issuecomment-215522809

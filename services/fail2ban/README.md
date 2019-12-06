@@ -8,6 +8,8 @@ docker services.
 1. [Docker Creation](#docker-creation)
 1. [System Setup](#system-setup)
 1. [Docker Setup](#docker-setup)
+1. [Bans Not Triggering](#bans-not-triggering)
+1. [Common Commands](#common-commands)
 
 Docker Capabilities
 -------------------
@@ -121,51 +123,81 @@ fail2ban/docker/jail.d/nginx.conf `root:root 0644`
 ```conf
 # enable filtering of nginx http auth.
 [nginx-http-auth]
-enabled = true
-filter  = nginx-http-auth
-port    = http,https
-logpath = /var/log/nginx/error.log
-bantime = -1
+enabled  = true
+filter   = nginx-http-auth
+port     = http,https
+logpath  = /var/log/nginx/error.log
+bantime  = -1
+findtime = 86400
+maxretry = 3
+
+# Invalid file / directory access attempts.
+[nginx-no-file-directory]
+enabled  = true
+filter   = nginx-no-file-directory
+port     = http,https
+logpath  = /var/log/nginx/error.log
+bantime  = -1
+findtime = 86400
+maxretry = 2
+
+# Forbidden index access attempts.
+[nginx-forbidden]
+enabled  = true
+filter   = nginx-forbidden
+port     = http,https
+logpath  = /var/log/nginx/error.log
+bantime  = -1
+findtime = 86400
+maxretry = 2
+
+# Ban repeated client errors.
+[nginx-errors]
+enabled  = true
+filter   = nginx-errors
+port     = http,https
+logpath  = /var/log/nginx/access.log
+bantime  = -1
 findtime = 86400
 maxretry = 2
 
 # Ban clients looking for scripts.
 [nginx-noscript]
 enabled  = true
-port     = http,https
 filter   = nginx-noscript
+port     = http,https
 logpath  = /var/log/nginx/access.log
-bantime = -1
+bantime  = -1
 findtime = 86400
 maxretry = 6
 
 # Ban known malicious bad bots.
 [nginx-badbots]
 enabled  = true
-port     = http,https
 filter   = nginx-badbots
+port     = http,https
 logpath  = /var/log/nginx/access.log
-bantime = -1
+bantime  = -1
 findtime = 86400
 maxretry = 2
 
 # Ban requests for user home directories.
 [nginx-nohome]
 enabled  = true
-port     = http,https
 filter   = nginx-nohome
+port     = http,https
 logpath  = /var/log/nginx/access.log
-bantime = -1
+bantime  = -1
 findtime = 86400
 maxretry = 2
 
 # Ban attempts to use as an open proxy.
 [nginx-noproxy]
 enabled  = true
-port     = http,https
 filter   = nginx-noproxy
+port     = http,https
 logpath  = /var/log/nginx/access.log
-bantime = -1
+bantime  = -1
 findtime = 86400
 maxretry = 2
 ```
@@ -231,6 +263,7 @@ failregex = ^<HOST> -.*GET .*/~.*
 
 ignoreregex =
 ```
+* Detect home directory usage.
 
 fail2ban/docker/filter.d/nginx-noproxy.conf `root:root 0644`
 ```conf
@@ -240,6 +273,7 @@ failregex = ^<HOST> -.*GET http.*
 
 ignoreregex =
 ```
+* Detect use of server as a ad-hoc proxy.
 
 fail2ban/docker/filter.d/nginx-noscript.conf `root:root 0644`
 ```conf
@@ -249,8 +283,77 @@ failregex = ^<HOST> -.*GET.*(\.php|\.asp|\.exe|\.pl|\.cgi|\.scgi)
 
 ignoreregex =
 ```
+* Detect attempts to directly access/execute scripts.
+
+fail2ban/docker/filter.d/nginx-forbidden.conf `root:root 0644`
+```conf
+[Definition]
+
+failregex = ^.*\[error\] \d+#\d+: .* is forbidden, client: <HOST>.*$
+
+ignoreregex =
+```
+* Detect access to forbidden indexes.
+
+fail2ban/docker/filter.d/nginx-no-file-directory.conf
+```conf
+[Definition]
+
+failregex = ^.*\[error\] \d+#\d+: .* No such file or directory\), client: <HOST>.*$
+
+ignoreregex =
+```
+* Detect attempts to access invalid files and directories.
+
+fail2ban/docker/filter.d/nginx-errors.conf
+```conf
+# https://www.restapitutorial.com/httpstatuscodes.html
+[Definition]
+
+failregex = ^<HOST> -.*"(GET|POST|HEAD).*HTTP.*" (40[0-7,9]|4[1-8][0-9]) .*$
+
+ignoreregex =
+```
+* Detect multiple client error codes.
 
 Restart fail2ban.
+
+Bans Not Triggering
+-------------------
+Commonly this is due to either invalid regex filters, timezone differences in
+logs and fail2ban container, or database wonkiness.
+
+Ensure regex filter is actually catching known bannable attempts:
+```bash
+fail2ban-regex /path/to/log.log /etc/fail2ban/filter.d/my-filter.conf
+```
+* If there are known lines that should be caught, these should appear in the
+  output as _matched_.
+
+Ensure regex filter is loaded properly:
+```bash
+fail2ban-client --dp
+```
+* This will show the loaded filters and jails. They should match your config.
+* Restart the service to reload if different.
+
+Set to debug and set if known bannable attempts are triggering:
+```bash
+docker-compose logs -f f2b-docker
+```
+* Bans should clearly appear in logs after logs are updated.
+
+Reset fail2ban state:
+```bash
+fail2ban-client unban --all
+docker-compose down
+docker rmi crazymax/fail2ban:latest
+rm /path/to/f2b/db/fail2ban.sqllite
+docker-compuse up -d
+```
+* Sometimes the DB gets in a weird state where actions are not triggered. This
+  will reset fail2ban to a default state (including the database) and actions
+  should be triggered again.
 
 Common Commands
 ---------------
