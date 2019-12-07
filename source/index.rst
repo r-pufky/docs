@@ -121,7 +121,8 @@ git hub, or submit a CL :)
   :includehidden:
   :maxdepth: -1
 
-  Windows 10 <operating-systems/windows/10/index>
+  services/airsonic/index
+  services/nginx/index
 
 .. toctree::
   :caption: Scripts

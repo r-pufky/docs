@@ -17,6 +17,7 @@ class WRegEdit(config_table.ConfigTable):
     See ConfigTable for core Directives.
 
     :admin: Flag to enable admin requirement display in :key_title:.
+    :delim: Alternative delimeter for lists. Default: ','.
 
   .. wregedit:: Disable disk space warning checks for partition regedit
     :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
@@ -25,6 +26,7 @@ class WRegEdit(config_table.ConfigTable):
     :types:     DWORD
     :data:      1
     :admin:
+    :delim: ,
 
       .. note::
         This is a free-form RST processed content contained within the rendered
@@ -58,6 +60,7 @@ class WRegEdit(config_table.ConfigTable):
     'names': directives.unchanged_required,
     'types': directives.unchanged_required,
     'data': directives.unchanged_required,
+    'delim': directives.unchanged,
     'admin': directives.flag,
     'no_section': directives.flag,
     'no_launch': directives.flag,
@@ -99,10 +102,14 @@ class WRegEdit(config_table.ConfigTable):
     Returns:
       WRegEditData object containing sanitized directive data.
     """
+    if 'delim' in self.options:
+      delim = self.options['delim'].strip()
+    else:
+      delim = ','
     key_title = ''.join(self._parse_list('key_title','\n'))
-    names_list = self._parse_list('names')
-    types_list = self._parse_list('types')
-    data_list = self._parse_list('data')
+    names_list = self._parse_list('names', delim)
+    types_list = self._parse_list('types', delim)
+    data_list = self._parse_list('data', delim)
     title, _ = self.make_title()
 
     return WRegEditData(key_title,
