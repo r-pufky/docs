@@ -125,6 +125,7 @@ git hub, or submit a CL :)
   services/beets/index
   services/crashplan/index
   services/deluge/index
+  services/digikam/index
   services/nginx/index
   services/certificate-authority/index
 
