@@ -1,7 +1,7 @@
 .. _service-beets:
 
-`beets.io`_ Media Server
-########################
+`beets.io`_
+###########
 Music organizer.
 
 See `beets.io Docker and Documentation`_.

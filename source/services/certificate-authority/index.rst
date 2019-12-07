@@ -1,7 +1,7 @@
 .. _service-certificate-authority:
 
-`Certificate Authority`_ Server
-###############################
+`Certificate Authority`_
+########################
 Run your own Ceritificate Authority which provides authentication and
 authorization for services you own. An excellent reference for `basic CA setup
 and usage`_ is here and should be well understood before proceeding.

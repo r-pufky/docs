@@ -1,7 +1,7 @@
 .. _service-nginx:
 
-NGINX Server
-############
+NGINX
+#####
 `Reverse proxy and load balancer`_ This provides a way to place services behind
 a proxy and enforce SSL for those applications, as well as being able to offer a
 clean namespace for multiple microservices.

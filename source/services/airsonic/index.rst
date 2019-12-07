@@ -1,7 +1,7 @@
 .. _service-airsonic:
 
-`Airsonic`_ Server
-##################
+`Airsonic`_
+###########
 Music streaming.
 
 See `Airsonic Docker and Documentation`_.
