@@ -44,6 +44,23 @@ Docker Creation
   Let's Encrypt local mount should just point to the install location of let's
   encrypt, typically ``/etc/letsencrypt``.
 
+.. _service-nginx-logs-to-system:
+
+Send NGINX Logs to System
+=========================
+If using NGINX as a proxy for dockers, setup to log to system.
+
+.. code-block:: yaml
+  :caption: Docker Compose
+
+  nginx-proxy:
+    volumes:
+      - /var/log/nginx:/var/log/nginx
+
+.. note::
+  Restart NGINX container. Logs should appear in ``/var/log/nginx/*.log`` on
+  host. Logs will no longer be accessible via ``docker logs``.
+
 Setup Base Reverse Proxy
 ************************
 This will setup a basic reverse-proxy that:

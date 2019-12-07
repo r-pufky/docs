@@ -127,6 +127,7 @@ git hub, or submit a CL :)
   services/deluge/index
   services/digikam/index
   services/dovecot/index
+  services/fail2ban/index
   services/nginx/index
   services/certificate-authority/index
 
