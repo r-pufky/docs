@@ -79,12 +79,12 @@ file if it doesn't exist.
 
 Using Subdomains
 ================
-.. literalinclude:: source/subdomains.conf
+.. literalinclude:: source/subdomain.conf
   :caption: **0644 root root** ``nginx/conf.d/reverse-proxy.conf``
 
 Using Subpaths
 ===============
-.. literalinclude:: source/subpaths.conf
+.. literalinclude:: source/subpath.conf
   :caption: **0644 root root** ``nginx/conf.d/reverse-proxy.conf``
 
 .. note::

@@ -69,6 +69,8 @@ This will setup a basic reverse-proxy that:
 * **resolver** should be set to a `DNS resolver`_. localhost, gateway or pihole
   are all viable options. Check logs to ensure resolution works.
 
+.. _service-nginx-base-proxy-control:
+
 Setup Base Proxy Control
 ************************
 A proxy control template will enable complex proxy configurations to be

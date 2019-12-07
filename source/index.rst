@@ -122,6 +122,7 @@ git hub, or submit a CL :)
   :maxdepth: -1
 
   services/airsonic/index
+  services/beets/index
   services/nginx/index
   services/certificate-authority/index
 
