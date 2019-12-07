@@ -123,6 +123,7 @@ git hub, or submit a CL :)
 
   services/airsonic/index
   services/nginx/index
+  services/certificate-authority/index
 
 .. toctree::
   :caption: Scripts

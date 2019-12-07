@@ -101,7 +101,10 @@ class GGui(config_table.ConfigTable):
     Returns:
       GuiData object containing sanitized directive data.
     """
-    key_title = ''.join(self._parse_list('key_title','\n'))
+    if 'key_title' in self.options:
+      key_title = ''.join(self._parse_list('key_title','\n'))
+    else:
+      key_title = None
     option_list = self._parse_list('option')
     setting_list = self._parse_list('setting')
     title, _ = self.make_title()

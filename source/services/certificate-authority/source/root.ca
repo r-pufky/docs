@@ -1,0 +1,95 @@
+# OpenSSL root CA configuration file.
+# Stripped down to just Root CA functionality.
+# https://jamielinux.com/docs/openssl-certificate-authority/create-the-root-pair.html
+
+[ ca ]
+default_ca                     = CA_default
+
+[ CA_default ]
+# Directory and file locations.
+dir                            = /root/ca/root
+certs                          = $dir/certs
+crl_dir                        = $dir/crl
+new_certs_dir                  = $dir/newcerts
+database                       = $dir/index.txt
+serial                         = $dir/serial
+RANDFILE                       = $dir/private/.rand
+
+# The root key and root certificate.
+private_key                    = $dir/private/root.key.pem
+certificate                    = $dir/certs/root.cert.pem
+
+# For certificate revocation lists.
+crlnumber                      = $dir/crlnumber
+crl                            = $dir/crl/root.crl.pem
+crl_extensions                 = crl_ext
+default_crl_days               = 375
+
+default_md                     = sha512
+name_opt                       = ca_default
+cert_opt                       = ca_default
+default_days                   = 375
+preserve                       = no
+policy                         = policy_strict
+
+[ policy_strict ]
+# The root CA should only sign intermediate certificates that match.
+countryName                    = match
+stateOrProvinceName            = match
+organizationName               = match
+organizationalUnitName         = optional
+commonName                     = supplied
+emailAddress                   = optional
+
+[ req ]
+# Applied when creating / signing certificates.
+default_bits                   = 4096
+distinguished_name             = req_distinguished_name
+string_mask                    = utf8only
+default_md                     = sha512
+x509_extensions                = v3_ca
+
+[ req_distinguished_name ]
+# CSR information required, prompts and defaults.
+countryName                    = Country Name (2 letter code)
+stateOrProvinceName            = State or Province Name
+localityName                   = Locality Name
+0.organizationName             = Organization Name
+organizationalUnitName         = Organizational Unit Name
+commonName                     = Common Name
+emailAddress                   = Email Address
+
+# Default values for certification generation.
+countryName_default            = XX
+stateOrProvinceName_default    = XX
+localityName_default           = XX
+0.organizationName_default     = {CA NAME}
+organizationalUnitName_default = {CA NAME} Certificate Authority
+commonName_default             = {CA NAME} Root CA
+emailAddress_default           = XX
+
+[ v3_ca ]
+# Root CA extenstions: man x509v3_config '-extensions v3_ca'
+subjectKeyIdentifier           = hash
+authorityKeyIdentifier         = keyid:always,issuer
+basicConstraints               = critical, CA:true
+keyUsage                       = critical, digitalSignature, cRLSign, keyCertSign
+
+[ v3_intermediate_ca ]
+# Intermediate CA extensions: man x509v3_config '-extensions v3_intermediate_ca'
+subjectKeyIdentifier           = hash
+authorityKeyIdentifier         = keyid:always,issuer
+basicConstraints               = critical, CA:true, pathlen:0
+keyUsage                       = critical, digitalSignature, cRLSign, keyCertSign
+
+[ crl_ext ]
+# Certificate revocation list extensions: man x509v3_config
+authorityKeyIdentifier         = keyid:always
+
+[ ocsp ]
+# OCSP signing certificate extensions: man ocsp
+basicConstraints               = CA:FALSE
+subjectKeyIdentifier           = hash
+authorityKeyIdentifier         = keyid,issuer
+keyUsage                       = critical, digitalSignature
+extendedKeyUsage               = critical, OCSPSigning

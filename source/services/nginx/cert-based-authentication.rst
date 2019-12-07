@@ -79,7 +79,7 @@ certificate authentication is supported both locally and via URI matching.
     sslKey = /home/user/{MACHINE}.key.pem
 
 `Git Cert Auth for Specific Repo`_
-=================================
+==================================
 .. code-block:: bash
 
   git config --local http.sslCert "/home/user/{MACHINE}.crt.pem"
