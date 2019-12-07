@@ -63,7 +63,8 @@ adjusting for paths.
 Reverse Proxy Setup
 *******************
 Allows you to isolate your containers as well as wrap connections in SSL. See
-:ref:`service-nginx` for more details.
+:ref:`service-nginx` for more details. See
+:ref:`service-nginx-base-proxy-control` for basic proxy configuration.
 
 Enable Forward Headers
 ======================
