@@ -129,6 +129,7 @@ git hub, or submit a CL :)
   services/dovecot/index
   services/fail2ban/index
   services/firefly/index
+  services/gitea/index
   services/nginx/index
   services/certificate-authority/index
 

@@ -63,6 +63,7 @@ will use to authenticate to backends for requests.
     proxy_ssl_trusted_certificate /etc/nginx/auth/{BACKEND}.crt.pem;
   }
 
+.. _service-nginx-cert-auth-git:
 
 Git Configuration
 *****************
