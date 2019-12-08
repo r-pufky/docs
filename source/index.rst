@@ -135,6 +135,7 @@ git hub, or submit a CL :)
   services/lidarr/index
   services/mumble/index
   services/nginx/index
+  services/nzbget/index
   services/certificate-authority/index
 
 .. toctree::
