@@ -4,7 +4,7 @@
 ###########
 Sync gmail to local imap server.
 
-ubuntu 16.04.
+Uses :ref:`1804-server-base-install`.
 
 imapsync Setup
 **************

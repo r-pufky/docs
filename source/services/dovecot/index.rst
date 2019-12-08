@@ -4,7 +4,7 @@ Dovecot
 #######
 Mail Delivery Agent (MDA) Setup.
 
-Ubunutu 16.04.
+Uses :ref:`1804-server-base-install`.
 
 * Disable ports **25/465/993** on firewall until configuration is final
   otherwise you may get email delivered while you are configuring server.
