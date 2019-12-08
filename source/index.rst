@@ -139,6 +139,7 @@ git hub, or submit a CL :)
   services/pihole/index
   services/plex/index
   services/postfix/index
+  services/radarr/index
   services/certificate-authority/index
 
 .. toctree::

@@ -196,7 +196,7 @@ Profiles
   :no_caption:
   :no_launch:
 
-.. gtable:: Delay Profiles
+.. gtable:: Lidarr Delay Profiles
   :key_title: Settings --> Profiles --> Delay Profiles --> +
   :header: Protocol,
            Usenet Delay,
@@ -212,7 +212,7 @@ Profiles
 
 Quality
 *******
-.. gtable:: Quality
+.. gtable:: Lidarr Quality
   :header: Quality,
            Title,
            Kbps Min,
@@ -228,7 +228,7 @@ Quality
 
 Indexers
 ********
-.. ggui:: Indexers
+.. ggui:: Lidarr Indexers
   :key_title: Settings --> Indexers --> +
   :option:  Name;
             Enable RSS;
@@ -238,7 +238,7 @@ Indexers
             API Path;
             API Key;
             Categories;
-            Easrly Download Limit;
+            Early Download Limit;
             Additional Parameters
   :setting: {INDEXER NAME};
             ☑;
@@ -255,7 +255,7 @@ Indexers
   :no_launch:
   :delim: ;
 
-.. ggui:: Options
+.. ggui:: Lidarr Options
   :key_title: Settings --> Indexers --> Options
   :option:  Minimum Age,
             Minimum Size,
@@ -271,7 +271,7 @@ Indexers
 
 Download Clients
 ****************
-.. ggui:: Download Clients
+.. ggui:: Lidarr Download Clients
   :key_title: Settings --> Download Clients --> +
   :option:  Name,
             Enable,
@@ -301,7 +301,7 @@ Download Clients
   :no_caption:
   :no_launch:
 
-.. ggui:: Completed Download Handling
+.. ggui:: Lidarr Completed Download Handling
   :key_title: Settings --> Download Clients --> Completed Download Handling
   :option:  ☑,
             ☑
@@ -311,7 +311,7 @@ Download Clients
   :no_caption:
   :no_launch:
 
-.. ggui:: Failed Download Handing
+.. ggui:: Lidarr Failed Download Handing
   :key_title: Settings --> Download Clients --> Failed Download Handling
   :option:  ☐,
             ☐
@@ -323,7 +323,7 @@ Download Clients
 
 General
 *******
-.. ggui:: General Gost
+.. ggui:: Lidarr General Host
   :key_title: Settings --> General --> Host
   :option:  Bind Address,
             Port Number,
@@ -337,7 +337,7 @@ General
   :no_caption:
   :no_launch:
 
-.. ggui:: General Security
+.. ggui:: Lidarr General Security
   :key_title: Settings --> General --> Security
   :option:  Authentication,
             API Key
@@ -347,7 +347,7 @@ General
   :no_caption:
   :no_launch:
 
-.. ggui:: General Proxy
+.. ggui:: Lidarr General Proxy
   :key_title: Settings --> General --> Proxy
   :option:  Use Proxy
   :setting: ☐
@@ -355,7 +355,7 @@ General
   :no_caption:
   :no_launch:
 
-.. ggui:: General Logging
+.. ggui:: Lidarr General Logging
   :key_title: Settings --> General --> Logging
   :option:  Log Level
   :setting: info
@@ -363,7 +363,7 @@ General
   :no_caption:
   :no_launch:
 
-.. ggui:: General Analytics
+.. ggui:: Lidarr General Analytics
   :key_title: Settings --> General --> Analytics
   :option:  Send Anonymous Usage Data
   :setting: ☐
@@ -371,7 +371,7 @@ General
   :no_caption:
   :no_launch:
 
-.. ggui:: General Backups
+.. ggui:: Lidarr General Backups
   :key_title: Settings --> General --> Backups
   :option:  Folder,
             Interval,
@@ -385,7 +385,7 @@ General
 
 UI
 **
-.. ggui:: UI
+.. ggui:: Lidarr UI
   :key_title: Settings --> UI --> Calendar
   :option:  First Day of Week,
             Week Column Header
@@ -395,7 +395,7 @@ UI
   :no_caption:
   :no_launch:
 
-.. ggui:: UI Dates
+.. ggui:: Lidarr UI Dates
   :key_title: Settings --> UI --> Dates
   :option:  Short Date Format,
             Long Date Format,
@@ -409,7 +409,7 @@ UI
   :no_caption:
   :no_launch:
 
-.. ggui:: UI Style
+.. ggui:: Lidarr UI Style
   :key_title: Settings --> UI --> Style
   :option:  Enable Color-Impaired mode,
             Expand Items by Default
