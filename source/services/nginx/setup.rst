@@ -42,7 +42,7 @@ Docker Creation
 
 .. note::
   Let's Encrypt local mount should just point to the install location of let's
-  encrypt, typically ``/etc/letsencrypt``.
+  encrypt, typically ``/etc/letsencrypt``. See :ref:`service-letsencrypt`.
 
 .. _service-nginx-logs-to-system:
 

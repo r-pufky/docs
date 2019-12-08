@@ -40,14 +40,12 @@ scripts & commands from the internet.
 
 Bugs & Security Concerns
 ************************
-Use `letsencrypt`_ for free SSL/TLS certs. There's **NO REASON** to run
-self-signed certs anymore for hosting anything. Don't do it. Get a Let's Encrypt
-Cert.
+Use :ref:`service-letsencrypt` for free SSL/TLS certs. There's **NO REASON** to
+run self-signed certs anymore for hosting anything. Don't do it. Get a Let's
+Encrypt Cert.
 
 If you find any bugs or security concerns, file a bug against this project on
 git hub, or submit a CL :)
-
-.. _letsencrypt: https://letsencrypt.org
 
 .. toctree::
   :hidden:
@@ -132,6 +130,8 @@ git hub, or submit a CL :)
   services/gitea/index
   services/git-webhook-receiver/index
   services/heimdall/index
+  services/imapsync/index
+  services/letsencrypt/index
   services/nginx/index
   services/certificate-authority/index
 
