@@ -137,6 +137,7 @@ git hub, or submit a CL :)
   services/nginx/index
   services/nzbget/index
   services/pihole/index
+  services/plex/index
   services/certificate-authority/index
 
 .. toctree::
