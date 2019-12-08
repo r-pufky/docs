@@ -18,6 +18,7 @@ class GGui(config_table.ConfigTable):
     See ConfigTable for core Directives.
 
     :admin: Flag to enable admin requirement display in :key_title:.
+    :delim: Alternative delimeter for lists. Default: ','.
 
   .. ggui:: Add storage pool to KVM
     :key_title: Edit --> Connection Details --> Storage
@@ -28,6 +29,7 @@ class GGui(config_table.ConfigTable):
                 dir: Filesystem Directory,
                 {STORAGE POOL LOCATION}
     :admin:
+    :delim: ,
 
       .. note::
         This is a free-form RST processed content contained within the rendered
@@ -60,6 +62,7 @@ class GGui(config_table.ConfigTable):
     'key_title': directives.unchanged_required,
     'option': directives.unchanged_required,
     'setting': directives.unchanged_required,
+    'delim': directives.unchanged,
     'admin': directives.flag,
     'no_section': directives.flag,
     'no_launch': directives.flag,
@@ -101,12 +104,16 @@ class GGui(config_table.ConfigTable):
     Returns:
       GuiData object containing sanitized directive data.
     """
+    if 'delim' in self.options:
+      delim = self.options['delim'].strip()
+    else:
+      delim = ','
     if 'key_title' in self.options:
       key_title = ''.join(self._parse_list('key_title','\n'))
     else:
       key_title = None
-    option_list = self._parse_list('option')
-    setting_list = self._parse_list('setting')
+    option_list = self._parse_list('option', delim)
+    setting_list = self._parse_list('setting', delim)
     title, _ = self.make_title()
 
     return GGuiData(key_title,

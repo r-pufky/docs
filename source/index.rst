@@ -132,6 +132,7 @@ git hub, or submit a CL :)
   services/heimdall/index
   services/imapsync/index
   services/letsencrypt/index
+  services/lidarr/index
   services/nginx/index
   services/certificate-authority/index
 
