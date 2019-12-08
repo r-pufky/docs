@@ -1,4 +1,4 @@
-.. _service-radarr-basic-configuration:
+.. _service-sonarr-basic-configuration:
 
 Basic Configuration
 ###################
@@ -7,35 +7,55 @@ Unmentioned options are defaults.
 
 Media Management
 ****************
-.. ggui:: Radarr Movie Naming
-  :key_title: Settings --> Media Management --> Movie Naming
+.. ggui:: Sonarr Episode Naming
+  :key_title: Settings --> Media Management --> Episode Naming
   :option:  Rename Episodes,
-            Replace Illegal Characters,
-            Colon Replacement Format,
-            Standard Movie Format,
-            Movie Folder Format
+            Include Series Title,
+            Include Episode Title,
+            Include Quality,
+            Replace Spaces,
+            Separator,
+            Numbering Style,
+            Season Folder Format,
+            Multi-Episode Style,
+            Single Episode Example,
+            Multi-Episode Example,
+            Daily-Episode Example,
+            Anime Episode Example,
+            Anime Multi-Episode Example,
+            Series Folder Example,
+            Season Folder Example
   :setting: Yes,
             Yes,
-            Delete,
-            {Movie TitleThe} ({Release Year}){ - Edition Tags},
-            {Movie TitleThe} ({Release Year})
-  :no_section:
-  :no_caption:
-  :no_launch:
-
-.. ggui:: Radarr Folders
-  :key_title: Settings --> Media Management --> Folders
-  :option:  Create empty movie folders,
-            Automatically Rename Folders,
-            Movie Paths Default to Static
-  :setting: No,
             Yes,
-            Yes
+            No,
+            No,
+            Dash,
+            S01E05,
+            Season {season:00},
+            Prefixed Range,
+            The Series Title (2010) - S01E01 - Episode Title (1),
+            The Series Title (2010) - S01E01-E03 - Episode Title,
+            The Series Title (2010) - 2013-10-30 - Episode Title (1),
+            The Series Title (2010) - S01E01 - Episode Title (1),
+            The Series Title (2010) - S01E01-E03 - Episode Title,
+            The Series Title (2010),
+            Season 01
   :no_section:
   :no_caption:
   :no_launch:
 
-.. ggui:: Radarr Importing
+.. ggui:: Sonarr Folders
+  :key_title: Settings --> Media Management --> Folders
+  :option:  Create empty series folders,
+            Delete empty folders
+  :setting: No,
+            No
+  :no_section:
+  :no_caption:
+  :no_launch:
+
+.. ggui:: Sonarr Importing
   :key_title: Settings --> Media Management --> Importing
   :option:  Skip Free Space Check,
             Use Hardlinks Instead of Copy,
@@ -47,9 +67,9 @@ Media Management
   :no_caption:
   :no_launch:
 
-.. ggui:: Radarr File Management
+.. ggui:: Sonarr File Management
   :key_title: Settings --> Media Management --> File Management
-  :option:  Unmonitor Deleted Movies,
+  :option:  Ignore Delete Episodes,
             Download Propers,
             Analyse video files,
             Change File Date,
@@ -58,12 +78,12 @@ Media Management
             Yes,
             Yes,
             None,
-            /data/downloads/media-trashed
+            /data/downloads/sonarr-recycle/
   :no_section:
   :no_caption:
   :no_launch:
 
-.. ggui:: Radarr Permissions
+.. ggui:: Sonarr Permissions
   :key_title: Settings --> Media Management --> Permissions
   :option:  Set Permissions,
             File chmod mask,
@@ -73,7 +93,7 @@ Media Management
   :setting: Yes,
             2660,
             2770,
-            radarr {OR DOCKER UID},
+            sonarr {OR DOCKER UID},
             media {OR DOCKER GID}
   :no_section:
   :no_caption:
@@ -81,13 +101,11 @@ Media Management
 
 Profiles
 ********
-.. ggui:: Radarr Profiles (Any)
+.. ggui:: Sonarr Profiles (Any)
   :key_title: Settings --> Profiles --> Any
   :option:  Name,
             Language,
-            Preferred Tags,
             Cutoff,
-            Custom Format Cutoff,
             Qualities,
             ›,
             ›,
@@ -97,223 +115,111 @@ Profiles
             ›,
             ›,
             ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            Custom Formats
+            ›
   :setting: Any,
             English,
+            SDTV,
             ,
-            Bluray-480p,
-            None,
-            ,
-            ☐ Raw HD,
-            ☑ BR-DISK,
-            ☑ Remux-2160p,
-            ☑ Bluray-2160p,
-            ☑ WEBDL-2160p,
-            ☑ HDTV-2160p,
-            ☑ Remux-1080p,
-            ☑ Bluray-1080p,
-            ☑ WEBDL-1080p,
-            ☑ HDTV-1080p,
-            ☑ Bluray-720p,
-            ☑ WEBDL-720p,
             ☑ HDTV-720p,
-            ☑ Bluray-576p,
-            ☑ Bluray-480p,
-            ☑ WEBDL-480p,
-            ☑ DVD-R,
+            ☑ WEBDL-720p,
+            ☑ Bluray-720p,
+            ☑ HDTV-1080p,
+            ☑ WEBDL-1080p,
+            ☑ Bluray-1080p,
             ☑ DVD,
-            ☑ SDTV,
-            ☑ DVDSCR,
-            ☑ REGIONAL,
-            ☑ TELECINE,
-            ☑ TELESYNC,
-            ☑ CAM,
-            ☑ WORKPRINT,
-            ☐ Unknown,
-            ☑ None
+            ☑ WEBDL-480p,
+            ☑ SDTV
   :no_section:
   :no_caption:
   :no_launch:
 
-.. ggui:: Radarr Profiles (SD)
+.. ggui:: Sonarr Profiles (SD)
   :key_title: Settings --> Profiles --> SD
   :option:  Name,
             Language,
-            Preferred Tags,
             Cutoff,
-            Custom Format Cutoff,
             Qualities,
             ›,
             ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            Custom Formats
+            ›
   :setting: SD,
             English,
+            SDTV,
             ,
-            Bluray-480p,
-            None,
-            ,
-            ☑ Bluray-576p,
-            ☑ Bluray-480p,
-            ☑ WEBDL-480p,
             ☑ DVD,
-            ☑ SDTV,
-            ☑ DVDSCR,
-            ☑ REGIONAL,
-            ☑ TELECINE,
-            ☑ TELESYNC,
-            ☑ CAM,
-            ☑ WORKPRINT,
-            ☑ None
+            ☑ WEBDL-480p,
+            ☑ SDTV
   :no_section:
   :no_caption:
   :no_launch:
 
-.. ggui:: Radarr Profiles (HD-720p)
+.. ggui:: Sonarr Profiles (HD-720p)
   :key_title: Settings --> Profiles --> HD-720p
   :option:  Name,
             Language,
-            Preferred Tags,
             Cutoff,
-            Custom Format Cutoff,
             Qualities,
             ›,
             ›,
-            ›,
-            Custom Formats
+            ›
   :setting: HD-720p,
             English,
+            SDTV,
             ,
-            Bluray-720p,
-            None,
-            ,
-            ☑ Bluray-720p,
-            ☑ WEBDL-720p,
             ☑ HDTV-720p,
-            ☑ None
+            ☑ WEBDL-720p,
+            ☑ Bluray-720p
   :no_section:
   :no_caption:
   :no_launch:
 
-.. ggui:: Radarr Profiles (HD-1080p)
+.. ggui:: Sonarr Profiles (HD-1080p)
   :key_title: Settings --> Profiles --> HD-1080p
   :option:  Name,
             Language,
-            Preferred Tags,
             Cutoff,
-            Custom Format Cutoff,
             Qualities,
             ›,
             ›,
-            ›,
-            ›,
-            Custom Formats
+            ›
   :setting: HD-1080p,
             English,
+            HD-1080p,
             ,
-            Bluray-480p,
-            None,
-            ,
-            ☑ Remux-1080p,
-            ☑ Bluray-1080p,
-            ☑ WEBDL-1080p,
             ☑ HDTV-1080p,
-            ☑ None
+            ☑ WEBDL-1080p,
+            ☑ Bluray-1080p
   :no_section:
   :no_caption:
   :no_launch:
 
-.. ggui:: Radarr Profiles (Ultra-HD)
-  :key_title: Settings --> Profiles --> Ultra-HD
+.. ggui:: Sonarr Profiles (All)
+  :key_title: Settings --> Profiles --> All
   :option:  Name,
             Language,
-            Preferred Tags,
             Cutoff,
-            Custom Format Cutoff,
-            Qualities,
-            ›,
-            ›,
-            ›,
-            ›,
-            Custom Formats
-  :setting: Ultra-HD,
-            English,
-            ,
-            Remux-2160p,
-            None,
-            ,
-            ☑ Remux-2160p,
-            ☑ Bluray-2160p,
-            ☑ WEBDL-2160p,
-            ☑ HDTV-2160p,
-            ☑ None
-  :no_section:
-  :no_caption:
-  :no_launch:
-
-.. ggui:: Radarr Profiles (HD - 720p/1080p)
-  :key_title: Settings --> Profiles --> HD - 720p/1080p
-  :option:  Name,
-            Language,
-            Preferred Tags,
-            Cutoff,
-            Custom Format Cutoff,
             Qualities,
             ›,
             ›,
             ›,
             ›,
             ›,
-            ›,
-            ›,
-            ›,
-            Custom Formats
-  :setting: HD - 720p/1080p,
+            ›
+  :setting: All,
             English,
+            HD-720p,
             ,
-            Bluray-720p,
-            None,
-            ,
-            ☑ Remux-2160p,
-            ☑ Remux-1080p,
-            ☑ Bluray-1080p,
-            ☑ WEBDL-1080p,
-            ☑ HDTV-1080p,
-            ☑ Bluray-720p,
-            ☑ WEBDL-720p,
             ☑ HDTV-720p,
-            ☑ None
+            ☑ WEBDL-720p,
+            ☑ Bluray-720p,
+            ☑ HDTV-1080p,
+            ☑ WEBDL-1080p,
+            ☑ Bluray-1080p
   :no_section:
   :no_caption:
   :no_launch:
 
-.. gtable:: Radarr Delay Profiles
+.. gtable:: Sonarr Delay Profiles
   :key_title: Settings --> Profiles --> Delay Profiles --> +
   :header: Protocol,
            Usenet Delay,
@@ -329,24 +235,42 @@ Profiles
 
 Quality
 *******
-.. gtable:: Radarr Quality
+.. gtable:: Sonarr Quality
   :header: Quality,
            Title,
            GB Low Min,
            GB High Min,
            GB Low Max,
            GB High Max
-  :c0:     {<= WEBDL-1080p},
-           {> WEBDL-1080p}
+  :c0:     All,
+           Raw-HD,
+           HDTV-2160p,
+           WEBDL-2160p,
+           Bluray-2160p
   :c1:     ALL,
-           ALL
+           Raw-HD,
+           HDTV-2160p,
+           WEBDL-2160p,
+           Bluray-2160p
   :c2:     0,
+           0,
+           0,
+           0,
            0
   :c3:     0,
+           0,
+           0,
+           0,
            0
-  :c4:     8.79GB,
+  :c4:     2.93GB,
+           Unlimited,
+           Unlimited,
+           Unlimited,
            Unlimited
-  :c5:     13.67GB,
+  :c5:     5.86GB,
+           Unlimited,
+           Unlimited,
+           Unlimited,
            Unlimited
   :no_key_title:
   :no_section:
@@ -355,68 +279,48 @@ Quality
 
 Indexers
 ********
-.. ggui:: Radarr Indexers
+.. ggui:: Sonarr Indexers
   :key_title: Settings --> Indexers --> +
   :option:  Name;
             Enable RSS;
             Enable Search;
             URL;
-            Multi Languages;
+            API Path;
             API Key;
             Categories;
             Anime Categories;
-            Additional Parameters;
-            Remove year from search string;
-            Search by Title
+            Additional Parameters
   :setting: {INDEXER NAME};
             Yes;
             Yes;
             {INDEXER API URI};
-            ;
+            /api;
             {INDEXER API KEY};
-            2000,2010,2020,2030,2035,2040,2045,2050,2060;
+            5030,5040;
             ;
-            ;
-            No;
-            No
+            None
   :no_section:
   :no_caption:
   :no_launch:
   :delim: ;
 
-.. ggui:: Radarr Options
+.. ggui:: Sonarr Options
   :key_title: Settings --> Indexers --> Options
   :option:  Minimum Age,
             Retention,
             Maximum Size,
-            Prefer Special Indexer Flags,
-            RSS Sync Interval,
-            Whiteliste Subtitle Tags,
-            Allow Hardcoded Subs,
-            Parser Leniency
+            RSS Sync Interval
   :setting: 0,
             0,
             0,
-            No,
-            0,
-            ,
-            No,
-            Strict
-  :no_section:
-  :no_caption:
-  :no_launch:
-
-.. ggui:: Radarr Availability Options
-  :key_title: Settings --> Indexers --> Availability Options
-  :option:  Availability Delay
-  :setting: 0
+            15
   :no_section:
   :no_caption:
   :no_launch:
 
 Download Client
 ***************
-.. ggui:: Radarr Download Client
+.. ggui:: Sonarr Download Client
   :key_title: Settings --> Download Client --> +
   :option:  Name,
             Enable,
@@ -428,8 +332,8 @@ Download Client
             Category,
             Recent Priority,
             Older Priority,
-            Use SSL,
-            Add Paused
+            Add Paused,
+            Use SSL
   :setting: {INDEXER NAME},
             Yes,
             {NZBGET IP},
@@ -437,28 +341,26 @@ Download Client
             ,
             {API USERNAME},
             {API PASSWORD},
-            movies,
+            tv,
             Normal,
             Normal,
-            Yes,
-            No
+            No,
+            Yes
   :no_section:
   :no_caption:
   :no_launch:
 
-.. ggui:: Radarr Completed Download Handling
+.. ggui:: Sonarr Completed Download Handling
   :key_title: Settings --> Download Client --> Completed Download Handling
   :option:  Enable,
-            Remove,
-            Check For Finished Downloads Interval
+            Remove
   :setting: Yes,
-            Yes,
-            1
+            Yes
   :no_section:
   :no_caption:
   :no_launch:
 
-.. ggui:: Radarr Failed Download Handing
+.. ggui:: Sonarr Failed Download Handing
   :key_title: Settings --> Download Client --> Failed Download Handling
   :option:  Redownload
   :setting: No
@@ -466,7 +368,7 @@ Download Client
   :no_caption:
   :no_launch:
 
-.. ggui:: Radarr Drone Factory Options
+.. ggui:: Sonarr Drone Factory Options
   :key_title: Settings --> Download Client --> Drone Factory Options
   :option:  Drone Factory,
             Drone Factory Interval
@@ -478,14 +380,14 @@ Download Client
 
 Connect
 *******
-.. ggui:: Radarr Connect
+.. ggui:: Sonarr Connect
   :key_title: Settings --> Connect --> Connections --> +
   :option:  Name,
             On Grab,
             On Download,
             On Upgrade,
             On Rename,
-            Filter Movie Tags,
+            Filter Series Tags,
             Host,
             Port,
             Username,
@@ -510,7 +412,7 @@ Connect
 
 General
 *******
-.. ggui:: Radarr General Host
+.. ggui:: Sonarr General Host
   :key_title: Settings --> General --> Start-Up
   :option:  Bind Address,
             Port Number,
@@ -518,7 +420,7 @@ General
             Enable SSL,
             Open browser on start
   :setting: *,
-            7878,
+            8989,
             ,
             No,
             No
@@ -526,7 +428,7 @@ General
   :no_caption:
   :no_launch:
 
-.. ggui:: Radarr General Security
+.. ggui:: Sonarr General Security
   :key_title: Settings --> General --> Security
   :option:  Authentication,
             API Key
@@ -536,7 +438,7 @@ General
   :no_caption:
   :no_launch:
 
-.. ggui:: Radarr General Proxy
+.. ggui:: Sonarr General Proxy
   :key_title: Settings --> General --> Proxy
   :option:  Use Proxy
   :setting: No
@@ -544,7 +446,7 @@ General
   :no_caption:
   :no_launch:
 
-.. ggui:: Radarr General Logging
+.. ggui:: Sonarr General Logging
   :key_title: Settings --> General --> Logging
   :option:  Log Level
   :setting: info
@@ -552,7 +454,7 @@ General
   :no_caption:
   :no_launch:
 
-.. ggui:: Radarr General Analytics
+.. ggui:: Sonarr General Analytics
   :key_title: Settings --> General --> Analytics
   :option:  Enable
   :setting: No
@@ -560,7 +462,7 @@ General
   :no_caption:
   :no_launch:
 
-.. ggui:: Radarr General Updates
+.. ggui:: Sonarr General Updates
   :key_title: Settings --> General --> Updates
   :option:  Branch,
             Automatic,
@@ -574,15 +476,7 @@ General
 
 UI
 **
-.. ggui:: Radarr UI Movies
-  :key_title: Settings --> UI --> Movies
-  :option:  Page Size
-  :setting: 250
-  :no_section:
-  :no_caption:
-  :no_launch:
-
-.. ggui:: Radarr UI Calendar
+.. ggui:: Sonarr UI Calendar
   :key_title: Settings --> UI --> Calendar
   :option:  First Day of Week,
             Week Column Header
@@ -592,7 +486,7 @@ UI
   :no_caption:
   :no_launch:
 
-.. ggui:: Radarr UI Dates
+.. ggui:: Sonarr UI Dates
   :key_title: Settings --> UI --> Dates
   :option:  Short Date Format,
             Long Date Format,
@@ -606,7 +500,7 @@ UI
   :no_caption:
   :no_launch:
 
-.. ggui:: Radarr UI Style
+.. ggui:: Sonarr UI Style
   :key_title: Settings --> UI --> Style
   :option:  Enable Color-Impaired mode
   :setting: No

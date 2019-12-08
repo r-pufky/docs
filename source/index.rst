@@ -140,6 +140,7 @@ git hub, or submit a CL :)
   services/plex/index
   services/postfix/index
   services/radarr/index
+  services/sonarr/index
   services/certificate-authority/index
 
 .. toctree::

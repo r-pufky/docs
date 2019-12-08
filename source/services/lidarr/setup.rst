@@ -78,7 +78,7 @@ Using Subpaths
   Set URL Base to ``/lidarr`` in Lidarr before enabling the reverse-proxy.
 
   .. code-block:: xml
-    :caption: **0644 user user** ``/config/config.yaml``
+    :caption: **0640 user user** ``/config/config.yaml``
 
     <Config>
       <UrlBase>/lidarr</UrlBase>

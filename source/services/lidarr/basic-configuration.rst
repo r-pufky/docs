@@ -8,7 +8,7 @@ Unmentioned options are defaults.
 Media Management
 ****************
 .. ggui:: Lidarr Track Naming
-  :key_title: Settings --> Media Managment --> Track Naming
+  :key_title: Settings --> Media Management --> Track Naming
   :option:  ☑,
             ☑,
             Standard Track Format,
@@ -26,7 +26,7 @@ Media Management
   :no_launch:
 
 .. ggui:: Lidarr Folders
-  :key_title: Settings --> Media Managment --> Folders
+  :key_title: Settings --> Media Management --> Folders
   :option:  Create empty artist folders,
             Delete empty folders,
             Import Extra Files
@@ -38,7 +38,7 @@ Media Management
   :no_launch:
 
 .. ggui:: Lidarr Importing
-  :key_title: Settings --> Media Managment --> Importing
+  :key_title: Settings --> Media Management --> Importing
   :option:  Skip Free Space Check,
             Use Hardlinks Instead of Copy,
             Import Extra Files
@@ -50,7 +50,7 @@ Media Management
   :no_launch:
 
 .. ggui:: Lidarr File Management
-  :key_title: Settings --> Media Managment --> File Management
+  :key_title: Settings --> Media Management --> File Management
   :option:  Ignore Delete Tracks,
             Propers and Repacks,
             Allow Fingerprinting,
@@ -66,7 +66,7 @@ Media Management
   :no_launch:
 
 .. ggui:: Lidarr Permissions
-  :key_title: Settings --> Media Managment --> Permissions
+  :key_title: Settings --> Media Management --> Permissions
   :option:  Set Permissions,
             File chmod mask,
             Folder chmod mask,
