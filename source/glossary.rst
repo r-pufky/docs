@@ -59,6 +59,12 @@ Glossary
     u+2699
     https://www.fileformat.info/info/unicode/char/2699/index.htm
 
+  ✗
+    Red X. Generally used for indication of failures.
+
+    u+2717
+    https://www.fileformat.info/info/unicode/char/2717/index.htm
+
   ' '
     Punctuation Space. Blank space used to hold a position where no text is
     required, but a non-whitespace value must be present for content to be

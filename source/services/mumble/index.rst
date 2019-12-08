@@ -5,7 +5,7 @@
 High quality VOIP server with public certificate authentication, encryption and
 ACLs.
 
-Uses :ref:`1804-server-base-install`.
+Uses :ref:`debian-server-base-install`.
 
 .. gport:: Ports (Mumble)
   :port:     64738,

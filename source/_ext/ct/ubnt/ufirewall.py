@@ -18,11 +18,11 @@ class UFirewall(config_table.ConfigTable):
     See ConfigTable for core Directives.
 
   .. ufirewall:: Drop Wifi to LAN Interface.
-    :key:   firewall policies --> WIFI_LOCAL --> actions --> interfaces
-    :names: Interface,
-            Direction
-    :data:  {WIFI INTERFACE},
-            local
+    :key_title: firewall policies --> WIFI_LOCAL --> actions --> interfaces
+    :option:    Interface,
+                Direction
+    :setting:   {WIFI INTERFACE},
+                local
 
       .. note::
         This is a free-form RST processed content contained within the rendered

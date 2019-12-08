@@ -290,6 +290,8 @@ Allow DNS Traffic to Router
     .. warning::
       Ensure Interface is set to the appropriate Wifi interface or VLAN.
 
+.. _networking-dnat-for-captive-dns:
+
 DNAT for `Captive DNS`_
 ***********************
 Force `all DNS`_ queries regardless of destination server to a specific DNS
@@ -336,6 +338,8 @@ Add `Masquerade NAT Rule`_ for each interface serving internal networks. This
 enables appropriate transparent DNS lookups (Clients will think that they are
 resolving from the DNS they requested, not the actual DNS server serving
 responses):
+
+:download:`local image <source/IFYUX2T.png>`.
 
 .. ufirewall:: Captive DNS Masquerade Setup
   :key_title:  NAT --> Add Source NAT Rule

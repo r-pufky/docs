@@ -4,6 +4,12 @@ Ubuntu 18.04 Server Base Install
 ################################
 Ubuntu 18.04 server base configuration notes.
 
+.. _debian-server-base-install:
+
+Debian Stretch Server Base Install
+**********************************
+Debian installation follows the same installation notes.
+
 Base Install
 ************
 
