@@ -130,6 +130,7 @@ git hub, or submit a CL :)
   services/fail2ban/index
   services/firefly/index
   services/gitea/index
+  services/git-webhook-receiver/index
   services/nginx/index
   services/certificate-authority/index
 
