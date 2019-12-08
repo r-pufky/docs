@@ -131,6 +131,7 @@ git hub, or submit a CL :)
   services/firefly/index
   services/gitea/index
   services/git-webhook-receiver/index
+  services/heimdall/index
   services/nginx/index
   services/certificate-authority/index
 

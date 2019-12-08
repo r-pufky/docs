@@ -46,6 +46,46 @@ default config to auto import sites / services.
 Adding a site in services and restarting NGINX will now automatically pickup
 that site.
 
+.. _service-nginx-basic-auth:
+
+Password Authencation (`Basic Auth`_)
+*************************************
+Basic auth uses a file to authenticate users for NGINX locations.
+
+.. code-block:: bash
+  :caption: Install password utilities and generate a user/password.
+
+  apt install apache2-utils
+  sudo htpasswd -c /etc/nginx/heimdall.pass {USER}
+
+.. code-block:: nginx
+  :caption: **0644 root root** ``nginx/conf.d/reverse-proxy.conf``
+
+  server {
+    listen 443 ssl http2;
+    server_name heimdall.{DOMAIN} heimdall;
+
+    location / {
+      allow {TRUSTED NETWORK}/{TRUSTED NETWORK MASK};
+      allow {TRUSTED IP};
+      deny all;
+      auth_basic 'Heimdall';
+      auth_basic_user_file /etc/nginx/heimdall.pass;
+
+      proxy_pass https://heimdall/;
+      include /etc/nginx/conf.d/proxy-control.conf;
+    }
+  }
+
+.. note::
+  This will allow specific subnets and trusted IP's to access location without
+  authentication, and force all others to authenticate, prompting with
+  ``Heimdall``.
+
+  See :ref:`service-nginx-site-auth` for applying auth to subnets.
+
+.. _service-nginx-site-auth:
+
 Site-wide Auth File
 *******************
 Keep authentication definitions for different services to one file to maintain
@@ -220,3 +260,4 @@ proxy and determine how to throttle or drop requests over that limit. Read
 .. _Whitelist Single Container: https://stackoverflow.com/questions/45358188/restrict-access-to-nginx-server-location-to-a-specific-docker-container-with-al
 .. _only evaluated when used: http://nginx.org/en/docs/http/ngx_http_geo_module.html
 .. _in-depth documentation: https://www.nginx.com/blog/rate-limiting-nginx/
+.. _Basic Auth: https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/#pass
