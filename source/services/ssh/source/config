@@ -6,7 +6,7 @@ Host *.github.com github.com
   PreferredAuthentications publickey
   IdentityFile ~/.ssh/github
 
-Host <CUSTOM_NAME>
+Host {CUSTOM NAME}
   HostName {HOST IP OR DNS}
   User {USER TO AUTH AS}
   IdentityFile ~/.ssh/{CERT}

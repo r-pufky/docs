@@ -155,7 +155,7 @@ slightly differently for each router.
 
 Enable Unifi Controller Assignment in EdgeOS or DHCP Option 43
 ==============================================================
-This should be enable for subnets in which the AP will reside. This will enable
+This should be enabled for subnets in which the AP will reside. This will allow
 the AP to be auto-detected by the controller.
 
 See :ref:`edgerouter-vlan-setup-dns` for setting up the ``Unifi Controller``

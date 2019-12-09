@@ -12,8 +12,8 @@ Always use a strong password on keys, that is not your login password.
   :caption: Generate 4096bit RSA keys.
 
   ssh-keygen -b 4096 -t rsa -f {KEYNAME}
-  chmod 0600 <keyname>
-  chmod 0640 <keyname>.pub
+  chmod 0600 {KEYNAME}
+  chmod 0640 {KEYNAME}.pub
 
 .. code-block::
   :caption: Add Public Key to Authorized Keys for Use.
@@ -38,14 +38,14 @@ Disable X11 forwarding but allow ports ``80,4243,32400`` to be forwarded.
 .. code-block:: bash
   :caption: **0600 user user** ``~/.ssh/authorized_keys``
 
-  no-X11-forwarding,permitopen="localhost:80",permitopen="localhost:4243",permitopen="10.10.10.10:32400" <PUBKEY DUMP>
+  no-X11-forwarding,permitopen="localhost:80",permitopen="localhost:4243",permitopen="10.10.10.10:32400" {PUBKEY DUMP}
 
 Allow connection, but disables all forwarding.
 
 .. code-block:: bash
   :caption: **0600 user user** ``~/.ssh/authorized_keys``
 
-  no-port-forwarding <PUBKEY DUMP>
+  no-port-forwarding {PUBKEY DUMP}
 
 SSH Host Configuration
 **********************

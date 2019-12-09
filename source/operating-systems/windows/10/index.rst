@@ -12,6 +12,8 @@ Working assumptions:
 
 Related Material:
 
+* :ref:`windows-10-pro-setup` for base installation.
+* :ref:`windows-10-pro-securing-install` for securing a base install.
 * :ref:`troubleshooting-pc-hardware` for diagnosing problems.
 * :ref:`additional-windows-10-fixes` for uncommon Windows 10 fixes.
 * :ref:`reinstalling-windows-10` for common backups before reinstalling.

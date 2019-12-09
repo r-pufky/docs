@@ -336,7 +336,7 @@ KVM images are stored in two locations, configuration and disk images.
 
 #. Ensure VM is stopped.
 #. Move VM disk images to new location.
-#. Update location information in XML file ``/etc/libvirtd/qemu/<VM>.xml``.
+#. Update location information in XML file ``/etc/libvirtd/qemu/{VM}.xml``.
 #. Restart service ``service libvirtd restart``.
 
 Moving KVM Storage Pool
@@ -351,7 +351,7 @@ Service requires a restart on changes.
   :caption: List all pools
 
   virsh pool-list
-  virsh pool-info <POOLNAME>
+  virsh pool-info {POOL NAME}
 
 .. code-block:: bash
   :caption: Delete a pool
@@ -393,7 +393,7 @@ This will enable mounting of a RAW disk image `outside of the VM`_.
 .. code-block:: bash
   :caption: Ensure the RAW image is readable
 
-  fdisk -l /var/lib/libvirt/images/<image>.RAW
+  fdisk -l /var/lib/libvirt/images/{IMAGE}.RAW
 
 * Determine **Sector Size**.
 * Determine **Start Sector** for partition to mount.

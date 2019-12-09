@@ -13,7 +13,7 @@ Copy data with verification.
   :caption: Archive Copying Data.
 
   cd /X/
-  rsync -avxhHAX <DIRECTORY> /Y
+  rsync -avxhHAX {DIRECTORY} /Y
 
 .. note::
   * ``-a`` archive (-rlptgoD).
@@ -28,7 +28,7 @@ Copy data with verification.
   :caption: Create Hashfile of All Original Files and Sort.
 
   cd /X/
-  md5deep -l -r -e <DIRECTORY> | sort > /tmp/<DIRECTORY>.md5
+  md5deep -l -r -e {DIRECTORY} | sort > /tmp/{DIRECTORY}.md5
 
 .. note::
   * ``-l`` use relative file paths.
@@ -39,9 +39,9 @@ Copy data with verification.
   :caption: Verify copied files with rsync.
 
   cd /Y/
-  md5deep -l -r -e <DIRECTORY> | sort > /tmp/<DIRECTORY>2.md5
-  md5sum /tmp/<DIRECTORY>.md5 /tmp/<DIRECTORY>2.md5
-  diff /tmp/<DIRECTORY>.md5 /tmp/<DIRECTORY>2.md5
+  md5deep -l -r -e {DIRECTORY} | sort > /tmp/{DIRECTORY}2.md5
+  md5sum /tmp/{DIRECTORY}.md5 /tmp/{DIRECTORY}2.md5
+  diff /tmp/{DIRECTORY}.md5 /tmp/{DIRECTORY}2.md5
 
 .. note::
   * This basically verifies that both hashfiles are the same (and therefore
@@ -52,8 +52,8 @@ Copy data with verification.
 .. code-block:: bash
   :caption: Verifying Copied Files Across OS’s are Accurate.
 
-  cut -f 1 -d ‘ ‘ <source>.md5 > <source>-hash-only.md5
-  grep -v -f <source>-hash-only.md5 <target>.md5
+  cut -f 1 -d ‘ ‘ {SOURCE}.md5 > {SOURCE}-hash-only.md5
+  grep -v -f {SOURCE}-hash-only.md5 {TARGET}.md5
 
 .. note::
   This removes path differences, and only compares source hashes to destination

@@ -17,27 +17,27 @@ Snippets
 .. code-block:: bash
   :caption: Extract 320kbps Audio From Video.
 
-  youtube-dl <url> --extract-audio --audio-format mp3 --audio-quality 320K --keep-video --add-metadata
+  youtube-dl {URL} --extract-audio --audio-format mp3 --audio-quality 320K --keep-video --add-metadata
 
 .. code-block:: bash
   :caption: List all formats for a video.
 
-  youtube-dl <url> -F
+  youtube-dl {URL} -F
 
 .. code-block:: bash
   :caption: Download only the 1080p video/audio stream from a video.
 
-  youtube-dl <url> 'bestvideo[height<=1080]+bestaudio/best[height<=1080]'
+  youtube-dl {URL} 'bestvideo[height<=1080]+bestaudio/best[height<=1080]'
 
 .. code-block:: bash
   :caption: Download a playlist.
 
-  youtube-dl https://youtube.com/playlist?list=<LID> --yes-playlist
+  youtube-dl https://youtube.com/playlist?list={PLAYLIST ID} --yes-playlist
 
 .. code-block:: bash
   :caption: Track Downloaded Videos for Archiving.
 
-  youtube-dl --download-archive <FILE>
+  youtube-dl --download-archive {FILE}
 
 .. note::
   Download only videos not listed in file and adds any downloaded videos to

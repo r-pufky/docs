@@ -7,12 +7,22 @@ General style-guide for sphinx.
 * 80 character limit, exception for code blocks.
 * Always verify links (:ref:`sphinx-build-link-checking`) before uploading
   changes.
+
+  .. info::
+    **Broken** links need to be fixed or removed.
+
+    **Redirected** links should be fixed, unless the redirect is excessive.
+
+    **SSL** issues should be corrected.
+
 * No submission of docs with breakages or warnings (red text).
 * Remain consistent. See existing documentation for examples.
 
 Common Replacements
 *******************
-Standardized replacements used.
+Use ``{CAPS WITH SPACE}``.
+
+Standardized replacements used:
 
 * ``{USERNAME}`` - user account.
 * ``{PASSWORD}`` - account password.

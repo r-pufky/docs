@@ -175,7 +175,7 @@ Setup DHCP & DNS for VLANs
 
 .. warning::
   Add DHCP for all VLANS. For the *management* DHCP server, set the *Unifi
-  Controller* field to the IP for the permenant Unifi Controller and not your
+  Controller* field to the IP for the permanent Unifi Controller and not your
   laptop.
 
 :cmdmenu:`Services > DNS > Interface > Add Listen Interface`

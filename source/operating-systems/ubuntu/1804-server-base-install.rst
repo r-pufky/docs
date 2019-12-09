@@ -244,7 +244,7 @@ boot:
 .. code-block:: bash
   :caption: **0644 root root** ``/etc/crypttab``
 
-  xvdb_crypt UUID=<UUID from xvdb> none luks,discard
+  xvdb_crypt UUID={UUID FROM XVDB} none luks,discard
 
 .. note::
   Even though there are `security issues related with using discard for SSD's`_,

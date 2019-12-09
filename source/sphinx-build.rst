@@ -13,6 +13,7 @@ location.
 .. code-block::
 
   make clean docs
+  make linkcheck
 
 .. note::
   *master file [...] checkouts/latest/contents.rst not found*

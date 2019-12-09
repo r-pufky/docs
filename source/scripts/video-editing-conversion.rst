@@ -73,12 +73,12 @@ Snippets
 .. code-block:: bash
   :caption: Rip MP3 Audio from FLV File.
 
-  avconv -i <input.flv> output.mp3
+  avconv -i {FLV FILE} output.mp3
 
 .. code-block:: bash
   :caption: Convert FLV to MKV Container.
 
-  ffmpeg -i <input.flv> -vcodec copy -acodec copy out.mkv
+  ffmpeg -i {FLV FILE} -vcodec copy -acodec copy out.mkv
 
 .. code-block:: bash
   :caption: Convert webm to mkv.
@@ -102,7 +102,7 @@ Turn on developer tools (Chrome):
 .. code-block:: bash
   :caption: Use ffmpeg to download and stitch stream together.
 
-  ffmpeg -i https://<URI>.m3u8 -c:v copy -c:a copy -f mpegts output.ts
+  ffmpeg -i https://{URI}.m3u8 -c:v copy -c:a copy -f mpegts output.ts
 
 .. rubric:: References
 

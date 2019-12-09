@@ -102,7 +102,7 @@ Plex Stuck at Initial Startup
 
   sudo service plexmediaserver stop
   sudo ps -ef | grep -i plex
-  sudo kill -9 <any remaining PID’s>
+  sudo kill -9 {REMAINING PIDS}
   cd /var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/Plugins
   rm -f Service.bundle Framwork.bundle
   sudo service plexmediaserver start

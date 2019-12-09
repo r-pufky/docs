@@ -11,7 +11,7 @@ Tool to overwrite single file contents and optionall delete file.
 .. code-block:: bash
   :caption: 35 pass random data, zero then remove file.
 
-  shred --iterations=35 --verbose --zero --remove <FILE>
+  shred --iterations=35 --verbose --zero --remove {FILE}
 
 .. code-block:: bash
   :caption: Recursively overwrite file data.
@@ -29,12 +29,12 @@ Tool to securely delete files and block devices.
 .. code-block:: bash
   :caption: Recursively delete files, 35 pass random data.
 
-  wipe -r -c -f -Q 35 <FILE_OR_DIR>
+  wipe -r -c -f -Q 35 {FILE OR DIR}
 
 .. code-block:: bash
   :caption: Wipe a block device, 35 pass random data.
 
-  wipe -k -Q 35 <BLOCK_DEVICE>
+  wipe -k -Q 35 {BLOCK DEVICE}
 
 dd
 **
@@ -60,7 +60,7 @@ Using dd to zero disks. Good for testing/setup of new drives.
   :caption: Checking Status on DD.
 
   ps -ef | grep dd
-  kill -USR1 <pid>
+  kill -USR1 {PID}
 
 DBAN
 ****
