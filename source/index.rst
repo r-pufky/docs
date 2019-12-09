@@ -142,6 +142,7 @@ git hub, or submit a CL :)
   services/radarr/index
   services/sonarr/index
   services/ssh/index
+  services/unifi/index
   services/certificate-authority/index
 
 .. toctree::

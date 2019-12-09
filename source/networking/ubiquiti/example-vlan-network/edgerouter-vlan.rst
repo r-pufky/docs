@@ -146,6 +146,8 @@ Setup VLANs on eth0
   :term:`Management VLAN` is not explicitly defined as a VLAN -- untagged
   traffic coming into *eth0* **IS** management traffic.
 
+.. _edgerouter-vlan-setup-dns:
+
 Setup DHCP & DNS for VLANs
 **************************
 
