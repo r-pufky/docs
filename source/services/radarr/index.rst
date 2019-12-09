@@ -1,4 +1,4 @@
-.. service-radarr:
+.. _service-radarr:
 
 Radarr
 ######

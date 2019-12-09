@@ -121,6 +121,7 @@ git hub, or submit a CL :)
 
   services/airsonic/index
   services/beets/index
+  services/certificate-authority/index
   services/crashplan/index
   services/deluge/index
   services/digikam/index
@@ -143,7 +144,8 @@ git hub, or submit a CL :)
   services/sonarr/index
   services/ssh/index
   services/unifi/index
-  services/certificate-authority/index
+  services/zfs/index
+  services/service-template
 
 .. toctree::
   :caption: Scripts
