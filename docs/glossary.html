@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Style Guide" href="style-guide.html" />
+    <link rel="next" title="Icon Explanation" href="icon-explanation.html" />
     <link rel="prev" title="Scripts" href="scripts/scripts.html" /> 
 </head>
 
@@ -873,7 +873,6 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="services/dovecot/sieve.html">Server-Side Mail Filtering (sieve)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="services/dovecot/migration.html">Migrating from Courier to Dovecot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="services/dovecot/glossary.html">Dovecot Glossary</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="services/fail2ban/index.html">fail2ban</a><ul>
@@ -1296,13 +1295,25 @@
 <p class="caption"><span class="caption-text">Appendix</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="style-guide.html">Style Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="style-guide.html#code-blocks">code blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="icon-explanation.html">Icon Explanation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Buildings Docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-style-guide.html">Sphinx Style Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-style-guide.html#common-replacements">Common Replacements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-style-guide.html#callouts-admonitions">Callouts (admonitions)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-style-guide.html#references">References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-style-guide.html#code-blocks">code blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-style-guide.html#file-listings">File Listings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-style-guide.html#gui">GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-style-guide.html#config-tables-extension">Config Tables Extension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-style-guide.html#toc">TOC</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="sphinx.html">Document Generation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="sphinx.html#building">Building</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sphinx.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-build.html">Document Generation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-build.html#building">Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-build.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-build.html#link-checking">Link Checking</a></li>
 </ul>
 </li>
 </ul>
@@ -1372,59 +1383,16 @@
             
   <div class="section" id="glossary">
 <span id="id1"></span><h1>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h1>
-<dl class="glossary">
-<dt id="term-lbm">LBM</dt><dd><p>Left mouse button. This means left click.</p>
-</dd>
-<dt id="term-rmb">RMB</dt><dd><p>Right mouse button. This means right click.</p>
-</dd>
-<dt id="term-2">✋</dt><dd><p>Hover mouse. Hover the mouse over the indicated location next to this
-symbol.</p>
-<p>u+270B
-<a class="reference external" href="https://www.fileformat.info/info/unicode/char/270b/index.htm">https://www.fileformat.info/info/unicode/char/270b/index.htm</a></p>
-</dd>
-<dt id="term-3">⌘</dt><dd><p>The <strong>super</strong> key: this is the <strong>windows key</strong> or <strong>command key</strong>. May also
-be referred to as <code class="docutils literal notranslate"><span class="pre">win</span></code>, <code class="docutils literal notranslate"><span class="pre">command</span></code>, <code class="docutils literal notranslate"><span class="pre">super</span></code>.</p>
-<p>u+2318
-<a class="reference external" href="https://www.fileformat.info/info/unicode/char/2318/index.htm">https://www.fileformat.info/info/unicode/char/2318/index.htm</a></p>
-</dd>
-<dt id="term-4">☐</dt><dd><p>Unchecked box. The correct setting for the specified option is unchecked or
-disabled. May be a box, radio, or binary slider (on/off) in the GUI.</p>
-<p>u+2610
-<a class="reference external" href="https://www.fileformat.info/info/unicode/char/2610/index.htm">https://www.fileformat.info/info/unicode/char/2610/index.htm</a></p>
-</dd>
-<dt id="term-5">☑</dt><dd><p>Checked box. The correct setting for the specified option is checked or
-enabled. Can be a box, radio, or binary slider (on/off) in the GUI.</p>
-<p>u+2611
-<a class="reference external" href="https://www.fileformat.info/info/unicode/char/2611/index.htm">https://www.fileformat.info/info/unicode/char/2611/index.htm</a></p>
-</dd>
-<dt id="term-6">›</dt><dd><p>GUI navigation action separator. Indicates the following items is the next
-element to look for while navigating the GUI.</p>
-<p>u+203A
-<a class="reference external" href="https://www.fileformat.info/info/unicode/char/203a/index.htm">https://www.fileformat.info/info/unicode/char/203a/index.htm</a></p>
-</dd>
-<dt id="term-7">⋮</dt><dd><p>Vertical Ellipis. Generally used in mobile for an alternative drop-down menu
-with more options.</p>
-<p>u+22EE
-<a class="reference external" href="https://www.fileformat.info/info/unicode/char/22ee/index.htm">https://www.fileformat.info/info/unicode/char/22ee/index.htm</a></p>
-</dd>
-<dt id="term-8">⚙</dt><dd><p>Gear icon. Generally used in mobile for system settings.</p>
-<p>u+2699
-<a class="reference external" href="https://www.fileformat.info/info/unicode/char/2699/index.htm">https://www.fileformat.info/info/unicode/char/2699/index.htm</a></p>
-</dd>
-<dt id="term-9">✗</dt><dd><p>Red X. Generally used for indication of failures.</p>
-<p>u+2717
-<a class="reference external" href="https://www.fileformat.info/info/unicode/char/2717/index.htm">https://www.fileformat.info/info/unicode/char/2717/index.htm</a></p>
-</dd>
-<dt id="term-10">‘ ’</dt><dd><p>Punctuation Space. Blank space used to hold a position where no text is
-required, but a non-whitespace value must be present for content to be
-generated correctly. Typically used for config tables at then end of a data
-List. (See <a class="reference internal" href="networking/ubiquiti/example-vlan-network/core-switch.html#core-switch-vlan-setup"><span class="std std-ref">Core Switch VLAN Setup</span></a>).</p>
-<p>u+2008
-<a class="reference external" href="https://www.fileformat.info/info/unicode/char/2008/index.htm">https://www.fileformat.info/info/unicode/char/2008/index.htm</a></p>
-</dd>
-<dt id="term-ubnt">UBNT</dt><dd><p>Ubiquiti Networks. This is a common Acronym used for their devices.</p>
+<dl class="glossary simple">
+<dt id="term-ubnt"><abbr>UBNT</abbr></dt><dd><p>Ubiquiti Networks. This is a common Acronym used for their devices.</p>
 </dd>
 <dt id="term-unifi">Unifi</dt><dd><p>A line of products from UBNT.</p>
+</dd>
+<dt id="term-mta"><abbr>MTA</abbr></dt><dd><p>Mail Transport Agent: handles mail server to server (e.g. other domains).</p>
+</dd>
+<dt id="term-mda"><abbr>MDA</abbr></dt><dd><p>Mail Delivery Agent: handles user access to email (e.g. IMAP).</p>
+</dd>
+<dt id="term-mua"><abbr>MUA</abbr></dt><dd><p>Mail User Agent: user client to check email (e.g. thunderbird/outlook).</p>
 </dd>
 </dl>
 </div>
@@ -1437,7 +1405,7 @@ List. (See <a class="reference internal" href="networking/ubiquiti/example-vlan-
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="style-guide.html" class="btn btn-neutral float-right" title="Style Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="icon-explanation.html" class="btn btn-neutral float-right" title="Icon Explanation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="scripts/scripts.html" class="btn btn-neutral float-left" title="Scripts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

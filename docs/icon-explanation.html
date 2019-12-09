@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Docs: A Collection of Setup Notes &mdash; Generic service &amp; computer documentation. 2019-07-06.0 documentation</title>
+  <title>Icon Explanation &mdash; Generic service &amp; computer documentation. 2019-07-06.0 documentation</title>
   
 
   
@@ -35,7 +35,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Moving Authy TOTP to Other Authenticators" href="apps/authy.html" /> 
+    <link rel="next" title="Sphinx Style Guide" href="sphinx-style-guide.html" />
+    <link rel="prev" title="Glossary" href="glossary.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -49,7 +50,7 @@
           
 
           
-            <a href="#" class="icon icon-home" alt="Documentation Home"> Generic service & computer documentation.
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Generic service & computer documentation.
           
 
           
@@ -80,8 +81,8 @@
               
             
             
-              <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Docs: A Collection of Setup Notes</a></li>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Docs: A Collection of Setup Notes</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Application Configuration</span></p>
 <ul>
@@ -1292,9 +1293,9 @@
 <li class="toctree-l1"><a class="reference internal" href="scripts/scripts.html">Scripts</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Appendix</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="icon-explanation.html">Icon Explanation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Icon Explanation</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Buildings Docs</span></p>
 <ul>
@@ -1330,7 +1331,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">Generic service & computer documentation.</a>
+          <a href="index.html">Generic service & computer documentation.</a>
         
       </nav>
 
@@ -1359,15 +1360,15 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Docs: A Collection of Setup Notes</li>
+      <li>Icon Explanation</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/icon-explanation.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -1380,76 +1381,59 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="docs-a-collection-of-setup-notes">
-<h1>Docs: A Collection of Setup Notes<a class="headerlink" href="#docs-a-collection-of-setup-notes" title="Permalink to this headline">¶</a></h1>
-<p>I created this repository as a response to people requesting I share my setup
-notes for services I run in my home. These notes have been made generic enough
-so that you can implement these services and setups with relative ease. Be sure
-to check the <a class="reference internal" href="glossary.html#glossary"><span class="std std-ref">Glossary</span></a> if you see unknown symbols.</p>
-<div class="section" id="where-d-everything-go">
-<h2>Where’d everything go?<a class="headerlink" href="#where-d-everything-go" title="Permalink to this headline">¶</a></h2>
-<p>Docs were re-organized to keep the growing documentation clean. You should link
-to the core doc repo and browse files.</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="operating-systems/windows/10/setup/index.html#windows-10-pro-setup"><span class="std std-ref">Windows 10 Pro Setup</span></a></p></li>
-<li><p><a class="reference internal" href="operating-systems/windows/10/troubleshooting-pc-hardware.html#troubleshooting-pc-hardware"><span class="std std-ref">Troubleshooting PC Issues</span></a></p></li>
-</ul>
-</div>
-<div class="section" id="assumptions">
-<h2>Assumptions<a class="headerlink" href="#assumptions" title="Permalink to this headline">¶</a></h2>
-<p>These notes make the following assumptions:</p>
-<ol class="arabic simple">
-<li><p>You have a advanced to expert competency in Windows, OSX, and Linux.</p></li>
-<li><p>You are comfortable with the following shells/languages: bash, go, cmd,
-powershell.</p></li>
-<li><p>You are familiar with how services work on all three platforms.</p></li>
-<li><p>You are comfortable writing scripts.</p></li>
-<li><p>You can take a generalized command and figure out the specifics
-(e.g. permissions).</p></li>
-<li><p>You can read man pages, and Google if you need to.</p></li>
-</ol>
-</div>
-<div class="section" id="fit-purpose">
-<h2>Fit &amp; Purpose<a class="headerlink" href="#fit-purpose" title="Permalink to this headline">¶</a></h2>
-<p>I do not consider these setups to be ‘secure’ in any way shape or form, these
-simply get you started off on the right foot. Don’t make the assumption that
-since this is setup, it is secure. It most definitely is not so. These are not
-setup to be massive services either – don’t use these scripts to setup your
-business or corporate environment – you’re doing it wrong. For the home gamer,
-proceed.</p>
-<p>Although I haven’t done anything malicious, you should never blindly run
-scripts &amp; commands from the internet.</p>
-</div>
-<div class="section" id="bugs-security-concerns">
-<h2>Bugs &amp; Security Concerns<a class="headerlink" href="#bugs-security-concerns" title="Permalink to this headline">¶</a></h2>
-<p>Use <a class="reference internal" href="services/letsencrypt/index.html#service-letsencrypt"><span class="std std-ref">Let’s Encrypt</span></a> for free SSL/TLS certs. There’s <strong>NO REASON</strong> to
-run self-signed certs anymore for hosting anything. Don’t do it. Get a Let’s
-Encrypt Cert.</p>
-<p>If you find any bugs or security concerns, file a bug against this project on
-git hub, or submit a CL :)</p>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-</div>
+  <div class="section" id="icon-explanation">
+<span id="id1"></span><h1>Icon Explanation<a class="headerlink" href="#icon-explanation" title="Permalink to this headline">¶</a></h1>
+<dl class="glossary">
+<dt id="term-lbm">LBM</dt><dd><p>Left mouse button. This means left click.</p>
+</dd>
+<dt id="term-rmb">RMB</dt><dd><p>Right mouse button. This means right click.</p>
+</dd>
+<dt id="term-2">✋</dt><dd><p>Hover mouse. Hover the mouse over the indicated location next to this
+symbol.</p>
+<p>u+270B
+<a class="reference external" href="https://www.fileformat.info/info/unicode/char/270b/index.htm">https://www.fileformat.info/info/unicode/char/270b/index.htm</a></p>
+</dd>
+<dt id="term-3">⌘</dt><dd><p>The <strong>super</strong> key: this is the <strong>windows key</strong> or <strong>command key</strong>. May also
+be referred to as <code class="docutils literal notranslate"><span class="pre">win</span></code>, <code class="docutils literal notranslate"><span class="pre">command</span></code>, <code class="docutils literal notranslate"><span class="pre">super</span></code>.</p>
+<p>u+2318
+<a class="reference external" href="https://www.fileformat.info/info/unicode/char/2318/index.htm">https://www.fileformat.info/info/unicode/char/2318/index.htm</a></p>
+</dd>
+<dt id="term-4">☐</dt><dd><p>Unchecked box. The correct setting for the specified option is unchecked or
+disabled. May be a box, radio, or binary slider (on/off) in the GUI.</p>
+<p>u+2610
+<a class="reference external" href="https://www.fileformat.info/info/unicode/char/2610/index.htm">https://www.fileformat.info/info/unicode/char/2610/index.htm</a></p>
+</dd>
+<dt id="term-5">☑</dt><dd><p>Checked box. The correct setting for the specified option is checked or
+enabled. Can be a box, radio, or binary slider (on/off) in the GUI.</p>
+<p>u+2611
+<a class="reference external" href="https://www.fileformat.info/info/unicode/char/2611/index.htm">https://www.fileformat.info/info/unicode/char/2611/index.htm</a></p>
+</dd>
+<dt id="term-6">›</dt><dd><p>GUI navigation action separator. Indicates the following items is the next
+element to look for while navigating the GUI.</p>
+<p>u+203A
+<a class="reference external" href="https://www.fileformat.info/info/unicode/char/203a/index.htm">https://www.fileformat.info/info/unicode/char/203a/index.htm</a></p>
+</dd>
+<dt id="term-7">⋮</dt><dd><p>Vertical Ellipis. Generally used in mobile for an alternative drop-down menu
+with more options.</p>
+<p>u+22EE
+<a class="reference external" href="https://www.fileformat.info/info/unicode/char/22ee/index.htm">https://www.fileformat.info/info/unicode/char/22ee/index.htm</a></p>
+</dd>
+<dt id="term-8">⚙</dt><dd><p>Gear icon. Generally used in mobile for system settings.</p>
+<p>u+2699
+<a class="reference external" href="https://www.fileformat.info/info/unicode/char/2699/index.htm">https://www.fileformat.info/info/unicode/char/2699/index.htm</a></p>
+</dd>
+<dt id="term-9">✗</dt><dd><p>Red X. Generally used for indication of failures.</p>
+<p>u+2717
+<a class="reference external" href="https://www.fileformat.info/info/unicode/char/2717/index.htm">https://www.fileformat.info/info/unicode/char/2717/index.htm</a></p>
+</dd>
+<dt id="term-10">‘ ’</dt><dd><p>Punctuation Space. Blank space used to hold a position where no text is
+required, but a non-whitespace value must be present for content to be
+generated correctly. Typically used for config tables at then end of a data
+List. (See <a class="reference internal" href="networking/ubiquiti/example-vlan-network/core-switch.html#core-switch-vlan-setup"><span class="std std-ref">Core Switch VLAN Setup</span></a>).</p>
+<p>u+2008
+<a class="reference external" href="https://www.fileformat.info/info/unicode/char/2008/index.htm">https://www.fileformat.info/info/unicode/char/2008/index.htm</a></p>
+</dd>
+</dl>
 </div>
 
 
@@ -1460,8 +1444,10 @@ git hub, or submit a CL :)</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="apps/authy.html" class="btn btn-neutral float-right" title="Moving Authy TOTP to Other Authenticators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="sphinx-style-guide.html" class="btn btn-neutral float-right" title="Sphinx Style Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
+      
+        <a href="glossary.html" class="btn btn-neutral float-left" title="Glossary" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

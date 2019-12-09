@@ -14,7 +14,7 @@ Uses :ref:`debian-server-base-install`.
 * user = a local linux user account.
 * alias@example.com = an email address (alias) for a given domain.
 
-See :ref:`service-dovecot-glossary` for mail terms.
+See :ref:`glossary` for mail terms.
 
 #. :ref:`service-dovecot-setup`.
 #. :ref:`service-dovecot-testing`.
@@ -30,4 +30,3 @@ See :ref:`service-dovecot-glossary` for mail terms.
    account
    sieve
    migration
-   glossary

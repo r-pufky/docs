@@ -166,5 +166,13 @@ git hub, or submit a CL :)
   :maxdepth: -1
 
   glossary
-  style-guide
-  sphinx
+  icon-explanation
+
+.. toctree::
+  :caption: Buildings Docs
+  :hidden:
+  :includehidden:
+  :maxdepth: -1
+
+  sphinx-style-guide
+  sphinx-build

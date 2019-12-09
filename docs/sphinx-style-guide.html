@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Style Guide &mdash; Generic service &amp; computer documentation. 2019-07-06.0 documentation</title>
+  <title>Sphinx Style Guide &mdash; Generic service &amp; computer documentation. 2019-07-06.0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Document Generation" href="sphinx.html" />
-    <link rel="prev" title="Glossary" href="glossary.html" /> 
+    <link rel="next" title="Document Generation" href="sphinx-build.html" />
+    <link rel="prev" title="Icon Explanation" href="icon-explanation.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -873,7 +873,6 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="services/dovecot/sieve.html">Server-Side Mail Filtering (sieve)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="services/dovecot/migration.html">Migrating from Courier to Dovecot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="services/dovecot/glossary.html">Dovecot Glossary</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="services/fail2ban/index.html">fail2ban</a><ul>
@@ -1294,15 +1293,27 @@
 <li class="toctree-l1"><a class="reference internal" href="scripts/scripts.html">Scripts</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Appendix</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Style Guide</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="icon-explanation.html">Icon Explanation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Buildings Docs</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sphinx Style Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#common-replacements">Common Replacements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#callouts-admonitions">Callouts (admonitions)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#references">References</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#code-blocks">code blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-listings">File Listings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gui">GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#config-tables-extension">Config Tables Extension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#toc">TOC</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="sphinx.html">Document Generation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="sphinx.html#building">Building</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sphinx.html#installation">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphinx-build.html">Document Generation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-build.html#building">Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-build.html#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-build.html#link-checking">Link Checking</a></li>
 </ul>
 </li>
 </ul>
@@ -1351,13 +1362,13 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Style Guide</li>
+      <li>Sphinx Style Guide</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/style-guide.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/sphinx-style-guide.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -1370,52 +1381,66 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="style-guide">
-<span id="id1"></span><h1>Style Guide<a class="headerlink" href="#style-guide" title="Permalink to this headline">¶</a></h1>
-<p>Use this: <a class="reference external" href="https://documentation-style-guide-sphinx.readthedocs.io/en/latest/style-guide.html#headings">https://documentation-style-guide-sphinx.readthedocs.io/en/latest/style-guide.html#headings</a></p>
-<p>sphinx / rst styling notes.</p>
-<p>Callouts (admonitions):
-* attention
-* caution
-* danger
-* error
-* hint
-* important
-* note
-* tip
-* warning
-* pull-quote — quote block, generally unformatted
-* highlights – highlight block, generally unformatted
-* epigraph  – epigraph block, generally unformatted
-* todo
-* seealso</p>
-<p>don’t use single line, to break reading as per rendered output</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This is a note.</p>
+  <div class="section" id="sphinx-style-guide">
+<span id="id1"></span><h1><a class="reference external" href="https://documentation-style-guide-sphinx.readthedocs.io/en/latest/style-guide.html#headings">Sphinx Style Guide</a><a class="headerlink" href="#sphinx-style-guide" title="Permalink to this headline">¶</a></h1>
+<p>General style-guide for sphinx.</p>
+<ul class="simple">
+<li><p>80 character limit, exception for code blocks.</p></li>
+<li><p>Always verify links (<a class="reference internal" href="sphinx-build.html#sphinx-build-link-checking"><span class="std std-ref">Link Checking</span></a>) before uploading
+changes.</p></li>
+<li><p>No submission of docs with breakages or warnings (red text).</p></li>
+<li><p>Remain consistent. See existing documentation for examples.</p></li>
+</ul>
+<div class="section" id="common-replacements">
+<h2>Common Replacements<a class="headerlink" href="#common-replacements" title="Permalink to this headline">¶</a></h2>
+<p>Standardized replacements used.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">{USERNAME}</span></code> - user account.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{PASSWORD}</span></code> - account password.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{HOSTNAME}</span></code> - Host DNS name.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{IP}</span></code> - Host IP.</p></li>
+</ul>
 </div>
-<p>references:
-lower-with-dashes. Don’t prepend ‘ref-‘ to the definition.</p>
-<p>sub-bullet point lists</p>
-<ol class="arabic">
-<li><p>somthing (no highlights)</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>requires a space. Insert begin/trailing vertical white space.</p></li>
+<div class="section" id="callouts-admonitions">
+<h2>Callouts (<a class="reference external" href="http://docutils.sourceforge.net/docs/ref/rst/directives.html#admonitions">admonitions</a>)<a class="headerlink" href="#callouts-admonitions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">attention</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">caution</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">danger</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">error</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hint</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">important</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">note</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tip</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">warning</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pull-quote</span></code> – quote block, generally unformatted.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">highlights</span></code> – highlight block, generally unformatted.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">epigraph</span></code> – epigraph block, generally unformatted.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">todo</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">seealso</span></code></p></li>
 </ul>
-</div></blockquote>
-</li>
-<li><dl class="simple">
-<dt>something (highlights)</dt><dd><ul class="simple">
-<li><p>No beginning vertical white space.</p></li>
-<li><p>Above line is required to be a single line.</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><p>some other stuff.</p></li>
-</ol>
-<p>Always prefer ‘ to ” for quotes.</p>
+<p>Only use multi-line admonitions.</p>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">lower-with-dashes</span></code>. Do not prepend <code class="docutils literal notranslate"><span class="pre">ref-</span></code> to the definition.</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">sub-bullet point lists</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="m">#.</span> Somthing (no highlights)
+
+    <span class="m">*</span> requires a space. Insert begin/trailing vertical white space.
+
+<span class="m">#.</span> Something (highlights)
+    <span class="m">*</span> No beginning vertical white space.
+    <span class="m">*</span> Above line is required to be a single line.
+
+<span class="m">#.</span> Some other stuff.
+
+Always prefer &#39; to &quot; for quotes.
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="code-blocks">
 <h2>code blocks<a class="headerlink" href="#code-blocks" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -1423,168 +1448,123 @@ lower-with-dashes. Don’t prepend ‘ref-‘ to the definition.</p>
 <li><p>File list with extra context text: trailing periods.</p></li>
 <li><p>Text only: trailing period.</p></li>
 </ul>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">title above block can be wrapped.</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="hll"><span class="c1"># some code here. if longer that a few lines, use ``literalinclude``.</span>
-</span><span class="k">print</span><span class="p">(</span><span class="s1">&#39;helloworld&#39;</span><span class="p">)</span>
-</pre></div>
-</td></tr></table></div>
-</div>
-<p>file listing:</p>
-<p>statements require periods.
-no periods for file lists.
-literal includes follow the same rule.
-captions may contain double backticks for paths.</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/initramfs/modules</span></code></span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>12
-13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="o">...</span>
-<span class="hll"><span class="n">k10temp</span>
-</span></pre></div>
-</td></tr></table></div>
-</div>
 <div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/ssh/sshd_config</span></code></span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24</pre></div></td><td class="code"><div class="highlight"><pre><span></span>
-<span class="hll"><span class="n">Port</span> <span class="mi">22</span>
-</span><span class="hll"><span class="n">Protocol</span> <span class="mi">2</span>
-</span><span class="n">HostKey</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ssh</span><span class="o">/</span><span class="n">ssh_host_rsa_key</span>
-<span class="n">HostKey</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ssh</span><span class="o">/</span><span class="n">ssh_host_dsa_key</span>
-<span class="n">HostKey</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ssh</span><span class="o">/</span><span class="n">ssh_host_ecdsa_key</span>
-<span class="n">HostKey</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ssh</span><span class="o">/</span><span class="n">ssh_host_ed25519_key</span>
-<span class="n">SyslogFacility</span> <span class="n">AUTH</span>
-<span class="n">LogLevel</span> <span class="n">INFO</span>
-<span class="n">LoginGraceTime</span> <span class="mi">120</span>
-<span class="n">PermitRootLogin</span> <span class="n">no</span>
-<span class="n">StrictModes</span> <span class="n">yes</span>
-<span class="n">MaxAuthTries</span> <span class="mi">3</span>
-<span class="n">PubkeyAuthentication</span> <span class="n">yes</span>
-<span class="n">AuthorizedKeysFile</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ssh</span><span class="o">/</span><span class="n">authorized_keys</span><span class="o">/%</span><span class="n">u</span>
-<span class="n">IgnoreRhosts</span> <span class="n">yes</span>
-<span class="n">HostbasedAuthentication</span> <span class="n">no</span>
-<span class="n">IgnoreUserKnownHosts</span> <span class="n">yes</span>
-<span class="n">PermitEmptyPasswords</span> <span class="n">no</span>
-<span class="n">ChallengeResponseAuthentication</span> <span class="n">no</span>
-<span class="n">PasswordAuthentication</span> <span class="n">no</span>
-<span class="n">KerberosAuthentication</span> <span class="n">no</span>
-<span class="n">KerberosOrLocalPasswd</span> <span class="n">yes</span>
-<span class="n">KerberosTicketCleanup</span> <span class="n">yes</span>
+<div class="code-block-caption"><span class="caption-text">Example code-block.</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> python
+  <span class="nc">:caption:</span> <span class="nf">title above block can be wrapped.</span>
+  <span class="nc">:emphasize-lines:</span> <span class="nf">1</span>
+  <span class="nc">:linenos:</span>
+
+  # some code here. if longer that a few lines, use <span class="s">``literalinclude``</span>.
+  print(&#39;helloworld&#39;)
 </pre></div>
-</td></tr></table></div>
+</div>
+</div>
+<p>For remote modification of files (e.g. a router) where there is a local file and
+a remote file of the same name, specific the remote target host as well.</p>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">Remote modification template.</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span>
+  <span class="nc">:caption:</span> <span class="nf">**0644 root root** ``/etc/initramfs/modules`` (EdgeOS CLI).</span>
+  <span class="nc">:lineno-start:</span> <span class="nf">12</span>
+  <span class="nc">:emphasize-lines:</span> <span class="nf">2</span>
+
+<span class="cp">  ...</span>
+<span class="cp">  k10temp</span>
+</pre></div>
+</div>
+</div>
+<p>For sections where dynamic deletions are needed for a file and cannot be
+pre-determined in documentation or a static file.</p>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">dyanmic deletions template.</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> bash
+  <span class="nc">:caption:</span> <span class="nf">**0644 root root** ``/etc/hosts`` EdgeOS CLI.</span>
+
+  #Delete hosts which are no longer used and reboot the router.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="file-listings">
+<h2>File Listings<a class="headerlink" href="#file-listings" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Statements require periods.</p></li>
+<li><p>No periods for file lists.</p></li>
+<li><p>Literal includes follow the same rule.</p></li>
+<li><p>Captions may contain double backticks for paths.</p></li>
+<li><p>Always use local <code class="docutils literal notranslate"><span class="pre">source</span></code> directories for downloads / file listings. See
+existing examples.</p></li>
+</ul>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">code-block template for showing file content.</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span>
+  <span class="nc">:caption:</span> <span class="nf">**0644 root root** ``/etc/initramfs/modules``</span>
+  <span class="nc">:lineno-start:</span> <span class="nf">12</span>
+  <span class="nc">:emphasize-lines:</span> <span class="nf">2</span>
+
+<span class="cp">  ...</span>
+<span class="cp">  k10temp</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">literalinclude  template for showing file content.</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">literalinclude</span><span class="p">::</span> operating-systems/ubuntu/source/sshd_config
+  <span class="nc">:caption:</span> <span class="nf">**0644 root root** ``/etc/ssh/sshd_config``</span>
+  <span class="nc">:linenos:</span>
+  <span class="nc">:emphasize-lines:</span> <span class="nf">2,3</span>
+  <span class="nc">:lines:</span> <span class="nf">2-25</span>
+</pre></div>
+</div>
 </div>
 <ul class="simple">
 <li><p>Always inline all headers, and settings.</p></li>
 <li><p>always add TOC section to bottom below links, hidden.</p></li>
 </ul>
-<p>For remote modification of files (e.g. a router) where there is a local file and
-a remote file of the same name, specific the remote target host as well.</p>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/initramfs/modules</span></code> (EdgeOS CLI).</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>12
-13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="o">...</span>
-<span class="hll"><span class="n">k10temp</span>
-</span></pre></div>
-</td></tr></table></div>
 </div>
-<p>For sections where dynamic deletions are needed for a file and cannot be
-pre-determined in documentation or a static file.</p>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/hosts</span></code> EdgeOS CLI.</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Delete hosts which are no longer used and reboot the router.</span>
-</pre></div>
-</div>
-</div>
-<p>GUI</p>
-<p>Use <span class="guilabel">action</span> for all actions
-chain with ‘–&gt;’</p>
-<p>cmdmenu:</p>
-<ol class="arabic simple">
+<div class="section" id="gui">
+<h2>GUI<a class="headerlink" href="#gui" title="Permalink to this headline">¶</a></h2>
+<p>Use <code class="docutils literal notranslate"><span class="pre">cmdmenu</span></code> directive for all actions. Do not use <code class="docutils literal notranslate"><span class="pre">guilabel</span></code>.</p>
+<ul class="simple">
 <li><p>GUI Options should appear as cased in UI.</p></li>
 <li><p><strong>Any</strong> user typed actions should be all lowercase.</p></li>
-</ol>
-<ul class="simple">
-<li><p>one component depth (e.g. Application Name)</p></li>
+<li><p>one component depth (e.g. Application Name).</p></li>
 <li><p>Mouse action / shortcut.</p></li>
 <li><p>cmdmenu in lists: no trailing period, unless combine with text.</p></li>
 </ul>
-<p><span class="guilabel">System</span></p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Host Name: {ROUTER HOSTNAME}</p></li>
-<li><p>Domain Name: {YOUR DOMAIN}</p></li>
-<li><dl class="simple">
-<dt><span class="guilabel">Management Settings &gt; SSH Server</span></dt><dd><ul>
-<li><dl class="simple">
-<dt>☑ Enable</dt><dd><ul>
-<li><p>Port: {SSH Port}</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><p>☐ Ubnt Discovery</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</div></blockquote>
-<p>see: <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html">https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html</a></p>
-<p>Config Tables:</p>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">cmdmenu example.</span><a class="headerlink" href="#id9" title="Permalink to this code">¶</a></div>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="na">:cmdmenu:</span><span class="nv">`System --&gt; Preferences`</span>
+
+   <span class="m">*</span> Host Name: {ROUTER HOSTNAME}
+   <span class="m">*</span> Domain Name: {YOUR DOMAIN}
+   <span class="m">*</span> <span class="na">:cmdmenu:</span><span class="nv">`Management Settings &gt; SSH Server`</span>
+      <span class="m">*</span> ☑ Enable
+         <span class="m">*</span> Port: {SSH Port}
+      <span class="m">*</span> ☐ Ubnt Discovery
+</pre></div>
+</div>
+</div>
+<p>see <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html">roles</a>.</p>
+</div>
+<div class="section" id="config-tables-extension">
+<h2>Config Tables Extension<a class="headerlink" href="#config-tables-extension" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Only use custom configuration tables for generic configurations on systems
 (e.g. regedit, unifi controllers) where <em>repeated, distinct</em> uses occur.</p></li>
-<li><p>Applications and one-offs use a static inline table for configuration.</p></li>
+<li><p>Applications and one-offs use generic ConfigTables for configuration.</p></li>
+<li><p>Documentation for ConfigTable is contained within Python module.</p></li>
 </ul>
-<p>gpolicy:
-title: lowercase if using no_section. Otherwise follow section formatting.
-keys: follow actual key cap formatting.</p>
-<p>Sections
-* title case
-* links should be set as <cite>see xyz</cite> if cannot be put in section title.</p>
-<p>ms_tables can have all metadata wrapped.</p>
-<p><a class="reference external" href="https://unicode-table.com/en">https://unicode-table.com/en</a></p>
-<p>testing documentation links
-<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">linkcheck</span></code>
-<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span> <span class="pre">html</span> <span class="pre">linkcheck</span></code></p>
-<p>Sphinx linkcheck setup
-<a class="reference external" href="https://www.writethedocs.org/guide/tools/testing/">https://www.writethedocs.org/guide/tools/testing/</a></p>
-<p>Include source files:</p>
-<p>Create a <code class="docutils literal notranslate"><span class="pre">source</span></code> directory for each section.</p>
-<p>VARS:</p>
-<p>{USERNAME}
-{PASSWORD}
-{HOSTNAME}</p>
-<p>references</p>
-<p class="rubric">References</p>
-<ol class="arabic simple">
-<li><p><a class="reference external" href="https://stackoverflow.com/questions/42801733/creating-a-scheduled-task-which-uses-a-specific-event-log-entry-as-a-trigger">Create schedule task with event log trigger</a></p></li>
-<li><p><a class="reference external" href="https://community.spiceworks.com/topic/1030490-task-scheduler-vb-script-help?page=1">Task scheduler VB scripting</a></p></li>
-<li><p><a class="reference external" href="https://social.technet.microsoft.com/Forums/office/en-US/f90bed75-475e-4f5f-94eb-60197efda6c6/prompt-for-password-without-using-getcredential-or-readhost-assecurestring-but-not-display-text?forum=winserverpowershell">Powershell password prompt without readhost</a></p></li>
-</ol>
+</div>
+<div class="section" id="toc">
+<h2>TOC<a class="headerlink" href="#toc" title="Permalink to this headline">¶</a></h2>
+<p>Main <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> used to land in areas, and sub-TOC’s used to generate TOC for
+those sub areas.</p>
+<ul class="simple">
+<li><p>See <code class="docutils literal notranslate"><span class="pre">source/index.rst</span></code> for main TOC.</p></li>
+<li><p>See <code class="docutils literal notranslate"><span class="pre">source/networking/ubiquiti/exmaple-vlan-network/index.rst</span></code> for sub TOC.</p></li>
+</ul>
 </div>
 </div>
 
@@ -1596,10 +1576,10 @@ keys: follow actual key cap formatting.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="sphinx.html" class="btn btn-neutral float-right" title="Document Generation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="sphinx-build.html" class="btn btn-neutral float-right" title="Document Generation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="glossary.html" class="btn btn-neutral float-left" title="Glossary" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="icon-explanation.html" class="btn btn-neutral float-left" title="Icon Explanation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

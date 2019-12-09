@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Style Guide" href="style-guide.html" /> 
+    <link rel="prev" title="Sphinx Style Guide" href="sphinx-style-guide.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -872,7 +872,6 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="services/dovecot/sieve.html">Server-Side Mail Filtering (sieve)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="services/dovecot/migration.html">Migrating from Courier to Dovecot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="services/dovecot/glossary.html">Dovecot Glossary</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="services/fail2ban/index.html">fail2ban</a><ul>
@@ -1293,15 +1292,27 @@
 <li class="toctree-l1"><a class="reference internal" href="scripts/scripts.html">Scripts</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Appendix</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="style-guide.html">Style Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="style-guide.html#code-blocks">code blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="icon-explanation.html">Icon Explanation</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Buildings Docs</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sphinx-style-guide.html">Sphinx Style Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-style-guide.html#common-replacements">Common Replacements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-style-guide.html#callouts-admonitions">Callouts (admonitions)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-style-guide.html#references">References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-style-guide.html#code-blocks">code blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-style-guide.html#file-listings">File Listings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-style-guide.html#gui">GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-style-guide.html#config-tables-extension">Config Tables Extension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sphinx-style-guide.html#toc">TOC</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Document Generation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#building">Building</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#link-checking">Link Checking</a></li>
 </ul>
 </li>
 </ul>
@@ -1356,7 +1367,7 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/sphinx.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/sphinx-build.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -1415,14 +1426,14 @@ python3 -m venv sphinx
 </ol>
 <blockquote>
 <div><div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text"><strong>0600 {USER}:{USER}</strong> <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code></span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text"><strong>0600 user user</strong> <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code></span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">PIP_REQUIRE_VIRTUALENV</span><span class="o">=</span><span class="n">true</span>
 </pre></div>
 </div>
 </div>
 </div></blockquote>
 <ol class="arabic simple" id="activated">
-<li><p>Activate virutal environment for use.</p></li>
+<li><p>Activate virtual environment for use.</p></li>
 </ol>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span> <span class="o">~/.</span><span class="n">python</span><span class="o">-</span><span class="n">env</span><span class="o">/</span><span class="n">sphinx</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
@@ -1447,7 +1458,7 @@ command.</p>
 </ol>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">readthedocs</span><span class="o">/</span><span class="n">sphinx_rtd_theme</span> <span class="o">/</span><span class="n">tmp</span>
-<span class="n">mv</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">sphinx_rtd_theme</span><span class="o">/</span><span class="n">sphinx_rtd_them</span> <span class="n">doc</span><span class="o">/</span><span class="n">sphinx</span><span class="o">/</span><span class="n">_themes</span>
+<span class="n">mv</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">sphinx_rtd_theme</span><span class="o">/</span><span class="n">sphinx_rtd_them</span> <span class="n">docs</span><span class="o">/</span><span class="n">sphinx</span><span class="o">/</span><span class="n">_themes</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -1456,7 +1467,7 @@ command.</p>
 </ol>
 <blockquote>
 <div><div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text"><strong>0640 {USER}:{USER}</strong> <code class="docutils literal notranslate"><span class="pre">doc/sphinx/conf.py</span></code></span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text"><strong>0640 user user</strong> <code class="docutils literal notranslate"><span class="pre">docs/sphinx/conf.py</span></code></span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Configuration file for the Sphinx documentation builder.</span>
 <span class="c1">#</span>
 <span class="c1"># This file only contains a selection of the most common options. For a full</span>
@@ -1543,7 +1554,7 @@ command.</p>
 </ol>
 <blockquote>
 <div><div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text"><strong>0640 {USER}:{USER}</strong> <code class="docutils literal notranslate"><span class="pre">doc/Makefile</span></code></span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text"><strong>0640 user user</strong> <code class="docutils literal notranslate"><span class="pre">docs/Makefile</span></code></span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Minimal makefile for Sphinx documentation
 #
 
@@ -1589,21 +1600,36 @@ copy:
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This will use the <em>data/dev</em> directory as the source, <em>doc/sphinx</em> as
-the configuration and <em>/tmp/services/docs</em> as output directory. A new
-make command <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span> <span class="pre">docs</span></code> will automatically build the documentation
-and remove / update <em>static/dev/files/d/etc/data/nginx/docs</em> with the
-latest documentation from the soruce tree.</p>
+<p>This will use:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">docs/source</span></code> directory as the source.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docs/sphinx</span></code> as the configuration.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/tmp/docs</span></code> as build directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">docs/docs</span></code> is the output directory.</p></li>
+</ul>
+<p>A new make command <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span> <span class="pre">docs</span></code> will automatically build the
+documentation and remove / update <code class="docutils literal notranslate"><span class="pre">docs/docs</span></code> with the latest
+documentation from the soruce tree.</p>
 </div>
 <p>See <a class="reference external" href="https://bitbucket.org/lbesson/web-sphinx/src/master/Makefile">sphinx makefile</a> for other custom examples.</p>
 </div></blockquote>
+</div>
+<div class="section" id="link-checking">
+<span id="sphinx-build-link-checking"></span><h2>Link Checking<a class="headerlink" href="#link-checking" title="Permalink to this headline">¶</a></h2>
+<p>Documentation can be automatically link checked:</p>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">verify documentation links work.</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make linkcheck
+make clean html linkcheck
+</pre></div>
+</div>
+</div>
 <p class="rubric">References</p>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://www.youtube.com/watch?v=hM4I58TA72g">Video Tutorial on Sphinx</a></p></li>
 <li><p><a class="reference external" href="https://sphinx-tutorial.readthedocs.io/start/">Sphinx Getting Started Tutorial</a></p></li>
 <li><p><a class="reference external" href="https://launchpadlibrarian.net/41870218/aafigure.pdf">Ascii Art Figure Manual</a></p></li>
 <li><p><a class="reference external" href="https://aafigure.readthedocs.io/en/latest/">Ascii Art Figure Documentation</a></p></li>
-<li><p><a class="reference external" href="https://daler.github.io/sphinxdoc-test/includeme.html">publishing sphinx docs on github</a></p></li>
 <li><p><a class="reference external" href="http://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html#rst-primer">RST Primer Tutorial</a></p></li>
 <li><p><a class="reference external" href="http://rst.ninjs.org">RST Live Editor</a></p></li>
 <li><p><a class="reference external" href="https://livesphinx.herokuapp.com/">Sphinx Live Editor</a></p></li>
@@ -1612,6 +1638,7 @@ latest documentation from the soruce tree.</p>
 <li><p><a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#substitutions">Sphinx roles and subsitutions</a></p></li>
 <li><p><a class="reference external" href="https://sublime-and-sphinx-guide.readthedocs.io/en/latest/reuse.html#use-a-substitution">Sublime and Sphinx</a></p></li>
 <li><p><a class="reference external" href="https://www.nginx.com/resources/wiki/contributing/writing_docs/">nginx Sphinx documentation guidance</a></p></li>
+<li><p><a class="reference external" href="https://www.writethedocs.org/guide/tools/testing/">Sphinx Tools</a></p></li>
 </ol>
 <p class="rubric">Development References</p>
 <ol class="arabic simple">
@@ -1636,7 +1663,7 @@ latest documentation from the soruce tree.</p>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="style-guide.html" class="btn btn-neutral float-left" title="Style Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="sphinx-style-guide.html" class="btn btn-neutral float-left" title="Sphinx Style Guide" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

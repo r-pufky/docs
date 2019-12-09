@@ -44,13 +44,13 @@ See `python pip and virtual environment`_ for reference material.
 #. Update ``.bashrc`` to force require virtual environments for ``pip``.
 
   .. code-block::
-    :caption: **0600 {USER}:{USER}** ``~/.bashrc``
+    :caption: **0600 user user** ``~/.bashrc``
 
     export PIP_REQUIRE_VIRTUALENV=true
 
 .. _activated:
 
-#. Activate virutal environment for use.
+#. Activate virtual environment for use.
 
   .. code-block::
 
@@ -71,12 +71,12 @@ See `python pip and virtual environment`_ for reference material.
   .. code-block::
 
     git clone https://github.com/readthedocs/sphinx_rtd_theme /tmp
-    mv /tmp/sphinx_rtd_theme/sphinx_rtd_them doc/sphinx/_themes
+    mv /tmp/sphinx_rtd_theme/sphinx_rtd_them docs/sphinx/_themes
 
 #. Use custom ``conf.py`` file for site customization.
 
   .. literalinclude:: ../sphinx/conf.py
-    :caption: **0640 {USER}:{USER}** ``doc/sphinx/conf.py``
+    :caption: **0640 user user** ``docs/sphinx/conf.py``
     :emphasize-lines: 20-22,31-32,35-36,46,52-59,64
 
   .. todo::
@@ -85,16 +85,33 @@ See `python pip and virtual environment`_ for reference material.
 #. Use custom ``Makefile`` for building documentation.
 
   .. literalinclude:: ../Makefile
-    :caption: **0640 {USER}:{USER}** ``doc/Makefile``
+    :caption: **0640 user user** ``docs/Makefile``
 
   .. note::
-    This will use the *data/dev* directory as the source, *doc/sphinx* as
-    the configuration and */tmp/services/docs* as output directory. A new
-    make command ``make clean docs`` will automatically build the documentation
-    and remove / update *static/dev/files/d/etc/data/nginx/docs* with the
-    latest documentation from the soruce tree.
+    This will use:
+
+    * ``docs/source`` directory as the source.
+    * ``docs/sphinx`` as the configuration.
+    * ``/tmp/docs`` as build directory.
+    * ``docs/docs`` is the output directory.
+
+    A new make command ``make clean docs`` will automatically build the
+    documentation and remove / update ``docs/docs`` with the latest
+    documentation from the soruce tree.
 
   See `sphinx makefile`_ for other custom examples.
+
+.. _sphinx-build-link-checking:
+
+Link Checking
+*************
+Documentation can be automatically link checked:
+
+.. code-block:: bash
+  :caption: verify documentation links work.
+
+  make linkcheck
+  make clean html linkcheck
 
 .. rubric:: References
 
@@ -102,8 +119,6 @@ See `python pip and virtual environment`_ for reference material.
 #. `Sphinx Getting Started Tutorial <https://sphinx-tutorial.readthedocs.io/start/>`_
 #. `Ascii Art Figure Manual <https://launchpadlibrarian.net/41870218/aafigure.pdf>`_
 #. `Ascii Art Figure Documentation <https://aafigure.readthedocs.io/en/latest/>`_
-#. `publishing sphinx docs on github <https://daler.github.io/sphinxdoc-test/includeme.html>`_
-
 #. `RST Primer Tutorial <http://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html#rst-primer>`_
 #. `RST Live Editor <http://rst.ninjs.org>`_
 #. `Sphinx Live Editor <https://livesphinx.herokuapp.com/>`_
@@ -112,6 +127,7 @@ See `python pip and virtual environment`_ for reference material.
 #. `Sphinx roles and subsitutions <https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#substitutions>`_
 #. `Sublime and Sphinx <https://sublime-and-sphinx-guide.readthedocs.io/en/latest/reuse.html#use-a-substitution>`_
 #. `nginx Sphinx documentation guidance <https://www.nginx.com/resources/wiki/contributing/writing_docs/>`_
+#. `Sphinx Tools <https://www.writethedocs.org/guide/tools/testing/>`_
 
 .. rubric:: Development References
 
