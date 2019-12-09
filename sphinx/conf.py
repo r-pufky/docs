@@ -63,6 +63,13 @@ html_theme_options = {
 todo_include_todos = True
 ct_separator = '\N{SINGLE RIGHT-POINTING ANGLE QUOTATION MARK}'
 
+# An empty format for CheckExternalLinksBuilder (linkchecking) is required.
+aafig_format = {
+  'html': 'svg',
+  'latex': 'pdf',
+  'text': None,
+  '': None
+}
 aafig_default_options = {
   'textual': True,
 }
