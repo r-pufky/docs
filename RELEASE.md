@@ -1,5 +1,10 @@
 # [Changelog][3g]
 
+## 2019-12-08
+RST conversion complete.
+
+* MD to RST conversion complete. Cutting release before changing repository around.
+
 ## 2019-07-06
 Documentation no longer in use has been removed.
 

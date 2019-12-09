@@ -167,3 +167,4 @@ git hub, or submit a CL :)
 
   glossary
   style-guide
+  sphinx
