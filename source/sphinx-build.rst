@@ -138,7 +138,7 @@ Documentation can be automatically link checked:
 #. `docutils snippets <https://agateau.com/2015/docutils-snippets/>`_
 #. `Unicode Python 3 escape sequences <https://www.quackit.com/python/reference/python_3_escape_sequences.cfm>`_
 #. `Unicode triangular bullet <https://www.compart.com/en/unicode/U+2023>`_
-#. `Using sphinx with github <https://daler.github.io/sphinxdoc-test/includeme.html>`_
+#. `Using sphinx with github <https://www.docslikecode.com/articles/github-pages-python-sphinx/>`_
 
 .. _sphinx: http://www.sphinx-doc.org
 .. _python pip and virtual environment: https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/
