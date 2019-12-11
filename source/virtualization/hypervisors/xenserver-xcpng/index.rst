@@ -217,7 +217,7 @@ Start VM when Hypervisor is booted.
 .. rubric:: References
 
 #. `Adding new usergroups to XenServer <https://discussions.citrix.com/topic/154063-add-new-usersgroup-to-xenserver/>`_
-#. `XenServer 7.0 release notes <http://docs.citrix.com/content/dam/docs/en-us/xenserver/xenserver-7-0/downloads/xenserver-7-0-release-notes.pdf>`_
+#. `XenServer 7.0 release notes <https://docs.citrix.com/en-us/xenserver/7-0/downloads/release-notes.pdf>`_
 
 .. _Securing Xenserver: http://burm.net/2012/01/29/xenserver-basic-security-tips-how-do-you-secure-your-xenserver/
 .. _Missing OS Templates: https://www.reddit.com/r/XenServer/comments/607pbi/my_xenserver_is_missing_templates/
@@ -225,7 +225,7 @@ Start VM when Hypervisor is booted.
 .. _Local ISO Repository: https://xen-orchestra.com/blog/creating-a-local-iso-repository-in-xenserver/
 .. _passthrough PCI devices: https://wiki.xen.org/wiki/Xen_PCI_Passthrough
 .. _multiple PCI devices: https://discussions.citrix.com/topic/355675-xenserver-pci-passthrough-pv-hvm-multiple-devices/
-.. _PCI Device Passthrough: https://xenserver.org/blog/entry/pci-pass-through-on-xenserver-7-0.html
+.. _PCI Device Passthrough: https://github.com/xcp-ng/xcp/wiki/PCI-Passtrough
 .. _Keep 2 Days of Logs: https://discussions.citrix.com/topic/299016-how-to-disable-xenserver-logging/
 .. _listing system block devices: https://willhaley.com/blog/find-correspond-disk-belongs-which-hard-drive-controller-linux/
 .. _Boot: https://xen-orchestra.com/blog/auto-start-vm-on-xenserver-boot/

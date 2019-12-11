@@ -193,4 +193,4 @@ Confirm Server/Infrastructure Network Working
 
 .. rubric:: References
 
-#. `Setting Management VLAN for Switches <https://community.ubnt.com/t5/UniFi-Routing-Switching/Setting-Management-VLAN-for-Switches/td-p/2279619>`_
+#. `Setting Management VLAN for Switches <https://community.ui.com/questions/5e765ef4-c734-413b-97fe-c38e5b33916e>`_

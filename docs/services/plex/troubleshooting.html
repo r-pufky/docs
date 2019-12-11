@@ -1404,7 +1404,7 @@ user on docker without re-creating this directory will cause this to happen.</p>
 </ol>
 </div>
 <div class="section" id="spinning-playback-icon-no-playback">
-<h3><a class="reference external" href="https://forums.plex.tv/discussion/265492/transcoder-fails-when-transcode-is-on-a-network-share/p4">Spinning playback icon, no playback</a><a class="headerlink" href="#spinning-playback-icon-no-playback" title="Permalink to this headline">¶</a></h3>
+<h3><a class="reference external" href="https://forums.plex.tv/t/transcoder-fails-when-transcode-is-on-a-network-share/186681">Spinning playback icon, no playback</a><a class="headerlink" href="#spinning-playback-icon-no-playback" title="Permalink to this headline">¶</a></h3>
 <p>Generally if transcoding is setup right, then this is related to the <em>audio
 transcoding</em> failing. Turn on debug logging on the server and look for:</p>
 <blockquote class="pull-quote">
@@ -1486,7 +1486,7 @@ sudo cp -av /tmp/metadata-backup Metadata
 <div class="code-block-caption"><span class="caption-text">Stop Plex and remove Service Bundle Framework.</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo service plexmediaserver stop
 sudo ps -ef <span class="p">|</span> grep -i plex
-sudo <span class="nb">kill</span> -9 &lt;any remaining PID’s&gt;
+sudo <span class="nb">kill</span> -9 <span class="o">{</span>REMAINING PIDS<span class="o">}</span>
 <span class="nb">cd</span> /var/lib/plexmediaserver/Library/Application<span class="se">\ </span>Support/Plex<span class="se">\ </span>Media<span class="se">\ </span>Server/Plugins
 rm -f Service.bundle Framwork.bundle
 sudo service plexmediaserver start

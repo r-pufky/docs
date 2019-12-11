@@ -1384,15 +1384,15 @@
   <div class="section" id="zfs">
 <span id="service-zfs"></span><h1>ZFS<a class="headerlink" href="#zfs" title="Permalink to this headline">¶</a></h1>
 <p>Set up and maintain a ZFS pool.</p>
-<p>Uses <a class="reference internal" href="../../operating-systems/ubuntu/1804-server-base-install.html#server-base-install"><span class="std std-ref">Ubuntu 18.04 Server Base Install</span></a>. See <a class="reference external" href="http://flux.org.uk/howto/solaris/zfs_tutorial_01">ZFS Tutorial</a>.</p>
+<p>Uses <a class="reference internal" href="../../operating-systems/ubuntu/1804-server-base-install.html#server-base-install"><span class="std std-ref">Ubuntu 18.04 Server Base Install</span></a>. See <a class="reference external" href="http://kbdone.com/zfs-basics/">ZFS Tutorial</a>.</p>
 <div class="section" id="zfs-install">
 <h2>ZFS Install<a class="headerlink" href="#zfs-install" title="Permalink to this headline">¶</a></h2>
-<p>This is now in the default repositories for Ubuntu. The <a class="reference external" href="https://launchpad.net/~zfs-native/+archive/stable">old PPA archive is
+<p>This is now in the default repositories for Ubuntu. The <a class="reference external" href="https://launchpad.net/~zfs-native/+archive/ubuntu/stable">old PPA archive is
 here</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">HWE</span></code> kernel currently does not build properly, you need to use the
-generic kernel <a class="reference external" href="https://bugs.launchpad.net/ubuntu/+source/linux-hwe/+bug/1693757">until this bug is resolved</a>.</p>
+generic kernel <a class="reference external" href="https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1693757">until this bug is resolved</a>.</p>
 </div>
 <p><a class="reference external" href="https://wiki.ubuntu.com/ZFS">Ubuntu 16.04+ has native ZFS kernel</a> level support built in. Only user tools
 need to be installed.</p>
@@ -1444,8 +1444,8 @@ Scrub.</p></li>
 <ul class="simple">
 <li><p>by-id is the easiest to use as it identifies drives by the WWN (World Wide
 Name) or a composite of the model and serial number.</p></li>
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">GPT</span></code> partitions for <a class="reference external" href="http://www.cyberciti.biz/tips/fdisk-unable-to-create-partition-greater-2tb.html">2TB+ disk support</a>.</p></li>
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">smartctl</span> <span class="pre">-i</span> <span class="pre">{DEVICE}</span></code> to get <a class="reference external" href="https://www.techrepublic.com/blog/linux-and-open-source/using-smartctl-to-get-smart-status-information-on-your-hard-drives/">detailed information on disk</a>.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">GPT</span></code> partitions for <a class="reference external" href="https://www.cyberciti.biz/tips/fdisk-unable-to-create-partition-greater-2tb.html">2TB+ disk support</a>.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">smartctl</span> <span class="pre">-i</span> <span class="pre">{DEVICE}</span></code> to get <a class="reference external" href="https://www.thomas-krenn.com/en/wiki/Analyzing_a_Faulty_Hard_Disk_using_Smartctl">detailed information on disk</a>.</p></li>
 </ul>
 </div>
 <div class="literal-block-wrapper docutils container" id="id6">
@@ -1462,7 +1462,7 @@ sudo zdb -C <span class="o">{</span>CONTAINER<span class="o">}</span>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">autoexpand=on</span></code> enables auto-expanding of ZFS pool when new disks are
 added.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ashift=12</span></code> <a class="reference external" href="http://forums.freebsd.org/showthread.php?t=29539">Enables 4K sectors</a>. <strong>All &gt; 2011</strong> drives should have 4K
+<li><p><code class="docutils literal notranslate"><span class="pre">ashift=12</span></code> <a class="reference external" href="https://forums.freebsd.org/threads/zfs-replacing-512b-drives-by-4k-drives.29539/">Enables 4K sectors</a>. <strong>All &gt; 2011</strong> drives should have 4K
 sectors. This <strong>cannot</strong> be changed once set in the pool, and will lead to
 severe performance degradation if mis-matched for FS/drives. Cannot
 hotswap/replace <code class="docutils literal notranslate"><span class="pre">512</span></code> with <code class="docutils literal notranslate"><span class="pre">4K</span></code> drives in pool.</p></li>

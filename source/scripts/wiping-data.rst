@@ -68,8 +68,8 @@ Download `DBAN boot & nuke`_ then run *DoD 3 pass*.
 
 .. rubric:: References
 
-#. `Basics on wiping a drive in linux <http://how-to.wikia.com/wiki/How_to_wipe_a_hard_drive_clean_in_Linux>`_
-#. `Wiping a drive with ones <http://www.commandlinefu.com/commands/view/6483/fill-a-hard-drive-with-ones-like-zero-fill-but-the-opposite->`_
-#. `What really needs to be done to destroy HD data <http://www.vidarholen.net/~vidar/overwriting_hard_drive_data.pdf>`_
+#. `Basics on wiping a drive in linux <https://how-to.fandom.com/wiki/How_to_wipe_a_hard_drive_clean_in_Linux>`_
+#. `Wiping a drive with ones <https://www.commandlinefu.com/commands/view/6483/fill-a-hard-drive-with-ones-like-zero-fill-but-the-opposite->`_
+#. `What really needs to be done to destroy HD data <https://www.vidarholen.net/~vidar/overwriting_hard_drive_data.pdf>`_
 
-.. _DBAN boot & nuke: http://sourceforge.net/projects/dban/
+.. _DBAN boot & nuke: https://sourceforge.net/projects/dban/

@@ -1392,8 +1392,8 @@
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">Generate 4096bit RSA keys.</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-keygen -b <span class="m">4096</span> -t rsa -f <span class="o">{</span>KEYNAME<span class="o">}</span>
-chmod <span class="m">0600</span> &lt;keyname&gt;
-chmod <span class="m">0640</span> &lt;keyname&gt;.pub
+chmod <span class="m">0600</span> <span class="o">{</span>KEYNAME<span class="o">}</span>
+chmod <span class="m">0640</span> <span class="o">{</span>KEYNAME<span class="o">}</span>.pub
 </pre></div>
 </div>
 </div>
@@ -1417,14 +1417,14 @@ chmod <span class="m">0640</span> &lt;keyname&gt;.pub
 <p>Disable X11 forwarding but allow ports <code class="docutils literal notranslate"><span class="pre">80,4243,32400</span></code> to be forwarded.</p>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text"><strong>0600 user user</strong> <code class="docutils literal notranslate"><span class="pre">~/.ssh/authorized_keys</span></code></span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>no-X11-forwarding,permitopen<span class="o">=</span><span class="s2">&quot;localhost:80&quot;</span>,permitopen<span class="o">=</span><span class="s2">&quot;localhost:4243&quot;</span>,permitopen<span class="o">=</span><span class="s2">&quot;10.10.10.10:32400&quot;</span> &lt;PUBKEY DUMP&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>no-X11-forwarding,permitopen<span class="o">=</span><span class="s2">&quot;localhost:80&quot;</span>,permitopen<span class="o">=</span><span class="s2">&quot;localhost:4243&quot;</span>,permitopen<span class="o">=</span><span class="s2">&quot;10.10.10.10:32400&quot;</span> <span class="o">{</span>PUBKEY DUMP<span class="o">}</span>
 </pre></div>
 </div>
 </div>
 <p>Allow connection, but disables all forwarding.</p>
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-text"><strong>0600 user user</strong> <code class="docutils literal notranslate"><span class="pre">~/.ssh/authorized_keys</span></code></span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>no-port-forwarding &lt;PUBKEY DUMP&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>no-port-forwarding <span class="o">{</span>PUBKEY DUMP<span class="o">}</span>
 </pre></div>
 </div>
 </div>
@@ -1443,7 +1443,7 @@ See <a class="reference external" href="https://nerderati.com/2011/03/17/simplif
   <span class="n">PreferredAuthentications</span> <span class="n">publickey</span>
   <span class="n">IdentityFile</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">github</span>
 
-<span class="n">Host</span> <span class="o">&lt;</span><span class="n">CUSTOM_NAME</span><span class="o">&gt;</span>
+<span class="n">Host</span> <span class="p">{</span><span class="n">CUSTOM</span> <span class="n">NAME</span><span class="p">}</span>
   <span class="n">HostName</span> <span class="p">{</span><span class="n">HOST</span> <span class="n">IP</span> <span class="n">OR</span> <span class="n">DNS</span><span class="p">}</span>
   <span class="n">User</span> <span class="p">{</span><span class="n">USER</span> <span class="n">TO</span> <span class="n">AUTH</span> <span class="n">AS</span><span class="p">}</span>
   <span class="n">IdentityFile</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="p">{</span><span class="n">CERT</span><span class="p">}</span>
@@ -1460,7 +1460,7 @@ See <a class="reference external" href="https://nerderati.com/2011/03/17/simplif
 </div>
 <div class="section" id="importing-rsa-keys-for-putty-winscp-on-windows">
 <h2>Importing RSA Keys for Putty/WinSCP on Windows<a class="headerlink" href="#importing-rsa-keys-for-putty-winscp-on-windows" title="Permalink to this headline">¶</a></h2>
-<p>See <a class="reference external" href="http://winscp.net/eng/docs/ui_puttygen">Puttygen Documentation</a>.</p>
+<p>See <a class="reference external" href="https://winscp.net/eng/docs/ui_puttygen">Puttygen Documentation</a>.</p>
 <ol class="arabic simple">
 <li><p>Copy RSA private key to windows computer.</p></li>
 <li><p><span class="guilabel">win + r › puttygen</span></p></li>

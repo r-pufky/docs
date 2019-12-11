@@ -57,7 +57,7 @@ to learn`_.
 .. note::
   You should see sieve entries on incoming mail in the ``/var/log/mail.log``.
 
-.. _sieve: http://dikant.de/2012/05/21/setting-up-server-side-mail-filtering/
-.. _delivered by the MDA: http://wiki2.dovecot.org/Pigeonhole
+.. _sieve: https://dikant.de/2012/05/21/setting-up-server-side-mail-filtering/
+.. _delivered by the MDA: https://wiki2.dovecot.org/Pigeonhole
 .. _standard mail filtering language: https://easyengine.io/tutorials/mail/server/sieve-filtering/
-.. _fairly easy to learn: https://tty1.net/blog/2011/sieve-tutorial_en.html
+.. _fairly easy to learn: https://p5r.uk/blog/2011/sieve-tutorial.html

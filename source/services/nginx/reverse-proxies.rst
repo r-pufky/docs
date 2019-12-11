@@ -191,7 +191,7 @@ errors and the app to break. Partially fixed using `http_sub_module`_.
 .. _subdomain reverse proxy: https://community.home-assistant.io/t/nginx-reverse-proxy-set-up-guide-docker/54802
 .. _reference documentation: https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/
 .. _location block: https://www.digitalocean.com/community/tutorials/understanding-nginx-server-and-location-block-selection-algorithms
-.. _expose versus ports: https://medium.freecodecamp.org/expose-vs-publish-docker-port-commands-explained-simply-434593dbc9a3
+.. _expose versus ports: https://www.freecodecamp.org/news/a-beginners-guide-to-docker-how-to-create-a-client-server-side-with-docker-compose-12c8cf0ae0aa/
 .. _Trailing Slash Gotchas: https://stackoverflow.com/questions/22759345/nginx-trailing-slash-in-proxy-pass-url
 .. _proxy_pass reference documentation: http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass
 .. _slow, error prone and hard to read: https://stackoverflow.com/questions/764247/why-are-regular-expressions-so-controversial

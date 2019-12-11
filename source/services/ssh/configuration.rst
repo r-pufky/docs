@@ -69,5 +69,5 @@ See `Puttygen Documentation`_.
    used.
 
 .. _sdelete64: https://docs.microsoft.com/en-us/sysinternals/downloads/sdelete
-.. _Puttygen Documentation: http://winscp.net/eng/docs/ui_puttygen
+.. _Puttygen Documentation: https://winscp.net/eng/docs/ui_puttygen
 .. _detailed explanation: https://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/

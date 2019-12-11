@@ -1669,11 +1669,11 @@ chmod -Rv go-rwx /etc/skel/
 <p>Pre-configured user skeleton files are here:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><a class="reference download internal" download="" href="../../_downloads/1308518062453b85e4f254fd20c6cb38/.bashrc"><code class="xref download docutils literal notranslate"><span class="pre">.bashrc</span></code></a></p></li>
-<li><p><a class="reference download internal" download="" href="../../_downloads/16af8659a183cc320b7e491e38a81c73/.bash_profile"><code class="xref download docutils literal notranslate"><span class="pre">.bash_profile</span></code></a></p></li>
-<li><p><a class="reference download internal" download="" href="../../_downloads/e3535d57bd75f63f2912f95aa6197032/.bash_logout"><code class="xref download docutils literal notranslate"><span class="pre">.bash_logout</span></code></a></p></li>
-<li><p><a class="reference download internal" download="" href="../../_downloads/75cc25bceba252b14e6ffe727f3e417f/.vimrc"><code class="xref download docutils literal notranslate"><span class="pre">.vimrc</span></code></a></p></li>
-<li><p><a class="reference download internal" download="" href="../../_downloads/e46c28ff4d59d456370d17f40ec1bd71/.tmux.conf"><code class="xref download docutils literal notranslate"><span class="pre">.tmux.conf</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/495dd63102b903f77ebb1b78607b43a8/.bashrc"><code class="xref download docutils literal notranslate"><span class="pre">.bashrc</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/75cf35caddfdab48db7f6d1562b9c39a/.bash_profile"><code class="xref download docutils literal notranslate"><span class="pre">.bash_profile</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/1627cbd63fefff78d915657fe26eb7b5/.bash_logout"><code class="xref download docutils literal notranslate"><span class="pre">.bash_logout</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/40940d191245d27c6fd71f3164498b69/.vimrc"><code class="xref download docutils literal notranslate"><span class="pre">.vimrc</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="../../_downloads/a834ee66fccff1eeba66401c62d446df/.tmux.conf"><code class="xref download docutils literal notranslate"><span class="pre">.tmux.conf</span></code></a></p></li>
 </ul>
 </div></blockquote>
 <p>These will need to be manually added to pre-existing accounts (e.g. <code class="docutils literal notranslate"><span class="pre">root</span></code>
@@ -1764,7 +1764,7 @@ mount /dev/data_vol_group/encrypted_data /data
 boot:</p>
 <div class="literal-block-wrapper docutils container" id="id27">
 <div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/crypttab</span></code></span><a class="headerlink" href="#id27" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xvdb_crypt <span class="nv">UUID</span><span class="o">=</span>&lt;UUID from xvdb&gt; none luks,discard
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xvdb_crypt <span class="nv">UUID</span><span class="o">={</span>UUID FROM XVDB<span class="o">}</span> none luks,discard
 </pre></div>
 </div>
 </div>

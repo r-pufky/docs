@@ -108,16 +108,16 @@ Turn on developer tools (Chrome):
 
 #. `mencoder online manual <http://www.mplayerhq.hu/DOCS/HTML/en/mencoder.html>`_
 #. `mencoder selecting codecs <http://www.mplayerhq.hu/DOCS/HTML/en/menc-feat-selecting-codec.html>`_
-#. `mencoder for merging video files <http://www.linuxquestions.org/questions/linux-general-1/how-to-merge-2-avi-together-424988/>`_
-#. `mencoder for video editing <http://bro1.centras.info/mencoder_editing.html>`_
+#. `mencoder for merging video files <https://www.linuxquestions.org/questions/linux-general-1/how-to-merge-2-avi-together-424988/>`_
+#. `mencoder for video editing <http://brovienas.tripod.com/mencoder_editing.html>`_
 #. `mencoder how to trim and split <http://www.misterhowto.com/index.php?category=Computers&subcategory=Video&article=trim_or_split_with_mencoder>`_
-#. `ffmpeg for slicing video files (1) <http://www.joeldare.com/wiki/video:cut_video_with_ffmpeg>`_
-#. `ffmpeg for slicing video files (2) <http://www.mydigitallife.info/convert-flash-video-flv-files-to-mpg-or-avi-and-other-media-formats/>`_
+#. `ffmpeg for slicing video files (1) <https://www.joeldare.com/wiki/video:cut_video_with_ffmpeg>`_
+#. `ffmpeg for slicing video files (2) <https://techjourney.net/convert-flash-video-flv-files-to-mpg-or-avi-and-other-media-formats/>`_
 #. `Convert static images to video files <http://jupiter.ethz.ch/~pjt/makingMovies.html>`_
-#. `Convert animated GIF’s to video files (1) <http://stackoverflow.com/questions/3212821/animated-gif-to-avi-on-linux>`_
-#. `Convert animated GIF’s to video files (2) <http://www.catswhocode.com/blog/19-ffmpeg-commands-for-all-needs>`_
+#. `Convert animated GIF’s to video files (1) <https://stackoverflow.com/questions/3212821/animated-gif-to-avi-on-linux>`_
+#. `Convert animated GIF’s to video files (2) <https://catswhocode.com/ffmpeg-commands/>`_
 #. `Convert animated GIF’s to video files (3) <http://www.imagemagick.org/discourse-server/viewtopic.php?f=1&t=14743&view=next>`_
-#. `Splitting MKV’s into smaller MKV’s <http://www.bunkus.org/videotools/mkvtoolnix/doc/mkvmerge.html>`_
-#. `Combining multiple videos parts into one file <https://askubuntu.com/questions/637074/merging-multiple-more-than-two-videos-on-ubuntu>`_
+#. `Splitting MKV’s into smaller MKV’s <https://mkvtoolnix.download/doc/mkvmerge.html>`_
+#. `Combining multiple videos parts into one file <https://askubuntu.com/questions/637074/how-to-merge-multiple-more-than-two-videos-on-ubuntu>`_
 
 .. _Strip metadata: https://stackoverflow.com/questions/11474532/how-to-change-metadata-with-ffmpeg-avconv-without-creating-a-new-file

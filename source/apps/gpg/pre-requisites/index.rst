@@ -13,8 +13,8 @@ Required Materials:
    will work but be less secure. Instructions assume Debian-based system.
 #. Hardware-backed Encrypted USB drive `Ironkey`_ (most secure), or USB drive
    with software encryption `using VeraCrypt`_ (less secure).
-#. Yubikey (or other hardware security key support 4096bit RSA certificates)
-   `nano`_ or `Yubikey 5`_.
+#. `Yubikey 5`_ (or other hardware security key support 4096bit RSA
+   certificates).
 #. A complete copy of these instructions or secondary device Internet access.
 #. A photo to associate with your GPG master key.
 
@@ -32,11 +32,10 @@ configuration.
 #. `GPG Card Administration <https://www.gnupg.org/howtos/card-howto/en/ch03.html>`_
 
 .. _setup instructions: https://tails.boum.org/install/win/usb-download/index.en.html
-.. _live USB: https://www.ubuntu.com/#download
-.. _Ironkey: https://www.kingston.com/us/usb/encrypted_security/IKD300
-.. _using VeraCrypt: https://github.com/drduh/YubiKey-Guide#backup-keys
-.. _nano: https://www.yubico.com/product/Yubikey-5-nano/#Yubikey-5-nano
-.. _Yubikey 5: https://www.yubico.com/product/Yubikey-5-nfc/#Yubikey-5-nfc
+.. _live USB: https://ubuntu.com/#download
+.. _Ironkey: https://www.kingston.com/us/usb-flash-drives/ironkey-d300-encrypted-usb-flash-drive
+.. _using VeraCrypt: https://github.com/drduh/YubiKey-Guide#backup
+.. _Yubikey 5: https://www.yubico.com/products/yubikey-5-overview/
 
 .. toctree::
    :hidden:

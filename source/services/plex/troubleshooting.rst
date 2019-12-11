@@ -108,5 +108,5 @@ Plex Stuck at Initial Startup
   sudo service plexmediaserver start
   sudo reboot
 
-.. _Spinning playback icon, no playback: https://forums.plex.tv/discussion/265492/transcoder-fails-when-transcode-is-on-a-network-share/p4
+.. _Spinning playback icon, no playback: https://forums.plex.tv/t/transcoder-fails-when-transcode-is-on-a-network-share/186681
 .. _Backup State Configuration: https://plexapp.zendesk.com/hc/en-us/articles/201154527-Move-Viewstate-Ratings-from-One-Install-to-Another

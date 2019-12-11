@@ -62,6 +62,6 @@ Attempt to login with a shell as well as port forwarding working.
 .. rubric:: References
 
 #. `Basic SSH Public Key Authentication Setup <https://help.ubuntu.com/community/SSH/OpenSSH/Keys>`_
-#. `Deny/Allow/Restrict SSH access to users and groups <http://www.cyberciti.biz/tips/openssh-deny-or-restrict-access-to-users-and-groups.html>`_
+#. `Deny/Allow/Restrict SSH access to users and groups <https://www.cyberciti.biz/tips/openssh-deny-or-restrict-access-to-users-and-groups.html>`_
 
 .. _OpenSSH Documentation: https://www.openssh.com/

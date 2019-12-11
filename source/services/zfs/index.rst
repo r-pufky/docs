@@ -120,13 +120,13 @@ done while the filesystem is online, but may slightly impact performance.
 
   @weekly /root/bin/scrub-zpool-monthly
 
-.. _old PPA archive is here: https://launchpad.net/~zfs-native/+archive/stable
-.. _2TB+ disk support: http://www.cyberciti.biz/tips/fdisk-unable-to-create-partition-greater-2tb.html
-.. _ZFS Tutorial: http://flux.org.uk/howto/solaris/zfs_tutorial_01
+.. _old PPA archive is here: https://launchpad.net/~zfs-native/+archive/ubuntu/stable
+.. _2TB+ disk support: https://www.cyberciti.biz/tips/fdisk-unable-to-create-partition-greater-2tb.html
+.. _ZFS Tutorial: http://kbdone.com/zfs-basics/
 .. _Upgrading ZFS with Larger Disks: http://www.itsacon.net/computers/unix/growing-a-zfs-pool/
-.. _Enables 4K sectors: http://forums.freebsd.org/showthread.php?t=29539
+.. _Enables 4K sectors: https://forums.freebsd.org/threads/zfs-replacing-512b-drives-by-4k-drives.29539/
 .. _Setup Monthly ZFS Scrub: https://docs.oracle.com/cd/E23823_01/html/819-5461/gbbwa.html
 .. _root crontab: https://en.wikipedia.org/wiki/Cron
-.. _until this bug is resolved: https://bugs.launchpad.net/ubuntu/+source/linux-hwe/+bug/1693757
+.. _until this bug is resolved: https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1693757
 .. _Ubuntu 16.04+ has native ZFS kernel: https://wiki.ubuntu.com/ZFS
-.. _detailed information on disk: https://www.techrepublic.com/blog/linux-and-open-source/using-smartctl-to-get-smart-status-information-on-your-hard-drives/
+.. _detailed information on disk: https://www.thomas-krenn.com/en/wiki/Analyzing_a_Faulty_Hard_Disk_using_Smartctl

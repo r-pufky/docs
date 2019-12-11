@@ -135,8 +135,8 @@ in a docker container (these are usually ``/`` based backups like ``/etc``).
 
 If identity imported then no adoption of a backup set is needed.
 
-.. _Crashplan Docker and Documentation: https://github.com/jlesage/docker-crashplan-pro
+.. _Crashplan Docker and Documentation: https://hub.docker.com/r/jlesage/crashplan-pro
 .. _inotify max watch limits: https://support.code42.com/CrashPlan/4/Troubleshooting/Linux_real-time_file_watching_errors
 .. _docker container documentation here: https://github.com/jlesage/docker-crashplan-pro#taking-over-existing-backup
-.. _subdomain reference: https://hub.docker.com/r/jlesage/crashplan-pro/#routing-based-on-url-path
+.. _subdomain reference: https://github.com/jlesage/docker-crashplan-pro#routing-based-on-url-path
 .. _websockets: https://stackoverflow.com/questions/15193743/nginx-reverse-proxy-websockets

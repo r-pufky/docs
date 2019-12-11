@@ -340,5 +340,5 @@ musicbrains or existing album in beets.
 .. _beets.io: https://beets.readthedocs.io/en/latest/reference/index.html
 .. _ftintitle works: https://github.com/beetbox/beets/issues/1766
 .. _additional querying options: https://beets.readthedocs.io/en/latest/reference/query.html
-.. _Importing Music: http://beets.readthedocs.io/en/latest/guides/tagger.html
+.. _Importing Music: https://beets.readthedocs.io/en/latest/guides/tagger.html
 .. _mid3v2: https://unix.stackexchange.com/questions/4961/which-mp3-tagging-tool-for-linux

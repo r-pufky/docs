@@ -1386,7 +1386,7 @@
 <p>Setting up docker on Ubuntu. See <a class="reference external" href="https://docs.docker.com/get-started/">getting started</a>.</p>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
-<p>Do <strong>NOT</strong> expose <code class="docutils literal notranslate"><span class="pre">docker.sock</span></code> to <a class="reference external" href="https://www.lvh.io/posts/dont-expose-the-docker-socket-not-even-to-a-container.html">containers, even in read-only</a>.</p>
+<p>Do <strong>NOT</strong> expose <code class="docutils literal notranslate"><span class="pre">docker.sock</span></code> to <a class="reference external" href="https://www.lvh.io/posts/dont-expose-the-docker-socket-not-even-to-a-container/">containers, even in read-only</a>.</p>
 </div>
 <div class="section" id="install-docker-service">
 <h2>Install Docker Service<a class="headerlink" href="#install-docker-service" title="Permalink to this headline">¶</a></h2>
@@ -1694,7 +1694,7 @@ sysctl -a <span class="p">|</span> grep bridge
 <h2>Compose Containers on <a class="reference external" href="https://runnable.com/docker/docker-compose-networking">Different Networks</a><a class="headerlink" href="#compose-containers-on-different-networks" title="Permalink to this headline">¶</a></h2>
 <p>Setup network isolation of compose containers to minimize exposure. By default
 all containers will end up on the same default network. This enables network
-<a class="reference external" href="https://blog.docker.com/2016/03/docker-networking-design-philosophy/">isolation</a> of containers.</p>
+<a class="reference external" href="https://www.docker.com/blog/docker-networking-design-philosophy/">isolation</a> of containers.</p>
 <p>Create a custom network named <code class="docutils literal notranslate"><span class="pre">custom_net_name</span></code> on the subnet
 <code class="docutils literal notranslate"><span class="pre">172.40.0.0/16</span></code> for this compose container. Containers will automatically
 recieve an IP on this network when turning up.</p>

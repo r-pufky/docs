@@ -12,8 +12,8 @@ See :ref:`service-certificate-authority` for instructions on setting up required
 certificates used here. An excellent reference for `basic certificate usage`_
 and should be well understood before proceeding.
 
-`Nginx Configuration`_
-**********************
+Nginx Configuration
+*******************
 If the ``default_server`` is set to not require cert-based authentication and
 additional server blocks do, clients that do not support it will fall back to
 the ``default_server`` and be **able** to make valid requests. Therefore the
@@ -149,7 +149,6 @@ Restarting chrome will pickup the configuration changes.
 
 .. _Cert Based Authentication: https://fardog.io/blog/2017/12/30/client-side-certificate-authentication-with-nginx/
 .. _basic certificate usage: https://jamielinux.com/docs/openssl-certificate-authority/introduction.html
-.. _Nginx Configuration: https://tech.mendix.com/linux/2014/10/29/nginx-certs-sni/
 .. _if is evil: https://www.nginx.com/resources/wiki/start/topics/depth/ifisevil/
 .. _access for specific certificates: https://stackoverflow.com/questions/41513400/nginx-authorization-based-on-client-certificates
 .. _Git Cert Auth for Repo Site: https://stackoverflow.com/questions/9008309/how-do-i-set-git-ssl-no-verify-for-specific-repos-only

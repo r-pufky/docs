@@ -286,10 +286,10 @@ Remove *you have new mail.* when you login to the mail host.
 
 .. _Postfix Setup: https://help.ubuntu.com/community/PostfixBasicSetupHowto
 .. _Configuring email Aliases for Users: http://postfix.1071664.n5.nabble.com/How-to-delete-a-key-via-postconf-td3692.html
-.. _catchall for domains: http://www.cyberciti.biz/faq/howto-setup-postfix-catch-all-email-accounts/
+.. _catchall for domains: https://www.cyberciti.biz/faq/howto-setup-postfix-catch-all-email-accounts/
 .. _blackhole an entire domain: http://madphilosopher.ca/2006/09/how-to-send-an-entire-domain-to-dev-null-in-postfix/
 .. _Testing Initial postfix Setup: https://qmail.jms1.net/test-auth.shtml
 .. _Installing postgrey: https://help.ubuntu.com/community/PostfixGreylisting
 .. _Installing Sender Policy Framework (SPF) Validation: https://help.ubuntu.com/community/Postfix/SPF
-.. _Installing spamassassin: http://www.debuntu.org/postfix-and-spamassassin-how-to-filter-spam/
+.. _Installing spamassassin: https://www.debuntu.org/postfix-and-spamassassin-how-to-filter-spam/
 .. _sa-learn utility: https://spamassassin.apache.org/full/3.1.x/doc/sa-learn.html

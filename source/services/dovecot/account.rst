@@ -24,6 +24,6 @@ that user.
 
   {USER}:{PASSWORD HASH}:{UID from /etc/passwd}:{GID from /etc/passwd}::{USER HOME DIRECTORY}
 
-.. _Virtual users: http://wiki.dovecot.org/VirtualUsers
-.. _/etc/passwd: http://wiki.dovecot.org/AuthDatabase/PasswdFile
-.. _imap.passwd: http://wiki.dovecot.org/HowTo/SimpleVirtualInstall
+.. _Virtual users: https://wiki.dovecot.org/VirtualUsers
+.. _/etc/passwd: https://wiki.dovecot.org/AuthDatabase/PasswdFile
+.. _imap.passwd: https://wiki.dovecot.org/HowTo/SimpleVirtualInstall

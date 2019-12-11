@@ -413,11 +413,11 @@ it is **not** recommended to disable TDR entirely.
   :no_section:
   :no_caption:
 
-.. _integrity enabled: !http://blog.architecting.it/2012/07/10/windows-server-2012-windows-server-8-resilient-file-system/w8-refs-2/
+.. _integrity enabled: https://docs.microsoft.com/en-us/windows-server/storage/refs/integrity-streams
 .. _ReFS create moved to Windows 10 Workstation: https://arstechnica.com/gadgets/2017/08/microsoft-to-remove-full-refs-support-from-windows-10-pro-push-workstation-sku/
 .. _SSD activity issue: https://superuser.com/questions/1016152/100-ssd-activity-0-r-w-speed-system-hang-issue
 .. _100% CPU usage issue: https://www.ghacks.net/2018/05/01/all-the-issues-of-windows-10-version-1803-you-may-run-into/
-.. _System & Compressed Memory Service issue: https://whatsabyte.com/windows/system-and-compressed-memory-high-cpu/
+.. _System & Compressed Memory Service issue: http://whatsabyte.com/windows/system-and-compressed-memory-high-cpu/
 .. _Disable Prefetch and Superfetch: https://www.thewindowsclub.com/disable-superfetch-prefetch-ssd
 .. _Disable ReFS Scheduled Tasks: http://bakins-bits.com/wordpress/?p=195
 .. _Hiding Local Desktop for Chrome Remote Desktop: https://support.google.com/chrome/a/answer/2799701?hl=en&vid=0-243350879834-1495198101821

@@ -1463,13 +1463,13 @@ ffmpeg -r <span class="m">9</span> -i output%05d.png final_movie.avi
 </div>
 <div class="literal-block-wrapper docutils container" id="id14">
 <div class="code-block-caption"><span class="caption-text">Rip MP3 Audio from FLV File.</span><a class="headerlink" href="#id14" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>avconv -i &lt;input.flv&gt; output.mp3
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>avconv -i <span class="o">{</span>FLV FILE<span class="o">}</span> output.mp3
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id15">
 <div class="code-block-caption"><span class="caption-text">Convert FLV to MKV Container.</span><a class="headerlink" href="#id15" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ffmpeg -i &lt;input.flv&gt; -vcodec copy -acodec copy out.mkv
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ffmpeg -i <span class="o">{</span>FLV FILE<span class="o">}</span> -vcodec copy -acodec copy out.mkv
 </pre></div>
 </div>
 </div>
@@ -1495,7 +1495,7 @@ stream).</p>
 </ul>
 <div class="literal-block-wrapper docutils container" id="id17">
 <div class="code-block-caption"><span class="caption-text">Use ffmpeg to download and stitch stream together.</span><a class="headerlink" href="#id17" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ffmpeg -i https://&lt;URI&gt;.m3u8 -c:v copy -c:a copy -f mpegts output.ts
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ffmpeg -i https://<span class="o">{</span>URI<span class="o">}</span>.m3u8 -c:v copy -c:a copy -f mpegts output.ts
 </pre></div>
 </div>
 </div>
@@ -1503,17 +1503,17 @@ stream).</p>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="http://www.mplayerhq.hu/DOCS/HTML/en/mencoder.html">mencoder online manual</a></p></li>
 <li><p><a class="reference external" href="http://www.mplayerhq.hu/DOCS/HTML/en/menc-feat-selecting-codec.html">mencoder selecting codecs</a></p></li>
-<li><p><a class="reference external" href="http://www.linuxquestions.org/questions/linux-general-1/how-to-merge-2-avi-together-424988/">mencoder for merging video files</a></p></li>
-<li><p><a class="reference external" href="http://bro1.centras.info/mencoder_editing.html">mencoder for video editing</a></p></li>
+<li><p><a class="reference external" href="https://www.linuxquestions.org/questions/linux-general-1/how-to-merge-2-avi-together-424988/">mencoder for merging video files</a></p></li>
+<li><p><a class="reference external" href="http://brovienas.tripod.com/mencoder_editing.html">mencoder for video editing</a></p></li>
 <li><p><a class="reference external" href="http://www.misterhowto.com/index.php?category=Computers&amp;subcategory=Video&amp;article=trim_or_split_with_mencoder">mencoder how to trim and split</a></p></li>
-<li><p><a class="reference external" href="http://www.joeldare.com/wiki/video:cut_video_with_ffmpeg">ffmpeg for slicing video files (1)</a></p></li>
-<li><p><a class="reference external" href="http://www.mydigitallife.info/convert-flash-video-flv-files-to-mpg-or-avi-and-other-media-formats/">ffmpeg for slicing video files (2)</a></p></li>
+<li><p><a class="reference external" href="https://www.joeldare.com/wiki/video:cut_video_with_ffmpeg">ffmpeg for slicing video files (1)</a></p></li>
+<li><p><a class="reference external" href="https://techjourney.net/convert-flash-video-flv-files-to-mpg-or-avi-and-other-media-formats/">ffmpeg for slicing video files (2)</a></p></li>
 <li><p><a class="reference external" href="http://jupiter.ethz.ch/~pjt/makingMovies.html">Convert static images to video files</a></p></li>
-<li><p><a class="reference external" href="http://stackoverflow.com/questions/3212821/animated-gif-to-avi-on-linux">Convert animated GIF’s to video files (1)</a></p></li>
-<li><p><a class="reference external" href="http://www.catswhocode.com/blog/19-ffmpeg-commands-for-all-needs">Convert animated GIF’s to video files (2)</a></p></li>
+<li><p><a class="reference external" href="https://stackoverflow.com/questions/3212821/animated-gif-to-avi-on-linux">Convert animated GIF’s to video files (1)</a></p></li>
+<li><p><a class="reference external" href="https://catswhocode.com/ffmpeg-commands/">Convert animated GIF’s to video files (2)</a></p></li>
 <li><p><a class="reference external" href="http://www.imagemagick.org/discourse-server/viewtopic.php?f=1&amp;t=14743&amp;view=next">Convert animated GIF’s to video files (3)</a></p></li>
-<li><p><a class="reference external" href="http://www.bunkus.org/videotools/mkvtoolnix/doc/mkvmerge.html">Splitting MKV’s into smaller MKV’s</a></p></li>
-<li><p><a class="reference external" href="https://askubuntu.com/questions/637074/merging-multiple-more-than-two-videos-on-ubuntu">Combining multiple videos parts into one file</a></p></li>
+<li><p><a class="reference external" href="https://mkvtoolnix.download/doc/mkvmerge.html">Splitting MKV’s into smaller MKV’s</a></p></li>
+<li><p><a class="reference external" href="https://askubuntu.com/questions/637074/how-to-merge-multiple-more-than-two-videos-on-ubuntu">Combining multiple videos parts into one file</a></p></li>
 </ol>
 </div>
 </div>

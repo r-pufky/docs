@@ -86,7 +86,7 @@ Server Setup
 
 .. rubric:: References
 
-#. `Playon Minimum requirements <https://www.playon.tv/support/minreqs#minreq-details>`_
+#. `Playon Minimum requirements <https://www.playon.tv/support/minreqs>`_
 #. `Playon User Guide <https://www.playon.tv/user-guide/intro>`_
 #. `Port forwarding Playon <https://forums.webosnation.com/webos-apps-games/297294-port-forwarding-playon.html>`_
 

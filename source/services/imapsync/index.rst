@@ -109,10 +109,10 @@ account.)
 
 .. rubric:: References
 
-#. `Error installing imapsync <http://askubuntu.com/questions/539102/error-install-imapsync>`_
+#. `Error installing imapsync <https://askubuntu.com/questions/539102/error-install-imapsync>`_
 
 .. _imapsync: https://github.com/imapsync/imapsync
 .. _gmail: http://imapsync.lamiral.info/FAQ.d/FAQ.Gmail.txt
 .. _Setup here: https://security.google.com/settings/security/apppasswords
 .. _local crontab: https://en.wikipedia.org/wiki/Cron
-.. _with duplicates: http://blog.christosoft.de/2015/03/maildir-remove-duplicates/
+.. _with duplicates: https://blog.christosoft.de/2015/03/maildir-remove-duplicates/

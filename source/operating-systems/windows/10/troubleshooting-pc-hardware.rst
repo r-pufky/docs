@@ -252,4 +252,4 @@ and keep them handy.
 .. _CrystalDiskInfo: https://crystalmark.info/en/software/crystaldiskinfo/
 .. _CrystalDiskMark: https://crystalmark.info/en/software/crystaldiskmark
 .. _pretty tolerant: https://static.googleusercontent.com/media/research.google.com/en//archive/disk_failures.pdf
-.. _around ~60c: https://www.amplicon.com/docs/white-papers/SSD-vs-HDD-white-paper.pdf
+.. _around ~60c: https://forums.guru3d.com/threads/what-should-normal-safe-operating-temperature-be-for-a-m-2-nvme-drive.418369/

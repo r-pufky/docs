@@ -80,5 +80,5 @@ Displayed without comments / unchanged lines.
 
 #. `Taskwarrior Examples <https://taskwarrior.org/docs/examples.html>`_
 #. `Taskwarrior Commands <https://taskwarrior.org/docs/commands/modify.html>`_
-#. `Manage tasks with Taskwarrior <https://youtu.be/zl68asL9jZA>`_
-#. `Taskwarrior Tutorials (some takeaways, generally crappy) <https://youtu.be/3iyaS5WwcuQ>`_
+#. `Manage tasks with Taskwarrior <https://www.youtube.com/watch?v=zl68asL9jZA>`_
+#. `Taskwarrior Tutorials (some takeaways, generally crappy) <https://www.youtube.com/watch?v=3iyaS5WwcuQ>`_

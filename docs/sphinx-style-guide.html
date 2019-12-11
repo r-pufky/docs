@@ -1384,16 +1384,23 @@
   <div class="section" id="sphinx-style-guide">
 <span id="id1"></span><h1><a class="reference external" href="https://documentation-style-guide-sphinx.readthedocs.io/en/latest/style-guide.html#headings">Sphinx Style Guide</a><a class="headerlink" href="#sphinx-style-guide" title="Permalink to this headline">¶</a></h1>
 <p>General style-guide for sphinx.</p>
-<ul class="simple">
+<ul>
 <li><p>80 character limit, exception for code blocks.</p></li>
 <li><p>Always verify links (<a class="reference internal" href="sphinx-build.html#sphinx-build-link-checking"><span class="std std-ref">Link Checking</span></a>) before uploading
-changes.</p></li>
+changes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All issues must be addressed. Do not use <code class="docutils literal notranslate"><span class="pre">!http</span></code> in source docs.</p>
+<p><code class="docutils literal notranslate"><span class="pre">sphinx/conf.py</span></code> contains specific exceptions for linkchecking.</p>
+</div>
+</li>
 <li><p>No submission of docs with breakages or warnings (red text).</p></li>
 <li><p>Remain consistent. See existing documentation for examples.</p></li>
 </ul>
 <div class="section" id="common-replacements">
 <h2>Common Replacements<a class="headerlink" href="#common-replacements" title="Permalink to this headline">¶</a></h2>
-<p>Standardized replacements used.</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">{CAPS</span> <span class="pre">WITH</span> <span class="pre">SPACE}</span></code>.</p>
+<p>Standardized replacements used:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">{USERNAME}</span></code> - user account.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">{PASSWORD}</span></code> - account password.</p></li>
@@ -1451,8 +1458,8 @@ Always prefer &#39; to &quot; for quotes.
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-text">Example code-block.</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
 <div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> python
-  <span class="nc">:caption:</span> <span class="nf">title above block can be wrapped.</span>
-  <span class="nc">:emphasize-lines:</span> <span class="nf">1</span>
+  <span class="nc">:caption:</span> title above block can be wrapped.
+  <span class="nc">:emphasize-lines:</span> 1
   <span class="nc">:linenos:</span>
 
   # some code here. if longer that a few lines, use <span class="s">``literalinclude``</span>.
@@ -1465,9 +1472,9 @@ a remote file of the same name, specific the remote target host as well.</p>
 <div class="literal-block-wrapper docutils container" id="id5">
 <div class="code-block-caption"><span class="caption-text">Remote modification template.</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
 <div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span>
-  <span class="nc">:caption:</span> <span class="nf">**0644 root root** ``/etc/initramfs/modules`` (EdgeOS CLI).</span>
-  <span class="nc">:lineno-start:</span> <span class="nf">12</span>
-  <span class="nc">:emphasize-lines:</span> <span class="nf">2</span>
+  <span class="nc">:caption:</span> <span class="gs">**0644 root root**</span> <span class="s">``/etc/initramfs/modules``</span> (EdgeOS CLI).
+  <span class="nc">:lineno-start:</span> 12
+  <span class="nc">:emphasize-lines:</span> 2
 
 <span class="cp">  ...</span>
 <span class="cp">  k10temp</span>
@@ -1479,7 +1486,7 @@ pre-determined in documentation or a static file.</p>
 <div class="literal-block-wrapper docutils container" id="id6">
 <div class="code-block-caption"><span class="caption-text">dyanmic deletions template.</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
 <div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> bash
-  <span class="nc">:caption:</span> <span class="nf">**0644 root root** ``/etc/hosts`` EdgeOS CLI.</span>
+  <span class="nc">:caption:</span> <span class="gs">**0644 root root**</span> <span class="s">``/etc/hosts``</span> EdgeOS CLI.
 
   #Delete hosts which are no longer used and reboot the router.
 </pre></div>
@@ -1499,9 +1506,9 @@ existing examples.</p></li>
 <div class="literal-block-wrapper docutils container" id="id7">
 <div class="code-block-caption"><span class="caption-text">code-block template for showing file content.</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
 <div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span>
-  <span class="nc">:caption:</span> <span class="nf">**0644 root root** ``/etc/initramfs/modules``</span>
-  <span class="nc">:lineno-start:</span> <span class="nf">12</span>
-  <span class="nc">:emphasize-lines:</span> <span class="nf">2</span>
+  <span class="nc">:caption:</span> <span class="gs">**0644 root root**</span> <span class="s">``/etc/initramfs/modules``</span>
+  <span class="nc">:lineno-start:</span> 12
+  <span class="nc">:emphasize-lines:</span> 2
 
 <span class="cp">  ...</span>
 <span class="cp">  k10temp</span>
@@ -1511,10 +1518,10 @@ existing examples.</p></li>
 <div class="literal-block-wrapper docutils container" id="id8">
 <div class="code-block-caption"><span class="caption-text">literalinclude  template for showing file content.</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
 <div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">literalinclude</span><span class="p">::</span> operating-systems/ubuntu/source/sshd_config
-  <span class="nc">:caption:</span> <span class="nf">**0644 root root** ``/etc/ssh/sshd_config``</span>
+  <span class="nc">:caption:</span> <span class="gs">**0644 root root**</span> <span class="s">``/etc/ssh/sshd_config``</span>
   <span class="nc">:linenos:</span>
-  <span class="nc">:emphasize-lines:</span> <span class="nf">2,3</span>
-  <span class="nc">:lines:</span> <span class="nf">2-25</span>
+  <span class="nc">:emphasize-lines:</span> 2,3
+  <span class="nc">:lines:</span> 2-25
 </pre></div>
 </div>
 </div>

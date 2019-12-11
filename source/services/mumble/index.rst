@@ -93,8 +93,8 @@ Create New Channel
 
 .. rubric:: References
 
-#. `Setting superuser password <http://mumble.sourceforge.net/Running_Murmur#Setting_the_SuperUser_Password>`_
+#. `Setting superuser password <https://wiki.mumble.info/wiki/Running_Murmur#Setting_the_SuperUser_Password>`_
 #. `Registering a mumble user <https://www.typefrag.com/mumble/tutorials/advanced-user-settings/>`_
-#. `Creating a mumble channel <http://www.mumble.com/support/mumble-how-to-create-a-channel.php>`_
+#. `Creating a mumble channel <https://www.mumble.com/support/mumble-how-to-create-a-channel.php>`_
 
-.. _Mumble: http://mumble.sourceforge.net/
+.. _Mumble: https://wiki.mumble.info/wiki/Main_Page

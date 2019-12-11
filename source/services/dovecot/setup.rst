@@ -107,5 +107,5 @@ See `Dovecot password schemes`_.
 #. `Postfix + Dovecot + SASL <https://help.ubuntu.com/community/PostfixDovecotSASL>`_
 #. `Spamassassin with Dovecot <http://www.townx.org/index.php?q=blog/elliot/simple_spamassassin_setup_with_postfix_and_dovecot_on_ubuntu_breezy>`_
 
-.. _Dovecot Setup: http://www.binarytides.com/install-postfix-dovecot-debian/
-.. _Dovecot password schemes: http://wiki.dovecot.org/Authentication/PasswordSchemes
+.. _Dovecot Setup: https://www.binarytides.com/install-postfix-dovecot-debian/
+.. _Dovecot password schemes: https://wiki.dovecot.org/Authentication/PasswordSchemes

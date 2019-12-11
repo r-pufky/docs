@@ -108,5 +108,5 @@ are used must trust the GPG Master Public key to prevent errors.
     machine, and ``>`` for your signing, authentication and encryption certs on
     the Yubikey.
 
-.. _automatically import: https://withinboredom.info/2017/11/18/signing-commits-ssh-with-yubikey-and-windows/
+.. _automatically import: https://withinboredom.info/blog/2017/11/18/signing-commits-ssh-with-yubikey-and-windows/
 .. _GPG Master Public Key: https://stackoverflow.com/questions/31784368/how-to-give-highest-trust-level-to-an-openpgp-certificate-in-kleopatra

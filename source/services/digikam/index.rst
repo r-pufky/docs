@@ -105,5 +105,5 @@ required for basic functionality:
 
 .. _digiKam: https://www.digikam.org/
 .. _digiKam Docker and Documentation: https://github.com/r-pufky/digikam
-.. _environment settings here: https://hub.docker.com/r/jlesage/baseimage-gui/#environment-variables
+.. _environment settings here: https://github.com/jlesage/docker-baseimage-gui#environment-variables
 .. _Initial Setup: https://github.com/r-pufky/digikam#digikam-setup

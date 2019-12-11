@@ -154,11 +154,12 @@ plex manually from the machine.
   ssh -L 32400:{DOCKER HOST}:32400 -N {USER}@{DOCKER HOST}
 
 .. code-block:: bash
-  :caption: Then nagivate to http://localhost:32400/web to finish setup.
+  :caption: Then nagivate to http://localhost:32400/web/index.html to finish
+            setup.
 
   docker-compose up -d plex
 
-.. _Plex: https://plex.tv
+.. _Plex: https://www.plex.tv/
 .. _Plex Docker and Documentation: https://hub.docker.com/r/plexinc/pms-docker/
 .. _Plex port usage: https://support.plex.tv/articles/201543147-what-network-ports-do-i-need-to-allow-through-my-firewall/
 .. _DNS Rebinding: https://support.plex.tv/articles/206225077-how-to-use-secure-server-connections/

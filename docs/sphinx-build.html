@@ -1382,14 +1382,24 @@
             
   <div class="section" id="document-generation">
 <span id="doc-generation"></span><h1>Document Generation<a class="headerlink" href="#document-generation" title="Permalink to this headline">¶</a></h1>
-<p>Site documentation is generated using <a class="reference external" href="http://www.sphinx-doc.org">sphinx</a> using a python virtual
+<p>Site documentation is generated using <a class="reference external" href="http://www.sphinx-doc.org/en/master/">sphinx</a> using a python virtual
 environment and a custom makefile.</p>
 <div class="section" id="building">
 <h2>Building<a class="headerlink" href="#building" title="Permalink to this headline">¶</a></h2>
 <p>Using an <a class="reference internal" href="#activated">activated</a> virtual environment from the <code class="docutils literal notranslate"><span class="pre">git/services/doc</span></code>
 location.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">clean</span> <span class="n">docs</span>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">One shot build and verification.</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">clean</span> <span class="n">docs</span> <span class="n">linkcheck</span>
 </pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Build docs, then verify separately.</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">clean</span> <span class="n">docs</span>
+<span class="n">make</span> <span class="n">linkcheck</span>
+</pre></div>
+</div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1425,8 +1435,8 @@ python3 -m venv sphinx
 <li><p>Update <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> to force require virtual environments for <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p></li>
 </ol>
 <blockquote>
-<div><div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text"><strong>0600 user user</strong> <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code></span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div><div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text"><strong>0600 user user</strong> <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code></span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">PIP_REQUIRE_VIRTUALENV</span><span class="o">=</span><span class="n">true</span>
 </pre></div>
 </div>
@@ -1466,8 +1476,8 @@ command.</p>
 <li><p>Use custom <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file for site customization.</p></li>
 </ol>
 <blockquote>
-<div><div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text"><strong>0640 user user</strong> <code class="docutils literal notranslate"><span class="pre">docs/sphinx/conf.py</span></code></span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div><div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text"><strong>0640 user user</strong> <code class="docutils literal notranslate"><span class="pre">docs/sphinx/conf.py</span></code></span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Configuration file for the Sphinx documentation builder.</span>
 <span class="c1">#</span>
 <span class="c1"># This file only contains a selection of the most common options. For a full</span>
@@ -1508,7 +1518,7 @@ command.</p>
 <span class="p">]</span>
 
 <span class="c1"># pygments doesn&#39;t handle powershell well. Ignore warnings for code-blocks.</span>
-<span class="n">suppress_warnings</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;misc.highlighting_failure&#39;</span><span class="p">]</span> 
+<span class="n">suppress_warnings</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;misc.highlighting_failure&#39;</span><span class="p">]</span>
 
 <span class="c1"># Add any paths that contain templates here, relative to this directory.</span>
 <span class="n">templates_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_templates&#39;</span><span class="p">]</span>
@@ -1519,24 +1529,50 @@ command.</p>
 <span class="n">exclude_patterns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Thumbs.db&#39;</span><span class="p">,</span> <span class="s1">&#39;.DS_Store&#39;</span><span class="p">]</span>
 
 <span class="n">today_fmt</span> <span class="o">=</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span>
-<span class="hll"><span class="c1"># -- Options for HTML output -------------------------------------------------</span>
+<span class="hll">
+</span><span class="hll"><span class="c1"># Include TODOs.</span>
+</span><span class="hll"><span class="n">todo_include_todos</span> <span class="o">=</span> <span class="kc">True</span>
 </span><span class="hll">
-</span><span class="hll"><span class="c1"># The theme to use for HTML and HTML Help pages.  See the documentation for</span>
-</span><span class="hll"><span class="c1"># a list of builtin themes.</span>
-</span><span class="hll"><span class="c1">#</span>
-</span><span class="hll"><span class="n">html_theme</span> <span class="o">=</span> <span class="s1">&#39;sphinx_rtd_theme&#39;</span>
-</span><span class="hll"><span class="n">html_theme_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_themes&#39;</span><span class="p">]</span>
-</span><span class="hll"><span class="n">html_theme_options</span> <span class="o">=</span> <span class="p">{</span>
-</span>  <span class="s1">&#39;collapse_navigation&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
-  <span class="s1">&#39;navigation_depth&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
-<span class="p">}</span>
-<span class="n">todo_include_todos</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="hll"><span class="n">ct_separator</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\N{SINGLE RIGHT-POINTING ANGLE QUOTATION MARK}</span><span class="s1">&#39;</span>
-</span>
+</span><span class="hll"><span class="c1"># ConfigTable separator</span>
+</span><span class="hll"><span class="n">ct_separator</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\N{SINGLE RIGHT-POINTING ANGLE QUOTATION MARK}</span><span class="s1">&#39;</span>
+</span><span class="hll">
+</span><span class="hll"><span class="c1"># aafig: Empty format for CheckExternalLinksBuilder (linkchecking) is required.</span>
+</span><span class="n">aafig_format</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;html&#39;</span><span class="p">:</span> <span class="s1">&#39;svg&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;latex&#39;</span><span class="p">:</span> <span class="s1">&#39;pdf&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+<span class="hll">  <span class="s1">&#39;&#39;</span><span class="p">:</span> <span class="kc">None</span>
+</span><span class="p">}</span>
 <span class="n">aafig_default_options</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s1">&#39;textual&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
 <span class="p">}</span>
 
+<span class="c1"># linkchecker exceptions. See: https://pythex.org</span>
+<span class="n">linkcheck_ignore</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="c1"># Broken: local state/context needed to resolve.</span>
+  <span class="sa">r</span><span class="s1">&#39;(http|https)://localhost\.*&#39;</span><span class="p">,</span>
+  <span class="sa">r</span><span class="s1">&#39;(http|https)://192.168.\.*&#39;</span><span class="p">,</span>
+  <span class="sa">r</span><span class="s1">&#39;(http|https)://10\.*&#39;</span><span class="p">,</span>
+  <span class="c1"># Broken: Will timeout after too many requests.</span>
+  <span class="sa">r</span><span class="s1">&#39;https://v.firebog.net/hosts/\.*&#39;</span><span class="p">,</span>
+  <span class="c1"># Broken: github dynamically adds anchors and cannot be checked.</span>
+  <span class="sa">r</span><span class="s1">&#39;https://github.com/.*[#]+&#39;</span><span class="p">,</span>
+  <span class="c1"># Redirects: behind authentication wall.</span>
+  <span class="sa">r</span><span class="s1">&#39;https://security.google.com/\.*&#39;</span><span class="p">,</span>
+  <span class="sa">r</span><span class="s1">&#39;https://plexapp.zendesk.com/\.*&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">linkcheck_workers</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># HTML rendering</span>
+<span class="c1"># The theme to use for HTML and HTML Help pages.  See the documentation for</span>
+<span class="c1"># a list of builtin themes.</span>
+<span class="c1">#</span>
+<span class="n">html_theme</span> <span class="o">=</span> <span class="s1">&#39;sphinx_rtd_theme&#39;</span>
+<span class="n">html_theme_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_themes&#39;</span><span class="p">]</span>
+<span class="n">html_theme_options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;collapse_navigation&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+  <span class="s1">&#39;navigation_depth&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">}</span>
 <span class="c1"># Add any paths that contain custom static files (such as style sheets) here,</span>
 <span class="c1"># relative to this directory. They are copied after the builtin static files,</span>
 <span class="c1"># so a file named &quot;default.css&quot; will overwrite the builtin &quot;default.css&quot;.</span>
@@ -1553,8 +1589,8 @@ command.</p>
 <li><p>Use custom <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> for building documentation.</p></li>
 </ol>
 <blockquote>
-<div><div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text"><strong>0640 user user</strong> <code class="docutils literal notranslate"><span class="pre">docs/Makefile</span></code></span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div><div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text"><strong>0640 user user</strong> <code class="docutils literal notranslate"><span class="pre">docs/Makefile</span></code></span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Minimal makefile for Sphinx documentation
 #
 
@@ -1564,6 +1600,7 @@ SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = source
 CONFDIR       = sphinx
+LINKCHECK     = sphinx/link
 BUILDDIR      = /tmp/docs
 TARGETDIR     = docs
 
@@ -1586,6 +1623,9 @@ clean:
 
 html:
 	@$(SPHINXBUILD) -M $@ &quot;$(SOURCEDIR)&quot; &quot;$(BUILDDIR)&quot; -c &quot;$(CONFDIR)&quot; $(SPHINXOPTS) $(O)
+
+linkcheck:
+	@$(SPHINXBUILD) -M linkcheck &quot;$(SOURCEDIR)&quot; &quot;$(BUILDDIR)&quot; -c &quot;$(CONFDIR)&quot; $(SPHINXOPTS) $(O)
 
 copy:
 	@mkdir -p $(TARGETDIR)
@@ -1617,8 +1657,8 @@ documentation from the soruce tree.</p>
 <div class="section" id="link-checking">
 <span id="sphinx-build-link-checking"></span><h2>Link Checking<a class="headerlink" href="#link-checking" title="Permalink to this headline">¶</a></h2>
 <p>Documentation can be automatically link checked:</p>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">verify documentation links work.</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">verify documentation links work.</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make linkcheck
 make clean html linkcheck
 </pre></div>

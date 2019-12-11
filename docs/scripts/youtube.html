@@ -1396,31 +1396,31 @@ apt install lame libav-tools
 <h2>Snippets<a class="headerlink" href="#snippets" title="Permalink to this headline">¶</a></h2>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text">Extract 320kbps Audio From Video.</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>youtube-dl &lt;url&gt; --extract-audio --audio-format mp3 --audio-quality 320K --keep-video --add-metadata
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>youtube-dl <span class="o">{</span>URL<span class="o">}</span> --extract-audio --audio-format mp3 --audio-quality 320K --keep-video --add-metadata
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-text">List all formats for a video.</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>youtube-dl &lt;url&gt; -F
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>youtube-dl <span class="o">{</span>URL<span class="o">}</span> -F
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id5">
 <div class="code-block-caption"><span class="caption-text">Download only the 1080p video/audio stream from a video.</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>youtube-dl &lt;url&gt; <span class="s1">&#39;bestvideo[height&lt;=1080]+bestaudio/best[height&lt;=1080]&#39;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>youtube-dl <span class="o">{</span>URL<span class="o">}</span> <span class="s1">&#39;bestvideo[height&lt;=1080]+bestaudio/best[height&lt;=1080]&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id6">
 <div class="code-block-caption"><span class="caption-text">Download a playlist.</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>youtube-dl https://youtube.com/playlist?list<span class="o">=</span>&lt;LID&gt; --yes-playlist
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>youtube-dl https://youtube.com/playlist?list<span class="o">={</span>PLAYLIST ID<span class="o">}</span> --yes-playlist
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id7">
 <div class="code-block-caption"><span class="caption-text">Track Downloaded Videos for Archiving.</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>youtube-dl --download-archive &lt;FILE&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>youtube-dl --download-archive <span class="o">{</span>FILE<span class="o">}</span>
 </pre></div>
 </div>
 </div>
@@ -1431,10 +1431,10 @@ the given file.</p>
 </div>
 <p class="rubric">References</p>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="http://yt-dl.org/latest/">youtube-dl Source download (latest)</a></p></li>
-<li><p><a class="reference external" href="http://rg3.github.io/youtube-dl/download.html">youtube-dl github repo</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ytdl-org/youtube-dl/releases">youtube-dl Source download (latest)</a></p></li>
+<li><p><a class="reference external" href="https://rg3.github.io/youtube-dl/download.html">youtube-dl github repo</a></p></li>
 <li><p><a class="reference external" href="http://linuxaria.com/recensioni/how-to-download-youtube-video-or-audio-tracks-from-the-linux-terminal">Using youtube-dl</a></p></li>
-<li><p><a class="reference external" href="http://www.linuxjournal.com/content/grabbing-your-music-youtube-do-it-your-way">Using youtube-dl with LAME</a></p></li>
+<li><p><a class="reference external" href="https://www.linuxjournal.com/content/grabbing-your-music-youtube-do-it-your-way">Using youtube-dl with LAME</a></p></li>
 <li><p><a class="reference external" href="https://askubuntu.com/questions/323944/convert-webm-to-other-formats">Convert webm format</a></p></li>
 </ol>
 </div>

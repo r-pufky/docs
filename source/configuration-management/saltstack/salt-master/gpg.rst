@@ -121,7 +121,7 @@ access to the specific pillar will be able to see the decrypted data.
   salt '*' saltutil.refresh_pillar
   salt pillar.items
 
-.. _GPG Encrypt Pillar Data: http://joshbolling.com/2017/05/28/protect-pillar-data-with-gpg/
+.. _GPG Encrypt Pillar Data: https://fabianlee.org/2016/10/18/saltstack-keeping-salt-pillar-data-encrypted-using-gpg/
 .. _Alternative GPG Reference: https://docs.saltstack.com/en/latest/ref/renderers/all/salt.renderers.gpg.html
 .. _GPG CLI Reference: http://blog.ghostinthemachines.com/2015/03/01/how-to-use-gpg-command-line/
 .. _haveged: https://www.digitalocean.com/community/tutorials/how-to-setup-additional-entropy-for-cloud-servers-using-haveged

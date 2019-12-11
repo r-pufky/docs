@@ -125,7 +125,7 @@ Install ``MarkdownEditing`` and ``MonokaiC`` packages.
 .. rubric:: References
 
 #. `Settings Files <https://www.sublimetext.com/docs/3/settings.html>`_
-#. `Customizing Settings Files <http://docs.sublimetext.info/en/latest/customization/settings.html>`_
+#. `Customizing Settings Files <https://sublime-text.readthedocs.io/en/stable/customization/settings.html>`_
 #. `Package Control Binary <https://packagecontrol.io/Package%20Control.sublime-package>`_
 #. `Using Sublime text from the command line <https://medium.com/@pck/how-to-use-sublime-text-3-from-command-line-with-ubuntu-bash-terminal-in-windows-10-subsystems-for-aa2ad59d088c>`_
 

@@ -1715,7 +1715,7 @@ bridge name if the Virtual Network bridge is not created.</p>
 </div>
 <p>Windows 10 requires signed virtio drivers. Drivers have been signed with the
 <a class="reference external" href="https://docs.fedoraproject.org/en-US/quick-docs/creating-windows-virtual-machines-using-virtio-drivers/index.html">Red Hat vendor signature</a>.</p>
-<p><a class="reference external" href="https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso">Install signed virtio Guest Tools</a>.</p>
+<p><a class="reference external" href="https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/">Install signed virtio Guest Tools</a>.</p>
 <p><a class="reference download external" download="" href="https://www.spice-space.org/download/windows/spice-guest-tools/spice-guest-tools-latest.exe"><code class="xref download docutils literal notranslate"><span class="pre">Latest</span> <span class="pre">Windows</span> <span class="pre">Spice</span> <span class="pre">Guest</span> <span class="pre">Tools</span></code></a></p>
 </div>
 </div>
@@ -1820,7 +1820,7 @@ should be extracted for correct VM import into KVM.</p>
 <ol class="arabic simple">
 <li><p>Ensure VM is stopped.</p></li>
 <li><p>Move VM disk images to new location.</p></li>
-<li><p>Update location information in XML file <code class="docutils literal notranslate"><span class="pre">/etc/libvirtd/qemu/&lt;VM&gt;.xml</span></code>.</p></li>
+<li><p>Update location information in XML file <code class="docutils literal notranslate"><span class="pre">/etc/libvirtd/qemu/{VM}.xml</span></code>.</p></li>
 <li><p>Restart service <code class="docutils literal notranslate"><span class="pre">service</span> <span class="pre">libvirtd</span> <span class="pre">restart</span></code>.</p></li>
 </ol>
 </div>
@@ -1834,7 +1834,7 @@ Service requires a restart on changes.</p>
 <div class="literal-block-wrapper docutils container" id="id29">
 <div class="code-block-caption"><span class="caption-text">List all pools</span><a class="headerlink" href="#id29" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>virsh pool-list
-virsh pool-info &lt;POOLNAME&gt;
+virsh pool-info <span class="o">{</span>POOL NAME<span class="o">}</span>
 </pre></div>
 </div>
 </div>
@@ -1884,7 +1884,7 @@ virsh pool-create pool.xml
 <p>This will enable mounting of a RAW disk image <a class="reference external" href="http://whazenberg.blogspot.com/2012/12/mounting-raw-virtual-machine-disk-image.html">outside of the VM</a>.</p>
 <div class="literal-block-wrapper docutils container" id="id34">
 <div class="code-block-caption"><span class="caption-text">Ensure the RAW image is readable</span><a class="headerlink" href="#id34" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fdisk -l /var/lib/libvirt/images/&lt;image&gt;.RAW
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fdisk -l /var/lib/libvirt/images/<span class="o">{</span>IMAGE<span class="o">}</span>.RAW
 </pre></div>
 </div>
 </div>
@@ -1946,17 +1946,17 @@ Opteron processor, and reload the definition.</p>
 </div>
 <p class="rubric">References</p>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="http://virt-manager.org/download">Virt Manager</a></p></li>
+<li><p><a class="reference external" href="https://virt-manager.org/download">Virt Manager</a></p></li>
 <li><p><a class="reference external" href="https://www.linuxtechi.com/install-configure-kvm-ubuntu-18-04-server/">KVM on Ubuntu 18.04 Server</a></p></li>
 <li><p><a class="reference external" href="https://linuxconfig.org/install-and-set-up-kvm-on-ubuntu-18-04-bionic-beaver-linux">Alternative KVM on Ubuntu 18.04 Server</a></p></li>
-<li><p><a class="reference external" href="https://netplan.io/examples#bridging">Netplan bridging</a></p></li>
+<li><p><a class="reference external" href="https://netplan.io/examples#configuring-network-bridges">Netplan bridging</a></p></li>
 <li><p><a class="reference external" href="https://askubuntu.com/questions/971126/17-10-netplan-config-with-bridge">Netplan example with bridge</a></p></li>
 <li><p><a class="reference external" href="https://websiteforstudents.com/configure-static-ip-addresses-on-ubuntu-18-04-beta/">Static IP address on Ubuntu 18.04</a></p></li>
 <li><p><a class="reference external" href="https://askubuntu.com/questions/1054350/netplan-bridge-for-kvm-on-ubuntu-server-18-04-with-static-ips">Netplan Ubtuntu 18.04 Static IP</a></p></li>
 <li><p><a class="reference external" href="https://bugs.launchpad.net/netplan/+bug/1718607">Netplan Bug</a></p></li>
 <li><p><a class="reference external" href="https://chariotsolutions.com/blog/post/convert-citrix-xenserver-xva-image-to-kvm/">Convert XenServer image to KVM</a></p></li>
-<li><p><a class="reference external" href="https://unix.stackexchange.com/questions/227792/are-there-any-benefits-of-using-qcow2-over-img-and-which-is-recommended-for-ma">QCOW2 versus RAW Performance</a></p></li>
-<li><p><a class="reference external" href="https://ask.fedoraproject.org/en/question/29704/how-do-i-move-a-virtual-machine-in-gnome-boxes-to-another-host/">Moving KVM VMs to another Machine</a></p></li>
+<li><p><a class="reference external" href="https://unix.stackexchange.com/questions/227792/what-are-tha-main-differences-between-an-iso-and-a-qco2-image">QCOW2 versus RAW Performance</a></p></li>
+<li><p><a class="reference external" href="https://askbot.fedoraproject.org/en/question/29704/how-do-i-move-a-virtual-machine-in-gnome-boxes-to-another-host/?answer=29839">Moving KVM VMs to another Machine</a></p></li>
 <li><p><a class="reference external" href="http://ask.xmodulo.com/change-default-location-libvirt-vm-images.html">Default libvirtd image locations</a></p></li>
 <li><p><a class="reference external" href="https://www.cyberciti.biz/faq/linux-kvm-disable-virbr0-nat-interface/">Disabling virbr0 interface</a></p></li>
 <li><p><a class="reference external" href="https://wiki.libvirt.org/page/Networking">libvirtd networking</a></p></li>

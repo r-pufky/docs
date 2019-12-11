@@ -63,6 +63,6 @@ Copy data with verification.
 .. rubric:: References
 
 #. `md5deep usage tricks <http://md5deep.sourceforge.net/start-md5deep.html#basic>`_
-#. `md5deep validating moved files between directories <http://stackoverflow.com/questions/606739/comparison-between-two-big-directories>`_
-#. `Using rsync to backup hard drives <http://superuser.com/questions/307541/copy-entire-file-system-hierarchy-from-one-drive-to-another>`_
-#. `rsync common commands <http://www.evbackup.com/support-commonly-used-rsync-arguments/>`_
+#. `md5deep validating moved files between directories <https://stackoverflow.com/questions/606739/comparison-between-two-big-directories>`_
+#. `Using rsync to backup hard drives <https://superuser.com/questions/307541/copy-entire-file-system-hierarchy-from-one-drive-to-another>`_
+#. `rsync common commands <https://www.evbackup.com/support/rsync-arguments>`_

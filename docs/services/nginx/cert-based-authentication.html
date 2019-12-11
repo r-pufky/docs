@@ -1394,7 +1394,7 @@ certificate.</p>
 certificates used here. An excellent reference for <a class="reference external" href="https://jamielinux.com/docs/openssl-certificate-authority/introduction.html">basic certificate usage</a>
 and should be well understood before proceeding.</p>
 <div class="section" id="nginx-configuration">
-<h2><a class="reference external" href="https://tech.mendix.com/linux/2014/10/29/nginx-certs-sni/">Nginx Configuration</a><a class="headerlink" href="#nginx-configuration" title="Permalink to this headline">¶</a></h2>
+<h2>Nginx Configuration<a class="headerlink" href="#nginx-configuration" title="Permalink to this headline">¶</a></h2>
 <p>If the <code class="docutils literal notranslate"><span class="pre">default_server</span></code> is set to not require cert-based authentication and
 additional server blocks do, clients that do not support it will fall back to
 the <code class="docutils literal notranslate"><span class="pre">default_server</span></code> and be <strong>able</strong> to make valid requests. Therefore the
@@ -1409,8 +1409,8 @@ access other SSL areas (due to a pre-existing valid SSL connection).</p>
 <p><strong>ALWAYS</strong> explicitly check for valid client certificates and do penetration
 testing to verify your assumptions.</p>
 </div>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">Setup NGINX SSL server with client cert authentication.</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">Setup NGINX SSL server with client cert authentication.</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>server {
   # Security-related headers (cross-site/domain, referrer)
   # https://geekflare.com/http-header-implementation/
@@ -1494,8 +1494,8 @@ even for valid clients.</p></li>
 proxy does not have one. This is <strong>dangerous</strong> if used without layering
 additional security measures. Explicitly specify a certificate that the proxy
 will use to authenticate to backends for requests.</p>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">Create a client ceritifcate as normal and configure NGINX with.</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">Create a client ceritifcate as normal and configure NGINX with.</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
 <div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="k">server</span> <span class="p">{</span>
   <span class="kn">proxy_ssl_certificate</span>         <span class="s">/etc/nginx/auth/nginx.crt.pem</span><span class="p">;</span>
   <span class="kn">proxy_ssl_certificate_key</span>     <span class="s">/etc/nginx/auth/nginx.key.pem</span><span class="p">;</span>
@@ -1511,8 +1511,8 @@ will use to authenticate to backends for requests.</p>
 certificate authentication is supported both locally and via URI matching.</p>
 <div class="section" id="git-cert-auth-for-repo-site">
 <h3><a class="reference external" href="https://stackoverflow.com/questions/9008309/how-do-i-set-git-ssl-no-verify-for-specific-repos-only">Git Cert Auth for Repo Site</a><a class="headerlink" href="#git-cert-auth-for-repo-site" title="Permalink to this headline">¶</a></h3>
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text"><strong>0400 user user</strong> <code class="docutils literal notranslate"><span class="pre">~/.gitconfig</span></code></span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text"><strong>0400 user user</strong> <code class="docutils literal notranslate"><span class="pre">~/.gitconfig</span></code></span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">http</span> <span class="s2">&quot;https://git.example.com&quot;</span><span class="p">]</span>
   <span class="n">sslCert</span> <span class="o">=</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="p">{</span><span class="n">MACHINE</span><span class="p">}</span><span class="o">.</span><span class="n">crt</span><span class="o">.</span><span class="n">pem</span>
   <span class="n">sslKey</span> <span class="o">=</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="p">{</span><span class="n">MACHINE</span><span class="p">}</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">pem</span>
@@ -1538,8 +1538,8 @@ This is probably not what you want to do.</p>
 <p><a class="reference external" href="https://www.tbs-certificates.co.uk/FAQ/en/installer_certificat_client_google_chrome.html">Setup chrome</a> to auto present correct certificate when challenged by proxy
 server.</p>
 <div class="ggui docutils container" id="Import Client Certificate to Chrome.">
-<table class="docutils align-default" id="id9">
-<caption><span class="caption-text">Import Client Certificate to Chrome.</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="id8">
+<caption><span class="caption-text">Import Client Certificate to Chrome.</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />

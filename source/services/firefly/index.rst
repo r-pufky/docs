@@ -134,12 +134,12 @@ uploading successfully but will be `sliently dropped`_.
 
 .. rubric:: References
 
-#. `Firefly with NGINX reverse proxy <https://firefly-iii.readthedocs.io/en/latest/support/faq.html#i-am-using-nginx-and-want-to-expose-firefly-iii-under-budget>`_
+#. `Firefly with NGINX reverse proxy <https://docs.firefly-iii.org/support/faq#i-am-using-nginx-and-want-to-expose-firefly-iii-under-budget>`_
 
 .. _Firefly III: https://firefly-iii.org/
 .. _Firefly Docker and Documentation: https://hub.docker.com/r/jc5x/firefly-iii
-.. _Docker Creation: https://docs.firefly-iii.org/en/latest/installation/docker.html#docker-hub-with-automatic-updates-via-docker-compose
-.. _environment settings here: https://github.com/firefly-iii/firefly-iii/blob/master/.deploy/docker/.env.docker
+.. _Docker Creation: https://docs.firefly-iii.org/installation/docker#docker-hub-with-automatic-updates-via-docker-compose
+.. _environment settings here: https://github.com/firefly-iii/firefly-iii/blob/master/.env.example
 .. _subdomain reference: https://github.com/firefly-iii/firefly-iii/issues/2109
 .. _Verifying password security: https://github.com/firefly-iii/help/wiki/Secure-password
 .. _sliently dropped: https://github.com/firefly-iii/firefly-iii/issues/960

@@ -8,12 +8,10 @@ General style-guide for sphinx.
 * Always verify links (:ref:`sphinx-build-link-checking`) before uploading
   changes.
 
-  .. info::
-    **Broken** links need to be fixed or removed.
+  .. note::
+    All issues must be addressed. Do not use ``!http`` in source docs.
 
-    **Redirected** links should be fixed, unless the redirect is excessive.
-
-    **SSL** issues should be corrected.
+    ``sphinx/conf.py`` contains specific exceptions for linkchecking.
 
 * No submission of docs with breakages or warnings (red text).
 * Remain consistent. See existing documentation for examples.

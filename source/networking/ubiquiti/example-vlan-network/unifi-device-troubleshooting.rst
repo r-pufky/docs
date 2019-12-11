@@ -97,4 +97,4 @@ profile*.
   :no_section:
   :no_caption:
 
-.. _regardless of switch load: https://community.ubnt.com/t5/UniFi-Routing-Switching/UniFI-Switch-8-POE-60-W-constant-high-CPU-utilization/td-p/2397994
+.. _regardless of switch load: https://community.ui.com/questions/6068efd3-bc6f-4db3-b2f1-ee1fba98c178

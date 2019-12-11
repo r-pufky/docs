@@ -45,8 +45,8 @@ Snippets
 
 .. rubric:: References
 
-#. `youtube-dl Source download (latest) <http://yt-dl.org/latest/>`_
-#. `youtube-dl github repo <http://rg3.github.io/youtube-dl/download.html>`_
+#. `youtube-dl Source download (latest) <https://github.com/ytdl-org/youtube-dl/releases>`_
+#. `youtube-dl github repo <https://rg3.github.io/youtube-dl/download.html>`_
 #. `Using youtube-dl <http://linuxaria.com/recensioni/how-to-download-youtube-video-or-audio-tracks-from-the-linux-terminal>`_
-#. `Using youtube-dl with LAME <http://www.linuxjournal.com/content/grabbing-your-music-youtube-do-it-your-way>`_
+#. `Using youtube-dl with LAME <https://www.linuxjournal.com/content/grabbing-your-music-youtube-do-it-your-way>`_
 #. `Convert webm format <https://askubuntu.com/questions/323944/convert-webm-to-other-formats>`_

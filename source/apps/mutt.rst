@@ -21,5 +21,5 @@ in Maildir.
 
 .. rubric:: References
 
-#. `Mutt maildir FAQ <http://dev.mutt.org/trac/wiki/MuttFaq/Maildir>`_
+#. `Mutt maildir FAQ <https://gitlab.com/muttmua/mutt/wikis/MuttFaq/Maildir>`_
 #. `Mutt maildir configuration <http://www.elho.net/mutt/maildir>`_

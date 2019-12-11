@@ -60,4 +60,4 @@ controller. Platform is irrelevant.
 
 #. `Unifi Apt install with Ubuntu <https://help.ubnt.com/hc/en-us/articles/220066768-UniFi-How-to-Install-Update-via-APT-on-Debian-or-Ubuntu>`_
 #. `Unifi Ports <https://help.ubnt.com/hc/en-us/articles/218506997-UniFi-Ports-Used>`_
-#. `Migrating Unifi AP's to New Controller <https://community.ubnt.com/t5/UniFi-Wireless/Migrating-UNIFI-APs-to-new-controller/td-p/308741>`_
+#. `Migrating Unifi AP's to New Controller <https://community.ui.com/questions/9ca9d8e9-780d-404d-84df-e7762cb810fd>`_

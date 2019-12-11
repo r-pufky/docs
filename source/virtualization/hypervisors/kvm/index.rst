@@ -442,17 +442,17 @@ Opteron processor, and reload the definition.
 
 .. rubric:: References
 
-#. `Virt Manager <http://virt-manager.org/download>`_
+#. `Virt Manager <https://virt-manager.org/download>`_
 #. `KVM on Ubuntu 18.04 Server <https://www.linuxtechi.com/install-configure-kvm-ubuntu-18-04-server/>`_
 #. `Alternative KVM on Ubuntu 18.04 Server <https://linuxconfig.org/install-and-set-up-kvm-on-ubuntu-18-04-bionic-beaver-linux>`_
-#. `Netplan bridging <https://netplan.io/examples#bridging>`_
+#. `Netplan bridging <https://netplan.io/examples#configuring-network-bridges>`_
 #. `Netplan example with bridge <https://askubuntu.com/questions/971126/17-10-netplan-config-with-bridge>`_
 #. `Static IP address on Ubuntu 18.04 <https://websiteforstudents.com/configure-static-ip-addresses-on-ubuntu-18-04-beta/>`_
 #. `Netplan Ubtuntu 18.04 Static IP <https://askubuntu.com/questions/1054350/netplan-bridge-for-kvm-on-ubuntu-server-18-04-with-static-ips>`_
 #. `Netplan Bug <https://bugs.launchpad.net/netplan/+bug/1718607>`_
 #. `Convert XenServer image to KVM <https://chariotsolutions.com/blog/post/convert-citrix-xenserver-xva-image-to-kvm/>`_
-#. `QCOW2 versus RAW Performance <https://unix.stackexchange.com/questions/227792/are-there-any-benefits-of-using-qcow2-over-img-and-which-is-recommended-for-ma>`_
-#. `Moving KVM VMs to another Machine <https://ask.fedoraproject.org/en/question/29704/how-do-i-move-a-virtual-machine-in-gnome-boxes-to-another-host/>`_
+#. `QCOW2 versus RAW Performance <https://unix.stackexchange.com/questions/227792/what-are-tha-main-differences-between-an-iso-and-a-qco2-image>`_
+#. `Moving KVM VMs to another Machine <https://askbot.fedoraproject.org/en/question/29704/how-do-i-move-a-virtual-machine-in-gnome-boxes-to-another-host/?answer=29839>`_
 #. `Default libvirtd image locations <http://ask.xmodulo.com/change-default-location-libvirt-vm-images.html>`_
 #. `Disabling virbr0 interface <https://www.cyberciti.biz/faq/linux-kvm-disable-virbr0-nat-interface/>`_
 #. `libvirtd networking <https://wiki.libvirt.org/page/Networking>`_
@@ -464,7 +464,7 @@ Opteron processor, and reload the definition.
 .. _longstanding bug: https://bugs.launchpad.net/ubuntu/+source/procps/+bug/50093
 .. _sysctl settings: https://serverfault.com/questions/431590/how-to-make-sysctl-network-bridge-settings-persist-after-a-reboot
 .. _Red Hat vendor signature: https://docs.fedoraproject.org/en-US/quick-docs/creating-windows-virtual-machines-using-virtio-drivers/index.html
-.. _Install signed virtio Guest Tools: https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso
+.. _Install signed virtio Guest Tools: https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/
 .. _outside of the VM: http://whazenberg.blogspot.com/2012/12/mounting-raw-virtual-machine-disk-image.html
 .. _BSOD on installation: https://bugzilla.redhat.com/show_bug.cgi?id=1593190
 .. _registers: https://bugzilla.redhat.com/show_bug.cgi?id=1592276

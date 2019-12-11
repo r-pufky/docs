@@ -220,7 +220,7 @@ resolved yet. See `GCC breaks 64bit wine`_ and `wait timeout`_.
 
 .. rubric:: References
 
-#. `Conan Exiles Dedicated Server <https://conanexiles.gamepedia.com/Dedicated_Server_Setup:_Linux_and_Windows#Linux>`_
+#. `Conan Exiles Dedicated Server <https://conanexiles.gamepedia.com/Dedicated_server_system_requirements>`_
 #. `Conan Exiles CentOS <https://steamcommunity.com/sharedfiles/filedetails/?id=858035949>`_
 #. `Installing wine on Ubuntu <https://tecadmin.net/install-wine-on-ubuntu/>`_
 #. `Conan Exiles multi-server Docker <https://hub.docker.com/r/alinmear/docker-conanexiles/>`_

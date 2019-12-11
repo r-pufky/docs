@@ -108,6 +108,6 @@ Reload Configuration
   If underlying services have changed **expose** or **ports**, those containers
   will need to be restarted.
 
-.. _Automatic generator: https://nginxconfig.io
+.. _Automatic generator: https://www.digitalocean.com/community/tools/nginx
 .. _wildcard certificate: https://medium.com/@utkarsh_verma/how-to-obtain-a-wildcard-ssl-certificate-from-lets-encrypt-and-setup-nginx-to-use-wildcard-cfb050c8b33f
 .. _DNS resolver: https://community.letsencrypt.org/t/no-resolver-defined-to-resolve-ocsp-int-x3-letsencrypt-org-while-requesting-certificate-status-responder-ocsp-int-x3-letsencrypt-org/21427

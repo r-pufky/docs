@@ -113,6 +113,6 @@ Ensure Yubikey is readable by GPG. This assumes you already setup:
 
 #. `Yubikey SSH <https://occamy.chemistry.jhu.edu/references/pubsoft/YubikeySSH/index.php>`_
 
-.. _broken implementation: https://www.forgesi.net/gpg-smartcard/
+.. _broken implementation: https://zeos.ca/post/2015/gpg-smartcard/
 .. _GPG public: https://stackoverflow.com/questions/31784368/how-to-give-highest-trust-level-to-an-openpgp-certificate-in-kleopatra
-.. _imported automatically: https://withinboredom.info/2017/11/18/signing-commits-ssh-with-yubikey-and-windows/
+.. _imported automatically: https://withinboredom.info/blog/2017/11/18/signing-commits-ssh-with-yubikey-and-windows/

@@ -1511,8 +1511,8 @@ everything else.</p>
 </div>
 <div class="section" id="deleted-dhcp-host-still-resolves-in-dns">
 <h2>Deleted DHCP Host Still Resolves in DNS<a class="headerlink" href="#deleted-dhcp-host-still-resolves-in-dns" title="Permalink to this headline">¶</a></h2>
-<p>When deleting a DHCP host, the DNS reservation should be <a class="reference external" href="https://community.ubnt.com/t5/EdgeRouter/DNS-resolution-of-local-hosts/m-p/1386378/highlight/true#M83801">removed as well</a>.
-However <a class="reference external" href="https://community.ubnt.com/t5/EdgeRouter/hostfile-update-enable-doesn-t-clear-expired-leases/td-p/969389">there is a bug</a> in which these hosts are never deleted.</p>
+<p>When deleting a DHCP host, the DNS reservation should be <a class="reference external" href="https://community.ui.com/questions/DNS-resolution-of-local-hosts/3b0a70d6-aefb-44a2-872e-e3703e757cd2">removed as well</a>.
+However <a class="reference external" href="https://community.ui.com/questions/12901fe9-f520-49cc-99f7-12cbbc8d6aed">there is a bug</a> in which these hosts are never deleted.</p>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/hosts</span></code> EdgeOS CLI.</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Delete hosts which are no longer used and reboot the router.</span>
@@ -1800,7 +1800,7 @@ issued.</p>
 </div>
 <div class="section" id="dnat-for-captive-dns">
 <span id="networking-dnat-for-captive-dns"></span><h2>DNAT for <a class="reference external" href="https://old.reddit.com/r/pihole/comments/ahmg14/finally_set_up_a_dnat_for_hardcoded_dns/eeg114d/">Captive DNS</a><a class="headerlink" href="#dnat-for-captive-dns" title="Permalink to this headline">¶</a></h2>
-<p>Force <a class="reference external" href="https://community.ubnt.com/t5/EdgeRouter/Intercepting-and-Re-Directing-DNS-Queries/td-p/1554378">all DNS</a> queries regardless of destination server to a specific DNS
+<p>Force <a class="reference external" href="https://community.ui.com/questions/cd0a248d-ca54-4d16-84c6-a5ade3dc3272">all DNS</a> queries regardless of destination server to a specific DNS
 server.</p>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
@@ -1862,7 +1862,7 @@ server.</p>
 enables appropriate transparent DNS lookups (Clients will think that they are
 resolving from the DNS they requested, not the actual DNS server serving
 responses):</p>
-<p><a class="reference download internal" download="" href="../../_downloads/af5b1d6f4b71a50487f6b1309592a7a4/IFYUX2T.png"><code class="xref download docutils literal notranslate"><span class="pre">local</span> <span class="pre">image</span></code></a>.</p>
+<p><a class="reference download internal" download="" href="../../_downloads/149b62e0c15bb4f1692f4aaf02359729/IFYUX2T.png"><code class="xref download docutils literal notranslate"><span class="pre">local</span> <span class="pre">image</span></code></a>.</p>
 <div class="ufirewall docutils container" id="Captive DNS Masquerade Setup">
 <span class="guilabel">Firewall/NAT</span><table class="docutils align-default">
 <colgroup>
@@ -2020,7 +2020,7 @@ mv /tmp/server.pem /etc/lighttpd/server.pem
 </div>
 </div>
 <div class="section" id="dump-configuration-via-cli-command-export">
-<h2><a class="reference external" href="https://community.ubnt.com/t5/EdgeRouter/Importing-and-exporting-configurations/td-p/1513041">Dump Configuration</a> via CLI Command Export<a class="headerlink" href="#dump-configuration-via-cli-command-export" title="Permalink to this headline">¶</a></h2>
+<h2><a class="reference external" href="https://community.ui.com/questions/66768622-c0a9-4c79-9dfa-331bd0a90e90">Dump Configuration</a> via CLI Command Export<a class="headerlink" href="#dump-configuration-via-cli-command-export" title="Permalink to this headline">¶</a></h2>
 <p>Export the list of CLI commands to manually re-create the current configuration
 of the router.</p>
 <div class="literal-block-wrapper docutils container" id="id9">
@@ -2031,7 +2031,7 @@ of the router.</p>
 </div>
 </div>
 <div class="section" id="dump-configuration-to-json-like-file">
-<h2><a class="reference external" href="https://community.ubnt.com/t5/EdgeRouter/Importing-and-exporting-configurations/td-p/1513041">Dump Configuration</a> to JSON-like file<a class="headerlink" href="#dump-configuration-to-json-like-file" title="Permalink to this headline">¶</a></h2>
+<h2><a class="reference external" href="https://community.ui.com/questions/66768622-c0a9-4c79-9dfa-331bd0a90e90">Dump Configuration</a> to JSON-like file<a class="headerlink" href="#dump-configuration-to-json-like-file" title="Permalink to this headline">¶</a></h2>
 <p>Show a JSON-like representation of the current router configuration.</p>
 <div class="literal-block-wrapper docutils container" id="id10">
 <div class="code-block-caption"><span class="caption-text">EdgeOS CLI.</span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
@@ -2041,7 +2041,7 @@ of the router.</p>
 </div>
 <p class="rubric">References</p>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="https://community.ubnt.com/t5/EdgeRouter/Create-DNS-enteries/td-p/468375">Creating DNS Entries</a></p></li>
+<li><p><a class="reference external" href="https://community.ui.com/questions/ab712740-d579-4c89-824a-cda582a6bdd4">Creating DNS Entries</a></p></li>
 <li><p><a class="reference external" href="https://help.ubnt.com/hc/en-us/articles/218889067-EdgeMAX-How-to-Protect-a-Guest-Network-on-EdgeRouter">How to Create a GuestLAN Firewall Rule</a></p></li>
 </ol>
 </div>

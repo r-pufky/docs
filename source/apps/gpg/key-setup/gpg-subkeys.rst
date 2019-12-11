@@ -190,5 +190,5 @@ command succeeded.
   echo '1234' | gpg --batch --passphrase-fd 1 -o /dev/null --local-user $KEYID -as - && echo 'Correct.'
 
 .. _Comments are considered harmful: https://debian-administration.org/users/dkg/weblog/97
-.. _instructions here: http://blog.josefsson.org/2014/06/19/creating-a-small-jpeg-photo-for-your-openpgp-key/
+.. _instructions here: https://blog.josefsson.org/2014/06/19/creating-a-small-jpeg-photo-for-your-openpgp-key/
 .. _protecting the master key: https://security.stackexchange.com/questions/14718/does-openpgp-key-expiration-add-to-security/79386

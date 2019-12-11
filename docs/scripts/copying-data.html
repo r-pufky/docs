@@ -1393,7 +1393,7 @@
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text">Archive Copying Data.</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /X/
-rsync -avxhHAX &lt;DIRECTORY&gt; /Y
+rsync -avxhHAX <span class="o">{</span>DIRECTORY<span class="o">}</span> /Y
 </pre></div>
 </div>
 </div>
@@ -1412,7 +1412,7 @@ rsync -avxhHAX &lt;DIRECTORY&gt; /Y
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-text">Create Hashfile of All Original Files and Sort.</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /X/
-md5deep -l -r -e &lt;DIRECTORY&gt; <span class="p">|</span> sort &gt; /tmp/&lt;DIRECTORY&gt;.md5
+md5deep -l -r -e <span class="o">{</span>DIRECTORY<span class="o">}</span> <span class="p">|</span> sort &gt; /tmp/<span class="o">{</span>DIRECTORY<span class="o">}</span>.md5
 </pre></div>
 </div>
 </div>
@@ -1427,9 +1427,9 @@ md5deep -l -r -e &lt;DIRECTORY&gt; <span class="p">|</span> sort &gt; /tmp/&lt;D
 <div class="literal-block-wrapper docutils container" id="id5">
 <div class="code-block-caption"><span class="caption-text">Verify copied files with rsync.</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> /Y/
-md5deep -l -r -e &lt;DIRECTORY&gt; <span class="p">|</span> sort &gt; /tmp/&lt;DIRECTORY&gt;2.md5
-md5sum /tmp/&lt;DIRECTORY&gt;.md5 /tmp/&lt;DIRECTORY&gt;2.md5
-diff /tmp/&lt;DIRECTORY&gt;.md5 /tmp/&lt;DIRECTORY&gt;2.md5
+md5deep -l -r -e <span class="o">{</span>DIRECTORY<span class="o">}</span> <span class="p">|</span> sort &gt; /tmp/<span class="o">{</span>DIRECTORY<span class="o">}</span><span class="m">2</span>.md5
+md5sum /tmp/<span class="o">{</span>DIRECTORY<span class="o">}</span>.md5 /tmp/<span class="o">{</span>DIRECTORY<span class="o">}</span><span class="m">2</span>.md5
+diff /tmp/<span class="o">{</span>DIRECTORY<span class="o">}</span>.md5 /tmp/<span class="o">{</span>DIRECTORY<span class="o">}</span><span class="m">2</span>.md5
 </pre></div>
 </div>
 </div>
@@ -1444,8 +1444,8 @@ all files are the same).</p></li>
 </div>
 <div class="literal-block-wrapper docutils container" id="id6">
 <div class="code-block-caption"><span class="caption-text">Verifying Copied Files Across OS’s are Accurate.</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cut -f <span class="m">1</span> -d ‘ ‘ &lt;source&gt;.md5 &gt; &lt;source&gt;-hash-only.md5
-grep -v -f &lt;source&gt;-hash-only.md5 &lt;target&gt;.md5
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cut -f <span class="m">1</span> -d ‘ ‘ <span class="o">{</span>SOURCE<span class="o">}</span>.md5 &gt; <span class="o">{</span>SOURCE<span class="o">}</span>-hash-only.md5
+grep -v -f <span class="o">{</span>SOURCE<span class="o">}</span>-hash-only.md5 <span class="o">{</span>TARGET<span class="o">}</span>.md5
 </pre></div>
 </div>
 </div>
@@ -1458,9 +1458,9 @@ printed.</p>
 <p class="rubric">References</p>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="http://md5deep.sourceforge.net/start-md5deep.html#basic">md5deep usage tricks</a></p></li>
-<li><p><a class="reference external" href="http://stackoverflow.com/questions/606739/comparison-between-two-big-directories">md5deep validating moved files between directories</a></p></li>
-<li><p><a class="reference external" href="http://superuser.com/questions/307541/copy-entire-file-system-hierarchy-from-one-drive-to-another">Using rsync to backup hard drives</a></p></li>
-<li><p><a class="reference external" href="http://www.evbackup.com/support-commonly-used-rsync-arguments/">rsync common commands</a></p></li>
+<li><p><a class="reference external" href="https://stackoverflow.com/questions/606739/comparison-between-two-big-directories">md5deep validating moved files between directories</a></p></li>
+<li><p><a class="reference external" href="https://superuser.com/questions/307541/copy-entire-file-system-hierarchy-from-one-drive-to-another">Using rsync to backup hard drives</a></p></li>
+<li><p><a class="reference external" href="https://www.evbackup.com/support/rsync-arguments">rsync common commands</a></p></li>
 </ol>
 </div>
 

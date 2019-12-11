@@ -11,6 +11,12 @@ Using an `activated`_ virtual environment from the ``git/services/doc``
 location.
 
 .. code-block::
+  :caption: One shot build and verification.
+
+  make clean docs linkcheck
+
+.. code-block::
+  :caption: Build docs, then verify separately.
 
   make clean docs
   make linkcheck
@@ -141,7 +147,7 @@ Documentation can be automatically link checked:
 #. `Unicode triangular bullet <https://www.compart.com/en/unicode/U+2023>`_
 #. `Using sphinx with github <https://www.docslikecode.com/articles/github-pages-python-sphinx/>`_
 
-.. _sphinx: http://www.sphinx-doc.org
+.. _sphinx: http://www.sphinx-doc.org/en/master/
 .. _python pip and virtual environment: https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/
 .. _sphinx makefile: https://bitbucket.org/lbesson/web-sphinx/src/master/Makefile
 .. _contents.rst issue: https://github.com/readthedocs/readthedocs.org/issues/2569

@@ -1384,12 +1384,12 @@
            <div itemprop="articleBody">
             
   <div class="section" id="server-side-mail-filtering-sieve">
-<span id="service-dovecot-sieve"></span><h1>Server-Side Mail Filtering (<a class="reference external" href="http://dikant.de/2012/05/21/setting-up-server-side-mail-filtering/">sieve</a>)<a class="headerlink" href="#server-side-mail-filtering-sieve" title="Permalink to this headline">¶</a></h1>
+<span id="service-dovecot-sieve"></span><h1>Server-Side Mail Filtering (<a class="reference external" href="https://dikant.de/2012/05/21/setting-up-server-side-mail-filtering/">sieve</a>)<a class="headerlink" href="#server-side-mail-filtering-sieve" title="Permalink to this headline">¶</a></h1>
 <p>This will enable users to setup server-side per-mailbox filters that are applied
-automatically when email is <a class="reference external" href="http://wiki2.dovecot.org/Pigeonhole">delivered by the MDA</a>, which removes the need for
+automatically when email is <a class="reference external" href="https://wiki2.dovecot.org/Pigeonhole">delivered by the MDA</a>, which removes the need for
 the user to setup a filtering on each MUA they use. This is in addition to any
 filtering already applied at the MTA level.</p>
-<p>Sieve filtering uses a <a class="reference external" href="https://easyengine.io/tutorials/mail/server/sieve-filtering/">standard mail filtering language</a> and is <a class="reference external" href="https://tty1.net/blog/2011/sieve-tutorial_en.html">fairly easy
+<p>Sieve filtering uses a <a class="reference external" href="https://easyengine.io/tutorials/mail/server/sieve-filtering/">standard mail filtering language</a> and is <a class="reference external" href="https://p5r.uk/blog/2011/sieve-tutorial.html">fairly easy
 to learn</a>.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/dovecot/conf.d/15-lda.conf</span></code></span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>

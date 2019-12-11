@@ -33,9 +33,7 @@ understanding of what this is.
 
 .. _instructions are here: https://github.com/drduh/YubiKey-Guide
 .. _OpenPGP for Beginners: https://zacharyvoase.com/2009/08/20/openpgp/
-.. _multi-platform GPG/Yubikey SSH usage are here: https://www.forgesi.net/gpg-smartcard/
-
-
+.. _multi-platform GPG/Yubikey SSH usage are here: https://zeos.ca/post/2015/gpg-smartcard/
 
 .. toctree::
    :hidden:

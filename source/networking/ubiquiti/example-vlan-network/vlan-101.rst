@@ -278,8 +278,8 @@ Important things to note:
 .. rubric:: References
 
 #. `Intro to Virtual LANs and VLANs <https://help.ubnt.com/hc/en-us/articles/222183968-Intro-to-Networking-Introduction-to-Virtual-LANs-VLANs-and-Tagging#3>`_
-#. `Tagged VLAN1 Wireless Traffic <https://community.ubnt.com/t5/UniFi-Wireless/Is-it-not-possible-to-have-a-tagged-VLAN-1-wireless-network/td-p/2477872>`_
+#. `Tagged VLAN1 Wireless Traffic <https://community.ui.com/questions/62e527e3-aa03-4de9-84fc-a5e42a44cfb9>`_
 #. `VLANs with UniFi Products <https://help.ubnt.com/hc/en-us/articles/219654087>`_
-#. `Guide to VLAN and Trunks <https://community.ubnt.com/t5/UniFi-Routing-Switching/A-non-expert-Guide-to-VLAN-and-Trunks-in-Unifi-Switches/td-p/1804481>`_
+#. `Guide to VLAN and Trunks <https://community.ui.com/questions/7462245c-95a7-455e-a711-209f44e194cb>`_
 
-.. _Within VLAN aware: https://community.ubnt.com/t5/UniFi-Routing-Switching/VLAN-tagging-on-Unifi-switch-not-working/td-p/2561077/page/2
+.. _Within VLAN aware: https://community.ui.com/questions/6205cb0e-20d5-47ac-b5f9-60c0539a8634s

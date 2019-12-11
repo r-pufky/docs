@@ -105,6 +105,6 @@ Detect Multiple Client Error Codes
 Restart fail2ban.
 
 .. _fail2ban for a docker based reverse-proxy: https://www.digitalocean.com/community/tutorials/how-to-protect-an-nginx-server-with-fail2ban-on-ubuntu-14-04
-.. _based off the default filters: https://github.com/fail2ban/fail2ban/blob/master/config/filter.d
+.. _based off the default filters: https://github.com/fail2ban/fail2ban/tree/master/config/filter.d
 .. _nginx-http-auth filter: https://github.com/fail2ban/fail2ban/blob/master/config/filter.d/nginx-http-auth.conf
 .. _apache-badbots filter: https://github.com/fail2ban/fail2ban/blob/master/config/filter.d/apache-badbots.conf
