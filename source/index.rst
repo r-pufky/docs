@@ -65,7 +65,7 @@ git hub, or submit a CL :)
   apps/gpg/index
   apps/mutt
   apps/putty
-  apps/sublime-text/sublime
+  apps/sublime-text/index
   apps/taskwarrior
 
 .. toctree::
@@ -74,7 +74,7 @@ git hub, or submit a CL :)
   :includehidden:
   :maxdepth: -1
 
-  Saltstack <configuration-management/saltstack/index>
+  configuration-management/saltstack/index
 
 .. toctree::
   :caption: Networking
@@ -82,9 +82,9 @@ git hub, or submit a CL :)
   :includehidden:
   :maxdepth: -1
 
-  Netplan <networking/netplan>
-  EdgeOS <networking/ubiquiti/edge-os>
-  Example Unifi VLAN <networking/ubiquiti/example-vlan-network/index>
+  networking/netplan
+  networking/ubiquiti/edge-os
+  networking/ubiquiti/example-vlan-network/index
 
 .. toctree::
   :caption: Operating Systems
@@ -92,8 +92,8 @@ git hub, or submit a CL :)
   :includehidden:
   :maxdepth: -1
 
-  Windows 10 <operating-systems/windows/10/index>
-  Ubuntu <operating-systems/ubuntu/index>
+  operating-systems/windows/10/index
+  operating-systems/ubuntu/index
 
 .. toctree::
   :caption: Virtualization
@@ -101,8 +101,8 @@ git hub, or submit a CL :)
   :includehidden:
   :maxdepth: -1
 
-  Xenserver / XCP-NP <virtualization/hypervisors/xenserver-xcpng/index>
-  KVM <virtualization/hypervisors/kvm/index>
+  virtualization/hypervisors/xenserver-xcpng/index
+  virtualization/hypervisors/kvm/index
   virtualization/vm-templates/index
 
 .. toctree::
@@ -111,7 +111,7 @@ git hub, or submit a CL :)
   :includehidden:
   :maxdepth: -1
 
-  Docker <containerization/docker/index>
+  containerization/docker/index
 
 .. toctree::
   :caption: Services

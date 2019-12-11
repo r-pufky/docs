@@ -1,7 +1,7 @@
 .. _kvm:
 
-KVM Server Setup
-################
+KVM Server
+##########
 Basic KVM server setup on ubuntu (18.04).
 
 .. gflocation:: Important File Locations (KVM)

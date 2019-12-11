@@ -1,6 +1,6 @@
 .. _salt-saltstack:
 
-SaltStack
+Saltstack
 #########
 Configuration management for Linux, Windows, & OSX.
 

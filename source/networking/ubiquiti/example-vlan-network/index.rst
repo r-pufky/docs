@@ -1,7 +1,9 @@
 .. _example-vlan-network:
 
-Edgerouter Docker Unifi Controller VLAN Setup
-#############################################
+Example Unifi VLAN
+##################
+Edgerouter using Docker Unifi Controller with VLAN Setup.
+
 Example walkthorugh of creating a VLAN based network using an edgerouter as a
 router/firewall with a Docker Unifi Controller managing Unifi Switch/APs.
 

@@ -1,8 +1,8 @@
 .. _networking-edge-os:
 
-Ubiquiti Edge OS
-################
-Setup notes for Edge OS.
+Edge OS
+#######
+Setup notes for Ubiquiti Edge OS.
 
 `Disable UBNT Discovery Service`_
 *********************************

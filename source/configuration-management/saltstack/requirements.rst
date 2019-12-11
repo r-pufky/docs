@@ -97,4 +97,5 @@ following requirements:
 .. rubric:: References
 
 #. `Saltstack Ports Exposed <https://docs.saltstack.com/en/getstarted/system/communication.html>`_
+
 .. _Requirements: https://www.saltstack.com/saltstack-enterprise-system-requirements/

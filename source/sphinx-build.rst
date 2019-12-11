@@ -86,7 +86,7 @@ See `python pip and virtual environment`_ for reference material.
 
   .. literalinclude:: ../sphinx/conf.py
     :caption: **0640 user user** ``docs/sphinx/conf.py``
-    :emphasize-lines: 20-22,31-32,35-36,46,52-59,64
+    :emphasize-lines: 20-22,34-37,41,54,57,64,73-75,77,79,81-82
 
   .. todo::
     Until ``pip install sphinx-rtd-theme`` is fixed without error.
@@ -117,7 +117,7 @@ Link Checking
 Documentation can be automatically link checked:
 
 .. code-block:: bash
-  :caption: verify documentation links work.
+  :caption: Verify documentation links work.
 
   make linkcheck
   make clean docs linkcheck

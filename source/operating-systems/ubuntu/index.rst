@@ -16,9 +16,9 @@ Related Material:
    :hidden:
    :maxdepth: -1
 
-   18.04 Server Base Install <1804-server-base-install>
-   Creating SSH Certificates <creating-ssh-certificates>
-   VM Configuration <vm-specific-configuration>
-   Additional Ubuntu Fixes <additional-fixes>
-   Threadripper 2990WX <threadripper-2990wx>
-   Automatic Installs (Preseed) <preseed/index>
+   1804-server-base-install
+   creating-ssh-certificates
+   vm-specific-configuration
+   additional-fixes
+   threadripper-2990wx
+   preseed/index

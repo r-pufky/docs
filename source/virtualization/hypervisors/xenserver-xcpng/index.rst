@@ -1,7 +1,7 @@
 .. _xenserver:
 
-XenServer (XCP-NG) Setup
-########################
+XenServer (XCP-NG)
+##################
 XenServer Setup & Lockdown (XCP-NG, Citrix XenServer).
 
 `Securing Xenserver`_

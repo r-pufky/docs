@@ -1,7 +1,7 @@
 .. _ubuntu-vm-specific-configuration:
 
-Ubuntu VM Specific Configuration
-################################
+Ubuntu VM Configuration
+#######################
 
 Installing XenServer / XCP Tools
 ================================

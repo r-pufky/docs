@@ -27,8 +27,8 @@ Related Material:
    :hidden:
    :maxdepth: -1
 
-   Initial Setup <setup/index>
-   Securing Installation <securing-installation>
+   setup/index
+   securing-installation
    troubleshooting-pc-hardware
    reinstalling
    additional-fixes
