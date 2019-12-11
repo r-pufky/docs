@@ -7,7 +7,6 @@ SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = source
 CONFDIR       = sphinx
-LINKCHECK     = sphinx/link
 BUILDDIR      = /tmp/docs
 TARGETDIR     = docs
 
