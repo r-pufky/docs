@@ -255,13 +255,15 @@ cloud-based protection will cause 100% disk usage (in settings).
 
 `Disable Windows Store App Installs`_
 *************************************
-:cmdmenu:`start --> store --> User Icon (⋮ if signed in) --> settings`
-
-  +---------------------------+----------+
-  | Update apps automatically | Disabled |
-  +---------------------------+----------+
-  | Show products on tile     | Disabled |
-  +---------------------------+----------+
+.. ggui:: Disable Windows Store App Installs.
+  :key_title: start --> store --> User Icon (⋮ if signed in) --> settings
+  :option:  Update apps automatically,
+            Show products on tile
+  :setting: Disabled,
+            Disabled
+  :no_section:
+  :no_caption:
+  :no_launch:
 
 Disable Windows Explorer Ads
 ****************************

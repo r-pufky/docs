@@ -226,8 +226,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../configuration-management/saltstack/index.html">Saltstack</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../configuration-management/saltstack/requirements.html">Requirements</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../configuration-management/saltstack/requirements.html#ports-exposed">Ports Exposed</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../configuration-management/saltstack/requirements.html#important-file-locations">Important File Locations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../configuration-management/saltstack/requirements.html#ports-exposed-saltstack">Ports Exposed (Saltstack)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../configuration-management/saltstack/requirements.html#important-file-locations-saltstack">Important File Locations (Saltstack)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../configuration-management/saltstack/requirements.html#service-directory-best-practices">Service Directory Best Practices</a></li>
 </ul>
 </li>
@@ -1372,8 +1372,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../../_sources/apps/gpg/usage/windows.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -1450,22 +1448,24 @@ and <strong>verify integrity</strong>.</p>
 <div class="section" id="configure-putty">
 <h2>Configure Putty<a class="headerlink" href="#configure-putty" title="Permalink to this headline">¶</a></h2>
 <p>Configure a host in putty and ensure the following options are set:</p>
+<div class="ggui docutils container" id="Use pageant for Putty Auth.">
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 6%" />
-<col style="width: 94%" />
+<col style="width: 50%" />
+<col style="width: 50%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td colspan="2"><p><span class="guilabel">Putty › Connection › SSH › Auth</span></p></td>
+<tr class="row-odd"><td colspan="3"><span class="guilabel">Putty › Connection › SSH › Auth</span></td>
 </tr>
 <tr class="row-even"><td><p>☑</p></td>
 <td><p>Attempt authentication using Pageant</p></td>
 </tr>
-<tr class="row-odd"><td></td>
+<tr class="row-odd"><td><p>›</p></td>
 <td><p>Private key file for authentication</p></td>
 </tr>
 </tbody>
 </table>
+</div>
 <p>Be sure to <strong>save</strong> your configuration changes.</p>
 </div>
 <div class="section" id="verify-putty-works">
@@ -1525,19 +1525,21 @@ for remote SSH targets.</p>
 <div class="figure align-default">
 <img alt="../../../_images/bastion.png" src="../../../_images/bastion.png" />
 </div>
+<div class="ggui docutils container" id="Enable GPG Agent Forwarding in Putty.">
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 6%" />
-<col style="width: 94%" />
+<col style="width: 50%" />
+<col style="width: 50%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td colspan="2"><p><span class="guilabel">Putty › Connection › SSH › Auth</span></p></td>
+<tr class="row-odd"><td colspan="3"><span class="guilabel">Putty › Connection › SSH › Auth</span></td>
 </tr>
 <tr class="row-even"><td><p>☑</p></td>
 <td><p>Allow agent forwarding</p></td>
 </tr>
 </tbody>
 </table>
+</div>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/ssh/sshd_config</span></code> on Bastion.</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>StreamLocalBindUnlink yes

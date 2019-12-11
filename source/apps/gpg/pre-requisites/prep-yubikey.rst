@@ -5,11 +5,14 @@ Prep Yubikey
 .. attention::
   :term:`Yubikey Password/PINs` may be up to **127 ASCII characters** long.
 
-  +-------------------+--------------+
-  | Default User Pin  | **123456**   |
-  +-------------------+--------------+
-  | Default Admin Pin | **12345678** |
-  +-------------------+--------------+
+.. gtable:: Default Yubikey Passwords
+  :c0: Default User Pin,
+       Default Admin Pin
+  :c1: 123456,
+       12345678
+  :no_key_title:
+  :no_section:
+  :no_launch:
 
 Reset Yubikey
 *************

@@ -226,8 +226,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../configuration-management/saltstack/index.html">Saltstack</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../configuration-management/saltstack/requirements.html">Requirements</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../configuration-management/saltstack/requirements.html#ports-exposed">Ports Exposed</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../configuration-management/saltstack/requirements.html#important-file-locations">Important File Locations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../configuration-management/saltstack/requirements.html#ports-exposed-saltstack">Ports Exposed (Saltstack)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../configuration-management/saltstack/requirements.html#important-file-locations-saltstack">Important File Locations (Saltstack)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../configuration-management/saltstack/requirements.html#service-directory-best-practices">Service Directory Best Practices</a></li>
 </ul>
 </li>
@@ -1372,8 +1372,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../../_sources/apps/gpg/pre-requisites/prep-yubikey.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -1390,17 +1388,20 @@
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p><a class="reference internal" href="../glossary.html#term-yubikey-password-pins"><span class="xref std std-term">Yubikey Password/PINs</span></a> may be up to <strong>127 ASCII characters</strong> long.</p>
-<table class="docutils align-default">
+</div>
+<div class="gtable docutils container" id="Default Yubikey Passwords">
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Default Yubikey Passwords</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col style="width: 58%" />
-<col style="width: 42%" />
+<col style="width: 50%" />
+<col style="width: 50%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>Default User Pin</p></td>
-<td><p><strong>123456</strong></p></td>
+<td><p>123456</p></td>
 </tr>
 <tr class="row-even"><td><p>Default Admin Pin</p></td>
-<td><p><strong>12345678</strong></p></td>
+<td><p>12345678</p></td>
 </tr>
 </tbody>
 </table>
@@ -1409,8 +1410,8 @@
 <h2>Reset Yubikey<a class="headerlink" href="#reset-yubikey" title="Permalink to this headline">¶</a></h2>
 <p>This will <a class="reference external" href="https://support.yubico.com/support/solutions/articles/15000006421-resetting-the-openpgp-applet-on-the-yubikey">destroy any openpgp material</a> on the key and reset to the default
 key state. Do this even if the Yubikey is new.</p>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">Reset Yubikey openpgp.</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Reset Yubikey openpgp.</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ykman openpgp reset
 </pre></div>
 </div>
@@ -1422,8 +1423,8 @@ do this via a GUI.</p>
 <p>If the Yubikey is not brand new, ensure you are not deleting any other
 <a class="reference internal" href="../glossary.html#term-2fa"><span class="xref std std-term">2FA</span></a> configurations.</p>
 </div>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">Show current Yubikey card shows with default values.</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Show current Yubikey card shows with default values.</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gpg --card-status
 </pre></div>
 </div>
@@ -1451,24 +1452,24 @@ to use key.</p>
 <p class="admonition-title">Note</p>
 <p>Newer keys can just use the <span class="guilabel">swap</span> button.</p>
 </div>
-<div class="figure align-default" id="id3">
+<div class="figure align-default" id="id4">
 <a class="reference internal image-reference" href="../../../_images/yubikey-otp.png"><img alt="../../../_images/yubikey-otp.png" src="../../../_images/yubikey-otp.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-text">Swapped button press lengths.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Swapped button press lengths.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple">
 <li><p><span class="guilabel">Yubikey Manager › Interfaces › NFC › Disable All</span></p></li>
 <li><p><span class="guilabel">Save Interfaces</span></p></li>
 </ol>
-<div class="figure align-default" id="id4">
+<div class="figure align-default" id="id5">
 <a class="reference internal image-reference" href="../../../_images/yubikey-nfc.png"><img alt="../../../_images/yubikey-nfc.png" src="../../../_images/yubikey-nfc.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-text">All NFC options are disabled to requirement phyiscal presence.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">All NFC options are disabled to requirement phyiscal presence.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="setup-openpgp-on-yubikey">
 <h2>Setup openpgp on Yubikey<a class="headerlink" href="#setup-openpgp-on-yubikey" title="Permalink to this headline">¶</a></h2>
 <p>Prepare Yubikey to load GPG key material.</p>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">Edit openpgp application on Yubikey.</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">Edit openpgp application on Yubikey.</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="hll">$ gpg --card-edit
 </span>
 Reader ...........: Yubico YubiKey OTP FIDO CCID <span class="m">0</span>
@@ -1489,8 +1490,8 @@ Signature counter : <span class="m">0</span>
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">Set the <strong>admin</strong> password (Remember to use the Default PIN if needed).</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">Set the <strong>admin</strong> password (Remember to use the Default PIN if needed).</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="hll">gpg/card&gt; admin
 </span>Admin commands are allowed
 
@@ -1510,8 +1511,8 @@ Q - quit
 </span></pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">Set the <strong>user</strong> password (Remember to use the Default PIN if needed).</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">Set the <strong>user</strong> password (Remember to use the Default PIN if needed).</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="hll">gpg/card&gt; admin
 </span>Admin commands are allowed
 
@@ -1531,23 +1532,23 @@ Q - quit
 </span></pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text">Set the <strong>name</strong> used in the GPG credentials to load.</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">Set the <strong>name</strong> used in the GPG credentials to load.</span><a class="headerlink" href="#id9" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="hll">gpg/card&gt; name
 </span><span class="hll">Cardholders surname: <span class="o">{</span>USER LAST NAME<span class="o">}</span>
 </span><span class="hll">Cardholders given name: <span class="o">{</span>USER FIRST NAME<span class="o">}</span>
 </span></pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id9">
-<div class="code-block-caption"><span class="caption-text">Set the <strong>language</strong> for the GPG user.</span><a class="headerlink" href="#id9" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">Set the <strong>language</strong> for the GPG user.</span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="hll">gpg/card&gt; lang
 </span><span class="hll">Language preferences: en
 </span></pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id10">
-<div class="code-block-caption"><span class="caption-text">Set the <strong>URL</strong> to locaiton of user’s GPG public key.</span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text">Set the <strong>URL</strong> to locaiton of user’s GPG public key.</span><a class="headerlink" href="#id11" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="hll">gpg/card&gt; url
 </span><span class="hll">URL to retrieve public key: https://keybase.io/<span class="o">{</span>USER<span class="o">}</span>/pgp_keys.asc
 </span></pre></div>
@@ -1558,21 +1559,21 @@ Q - quit
 <p>As shown using <a class="reference external" href="https://keybase.io">https://keybase.io</a> as the location, but any publically
 accessible location with the public key material will work.</p>
 </div>
-<div class="literal-block-wrapper docutils container" id="id11">
-<div class="code-block-caption"><span class="caption-text">Set <strong>login</strong> to GPG email account used.</span><a class="headerlink" href="#id11" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text">Set <strong>login</strong> to GPG email account used.</span><a class="headerlink" href="#id12" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="hll">gpg/card&gt; login
 </span><span class="hll">Login data <span class="o">(</span>account name<span class="o">)</span>: <span class="o">{</span>GPG USER EMAIL ADDRESS<span class="o">}</span>
 </span></pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id12">
-<div class="code-block-caption"><span class="caption-text">Set <strong>forcesig</strong> to always require PIN to access GPG key material.</span><a class="headerlink" href="#id12" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-text">Set <strong>forcesig</strong> to always require PIN to access GPG key material.</span><a class="headerlink" href="#id13" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="hll">gpg/card&gt; forcesig
 </span></pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id13">
-<div class="code-block-caption"><span class="caption-text">Verify configuration and quit to save.</span><a class="headerlink" href="#id13" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-text">Verify configuration and quit to save.</span><a class="headerlink" href="#id14" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gpg/card&gt; <span class="o">{</span>PRESS ENTER<span class="o">}</span>
 
 Reader ...........: Yubico YubiKey OTP FIDO CCID <span class="m">0</span>
@@ -1595,8 +1596,8 @@ Signature counter : <span class="m">0</span>
 </span></pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id14">
-<div class="code-block-caption"><span class="caption-text">Require touch each time <a class="reference external" href="https://suchsecurity.com/gpg-and-ssh-with-yubikey-on-windows.html">authentication, encryption or signing request</a> occurs.</span><a class="headerlink" href="#id14" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id15">
+<div class="code-block-caption"><span class="caption-text">Require touch each time <a class="reference external" href="https://suchsecurity.com/gpg-and-ssh-with-yubikey-on-windows.html">authentication, encryption or signing request</a> occurs.</span><a class="headerlink" href="#id15" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="hll">ykman openpgp set-touch aut fixed
 </span><span class="hll">ykman openpgp set-touch sig fixed
 </span><span class="hll">ykman openpgp set-touch enc fixed

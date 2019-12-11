@@ -5,18 +5,20 @@ Document Generation
 Site documentation is generated using `sphinx`_ using a python virtual
 environment and a custom makefile.
 
+.. _sphinx-build:
+
 Building
 ********
-Using an `activated`_ virtual environment from the ``git/services/doc``
+Using an `activated`_ virtual environment for the ``git/docs``
 location.
 
 .. code-block::
-  :caption: One shot build and verification.
+  :caption: One shot build and link verification.
 
   make clean docs linkcheck
 
 .. code-block::
-  :caption: Build docs, then verify separately.
+  :caption: Build docs, then verify links separately.
 
   make clean docs
   make linkcheck
@@ -118,7 +120,7 @@ Documentation can be automatically link checked:
   :caption: verify documentation links work.
 
   make linkcheck
-  make clean html linkcheck
+  make clean docs linkcheck
 
 .. rubric:: References
 

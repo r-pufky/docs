@@ -226,8 +226,8 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Saltstack</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Requirements</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#ports-exposed">Ports Exposed</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#important-file-locations">Important File Locations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ports-exposed-saltstack">Ports Exposed (Saltstack)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#important-file-locations-saltstack">Important File Locations (Saltstack)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#service-directory-best-practices">Service Directory Best Practices</a></li>
 </ul>
 </li>
@@ -1370,8 +1370,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/configuration-management/saltstack/requirements.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -1384,20 +1382,19 @@
            <div itemprop="articleBody">
             
   <div class="section" id="requirements">
-<span id="salt-requirements"></span><h1><a class="reference external" href="https://www.saltstack.com/saltstack-enterprise-system-requirements/">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h1>
+<span id="salt-requirements"></span><h1><a class="reference internal" href="#requirements">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h1>
 <p>There are no specific requirements for Salt Open Source. Enterprise requirements
 are defined here. Most users report actual usage minimum requirements as:</p>
+<div class="gtable docutils container" id="Saltstack Minimum Requirements.">
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>&lt; 500 minions</p></th>
-<th class="head"><p>&gt; 500 minions</p></th>
-</tr>
-</thead>
 <tbody>
+<tr class="row-odd"><td><p>&lt; 500 Minions</p></td>
+<td><p>&gt; 500 Minions</p></td>
+</tr>
 <tr class="row-even"><td><p>RAM: 2GB</p></td>
 <td><p>RAM: 4GB</p></td>
 </tr>
@@ -1409,94 +1406,80 @@ are defined here. Most users report actual usage minimum requirements as:</p>
 </tr>
 </tbody>
 </table>
-<div class="section" id="ports-exposed">
-<h2><a class="reference external" href="https://docs.saltstack.com/en/getstarted/system/communication.html">Ports Exposed</a><a class="headerlink" href="#ports-exposed" title="Permalink to this headline">¶</a></h2>
-<p>By default <code class="docutils literal notranslate"><span class="pre">salt</span></code> should resolve to the master IP for the minion, this can be
-configured in the minion as a DNS name or IP address.</p>
+</div>
+<div class="section" id="ports-exposed-saltstack">
+<h2>Ports Exposed (Saltstack)<a class="headerlink" href="#ports-exposed-saltstack" title="Permalink to this headline">¶</a></h2>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 9%" />
-<col style="width: 15%" />
-<col style="width: 75%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Port</p></th>
-<th class="head"><p>Protocol</p></th>
-<th class="head"><p>Purpose</p></th>
-</tr>
-</thead>
 <tbody>
+<tr class="row-odd"><td><p>Port</p></td>
+<td><p>Protocol</p></td>
+<td><p>Type</p></td>
+<td><p>Purpose</p></td>
+</tr>
 <tr class="row-even"><td><p>4505</p></td>
 <td><p>TCP</p></td>
+<td><p>External</p></td>
 <td><p>Minion listen port for pubsub messages.</p></td>
 </tr>
 <tr class="row-odd"><td><p>4506</p></td>
 <td><p>TCP</p></td>
-<td><p>Master file/data push, Minion push result data.</p></td>
+<td><p>External</p></td>
+<td><p>Master file/data push; Minion push result data.</p></td>
 </tr>
 </tbody>
 </table>
+<p>By default <code class="docutils literal notranslate"><span class="pre">salt</span></code> should resolve to the master IP for the minion, this can
+be configured in the minion as a DNS name or IP address.</p>
 </div>
-<div class="section" id="important-file-locations">
-<h2>Important File Locations<a class="headerlink" href="#important-file-locations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="important-file-locations-saltstack">
+<h2>Important File Locations (Saltstack)<a class="headerlink" href="#important-file-locations-saltstack" title="Permalink to this headline">¶</a></h2>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 30%" />
-<col style="width: 70%" />
+<col style="width: 50%" />
+<col style="width: 50%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>File</p></th>
-<th class="head"><p>Purpose</p></th>
-</tr>
-</thead>
 <tbody>
+<tr class="row-odd"><td><p>Location</p></td>
+<td><p>Purpose</p></td>
+</tr>
 <tr class="row-even"><td><p>/etc/salt</p></td>
-<td><p>Salt configuration, both master and minion.</p></td>
+<td><p>Salt configuration; both master and minion.</p></td>
 </tr>
 <tr class="row-odd"><td><p>/etc/salt/gpgkeys</p></td>
-<td><p>Master private GPG keys for decrypting data. Hard
-coded.</p></td>
+<td><p>Master private GPG keys for decrypting data. Hard coded.</p></td>
 </tr>
 <tr class="row-even"><td><p>/etc/salt/master</p></td>
-<td><p>Master configuration flat file. This should be
-untouched for sane defaults. Set custom
-configuration in the master configuration directory.</p></td>
+<td><p>Master configuration flat file. This should be untouched for sane defaults. Set custom configuration in the master configuration directory.</p></td>
 </tr>
 <tr class="row-odd"><td><p>/etc/salt/master.d</p></td>
 <td><p>Master configuration directory.</p></td>
 </tr>
 <tr class="row-even"><td><p>/etc/salt/minion</p></td>
-<td><p>Minion configuration flat file. This should be
-untouched for sane defaults. Set custom
-configuration in the minion configuration directory.</p></td>
+<td><p>Minion configuration flat file. This should be untouched for sane defaults. Set custom configuration in the minion configuration directory.</p></td>
 </tr>
 <tr class="row-odd"><td><p>/etc/salt/minion.d</p></td>
 <td><p>Minion configuration directory.</p></td>
 </tr>
 <tr class="row-even"><td><p>/etc/salt/pki/minions</p></td>
-<td><p>Keyfile data for minions. Deleted minions should be
-automatically removed.</p></td>
+<td><p>Keyfile data for minions. Deleted minions should be automatically removed.</p></td>
 </tr>
 <tr class="row-odd"><td><p>/srv/salt</p></td>
-<td><p>Master service directory structure for hosting
-files, forumlas and data. See
-<a class="reference internal" href="#salt-service-directory-best-practices"><span class="std std-ref">Service Directory Best Practices</span></a></p></td>
+<td><p>Master service directory structure for hosting files/forumlas and data. See best practices (below).</p></td>
 </tr>
 <tr class="row-even"><td><p>/var/log/salt/master</p></td>
-<td><p>Master logging/error messages. Useful for debugging
-module errors. When setup with encryption and
-no-minion reporting, errors will appear here for
-minions.</p></td>
+<td><p>Master logging/error messages. Useful for debugging module errors. When setup with encryption and no-minion reporting errors will appear here for minions.</p></td>
 </tr>
 <tr class="row-odd"><td><p>/var/log/salt/minion</p></td>
-<td><p>Minion logging/error messages. Many minion errors
-are logged on the server side, especially for
-encrypted Pillar data.</p></td>
+<td><p>Minion logging/error messages. Many minion errors are logged on the server side; especially for encrypted Pillar data.</p></td>
 </tr>
 <tr class="row-even"><td><p>c:/salt/conf/minion</p></td>
-<td><p>Minion configuration flat file for Windows. This
-should be untouched for sane defaults. Set custom
-configuration in the master configuration directory.</p></td>
+<td><p>Minion configuration flat file for Windows. This should be untouched for sane defaults. Set custom configuration in the master configuration directory.</p></td>
 </tr>
 <tr class="row-odd"><td><p>c:/salt/conf/minion.d</p></td>
 <td><p>Minion configuration directory.</p></td>
@@ -1517,31 +1500,31 @@ to know salt-specific terminology.</p></li>
 <em>static, globally avaliable unencrypted minion files</em>. Only minions with
 explicit access to data can read it.</p></li>
 </ul>
+<div class="gtable docutils container" id="Service Directory Best Practice.">
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 44%" />
-<col style="width: 56%" />
+<col style="width: 50%" />
+<col style="width: 50%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Service Directory</p></th>
-<th class="head"><p>Purpose</p></th>
-</tr>
-</thead>
 <tbody>
+<tr class="row-odd"><td><p>Service Directory</p></td>
+<td><p>Purpose</p></td>
+</tr>
 <tr class="row-even"><td><p>/srv/salt/data/{prod,dev}</p></td>
 <td><p>prod and dev Pillar data.</p></td>
 </tr>
 <tr class="row-odd"><td><p>/srv/salt/template/{prod,dev}</p></td>
-<td><p>prod and dev salt formulas</p></td>
+<td><p>prod and dev salt formulas.</p></td>
 </tr>
 <tr class="row-even"><td><p>/srv/salt/static/{prod,dev,base}</p></td>
-<td><p>prod, dev, and base globally avaliable
-static data. Base is ununsed other than
-to provide a catch-all for any minion not
-in dev or prod.</p></td>
+<td><p>prod, dev, and base globally avaliable static data. Base is ununsed other than to provide a catch-all for any minion not in dev or prod.</p></td>
 </tr>
 </tbody>
 </table>
+</div>
+<p class="rubric">References</p>
+<p>#. <a class="reference external" href="https://docs.saltstack.com/en/getstarted/system/communication.html">Saltstack Ports Exposed</a>
+.. _Requirements: <a class="reference external" href="https://www.saltstack.com/saltstack-enterprise-system-requirements/">https://www.saltstack.com/saltstack-enterprise-system-requirements/</a></p>
 </div>
 </div>
 

@@ -226,8 +226,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../configuration-management/saltstack/index.html">Saltstack</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../configuration-management/saltstack/requirements.html">Requirements</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/requirements.html#ports-exposed">Ports Exposed</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/requirements.html#important-file-locations">Important File Locations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/requirements.html#ports-exposed-saltstack">Ports Exposed (Saltstack)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/requirements.html#important-file-locations-saltstack">Important File Locations (Saltstack)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/requirements.html#service-directory-best-practices">Service Directory Best Practices</a></li>
 </ul>
 </li>
@@ -1370,8 +1370,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/operating-systems/ubuntu/threadripper-2990wx.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -1488,25 +1486,31 @@ temp3:        +41.0°C  <span class="o">(</span><span class="nv">low</span>  <sp
 </pre></div>
 </div>
 </div>
-<table class="docutils align-default">
+<div class="gtable docutils container" id="it8792 Fan Mapping.">
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-text">it8792 Fan Mapping.</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col style="width: 29%" />
-<col style="width: 71%" />
+<col style="width: 50%" />
+<col style="width: 50%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>fan1</p></td>
+<tr class="row-odd"><td><p>Layout Name</p></td>
+<td><p>Sensor Name</p></td>
+</tr>
+<tr class="row-even"><td><p>fan1</p></td>
 <td><p>SYS_FAN5_PUMP</p></td>
 </tr>
-<tr class="row-even"><td><p>fan2</p></td>
+<tr class="row-odd"><td><p>fan2</p></td>
 <td><p>SYS_FAN6_PUMP</p></td>
 </tr>
-<tr class="row-odd"><td><p>fan3</p></td>
+<tr class="row-even"><td><p>fan3</p></td>
 <td><p>SYS_FAN4</p></td>
 </tr>
 </tbody>
 </table>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">it8686-isa-0a40.</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">it8686-isa-0a40.</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>in0:          +0.77 V  <span class="o">(</span><span class="nv">min</span> <span class="o">=</span>  +0.00 V, <span class="nv">max</span> <span class="o">=</span>  +3.06 V<span class="o">)</span>
 in1:          +2.00 V  <span class="o">(</span><span class="nv">min</span> <span class="o">=</span>  +0.00 V, <span class="nv">max</span> <span class="o">=</span>  +3.06 V<span class="o">)</span>
 in2:          +2.03 V  <span class="o">(</span><span class="nv">min</span> <span class="o">=</span>  +0.00 V, <span class="nv">max</span> <span class="o">=</span>  +3.06 V<span class="o">)</span>
@@ -1530,32 +1534,44 @@ temp6:        -55.0°C  <span class="o">(</span><span class="nv">low</span>  <sp
 </pre></div>
 </div>
 </div>
-<table class="docutils align-default">
+<div class="gtable docutils container" id="it8686 Fan Mapping.">
+<table class="docutils align-default" id="id8">
+<caption><span class="caption-text">it8686 Fan Mapping.</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col style="width: 11%" />
-<col style="width: 89%" />
+<col style="width: 50%" />
+<col style="width: 50%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>fan1</p></td>
+<tr class="row-odd"><td><p>Layout Name</p></td>
+<td><p>Sensor Name</p></td>
+</tr>
+<tr class="row-even"><td><p>fan1</p></td>
 <td><p>CPU_FAN</p></td>
 </tr>
-<tr class="row-even"><td><p>fan2</p></td>
+<tr class="row-odd"><td><p>fan2</p></td>
 <td><p>SYS_FAN1</p></td>
 </tr>
-<tr class="row-odd"><td><p>fan3</p></td>
-<td><p>SYS_FAN2 (Built in VRM fans / unlisited in <a class="reference external" href="http://download.gigabyte.us/FileList/Manual/mb_manual_x399-aorus-xtreme_1001_e.pdf">manual</a>)</p></td>
+<tr class="row-even"><td><p>fan3</p></td>
+<td><p>SYS_FAN2 (Built in VRM fans).</p></td>
 </tr>
-<tr class="row-even"><td><p>fan4</p></td>
+<tr class="row-odd"><td><p>fan4</p></td>
 <td><p>SYS_FAN3</p></td>
 </tr>
-<tr class="row-odd"><td><p>fan5</p></td>
+<tr class="row-even"><td><p>fan5</p></td>
 <td><p>CPU_OPT</p></td>
 </tr>
-<tr class="row-even"><td><p>temp3</p></td>
-<td><p>Threadripper CPU temp (<cite>AMD AMDSI</cite>)</p></td>
+<tr class="row-odd"><td><p>temp3</p></td>
+<td><p>Threadripper CPU temp (AMD AMDSI).</p></td>
 </tr>
 </tbody>
 </table>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">SYS_FAN2</span></code> is unlisited in <a class="reference external" href="http://download.gigabyte.us/FileList/Manual/mb_manual_x399-aorus-xtreme_1001_e.pdf">manual</a>.</p>
+</div>
+</div></blockquote>
+</div>
 </div>
 <div class="section" id="building-kernel-4-18-6">
 <h2>Building Kernel 4.18.6+<a class="headerlink" href="#building-kernel-4-18-6" title="Permalink to this headline">¶</a></h2>
@@ -1565,8 +1581,8 @@ as ZFS (e.g. zfs-dkms spl-dkms). These are essentially Vanilla Kernels for
 Ubuntu with core patches. You will need <em>at least</em> Kernel <strong>4.18.6</strong>.</p>
 <p>Determine your platform and grab <a class="reference external" href="https://kernel.ubuntu.com/~kernel-ppa/mainline/">Kernel 4.18.6</a> source with ubuntu pataches.
 Any recent 64bit CPU will be <strong>amd64</strong>. You <em>only</em> need the generic Kernel.</p>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">Download ubuntu Kernel 4.18.6 package and install.</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">Download ubuntu Kernel 4.18.6 package and install.</span><a class="headerlink" href="#id9" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget http://Kernel.ubuntu.com/~Kernel-ppa/mainline/v4.18.6/linux-headers-4.18.6-041806_4.18.6-041806.201809050847_all.deb
 wget http://Kernel.ubuntu.com/~Kernel-ppa/mainline/v4.18.6/linux-headers-4.18.6-041806-generic_4.18.6-041806.201809050847_amd64.deb
 wget http://Kernel.ubuntu.com/~Kernel-ppa/mainline/v4.18.6/linux-image-unsigned-4.18.6-041806-generic_4.18.6-041806.201809050847_amd64.deb
@@ -1582,8 +1598,8 @@ dpkg -i linux-image*amd64.deb
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>modprobe k10temp
 </pre></div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/initramfs/modules</span></code></span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/initramfs/modules</span></code></span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>12
 13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="o">...</span>
 <span class="hll"><span class="n">k10temp</span>

@@ -226,8 +226,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../configuration-management/saltstack/index.html">Saltstack</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../configuration-management/saltstack/requirements.html">Requirements</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/requirements.html#ports-exposed">Ports Exposed</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/requirements.html#important-file-locations">Important File Locations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/requirements.html#ports-exposed-saltstack">Ports Exposed (Saltstack)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/requirements.html#important-file-locations-saltstack">Important File Locations (Saltstack)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/requirements.html#service-directory-best-practices">Service Directory Best Practices</a></li>
 </ul>
 </li>
@@ -1368,8 +1368,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../_sources/apps/sublime-text/sublime.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -1406,90 +1404,90 @@ apt install libgtk2.0-0 sublime-text
 <span class="guilabel">preferences › settings</span>.</p>
 <p>Generally, you should never have to modify file directly; you can copy and paste
 directly with the menu settings.</p>
-<p>Windows</p>
-<table class="docutils align-default">
+<div class="gfilelocation docutils container" id="Windows">
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">Windows</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col style="width: 68%" />
-<col style="width: 32%" />
+<col style="width: 50%" />
+<col style="width: 50%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>File</p></th>
-<th class="head"><p>Purpose</p></th>
-</tr>
-</thead>
 <tbody>
-<tr class="row-even"><td><p>%appdata%Sublime Text 3</p></td>
-<td><p>configuration and package locations</p></td>
+<tr class="row-odd"><td><p>Location</p></td>
+<td><p>Purpose</p></td>
 </tr>
-<tr class="row-odd"><td><p>%appdata%Sublime Text 3PackagesUserPreferences.sublime-settings</p></td>
-<td><p>user preferences</p></td>
+<tr class="row-even"><td><p>%appdata%\Sublime Text 3</p></td>
+<td><p>Configuration and package locations.</p></td>
 </tr>
-<tr class="row-even"><td><p>%appdata%Sublime Text 3PackagesUserPackage Control.sublime-settings</p></td>
-<td><p>user installed packages</p></td>
+<tr class="row-odd"><td><p>%appdata%\Sublime Text 3\Packages\User\Preferences.sublime-settings</p></td>
+<td><p>User preferences.</p></td>
 </tr>
-<tr class="row-odd"><td><p>%appdata%Sublime Text 3Installed PackagesPackage Control.sublime-package</p></td>
-<td><p>package control</p></td>
+<tr class="row-even"><td><p>%appdata%\Sublime Text 3\Packages\User\Package Control.sublime-settings</p></td>
+<td><p>User installed packages.</p></td>
 </tr>
-</tbody>
-</table>
-<p>Linux</p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 68%" />
-<col style="width: 32%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>File</p></th>
-<th class="head"><p>Purpose</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>~/.config/sublime-text-3</p></td>
-<td><p>configuration and package locations</p></td>
-</tr>
-<tr class="row-odd"><td><p>~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings</p></td>
-<td><p>user preferences</p></td>
-</tr>
-<tr class="row-even"><td><p>~/.config/sublime-text-3/Packages/User/Package Control.sublime-settings</p></td>
-<td><p>user installed packages</p></td>
-</tr>
-<tr class="row-odd"><td><p>~/.config/sublime-text-3/Installed Packages/Package Control.sublime-package</p></td>
-<td><p>package control binary</p></td>
-</tr>
-</tbody>
-</table>
-<p>OSX</p>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 72%" />
-<col style="width: 28%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>File</p></th>
-<th class="head"><p>Purpose</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>~/Library/Application Support/Sublime Text 3</p></td>
-<td><p>configuration and package locations</p></td>
-</tr>
-<tr class="row-odd"><td><p>~/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings</p></td>
-<td><p>user preferences</p></td>
-</tr>
-<tr class="row-even"><td><p>~/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings</p></td>
-<td><p>user installed packages</p></td>
-</tr>
-<tr class="row-odd"><td><p>~/Library/Application Support/Sublime Text 3/Installed Packages/Package Control.sublime-package</p></td>
-<td><p>package control binary</p></td>
+<tr class="row-odd"><td><p>%appdata%\Sublime Text 3\Installed Packages\Package Control.sublime-package</p></td>
+<td><p>Package control.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
+<div class="gfilelocation docutils container" id="Linux">
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-text">Linux</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Location</p></td>
+<td><p>Purpose</p></td>
+</tr>
+<tr class="row-even"><td><p>~/.config/sublime-text-3</p></td>
+<td><p>Configuration and package locations.</p></td>
+</tr>
+<tr class="row-odd"><td><p>~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings</p></td>
+<td><p>User preferences.</p></td>
+</tr>
+<tr class="row-even"><td><p>~/.config/sublime-text-3/Packages/User/Package Control.sublime-settings</p></td>
+<td><p>User installed packages.</p></td>
+</tr>
+<tr class="row-odd"><td><p>~/.config/sublime-text-3/Installed Packages/Package Control.sublime-package</p></td>
+<td><p>Package control.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="gfilelocation docutils container" id="OSX">
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-text">OSX</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Location</p></td>
+<td><p>Purpose</p></td>
+</tr>
+<tr class="row-even"><td><p>~/Library/Application Support/Sublime Text 3</p></td>
+<td><p>Configuration and package locations.</p></td>
+</tr>
+<tr class="row-odd"><td><p>~/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings</p></td>
+<td><p>User preferences.</p></td>
+</tr>
+<tr class="row-even"><td><p>~/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings</p></td>
+<td><p>User installed packages.</p></td>
+</tr>
+<tr class="row-odd"><td><p>~/Library/Application Support/Sublime Text 3/Installed Packages/Package Control.sublime-package</p></td>
+<td><p>Package control.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div class="section" id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
-<div class="literal-block-wrapper docutils container" id="id4">
+<div class="literal-block-wrapper docutils container" id="id7">
 <div class="code-block-caption"><span class="caption-text">Copy and paste into user preferences
-<span class="guilabel">preferences › settings</span>.</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<span class="guilabel">preferences › settings</span>.</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -1528,8 +1526,8 @@ directly with the menu settings.</p>
 <p>Sublime will automatically keep packages up to date if they are listed as
 Installed. You can use this to automatically installed Package Control, as well
 as packages on a fresh installation. Some <a class="reference external" href="http://txfx.net/2014/11/08/my-sublime-text-3-packages/">recommended packages</a> are here.</p>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">Download the package control binary and add installed packages.</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">Download the package control binary and add installed packages.</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://packagecontrol.io/Package%20Control.sublime-package &lt;sublime config&gt;/Installed<span class="se">\ </span>Packages/
 cp Package<span class="se">\ </span>Control.sublime-settings &lt;sublime config&gt;/Packages/User
 </pre></div>
@@ -1550,8 +1548,8 @@ setting.</p>
 <h2>Markdown Editing<a class="headerlink" href="#markdown-editing" title="Permalink to this headline">¶</a></h2>
 <p>Install <code class="docutils literal notranslate"><span class="pre">MarkdownEditing</span></code> and <code class="docutils literal notranslate"><span class="pre">MonokaiC</span></code> packages.</p>
 <p><span class="guilabel">preferences › package settings › markdown editing › markdown GFM Settings – user › Markdown.sublime-settings</span></p>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text"><strong>0600 user user</strong> <code class="docutils literal notranslate"><span class="pre">&lt;sublime</span> <span class="pre">config&gt;/Preferences/User/Markdown.sublime-settings</span></code></span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text"><strong>0600 user user</strong> <code class="docutils literal notranslate"><span class="pre">&lt;sublime</span> <span class="pre">config&gt;/Preferences/User/Markdown.sublime-settings</span></code></span><a class="headerlink" href="#id9" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{</span>

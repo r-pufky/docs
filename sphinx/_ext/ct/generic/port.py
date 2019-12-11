@@ -18,6 +18,7 @@ class GPort(config_table.ConfigTable):
     See ConfigTable for core Directives.
 
     :no_header: Flag to disable rendering headers in table, below key_title.
+    :delim: Alternative delimeter for lists. Default: ','.
 
   .. gport::    Ports Exposed
     :port:      80, 443
@@ -27,6 +28,7 @@ class GPort(config_table.ConfigTable):
                 HTTPS webface
     :no_key_title:
     :no_header:
+    :delim: ,
 
       .. note::
         This is a free-form RST processed content contained within the rendered
@@ -58,6 +60,7 @@ class GPort(config_table.ConfigTable):
     'protocol': directives.unchanged_required,
     'type': directives.unchanged_required,
     'purpose': directives.unchanged_required,
+    'delim': directives.unchanged,
     'no_header': directives.flag,
     'no_section': directives.flag,
     'no_launch': directives.flag,
@@ -95,10 +98,14 @@ class GPort(config_table.ConfigTable):
     Returns:
       FileLocationData object containing sanitized directive data.
     """
-    port_list = self._parse_list('port')
-    protocol_list = self._parse_list('protocol')
-    type_list = self._parse_list('type')
-    purpose_list = self._parse_list('purpose')
+    if 'delim' in self.options:
+      delim = self.options['delim'].strip()
+    else:
+      delim = ','
+    port_list = self._parse_list('port', delim)
+    protocol_list = self._parse_list('protocol', delim)
+    type_list = self._parse_list('type', delim)
+    purpose_list = self._parse_list('purpose', delim)
 
     if 'no_header' not in self.options:
       port_list.insert(0, 'Port')

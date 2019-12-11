@@ -93,6 +93,7 @@ html_theme_options = {
   'collapse_navigation': False,
   'navigation_depth': -1,
 }
+html_show_sourcelink = False
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".

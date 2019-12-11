@@ -225,8 +225,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="configuration-management/saltstack/index.html">Saltstack</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="configuration-management/saltstack/requirements.html">Requirements</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="configuration-management/saltstack/requirements.html#ports-exposed">Ports Exposed</a></li>
-<li class="toctree-l3"><a class="reference internal" href="configuration-management/saltstack/requirements.html#important-file-locations">Important File Locations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration-management/saltstack/requirements.html#ports-exposed-saltstack">Ports Exposed (Saltstack)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration-management/saltstack/requirements.html#important-file-locations-saltstack">Important File Locations (Saltstack)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuration-management/saltstack/requirements.html#service-directory-best-practices">Service Directory Best Practices</a></li>
 </ul>
 </li>
@@ -1367,8 +1367,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/sphinx-build.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -1385,17 +1383,17 @@
 <p>Site documentation is generated using <a class="reference external" href="http://www.sphinx-doc.org/en/master/">sphinx</a> using a python virtual
 environment and a custom makefile.</p>
 <div class="section" id="building">
-<h2>Building<a class="headerlink" href="#building" title="Permalink to this headline">¶</a></h2>
-<p>Using an <a class="reference internal" href="#activated">activated</a> virtual environment from the <code class="docutils literal notranslate"><span class="pre">git/services/doc</span></code>
+<span id="sphinx-build"></span><h2>Building<a class="headerlink" href="#building" title="Permalink to this headline">¶</a></h2>
+<p>Using an <a class="reference internal" href="#activated">activated</a> virtual environment for the <code class="docutils literal notranslate"><span class="pre">git/docs</span></code>
 location.</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">One shot build and verification.</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text">One shot build and link verification.</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">clean</span> <span class="n">docs</span> <span class="n">linkcheck</span>
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">Build docs, then verify separately.</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text">Build docs, then verify links separately.</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">clean</span> <span class="n">docs</span>
 <span class="n">make</span> <span class="n">linkcheck</span>
 </pre></div>
@@ -1573,6 +1571,7 @@ command.</p>
   <span class="s1">&#39;collapse_navigation&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
   <span class="s1">&#39;navigation_depth&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
 <span class="p">}</span>
+<span class="n">html_show_sourcelink</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="c1"># Add any paths that contain custom static files (such as style sheets) here,</span>
 <span class="c1"># relative to this directory. They are copied after the builtin static files,</span>
 <span class="c1"># so a file named &quot;default.css&quot; will overwrite the builtin &quot;default.css&quot;.</span>
@@ -1660,7 +1659,7 @@ documentation from the soruce tree.</p>
 <div class="literal-block-wrapper docutils container" id="id7">
 <div class="code-block-caption"><span class="caption-text">verify documentation links work.</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make linkcheck
-make clean html linkcheck
+make clean docs linkcheck
 </pre></div>
 </div>
 </div>

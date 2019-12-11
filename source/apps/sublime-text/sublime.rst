@@ -27,47 +27,44 @@ Configuration files can be modified directly in sublime via
 Generally, you should never have to modify file directly; you can copy and paste
 directly with the menu settings.
 
-Windows
+.. gflocation:: Windows
+  :file:    %appdata%\Sublime Text 3,
+            %appdata%\Sublime Text 3\Packages\User\Preferences.sublime-settings,
+            %appdata%\Sublime Text 3\Packages\User\Package Control.sublime-settings,
+            %appdata%\Sublime Text 3\Installed Packages\Package Control.sublime-package
+  :purpose: Configuration and package locations.,
+            User preferences.,
+            User installed packages.,
+            Package control.
+  :no_key_title:
+  :no_section:
+  :no_launch:
 
-+-----------------------------------------------------------------------------+-------------------------------------+
-| File                                                                        | Purpose                             |
-+=============================================================================+=====================================+
-| %appdata%\Sublime Text 3                                                    | configuration and package locations |
-+-----------------------------------------------------------------------------+-------------------------------------+
-| %appdata%\Sublime Text 3\Packages\User\Preferences.sublime-settings         | user preferences                    |
-+-----------------------------------------------------------------------------+-------------------------------------+
-| %appdata%\Sublime Text 3\Packages\User\Package Control.sublime-settings     | user installed packages             |
-+-----------------------------------------------------------------------------+-------------------------------------+
-| %appdata%\Sublime Text 3\Installed Packages\Package Control.sublime-package | package control                     |
-+-----------------------------------------------------------------------------+-------------------------------------+
+.. gflocation:: Linux
+  :file:    ~/.config/sublime-text-3,
+            ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings,
+            ~/.config/sublime-text-3/Packages/User/Package Control.sublime-settings,
+            ~/.config/sublime-text-3/Installed Packages/Package Control.sublime-package
+  :purpose: Configuration and package locations.,
+            User preferences.,
+            User installed packages.,
+            Package control.
+  :no_key_title:
+  :no_section:
+  :no_launch:
 
-Linux
-
-+-----------------------------------------------------------------------------+-------------------------------------+
-| File                                                                        | Purpose                             |
-+=============================================================================+=====================================+
-| ~/.config/sublime-text-3                                                    | configuration and package locations |
-+-----------------------------------------------------------------------------+-------------------------------------+
-| ~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings         | user preferences                    |
-+-----------------------------------------------------------------------------+-------------------------------------+
-| ~/.config/sublime-text-3/Packages/User/Package Control.sublime-settings     | user installed packages             |
-+-----------------------------------------------------------------------------+-------------------------------------+
-| ~/.config/sublime-text-3/Installed Packages/Package Control.sublime-package | package control binary              |
-+-----------------------------------------------------------------------------+-------------------------------------+
-
-OSX
-
-+-------------------------------------------------------------------------------------------------+-------------------------------------+
-| File                                                                                            | Purpose                             |
-+=================================================================================================+=====================================+
-| ~/Library/Application Support/Sublime Text 3                                                    | configuration and package locations |
-+-------------------------------------------------------------------------------------------------+-------------------------------------+
-| ~/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings         | user preferences                    |
-+-------------------------------------------------------------------------------------------------+-------------------------------------+
-| ~/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings     | user installed packages             |
-+-------------------------------------------------------------------------------------------------+-------------------------------------+
-| ~/Library/Application Support/Sublime Text 3/Installed Packages/Package Control.sublime-package | package control binary              |
-+-------------------------------------------------------------------------------------------------+-------------------------------------+
+.. gflocation:: OSX
+  :file:    ~/Library/Application Support/Sublime Text 3,
+            ~/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings,
+            ~/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings,
+            ~/Library/Application Support/Sublime Text 3/Installed Packages/Package Control.sublime-package
+  :purpose: Configuration and package locations.,
+            User preferences.,
+            User installed packages.,
+            Package control.
+  :no_key_title:
+  :no_section:
+  :no_launch:
 
 Configuration
 *************

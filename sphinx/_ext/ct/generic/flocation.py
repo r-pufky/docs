@@ -18,6 +18,7 @@ class GFileLocation(config_table.ConfigTable):
     See ConfigTable for core Directives.
 
     :no_header: Flag to disable rendering headers in table, below key_title.
+    :delim: Alternative delimeter for lists. Default: ','.
 
   .. gflocation:: Import File Locations
     :key_title: Linux File Locations
@@ -26,6 +27,7 @@ class GFileLocation(config_table.ConfigTable):
     :purpose:   KVM and VM configuration data.,
                 Default KVM VM/ISO image pool Location.
     :no_header:
+    :delim: ,
 
       .. note::
         This is a free-form RST processed content contained within the rendered
@@ -56,6 +58,7 @@ class GFileLocation(config_table.ConfigTable):
     'key_title': directives.unchanged_required,
     'file': directives.unchanged_required,
     'purpose': directives.unchanged_required,
+    'delim': directives.unchanged,
     'no_header': directives.flag,
     'no_section': directives.flag,
     'no_launch': directives.flag,
@@ -93,12 +96,16 @@ class GFileLocation(config_table.ConfigTable):
     Returns:
       FileLocationData object containing sanitized directive data.
     """
+    if 'delim' in self.options:
+      delim = self.options['delim'].strip()
+    else:
+      delim = ','
     if 'key_title' in self.options:
       key_title = ''.join(self._parse_list('key_title','\n'))
     else:
       key_title = ''
-    file_list = self._parse_list('file')
-    purpose_list = self._parse_list('purpose')
+    file_list = self._parse_list('file', delim)
+    purpose_list = self._parse_list('purpose', delim)
 
     if 'no_header' not in self.options:
       file_list.insert(0, 'Location')

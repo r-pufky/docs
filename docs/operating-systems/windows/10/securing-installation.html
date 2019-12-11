@@ -226,8 +226,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../configuration-management/saltstack/index.html">Saltstack</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../configuration-management/saltstack/requirements.html">Requirements</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../configuration-management/saltstack/requirements.html#ports-exposed">Ports Exposed</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../configuration-management/saltstack/requirements.html#important-file-locations">Important File Locations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../configuration-management/saltstack/requirements.html#ports-exposed-saltstack">Ports Exposed (Saltstack)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../configuration-management/saltstack/requirements.html#important-file-locations-saltstack">Important File Locations (Saltstack)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../configuration-management/saltstack/requirements.html#service-directory-best-practices">Service Directory Best Practices</a></li>
 </ul>
 </li>
@@ -1370,8 +1370,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../../_sources/operating-systems/windows/10/securing-installation.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -1771,23 +1769,24 @@ adds and removes applications. They should all be disabled (set to <strong>0</st
 </div>
 <div class="section" id="disable-windows-store-app-installs">
 <h2><a class="reference external" href="https://www.easeus.com/computer-instruction/stop-windows-10-installing-apps.html">Disable Windows Store App Installs</a><a class="headerlink" href="#disable-windows-store-app-installs" title="Permalink to this headline">¶</a></h2>
-<p><span class="guilabel">start › store › User Icon (⋮ if signed in) › settings</span></p>
-<blockquote>
-<div><table class="docutils align-default">
+<div class="ggui docutils container" id="Disable Windows Store App Installs.">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 73%" />
-<col style="width: 27%" />
+<col style="width: 50%" />
+<col style="width: 50%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p>Update apps automatically</p></td>
+<tr class="row-odd"><td colspan="3"><span class="guilabel">start › store › User Icon (⋮ if signed in) › settings</span></td>
+</tr>
+<tr class="row-even"><td><p>Update apps automatically</p></td>
 <td><p>Disabled</p></td>
 </tr>
-<tr class="row-even"><td><p>Show products on tile</p></td>
+<tr class="row-odd"><td><p>Show products on tile</p></td>
 <td><p>Disabled</p></td>
 </tr>
 </tbody>
 </table>
-</div></blockquote>
+</div>
 </div>
 <div class="section" id="disable-windows-explorer-ads">
 <h2>Disable Windows Explorer Ads<a class="headerlink" href="#disable-windows-explorer-ads" title="Permalink to this headline">¶</a></h2>

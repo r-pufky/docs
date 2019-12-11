@@ -5,7 +5,7 @@
 General style-guide for sphinx.
 
 * 80 character limit, exception for code blocks.
-* Always verify links (:ref:`sphinx-build-link-checking`) before uploading
+* Always verify links (:ref:`sphinx-build`) before uploading
   changes.
 
   .. note::

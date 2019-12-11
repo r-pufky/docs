@@ -18,6 +18,7 @@ class GTable(config_table.ConfigTable):
     See ConfigTable for core Directives. Up to 10 column directives.
 
     :admin: Flag to enable admin requirement display in :key_title:.
+    :delim: Alternative delimeter for lists. Default: ','.
 
   .. gtable::  Services Used
     :header:   Service,
@@ -26,6 +27,7 @@ class GTable(config_table.ConfigTable):
                CRD
     :c{1..9}: SSHFS remote file access for copying videos.,
                Chrome Remote Desktop for remote login.
+    :delim: ,
 
       .. note::
         This is a free-form RST processed content contained within the rendered
@@ -67,6 +69,7 @@ class GTable(config_table.ConfigTable):
     'c7': directives.unchanged,
     'c8': directives.unchanged,
     'c9': directives.unchanged,
+    'delim': directives.unchanged,
     'admin': directives.flag,
     'no_section': directives.flag,
     'no_launch': directives.flag,
@@ -105,13 +108,16 @@ class GTable(config_table.ConfigTable):
       directive is used.
     """
     data = []
+    if 'delim' in self.options:
+      delim = self.options['delim'].strip()
+    else:
+      delim = ','
     if 'header' in self.options:
-      headers = self._parse_list('header')
-
+      headers = self._parse_list('header', delim)
     for x in range(0,10):
       column = 'c%s' % x
       if column in self.options:
-        data.append(self._parse_list(column))
+        data.append(self._parse_list(column, delim))
         if 'header' in self.options:
           data[-1].insert(0, headers[x])
 

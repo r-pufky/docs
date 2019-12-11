@@ -226,8 +226,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../configuration-management/saltstack/index.html">Saltstack</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../configuration-management/saltstack/requirements.html">Requirements</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../configuration-management/saltstack/requirements.html#ports-exposed">Ports Exposed</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../configuration-management/saltstack/requirements.html#important-file-locations">Important File Locations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../configuration-management/saltstack/requirements.html#ports-exposed-saltstack">Ports Exposed (Saltstack)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../configuration-management/saltstack/requirements.html#important-file-locations-saltstack">Important File Locations (Saltstack)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../configuration-management/saltstack/requirements.html#service-directory-best-practices">Service Directory Best Practices</a></li>
 </ul>
 </li>
@@ -1370,8 +1370,6 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../../../_sources/networking/ubiquiti/example-vlan-network/network-overview.rst.txt" rel="nofollow"> View page source</a>
-          
         
       </li>
     
@@ -1387,17 +1385,16 @@
 <span id="id1"></span><h1>Network Overview<a class="headerlink" href="#network-overview" title="Permalink to this headline">¶</a></h1>
 <p>See <a class="reference internal" href="vlan-101.html#vlan-101"><span class="std std-ref">VLAN 101</span></a> for detailed VLAN concept information. The example network
 <a class="reference internal" href="example-network-diagram.html#example-network-diagram"><span class="std std-ref">Example Network Diagram</span></a> will be laid out as follows:</p>
+<div class="gtable docutils container" id="Network Overview">
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 43%" />
-<col style="width: 57%" />
+<col style="width: 50%" />
+<col style="width: 50%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Color</p></th>
-<th class="head"><p>Network</p></th>
-</tr>
-</thead>
 <tbody>
+<tr class="row-odd"><td><p>Color</p></td>
+<td><p>Network</p></td>
+</tr>
 <tr class="row-even"><td><p>White</p></td>
 <td><p>Trunk: All</p></td>
 </tr>
@@ -1424,29 +1421,29 @@
 </tr>
 </tbody>
 </table>
-<table class="docutils align-default" id="vlan-table">
+</div>
+<div class="gtable docutils container" id="VLAN Table">
+<span id="vlan-table"></span><table class="docutils align-default">
 <colgroup>
-<col style="width: 11%" />
-<col style="width: 5%" />
-<col style="width: 9%" />
-<col style="width: 7%" />
-<col style="width: 8%" />
-<col style="width: 8%" />
-<col style="width: 7%" />
-<col style="width: 45%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Network Name</p></th>
-<th class="head"><p>VLANID</p></th>
-<th class="head"><p>Network</p></th>
-<th class="head"><p>Router</p></th>
-<th class="head"><p>DHCP Start</p></th>
-<th class="head"><p>DHCP End</p></th>
-<th class="head"><p>DNS</p></th>
-<th class="head"><p>Usage/Notes</p></th>
-</tr>
-</thead>
 <tbody>
+<tr class="row-odd"><td><p>Network Name</p></td>
+<td><p>VLANID</p></td>
+<td><p>Network</p></td>
+<td><p>Router</p></td>
+<td><p>DHCP Start</p></td>
+<td><p>DHCP End</p></td>
+<td><p>DNS</p></td>
+<td><p>Usage/Notes</p></td>
+</tr>
 <tr class="row-even"><td><p>Management</p></td>
 <td><p>1</p></td>
 <td><p>10.1.1.0/24</p></td>
@@ -1499,29 +1496,29 @@
 <td><p>10.9.9.10</p></td>
 <td><p>10.9.9.240</p></td>
 <td><p>10.9.9.1</p></td>
-<td><p>Critical always-on infastructure-only services like DNS, DHCP.</p></td>
+<td><p>Critical always-on infastructure-only services like DNS/DHCP.</p></td>
 </tr>
 </tbody>
 </table>
+</div>
 <p id="swtich-port-profiles">Switch Port Profiles are applied to switch ports to define traffic allowed
 through the port:</p>
+<div class="gtable docutils container" id="Switch Port Profiles">
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 21%" />
-<col style="width: 7%" />
-<col style="width: 21%" />
-<col style="width: 32%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
 <col style="width: 20%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>PoE</p></th>
-<th class="head"><p>Native Network</p></th>
-<th class="head"><p>Tagged Networks</p></th>
-<th class="head"><p>Voice Network</p></th>
-</tr>
-</thead>
 <tbody>
+<tr class="row-odd"><td><p>Name</p></td>
+<td><p>PoE</p></td>
+<td><p>Native Network</p></td>
+<td><p>Tagged Networks</p></td>
+<td><p>Voice Network</p></td>
+</tr>
 <tr class="row-even"><td><p>infrastructure</p></td>
 <td><p>N/A</p></td>
 <td><p>infrastructure</p></td>
@@ -1572,20 +1569,20 @@ through the port:</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p id="ip-assignments">Infrastructure IP assignments on management network:</p>
+<div class="gtable docutils container" id="IP Assignments">
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 44%" />
-<col style="width: 32%" />
-<col style="width: 24%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
 </colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Device</p></th>
-<th class="head"><p>IP</p></th>
-<th class="head"><p>Name</p></th>
-</tr>
-</thead>
 <tbody>
+<tr class="row-odd"><td><p>Device</p></td>
+<td><p>IP</p></td>
+<td><p>Name</p></td>
+</tr>
 <tr class="row-even"><td><p>Core Switch</p></td>
 <td><p>10.1.1.5</p></td>
 <td><p>core</p></td>
@@ -1612,6 +1609,7 @@ through the port:</p>
 </tr>
 </tbody>
 </table>
+</div>
 </div>
 
 
