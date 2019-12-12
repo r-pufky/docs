@@ -103,7 +103,6 @@ git hub, or submit a CL :)
 
   virtualization/hypervisors/xenserver-xcpng/index
   virtualization/hypervisors/kvm/index
-  virtualization/vm-templates/index
 
 .. toctree::
   :caption: Containerization
@@ -138,6 +137,7 @@ git hub, or submit a CL :)
   services/nginx/index
   services/nzbget/index
   services/pihole/index
+  services/play-on/index
   services/plex/index
   services/postfix/index
   services/radarr/index

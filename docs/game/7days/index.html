@@ -653,31 +653,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../virtualization/vm-templates/index.html">VM Templates</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../virtualization/vm-templates/base-vm.html">Base VM Template</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../virtualization/vm-templates/base-vm.html#ubuntu">Ubuntu</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../virtualization/vm-templates/base-vm.html#ubuntu-base-vm-specifications">Ubuntu Base VM Specifications</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../virtualization/vm-templates/base-vm.html#ubuntu-base-vm-configuration">Ubuntu Base VM Configuration</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../virtualization/vm-templates/base-vm.html#windows-10">Windows 10</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../virtualization/vm-templates/base-vm.html#windows-base-vm-specifications">Windows Base VM Specifications</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../virtualization/vm-templates/base-vm.html#activating-windows">Activating Windows</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../virtualization/vm-templates/base-vm.html#install-virtualization-tools">Install Virtualization Tools</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../virtualization/vm-templates/base-vm.html#default-applications">Default Applications</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../virtualization/vm-templates/base-vm.html#adding-custom-fonts">Adding Custom Fonts</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../virtualization/vm-templates/play-on.html">Playon Dedicated Recorder</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../virtualization/vm-templates/play-on.html#ports-exposed-play-on">Ports Exposed (Play-on)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../virtualization/vm-templates/play-on.html#services-used-play-on">Services Used (Play-on)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../virtualization/vm-templates/play-on.html#server-setup">Server Setup</a></li>
-</ul>
-</li>
-</ul>
-</li>
 </ul>
 <p class="caption"><span class="caption-text">Containerization</span></p>
 <ul>
@@ -1094,6 +1069,12 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/play-on/index.html">Play-On</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../services/play-on/index.html#ports-exposed-play-on">Ports Exposed (Play-on)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/play-on/index.html#services-used-play-on">Services Used (Play-on)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/play-on/index.html#server-setup">Server Setup</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../services/plex/index.html">Plex</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../services/plex/setup.html">Plex Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../services/plex/setup.html#ports-plex">Ports (Plex)</a></li>
@@ -1487,7 +1468,6 @@ paths.</p>
 <ul class="simple">
 <li><p>The UID/GID should be set to a user/group that has access to your media. All
 media clients should run under the same user to run correctly.</p></li>
-<li><p>See <span class="xref std std-ref">game-7days-configuration</span> for example configuration.</p></li>
 </ul>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-text">Docker Compose</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
@@ -1554,6 +1534,15 @@ while true; do
 done
 </pre></div>
 </div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PROCESS_WAIT_TIME</span></code>: amount of time allocated to shutdown wine.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">WATCHDOG_TIME</span></code>: amount of time between checking server heartbeat.</p></li>
+</ul>
+<p>Game options specified will launch a dedicated server visible on steam
+clients. The game server will check for updates on boot and reboot.</p>
 </div>
 </div>
 <div class="section" id="initial-startup">
@@ -1729,7 +1718,7 @@ locations for server configuration.</p>
 </div>
 </div>
 <p>Access to administrative commands is granted based on SteamID, in
-<code class="docutils literal notranslate"><span class="pre">serveradmin.xml</span></code>. A server restarte is needed to apply changes.</p>
+<code class="docutils literal notranslate"><span class="pre">serveradmin.xml</span></code>. A server restart is needed to apply changes.</p>
 <div class="literal-block-wrapper docutils container" id="id10">
 <div class="code-block-caption"><span class="caption-text"><strong>0644 7days 7days</strong> <code class="docutils literal notranslate"><span class="pre">/data/saves/serveradmin.xml</span></code></span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;adminTools&gt;

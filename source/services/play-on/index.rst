@@ -1,7 +1,9 @@
 .. _play-on:
 
-Playon Dedicated Recorder
-#########################
+Play-On
+#######
+Steaming service recorder.
+
 Uses :ref:`windows-10-pro-setup` and assumes post template setup scripts have
 been run.
 

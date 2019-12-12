@@ -132,7 +132,7 @@ Documentation`_ requirements.
   Conan will autogenerate default configuration files if they are missing. Make
   sure the server gets to a running state before shutting down.
 
-  See :ref:`game-conan-troublshooting-wine` if wine takes multiple minutes to
+  See :ref:`game-conan-troubleshooting-wine` if wine takes multiple minutes to
   start.
 
 .. _Conan Docker and Documentation: https://hub.docker.com/r/rpufky/steam
