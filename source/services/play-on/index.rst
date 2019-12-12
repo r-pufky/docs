@@ -7,8 +7,14 @@ Steaming service recorder.
 Uses :ref:`windows-10-pro-setup` and assumes post template setup scripts have
 been run.
 
-* Memory: 8GB
-* Disk: 60GB
+.. gtable:: System Requirements.
+  :header: Memory,
+           Disk
+  :c0:     8GB
+  :c1:     60GB
+  :no_key_title:
+  :no_caption:
+  :no_launch:
 
 .. gport:: Ports Exposed (Play-on)
   :port:     22,
