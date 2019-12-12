@@ -148,6 +148,15 @@ git hub, or submit a CL :)
   services/service-template
 
 .. toctree::
+  :caption: Game Servers
+  :hidden:
+  :includehidden:
+  :maxdepth: -1
+
+  game/7days/index
+  game/conan/index
+
+.. toctree::
   :caption: Scripts
   :hidden:
   :includehidden:

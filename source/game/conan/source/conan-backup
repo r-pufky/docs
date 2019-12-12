@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# Backup Conan Exiles game state.
+#
+BASE='/data/server/ConanSandbox/'
+TARGET='/data/server/backup/'
+DATE_STAMP=`date +%Y-%m-%dT%H%M`
+
+mkdir -p ${TARGET}
+tar czvf "${TARGET}${DATE_STAMP}-conan-exiles.tar.gz" ${BASE}Saved
+chown -R conan:conan ${TARGET}

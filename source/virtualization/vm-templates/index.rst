@@ -10,6 +10,3 @@ Templates for VM creation.
 
    base-vm
    play-on
-   unifi-controller
-   steam-conan-exiles/index
-   steam-7-days-to-die/index

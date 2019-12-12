@@ -6,6 +6,8 @@
 
    STEAM ID INSTRUCTIONS:
    ===============================================================
+   You can find the SteamID64 of any user with one of the following pages:
+   https://steamdb.info/calculator/, https://steamid.io/lookup, http://steamid.co/
    http://steamid.co/ instructions:
    Input the player's name in the search field. example: Kinyajuu
    If the name doesn't work, you can also use the url of their steam page.
@@ -36,10 +38,13 @@
         <!-- <permission cmd="kick" permission_level="1" /> -->
         <!-- <permission cmd="say" permission_level="1000" /> -->
         <permission cmd="chunkcache" permission_level="1000" />
+        <permission cmd="debugshot" permission_level="1000" />
         <permission cmd="debugweather" permission_level="1000" />
         <permission cmd="getgamepref" permission_level="1000" />
         <permission cmd="getgamestat" permission_level="1000" />
+        <permission cmd="getoptions" permission_level="1000" />
         <permission cmd="gettime" permission_level="1000" />
+        <permission cmd="gfx" permission_level="1000" />
         <permission cmd="help" permission_level="1000" />
         <permission cmd="listplayerids" permission_level="1000" />
         <permission cmd="listthreads" permission_level="1000" />
