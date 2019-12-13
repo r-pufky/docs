@@ -86,7 +86,7 @@ See `python pip and virtual environment`_ for reference material.
 
   .. literalinclude:: ../sphinx/conf.py
     :caption: **0640 user user** ``docs/sphinx/conf.py``
-    :emphasize-lines: 20-22,34-37,41,54,57,64,73-75,77,79,81-82
+    :emphasize-lines: 20-22,30-33,37,50,53,60,69-71,73,75,77-78
 
   .. todo::
     Until ``pip install sphinx-rtd-theme`` is fixed without error.

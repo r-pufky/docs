@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Document Generation &mdash; Generic service &amp; computer documentation. 2019-07-06.0 documentation</title>
+  <title>Document Generation &mdash; Generic service &amp; computer documentation.  documentation</title>
   
 
   
@@ -1487,10 +1487,6 @@ command.</p>
 </span><span class="hll"><span class="n">copyright</span> <span class="o">=</span> <span class="s1">&#39;2019, r-pufky&#39;</span>
 </span><span class="hll"><span class="n">author</span> <span class="o">=</span> <span class="s1">&#39;r-pufky&#39;</span>
 </span>
-<span class="c1"># The full version, including alpha/beta/rc tags</span>
-<span class="n">release</span> <span class="o">=</span> <span class="s1">&#39;2019-07-06.0&#39;</span>
-
-
 <span class="c1"># -- General configuration ---------------------------------------------------</span>
 
 <span class="c1"># Add any Sphinx extension module names here, as strings. They can be</span>
@@ -1592,7 +1588,19 @@ TARGETDIR     = docs
 
 # Put it first so that &quot;make&quot; without argument is like &quot;make help&quot;.
 help:
-	@$(SPHINXBUILD) -M help &quot;$(SOURCEDIR)&quot; &quot;$(BUILDDIR)&quot; -c &quot;$(CONFDIR)&quot; $(SPHINXOPTS) $(O)
+	@echo &quot;USAGE:&quot;
+	@echo &quot;  make docs&quot;
+	@echo &quot;        Build site documentation in $(BUILDDIR), trim extraneous&quot;
+	@echo &quot;        output and copy to $(TARGETDIR).&quot;
+	@echo
+	@echo &quot;  make html&quot;
+	@echo &quot;        Build site documentation in $(BUILDDIR).&quot;
+	@echo
+	@echo &quot;  make clean&quot;
+	@echo &quot;        Removes all build artifacts on filesystem.&quot;
+	@echo
+	@echo &quot;  make linkcheck&quot;
+	@echo &quot;        Verifies documentation links resolve properly.&quot;
 
 .PHONY: help Makefile
 
@@ -1620,7 +1628,6 @@ copy:
 	@rm -v &quot;$(TARGETDIR)/objects.inv&quot;
 	@rm -v &quot;$(TARGETDIR)/genindex.html&quot;
 	@rm -rfv &quot;$(TARGETDIR)/_sources&quot;
-
 </pre></div>
 </div>
 </div>
