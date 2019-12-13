@@ -45,4 +45,3 @@ understanding of what this is.
    key-setup/index
    usage/index
    troubleshooting
-   glossary

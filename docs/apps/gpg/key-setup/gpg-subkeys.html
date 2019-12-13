@@ -187,7 +187,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../troubleshooting.html#please-insert-card-with-serial-number">Please insert card with serial number</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../glossary.html">GPG Glossary</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../mutt.html">Mutt Maildir Setup</a><ul>
@@ -1278,7 +1277,12 @@
 </ul>
 <p class="caption"><span class="caption-text">Appendix</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary.html">Glossary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../glossary.html#networking">Networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../glossary.html#mail">Mail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../glossary.html#gpg-encryption">GPG/Encryption</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../../icon-explanation.html">Icon Explanation</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Buildings Docs</span></p>
@@ -1376,7 +1380,7 @@ key can be revoked/changed to invalidate all subkeys at once.</p>
 <p>If the subkeys will not be stored on a self-destructing device when attacked
 (e.g. a Yubikey), then <strong>set an expiry date</strong>.</p>
 <div class="section" id="create-signing-key">
-<h2>Create <a class="reference internal" href="../glossary.html#term-signing-key"><span class="xref std std-term">Signing Key</span></a><a class="headerlink" href="#create-signing-key" title="Permalink to this headline">¶</a></h2>
+<h2>Create <a class="reference internal" href="../../../glossary.html#term-signing-key"><span class="xref std std-term">Signing Key</span></a><a class="headerlink" href="#create-signing-key" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="hll">$ gpg --expert --edit-key <span class="nv">$KEYID</span>
 </span>
 <span class="hll">gpg&gt; addkey
@@ -1422,7 +1426,7 @@ sec  rsa4096/################
 </div>
 </div>
 <div class="section" id="create-encryption-key">
-<h2>Create <a class="reference internal" href="../glossary.html#term-encryption-key"><span class="xref std std-term">Encryption Key</span></a><a class="headerlink" href="#create-encryption-key" title="Permalink to this headline">¶</a></h2>
+<h2>Create <a class="reference internal" href="../../../glossary.html#term-encryption-key"><span class="xref std std-term">Encryption Key</span></a><a class="headerlink" href="#create-encryption-key" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="hll">$ gpg --expert --edit-key <span class="nv">$KEYID</span>
 </span>
 <span class="hll">gpg&gt; addkey
@@ -1464,7 +1468,7 @@ ssb  rsa4096/################
 </div>
 </div>
 <div class="section" id="create-authentication-key">
-<h2>Create <a class="reference internal" href="../glossary.html#term-authentication-key"><span class="xref std std-term">Authentication Key</span></a><a class="headerlink" href="#create-authentication-key" title="Permalink to this headline">¶</a></h2>
+<h2>Create <a class="reference internal" href="../../../glossary.html#term-authentication-key"><span class="xref std std-term">Authentication Key</span></a><a class="headerlink" href="#create-authentication-key" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="hll">$ gpg --expert --edit-key <span class="nv">$KEYID</span>
 </span>
 <span class="hll">gpg&gt; addkey

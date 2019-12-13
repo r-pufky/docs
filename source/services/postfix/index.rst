@@ -4,8 +4,7 @@ Postfix
 #######
 Mail Transport Agent (MTA) setup
 
-Uses :ref:`debian-server-base-install`. See :ref:`glossary` for mail term
-definitions.
+Uses :ref:`debian-server-base-install`. See :ref:`glossary` for mail terms.
 
 Standard Definitions
 ********************

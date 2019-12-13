@@ -22,7 +22,7 @@ copyright = '2019, r-pufky'
 author = 'r-pufky'
 
 # The full version, including alpha/beta/rc tags
-release = '2019-07-06.0'
+release = '2019-12-12.0'
 
 
 # -- General configuration ---------------------------------------------------

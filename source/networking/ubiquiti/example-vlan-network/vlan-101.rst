@@ -6,7 +6,6 @@ Basic understanding of VLANs and how they work.
 
 Basic Concepts
 **************
-
 .. glossary::
   :abbr:`PIF (Physical InterFace)`
     Defines the physical port of a piece of equipment.

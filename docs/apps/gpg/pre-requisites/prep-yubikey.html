@@ -187,7 +187,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../troubleshooting.html#please-insert-card-with-serial-number">Please insert card with serial number</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../glossary.html">GPG Glossary</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../mutt.html">Mutt Maildir Setup</a><ul>
@@ -1278,7 +1277,12 @@
 </ul>
 <p class="caption"><span class="caption-text">Appendix</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary.html">Glossary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../glossary.html#networking">Networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../glossary.html#mail">Mail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../glossary.html#gpg-encryption">GPG/Encryption</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../../icon-explanation.html">Icon Explanation</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Buildings Docs</span></p>
@@ -1371,7 +1375,7 @@
 <span id="gpg-prep-yubikey"></span><h1>Prep Yubikey<a class="headerlink" href="#prep-yubikey" title="Permalink to this headline">¶</a></h1>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p><a class="reference internal" href="../glossary.html#term-yubikey-password-pins"><span class="xref std std-term">Yubikey Password/PINs</span></a> may be up to <strong>127 ASCII characters</strong> long.</p>
+<p><a class="reference internal" href="../../../glossary.html#term-yubikey-password-pins"><span class="xref std std-term">Yubikey Password/PINs</span></a> may be up to <strong>127 ASCII characters</strong> long.</p>
 </div>
 <div class="gtable docutils container" id="Default Yubikey Passwords">
 <table class="docutils align-default" id="id1">
@@ -1405,7 +1409,7 @@ do this via a GUI.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If the Yubikey is not brand new, ensure you are not deleting any other
-<a class="reference internal" href="../glossary.html#term-2fa"><span class="xref std std-term">2FA</span></a> configurations.</p>
+<a class="reference internal" href="../../../glossary.html#term-2fa"><span class="xref std std-term">2FA</span></a> configurations.</p>
 </div>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text">Show current Yubikey card shows with default values.</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
@@ -1416,8 +1420,8 @@ do this via a GUI.</p>
 <ul class="simple">
 <li><p>If not found, re-insert the key. There is a known race condition that may
 occur with older GPG libraries.</p></li>
-<li><p>Ensure latest firmware version using <a class="reference internal" href="../glossary.html#term-yubikey-manager"><span class="xref std std-term">Yubikey Manager</span></a>.</p></li>
-<li><p>Ensure device has <code class="docutils literal notranslate"><span class="pre">CCID</span></code> mode enabled using <a class="reference internal" href="../glossary.html#term-yubikey-manager"><span class="xref std std-term">Yubikey Manager</span></a>. Most
+<li><p>Ensure latest firmware version using <a class="reference internal" href="../../../glossary.html#term-yubikey-manager"><span class="xref std std-term">Yubikey Manager</span></a>.</p></li>
+<li><p>Ensure device has <code class="docutils literal notranslate"><span class="pre">CCID</span></code> mode enabled using <a class="reference internal" href="../../../glossary.html#term-yubikey-manager"><span class="xref std std-term">Yubikey Manager</span></a>. Most
 firmware past <code class="docutils literal notranslate"><span class="pre">3.1.8</span></code> will have this permenantly enabled and not listed.</p></li>
 </ul>
 </div>

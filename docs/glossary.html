@@ -187,7 +187,6 @@
 <li class="toctree-l3"><a class="reference internal" href="apps/gpg/troubleshooting.html#please-insert-card-with-serial-number">Please insert card with serial number</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="apps/gpg/glossary.html">GPG Glossary</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="apps/mutt.html">Mutt Maildir Setup</a><ul>
@@ -1278,7 +1277,12 @@
 </ul>
 <p class="caption"><span class="caption-text">Appendix</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Glossary</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Glossary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#networking">Networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mail">Mail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gpg-encryption">GPG/Encryption</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="icon-explanation.html">Icon Explanation</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Buildings Docs</span></p>
@@ -1365,11 +1369,20 @@
             
   <div class="section" id="glossary">
 <span id="id1"></span><h1>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h1>
+<p>See <a class="reference internal" href="icon-explanation.html#icon-explanation"><span class="std std-ref">Icon Explanation</span></a> for documentation specific symbols.</p>
+<div class="section" id="networking">
+<h2>Networking<a class="headerlink" href="#networking" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="networking/ubiquiti/example-vlan-network/vlan-101.html#vlan-101"><span class="std std-ref">VLAN 101</span></a> for Unifi network specific terms.</p>
 <dl class="glossary simple">
 <dt id="term-ubnt"><abbr>UBNT</abbr></dt><dd><p>Ubiquiti Networks. This is a common Acronym used for their devices.</p>
 </dd>
-<dt id="term-unifi">Unifi</dt><dd><p>A line of products from UBNT.</p>
+<dt id="term-unifi"><abbr>Unifi</abbr></dt><dd><p>A line of products from UBNT.</p>
 </dd>
+</dl>
+</div>
+<div class="section" id="mail">
+<h2>Mail<a class="headerlink" href="#mail" title="Permalink to this headline">¶</a></h2>
+<dl class="glossary simple">
 <dt id="term-mta"><abbr>MTA</abbr></dt><dd><p>Mail Transport Agent: handles mail server to server (e.g. other domains).</p>
 </dd>
 <dt id="term-mda"><abbr>MDA</abbr></dt><dd><p>Mail Delivery Agent: handles user access to email (e.g. IMAP).</p>
@@ -1377,6 +1390,40 @@
 <dt id="term-mua"><abbr>MUA</abbr></dt><dd><p>Mail User Agent: user client to check email (e.g. thunderbird/outlook).</p>
 </dd>
 </dl>
+</div>
+<div class="section" id="gpg-encryption">
+<h2>GPG/Encryption<a class="headerlink" href="#gpg-encryption" title="Permalink to this headline">¶</a></h2>
+<dl class="glossary">
+<dt id="term-2fa"><abbr>2FA</abbr></dt><dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Multi-factor_authentication">Two Factor Authentication</a>. Combines two different factors to
+provide strong authentication:</p>
+<ol class="arabic simple">
+<li><p>Something you know.</p></li>
+<li><p>Something you have.</p></li>
+<li><p>Something you are.</p></li>
+</ol>
+</dd>
+<dt id="term-yubikey-manager"><abbr>Yubikey Manager</abbr></dt><dd><p>Application that will manage Yubikey configuration. There is a
+<a class="reference external" href="https://www.yubico.com/products/services-software/download/yubikey-manager/">GUI Yubikey Manager</a> and a <a class="reference external" href="https://developers.yubico.com/yubikey-manager/">CLI Yubikey Manager</a>.</p>
+</dd>
+<dt id="term-yubikey-password-pins"><abbr>Yubikey Password/PINs</abbr></dt><dt id="term-pin"><abbr>PIN</abbr></dt><dd><p>Password for <code class="docutils literal notranslate"><span class="pre">user</span></code> and <code class="docutils literal notranslate"><span class="pre">admin</span></code> accounts for a Yubikey. Can be up to
+<strong>127 ASCII characters</strong> long.</p>
+<p>The user password is used whenever GPG material needs to be accessed on the
+card. Daily usage.</p>
+<p>The admin password is used to reset the user password and perform
+administrative functions on the Yubikey itself. Limited usage.</p>
+</dd>
+<dt id="term-signing-key"><abbr>Signing Key</abbr></dt><dd><p>Key used to cryptographically sign data. This enables others to verify that
+data sent by you has not been altered.</p>
+</dd>
+<dt id="term-encryption-key"><abbr>Encryption Key</abbr></dt><dd><p>Key used to encrypt data. Data is typically signed with the
+<a class="reference internal" href="#term-signing-key"><span class="xref std std-term">Signing Key</span></a> after encryption.</p>
+</dd>
+<dt id="term-authentication-key"><abbr>Authentication Key</abbr></dt><dd><p>Key used to Authenicate to systems (e.g. SSH). This will allow other systems
+to load your public GPG key and enable access to systems without needing any
+information from you.</p>
+</dd>
+</dl>
+</div>
 </div>
 
 
