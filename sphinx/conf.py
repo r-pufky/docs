@@ -21,10 +21,6 @@ project = 'Generic service & computer documentation.'
 copyright = '2019, r-pufky'
 author = 'r-pufky'
 
-# The full version, including alpha/beta/rc tags
-release = '2019-12-12.0'
-
-
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
