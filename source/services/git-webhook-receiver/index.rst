@@ -45,7 +45,7 @@ Create User for Pulling Repository
   :setting:   local,
               {WEBHOOK USER},
               {WEBHOOK EMAIL},
-              {PASSWORD},
+              {PASS},
               Require user to change password
   :no_section:
   :no_launch:
@@ -133,7 +133,7 @@ For each respository:
      git pull
 
 .. note::
-  This will prompt for {USER} and {PASSWORD}; they will be stored locally in
+  This will prompt for {USER} and {PASS}; they will be stored locally in
   ``~/.git-credentials``.
 
 Setup pull Scripts

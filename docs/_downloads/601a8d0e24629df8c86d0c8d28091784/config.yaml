@@ -97,7 +97,7 @@ acousticbrainz:
 bpd:
   host: 0.0.0.0
   port: 6600
-  password: {PASSWORD}
+  password: {PASS}
   volume: 100
 chroma:
   auto: yes

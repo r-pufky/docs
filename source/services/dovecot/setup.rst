@@ -18,7 +18,7 @@ responses.
   sudo apt install dovecot-core dovecot-imapd dovecot-sieve dovecot-managesieved
 
 .. note::
-  Create SSL certificate; use your {HOSTNAME}.
+  Create SSL certificate; use your {HOST}.
 
 .. code-block:: bash
   :caption: **0644 root root** ``/etc/postfix/main.cf``

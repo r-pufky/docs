@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Unifi Controller" href="../unifi/index.html" />
-    <link rel="prev" title="SSH Setup" href="setup.html" /> 
+    <link rel="next" title="Creating SSH Certificates" href="creating-ssh-certificates.html" />
+    <link rel="prev" title="SSHD Windows Setup" href="windows-setup.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -560,11 +560,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../operating-systems/ubuntu/1804-server-base-install.html#creating-an-encrypted-volume">Creating an Encrypted Volume</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../operating-systems/ubuntu/creating-ssh-certificates.html">Creating SSH Certificates</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/ubuntu/creating-ssh-certificates.html#initial-setup">Initial Setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/ubuntu/creating-ssh-certificates.html#generate-certificates">Generate Certificates</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="../../operating-systems/ubuntu/vm-specific-configuration.html">Ubuntu VM Configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../operating-systems/ubuntu/vm-specific-configuration.html#installing-xenserver-xcp-tools">Installing XenServer / XCP Tools</a></li>
 </ul>
@@ -630,7 +625,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/kvm/index.html#create-a-network-bridge">Create a Network Bridge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/kvm/index.html#add-bridge-to-kvm-menu-drop-down">Add Bridge to KVM Menu Drop Down</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/kvm/index.html#remove-pre-made-nat-virtual-bridge">Remove Pre-made NAT Virtual Bridge</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/kvm/index.html#ensure-ufw-is-allowing-connections-to-be-made">Ensure UFW is Allowing Connections to be Made</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/kvm/index.html#creating-new-vm">Creating New VM</a><ul>
@@ -1173,19 +1167,26 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">SSH</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="setup.html">SSH Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="setup.html#centralize-authorized-key-files">Centralize Authorized Key Files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="setup.html#create-a-port-forwarding-only-user">Create a Port Forwarding Only User</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="setup.html#verify-restrictions">Verify restrictions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-setup.html">SSHD Linux Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="linux-setup.html#centralize-authorized-key-files">Centralize Authorized Key Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="linux-setup.html#secure-sshd-config">Secure SSHD Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="linux-setup.html#add-users-to-access-group">Add Users to Access Group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="linux-setup.html#allow-ssh-connections-through-ufw">Allow SSH Connections Through UFW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="linux-setup.html#create-a-port-forwarding-only-user">Create a Port Forwarding Only User</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="linux-setup.html#verify-restrictions">Verify Restrictions</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="windows-setup.html">SSHD Windows Setup</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">SSH Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#generate-rsa-keys">Generate RSA Keys</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#restricting-ssh-tunneling">Restricting SSH Tunneling</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ssh-host-configuration">SSH Host Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#importing-rsa-keys-for-putty-winscp-on-windows">Importing RSA Keys for Putty/WinSCP on Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="creating-ssh-certificates.html">Creating SSH Certificates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="creating-ssh-certificates.html#generate-certificates">Generate Certificates</a></li>
 </ul>
 </li>
 </ul>
@@ -1367,9 +1368,7 @@
   <div class="section" id="ssh-configuration">
 <span id="service-ssh-configuration"></span><h1>SSH Configuration<a class="headerlink" href="#ssh-configuration" title="Permalink to this headline">¶</a></h1>
 <p>Typical end-user SSH configuration needs.</p>
-<div class="section" id="generate-rsa-keys">
-<h2>Generate RSA Keys<a class="headerlink" href="#generate-rsa-keys" title="Permalink to this headline">¶</a></h2>
-<p>Always use a strong password on keys, that is not your login password.</p>
+<p>See <a class="reference internal" href="creating-ssh-certificates.html#service-ssh-create-certificates"><span class="std std-ref">Creating SSH Certificates</span></a> for generating certificates to use.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">Generate 4096bit RSA keys.</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-keygen -b <span class="m">4096</span> -t rsa -f <span class="o">{</span>KEYNAME<span class="o">}</span>
@@ -1382,7 +1381,6 @@ chmod <span class="m">0640</span> <span class="o">{</span>KEYNAME<span class="o"
 <div class="code-block-caption"><span class="caption-text">Add Public Key to Authorized Keys for Use.</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="p">{</span><span class="n">KEYNAME</span><span class="p">}</span><span class="o">.</span><span class="n">pub</span> <span class="o">&gt;&gt;</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">authorized_keys</span>
 </pre></div>
-</div>
 </div>
 </div>
 <div class="section" id="restricting-ssh-tunneling">
@@ -1463,10 +1461,10 @@ used.</p></li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../unifi/index.html" class="btn btn-neutral float-right" title="Unifi Controller" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="creating-ssh-certificates.html" class="btn btn-neutral float-right" title="Creating SSH Certificates" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="setup.html" class="btn btn-neutral float-left" title="SSH Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="windows-setup.html" class="btn btn-neutral float-left" title="SSHD Windows Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

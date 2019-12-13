@@ -560,11 +560,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/ubuntu/1804-server-base-install.html#creating-an-encrypted-volume">Creating an Encrypted Volume</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/ubuntu/creating-ssh-certificates.html">Creating SSH Certificates</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/ubuntu/creating-ssh-certificates.html#initial-setup">Initial Setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/ubuntu/creating-ssh-certificates.html#generate-certificates">Generate Certificates</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/ubuntu/vm-specific-configuration.html">Ubuntu VM Configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/ubuntu/vm-specific-configuration.html#installing-xenserver-xcp-tools">Installing XenServer / XCP Tools</a></li>
 </ul>
@@ -630,7 +625,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#create-a-network-bridge">Create a Network Bridge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#add-bridge-to-kvm-menu-drop-down">Add Bridge to KVM Menu Drop Down</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#remove-pre-made-nat-virtual-bridge">Remove Pre-made NAT Virtual Bridge</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ensure-ufw-is-allowing-connections-to-be-made">Ensure UFW is Allowing Connections to be Made</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#creating-new-vm">Creating New VM</a><ul>
@@ -1173,19 +1167,26 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../services/ssh/index.html">SSH</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../services/ssh/setup.html">SSH Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../services/ssh/setup.html#centralize-authorized-key-files">Centralize Authorized Key Files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../services/ssh/setup.html#create-a-port-forwarding-only-user">Create a Port Forwarding Only User</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../services/ssh/setup.html#verify-restrictions">Verify restrictions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../services/ssh/linux-setup.html">SSHD Linux Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/ssh/linux-setup.html#centralize-authorized-key-files">Centralize Authorized Key Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/ssh/linux-setup.html#secure-sshd-config">Secure SSHD Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/ssh/linux-setup.html#add-users-to-access-group">Add Users to Access Group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/ssh/linux-setup.html#allow-ssh-connections-through-ufw">Allow SSH Connections Through UFW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/ssh/linux-setup.html#create-a-port-forwarding-only-user">Create a Port Forwarding Only User</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../services/ssh/linux-setup.html#verify-restrictions">Verify Restrictions</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../services/ssh/windows-setup.html">SSHD Windows Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../services/ssh/configuration.html">SSH Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../services/ssh/configuration.html#generate-rsa-keys">Generate RSA Keys</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../services/ssh/configuration.html#restricting-ssh-tunneling">Restricting SSH Tunneling</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../services/ssh/configuration.html#ssh-host-configuration">SSH Host Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../services/ssh/configuration.html#importing-rsa-keys-for-putty-winscp-on-windows">Importing RSA Keys for Putty/WinSCP on Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../services/ssh/creating-ssh-certificates.html">Creating SSH Certificates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/ssh/creating-ssh-certificates.html#generate-certificates">Generate Certificates</a></li>
 </ul>
 </li>
 </ul>
@@ -1582,33 +1583,14 @@ service libvirtd restart
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="ensure-ufw-is-allowing-connections-to-be-made">
-<h3>Ensure UFW is Allowing Connections to be Made<a class="headerlink" href="#ensure-ufw-is-allowing-connections-to-be-made" title="Permalink to this headline">¶</a></h3>
-<p>UFW may be configured by <a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-18-04">default to block connections</a>, verify this is not the
-case. The general default is to deny incoming connections, allow outgoing, and
-enable SSH.</p>
-<div class="literal-block-wrapper docutils container" id="id15">
-<div class="code-block-caption"><span class="caption-text">Get current status.</span><a class="headerlink" href="#id15" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ufw status
-</pre></div>
-</div>
-</div>
-<div class="literal-block-wrapper docutils container" id="id16">
-<div class="code-block-caption"><span class="caption-text">Set a generic default state.</span><a class="headerlink" href="#id16" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ufw default deny incoming
-ufw default allow outgoing
-ufw allow ssh
-</pre></div>
-</div>
-</div>
+<p><a class="reference internal" href="../../../services/ssh/linux-setup.html#service-ssh-ufw"><span class="std std-ref">Allow SSH Connections Through UFW</span></a>.</p>
 </div>
 </div>
 <div class="section" id="creating-new-vm">
 <h2>Creating New VM<a class="headerlink" href="#creating-new-vm" title="Permalink to this headline">¶</a></h2>
 <p>Setup a standard VM to use the network bridge.</p>
-<div class="literal-block-wrapper docutils container" id="id17">
-<div class="code-block-caption"><span class="caption-text">Launch VM manager with X11 forwarding enabled.</span><a class="headerlink" href="#id17" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id15">
+<div class="code-block-caption"><span class="caption-text">Launch VM manager with X11 forwarding enabled.</span><a class="headerlink" href="#id15" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>virt-manager
 </pre></div>
 </div>
@@ -1688,8 +1670,8 @@ bridge name if the Virtual Network bridge is not created.</p>
 <div class="section" id="install-guest-os-tools">
 <h3>Install Guest OS Tools<a class="headerlink" href="#install-guest-os-tools" title="Permalink to this headline">¶</a></h3>
 <p>These are only needed if you want to use a GUI in linux (required for windows).</p>
-<div class="literal-block-wrapper docutils container" id="id18">
-<div class="code-block-caption"><span class="caption-text">Linux</span><a class="headerlink" href="#id18" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id16">
+<div class="code-block-caption"><span class="caption-text">Linux</span><a class="headerlink" href="#id16" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt install spice-vdagent xserver-org-video-qxl
 </pre></div>
 </div>
@@ -1704,14 +1686,14 @@ bridge name if the Virtual Network bridge is not created.</p>
 <h2>Convert XenServer XVA to KVM Image<a class="headerlink" href="#convert-xenserver-xva-to-kvm-image" title="Permalink to this headline">¶</a></h2>
 <p>XenServer images cannot be directly imported, they must be converted first. VM’s
 should be exported <em>1 instance per XVA image</em> export.</p>
-<div class="literal-block-wrapper docutils container" id="id19">
-<div class="code-block-caption"><span class="caption-text">Install Build Tools</span><a class="headerlink" href="#id19" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id17">
+<div class="code-block-caption"><span class="caption-text">Install Build Tools</span><a class="headerlink" href="#id17" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt install cmake gcc build-essentials libssl-dev
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id20">
-<div class="code-block-caption"><span class="caption-text">Clone xva-img Tool &amp; Build</span><a class="headerlink" href="#id20" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id18">
+<div class="code-block-caption"><span class="caption-text">Clone xva-img Tool &amp; Build</span><a class="headerlink" href="#id18" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/eriklax/xva-img.git
 <span class="nb">cd</span> xva-img/
 cmake .
@@ -1719,8 +1701,8 @@ sudo make install
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id21">
-<div class="code-block-caption"><span class="caption-text">Extract VM from XVA Image</span><a class="headerlink" href="#id21" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id19">
+<div class="code-block-caption"><span class="caption-text">Extract VM from XVA Image</span><a class="headerlink" href="#id19" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir my_vm
 tar -xvf my_vm.xva -C my_vm
 chmod -R <span class="m">0755</span> my_vm
@@ -1734,8 +1716,8 @@ xva-img -p disk-export my_vm/Ref<span class="se">\:</span><span class="o">{</spa
 as the reference number for sanity, until you know what they are.</p></li>
 <li><p>Note: RAW is generally better for performance and long term performance.</p></li>
 </ul>
-<div class="literal-block-wrapper docutils container" id="id22">
-<div class="code-block-caption"><span class="caption-text">(Optional): Convert Disk Image to qcow2</span><a class="headerlink" href="#id22" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id20">
+<div class="code-block-caption"><span class="caption-text">(Optional): Convert Disk Image to qcow2</span><a class="headerlink" href="#id20" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>qemu-img convert -f raw -O qcow2 my_vm/ref-<span class="o">{</span>XXX<span class="o">}</span>.raw my_vm/ref-<span class="o">{</span>XXX<span class="o">}</span>.qcow2
 </pre></div>
 </div>
@@ -1748,26 +1730,26 @@ of unused space.</p></li>
 <h3>Grab Metadata From VM<a class="headerlink" href="#grab-metadata-from-vm" title="Permalink to this headline">¶</a></h3>
 <p>VM metadata (such as # of CPU’s, memory, MAC) are not extracted by default. This
 should be extracted for correct VM import into KVM.</p>
-<div class="literal-block-wrapper docutils container" id="id23">
-<div class="code-block-caption"><span class="caption-text">CPU</span><a class="headerlink" href="#id23" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id21">
+<div class="code-block-caption"><span class="caption-text">CPU</span><a class="headerlink" href="#id21" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep -o <span class="s1">&#39;.\{0,40\}CPU.\{0,40\}&#39;</span> my_vm/ova.xml
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id24">
-<div class="code-block-caption"><span class="caption-text">Memory</span><a class="headerlink" href="#id24" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id22">
+<div class="code-block-caption"><span class="caption-text">Memory</span><a class="headerlink" href="#id22" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep -o <span class="s1">&#39;.\{0,40\}memory.\{0,40\}&#39;</span> my_vm/ova.xml
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id25">
-<div class="code-block-caption"><span class="caption-text">MAC</span><a class="headerlink" href="#id25" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id23">
+<div class="code-block-caption"><span class="caption-text">MAC</span><a class="headerlink" href="#id23" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep -o <span class="s1">&#39;.\{0,40\}MAC.\{0,40\}&#39;</span> my_vm/ova.xml
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id26">
-<div class="code-block-caption"><span class="caption-text">Hostname</span><a class="headerlink" href="#id26" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id24">
+<div class="code-block-caption"><span class="caption-text">Hostname</span><a class="headerlink" href="#id24" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep -o <span class="s1">&#39;.\{0,40\}hostname.\{0,40\}&#39;</span> my_vm/ova.xml
 </pre></div>
 </div>
@@ -1777,8 +1759,8 @@ should be extracted for correct VM import into KVM.</p>
 <div class="section" id="export-kvm-image">
 <h2>Export KVM Image<a class="headerlink" href="#export-kvm-image" title="Permalink to this headline">¶</a></h2>
 <p>Useful for a configuration backup or moving to a new system.</p>
-<div class="literal-block-wrapper docutils container" id="id27">
-<div class="code-block-caption"><span class="caption-text">Dump the Current VM configuration</span><a class="headerlink" href="#id27" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id25">
+<div class="code-block-caption"><span class="caption-text">Dump the Current VM configuration</span><a class="headerlink" href="#id25" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>virsh dumpxml <span class="o">{</span>VM NAME<span class="o">}</span> &gt; <span class="o">{</span>VM NAME<span class="o">}</span>.xml
 </pre></div>
 </div>
@@ -1786,8 +1768,8 @@ should be extracted for correct VM import into KVM.</p>
 <ul class="simple">
 <li><p>Copy the XML file and associated disks to new location.</p></li>
 </ul>
-<div class="literal-block-wrapper docutils container" id="id28">
-<div class="code-block-caption"><span class="caption-text">Import VM</span><a class="headerlink" href="#id28" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id26">
+<div class="code-block-caption"><span class="caption-text">Import VM</span><a class="headerlink" href="#id26" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>virsh create <span class="o">{</span>VM NAME<span class="o">}</span>.xml
 </pre></div>
 </div>
@@ -1812,15 +1794,15 @@ should be extracted for correct VM import into KVM.</p>
 servers centralizing data to storage pools.</p>
 <p>By default, a single pool <code class="docutils literal notranslate"><span class="pre">default</span></code> is used for both VM images and ISO images.
 Service requires a restart on changes.</p>
-<div class="literal-block-wrapper docutils container" id="id29">
-<div class="code-block-caption"><span class="caption-text">List all pools</span><a class="headerlink" href="#id29" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id27">
+<div class="code-block-caption"><span class="caption-text">List all pools</span><a class="headerlink" href="#id27" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>virsh pool-list
 virsh pool-info <span class="o">{</span>POOL NAME<span class="o">}</span>
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id30">
-<div class="code-block-caption"><span class="caption-text">Delete a pool</span><a class="headerlink" href="#id30" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id28">
+<div class="code-block-caption"><span class="caption-text">Delete a pool</span><a class="headerlink" href="#id28" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>virsh pool-destroy <span class="o">{</span>POOL<span class="o">}</span>
 </pre></div>
 </div>
@@ -1831,8 +1813,8 @@ virsh pool-info <span class="o">{</span>POOL NAME<span class="o">}</span>
 and corresponding autostart file if existing
 <code class="docutils literal notranslate"><span class="pre">/etc/libvirtd/storage/autostart</span></code>.</p></li>
 </ul>
-<div class="literal-block-wrapper docutils container" id="id31">
-<div class="code-block-caption"><span class="caption-text">Move pool storage location while running</span><a class="headerlink" href="#id31" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id29">
+<div class="code-block-caption"><span class="caption-text">Move pool storage location while running</span><a class="headerlink" href="#id29" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>virsh pool-edit <span class="o">{</span>POOL<span class="o">}</span>
 </pre></div>
 </div>
@@ -1841,8 +1823,8 @@ and corresponding autostart file if existing
 <li><p>Update location for storage.</p></li>
 <li><p>Generally need to restart <cite>libvirtd</cite> for changes to apply.</p></li>
 </ul>
-<div class="literal-block-wrapper docutils container" id="id32">
-<div class="code-block-caption"><span class="caption-text">Dump Disk Image Pool</span><a class="headerlink" href="#id32" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id30">
+<div class="code-block-caption"><span class="caption-text">Dump Disk Image Pool</span><a class="headerlink" href="#id30" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>virsh pool-dumpxml default &gt; pool.xml
 </pre></div>
 </div>
@@ -1852,8 +1834,8 @@ and corresponding autostart file if existing
 <li><p>Make sure disk images are moved to new location.</p></li>
 <li><p>Update disk image locations in XML file.</p></li>
 </ul>
-<div class="literal-block-wrapper docutils container" id="id33">
-<div class="code-block-caption"><span class="caption-text">Destroy existing pool, import new pool from XML dump</span><a class="headerlink" href="#id33" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id31">
+<div class="code-block-caption"><span class="caption-text">Destroy existing pool, import new pool from XML dump</span><a class="headerlink" href="#id31" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>virsh pool-destory default
 virsh pool-create pool.xml
 </pre></div>
@@ -1863,8 +1845,8 @@ virsh pool-create pool.xml
 <div class="section" id="mount-raw-disk-image">
 <h2>Mount RAW Disk Image<a class="headerlink" href="#mount-raw-disk-image" title="Permalink to this headline">¶</a></h2>
 <p>This will enable mounting of a RAW disk image <a class="reference external" href="http://whazenberg.blogspot.com/2012/12/mounting-raw-virtual-machine-disk-image.html">outside of the VM</a>.</p>
-<div class="literal-block-wrapper docutils container" id="id34">
-<div class="code-block-caption"><span class="caption-text">Ensure the RAW image is readable</span><a class="headerlink" href="#id34" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id32">
+<div class="code-block-caption"><span class="caption-text">Ensure the RAW image is readable</span><a class="headerlink" href="#id32" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fdisk -l /var/lib/libvirt/images/<span class="o">{</span>IMAGE<span class="o">}</span>.RAW
 </pre></div>
 </div>
@@ -1878,8 +1860,8 @@ virsh pool-create pool.xml
 <p>The sector offset is:</p>
 <p><code class="docutils literal notranslate"><span class="pre">Sector</span> <span class="pre">Start</span> <span class="pre">*</span> <span class="pre">Sector</span> <span class="pre">Size</span> <span class="pre">=</span> <span class="pre">Sector</span> <span class="pre">Offset</span></code></p>
 </div>
-<div class="literal-block-wrapper docutils container" id="id35">
-<div class="code-block-caption"><span class="caption-text">Mount the partition as a block loop device</span><a class="headerlink" href="#id35" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id33">
+<div class="code-block-caption"><span class="caption-text">Mount the partition as a block loop device</span><a class="headerlink" href="#id33" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>losetup -r -o <span class="o">{</span>SECTOR OFFSET<span class="o">}</span> /dev/loop0 /var/lib/libvirt/<span class="o">{</span>IMAGE<span class="o">}</span>.RAW
 </pre></div>
 </div>
@@ -1888,8 +1870,8 @@ virsh pool-create pool.xml
 <li><p><code class="docutils literal notranslate"><span class="pre">losetup</span> <span class="pre">-d</span> <span class="pre">/dev/loop0</span></code> can be used to detach device later.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">losetup</span> <span class="pre">-l</span></code> will show looped devices current mounted.</p></li>
 </ul>
-<div class="literal-block-wrapper docutils container" id="id36">
-<div class="code-block-caption"><span class="caption-text">Mount the Filesystem</span><a class="headerlink" href="#id36" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id34">
+<div class="code-block-caption"><span class="caption-text">Mount the Filesystem</span><a class="headerlink" href="#id34" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mount /dev/loop0 /mnt/image
 </pre></div>
 </div>
@@ -1907,8 +1889,8 @@ kernel release.</p>
 happening. This will be an emulated CPU instead of passthrough.</p>
 <p>Create a VM as normal and shutdown. Edit the VM definition to force emulate an
 Opteron processor, and reload the definition.</p>
-<div class="literal-block-wrapper docutils container" id="id37">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/libvirt/qemu/threadripper-vm.xml</span></code></span><a class="headerlink" href="#id37" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id35">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/libvirt/qemu/threadripper-vm.xml</span></code></span><a class="headerlink" href="#id35" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">cpu</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;custom&#39;</span> <span class="n">match</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span> <span class="n">check</span><span class="o">=</span><span class="s1">&#39;partial&#39;</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="n">model</span> <span class="n">fallback</span><span class="o">=</span><span class="s1">&#39;allow&#39;</span><span class="o">&gt;</span><span class="n">Opteron_G5</span><span class="o">&lt;/</span><span class="n">model</span><span class="o">&gt;</span>
     <span class="o">&lt;</span><span class="n">topology</span> <span class="n">sockets</span><span class="o">=</span><span class="s1">&#39;1&#39;</span> <span class="n">cores</span><span class="o">=</span><span class="s1">&#39;8&#39;</span> <span class="n">threads</span><span class="o">=</span><span class="s1">&#39;1&#39;</span><span class="o">/&gt;</span>
@@ -1919,8 +1901,8 @@ Opteron processor, and reload the definition.</p>
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id38">
-<div class="code-block-caption"><span class="caption-text">Define the VM profile for KVM</span><a class="headerlink" href="#id38" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id36">
+<div class="code-block-caption"><span class="caption-text">Define the VM profile for KVM</span><a class="headerlink" href="#id36" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>virsh define /etc/libvirt/qemu/threadripper-vm.xml
 </pre></div>
 </div>

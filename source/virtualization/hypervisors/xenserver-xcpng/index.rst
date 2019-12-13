@@ -29,18 +29,14 @@ Create a non-root user account with sudo access.
 
   sudo su -
 
-:ref:`ubuntu-generate-certificates` for the new user.
+:ref:`service-ssh-linux-setup` to setup sercure SSH cert-only logins.
 
-Enforce cert-only SSH logins:
+Explicitly enable access only for users, not ssh group.
 
 .. code-block:: bash
   :caption: **0644 root root** ``/etc/ssh/sshd_config``
 
-  permitrootlogin no
   allowusers {USER}
-  MaxAuthTries 3
-  PasswordAuthentication no
-  AuthorizedKeysFile %h/.ssh/authorized_keys
 
 .. code-block:: bash
   :caption: Restart SSHD to apply changes.

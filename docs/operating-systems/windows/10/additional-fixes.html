@@ -560,11 +560,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../ubuntu/1804-server-base-install.html#creating-an-encrypted-volume">Creating an Encrypted Volume</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../ubuntu/creating-ssh-certificates.html">Creating SSH Certificates</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../ubuntu/creating-ssh-certificates.html#initial-setup">Initial Setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../ubuntu/creating-ssh-certificates.html#generate-certificates">Generate Certificates</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="../../ubuntu/vm-specific-configuration.html">Ubuntu VM Configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../ubuntu/vm-specific-configuration.html#installing-xenserver-xcp-tools">Installing XenServer / XCP Tools</a></li>
 </ul>
@@ -630,7 +625,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../virtualization/hypervisors/kvm/index.html#create-a-network-bridge">Create a Network Bridge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../virtualization/hypervisors/kvm/index.html#add-bridge-to-kvm-menu-drop-down">Add Bridge to KVM Menu Drop Down</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../virtualization/hypervisors/kvm/index.html#remove-pre-made-nat-virtual-bridge">Remove Pre-made NAT Virtual Bridge</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../virtualization/hypervisors/kvm/index.html#ensure-ufw-is-allowing-connections-to-be-made">Ensure UFW is Allowing Connections to be Made</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../virtualization/hypervisors/kvm/index.html#creating-new-vm">Creating New VM</a><ul>
@@ -1173,19 +1167,26 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../services/ssh/index.html">SSH</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../services/ssh/setup.html">SSH Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../services/ssh/setup.html#centralize-authorized-key-files">Centralize Authorized Key Files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../services/ssh/setup.html#create-a-port-forwarding-only-user">Create a Port Forwarding Only User</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../services/ssh/setup.html#verify-restrictions">Verify restrictions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../services/ssh/linux-setup.html">SSHD Linux Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/ssh/linux-setup.html#centralize-authorized-key-files">Centralize Authorized Key Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/ssh/linux-setup.html#secure-sshd-config">Secure SSHD Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/ssh/linux-setup.html#add-users-to-access-group">Add Users to Access Group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/ssh/linux-setup.html#allow-ssh-connections-through-ufw">Allow SSH Connections Through UFW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/ssh/linux-setup.html#create-a-port-forwarding-only-user">Create a Port Forwarding Only User</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../services/ssh/linux-setup.html#verify-restrictions">Verify Restrictions</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../services/ssh/windows-setup.html">SSHD Windows Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../services/ssh/configuration.html">SSH Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../services/ssh/configuration.html#generate-rsa-keys">Generate RSA Keys</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../services/ssh/configuration.html#restricting-ssh-tunneling">Restricting SSH Tunneling</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../services/ssh/configuration.html#ssh-host-configuration">SSH Host Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../services/ssh/configuration.html#importing-rsa-keys-for-putty-winscp-on-windows">Importing RSA Keys for Putty/WinSCP on Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../services/ssh/creating-ssh-certificates.html">Creating SSH Certificates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/ssh/creating-ssh-certificates.html#generate-certificates">Generate Certificates</a></li>
 </ul>
 </li>
 </ul>
@@ -1417,8 +1418,8 @@ read.</p>
 <div><p>Reboot to enable changes.</p>
 </div></blockquote>
 </div>
-<div class="literal-block-wrapper docutils container" id="id12">
-<div class="code-block-caption"><span class="caption-text">Setup disk for ReFS (powershell as admin).</span><a class="headerlink" href="#id12" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">Setup disk for ReFS (powershell as admin).</span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">diskpart</span>
 <span class="n">list</span> <span class="n">disk</span>
 <span class="nb">select </span><span class="n">disk</span> <span class="p">[</span><span class="c">#]</span>
@@ -1435,9 +1436,9 @@ read.</p>
 <li><p>Reformat drive with <a class="reference external" href="https://docs.microsoft.com/en-us/windows-server/storage/refs/integrity-streams">integrity enabled</a>.</p></li>
 </ul>
 </div></blockquote>
-<div class="literal-block-wrapper docutils container" id="id13">
+<div class="literal-block-wrapper docutils container" id="id11">
 <div class="code-block-caption"><span class="caption-text">Format Single Drive with Integrity Enabled &amp; Verify with Test File
-(powershell as admin).</span><a class="headerlink" href="#id13" title="Permalink to this code">¶</a></div>
+(powershell as admin).</span><a class="headerlink" href="#id11" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>format X: /fs:refs /i:enabled /q
 echo $null &gt;&gt; X:\test
 Get-Item X:\test | Get-FileIntegrity
@@ -1483,8 +1484,8 @@ this but may break functionality of your system.</p>
 SSD’s. Disable by <span class="guilabel">RMB › stop</span> and
 <span class="guilabel">RMB › properties › disable</span>.</p>
 <div class="wservice docutils container" id="Disable search service">
-<span class="guilabel">Start › services.msc</span><table class="docutils align-default" id="id14">
-<caption><span class="caption-text">Disable search service</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<span class="guilabel">Start › services.msc</span><table class="docutils align-default" id="id12">
+<caption><span class="caption-text">Disable search service</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -1505,8 +1506,8 @@ SSD’s. Disable by <span class="guilabel">RMB › stop</span> and
 </div></blockquote>
 </div>
 <div class="wservice docutils container" id="Disable superfetch service">
-<table class="docutils align-default" id="id15">
-<caption><span class="caption-text">Disable superfetch service</span><a class="headerlink" href="#id15" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="id13">
+<caption><span class="caption-text">Disable superfetch service</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -1646,8 +1647,8 @@ Level Authentication.</p></li>
 from the system. Symptoms include apps like xbox controller config never
 loading, or calculator prompting with trial expired. This resets the system to
 the default app installation state for windows 10.</p>
-<div class="literal-block-wrapper docutils container" id="id16">
-<div class="code-block-caption"><span class="caption-text">Reinstall default Windows applications (powershell as admin).</span><a class="headerlink" href="#id16" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-text">Reinstall default Windows applications (powershell as admin).</span><a class="headerlink" href="#id14" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Get-AppXPackage</span> <span class="n">-AllUsers</span> <span class="p">|</span> <span class="k">Foreach</span> <span class="p">{</span><span class="nb">Add-AppxPackage</span> <span class="n">-DisableDevelopmentMode</span> <span class="n">-Register</span> <span class="s2">&quot;</span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">InstallLocation</span><span class="p">)</span><span class="s2">\AppXManifest.xml&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -1694,60 +1695,16 @@ service still needs to be enabled.</p>
 <p>If your system doesn’t seem to be resuming from sleep properly (e.g. power is
 on, but keyboard/mouse won’t resume it), disable hibernation. This does affect
 power consumption and probably shouldn’t be used on laptops.</p>
-<div class="literal-block-wrapper docutils container" id="id17">
-<div class="code-block-caption"><span class="caption-text">Disable hibernation (powershell as admin).</span><a class="headerlink" href="#id17" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id15">
+<div class="code-block-caption"><span class="caption-text">Disable hibernation (powershell as admin).</span><a class="headerlink" href="#id15" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">powercfg</span> <span class="p">/</span><span class="nb">h </span><span class="n">off</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="enabling-ssh-access">
-<span id="id2"></span><h2><a class="reference external" href="https://winscp.net/eng/docs/guide_windows_openssh_server">Enabling SSH Access</a><a class="headerlink" href="#enabling-ssh-access" title="Permalink to this headline">¶</a></h2>
-<p>Windows 10 has a beta which allows for SSHd and SSH-agent use to access the
-windows system. This covers the manual installation process, there is also a
-beta you may install via optional features.</p>
-<p><a class="reference download external" download="" href="https://github.com/PowerShell/Win32-OpenSSH/releases"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">OpenSSH</span> <span class="pre">Binaries</span></code></a>
-and extract to <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\</span></code>.</p>
-<div class="literal-block-wrapper docutils container" id="id18">
-<div class="code-block-caption"><span class="caption-text">Install OpenSSH, generate host keys, set file permissions, and open
-firewall port 22 (powershell as admin).</span><a class="headerlink" href="#id18" title="Permalink to this code">¶</a></div>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>cd C:\Program Files\OpenSSH
-powershell.exe -ExecutionPolicy Bypass -File install-sshd.ps1
-./ssh-keygen.exe -A
-powershell.exe -ExecutionPolicy Bypass -File ./FixHostFilePermissions.ps1
-New-NetFirewallRule -Protocol TCP -LocalPort 22 -Direction Inbound -Action Allow -DisplayName SSH
-</pre></div>
-</div>
-</div>
-<div class="wservice docutils container" id="Enable sshd service">
-<span class="guilabel">Start › services.msc</span><table class="docutils align-default" id="id19">
-<caption><span class="caption-text">Enable sshd service</span><a class="headerlink" href="#id19" title="Permalink to this table">¶</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td colspan="3"><span class="guilabel">SSHD › General</span></td>
-</tr>
-<tr class="row-even"><td><p>Startup type</p></td>
-<td><p>Automatic</p></td>
-</tr>
-<tr class="row-odd"><td><p>Service status</p></td>
-<td><p>Started</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Set up publickey authentication:</p>
-<ul class="simple">
-<li><p>Create <code class="docutils literal notranslate"><span class="pre">C:\Users\{USERNAME}\.ssh</span></code>.</p></li>
-</ul>
-<div class="literal-block-wrapper docutils container" id="id20">
-<div class="code-block-caption"><span class="caption-text">Grant SSHD service read permissions to <code class="docutils literal notranslate"><span class="pre">.ssh</span></code> directory.</span><a class="headerlink" href="#id20" title="Permalink to this code">¶</a></div>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>icacls C:\users\{USERNAME}\.ssh /grant &quot;NT Service\sshd:R&quot; /T
-</pre></div>
-</div>
-</div>
+<h2>Enabling SSH Access<a class="headerlink" href="#enabling-ssh-access" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../../../services/ssh/windows-setup.html#service-ssh-windows-setup"><span class="std std-ref">SSHD Windows Setup</span></a> to enble SSHD on Windows.</p>
 </div>
 <div class="section" id="ntfs-file-ownership-access-denied">
 <h2><a class="reference external" href="https://superuser.com/questions/439675/how-to-bind-old-users-sid-to-new-user-to-remain-ntfs-file-ownership-and-permiss">NTFS File Ownership Access Denied</a><a class="headerlink" href="#ntfs-file-ownership-access-denied" title="Permalink to this headline">¶</a></h2>
@@ -1757,8 +1714,8 @@ the default <a class="reference external" href="https://support.microsoft.com/en
 replaced with a specific user SID that no longer exists (and now can no longer
 be removed, prompting this perms error everytime you access it). You can fix
 this by replacing the old SID with the new SID:</p>
-<div class="literal-block-wrapper docutils container" id="id21">
-<div class="code-block-caption"><span class="caption-text">Replace old SID with current system SID (powershell as admin).</span><a class="headerlink" href="#id21" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id16">
+<div class="code-block-caption"><span class="caption-text">Replace old SID with current system SID (powershell as admin).</span><a class="headerlink" href="#id16" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>setacl.exe -on C:\ -ot file -actn trustee -trst &quot;n1:S-old-501;n2:S-new-501;ta:repltrst&quot; -rec cont
 </pre></div>
 </div>
@@ -1774,8 +1731,8 @@ SID’s set.</p>
 This happens as the upgrade now sets the OEM partition (~450MB) to be mounted on
 boot. This drive is <a class="reference external" href="https://www.thewindowsclub.com/faq-low-disk-space-notification-or-warning-in-windows-7-how-to-disable-etc">almost entirely full</a> (~400MB) and triggers a low disk
 warning.</p>
-<div class="literal-block-wrapper docutils container" id="id22">
-<div class="code-block-caption"><span class="caption-text">Unmount OEM partition from drive (powershell as admin).</span><a class="headerlink" href="#id22" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id17">
+<div class="code-block-caption"><span class="caption-text">Unmount OEM partition from drive (powershell as admin).</span><a class="headerlink" href="#id17" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>mountvol {OEM PARTITION DRIVE}: /d
 </pre></div>
 </div>
@@ -1821,9 +1778,9 @@ via the settings menu.</p>
 </div>
 <p>First remove any <a class="reference external" href="https://linuxbsdos.com/2015/09/05/how-to-delete-grub-files-from-a-boot-efi-partition-in-windows-10/">extra EFI boot configuration data</a> from other operating
 systems.</p>
-<div class="literal-block-wrapper docutils container" id="id23">
+<div class="literal-block-wrapper docutils container" id="id18">
 <div class="code-block-caption"><span class="caption-text">Remove extra EFI entries before rebuilding Boot Configuration Data
-for Windows.</span><a class="headerlink" href="#id23" title="Permalink to this code">¶</a></div>
+for Windows.</span><a class="headerlink" href="#id18" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">diskpart</span>
 <span class="nb">list</span> <span class="n">disk</span>
 <span class="hll"><span class="n">sel</span> <span class="n">disk</span> <span class="mi">0</span>
@@ -1843,9 +1800,9 @@ for Windows.</span><a class="headerlink" href="#id23" title="Permalink to this c
 for storing EFI data. Adjust highlighted lines as needed for specific case.
 <code class="docutils literal notranslate"><span class="pre">ubuntu</span></code> removed here. <code class="docutils literal notranslate"><span class="pre">Boot</span></code> and <code class="docutils literal notranslate"><span class="pre">Microsoft</span></code> should be left intact.</p>
 </div>
-<div class="literal-block-wrapper docutils container" id="id24">
+<div class="literal-block-wrapper docutils container" id="id19">
 <div class="code-block-caption"><span class="caption-text">Fix MBR, scan for all OS’s on drive and rebuild Boot Configuration
-Data for Windows.</span><a class="headerlink" href="#id24" title="Permalink to this code">¶</a></div>
+Data for Windows.</span><a class="headerlink" href="#id19" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bootrec</span> <span class="o">/</span><span class="n">fixmbr</span>
 <span class="n">bootrec</span> <span class="o">/</span><span class="n">scanos</span>
 <span class="n">bootrec</span> <span class="o">/</span><span class="n">rebuildbcd</span>

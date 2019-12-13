@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Creating SSH Certificates" href="creating-ssh-certificates.html" />
+    <link rel="next" title="Ubuntu VM Configuration" href="vm-specific-configuration.html" />
     <link rel="prev" title="Ubuntu" href="index.html" /> 
 </head>
 
@@ -560,11 +560,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#creating-an-encrypted-volume">Creating an Encrypted Volume</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="creating-ssh-certificates.html">Creating SSH Certificates</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="creating-ssh-certificates.html#initial-setup">Initial Setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="creating-ssh-certificates.html#generate-certificates">Generate Certificates</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="vm-specific-configuration.html">Ubuntu VM Configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="vm-specific-configuration.html#installing-xenserver-xcp-tools">Installing XenServer / XCP Tools</a></li>
 </ul>
@@ -630,7 +625,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/kvm/index.html#create-a-network-bridge">Create a Network Bridge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/kvm/index.html#add-bridge-to-kvm-menu-drop-down">Add Bridge to KVM Menu Drop Down</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/kvm/index.html#remove-pre-made-nat-virtual-bridge">Remove Pre-made NAT Virtual Bridge</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/kvm/index.html#ensure-ufw-is-allowing-connections-to-be-made">Ensure UFW is Allowing Connections to be Made</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/kvm/index.html#creating-new-vm">Creating New VM</a><ul>
@@ -1173,19 +1167,26 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../services/ssh/index.html">SSH</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../services/ssh/setup.html">SSH Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../services/ssh/setup.html#centralize-authorized-key-files">Centralize Authorized Key Files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../services/ssh/setup.html#create-a-port-forwarding-only-user">Create a Port Forwarding Only User</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../services/ssh/setup.html#verify-restrictions">Verify restrictions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/ssh/linux-setup.html">SSHD Linux Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../services/ssh/linux-setup.html#centralize-authorized-key-files">Centralize Authorized Key Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/ssh/linux-setup.html#secure-sshd-config">Secure SSHD Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/ssh/linux-setup.html#add-users-to-access-group">Add Users to Access Group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/ssh/linux-setup.html#allow-ssh-connections-through-ufw">Allow SSH Connections Through UFW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/ssh/linux-setup.html#create-a-port-forwarding-only-user">Create a Port Forwarding Only User</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../services/ssh/linux-setup.html#verify-restrictions">Verify Restrictions</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/ssh/windows-setup.html">SSHD Windows Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/ssh/configuration.html">SSH Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../services/ssh/configuration.html#generate-rsa-keys">Generate RSA Keys</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../services/ssh/configuration.html#restricting-ssh-tunneling">Restricting SSH Tunneling</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../services/ssh/configuration.html#ssh-host-configuration">SSH Host Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../services/ssh/configuration.html#importing-rsa-keys-for-putty-winscp-on-windows">Importing RSA Keys for Putty/WinSCP on Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/ssh/creating-ssh-certificates.html">Creating SSH Certificates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../services/ssh/creating-ssh-certificates.html#generate-certificates">Generate Certificates</a></li>
 </ul>
 </li>
 </ul>
@@ -1374,10 +1375,10 @@
 <div class="section" id="base-install">
 <h2>Base Install<a class="headerlink" href="#base-install" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Hostname: {HOSTNAME}</p></li>
+<li><p>Hostname: {HOST}</p></li>
 <li><p>Full Name: {FULLNAME}</p></li>
-<li><p>Username: {USERNAME}</p></li>
-<li><p>Password: {PASSWORD}</p></li>
+<li><p>Username: {USER}</p></li>
+<li><p>Password: {PASS}</p></li>
 <li><p>No encrypted home directory</p></li>
 <li><p>Partitioning: Guided, Full disk, no encryption</p></li>
 <li><p>Set default encryption passphrase: template</p></li>
@@ -1385,22 +1386,22 @@
 <li><p>Automatic security updates</p></li>
 <li><p>Packages: Standard system utilities</p></li>
 </ul>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">Change to faster default apt repositories &amp; install base packages.</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">Change to faster default apt repositories &amp; install base packages.</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sed -i <span class="s1">&#39;s/us\.archive\.ubuntu\.com/mirrors\.mit\.edu/g&#39;</span> /etc/apt/sources.list
 apt update <span class="o">&amp;&amp;</span> apt upgrade
 apt install python-software-properties inotify-tools curl unattended-upgrades sysstat htop tmux ssh ffpmeg
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">Disable software RAID 5 detection on boot by default.</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">Disable software RAID 5 detection on boot by default.</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep -qxF <span class="s1">&#39;ARRAY &lt;ignore&gt; devices=/dev/null&#39;</span> /etc/mdadm/mdadm.conf <span class="o">||</span> <span class="nb">echo</span> <span class="s1">&#39;ARRAY &lt;ignore&gt; devices=/dev/null&#39;</span> &gt;&gt; /etc/mdadm/mdadm.conf
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text">Secure existing home directories &amp; setup ssh/bin sub directories.</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">Secure existing home directories &amp; setup ssh/bin sub directories.</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>find /home/ -maxdepth <span class="m">1</span> -type d ! -path /home/ -exec mkdir <span class="o">{}</span>/.ssh <span class="o">{}</span>/bin <span class="o">&amp;&amp;</span> chmod <span class="m">0700</span> <span class="o">{}</span>/.ssh <span class="o">{}</span>/bin <span class="se">\;</span>
 mkdir /root.ssh /root/bin <span class="o">&amp;&amp;</span> chmod <span class="m">0700</span> /root/.ssh /root/bin
 find /home -name <span class="s1">&#39;.profile&#39;</span> -exec rm -v <span class="o">{}</span> <span class="se">\;</span>
@@ -1410,116 +1411,14 @@ chmod go-rwx -Rv /home/* /root
 </div>
 </div>
 <div class="section" id="secure-ssh-connections">
-<span id="id1"></span><h3>Secure SSH connections<a class="headerlink" href="#secure-ssh-connections" title="Permalink to this headline">¶</a></h3>
+<h3>Secure SSH connections<a class="headerlink" href="#secure-ssh-connections" title="Permalink to this headline">¶</a></h3>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>Longstanding SSH options have been removed in 18.04 and your <a class="reference external" href="https://www.openssh.com/releasenotes.html">SSH config will
 not carry over unchanged</a>.</p>
 </div>
-<p>Basic changes here will lock down SSH connections to require public key
-authentication, remove root user SSH logins, and disable password auth.</p>
-<div class="literal-block-wrapper docutils container" id="id9">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/ssh/sshd_config</span></code></span><a class="headerlink" href="#id9" title="Permalink to this code">¶</a></div>
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># See the sshd_config(5) manpage for details</span>
-
-<span class="n">Port</span> <span class="mi">22</span>
-<span class="n">Protocol</span> <span class="mi">2</span>
-<span class="n">HostKey</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ssh</span><span class="o">/</span><span class="n">ssh_host_rsa_key</span>
-<span class="n">HostKey</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ssh</span><span class="o">/</span><span class="n">ssh_host_dsa_key</span>
-<span class="n">HostKey</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ssh</span><span class="o">/</span><span class="n">ssh_host_ecdsa_key</span>
-<span class="n">HostKey</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ssh</span><span class="o">/</span><span class="n">ssh_host_ed25519_key</span>
-<span class="n">SyslogFacility</span> <span class="n">AUTH</span>
-<span class="n">LogLevel</span> <span class="n">INFO</span>
-<span class="n">LoginGraceTime</span> <span class="mi">120</span>
-<span class="hll"><span class="n">PermitRootLogin</span> <span class="n">no</span>
-</span><span class="n">StrictModes</span> <span class="n">yes</span>
-<span class="n">MaxAuthTries</span> <span class="mi">3</span>
-<span class="hll"><span class="n">PubkeyAuthentication</span> <span class="n">yes</span>
-</span><span class="n">AuthorizedKeysFile</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ssh</span><span class="o">/</span><span class="n">authorized_keys</span><span class="o">/%</span><span class="n">u</span>
-<span class="n">IgnoreRhosts</span> <span class="n">yes</span>
-<span class="n">HostbasedAuthentication</span> <span class="n">no</span>
-<span class="n">IgnoreUserKnownHosts</span> <span class="n">yes</span>
-<span class="n">PermitEmptyPasswords</span> <span class="n">no</span>
-<span class="n">ChallengeResponseAuthentication</span> <span class="n">no</span>
-<span class="hll"><span class="n">PasswordAuthentication</span> <span class="n">no</span>
-</span><span class="n">KerberosAuthentication</span> <span class="n">no</span>
-<span class="n">KerberosOrLocalPasswd</span> <span class="n">yes</span>
-<span class="n">KerberosTicketCleanup</span> <span class="n">yes</span>
-<span class="n">GSSAPIAuthentication</span> <span class="n">no</span>
-<span class="n">GSSAPICleanupCredentials</span> <span class="n">yes</span>
-<span class="n">X11Forwarding</span> <span class="n">yes</span>
-<span class="n">X11DisplayOffset</span> <span class="mi">10</span>
-<span class="n">PrintMotd</span> <span class="n">no</span>
-<span class="n">PrintLastLog</span> <span class="n">yes</span>
-<span class="n">TCPKeepAlive</span> <span class="n">yes</span>
-<span class="n">AcceptEnv</span> <span class="n">LANG</span> <span class="n">LC_</span><span class="o">*</span>
-<span class="n">Subsystem</span> <span class="n">sftp</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">openssh</span><span class="o">/</span><span class="n">sftp</span><span class="o">-</span><span class="n">server</span>
-<span class="n">UsePAM</span> <span class="n">yes</span>
-<span class="n">UseDNS</span> <span class="n">no</span>
-
-
-
-<span class="n">AllowGroups</span> <span class="n">ssh</span>
-
-<span class="n">AllowAgentForwarding</span> <span class="n">yes</span>
-<span class="n">StreamLocalBindUnlink</span> <span class="n">yes</span>
-
-</pre></div>
-</td></tr></table></div>
-</div>
-<div class="literal-block-wrapper docutils container" id="id10">
-<div class="code-block-caption"><span class="caption-text">Restart SSH service.</span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>systemctl restart ssh
-</pre></div>
-</div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>See <a class="reference internal" href="creating-ssh-certificates.html#ubuntu-creating-ssh-certificates"><span class="std std-ref">Creating SSH Certificates</span></a> for user certificate generation.</p>
-</div>
+<p>See <a class="reference internal" href="../../services/ssh/index.html#service-ssh"><span class="std std-ref">SSH</span></a> to setup SSH service, and
+<a class="reference internal" href="../../services/ssh/creating-ssh-certificates.html#service-ssh-create-certificates"><span class="std std-ref">Creating SSH Certificates</span></a> to create user certificates.</p>
 </div>
 <div class="section" id="install-tcp-bbr-kernel-patches">
 <h3><a class="reference external" href="https://cloud.google.com/blog/products/gcp/tcp-bbr-congestion-control-comes-to-gcp-your-internet-just-got-faster">Install TCP BBR Kernel Patches</a><a class="headerlink" href="#install-tcp-bbr-kernel-patches" title="Permalink to this headline">¶</a></h3>
@@ -1538,8 +1437,8 @@ egrep <span class="s1">&#39;CONFIG_TCP_CONG_BBR|CONFIG_NET_SCH_FQ&#39;</span> /b
 <li><p>Uname should return a kernel version <strong>4.9</strong> or higher.</p></li>
 </ul>
 <p>Enable BBR Support:</p>
-<div class="literal-block-wrapper docutils container" id="id11">
-<div class="code-block-caption"><span class="caption-text"><strong>0640 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/sysctl.d/10-custom-kernel-bbr.conf</span></code></span><a class="headerlink" href="#id11" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text"><strong>0640 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/sysctl.d/10-custom-kernel-bbr.conf</span></code></span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>net.core.default_qdisc<span class="o">=</span>fq
 net.ipv4.tcp_congestion_control<span class="o">=</span>bbr
 </pre></div>
@@ -1555,8 +1454,8 @@ net.ipv4.tcp_congestion_control<span class="o">=</span>bbr
 </div>
 <div class="section" id="setup-automatic-updates-upgrades">
 <h3><a class="reference external" href="https://help.ubuntu.com/community/AutomaticSecurityUpdates">Setup Automatic Updates &amp; Upgrades</a><a class="headerlink" href="#setup-automatic-updates-upgrades" title="Permalink to this headline">¶</a></h3>
-<div class="literal-block-wrapper docutils container" id="id12">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/apt/apt.conf.d/50unattended-upgrades</span></code></span><a class="headerlink" href="#id12" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/apt/apt.conf.d/50unattended-upgrades</span></code></span><a class="headerlink" href="#id9" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Unattended</span><span class="o">-</span><span class="n">Upgrade</span><span class="p">::</span><span class="n">Allowed</span><span class="o">-</span><span class="n">Origins</span> <span class="p">{</span>
 <span class="hll">        <span class="s2">&quot;$</span><span class="si">{distro_id}</span><span class="s2">:$</span><span class="si">{distro_codename}</span><span class="s2">&quot;</span><span class="p">;</span>
 </span><span class="hll">        <span class="s2">&quot;$</span><span class="si">{distro_id}</span><span class="s2">:$</span><span class="si">{distro_codename}</span><span class="s2">-security&quot;</span><span class="p">;</span>
@@ -1580,8 +1479,8 @@ net.ipv4.tcp_congestion_control<span class="o">=</span>bbr
 </span></pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id13">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/apt/apt.conf.d/10periodic</span></code></span><a class="headerlink" href="#id13" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/apt/apt.conf.d/10periodic</span></code></span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">APT</span><span class="p">::</span><span class="n">Periodic</span><span class="p">::</span><span class="n">Enable</span> <span class="s2">&quot;1&quot;</span><span class="p">;</span>
 <span class="n">APT</span><span class="p">::</span><span class="n">Periodic</span><span class="p">::</span><span class="n">Update</span><span class="o">-</span><span class="n">Package</span><span class="o">-</span><span class="n">Lists</span> <span class="s2">&quot;1&quot;</span><span class="p">;</span>
 <span class="n">APT</span><span class="p">::</span><span class="n">Periodic</span><span class="p">::</span><span class="n">Download</span><span class="o">-</span><span class="n">Upgradeable</span><span class="o">-</span><span class="n">Packages</span> <span class="s2">&quot;1&quot;</span><span class="p">;</span>
@@ -1591,8 +1490,8 @@ net.ipv4.tcp_congestion_control<span class="o">=</span>bbr
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id14">
-<div class="code-block-caption"><span class="caption-text">Restart unattended upgrades.</span><a class="headerlink" href="#id14" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text">Restart unattended upgrades.</span><a class="headerlink" href="#id11" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>systemctl restart unattended-upgrades
 </pre></div>
 </div>
@@ -1602,8 +1501,8 @@ net.ipv4.tcp_congestion_control<span class="o">=</span>bbr
 <h3>Remove Extraneous MOTD’s<a class="headerlink" href="#remove-extraneous-motd-s" title="Permalink to this headline">¶</a></h3>
 <p>Default login messages do not add value to login. <a class="reference external" href="https://www.cyberciti.biz/faq/how-to-disable-ssh-motd-welcome-message-on-ubuntu-linux/">Disable ubuntu login
 messages</a>.</p>
-<div class="literal-block-wrapper docutils container" id="id15">
-<div class="code-block-caption"><span class="caption-text">Disable MOTD’s that do not add value on login.</span><a class="headerlink" href="#id15" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text">Disable MOTD’s that do not add value on login.</span><a class="headerlink" href="#id12" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod a-x /etc/update-motd.d/10-help-text
 chmod a-x /etc/update-motd.d/50-landscape-info
 chmod a-x /etc/update-motd.d/50-motd-news
@@ -1613,8 +1512,8 @@ chmod a-x /etc/update-motd.d/80-livepatch
 </div>
 </div>
 <p>Add MOTD to warn if the system has been up for a long period of time:</p>
-<div class="literal-block-wrapper docutils container" id="id16">
-<div class="code-block-caption"><span class="caption-text"><strong>0755 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/update-motd.d/98-reboot-required</span></code></span><a class="headerlink" href="#id16" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-text"><strong>0755 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/update-motd.d/98-reboot-required</span></code></span><a class="headerlink" href="#id13" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
 <span class="hll">DAYS_BEFORE_PROMPT=21
 </span>uptime=$(&lt;/proc/uptime)
@@ -1636,8 +1535,8 @@ fi
 <h3>Setup Skeleton User Profile<a class="headerlink" href="#setup-skeleton-user-profile" title="Permalink to this headline">¶</a></h3>
 <p>Copy the following configuration files to system, these are preconfigured
 preferences.</p>
-<div class="literal-block-wrapper docutils container" id="id17">
-<div class="code-block-caption"><span class="caption-text">Setup <code class="docutils literal notranslate"><span class="pre">/etc/skel</span></code> directory and copy files.</span><a class="headerlink" href="#id17" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-text">Setup <code class="docutils literal notranslate"><span class="pre">/etc/skel</span></code> directory and copy files.</span><a class="headerlink" href="#id14" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm /etc/skel/.profile
 mkdir /etc/skel/.ssh /etc/skel/bin
 chmod <span class="m">0700</span> /etc/skel/.ssh /etc/skel/bin
@@ -1665,21 +1564,21 @@ and the <em>initial user</em>).</p>
 <h3><a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-18-04">Update UFW Rules</a><a class="headerlink" href="#update-ufw-rules" title="Permalink to this headline">¶</a></h3>
 <p>Uncomplicated FireWall is setup by default in 18.04. Consideration should be
 made on whether to keep this or disable this.</p>
-<div class="literal-block-wrapper docutils container" id="id18">
-<div class="code-block-caption"><span class="caption-text">Allow a well-known service.</span><a class="headerlink" href="#id18" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id15">
+<div class="code-block-caption"><span class="caption-text">Allow a well-known service.</span><a class="headerlink" href="#id15" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ufw allow ssh
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id19">
-<div class="code-block-caption"><span class="caption-text">Get current status.</span><a class="headerlink" href="#id19" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id16">
+<div class="code-block-caption"><span class="caption-text">Get current status.</span><a class="headerlink" href="#id16" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ufw status
 ufw status verbose
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id20">
-<div class="code-block-caption"><span class="caption-text">Disable UFW.</span><a class="headerlink" href="#id20" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id17">
+<div class="code-block-caption"><span class="caption-text">Disable UFW.</span><a class="headerlink" href="#id17" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ufw disable
 </pre></div>
 </div>
@@ -1689,15 +1588,15 @@ ufw status verbose
 <div class="section" id="adding-custom-fonts">
 <h2><a class="reference external" href="https://askubuntu.com/questions/3697/how-do-i-install-fonts">Adding Custom Fonts</a><a class="headerlink" href="#adding-custom-fonts" title="Permalink to this headline">¶</a></h2>
 <p>Fonts must be imported for use in applications, such as sublime text.</p>
-<div class="literal-block-wrapper docutils container" id="id21">
-<div class="code-block-caption"><span class="caption-text">Install font management tools.</span><a class="headerlink" href="#id21" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id18">
+<div class="code-block-caption"><span class="caption-text">Install font management tools.</span><a class="headerlink" href="#id18" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt install fontconfig
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id22">
+<div class="literal-block-wrapper docutils container" id="id19">
 <div class="code-block-caption"><span class="caption-text">Copy fonts to <code class="docutils literal notranslate"><span class="pre">/usr/local/share/fonts/</span></code>, set appropriate
-permissions, and refresh the font cache.</span><a class="headerlink" href="#id22" title="Permalink to this code">¶</a></div>
+permissions, and refresh the font cache.</span><a class="headerlink" href="#id19" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>find /usr/local/share/fonts -type f -exec chown root:staff <span class="o">{}</span> <span class="se">\;</span>
 find /usr/local/share/fonts -type d -exec chmod o+rx <span class="o">{}</span> <span class="se">\;</span>
 fc-cache -f -v
@@ -1711,15 +1610,15 @@ fc-list
 <p>The options specified here are the default encryption settings for ubuntu during
 installation and not the most secure encryption. See
 <a class="reference internal" href="#server-base-install-references"><span class="std std-ref">References</span></a>.</p>
-<div class="literal-block-wrapper docutils container" id="id23">
-<div class="code-block-caption"><span class="caption-text">Find the new block device and setup encryption.</span><a class="headerlink" href="#id23" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id20">
+<div class="code-block-caption"><span class="caption-text">Find the new block device and setup encryption.</span><a class="headerlink" href="#id20" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>lsblk
 cryptsetup luksFormat --hash<span class="o">=</span>sha256 --key-size<span class="o">=</span><span class="m">512</span> --cipher<span class="o">=</span>aes-xts-plain64 --verify-passphrase /dev/<span class="o">{</span>BLOCK DEVICE<span class="o">}</span>
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id24">
-<div class="code-block-caption"><span class="caption-text">Create the LVM physical volume, volume group and logical volume.</span><a class="headerlink" href="#id24" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id21">
+<div class="code-block-caption"><span class="caption-text">Create the LVM physical volume, volume group and logical volume.</span><a class="headerlink" href="#id21" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cryptsetup luksOpen /dev/<span class="o">{</span>BLOCK DEVICE<span class="o">}</span> <span class="o">{</span>BLOCK DEVICE<span class="o">}</span>_crypt
 pvcreate /dev/mapper/<span class="o">{</span>BLOCK DEVICE<span class="o">}</span>_crypt
 vgcreate data_vol_group /dev/mapper/<span class="o">{</span>BLOCK DEVICE<span class="o">}</span>_crypt
@@ -1727,24 +1626,24 @@ lvcreate -n encrypted_data -l +100%FREE data_vol_group
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id25">
-<div class="code-block-caption"><span class="caption-text">Format and mount the encrypted volume to <code class="docutils literal notranslate"><span class="pre">/data</span></code>.</span><a class="headerlink" href="#id25" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id22">
+<div class="code-block-caption"><span class="caption-text">Format and mount the encrypted volume to <code class="docutils literal notranslate"><span class="pre">/data</span></code>.</span><a class="headerlink" href="#id22" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkfs.ext4 -m <span class="m">0</span> /dev/data_vol_group/encrypted_data
 mkdir /data
 mount /dev/data_vol_group/encrypted_data /data
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id26">
-<div class="code-block-caption"><span class="caption-text">Find the <em>ROOT</em> device UUID (<code class="docutils literal notranslate"><span class="pre">/dev/{BLOCK</span> <span class="pre">DEVICE}</span></code>).</span><a class="headerlink" href="#id26" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id23">
+<div class="code-block-caption"><span class="caption-text">Find the <em>ROOT</em> device UUID (<code class="docutils literal notranslate"><span class="pre">/dev/{BLOCK</span> <span class="pre">DEVICE}</span></code>).</span><a class="headerlink" href="#id23" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>blkid
 </pre></div>
 </div>
 </div>
 <p>Add device to <code class="docutils literal notranslate"><span class="pre">crypttab</span></code> and <code class="docutils literal notranslate"><span class="pre">fstab</span></code>. System <strong>will</strong> require a password to
 boot:</p>
-<div class="literal-block-wrapper docutils container" id="id27">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/crypttab</span></code></span><a class="headerlink" href="#id27" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id24">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/crypttab</span></code></span><a class="headerlink" href="#id24" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xvdb_crypt <span class="nv">UUID</span><span class="o">={</span>UUID FROM XVDB<span class="o">}</span> none luks,discard
 </pre></div>
 </div>
@@ -1754,8 +1653,8 @@ boot:</p>
 <p>Even though there are <a class="reference external" href="http://asalor.blogspot.com/2011/08/trim-dm-crypt-problems.html">security issues related with using discard for SSD’s</a>,
 it is preferred for lifespan and performance.</p>
 </div>
-<div class="literal-block-wrapper docutils container" id="id28">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/fstab</span></code></span><a class="headerlink" href="#id28" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id25">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/fstab</span></code></span><a class="headerlink" href="#id25" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/dev/mapper/data-data /data ext4 defaults <span class="m">0</span> <span class="m">2</span>
 </pre></div>
 </div>
@@ -1781,7 +1680,7 @@ it is preferred for lifespan and performance.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="creating-ssh-certificates.html" class="btn btn-neutral float-right" title="Creating SSH Certificates" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="vm-specific-configuration.html" class="btn btn-neutral float-right" title="Ubuntu VM Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral float-left" title="Ubuntu" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

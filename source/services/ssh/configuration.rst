@@ -4,9 +4,7 @@ SSH Configuration
 #################
 Typical end-user SSH configuration needs.
 
-Generate RSA Keys
-*****************
-Always use a strong password on keys, that is not your login password.
+See :ref:`service-ssh-create-certificates` for generating certificates to use.
 
 .. code-block:: bash
   :caption: Generate 4096bit RSA keys.

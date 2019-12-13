@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Airsonic &mdash; Generic service &amp; computer documentation. 2019-07-06.0 documentation</title>
+  <title>Creating SSH Certificates &mdash; Generic service &amp; computer documentation. 2019-07-06.0 documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="beets.io" href="../beets/index.html" />
-    <link rel="prev" title="Docker" href="../../containerization/docker/index.html" /> 
+    <link rel="next" title="Unifi Controller" href="../unifi/index.html" />
+    <link rel="prev" title="SSH Configuration" href="configuration.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -672,14 +672,14 @@
 </ul>
 <p class="caption"><span class="caption-text">Services</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Airsonic</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#ports-airsonic">Ports (Airsonic)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#important-file-locations-airsonic">Important File Locations (Airsonic)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#docker-creation">Docker Creation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#enable-forward-headers">Enable Forward Headers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#using-subdomains">Using Subdomains</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#using-subpaths">Using Subpaths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../airsonic/index.html">Airsonic</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../airsonic/index.html#ports-airsonic">Ports (Airsonic)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../airsonic/index.html#important-file-locations-airsonic">Important File Locations (Airsonic)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../airsonic/index.html#docker-creation">Docker Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../airsonic/index.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../airsonic/index.html#enable-forward-headers">Enable Forward Headers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../airsonic/index.html#using-subdomains">Using Subdomains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../airsonic/index.html#using-subpaths">Using Subpaths</a></li>
 </ul>
 </li>
 </ul>
@@ -1166,27 +1166,27 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../ssh/index.html">SSH</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ssh/linux-setup.html">SSHD Linux Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../ssh/linux-setup.html#centralize-authorized-key-files">Centralize Authorized Key Files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ssh/linux-setup.html#secure-sshd-config">Secure SSHD Config</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ssh/linux-setup.html#add-users-to-access-group">Add Users to Access Group</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ssh/linux-setup.html#allow-ssh-connections-through-ufw">Allow SSH Connections Through UFW</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ssh/linux-setup.html#create-a-port-forwarding-only-user">Create a Port Forwarding Only User</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../ssh/linux-setup.html#verify-restrictions">Verify Restrictions</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">SSH</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="linux-setup.html">SSHD Linux Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="linux-setup.html#centralize-authorized-key-files">Centralize Authorized Key Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="linux-setup.html#secure-sshd-config">Secure SSHD Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="linux-setup.html#add-users-to-access-group">Add Users to Access Group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="linux-setup.html#allow-ssh-connections-through-ufw">Allow SSH Connections Through UFW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="linux-setup.html#create-a-port-forwarding-only-user">Create a Port Forwarding Only User</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="linux-setup.html#verify-restrictions">Verify Restrictions</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../ssh/windows-setup.html">SSHD Windows Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ssh/configuration.html">SSH Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../ssh/configuration.html#restricting-ssh-tunneling">Restricting SSH Tunneling</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ssh/configuration.html#ssh-host-configuration">SSH Host Configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../ssh/configuration.html#importing-rsa-keys-for-putty-winscp-on-windows">Importing RSA Keys for Putty/WinSCP on Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="windows-setup.html">SSHD Windows Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html">SSH Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#restricting-ssh-tunneling">Restricting SSH Tunneling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#ssh-host-configuration">SSH Host Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#importing-rsa-keys-for-putty-winscp-on-windows">Importing RSA Keys for Putty/WinSCP on Windows</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../ssh/creating-ssh-certificates.html">Creating SSH Certificates</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../ssh/creating-ssh-certificates.html#generate-certificates">Generate Certificates</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Creating SSH Certificates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#generate-certificates">Generate Certificates</a></li>
 </ul>
 </li>
 </ul>
@@ -1346,7 +1346,9 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Airsonic</li>
+          <li><a href="index.html">SSH</a> &raquo;</li>
+        
+      <li>Creating SSH Certificates</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -1363,179 +1365,30 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="airsonic">
-<span id="service-airsonic"></span><h1><a class="reference external" href="https://airsonic.github.io/">Airsonic</a><a class="headerlink" href="#airsonic" title="Permalink to this headline">¶</a></h1>
-<p>Music streaming.</p>
-<p>See <a class="reference external" href="https://hub.docker.com/r/linuxserver/airsonic">Airsonic Docker and Documentation</a>.</p>
-<div class="section" id="ports-airsonic">
-<h2>Ports (Airsonic)<a class="headerlink" href="#ports-airsonic" title="Permalink to this headline">¶</a></h2>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p>Port</p></td>
-<td><p>Protocol</p></td>
-<td><p>Type</p></td>
-<td><p>Purpose</p></td>
-</tr>
-<tr class="row-even"><td><p>4040</p></td>
-<td><p>TCP</p></td>
-<td><p>Exposed</p></td>
-<td><p>Airsonic webservice.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="important-file-locations-airsonic">
-<h2>Important File Locations (Airsonic)<a class="headerlink" href="#important-file-locations-airsonic" title="Permalink to this headline">¶</a></h2>
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p>Location</p></td>
-<td><p>Purpose</p></td>
-</tr>
-<tr class="row-even"><td><p>/config</p></td>
-<td><p>Airsonic configuration directory.</p></td>
-</tr>
-<tr class="row-odd"><td><p>/config/airsonic.properties</p></td>
-<td><p>Global airsonic configuration.</p></td>
-</tr>
-<tr class="row-even"><td><p>/playlists</p></td>
-<td><p>Playlists data.</p></td>
-</tr>
-<tr class="row-odd"><td><p>/podcasts</p></td>
-<td><p>Podcasts data.</p></td>
-</tr>
-<tr class="row-even"><td><p>/music</p></td>
-<td><p>Music data.</p></td>
-</tr>
-<tr class="row-odd"><td><p>/media</p></td>
-<td><p>Additional media data (videos; etc).</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="docker-creation">
-<h2>Docker Creation<a class="headerlink" href="#docker-creation" title="Permalink to this headline">¶</a></h2>
-<p>You can copy your existing configuration to docker <code class="docutils literal notranslate"><span class="pre">/config</span></code> directory
-adjusting for paths.</p>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">Docker Compose</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">airsonic</span><span class="p">:</span>
-  <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">linuxserver/airsonic</span>
-  <span class="nt">restart</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
-  <span class="nt">environment</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">PUID=1000</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">PGID=1000</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TZ=America/Los_Angeles</span>
-  <span class="nt">volumes</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/data/services/airsonic/config:/config</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/data/services/airsonic/playlists:/playlists</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/data/media/podcasts:/podcasts:ro</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/data/media/music:/music:ro</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/data/other/media:/media:ro</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/etc/localtime:/etc/localtime:ro</span>
-</pre></div>
-</div>
-</div>
-<ul class="simple">
-<li><p>Proxy will forward traffic to the container, so no ports need to be exposed.</p></li>
-<li><p>Use environment <code class="docutils literal notranslate"><span class="pre">CONTEXT_PATH=URL_BASE</span></code> if airsonic is serving from a
-subpath.</p></li>
-<li><p>Use environment <code class="docutils literal notranslate"><span class="pre">JAVA_OPTS=</span></code> to pass additional java options.</p></li>
-</ul>
-</div>
-<div class="section" id="reverse-proxy-setup">
-<h2>Reverse Proxy Setup<a class="headerlink" href="#reverse-proxy-setup" title="Permalink to this headline">¶</a></h2>
-<p>Allows you to isolate your containers as well as wrap connections in SSL. See
-<a class="reference internal" href="../nginx/index.html#service-nginx"><span class="std std-ref">NGINX</span></a> for more details. See
-<a class="reference internal" href="../nginx/setup.html#service-nginx-base-proxy-control"><span class="std std-ref">Setup Base Proxy Control</span></a> for basic proxy configuration.</p>
-<div class="section" id="enable-forward-headers">
-<h3>Enable Forward Headers<a class="headerlink" href="#enable-forward-headers" title="Permalink to this headline">¶</a></h3>
-<p>Airsonic must be configured to expect requests through a proxy otherwise
-connections will fail through a reverse proxy. Enable this and restart the
-service before testing proxy configuration. Start the service to create a new
-file if it doesn’t exist.</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/data/airsonic.properties</span></code></span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>server.use-forward-headers<span class="o">=</span><span class="nb">true</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="using-subdomains">
-<h3>Using Subdomains<a class="headerlink" href="#using-subdomains" title="Permalink to this headline">¶</a></h3>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">nginx/conf.d/reverse-proxy.conf</span></code></span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>server {
-  listen                                 443 ssl http2;
-  server_name                            airsonic.{DOMAIN} airsonic;
-  location / {
-    proxy_bind                           {NGINX PROXY IP};
-    proxy_set_header X-Real-IP           $remote_addr;
-    proxy_set_header X-Forwarded-For     $proxy_add_x_forwarded_for;
-    proxy_set_header X-Forwarded-Proto   https;
-    proxy_set_header X-Forwarded-Host    $http_host;
-    proxy_set_header Host                $http_host;
-    proxy_set_header X-Forwarded-Server  $host;
-    proxy_max_temp_file_size             0;
-    proxy_pass                           http://airsonic:4040;
-    add_header Strict-Transport-Security &quot;max-age=15768000; includeSubDomains; preload;&quot;;
-    add_header X-Content-Type-Options    &quot;nosniff&quot;;
-    add_header X-Frame-Options           SAMEORIGIN;
-    add_header X-XSS-Protection          &quot;1; mode=block&quot;;
-    add_header X-Robots-Tag              none;
-  }
-}
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="using-subpaths">
-<h3>Using Subpaths<a class="headerlink" href="#using-subpaths" title="Permalink to this headline">¶</a></h3>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">nginx/conf.d/reverse-proxy.conf</span></code></span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>server {
-  listen                                 443 ssl http2;
-  server_name                            airsonic.{DOMAIN} airsonic;
-  location /airsonic {
-    proxy_bind                           {NGINX PROXY IP};
-    proxy_set_header X-Real-IP           $remote_addr;
-    proxy_set_header X-Forwarded-For     $proxy_add_x_forwarded_for;
-    proxy_set_header X-Forwarded-Proto   https;
-    proxy_set_header X-Forwarded-Host    $http_host;
-    proxy_set_header Host                $http_host;
-    proxy_set_header X-Forwarded-Server  $host;
-    proxy_max_temp_file_size             0;
-    proxy_pass                           http://airsonic:4040;
-    add_header Strict-Transport-Security &quot;max-age=15768000; includeSubDomains; preload;&quot;;
-    add_header X-Content-Type-Options    &quot;nosniff&quot;;
-    add_header X-Frame-Options           SAMEORIGIN;
-    add_header X-XSS-Protection          &quot;1; mode=block&quot;;
-    add_header X-Robots-Tag              none;
-  }
-}
+  <div class="section" id="creating-ssh-certificates">
+<span id="service-ssh-create-certificates"></span><h1>Creating SSH Certificates<a class="headerlink" href="#creating-ssh-certificates" title="Permalink to this headline">¶</a></h1>
+<p>This setup assumes that a systems certificates for users are centrally located
+in <code class="docutils literal notranslate"><span class="pre">/etc/ssh/authorized_keys/{USER}</span></code>. See
+<a class="reference internal" href="linux-setup.html#service-ssh-centralize-keys"><span class="std std-ref">Centralize Authorized Key Files</span></a> for service setup with public key
+authentication.</p>
+<div class="section" id="generate-certificates">
+<span id="service-ssh-generate-certificates"></span><h2>Generate Certificates<a class="headerlink" href="#generate-certificates" title="Permalink to this headline">¶</a></h2>
+<p><strong>Always</strong> use a strong password on keys that is not your login password.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Generate 4096 bit RSA certificates &amp; add user to SSH group.</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-keygen -b <span class="m">4096</span> -t rsa -f /home/<span class="o">{</span>USER<span class="o">}</span>/.ssh/<span class="o">{</span>USER<span class="o">}</span>
+cat /home/<span class="o">{</span>USER<span class="o">}</span>/.ssh/<span class="o">{</span>USER<span class="o">}</span>.pub &gt;&gt; home/<span class="o">{</span>USER<span class="o">}</span>/.ssh/authorized_keys
+chmod <span class="m">0600</span> /home/<span class="o">{</span>USER<span class="o">}</span>/.ssh/*
+chmod <span class="m">0640</span> /home/<span class="o">{</span>USER<span class="o">}</span>/.ssh/*.pub
+addgroup <span class="o">{</span>USER<span class="o">}</span> ssh
 </pre></div>
 </div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Use environment <code class="docutils literal notranslate"><span class="pre">CONTEXT_PATH=URL_BASE</span></code> if airsonic is serving from a
-subpath.</p>
-</div>
-<p class="rubric">References</p>
-<ol class="arabic simple">
-<li><p><a class="reference external" href="https://airsonic.github.io/docs/configure/airsonic-properties/">Airsonic Configuration File</a></p></li>
-<li><p><a class="reference external" href="https://old.reddit.com/r/freenas/comments/b2ft7x/does_anyone_have_a_working_nginx_reverseproxy_for/">Airsonic reverse proxy</a></p></li>
-<li><p><a class="reference external" href="https://airsonic.github.io/docs/proxy/nginx/">Airsonic nginx reverse proxy</a></p></li>
-</ol>
+<p>The private key <code class="docutils literal notranslate"><span class="pre">{USER}</span></code> needs to be used to SSH into this host. Copy
+the publikc key <code class="docutils literal notranslate"><span class="pre">{USER}.pub</span></code> to the <code class="docutils literal notranslate"><span class="pre">authorized_keys</span></code> on other hosts
+to be able to login to those hosts.</p>
 </div>
 </div>
 </div>
@@ -1548,10 +1401,10 @@ subpath.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../beets/index.html" class="btn btn-neutral float-right" title="beets.io" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../unifi/index.html" class="btn btn-neutral float-right" title="Unifi Controller" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../../containerization/docker/index.html" class="btn btn-neutral float-left" title="Docker" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="configuration.html" class="btn btn-neutral float-left" title="SSH Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

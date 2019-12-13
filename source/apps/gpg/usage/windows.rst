@@ -77,9 +77,11 @@ Verify Putty Works
 ******************
 Ensure Yubikey is readable by GPG. This assumes you already setup:
 
-  #. ``~/.ssh/authorized_keys`` on the target machine with your *exported*
-     GPG SSH RSA Public Key; see :ref:`gpg-export-keys`.
-  #. **Trusted** the GPG Master Public Key on the local machine; see
+  #. ``~/.ssh/authorized_keys`` on the target machine with your *exported* GPG
+     SSH RSA Public Key; see :ref:`gpg-export-keys`. Reference
+     :ref:`service-ssh` for remote SSH configuration.
+  #. **Trusted** the GPG
+     Master Public Key on the local machine; see
      :ref:`gpg-import`.
 
 #. Connect with putty as normal.

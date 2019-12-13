@@ -56,6 +56,8 @@ Master and Subkeys will be encrypted with your passphrase when exported.
   The `SSH RSA Public Key`_ comment will use the authentication short key ID
   (``openpgp:0xXXXXXXXX``).
 
+  See :ref:`service-ssh-configuration` for importing keys.
+
 .. code-block:: bash
   :caption: Backup GNUPG state for multiple Yubikey initalizations.
 

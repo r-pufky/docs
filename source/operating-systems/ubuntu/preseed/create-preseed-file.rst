@@ -68,8 +68,8 @@ file here: :download:`ubuntu-template.seed <../source/ubuntu-template.seed>`.
   mkpasswd -m sha-512
 
 .. note::
-  Disables root login, creating an initial {USERNAME}, with a sha512 password
-  hash. Give {USERNAME} sudo and ssh access, and `default groups to function`_.
+  Disables root login, creating an initial {USER}, with a sha512 password
+  hash. Give {USER} sudo and ssh access, and `default groups to function`_.
 
   The password used should be an **installation password** and not a real one.
 

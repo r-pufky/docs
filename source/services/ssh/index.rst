@@ -6,8 +6,10 @@ Secure Shell.
 
 See `OpenSSH Documentation`_.
 
-#. :ref:`service-ssh-setup`.
+#. :ref:`service-ssh-linux-setup`.
+#. :ref:`service-ssh-windows-setup`.
 #. :ref:`service-ssh-configuration`.
+#. :ref:`service-ssh-create-certificates`.
 
 .. _OpenSSH Documentation: https://www.openssh.com/
 
@@ -15,5 +17,7 @@ See `OpenSSH Documentation`_.
    :hidden:
    :maxdepth: -1
 
-   setup
+   linux-setup
+   windows-setup
    configuration
+   creating-ssh-certificates

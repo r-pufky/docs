@@ -136,4 +136,4 @@ Documentation`_ requirements.
   start.
 
 .. _Conan Docker and Documentation: https://hub.docker.com/r/rpufky/steam
-.. _Conan Exiles Dedicated Server: https://conanexiles.gamepedia.com/Dedicated_server_system_requirements>
+.. _Conan Exiles Dedicated Server: https://conanexiles.gamepedia.com/Dedicated_server_system_requirements

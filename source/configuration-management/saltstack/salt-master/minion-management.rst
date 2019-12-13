@@ -15,7 +15,7 @@ approved on the Salt Master. Globbing is supported.
   :caption: Show all *unaccepted* certs and sign one (Salt Master).
 
   salt-key -l unaccepted
-  salt-key -a {HOSTNAME}
+  salt-key -a {HOST}
 
 .. _salt-minion-show-all-certs:
 
@@ -33,7 +33,7 @@ See :ref:`salt-minion-show-all-certs` for getting a certificate list.
 .. code-block:: bash
   :caption: Remove minion from salt server (Salt Master).
 
-  salt-key -d {HOSTNAME}
+  salt-key -d {HOST}
 
 Salt will remove the key material automatically.
 

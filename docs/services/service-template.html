@@ -560,11 +560,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../operating-systems/ubuntu/1804-server-base-install.html#creating-an-encrypted-volume">Creating an Encrypted Volume</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../operating-systems/ubuntu/creating-ssh-certificates.html">Creating SSH Certificates</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../operating-systems/ubuntu/creating-ssh-certificates.html#initial-setup">Initial Setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../operating-systems/ubuntu/creating-ssh-certificates.html#generate-certificates">Generate Certificates</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="../operating-systems/ubuntu/vm-specific-configuration.html">Ubuntu VM Configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../operating-systems/ubuntu/vm-specific-configuration.html#installing-xenserver-xcp-tools">Installing XenServer / XCP Tools</a></li>
 </ul>
@@ -630,7 +625,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../virtualization/hypervisors/kvm/index.html#create-a-network-bridge">Create a Network Bridge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../virtualization/hypervisors/kvm/index.html#add-bridge-to-kvm-menu-drop-down">Add Bridge to KVM Menu Drop Down</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../virtualization/hypervisors/kvm/index.html#remove-pre-made-nat-virtual-bridge">Remove Pre-made NAT Virtual Bridge</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../virtualization/hypervisors/kvm/index.html#ensure-ufw-is-allowing-connections-to-be-made">Ensure UFW is Allowing Connections to be Made</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../virtualization/hypervisors/kvm/index.html#creating-new-vm">Creating New VM</a><ul>
@@ -1173,19 +1167,26 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ssh/index.html">SSH</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ssh/setup.html">SSH Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="ssh/setup.html#centralize-authorized-key-files">Centralize Authorized Key Files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ssh/setup.html#create-a-port-forwarding-only-user">Create a Port Forwarding Only User</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="ssh/setup.html#verify-restrictions">Verify restrictions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ssh/linux-setup.html">SSHD Linux Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ssh/linux-setup.html#centralize-authorized-key-files">Centralize Authorized Key Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ssh/linux-setup.html#secure-sshd-config">Secure SSHD Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ssh/linux-setup.html#add-users-to-access-group">Add Users to Access Group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ssh/linux-setup.html#allow-ssh-connections-through-ufw">Allow SSH Connections Through UFW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ssh/linux-setup.html#create-a-port-forwarding-only-user">Create a Port Forwarding Only User</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ssh/linux-setup.html#verify-restrictions">Verify Restrictions</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="ssh/windows-setup.html">SSHD Windows Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ssh/configuration.html">SSH Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="ssh/configuration.html#generate-rsa-keys">Generate RSA Keys</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ssh/configuration.html#restricting-ssh-tunneling">Restricting SSH Tunneling</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ssh/configuration.html#ssh-host-configuration">SSH Host Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ssh/configuration.html#importing-rsa-keys-for-putty-winscp-on-windows">Importing RSA Keys for Putty/WinSCP on Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ssh/creating-ssh-certificates.html">Creating SSH Certificates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ssh/creating-ssh-certificates.html#generate-certificates">Generate Certificates</a></li>
 </ul>
 </li>
 </ul>

@@ -159,8 +159,8 @@ Navigate to: ``{REVERSE PROXY URI}/install``.
             users.noreply.{DOMAIN},
             ,
             {USER},
-            {PASSWORD},
-            {PASSWORD},
+            {PASS},
+            {PASS},
             {EMAIL}
   :no_key_title:
   :no_caption:

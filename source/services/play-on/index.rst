@@ -54,7 +54,7 @@ Server Setup
 ************
 
 #. Setup :ref:`hiding-local-desktop-crd`.
-#. Setup :ref:`enabling-ssh-access` with only public key authentication.
+#. Setup :ref:`service-ssh-windows-setup` with only public key authentication.
 #. Ensure you are connected via the VM console (not CRD) for install, otherwise
    installer will fail.
 #. Install `Playon Desktop`_, but do not launch immediately.

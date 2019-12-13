@@ -7,7 +7,7 @@ Ubuntu setup and configuration instructions.
 Related Material:
 
 * :ref:`1804-server-base-install` for basic installation.
-* :ref:`ubuntu-creating-ssh-certificates` for creating SSH certificates.
+* :ref:`service-ssh-create-certificates` for creating SSH certificates.
 * :ref:`additional-ubuntu-fixes` for uncommon Ubuntu fixes.
 * :ref:`ubuntu-vm-specific-configuration` for VM specific configuration.
 * :ref:`ubuntu-2990wx-linux-patches` for Threadripper specific configuration.
@@ -17,7 +17,6 @@ Related Material:
    :maxdepth: -1
 
    1804-server-base-install
-   creating-ssh-certificates
    vm-specific-configuration
    additional-fixes
    threadripper-2990wx

@@ -4,7 +4,7 @@ Ubuntu GPG Yubikey
 ##################
 Configure Yubikey for SSH authentication on Ubuntu.
 
-Gnome-keyring implements both ssh-agent and gpg-agent with a `broken
+Gnome-keyring implements both ``ssh-agent`` and ``gpg-agent`` with a `broken
 implementation`_ that does not support smart cards. This will be disabled.
 
 Required Materials
@@ -92,7 +92,8 @@ Verify SSH Works
 Ensure Yubikey is readable by GPG. This assumes you already setup:
 
   #. ``~/.ssh/authorized_keys`` on the target machine with your *exported*
-     GPG SSH RSA Public Key; see :ref:`gpg-export-keys`.
+     GPG SSH RSA Public Key; see :ref:`gpg-export-keys`. Reference
+     :ref:`service-ssh` for remote SSH configuration.
   #. **Trusted** the GPG Master Public Key on the local machine; see
      :ref:`gpg-import`.
 

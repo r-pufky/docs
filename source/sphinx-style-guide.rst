@@ -22,10 +22,15 @@ Use ``{CAPS WITH SPACE}``.
 
 Standardized replacements used:
 
-* ``{USERNAME}`` - user account.
-* ``{PASSWORD}`` - account password.
-* ``{HOSTNAME}`` - Host DNS name.
+* ``{USER}`` - user account.
+* ``{PASS}`` - account password.
+* ``{EMAIL}`` - user email address.
+* ``{HOST}`` - Host DNS name.
 * ``{IP}`` - Host IP.
+
+.. note::
+  All can be modified with additional context as needed. E.g. ``{WEBHOOK
+  EMAIL}``.
 
 Callouts (`admonitions`_)
 *************************
@@ -131,7 +136,7 @@ File Listings
 .. code-block:: RST
   :caption: literalinclude  template for showing file content.
 
-  .. literalinclude:: operating-systems/ubuntu/source/sshd_config
+  .. literalinclude:: source/sshd_config
     :caption: **0644 root root** ``/etc/ssh/sshd_config``
     :linenos:
     :emphasize-lines: 2,3

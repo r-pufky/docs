@@ -255,43 +255,9 @@ power consumption and probably shouldn't be used on laptops.
 
   powercfg /h off
 
-.. _enabling-ssh-access:
-
-`Enabling SSH Access`_
-**********************
-Windows 10 has a beta which allows for SSHd and SSH-agent use to access the
-windows system. This covers the manual installation process, there is also a
-beta you may install via optional features.
-
-:download:`Download OpenSSH Binaries <https://github.com/PowerShell/Win32-OpenSSH/releases>`
-and extract to ``C:\Program Files\``.
-
-.. code-block:: powershell
-  :caption: Install OpenSSH, generate host keys, set file permissions, and open
-            firewall port 22 (powershell as admin).
-
-  cd C:\Program Files\OpenSSH
-  powershell.exe -ExecutionPolicy Bypass -File install-sshd.ps1
-  ./ssh-keygen.exe -A
-  powershell.exe -ExecutionPolicy Bypass -File ./FixHostFilePermissions.ps1
-  New-NetFirewallRule -Protocol TCP -LocalPort 22 -Direction Inbound -Action Allow -DisplayName SSH
-
-.. wservice:: Enable sshd service
-  :key_title: SSHD --> General
-  :option:    Startup type,
-              Service status
-  :setting:   Automatic,
-              Started
-  :no_section:
-
-Set up publickey authentication:
-
-* Create ``C:\Users\{USERNAME}\.ssh``.
-
-.. code-block:: powershell
-  :caption: Grant SSHD service read permissions to ``.ssh`` directory.
-
-  icacls C:\users\{USERNAME}\.ssh /grant "NT Service\sshd:R" /T
+Enabling SSH Access
+*******************
+See :ref:`service-ssh-windows-setup` to enble SSHD on Windows.
 
 `NTFS File Ownership Access Denied`_
 ************************************
@@ -427,7 +393,6 @@ it is **not** recommended to disable TDR entirely.
 .. _Enable Bitlocker on USB drives over RDP: https://superuser.com/questions/962125/bitlocker-refuses-to-enable-via-rdp-on-data-drive-but-ok-on-the-os-drive
 .. _Fix Windows Applications Not Appearing in Start Menu Searches: https://superuser.com/questions/947392/windows-10-search-cant-find-any-applications-even-calculator
 .. _Disable Hibernation for Windows 10 Sleep Resume Problems: https://www.tenforums.com/general-support/5265-turn-off-wake-up-problems.html
-.. _Enabling SSH Access: https://winscp.net/eng/docs/guide_windows_openssh_server
 .. _NTFS File Ownership Access Denied: https://superuser.com/questions/439675/how-to-bind-old-users-sid-to-new-user-to-remain-ntfs-file-ownership-and-permiss
 .. _well known SIDs: https://support.microsoft.com/en-us/help/243330/well-known-security-identifiers-in-windows-operating-systems
 .. _Low Disk Space Warning After 1803 Update: https://answers.microsoft.com/en-us/insider/forum/insider_wintp-insider_install-insiderplat_pc/new-oem-partition-appears-in-file-explorer-after/29a0a95c-fe51-41a5-a345-72773c437b39

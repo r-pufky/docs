@@ -71,8 +71,8 @@ Basic Setup (Basic Setup is the same as *WAN+2LAN2*).
   :key_title: User Setup
   :option:    Username,
               Password
-  :setting:   {USERNAME},
-              {PASSWORD}
+  :setting:   {USER},
+              {PASS}
   :no_section:
   :no_caption:
   :no_launch:

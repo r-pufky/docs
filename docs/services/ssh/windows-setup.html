@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>SSH Setup &mdash; Generic service &amp; computer documentation. 2019-07-06.0 documentation</title>
+  <title>SSHD Windows Setup &mdash; Generic service &amp; computer documentation. 2019-07-06.0 documentation</title>
   
 
   
@@ -36,7 +36,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="SSH Configuration" href="configuration.html" />
-    <link rel="prev" title="SSH" href="index.html" /> 
+    <link rel="prev" title="SSHD Linux Setup" href="linux-setup.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -560,11 +560,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../operating-systems/ubuntu/1804-server-base-install.html#creating-an-encrypted-volume">Creating an Encrypted Volume</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../operating-systems/ubuntu/creating-ssh-certificates.html">Creating SSH Certificates</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/ubuntu/creating-ssh-certificates.html#initial-setup">Initial Setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/ubuntu/creating-ssh-certificates.html#generate-certificates">Generate Certificates</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="../../operating-systems/ubuntu/vm-specific-configuration.html">Ubuntu VM Configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../operating-systems/ubuntu/vm-specific-configuration.html#installing-xenserver-xcp-tools">Installing XenServer / XCP Tools</a></li>
 </ul>
@@ -630,7 +625,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/kvm/index.html#create-a-network-bridge">Create a Network Bridge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/kvm/index.html#add-bridge-to-kvm-menu-drop-down">Add Bridge to KVM Menu Drop Down</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/kvm/index.html#remove-pre-made-nat-virtual-bridge">Remove Pre-made NAT Virtual Bridge</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/kvm/index.html#ensure-ufw-is-allowing-connections-to-be-made">Ensure UFW is Allowing Connections to be Made</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/kvm/index.html#creating-new-vm">Creating New VM</a><ul>
@@ -1173,19 +1167,26 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">SSH</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">SSH Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#centralize-authorized-key-files">Centralize Authorized Key Files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#create-a-port-forwarding-only-user">Create a Port Forwarding Only User</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#verify-restrictions">Verify restrictions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-setup.html">SSHD Linux Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="linux-setup.html#centralize-authorized-key-files">Centralize Authorized Key Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="linux-setup.html#secure-sshd-config">Secure SSHD Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="linux-setup.html#add-users-to-access-group">Add Users to Access Group</a></li>
+<li class="toctree-l3"><a class="reference internal" href="linux-setup.html#allow-ssh-connections-through-ufw">Allow SSH Connections Through UFW</a></li>
+<li class="toctree-l3"><a class="reference internal" href="linux-setup.html#create-a-port-forwarding-only-user">Create a Port Forwarding Only User</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="linux-setup.html#verify-restrictions">Verify Restrictions</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">SSHD Windows Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="configuration.html">SSH Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="configuration.html#generate-rsa-keys">Generate RSA Keys</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuration.html#restricting-ssh-tunneling">Restricting SSH Tunneling</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuration.html#ssh-host-configuration">SSH Host Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuration.html#importing-rsa-keys-for-putty-winscp-on-windows">Importing RSA Keys for Putty/WinSCP on Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="creating-ssh-certificates.html">Creating SSH Certificates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="creating-ssh-certificates.html#generate-certificates">Generate Certificates</a></li>
 </ul>
 </li>
 </ul>
@@ -1347,7 +1348,7 @@
         
           <li><a href="index.html">SSH</a> &raquo;</li>
         
-      <li>SSH Setup</li>
+      <li>SSHD Windows Setup</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -1364,103 +1365,51 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="ssh-setup">
-<span id="service-ssh-setup"></span><h1>SSH Setup<a class="headerlink" href="#ssh-setup" title="Permalink to this headline">¶</a></h1>
-<p>Secure Shell.</p>
-<p>See <a class="reference external" href="https://www.openssh.com/">OpenSSH Documentation</a>.</p>
-<div class="section" id="centralize-authorized-key-files">
-<h2>Centralize Authorized Key Files<a class="headerlink" href="#centralize-authorized-key-files" title="Permalink to this headline">¶</a></h2>
-<p>Redirect all key files to a specific directory and link to users; allowing for
-easier central management of keys.</p>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/ssh/sshd_config</span></code></span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Port</span> <span class="mi">22</span>
-<span class="hll"><span class="n">Protocol</span> <span class="mi">2</span>
-</span><span class="n">HostKey</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ssh</span><span class="o">/</span><span class="n">ssh_host_rsa_key</span>
-<span class="n">HostKey</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ssh</span><span class="o">/</span><span class="n">ssh_host_dsa_key</span>
-<span class="n">HostKey</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ssh</span><span class="o">/</span><span class="n">ssh_host_ecdsa_key</span>
-<span class="n">HostKey</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ssh</span><span class="o">/</span><span class="n">ssh_host_ed25519_key</span>
-<span class="hll"><span class="n">UsePrivilegeSeparation</span> <span class="n">yes</span>
-</span><span class="n">KeyRegenerationInterval</span> <span class="mi">3600</span>
-<span class="n">ServerKeyBits</span> <span class="mi">1024</span>
-<span class="n">SyslogFacility</span> <span class="n">AUTH</span>
-<span class="n">LogLevel</span> <span class="n">INFO</span>
-<span class="n">LoginGraceTime</span> <span class="mi">120</span>
-<span class="hll"><span class="n">PermitRootLogin</span> <span class="n">no</span>
-</span><span class="n">StrictModes</span> <span class="n">yes</span>
-<span class="n">UseDNS</span> <span class="n">no</span>
-<span class="hll"><span class="n">AllowGroups</span> <span class="n">ssh</span>
-</span><span class="hll"><span class="n">RSAAuthentication</span> <span class="n">no</span>
-</span><span class="hll"><span class="n">PubkeyAuthentication</span> <span class="n">yes</span>
-</span><span class="hll"><span class="n">AuthorizedKeysFile</span>  <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">ssh</span><span class="o">/%</span><span class="n">u</span><span class="o">/</span><span class="n">authorized_keys</span>
-</span><span class="n">IgnoreRhosts</span> <span class="n">yes</span>
-<span class="hll"><span class="n">RhostsRSAAuthentication</span> <span class="n">no</span>
-</span><span class="hll"><span class="n">HostbasedAuthentication</span> <span class="n">no</span>
-</span><span class="hll"><span class="n">PermitEmptyPasswords</span> <span class="n">no</span>
-</span><span class="hll"><span class="n">ChallengeResponseAuthentication</span> <span class="n">no</span>
-</span><span class="hll"><span class="n">PasswordAuthentication</span> <span class="n">no</span>
-</span><span class="n">X11Forwarding</span> <span class="n">yes</span>
-<span class="n">X11DisplayOffset</span> <span class="mi">10</span>
-<span class="n">PrintMotd</span> <span class="n">no</span>
-<span class="n">PrintLastLog</span> <span class="n">yes</span>
-<span class="n">TCPKeepAlive</span> <span class="n">yes</span>
-<span class="n">AcceptEnv</span> <span class="n">LANG</span> <span class="n">LC_</span><span class="o">*</span>
-<span class="n">Subsystem</span> <span class="n">sftp</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">openssh</span><span class="o">/</span><span class="n">sftp</span><span class="o">-</span><span class="n">server</span>
-<span class="n">UsePAM</span> <span class="n">yes</span>
-</pre></div>
-</div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This will provide a default configuration which only allows non-root public
-key authenticated users to login.</p>
-<p>Public keys are setup to use <code class="docutils literal notranslate"><span class="pre">/etc/ssh/{USER}/authorized_keys</span></code> for
-authenticating the user.</p>
-</div>
+  <div class="section" id="sshd-windows-setup">
+<span id="service-ssh-windows-setup"></span><h1><a class="reference external" href="https://winscp.net/eng/docs/guide_windows_openssh_server">SSHD Windows Setup</a><a class="headerlink" href="#sshd-windows-setup" title="Permalink to this headline">¶</a></h1>
+<p>Windows 10 has a beta which allows for <code class="docutils literal notranslate"><span class="pre">sshd</span></code> and <code class="docutils literal notranslate"><span class="pre">ssh-agent</span></code> use to access
+the windows system. This covers the manual installation process, there is also a
+beta you may install via optional features.</p>
+<p><a class="reference download external" download="" href="https://github.com/PowerShell/Win32-OpenSSH/releases"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">OpenSSH</span> <span class="pre">Binaries</span></code></a>
+and extract to <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files\</span></code>.</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">Add {USER} to <code class="docutils literal notranslate"><span class="pre">ssh</span></code> group to enable ssh service access.</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>addgroup <span class="o">{</span>USER<span class="o">}</span> ssh
+<div class="code-block-caption"><span class="caption-text">Install OpenSSH, generate host keys, set file permissions, and open
+firewall port 22 (powershell as admin).</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>cd C:\Program Files\OpenSSH
+powershell.exe -ExecutionPolicy Bypass -File install-sshd.ps1
+./ssh-keygen.exe -A
+powershell.exe -ExecutionPolicy Bypass -File ./FixHostFilePermissions.ps1
+New-NetFirewallRule -Protocol TCP -LocalPort 22 -Direction Inbound -Action Allow -DisplayName SSH
 </pre></div>
 </div>
 </div>
+<div class="wservice docutils container" id="Enable sshd service">
+<span class="guilabel">Start › services.msc</span><table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Enable sshd service</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="3"><span class="guilabel">SSHD › General</span></td>
+</tr>
+<tr class="row-even"><td><p>Startup type</p></td>
+<td><p>Automatic</p></td>
+</tr>
+<tr class="row-odd"><td><p>Service status</p></td>
+<td><p>Started</p></td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="section" id="create-a-port-forwarding-only-user">
-<h2>Create a Port Forwarding Only User<a class="headerlink" href="#create-a-port-forwarding-only-user" title="Permalink to this headline">¶</a></h2>
-<p>Useful to forward services without providing shell a login.</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">Add port forwarding user and generate key.</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>adduser --disabled-password --home /etc/ssh/port-forwards-only --shell /bin/false port-forwards-only
-addgroup port-forwards-only ssh
-mkdir /etc/ssh/port-forwards-only
-chmod <span class="m">0700</span> /etc/ssh/port-forwards-only
-chown port-forwards-only:port-forwards-only /etc/ssh/port-forwards-only
-ssh-keygen -b <span class="m">4096</span> -t rsa -f /etc/ssh/port-forwards-only/port-forwards-only
-cat /etc/ssh/port-forwards-only/port-forwards-only.pub &gt;&gt; /etc/ssh/port-forwards-only/authorized_keys
-</pre></div>
-</div>
-</div>
-<p>See <a class="reference internal" href="configuration.html#service-ssh-tunneling"><span class="std std-ref">Restricting SSH Tunneling</span></a> add only <code class="docutils literal notranslate"><span class="pre">permitopen</span></code> lines.</p>
-<div class="section" id="verify-restrictions">
-<h3>Verify restrictions<a class="headerlink" href="#verify-restrictions" title="Permalink to this headline">¶</a></h3>
-<p>Attempt to login with a shell as well as port forwarding working.</p>
+<p>Set up publickey authentication:</p>
+<ul class="simple">
+<li><p>Create <code class="docutils literal notranslate"><span class="pre">C:\Users\{USER}\.ssh</span></code>.</p></li>
+</ul>
 <div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">Verify port forwarding user cannot actually get a shell.</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh -vvv -N -L <span class="m">5901</span>:<span class="o">{</span>SERVER<span class="o">}</span>:5900 -i ~/.ssh/port-forwards-only port-forwards-only@<span class="o">{</span>SERVER<span class="o">}</span>
-ssh -vvv -i ~/.ssh/port-forwarding-only port-forwards-only@<span class="o">{</span>SERVER<span class="o">}</span>
-ssh -vvv -i port-forwards-only@<span class="o">{</span>SERVER<span class="o">}</span>
+<div class="code-block-caption"><span class="caption-text">Grant SSHD service read permissions to <code class="docutils literal notranslate"><span class="pre">.ssh</span></code> directory.</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>icacls C:\users\{USER}\.ssh /grant &quot;NT Service\sshd:R&quot; /T
 </pre></div>
-</div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Only port forwarding should work (<code class="docutils literal notranslate"><span class="pre">-N</span></code>). Interactive logins with and without
-cert should fail.</p>
-</div>
-<p class="rubric">References</p>
-<ol class="arabic simple">
-<li><p><a class="reference external" href="https://help.ubuntu.com/community/SSH/OpenSSH/Keys">Basic SSH Public Key Authentication Setup</a></p></li>
-<li><p><a class="reference external" href="https://www.cyberciti.biz/tips/openssh-deny-or-restrict-access-to-users-and-groups.html">Deny/Allow/Restrict SSH access to users and groups</a></p></li>
-</ol>
 </div>
 </div>
 </div>
@@ -1476,7 +1425,7 @@ cert should fail.</p>
         <a href="configuration.html" class="btn btn-neutral float-right" title="SSH Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="SSH" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="linux-setup.html" class="btn btn-neutral float-left" title="SSHD Linux Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

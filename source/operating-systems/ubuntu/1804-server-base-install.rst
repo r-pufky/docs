@@ -13,10 +13,10 @@ Debian installation follows the same installation notes.
 Base Install
 ************
 
-* Hostname: {HOSTNAME}
+* Hostname: {HOST}
 * Full Name: {FULLNAME}
-* Username: {USERNAME}
-* Password: {PASSWORD}
+* Username: {USER}
+* Password: {PASS}
 * No encrypted home directory
 * Partitioning: Guided, Full disk, no encryption
 * Set default encryption passphrase: template
@@ -45,29 +45,14 @@ Base Install
   rm /root/.profile
   chmod go-rwx -Rv /home/* /root
 
-.. _secure-ssh-connections:
-
 Secure SSH connections
 ======================
 .. caution::
   Longstanding SSH options have been removed in 18.04 and your `SSH config will
   not carry over unchanged`_.
 
-Basic changes here will lock down SSH connections to require public key
-authentication, remove root user SSH logins, and disable password auth.
-
-.. literalinclude:: source/sshd_config
-  :caption: **0644 root root** ``/etc/ssh/sshd_config``
-  :linenos:
-  :emphasize-lines: 12,15,22
-
-.. code-block:: bash
-  :caption: Restart SSH service.
-
-  systemctl restart ssh
-
-.. note::
-  See :ref:`ubuntu-creating-ssh-certificates` for user certificate generation.
+See :ref:`service-ssh` to setup SSH service, and
+:ref:`service-ssh-create-certificates` to create user certificates.
 
 `Install TCP BBR Kernel Patches`_
 =================================

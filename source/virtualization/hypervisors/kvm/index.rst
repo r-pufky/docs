@@ -159,23 +159,7 @@ This network is not needed if using bridging.
 
   virsh net-list --all
 
-Ensure UFW is Allowing Connections to be Made
-=============================================
-UFW may be configured by `default to block connections`_, verify this is not the
-case. The general default is to deny incoming connections, allow outgoing, and
-enable SSH.
-
-.. code-block:: bash
-  :caption: Get current status.
-
-  ufw status
-
-.. code-block:: bash
-  :caption: Set a generic default state.
-
-  ufw default deny incoming
-  ufw default allow outgoing
-  ufw allow ssh
+:ref:`service-ssh-ufw`.
 
 Creating New VM
 ***************
@@ -460,7 +444,6 @@ Opteron processor, and reload the definition.
 
 .. _network XML file format: https://libvirt.org/formatnetwork.html
 .. _bridged netplan interfaces for libvirtd: https://bugs.launchpad.net/ubuntu/+source/libvirt/+bug/1770345
-.. _default to block connections: https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-18-04
 .. _longstanding bug: https://bugs.launchpad.net/ubuntu/+source/procps/+bug/50093
 .. _sysctl settings: https://serverfault.com/questions/431590/how-to-make-sysctl-network-bridge-settings-persist-after-a-reboot
 .. _Red Hat vendor signature: https://docs.fedoraproject.org/en-US/quick-docs/creating-windows-virtual-machines-using-virtio-drivers/index.html
