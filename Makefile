@@ -12,7 +12,19 @@ TARGETDIR     = docs
 
 # Put it first so that "make" without argument is like "make help".
 help:
-	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" -c "$(CONFDIR)" $(SPHINXOPTS) $(O)
+	@echo "USAGE:"
+	@echo "  make docs"
+	@echo "        Build site documentation in $(BUILDDIR), trim extraneous"
+	@echo "        output and copy to $(TARGETDIR)."
+	@echo
+	@echo "  make html"
+	@echo "        Build site documentation in $(BUILDDIR)."
+	@echo
+	@echo "  make clean"
+	@echo "        Removes all build artifacts on filesystem."
+	@echo
+	@echo "  make linkcheck"
+	@echo "        Verifies documentation links resolve properly."
 
 .PHONY: help Makefile
 
@@ -40,4 +52,3 @@ copy:
 	@rm -v "$(TARGETDIR)/objects.inv"
 	@rm -v "$(TARGETDIR)/genindex.html"
 	@rm -rfv "$(TARGETDIR)/_sources"
-
