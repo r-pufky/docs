@@ -390,6 +390,22 @@ Files can be copied directly out of containers.
 
   docker {NAME}:/local/container/file .
 
+Tagging Docker Images
+*********************
+Docker images can be tagged with `multiple tags`_ for the same image.
+
+.. code-block:: bash
+  :caption: Create two tages for the same image.
+
+  docker tag {ID} {USER}/{IMAGE}:0.2
+  docker tag {ID} {USER}/{IMAGE}:latest
+
+.. code-block:: bash
+  :caption: Multiple tags during docker image build.
+
+  docker build -t {USER}/{IMAGE}:0.2 -t {USER}/{IMAGE}:latest .
+  docker push {USER}/{IMAGE}
+
 Docker Container Not Getting Interrupt Signals
 **********************************************
 Caused by the container Dockerfile not properly using the ``Exec`` specification
@@ -431,7 +447,7 @@ bypassed by replacing the functionality with ``gnupg2`` and ``pass``.
 .. _GDBus.Error:org.freedesktop.DBus.Error.Service Unknown Error: https://stackoverflow.com/questions/50151833/cannot-login-to-docker-account
 .. _the entrypoint script: https://hynek.me/articles/docker-signals/
 .. _enables a longer shutdown time: https://docs.docker.com/compose/compose-file/#stop_grace_period
-
+.. _multiple tags: https://stackoverflow.com/questions/31963525/is-it-possible-for-image-to-have-multiple-tags
 .. _Docker does not provide a way: https://github.com/docker/libnetwork/issues/1141#issuecomment-215522809
 .. _non-deterministic: https://dustymabe.com/2016/05/25/non-deterministic-docker-networking-and-source-based-ip-routing/
 .. _appropriate default gateway: https://stackoverflow.com/questions/36882945/change-default-route-in-docker-container
