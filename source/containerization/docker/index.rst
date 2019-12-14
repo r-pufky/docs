@@ -406,6 +406,16 @@ Docker images can be tagged with `multiple tags`_ for the same image.
   docker build -t {USER}/{IMAGE}:0.2 -t {USER}/{IMAGE}:latest .
   docker push {USER}/{IMAGE}
 
+Push Image to Docker Hub
+************************
+Login to Docker Hub and push via the correct tag.
+
+.. code-block:: bash
+  :caption: Login and push image based on tags.
+
+  docker login
+  docker push {USER}/{IMAGE}:{TAG}
+
 Docker Container Not Getting Interrupt Signals
 **********************************************
 Caused by the container Dockerfile not properly using the ``Exec`` specification
@@ -448,6 +458,7 @@ bypassed by replacing the functionality with ``gnupg2`` and ``pass``.
 .. _the entrypoint script: https://hynek.me/articles/docker-signals/
 .. _enables a longer shutdown time: https://docs.docker.com/compose/compose-file/#stop_grace_period
 .. _multiple tags: https://stackoverflow.com/questions/31963525/is-it-possible-for-image-to-have-multiple-tags
+.. _Login to Docker Hub: https://stackoverflow.com/questions/34434231/how-to-authenticate-for-docker-push
 .. _Docker does not provide a way: https://github.com/docker/libnetwork/issues/1141#issuecomment-215522809
 .. _non-deterministic: https://dustymabe.com/2016/05/25/non-deterministic-docker-networking-and-source-based-ip-routing/
 .. _appropriate default gateway: https://stackoverflow.com/questions/36882945/change-default-route-in-docker-container
