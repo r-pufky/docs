@@ -19,9 +19,11 @@ Related Material:
 * :ref:`reinstalling-windows-10` for common backups before reinstalling.
 * :ref:`scheduled-tasks-inconsistencies` for inconsistencies in scheduling
   service.
-* See `windows command reference`_.
 
-.. _windows command reference: https://ss64.com/nt/run.html
+.. rubric:: References
+
+#. `Windows Command Reference <https://ss64.com/nt/run.html>`_.
+#. `Registry Data Types <https://docs.microsoft.com/en-us/windows/win32/shell/hkey-type>`_
 
 .. toctree::
    :hidden:
