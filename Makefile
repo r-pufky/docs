@@ -24,7 +24,7 @@ help:
 	@echo "        Removes all build artifacts on filesystem."
 	@echo
 	@echo "  make head"
-	@echo "        Reverts ALL changes to head in docs/docs."
+	@echo "        Reverts ALL changes to head in $(TARGETDIR)."
 	@echo
 	@echo "  make linkcheck"
 	@echo "        Verifies documentation links resolve properly."

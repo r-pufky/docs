@@ -549,6 +549,10 @@
 <li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/additional-fixes.html#show-password-on-wifi-network">Show Password on Wifi Network</a></li>
 <li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/additional-fixes.html#driver-irql-not-less-or-equal-epfwwfp-sys">DRIVER_IRQL_NOT_LESS_OR_EQUAL (Epfwwfp.sys)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/additional-fixes.html#uninstall-edge-browser">Uninstall Edge Browser</a></li>
+<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/additional-fixes.html#usb-devices-slow">USB Devices Slow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="operating-systems/windows/10/additional-fixes.html#enable-better-performance-for-usb-devices">Enable Better Performance for USB Devices</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/scheduled-tasks-inconsistencies.html">Scheduled Tasks Inconsistencies</a><ul>
@@ -1410,6 +1414,12 @@ location.</p>
 </pre></div>
 </div>
 </div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Clean docs/ to upload only source changes.</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">head</span>
+</pre></div>
+</div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><em>master file […] checkouts/latest/contents.rst not found</em></p>
@@ -1444,8 +1454,8 @@ python3 -m venv sphinx
 <li><p>Update <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> to force require virtual environments for <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p></li>
 </ol>
 <blockquote>
-<div><div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text"><strong>0600 user user</strong> <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code></span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div><div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text"><strong>0600 user user</strong> <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code></span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">PIP_REQUIRE_VIRTUALENV</span><span class="o">=</span><span class="n">true</span>
 </pre></div>
 </div>
@@ -1485,8 +1495,8 @@ command.</p>
 <li><p>Use custom <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file for site customization.</p></li>
 </ol>
 <blockquote>
-<div><div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text"><strong>0640 user user</strong> <code class="docutils literal notranslate"><span class="pre">docs/sphinx/conf.py</span></code></span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div><div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text"><strong>0640 user user</strong> <code class="docutils literal notranslate"><span class="pre">docs/sphinx/conf.py</span></code></span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Configuration file for the Sphinx documentation builder.</span>
 <span class="c1">#</span>
 <span class="c1"># This file only contains a selection of the most common options. For a full</span>
@@ -1595,8 +1605,8 @@ command.</p>
 <li><p>Use custom <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> for building documentation.</p></li>
 </ol>
 <blockquote>
-<div><div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text"><strong>0640 user user</strong> <code class="docutils literal notranslate"><span class="pre">docs/Makefile</span></code></span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div><div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text"><strong>0640 user user</strong> <code class="docutils literal notranslate"><span class="pre">docs/Makefile</span></code></span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Minimal makefile for Sphinx documentation
 #
 
@@ -1622,6 +1632,9 @@ help:
 	@echo &quot;  make clean&quot;
 	@echo &quot;        Removes all build artifacts on filesystem.&quot;
 	@echo
+	@echo &quot;  make head&quot;
+	@echo &quot;        Reverts ALL changes to head in $(TARGETDIR).&quot;
+	@echo
 	@echo &quot;  make linkcheck&quot;
 	@echo &quot;        Verifies documentation links resolve properly.&quot;
 
@@ -1637,6 +1650,10 @@ docs: html copy
 clean:
 	@$(SPHINXBUILD) -M $@ &quot;$(SOURCEDIR)&quot; &quot;$(BUILDDIR)&quot; -c &quot;$(CONFDIR)&quot; $(SPHINXOPTS) $(O)
 	@rm -rfv &quot;$(TARGETDIR)&quot;/*
+
+head:
+	@git checkout -- $(TARGETDIR)
+	@git clean -fd $(TARGETDIR)
 
 html:
 	@$(SPHINXBUILD) -M $@ &quot;$(SOURCEDIR)&quot; &quot;$(BUILDDIR)&quot; -c &quot;$(CONFDIR)&quot; $(SPHINXOPTS) $(O)
@@ -1673,8 +1690,8 @@ documentation from the soruce tree.</p>
 <div class="section" id="link-checking">
 <span id="sphinx-build-link-checking"></span><h2>Link Checking<a class="headerlink" href="#link-checking" title="Permalink to this headline">¶</a></h2>
 <p>Documentation can be automatically link checked:</p>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">Verify documentation links work.</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">Verify documentation links work.</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make linkcheck
 make clean docs linkcheck
 </pre></div>
