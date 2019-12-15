@@ -5,9 +5,9 @@ Additional Windows 10 Fixes
 All changes listed below are for very specific use cases, and should not be
 applied by default or without thought.
 
-.. warning::
+.. danger::
   These can seriously break your shit if you blindly execute these. Default
-  recommendation here is not apply these.
+  recommendation here is **not** apply these.
 
 Execution Policy: **Unrestricted** (see: :ref:`setting-execution-policy`).
 
@@ -399,6 +399,17 @@ DRIVER_IRQL_NOT_LESS_OR_EQUAL (`Epfwwfp.sys`_)
 
 Offending program should be reinstalled.
 
+`Uninstall Edge Browser`_
+*************************
+Heavily integrated into Windows 10. Will probably break stuff.
+
+Download and build `install_wim_tweak`_.
+
+.. literalinclude:: source/remove-edge.cmd
+  :caption: Remove Edge browser and reboot.
+
+:download:`remove-edge.cmd <source/remove-edge.cmd>`
+
 .. _integrity enabled: https://docs.microsoft.com/en-us/windows-server/storage/refs/integrity-streams
 .. _ReFS create moved to Windows 10 Workstation: https://arstechnica.com/gadgets/2017/08/microsoft-to-remove-full-refs-support-from-windows-10-pro-push-workstation-sku/
 .. _SSD activity issue: https://superuser.com/questions/1016152/100-ssd-activity-0-r-w-speed-system-hang-issue
@@ -422,3 +433,5 @@ Offending program should be reinstalled.
 .. _Timeout Detection and Recovery: https://www.pugetsystems.com/labs/hpc/Working-around-TDR-in-Windows-for-a-better-GPU-computing-experience-777/
 .. _extra EFI boot configuration data: https://linuxbsdos.com/2015/09/05/how-to-delete-grub-files-from-a-boot-efi-partition-in-windows-10/
 .. _Epfwwfp.sys: https://ugetfix.com/ask/how-to-fix-driver_irql_not_less_or_equal-epfwwfp-sys-error-on-windows/
+.. _Uninstall Edge Browser: http://www.intowindows.com/how-to-uninstall-remove-edge-browser-from-windows-10/
+.. _install_wim_tweak: https://github.com/shiitake/win6x_registry_tweak
