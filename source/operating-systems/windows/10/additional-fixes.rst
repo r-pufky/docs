@@ -386,6 +386,19 @@ Show Password on Wifi Network
 
   netsh wlan show profile WiFi-name key=clear
 
+DRIVER_IRQL_NOT_LESS_OR_EQUAL (`Epfwwfp.sys`_)
+**********************************************
+
+:cmdmenu:`shift + Reset --> Troubleshoot --> Advanced options --> Start-up Settings --> Restart --> 4 (Safe Mode)`
+:cmdmenu:`Troubleshoot --> Command Prompt`
+
+.. code-block:: powershell
+  :caption: Remove ESET driver and reboot.
+
+  del /F /S /Q /A “C:\Windows\System32\drivers\epfwwfp.sys”
+
+Offending program should be reinstalled.
+
 .. _integrity enabled: https://docs.microsoft.com/en-us/windows-server/storage/refs/integrity-streams
 .. _ReFS create moved to Windows 10 Workstation: https://arstechnica.com/gadgets/2017/08/microsoft-to-remove-full-refs-support-from-windows-10-pro-push-workstation-sku/
 .. _SSD activity issue: https://superuser.com/questions/1016152/100-ssd-activity-0-r-w-speed-system-hang-issue
@@ -408,3 +421,4 @@ Show Password on Wifi Network
 .. _EasyUEFI: https://www.easyuefi.com/index-us.html
 .. _Timeout Detection and Recovery: https://www.pugetsystems.com/labs/hpc/Working-around-TDR-in-Windows-for-a-better-GPU-computing-experience-777/
 .. _extra EFI boot configuration data: https://linuxbsdos.com/2015/09/05/how-to-delete-grub-files-from-a-boot-efi-partition-in-windows-10/
+.. _Epfwwfp.sys: https://ugetfix.com/ask/how-to-fix-driver_irql_not_less_or_equal-epfwwfp-sys-error-on-windows/
