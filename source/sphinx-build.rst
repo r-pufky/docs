@@ -23,6 +23,11 @@ location.
   make clean docs
   make linkcheck
 
+.. code-block::
+  :caption: Clean docs/ to upload only source changes.
+
+  make head
+
 .. note::
   *master file [...] checkouts/latest/contents.rst not found*
 

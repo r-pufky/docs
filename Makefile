@@ -23,6 +23,9 @@ help:
 	@echo "  make clean"
 	@echo "        Removes all build artifacts on filesystem."
 	@echo
+	@echo "  make head"
+	@echo "        Reverts ALL changes to head in docs/docs."
+	@echo
 	@echo "  make linkcheck"
 	@echo "        Verifies documentation links resolve properly."
 
@@ -38,6 +41,10 @@ docs: html copy
 clean:
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" -c "$(CONFDIR)" $(SPHINXOPTS) $(O)
 	@rm -rfv "$(TARGETDIR)"/*
+
+head:
+	@git checkout -- $(TARGETDIR)
+	@git clean -fd $(TARGETDIR)
 
 html:
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" -c "$(CONFDIR)" $(SPHINXOPTS) $(O)
