@@ -410,6 +410,30 @@ Download and build `install_wim_tweak`_.
 
 :download:`remove-edge.cmd <source/remove-edge.cmd>`
 
+`USB Devices Slow`_
+*******************
+In Windows 1809+ default USB removal policy changed to ``Quick removal`` for
+additional safety instead of ``Better performance`` for additional speed; as a
+result USB devices may appear slower than normal. This reverts to the old
+behavior.
+
+.. ggui:: Enable Better Performance for USB Devices
+  :key_title: win + x -->
+              Disk Management -->
+              RMB {USB DEVICE} -->
+              Properties -->
+              Policies
+  :option:    Removal policy,
+              › ☑,
+              Write-caching policy,
+              › ☑
+  :setting:   ,
+              Better performance,
+              ,
+              Enable write caching on the device
+  :no_caption:
+  :no_launch:
+
 .. _integrity enabled: https://docs.microsoft.com/en-us/windows-server/storage/refs/integrity-streams
 .. _ReFS create moved to Windows 10 Workstation: https://arstechnica.com/gadgets/2017/08/microsoft-to-remove-full-refs-support-from-windows-10-pro-push-workstation-sku/
 .. _SSD activity issue: https://superuser.com/questions/1016152/100-ssd-activity-0-r-w-speed-system-hang-issue
@@ -435,3 +459,4 @@ Download and build `install_wim_tweak`_.
 .. _Epfwwfp.sys: https://ugetfix.com/ask/how-to-fix-driver_irql_not_less_or_equal-epfwwfp-sys-error-on-windows/
 .. _Uninstall Edge Browser: http://www.intowindows.com/how-to-uninstall-remove-edge-browser-from-windows-10/
 .. _install_wim_tweak: https://github.com/shiitake/win6x_registry_tweak
+.. _USB Devices Slow: https://support.microsoft.com/en-us/help/4495263/windows-10-1809-change-in-default-removal-policy-for-external-media
