@@ -7,9 +7,9 @@ Common things to remember when reinstalling a Windows machine.
 #. Remove any existing junctions, otherwise copy with halt on them.
 #. Backup any wanted data from the following default locations:
 
-   * ``C:\Users\*``
-   * ``C:\Programs\``
-   * ``C:\Program Files (x86)\``
+   * ``c:\Users\*``
+   * ``c:\Programs\``
+   * ``c:\Program Files (x86)\``
 
 Dump Existing Registry
 **********************
@@ -21,7 +21,7 @@ Gamesave Manager
 ****************
 Backup the installation directory and games database:
 
-* ``C:\Program Files (x86)GameSave Manager v3``
+* ``c:\Program Files (x86)GameSave Manager v3``
 * ``%appdata%\roaming\GameSave Manager 3``
 
 Putty
@@ -43,7 +43,7 @@ WinSCP
 MusicBee
 ********
 * Copy any special files from installation directory (e.g. plugins, etc). These
-  are located in ``C:\Program Files (x86)/MusicBee``.
+  are located in ``c:\Program Files (x86)/MusicBee``.
 * Copy configuration data from `%appdata%/roaming/musicbee`.
 
 Mumble
@@ -60,7 +60,7 @@ Backup the client settings, certificates, and database:
 Claws-mail
 **********
 Default installation directory includes configuration and mail data:
-``C:\Program Files (x86)\claws``.
+``c:\Program Files (x86)\claws``.
 
 Gaming
 ******
@@ -68,11 +68,11 @@ Backup saves and game data from game services.
 
 Origin
 ======
-Directory contains configuration and saves: ``C:\Program Files (x86)\Origin``.
+Directory contains configuration and saves: ``c:\Program Files (x86)\Origin``.
 
 Uplay
 =====
-Directory contains configuration and saves: ``C:\Program Files (x86)\Ubisoft``.
+Directory contains configuration and saves: ``c:\Program Files (x86)\Ubisoft``.
 
 .. warning::
   Older ubisoft games do **not** back up to their servers even though they say
@@ -81,4 +81,4 @@ Directory contains configuration and saves: ``C:\Program Files (x86)\Ubisoft``.
 Steam
 =====
 Directory contains configuration and saves:
-``C:\Program Files (x86)\Steam\userdata``.
+``c:\Program Files (x86)\Steam\userdata``.

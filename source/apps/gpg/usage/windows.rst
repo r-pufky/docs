@@ -31,7 +31,7 @@ and **verify integrity**.
               Edit -->
               New
   :option:    Path
-  :setting:   C:\Program Files (x86)\GnuPG\bin
+  :setting:   c:\Program Files (x86)\GnuPG\bin
   :no_section:
   :no_caption:
 

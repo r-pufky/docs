@@ -48,6 +48,8 @@ running through multiple screen sessions into docker, etc.
   * Sets the correct escape sequence.
   * Press the key instead of manually typing it.
 
+.. _apps-putty-x-windows:
+
 Forwarding X Windows
 ********************
 Use `VcXsrv`_ instead of xming. This is fully functional and does not have
@@ -64,12 +66,12 @@ copy/paste or resizing disabled. Install as normal.
 
 #. Edit xlaunch shortcut
 
-   * ``C:\ProgramData\Microsoft\Windows\Start Menu\Programs\VcXsrv``
+   * ``c:\ProgramData\Microsoft\Windows\Start Menu\Programs\VcXsrv``
    * :cmdmenu:`XLaunch --> RMB --> properties --> Target`
 
      .. code-block:: powershell
 
-       "C:\Program Files\VcXsrv\xlaunch.exe" -run config.xlaunch
+       "c:\Program Files\VcXsrv\xlaunch.exe" -run config.xlaunch
 
 #. Save and launch ``XLaunch``. Settings should load automatically and start
    xserver.

@@ -482,6 +482,23 @@
 <li class="toctree-l3"><a class="reference internal" href="securing-installation.html#removing-preinstalled-windows-packages">Removing Preinstalled Windows Packages</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="wsl.html">Windows Subsystem for Linux (WSL)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="wsl.html#enable-wsl-in-windows-10">Enable WSL in Windows 10</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wsl.html#installing-linux-distros">Installing Linux Distros</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="wsl.html#manual-install">Manual Install</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wsl.html#windows-store-install">Windows Store Install</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="wsl.html#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="wsl.html#installation-failed-with-error-0x80070003">Installation failed with error 0x80070003</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="wsl.html#wsl-storage-settings">WSL Storage Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="wsl.html#wslregisterdistribution-failed-with-error-0x8007019e">WslRegisterDistribution failed with error 0x8007019e</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="troubleshooting-pc-hardware.html">Troubleshooting PC Issues</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="troubleshooting-pc-hardware.html#general-maintenance">General Maintenance</a></li>
 <li class="toctree-l3"><a class="reference internal" href="troubleshooting-pc-hardware.html#random-crashes">Random ‘Crashes’</a><ul>
@@ -530,6 +547,8 @@
 <li class="toctree-l3"><a class="reference internal" href="additional-fixes.html#application-using-the-wrong-audio-output-device">Application Using the Wrong Audio Output Device</a></li>
 <li class="toctree-l3"><a class="reference internal" href="additional-fixes.html#windows-bootloader-missing-multiple-os">Windows Bootloader Missing / Multiple OS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="additional-fixes.html#display-driver-has-been-restarted">Display Driver Has Been Restarted</a></li>
+<li class="toctree-l3"><a class="reference internal" href="additional-fixes.html#show-password-on-wifi-network">Show Password on Wifi Network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="additional-fixes.html#driver-irql-not-less-or-equal-epfwwfp-sys">DRIVER_IRQL_NOT_LESS_OR_EQUAL (Epfwwfp.sys)</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="scheduled-tasks-inconsistencies.html">Scheduled Tasks Inconsistencies</a><ul>
@@ -1280,9 +1299,10 @@
 <p class="caption"><span class="caption-text">Appendix</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../glossary.html">Glossary</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../glossary.html#networking">Networking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../glossary.html#mail">Mail</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../glossary.html#gpg-encryption">GPG/Encryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../glossary.html#mail">Mail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../glossary.html#networking">Networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../glossary.html#operating-systems">Operating Systems</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../icon-explanation.html">Icon Explanation</a></li>
@@ -1378,9 +1398,9 @@
 <li><p>Remove any existing junctions, otherwise copy with halt on them.</p></li>
 <li><p>Backup any wanted data from the following default locations:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">C:\Users\*</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">C:\Programs\</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)\</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c:\Users\*</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c:\Programs\</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)\</span></code></p></li>
 </ul>
 </li>
 </ol>
@@ -1393,7 +1413,7 @@
 <h2>Gamesave Manager<a class="headerlink" href="#gamesave-manager" title="Permalink to this headline">¶</a></h2>
 <p>Backup the installation directory and games database:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)GameSave</span> <span class="pre">Manager</span> <span class="pre">v3</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)GameSave</span> <span class="pre">Manager</span> <span class="pre">v3</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">%appdata%\roaming\GameSave</span> <span class="pre">Manager</span> <span class="pre">3</span></code></p></li>
 </ul>
 </div>
@@ -1420,7 +1440,7 @@
 <h2>MusicBee<a class="headerlink" href="#musicbee" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Copy any special files from installation directory (e.g. plugins, etc). These
-are located in <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)/MusicBee</span></code>.</p></li>
+are located in <code class="docutils literal notranslate"><span class="pre">c:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)/MusicBee</span></code>.</p></li>
 <li><p>Copy configuration data from <cite>%appdata%/roaming/musicbee</cite>.</p></li>
 </ul>
 </div>
@@ -1439,18 +1459,18 @@ are located in <code class="docutils literal notranslate"><span class="pre">C:\P
 <div class="section" id="claws-mail">
 <h2>Claws-mail<a class="headerlink" href="#claws-mail" title="Permalink to this headline">¶</a></h2>
 <p>Default installation directory includes configuration and mail data:
-<code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)\claws</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">c:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)\claws</span></code>.</p>
 </div>
 <div class="section" id="gaming">
 <h2>Gaming<a class="headerlink" href="#gaming" title="Permalink to this headline">¶</a></h2>
 <p>Backup saves and game data from game services.</p>
 <div class="section" id="origin">
 <h3>Origin<a class="headerlink" href="#origin" title="Permalink to this headline">¶</a></h3>
-<p>Directory contains configuration and saves: <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)\Origin</span></code>.</p>
+<p>Directory contains configuration and saves: <code class="docutils literal notranslate"><span class="pre">c:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)\Origin</span></code>.</p>
 </div>
 <div class="section" id="uplay">
 <h3>Uplay<a class="headerlink" href="#uplay" title="Permalink to this headline">¶</a></h3>
-<p>Directory contains configuration and saves: <code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)\Ubisoft</span></code>.</p>
+<p>Directory contains configuration and saves: <code class="docutils literal notranslate"><span class="pre">c:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)\Ubisoft</span></code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Older ubisoft games do <strong>not</strong> back up to their servers even though they say
@@ -1460,7 +1480,7 @@ they do.</p>
 <div class="section" id="steam">
 <h3>Steam<a class="headerlink" href="#steam" title="Permalink to this headline">¶</a></h3>
 <p>Directory contains configuration and saves:
-<code class="docutils literal notranslate"><span class="pre">C:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)\Steam\userdata</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">c:\Program</span> <span class="pre">Files</span> <span class="pre">(x86)\Steam\userdata</span></code>.</p>
 </div>
 </div>
 </div>

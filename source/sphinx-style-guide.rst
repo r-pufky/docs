@@ -27,6 +27,7 @@ Standardized replacements used:
 * ``{EMAIL}`` - user email address.
 * ``{HOST}`` - Host DNS name.
 * ``{IP}`` - Host IP.
+* Windows drives are **lowercased** ``c:\``.
 
 .. note::
   All can be modified with additional context as needed. E.g. ``{WEBHOOK

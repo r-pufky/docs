@@ -12,8 +12,8 @@ clarify minion changes, as well as enabling easy management on the config. Any
 file with ``.conf`` will be loaded in this directory and take precedence over
 the flat file.
 
-Windows minion configuration files are located in ``C:\salt\conf\minion`` and
-``C:\salt\conf\minion.d\`` respectively.
+Windows minion configuration files are located in ``c:\salt\conf\minion`` and
+``c:\salt\conf\minion.d\`` respectively.
 
 Schedule Section
 ****************

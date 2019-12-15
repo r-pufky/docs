@@ -482,6 +482,23 @@
 <li class="toctree-l3"><a class="reference internal" href="securing-installation.html#removing-preinstalled-windows-packages">Removing Preinstalled Windows Packages</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="wsl.html">Windows Subsystem for Linux (WSL)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="wsl.html#enable-wsl-in-windows-10">Enable WSL in Windows 10</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wsl.html#installing-linux-distros">Installing Linux Distros</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="wsl.html#manual-install">Manual Install</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wsl.html#windows-store-install">Windows Store Install</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="wsl.html#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="wsl.html#installation-failed-with-error-0x80070003">Installation failed with error 0x80070003</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="wsl.html#wsl-storage-settings">WSL Storage Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="wsl.html#wslregisterdistribution-failed-with-error-0x8007019e">WslRegisterDistribution failed with error 0x8007019e</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="troubleshooting-pc-hardware.html">Troubleshooting PC Issues</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="troubleshooting-pc-hardware.html#general-maintenance">General Maintenance</a></li>
 <li class="toctree-l3"><a class="reference internal" href="troubleshooting-pc-hardware.html#random-crashes">Random ‘Crashes’</a><ul>
@@ -530,6 +547,8 @@
 <li class="toctree-l3"><a class="reference internal" href="#application-using-the-wrong-audio-output-device">Application Using the Wrong Audio Output Device</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#windows-bootloader-missing-multiple-os">Windows Bootloader Missing / Multiple OS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#display-driver-has-been-restarted">Display Driver Has Been Restarted</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#show-password-on-wifi-network">Show Password on Wifi Network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#driver-irql-not-less-or-equal-epfwwfp-sys">DRIVER_IRQL_NOT_LESS_OR_EQUAL (Epfwwfp.sys)</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="scheduled-tasks-inconsistencies.html">Scheduled Tasks Inconsistencies</a><ul>
@@ -1280,9 +1299,10 @@
 <p class="caption"><span class="caption-text">Appendix</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../glossary.html">Glossary</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../glossary.html#networking">Networking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../glossary.html#mail">Mail</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../glossary.html#gpg-encryption">GPG/Encryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../glossary.html#mail">Mail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../glossary.html#networking">Networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../glossary.html#operating-systems">Operating Systems</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../icon-explanation.html">Icon Explanation</a></li>
@@ -1722,7 +1742,7 @@ be removed, prompting this perms error everytime you access it). You can fix
 this by replacing the old SID with the new SID:</p>
 <div class="literal-block-wrapper docutils container" id="id16">
 <div class="code-block-caption"><span class="caption-text">Replace old SID with current system SID (powershell as admin).</span><a class="headerlink" href="#id16" title="Permalink to this code">¶</a></div>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>setacl.exe -on C:\ -ot file -actn trustee -trst &quot;n1:S-old-501;n2:S-new-501;ta:repltrst&quot; -rec cont
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>setacl.exe -on c:\ -ot file -actn trustee -trst &quot;n1:S-old-501;n2:S-new-501;ta:repltrst&quot; -rec cont
 </pre></div>
 </div>
 </div>
@@ -1845,6 +1865,27 @@ it is <strong>not</strong> recommended to disable TDR entirely.</p>
 </tbody>
 </table>
 </div>
+</div>
+<div class="section" id="show-password-on-wifi-network">
+<h2>Show Password on Wifi Network<a class="headerlink" href="#show-password-on-wifi-network" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block-wrapper docutils container" id="id20">
+<div class="code-block-caption"><span class="caption-text">Dump wifi configuration including password (powershell as admin).</span><a class="headerlink" href="#id20" title="Permalink to this code">¶</a></div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">netsh</span> <span class="n">wlan</span> <span class="n">show</span> <span class="n">profile</span> <span class="n">WiFi-name</span> <span class="n">key</span><span class="p">=</span><span class="nb">clear</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="driver-irql-not-less-or-equal-epfwwfp-sys">
+<h2>DRIVER_IRQL_NOT_LESS_OR_EQUAL (<a class="reference external" href="https://ugetfix.com/ask/how-to-fix-driver_irql_not_less_or_equal-epfwwfp-sys-error-on-windows/">Epfwwfp.sys</a>)<a class="headerlink" href="#driver-irql-not-less-or-equal-epfwwfp-sys" title="Permalink to this headline">¶</a></h2>
+<p><span class="guilabel">shift + Reset › Troubleshoot › Advanced options › Start-up Settings › Restart › 4 (Safe Mode)</span>
+<span class="guilabel">Troubleshoot › Command Prompt</span></p>
+<div class="literal-block-wrapper docutils container" id="id21">
+<div class="code-block-caption"><span class="caption-text">Remove ESET driver and reboot.</span><a class="headerlink" href="#id21" title="Permalink to this code">¶</a></div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>del /F /S /Q /A “c:\Windows\System32\drivers\epfwwfp.sys”
+</pre></div>
+</div>
+</div>
+<p>Offending program should be reinstalled.</p>
 </div>
 </div>
 

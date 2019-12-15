@@ -271,7 +271,7 @@ this by replacing the old SID with the new SID:
 .. code-block:: powershell
   :caption: Replace old SID with current system SID (powershell as admin).
 
-  setacl.exe -on C:\ -ot file -actn trustee -trst "n1:S-old-501;n2:S-new-501;ta:repltrst" -rec cont
+  setacl.exe -on c:\ -ot file -actn trustee -trst "n1:S-old-501;n2:S-new-501;ta:repltrst" -rec cont
 
 Alternatively take ownership and copy files to a NTFS partition with proper
 SID's set.
@@ -395,7 +395,7 @@ DRIVER_IRQL_NOT_LESS_OR_EQUAL (`Epfwwfp.sys`_)
 .. code-block:: powershell
   :caption: Remove ESET driver and reboot.
 
-  del /F /S /Q /A “C:\Windows\System32\drivers\epfwwfp.sys”
+  del /F /S /Q /A “c:\Windows\System32\drivers\epfwwfp.sys”
 
 Offending program should be reinstalled.
 

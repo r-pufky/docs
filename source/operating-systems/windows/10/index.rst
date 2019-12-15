@@ -29,6 +29,7 @@ Related Material:
 
    setup/index
    securing-installation
+   wsl
    troubleshooting-pc-hardware
    reinstalling
    additional-fixes

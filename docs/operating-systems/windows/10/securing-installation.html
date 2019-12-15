@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Troubleshooting PC Issues" href="troubleshooting-pc-hardware.html" />
+    <link rel="next" title="Windows Subsystem for Linux (WSL)" href="wsl.html" />
     <link rel="prev" title="Run Windows 10 From USB" href="setup/run-from-usb.html" /> 
 </head>
 
@@ -482,6 +482,23 @@
 <li class="toctree-l3"><a class="reference internal" href="#removing-preinstalled-windows-packages">Removing Preinstalled Windows Packages</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="wsl.html">Windows Subsystem for Linux (WSL)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="wsl.html#enable-wsl-in-windows-10">Enable WSL in Windows 10</a></li>
+<li class="toctree-l3"><a class="reference internal" href="wsl.html#installing-linux-distros">Installing Linux Distros</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="wsl.html#manual-install">Manual Install</a></li>
+<li class="toctree-l4"><a class="reference internal" href="wsl.html#windows-store-install">Windows Store Install</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="wsl.html#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="wsl.html#installation-failed-with-error-0x80070003">Installation failed with error 0x80070003</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="wsl.html#wsl-storage-settings">WSL Storage Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="wsl.html#wslregisterdistribution-failed-with-error-0x8007019e">WslRegisterDistribution failed with error 0x8007019e</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="troubleshooting-pc-hardware.html">Troubleshooting PC Issues</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="troubleshooting-pc-hardware.html#general-maintenance">General Maintenance</a></li>
 <li class="toctree-l3"><a class="reference internal" href="troubleshooting-pc-hardware.html#random-crashes">Random ‘Crashes’</a><ul>
@@ -530,6 +547,8 @@
 <li class="toctree-l3"><a class="reference internal" href="additional-fixes.html#application-using-the-wrong-audio-output-device">Application Using the Wrong Audio Output Device</a></li>
 <li class="toctree-l3"><a class="reference internal" href="additional-fixes.html#windows-bootloader-missing-multiple-os">Windows Bootloader Missing / Multiple OS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="additional-fixes.html#display-driver-has-been-restarted">Display Driver Has Been Restarted</a></li>
+<li class="toctree-l3"><a class="reference internal" href="additional-fixes.html#show-password-on-wifi-network">Show Password on Wifi Network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="additional-fixes.html#driver-irql-not-less-or-equal-epfwwfp-sys">DRIVER_IRQL_NOT_LESS_OR_EQUAL (Epfwwfp.sys)</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="scheduled-tasks-inconsistencies.html">Scheduled Tasks Inconsistencies</a><ul>
@@ -1280,9 +1299,10 @@
 <p class="caption"><span class="caption-text">Appendix</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../glossary.html">Glossary</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../glossary.html#networking">Networking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../glossary.html#mail">Mail</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../glossary.html#gpg-encryption">GPG/Encryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../glossary.html#mail">Mail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../glossary.html#networking">Networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../glossary.html#operating-systems">Operating Systems</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../icon-explanation.html">Icon Explanation</a></li>
@@ -1981,7 +2001,7 @@ provisioned accounts.</p></li>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="troubleshooting-pc-hardware.html" class="btn btn-neutral float-right" title="Troubleshooting PC Issues" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="wsl.html" class="btn btn-neutral float-right" title="Windows Subsystem for Linux (WSL)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="setup/run-from-usb.html" class="btn btn-neutral float-left" title="Run Windows 10 From USB" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

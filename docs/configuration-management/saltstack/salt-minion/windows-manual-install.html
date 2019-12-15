@@ -482,6 +482,23 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/securing-installation.html#removing-preinstalled-windows-packages">Removing Preinstalled Windows Packages</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/wsl.html">Windows Subsystem for Linux (WSL)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/wsl.html#enable-wsl-in-windows-10">Enable WSL in Windows 10</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/wsl.html#installing-linux-distros">Installing Linux Distros</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/wsl.html#manual-install">Manual Install</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/wsl.html#windows-store-install">Windows Store Install</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/wsl.html#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/wsl.html#installation-failed-with-error-0x80070003">Installation failed with error 0x80070003</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../operating-systems/windows/10/wsl.html#wsl-storage-settings">WSL Storage Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/wsl.html#wslregisterdistribution-failed-with-error-0x8007019e">WslRegisterDistribution failed with error 0x8007019e</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/troubleshooting-pc-hardware.html">Troubleshooting PC Issues</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/troubleshooting-pc-hardware.html#general-maintenance">General Maintenance</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/troubleshooting-pc-hardware.html#random-crashes">Random ‘Crashes’</a><ul>
@@ -530,6 +547,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/additional-fixes.html#application-using-the-wrong-audio-output-device">Application Using the Wrong Audio Output Device</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/additional-fixes.html#windows-bootloader-missing-multiple-os">Windows Bootloader Missing / Multiple OS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/additional-fixes.html#display-driver-has-been-restarted">Display Driver Has Been Restarted</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/additional-fixes.html#show-password-on-wifi-network">Show Password on Wifi Network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/additional-fixes.html#driver-irql-not-less-or-equal-epfwwfp-sys">DRIVER_IRQL_NOT_LESS_OR_EQUAL (Epfwwfp.sys)</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/scheduled-tasks-inconsistencies.html">Scheduled Tasks Inconsistencies</a><ul>
@@ -1280,9 +1299,10 @@
 <p class="caption"><span class="caption-text">Appendix</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../glossary.html">Glossary</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../glossary.html#networking">Networking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../glossary.html#mail">Mail</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../glossary.html#gpg-encryption">GPG/Encryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../glossary.html#mail">Mail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../glossary.html#networking">Networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../glossary.html#operating-systems">Operating Systems</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../icon-explanation.html">Icon Explanation</a></li>
@@ -1377,7 +1397,7 @@
 <span id="salt-windows-manual-install"></span><h1><a class="reference external" href="https://repo.saltstack.com/#windows">Windows Manual Install</a><a class="headerlink" href="#windows-manual-install" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference download external" download="" href="https://repo.saltstack.com/windows/"><code class="xref download docutils literal notranslate"><span class="pre">Latest</span> <span class="pre">Windows</span> <span class="pre">Minion</span> <span class="pre">Installer</span></code></a>.</p>
 <p>Installer can be launched from the <a class="reference external" href="https://docs.saltstack.com/en/latest/topics/installation/windows.html">CLI or GUI</a>, dependencies are included with
-the installer. The minion will be installed to <code class="docutils literal notranslate"><span class="pre">C:\salt</span></code>.</p>
+the installer. The minion will be installed to <code class="docutils literal notranslate"><span class="pre">c:\salt</span></code>.</p>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-text">The salt-minion can be managed like a normal windows service.</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">sc start </span><span class="n">salt-minion</span>

@@ -5,7 +5,7 @@
 :download:`Latest Windows Minion Installer <https://repo.saltstack.com/windows/>`.
 
 Installer can be launched from the `CLI or GUI`_, dependencies are included with
-the installer. The minion will be installed to ``C:\salt``.
+the installer. The minion will be installed to ``c:\salt``.
 
 .. code-block:: powershell
   :caption: The salt-minion can be managed like a normal windows service.

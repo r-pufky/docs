@@ -482,6 +482,23 @@
 <li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/securing-installation.html#removing-preinstalled-windows-packages">Removing Preinstalled Windows Packages</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/wsl.html">Windows Subsystem for Linux (WSL)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/wsl.html#enable-wsl-in-windows-10">Enable WSL in Windows 10</a></li>
+<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/wsl.html#installing-linux-distros">Installing Linux Distros</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="operating-systems/windows/10/wsl.html#manual-install">Manual Install</a></li>
+<li class="toctree-l4"><a class="reference internal" href="operating-systems/windows/10/wsl.html#windows-store-install">Windows Store Install</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/wsl.html#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="operating-systems/windows/10/wsl.html#installation-failed-with-error-0x80070003">Installation failed with error 0x80070003</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="operating-systems/windows/10/wsl.html#wsl-storage-settings">WSL Storage Settings</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="operating-systems/windows/10/wsl.html#wslregisterdistribution-failed-with-error-0x8007019e">WslRegisterDistribution failed with error 0x8007019e</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/troubleshooting-pc-hardware.html">Troubleshooting PC Issues</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/troubleshooting-pc-hardware.html#general-maintenance">General Maintenance</a></li>
 <li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/troubleshooting-pc-hardware.html#random-crashes">Random ‘Crashes’</a><ul>
@@ -530,6 +547,8 @@
 <li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/additional-fixes.html#application-using-the-wrong-audio-output-device">Application Using the Wrong Audio Output Device</a></li>
 <li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/additional-fixes.html#windows-bootloader-missing-multiple-os">Windows Bootloader Missing / Multiple OS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/additional-fixes.html#display-driver-has-been-restarted">Display Driver Has Been Restarted</a></li>
+<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/additional-fixes.html#show-password-on-wifi-network">Show Password on Wifi Network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/additional-fixes.html#driver-irql-not-less-or-equal-epfwwfp-sys">DRIVER_IRQL_NOT_LESS_OR_EQUAL (Epfwwfp.sys)</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/scheduled-tasks-inconsistencies.html">Scheduled Tasks Inconsistencies</a><ul>
@@ -1280,9 +1299,10 @@
 <p class="caption"><span class="caption-text">Appendix</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Glossary</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#networking">Networking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#mail">Mail</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#gpg-encryption">GPG/Encryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mail">Mail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#networking">Networking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#operating-systems">Operating Systems</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="icon-explanation.html">Icon Explanation</a></li>
@@ -1372,27 +1392,6 @@
   <div class="section" id="glossary">
 <span id="id1"></span><h1>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h1>
 <p>See <a class="reference internal" href="icon-explanation.html#icon-explanation"><span class="std std-ref">Icon Explanation</span></a> for documentation specific symbols.</p>
-<div class="section" id="networking">
-<h2>Networking<a class="headerlink" href="#networking" title="Permalink to this headline">¶</a></h2>
-<p>See <a class="reference internal" href="networking/ubiquiti/example-vlan-network/vlan-101.html#vlan-101"><span class="std std-ref">VLAN 101</span></a> for Unifi network specific terms.</p>
-<dl class="glossary simple">
-<dt id="term-ubnt"><abbr>UBNT</abbr></dt><dd><p>Ubiquiti Networks. This is a common Acronym used for their devices.</p>
-</dd>
-<dt id="term-unifi"><abbr>Unifi</abbr></dt><dd><p>A line of products from UBNT.</p>
-</dd>
-</dl>
-</div>
-<div class="section" id="mail">
-<h2>Mail<a class="headerlink" href="#mail" title="Permalink to this headline">¶</a></h2>
-<dl class="glossary simple">
-<dt id="term-mta"><abbr>MTA</abbr></dt><dd><p>Mail Transport Agent: handles mail server to server (e.g. other domains).</p>
-</dd>
-<dt id="term-mda"><abbr>MDA</abbr></dt><dd><p>Mail Delivery Agent: handles user access to email (e.g. IMAP).</p>
-</dd>
-<dt id="term-mua"><abbr>MUA</abbr></dt><dd><p>Mail User Agent: user client to check email (e.g. thunderbird/outlook).</p>
-</dd>
-</dl>
-</div>
 <div class="section" id="gpg-encryption">
 <h2>GPG/Encryption<a class="headerlink" href="#gpg-encryption" title="Permalink to this headline">¶</a></h2>
 <dl class="glossary">
@@ -1423,6 +1422,35 @@ data sent by you has not been altered.</p>
 <dt id="term-authentication-key"><abbr>Authentication Key</abbr></dt><dd><p>Key used to Authenicate to systems (e.g. SSH). This will allow other systems
 to load your public GPG key and enable access to systems without needing any
 information from you.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="mail">
+<h2>Mail<a class="headerlink" href="#mail" title="Permalink to this headline">¶</a></h2>
+<dl class="glossary simple">
+<dt id="term-mta"><abbr>MTA</abbr></dt><dd><p>Mail Transport Agent: handles mail server to server (e.g. other domains).</p>
+</dd>
+<dt id="term-mda"><abbr>MDA</abbr></dt><dd><p>Mail Delivery Agent: handles user access to email (e.g. IMAP).</p>
+</dd>
+<dt id="term-mua"><abbr>MUA</abbr></dt><dd><p>Mail User Agent: user client to check email (e.g. thunderbird/outlook).</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="networking">
+<h2>Networking<a class="headerlink" href="#networking" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="networking/ubiquiti/example-vlan-network/vlan-101.html#vlan-101"><span class="std std-ref">VLAN 101</span></a> for Unifi network specific terms.</p>
+<dl class="glossary simple">
+<dt id="term-ubnt"><abbr>UBNT</abbr></dt><dd><p>Ubiquiti Networks. This is a common Acronym used for their devices.</p>
+</dd>
+<dt id="term-unifi"><abbr>Unifi</abbr></dt><dd><p>A line of products from UBNT.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="operating-systems">
+<h2>Operating Systems<a class="headerlink" href="#operating-systems" title="Permalink to this headline">¶</a></h2>
+<dl class="glossary simple">
+<dt id="term-wsl"><abbr>WSL</abbr></dt><dd><p>Windows Subsystem for Linux. Run linux distros in windows 10. See
+<a class="reference internal" href="operating-systems/windows/10/wsl.html#os-windows-wsl"><span class="std std-ref">Windows Subsystem for Linux (WSL)</span></a>.</p>
 </dd>
 </dl>
 </div>
