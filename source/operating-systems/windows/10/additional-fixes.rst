@@ -379,6 +379,13 @@ it is **not** recommended to disable TDR entirely.
   :no_section:
   :no_caption:
 
+Show Password on Wifi Network
+*****************************
+.. code-block:: powershell
+  :caption: Dump wifi configuration including password (powershell as admin).
+
+  netsh wlan show profile WiFi-name key=clear
+
 .. _integrity enabled: https://docs.microsoft.com/en-us/windows-server/storage/refs/integrity-streams
 .. _ReFS create moved to Windows 10 Workstation: https://arstechnica.com/gadgets/2017/08/microsoft-to-remove-full-refs-support-from-windows-10-pro-push-workstation-sku/
 .. _SSD activity issue: https://superuser.com/questions/1016152/100-ssd-activity-0-r-w-speed-system-hang-issue
