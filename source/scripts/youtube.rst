@@ -15,19 +15,24 @@ Snippets
 ********
 
 .. code-block:: bash
-  :caption: Extract 320kbps Audio From Video.
+  :caption: Extract 320kbps MP3 Audio From Video.
 
-  youtube-dl {URL} --extract-audio --audio-format mp3 --audio-quality 320K --keep-video --add-metadata
+  youtube-dl --extract-audio --audio-format mp3 --audio-quality 320K --keep-video --add-metadata {URL}
+
+.. code-block:: bash
+  :caption: Extract FLAC Audio From Video.
+
+  youtube-dl --extract-audio --audio-format flac --audio-quality 0 --add-metadata {URL}
 
 .. code-block:: bash
   :caption: List all formats for a video.
 
-  youtube-dl {URL} -F
+  youtube-dl -F {URL}
 
 .. code-block:: bash
   :caption: Download only the 1080p video/audio stream from a video.
 
-  youtube-dl {URL} 'bestvideo[height<=1080]+bestaudio/best[height<=1080]'
+  youtube-dl "ytsearch:bestvideo[height<=1080]+bestaudio/best[height<=1080]" {URL}
 
 .. code-block:: bash
   :caption: Download a playlist.
