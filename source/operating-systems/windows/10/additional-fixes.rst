@@ -434,6 +434,15 @@ behavior.
   :no_caption:
   :no_launch:
 
+Disable `Windows Backup Schedule`_
+**********************************
+Removed since Windows 7 but added back into Windows 10.
+
+.. code-block:: powershell
+  :caption: powershell (as admin).
+
+  sdclt.exe /DISABLEJOB
+
 .. _integrity enabled: https://docs.microsoft.com/en-us/windows-server/storage/refs/integrity-streams
 .. _ReFS create moved to Windows 10 Workstation: https://arstechnica.com/gadgets/2017/08/microsoft-to-remove-full-refs-support-from-windows-10-pro-push-workstation-sku/
 .. _SSD activity issue: https://superuser.com/questions/1016152/100-ssd-activity-0-r-w-speed-system-hang-issue
@@ -460,3 +469,4 @@ behavior.
 .. _Uninstall Edge Browser: http://www.intowindows.com/how-to-uninstall-remove-edge-browser-from-windows-10/
 .. _install_wim_tweak: https://github.com/shiitake/win6x_registry_tweak
 .. _USB Devices Slow: https://support.microsoft.com/en-us/help/4495263/windows-10-1809-change-in-default-removal-policy-for-external-media
+.. _Windows Backup Schedule: https://www.tenforums.com/tutorials/75591-turn-off-schedule-windows-backup-windows-10-a.html
