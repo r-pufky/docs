@@ -141,6 +141,7 @@ git hub, or submit a CL :)
   services/plex/index
   services/postfix/index
   services/radarr/index
+  services/signal/index
   services/sonarr/index
   services/ssh/index
   services/unifi/index
