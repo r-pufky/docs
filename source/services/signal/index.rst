@@ -22,12 +22,21 @@ Server Setup
 Download the `Latest Release`_.
 
 .. code-block:: bash
-  :caption: Install dependencies and extract release.
+  :caption: Install dependencies.
 
   apt install default-jre
 
+.. code-block:: bash
+  :caption: Create signal system user.
+
+  adduser --system --home /data/signal --shell /bin/false signal
+
+.. code-block:: bash
+  :caption: Install dependencies and extract release.
+
   tar xvf signal-cli-*.tar.gz -C /data/signal/cli
   chmod go-rwx /data/signal
+  chown -R signal /data/signal
 
 Link to Phone
 =============
@@ -74,7 +83,8 @@ service.
   :caption: Copy configuration to service directory.
 
   cp -av ~/.local/share/signal-cli/data /data/signal/
-  chmod go-rwx -R /data/signal/data
+  chmod go-rwx -R /data/signal
+  chown -R signal /data/signal
 
 .. warning::
   These files **must** be secured as any access to these credentials will allow
@@ -97,7 +107,7 @@ Script will only send notifications on opening SSH connections.
 
   ## Add at end of file.
   # Alert successful logins via signal.
-  session    optional    pam_exec.so /data/signal/ssh-signal-notify
+  session    optional    pam_exec.so seteuid /data/signal/ssh-signal-notify
 
 .. note::
   ``pam_exec`` will not have user environment variables by default. See
@@ -109,6 +119,7 @@ Script will only send notifications on opening SSH connections.
 
 .. rubric:: References
 
+#. `PAM Reference <https://www.tecmint.com/configure-pam-in-centos-ubuntu-linux/>`_/
 #. `Signal CLI Reference <https://github.com/AsamK/signal-cli/blob/master/man/signal-cli.1.adoc>`_
 #. `Signal CLI Docker <https://hub.docker.com/r/kayvan/signal-cli>`_.
 #. `SSH Login Notifications with Signal <https://8192.one/post/ssh_login_notification_signal/>`_.

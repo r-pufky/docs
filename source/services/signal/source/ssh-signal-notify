@@ -4,6 +4,6 @@ if [ ${PAM_TYPE} = "open_session" ]; then
   HOSTNAME=$(hostname -f)
   HOST_IP=$(hostname -I | awk '{print $1}')
   TEXT="$DATE_EXEC: ${PAM_USER}@${PAM_RHOST} logged in to $HOSTNAME ($HOST_IP)."
-  /data/signal/cli/bin/signal-cli --config /data/signal -u +{INTERNATIONAL PHONE NUMBER} send -m "$TEXT" +{INTERNATIONAL PHONE NUMBER}
+  su - signal -c /data/signal/cli/bin/signal-cli --config /data/signal -u +{INTERNATIONAL PHONE NUMBER} send -m "$TEXT" +{INTERNATIONAL PHONE NUMBER} &
 fi
 exit 0
