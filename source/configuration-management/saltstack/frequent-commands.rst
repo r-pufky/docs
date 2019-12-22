@@ -45,6 +45,14 @@ General Minion Commands
 Useful for testing as well as immediately applying changes outside of the minion
 run window.
 
+Run A Specific State
+********************
+Useful to isolate failures or apply a specific state change.
+
+.. code-block:: bash
+
+  sudo salt-call -l debug state.sls {STATE NAME} pillarenv=dev saltenv=dev
+
 Manual Minion Run with Specific Environments
 ********************************************
 .. code-block:: bash

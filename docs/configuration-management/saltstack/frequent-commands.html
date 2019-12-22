@@ -298,6 +298,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Frequent Commands</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#general-master-commands">General Master Commands</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#general-minion-commands">General Minion Commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-a-specific-state">Run A Specific State</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#manual-minion-run-with-specific-environments">Manual Minion Run with Specific Environments</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#print-only-changes-or-errors">Print Only Changes or Errors</a></li>
 </ul>
@@ -1164,6 +1165,16 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/signal/index.html">Signal</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../services/signal/index.html#important-file-locations-signal">Important File Locations (Signal)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/signal/index.html#server-setup">Server Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../services/signal/index.html#link-to-phone">Link to Phone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/signal/index.html#send-test-message">Send Test Message</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/signal/index.html#send-ssh-login-notification">Send SSH Login Notification</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../services/sonarr/index.html">Sonarr</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../services/sonarr/setup.html">Sonarr Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../services/sonarr/setup.html#ports-sonarr">Ports (Sonarr)</a></li>
@@ -1446,6 +1457,13 @@ command will not finish before`timeout` is reached. See <a class="reference exte
 <h2>General Minion Commands<a class="headerlink" href="#general-minion-commands" title="Permalink to this headline">¶</a></h2>
 <p>Useful for testing as well as immediately applying changes outside of the minion
 run window.</p>
+</div>
+<div class="section" id="run-a-specific-state">
+<h2>Run A Specific State<a class="headerlink" href="#run-a-specific-state" title="Permalink to this headline">¶</a></h2>
+<p>Useful to isolate failures or apply a specific state change.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo salt-call -l debug state.sls <span class="o">{</span>STATE NAME<span class="o">}</span> <span class="nv">pillarenv</span><span class="o">=</span>dev <span class="nv">saltenv</span><span class="o">=</span>dev
+</pre></div>
+</div>
 </div>
 <div class="section" id="manual-minion-run-with-specific-environments">
 <h2>Manual Minion Run with Specific Environments<a class="headerlink" href="#manual-minion-run-with-specific-environments" title="Permalink to this headline">¶</a></h2>
