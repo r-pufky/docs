@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+# Args:
+#   1: github username
+#   2: repository name
+#   3: tarball download target (absolute path)
+#   4: tarball extract target (absolute path)
+RELEASE_DATA=$(curl --silent "https://api.github.com/repos/${1}/${2}/releases/latest")
+TAG=$(echo ${RELEASE_DATA} | jq -r .tag_name)
+URL=$(echo ${RELEASE_DATA} | jq -r '.assets[0].browser_download_url')
+NAME=$(echo ${RELEASE_DATA} | jq -r '.assets[0].name')
+TARBALL=${3}/${NAME}
+
+if [ ! -f "${TARBALL}" ]; then
+  curl --silent --location ${URL} --output ${TARBALL}
+  tar xf ${TARBALL} --strip-components=1 -C ${4}
+fi

@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Glossary" href="../glossary.html" />
-    <link rel="prev" title="Youtube Extractor" href="youtube.html" /> 
+    <link rel="next" title="Video Editing / Conversion" href="video-editing-conversion.html" />
+    <link rel="prev" title="GIT" href="git.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -1295,6 +1295,15 @@
 <p class="caption"><span class="caption-text">Scripts</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="copying-data.html">Copying Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git.html">GIT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="git.html#revert-changes-and-keep-commit-history">Revert Changes and Keep Commit History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#force-repository-to-previous-commit">Force Repository to Previous Commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#revert-entire-directory-to-head">Revert Entire Directory to HEAD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#remove-tracked-files-without-deleting-them">Remove Tracked Files without Deleting Them</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#pull-latest-tarball-release-from-github">Pull Latest Tarball Release from Github</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Scripts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="video-editing-conversion.html">Video Editing / Conversion</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="video-editing-conversion.html#snippets">Snippets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="video-editing-conversion.html#download-m3u8-playlist">Download M3U8 Playlist</a></li>
@@ -1311,7 +1320,6 @@
 <li class="toctree-l2"><a class="reference internal" href="youtube.html#snippets">Snippets</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Scripts</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Appendix</span></p>
 <ul>
@@ -1410,9 +1418,21 @@
 <span id="id1"></span><h1>Scripts<a class="headerlink" href="#scripts" title="Permalink to this headline">¶</a></h1>
 <p>One off scripting commands and small QOL improvement scripts not needing their
 own repository.</p>
-<p><a class="reference download internal" download="" href="../_downloads/0297a1008f3eb34919efdae3bd3ff567/fflength"><code class="xref download docutils literal notranslate"><span class="pre">fflength</span></code></a> determines the length of a video file.</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text"><strong>0700 user user</strong> <code class="docutils literal notranslate"><span class="pre">fflength</span></code></span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text">Bash script to require a specific keypress or die.</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span> <span class="s1">&#39;This will cut a production release by overwriting prod with dev.&#39;</span>
+<span class="nb">read</span> -n <span class="m">1</span> -p <span class="s1">&#39;Press Y to continue, any other key to abort: &#39;</span> READ_CONTINUE
+
+<span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">READ_CONTINUE</span><span class="si">}</span><span class="s2">&quot;</span> !<span class="o">=</span> <span class="s1">&#39;Y&#39;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+  <span class="nb">echo</span> -e <span class="s1">&#39;\nAborting.&#39;</span>
+  <span class="nb">exit</span> <span class="m">1</span>
+<span class="k">fi</span>
+</pre></div>
+</div>
+</div>
+<p><a class="reference download internal" download="" href="../_downloads/0297a1008f3eb34919efdae3bd3ff567/fflength"><code class="xref download docutils literal notranslate"><span class="pre">fflength</span></code></a> determines the length of a video file.</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text"><strong>0700 user user</strong> <code class="docutils literal notranslate"><span class="pre">fflength</span></code></span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -1427,8 +1447,8 @@ own repository.</p>
 </div>
 <p><a class="reference download internal" download="" href="../_downloads/7c35841cb758415323d9eb7e8c401f11/playon-to-mkv"><code class="xref download docutils literal notranslate"><span class="pre">playon-to-mkv</span></code></a> converts playon videos to MKV
 containers.</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text"><strong>0700 user user</strong> <code class="docutils literal notranslate"><span class="pre">playon-to-mkv</span></code></span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text"><strong>0700 user user</strong> <code class="docutils literal notranslate"><span class="pre">playon-to-mkv</span></code></span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -1571,10 +1591,10 @@ chmod 0640 &quot;${basename}.mkv&quot;
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../glossary.html" class="btn btn-neutral float-right" title="Glossary" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="video-editing-conversion.html" class="btn btn-neutral float-right" title="Video Editing / Conversion" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="youtube.html" class="btn btn-neutral float-left" title="Youtube Extractor" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="git.html" class="btn btn-neutral float-left" title="GIT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
