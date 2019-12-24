@@ -67,6 +67,7 @@ git hub, or submit a CL :)
   apps/putty
   apps/sublime-text/index
   apps/taskwarrior
+  apps/vim
 
 .. toctree::
   :caption: Configuration Management
