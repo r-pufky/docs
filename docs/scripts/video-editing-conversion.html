@@ -1325,7 +1325,25 @@
 <li class="toctree-l1"><a class="reference internal" href="copying-data.html">Copying Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scripts.html">Scripts</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Video Editing / Conversion</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#snippets">Snippets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#snippets">Snippets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#splitting-mkv-files-into-smaller-mkvs-based-on-timestamps">Splitting MKV Files into Smaller MKV’s Based on Timestamps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cut-and-direct-copy-video-to-new-file">Cut and Direct Copy Video to New File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#strip-metadata-metadata-that-is-not-required">Strip metadata (metadata that is not required)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generate-copies-at-one-second-intervals-for-bad-encodes">Generate Copies at One Second Intervals (For Bad Encodes)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#merge-video-files-into-a-single-file">Merge Video Files into a Single File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#insert-a-video-into-a-mkv-container-no-video-conversion-preferred">Insert a Video into a MKV Container (No Video Conversion – Preferred)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#insert-and-convert-a-video-into-a-mkv-container-re-encodes-video-than-insert">Insert and Convert a Video into a MKV Container (Re-encodes Video Than Insert)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#insert-and-convert-videos-in-a-directory-to-mkv-containers">Insert and Convert Videos in a Directory to MKV Containers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#convert-entire-directory-to-mkv-containers">Convert Entire Directory to MKV Containers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#convert-animated-gif-to-avi-mpg">Convert Animated GIF to AVI/MPG</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#combine-multiple-video-parts-into-one-video">Combine multiple video parts into one video</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rip-mp3-audio-from-flv-file">Rip MP3 Audio from FLV File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#convert-flv-to-mkv-container">Convert FLV to MKV Container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#convert-webm-to-mkv">Convert webm to mkv</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-ffmpeg-to-download-and-stitch-stream-together">Use ffmpeg to download and stitch stream together</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ffmpeg-convert-minimizing-quality-loss">ffmpeg Convert Minimizing Quality Loss</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#download-m3u8-playlist">Download M3U8 Playlist</a></li>
 </ul>
 </li>
@@ -1445,90 +1463,106 @@
 </div>
 <div class="section" id="snippets">
 <h2>Snippets<a class="headerlink" href="#snippets" title="Permalink to this headline">¶</a></h2>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">Splitting MKV Files into Smaller MKV’s Based on Timestamps.</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="section" id="splitting-mkv-files-into-smaller-mkvs-based-on-timestamps">
+<h3>Splitting MKV Files into Smaller MKV’s Based on Timestamps<a class="headerlink" href="#splitting-mkv-files-into-smaller-mkvs-based-on-timestamps" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkvmerge -o out.file --split timecodes:00:42:06.000,01:22:20.000 in.file
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">Cut and Direct Copy Video to New File.</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="section" id="cut-and-direct-copy-video-to-new-file">
+<h3>Cut and Direct Copy Video to New File<a class="headerlink" href="#cut-and-direct-copy-video-to-new-file" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mencoder <span class="o">[</span>-ss <span class="m">00</span>:00:00<span class="o">]</span> -endpos <span class="m">00</span>:15:00 -oac copy -ovc copy in.file -o out.file
 ffmpeg -i input.wmv -ss <span class="m">00</span>:00:00.000 -t <span class="m">00</span>:15:00.000 -acodec copy -vcodec copy output.wmv
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://stackoverflow.com/questions/11474532/how-to-change-metadata-with-ffmpeg-avconv-without-creating-a-new-file">Strip metadata</a> (metadata that is not required).</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="section" id="strip-metadata-metadata-that-is-not-required">
+<h3><a class="reference external" href="https://stackoverflow.com/questions/11474532/how-to-change-metadata-with-ffmpeg-avconv-without-creating-a-new-file">Strip metadata</a> (metadata that is not required)<a class="headerlink" href="#strip-metadata-metadata-that-is-not-required" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Ffmpeg -map_metadata -1
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">Generate Copies at One Second Intervals (For Bad Encodes).</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div class="section" id="generate-copies-at-one-second-intervals-for-bad-encodes">
+<h3>Generate Copies at One Second Intervals (For Bad Encodes)<a class="headerlink" href="#generate-copies-at-one-second-intervals-for-bad-encodes" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> x in <span class="sb">`</span>seq -w <span class="m">5</span> <span class="m">15</span><span class="sb">`</span><span class="p">;</span><span class="k">do</span> mencoder -oac copy -ovc copy -ss <span class="m">11</span>:<span class="si">${</span><span class="nv">x</span><span class="si">}</span> -endpos <span class="m">14</span>:00 in.file -o out-<span class="si">${</span><span class="nv">x</span><span class="si">}</span>.file<span class="p">;</span><span class="k">done</span>
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">Merge Video Files into a Single File.</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
+<div class="section" id="merge-video-files-into-a-single-file">
+<h3>Merge Video Files into a Single File<a class="headerlink" href="#merge-video-files-into-a-single-file" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mencoder -oac copy -ovc copy <span class="o">[</span>-noskip<span class="o">]</span> <span class="o">[</span>hr-edl-seek<span class="o">]</span> in1.file in2.file inX.file -o out.file
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text">Insert a Video into a MKV Container (No Video Conversion – Preferred).</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
+<div class="section" id="insert-a-video-into-a-mkv-container-no-video-conversion-preferred">
+<h3>Insert a Video into a MKV Container (No Video Conversion – Preferred)<a class="headerlink" href="#insert-a-video-into-a-mkv-container-no-video-conversion-preferred" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkvmerge -o out.mkv in.file
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id9">
-<div class="code-block-caption"><span class="caption-text">Insert and Convert a Video into a MKV Container (Re-encodes Video Than Insert).</span><a class="headerlink" href="#id9" title="Permalink to this code">¶</a></div>
+<div class="section" id="insert-and-convert-a-video-into-a-mkv-container-re-encodes-video-than-insert">
+<h3>Insert and Convert a Video into a MKV Container (Re-encodes Video Than Insert)<a class="headerlink" href="#insert-and-convert-a-video-into-a-mkv-container-re-encodes-video-than-insert" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mencoder in.file -o out.mkv -of lavf -oac copy -ovc lavc
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id10">
-<div class="code-block-caption"><span class="caption-text">Insert and Convert Videos in a Directory to MKV Containers.</span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
+<div class="section" id="insert-and-convert-videos-in-a-directory-to-mkv-containers">
+<h3>Insert and Convert Videos in a Directory to MKV Containers<a class="headerlink" href="#insert-and-convert-videos-in-a-directory-to-mkv-containers" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>find . -name <span class="s2">&quot;*.flv&quot;</span> -exec mencoder <span class="o">{}</span> -o <span class="o">{}</span>.mkv -of lavf -oac copy -ovc lavc <span class="se">\;</span>
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id11">
-<div class="code-block-caption"><span class="caption-text">Convert Entire Directory to MKV Containers.</span><a class="headerlink" href="#id11" title="Permalink to this code">¶</a></div>
+<div class="section" id="convert-entire-directory-to-mkv-containers">
+<h3>Convert Entire Directory to MKV Containers<a class="headerlink" href="#convert-entire-directory-to-mkv-containers" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>find . -type f -exec mkvmerge -o <span class="o">{}</span>.mkv <span class="o">{}</span> <span class="se">\;</span>
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id12">
-<div class="code-block-caption"><span class="caption-text">Convert Animated GIF to AVI/MPG.</span><a class="headerlink" href="#id12" title="Permalink to this code">¶</a></div>
+<div class="section" id="convert-animated-gif-to-avi-mpg">
+<h3>Convert Animated GIF to AVI/MPG<a class="headerlink" href="#convert-animated-gif-to-avi-mpg" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>convert image.gif output%05d.png
 convert -delay <span class="m">12</span> -quality <span class="m">100</span> output*png final_movie.mpg
 ffmpeg -r <span class="m">9</span> -i output%05d.png final_movie.avi
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id13">
-<div class="code-block-caption"><span class="caption-text">Combine multiple video parts into one video.</span><a class="headerlink" href="#id13" title="Permalink to this code">¶</a></div>
+<div class="section" id="combine-multiple-video-parts-into-one-video">
+<h3>Combine multiple video parts into one video<a class="headerlink" href="#combine-multiple-video-parts-into-one-video" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkvmerge -o out.mkv <span class="m">1</span>.file + <span class="m">2</span>.file + <span class="m">3</span>.file + <span class="m">4</span>.file + <span class="m">5</span>.file
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id14">
-<div class="code-block-caption"><span class="caption-text">Rip MP3 Audio from FLV File.</span><a class="headerlink" href="#id14" title="Permalink to this code">¶</a></div>
+<div class="section" id="rip-mp3-audio-from-flv-file">
+<h3>Rip MP3 Audio from FLV File<a class="headerlink" href="#rip-mp3-audio-from-flv-file" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>avconv -i <span class="o">{</span>FLV FILE<span class="o">}</span> output.mp3
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id15">
-<div class="code-block-caption"><span class="caption-text">Convert FLV to MKV Container.</span><a class="headerlink" href="#id15" title="Permalink to this code">¶</a></div>
+<div class="section" id="convert-flv-to-mkv-container">
+<h3>Convert FLV to MKV Container<a class="headerlink" href="#convert-flv-to-mkv-container" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ffmpeg -i <span class="o">{</span>FLV FILE<span class="o">}</span> -vcodec copy -acodec copy out.mkv
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id16">
-<div class="code-block-caption"><span class="caption-text">Convert webm to mkv.</span><a class="headerlink" href="#id16" title="Permalink to this code">¶</a></div>
+<div class="section" id="convert-webm-to-mkv">
+<h3>Convert webm to mkv<a class="headerlink" href="#convert-webm-to-mkv" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ffmpeg -i your_input_filename.webm -qscale <span class="m">0</span> your_outfile_name.mkv
+</pre></div>
+</div>
+</div>
+<div class="section" id="use-ffmpeg-to-download-and-stitch-stream-together">
+<h3>Use ffmpeg to download and stitch stream together<a class="headerlink" href="#use-ffmpeg-to-download-and-stitch-stream-together" title="Permalink to this headline">¶</a></h3>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Use ffmpeg to download and stitch stream together.</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ffmpeg -i https://<span class="o">{</span>URI<span class="o">}</span>.m3u8 -c:v copy -c:a copy -f mpegts output.ts
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="ffmpeg-convert-minimizing-quality-loss">
+<h3>ffmpeg Convert <a class="reference external" href="https://stackoverflow.com/questions/25569180/ffmpeg-convert-without-loss-quality">Minimizing Quality Loss</a><a class="headerlink" href="#ffmpeg-convert-minimizing-quality-loss" title="Permalink to this headline">¶</a></h3>
+<p>Convert file stripping metadata and enabling skipping and scrubbing in video.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ffmpeg -i example.mp4 -ss <span class="m">00</span>:00:10.000 -t <span class="m">00</span>:51:29.000 -crf <span class="m">15</span> -movflags +faststart -pix_fmt yuv420p -map_metadata -1 out.mp4
 </pre></div>
 </div>
 </div>
@@ -1546,12 +1580,6 @@ stream).</p>
 <li><p>Determine stream URL to use.</p></li>
 <li><p><span class="guilabel">RMB › Copy › Copy link address</span></p></li>
 </ul>
-<div class="literal-block-wrapper docutils container" id="id17">
-<div class="code-block-caption"><span class="caption-text">Use ffmpeg to download and stitch stream together.</span><a class="headerlink" href="#id17" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ffmpeg -i https://<span class="o">{</span>URI<span class="o">}</span>.m3u8 -c:v copy -c:a copy -f mpegts output.ts
-</pre></div>
-</div>
-</div>
 <p class="rubric">References</p>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="http://www.mplayerhq.hu/DOCS/HTML/en/mencoder.html">mencoder online manual</a></p></li>
@@ -1567,6 +1595,9 @@ stream).</p>
 <li><p><a class="reference external" href="http://www.imagemagick.org/discourse-server/viewtopic.php?f=1&amp;t=14743&amp;view=next">Convert animated GIF’s to video files (3)</a></p></li>
 <li><p><a class="reference external" href="https://mkvtoolnix.download/doc/mkvmerge.html">Splitting MKV’s into smaller MKV’s</a></p></li>
 <li><p><a class="reference external" href="https://askubuntu.com/questions/637074/how-to-merge-multiple-more-than-two-videos-on-ubuntu">Combining multiple videos parts into one file</a></p></li>
+<li><p><a class="reference external" href="https://askubuntu.com/questions/59383/extract-part-of-a-video-with-a-one-line-command">Extract part of video</a></p></li>
+<li><p><a class="reference external" href="https://superuser.com/questions/542989/getting-the-video-frame-number-in-vlc">Get frame number in VLC</a></p></li>
+<li><p><a class="reference external" href="https://www.linuxuprising.com/2018/07/how-to-stream-netflix-videos-at-1080p.html">Stream Netflix videos at 1080p in Linux</a></p></li>
 </ol>
 </div>
 </div>
