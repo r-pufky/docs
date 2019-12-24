@@ -61,7 +61,9 @@ git hub, or submit a CL :)
   :maxdepth: -1
 
   apps/authy
+  apps/bash
   apps/chrome
+  apps/git
   apps/gpg/index
   apps/mutt
   apps/putty
@@ -165,7 +167,6 @@ git hub, or submit a CL :)
   :maxdepth: -1
 
   scripts/copying-data
-  scripts/git
   scripts/scripts
   scripts/video-editing-conversion
   scripts/wiping-data

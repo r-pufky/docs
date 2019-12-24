@@ -2,7 +2,7 @@
 
 GIT
 ###
-GIT versoin managmenet snippets.
+GIT version management snippets.
 
 .. _revert-with-history:
 
