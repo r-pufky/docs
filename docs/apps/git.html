@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Mutt Maildir Setup &mdash; Generic service &amp; computer documentation.  documentation</title>
+  <title>GIT &mdash; Generic service &amp; computer documentation.  documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Putty Configuration" href="putty.html" />
-    <link rel="prev" title="Troubleshooting" href="gpg/troubleshooting.html" /> 
+    <link rel="next" title="GPG with Yubikey" href="gpg/index.html" />
+    <link rel="prev" title="Chrome Configuration" href="chrome.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -104,12 +104,12 @@
 <li class="toctree-l2"><a class="reference internal" href="chrome.html#block-location-tracking">Block location tracking</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="git.html">GIT</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="git.html#revert-changes-and-keep-commit-history">Revert Changes and Keep Commit History</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#force-repository-to-previous-commit">Force Repository to Previous Commit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#revert-entire-directory-to-head">Revert Entire Directory to HEAD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#remove-tracked-files-without-deleting-them">Remove Tracked Files without Deleting Them</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html#pull-latest-tarball-release-from-github">Pull Latest Tarball Release from Github</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">GIT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#revert-changes-and-keep-commit-history">Revert Changes and Keep Commit History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#force-repository-to-previous-commit">Force Repository to Previous Commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#revert-entire-directory-to-head">Revert Entire Directory to HEAD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#remove-tracked-files-without-deleting-them">Remove Tracked Files without Deleting Them</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pull-latest-tarball-release-from-github">Pull Latest Tarball Release from Github</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="gpg/index.html">GPG with Yubikey</a><ul>
@@ -202,8 +202,8 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Mutt Maildir Setup</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#base-mutt-setup">Base mutt Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mutt.html">Mutt Maildir Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mutt.html#base-mutt-setup">Base mutt Setup</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="putty.html">Putty Configuration</a><ul>
@@ -1417,7 +1417,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Mutt Maildir Setup</li>
+      <li>GIT</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -1434,74 +1434,86 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="mutt-maildir-setup">
-<span id="apps-mutt"></span><h1>Mutt Maildir Setup<a class="headerlink" href="#mutt-maildir-setup" title="Permalink to this headline">¶</a></h1>
-<p>Local terminal texted based email client.</p>
-<p>Ubunutu 16.04</p>
-<div class="section" id="base-mutt-setup">
-<h2>Base mutt Setup<a class="headerlink" href="#base-mutt-setup" title="Permalink to this headline">¶</a></h2>
-<p>This will setup mutt for use with Maildir, as well as subscribe to all folders
-in Maildir.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install mutt
+  <div class="section" id="git">
+<span id="id1"></span><h1>GIT<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h1>
+<p>GIT version management snippets.</p>
+<div class="section" id="revert-changes-and-keep-commit-history">
+<span id="revert-with-history"></span><h2>Revert Changes and Keep Commit History<a class="headerlink" href="#revert-changes-and-keep-commit-history" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git revert --no-edit <span class="o">{</span>LAST GOOD COMMIT<span class="o">}</span>..<span class="o">{</span>LAST BAD COMMIT<span class="o">}</span>
 </pre></div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text"><strong>0600 user user</strong> <code class="docutils literal notranslate"><span class="pre">~/.muttrc</span></code></span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24</pre></div></td><td class="code"><div class="highlight"><pre><span></span>set mbox_type=Maildir
-set spoolfile=&quot;~/Maildir/&quot;
-set folder=&quot;~/Maildir/&quot;
-set mask=&quot;.*&quot;
-set record=&quot;+.Sent&quot;
-set postponed=&quot;+.Drafts&quot;
-
-# Generate mailboxes for each maildir subdir
-mailboxes ! + `\
-for file in ~/Maildir/.*; do \
-  box=$(basename &quot;$file&quot;); \
-  if [ ! &quot;$box&quot; = &#39;.&#39; -a ! &quot;$box&quot; = &#39;..&#39; -a ! &quot;$box&quot; = &#39;.customflags&#39; \
-      -a ! &quot;$box&quot; = &#39;.subscriptions&#39; ]; then \
-   echo -n &quot;\&quot;+$box\&quot; &quot;; \
-  fi; \
-done`
-
-# Marcos to display folder list when changing maildir folders
-macro index c &quot;&lt;change-folder&gt;?&lt;toggle-mailboxes&gt;&quot; &quot;open a different folder&quot;
-macro pager c &quot;&lt;change-folder&gt;?&lt;toggle-mailboxes&gt;&quot; &quot;open a different folder&quot;
-
-# Macros to display folder list when copying/moving messages
-macro index C &quot;&lt;copy-message&gt;?&lt;toggle-mailboxes&gt;&quot; &quot;copy a message to a mailbox&quot;
-macro index M &quot;&lt;save-message&gt;?&lt;toggle-mailboxes&gt;&quot; &quot;move a message to a mailbox&quot;
-</pre></div>
-</td></tr></table></div>
 </div>
-<p class="rubric">References</p>
-<ol class="arabic simple">
-<li><p><a class="reference external" href="https://gitlab.com/muttmua/mutt/-/wikis/MuttFaq/Maildir">Mutt maildir FAQ</a></p></li>
-<li><p><a class="reference external" href="http://www.elho.net/mutt/maildir">Mutt maildir configuration</a></p></li>
-</ol>
+<div class="section" id="force-repository-to-previous-commit">
+<h2>Force Repository to Previous Commit<a class="headerlink" href="#force-repository-to-previous-commit" title="Permalink to this headline">¶</a></h2>
+<p>Should use <a class="reference internal" href="#revert-with-history"><span class="std std-ref">Revert Changes and Keep Commit History</span></a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git reset --hard <span class="o">{</span>COMMIT ID<span class="o">}</span>
+git push --force origin master
+</pre></div>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>This is data destructive. Ensure any files are cleaned up before committing.</p>
+<p>Currently checked out versions of this repository will break.</p>
+</div>
+</div>
+<div class="section" id="revert-entire-directory-to-head">
+<h2>Revert Entire Directory to HEAD<a class="headerlink" href="#revert-entire-directory-to-head" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout -- <span class="o">{</span>DIR<span class="o">}</span>
+git clean -fd <span class="o">{</span>DIR<span class="o">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">{DIR}/..</span></code> can be used to target all files and directories within that
+directory.</p>
+</div>
+</div>
+<div class="section" id="remove-tracked-files-without-deleting-them">
+<h2>Remove Tracked Files without Deleting Them<a class="headerlink" href="#remove-tracked-files-without-deleting-them" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Single file.</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git rm --cached <span class="o">{</span>FILE TO REMOVE FROM COMMIT<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Multiple files.</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git rm --cached <span class="o">{</span>FILE1<span class="o">}</span> <span class="o">{</span>FILEN<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">All contents of a directory.</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git rm -r --cached <span class="o">{</span>DIR<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="pull-latest-tarball-release-from-github">
+<h2>Pull <a class="reference external" href="https://gist.github.com/lukechilds/a83e1d7127b78fef38c2914c4ececc3c#gistcomment-2574561">Latest Tarball Release</a> from Github<a class="headerlink" href="#pull-latest-tarball-release-from-github" title="Permalink to this headline">¶</a></h2>
+<p>Useful for projects that have periodic releases but are not in OS packages.</p>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text"><strong>0755 user user</strong> <code class="docutils literal notranslate"><span class="pre">update_latest_tarball</span></code></span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
+#
+# Args:
+#   1: github username
+#   2: repository name
+#   3: tarball download target (absolute path)
+#   4: tarball extract target (absolute path)
+RELEASE_DATA=$(curl --silent &quot;https://api.github.com/repos/${1}/${2}/releases/latest&quot;)
+TAG=$(echo ${RELEASE_DATA} | jq -r .tag_name)
+URL=$(echo ${RELEASE_DATA} | jq -r &#39;.assets[0].browser_download_url&#39;)
+NAME=$(echo ${RELEASE_DATA} | jq -r &#39;.assets[0].name&#39;)
+TARBALL=${3}/${NAME}
+
+if [ ! -f &quot;${TARBALL}&quot; ]; then
+  curl --silent --location ${URL} --output ${TARBALL}
+  tar xf ${TARBALL} --strip-components=1 -C ${4}
+fi
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -1513,10 +1525,10 @@ macro index M &quot;&lt;save-message&gt;?&lt;toggle-mailboxes&gt;&quot; &quot;mo
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="putty.html" class="btn btn-neutral float-right" title="Putty Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="gpg/index.html" class="btn btn-neutral float-right" title="GPG with Yubikey" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="gpg/troubleshooting.html" class="btn btn-neutral float-left" title="Troubleshooting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="chrome.html" class="btn btn-neutral float-left" title="Chrome Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

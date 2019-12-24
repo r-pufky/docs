@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>GIT &mdash; Generic service &amp; computer documentation.  documentation</title>
+  <title>VIM &mdash; Generic service &amp; computer documentation.  documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Scripts" href="scripts.html" />
-    <link rel="prev" title="Copying Data" href="copying-data.html" /> 
+    <link rel="next" title="Saltstack" href="../configuration-management/saltstack/index.html" />
+    <link rel="prev" title="Taskwarrior Configuration" href="taskwarrior.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -85,139 +85,167 @@
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Docs: A Collection of Setup Notes</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Application Configuration</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../apps/authy.html">Moving Authy TOTP to Other Authenticators</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../apps/authy.html#setup-authy">Setup Authy</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../apps/authy.html#authy-totp-format">Authy TOTP Format</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="authy.html">Moving Authy TOTP to Other Authenticators</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="authy.html#setup-authy">Setup Authy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="authy.html#authy-totp-format">Authy TOTP Format</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../apps/authy.html#export-totp-from-authy">Export TOTP from Authy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../apps/authy.html#cleanup">Cleanup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authy.html#export-totp-from-authy">Export TOTP from Authy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="authy.html#cleanup">Cleanup</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../apps/chrome.html">Chrome Configuration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../apps/chrome.html#block-location-tracking">Block location tracking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bash.html">BASH</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#rename-all-file-extensions-to-lowercase">Rename All File Extensions to Lowercase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#find-binary-in-all-files">Find Binary in All Files</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../apps/gpg/index.html">GPG with Yubikey</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../apps/gpg/pre-requisites/index.html">Pre-Requisites</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../apps/gpg/pre-requisites/prep-live-usb.html">Prep Live USB</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../apps/gpg/pre-requisites/prep-ironkey.html">Prep Ironkey</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/pre-requisites/prep-ironkey.html#initalize-ironkey">Initalize Ironkey</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/pre-requisites/prep-ironkey.html#reset-ironkey">Reset Ironkey</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/pre-requisites/prep-ironkey.html#unlock-ironkey">Unlock Ironkey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chrome.html">Chrome Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chrome.html#block-location-tracking">Block location tracking</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../apps/gpg/pre-requisites/prep-yubikey.html">Prep Yubikey</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/pre-requisites/prep-yubikey.html#reset-yubikey">Reset Yubikey</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/pre-requisites/prep-yubikey.html#configure-yubikey">Configure Yubikey</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/pre-requisites/prep-yubikey.html#setup-openpgp-on-yubikey">Setup openpgp on Yubikey</a></li>
+<li class="toctree-l1"><a class="reference internal" href="git.html">GIT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="git.html#revert-changes-and-keep-commit-history">Revert Changes and Keep Commit History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#force-repository-to-previous-commit">Force Repository to Previous Commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#revert-entire-directory-to-head">Revert Entire Directory to HEAD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#remove-tracked-files-without-deleting-them">Remove Tracked Files without Deleting Them</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#pull-latest-tarball-release-from-github">Pull Latest Tarball Release from Github</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="gpg/index.html">GPG with Yubikey</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gpg/pre-requisites/index.html">Pre-Requisites</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gpg/pre-requisites/prep-live-usb.html">Prep Live USB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gpg/pre-requisites/prep-ironkey.html">Prep Ironkey</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gpg/pre-requisites/prep-ironkey.html#initalize-ironkey">Initalize Ironkey</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gpg/pre-requisites/prep-ironkey.html#reset-ironkey">Reset Ironkey</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gpg/pre-requisites/prep-ironkey.html#unlock-ironkey">Unlock Ironkey</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../apps/gpg/key-setup/index.html">Key Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../apps/gpg/key-setup/gpg-master.html">GPG Master Key</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/key-setup/gpg-master.html#basic-setup">Basic Setup</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/key-setup/gpg-master.html#generate-strong-password">Generate Strong Password</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/key-setup/gpg-master.html#create-master-key">Create Master Key</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/key-setup/gpg-master.html#add-photo-to-master-key-optional">Add Photo to Master Key (Optional)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/key-setup/gpg-master.html#add-additional-identities-optional">Add Additional Identities (Optional)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/key-setup/gpg-master.html#sign-new-key-with-existing-key-optional">Sign New Key with Existing Key (Optional)</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../apps/gpg/key-setup/gpg-subkeys.html">Generate Subkeys</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/key-setup/gpg-subkeys.html#create-signing-key">Create <span class="xref std std-term">Signing Key</span></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/key-setup/gpg-subkeys.html#create-encryption-key">Create <span class="xref std std-term">Encryption Key</span></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/key-setup/gpg-subkeys.html#create-authentication-key">Create <span class="xref std std-term">Authentication Key</span></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/key-setup/gpg-subkeys.html#verify-keys-are-secure">Verify Keys Are Secure</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/key-setup/gpg-subkeys.html#verify-gpg-password">Verify GPG Password</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../apps/gpg/key-setup/gpg-backup.html">Backup GPG Keys</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/key-setup/gpg-backup.html#confirm-key-state">Confirm Key State</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/key-setup/gpg-backup.html#export-gpg-keys">Export GPG Keys</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/key-setup/gpg-backup.html#publish-public-key">Publish Public Key</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../apps/gpg/key-setup/export-to-yubikey.html">Export GPG Subkeys to Yubikey</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/key-setup/export-to-yubikey.html#understanding-how-yubikeys-work">Understanding How Yubikeys Work</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/key-setup/export-to-yubikey.html#export-subkeys-to-yubikeys">Export Subkeys to Yubikeys</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/key-setup/export-to-yubikey.html#verify-subkeys-are-offloaded">Verify subkeys are Offloaded</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/key-setup/export-to-yubikey.html#restore-original-gpg-state">Restore Original GPG State</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../apps/gpg/key-setup/gpg-cleanup.html">GPG Cleanup</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/key-setup/gpg-cleanup.html#verify-the-following">Verify the Following</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/key-setup/gpg-cleanup.html#secure-delete-secret-material">Secure Delete Secret Material</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../apps/gpg/key-setup/gpg-import.html">Import GPG Master Public Key</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/key-setup/gpg-import.html#trust-gpg-public-key-locally">Trust GPG Public Key Locally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gpg/pre-requisites/prep-yubikey.html">Prep Yubikey</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gpg/pre-requisites/prep-yubikey.html#reset-yubikey">Reset Yubikey</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gpg/pre-requisites/prep-yubikey.html#configure-yubikey">Configure Yubikey</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gpg/pre-requisites/prep-yubikey.html#setup-openpgp-on-yubikey">Setup openpgp on Yubikey</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../apps/gpg/usage/index.html">Using GPG Keys</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../apps/gpg/usage/windows.html">Windows GPG Yubikey</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/usage/windows.html#required-materials">Required Materials</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/usage/windows.html#configure-gpg4win">Configure GPG4win</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/usage/windows.html#configure-gpg-agent">Configure GPG Agent</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/usage/windows.html#configure-putty">Configure Putty</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/usage/windows.html#verify-putty-works">Verify Putty Works</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/usage/windows.html#run-gpg-agent-on-login">Run GPG Agent on Login</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/usage/windows.html#forward-gpg-agent-through-multiple-servers">Forward GPG Agent Through Multiple Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpg/key-setup/index.html">Key Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gpg/key-setup/gpg-master.html">GPG Master Key</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gpg/key-setup/gpg-master.html#basic-setup">Basic Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gpg/key-setup/gpg-master.html#generate-strong-password">Generate Strong Password</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gpg/key-setup/gpg-master.html#create-master-key">Create Master Key</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gpg/key-setup/gpg-master.html#add-photo-to-master-key-optional">Add Photo to Master Key (Optional)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gpg/key-setup/gpg-master.html#add-additional-identities-optional">Add Additional Identities (Optional)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gpg/key-setup/gpg-master.html#sign-new-key-with-existing-key-optional">Sign New Key with Existing Key (Optional)</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../apps/gpg/usage/ubuntu.html">Ubuntu GPG Yubikey</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/usage/ubuntu.html#required-materials">Required Materials</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/usage/ubuntu.html#configure-gpg-agent">Configure GPG Agent</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/usage/ubuntu.html#allow-user-to-automount-yubikeys">Allow User to Automount Yubikeys</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/usage/ubuntu.html#disable-gnome-ssh-fuckery">Disable Gnome SSH Fuckery</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../apps/gpg/usage/ubuntu.html#verify-ssh-works">Verify SSH Works</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gpg/key-setup/gpg-subkeys.html">Generate Subkeys</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gpg/key-setup/gpg-subkeys.html#create-signing-key">Create <span class="xref std std-term">Signing Key</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="gpg/key-setup/gpg-subkeys.html#create-encryption-key">Create <span class="xref std std-term">Encryption Key</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="gpg/key-setup/gpg-subkeys.html#create-authentication-key">Create <span class="xref std std-term">Authentication Key</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="gpg/key-setup/gpg-subkeys.html#verify-keys-are-secure">Verify Keys Are Secure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gpg/key-setup/gpg-subkeys.html#verify-gpg-password">Verify GPG Password</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gpg/key-setup/gpg-backup.html">Backup GPG Keys</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gpg/key-setup/gpg-backup.html#confirm-key-state">Confirm Key State</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gpg/key-setup/gpg-backup.html#export-gpg-keys">Export GPG Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gpg/key-setup/gpg-backup.html#publish-public-key">Publish Public Key</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gpg/key-setup/export-to-yubikey.html">Export GPG Subkeys to Yubikey</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gpg/key-setup/export-to-yubikey.html#understanding-how-yubikeys-work">Understanding How Yubikeys Work</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gpg/key-setup/export-to-yubikey.html#export-subkeys-to-yubikeys">Export Subkeys to Yubikeys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gpg/key-setup/export-to-yubikey.html#verify-subkeys-are-offloaded">Verify subkeys are Offloaded</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gpg/key-setup/export-to-yubikey.html#restore-original-gpg-state">Restore Original GPG State</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gpg/key-setup/gpg-cleanup.html">GPG Cleanup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gpg/key-setup/gpg-cleanup.html#verify-the-following">Verify the Following</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gpg/key-setup/gpg-cleanup.html#secure-delete-secret-material">Secure Delete Secret Material</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gpg/key-setup/gpg-import.html">Import GPG Master Public Key</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gpg/key-setup/gpg-import.html#trust-gpg-public-key-locally">Trust GPG Public Key Locally</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../apps/gpg/troubleshooting.html">Troubleshooting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../apps/gpg/troubleshooting.html#no-agent-running-error">No agent running error</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../apps/gpg/troubleshooting.html#agent-genkey-failed-permission-denied">agent_genkey failed: permission denied</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../apps/gpg/troubleshooting.html#yubikey-not-appearing">Yubikey Not Appearing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../apps/gpg/troubleshooting.html#ssh-connection-failed-server-sent-publickey">SSH connection failed, Server sent: publickey</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../apps/gpg/troubleshooting.html#please-insert-card-with-serial-number">Please insert card with serial number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpg/usage/index.html">Using GPG Keys</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gpg/usage/windows.html">Windows GPG Yubikey</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gpg/usage/windows.html#required-materials">Required Materials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gpg/usage/windows.html#configure-gpg4win">Configure GPG4win</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gpg/usage/windows.html#configure-gpg-agent">Configure GPG Agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gpg/usage/windows.html#configure-putty">Configure Putty</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gpg/usage/windows.html#verify-putty-works">Verify Putty Works</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gpg/usage/windows.html#run-gpg-agent-on-login">Run GPG Agent on Login</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gpg/usage/windows.html#forward-gpg-agent-through-multiple-servers">Forward GPG Agent Through Multiple Servers</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="gpg/usage/ubuntu.html">Ubuntu GPG Yubikey</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="gpg/usage/ubuntu.html#required-materials">Required Materials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gpg/usage/ubuntu.html#configure-gpg-agent">Configure GPG Agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gpg/usage/ubuntu.html#allow-user-to-automount-yubikeys">Allow User to Automount Yubikeys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gpg/usage/ubuntu.html#disable-gnome-ssh-fuckery">Disable Gnome SSH Fuckery</a></li>
+<li class="toctree-l4"><a class="reference internal" href="gpg/usage/ubuntu.html#verify-ssh-works">Verify SSH Works</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../apps/mutt.html">Mutt Maildir Setup</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../apps/mutt.html#base-mutt-setup">Base mutt Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpg/troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gpg/troubleshooting.html#no-agent-running-error">No agent running error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gpg/troubleshooting.html#agent-genkey-failed-permission-denied">agent_genkey failed: permission denied</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gpg/troubleshooting.html#yubikey-not-appearing">Yubikey Not Appearing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gpg/troubleshooting.html#ssh-connection-failed-server-sent-publickey">SSH connection failed, Server sent: publickey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gpg/troubleshooting.html#please-insert-card-with-serial-number">Please insert card with serial number</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../apps/putty.html">Putty Configuration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../apps/putty.html#putty-timeouts">Putty Timeouts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../apps/putty.html#changing-escape-characters">Changing Escape Characters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../apps/putty.html#forwarding-x-windows">Forwarding X Windows</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../apps/sublime-text/index.html">Sublime Text Configuration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../apps/sublime-text/index.html#installation">Installation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../apps/sublime-text/index.html#ubuntu-apt-repository">Ubuntu Apt Repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mutt.html">Mutt Maildir Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mutt.html#base-mutt-setup">Base mutt Setup</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../apps/sublime-text/index.html#important-file-locations">Important File Locations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../apps/sublime-text/index.html#configuration">Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../apps/sublime-text/index.html#automatically-installing-packages">Automatically Installing Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../apps/sublime-text/index.html#force-unix-line-endings-on-save">Force Unix Line Endings on Save</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../apps/sublime-text/index.html#markdown-editing">Markdown Editing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="putty.html">Putty Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="putty.html#putty-timeouts">Putty Timeouts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="putty.html#changing-escape-characters">Changing Escape Characters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="putty.html#forwarding-x-windows">Forwarding X Windows</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../apps/taskwarrior.html">Taskwarrior Configuration</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../apps/taskwarrior.html#installation">Installation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../apps/taskwarrior.html#customize-taskwarrior">Customize Taskwarrior</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../apps/taskwarrior.html#customized-timewarrior">Customized Timewarrior</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../apps/taskwarrior.html#customize-taskopen">Customize Taskopen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sublime-text/index.html">Sublime Text Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sublime-text/index.html#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sublime-text/index.html#ubuntu-apt-repository">Ubuntu Apt Repository</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="sublime-text/index.html#important-file-locations">Important File Locations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sublime-text/index.html#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sublime-text/index.html#automatically-installing-packages">Automatically Installing Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sublime-text/index.html#force-unix-line-endings-on-save">Force Unix Line Endings on Save</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sublime-text/index.html#markdown-editing">Markdown Editing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="taskwarrior.html">Taskwarrior Configuration</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="taskwarrior.html#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="taskwarrior.html#customize-taskwarrior">Customize Taskwarrior</a></li>
+<li class="toctree-l3"><a class="reference internal" href="taskwarrior.html#customized-timewarrior">Customized Timewarrior</a></li>
+<li class="toctree-l3"><a class="reference internal" href="taskwarrior.html#customize-taskopen">Customize Taskopen</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">VIM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#quit-with-error">Quit with Error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#insert-unicode-characters">Insert Unicode Characters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#increment-decrement-a-number">Increment/Decrement A Number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#visual-mode">Visual Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#indentation">Indentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#goto-last-edit">Goto Last Edit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delete-to-end-of-line">Delete to End of Line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#macros">Macros</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#customize-vim">Customize VIM</a></li>
 </ul>
 </li>
 </ul>
@@ -1293,31 +1321,23 @@
 </li>
 </ul>
 <p class="caption"><span class="caption-text">Scripts</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="copying-data.html">Copying Data</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">GIT</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#revert-changes-and-keep-commit-history">Revert Changes and Keep Commit History</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#force-repository-to-previous-commit">Force Repository to Previous Commit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#revert-entire-directory-to-head">Revert Entire Directory to HEAD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#remove-tracked-files-without-deleting-them">Remove Tracked Files without Deleting Them</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#pull-latest-tarball-release-from-github">Pull Latest Tarball Release from Github</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/copying-data.html">Copying Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/scripts.html">Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/video-editing-conversion.html">Video Editing / Conversion</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/video-editing-conversion.html#snippets">Snippets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/video-editing-conversion.html#download-m3u8-playlist">Download M3U8 Playlist</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="scripts.html">Scripts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="video-editing-conversion.html">Video Editing / Conversion</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="video-editing-conversion.html#snippets">Snippets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="video-editing-conversion.html#download-m3u8-playlist">Download M3U8 Playlist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/wiping-data.html">Wiping Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/wiping-data.html#shred">shred</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/wiping-data.html#wipe">wipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/wiping-data.html#dd">dd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/wiping-data.html#dban">DBAN</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="wiping-data.html">Wiping Data</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="wiping-data.html#shred">shred</a></li>
-<li class="toctree-l2"><a class="reference internal" href="wiping-data.html#wipe">wipe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="wiping-data.html#dd">dd</a></li>
-<li class="toctree-l2"><a class="reference internal" href="wiping-data.html#dban">DBAN</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="youtube.html">Youtube Extractor</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="youtube.html#snippets">Snippets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/youtube.html">Youtube Extractor</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/youtube.html#snippets">Snippets</a></li>
 </ul>
 </li>
 </ul>
@@ -1397,7 +1417,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>GIT</li>
+      <li>VIM</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -1414,85 +1434,272 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="git">
-<span id="id1"></span><h1>GIT<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h1>
-<p>GIT versoin managmenet snippets.</p>
-<div class="section" id="revert-changes-and-keep-commit-history">
-<span id="revert-with-history"></span><h2>Revert Changes and Keep Commit History<a class="headerlink" href="#revert-changes-and-keep-commit-history" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git revert --no-edit <span class="o">{</span>LAST GOOD COMMIT<span class="o">}</span>..<span class="o">{</span>LAST BAD COMMIT<span class="o">}</span>
+  <div class="section" id="vim">
+<span id="apps-vim"></span><h1>VIM<a class="headerlink" href="#vim" title="Permalink to this headline">¶</a></h1>
+<p>VI Improved.</p>
+<p>See <a class="reference external" href="https://vim-adventures.com/">vim adventure</a> for a game to learn vim, and <a class="reference external" href="https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim/1220118#1220118">stackoverflow most useful vim
+shortcuts</a>.</p>
+<div class="section" id="commands">
+<h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="quit-with-error">
+<h3>Quit with Error<a class="headerlink" href="#quit-with-error" title="Permalink to this headline">¶</a></h3>
+<p>Useful for aborting mid-commit without submitting.</p>
+<div class="highlight-vim notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="k">cq</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="force-repository-to-previous-commit">
-<h2>Force Repository to Previous Commit<a class="headerlink" href="#force-repository-to-previous-commit" title="Permalink to this headline">¶</a></h2>
-<p>Should use <a class="reference internal" href="#revert-with-history"><span class="std std-ref">Revert Changes and Keep Commit History</span></a>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git reset --hard <span class="o">{</span>COMMIT ID<span class="o">}</span>
-git push --force origin master
-</pre></div>
-</div>
-<div class="admonition danger">
-<p class="admonition-title">Danger</p>
-<p>This is data destructive. Ensure any files are cleaned up before committing.</p>
-<p>Currently checked out versions of this repository will break.</p>
-</div>
-</div>
-<div class="section" id="revert-entire-directory-to-head">
-<h2>Revert Entire Directory to HEAD<a class="headerlink" href="#revert-entire-directory-to-head" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout -- <span class="o">{</span>DIR<span class="o">}</span>
-git clean -fd <span class="o">{</span>DIR<span class="o">}</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><code class="docutils literal notranslate"><span class="pre">{DIR}/..</span></code> can be used to target all files and directories within that
-directory.</p>
-</div>
-</div>
-<div class="section" id="remove-tracked-files-without-deleting-them">
-<h2>Remove Tracked Files without Deleting Them<a class="headerlink" href="#remove-tracked-files-without-deleting-them" title="Permalink to this headline">¶</a></h2>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">Single file.</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git rm --cached <span class="o">{</span>FILE TO REMOVE FROM COMMIT<span class="o">}</span>
+<div class="section" id="insert-unicode-characters">
+<h3>Insert Unicode Characters<a class="headerlink" href="#insert-unicode-characters" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-vim notranslate"><div class="highlight"><pre><span></span><span class="k">i</span>
+ctrl<span class="p">+</span><span class="k">v</span>
+<span class="k">u</span>####
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">Multiple files.</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git rm --cached <span class="o">{</span>FILE1<span class="o">}</span> <span class="o">{</span>FILEN<span class="o">}</span>
+<div class="section" id="increment-decrement-a-number">
+<h3>Increment/Decrement A Number<a class="headerlink" href="#increment-decrement-a-number" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-vim notranslate"><div class="highlight"><pre><span></span>ctrl<span class="p">+</span>A  # Increment
+ctrl<span class="p">+</span>X  # Decrement
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">All contents of a directory.</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git rm -r --cached <span class="o">{</span>DIR<span class="o">}</span>
+<div class="section" id="visual-mode">
+<h3>Visual Mode<a class="headerlink" href="#visual-mode" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-vim notranslate"><div class="highlight"><pre><span></span><span class="k">v</span>       # character
+V       # line
+ctrl<span class="p">+</span><span class="k">v</span>  # block
+</pre></div>
+</div>
+</div>
+<div class="section" id="indentation">
+<h3>Indentation<a class="headerlink" href="#indentation" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-vim notranslate"><div class="highlight"><pre><span></span><span class="k">v</span>
+<span class="p">&gt;</span>
+<span class="p">&lt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="goto-last-edit">
+<h3>Goto Last Edit<a class="headerlink" href="#goto-last-edit" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-vim notranslate"><div class="highlight"><pre><span></span>gi
+</pre></div>
+</div>
+</div>
+<div class="section" id="delete-to-end-of-line">
+<h3>Delete to End of Line<a class="headerlink" href="#delete-to-end-of-line" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-vim notranslate"><div class="highlight"><pre><span></span><span class="k">d</span>$  # Delete <span class="k">only</span>
+<span class="k">c</span>$  # Delete and enter insert <span class="k">mode</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="macros">
+<h3>Macros<a class="headerlink" href="#macros" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-vim notranslate"><div class="highlight"><pre><span></span>qq   # <span class="k">start</span> recording
+{PERFORM ACTIONS}
+<span class="k">q</span>    # stop recording
+@<span class="k">q</span>   # repeat recorded actions <span class="p">(</span><span class="k">first</span> time<span class="p">)</span>
+@@   # <span class="nb">report</span> recorded actions <span class="p">(</span>every time after<span class="p">)</span>
+<span class="m">20</span>@@ # repeat <span class="m">20</span> times
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="pull-latest-tarball-release-from-github">
-<h2>Pull <a class="reference external" href="https://gist.github.com/lukechilds/a83e1d7127b78fef38c2914c4ececc3c#gistcomment-2574561">Latest Tarball Release</a> from Github<a class="headerlink" href="#pull-latest-tarball-release-from-github" title="Permalink to this headline">¶</a></h2>
-<p>Useful for projects that have periodic releases but are not in OS packages.</p>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text"><strong>0755 user user</strong> <code class="docutils literal notranslate"><span class="pre">update_latest_tarball</span></code></span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
-#
-# Args:
-#   1: github username
-#   2: repository name
-#   3: tarball download target (absolute path)
-#   4: tarball extract target (absolute path)
-RELEASE_DATA=$(curl --silent &quot;https://api.github.com/repos/${1}/${2}/releases/latest&quot;)
-TAG=$(echo ${RELEASE_DATA} | jq -r .tag_name)
-URL=$(echo ${RELEASE_DATA} | jq -r &#39;.assets[0].browser_download_url&#39;)
-NAME=$(echo ${RELEASE_DATA} | jq -r &#39;.assets[0].name&#39;)
-TARBALL=${3}/${NAME}
+<div class="section" id="customize-vim">
+<h2>Customize VIM<a class="headerlink" href="#customize-vim" title="Permalink to this headline">¶</a></h2>
+<p>Displayed without comments / unchanged lines.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 user user</strong> <code class="docutils literal notranslate"><span class="pre">~/.vimrc</span></code></span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95</pre></div></td><td class="code"><div class="highlight"><pre><span></span>&quot;&quot; If python (or any files) are tabbing incorrectly, modify the
+&quot;&quot; /usr/share/vim/vim74/ftplugin/(filetype).vim file and comment out the
+&quot;&quot; setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=8
+&quot;&quot;
+set nocompatible
+set ruler
+set viminfo=&#39;50,\&quot;1000,:0
 
-if [ ! -f &quot;${TARBALL}&quot; ]; then
-  curl --silent --location ${URL} --output ${TARBALL}
-  tar xf ${TARBALL} --strip-components=1 -C ${4}
-fi
+set popt+=syntax:y    &quot; Printing options
+set mouse=a           &quot; mouse will be on all the time
+
+filetype on           &quot; enable filetype settings
+filetype plugin on
+filetype indent on
+
+set hlsearch          &quot; highlight search matches
+set background=dark
+set guioptions=agirt  &quot;no menu, no toolbar
+set guifont=Lucida\ Terminal
+&quot;&quot; clear highlights with \
+nnoremap \ :noh&lt;return&gt;
+
+&quot;&quot;  CONSOLE AND GUI OPTIONS:
+&quot;&quot;  -----------------------
+set vb t_vb=          &quot; turn beeping off
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab         &quot; convert tabs to spaces
+set backspace=2       &quot; this makes backspace work
+set tw=80             &quot; wrap as close to 80 characters as possible.
+
+&quot;&quot; STATUSBAR:
+&quot;&quot; ---------
+set laststatus=2
+set statusline=
+set statusline+=%-3.3n\                      &quot; buffer number
+set statusline+=%f\                          &quot; file name
+set statusline+=%h%m%r%w                     &quot; flags
+set statusline+=\[%{strlen(&amp;ft)?&amp;ft:&#39;none&#39;}, &quot; filetype
+set statusline+=%{&amp;encoding},                &quot; encoding
+set statusline+=%{&amp;fileformat}]              &quot; file format
+set statusline+=%=                           &quot; right align
+set statusline+=0x%-8B\                      &quot; current char
+set statusline+=%-14.(%l,%c%V%)\ %&lt;%P        &quot; offset
+
+syntax on
+
+&quot;&quot; COMMENTING:
+&quot;&quot; ----------
+map ,# :s/^/#/&lt;CR&gt;:nohlsearch&lt;CR&gt;
+map ,/ :s/^/\/\//&lt;CR&gt;:nohlsearch&lt;CR&gt;
+map ,&gt; :s/^/&gt; /&lt;CR&gt;:nohlsearch&lt;CR&gt;
+map ,&quot; :s/^/\&quot;/&lt;CR&gt;:nohlsearch&lt;CR&gt;
+map ,% :s/^/%/&lt;CR&gt;:nohlsearch&lt;CR&gt;
+map ,! :s/^/!/&lt;CR&gt;:nohlsearch&lt;CR&gt;
+map ,; :s/^/;/&lt;CR&gt;:nohlsearch&lt;CR&gt;
+map ,- :s/^/--/&lt;CR&gt;:nohlsearch&lt;CR&gt;
+map ,c :s/^\/\/\\|^--\\|^&gt; \\|^[#&quot;%!;]//&lt;CR&gt;:nohlsearch&lt;CR&gt;
+&quot; wrapping comments
+map ,* :s/^\(.*\)$/\/\* \1 \*\//&lt;CR&gt;:nohlsearch&lt;CR&gt;
+map ,( :s/^\(.*\)$/\(\* \1 \*\)/&lt;CR&gt;:nohlsearch&lt;CR&gt;
+map ,&lt; :s/^\(.*\)$/&lt;!-- \1 --&gt;/&lt;CR&gt;:nohlsearch&lt;CR&gt;
+map ,d :s/^\([/(]\*\\|&lt;!--\) \(.*\) \(\*[/)]\\|--&gt;\)$/\2/&lt;CR&gt;:nohlsearch&lt;CR&gt;
+
+&quot;&quot;---------------- OPTIONS YOU PROBABLY DON&quot;T WANT TO PLAY WITH -------------
+&quot; When editing a file, always jump to the last known cursor position.
+&quot; Don&#39;t do it when the position is invalid or when inside an event handler
+&quot; (happens when dropping a file on gvim).
+autocmd BufReadPost *
+\ if expand(&quot;&lt;afile&gt;:p:h&quot;) !=? $TEMP |
+\   if line(&quot;&#39;\&quot;&quot;) &gt; 0 &amp;&amp; line(&quot;&#39;\&quot;&quot;) &lt;= line(&quot;$&quot;) |
+\     exe &quot;normal g`\&quot;&quot; |
+\     let b:doopenfold = 1 |
+\   endif |
+\ endif
+&quot; Need to postpone using &quot;zv&quot; until after reading the modelines.
+autocmd BufWinEnter *
+\ if exists(&quot;b:doopenfold&quot;) |
+\   unlet b:doopenfold |
+\   exe &quot;normal zv&quot; |
+\ endif
+
+&quot; If we&#39;re in a wide window, enable line numbers.
+fun! &lt;SID&gt;WindowWidth()
+    if winwidth(0) &gt; 90
+        setlocal number
+    else
+        setlocal nonumber
+    endif
+endfun
+
+&quot; Always do a full syntax refresh
+autocmd BufEnter * syntax sync fromstart
+&quot;&quot;---------------------------------------------------------------------------
 </pre></div>
-</div>
+</td></tr></table></div>
 </div>
 </div>
 </div>
@@ -1505,10 +1712,10 @@ fi
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="scripts.html" class="btn btn-neutral float-right" title="Scripts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../configuration-management/saltstack/index.html" class="btn btn-neutral float-right" title="Saltstack" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="copying-data.html" class="btn btn-neutral float-left" title="Copying Data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="taskwarrior.html" class="btn btn-neutral float-left" title="Taskwarrior Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

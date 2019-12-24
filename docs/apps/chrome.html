@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="GPG with Yubikey" href="gpg/index.html" />
-    <link rel="prev" title="Moving Authy TOTP to Other Authenticators" href="authy.html" /> 
+    <link rel="next" title="GIT" href="git.html" />
+    <link rel="prev" title="BASH" href="bash.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -95,8 +95,21 @@
 <li class="toctree-l2"><a class="reference internal" href="authy.html#cleanup">Cleanup</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="bash.html">BASH</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#rename-all-file-extensions-to-lowercase">Rename All File Extensions to Lowercase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bash.html#find-binary-in-all-files">Find Binary in All Files</a></li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Chrome Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#block-location-tracking">Block location tracking</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="git.html">GIT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="git.html#revert-changes-and-keep-commit-history">Revert Changes and Keep Commit History</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#force-repository-to-previous-commit">Force Repository to Previous Commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#revert-entire-directory-to-head">Revert Entire Directory to HEAD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#remove-tracked-files-without-deleting-them">Remove Tracked Files without Deleting Them</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html#pull-latest-tarball-release-from-github">Pull Latest Tarball Release from Github</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="gpg/index.html">GPG with Yubikey</a><ul>
@@ -218,6 +231,21 @@
 <li class="toctree-l3"><a class="reference internal" href="taskwarrior.html#customize-taskopen">Customize Taskopen</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vim.html">VIM</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="vim.html#commands">Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vim.html#quit-with-error">Quit with Error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vim.html#insert-unicode-characters">Insert Unicode Characters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vim.html#increment-decrement-a-number">Increment/Decrement A Number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vim.html#visual-mode">Visual Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vim.html#indentation">Indentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vim.html#goto-last-edit">Goto Last Edit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vim.html#delete-to-end-of-line">Delete to End of Line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vim.html#macros">Macros</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="vim.html#customize-vim">Customize VIM</a></li>
 </ul>
 </li>
 </ul>
@@ -1295,14 +1323,6 @@
 <p class="caption"><span class="caption-text">Scripts</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../scripts/copying-data.html">Copying Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../scripts/git.html">GIT</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../scripts/git.html#revert-changes-and-keep-commit-history">Revert Changes and Keep Commit History</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scripts/git.html#force-repository-to-previous-commit">Force Repository to Previous Commit</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scripts/git.html#revert-entire-directory-to-head">Revert Entire Directory to HEAD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scripts/git.html#remove-tracked-files-without-deleting-them">Remove Tracked Files without Deleting Them</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scripts/git.html#pull-latest-tarball-release-from-github">Pull Latest Tarball Release from Github</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="../scripts/scripts.html">Scripts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../scripts/video-editing-conversion.html">Video Editing / Conversion</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../scripts/video-editing-conversion.html#snippets">Snippets</a></li>
@@ -1441,10 +1461,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="gpg/index.html" class="btn btn-neutral float-right" title="GPG with Yubikey" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="git.html" class="btn btn-neutral float-right" title="GIT" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="authy.html" class="btn btn-neutral float-left" title="Moving Authy TOTP to Other Authenticators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="bash.html" class="btn btn-neutral float-left" title="BASH" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

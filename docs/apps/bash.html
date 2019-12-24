@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Mutt Maildir Setup &mdash; Generic service &amp; computer documentation.  documentation</title>
+  <title>BASH &mdash; Generic service &amp; computer documentation.  documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Putty Configuration" href="putty.html" />
-    <link rel="prev" title="Troubleshooting" href="gpg/troubleshooting.html" /> 
+    <link rel="next" title="Chrome Configuration" href="chrome.html" />
+    <link rel="prev" title="Moving Authy TOTP to Other Authenticators" href="authy.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -95,9 +95,9 @@
 <li class="toctree-l2"><a class="reference internal" href="authy.html#cleanup">Cleanup</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="bash.html">BASH</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="bash.html#rename-all-file-extensions-to-lowercase">Rename All File Extensions to Lowercase</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bash.html#find-binary-in-all-files">Find Binary in All Files</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">BASH</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#rename-all-file-extensions-to-lowercase">Rename All File Extensions to Lowercase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#find-binary-in-all-files">Find Binary in All Files</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="chrome.html">Chrome Configuration</a><ul>
@@ -202,8 +202,8 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Mutt Maildir Setup</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#base-mutt-setup">Base mutt Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mutt.html">Mutt Maildir Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mutt.html#base-mutt-setup">Base mutt Setup</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="putty.html">Putty Configuration</a><ul>
@@ -1417,7 +1417,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Mutt Maildir Setup</li>
+      <li>BASH</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -1434,74 +1434,41 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="mutt-maildir-setup">
-<span id="apps-mutt"></span><h1>Mutt Maildir Setup<a class="headerlink" href="#mutt-maildir-setup" title="Permalink to this headline">¶</a></h1>
-<p>Local terminal texted based email client.</p>
-<p>Ubunutu 16.04</p>
-<div class="section" id="base-mutt-setup">
-<h2>Base mutt Setup<a class="headerlink" href="#base-mutt-setup" title="Permalink to this headline">¶</a></h2>
-<p>This will setup mutt for use with Maildir, as well as subscribe to all folders
-in Maildir.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt install mutt
+  <div class="section" id="bash">
+<span id="id1"></span><h1>BASH<a class="headerlink" href="#bash" title="Permalink to this headline">¶</a></h1>
+<p>Bourne Again Shell snippets.</p>
+<div class="section" id="rename-all-file-extensions-to-lowercase">
+<h2>Rename All <a class="reference external" href="https://askubuntu.com/questions/546426/how-to-rename-file-extension-to-lowercase">File Extensions to Lowercase</a><a class="headerlink" href="#rename-all-file-extensions-to-lowercase" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>find . -type d -execdir rename <span class="s1">&#39;s/(\.[A-Z]+$)/lc($1)/ge&#39;</span> *.*<span class="o">[</span>A-Z<span class="o">]</span>* <span class="se">\;</span>
 </pre></div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text"><strong>0600 user user</strong> <code class="docutils literal notranslate"><span class="pre">~/.muttrc</span></code></span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24</pre></div></td><td class="code"><div class="highlight"><pre><span></span>set mbox_type=Maildir
-set spoolfile=&quot;~/Maildir/&quot;
-set folder=&quot;~/Maildir/&quot;
-set mask=&quot;.*&quot;
-set record=&quot;+.Sent&quot;
-set postponed=&quot;+.Drafts&quot;
-
-# Generate mailboxes for each maildir subdir
-mailboxes ! + `\
-for file in ~/Maildir/.*; do \
-  box=$(basename &quot;$file&quot;); \
-  if [ ! &quot;$box&quot; = &#39;.&#39; -a ! &quot;$box&quot; = &#39;..&#39; -a ! &quot;$box&quot; = &#39;.customflags&#39; \
-      -a ! &quot;$box&quot; = &#39;.subscriptions&#39; ]; then \
-   echo -n &quot;\&quot;+$box\&quot; &quot;; \
-  fi; \
-done`
-
-# Marcos to display folder list when changing maildir folders
-macro index c &quot;&lt;change-folder&gt;?&lt;toggle-mailboxes&gt;&quot; &quot;open a different folder&quot;
-macro pager c &quot;&lt;change-folder&gt;?&lt;toggle-mailboxes&gt;&quot; &quot;open a different folder&quot;
-
-# Macros to display folder list when copying/moving messages
-macro index C &quot;&lt;copy-message&gt;?&lt;toggle-mailboxes&gt;&quot; &quot;copy a message to a mailbox&quot;
-macro index M &quot;&lt;save-message&gt;?&lt;toggle-mailboxes&gt;&quot; &quot;move a message to a mailbox&quot;
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Alternatively use rename binary.</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rename <span class="s1">&#39;y/A-Z/a-z/&#39;</span> *
 </pre></div>
-</td></tr></table></div>
 </div>
-<p class="rubric">References</p>
-<ol class="arabic simple">
-<li><p><a class="reference external" href="https://gitlab.com/muttmua/mutt/-/wikis/MuttFaq/Maildir">Mutt maildir FAQ</a></p></li>
-<li><p><a class="reference external" href="http://www.elho.net/mutt/maildir">Mutt maildir configuration</a></p></li>
-</ol>
+</div>
+</div>
+<div class="section" id="find-binary-in-all-files">
+<h2>Find Binary in All Files<a class="headerlink" href="#find-binary-in-all-files" title="Permalink to this headline">¶</a></h2>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Sed for a signal file.</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sed -n <span class="s1">&#39;s/.*[,&quot;\[&gt;[:space:]]\(.*\.exe\).*/\1/p&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">For all files.</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>find . -name <span class="s2">&quot;*.txt&quot;</span> -exec sed -n <span class="s1">&#39;s/.*[+,&quot;\[&gt;[:space:]]\(.*\.exe\).*/\1/p&#39;</span> <span class="o">{}</span> <span class="se">\;</span> &gt; result-list
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">Using grep is faster.</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grep -iroh <span class="s2">&quot;\(.*\.exe\)&quot;</span> . <span class="p">|</span> tee result-list
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -1513,10 +1480,10 @@ macro index M &quot;&lt;save-message&gt;?&lt;toggle-mailboxes&gt;&quot; &quot;mo
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="putty.html" class="btn btn-neutral float-right" title="Putty Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="chrome.html" class="btn btn-neutral float-right" title="Chrome Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="gpg/troubleshooting.html" class="btn btn-neutral float-left" title="Troubleshooting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="authy.html" class="btn btn-neutral float-left" title="Moving Authy TOTP to Other Authenticators" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
