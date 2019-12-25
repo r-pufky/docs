@@ -1569,29 +1569,38 @@ reponse from the Master, and will not cache pillar data.</p>
 </div>
 </div>
 <div class="section" id="security-section">
-<h2>Security Section<a class="headerlink" href="#security-section" title="Permalink to this headline">¶</a></h2>
+<span id="salt-minion-configuration-security-section"></span><h2>Security Section<a class="headerlink" href="#security-section" title="Permalink to this headline">¶</a></h2>
 <p>Require 4096 bit keys for signing as well as accepting Master messages. PKI
 access is restricted and the Master server is independently verified using a
 fingerprint.</p>
 <div class="literal-block-wrapper docutils container" id="id7">
 <div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/salt/minion.d/security.conf</span></code></span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">keysize</span><span class="p">:</span> <span class="mi">4096</span>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">keysize</span><span class="p">:</span> <span class="mi">4096</span>
 <span class="n">minion_sign_messages</span><span class="p">:</span> <span class="kc">True</span>
 <span class="n">permissive_pki_access</span><span class="p">:</span> <span class="kc">False</span>
-
+<span class="hll"><span class="n">verify_master_pubkey_sign</span><span class="p">:</span> <span class="kc">True</span>
+</span><span class="hll"><span class="n">always_verify_signature</span><span class="p">:</span> <span class="kc">True</span>
+</span>
 <span class="c1"># Fingerprint of the master public key to validate the identity of your Salt master</span>
 <span class="c1"># before the initial key exchange. The master fingerprint can be found by running</span>
 <span class="c1"># &quot;salt-key -f master.pub&quot; on the Salt master.</span>
 <span class="hll"><span class="n">master_finger</span><span class="p">:</span> <span class="s1">&#39;{MASTER FINGERPRINT}&#39;</span>
 </span></pre></div>
 </td></tr></table></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Copy <code class="docutils literal notranslate"><span class="pre">master_sign.pub</span></code> to <code class="docutils literal notranslate"><span class="pre">/etc/salt/pki/minion</span></code>. See Master
+<a class="reference internal" href="../salt-master/setup.html#salt-master-configuration-security-section"><span class="std std-ref">Security Section</span></a>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

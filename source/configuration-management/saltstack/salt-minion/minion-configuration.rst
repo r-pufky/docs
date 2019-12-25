@@ -64,6 +64,8 @@ reponse from the Master, and will not cache pillar data.
   :linenos:
   :emphasize-lines: 4
 
+.. _salt-minion-configuration-security-section:
+
 Security Section
 ****************
 Require 4096 bit keys for signing as well as accepting Master messages. PKI
@@ -73,7 +75,11 @@ fingerprint.
 .. literalinclude:: source/security.conf
   :caption: **0644 root root** ``/etc/salt/minion.d/security.conf``
   :linenos:
-  :emphasize-lines: 8
+  :emphasize-lines: 4-5,10
+
+.. note::
+  Copy ``master_sign.pub`` to ``/etc/salt/pki/minion``. See Master
+  :ref:`salt-master-configuration-security-section`.
 
 .. note::
   For the initial configuration ``master_finger`` does not need to be setup,

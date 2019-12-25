@@ -48,6 +48,8 @@ minions on AES key rotation and prevents minions from unmanaging themselves. See
   :caption: **0644 root root** ``/etc/salt/master.d/primary.conf``
   :linenos:
 
+.. _salt-master-configuration-security-section:
+
 Security Section
 ****************
 Security configuration. Require 4096 bit keys for signing. All messages are
@@ -62,6 +64,19 @@ this option will drop any message that is not verified to a root CA.
   :caption: **0644 root root** ``/etc/salt/master.d/security.conf``
   :linenos:
 
+.. code-block:: bash
+  :caption: Generate keys for `Minions to authenticate the master`_.
+
+  salt-key --gen-signature --auto-create
+
+.. note::
+  This will generate ``master_sign.pub``, ``master_sign.pem`` and
+  ``master_pubkey_signature`` in ``/etc/salt/pki/master``.
+
+  ``master_sign.pub`` must be installed on minions and enabled before they will
+  be able to validate the master and connect. See Minion
+  :ref:`salt-minion-configuration-security-section`.
+
 State Section
 *************
 Defines how states are applied to minions. Minions will immediately fail is
@@ -75,3 +90,4 @@ See :ref:`salt-minion-management` for managing minions on Salt Master.
 
 .. _Salt Master Setup: https://docs.saltstack.com/en/latest/ref/configuration/master.html
 .. _Pillar Section: https://docs.saltstack.com/en/latest/topics/pillar/
+.. _Minions to authenticate the master: https://docs.saltstack.com/en/latest/topics/tutorials/multimaster_pki.html

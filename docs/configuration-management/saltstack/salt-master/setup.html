@@ -1566,7 +1566,7 @@ minions on AES key rotation and prevents minions from unmanaging themselves. See
 </div>
 </div>
 <div class="section" id="security-section">
-<h2>Security Section<a class="headerlink" href="#security-section" title="Permalink to this headline">¶</a></h2>
+<span id="salt-master-configuration-security-section"></span><h2>Security Section<a class="headerlink" href="#security-section" title="Permalink to this headline">¶</a></h2>
 <p>Security configuration. Require 4096 bit keys for signing. All messages are
 signed. All minions added require manaul approval. Use <em>SSL/TLS1.2</em> for protcol
 encryption. See <a class="reference internal" href="../service-setup.html#salt-tls-protocol"><span class="std std-ref">Use TLS for protocol encryption</span></a> for cert creation.</p>
@@ -1575,16 +1575,20 @@ have verifiable signing certs, which self-signed certs cannot provide. Otherwise
 this option will drop any message that is not verified to a root CA.</p>
 <div class="literal-block-wrapper docutils container" id="id6">
 <div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/salt/master.d/security.conf</span></code></span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">keysize</span><span class="p">:</span> <span class="mi">4096</span>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">keysize</span><span class="p">:</span> <span class="mi">4096</span>
 <span class="n">autosign_timeout</span><span class="p">:</span> <span class="mi">0</span>
+<span class="n">master_sign_pubkey</span><span class="p">:</span> <span class="kc">True</span>
+<span class="n">master_use_pubkey_signature</span><span class="p">:</span> <span class="kc">True</span>
 <span class="n">sign_pub_messages</span><span class="p">:</span> <span class="kc">True</span>
 <span class="n">require_minion_sign_messages</span><span class="p">:</span> <span class="kc">True</span>
 <span class="n">drop_messages_signature_fail</span><span class="p">:</span> <span class="kc">False</span>
@@ -1595,13 +1599,27 @@ this option will drop any message that is not verified to a root CA.</p>
 </pre></div>
 </td></tr></table></div>
 </div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">Generate keys for <a class="reference external" href="https://docs.saltstack.com/en/latest/topics/tutorials/multimaster_pki.html">Minions to authenticate the master</a>.</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>salt-key --gen-signature --auto-create
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This will generate <code class="docutils literal notranslate"><span class="pre">master_sign.pub</span></code>, <code class="docutils literal notranslate"><span class="pre">master_sign.pem</span></code> and
+<code class="docutils literal notranslate"><span class="pre">master_pubkey_signature</span></code> in <code class="docutils literal notranslate"><span class="pre">/etc/salt/pki/master</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">master_sign.pub</span></code> must be installed on minions and enabled before they will
+be able to validate the master and connect. See Minion
+<a class="reference internal" href="../salt-minion/minion-configuration.html#salt-minion-configuration-security-section"><span class="std std-ref">Security Section</span></a>.</p>
+</div>
 </div>
 <div class="section" id="state-section">
 <h2>State Section<a class="headerlink" href="#state-section" title="Permalink to this headline">¶</a></h2>
 <p>Defines how states are applied to minions. Minions will immediately fail is
 there is an error, instead of continuing to apply state.</p>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/salt/master.d/state.conf</span></code></span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/salt/master.d/state.conf</span></code></span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">failhard</span><span class="p">:</span> <span class="kc">True</span>
 </pre></div>
 </td></tr></table></div>
