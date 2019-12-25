@@ -29,11 +29,16 @@ Debug NGINX configs
 *******************
 There is no existing logging functionality in NGINX to write directly to logs
 from configuration files. Work around by directly injecting `debugging headers`_
-in configuration files to dump information to logs.
+in configuration files to dump information to logs. NGINX variables may be used
+as well.
 
 .. code-block:: nginx
 
-  add_header X-debug-message "some message to write" always;
+  add_header X-debug-message "some message to write $ssl_client_s_dn" always;
+
+Headers are found in the page response.
+
+.. image:: source/debug-headers.png
 
 .. _if-is-evil:
 

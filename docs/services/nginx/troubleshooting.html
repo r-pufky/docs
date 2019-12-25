@@ -245,6 +245,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../../apps/vim.html#macros">Macros</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../apps/vim.html#troublshooting">Troublshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../apps/vim.html#vim-frozen">VIM ‘Frozen’</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/vim.html#customize-vim">Customize VIM</a></li>
 </ul>
 </li>
@@ -1483,10 +1487,13 @@ and https communication to the upstream service.</p>
 <h2>Debug NGINX configs<a class="headerlink" href="#debug-nginx-configs" title="Permalink to this headline">¶</a></h2>
 <p>There is no existing logging functionality in NGINX to write directly to logs
 from configuration files. Work around by directly injecting <a class="reference external" href="https://serverfault.com/questions/404626/how-to-output-variable-in-nginx-log-for-debugging">debugging headers</a>
-in configuration files to dump information to logs.</p>
-<div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="k">add_header</span> <span class="s">X-debug-message</span> <span class="s">&quot;some</span> <span class="s">message</span> <span class="s">to</span> <span class="s">write&quot;</span> <span class="s">always</span><span class="p">;</span>
+in configuration files to dump information to logs. NGINX variables may be used
+as well.</p>
+<div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="k">add_header</span> <span class="s">X-debug-message</span> <span class="s">&quot;some</span> <span class="s">message</span> <span class="s">to</span> <span class="s">write</span> <span class="nv">$ssl_client_s_dn&quot;</span> <span class="s">always</span><span class="p">;</span>
 </pre></div>
 </div>
+<p>Headers are found in the page response.</p>
+<img alt="../../_images/debug-headers.png" src="../../_images/debug-headers.png" />
 </div>
 <div class="section" id="if-is-evil">
 <span id="id1"></span><h2>If is Evil<a class="headerlink" href="#if-is-evil" title="Permalink to this headline">¶</a></h2>

@@ -73,8 +73,20 @@ Macros
   @@   # report recorded actions (every time after)
   20@@ # repeat 20 times
 
+Troublshooting
+**************
+
+VIM 'Frozen'
+============
+Generally happens when stopping terminal output with control floww.
+
+.. code-block:: vim
+
+  ctrl+s  # stops terminal output (causes freeze) (XON)
+  ctrl+q  # starts terminal output (XOFF)
+
 Customize VIM
-*********************
+*************
 Displayed without comments / unchanged lines.
 
 .. literalinclude:: source/.vimrc

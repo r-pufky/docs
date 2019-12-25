@@ -245,6 +245,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#macros">Macros</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#troublshooting">Troublshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#vim-frozen">VIM ‘Frozen’</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#customize-vim">Customize VIM</a></li>
 </ul>
 </li>
@@ -1518,6 +1522,17 @@ ctrl<span class="p">+</span><span class="k">v</span>  # block
 @<span class="k">q</span>   # repeat recorded actions <span class="p">(</span><span class="k">first</span> time<span class="p">)</span>
 @@   # <span class="nb">report</span> recorded actions <span class="p">(</span>every time after<span class="p">)</span>
 <span class="m">20</span>@@ # repeat <span class="m">20</span> times
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="troublshooting">
+<h2>Troublshooting<a class="headerlink" href="#troublshooting" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="vim-frozen">
+<h3>VIM ‘Frozen’<a class="headerlink" href="#vim-frozen" title="Permalink to this headline">¶</a></h3>
+<p>Generally happens when stopping terminal output with control floww.</p>
+<div class="highlight-vim notranslate"><div class="highlight"><pre><span></span>ctrl<span class="p">+</span>s  # stops terminal output <span class="p">(</span>causes freeze<span class="p">)</span> <span class="p">(</span>XON<span class="p">)</span>
+ctrl<span class="p">+</span><span class="k">q</span>  # starts terminal output <span class="p">(</span>XOFF<span class="p">)</span>
 </pre></div>
 </div>
 </div>
