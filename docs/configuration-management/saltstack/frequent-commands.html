@@ -328,11 +328,21 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Frequent Commands</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#general-master-commands">General Master Commands</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#general-minion-commands">General Minion Commands</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#run-a-specific-state">Run A Specific State</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#manual-minion-run-with-specific-environments">Manual Minion Run with Specific Environments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#print-only-changes-or-errors">Print Only Changes or Errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#general-master-commands">General Master Commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#run-command-on-minions-from-salt-master">Run Command On Minions From Salt Master</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#get-status-of-all-minions">Get Status of All Minions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#show-minions-on-a-subnet">Show Minions On A Subnet</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#show-avaliable-grains-on-minions">Show Avaliable Grains On Minions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#list-active-jobs">List Active Jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#generate-new-master-certificates">Generate New Master Certificates</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#general-minion-commands">General Minion Commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#run-a-specific-state">Run A Specific State</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#manual-minion-run-with-specific-environments">Manual Minion Run with Specific Environments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#print-only-changes-or-errors">Print Only Changes or Errors</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="common-issues.html">Common Issues</a><ul>
@@ -1466,36 +1476,35 @@ execute commands. See <a class="reference internal" href="common-issues.html#sal
 information.</p>
 <div class="section" id="general-master-commands">
 <h2>General Master Commands<a class="headerlink" href="#general-master-commands" title="Permalink to this headline">¶</a></h2>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">Run a command on Minion and all Ubuntu machines from Salt Master (Salt Master).</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="section" id="run-command-on-minions-from-salt-master">
+<h3>Run Command On Minions From Salt Master<a class="headerlink" href="#run-command-on-minions-from-salt-master" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>salt <span class="o">{</span>MINION<span class="o">}</span> cmd.run <span class="s1">&#39;ifconfig&#39;</span>
 salt -G os:ubuntu cmd.run <span class="s1">&#39;df -h&#39;</span>
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">Get status of all minions.</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="section" id="get-status-of-all-minions">
+<h3>Get Status of All Minions<a class="headerlink" href="#get-status-of-all-minions" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>salt-run manage.status
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">Show minions on a subnet.</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="section" id="show-minions-on-a-subnet">
+<h3>Show Minions On A Subnet<a class="headerlink" href="#show-minions-on-a-subnet" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>salt -S <span class="s1">&#39;10.5.5.0/24&#39;</span> network.ip_addrs
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">Show avaliable grains on minions.</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="section" id="show-avaliable-grains-on-minions">
+<h3>Show Avaliable Grains On Minions<a class="headerlink" href="#show-avaliable-grains-on-minions" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>salt <span class="o">{</span>MINION<span class="o">}</span> grains.items
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">List active jobs.</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="section" id="list-active-jobs">
+<h3>List Active Jobs<a class="headerlink" href="#list-active-jobs" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>salt-run jobs.active
 </pre></div>
-</div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1504,27 +1513,41 @@ command will not finish before`timeout` is reached. See <a class="reference exte
 <a class="reference internal" href="common-issues.html#salt-common-issues-no-return"><span class="std std-ref">Minion did not return. [Not connected].</span></a>.</p>
 </div>
 </div>
+<div class="section" id="generate-new-master-certificates">
+<h3><a class="reference external" href="https://docs.mirantis.com/mcp/q4-18/mcp-operations-guide/saltstack-operations/salt-master-cert/replace-ssh-rsa.html">Generate New Master Certificates</a><a class="headerlink" href="#generate-new-master-certificates" title="Permalink to this headline">¶</a></h3>
+<p>Salt Master uses a RSA 4096bit key and a OpenSSL public key.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ssh-keygen -t rsa -b <span class="m">4096</span> -f master.pem
+openssl rsa -in master.pem -pubout -out master.pub
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These keys should have <strong>no password</strong>. Replace existing files in
+<code class="docutils literal notranslate"><span class="pre">/etc/salt/pki/master</span></code> and ensure Minions are updated accordingly. See
+Minion <a class="reference internal" href="salt-minion/minion-configuration.html#salt-minion-configuration-security-section"><span class="std std-ref">Security Section</span></a>.</p>
+</div>
+</div>
+</div>
 <div class="section" id="general-minion-commands">
 <h2>General Minion Commands<a class="headerlink" href="#general-minion-commands" title="Permalink to this headline">¶</a></h2>
 <p>Useful for testing as well as immediately applying changes outside of the minion
 run window.</p>
-</div>
 <div class="section" id="run-a-specific-state">
-<h2>Run A Specific State<a class="headerlink" href="#run-a-specific-state" title="Permalink to this headline">¶</a></h2>
+<h3>Run A Specific State<a class="headerlink" href="#run-a-specific-state" title="Permalink to this headline">¶</a></h3>
 <p>Useful to isolate failures or apply a specific state change.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo salt-call -l debug state.sls <span class="o">{</span>STATE NAME<span class="o">}</span> <span class="nv">pillarenv</span><span class="o">=</span>dev <span class="nv">saltenv</span><span class="o">=</span>dev
 </pre></div>
 </div>
 </div>
 <div class="section" id="manual-minion-run-with-specific-environments">
-<h2>Manual Minion Run with Specific Environments<a class="headerlink" href="#manual-minion-run-with-specific-environments" title="Permalink to this headline">¶</a></h2>
+<h3>Manual Minion Run with Specific Environments<a class="headerlink" href="#manual-minion-run-with-specific-environments" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>salt <span class="o">{</span>MINION<span class="o">}</span> state.highstate <span class="nv">pillarenv</span><span class="o">=</span>dev <span class="nv">saltenv</span><span class="o">=</span>dev
 salt-call state.highstate <span class="nv">pillarenv</span><span class="o">=</span>dev <span class="nv">saltenv</span><span class="o">=</span>dev
 </pre></div>
 </div>
 </div>
 <div class="section" id="print-only-changes-or-errors">
-<h2>Print Only <a class="reference external" href="https://stackoverflow.com/questions/15953082/is-there-a-way-to-display-only-changes-and-errors">Changes or Errors</a><a class="headerlink" href="#print-only-changes-or-errors" title="Permalink to this headline">¶</a></h2>
+<h3>Print Only <a class="reference external" href="https://stackoverflow.com/questions/15953082/is-there-a-way-to-display-only-changes-and-errors">Changes or Errors</a><a class="headerlink" href="#print-only-changes-or-errors" title="Permalink to this headline">¶</a></h3>
 <p>By default <code class="docutils literal notranslate"><span class="pre">state.highstate</span></code> will print detailed information. This will focus
 output on changes and errors.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>salt <span class="o">{</span>MINION<span class="o">}</span> state.highstate <span class="nv">saltenv</span><span class="o">=</span>prod --state-output<span class="o">=</span>changes
@@ -1538,6 +1561,7 @@ salt <span class="o">{</span>MINION<span class="o">}</span> state.highstate <spa
 <li><p><code class="docutils literal notranslate"><span class="pre">mixed</span></code> will log terse messages for changes and standard messages for
 errors.</p></li>
 </ul>
+</div>
 </div>
 </div>
 </div>
