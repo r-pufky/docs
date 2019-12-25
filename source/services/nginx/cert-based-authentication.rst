@@ -32,6 +32,8 @@ with a ``403``.
 .. literalinclude:: source/server-cert-authentication.conf
   :caption: Setup NGINX SSL server with client cert authentication.
 
+* This provices **Authentication (authn)** See :ref:`service-nginx-cert-authz`
+  for **authorization** setup.
 * ``If`` statements should only be used to for ``rewrite`` and ``return``
   (``proxy_pass`` is a ``rewrite`` statement). See :ref:`if-is-evil`.
 * Access can be provided based on client certificate presented as well (e.g.
@@ -62,6 +64,62 @@ will use to authenticate to backends for requests.
     proxy_ssl_certificate_key     /etc/nginx/auth/nginx.key.pem;
     proxy_ssl_trusted_certificate /etc/nginx/auth/{BACKEND}.crt.pem;
   }
+
+.. _service-nginx-cert-authz:
+
+Certificate Authorization (authz)
+*********************************
+Enable `specific site access to client certificates`_.
+
+.. code-block:: nginx
+  :caption: **0644 root root** ``/etc/nginx/conf.d/default.conf``
+
+  include /etc/nginx/conf.d/include/context/map-hash-size-optimal;
+  include /etc/nginx/conf.d/include/context/map-client-blacklist;
+
+.. code-block:: nginx
+  :caption: **0644 root root** ``/etc/nginx/conf.d/include/context/map-hash-size-optimal``
+
+  # Increase hashtable size for optimal map lookups.
+  map_hash_max_size 1024;
+  map_hash_bucket_size 128;
+
+.. code-block:: nginx
+  :caption: **0644 root root** ``/etc/nginx/conf.d/include/context/map-client-blacklist``
+
+  map $ssl_client_s_dn $cert_authz {
+    default SUCCESS;
+    "emailAddress=XX,CN=XX,OU=XX,O=XX,L=XX,ST=XX,C=XX" FAILURE;
+  }
+
+.. note::
+  ``Subject DN`` can be found by inspecting the certificate:
+
+  .. code-block:: bash
+
+    openssl x509 -text -noout -in {CERT}
+
+  Order of the ``Subject DN`` can be found by inspecting the response headers.
+  See :ref:`service-nginx-debug-nginx-configs`.
+
+.. code-block:: nginx
+  :caption: **0644 root root** ``/etc/nginx/conf.d/include/authz/enforce-blacklist``
+
+  # Blacklisted authz certs should 403.
+  if ($cert_authz != SUCCESS) {
+    return 403;
+    break;
+  }
+
+.. code-block:: nginx
+  :caption: **0644 root root** ``/etc/nginx/conf.d/include/proxy/site``
+
+  include /etc/nginx/conf.d/include/authn/cert/force-all-connections;
+  include /etc/nginx/conf.d/include/authz/enforce-blacklist;
+
+.. note::
+  ``force-all-connections`` provides the **authentication** step.
+  ``enforce-blacklist`` provides the **authorization** step.
 
 .. _service-nginx-cert-auth-git:
 
@@ -156,3 +214,4 @@ Restarting chrome will pickup the configuration changes.
 .. _Setup chrome: https://www.tbs-certificates.co.uk/FAQ/en/installer_certificat_client_google_chrome.html
 .. _correct certificate: https://blogs.sap.com/2014/01/30/avoid-certification-selection-popup-in-chrome/
 .. _Reg Edit: https://www.chromium.org/administrators/policy-list-3#AutoSelectCertificateForUrls
+.. _specific site access to client certificates: https://stackoverflow.com/questions/41513400/nginx-authorization-based-on-client-certificates

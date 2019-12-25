@@ -25,6 +25,8 @@ and https communication to the upstream service.
 .. note::
   Headers will be dumped directly to the page.
 
+.. _service-nginx-debug-nginx-configs:
+
 Debug NGINX configs
 *******************
 There is no existing logging functionality in NGINX to write directly to logs

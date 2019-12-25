@@ -1049,6 +1049,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Cert Based Authentication</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#nginx-configuration">Nginx Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#proxy-specific-client-certificate">Proxy-specific Client Certificate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#certificate-authorization-authz">Certificate Authorization (authz)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#git-configuration">Git Configuration</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#git-cert-auth-for-repo-site">Git Cert Auth for Repo Site</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#git-cert-auth-for-specific-repo">Git Cert Auth for Specific Repo</a></li>
@@ -1547,6 +1548,8 @@ testing to verify your assumptions.</p>
 </div>
 </div>
 <ul class="simple">
+<li><p>This provices <strong>Authentication (authn)</strong> See <a class="reference internal" href="#service-nginx-cert-authz"><span class="std std-ref">Certificate Authorization (authz)</span></a>
+for <strong>authorization</strong> setup.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">If</span></code> statements should only be used to for <code class="docutils literal notranslate"><span class="pre">rewrite</span></code> and <code class="docutils literal notranslate"><span class="pre">return</span></code>
 (<code class="docutils literal notranslate"><span class="pre">proxy_pass</span></code> is a <code class="docutils literal notranslate"><span class="pre">rewrite</span></code> statement). See <a class="reference internal" href="troubleshooting.html#if-is-evil"><span class="std std-ref">If is Evil</span></a>.</p></li>
 <li><p>Access can be provided based on client certificate presented as well (e.g.
@@ -1580,14 +1583,73 @@ will use to authenticate to backends for requests.</p>
 </div>
 </div>
 </div>
+<div class="section" id="certificate-authorization-authz">
+<span id="service-nginx-cert-authz"></span><h2>Certificate Authorization (authz)<a class="headerlink" href="#certificate-authorization-authz" title="Permalink to this headline">¶</a></h2>
+<p>Enable <a class="reference external" href="https://stackoverflow.com/questions/41513400/nginx-authorization-based-on-client-certificates">specific site access to client certificates</a>.</p>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/nginx/conf.d/default.conf</span></code></span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
+<div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="k">include</span> <span class="n">/etc/nginx/conf.d/include/context/map-hash-size-optimal</span>;
+<span class="k">include</span> <span class="n">/etc/nginx/conf.d/include/context/map-client-blacklist</span>;
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/nginx/conf.d/include/context/map-hash-size-optimal</span></code></span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
+<div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="c1"># Increase hashtable size for optimal map lookups.</span>
+<span class="k">map_hash_max_size</span> <span class="mi">1024</span><span class="p">;</span>
+<span class="k">map_hash_bucket_size</span> <span class="mi">128</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/nginx/conf.d/include/context/map-client-blacklist</span></code></span><a class="headerlink" href="#id9" title="Permalink to this code">¶</a></div>
+<div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="k">map</span> <span class="nv">$ssl_client_s_dn</span> <span class="nv">$cert_authz</span> <span class="p">{</span>
+  <span class="kn">default</span> <span class="s">SUCCESS</span><span class="p">;</span>
+  <span class="kn">&quot;emailAddress=XX,CN=XX,OU=XX,O=XX,L=XX,ST=XX,C=XX&quot;</span> <span class="s">FAILURE</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">Subject</span> <span class="pre">DN</span></code> can be found by inspecting the certificate:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>openssl x509 -text -noout -in <span class="o">{</span>CERT<span class="o">}</span>
+</pre></div>
+</div>
+<p>Order of the <code class="docutils literal notranslate"><span class="pre">Subject</span> <span class="pre">DN</span></code> can be found by inspecting the response headers.
+See <a class="reference internal" href="troubleshooting.html#service-nginx-debug-nginx-configs"><span class="std std-ref">Debug NGINX configs</span></a>.</p>
+</div>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/nginx/conf.d/include/authz/enforce-blacklist</span></code></span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
+<div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="c1"># Blacklisted authz certs should 403.</span>
+<span class="k">if</span> <span class="s">(</span><span class="nv">$cert_authz</span> <span class="s">!=</span> <span class="s">SUCCESS)</span> <span class="p">{</span>
+  <span class="kn">return</span> <span class="mi">403</span><span class="p">;</span>
+  <span class="kn">break</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/nginx/conf.d/include/proxy/site</span></code></span><a class="headerlink" href="#id11" title="Permalink to this code">¶</a></div>
+<div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="k">include</span> <span class="n">/etc/nginx/conf.d/include/authn/cert/force-all-connections</span>;
+<span class="k">include</span> <span class="n">/etc/nginx/conf.d/include/authz/enforce-blacklist</span>;
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">force-all-connections</span></code> provides the <strong>authentication</strong> step.
+<code class="docutils literal notranslate"><span class="pre">enforce-blacklist</span></code> provides the <strong>authorization</strong> step.</p>
+</div>
+</div>
 <div class="section" id="git-configuration">
 <span id="service-nginx-cert-auth-git"></span><h2>Git Configuration<a class="headerlink" href="#git-configuration" title="Permalink to this headline">¶</a></h2>
 <p>Accessing a https based git repository behind a NGINX proxy requiring client
 certificate authentication is supported both locally and via URI matching.</p>
 <div class="section" id="git-cert-auth-for-repo-site">
 <h3><a class="reference external" href="https://stackoverflow.com/questions/9008309/how-do-i-set-git-ssl-no-verify-for-specific-repos-only">Git Cert Auth for Repo Site</a><a class="headerlink" href="#git-cert-auth-for-repo-site" title="Permalink to this headline">¶</a></h3>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text"><strong>0400 user user</strong> <code class="docutils literal notranslate"><span class="pre">~/.gitconfig</span></code></span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text"><strong>0400 user user</strong> <code class="docutils literal notranslate"><span class="pre">~/.gitconfig</span></code></span><a class="headerlink" href="#id12" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">http</span> <span class="s2">&quot;https://git.example.com&quot;</span><span class="p">]</span>
   <span class="n">sslCert</span> <span class="o">=</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="p">{</span><span class="n">MACHINE</span><span class="p">}</span><span class="o">.</span><span class="n">crt</span><span class="o">.</span><span class="n">pem</span>
   <span class="n">sslKey</span> <span class="o">=</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">user</span><span class="o">/</span><span class="p">{</span><span class="n">MACHINE</span><span class="p">}</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">pem</span>
@@ -1613,8 +1675,8 @@ This is probably not what you want to do.</p>
 <p><a class="reference external" href="https://www.tbs-certificates.co.uk/FAQ/en/installer_certificat_client_google_chrome.html">Setup chrome</a> to auto present correct certificate when challenged by proxy
 server.</p>
 <div class="ggui docutils container" id="Import Client Certificate to Chrome.">
-<table class="docutils align-default" id="id8">
-<caption><span class="caption-text">Import Client Certificate to Chrome.</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="id13">
+<caption><span class="caption-text">Import Client Certificate to Chrome.</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
