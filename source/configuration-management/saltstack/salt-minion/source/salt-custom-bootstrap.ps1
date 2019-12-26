@@ -12,12 +12,17 @@
     the install machine.
 
 .EXAMPLE
+    ./salt-custom-bootstrap.ps1 -domain mydomain.com -config salt-config.zip -confirm
+    Install using with custom domain and pre-seeded configuration, skip
+    confirmation prompt.
+
+.EXAMPLE
     ./bootstrap-salt.ps1 -version 2019.2.2 -master salt -minion myminion -config salt-config.zip -domain example.com
     Install salt minion 2019.2.2 and overlay custom salt configuration, with the
     minion id: myminion.
 
 .PARAMETER version
-    Default version defined in this script.
+    Salt-minion version to install. Default: latest.
 
 .PARAMETER master
     Name or IP of the master server. Installer defaults to 'salt'.
@@ -48,6 +53,14 @@
     Domain that the salt-master and salt-minion are on.
 
     e.g.: example.com
+
+.PARAMETER confirm
+    Flag to auto-accept confirmation on script run.
+
+.PARAMETER ports
+    Flag to enable incoming connections on TCP 4505-4506 in windows firewall.
+
+    This is NOT NEEDED for salt-minions to work. Dangerous.
 #>
 
 [CmdletBinding()]
@@ -55,7 +68,7 @@ Param (
     [Parameter(Mandatory=$false,ValueFromPipeline=$true)]
     # Doesn't support versions prior to "YYYY.M.R-B"
     [ValidatePattern('^201\d\.\d{1,2}\.\d{1,2}(\-\d{1})?|(rc\d)$')]
-    [string]$VERSION = '2019.2.2',
+    [string]$VERSION = 'Latest',
 
     [Parameter(Mandatory=$false,ValueFromPipeline=$true)]
     [string]$MASTER = 'salt',
@@ -76,7 +89,13 @@ Param (
     [string]$SALTDIR = 'c:\salt\conf',
 
     [Parameter(Mandatory=$false,ValueFromPipeline=$true)]
-    [string]$DOMAIN = 'example.com'
+    [string]$DOMAIN = 'example.com',
+
+    [Parameter(Mandatory=$false,ValueFromPipeline=$true)]
+    [switch]$CONFIRM,
+
+    [Parameter(Mandatory=$false,ValueFromPipeline=$true)]
+    [switch]$PORTS
 )
 
 Import-Module BitsTransfer
@@ -94,6 +113,10 @@ Write-Output "Custom Config: $CONFIG"
 Write-Output "Salt Dir:      $SALTDIR"
 Write-Output "Platform:      $ARCH"
 Write-Output "Binary:        $BINARY"
+Write-Output "Expose Ports:  $PORTS"
+if (-Not $CONFIRM) {
+  Read-Host -Prompt 'Confirm install options (press any key) or CTRL+C to quit.'
+}
 
 function Get-IsAdministrator {
     $Identity = [System.Security.Principal.WindowsIdentity]::GetCurrent()
@@ -101,27 +124,12 @@ function Get-IsAdministrator {
     $Principal.IsInRole([System.Security.Principal.WindowsBuiltInRole]::Administrator)
 }
 
-function Get-IsUacEnabled {
-    (Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System).EnableLua -ne 0
-}
-
 function Run-AsAdmin {
   If (!(Get-IsAdministrator)) {
-    If (Get-IsUacEnabled) {
-      $newProcess = new-object System.Diagnostics.ProcessStartInfo "PowerShell";
-      $parameters = ""
-      If($MINION -ne "not-specified") {$parameters = "-minion $MINION"}
-      If($MASTER -ne "not-specified") {$parameters = "$parameters -master $MASTER"}
-      If($VERSION -ne '') {$parameters = "$parameters -version $VERSION"}
-
-      $newProcess.Arguments = $myInvocation.MyCommand.Definition, $parameters
-      $newProcess.WorkingDirectory = "$script_path"
-      $newProcess.Verb = "runas";
-      [System.Diagnostics.Process]::Start($newProcess);
-      exit 0
-    } else {
-      Throw "You must be administrator to run this script."
-    }
+    Write-Host 'You must run this script as an Administrator.' -BackgroundColor red
+    Write-Host 'Ensure unrestricted execution policy: ' -NoNewLine
+    Write-Host 'Set-ExecutionPolicy Unrestricted' -ForegroundColor yellow
+    exit 3
   }
 }
 
@@ -150,11 +158,6 @@ function Validate-File {
 
 function Setup-Prerequistes {
   New-Item $WORKING -ItemType Directory -Force | Out-Null
-
-  if (Test-Path "$PSScriptRoot/$CONFIG") {
-    New-Item "$SALTDIR\pki\minion" -ItemType directory -Force | Out-Null
-    New-Item "$SALTDIR\minion.d" -ItemType directory -Force | Out-Null
-  }
 }
 
 function Install-Config {
@@ -176,8 +179,8 @@ function Download-Minion {
 }
 
 function Install-Minion {
-  Write-Host 'Installing salt-minion ... '  -NoNewLine
-  Start-Process "$WORKING/$BINARY" -ArgumentList "/master=$MASTER","/minion-name=$MINION","/start-minion=0","/S" -Wait -NoNewWindow -PassThru | Out-Null
+  Write-Host 'Installing salt-minion ... ' -NoNewLine
+  Start-Process "$WORKING/$BINARY" -ArgumentList "/master=$MASTER","/minion-name=$MINION",'/start-minion=0','/S' -Wait -NoNewWindow -PassThru | Out-Null
   Write-Host 'Done' -BackgroundColor green -ForegroundColor black
 }
 
@@ -203,9 +206,18 @@ function Start-MinionService {
   Write-Host 'salt-minion service started.' -NoNewline -BackgroundColor green -ForegroundColor black
 }
 
+function Enable-Connections {
+  if ($PORTS) {
+    Write-Host 'Enabling minion connections ... ' -NoNewLine
+    Start-Process netsh -ArgumentList 'advfirewall','firewall','add','rule','name=Salt-Minion','dir=in','action=allow','protocol=TCP','localport=4505-4506' -Wait -NoNewWindow -PassThru | Out-Null
+    Write-Host 'Done' -BackgroundColor green -ForegroundColor black
+  }
+}
+
 Run-AsAdmin
 Setup-Prerequistes
 Install-Config
 Download-Minion
 Install-Minion
 Start-MinionService
+Enable-Connections
