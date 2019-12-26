@@ -25,14 +25,15 @@ Snippets
   youtube-dl --extract-audio --audio-format flac --audio-quality 0 --add-metadata {URL}
 
 .. code-block:: bash
-  :caption: List all formats for a video.
+  :caption: List all formats for a video and select the best ones.
 
   youtube-dl -F {URL}
+  youtube-dl -f ###+### {URL}
 
 .. code-block:: bash
   :caption: Download only the 1080p video/audio stream from a video.
 
-  youtube-dl "ytsearch:bestvideo[height<=1080]+bestaudio/best[height<=1080]" {URL}
+  youtube-dl -f "bestvideo[height<=1080]+bestaudio/best[height<=1080]" {URL}
 
 .. code-block:: bash
   :caption: Download a playlist.
