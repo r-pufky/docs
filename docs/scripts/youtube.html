@@ -1493,14 +1493,15 @@ apt install lame libav-tools
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">List all formats for a video.</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text">List all formats for a video and select the best ones.</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>youtube-dl -F <span class="o">{</span>URL<span class="o">}</span>
+youtube-dl -f <span class="c1">###+### {URL}</span>
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id6">
 <div class="code-block-caption"><span class="caption-text">Download only the 1080p video/audio stream from a video.</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>youtube-dl <span class="s2">&quot;ytsearch:bestvideo[height&lt;=1080]+bestaudio/best[height&lt;=1080]&quot;</span> <span class="o">{</span>URL<span class="o">}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>youtube-dl -f <span class="s2">&quot;bestvideo[height&lt;=1080]+bestaudio/best[height&lt;=1080]&quot;</span> <span class="o">{</span>URL<span class="o">}</span>
 </pre></div>
 </div>
 </div>
