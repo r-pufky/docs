@@ -23,7 +23,7 @@ enabled by default and is the default location for all files. It cannot be remov
 
 :term:`Registry`
 ****************
-.. wregedit:: `Remove OneDrive from Windows Explorer`_
+.. wregedit:: `Remove OneDrive from Windows Explorer`_ via Registry
   :key_title: HKEY_CLASSES_ROOT\\CLSID\\{018D5C66-4533-4307-9B53-224DE2ED1FE6}
   :names:     System.IsPinnedToNameSpaceTree
   :types:     DWORD
@@ -33,12 +33,13 @@ enabled by default and is the default location for all files. It cannot be remov
 
 :term:`GPO`
 ***********
-.. wgpolicy:: Disable one-drive from storing files
+.. wgpolicy:: Disable one-drive from storing files via machine GPO
   :key_title: Computer Configuration -->
               Administrative Templates -->
               Windows Components -->
-              OneDrive
-  :option:    Prevent the usage of OneDrive for file storage
+              OneDrive -->
+              Prevent the usage of OneDrive for file storage
+  :option:    ☑
   :setting:   Enabled
   :no_section:
 
@@ -65,8 +66,10 @@ changed. See references for additional documentation.
 .. gtable:: Diagnostic data services
   :header: Service,
            Endpoint
-  :c0:     OneDrive app for Windows 10
-  :c1:     vortex.data.microsoft.com/collect/v1
+  :c0:     OneDrive app for Windows 10,
+           ›
+  :c1:     https://vortex.data.microsoft.com/collect/v1,
+           vortex.data.microsoft.com/collect/v1
   :no_key_title:
   :no_section:
   :no_launch:

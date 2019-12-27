@@ -8,6 +8,7 @@ applied.
 
 #. :ref:`windows-10-disable-telemetry`.
 #. :ref:`windows-10-disable-onedrive`.
+#. :ref:`windows-10-disable-defender`.
 
 .. toctree::
    :hidden:
@@ -15,3 +16,4 @@ applied.
 
    telemetry
    onedrive
+   defender

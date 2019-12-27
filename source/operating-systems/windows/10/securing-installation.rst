@@ -67,35 +67,6 @@ Remove Unused Optional Windows Features
   :no_section:
   :no_caption:
 
-`Disable OneDrive`_
-*******************
-.. wgpolicy:: Disable one-drive from storing files
-  :key_title: Computer Configuration -->
-              Administrative Templates -->
-              Windows Components -->
-              OneDrive
-  :option:    Prevent the usage of OneDrive for file storage
-  :setting:   Enabled
-  :no_caption:
-
-.. wtschedule:: Disable OneDrive schedule update task
-  :key_title:   OneDrive Standalone Update Task v2
-  :option:      Task
-  :setting:     Disabled
-  :no_caption:
-
-    This will sometimes randomly re-enable OneDrive when it is updated.
-
-.. wregedit:: Remove OneDrive from Windows Explorer
-  :key_title: HKEY_CLASSES_ROOT\\CLSID\\{018D5C66-4533-4307-9B53-224DE2ED1FE6}
-  :names:     System.IsPinnedToNameSpaceTree
-  :types:     DWORD
-  :data:      0
-  :admin:
-  :no_caption:
-
-    `See removing onedrive from windows explorer`_.
-
 `Disable Suggested Apps in Windows`_
 ************************************
 .. wgpolicy:: Disable suggested apps in Windows
@@ -148,79 +119,6 @@ starts to fill up. Prevent Windows from being dumb.
               Stopped
   :no_section:
   :no_caption:
-
-`Disable Windows Defender Service`_
-***********************************
-Don't turn this off unless you know what you are doing. You should first disable
-all of the options for windows defender before disabling the service, as
-cloud-based protection will cause 100% disk usage (in settings).
-
-.. wgpolicy:: Turn off windows defender policy
-  :key_title: Computer Configuration -->
-              Administrative Templates -->
-              Windows Components -->
-              Windows Defender Antivirus
-  :option:    Turn off Windows Defender Antivirus
-  :setting:   Enabled
-  :no_section:
-  :no_caption:
-
-.. wgpolicy:: Disable windows defender service real-time policy
-  :key_title: Computer Configuration -->
-              Administrative Templates -->
-              Windows Components -->
-              Windows Defender Antivirus -->
-              Real-time Protection
-  :option:    Turn off real-time protection
-  :setting:   Enabled
-  :no_section:
-  :no_caption:
-  :no_launch:
-
-.. wgpolicy:: Disable windows defender service real-time policy
-  :key_title: Computer Configuration -->
-              Administrative Templates -->
-              Windows Components -->
-              Windows Defender Antivirus -->
-              Client Interface
-  :option:    Suppress all notifications
-  :setting:   Enabled
-  :no_section:
-  :no_caption:
-  :no_launch:
-
-.. wgpolicy:: Disable windows defender service real-time policy
-  :key_title: Computer Configuration -->
-              Administrative Templates -->
-              Windows Components -->
-              Windows Defender Antivirus -->
-              Reporting
-  :option:    Turn off enhanced notifications
-  :setting:   Enabled
-  :no_section:
-  :no_caption:
-  :no_launch:
-
-.. wtmanager:: Disable windows defender notification icon manager
-  :key_title:  More Details --> Startup
-  :option:     Windows Defender notification icon
-  :setting:    Disabled
-  :no_section:
-  :no_caption:
-
-.. wgpolicy:: Disable windows defender notification icon via group policy
-  :key_title: Computer Configuration -->
-              Administrative Templates -->
-              Windows Components -->
-              Windows Security -->
-              Systray
-  :option:    Hide Windows Security Systray
-  :setting:   Enabled
-  :no_section:
-  :no_caption:
-  :no_launch:
-
-    `See disabling windows defender icon`_.
 
 `Disable Silent Windows Store App Installs`_
 ********************************************
@@ -402,14 +300,10 @@ manually removing applications is preferred over a script.
 .. _1803 update breaks microphone: https://www.ghacks.net/2018/05/01/all-the-issues-of-windows-10-version-1803-you-may-run-into/
 .. _Disable Cortana: https://www.howtogeek.com/265027/how-to-disable-cortana-in-windows-10/
 .. _Disable Ad Tracking: https://account.microsoft.com/privacy/ad-settings/signedout?ru=https%3A%2F%2Faccount.microsoft.com%2Fprivacy%2Fad-settings
-.. _Disable OneDrive: https://support.office.com/en-us/article/turn-off-disable-or-uninstall-onedrive-f32a17ce-3336-40fe-9c38-6efb09f944b0?ui=en-US&rs=en-US&ad=US
 .. _Disable Suggested Apps in Windows: https://www.howtogeek.com/259946/how-to-get-rid-of-suggested-apps-in-windows-10/
 .. _Disable Automatic Resource Exhaustion Resolution: https://www.windows-security.org/f4aece067cb4976eb7a4f3add2fda30c/configure-scenario-execution-level
-.. _Disable Windows Defender Service: https://www.tenforums.com/tutorials/5918-turn-off-windows-defender-antivirus-windows-10-a.html
-.. _See disabling windows defender icon: https://appuals.com/how-to-remove-windows-defender-icon-on-windows-10/
 .. _Disable Silent Windows Store App Installs: https://www.youtube.com/watch?v=wgKJMsJ-6XU&feature=youtu.be&t=4m47s
 .. _Disable Windows Store App Installs: https://www.easeus.com/computer-instruction/stop-windows-10-installing-apps.html
-.. _See removing onedrive from windows explorer: https://www.techjunkie.com/remove-onedrive-file-explorer-sidebar-windows-10/
 .. _See disable quick access pane in windows explorer: https://www.winhelponline.com/blog/remove-quick-access-other-shell-folders-file-explorer/
 .. _explorer to use this pc: https://www.maketecheasier.com/remove-quick-access-file-explorer/
 .. _Remove Services from Being Listed in Task Manager:  https://www.tenforums.com/tutorials/2944-add-delete-enable-disable-startup-items-windows-10-a.html

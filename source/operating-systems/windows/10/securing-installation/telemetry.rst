@@ -41,7 +41,7 @@ Services
   :data:      1
   :no_section:
 
-.. wregedit:: `Disable infection reporting`_.
+.. wregedit:: `Disable infection reporting`_. via Registry
   :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\MRT
   :names:     DontReportInfectionInformation
   :types:     DWORD
@@ -79,7 +79,7 @@ Services
   :no_section:
   :no_launch:
 
-.. wgpolicy:: Make Desktop Analytics use Telemetry setting
+.. wgpolicy:: Make Desktop Analytics use Telemetry setting via machine GPO
   :key_title: Computer Configuration -->
               Administrative Templates -->
               Windows Components -->
@@ -157,6 +157,7 @@ changed. See references for additional documentation.
            ›,
            Online Crash Analysis,
            OneDrive app for Windows 10,
+           ›,
            Microsoft Defender Advanced Threat Protection,
            ›
   :c1:     watson.telemetry.microsoft.com,
@@ -167,6 +168,7 @@ changed. See references for additional documentation.
            weus2watcab01.blob.core.windows.net,
            weus2watcab02.blob.core.windows.net,
            oca.telemetry.microsoft.com,
+           https://vortex.data.microsoft.com/collect/v1,
            vortex.data.microsoft.com/collect/v1,
            https://wdcp.microsoft.com,
            https://wdcpalt.microsoft.com
@@ -178,6 +180,7 @@ changed. See references for additional documentation.
 
 #. `Configure Windows Diagnostic Data <https://docs.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization>`_
 #. `Manage connections from Windows 10 to Microsoft Services <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services>`_
+#. `Manage connections from Windows 10 OS components to Microsoft Services <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services>`_
 
 .. _Telemetry Info: https://www.forbes.com/sites/gordonkelly/2015/11/24/windows-10-automatic-spying-begins-again/
 .. _diagnostic data levels: https://docs.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization#security-level
