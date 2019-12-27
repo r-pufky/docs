@@ -6,7 +6,7 @@ Standard Windows setup used for gaming. Removes known tracking & bloatware.
 
 Working assumptions:
 
-* Windows 10 pro.
+* Windows 10 pro (64 bit).
 * Execution Policy: **Unrestricted** (see: :ref:`setting-execution-policy`).
 * Assumes Admin Rights.
 
@@ -22,9 +22,9 @@ Related Material:
 
 .. rubric:: References
 
-#. `Windows Command Reference <https://ss64.com/nt/run.html>`_.
-#. `Windows Group Policy Reference <https://www.windows-security.org/group-policy-setting/3813-windows-group-policy-encyclopedia>`_.
-#. `Registry Data Types <https://docs.microsoft.com/en-us/windows/win32/shell/hkey-type>`_.
+#. `Windows Command Reference <https://ss64.com/nt/run.html>`_
+#. `Windows Group Policy Reference <https://www.windows-security.org/group-policy-setting/3813-windows-group-policy-encyclopedia>`_
+#. `Registry Data Types <https://docs.microsoft.com/en-us/windows/win32/shell/hkey-type>`_
 
 .. toctree::
    :hidden:

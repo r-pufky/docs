@@ -119,12 +119,12 @@ Script will only send notifications on opening SSH connections.
 
 .. rubric:: References
 
-#. `PAM Reference <https://www.tecmint.com/configure-pam-in-centos-ubuntu-linux/>`_/
+#. `PAM Reference <https://www.tecmint.com/configure-pam-in-centos-ubuntu-linux/>`_
 #. `Signal CLI Reference <https://github.com/AsamK/signal-cli/blob/master/man/signal-cli.1.adoc>`_
-#. `Signal CLI Docker <https://hub.docker.com/r/kayvan/signal-cli>`_.
-#. `SSH Login Notifications with Signal <https://8192.one/post/ssh_login_notification_signal/>`_.
-#. `pam_exec Reference <http://www.linux-pam.org/Linux-PAM-html/sag-pam_exec.html>`_.
-#. `Run sshd login script one <https://unix.stackexchange.com/questions/507811/running-a-script-prior-to-ssh-login-but-only-once>`_.
+#. `Signal CLI Docker <https://hub.docker.com/r/kayvan/signal-cli>`_
+#. `SSH Login Notifications with Signal <https://8192.one/post/ssh_login_notification_signal/>`_
+#. `pam_exec Reference <http://www.linux-pam.org/Linux-PAM-html/sag-pam_exec.html>`_
+#. `Run sshd login script one <https://unix.stackexchange.com/questions/507811/running-a-script-prior-to-ssh-login-but-only-once>`_
 
 .. _pam_exec reference: http://www.linux-pam.org/Linux-PAM-html/sag-pam_exec.html
 .. _Latest Release: https://github.com/AsamK/signal-cli/releases/latest

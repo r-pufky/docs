@@ -12,6 +12,9 @@ hit. See `Telemetry Info`_.
   most restrictive policy is setup in case telemetry services are re-enabled on
   updates.
 
+.. danger::
+  After every major windows update, verify these settings.
+
 Services
 ********
 .. wservice:: Disable Connected User Experiences and Telemetry
@@ -173,8 +176,8 @@ changed. See references for additional documentation.
 
 .. rubric:: References
 
-#. `Configure Windows Diagnostic Data <https://docs.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization>`_.
-#. `Manage connections from Windows 10 to Microsoft Services <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services>`_.
+#. `Configure Windows Diagnostic Data <https://docs.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization>`_
+#. `Manage connections from Windows 10 to Microsoft Services <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services>`_
 
 .. _Telemetry Info: https://www.forbes.com/sites/gordonkelly/2015/11/24/windows-10-automatic-spying-begins-again/
 .. _diagnostic data levels: https://docs.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization#security-level

@@ -5,7 +5,7 @@ Icon Explanation
 
 .. glossary::
 
-  LBM
+  LMB
     Left mouse button. This means left click.
 
   RMB

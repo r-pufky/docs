@@ -6,10 +6,12 @@ A reboot is required once these changes are made. Group policy edits are
 preferred and registry/other equivalents are provided as well. Any may be
 applied.
 
-#. ref:`windows-10-disable-telemetry`.
+#. :ref:`windows-10-disable-telemetry`.
+#. :ref:`windows-10-disable-onedrive`.
 
 .. toctree::
    :hidden:
    :maxdepth: -1
 
    telemetry
+   onedrive
