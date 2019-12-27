@@ -6,6 +6,19 @@ Most commands support *globbing* and *regex* matching on Minions and Grains to
 execute commands. See :ref:`salt-common-issues` for additional debugging
 information.
 
+.. note::
+  For windows minions, command should be run from the salt batch files to setup
+  the appropriate environment.
+
+  .. code-block:: bash
+    :caption: Linux command.
+
+    salt-call -l debug state.highstate saltenv=dev pillarenv=dev
+
+  .. code-block:: powershell
+    :caption: Equivalent Windoes command.
+    c:\salt\salt-call.bat -l debug state.highstate saltenv=dev pillarenv=dev
+
 General Master Commands
 ***********************
 Run Command On Minions From Salt Master
