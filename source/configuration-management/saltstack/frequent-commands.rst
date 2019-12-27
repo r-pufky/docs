@@ -17,6 +17,7 @@ information.
 
   .. code-block:: powershell
     :caption: Equivalent Windoes command.
+
     c:\salt\salt-call.bat -l debug state.highstate saltenv=dev pillarenv=dev
 
 General Master Commands

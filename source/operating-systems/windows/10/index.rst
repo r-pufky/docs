@@ -23,7 +23,7 @@ Related Material:
 .. rubric:: References
 
 #. `Windows Command Reference <https://ss64.com/nt/run.html>`_.
-#, `Windows Group Policy Reference <https://www.windows-security.org/group-policy-setting/3813-windows-group-policy-encyclopedia>`_.
+#. `Windows Group Policy Reference <https://www.windows-security.org/group-policy-setting/3813-windows-group-policy-encyclopedia>`_.
 #. `Registry Data Types <https://docs.microsoft.com/en-us/windows/win32/shell/hkey-type>`_
 
 .. toctree::

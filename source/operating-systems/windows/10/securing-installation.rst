@@ -165,6 +165,15 @@ starts to fill up. Prevent Windows from being dumb.
   :no_section:
   :no_caption:
 
+.. wservice:: Disable Diagnostic Service.
+  :key_title: Diagnostic Policy Service --> General
+  :option:    Startup type,
+              Service status
+  :setting:   Disabled,
+              Stopped
+  :no_section:
+  :no_caption:
+
 `Disable Windows Defender Service`_
 ***********************************
 Don't turn this off unless you know what you are doing. You should first disable
@@ -409,7 +418,7 @@ manually removing applications is preferred over a script.
 .. _Disable Ad Tracking: https://account.microsoft.com/privacy/ad-settings/signedout?ru=https%3A%2F%2Faccount.microsoft.com%2Fprivacy%2Fad-settings
 .. _Disable OneDrive: https://support.office.com/en-us/article/turn-off-disable-or-uninstall-onedrive-f32a17ce-3336-40fe-9c38-6efb09f944b0?ui=en-US&rs=en-US&ad=US
 .. _Disable Suggested Apps in Windows: https://www.howtogeek.com/259946/how-to-get-rid-of-suggested-apps-in-windows-10/
-.. _Disable Automatic Resource Exhaustion Resolution: https://www.autoitscript.com/forum/topic/177749-stopping-windows-10-from-auto-closing-programs-to-free-up-ram/
+.. _Disable Automatic Resource Exhaustion Resolution: https://www.windows-security.org/f4aece067cb4976eb7a4f3add2fda30c/configure-scenario-execution-level
 .. _Disable Windows Defender Service: https://www.tenforums.com/tutorials/5918-turn-off-windows-defender-antivirus-windows-10-a.html
 .. _See disabling windows defender icon: https://www.howtogeek.com/264796/how-to-remove-the-windows-defender-icon-from-your-notification-area/
 .. _Disable Silent Windows Store App Installs: https://www.youtube.com/watch?v=wgKJMsJ-6XU&feature=youtu.be&t=4m47s
