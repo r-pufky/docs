@@ -74,6 +74,14 @@ Operating Systems
 *****************
 .. glossary::
 
+  :abbr:`GPO`
+    Group Policy for Windows. Provides centralized management and configuration
+    of operating systems, applications, and users' settings
+
+  :abbr:`Registry`
+    Hierarchical database that stores low-level settings for Windows and
+    applications that opt to use the registry.
+
   :abbr:`WSL`
     Windows Subsystem for Linux. Run linux distros in windows 10. See
     :ref:`os-windows-wsl`.

@@ -1,38 +1,13 @@
-.. _windows-10-pro-securing-install:
+.. _windows-10-pro-securing-install-old:
 
-Windows 10 Pro Securing Install
-###############################
+Windows 10 Pro Securing Install (Old)
+#####################################
 A reboot is required once these changes are made. Group policy edits are
-preferred however registry equivalents are provided as well.
+preferred and registry/other equivalents are provided as well. Any may be
+applied.
 
 Disable Services
 ****************
-These services either do user data tracking, or are an unnecessary performance
-hit. See `Telemetry Info`_.
-
-.. wservice:: Disable connected user telemetry service
-  :key_title: Connected User Experiences and Telemetry --> General
-  :option:    Startup type,
-              Service status
-  :setting:   Disabled,
-              Stopped
-  :no_section:
-  :no_caption:
-
-.. wservice:: Disable diagnostic tracking telemtry service
-  :key_title: Diagnostic Tracking Services --> General
-  :option:    Startup type,
-              Service status
-  :setting:   Disabled,
-              Stopped
-  :no_section:
-  :no_launch:
-  :no_caption:
-
-    .. note::
-      This is the old version of telemetry data collection in earlier versions
-      of Windows 10. May not exist in recent versions.
-
 .. wservice:: Disable razer game scanner service
   :key_title: Razer Game Scanner --> General
   :option:    Startup type,
@@ -423,7 +398,6 @@ manually removing applications is preferred over a script.
 
 :download:`Remove packages script. <source/remove-crapware.ps1>`
 
-.. _Telemetry Info: https://www.forbes.com/sites/gordonkelly/2015/11/24/windows-10-automatic-spying-begins-again/
 .. _all options on all 13 pages: https://bgr.com/2015/07/31/windows-10-upgrade-spying-how-to-opt-out/
 .. _1803 update breaks microphone: https://www.ghacks.net/2018/05/01/all-the-issues-of-windows-10-version-1803-you-may-run-into/
 .. _Disable Cortana: https://www.howtogeek.com/265027/how-to-disable-cortana-in-windows-10/
