@@ -1474,6 +1474,23 @@
 <p>Most commands support <em>globbing</em> and <em>regex</em> matching on Minions and Grains to
 execute commands. See <a class="reference internal" href="common-issues.html#salt-common-issues"><span class="std std-ref">Common Issues</span></a> for additional debugging
 information.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For windows minions, command should be run from the salt batch files to setup
+the appropriate environment.</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Linux command.</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>salt-call -l debug state.highstate <span class="nv">saltenv</span><span class="o">=</span>dev <span class="nv">pillarenv</span><span class="o">=</span>dev
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Equivalent Windoes command.</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>c:\salt\salt-call.bat -l debug state.highstate saltenv=dev pillarenv=dev
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="general-master-commands">
 <h2>General Master Commands<a class="headerlink" href="#general-master-commands" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="run-command-on-minions-from-salt-master">

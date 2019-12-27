@@ -1708,7 +1708,7 @@ mumble to use the microphone. See <a class="reference external" href="https://ww
 </div></blockquote>
 </div>
 <div class="section" id="disable-automatic-resource-exhaustion-resolution">
-<h2><a class="reference external" href="https://www.autoitscript.com/forum/topic/177749-stopping-windows-10-from-auto-closing-programs-to-free-up-ram/">Disable Automatic Resource Exhaustion Resolution</a><a class="headerlink" href="#disable-automatic-resource-exhaustion-resolution" title="Permalink to this headline">¶</a></h2>
+<h2><a class="reference external" href="https://www.windows-security.org/f4aece067cb4976eb7a4f3add2fda30c/configure-scenario-execution-level">Disable Automatic Resource Exhaustion Resolution</a><a class="headerlink" href="#disable-automatic-resource-exhaustion-resolution" title="Permalink to this headline">¶</a></h2>
 <p>By default, windows will automatically force close applications when memory
 starts to fill up. Prevent Windows from being dumb.</p>
 <div class="wgrouppolicy docutils container" id="Disable automatic resource exhaustion policy">
@@ -1722,6 +1722,24 @@ starts to fill up. Prevent Windows from being dumb.</p>
 </tr>
 <tr class="row-even"><td><p>Configure Scenario Execution Level</p></td>
 <td><p>Disabled</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="wservice docutils container" id="Disable Diagnostic Service.">
+<span class="guilabel">Start › services.msc</span><table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="3"><span class="guilabel">Diagnostic Policy Service › General</span></td>
+</tr>
+<tr class="row-even"><td><p>Startup type</p></td>
+<td><p>Disabled</p></td>
+</tr>
+<tr class="row-odd"><td><p>Service status</p></td>
+<td><p>Stopped</p></td>
 </tr>
 </tbody>
 </table>
