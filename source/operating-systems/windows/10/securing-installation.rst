@@ -185,7 +185,7 @@ cloud-based protection will cause 100% disk usage (in settings).
               Administrative Templates -->
               Windows Components -->
               Windows Defender Antivirus
-  :option:    Turn off Windows Defender
+  :option:    Turn off Windows Defender Antivirus
   :setting:   Enabled
   :no_section:
   :no_caption:
@@ -232,6 +232,18 @@ cloud-based protection will cause 100% disk usage (in settings).
   :setting:    Disabled
   :no_section:
   :no_caption:
+
+.. wgpolicy:: Disable windows defender notification icon via group policy
+  :key_title: Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Windows Security -->
+              Systray
+  :option:    Hide Windows Security Systray
+  :setting:   Enabled
+  :no_section:
+  :no_caption:
+  :no_launch:
 
     `See disabling windows defender icon`_.
 
@@ -420,7 +432,7 @@ manually removing applications is preferred over a script.
 .. _Disable Suggested Apps in Windows: https://www.howtogeek.com/259946/how-to-get-rid-of-suggested-apps-in-windows-10/
 .. _Disable Automatic Resource Exhaustion Resolution: https://www.windows-security.org/f4aece067cb4976eb7a4f3add2fda30c/configure-scenario-execution-level
 .. _Disable Windows Defender Service: https://www.tenforums.com/tutorials/5918-turn-off-windows-defender-antivirus-windows-10-a.html
-.. _See disabling windows defender icon: https://www.howtogeek.com/264796/how-to-remove-the-windows-defender-icon-from-your-notification-area/
+.. _See disabling windows defender icon: https://appuals.com/how-to-remove-windows-defender-icon-on-windows-10/
 .. _Disable Silent Windows Store App Installs: https://www.youtube.com/watch?v=wgKJMsJ-6XU&feature=youtu.be&t=4m47s
 .. _Disable Windows Store App Installs: https://www.easeus.com/computer-instruction/stop-windows-10-installing-apps.html
 .. _See removing onedrive from windows explorer: https://www.techjunkie.com/remove-onedrive-file-explorer-sidebar-windows-10/
