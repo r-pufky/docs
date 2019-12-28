@@ -17,6 +17,7 @@ A reboot is required once these changes are made.
 #. :ref:`windows-10-disable-resource-exhaustion`.
 #. :ref:`windows-10-disable-game-broadcasting`.
 #. :ref:`windows-10-meltdown-spectre`.
+#. :ref:`windows-10-disable-explorer-ads`.
 #. :ref:`windows-10-disable-startup-services`.
 #. :ref:`windows-10-remove-preinstalled-packages`.
 
@@ -32,5 +33,6 @@ A reboot is required once these changes are made.
    resource-exhaustion
    game-broadcasting
    meltdown-spectre
+   explorer-ads
    startup-services
    remove-preinstalled-packages

@@ -2,8 +2,8 @@
 
 `Remove Startup Items`_
 #######################
-Remove startup items that are unused from the Task Manager Startup list. For
-items such as Microsoft OneDrive, which won't disappear when removed.
+Remove startup items from the Task Manager Startup list. For items such as
+Microsoft OneDrive, which won't disappear when removed.
 
 :term:`Registry`
 ****************

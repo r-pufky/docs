@@ -64,36 +64,7 @@ Disable Paging, Restore Points, and Automatic Driver Updates
 
    * No (Disable).
 
-Disable Windows Explorer Ads
-****************************
-`Sync providers`_ for windows explorer can now show Ads. Disable it.
-
-:cmdmenu:`⌘ + e --> view --> options --> view`
-
-   * ☐ show sync provider notifications.
-
-.. wregedit:: Disable Quick Access Pane
-  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-              Explorer
-  :names:     HubMode
-  :types:     DWORD
-  :data:      1
-  :admin:
-  :no_section:
-  :no_caption:
-
-    .. danger::
-      Set `explorer to use this pc`_ instead of quick access **before** setting
-      registry options or this will break explorer.
-
-      :cmdmenu:`explorer --> change folder and search options --> general --> open file explorer to: This PC`
-
-    `See disable quick access pane in windows explorer`_.
-
 .. _all options on all 13 pages: https://bgr.com/2015/07/31/windows-10-upgrade-spying-how-to-opt-out/
 .. _1803 update breaks microphone: https://www.ghacks.net/2018/05/01/all-the-issues-of-windows-10-version-1803-you-may-run-into/
 .. _Disable Ad Tracking: https://account.microsoft.com/privacy/ad-settings/signedout?ru=https%3A%2F%2Faccount.microsoft.com%2Fprivacy%2Fad-settings
-.. _See disable quick access pane in windows explorer: https://www.winhelponline.com/blog/remove-quick-access-other-shell-folders-file-explorer/
-.. _explorer to use this pc: https://www.maketecheasier.com/remove-quick-access-file-explorer/
 .. _Remove Services from Being Listed in Task Manager:  https://www.tenforums.com/tutorials/2944-add-delete-enable-disable-startup-items-windows-10-a.html
-.. _Sync providers: https://www.extremetech.com/computing/245553-microsoft-now-puts-ads-windows-file-explorer
