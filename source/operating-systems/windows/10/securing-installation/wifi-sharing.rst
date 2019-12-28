@@ -1,4 +1,4 @@
-.. _windows-10-wifi-sharing:
+.. _windows-10-disable-wifi-sharing:
 
 `Disable Wifi Sharing`_
 #######################
