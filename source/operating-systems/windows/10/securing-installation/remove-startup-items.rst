@@ -1,9 +1,10 @@
-.. _windows-10-disable-startup-services:
+.. _windows-10-remove-startup-items:
 
 `Remove Startup Items`_
 #######################
-Remove startup items from the Task Manager Startup list. For items such as
-Microsoft OneDrive, which won't disappear when removed.
+Force remove items from Task Manager Startup list that cannot be removed in the
+GUI; such as Microsoft OneDrive which will leave a setup startup service on
+removal.
 
 :term:`Registry`
 ****************
