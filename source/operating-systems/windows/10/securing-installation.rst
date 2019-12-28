@@ -50,20 +50,6 @@ Remove Unused Optional Windows Features
    * Microsoft Quick Assist.
    * Contact Support.
 
-`Disable Suggested Apps in Windows`_
-************************************
-.. wgpolicy:: Disable suggested apps in Windows
-  :key_title: Computer Configuration -->
-              Administrative Templates -->
-              Windows Components -->
-              Cloud Content
-  :option:    Turn off Microsoft consumer experiences,
-              Do not show Windows tips
-  :setting:   Enabled,
-              Enabled
-  :no_section:
-  :no_caption:
-
 Disable Paging, Restore Points, and Automatic Driver Updates
 ************************************************************
 :cmdmenu:`start --> view advanced system settings --> advanced --> performance`
@@ -77,70 +63,6 @@ Disable Paging, Restore Points, and Automatic Driver Updates
 :cmdmenu:`start --> view advanced system settings --> hardware --> device installation settings`
 
    * No (Disable).
-
-`Disable Automatic Resource Exhaustion Resolution`_
-***************************************************
-By default, windows will automatically force close applications when memory
-starts to fill up. Prevent Windows from being dumb.
-
-.. wgpolicy:: Disable automatic resource exhaustion policy
-  :key_title: Computer Configuration -->
-              Administrative Templates -->
-              System -->
-              Troubleshooting and Diagnostics -->
-              Windows Resource Exhaustion Detection and Resolution
-  :option:    Configure Scenario Execution Level
-  :setting:   Disabled
-  :no_section:
-  :no_caption:
-
-.. wservice:: Disable Diagnostic Service.
-  :key_title: Diagnostic Policy Service --> General
-  :option:    Startup type,
-              Service status
-  :setting:   Disabled,
-              Stopped
-  :no_section:
-  :no_caption:
-
-`Disable Silent Windows Store App Installs`_
-********************************************
-.. wregedit:: Disable silent app install regedit
-  :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
-              ContentDeliveryManager
-  :names:     SilentInstalledAppsEnabled
-  :types:     DWORD
-  :data:      0
-  :admin:
-  :no_section:
-  :no_caption:
-
-.. wregedit:: Disable all suggested apps regedit
-  :key_title: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\
-              ContentDeliveryManager\SuggestedApps
-  :names:     *
-  :types:     DWORD
-  :data:      0
-  :admin:
-  :no_section:
-  :no_caption:
-  :no_launch:
-
-    .. note::
-      Set all applications listed here; this list changes over time as Microsoft
-      adds and removes applications. They should all be disabled (set to **0**).
-
-`Disable Windows Store App Installs`_
-*************************************
-.. ggui:: Disable Windows Store App Installs.
-  :key_title: start --> store --> User Icon (⋮ if signed in) --> settings
-  :option:  Update apps automatically,
-            Show products on tile
-  :setting: Disabled,
-            Disabled
-  :no_section:
-  :no_caption:
-  :no_launch:
 
 Disable Windows Explorer Ads
 ****************************
@@ -198,7 +120,6 @@ Disable Windows Explorer Ads
     .. note::
       Delete entries that should not appear (or can't be removed from startup by
       other means). This applies to the current **user**.
-
 
 Disable Microsoft Game Broadcasting Suite
 *****************************************
@@ -281,12 +202,7 @@ manually removing applications is preferred over a script.
 
 .. _all options on all 13 pages: https://bgr.com/2015/07/31/windows-10-upgrade-spying-how-to-opt-out/
 .. _1803 update breaks microphone: https://www.ghacks.net/2018/05/01/all-the-issues-of-windows-10-version-1803-you-may-run-into/
-.. _Disable Cortana: https://www.howtogeek.com/265027/how-to-disable-cortana-in-windows-10/
 .. _Disable Ad Tracking: https://account.microsoft.com/privacy/ad-settings/signedout?ru=https%3A%2F%2Faccount.microsoft.com%2Fprivacy%2Fad-settings
-.. _Disable Suggested Apps in Windows: https://www.howtogeek.com/259946/how-to-get-rid-of-suggested-apps-in-windows-10/
-.. _Disable Automatic Resource Exhaustion Resolution: https://www.windows-security.org/f4aece067cb4976eb7a4f3add2fda30c/configure-scenario-execution-level
-.. _Disable Silent Windows Store App Installs: https://www.youtube.com/watch?v=wgKJMsJ-6XU&feature=youtu.be&t=4m47s
-.. _Disable Windows Store App Installs: https://www.easeus.com/computer-instruction/stop-windows-10-installing-apps.html
 .. _See disable quick access pane in windows explorer: https://www.winhelponline.com/blog/remove-quick-access-other-shell-folders-file-explorer/
 .. _explorer to use this pc: https://www.maketecheasier.com/remove-quick-access-file-explorer/
 .. _Remove Services from Being Listed in Task Manager:  https://www.tenforums.com/tutorials/2944-add-delete-enable-disable-startup-items-windows-10-a.html

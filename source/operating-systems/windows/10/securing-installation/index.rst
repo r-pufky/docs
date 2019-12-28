@@ -2,14 +2,19 @@
 
 Windows 10 Pro Securing Install
 ###############################
-A reboot is required once these changes are made. Group policy edits are
-preferred and registry/other equivalents are provided as well. Any may be
-applied.
+A reboot is required once these changes are made.
+
+.. important::
+  All changes should be made, both :term:`GPO` and :term:`Registry` edits.
+
+  Many settings only appear in :term:`GPO` or :term:`Registry`.
 
 #. :ref:`windows-10-disable-telemetry`.
 #. :ref:`windows-10-disable-onedrive`.
 #. :ref:`windows-10-disable-defender`.
 #. :ref:`windows-10-disable-cortana-search`.
+#. :ref:`windows-10-disable-windows-store-promotions`.
+#. :ref:`windows-10-disable-resource-exhaustion`.
 
 .. toctree::
    :hidden:
@@ -19,3 +24,5 @@ applied.
    onedrive
    defender
    cortana-search
+   windows-store
+   resource-exhaustion

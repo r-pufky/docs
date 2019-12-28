@@ -156,7 +156,7 @@ Use ``cmdmenu`` directive for all actions. Do not use ``guilabel``.
 * Mouse action / shortcut.
 * cmdmenu in lists: no trailing period, unless combine with text.
 * Windows shortcut to different settings:
-  :cmdmenu:`⌘ + r --> ms-settings:{LABEL}` See :ref:`run refernce`.
+  :cmdmenu:`⌘ + r --> ms-settings:{LABEL}` See `run reference`_.
 
 .. code-block:: RST
   :caption: cmdmenu example.
@@ -190,4 +190,4 @@ those sub areas.
 .. _roles: https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html
 .. _admonitions: http://docutils.sourceforge.net/docs/ref/rst/directives.html#admonitions
 .. _Sphinx Style Guide: https://documentation-style-guide-sphinx.readthedocs.io/en/latest/style-guide.html#headings
-.. _run refernce: https://ss64.com/nt/run.html
+.. _run reference: https://ss64.com/nt/run.html
