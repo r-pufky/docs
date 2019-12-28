@@ -121,45 +121,6 @@ Disable Windows Explorer Ads
       Delete entries that should not appear (or can't be removed from startup by
       other means). This applies to the current **user**.
 
-Disable Microsoft Game Broadcasting Suite
-*****************************************
-Nearly every program on windows now wants to record your games and broadcast
-them. This disables the built-in windows game broadcasting and recording
-software.
-
-Also removes the :cmdmenu:`⌘ + g` prompt when starting games.
-
-This occurs because of the xbox app on Windows 10. Removing the app will also
-fix this.
-(see [Removing pre-installed Windows Packages](#removing-pre-installed-windows-packages))
-
-.. wgpolicy:: Disable game broadcasting suite policy
-  :key_title: Computer Configuration -->
-              Administrative Templates -->
-              Windows Components -->
-              Windows Game Recording and Broadcasting
-  :option:    Enables or disables Windows Game Recording and Broadcasting
-  :setting:   Disabled
-  :no_section:
-  :no_caption:
-
-.. wregedit:: Removing ⌘ + g Prompt on Game Launch
-  :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
-              GameDVR
-  :names:     AppCaptureEnabled
-  :types:     DWORD
-  :data:      0
-  :admin:
-  :no_caption:
-
-.. wregedit:: Disable xbox Game DVR
-  :key_title: HKEY_CURRENT_USER\System\GameConfigStore
-  :names:     GameDVR_Enabled
-  :types:     DWORD
-  :data:      0
-  :admin:
-  :no_caption:
-
 .. _meltdown-spectre-patch:
 
 `Meltdown and Spectre Patch`_
@@ -206,7 +167,6 @@ manually removing applications is preferred over a script.
 .. _See disable quick access pane in windows explorer: https://www.winhelponline.com/blog/remove-quick-access-other-shell-folders-file-explorer/
 .. _explorer to use this pc: https://www.maketecheasier.com/remove-quick-access-file-explorer/
 .. _Remove Services from Being Listed in Task Manager:  https://www.tenforums.com/tutorials/2944-add-delete-enable-disable-startup-items-windows-10-a.html
-.. _Disable Microsoft Game Broadcasting Suite: https://www.tenforums.com/tutorials/8637-game-bar-turn-off-windows-10-a.html
 .. _Sync providers: https://www.extremetech.com/computing/245553-microsoft-now-puts-ads-windows-file-explorer
 .. _Meltdown and Spectre Patch: https://support.microsoft.com/en-us/help/4056892/windows-10-update-kb4056892
 .. _anti-virus compatibly list: https://docs.google.com/spreadsheets/d/184wcDt9I9TUNFFbsAVLpzAtckQxYiuirADzf3cL42FQ/htmlview?usp=sharing&sle=true

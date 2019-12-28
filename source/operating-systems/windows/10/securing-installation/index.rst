@@ -15,6 +15,7 @@ A reboot is required once these changes are made.
 #. :ref:`windows-10-disable-cortana-search`.
 #. :ref:`windows-10-disable-windows-store-promotions`.
 #. :ref:`windows-10-disable-resource-exhaustion`.
+#. :ref:`windows-10-disable-game-broadcasting`.
 
 .. toctree::
    :hidden:
@@ -26,3 +27,4 @@ A reboot is required once these changes are made.
    cortana-search
    windows-store
    resource-exhaustion
+   game-broadcasting
