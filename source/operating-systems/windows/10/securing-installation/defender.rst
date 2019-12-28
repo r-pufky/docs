@@ -43,8 +43,8 @@ See :ref:`windows-10-disable-telemetry` for additional telemetry services.
   :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\
               Updates
   :names:     named
-  :types:     DELETE
-  :data:      DELETE
+  :types:     {DELETE}
+  :data:      {DELETE}
   :no_section:
   :no_launch:
 
@@ -54,9 +54,9 @@ See :ref:`windows-10-disable-telemetry` for additional telemetry services.
   :names:     FallbackOrder,
               DefinitionUpdateFileSharesSources
   :types:     SZ,
-              DELETE
+              {DELETE}
   :data:      FileShares,
-              DELETE
+              {DELETE}
   :no_section:
   :no_launch:
 

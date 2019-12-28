@@ -90,37 +90,6 @@ Disable Windows Explorer Ads
 
     `See disable quick access pane in windows explorer`_.
 
-`Remove Services from Being Listed in Task Manager`_
-****************************************************
-.. wregedit:: Remove local machine startup services regedit
-  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-              Explorer\StartupApproved\Run
-  :names:     *
-  :types:     REG_BINARY
-  :data:      Delete
-  :admin:
-  :no_section:
-  :no_caption:
-
-    .. note::
-      Delete entries that should not appear (or can't be removed from startup by
-      other means). This applies to the entire **system**.
-
-.. wregedit:: Remove local user startup services regedit
-  :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
-              Explorer\StartupApproved\Run
-  :names:     *
-  :types:     REG_BINARY
-  :data:      Delete
-  :admin:
-  :no_section:
-  :no_caption:
-  :no_launch:
-
-    .. note::
-      Delete entries that should not appear (or can't be removed from startup by
-      other means). This applies to the current **user**.
-
 .. _all options on all 13 pages: https://bgr.com/2015/07/31/windows-10-upgrade-spying-how-to-opt-out/
 .. _1803 update breaks microphone: https://www.ghacks.net/2018/05/01/all-the-issues-of-windows-10-version-1803-you-may-run-into/
 .. _Disable Ad Tracking: https://account.microsoft.com/privacy/ad-settings/signedout?ru=https%3A%2F%2Faccount.microsoft.com%2Fprivacy%2Fad-settings
