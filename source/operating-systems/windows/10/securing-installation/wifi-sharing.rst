@@ -1,0 +1,35 @@
+.. _windows-10-wifi-sharing:
+
+`Disable Wifi Sharing`_
+#######################
+Wifi Sharing (Sense) will automatically make connections to Wifi Networks via
+crowdsharing and identified hotspots. Disable this.
+
+:term:`Registry`
+****************
+.. wregedit:: Disable Wifi Sharing (Sense) via Registry
+  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WcmSvc\wifinetworkmanager\config
+  :names:     AutoConnectAllowedOEM
+  :types:     DWORD
+  :data:      0
+  :no_section:
+
+  .. note::
+    :cmdmenu:`⌘ + r --> ms-settings:network --> manage wifi settings`
+
+      * ☐ all for sharing.
+
+:term:`GPO`
+***********
+.. wgpolicy:: Disable Wifi Sharing (Sense) via machine GPO
+  :key_title: Computer Configuration -->
+              Administrative Templates -->
+              Network -->
+              WLAN Service -->
+              WLAN Settings -->
+              Allow Windows to automatically connect to suggested open hotspots, to networks shared by contacts, and to hotspots offering paid services
+  :option:    ☑
+  :setting:   Disabled
+  :no_section:
+
+.. _Disable Wifi Sharing: https://www.thewindowsclub.com/disable-wi-fi-sense-windows-10-enterprise

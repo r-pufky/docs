@@ -19,6 +19,7 @@ A reboot is required once these changes are made.
 #. :ref:`windows-10-meltdown-spectre`.
 #. :ref:`windows-10-disable-explorer-ads`.
 #. :ref:`windows-10-remove-startup-items`.
+#. :ref:`windows-10-disable-wifi-sharing`.
 #. :ref:`windows-10-remove-preinstalled-packages`.
 
 .. toctree::
@@ -34,5 +35,6 @@ A reboot is required once these changes are made.
    game-broadcasting
    meltdown-spectre
    explorer-ads
+   wifi-sharing
    remove-startup-items
    remove-preinstalled-packages

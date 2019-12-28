@@ -34,12 +34,6 @@ Set Reasonable Privacy Settings
    * :cmdmenu:`Microphone`: Leave enabled, but disable all apps. This will allow
      mumble to use the microphone. See `1803 update breaks microphone`_.
 
-Disable Wi-Fi Sharing
-*********************
-:cmdmenu:`start --> settings --> change network settings --> manage wifi settings`
-
-   * ☐ all for sharing.
-
 Remove Unused Optional Windows Features
 ***************************************
 :cmdmenu:`start --> settings --> manage optional features`
@@ -67,4 +61,3 @@ Disable Paging, Restore Points, and Automatic Driver Updates
 .. _all options on all 13 pages: https://bgr.com/2015/07/31/windows-10-upgrade-spying-how-to-opt-out/
 .. _1803 update breaks microphone: https://www.ghacks.net/2018/05/01/all-the-issues-of-windows-10-version-1803-you-may-run-into/
 .. _Disable Ad Tracking: https://account.microsoft.com/privacy/ad-settings/signedout?ru=https%3A%2F%2Faccount.microsoft.com%2Fprivacy%2Fad-settings
-.. _Remove Services from Being Listed in Task Manager:  https://www.tenforums.com/tutorials/2944-add-delete-enable-disable-startup-items-windows-10-a.html
