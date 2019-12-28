@@ -145,22 +145,6 @@ ensure you are not affected by checking the `anti-virus compatibly list`_.
 
 :download:`regedit script <source/enable-meltdown-spectre-update.reg>`.
 
-`Removing Preinstalled Windows Packages`_
-*****************************************
-Certain packages (and windows store applications) cannot be removed with
-`programs and applications`_. This removes applications using Windows the
-built-in package manager.
-
-Default applications are updated with each major update to windows 10, so
-manually removing applications is preferred over a script.
-
-   * ``Remove-AppxProvisionedPackage`` will remove packages for newly
-     provisioned accounts.
-   * ``Remove-AppxPackage`` removes for the current user.
-   * ``Get-AppxPackage -AllUsers`` will return results for all users on system.
-
-:download:`Remove packages script. <source/remove-crapware.ps1>`
-
 .. _all options on all 13 pages: https://bgr.com/2015/07/31/windows-10-upgrade-spying-how-to-opt-out/
 .. _1803 update breaks microphone: https://www.ghacks.net/2018/05/01/all-the-issues-of-windows-10-version-1803-you-may-run-into/
 .. _Disable Ad Tracking: https://account.microsoft.com/privacy/ad-settings/signedout?ru=https%3A%2F%2Faccount.microsoft.com%2Fprivacy%2Fad-settings
@@ -171,5 +155,3 @@ manually removing applications is preferred over a script.
 .. _Meltdown and Spectre Patch: https://support.microsoft.com/en-us/help/4056892/windows-10-update-kb4056892
 .. _anti-virus compatibly list: https://docs.google.com/spreadsheets/d/184wcDt9I9TUNFFbsAVLpzAtckQxYiuirADzf3cL42FQ/htmlview?usp=sharing&sle=true
 .. _InSpectre: https://www.grc.com/inspectre.htm
-.. _Removing Preinstalled Windows Packages: https://thomas.vanhoutte.be/miniblog/delete-windows-10-apps/
-.. _programs and applications: https://www.makeuseof.com/tag/3-clever-powershell-functions-upgrading-windows-10
