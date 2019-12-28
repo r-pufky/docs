@@ -121,30 +121,6 @@ Disable Windows Explorer Ads
       Delete entries that should not appear (or can't be removed from startup by
       other means). This applies to the current **user**.
 
-.. _meltdown-spectre-patch:
-
-`Meltdown and Spectre Patch`_
-*****************************
-Windows 10 will not automatically patch for meltdown and spectre due to
-anti-virus software causing BSOD's. If you are running anti-virus software
-ensure you are not affected by checking the `anti-virus compatibly list`_.
-
-`InSpectre`_ can be used to validate patches are applied.
-
-.. wregedit:: Meltdown and sepctre patch regedit
-  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-              QualityCompat
-  :names:     cadca5fe-87d3-4b96-b7fb-a231484277cc
-  :types:     DWORD
-  :data:      0
-  :admin:
-  :no_section:
-  :no_caption:
-
-    Reboot to apply changes.
-
-:download:`regedit script <source/enable-meltdown-spectre-update.reg>`.
-
 .. _all options on all 13 pages: https://bgr.com/2015/07/31/windows-10-upgrade-spying-how-to-opt-out/
 .. _1803 update breaks microphone: https://www.ghacks.net/2018/05/01/all-the-issues-of-windows-10-version-1803-you-may-run-into/
 .. _Disable Ad Tracking: https://account.microsoft.com/privacy/ad-settings/signedout?ru=https%3A%2F%2Faccount.microsoft.com%2Fprivacy%2Fad-settings
@@ -152,6 +128,3 @@ ensure you are not affected by checking the `anti-virus compatibly list`_.
 .. _explorer to use this pc: https://www.maketecheasier.com/remove-quick-access-file-explorer/
 .. _Remove Services from Being Listed in Task Manager:  https://www.tenforums.com/tutorials/2944-add-delete-enable-disable-startup-items-windows-10-a.html
 .. _Sync providers: https://www.extremetech.com/computing/245553-microsoft-now-puts-ads-windows-file-explorer
-.. _Meltdown and Spectre Patch: https://support.microsoft.com/en-us/help/4056892/windows-10-update-kb4056892
-.. _anti-virus compatibly list: https://docs.google.com/spreadsheets/d/184wcDt9I9TUNFFbsAVLpzAtckQxYiuirADzf3cL42FQ/htmlview?usp=sharing&sle=true
-.. _InSpectre: https://www.grc.com/inspectre.htm

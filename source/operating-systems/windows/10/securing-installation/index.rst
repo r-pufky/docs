@@ -16,6 +16,7 @@ A reboot is required once these changes are made.
 #. :ref:`windows-10-disable-windows-store-promotions`.
 #. :ref:`windows-10-disable-resource-exhaustion`.
 #. :ref:`windows-10-disable-game-broadcasting`.
+#. :ref:`windows-10-meltdown-spectre`.
 #. :ref:`windows-10-remove-preinstalled-packages`.
 
 .. toctree::
@@ -29,4 +30,5 @@ A reboot is required once these changes are made.
    windows-store
    resource-exhaustion
    game-broadcasting
+   meltdown-spectre
    remove-preinstalled-packages
