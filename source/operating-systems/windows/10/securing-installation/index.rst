@@ -9,6 +9,7 @@ applied.
 #. :ref:`windows-10-disable-telemetry`.
 #. :ref:`windows-10-disable-onedrive`.
 #. :ref:`windows-10-disable-defender`.
+#. :ref:`windows-10-disable-cortana-search`.
 
 .. toctree::
    :hidden:
@@ -17,3 +18,4 @@ applied.
    telemetry
    onedrive
    defender
+   cortana-search

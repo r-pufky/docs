@@ -197,7 +197,7 @@ See :ref:`windows-10-disable-telemetry` for additional telemetry services.
   :option:    ☑
   :setting:   Enabled
   :no_section:
-  :no_caption:
+  :no_launch:
 
 .. wgpolicy:: Disable Windows Defender real-time protection via machine GPO
   :key_title: Computer Configuration -->
@@ -232,7 +232,6 @@ See :ref:`windows-10-disable-telemetry` for additional telemetry services.
               Disabled,
               Disabled
   :no_section:
-  :no_caption:
   :no_launch:
 
 .. wgpolicy:: Disable Windows Defender notifications via machine GPO
@@ -257,7 +256,6 @@ See :ref:`windows-10-disable-telemetry` for additional telemetry services.
   :option:    Hide Windows Security Systray
   :setting:   Enabled
   :no_section:
-  :no_caption:
   :no_launch:
 
   .. note::

@@ -50,23 +50,6 @@ Remove Unused Optional Windows Features
    * Microsoft Quick Assist.
    * Contact Support.
 
-`Disable Cortana`_
-******************
-:cmdmenu:`start --> cortana & search settings`
-
-   * Disable all options.
-   * Clear all data.
-
-.. wgpolicy:: Disable Cortana Policy
-  :key_title: Computer Configuration -->
-              Administrative Templates -->
-              Windows Components -->
-              Search
-  :option:    Allow Cortana
-  :setting:   Disabled
-  :no_section:
-  :no_caption:
-
 `Disable Suggested Apps in Windows`_
 ************************************
 .. wgpolicy:: Disable suggested apps in Windows
