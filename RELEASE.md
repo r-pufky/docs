@@ -1,5 +1,46 @@
 # [Changelog][3g]
 
+## 2019-12-28.0
+Windows Telemetry, NGINX authz, Signal Notifications.
+
+Added:
+* Separate and Add detailed documentation for Windows Telemetry and Securing.
+* Add GPO for disabling windows defender systray notification.
+* Add service for disabling windows diagnostic policy service.
+* Add group policy reference and windows salt-call clarification.
+* Add initial salt-minion custom installer with config pre-seeding.
+* Add saltstack documentation for regenerating master.pem, master.pub.
+* Add saltstack minion authentication of master servers.
+* Add authz setup for NGINX.
+* Add expanded nginx header debugging.
+* Add vim flow control commands.
+* Add bash snippets and move git snippets to apps.
+* Add vim documentation and clarify makefile.
+* Add GIT scripts and snippets to documentation.
+* Add salt documentation for running a specific state.
+* Add Signal CLI documentation.
+* Add disable windows backup to additional fixes.
+* Add make head option to only upload source changes.
+* Add windows 10 usb device speed fix documentation.
+* Add Edge browser removal documentation.
+* Add windows registry data types, move command reference to reference section.
+* Add WSL documentation and standardize windows drive formatting.
+* Add windows epfwwfp.sys bluescreen fix.
+* Add WIFI password dump for windows.
+* Add docker login and push instructions.
+* Add docker image tagging.
+
+Changes:
+* Update video conversion docs.
+* Update youtube-dl syntax with recent update.
+* Adjust highlighting based on conf.py changes.
+* Add help section for Makefile.
+* Remove version tag from sphinx conf.py.
+
+Fixes:
+* linkcheck updated to ignore latest github repos, as they will always redirect
+  to the latest tagged version.
+
 ## 2019-12-12.0
 Consolidate sphinx documentation.
 
