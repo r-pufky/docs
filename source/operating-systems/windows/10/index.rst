@@ -23,7 +23,9 @@ Related Material:
 .. rubric:: References
 
 #. `Windows Command Reference <https://ss64.com/nt/run.html>`_
+#. `Windows Management Options for Each Component Setting (UI, Reg, GPO) <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services>`_
 #. `Windows Group Policy Reference <https://www.windows-security.org/group-policy-setting/3813-windows-group-policy-encyclopedia>`_
+#. `Windows Management Options for Each Setting <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services>`_
 #. `Registry Data Types <https://docs.microsoft.com/en-us/windows/win32/shell/hkey-type>`_
 
 .. toctree::
@@ -32,7 +34,6 @@ Related Material:
 
    setup/index
    securing-installation/index
-   securing-installation
    wsl
    troubleshooting-pc-hardware
    reinstalling

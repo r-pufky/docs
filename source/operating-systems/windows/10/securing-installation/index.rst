@@ -20,8 +20,12 @@ A reboot is required once these changes are made.
 #. :ref:`windows-10-disable-explorer-ads`.
 #. :ref:`windows-10-disable-wifi-sharing`.
 #. :ref:`windows-10-remove-optional-features`.
+#. :ref:`windows-10-reasonable-privacy`.
 #. :ref:`windows-10-remove-startup-items`.
 #. :ref:`windows-10-remove-preinstalled-packages`.
+#. :ref:`windows-10-disable-paging`.
+#. :ref:`windows-10-disable-restore`.
+#. :ref:`windows-10-disable-service`.
 
 .. toctree::
    :hidden:
@@ -38,5 +42,9 @@ A reboot is required once these changes are made.
    explorer-ads
    wifi-sharing
    optional-features
+   privacy/index
    remove-startup-items
    remove-preinstalled-packages
+   paging
+   restore
+   service

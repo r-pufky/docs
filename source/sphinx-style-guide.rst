@@ -190,4 +190,4 @@ those sub areas.
 .. _roles: https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html
 .. _admonitions: http://docutils.sourceforge.net/docs/ref/rst/directives.html#admonitions
 .. _Sphinx Style Guide: https://documentation-style-guide-sphinx.readthedocs.io/en/latest/style-guide.html#headings
-.. _run reference: https://ss64.com/nt/run.html
+.. _run reference: https://docs.microsoft.com/en-us/windows/uwp/launch-resume/launch-settings-app

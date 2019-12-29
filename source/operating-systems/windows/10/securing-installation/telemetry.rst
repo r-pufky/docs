@@ -79,6 +79,17 @@ Services
   :no_section:
   :no_launch:
 
+.. wgpolicy:: Disable application telemetry via machine GPO
+  :key_title: User Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Application Compatibility -->
+              Turn off Application Telemetry
+  :option:    ☑
+  :setting:   Enabled
+  :no_section:
+  :no_launch:
+
 .. wgpolicy:: Make Desktop Analytics use Telemetry setting via machine GPO
   :key_title: Computer Configuration -->
               Administrative Templates -->
@@ -178,6 +189,7 @@ changed. See references for additional documentation.
 
 .. rubric:: References
 
+#. `All Windows 10 GPO Settings <https://4sysops.com/archives/windows-10-privacy-all-group-policy-settings/>`_
 #. `Configure Windows Diagnostic Data <https://docs.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization>`_
 #. `Manage connections from Windows 10 to Microsoft Services <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services>`_
 #. `Manage connections from Windows 10 OS components to Microsoft Services <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services>`_
