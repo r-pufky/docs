@@ -466,7 +466,7 @@ Removed since Windows 7 but added back into Windows 10.
 .. _Timeout Detection and Recovery: https://www.pugetsystems.com/labs/hpc/Working-around-TDR-in-Windows-for-a-better-GPU-computing-experience-777/
 .. _extra EFI boot configuration data: https://linuxbsdos.com/2015/09/05/how-to-delete-grub-files-from-a-boot-efi-partition-in-windows-10/
 .. _Epfwwfp.sys: https://ugetfix.com/ask/how-to-fix-driver_irql_not_less_or_equal-epfwwfp-sys-error-on-windows/
-.. _Uninstall Edge Browser: http://www.intowindows.com/how-to-uninstall-remove-edge-browser-from-windows-10/
+.. _Uninstall Edge Browser: https://www.intowindows.com/how-to-uninstall-remove-edge-browser-from-windows-10/
 .. _install_wim_tweak: https://github.com/shiitake/win6x_registry_tweak
-.. _USB Devices Slow: https://support.microsoft.com/en-us/help/4495263/windows-10-1809-change-in-default-removal-policy-for-external-media
+.. _USB Devices Slow: https://docs.microsoft.com/en-us/windows/client-management/change-default-removal-policy-external-storage-media
 .. _Windows Backup Schedule: https://www.tenforums.com/tutorials/75591-turn-off-schedule-windows-backup-windows-10-a.html

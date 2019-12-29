@@ -10,7 +10,7 @@ enabled by default and is the default location for all files. It cannot be remov
 
 .. note::
   If you have signed into OneDrive on this machine, OneDrive **should** be
-  unlinked before proceeding. Data will still be on https://onedrive.com.
+  unlinked before proceeding. Data will still be on https://onedrive.live.com.
 
     .. ggui:: Unlink OneDrive
       :key_title: taskbar --> RMB OneDrive --> More --> Settings --> Account

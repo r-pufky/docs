@@ -188,6 +188,6 @@ those sub areas.
 * See ``source/networking/ubiquiti/exmaple-vlan-network/index.rst`` for sub TOC.
 
 .. _roles: https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html
-.. _admonitions: http://docutils.sourceforge.net/docs/ref/rst/directives.html#admonitions
+.. _admonitions: https://docutils.sourceforge.io/docs/ref/rst/directives.html#admonitions
 .. _Sphinx Style Guide: https://documentation-style-guide-sphinx.readthedocs.io/en/latest/style-guide.html#headings
 .. _run reference: https://docs.microsoft.com/en-us/windows/uwp/launch-resume/launch-settings-app

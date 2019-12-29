@@ -73,6 +73,8 @@ linkcheck_ignore = [
   r'https://v.firebog.net/hosts/\.*',
   # Broken: github dynamically adds anchors and cannot be checked.
   r'https://github.com/.*[#]+',
+  # Redirects: latest tags are always redirected to versions on github.
+  r'https://github.com/.*/latest.*',
   # Redirects: behind authentication wall.
   r'https://security.google.com/\.*',
   r'https://plexapp.zendesk.com/\.*',

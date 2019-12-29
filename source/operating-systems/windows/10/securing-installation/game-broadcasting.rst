@@ -57,6 +57,6 @@ fix this. See :ref:`windows-10-remove-preinstalled-packages`.
   :setting:   Disabled
   :no_section:
 
-.. _Disable Game Broadcasting: https://www.tenforums.com/tutorials/8637-game-bar-turn-off-windows-10-a.html
+.. _Disable Game Broadcasting: https://www.tenforums.com/tutorials/8637-turn-off-xbox-game-bar-windows-10-a.html
 .. _Disable xbox Game monitoring: https://www.windowscentral.com/how-disable-and-remove-game-bar-windows-10-creators-update
 .. _Disable xbox Game DVR for system: https://www.ghacks.net/2019/09/27/disable-windows-10-game-bar-tips-and-notifications/

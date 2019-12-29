@@ -147,7 +147,7 @@ Documentation can be automatically link checked:
 
 #. `Sphinx Development <https://www.sphinx-doc.org/en/master/develop.html>`_
 #. `Documented List <https://github.com/sphinx-contrib/documentedlist/blob/master/sphinxcontrib/documentedlist.py>`_
-#. `RST Directive option conversion functions <http://docutils.sourceforge.net/docs/howto/rst-directives.html#option-conversion-functions>`_
+#. `RST Directive option conversion functions <https://docutils.sourceforge.io/docs/howto/rst-directives.html#option-conversion-functions>`_
 #. `Sphinx roles <https://github.com/sphinx-doc/sphinx/blob/master/sphinx/roles.py#L382>`_
 #. `docutils snippets <https://agateau.com/2015/docutils-snippets/>`_
 #. `Unicode Python 3 escape sequences <https://www.quackit.com/python/reference/python_3_escape_sequences.cfm>`_
