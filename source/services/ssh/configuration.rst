@@ -58,8 +58,7 @@ Importing RSA Keys for Putty/WinSCP on Windows
 See `Puttygen Documentation`_.
 
 #. Copy RSA private key to windows computer.
-#. :cmdmenu:`win + r --> puttygen`
-#. :cmdmenu:`File --> Load Private Key (Select RSA Private Key)`
+#. :cmdmenu:`⌘ + r --> puttygen --> File --> Load Private Key (Select RSA Private Key)`
 #. Rename Key Comment to ``user@server``.
 #. Save private key as ``RSA 4096`` in a ``.ppk`` file to local machine.
 #. Delete RSA keys (use `sdelete64`_).

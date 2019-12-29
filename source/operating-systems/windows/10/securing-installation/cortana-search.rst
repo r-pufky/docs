@@ -11,7 +11,7 @@ including location, browsing, voice, and search data.
 .. note::
   Most settings are managed via GPO.
 
-  :cmdmenu:`start --> cortana & search settings`
+  :cmdmenu:`⌘ + r --> ms-settings:cortana`
 
      * Disable all options.
      * Clear all data.

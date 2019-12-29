@@ -15,7 +15,7 @@ Dump Existing Registry
 **********************
 Backup the existing registry in case anything is missed after reinstall.
 
-:cmdmenu:`start --> regedit --> computer --> right click --> export`
+:cmdmenu:`⌘ --> regedit --> Computer --> RMB --> Export`
 
 Gamesave Manager
 ****************
@@ -33,7 +33,7 @@ Putty
 
 WinSCP
 ******
-:cmdmenu:`start --> winscp --> tools --> export configuration to file`
+:cmdmenu:`⌘ --> winscp --> Tools --> Export/Backup Configuration ...`
 
 .. code-block:: powershell
   :caption: Dump winscp settings to reg file (powershell as admin).

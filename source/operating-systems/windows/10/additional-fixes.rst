@@ -181,7 +181,7 @@ Installing CRD (Chrome Remote Desktop):
   :no_caption:
   :no_launch:
 
-:cmdmenu:`start --> control panel --> system and security --> system --> remote settings --> remote`
+:cmdmenu:`⌘ + r --> control --> System and Security --> System --> Remote Settings --> Remote`
 
 * ☑ Allow remote connections to this computer.
 * ☐ Allow connections only from computers running Remote Desktop with Network
@@ -240,7 +240,7 @@ this index is never updated, and therefore apps will stop appearing in start
 menu searches. You can still disable all apps in the background, however the
 service still needs to be enabled.
 
-:cmdmenu:`start --> settings --> privacy --> app permissions --> background apps`
+:cmdmenu:`⌘ + r --> ms-settings:privacy-backgroundapps`
 
    * Let apps run in the background: ☑
 
@@ -307,7 +307,7 @@ Some applications will not respect the default output device in Windows 10 and
 output to the wrong device. Output settings can be set for specific applications
 via the settings menu.
 
-:cmdmenu:`start --> settings --> system --> sound --> app volume and device preferences`
+:cmdmenu:`⌘ + r --> ms-settings:sound --> Advanced sound options --> App volume and device preferences`
 
    * Set preferred output for device (application must be running).
 

@@ -20,7 +20,7 @@ Icon Explanation
 
   ⌘
     The **super** key: this is the **windows key** or **command key**. May also
-    be referred to as ``win``, ``command``, ``super``.
+    be referred to as ``win``, ``start``, ``command``, ``super``.
 
     u+2318
     https://www.fileformat.info/info/unicode/char/2318/index.htm

@@ -14,7 +14,10 @@ promoted tiles from the start menu.
   this.
 
 .. ggui:: Disable Windows Store App Installs from user app.
-  :key_title: start --> store --> User Icon (⋮ if signed in) --> settings
+  :key_title: ⌘ + r -->
+              ms-windows-store://home -->
+              User Icon (⋮ if signed in) -->
+              Settings
   :option:  Update apps automatically,
             Show products on tile
   :setting: Disabled,
