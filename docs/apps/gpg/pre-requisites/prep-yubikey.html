@@ -122,6 +122,7 @@
 </ul>
 </li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Prep Yubikey</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#verify-geniue-yubikey">Verify Geniue Yubikey</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#reset-yubikey">Reset Yubikey</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#configure-yubikey">Configure Yubikey</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#setup-openpgp-on-yubikey">Setup openpgp on Yubikey</a></li>
@@ -188,6 +189,14 @@
 <li class="toctree-l4"><a class="reference internal" href="../usage/ubuntu.html#allow-user-to-automount-yubikeys">Allow User to Automount Yubikeys</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../usage/ubuntu.html#disable-gnome-ssh-fuckery">Disable Gnome SSH Fuckery</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../usage/ubuntu.html#verify-ssh-works">Verify SSH Works</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../usage/encryption.html">Encrypting Files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../usage/encryption.html#required-materials">Required Materials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usage/encryption.html#import-public-key">Import Public Key</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usage/encryption.html#encrypt-file">Encrypt File</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usage/encryption.html#create-a-detached-signature">Create a Detached Signature</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../usage/encryption.html#validate-file-using-detached-signature">Validate File Using Detached Signature</a></li>
 </ul>
 </li>
 </ul>
@@ -1570,6 +1579,23 @@
 </tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="verify-geniue-yubikey">
+<h2>Verify Geniue Yubikey<a class="headerlink" href="#verify-geniue-yubikey" title="Permalink to this headline">¶</a></h2>
+<p>Ensure Yubikey is geniue and has not been tampered with during any step of the
+supply chain.</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.yubico.com/genuine/">https://www.yubico.com/genuine/</a></p></li>
+<li><p><span class="guilabel">Verify Device</span></p></li>
+<li><p>Touch Yubikey when prompted.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Yubico must be able to see the make and model of the device during the
+verification process.</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Verification</span> <span class="pre">Complete</span></code> is displayed for genuine keys. Failure means potential
+compromise and should be thrown out after it is confirmed to fail again.</p>
 </div>
 <div class="section" id="reset-yubikey">
 <h2>Reset Yubikey<a class="headerlink" href="#reset-yubikey" title="Permalink to this headline">¶</a></h2>

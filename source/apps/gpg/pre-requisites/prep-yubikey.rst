@@ -14,6 +14,22 @@ Prep Yubikey
   :no_section:
   :no_launch:
 
+Verify Geniue Yubikey
+*********************
+Ensure Yubikey is geniue and has not been tampered with during any step of the
+supply chain.
+
+#. https://www.yubico.com/genuine/
+#. :cmdmenu:`Verify Device`
+#. Touch Yubikey when prompted.
+
+.. note::
+  Yubico must be able to see the make and model of the device during the
+  verification process.
+
+``Verification Complete`` is displayed for genuine keys. Failure means potential
+compromise and should be thrown out after it is confirmed to fail again.
+
 Reset Yubikey
 *************
 This will `destroy any openpgp material`_ on the key and reset to the default

@@ -7,6 +7,7 @@ backed GPG Key for SSH connections.
 
 * :ref:`gpg-windows`.
 * :ref:`gpg-ubuntu`.
+* :ref:`gpg-encryption`.
 
 .. toctree::
    :hidden:
@@ -14,3 +15,4 @@ backed GPG Key for SSH connections.
 
    windows
    ubuntu
+   encryption
