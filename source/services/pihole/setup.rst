@@ -28,12 +28,16 @@ Block nefarious websites & Ads.
             /etc/hosts,
             /etc/lighthttpd/external.conf,
             /etc/pihole,
-            /etc/pihole/SetupVars.conf
+            /etc/pihole/SetupVars.conf,
+            /etc/pihole/blacklist.txt,
+            /etc/pihole/gravity.list
   :purpose: DNS masqerade settings.,
             Static host/IP lookup.,
             Pi-Hole web server configuration.,
             Configuration Data.,
-            Startup Configuration Settings.
+            Startup Configuration Settings.,
+            Compiled blacklisted domains.,
+            Compiled blocklist of domains.
   :no_key_title:
   :no_caption:
   :no_launch:
