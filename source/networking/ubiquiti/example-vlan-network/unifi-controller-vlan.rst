@@ -6,6 +6,12 @@ This will be used to setup the Unifi managed switches and APs. See
 :ref:`example-network-diagram`. Download and install the `Unifi Controller`_
 onto the setup laptop.
 
+.. danger::
+  The most recent firmware update (~2019-10) has added `telemetry`_ to ubiquity
+  devices; disabled by default.
+
+  **Block or blackhole** ``trace.svc.ui.com``.
+
 Basic Setup Wizard
 ******************
 Connect to Unifi Controller @ http://localhost:8443.
@@ -61,6 +67,7 @@ Basic Controller Setup
                  Store,
                  Support Messaging,
                  Real-time Updates in Web Browser,
+                 Analytics & Improvements,
                  › ☐
   :setting:      {CONTROLLER DNS NAME},
                  {CONTROLLER IP},
@@ -69,7 +76,7 @@ Basic Controller Setup
                  Disable store for all users,
                  Disable live support for all users,
                  Automatically adapt rates of real-time updates,
-                 Enable mail server
+                 Off
   :no_section:
   :no_caption:
   :no_launch:
@@ -79,6 +86,34 @@ Basic Controller Setup
   `unifi controller DHCP option`_. These settings are only for initial setup
   with the laptop and may be changed or disabled after initial configuration to
   rely on DHCP or set inform.
+
+.. ucontroller:: Remote Access Controller Setup
+  :key_title:    ⚙ --> Remote Access --> Controller
+  :option:       Enable Remote Access,
+                 Enable Local Login with UBNT Account,
+                 Remote Access Status
+  :setting:      Off,
+                 Off,
+                 Disabled
+  :no_section:
+  :no_caption:
+  :no_launch:
+
+.. ucontroller:: Remote Access Owner Setup
+  :key_title:    ⚙ --> Remote Access --> Owner
+  :option:       Configured for
+  :setting:      Not Configured
+  :no_section:
+  :no_caption:
+  :no_launch:
+
+.. ucontroller:: Remote Access Controller Setup
+  :key_title:    ⚙ --> Remote Access --> Advanced Options
+  :option:       Report Errors to Ubiquiti
+  :setting:      ☐
+  :no_section:
+  :no_caption:
+  :no_launch:
 
 .. ucontroller:: Site Configuration
   :key_title:    ⚙ --> Site --> Site Configuration
@@ -276,3 +311,4 @@ Add Trunk Port Profiles
 .. _Unifi Controller: https://www.ui.com/download/?q=controller
 .. _super admin: https://help.ubnt.com/hc/en-us/articles/204909374-UniFi-Accounts-and-Passwords-for-Controller-Cloud-Key-and-Other-Devices
 .. _unifi controller DHCP option: https://help.ubnt.com/hc/en-us/articles/204909754-UniFi-Device-Adoption-Methods-for-Remote-UniFi-Controllers#7
+.. _telemetry: https://community.ui.com/questions/Update-UniFi-Phone-Home-Performance-Data-Collection/f84a71c9-0b81-4d69-a3b3-45640aba1c8b

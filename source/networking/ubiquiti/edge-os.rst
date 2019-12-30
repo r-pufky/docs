@@ -4,6 +4,12 @@ Edge OS
 #######
 Setup notes for Ubiquiti Edge OS.
 
+.. danger::
+  The most recent firmware update (~2019-10) has added `telemetry`_ to ubiquity
+  devices; disabled by default.
+
+  **Block or blackhole** ``trace.svc.ui.com``.
+
 `Disable UBNT Discovery Service`_
 *********************************
 The UBNT Discovery Service enables other UBNT devices the ability to discover
@@ -483,3 +489,4 @@ Show a JSON-like representation of the current router configuration.
 .. _Masquerade NAT Rule: https://i.imgur.com/IFYUX2T.png
 .. _all DNS: https://community.ui.com/questions/cd0a248d-ca54-4d16-84c6-a5ade3dc3272
 .. _Destination NAT Rule: https://old.reddit.com/r/Ubiquiti/comments/6lndq4/question_redirect_port_53_to_internal_dns_server/
+.. _telemetry: https://community.ui.com/questions/Update-UniFi-Phone-Home-Performance-Data-Collection/f84a71c9-0b81-4d69-a3b3-45640aba1c8b
