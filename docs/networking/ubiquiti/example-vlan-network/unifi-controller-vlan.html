@@ -1560,6 +1560,12 @@
 <p>This will be used to setup the Unifi managed switches and APs. See
 <a class="reference internal" href="example-network-diagram.html#example-network-diagram"><span class="std std-ref">Example Network Diagram</span></a>. Download and install the <a class="reference external" href="https://www.ui.com/download/?q=controller">Unifi Controller</a>
 onto the setup laptop.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>The most recent firmware update (~2019-10) has added <a class="reference external" href="https://community.ui.com/questions/Update-UniFi-Phone-Home-Performance-Data-Collection/f84a71c9-0b81-4d69-a3b3-45640aba1c8b">telemetry</a> to ubiquity
+devices; disabled by default.</p>
+<p><strong>Block or blackhole</strong> <code class="docutils literal notranslate"><span class="pre">trace.svc.ui.com</span></code>.</p>
+</div>
 <div class="section" id="basic-setup-wizard">
 <h2>Basic Setup Wizard<a class="headerlink" href="#basic-setup-wizard" title="Permalink to this headline">¶</a></h2>
 <p>Connect to Unifi Controller &#64; <a class="reference external" href="http://localhost:8443">http://localhost:8443</a>.</p>
@@ -1658,7 +1664,10 @@ SSH on that device.</p>
 <tr class="row-even"><td><p>Real-time Updates in Web Browser</p></td>
 <td><p>Automatically adapt rates of real-time updates</p></td>
 </tr>
-<tr class="row-odd"><td><p>› ☐</p></td>
+<tr class="row-odd"><td><p>Analytics &amp; Improvements</p></td>
+<td><p>Off</p></td>
+</tr>
+<tr class="row-even"><td><p>› ☐</p></td>
 <td><p>Enable mail server</p></td>
 </tr>
 </tbody>
@@ -1670,6 +1679,57 @@ SSH on that device.</p>
 <a class="reference external" href="https://help.ubnt.com/hc/en-us/articles/204909754-UniFi-Device-Adoption-Methods-for-Remote-UniFi-Controllers#7">unifi controller DHCP option</a>. These settings are only for initial setup
 with the laptop and may be changed or disabled after initial configuration to
 rely on DHCP or set inform.</p>
+</div>
+<div class="ucontroller docutils container" id="Remote">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="3"><span class="guilabel">⚙ › Remote Access › Controller</span></td>
+</tr>
+<tr class="row-even"><td><p>Enable Remote Access</p></td>
+<td><p>Off</p></td>
+</tr>
+<tr class="row-odd"><td><p>Enable Local Login with UBNT Account</p></td>
+<td><p>Off</p></td>
+</tr>
+<tr class="row-even"><td><p>Remote Access Status</p></td>
+<td><p>Disabled</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="ucontroller docutils container" id="Remote">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="3"><span class="guilabel">⚙ › Remote Access › Owner</span></td>
+</tr>
+<tr class="row-even"><td><p>Configured for</p></td>
+<td><p>Not Configured</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="ucontroller docutils container" id="Remote">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="3"><span class="guilabel">⚙ › Remote Access › Advanced Options</span></td>
+</tr>
+<tr class="row-even"><td><p>Report Errors to Ubiquiti</p></td>
+<td><p>☐</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="ucontroller docutils container" id="Site">
 <table class="docutils align-default">

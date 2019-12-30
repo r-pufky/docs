@@ -1556,6 +1556,12 @@
   <div class="section" id="edge-os">
 <span id="networking-edge-os"></span><h1>Edge OS<a class="headerlink" href="#edge-os" title="Permalink to this headline">¶</a></h1>
 <p>Setup notes for Ubiquiti Edge OS.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>The most recent firmware update (~2019-10) has added <a class="reference external" href="https://community.ui.com/questions/Update-UniFi-Phone-Home-Performance-Data-Collection/f84a71c9-0b81-4d69-a3b3-45640aba1c8b">telemetry</a> to ubiquity
+devices; disabled by default.</p>
+<p><strong>Block or blackhole</strong> <code class="docutils literal notranslate"><span class="pre">trace.svc.ui.com</span></code>.</p>
+</div>
 <div class="section" id="disable-ubnt-discovery-service">
 <h2><a class="reference external" href="https://help.ubnt.com/hc/en-us/articles/204976244-EdgeRouter-UBNT-Device-Discovery">Disable UBNT Discovery Service</a><a class="headerlink" href="#disable-ubnt-discovery-service" title="Permalink to this headline">¶</a></h2>
 <p>The UBNT Discovery Service enables other UBNT devices the ability to discover

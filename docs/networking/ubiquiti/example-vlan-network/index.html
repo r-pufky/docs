@@ -1558,6 +1558,12 @@
 <p>Edgerouter using Docker Unifi Controller with VLAN Setup.</p>
 <p>Example walkthorugh of creating a VLAN based network using an edgerouter as a
 router/firewall with a Docker Unifi Controller managing Unifi Switch/APs.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>The most recent firmware update (~2019-10) has added <a class="reference external" href="https://community.ui.com/questions/Update-UniFi-Phone-Home-Performance-Data-Collection/f84a71c9-0b81-4d69-a3b3-45640aba1c8b">telemetry</a> to ubiquity
+devices; disabled by default.</p>
+<p><strong>Block or blackhole</strong> <code class="docutils literal notranslate"><span class="pre">trace.svc.ui.com</span></code>.</p>
+</div>
 <p>Read through <a class="reference internal" href="network-overview.html#network-overview"><span class="std std-ref">Network Overview</span></a> and prep these things before starting:</p>
 <ul class="simple">
 <li><p>Always set an spare port on your router with a static management address

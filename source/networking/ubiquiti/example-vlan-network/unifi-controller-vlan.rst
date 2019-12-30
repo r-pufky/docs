@@ -76,7 +76,8 @@ Basic Controller Setup
                  Disable store for all users,
                  Disable live support for all users,
                  Automatically adapt rates of real-time updates,
-                 Off
+                 Off,
+                 Enable mail server
   :no_section:
   :no_caption:
   :no_launch:
@@ -107,7 +108,7 @@ Basic Controller Setup
   :no_caption:
   :no_launch:
 
-.. ucontroller:: Remote Access Controller Setup
+.. ucontroller:: Remote Access Advanced Setup
   :key_title:    ⚙ --> Remote Access --> Advanced Options
   :option:       Report Errors to Ubiquiti
   :setting:      ☐
