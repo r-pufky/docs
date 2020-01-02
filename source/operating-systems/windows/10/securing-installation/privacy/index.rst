@@ -17,6 +17,7 @@ Disable this.
 #. :ref:`windows-10-reasonable-privacy-location`.
 #. :ref:`windows-10-reasonable-privacy-camera`.
 #. :ref:`windows-10-reasonable-privacy-microphone`.
+#. :ref:`windows-10-reasonable-privacy-voice-activation`.
 #. :ref:`windows-10-reasonable-privacy-notifications`.
 #. :ref:`windows-10-reasonable-privacy-account`.
 #. :ref:`windows-10-reasonable-privacy-contacts`.
@@ -58,6 +59,7 @@ block while applying GPO's.
    location
    camera
    microphone
+   voice-activation
    notifications
    account
    contacts
