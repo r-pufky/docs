@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Location &mdash; Generic service &amp; computer documentation.  documentation</title>
+  <title>Voice Activation &mdash; Generic service &amp; computer documentation.  documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="Camera" href="camera.html" />
-    <link rel="prev" title="Activity History" href="activity.html" /> 
+    <link rel="next" title="Notifications" href="notifications.html" />
+    <link rel="prev" title="Microphone" href="microphone.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -573,10 +573,10 @@
 <li class="toctree-l4"><a class="reference internal" href="typing.html">Ink &amp; Typing Personalization</a></li>
 <li class="toctree-l4"><a class="reference internal" href="diagnostics-feedback.html">Diagnostics &amp; Feedback</a></li>
 <li class="toctree-l4"><a class="reference internal" href="activity.html">Activity History</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Location</a></li>
+<li class="toctree-l4"><a class="reference internal" href="location.html">Location</a></li>
 <li class="toctree-l4"><a class="reference internal" href="camera.html">Camera</a></li>
 <li class="toctree-l4"><a class="reference internal" href="microphone.html">Microphone</a></li>
-<li class="toctree-l4"><a class="reference internal" href="voice-activation.html">Voice Activation</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Voice Activation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="notifications.html">Notifications</a></li>
 <li class="toctree-l4"><a class="reference internal" href="account.html">Account Info</a></li>
 <li class="toctree-l4"><a class="reference internal" href="contacts.html">Contacts</a></li>
@@ -1543,7 +1543,7 @@
         
           <li><a href="index.html">Reasonable Privacy Settings</a> &raquo;</li>
         
-      <li>Location</li>
+      <li>Voice Activation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -1560,129 +1560,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="location">
-<span id="windows-10-reasonable-privacy-location"></span><h1>Location<a class="headerlink" href="#location" title="Permalink to this headline">¶</a></h1>
-<p><span class="guilabel">⌘ + r › ms-settings:privacy-location</span></p>
-<p class="rubric">Allow access to location on this device</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This disables all location privacy (hardware) options. See
-<a class="reference internal" href="#windows-10-privacy-location"><span class="std std-ref">Allow apps to access your location</span></a> to manage access on a per app basis.</p>
-</div>
-<div class="wregedit docutils container" id="Disable access to location on this device via Registry">
+  <div class="section" id="voice-activation">
+<span id="windows-10-reasonable-privacy-voice-activation"></span><h1>Voice Activation<a class="headerlink" href="#voice-activation" title="Permalink to this headline">¶</a></h1>
+<p><span class="guilabel">⌘ + r › ms-settings:privacy-voiceactivation</span></p>
+<p class="rubric">Allow apps to use voice activation</p>
+<div class="wregedit docutils container" id="Disable apps using voice activation via Registry">
 <span class="guilabel">Start › regedit.msc</span><table class="docutils align-default" id="id1">
-<caption><span class="caption-text">Disable access to location on this device via Registry</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\LocationAndSensors</span></td>
-</tr>
-<tr class="row-even"><td><p>DisableLocation</p></td>
-<td><p>DWORD</p></td>
-<td><p>1</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="wregedit docutils container" id="Disable access to location on this device consentstore via             Registry">
-<span class="guilabel">Start › regedit.msc</span><table class="docutils align-default" id="id2">
-<caption><span class="caption-text">Disable access to location on this device consentstore via
-            Registry</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\location</span></td>
-</tr>
-<tr class="row-even"><td><p>Value</p></td>
-<td><p>SZ</p></td>
-<td><p>Deny</p></td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<div><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>See <a class="reference internal" href="app-list.html#windows-10-privacy-app-list"><span class="std std-ref">Determining App List</span></a> to generate a list of apps for more
-fine grained control of app access.</p>
-</div>
-</div></blockquote>
-</div>
-<div class="wgrouppolicy docutils container" id="Disable access to location on this device via machine GPO">
-<span class="guilabel">Start › gpedit.msc</span><table class="docutils align-default" id="id3">
-<caption><span class="caption-text">Disable access to location on this device via machine GPO</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td colspan="3"><span class="guilabel">Computer Configuration › Administrative Templates › Windows Components › Location and Sensors › Turn off location</span></td>
-</tr>
-<tr class="row-even"><td><p>☑</p></td>
-<td><p>Enabled</p></td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<div><div class="wgrouppolicy docutils container" id="Disable Location sensors (hardware) via machine GPO">
-<table class="docutils align-default" id="id4">
-<caption><span class="caption-text">Disable Location sensors (hardware) via machine GPO</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td colspan="3"><span class="guilabel">Computer Configuration › Administrative Templates › Windows Components › Location and Sensors › Turn off sensors</span></td>
-</tr>
-<tr class="row-even"><td><p>☑</p></td>
-<td><p>Enabled</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="wgrouppolicy docutils container" id="Disable Location scripting (hardware) via machine GPO">
-<table class="docutils align-default" id="id5">
-<caption><span class="caption-text">Disable Location scripting (hardware) via machine GPO</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td colspan="3"><span class="guilabel">Computer Configuration › Administrative Templates › Windows Components › Location and Sensors › Turn off location scripting</span></td>
-</tr>
-<tr class="row-even"><td><p>☑</p></td>
-<td><p>Enabled</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="wgrouppolicy docutils container" id="Disable Location provider (hardware) via machine GPO">
-<table class="docutils align-default" id="id6">
-<caption><span class="caption-text">Disable Location provider (hardware) via machine GPO</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td colspan="3"><span class="guilabel">Computer Configuration › Administrative Templates › Windows Components › Location and Sensors › Windows Location ProviderTurn off Windows Location Provider</span></td>
-</tr>
-<tr class="row-even"><td><p>☑</p></td>
-<td><p>Enabled</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div></blockquote>
-</div>
-<p class="rubric" id="windows-10-privacy-location">Allow apps to access your location</p>
-<div class="wregedit docutils container" id="Disable apps to access your location via Registry">
-<span class="guilabel">Start › regedit.msc</span><table class="docutils align-default" id="id7">
-<caption><span class="caption-text">Disable apps to access your location via Registry</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-text">Disable apps using voice activation via Registry</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -1691,29 +1575,22 @@ fine grained control of app access.</p>
 <tbody>
 <tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy</span></td>
 </tr>
-<tr class="row-even"><td><p>LetAppsAccessLocation</p></td>
+<tr class="row-even"><td><p>LetAppsActivateWithVoice</p></td>
 <td><p>DWORD</p></td>
 <td><p>2</p></td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<div><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>See <a class="reference internal" href="app-list.html#windows-10-privacy-app-list"><span class="std std-ref">Determining App List</span></a> to generate a list of apps for more
-fine grained control of app access.</p>
 </div>
-</div></blockquote>
-</div>
-<div class="wgrouppolicy docutils container" id="Disable apps to access your location via machine GPO">
-<span class="guilabel">Start › gpedit.msc</span><table class="docutils align-default" id="id8">
-<caption><span class="caption-text">Disable apps to access your location via machine GPO</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
+<div class="wgrouppolicy docutils container" id="Disable apps using voice activation via machine GPO">
+<span class="guilabel">Start › gpedit.msc</span><table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Disable apps using voice activation via machine GPO</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td colspan="3"><span class="guilabel">Computer Configuration › Administrative Templates › Windows Components › App Privacy › Let Windows apps access location</span></td>
+<tr class="row-odd"><td colspan="3"><span class="guilabel">Computer Configuration › Administrative Templates › Windows Components › App Privacy › Let Windows apps activate with voice</span></td>
 </tr>
 <tr class="row-even"><td><p>☑</p></td>
 <td><p>Enabled</p></td>
@@ -1723,17 +1600,48 @@ fine grained control of app access.</p>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<div><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>See <a class="reference internal" href="app-list.html#windows-10-privacy-app-list"><span class="std std-ref">Determining App List</span></a> to generate a list of apps for more
-fine grained control of app access.</p>
 </div>
-</div></blockquote>
+<p class="rubric">Allow apps to use voice activation when this device is locked</p>
+<div class="wregedit docutils container" id="Disable app using voice activation when device locked via Registry">
+<span class="guilabel">Start › regedit.msc</span><table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Disable app using voice activation when device locked via Registry</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Messaging</span></td>
+</tr>
+<tr class="row-even"><td><p>LetAppsActivateWithVoiceAboveLock</p></td>
+<td><p>DWORD</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="wgrouppolicy docutils container" id="Disable app using voice activation when device locked via machine GPO">
+<span class="guilabel">Start › gpedit.msc</span><table class="docutils align-default" id="id4">
+<caption><span class="caption-text">Disable app using voice activation when device locked via machine GPO</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="3"><span class="guilabel">Computer Configuration › Administrative Templates › Windows Components › App Privacy › Let Windows apps activate with voice</span></td>
+</tr>
+<tr class="row-even"><td><p>☑</p></td>
+<td><p>Enabled</p></td>
+</tr>
+<tr class="row-odd"><td><p>Default for all apps</p></td>
+<td><p>Force Deny</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <p class="rubric">Rreferences</p>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#182-location">Location Windows Management Settings</a></p></li>
+<li><p><a class="reference external" href="https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#bkmk-voice-act">Voice Activation Management Settings</a></p></li>
 </ol>
 </div>
 
@@ -1745,10 +1653,10 @@ fine grained control of app access.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="camera.html" class="btn btn-neutral float-right" title="Camera" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="notifications.html" class="btn btn-neutral float-right" title="Notifications" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="activity.html" class="btn btn-neutral float-left" title="Activity History" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="microphone.html" class="btn btn-neutral float-left" title="Microphone" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

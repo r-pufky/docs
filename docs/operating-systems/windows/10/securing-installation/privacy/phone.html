@@ -576,6 +576,7 @@
 <li class="toctree-l4"><a class="reference internal" href="location.html">Location</a></li>
 <li class="toctree-l4"><a class="reference internal" href="camera.html">Camera</a></li>
 <li class="toctree-l4"><a class="reference internal" href="microphone.html">Microphone</a></li>
+<li class="toctree-l4"><a class="reference internal" href="voice-activation.html">Voice Activation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="notifications.html">Notifications</a></li>
 <li class="toctree-l4"><a class="reference internal" href="account.html">Account Info</a></li>
 <li class="toctree-l4"><a class="reference internal" href="contacts.html">Contacts</a></li>
@@ -1566,7 +1567,7 @@
 <p class="admonition-title">Note</p>
 <p>Only displayed in GUI if phone device is present. Can still be disabled.</p>
 </div>
-<p class="rubric">Let apps make phone calls</p>
+<p class="rubric">Allow phone calls on this device</p>
 <div class="wregedit docutils container" id="Disable apps make phone calls via Registry">
 <span class="guilabel">Start › regedit.msc</span><table class="docutils align-default" id="id1">
 <caption><span class="caption-text">Disable apps make phone calls via Registry</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
@@ -1603,6 +1604,39 @@
 </tr>
 </tbody>
 </table>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See <a class="reference internal" href="app-list.html#windows-10-privacy-app-list"><span class="std std-ref">Determining App List</span></a> to generate a list of apps for more
+fine grained control of app access.</p>
+</div>
+</div></blockquote>
+</div>
+<p class="rubric">Allow apps to make phone calls</p>
+<div class="wregedit docutils container" id="Disable access to messaging on this device via Registry">
+<span class="guilabel">Start › regedit.msc</span><table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Disable access to messaging on this device via Registry</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\phoneCall</span></td>
+</tr>
+<tr class="row-even"><td><p>Value</p></td>
+<td><p>SZ</p></td>
+<td><p>Deny</p></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See <a class="reference internal" href="app-list.html#windows-10-privacy-app-list"><span class="std std-ref">Determining App List</span></a> to generate a list of apps for more
+fine grained control of app access.</p>
+</div>
+</div></blockquote>
 </div>
 <p class="rubric">Rreferences</p>
 <ol class="arabic simple">
