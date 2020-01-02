@@ -21,6 +21,7 @@ Disable this.
 #. :ref:`windows-10-reasonable-privacy-account`.
 #. :ref:`windows-10-reasonable-privacy-contacts`.
 #. :ref:`windows-10-reasonable-privacy-calendar`.
+#. :ref:`windows-10-reasonable-privacy-phone`.
 #. :ref:`windows-10-reasonable-privacy-call`.
 #. :ref:`windows-10-reasonable-privacy-email`.
 #. :ref:`windows-10-reasonable-privacy-tasks`.
@@ -35,7 +36,6 @@ Disable this.
 #. :ref:`windows-10-reasonable-privacy-files`.
 #. :ref:`windows-10-reasonable-privacy-eye`.
 #. :ref:`windows-10-reasonable-privacy-motion`.
-#. :ref:`windows-10-reasonable-privacy-phone`.
 
 See :ref:`windows-10-privacy-app-list` to generate specific lists of apps to
 block while applying GPO's.
