@@ -30,7 +30,7 @@ this creeate a drastic performance hit.
   vssadmin delete shadows /all /Quiet
 
 .. wtschedule:: Disable schedule task for System Restore.
-  :key_title:   Microsoft --> Windows --> System Restore --> SR --> RMB --> Disable
+  :key_title:   Microsoft --> Windows --> SystemRestore --> SR --> RMB --> Disable
   :option:      Name,
                 Description
   :setting:     SR,
