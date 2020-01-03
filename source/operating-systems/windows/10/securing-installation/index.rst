@@ -26,6 +26,7 @@ A reboot is required once these changes are made.
 #. :ref:`windows-10-disable-paging`.
 #. :ref:`windows-10-disable-restore-points`.
 #. :ref:`windows-10-disable-facial-recognition`.
+#. :ref:`windows-10-disable-error-reporting`.
 #. :ref:`windows-10-disable-service`.
 
 .. toctree::
@@ -49,4 +50,5 @@ A reboot is required once these changes are made.
    paging
    restore-points
    facial-recognition
+   error-reporting
    service
