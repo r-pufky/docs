@@ -49,6 +49,38 @@ Services
   :no_section:
   :no_launch:
 
+.. wregedit:: Turn off application telemetry via Registry
+  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppCompat
+  :names:     AITEnable
+  :types:     DWORD
+  :data:      0
+  :no_section:
+  :no_launch:
+
+.. wregedit:: Disable inventory collector via Registry
+  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppCompat
+  :names:     DisableInventory
+  :types:     DWORD
+  :data:      1
+  :no_section:
+  :no_launch:
+
+.. wregedit:: Disable program compatibility assistant via Registry
+  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppCompat
+  :names:     DisablePCA
+  :types:     DWORD
+  :data:      1
+  :no_section:
+  :no_launch:
+
+.. wregedit:: Disable steps recorder via Registry
+  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppCompat
+  :names:     DisableUAR
+  :types:     DWORD
+  :data:      1
+  :no_section:
+  :no_launch:
+
 :term:`GPO`
 ***********
 .. note::
@@ -194,6 +226,7 @@ changed. See references for additional documentation.
 #. `Configure Windows Diagnostic Data <https://docs.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization>`_
 #. `Manage connections from Windows 10 to Microsoft Services <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services>`_
 #. `Manage connections from Windows 10 OS components to Microsoft Services <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services>`_
+#. `Application Telemetry <https://getadmx.com/HKLM/Software/Policies/Microsoft/Windows/AppCompat>`_
 
 .. _Telemetry Info: https://www.forbes.com/sites/gordonkelly/2015/11/24/windows-10-automatic-spying-begins-again/
 .. _diagnostic data levels: https://docs.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization#security-level
