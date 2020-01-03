@@ -1,9 +1,10 @@
 .. _apps-authy:
 
-Moving Authy TOTP to Other Authenticators
-#########################################
-Lock in is unreal with Authy and some sites are only allowing Authy usage. This
-is not ideal, especially if you have other TOTP solutions that work for you.
+Authy TOTP Migration
+####################
+Authy actively trys to lock in users, which is only made worse by some sits only
+allowing Authy usage (such at Twitch.tv). This is not ideal, especially if you
+have other TOTP solutions that already work for you.
 
 This will guide you how to remove dependence on Authy.
 
