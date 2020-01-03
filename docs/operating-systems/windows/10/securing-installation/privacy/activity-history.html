@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Background Apps &mdash; Generic service &amp; computer documentation.  documentation</title>
+  <title>Activity History &mdash; Generic service &amp; computer documentation.  documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="App Diagnostics" href="app-diagnostics.html" />
-    <link rel="prev" title="Other Devices" href="other.html" /> 
+    <link rel="next" title="Location" href="location.html" />
+    <link rel="prev" title="Diagnostics &amp; Feedback" href="diagnostics-feedback.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -570,32 +570,32 @@
 <li class="toctree-l4"><a class="reference internal" href="manual.html">Manual Setting Privacy Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="general.html">General</a></li>
 <li class="toctree-l4"><a class="reference internal" href="speech.html">Speech</a></li>
-<li class="toctree-l4"><a class="reference internal" href="typing.html">Ink &amp; Typing Personalization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ink-typing.html">Ink &amp; Typing Personalization</a></li>
 <li class="toctree-l4"><a class="reference internal" href="diagnostics-feedback.html">Diagnostics &amp; Feedback</a></li>
-<li class="toctree-l4"><a class="reference internal" href="activity.html">Activity History</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Activity History</a></li>
 <li class="toctree-l4"><a class="reference internal" href="location.html">Location</a></li>
 <li class="toctree-l4"><a class="reference internal" href="camera.html">Camera</a></li>
 <li class="toctree-l4"><a class="reference internal" href="microphone.html">Microphone</a></li>
 <li class="toctree-l4"><a class="reference internal" href="voice-activation.html">Voice Activation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="notifications.html">Notifications</a></li>
-<li class="toctree-l4"><a class="reference internal" href="account.html">Account Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="account-info.html">Account Info</a></li>
 <li class="toctree-l4"><a class="reference internal" href="contacts.html">Contacts</a></li>
 <li class="toctree-l4"><a class="reference internal" href="calendar.html">Calendar</a></li>
-<li class="toctree-l4"><a class="reference internal" href="call.html">Call History</a></li>
+<li class="toctree-l4"><a class="reference internal" href="call-history.html">Call History</a></li>
 <li class="toctree-l4"><a class="reference internal" href="email.html">Email</a></li>
 <li class="toctree-l4"><a class="reference internal" href="tasks.html">Tasks</a></li>
 <li class="toctree-l4"><a class="reference internal" href="messaging.html">Messaging</a></li>
 <li class="toctree-l4"><a class="reference internal" href="radios.html">Radios</a></li>
-<li class="toctree-l4"><a class="reference internal" href="other.html">Other Devices</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">Background Apps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="other-devices.html">Other Devices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="background-apps.html">Background Apps</a></li>
 <li class="toctree-l4"><a class="reference internal" href="app-diagnostics.html">App Diagnostics</a></li>
 <li class="toctree-l4"><a class="reference internal" href="documents.html">Documents</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pictures.html">Pictures</a></li>
 <li class="toctree-l4"><a class="reference internal" href="videos.html">Videos</a></li>
-<li class="toctree-l4"><a class="reference internal" href="files.html">File System</a></li>
+<li class="toctree-l4"><a class="reference internal" href="file-system.html">File System</a></li>
 <li class="toctree-l4"><a class="reference internal" href="eye.html">Eye Tracker</a></li>
 <li class="toctree-l4"><a class="reference internal" href="motion.html">Motion</a></li>
-<li class="toctree-l4"><a class="reference internal" href="phone.html">Phone Calls</a></li>
+<li class="toctree-l4"><a class="reference internal" href="phone-calls.html">Phone Calls</a></li>
 <li class="toctree-l4"><a class="reference internal" href="app-list.html">Determining App List</a></li>
 </ul>
 </li>
@@ -1543,7 +1543,7 @@
         
           <li><a href="index.html">Reasonable Privacy Settings</a> &raquo;</li>
         
-      <li>Background Apps</li>
+      <li>Activity History</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -1560,291 +1560,117 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="background-apps">
-<span id="windows-10-reasonable-privacy-background"></span><h1>Background Apps<a class="headerlink" href="#background-apps" title="Permalink to this headline">¶</a></h1>
-<p><span class="guilabel">⌘ + r › ms-settings:privacy-backgroundapps</span></p>
-<p>Leave background service enable, but disable all apps. This will prevent
-the start menu search from breaking.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If start menu searches start to fail, it is because background apps
-service has been disabled. See <a class="reference internal" href="../../additional-fixes.html#windows-background-apps"><span class="std std-ref">Fix Windows Applications Not Appearing in Start Menu Searches</span></a>.</p>
-</div>
-<p class="rubric">Let apps run in the background</p>
-<div class="wregedit docutils container" id="Enable apps run in the background via Registry">
+  <div class="section" id="activity-history">
+<span id="windows-10-reasonable-privacy-activity-history"></span><h1>Activity History<a class="headerlink" href="#activity-history" title="Permalink to this headline">¶</a></h1>
+<p><span class="guilabel">⌘ + r › ms-settings:privacy-activityhistory</span></p>
+<p class="rubric">Store my activity history on this device</p>
+<div class="wregedit docutils container" id="Disable storing of activity history via Registry">
 <span class="guilabel">Start › regedit.msc</span><table class="docutils align-default" id="id1">
-<caption><span class="caption-text">Enable apps run in the background via Registry</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-text">Disable storing of activity history via Registry</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
 <col style="width: 33%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy</span></td>
+<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\System</span></td>
 </tr>
-<tr class="row-even"><td><p>LetAppsRunInBackground</p></td>
+<tr class="row-even"><td><p>PublishUserActivities</p></td>
 <td><p>DWORD</p></td>
 <td><p>2</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="gtable docutils container" id="Disable specific apps access to your microphone via Registry">
-<table class="docutils align-default" id="id2">
-<caption><span class="caption-text">Disable specific apps access to your microphone via Registry</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td colspan="5"><span class="guilabel">HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy\LetAppsRunInBackground</span></td>
-</tr>
-<tr class="row-even"><td><p>Key</p></td>
-<td><p>Name</p></td>
-<td><p>Type</p></td>
-<td><p>Data</p></td>
-</tr>
-<tr class="row-odd"><td><p>Microsoft.WindowsAlarms_8wekyb3d8bbwe</p></td>
-<td><p>Value</p></td>
-<td><p>SZ</p></td>
-<td><p>Deny</p></td>
-</tr>
-<tr class="row-even"><td><p>Microsoft.WindowsCalculator_8wekyb3d8bbwe</p></td>
-<td><p>Value</p></td>
-<td><p>SZ</p></td>
-<td><p>Deny</p></td>
-</tr>
-<tr class="row-odd"><td><p>Microsoft.WindowsCamera_8wekyb3d8bbwe</p></td>
-<td><p>Value</p></td>
-<td><p>SZ</p></td>
-<td><p>Deny</p></td>
-</tr>
-<tr class="row-even"><td><p>Microsoft.PPIProjection_cw5n1h2txyewy</p></td>
-<td><p>Value</p></td>
-<td><p>SZ</p></td>
-<td><p>Deny</p></td>
-</tr>
-<tr class="row-odd"><td><p>Microsoft.WindowsFeedbackHub_8wekyb3d8bbwe</p></td>
-<td><p>Value</p></td>
-<td><p>SZ</p></td>
-<td><p>Deny</p></td>
-</tr>
-<tr class="row-even"><td><p>Microsoft.XboxGamingOverlay_8wekyb3d8bbwe</p></td>
-<td><p>Value</p></td>
-<td><p>SZ</p></td>
-<td><p>Deny</p></td>
-</tr>
-<tr class="row-odd"><td><p>Microsoft.GetHelp_8wekyb3d8bbwe</p></td>
-<td><p>Value</p></td>
-<td><p>SZ</p></td>
-<td><p>Deny</p></td>
-</tr>
-<tr class="row-even"><td><p>Microsoft.ZuneMusic_8wekyb3d8bbwe</p></td>
-<td><p>Value</p></td>
-<td><p>SZ</p></td>
-<td><p>Deny</p></td>
-</tr>
-<tr class="row-odd"><td><p>microsoft.windowscommunicationsapps_8wekyb3d8bbwe</p></td>
-<td><p>Value</p></td>
-<td><p>SZ</p></td>
-<td><p>Deny</p></td>
-</tr>
-<tr class="row-even"><td><p>Microsoft.WindowsMaps_8wekyb3d8bbwe</p></td>
-<td><p>Value</p></td>
-<td><p>SZ</p></td>
-<td><p>Deny</p></td>
-</tr>
-<tr class="row-odd"><td><p>Microsoft.Messaging_8wekyb3d8bbwe</p></td>
-<td><p>Value</p></td>
-<td><p>SZ</p></td>
-<td><p>Deny</p></td>
-</tr>
-<tr class="row-even"><td><p>Microsoft.MicrosoftEdge_8wekyb3d8bbwe</p></td>
-<td><p>Value</p></td>
-<td><p>SZ</p></td>
-<td><p>Deny</p></td>
-</tr>
-<tr class="row-odd"><td><p>Microsoft.WindowsStore_8wekyb3d8bbwe</p></td>
-<td><p>Value</p></td>
-<td><p>SZ</p></td>
-<td><p>Deny</p></td>
-</tr>
-<tr class="row-even"><td><p>Microsoft.MixedReality.Portal_8wekyb3d8bbwe</p></td>
-<td><p>Value</p></td>
-<td><p>SZ</p></td>
-<td><p>Deny</p></td>
-</tr>
-<tr class="row-odd"><td><p>Microsoft.Microsoft3DViewer_8wekyb3d8bbwe</p></td>
-<td><p>Value</p></td>
-<td><p>SZ</p></td>
-<td><p>Deny</p></td>
-</tr>
-<tr class="row-even"><td><p>Microsoft.ZuneVideo_8wekyb3d8bbwe</p></td>
-<td><p>Value</p></td>
-<td><p>SZ</p></td>
-<td><p>Deny</p></td>
-</tr>
-<tr class="row-odd"><td><p>Microsoft.MSPaint_8wekyb3d8bbwe</p></td>
-<td><p>Value</p></td>
-<td><p>SZ</p></td>
-<td><p>Deny</p></td>
-</tr>
-<tr class="row-even"><td><p>Microsoft.Windows.Photos_8wekyb3d8bbwe</p></td>
-<td><p>Value</p></td>
-<td><p>SZ</p></td>
-<td><p>Deny</p></td>
-</tr>
-<tr class="row-odd"><td><p>windows.immersivecontrolpanel_cw5n1h2txyewy</p></td>
-<td><p>Value</p></td>
-<td><p>SZ</p></td>
-<td><p>Deny</p></td>
-</tr>
-<tr class="row-even"><td><p>Microsoft.ScreenSketch_8wekyb3d8bbwe</p></td>
-<td><p>Value</p></td>
-<td><p>SZ</p></td>
-<td><p>Deny</p></td>
-</tr>
-<tr class="row-odd"><td><p>Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe</p></td>
-<td><p>Value</p></td>
-<td><p>SZ</p></td>
-<td><p>Deny</p></td>
-</tr>
-<tr class="row-even"><td><p>Microsoft.WindowsSoundRecorder_8wekyb3d8bbwe</p></td>
-<td><p>Value</p></td>
-<td><p>SZ</p></td>
-<td><p>Deny</p></td>
-</tr>
-<tr class="row-odd"><td><p>Microsoft.Windows.SecHealthUI_cw5n1h2txyewy</p></td>
-<td><p>Value</p></td>
-<td><p>SZ</p></td>
-<td><p>Deny</p></td>
-</tr>
-<tr class="row-even"><td><p>Microsoft.XboxApp_8wekyb3d8bbwe</p></td>
-<td><p>Value</p></td>
-<td><p>SZ</p></td>
-<td><p>Deny</p></td>
-</tr>
-<tr class="row-odd"><td><p>Microsoft.YourPhone_8wekyb3d8bbwe</p></td>
-<td><p>Value</p></td>
-<td><p>SZ</p></td>
-<td><p>Deny</p></td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<div><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>See <a class="reference internal" href="app-list.html#windows-10-privacy-app-list"><span class="std std-ref">Determining App List</span></a> to generate a list of apps for more
-fine grained control of app access.</p>
-</div>
-</div></blockquote>
-</div>
-<div class="wgrouppolicy docutils container" id="Disable Background apps access via machine GPO">
-<span class="guilabel">Start › gpedit.msc</span><table class="docutils align-default" id="id3">
-<caption><span class="caption-text">Disable Background apps access via machine GPO</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<div class="wgrouppolicy docutils container" id="Disable storing of activity history via machine GPO">
+<span class="guilabel">Start › gpedit.msc</span><table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Disable storing of activity history via machine GPO</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td colspan="3"><span class="guilabel">Computer Configuration › Administrative Templates › Windows Components › App Privacy › Let Windows apps run in the background</span></td>
+<tr class="row-odd"><td colspan="3"><span class="guilabel">Computer Configuration › Administrative Templates › System › OS Policies › Allow publishing of User Activites</span></td>
 </tr>
 <tr class="row-even"><td><p>☑</p></td>
-<td><p>Enabled</p></td>
-</tr>
-<tr class="row-odd"><td><p>Default for all apps</p></td>
-<td><p>User is in control</p></td>
-</tr>
-<tr class="row-even"><td><p>Force deny these specific apps (use Package Family Names):</p></td>
-<td><p>Microsoft.WindowsAlarms_8wekyb3d8bbwe</p></td>
-</tr>
-<tr class="row-odd"><td><p>›</p></td>
-<td><p>Microsoft.WindowsCalculator_8wekyb3d8bbwe</p></td>
-</tr>
-<tr class="row-even"><td><p>›</p></td>
-<td><p>Microsoft.WindowsCamera_8wekyb3d8bbwe</p></td>
-</tr>
-<tr class="row-odd"><td><p>›</p></td>
-<td><p>Microsoft.PPIProjection_cw5n1h2txyewy</p></td>
-</tr>
-<tr class="row-even"><td><p>›</p></td>
-<td><p>Microsoft.WindowsFeedbackHub_8wekyb3d8bbwe</p></td>
-</tr>
-<tr class="row-odd"><td><p>›</p></td>
-<td><p>Microsoft.XboxGamingOverlay_8wekyb3d8bbwe</p></td>
-</tr>
-<tr class="row-even"><td><p>›</p></td>
-<td><p>Microsoft.GetHelp_8wekyb3d8bbwe</p></td>
-</tr>
-<tr class="row-odd"><td><p>›</p></td>
-<td><p>Microsoft.ZuneMusic_8wekyb3d8bbwe</p></td>
-</tr>
-<tr class="row-even"><td><p>›</p></td>
-<td><p>microsoft.windowscommunicationsapps_8wekyb3d8bbwe</p></td>
-</tr>
-<tr class="row-odd"><td><p>›</p></td>
-<td><p>Microsoft.WindowsMaps_8wekyb3d8bbwe</p></td>
-</tr>
-<tr class="row-even"><td><p>›</p></td>
-<td><p>Microsoft.Messaging_8wekyb3d8bbwe</p></td>
-</tr>
-<tr class="row-odd"><td><p>›</p></td>
-<td><p>Microsoft.MicrosoftEdge_8wekyb3d8bbwe</p></td>
-</tr>
-<tr class="row-even"><td><p>›</p></td>
-<td><p>Microsoft.WindowsStore_8wekyb3d8bbwe</p></td>
-</tr>
-<tr class="row-odd"><td><p>›</p></td>
-<td><p>Microsoft.MixedReality.Portal_8wekyb3d8bbwe</p></td>
-</tr>
-<tr class="row-even"><td><p>›</p></td>
-<td><p>Microsoft.Microsoft3DViewer_8wekyb3d8bbwe</p></td>
-</tr>
-<tr class="row-odd"><td><p>›</p></td>
-<td><p>Microsoft.ZuneVideo_8wekyb3d8bbwe</p></td>
-</tr>
-<tr class="row-even"><td><p>›</p></td>
-<td><p>Microsoft.MSPaint_8wekyb3d8bbwe</p></td>
-</tr>
-<tr class="row-odd"><td><p>›</p></td>
-<td><p>Microsoft.Windows.Photos_8wekyb3d8bbwe</p></td>
-</tr>
-<tr class="row-even"><td><p>›</p></td>
-<td><p>windows.immersivecontrolpanel_cw5n1h2txyewy</p></td>
-</tr>
-<tr class="row-odd"><td><p>›</p></td>
-<td><p>Microsoft.ScreenSketch_8wekyb3d8bbwe</p></td>
-</tr>
-<tr class="row-even"><td><p>›</p></td>
-<td><p>Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe</p></td>
-</tr>
-<tr class="row-odd"><td><p>›</p></td>
-<td><p>Microsoft.WindowsSoundRecorder_8wekyb3d8bbwe</p></td>
-</tr>
-<tr class="row-even"><td><p>›</p></td>
-<td><p>Microsoft.Windows.SecHealthUI_cw5n1h2txyewy</p></td>
-</tr>
-<tr class="row-odd"><td><p>›</p></td>
-<td><p>Microsoft.XboxApp_8wekyb3d8bbwe</p></td>
-</tr>
-<tr class="row-even"><td><p>›</p></td>
-<td><p>Microsoft.YourPhone_8wekyb3d8bbwe</p></td>
+<td><p>Disabled</p></td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<div><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>See <a class="reference internal" href="app-list.html#windows-10-privacy-app-list"><span class="std std-ref">Determining App List</span></a> to generate a list of apps for more
-fine grained control of app access.</p>
 </div>
-</div></blockquote>
+<p class="rubric">Send my activity history to Microsoft</p>
+<div class="wregedit docutils container" id="Disable sending activity history to Microsoft via Registry">
+<span class="guilabel">Start › regedit.msc</span><table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Disable sending activity history to Microsoft via Registry</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\System</span></td>
+</tr>
+<tr class="row-even"><td><p>UploadUserActivities</p></td>
+<td><p>DWORD</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="wgrouppolicy docutils container" id="Disable sending activity history to Microsoft via machine GPO">
+<span class="guilabel">Start › gpedit.msc</span><table class="docutils align-default" id="id4">
+<caption><span class="caption-text">Disable sending activity history to Microsoft via machine GPO</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="3"><span class="guilabel">Computer Configuration › Administrative Templates › System › OS Policies › Allow upload of User Activities</span></td>
+</tr>
+<tr class="row-even"><td><p>☑</p></td>
+<td><p>Disabled</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Activity history</p>
+<div class="wregedit docutils container" id="Disable activity history via Registry">
+<span class="guilabel">Start › regedit.msc</span><table class="docutils align-default" id="id5">
+<caption><span class="caption-text">Disable activity history via Registry</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\System</span></td>
+</tr>
+<tr class="row-even"><td><p>EnableActivityFeed</p></td>
+<td><p>DWORD</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="wgrouppolicy docutils container" id="Disable activity history via machine GPO">
+<span class="guilabel">Start › gpedit.msc</span><table class="docutils align-default" id="id6">
+<caption><span class="caption-text">Disable activity history via machine GPO</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="3"><span class="guilabel">Computer Configuration › Administrative Templates › System › OS Policies › Enables Activity Feed</span></td>
+</tr>
+<tr class="row-even"><td><p>☑</p></td>
+<td><p>Disabled</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <p class="rubric">Rreferences</p>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1817-background-apps">Background Apps Windows Management Settings</a></p></li>
+<li><p><a class="reference external" href="https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1822-activity-history">Activity History Windows Management Settings</a></p></li>
 </ol>
 </div>
 
@@ -1856,10 +1682,10 @@ fine grained control of app access.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="app-diagnostics.html" class="btn btn-neutral float-right" title="App Diagnostics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="location.html" class="btn btn-neutral float-right" title="Location" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="other.html" class="btn btn-neutral float-left" title="Other Devices" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="diagnostics-feedback.html" class="btn btn-neutral float-left" title="Diagnostics &amp; Feedback" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
