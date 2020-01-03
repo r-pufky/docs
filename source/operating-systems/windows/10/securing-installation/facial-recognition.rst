@@ -18,7 +18,6 @@ camera. Disable this.
   :option:      Name
   :setting:     FODCleanupTask
   :no_section:
-  :no_caption:
 
 .. rubric:: References
 
