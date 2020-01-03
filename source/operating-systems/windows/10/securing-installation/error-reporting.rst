@@ -10,14 +10,14 @@ including related metadata. Disable this.
 
 :term:`Registry`
 ****************
-.. wregedit:: Restrict data collection to basic via Registry
+.. wregedit:: Disable error reporting policy via Registry
   :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Error Reporting
   :names:     Disabled
   :types:     DWORD
   :data:      1
   :no_section:
 
-.. wregedit:: `Disable infection reporting`_. via Registry
+.. wregedit:: Disable error reporting via Registry
   :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Windows Error Reporting
   :names:     Disabled
   :types:     DWORD
@@ -27,7 +27,7 @@ including related metadata. Disable this.
 
 :term:`GPO`
 ***********
-.. wgpolicy:: Disalbe Windows Error Reporting via machine GPO
+.. wgpolicy:: Disable Windows Error Reporting via machine GPO
   :key_title: Computer Configuration -->
               Administrative Templates -->
               Windows Components -->
