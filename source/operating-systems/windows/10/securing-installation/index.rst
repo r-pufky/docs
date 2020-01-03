@@ -28,6 +28,7 @@ A reboot is required once these changes are made.
 #. :ref:`windows-10-disable-facial-recognition`.
 #. :ref:`windows-10-disable-error-reporting`.
 #. :ref:`windows-10-disable-account-sync`.
+#. :ref:`windows-10-disable-spotlight`.
 #. :ref:`windows-10-disable-service`.
 
 .. toctree::
@@ -53,4 +54,5 @@ A reboot is required once these changes are made.
    facial-recognition
    error-reporting
    account-sync
+   spotlight
    service
