@@ -24,7 +24,7 @@ A reboot is required once these changes are made.
 #. :ref:`windows-10-remove-startup-items`.
 #. :ref:`windows-10-remove-preinstalled-packages`.
 #. :ref:`windows-10-disable-paging`.
-#. :ref:`windows-10-disable-restore`.
+#. :ref:`windows-10-disable-restore-points`.
 #. :ref:`windows-10-disable-service`.
 
 .. toctree::
@@ -46,5 +46,5 @@ A reboot is required once these changes are made.
    remove-startup-items
    remove-preinstalled-packages
    paging
-   restore
+   restore-points
    service
