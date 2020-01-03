@@ -1,4 +1,4 @@
-.. _windows-10-reasonable-privacy-other:
+.. _windows-10-reasonable-privacy-other-devices:
 
 Other Devices
 #############

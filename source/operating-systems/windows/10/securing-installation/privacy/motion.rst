@@ -1,7 +1,7 @@
 .. _windows-10-reasonable-privacy-motion:
 
 Motion
-###########
+######
 :cmdmenu:`⌘ + r --> ms-settings:privacy-motion`
 
 .. note::

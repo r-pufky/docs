@@ -20,6 +20,7 @@ Camera
   :types:     SZ
   :data:      Deny
   :no_section:
+  :no_launch:
 
     .. note::
       See :ref:`windows-10-privacy-app-list` to generate a list of apps for more

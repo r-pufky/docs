@@ -26,6 +26,7 @@ Notifications
   :types:     SZ
   :data:      Deny
   :no_section:
+  :no_launch:
 
 .. wgpolicy:: Disable access to user notifications on this device via machine
               GPO

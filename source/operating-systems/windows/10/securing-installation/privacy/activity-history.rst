@@ -1,4 +1,4 @@
-.. _windows-10-reasonable-privacy-activity:
+.. _windows-10-reasonable-privacy-activity-history:
 
 Activity History
 ################

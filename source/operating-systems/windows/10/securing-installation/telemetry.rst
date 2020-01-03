@@ -59,7 +59,8 @@ Services
   :key_title: Computer Configuration -->
               Administrative Templates -->
               Windows Components -->
-              Data Collection and Preview Builds
+              Data Collection and Preview Builds -->
+              Allow Telemetry
   :option:    ☑,
               1
   :setting:   Enabled,

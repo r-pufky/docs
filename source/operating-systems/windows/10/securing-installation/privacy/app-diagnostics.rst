@@ -6,7 +6,7 @@ App Diagnostics
 
 .. rubric:: Allow access to app diagnostic info on this device
 
-.. wregedit:: Enable access to radios on this device via Registry
+.. wregedit:: Disable access to app diagnostics on this device via Registry
   :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
               CapabilityAccessManager\ConsentStore\appDiagnostics
   :names:     Value

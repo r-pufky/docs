@@ -11,30 +11,30 @@ Disable this.
 #. :ref:`windows-10-reasonable-privacy-manual`.
 #. :ref:`windows-10-reasonable-privacy-general`.
 #. :ref:`windows-10-reasonable-privacy-speech`.
-#. :ref:`windows-10-reasonable-privacy-typing`.
+#. :ref:`windows-10-reasonable-privacy-ink-typing`.
 #. :ref:`windows-10-reasonable-privacy-diagnostics-feedback`.
-#. :ref:`windows-10-reasonable-privacy-activity`.
+#. :ref:`windows-10-reasonable-privacy-activity-history`.
 #. :ref:`windows-10-reasonable-privacy-location`.
 #. :ref:`windows-10-reasonable-privacy-camera`.
 #. :ref:`windows-10-reasonable-privacy-microphone`.
 #. :ref:`windows-10-reasonable-privacy-voice-activation`.
 #. :ref:`windows-10-reasonable-privacy-notifications`.
-#. :ref:`windows-10-reasonable-privacy-account`.
+#. :ref:`windows-10-reasonable-privacy-account-info`.
 #. :ref:`windows-10-reasonable-privacy-contacts`.
 #. :ref:`windows-10-reasonable-privacy-calendar`.
-#. :ref:`windows-10-reasonable-privacy-phone`.
-#. :ref:`windows-10-reasonable-privacy-call`.
+#. :ref:`windows-10-reasonable-privacy-phone-calls`.
+#. :ref:`windows-10-reasonable-privacy-call-history`.
 #. :ref:`windows-10-reasonable-privacy-email`.
 #. :ref:`windows-10-reasonable-privacy-tasks`.
 #. :ref:`windows-10-reasonable-privacy-messaging`.
 #. :ref:`windows-10-reasonable-privacy-radios`.
-#. :ref:`windows-10-reasonable-privacy-other`.
-#. :ref:`windows-10-reasonable-privacy-background`.
+#. :ref:`windows-10-reasonable-privacy-other-devices`.
+#. :ref:`windows-10-reasonable-privacy-background-apps`.
 #. :ref:`windows-10-reasonable-privacy-app-diagnostics`.
 #. :ref:`windows-10-reasonable-privacy-documents`.
 #. :ref:`windows-10-reasonable-privacy-pictures`.
 #. :ref:`windows-10-reasonable-privacy-videos`.
-#. :ref:`windows-10-reasonable-privacy-files`.
+#. :ref:`windows-10-reasonable-privacy-file-system`.
 #. :ref:`windows-10-reasonable-privacy-eye`.
 #. :ref:`windows-10-reasonable-privacy-motion`.
 
@@ -53,30 +53,30 @@ block while applying GPO's.
    manual
    general
    speech
-   typing
+   ink-typing
    diagnostics-feedback
-   activity
+   activity-history
    location
    camera
    microphone
    voice-activation
    notifications
-   account
+   account-info
    contacts
    calendar
-   call
+   call-history
    email
    tasks
    messaging
    radios
-   other
-   background
+   other-devices
+   background-apps
    app-diagnostics
    documents
    pictures
    videos
-   files
+   file-system
    eye
    motion
-   phone
+   phone-calls
    app-list

@@ -10,7 +10,7 @@ Contacts
   This disables all contacts options. See
   :ref:`windows-10-privacy-contacts` to manage access on a per app basis.
 
-.. wregedit:: Disable access to user notifications on this device via Registry
+.. wregedit:: Disable access to contacts on this device via Registry
   :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
               CapabilityAccessManager\ConsentStore\contacts
   :names:     Value

@@ -26,7 +26,7 @@ the microphone. See `1803 update breaks microphone`_.
   :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
   :names:     LetAppsAccessMicrophone
   :types:     DWORD
-  :data:      2
+  :data:      0
   :no_section:
 
 .. gtable::   Disable specific apps access to your microphone via Registry
@@ -98,15 +98,6 @@ the microphone. See `1803 update breaks microphone`_.
     .. note::
       See :ref:`windows-10-privacy-app-list` to generate a list of apps for more
       fine grained control of app access.
-
-.. wregedit:: Example app prviacy restriction via Registry
-  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-              CapabilityAccessManager\ConsentStore\microphone
-  :names:     Value
-  :types:     SZ
-  :data:      Deny
-  :no_section:
-  :no_launch:
 
 .. wgpolicy:: Disable apps access to your microphone via machine GPO
   :key_title: Computer Configuration -->

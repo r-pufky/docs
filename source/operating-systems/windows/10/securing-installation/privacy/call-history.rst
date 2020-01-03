@@ -1,4 +1,4 @@
-.. _windows-10-reasonable-privacy-call:
+.. _windows-10-reasonable-privacy-call-history:
 
 Call History
 ############
@@ -8,7 +8,7 @@ Call History
 
 .. note::
   This disables all call history options. See
-  :ref:`windows-10-privacy-call` to manage access on a per app basis.
+  :ref:`windows-10-privacy-call-history` to manage access on a per app basis.
 
 .. wregedit:: Disable access to call history on this device via Registry
   :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
@@ -18,7 +18,7 @@ Call History
   :data:      Deny
   :no_section:
 
-.. _windows-10-privacy-call:
+.. _windows-10-privacy-call-history:
 
 .. rubric:: Allow apps to access your call history
 

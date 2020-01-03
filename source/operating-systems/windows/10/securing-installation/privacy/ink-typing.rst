@@ -1,4 +1,4 @@
-.. _windows-10-reasonable-privacy-typing:
+.. _windows-10-reasonable-privacy-ink-typing:
 
 Ink & Typing Personalization
 ############################

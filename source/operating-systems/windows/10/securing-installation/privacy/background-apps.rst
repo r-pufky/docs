@@ -1,4 +1,4 @@
-.. _windows-10-reasonable-privacy-background:
+.. _windows-10-reasonable-privacy-background-apps:
 
 Background Apps
 ###############
@@ -17,7 +17,7 @@ the start menu search from breaking.
   :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
   :names:     LetAppsRunInBackground
   :types:     DWORD
-  :data:      2
+  :data:      0
   :no_section:
 
 .. gtable::   Disable specific apps access to your microphone via Registry
@@ -51,8 +51,10 @@ the start menu search from breaking.
            Microsoft.WindowsSoundRecorder_8wekyb3d8bbwe,
            Microsoft.Windows.SecHealthUI_cw5n1h2txyewy,
            Microsoft.XboxApp_8wekyb3d8bbwe,
-           Microsoft.YourPhone_8wekyb3d8bbwe
+           Microsoft.YourPhone_8wekyb3d8bbwe,
+           Microsoft.XboxDevices_8wekyb3d8bbwe
   :c1:     Value,
+           Value,
            Value,
            Value,
            Value,
@@ -101,8 +103,10 @@ the start menu search from breaking.
            SZ,
            SZ,
            SZ,
+           SZ,
            SZ
   :c3:     Deny,
+           Deny,
            Deny,
            Deny,
            Deny,
@@ -166,6 +170,7 @@ the start menu search from breaking.
               ›,
               ›,
               ›,
+              ›,
               ›
   :setting:   Enabled,
               User is in control,
@@ -193,7 +198,8 @@ the start menu search from breaking.
               Microsoft.WindowsSoundRecorder_8wekyb3d8bbwe,
               Microsoft.Windows.SecHealthUI_cw5n1h2txyewy,
               Microsoft.XboxApp_8wekyb3d8bbwe,
-              Microsoft.YourPhone_8wekyb3d8bbwe
+              Microsoft.YourPhone_8wekyb3d8bbwe,
+              Microsoft.XboxDevices_8wekyb3d8bbwe
   :no_section:
 
     .. note::

@@ -1,4 +1,4 @@
-.. _windows-10-reasonable-privacy-account:
+.. _windows-10-reasonable-privacy-account-info:
 
 Account Info
 ############
@@ -8,7 +8,7 @@ Account Info
 
 .. note::
   This disables all account info options. See
-  :ref:`windows-10-privacy-account` to manage access on a per app basis.
+  :ref:`windows-10-privacy-account-info` to manage access on a per app basis.
 
 .. wregedit:: Disable access to account info on this device via Registry
   :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
@@ -18,7 +18,7 @@ Account Info
   :data:      Deny
   :no_section:
 
-.. _windows-10-privacy-account:
+.. _windows-10-privacy-account-info:
 
 .. rubric:: Allow apps to access your account info
 
