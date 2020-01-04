@@ -29,8 +29,8 @@ this creeate a drastic performance hit.
   Get-PSDrive -PSProvider FileSystem | ForEach-Object -Process {Disable-ComputerRestore -Drive $_.Root -ErrorAction SilentlyContinue}
   vssadmin delete shadows /all /Quiet
 
-    .. note::
-      This will disable system restore on all mounted Filesystems.
+.. note::
+  This will disable system restore on all mounted Filesystems.
 
 .. wtschedule:: Disable schedule task for System Restore.
   :key_title:   Microsoft --> Windows --> SystemRestore --> SR --> RMB --> Disable
@@ -74,8 +74,8 @@ this creeate a drastic performance hit.
   :no_section:
   :no_launch:
 
-:term:`Registry`
-****************
+:term:`GPO`
+***********
 .. wgpolicy:: Disable system restore via machine GPO
   :key_title: Computer Configuration -->
               Administrative Templates -->
