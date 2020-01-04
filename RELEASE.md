@@ -1,5 +1,34 @@
 # [Changelog][3g]
 
+## 2019-01-03.0
+Telemetry updates and documentation clarification.
+
+Added:
+* Add delivery optimization windows settings.
+* Add disable of customer experience improvement program for windows.
+* Add registry entries for paging file.
+* Add windows spotlight disable.
+* Add application telemetry for windows.
+* Add disable for microsoft account sync in windows.
+* Add windows error reporting disable for windows.
+* Add facial recognition disable for Windows.
+* Add phone call, voice activation privacy sections for windows 10 1909.
+* Add voice activation to privacy settings for windows 1909.
+* Add ubiquity telemetry disabled instructions. Fucking idiots. …
+* Add GPG encryption documentation and yubikey verification.
+
+Changed:
+* Fix documentation formatting.
+* Use dyanmic system restore disable script. Add GPO management.
+* Update telemetry link.
+* Update system restore points with registry and powershell commands.
+* Update published documentation.
+* Clarify authy TOTP wording.
+* Update published documentation.
+* Standardize document names and ensure default values are correct.
+* Update Phone Calls privacy section for windows 1909.
+* Update pihole documentation with blocklist and blacklist locations.
+
 ## 2019-12-28.0
 Windows Telemetry, NGINX authz, Signal Notifications.
 
