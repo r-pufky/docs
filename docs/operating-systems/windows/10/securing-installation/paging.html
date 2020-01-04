@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="Disable Restore Points" href="restore.html" />
+    <link rel="next" title="Disable Restore Points" href="restore-points.html" />
     <link rel="prev" title="Remove Preinstalled Packages" href="remove-preinstalled-packages.html" /> 
 </head>
 
@@ -604,8 +604,35 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="remove-preinstalled-packages.html">Remove Preinstalled Packages</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Disable Paging</a></li>
-<li class="toctree-l3"><a class="reference internal" href="restore.html">Disable Restore Points</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Disable Paging</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#registry"><span class="xref std std-term">Registry</span></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="restore-points.html">Disable Restore Points</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="restore-points.html#registry"><span class="xref std std-term">Registry</span></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="facial-recognition.html">Disable Facial Recognition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="error-reporting.html">Disable Error Reporting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="error-reporting.html#registry"><span class="xref std std-term">Registry</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="error-reporting.html#gpo"><span class="xref std std-term">GPO</span></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="account-sync.html">Disable Account Sync</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="account-sync.html#registry"><span class="xref std std-term">Registry</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="account-sync.html#gpo"><span class="xref std std-term">GPO</span></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spotlight.html">Disable Spotlight</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spotlight.html#registry"><span class="xref std std-term">Registry</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotlight.html#gpo"><span class="xref std std-term">GPO</span></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="delivery-optimization.html">Disable Delivery Optimization</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="delivery-optimization.html#registry"><span class="xref std std-term">Registry</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="delivery-optimization.html#gpo"><span class="xref std std-term">GPO</span></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="service.html">Disable Services</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="service.html#services">Services</a></li>
 </ul>
@@ -1600,6 +1627,51 @@ re-enabled if certain programs rely on the paging file existing.</p>
 </div>
 </div></blockquote>
 </div>
+<div class="section" id="registry">
+<h2><a class="reference internal" href="../../../../glossary.html#term-registry"><span class="xref std std-term">Registry</span></a><a class="headerlink" href="#registry" title="Permalink to this headline">¶</a></h2>
+<div class="wregedit docutils container" id="Disable paging files on all drives via Registry">
+<span class="guilabel">Start › regedit.msc</span><table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Disable paging files on all drives via Registry</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management</span></td>
+</tr>
+<tr class="row-even"><td><p>PagingFiles</p></td>
+<td><p>MULTI_SZ</p></td>
+<td><p>{EMPTY}</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="wregedit docutils container" id="Disable swapfile for windows components via Registry">
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">Disable swapfile for windows components via Registry</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management</span></td>
+</tr>
+<tr class="row-even"><td><p>SwapfileControl</p></td>
+<td><p>DWORD</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">References</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.petri.com/pagefile_optimization">Windows pagefile Optimization</a></p></li>
+<li><p><a class="reference external" href="https://www.windowscentral.com/what-swapfilesys-and-do-i-need-it-my-windows-10-pc">Windows disabling swapfile</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Disassembler0/Win10-Initial-Setup-Script/issues/190">Windows swapfile explanation</a></p></li>
+</ol>
+</div>
 </div>
 
 
@@ -1610,7 +1682,7 @@ re-enabled if certain programs rely on the paging file existing.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="restore.html" class="btn btn-neutral float-right" title="Disable Restore Points" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="restore-points.html" class="btn btn-neutral float-right" title="Disable Restore Points" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="remove-preinstalled-packages.html" class="btn btn-neutral float-left" title="Remove Preinstalled Packages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

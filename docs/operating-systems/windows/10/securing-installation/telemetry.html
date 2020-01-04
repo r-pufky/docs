@@ -604,8 +604,35 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="remove-preinstalled-packages.html">Remove Preinstalled Packages</a></li>
-<li class="toctree-l3"><a class="reference internal" href="paging.html">Disable Paging</a></li>
-<li class="toctree-l3"><a class="reference internal" href="restore.html">Disable Restore Points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paging.html">Disable Paging</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="paging.html#registry"><span class="xref std std-term">Registry</span></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="restore-points.html">Disable Restore Points</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="restore-points.html#registry"><span class="xref std std-term">Registry</span></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="facial-recognition.html">Disable Facial Recognition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="error-reporting.html">Disable Error Reporting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="error-reporting.html#registry"><span class="xref std std-term">Registry</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="error-reporting.html#gpo"><span class="xref std std-term">GPO</span></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="account-sync.html">Disable Account Sync</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="account-sync.html#registry"><span class="xref std std-term">Registry</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="account-sync.html#gpo"><span class="xref std std-term">GPO</span></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="spotlight.html">Disable Spotlight</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="spotlight.html#registry"><span class="xref std std-term">Registry</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="spotlight.html#gpo"><span class="xref std std-term">GPO</span></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="delivery-optimization.html">Disable Delivery Optimization</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="delivery-optimization.html#registry"><span class="xref std std-term">Registry</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="delivery-optimization.html#gpo"><span class="xref std std-term">GPO</span></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="service.html">Disable Services</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="service.html#services">Services</a></li>
 </ul>
@@ -1644,6 +1671,96 @@ It is the same service name <code class="docutils literal notranslate"><span cla
 </tbody>
 </table>
 </div>
+<div class="wregedit docutils container" id="Turn off application telemetry via Registry">
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">Turn off application telemetry via Registry</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppCompat</span></td>
+</tr>
+<tr class="row-even"><td><p>AITEnable</p></td>
+<td><p>DWORD</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="wregedit docutils container" id="Disable inventory collector via Registry">
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-text">Disable inventory collector via Registry</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppCompat</span></td>
+</tr>
+<tr class="row-even"><td><p>DisableInventory</p></td>
+<td><p>DWORD</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="wregedit docutils container" id="Disable program compatibility assistant via Registry">
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-text">Disable program compatibility assistant via Registry</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppCompat</span></td>
+</tr>
+<tr class="row-even"><td><p>DisablePCA</p></td>
+<td><p>DWORD</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="wregedit docutils container" id="Disable steps recorder via Registry">
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-text">Disable steps recorder via Registry</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppCompat</span></td>
+</tr>
+<tr class="row-even"><td><p>DisableUAR</p></td>
+<td><p>DWORD</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="wregedit docutils container" id="Disable customer experience improvement program via Registry">
+<table class="docutils align-default" id="id8">
+<caption><span class="caption-text">Disable <a class="reference external" href="https://www.windowscentral.com/how-opt-out-customer-experience-improvement-program-windows-10">customer experience improvement program</a> via Registry</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SQMClient\Windows</span></td>
+</tr>
+<tr class="row-even"><td><p>CEIPEnable</p></td>
+<td><p>DWORD</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div class="section" id="gpo">
 <h2><a class="reference internal" href="../../../../glossary.html#term-gpo"><span class="xref std std-term">GPO</span></a><a class="headerlink" href="#gpo" title="Permalink to this headline">¶</a></h2>
@@ -1653,8 +1770,8 @@ It is the same service name <code class="docutils literal notranslate"><span cla
 <a class="reference internal" href="../../../../glossary.html#term-gpo"><span class="xref std std-term">GPO</span></a>’s are set.</p>
 </div>
 <div class="wgrouppolicy docutils container" id="Restrict data collection to basic via machine GPO">
-<span class="guilabel">Start › gpedit.msc</span><table class="docutils align-default" id="id4">
-<caption><span class="caption-text">Restrict data collection to basic via machine GPO</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<span class="guilabel">Start › gpedit.msc</span><table class="docutils align-default" id="id9">
+<caption><span class="caption-text">Restrict data collection to basic via machine GPO</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -1672,8 +1789,8 @@ It is the same service name <code class="docutils literal notranslate"><span cla
 </table>
 </div>
 <div class="wgrouppolicy docutils container" id="Restrict data collection to basic via user GPO">
-<table class="docutils align-default" id="id5">
-<caption><span class="caption-text">Restrict data collection to basic via user GPO</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="id10">
+<caption><span class="caption-text">Restrict data collection to basic via user GPO</span><a class="headerlink" href="#id10" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -1690,9 +1807,9 @@ It is the same service name <code class="docutils literal notranslate"><span cla
 </tbody>
 </table>
 </div>
-<div class="wgrouppolicy docutils container" id="Disable application telemetry via machine GPO">
-<table class="docutils align-default" id="id6">
-<caption><span class="caption-text">Disable application telemetry via machine GPO</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<div class="wgrouppolicy docutils container" id="Disable application telemetry via user GPO">
+<table class="docutils align-default" id="id11">
+<caption><span class="caption-text">Disable application telemetry via user GPO</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -1707,8 +1824,8 @@ It is the same service name <code class="docutils literal notranslate"><span cla
 </table>
 </div>
 <div class="wgrouppolicy docutils container" id="Make Desktop Analytics use Telemetry setting via machine GPO">
-<table class="docutils align-default" id="id7">
-<caption><span class="caption-text">Make Desktop Analytics use Telemetry setting via machine GPO</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="id12">
+<caption><span class="caption-text">Make Desktop Analytics use Telemetry setting via machine GPO</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -1723,8 +1840,8 @@ It is the same service name <code class="docutils literal notranslate"><span cla
 </table>
 </div>
 <div class="wgrouppolicy docutils container" id="Disable sending browser history for Edge via machine GPO">
-<span class="guilabel">Start › gpedit.msc</span><table class="docutils align-default" id="id8">
-<caption><span class="caption-text">Disable sending browser history for Edge via machine GPO</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
+<span class="guilabel">Start › gpedit.msc</span><table class="docutils align-default" id="id13">
+<caption><span class="caption-text">Disable sending browser history for Edge via machine GPO</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -1738,9 +1855,9 @@ It is the same service name <code class="docutils literal notranslate"><span cla
 </tbody>
 </table>
 </div>
-<div class="wgrouppolicy docutils container" id="Disable sending browser history for Edge via machine GPO">
-<table class="docutils align-default" id="id9">
-<caption><span class="caption-text">Disable sending browser history for Edge via machine GPO</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
+<div class="wgrouppolicy docutils container" id="Disable sending browser history for Edge via user GPO">
+<table class="docutils align-default" id="id14">
+<caption><span class="caption-text">Disable sending browser history for Edge via user GPO</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -1750,6 +1867,22 @@ It is the same service name <code class="docutils literal notranslate"><span cla
 </tr>
 <tr class="row-even"><td><p>☑</p></td>
 <td><p>Disabled</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="wgrouppolicy docutils container" id="Disable customer experience improvement program via machine GPO">
+<table class="docutils align-default" id="id15">
+<caption><span class="caption-text">Disable <a class="reference external" href="https://www.windowscentral.com/how-opt-out-customer-experience-improvement-program-windows-10">customer experience improvement program</a> via machine GPO</span><a class="headerlink" href="#id15" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="3"><span class="guilabel">Computer Configuration › Administrative Templates › System › Internet Communication Management › Internet Communication settings › Turn off Windows Customer Experience Improvement Program</span></td>
+</tr>
+<tr class="row-even"><td><p>☑</p></td>
+<td><p>Enabled</p></td>
 </tr>
 </tbody>
 </table>
@@ -1765,8 +1898,8 @@ changed. See references for additional documentation.</p>
 <a class="reference internal" href="../../../../services/pihole/index.html#service-pihole"><span class="std std-ref">Pi-Hole</span></a> and <a class="reference internal" href="../../../../networking/ubiquiti/edge-os.html#networking-dnat-for-captive-dns"><span class="std std-ref">DNAT for Captive DNS</span></a>.</p>
 </div>
 <div class="gtable docutils container" id="Connected User Experiences and Telemetry endpoints">
-<table class="docutils align-default" id="id10">
-<caption><span class="caption-text">Connected User Experiences and Telemetry endpoints</span><a class="headerlink" href="#id10" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="id16">
+<caption><span class="caption-text">Connected User Experiences and Telemetry endpoints</span><a class="headerlink" href="#id16" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
@@ -1805,8 +1938,8 @@ prefix changes by country, e.g.: <strong>de</strong>.vortex-win.data.microsoft.c
 </div></blockquote>
 </div>
 <div class="gtable docutils container" id="Diagnostic data services">
-<table class="docutils align-default" id="id11">
-<caption><span class="caption-text">Diagnostic data services</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="id17">
+<caption><span class="caption-text">Diagnostic data services</span><a class="headerlink" href="#id17" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -1860,6 +1993,7 @@ prefix changes by country, e.g.: <strong>de</strong>.vortex-win.data.microsoft.c
 <li><p><a class="reference external" href="https://docs.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization">Configure Windows Diagnostic Data</a></p></li>
 <li><p><a class="reference external" href="https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services">Manage connections from Windows 10 to Microsoft Services</a></p></li>
 <li><p><a class="reference external" href="https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services">Manage connections from Windows 10 OS components to Microsoft Services</a></p></li>
+<li><p><a class="reference external" href="https://getadmx.com/HKLM/Software/Policies/Microsoft/Windows/AppCompat">Application Telemetry</a></p></li>
 </ol>
 </div>
 </div>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Disable Restore Points &mdash; Generic service &amp; computer documentation.  documentation</title>
+  <title>Disable Spotlight &mdash; Generic service &amp; computer documentation.  documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="Disable Services" href="service.html" />
-    <link rel="prev" title="Disable Paging" href="paging.html" /> 
+    <link rel="next" title="Disable Delivery Optimization" href="delivery-optimization.html" />
+    <link rel="prev" title="Disable Account Sync" href="account-sync.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -604,8 +604,35 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="remove-preinstalled-packages.html">Remove Preinstalled Packages</a></li>
-<li class="toctree-l3"><a class="reference internal" href="paging.html">Disable Paging</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Disable Restore Points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="paging.html">Disable Paging</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="paging.html#registry"><span class="xref std std-term">Registry</span></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="restore-points.html">Disable Restore Points</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="restore-points.html#registry"><span class="xref std std-term">Registry</span></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="facial-recognition.html">Disable Facial Recognition</a></li>
+<li class="toctree-l3"><a class="reference internal" href="error-reporting.html">Disable Error Reporting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="error-reporting.html#registry"><span class="xref std std-term">Registry</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="error-reporting.html#gpo"><span class="xref std std-term">GPO</span></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="account-sync.html">Disable Account Sync</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="account-sync.html#registry"><span class="xref std std-term">Registry</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="account-sync.html#gpo"><span class="xref std std-term">GPO</span></a></li>
+</ul>
+</li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Disable Spotlight</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#registry"><span class="xref std std-term">Registry</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gpo"><span class="xref std std-term">GPO</span></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="delivery-optimization.html">Disable Delivery Optimization</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="delivery-optimization.html#registry"><span class="xref std std-term">Registry</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="delivery-optimization.html#gpo"><span class="xref std std-term">GPO</span></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="service.html">Disable Services</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="service.html#services">Services</a></li>
 </ul>
@@ -1541,7 +1568,7 @@
         
           <li><a href="index.html">Windows 10 Pro Securing Install</a> &raquo;</li>
         
-      <li>Disable Restore Points</li>
+      <li>Disable Spotlight</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -1558,37 +1585,262 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="disable-restore-points">
-<span id="windows-10-disable-restore"></span><h1>Disable Restore Points<a class="headerlink" href="#disable-restore-points" title="Permalink to this headline">¶</a></h1>
-<p>All system changes trigger a backup of affect files before changes are applied;
-this creeate a drastic performance hit</p>
-<div class="ggui docutils container" id="Disable restore points for each drive">
-<table class="docutils align-default" id="id1">
-<caption><span class="caption-text">Disable restore points for each drive</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+  <div class="section" id="disable-spotlight">
+<span id="windows-10-disable-spotlight"></span><h1>Disable Spotlight<a class="headerlink" href="#disable-spotlight" title="Permalink to this headline">¶</a></h1>
+<p>Downloads pictures and advertisments to show while computer is locked. Disable
+this.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>After every major windows update, verify these settings.</p>
+</div>
+<div class="section" id="registry">
+<h2><a class="reference internal" href="../../../../glossary.html#term-registry"><span class="xref std std-term">Registry</span></a><a class="headerlink" href="#registry" title="Permalink to this headline">¶</a></h2>
+<div class="wregedit docutils container" id="Disable all spotlight features via Registry">
+<span class="guilabel">Start › regedit.msc</span><table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Disable all spotlight features via Registry</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CloudContent</span></td>
+</tr>
+<tr class="row-even"><td><p>DisableWindowsSpotlightFeatures</p></td>
+<td><p>DWORD</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="wregedit docutils container" id="Disable third-party content in spotlight via Registry">
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Disable third-party content in spotlight via Registry</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CloudContent</span></td>
+</tr>
+<tr class="row-even"><td><p>DisableThirdPartySuggestions</p></td>
+<td><p>DWORD</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="wregedit docutils container" id="Disable diagnostic data for spotlight via Registry">
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Disable diagnostic data for spotlight via Registry</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CloudContent</span></td>
+</tr>
+<tr class="row-even"><td><p>DisableTailoredExperiencesWithDiagnosticData</p></td>
+<td><p>DWORD</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="wregedit docutils container" id="Disable all spotlight features on lock screen via Registry">
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">Disable all spotlight features on lock screen via Registry</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CloudContent</span></td>
+</tr>
+<tr class="row-even"><td><p>ConfigureWindowsSpotlight</p></td>
+<td><p>DWORD</p></td>
+<td><p>2</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="wregedit docutils container" id="Disable action center notifications on spotlight via Registry">
+<table class="docutils align-default" id="id5">
+<caption><span class="caption-text">Disable action center notifications on spotlight via Registry</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CloudContent</span></td>
+</tr>
+<tr class="row-even"><td><p>DisableWindowsSpotlightOnActionCenter</p></td>
+<td><p>DWORD</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="wregedit docutils container" id="Disable spotlight notifications for settings via Registry">
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-text">Disable spotlight notifications for settings via Registry</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CloudContent</span></td>
+</tr>
+<tr class="row-even"><td><p>DisableWindowsSpotlightOnSettings</p></td>
+<td><p>DWORD</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="wregedit docutils container" id="Disable spotlight windows experience via Registry">
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-text">Disable spotlight windows experience via Registry</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CloudContent</span></td>
+</tr>
+<tr class="row-even"><td><p>DisableWindowsSpotlightWindowsWelcomeExperience</p></td>
+<td><p>DWORD</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="gpo">
+<h2><a class="reference internal" href="../../../../glossary.html#term-gpo"><span class="xref std std-term">GPO</span></a><a class="headerlink" href="#gpo" title="Permalink to this headline">¶</a></h2>
+<div class="wgrouppolicy docutils container" id="Disable all spotlight features via user GPO">
+<span class="guilabel">Start › gpedit.msc</span><table class="docutils align-default" id="id8">
+<caption><span class="caption-text">Disable all spotlight features via user GPO</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td colspan="3"><span class="guilabel">⌘ + r › systempropertiesprotection › Protection Settings › {DRIVE} › Configure</span></td>
+<tr class="row-odd"><td colspan="3"><span class="guilabel">User Configuration › Administrative Templates › Windows Components › Cloud Content › Turn off all Windows spotlight features</span></td>
 </tr>
 <tr class="row-even"><td><p>☑</p></td>
-<td><p>Disable system protection</p></td>
-</tr>
-<tr class="row-odd"><td><p>Max Usage</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-even"><td><p>Delete all restore points for this drive</p></td>
-<td><p>Delete</p></td>
+<td><p>Enabled</p></td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<div><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Be sure to set this for each drive explicitly.</p>
 </div>
-</div></blockquote>
+<div class="wgrouppolicy docutils container" id="Disable third-party content in spotlight via user GPO">
+<table class="docutils align-default" id="id9">
+<caption><span class="caption-text">Disable third-party content in spotlight via user GPO</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="3"><span class="guilabel">User Configuration › Administrative Templates › Windows Components › Cloud Content › Do not suggest third-party content in Windows spotlight</span></td>
+</tr>
+<tr class="row-even"><td><p>☑</p></td>
+<td><p>Enabled</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="wgrouppolicy docutils container" id="Disable diagnostic data for spotlight via user GPO">
+<table class="docutils align-default" id="id10">
+<caption><span class="caption-text">Disable diagnostic data for spotlight via user GPO</span><a class="headerlink" href="#id10" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="3"><span class="guilabel">User Configuration › Administrative Templates › Windows Components › Cloud Content › Do not use diagnostic data for tailored experiences</span></td>
+</tr>
+<tr class="row-even"><td><p>☑</p></td>
+<td><p>Enabled</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="wgrouppolicy docutils container" id="Disable all spotlight features on lock screen via user GPO">
+<table class="docutils align-default" id="id11">
+<caption><span class="caption-text">Disable all spotlight features on lock screen via user GPO</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="3"><span class="guilabel">User Configuration › Administrative Templates › Windows Components › Cloud Content › Configure Windows spotlight on lock screen</span></td>
+</tr>
+<tr class="row-even"><td><p>☑</p></td>
+<td><p>Disabled</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="wgrouppolicy docutils container" id="Disable action center notifications on spotlight via user GPO">
+<table class="docutils align-default" id="id12">
+<caption><span class="caption-text">Disable action center notifications on spotlight via user GPO</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="3"><span class="guilabel">User Configuration › Administrative Templates › Windows Components › Cloud Content › Turn off Windows Spotlight on Action Center</span></td>
+</tr>
+<tr class="row-even"><td><p>☑</p></td>
+<td><p>Enabled</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="wgrouppolicy docutils container" id="Disable spotlight notifications for settings via user GPO">
+<table class="docutils align-default" id="id13">
+<caption><span class="caption-text">Disable spotlight notifications for settings via user GPO</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="3"><span class="guilabel">User Configuration › Administrative Templates › Windows Components › Cloud Content › Turn off Windows Spotlight on Settings</span></td>
+</tr>
+<tr class="row-even"><td><p>☑</p></td>
+<td><p>Enabled</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="wgrouppolicy docutils container" id="Disable spotlight windows experience via user GPO">
+<table class="docutils align-default" id="id14">
+<caption><span class="caption-text">Disable spotlight windows experience via user GPO</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="3"><span class="guilabel">User Configuration › Administrative Templates › Windows Components › Cloud Content › Turn off the Windows Welcome Experience</span></td>
+</tr>
+<tr class="row-even"><td><p>☑</p></td>
+<td><p>Enabled</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">References</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://docs.microsoft.com/en-us/windows/configuration/windows-spotlight">Manage Windows Spotlight Group Policy</a></p></li>
+<li><p><a class="reference external" href="https://getadmx.com/?Category=Windows_10_2016&amp;Policy=Microsoft.Policies.CloudContent::DisableWindowsSpotlightFeatures">Manage Windows Spotlight Registry</a></p></li>
+</ol>
 </div>
 </div>
 
@@ -1600,10 +1852,10 @@ this creeate a drastic performance hit</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="service.html" class="btn btn-neutral float-right" title="Disable Services" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="delivery-optimization.html" class="btn btn-neutral float-right" title="Disable Delivery Optimization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="paging.html" class="btn btn-neutral float-left" title="Disable Paging" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="account-sync.html" class="btn btn-neutral float-left" title="Disable Account Sync" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
