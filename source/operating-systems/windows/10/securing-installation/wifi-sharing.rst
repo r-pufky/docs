@@ -32,4 +32,8 @@ crowdsharing and identified hotspots. Disable this.
   :setting:   Disabled
   :no_section:
 
+.. rubric:: References
+
+#. `Wifi Sharing Settings <https://docs.microsoft.com/en-us/windows/client-management/mdm/policy-csp-wifi>`_
+
 .. _Disable Wifi Sharing: https://www.thewindowsclub.com/disable-wi-fi-sense-windows-10-enterprise
