@@ -81,6 +81,14 @@ Services
   :no_section:
   :no_launch:
 
+.. wregedit:: Disable `cusomter experience improvement program`_ via Registry
+  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SQMClient\Windows
+  :names:     CEIPEnable
+  :types:     DWORD
+  :data:      0
+  :no_section:
+  :no_launch:
+
 :term:`GPO`
 ***********
 .. note::
@@ -112,7 +120,7 @@ Services
   :no_section:
   :no_launch:
 
-.. wgpolicy:: Disable application telemetry via machine GPO
+.. wgpolicy:: Disable application telemetry via user GPO
   :key_title: User Configuration -->
               Administrative Templates -->
               Windows Components -->
@@ -144,7 +152,7 @@ Services
   :setting:   Disabled
   :no_section:
 
-.. wgpolicy:: Disable sending browser history for Edge via machine GPO
+.. wgpolicy:: Disable sending browser history for Edge via user GPO
   :key_title: User Configuration -->
               Administrative Templates -->
               Windows Components -->
@@ -152,6 +160,18 @@ Services
               Configure collection of browsing data for Microsoft 365 Analytics
   :option:    ☑
   :setting:   Disabled
+  :no_section:
+  :no_launch:
+
+.. wgpolicy:: Disable `customer experience improvement program`_ via machine GPO
+  :key_title: Computer Configuration -->
+              Administrative Templates -->
+              System -->
+              Internet Communication Management -->
+              Internet Communication settings -->
+              Turn off Windows Customer Experience Improvement Program
+  :option:    ☑
+  :setting:   Enabled
   :no_section:
   :no_launch:
 
@@ -228,7 +248,9 @@ changed. See references for additional documentation.
 #. `Manage connections from Windows 10 OS components to Microsoft Services <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services>`_
 #. `Application Telemetry <https://getadmx.com/HKLM/Software/Policies/Microsoft/Windows/AppCompat>`_
 
+
 .. _Telemetry Info: https://www.forbes.com/sites/gordonkelly/2015/11/24/windows-10-automatic-spying-begins-again/
 .. _diagnostic data levels: https://docs.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization#security-level
 .. _Disable infection reporting: https://support.microsoft.com/en-us/help/891716/deploy-windows-malicious-software-removal-tool-in-an-enterprise-enviro
 .. _Endpoints for telemetry: https://docs.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization#how-microsoft-handles-diagnostic-data
+.. _customer experience improvement program: https://www.windowscentral.com/how-opt-out-customer-experience-improvement-program-windows-10
