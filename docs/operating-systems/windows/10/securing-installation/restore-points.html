@@ -610,6 +610,7 @@
 </li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Disable Restore Points</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#registry"><span class="xref std std-term">Registry</span></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gpo"><span class="xref std std-term">GPO</span></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="facial-recognition.html">Disable Facial Recognition</a></li>
@@ -1619,10 +1620,14 @@ this creeate a drastic performance hit.</p>
 </div>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://github.com/adolfintel/Windows10-Privacy#system-restore">Disable restore points</a> powershell (as admin)</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Disable-ComputerRestore</span> <span class="n">-Drive</span> <span class="s2">&quot;C:\&quot;</span>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Get-PSDrive</span> <span class="n">-PSProvider</span> <span class="n">FileSystem</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="n">-Process</span> <span class="p">{</span><span class="nb">Disable-ComputerRestore</span> <span class="n">-Drive</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Root</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span><span class="p">}</span>
 <span class="n">vssadmin</span> <span class="n">delete</span> <span class="n">shadows</span> <span class="p">/</span><span class="n">all</span> <span class="p">/</span><span class="n">Quiet</span>
 </pre></div>
 </div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This will disable system restore on all mounted Filesystems.</p>
 </div>
 <div class="wtaskscheduler docutils container" id="Disable schedule task for System Restore.">
 <span class="guilabel">Start › Task Scheduler › Task Scheduler Library</span><table class="docutils align-default">
@@ -1716,6 +1721,45 @@ this creeate a drastic performance hit.</p>
 </tbody>
 </table>
 </div>
+</div>
+<div class="section" id="gpo">
+<h2><a class="reference internal" href="../../../../glossary.html#term-gpo"><span class="xref std std-term">GPO</span></a><a class="headerlink" href="#gpo" title="Permalink to this headline">¶</a></h2>
+<div class="wgrouppolicy docutils container" id="Disable system restore via machine GPO">
+<span class="guilabel">Start › gpedit.msc</span><table class="docutils align-default" id="id8">
+<caption><span class="caption-text">Disable system restore via machine GPO</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="3"><span class="guilabel">Computer Configuration › Administrative Templates › System › System Restore › Turn off System Restore</span></td>
+</tr>
+<tr class="row-even"><td><p>☑</p></td>
+<td><p>Enabled</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="wgrouppolicy docutils container" id="Disable system restore configuration via machine GPO">
+<span class="guilabel">Start › gpedit.msc</span><table class="docutils align-default" id="id9">
+<caption><span class="caption-text">Disable system restore configuration via machine GPO</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="3"><span class="guilabel">Computer Configuration › Administrative Templates › System › System Restore › Turn off Configuration</span></td>
+</tr>
+<tr class="row-even"><td><p>☑</p></td>
+<td><p>Enabled</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">References</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://www.sevenforums.com/tutorials/81500-system-restore-enable-disable.html">Disable System Restore</a></p></li>
+</ol>
 </div>
 </div>
 
