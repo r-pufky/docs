@@ -26,8 +26,11 @@ this creeate a drastic performance hit.
 .. code-block:: powershell
   :caption: `Disable restore points`_ powershell (as admin)
 
-  Disable-ComputerRestore -Drive "C:\"
+  Get-PSDrive -PSProvider FileSystem | ForEach-Object -Process {Disable-ComputerRestore -Drive $_.Root -ErrorAction SilentlyContinue}
   vssadmin delete shadows /all /Quiet
+
+    .. note::
+      This will disable system restore on all mounted Filesystems.
 
 .. wtschedule:: Disable schedule task for System Restore.
   :key_title:   Microsoft --> Windows --> SystemRestore --> SR --> RMB --> Disable
@@ -70,5 +73,31 @@ this creeate a drastic performance hit.
   :data:      1
   :no_section:
   :no_launch:
+
+:term:`Registry`
+****************
+.. wgpolicy:: Disable system restore via machine GPO
+  :key_title: Computer Configuration -->
+              Administrative Templates -->
+              System -->
+              System Restore -->
+              Turn off System Restore
+  :option:    ☑
+  :setting:   Enabled
+  :no_section:
+
+.. wgpolicy:: Disable system restore configuration via machine GPO
+  :key_title: Computer Configuration -->
+              Administrative Templates -->
+              System -->
+              System Restore -->
+              Turn off Configuration
+  :option:    ☑
+  :setting:   Enabled
+  :no_section:
+
+.. rubric:: References
+
+#. `Disable System Restore <https://www.sevenforums.com/tutorials/81500-system-restore-enable-disable.html>`_
 
 .. _Disable restore points: https://github.com/adolfintel/Windows10-Privacy#system-restore
