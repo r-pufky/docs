@@ -27,6 +27,16 @@ See :ref:`windows-10-disable-telemetry` for additional telemetry services.
 
 :term:`Registry`
 ****************
+.. wregedit:: `Disable Tamper Protection`_ via Registry
+  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Defender\Features
+  :names:     TamperProtection
+  :types:     DWORD
+  :data:      0
+  :no_section:
+
+    .. note::
+      There is no :term:`GPO` for this. ``5`` enables protection.
+
 .. wregedit:: Disconnect from Microsoft Antimalware Protection Service and
               disable sending files to Microsoft via Registry
   :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\
@@ -38,6 +48,7 @@ See :ref:`windows-10-disable-telemetry` for additional telemetry services.
   :data:      0,
               2
   :no_section:
+  :no_launch:
 
 .. wregedit:: Delete named setting for Windows Defender via Registry
   :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\
@@ -322,3 +333,4 @@ changed. See references for additional documentation.
 .. _Endpoints for telemetry: https://docs.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization#how-microsoft-handles-diagnostic-data
 .. _Disable Windows Defender: https://www.tenforums.com/tutorials/5918-turn-off-windows-defender-antivirus-windows-10-a.html
 .. _disabling windows defender icon: https://appuals.com/how-to-remove-windows-defender-icon-on-windows-10/
+.. _Disable Tamper Protection: https://www.thewindowsclub.com/how-to-enable-tamper-protection-in-windows-10
