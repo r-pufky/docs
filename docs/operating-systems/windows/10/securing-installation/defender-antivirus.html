@@ -1587,7 +1587,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="disable-windows-defender">
-<span id="windows-10-disable-defender"></span><h1><a class="reference external" href="https://www.tenforums.com/tutorials/5918-turn-off-windows-defender-antivirus-windows-10-a.html">Disable Windows Defender</a><a class="headerlink" href="#disable-windows-defender" title="Permalink to this headline">¶</a></h1>
+<span id="windows-10-disable-defender-antivirus"></span><h1><a class="reference external" href="https://www.tenforums.com/tutorials/5918-turn-off-windows-defender-antivirus-windows-10-a.html">Disable Windows Defender</a><a class="headerlink" href="#disable-windows-defender" title="Permalink to this headline">¶</a></h1>
 <p>Don’t turn this off unless you know what you are doing. You should first disable
 all of the options for windows defender before disabling the service, as
 cloud-based protection will cause 100% disk usage (in settings).</p>
@@ -1598,7 +1598,7 @@ cloud-based protection will cause 100% disk usage (in settings).</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Windows 1903+ may require <code class="docutils literal notranslate"><span class="pre">Tamper</span> <span class="pre">Protection</span></code> to be <strong>disabled</strong> before
+<p>Windows 1903+ requires <code class="docutils literal notranslate"><span class="pre">Tamper</span> <span class="pre">Protection</span></code> to be <strong>disabled</strong> before
 Windows Defender can be disabled.</p>
 <blockquote>
 <div><div class="ggui docutils container" id="Disable Tamper Protection to remove Windows Defender">
@@ -1617,13 +1617,20 @@ Windows Defender can be disabled.</p>
 </tbody>
 </table>
 </div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">powershell (as admin)</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">PsExec64</span><span class="p">.</span><span class="n">exe</span> <span class="n">-accepteula</span> <span class="n">-d</span> <span class="n">-i</span> <span class="n">-s</span> <span class="n">powershell</span> <span class="n">-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="nb">Set-Itemproperty</span> <span class="n">-path</span> <span class="s1">&#39;HKLM:SOFTWARE\Microsoft\Windows Defender\Features&#39;</span> <span class="n">-Name</span> <span class="s1">&#39;TamperProtection&#39;</span> <span class="n">-value</span> <span class="n">0</span>
+</pre></div>
+</div>
+</div>
+<p>Sysinternals <a class="reference external" href="https://docs.microsoft.com/en-us/sysinternals/downloads/pstools">PSTools</a> need to be installed disable via powershell.</p>
 </div></blockquote>
 </div>
 <div class="section" id="registry">
 <h2><a class="reference internal" href="../../../../glossary.html#term-registry"><span class="xref std std-term">Registry</span></a><a class="headerlink" href="#registry" title="Permalink to this headline">¶</a></h2>
 <div class="wregedit docutils container" id="Disable Tamper Protection via Registry">
-<span class="guilabel">Start › regedit.msc</span><table class="docutils align-default" id="id3">
-<caption><span class="caption-text"><a class="reference external" href="https://www.thewindowsclub.com/how-to-enable-tamper-protection-in-windows-10">Disable Tamper Protection</a> via Registry</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<span class="guilabel">Start › regedit.msc</span><table class="docutils align-default" id="id4">
+<caption><span class="caption-text"><a class="reference external" href="https://www.tenforums.com/tutorials/123792-turn-off-tamper-protection-windows-defender-antivirus.html">Disable Tamper Protection</a> via Registry</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -1646,9 +1653,9 @@ Windows Defender can be disabled.</p>
 </div></blockquote>
 </div>
 <div class="wregedit docutils container" id="Disconnect from Microsoft Antimalware Protection Service and             disable sending files to Microsoft via Registry">
-<table class="docutils align-default" id="id4">
+<table class="docutils align-default" id="id5">
 <caption><span class="caption-text">Disconnect from Microsoft Antimalware Protection Service and
-            disable sending files to Microsoft via Registry</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+            disable sending files to Microsoft via Registry</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -1669,8 +1676,8 @@ Windows Defender can be disabled.</p>
 </table>
 </div>
 <div class="wregedit docutils container" id="Delete named setting for Windows Defender via Registry">
-<table class="docutils align-default" id="id5">
-<caption><span class="caption-text">Delete named setting for Windows Defender via Registry</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="id6">
+<caption><span class="caption-text">Delete named setting for Windows Defender via Registry</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -1687,8 +1694,8 @@ Windows Defender can be disabled.</p>
 </table>
 </div>
 <div class="wregedit docutils container" id="Stop downloading updates for Windows Defender via Registry">
-<table class="docutils align-default" id="id6">
-<caption><span class="caption-text">Stop downloading updates for Windows Defender via Registry</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="id7">
+<caption><span class="caption-text">Stop downloading updates for Windows Defender via Registry</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -1709,8 +1716,8 @@ Windows Defender can be disabled.</p>
 </table>
 </div>
 <div class="wregedit docutils container" id="Disable Malicious Software Reporting Tool via Registry">
-<table class="docutils align-default" id="id7">
-<caption><span class="caption-text">Disable Malicious Software Reporting Tool via Registry</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="id8">
+<caption><span class="caption-text">Disable Malicious Software Reporting Tool via Registry</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -1733,8 +1740,8 @@ Windows Defender can be disabled.</p>
 </div></blockquote>
 </div>
 <div class="wregedit docutils container" id="Disable Windows Defender Enhanced Notifications via Registry">
-<table class="docutils align-default" id="id8">
-<caption><span class="caption-text">Disable Windows Defender Enhanced Notifications via Registry</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="id9">
+<caption><span class="caption-text">Disable Windows Defender Enhanced Notifications via Registry</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -1751,8 +1758,8 @@ Windows Defender can be disabled.</p>
 </table>
 </div>
 <div class="wregedit docutils container" id="Disable Windows Defender Smart Screen for system via Registry">
-<table class="docutils align-default" id="id9">
-<caption><span class="caption-text">Disable Windows Defender Smart Screen for system via Registry</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="id10">
+<caption><span class="caption-text">Disable Windows Defender Smart Screen for system via Registry</span><a class="headerlink" href="#id10" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -1769,8 +1776,8 @@ Windows Defender can be disabled.</p>
 </table>
 </div>
 <div class="wregedit docutils container" id="Disable Windows store only app recommendations via Registry">
-<table class="docutils align-default" id="id10">
-<caption><span class="caption-text">Disable Windows store only app recommendations via Registry</span><a class="headerlink" href="#id10" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="id11">
+<caption><span class="caption-text">Disable Windows store only app recommendations via Registry</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -1797,8 +1804,8 @@ Windows Defender can be disabled.</p>
 </div></blockquote>
 </div>
 <div class="wregedit docutils container" id="Disable Windows Defender via Registry">
-<table class="docutils align-default" id="id11">
-<caption><span class="caption-text">Disable Windows Defender via Registry</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="id12">
+<caption><span class="caption-text">Disable Windows Defender via Registry</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -1818,9 +1825,9 @@ Windows Defender can be disabled.</p>
 <div class="section" id="gpo">
 <h2><a class="reference internal" href="../../../../glossary.html#term-gpo"><span class="xref std std-term">GPO</span></a><a class="headerlink" href="#gpo" title="Permalink to this headline">¶</a></h2>
 <div class="wgrouppolicy docutils container" id="Disconnect from Microsoft Antimalware Protection Service via             machine GPO">
-<span class="guilabel">Start › gpedit.msc</span><table class="docutils align-default" id="id12">
+<span class="guilabel">Start › gpedit.msc</span><table class="docutils align-default" id="id13">
 <caption><span class="caption-text">Disconnect from Microsoft Antimalware Protection Service via
-            machine GPO</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
+            machine GPO</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -1835,8 +1842,8 @@ Windows Defender can be disabled.</p>
 </table>
 </div>
 <div class="wgrouppolicy docutils container" id="Disable sending files to Microsoft via machine GPO">
-<table class="docutils align-default" id="id13">
-<caption><span class="caption-text">Disable sending files to Microsoft via machine GPO</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="id14">
+<caption><span class="caption-text">Disable sending files to Microsoft via machine GPO</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -1851,8 +1858,8 @@ Windows Defender can be disabled.</p>
 </table>
 </div>
 <div class="wgrouppolicy docutils container" id="Disable Windows Defender Enhanced Notifications via machine GPO">
-<table class="docutils align-default" id="id14">
-<caption><span class="caption-text">Disable Windows Defender Enhanced Notifications via machine GPO</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="id15">
+<caption><span class="caption-text">Disable Windows Defender Enhanced Notifications via machine GPO</span><a class="headerlink" href="#id15" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -1867,8 +1874,8 @@ Windows Defender can be disabled.</p>
 </table>
 </div>
 <div class="wgrouppolicy docutils container" id="Disable Windows Defender Smart Screen for system via machine GPO">
-<table class="docutils align-default" id="id15">
-<caption><span class="caption-text">Disable Windows Defender Smart Screen for system via machine GPO</span><a class="headerlink" href="#id15" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="id16">
+<caption><span class="caption-text">Disable Windows Defender Smart Screen for system via machine GPO</span><a class="headerlink" href="#id16" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -1883,9 +1890,9 @@ Windows Defender can be disabled.</p>
 </table>
 </div>
 <div class="wgrouppolicy docutils container" id="Disable Windows Defender Smart Screen Windows store only app             recommendations via machine GPO">
-<table class="docutils align-default" id="id16">
+<table class="docutils align-default" id="id17">
 <caption><span class="caption-text">Disable Windows Defender Smart Screen Windows store only app
-            recommendations via machine GPO</span><a class="headerlink" href="#id16" title="Permalink to this table">¶</a></caption>
+            recommendations via machine GPO</span><a class="headerlink" href="#id17" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -1903,9 +1910,9 @@ Windows Defender can be disabled.</p>
 </table>
 </div>
 <div class="wgrouppolicy docutils container" id="Disable Windows Defender Smart Screen for file explorer via             machine GPO">
-<table class="docutils align-default" id="id17">
+<table class="docutils align-default" id="id18">
 <caption><span class="caption-text">Disable Windows Defender Smart Screen for file explorer via
-            machine GPO</span><a class="headerlink" href="#id17" title="Permalink to this table">¶</a></caption>
+            machine GPO</span><a class="headerlink" href="#id18" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -1920,8 +1927,8 @@ Windows Defender can be disabled.</p>
 </table>
 </div>
 <div class="wgrouppolicy docutils container" id="Turn off Windows Defender via machine GPO">
-<table class="docutils align-default" id="id18">
-<caption><span class="caption-text">Turn off Windows Defender via machine GPO</span><a class="headerlink" href="#id18" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="id19">
+<caption><span class="caption-text">Turn off Windows Defender via machine GPO</span><a class="headerlink" href="#id19" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -1936,8 +1943,8 @@ Windows Defender can be disabled.</p>
 </table>
 </div>
 <div class="wgrouppolicy docutils container" id="Disable Windows Defender real-time protection via machine GPO">
-<table class="docutils align-default" id="id19">
-<caption><span class="caption-text">Disable Windows Defender real-time protection via machine GPO</span><a class="headerlink" href="#id19" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="id20">
+<caption><span class="caption-text">Disable Windows Defender real-time protection via machine GPO</span><a class="headerlink" href="#id20" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -2003,8 +2010,8 @@ Windows Defender can be disabled.</p>
 </table>
 </div>
 <div class="wgrouppolicy docutils container" id="Disable windows defender notification icon via machine GPO">
-<table class="docutils align-default" id="id20">
-<caption><span class="caption-text">Disable windows defender notification icon via machine GPO</span><a class="headerlink" href="#id20" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="id21">
+<caption><span class="caption-text">Disable windows defender notification icon via machine GPO</span><a class="headerlink" href="#id21" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -2048,8 +2055,8 @@ changed. See references for additional documentation.</p>
 <a class="reference internal" href="../../../../services/pihole/index.html#service-pihole"><span class="std std-ref">Pi-Hole</span></a> and <a class="reference internal" href="../../../../networking/ubiquiti/edge-os.html#networking-dnat-for-captive-dns"><span class="std std-ref">DNAT for Captive DNS</span></a>.</p>
 </div>
 <div class="gtable docutils container" id="Connected User Experiences and Telemetry endpoints">
-<table class="docutils align-default" id="id21">
-<caption><span class="caption-text">Connected User Experiences and Telemetry endpoints</span><a class="headerlink" href="#id21" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="id22">
+<caption><span class="caption-text">Connected User Experiences and Telemetry endpoints</span><a class="headerlink" href="#id22" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
@@ -2088,8 +2095,8 @@ prefix changes by country, e.g.: <strong>de</strong>.vortex-win.data.microsoft.c
 </div></blockquote>
 </div>
 <div class="gtable docutils container" id="Diagnostic data services">
-<table class="docutils align-default" id="id22">
-<caption><span class="caption-text">Diagnostic data services</span><a class="headerlink" href="#id22" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="id23">
+<caption><span class="caption-text">Diagnostic data services</span><a class="headerlink" href="#id23" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
