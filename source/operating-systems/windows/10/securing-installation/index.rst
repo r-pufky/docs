@@ -11,7 +11,7 @@ A reboot is required once these changes are made.
 
 #. :ref:`windows-10-disable-telemetry`.
 #. :ref:`windows-10-disable-onedrive`.
-#. :ref:`windows-10-disable-defender`.
+#. :ref:`windows-10-disable-defender-antivirus`.
 #. :ref:`windows-10-disable-cortana-search`.
 #. :ref:`windows-10-disable-windows-store-promotions`.
 #. :ref:`windows-10-disable-resource-exhaustion`.
@@ -38,7 +38,7 @@ A reboot is required once these changes are made.
 
    telemetry
    onedrive
-   defender
+   defender-antivirus
    cortana-search
    windows-store
    resource-exhaustion

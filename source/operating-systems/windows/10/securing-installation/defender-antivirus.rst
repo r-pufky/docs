@@ -1,4 +1,4 @@
-.. _windows-10-disable-defender:
+.. _windows-10-disable-defender-antivirus:
 
 `Disable Windows Defender`_
 ###########################
@@ -12,7 +12,7 @@ See :ref:`windows-10-disable-telemetry` for additional telemetry services.
   After every major windows update, verify these settings.
 
 .. warning::
-  Windows 1903+ may require ``Tamper Protection`` to be **disabled** before
+  Windows 1903+ requires ``Tamper Protection`` to be **disabled** before
   Windows Defender can be disabled.
 
     .. ggui:: Disable Tamper Protection to remove Windows Defender
@@ -24,6 +24,13 @@ See :ref:`windows-10-disable-telemetry` for additional telemetry services.
       :setting:   ☐
       :no_section:
       :no_launch:
+
+    .. code-block:: powershell
+      :caption: powershell (as admin)
+
+      PsExec64.exe -accepteula -d -i -s powershell -ExecutionPolicy Bypass Set-Itemproperty -path 'HKLM:SOFTWARE\Microsoft\Windows Defender\Features' -Name 'TamperProtection' -value 0
+
+    Sysinternals `PSTools`_ need to be installed disable via powershell.
 
 :term:`Registry`
 ****************
@@ -333,4 +340,5 @@ changed. See references for additional documentation.
 .. _Endpoints for telemetry: https://docs.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization#how-microsoft-handles-diagnostic-data
 .. _Disable Windows Defender: https://www.tenforums.com/tutorials/5918-turn-off-windows-defender-antivirus-windows-10-a.html
 .. _disabling windows defender icon: https://appuals.com/how-to-remove-windows-defender-icon-on-windows-10/
-.. _Disable Tamper Protection: https://www.thewindowsclub.com/how-to-enable-tamper-protection-in-windows-10
+.. _Disable Tamper Protection: https://www.tenforums.com/tutorials/123792-turn-off-tamper-protection-windows-defender-antivirus.html
+.. _PSTools: https://docs.microsoft.com/en-us/sysinternals/downloads/pstools
