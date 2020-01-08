@@ -26,5 +26,5 @@ Related Material:
    :maxdepth: -1
 
    install-config
-   set-execution-policy
+   execution-policy
    run-from-usb
