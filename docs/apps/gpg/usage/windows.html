@@ -501,7 +501,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/setup/install-config.html#installing-windows-10-without-live-account">Installing Windows 10 Without Live Account</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/setup/set-execution-policy.html">Setting Execution Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/setup/execution-policy.html">Setting Execution Policy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/setup/execution-policy.html#set-policy-via-script">Set Policy Via Script</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/setup/run-from-usb.html">Run Windows 10 From USB</a></li>
 </ul>
 </li>
@@ -1384,6 +1387,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../services/ssh/creating-ssh-certificates.html#generate-certificates">Generate Certificates</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../services/ssh/troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/ssh/troubleshooting.html#enable-debug-mode">Enable Debug Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/ssh/troubleshooting.html#could-not-open-authorized-keys-x-permission-denied">Could not open authorized keys ‘{X}’: Permission denied</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../services/unifi/index.html">Unifi Controller</a><ul>
@@ -1701,6 +1709,8 @@ your <strong>user</strong> <a class="reference internal" href="../../../glossary
 <li><p>Number is the Yubikey serial number.</p></li>
 <li><p>Holder is the First/Last name of the GPG certificate on the key.</p></li>
 <li><p>Your key will blink when waiting for password or touch.</p></li>
+<li><p>Both publickey and GPG can be used in the same system at the same time for
+different connections. No specific configuration is needed.</p></li>
 </ul>
 </div>
 </div>

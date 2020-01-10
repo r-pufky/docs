@@ -501,7 +501,10 @@
 <li class="toctree-l4"><a class="reference internal" href="install-config.html#installing-windows-10-without-live-account">Installing Windows 10 Without Live Account</a></li>
 </ul>
 </li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Setting Execution Policy</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Setting Execution Policy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#set-policy-via-script">Set Policy Via Script</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="run-from-usb.html">Run Windows 10 From USB</a></li>
 </ul>
 </li>
@@ -1384,6 +1387,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../services/ssh/creating-ssh-certificates.html#generate-certificates">Generate Certificates</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../services/ssh/troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../services/ssh/troubleshooting.html#enable-debug-mode">Enable Debug Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../services/ssh/troubleshooting.html#could-not-open-authorized-keys-x-permission-denied">Could not open authorized keys ‘{X}’: Permission denied</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../services/unifi/index.html">Unifi Controller</a><ul>
@@ -1587,25 +1595,40 @@
            <div itemprop="articleBody">
             
   <div class="section" id="setting-execution-policy">
-<span id="id1"></span><h1><a class="reference external" href="https://stackoverflow.com/questions/4037939/powershell-says-execution-of-scripts-is-disabled-on-this-system">Setting Execution Policy</a><a class="headerlink" href="#setting-execution-policy" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1><a class="reference external" href="https://blog.netspi.com/15-ways-to-bypass-the-powershell-execution-policy/">Setting Execution Policy</a><a class="headerlink" href="#setting-execution-policy" title="Permalink to this headline">¶</a></h1>
 <p>Powershell scripts require unrestricted execution policy to be set to execute.
 By default this is <strong>disabled</strong> and is the <strong>correct choice</strong>. Once you’ve
 executed scripts, you <strong>must</strong> manually reset this to restricted or you leave
 yourself open to bad things. This persists across sessions.</p>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text">Check and set unrestricted policy (powershell as admin).</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">get-executionpolicy</span>
-<span class="nb">set-executionpolicy</span> <span class="n">unrestricted</span>
-<span class="hll"><span class="n">Y</span>
-</span></pre></div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Get-ExecutionPolicy</span>
+<span class="nb">Set-ExecutionPolicy</span> <span class="n">-ExecutionPolicy</span> <span class="n">unrestricted</span> <span class="n">-Force</span>
+</pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-text">Set restricted policy (powershell as admin).</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
-<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">set-executionpolicy</span> <span class="n">restricted</span>
-<span class="hll"><span class="n">Y</span>
-</span></pre></div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Set-ExecutionPolicy</span> <span class="n">-ExecutionPolicy</span> <span class="n">restricted</span> <span class="n">-force</span>
+</pre></div>
 </div>
+</div>
+<div class="section" id="set-policy-via-script">
+<h2>Set Policy Via Script<a class="headerlink" href="#set-policy-via-script" title="Permalink to this headline">¶</a></h2>
+<p>Commands entered directly into powershell are executed. Scripts may be run
+without setting execution policy by launching a sub-shell with ExecutionPolicy
+bypassed.</p>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">Execute script without setting ExecutionPolicy.</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">PowerShell</span><span class="p">.</span><span class="n">exe</span> <span class="n">-ExecutionPolicy</span> <span class="n">Bypass</span> <span class="o">-File</span> <span class="p">{</span><span class="n">SCRIPT</span><span class="p">}.</span><span class="n">ps1</span>
+</pre></div>
+</div>
+</div>
+<p class="rubric">References</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://blog.netspi.com/15-ways-to-bypass-the-powershell-execution-policy/">Setting Execution Policy</a></p></li>
+<li><p><a class="reference external" href="https://stackoverflow.com/questions/4037939/powershell-says-execution-of-scripts-is-disabled-on-this-system">Powershell Scripts Disabled</a></p></li>
+</ol>
 </div>
 </div>
 

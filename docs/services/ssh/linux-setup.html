@@ -501,7 +501,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/setup/install-config.html#installing-windows-10-without-live-account">Installing Windows 10 Without Live Account</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/setup/set-execution-policy.html">Setting Execution Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/setup/execution-policy.html">Setting Execution Policy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/setup/execution-policy.html#set-policy-via-script">Set Policy Via Script</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/setup/run-from-usb.html">Run Windows 10 From USB</a></li>
 </ul>
 </li>
@@ -1384,6 +1387,11 @@
 <li class="toctree-l3"><a class="reference internal" href="creating-ssh-certificates.html#generate-certificates">Generate Certificates</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html#enable-debug-mode">Enable Debug Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html#could-not-open-authorized-keys-x-permission-denied">Could not open authorized keys ‘{X}’: Permission denied</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../unifi/index.html">Unifi Controller</a><ul>
@@ -1651,7 +1659,7 @@ authenticated users to login. Public keys are setup to use
 </span><span class="n">ServerKeyBits</span> <span class="mi">1024</span>
 <span class="hll"><span class="n">StreamLocalBindUnlink</span> <span class="n">yes</span>
 </span><span class="n">StrictModes</span> <span class="n">yes</span>
-<span class="n">Subsystem</span> <span class="n">sftp</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">openssh</span><span class="o">/</span><span class="n">sftp</span><span class="o">-</span><span class="n">server</span>
+<span class="n">Subsystem</span> <span class="n">sftp</span> <span class="n">internal</span><span class="o">-</span><span class="n">sftp</span>
 <span class="n">SyslogFacility</span> <span class="n">AUTH</span>
 <span class="n">TCPKeepAlive</span> <span class="n">yes</span>
 <span class="n">UseDNS</span> <span class="n">no</span>

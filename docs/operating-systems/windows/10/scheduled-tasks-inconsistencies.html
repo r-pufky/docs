@@ -501,7 +501,10 @@
 <li class="toctree-l4"><a class="reference internal" href="setup/install-config.html#installing-windows-10-without-live-account">Installing Windows 10 Without Live Account</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="setup/set-execution-policy.html">Setting Execution Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="setup/execution-policy.html">Setting Execution Policy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="setup/execution-policy.html#set-policy-via-script">Set Policy Via Script</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="setup/run-from-usb.html">Run Windows 10 From USB</a></li>
 </ul>
 </li>
@@ -1384,6 +1387,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../services/ssh/creating-ssh-certificates.html#generate-certificates">Generate Certificates</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../services/ssh/troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/ssh/troubleshooting.html#enable-debug-mode">Enable Debug Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/ssh/troubleshooting.html#could-not-open-authorized-keys-x-permission-denied">Could not open authorized keys ‘{X}’: Permission denied</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../services/unifi/index.html">Unifi Controller</a><ul>
@@ -1881,7 +1889,7 @@ the Event Trigger and the task. A password is required when adding the task.</p>
 </td></tr></table></div>
 <p><a class="reference download internal" download="" href="../../../_downloads/260dfbaf2e7c3704a0fe6dc245a86f8b/gpg-agent-refresh-unlock.ps1"><code class="xref download docutils literal notranslate"><span class="pre">gpg-unlock.ps1</span></code></a></p>
 <ul class="simple">
-<li><p>Execution Policy: <strong>Unrestricted</strong> (see: <a class="reference internal" href="setup/set-execution-policy.html#setting-execution-policy"><span class="std std-ref">Setting Execution Policy</span></a>).</p></li>
+<li><p>Execution Policy: <strong>Unrestricted</strong> (see: <a class="reference internal" href="setup/execution-policy.html#setting-execution-policy"><span class="std std-ref">Setting Execution Policy</span></a>).</p></li>
 <li><p>This is registered in <span class="guilabel">Task Scheduler Library</span> as
 <em>GPGAgentRefreshUnlock</em>.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">Subscription</span></code> query on line 35 is <a class="reference external" href="https://blogs.technet.microsoft.com/wincat/2011/08/25/trigger-a-powershell-script-from-a-windows-event/">extracted from the manually</a>

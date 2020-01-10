@@ -501,7 +501,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/setup/install-config.html#installing-windows-10-without-live-account">Installing Windows 10 Without Live Account</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/setup/set-execution-policy.html">Setting Execution Policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/setup/execution-policy.html">Setting Execution Policy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/setup/execution-policy.html#set-policy-via-script">Set Policy Via Script</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/setup/run-from-usb.html">Run Windows 10 From USB</a></li>
 </ul>
 </li>
@@ -1384,6 +1387,11 @@
 <li class="toctree-l3"><a class="reference internal" href="creating-ssh-certificates.html#generate-certificates">Generate Certificates</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html#enable-debug-mode">Enable Debug Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html#could-not-open-authorized-keys-x-permission-denied">Could not open authorized keys ‘{X}’: Permission denied</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../unifi/index.html">Unifi Controller</a><ul>
@@ -1630,7 +1638,9 @@ chmod <span class="m">0640</span> <span class="o">{</span>KEYNAME<span class="o"
 <div class="section" id="ssh-host-configuration">
 <h2>SSH Host Configuration<a class="headerlink" href="#ssh-host-configuration" title="Permalink to this headline">¶</a></h2>
 <p>Setup SSH to automatically select correct options when using hosts/shortcuts.
-See <a class="reference external" href="https://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/">detailed explanation</a> on <code class="docutils literal notranslate"><span class="pre">config</span></code> file.</p>
+See <a class="reference external" href="https://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/">detailed explanation</a> on <code class="docutils literal notranslate"><span class="pre">config</span></code> file. <a class="reference external" href="http://postsbylukman.blogspot.com/2017/09/difference-between-internal-sftp-and.html">internal-sftp</a> is the default
+now and is built from the same code as <code class="docutils literal notranslate"><span class="pre">sftp-server</span></code> but also includes
+supporte for ChrootDirectories.</p>
 <div class="literal-block-wrapper docutils container" id="id5">
 <div class="code-block-caption"><span class="caption-text"><strong>0600 user user</strong> <code class="docutils literal notranslate"><span class="pre">~/.ssh/config</span></code></span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Autoselect github keys</span>
@@ -1661,9 +1671,9 @@ See <a class="reference external" href="https://nerderati.com/2011/03/17/simplif
 <p>See <a class="reference external" href="https://winscp.net/eng/docs/ui_puttygen">Puttygen Documentation</a>.</p>
 <ol class="arabic simple">
 <li><p>Copy RSA private key to windows computer.</p></li>
-<li><p><span class="guilabel">⌘ + r › puttygen › File › Load Private Key (Select RSA Private Key)</span></p></li>
+<li><p><span class="guilabel">⌘ + r › puttygen › Conversions › Import Key (Select Private Key)</span></p></li>
 <li><p>Rename Key Comment to <code class="docutils literal notranslate"><span class="pre">user&#64;server</span></code>.</p></li>
-<li><p>Save private key as <code class="docutils literal notranslate"><span class="pre">RSA</span> <span class="pre">4096</span></code> in a <code class="docutils literal notranslate"><span class="pre">.ppk</span></code> file to local machine.</p></li>
+<li><p><span class="guilabel">Save private key</span> in a <code class="docutils literal notranslate"><span class="pre">.ppk</span></code> file to local machine.</p></li>
 <li><p>Delete RSA keys (use <a class="reference external" href="https://docs.microsoft.com/en-us/sysinternals/downloads/sdelete">sdelete64</a>).</p></li>
 <li><p>Update public key in <code class="docutils literal notranslate"><span class="pre">authorized_keys</span></code> file with comment about key being
 used.</p></li>
