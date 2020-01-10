@@ -10,6 +10,7 @@ See `OpenSSH Documentation`_.
 #. :ref:`service-ssh-windows-setup`.
 #. :ref:`service-ssh-configuration`.
 #. :ref:`service-ssh-create-certificates`.
+#. :ref:`service-ssh-troubleshooting`.
 
 .. _OpenSSH Documentation: https://www.openssh.com/
 
@@ -21,3 +22,4 @@ See `OpenSSH Documentation`_.
    windows-setup
    configuration
    creating-ssh-certificates
+   troubleshooting

@@ -97,6 +97,8 @@ Ensure Yubikey is readable by GPG. This assumes you already setup:
   * Number is the Yubikey serial number.
   * Holder is the First/Last name of the GPG certificate on the key.
   * Your key will blink when waiting for password or touch.
+  * Both publickey and GPG can be used in the same system at the same time for
+    different connections. No specific configuration is needed.
 
 Run GPG Agent on Login
 **********************
