@@ -7,9 +7,9 @@ Enable Debug Mode
 *****************
 Print verbose messages to ``/var/log/syslog`` to help in debugging issues.
 
-.. literalinclude:: source/ssh.config
-  :caption: **0644 root root** ``/etc/systemd/system/ssh.service``
-  :emphasize-lines: 9
+.. literalinclude:: source/ssh
+  :caption: **0644 root root** ``/etc/default/ssh``
+  :emphasize-lines: 5
 
 .. code-block:: bash
   :caption: Reload and restart SSHD.
