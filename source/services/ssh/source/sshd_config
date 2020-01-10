@@ -33,7 +33,7 @@ RhostsRSAAuthentication no
 ServerKeyBits 1024
 StreamLocalBindUnlink yes
 StrictModes yes
-Subsystem sftp /usr/lib/openssh/sftp-server
+Subsystem sftp internal-sftp
 SyslogFacility AUTH
 TCPKeepAlive yes
 UseDNS no

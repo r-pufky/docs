@@ -48,7 +48,9 @@ Allow connection, but disables all forwarding.
 SSH Host Configuration
 **********************
 Setup SSH to automatically select correct options when using hosts/shortcuts.
-See `detailed explanation`_ on ``config`` file.
+See `detailed explanation`_ on ``config`` file. `internal-sftp`_ is the default
+now and is built from the same code as ``sftp-server`` but also includes
+supporte for ChrootDirectories.
 
 .. literalinclude:: source/config
   :caption: **0600 user user** ``~/.ssh/config``
@@ -68,3 +70,4 @@ See `Puttygen Documentation`_.
 .. _sdelete64: https://docs.microsoft.com/en-us/sysinternals/downloads/sdelete
 .. _Puttygen Documentation: https://winscp.net/eng/docs/ui_puttygen
 .. _detailed explanation: https://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/
+.. _internal-sftp: http://postsbylukman.blogspot.com/2017/09/difference-between-internal-sftp-and.html
