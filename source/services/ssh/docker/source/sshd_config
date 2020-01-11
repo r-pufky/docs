@@ -1,0 +1,38 @@
+# See the sshd_config(5) manpage for details
+
+Port 22
+Protocol 2
+HostKey /etc/ssh/keys/ssh_host_rsa_key
+HostKey /etc/ssh/keys/ssh_host_dsa_key
+HostKey /etc/ssh/keys/ssh_host_ecdsa_key
+HostKey /etc/ssh/keys/ssh_host_ed25519_key
+SyslogFacility AUTH
+LogLevel INFO
+LoginGraceTime 120
+PermitRootLogin no
+StrictModes yes
+MaxAuthTries 3
+PubkeyAuthentication yes
+# Container start scripts check this location.
+AuthorizedKeysFile /etc/authorized_keys/%u
+IgnoreRhosts yes
+HostbasedAuthentication no
+IgnoreUserKnownHosts yes
+PermitEmptyPasswords no
+ChallengeResponseAuthentication no
+PasswordAuthentication no
+X11Forwarding no
+PrintMotd no
+TCPKeepAlive yes
+AcceptEnv LANG LC_*
+Subsystem sftp internal-sftp
+UseDNS no
+
+AllowUsers {USER}
+
+AllowAgentForwarding no
+StreamLocalBindUnlink yes
+AllowTCPForwarding no
+GatewayPorts no
+ForceCommand internal-sftp
+ChrootDirectory /data

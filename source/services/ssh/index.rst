@@ -8,6 +8,7 @@ See `OpenSSH Documentation`_.
 
 #. :ref:`service-ssh-linux-setup`.
 #. :ref:`service-ssh-windows-setup`.
+#. :ref:`service-ssh-docker-setup`.
 #. :ref:`service-ssh-configuration`.
 #. :ref:`service-ssh-create-certificates`.
 #. :ref:`service-ssh-troubleshooting`.
