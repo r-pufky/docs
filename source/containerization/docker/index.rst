@@ -388,7 +388,7 @@ Files can be copied directly out of containers.
 .. code-block:: bash
   :caption: Copy data from docker container.
 
-  docker {NAME}:/local/container/file .
+  docker cp {NAME}:/local/container/file .
 
 Tagging Docker Images
 *********************

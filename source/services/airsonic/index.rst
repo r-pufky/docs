@@ -46,6 +46,7 @@ adjusting for paths.
     environment:
       - PUID=1000
       - PGID=1000
+      - JAVA_OPTS=-Xmx256m -Xms256m
       - TZ=America/Los_Angeles
     volumes:
       - /data/services/airsonic/config:/config
@@ -58,7 +59,8 @@ adjusting for paths.
 * Proxy will forward traffic to the container, so no ports need to be exposed.
 * Use environment ``CONTEXT_PATH=URL_BASE`` if airsonic is serving from a
   subpath.
-* Use environment ``JAVA_OPTS=`` to pass additional java options.
+* Limit airsonic to 256MB for initial memory size, and heap size. See `Java Xmx
+  and Xms options`_.
 
 Reverse Proxy Setup
 *******************
@@ -100,3 +102,4 @@ Using Subpaths
 
 .. _Airsonic: https://airsonic.github.io/
 .. _Airsonic Docker and Documentation: https://hub.docker.com/r/linuxserver/airsonic
+.. _Java Xmx and Xms options: https://codeahoy.com/2019/09/02/java-xmx-vs-xms/
