@@ -18,7 +18,7 @@ Notifications
   :data:      1
   :no_section:
 
-.. wregedit:: Disable access to user notifications listner on this device via
+.. wregedit:: Disable access to user notifications listener on this device via
               Registry
   :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
               CapabilityAccessManager\ConsentStore\userNotificationListener
