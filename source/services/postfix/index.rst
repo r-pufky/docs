@@ -4,6 +4,10 @@ Postfix
 #######
 Mail Transport Agent (MTA) setup
 
+.. danger::
+  Use :ref:`service-email` to configure email services in docker. This document
+  remains as a reference for deeper configuration of email services if needed.
+
 Uses :ref:`debian-server-base-install`. See :ref:`glossary` for mail terms.
 
 Standard Definitions
@@ -281,7 +285,6 @@ Remove *you have new mail.* when you login to the mail host.
   :caption: **0644 root root** ``/etc/pam.d/sshd``
 
   session  optional  pam_mail.so nopen noenv # [1]
-
 
 .. _Postfix Setup: https://help.ubuntu.com/community/PostfixBasicSetupHowto
 .. _Configuring email Aliases for Users: http://postfix.1071664.n5.nabble.com/How-to-delete-a-key-via-postconf-td3692.html

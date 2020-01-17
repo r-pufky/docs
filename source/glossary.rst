@@ -49,6 +49,19 @@ Mail
 ****
 .. glossary::
 
+  :abbr:`DKIM`
+    Domain Key Identified Mail: `DKIM provides`_ a method for validating a
+    domain name identity that is associated with an email message through
+    cryptographic authentication.
+
+  :abbr:`DMARC`
+    Domain-based Message Authentication, Reporting & Conformance:, is an email
+    authentication, policy, and reporting protocol. It builds on the widely
+    deployed :term:`SPF` and :term:`DKIM` protocols, adding linkage to the
+    author (“From:”) domain name, published policies for recipient handling of
+    authentication failures, and reporting from receivers to senders, to improve
+    and monitor protection of the domain from fraudulent email.
+
   :abbr:`MTA`
     Mail Transport Agent: handles mail server to server (e.g. other domains).
 
@@ -57,6 +70,10 @@ Mail
 
   :abbr:`MUA`
     Mail User Agent: user client to check email (e.g. thunderbird/outlook).
+
+  :abbr:`SPF`
+    `Sender Policy Framework`_: Email authentication method designed to detect
+    forging sender addresses during the delivery of the email.
 
 Networking
 **********
@@ -89,3 +106,5 @@ Operating Systems
 .. _CLI Yubikey Manager: https://developers.yubico.com/yubikey-manager/
 .. _GUI Yubikey Manager: https://www.yubico.com/products/services-software/download/yubikey-manager/
 .. _Two Factor Authentication: https://en.wikipedia.org/wiki/Multi-factor_authentication
+.. _DKIM provides: http://dkim.org/
+.. _Sender Policy Framework: https://en.wikipedia.org/wiki/Sender_Policy_Framework

@@ -7,6 +7,10 @@ automatically when email is `delivered by the MDA`_, which removes the need for
 the user to setup a filtering on each MUA they use. This is in addition to any
 filtering already applied at the MTA level.
 
+.. danger::
+  Use :ref:`service-email` to configure email services in docker. This document
+  remains as a reference for deeper configuration of email services if needed.
+
 Sieve filtering uses a `standard mail filtering language`_ and is `fairly easy
 to learn`_.
 

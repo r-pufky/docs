@@ -6,6 +6,10 @@ This will configure dovecot as an IMAPS server, disabling POP and non-SSL
 connections. Accounts are based off of local accounts, using non-local passwords
 for authentication.
 
+.. danger::
+  Use :ref:`service-email` to configure email services in docker. This document
+  remains as a reference for deeper configuration of email services if needed.
+
 Sieve is used to do server-side mailbox filtering, in additional to what the MTA
 already does. This allows for vacation messages as well as custom filtering and
 responses.

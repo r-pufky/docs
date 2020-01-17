@@ -4,6 +4,10 @@ Testing Dovecot
 ###############
 Basic tests to ensure dovecot is working properly as an IMAPS MDA.
 
+.. danger::
+  Use :ref:`service-email` to configure email services in docker. This document
+  remains as a reference for deeper configuration of email services if needed.
+
 .. code-block:: bash
   :caption: Test SASL service.
 

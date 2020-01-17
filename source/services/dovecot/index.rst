@@ -4,6 +4,10 @@ Dovecot
 #######
 Mail Delivery Agent (MDA) Setup.
 
+.. danger::
+  Use :ref:`service-email` to configure email services in docker. This document
+  remains as a reference for deeper configuration of email services if needed.
+
 Uses :ref:`debian-server-base-install`.
 
 * Disable ports **25/465/993** on firewall until configuration is final

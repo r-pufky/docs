@@ -4,6 +4,10 @@ Adding Accounts
 ###############
 Accounts use separate passwords from shell logins using `imap.passwd`_.
 
+.. danger::
+  Use :ref:`service-email` to configure email services in docker. This document
+  remains as a reference for deeper configuration of email services if needed.
+
 Add a User/Password
 *******************
 `Virtual users`_ are stored in ``/etc/imap.passwd`` and is formatted exactly

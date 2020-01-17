@@ -67,6 +67,8 @@ every **12 hours**. Be sure to restart the container if changes are made.
 Initial Setup
 *************
 
+.. _service-letsencrypt-domains:
+
 Create Domains to Manage
 ========================
 A certificate will be created for the contents of each line.
