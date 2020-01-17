@@ -37,6 +37,27 @@ Revert Entire Directory to HEAD
   ``{DIR}/..`` can be used to target all files and directories within that
   directory.
 
+Add Tag to Previous Commit
+**************************
+.. code-block:: bash
+
+  git pull --tags
+  git tag {TAG} {COMMIT}
+  git push --tags
+
+Squash Commits to a Single Commit (Rebase)
+******************************************
+This will squash a series of commits into a single commit, which is useful to
+cleanup multiple commits before pushing upstream.
+
+.. code-block:: bash
+
+  git rebase -i {COMMIT}
+
+.. note::
+  The ``COMMIT`` is the last commit that should be collapsed (e.g. rolled into a
+  single commit).
+
 Remove Tracked Files without Deleting Them
 ******************************************
 .. code-block:: bash

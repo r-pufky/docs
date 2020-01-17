@@ -127,7 +127,7 @@ git hub, or submit a CL :)
   services/crashplan/index
   services/deluge/index
   services/digikam/index
-  services/dovecot/index
+  services/email/index
   services/fail2ban/index
   services/firefly/index
   services/gitea/index
@@ -142,7 +142,6 @@ git hub, or submit a CL :)
   services/pihole/index
   services/play-on/index
   services/plex/index
-  services/postfix/index
   services/radarr/index
   services/signal/index
   services/sonarr/index

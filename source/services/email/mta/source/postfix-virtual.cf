@@ -6,5 +6,5 @@ another_email_address@{DOMAIN} {USER}@{DOMAIN}
 # Blackhole these addresses. (accept delivery and drop data).
 known_spammer_email@{DOMAIN} blackhole@localhost
 
-# Send all 2nd domain emails to primary domain account.
+# Send all secondary domain emails to primary domain account.
 @{DOMAIN2} {USER}@{DOMAIN}
