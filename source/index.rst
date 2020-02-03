@@ -165,6 +165,7 @@ git hub, or submit a CL :)
   :includehidden:
   :maxdepth: -1
 
+  scripts/bulk-downloader-for-reddit
   scripts/copying-data
   scripts/scripts
   scripts/video-editing-conversion
