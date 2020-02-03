@@ -6,29 +6,34 @@ set nocompatible
 set ruler
 set viminfo='50,\"1000,:0
 
-set popt+=syntax:y    " Printing options
-set mouse=a           " mouse will be on all the time
+set popt+=syntax:y                           " Printing options
+set mouse=a                                  " Mouse will be on all the time
 
-filetype on           " enable filetype settings
+filetype on                                  " Enable filetype settings
 filetype plugin on
 filetype indent on
 
-set hlsearch          " highlight search matches
+set hlsearch                                 " Highlight search matches
 set background=dark
-set guioptions=agirt  "no menu, no toolbar
+set guioptions=agirt                         " No menu, no toolbar
 set guifont=Lucida\ Terminal
-"" clear highlights with \
+"" Clear highlights with \
 nnoremap \ :noh<return>
 
 ""  CONSOLE AND GUI OPTIONS:
 ""  -----------------------
-set vb t_vb=          " turn beeping off
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set expandtab         " convert tabs to spaces
-set backspace=2       " this makes backspace work
-set tw=80             " wrap as close to 80 characters as possible.
+set vb t_vb=                                 " Turn beeping off
+set tabstop=2                                " Tabs are 2 spaces
+set softtabstop=2                            " Soft tabs are 2 spaces
+set shiftwidth=2                             " Shifting is 2 spaces
+set expandtab                                " Convert tabs to spaces
+set backspace=2                              " This makes backspace work
+set textwidth=0                              " Disable hard text wrapping
+set wrapmargin=0                             " Disable soft text wrapping
+
+"" Highlight 81-120 and 121-999 in different backgroun color
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
+let &colorcolumn=join(range(81,121),",").join(range(121,999),",")
 
 "" STATUSBAR:
 "" ---------
