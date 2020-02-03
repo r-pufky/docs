@@ -45,18 +45,29 @@ Add Tag to Previous Commit
   git tag {TAG} {COMMIT}
   git push --tags
 
-Squash Commits to a Single Commit (Rebase)
-******************************************
+Squash Commits to a Single Commit (`Rebase`_)
+*********************************************
 This will squash a series of commits into a single commit, which is useful to
 cleanup multiple commits before pushing upstream.
 
 .. code-block:: bash
 
-  git rebase -i {COMMIT}
+  git rebase --interactive {COMMIT}
 
 .. note::
   The ``COMMIT`` is the last commit that should be collapsed (e.g. rolled into a
   single commit).
+
+  Editor will appear with rebase configuration. Generally use ``pick`` for the
+  first commit and ``squash`` for the remaining commits.
+
+.. code-block:: bash
+
+  git rebase --continue
+
+.. note::
+  If done correctly, this will show all commit messages that were rolled up.
+  Update as needed and commit as normal.
 
 Remove Tracked Files without Deleting Them
 ******************************************
@@ -83,3 +94,4 @@ Useful for projects that have periodic releases but are not in OS packages.
   :caption: **0755 user user** ``update_latest_tarball``
 
 .. _Latest Tarball Release: https://gist.github.com/lukechilds/a83e1d7127b78fef38c2914c4ececc3c#gistcomment-2574561
+.. _Rebase: https://www.internalpointers.com/post/squash-commits-into-one-git
