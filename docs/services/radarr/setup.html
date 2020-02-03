@@ -108,6 +108,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#revert-changes-and-keep-commit-history">Revert Changes and Keep Commit History</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#force-repository-to-previous-commit">Force Repository to Previous Commit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#revert-entire-directory-to-head">Revert Entire Directory to HEAD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#add-tag-to-previous-commit">Add Tag to Previous Commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#squash-commits-to-a-single-commit-rebase">Squash Commits to a Single Commit (Rebase)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#remove-tracked-files-without-deleting-them">Remove Tracked Files without Deleting Them</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#pull-latest-tarball-release-from-github">Pull Latest Tarball Release from Github</a></li>
 </ul>
@@ -637,6 +639,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/securing-installation/delivery-optimization.html#gpo"><span class="xref std std-term">GPO</span></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/securing-installation/taskbar-notifications.html">Taskbar Notifications</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/securing-installation/taskbar-notifications.html#registry"><span class="xref std std-term">Registry</span></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/securing-installation/service.html">Disable Services</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/securing-installation/service.html#services">Services</a></li>
 </ul>
@@ -983,15 +989,53 @@
 <li class="toctree-l2"><a class="reference internal" href="../digikam/index.html#initial-setup">Initial Setup</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../dovecot/index.html">Dovecot</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../dovecot/setup.html">Dovecot Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dovecot/testing.html">Testing Dovecot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dovecot/account.html">Adding Accounts</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../dovecot/account.html#add-a-user-password">Add a User/Password</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../email/index.html">Email</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../email/mta/index.html">MTA/MDA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../email/mta/setup.html">Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../email/mta/setup.html#ports-email">Ports (Email)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../email/mta/setup.html#important-file-locations-email">Important File Locations (Email)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../email/mta/setup.html#docker-creation">Docker Creation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../email/mta/setup.html#fail2ban-setup">fail2ban Setup</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../dovecot/sieve.html">Server-Side Mail Filtering (sieve)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dovecot/migration.html">Migrating from Courier to Dovecot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../email/mta/configuration.html">Configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../email/mta/configuration.html#add-initial-user-accounts">Add Initial User Accounts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../email/mta/configuration.html#add-aliases">Add Aliases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../email/mta/configuration.html#add-virtual-mailboxes">Add Virtual Mailboxes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../email/mta/configuration.html#use-dovecot-for-smtp-authentication">Use Dovecot for SMTP Authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../email/mta/configuration.html#set-global-sieve-filters-optional">Set Global Sieve Filters (Optional)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../email/mta/configuration.html#generate-dkim-config">Generate <span class="xref std std-term">DKIM</span> Config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../email/mta/configuration.html#setup-spf-policy">Setup <span class="xref std std-term">SPF</span> Policy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../email/mta/configuration.html#setup-dmarc-policy">Setup <span class="xref std std-term">DMARC</span> Policy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../email/mta/configuration.html#setup-ssl-certificates">Setup SSL Certificates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../email/mta/configuration.html#disable-unsecured-services">Disable Unsecured Services</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../email/mta/configuration.html#setup-mail-dns-entries">Setup Mail DNS Entries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../email/mta/testing.html">Testing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../email/mta/testing.html#verify-services-locked-down">Verify Services Locked Down</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../email/mta/testing.html#test-email-delivery">Test Email Delivery</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../email/mta/testing.html#verify-proper-mail-configuration">Verify Proper Mail Configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../email/mua/setup.html">MUA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../email/mua/setup.html#ports-mua">Ports (MUA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../email/mua/setup.html#important-file-locations-mua">Important File Locations (MUA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../email/mua/setup.html#docker-creation">Docker Creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../email/mua/setup.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../email/mua/setup.html#using-subdomains">Using Subdomains</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../email/mua/setup.html#using-subpaths">Using Subpaths</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../email/mua/setup.html#fail2ban-setup">fail2ban Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../email/mua/setup.html#roundcube-filters">Roundcube Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../email/mua/setup.html#roundcube-jails">Roundcube Jails</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../fail2ban/index.html">fail2ban</a><ul>
@@ -1288,17 +1332,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../postfix/index.html">Postfix</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../postfix/index.html#standard-definitions">Standard Definitions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../postfix/index.html#postfix-setup">Postfix Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../postfix/index.html#configuring-email-aliases-for-users">Configuring email Aliases for Users</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../postfix/index.html#testing-initial-postfix-setup">Testing Initial postfix Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../postfix/index.html#installing-postgrey">Installing postgrey</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../postfix/index.html#installing-sender-policy-framework-spf-validation">Installing Sender Policy Framework (SPF) Validation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../postfix/index.html#installing-spamassassin">Installing spamassassin</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../postfix/index.html#disable-login-notifications-for-email">Disable Login Notifications for Email</a></li>
-</ul>
-</li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Radarr</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Radarr Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#ports-radarr">Ports (Radarr)</a></li>
@@ -1377,6 +1410,21 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../ssh/windows-setup.html">SSHD Windows Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ssh/docker/index.html">SSHD Docker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ssh/docker/setup.html">SSHD Docker Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../ssh/docker/setup.html#ports-sshd-docker">Ports (SSHD Docker)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ssh/docker/setup.html#important-file-locations-sshd-docker">Important File Locations (SSHD Docker)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ssh/docker/setup.html#docker-creation">Docker Creation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ssh/docker/basic-configuration.html">Basic Configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../ssh/docker/basic-configuration.html#authorized-key-files">Authorized Key Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ssh/docker/basic-configuration.html#secure-sshd-config">Secure SSHD Config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ssh/docker/basic-configuration.html#fail2ban-config">Fail2Ban Config</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../ssh/configuration.html">SSH Configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../ssh/configuration.html#restricting-ssh-tunneling">Restricting SSH Tunneling</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ssh/configuration.html#ssh-host-configuration">SSH Host Configuration</a></li>

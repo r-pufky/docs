@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Dovecot Setup &mdash; Generic service &amp; computer documentation.  documentation</title>
+  <title>Email &mdash; Generic service &amp; computer documentation.  documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Testing Dovecot" href="testing.html" />
-    <link rel="prev" title="Dovecot" href="index.html" /> 
+    <link rel="next" title="MTA/MDA" href="mta/index.html" />
+    <link rel="prev" title="digiKam" href="../digikam/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -108,6 +108,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#revert-changes-and-keep-commit-history">Revert Changes and Keep Commit History</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#force-repository-to-previous-commit">Force Repository to Previous Commit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#revert-entire-directory-to-head">Revert Entire Directory to HEAD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#add-tag-to-previous-commit">Add Tag to Previous Commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#squash-commits-to-a-single-commit-rebase">Squash Commits to a Single Commit (Rebase)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#remove-tracked-files-without-deleting-them">Remove Tracked Files without Deleting Them</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#pull-latest-tarball-release-from-github">Pull Latest Tarball Release from Github</a></li>
 </ul>
@@ -637,6 +639,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/securing-installation/delivery-optimization.html#gpo"><span class="xref std std-term">GPO</span></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/securing-installation/taskbar-notifications.html">Taskbar Notifications</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/securing-installation/taskbar-notifications.html#registry"><span class="xref std std-term">Registry</span></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/securing-installation/service.html">Disable Services</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/securing-installation/service.html#services">Services</a></li>
 </ul>
@@ -983,15 +989,53 @@
 <li class="toctree-l2"><a class="reference internal" href="../digikam/index.html#initial-setup">Initial Setup</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Dovecot</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Dovecot Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="testing.html">Testing Dovecot</a></li>
-<li class="toctree-l2"><a class="reference internal" href="account.html">Adding Accounts</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="account.html#add-a-user-password">Add a User/Password</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Email</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mta/index.html">MTA/MDA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mta/setup.html">Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mta/setup.html#ports-email">Ports (Email)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mta/setup.html#important-file-locations-email">Important File Locations (Email)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mta/setup.html#docker-creation">Docker Creation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mta/setup.html#fail2ban-setup">fail2ban Setup</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="sieve.html">Server-Side Mail Filtering (sieve)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="migration.html">Migrating from Courier to Dovecot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mta/configuration.html">Configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mta/configuration.html#add-initial-user-accounts">Add Initial User Accounts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mta/configuration.html#add-aliases">Add Aliases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mta/configuration.html#add-virtual-mailboxes">Add Virtual Mailboxes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mta/configuration.html#use-dovecot-for-smtp-authentication">Use Dovecot for SMTP Authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mta/configuration.html#set-global-sieve-filters-optional">Set Global Sieve Filters (Optional)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mta/configuration.html#generate-dkim-config">Generate <span class="xref std std-term">DKIM</span> Config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mta/configuration.html#setup-spf-policy">Setup <span class="xref std std-term">SPF</span> Policy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mta/configuration.html#setup-dmarc-policy">Setup <span class="xref std std-term">DMARC</span> Policy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mta/configuration.html#setup-ssl-certificates">Setup SSL Certificates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mta/configuration.html#disable-unsecured-services">Disable Unsecured Services</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mta/configuration.html#setup-mail-dns-entries">Setup Mail DNS Entries</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mta/testing.html">Testing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mta/testing.html#verify-services-locked-down">Verify Services Locked Down</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mta/testing.html#test-email-delivery">Test Email Delivery</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mta/testing.html#verify-proper-mail-configuration">Verify Proper Mail Configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mua/setup.html">MUA</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="mua/setup.html#ports-mua">Ports (MUA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mua/setup.html#important-file-locations-mua">Important File Locations (MUA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mua/setup.html#docker-creation">Docker Creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mua/setup.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mua/setup.html#using-subdomains">Using Subdomains</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mua/setup.html#using-subpaths">Using Subpaths</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="mua/setup.html#fail2ban-setup">fail2ban Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="mua/setup.html#roundcube-filters">Roundcube Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="mua/setup.html#roundcube-jails">Roundcube Jails</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../fail2ban/index.html">fail2ban</a><ul>
@@ -1288,17 +1332,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../postfix/index.html">Postfix</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../postfix/index.html#standard-definitions">Standard Definitions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../postfix/index.html#postfix-setup">Postfix Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../postfix/index.html#configuring-email-aliases-for-users">Configuring email Aliases for Users</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../postfix/index.html#testing-initial-postfix-setup">Testing Initial postfix Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../postfix/index.html#installing-postgrey">Installing postgrey</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../postfix/index.html#installing-sender-policy-framework-spf-validation">Installing Sender Policy Framework (SPF) Validation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../postfix/index.html#installing-spamassassin">Installing spamassassin</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../postfix/index.html#disable-login-notifications-for-email">Disable Login Notifications for Email</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="../radarr/index.html">Radarr</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../radarr/setup.html">Radarr Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../radarr/setup.html#ports-radarr">Ports (Radarr)</a></li>
@@ -1377,6 +1410,21 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../ssh/windows-setup.html">SSHD Windows Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ssh/docker/index.html">SSHD Docker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ssh/docker/setup.html">SSHD Docker Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../ssh/docker/setup.html#ports-sshd-docker">Ports (SSHD Docker)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ssh/docker/setup.html#important-file-locations-sshd-docker">Important File Locations (SSHD Docker)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ssh/docker/setup.html#docker-creation">Docker Creation</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../ssh/docker/basic-configuration.html">Basic Configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../ssh/docker/basic-configuration.html#authorized-key-files">Authorized Key Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ssh/docker/basic-configuration.html#secure-sshd-config">Secure SSHD Config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ssh/docker/basic-configuration.html#fail2ban-config">Fail2Ban Config</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../ssh/configuration.html">SSH Configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../ssh/configuration.html#restricting-ssh-tunneling">Restricting SSH Tunneling</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../ssh/configuration.html#ssh-host-configuration">SSH Host Configuration</a></li>
@@ -1573,9 +1621,7 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="index.html">Dovecot</a> &raquo;</li>
-        
-      <li>Dovecot Setup</li>
+      <li>Email</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -1592,147 +1638,21 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="dovecot-setup">
-<span id="service-dovecot-setup"></span><h1><a class="reference external" href="https://www.binarytides.com/install-postfix-dovecot-debian/">Dovecot Setup</a><a class="headerlink" href="#dovecot-setup" title="Permalink to this headline">¶</a></h1>
-<p>This will configure dovecot as an IMAPS server, disabling POP and non-SSL
-connections. Accounts are based off of local accounts, using non-local passwords
-for authentication.</p>
-<p>Sieve is used to do server-side mailbox filtering, in additional to what the MTA
-already does. This allows for vacation messages as well as custom filtering and
-responses.</p>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">Install core packages.</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt remove --purge dovecot-core dovecot-imapd
-sudo rm -rfv /etc/dovecot
-sudo apt install dovecot-core dovecot-imapd dovecot-sieve dovecot-managesieved
-</pre></div>
-</div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Create SSL certificate; use your {HOST}.</p>
-</div>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/postfix/main.cf</span></code></span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">mailbox_command</span> <span class="o">=</span> /usr/lib/dovecot/deliver
-</pre></div>
-</div>
-</div>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/dovecot/conf.d/10-master.conf</span></code></span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Postfix smtp-auth</span>
-<span class="n">unix_listener</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">spool</span><span class="o">/</span><span class="n">postfix</span><span class="o">/</span><span class="n">private</span><span class="o">/</span><span class="n">auth</span> <span class="p">{</span>
-  <span class="n">mode</span>   <span class="o">=</span> <span class="mi">0666</span>
-<span class="p">}</span>
-
-<span class="n">service</span> <span class="n">imap</span><span class="o">-</span><span class="n">login</span> <span class="p">{</span>
-  <span class="n">inet_listener</span> <span class="n">imap</span> <span class="p">{</span>
-    <span class="n">port</span> <span class="o">=</span> <span class="mi">0</span>
-  <span class="p">}</span>
-  <span class="n">inet_listener</span> <span class="n">imaps</span> <span class="p">{</span>
-    <span class="n">port</span> <span class="o">=</span> <span class="mi">993</span>
-    <span class="n">ssl</span>  <span class="o">=</span> <span class="n">yes</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="n">service</span> <span class="n">pop3</span><span class="o">-</span><span class="n">login</span> <span class="p">{</span>
-  <span class="n">inet_listener</span> <span class="n">pop3</span> <span class="p">{</span>
-    <span class="n">port</span> <span class="o">=</span> <span class="mi">0</span>
-  <span class="p">}</span>
-  <span class="n">inet_listener</span> <span class="n">pop3s</span> <span class="p">{</span>
-    <span class="n">port</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">ssl</span>  <span class="o">=</span> <span class="n">yes</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/dovecot/conf.d/10-auth.conf</span></code></span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">auth_mechanisms</span> <span class="o">=</span> plain login
-<span class="c1">#!include auth-system.conf.ext</span>
-!include auth-passwdfile.conf.ext
-</pre></div>
-</div>
-</div>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/dovecot/conf.d/10-mail.conf</span></code></span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mail_location: maildir:/home/%u/Maildir
-</pre></div>
-</div>
-</div>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/dovecot/conf.d/10-ssl.conf</span></code></span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">ssl</span> <span class="o">=</span> required
-<span class="nv">ssl_cert</span> <span class="o">=</span> &lt;/etc/dovecot/dovecot.pem
-<span class="nv">ssl_key</span> <span class="o">=</span> &lt;/etc/dovecot/private/dovecot.pem
-</pre></div>
-</div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>These certs can be the same as postfix, useful when you get valid certs.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">&lt;/</span></code> is not a mistake, it is required to specify file location.</p>
-</div>
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/dovecot/conf.d/15-lda.conf</span></code></span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">postmaster_address</span> <span class="o">=</span> postmaster@%d
-Protocol lda <span class="o">{</span>
-  <span class="nv">mail_plugins</span> <span class="o">=</span> <span class="nv">$mail_plugins</span>
-<span class="o">}</span>
-</pre></div>
-</div>
-</div>
-<div class="literal-block-wrapper docutils container" id="id9">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/dovecot/conf.d/20-imap.conf</span></code></span><a class="headerlink" href="#id9" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>protocol imap <span class="o">{</span>
-  <span class="nv">imap_client_workarounds</span> <span class="o">=</span> tb-extra-mailbox-sep
-<span class="o">}</span>
-</pre></div>
-</div>
-</div>
-<div class="literal-block-wrapper docutils container" id="id10">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/dovecot/conf.d/auth-passwdfile.conf.ext</span></code></span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>passdb <span class="o">{</span>
-  <span class="nv">driver</span> <span class="o">=</span> passwd-file
-  <span class="nv">args</span> <span class="o">=</span> <span class="nv">scheme</span><span class="o">=</span>SHA512-CRYPT <span class="nv">username_format</span><span class="o">=</span>%u /etc/imap.passwd
-<span class="o">}</span>
-
-userdb <span class="o">{</span>
-  <span class="nv">driver</span> <span class="o">=</span> passwd-file
-  <span class="nv">args</span> <span class="o">=</span> <span class="nv">username_format</span><span class="o">=</span>%u /etc/imap.passwd
-<span class="o">}</span>
-</pre></div>
-</div>
-</div>
-<p>See <a class="reference external" href="https://wiki.dovecot.org/Authentication/PasswordSchemes">Dovecot password schemes</a>.</p>
-<div class="literal-block-wrapper docutils container" id="id11">
-<div class="code-block-caption"><span class="caption-text">Create passwd DB and enable Dovecot.</span><a class="headerlink" href="#id11" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo touch /etc/imap.passwd
-sudo chown dovecot:dovecot /etc/imap.passwd
-sudo chmod <span class="m">0400</span> /etc/imap.passwd
-sudo postconf -e <span class="s1">&#39;smtpd_sasl_type = dovecot&#39;</span>
-sudo postconf -e <span class="s1">&#39;smtpd_sasl_auth_enable = yes&#39;</span>
-sudo postconf -e <span class="s1">&#39;smtpd_recipient_restrictions = permit_sasl_authenticated,permit_mynetworks,reject_unauth_destination&#39;</span>
-sudo postconf -e <span class="s1">&#39;smtpd_sasl_path = private/auth&#39;</span>
-sudo service postfix restart
-sudo service dovecot restart
-</pre></div>
-</div>
-</div>
-<ul class="simple">
-<li><p>Restarting postfix will pickup dovecot as the MDA instead of postfix/maildir
-(dovecot still delivers to maildir).</p></li>
-<li><p>LDA (local delivery agent) is what dovecot uses for it’s MDA; it also provides
-IMAPS.</p></li>
-<li><p>Tailing <code class="docutils literal notranslate"><span class="pre">mail.log</span></code> and watching for incoming message delivery, should be
-sent to <code class="docutils literal notranslate"><span class="pre">/usr/lib/dovecot/deliver</span></code> and appear in your maildir.</p></li>
-</ul>
-<p class="rubric">References</p>
+  <div class="section" id="email">
+<span id="service-email"></span><h1>Email<a class="headerlink" href="#email" title="Permalink to this headline">¶</a></h1>
+<p>Self-hosted email services (<a class="reference internal" href="../../glossary.html#term-mda"><span class="xref std std-term">MDA</span></a>, <a class="reference internal" href="../../glossary.html#term-mta"><span class="xref std std-term">MTA</span></a>, <a class="reference internal" href="../../glossary.html#term-mua"><span class="xref std std-term">MUA</span></a>).</p>
+<p>You must be able to setup DNS for your domain to use the security options.</p>
+<p>Setup focuses on running a <a class="reference internal" href="../../glossary.html#term-mta"><span class="xref std std-term">MTA</span></a> using the latest security options, with
+a proxy authentication webface; disabling POP3 and IMAP access.</p>
+<p>See <a class="reference external" href="https://hub.docker.com/r/tvial/docker-mailserver/">Email Docker and Documentation</a>.</p>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="https://help.ubuntu.com/community/PostfixDovecotSASL">Postfix + Dovecot + SASL</a></p></li>
-<li><p><a class="reference external" href="http://www.townx.org/index.php?q=blog/elliot/simple_spamassassin_setup_with_postfix_and_dovecot_on_ubuntu_breezy">Spamassassin with Dovecot</a></p></li>
+<li><p><a class="reference internal" href="mta/setup.html#service-email-mta-setup"><span class="std std-ref">Setup</span></a>.</p></li>
+<li><p><a class="reference internal" href="mta/configuration.html#service-email-mta-configuration"><span class="std std-ref">Configuration</span></a>.</p></li>
+<li><p><a class="reference internal" href="mta/testing.html#service-email-mta-testing"><span class="std std-ref">Testing</span></a>.</p></li>
+<li><p><a class="reference internal" href="mua/setup.html#service-email-mua-setup"><span class="std std-ref">MUA</span></a>.</p></li>
 </ol>
+<div class="toctree-wrapper compound">
+</div>
 </div>
 
 
@@ -1743,10 +1663,10 @@ sent to <code class="docutils literal notranslate"><span class="pre">/usr/lib/do
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="testing.html" class="btn btn-neutral float-right" title="Testing Dovecot" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mta/index.html" class="btn btn-neutral float-right" title="MTA/MDA" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="Dovecot" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../digikam/index.html" class="btn btn-neutral float-left" title="digiKam" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
