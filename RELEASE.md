@@ -1,5 +1,26 @@
 # [Changelog][3g]
 
+## 2020-02-02.0
+Dockerized Email Services.
+
+Added:
+* Add tamper protection disable for registry.
+* Add instructions for disabling tamper protection via powershell.
+* Add SSHD docker container with chroot and readonly filesystem.
+* Add windows update taskbar notification removal.
+* Add dockerized email services.
+* Add git rebase, tagging instructions.
+
+Changed:
+* Update execution policy with additional options.
+* Update SSH documentation with some additional troublshooting information.
+* Use defaults file instead of systemd service for ssh options.
+* Use `internal-sftp` for default SFTP server now, instead of separate binary. This has been the default for a few years. Explicitly make it so.
+
+Documentation no longer in use has been removed.
+* Removed: service/dovecot
+* Removed: service/postfix
+
 ## 2019-01-03.0
 Telemetry updates and documentation clarification.
 
