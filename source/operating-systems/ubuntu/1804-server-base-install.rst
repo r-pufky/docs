@@ -143,7 +143,7 @@ preferences.
    * :download:`.bashrc <source/.bashrc>`
    * :download:`.bash_profile <source/.bash_profile>`
    * :download:`.bash_logout <source/.bash_logout>`
-   * :download:`.vimrc <source/.vimrc>`
+   * :download:`.vimrc <../../apps/source/.vimrc>`
    * :download:`.tmux.conf <source/.tmux.conf>`
 
   These will need to be manually added to pre-existing accounts (e.g. ``root``
