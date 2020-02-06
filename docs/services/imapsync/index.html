@@ -102,6 +102,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../apps/chrome.html">Chrome Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/chrome.html#block-location-tracking">Block location tracking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../apps/chrome.html#disable-software-reporting">Disable Software Reporting</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../apps/git.html">GIT</a><ul>
@@ -1508,6 +1509,15 @@
 </ul>
 <p class="caption"><span class="caption-text">Scripts</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/bulk-downloader-for-reddit.html">Bulk Downloader for Reddit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../scripts/bulk-downloader-for-reddit.html#setup">Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../scripts/bulk-downloader-for-reddit.html#important-file-locations-bulk-downloader-for-reddit">Important File Locations (Bulk Downloader for Reddit)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../scripts/bulk-downloader-for-reddit.html#create-imgur-api-account">Create Imgur API Account</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../scripts/bulk-downloader-for-reddit.html#initial-configuration">Initial Configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../scripts/copying-data.html">Copying Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../scripts/scripts.html">Scripts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../scripts/video-editing-conversion.html">Video Editing / Conversion</a><ul>
@@ -1652,16 +1662,19 @@
 </div>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text">Install perl dependencies.</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo apt-get install libio-tee-perl libmail-imapclient-perl
-libterm-readkey-perl libunicode-string-perl libcrypt-openssl-rsa-perl
-libdata-uniqid-perl libjson-perl liblwp-online-perl libreadonly-perl
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt install libio-tee-perl libmail-imapclient-perl libterm-readkey-perl libunicode-string-perl libcrypt-openssl-rsa-perl libdata-uniqid-perl libjson-perl liblwp-online-perl libreadonly-perl libfile-copy-recursive-perl libio-socket-inet6-perl libsys-meminfo-perl libregexp-common-perl libfile-tail-perl libauthen-ntlm-perl libcgi-pm-perl libclass-load-perl libcrypt-ssleay-perl libdigest-hmac-perl libdist-checkconflicts-perl libencode-imaputf7-perl libio-compress-perl libio-socket-ssl-perl libmodule-scandeps-perl libnet-dbus-perl libnet-ssleay-perl libpar-packer-perl libtest-fatal-perl libtest-mock-guard-perl libtest-mockobject-perl libtest-pod-perl libtest-requires-perl libtest-simple-perl liburi-perl libtest-nowarnings-perl libtest-deep-perl libtest-warn-perl libjson-webtoken-perl cpanminus make
 </pre></div>
 </div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Meeting prerequisites can be determined by running
+<code class="docutils literal notranslate"><span class="pre">./INSTALL.d/prerequisities_imapsync</span></code>.</p>
+</div>
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-text">Create secured password files, enter passwords.</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>touch .ssh/imapsync_<span class="o">{</span>local,remote<span class="o">}</span>
-chmod <span class="m">0600</span> .ssh/imapsync_<span class="o">{</span>local,remote<span class="o">}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>touch .ssh/imapsync_<span class="o">{</span>personal,gmail<span class="o">}</span>
+chmod <span class="m">0600</span> .ssh/imapsync_<span class="o">{</span>personal,gmail<span class="o">}</span>
 </pre></div>
 </div>
 </div>
@@ -1670,12 +1683,12 @@ chmod <span class="m">0600</span> .ssh/imapsync_<span class="o">{</span>local,re
 <ul class="simple">
 <li><p>Remote server is gmail, uses application specific password. <a class="reference external" href="https://security.google.com/settings/security/apppasswords">Setup here</a>.</p></li>
 <li><p>Local server is your personal IMAP server. Use IMAP password.</p></li>
-<li><p>We use <code class="docutils literal notranslate"><span class="pre">.ssh</span></code> directory here since it’s already secured.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">.ssh</span></code> directory here since it’s already secured.</p></li>
 </ul>
 </div>
 <div class="literal-block-wrapper docutils container" id="id5">
 <div class="code-block-caption"><span class="caption-text">Set password files readonly.</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod <span class="m">0400</span> .ssh/imapsync_<span class="o">{</span>local,remote<span class="o">}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod <span class="m">0400</span> .ssh/imapsync_<span class="o">{</span>personal,gmail<span class="o">}</span>
 </pre></div>
 </div>
 </div>
@@ -1684,12 +1697,10 @@ chmod <span class="m">0600</span> .ssh/imapsync_<span class="o">{</span>local,re
 <h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
 <div class="literal-block-wrapper docutils container" id="id6">
 <div class="code-block-caption"><span class="caption-text">Test sync to ensure connecting properly.</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./imapsync --dry --host1 imap.gmail.com --port1 <span class="m">993</span> --user1
-<span class="o">{</span>GMAIL EMAIL USER<span class="o">}</span> --passfile1 ~/.ssh/imapsync_remote --ssl1 --host2
-<span class="o">{</span>YOUR IMAP SERVER<span class="o">}</span> --port2 <span class="m">993</span> --user2
-<span class="o">{</span>YOUR IMAP USER<span class="o">}</span> --passfile2 ~/.ssh/imapsync_local --sslargs2
-<span class="nv">SSL_verify_mode</span><span class="o">=</span><span class="m">0</span> --ssl2 --subfolder2 gmail-archive --minage
-<span class="m">30</span> --exitwhenover <span class="m">2500000000</span> --delete --expunge1
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./imapsync --dry <span class="se">\</span>
+--host1 imap.gmail.com --port1 <span class="m">993</span> --user1 <span class="o">{</span>GMAIL EMAIL USER<span class="o">}</span> --passfile1 ~/.ssh/imapsync_gmail --ssl1 <span class="se">\</span>
+--host2 <span class="o">{</span>YOUR IMAP SERVER<span class="o">}</span> --port2 <span class="m">993</span> --user2 <span class="o">{</span>YOUR IMAP USER<span class="o">}</span> --passfile2 ~/.ssh/imapsync_personal --ssl2 <span class="se">\</span>
+--subfolder2 gmail-archive --minage <span class="m">30</span> --exitwhenover <span class="m">2500000000</span> --delete --expunge1
 </pre></div>
 </div>
 </div>
@@ -1697,9 +1708,6 @@ chmod <span class="m">0600</span> .ssh/imapsync_<span class="o">{</span>local,re
 <li><p>This will sync mail older than 30 days, and remove it from <a class="reference external" href="http://imapsync.lamiral.info/FAQ.d/FAQ.Gmail.txt">gmail</a>.</p></li>
 <li><p>Gmail has a download limit of 2.5GB’s a day, this will safetly exit when
 reached.</p></li>
-<li><p>SSL Verification is disabled for local IMAP (assuming self-signed cert) - this
-will allow for MITM attacks, you should get a <a class="reference internal" href="../letsencrypt/index.html#service-letsencrypt"><span class="std std-ref">Let’s Encrypt</span></a> cert
-and remove this.</p></li>
 <li><p>Ensure connections work, folders are identified, and local folder is set
 properly.</p></li>
 </ul>
@@ -1720,11 +1728,10 @@ properly.</p></li>
 <div class="code-block-caption"><span class="caption-text">Create bash script using <code class="docutils literal notranslate"><span class="pre">/opt/imapsync</span></code>, typically in <code class="docutils literal notranslate"><span class="pre">~/bin</span></code>.</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 
-/opt/imapsync/imapsync --host1 imap.gmail.com --port1 <span class="m">993</span> --user1 <span class="se">\</span>
-<span class="o">{</span>GMAIL EMAIL USER<span class="o">}</span> --passfile1 ~/.ssh/imapsync_remote --ssl1 --host2 <span class="se">\</span>
-<span class="o">{</span>YOUR IMAP SERVER<span class="o">}</span> --port2 <span class="m">993</span> --user2 <span class="o">{</span>YOUR IMAP USER<span class="o">}</span> --passfile2 <span class="se">\</span>
-~/.ssh/imapsync_local --sslargs2 <span class="nv">SSL_verify_mode</span><span class="o">=</span><span class="m">0</span> --ssl2 --subfolder2 <span class="se">\</span>
-gmail-archive --minage <span class="m">30</span> --exitwhenover <span class="m">2500000000</span> --delete --expunge1 <span class="se">\</span>
+/opt/imapsync/imapsync <span class="se">\</span>
+--host1 imap.gmail.com --port1 <span class="m">993</span> --user1 <span class="o">{</span>GMAIL EMAIL USER<span class="o">}</span> --passfile1 ~/.ssh/imapsync_gmail --ssl1 <span class="se">\</span>
+--host2 <span class="o">{</span>YOUR IMAP SERVER<span class="o">}</span> --port2 <span class="m">993</span> --user2 <span class="o">{</span>YOUR IMAP USER<span class="o">}</span> --passfile2 ~/.ssh/imapsync_personal --ssl2 <span class="se">\</span>
+--subfolder2 gmail-archive --minage <span class="m">30</span> --exitwhenover <span class="m">2500000000</span> --delete --expunge1 <span class="se">\</span>
 --nolog <span class="p">&amp;</span>&gt;/dev/null
 </pre></div>
 </div>

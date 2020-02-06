@@ -102,6 +102,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="chrome.html">Chrome Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="chrome.html#block-location-tracking">Block location tracking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chrome.html#disable-software-reporting">Disable Software Reporting</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="git.html">GIT</a><ul>
@@ -1508,6 +1509,15 @@
 </ul>
 <p class="caption"><span class="caption-text">Scripts</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../scripts/bulk-downloader-for-reddit.html">Bulk Downloader for Reddit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scripts/bulk-downloader-for-reddit.html#setup">Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../scripts/bulk-downloader-for-reddit.html#important-file-locations-bulk-downloader-for-reddit">Important File Locations (Bulk Downloader for Reddit)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scripts/bulk-downloader-for-reddit.html#create-imgur-api-account">Create Imgur API Account</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scripts/bulk-downloader-for-reddit.html#initial-configuration">Initial Configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../scripts/copying-data.html">Copying Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../scripts/scripts.html">Scripts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../scripts/video-editing-conversion.html">Video Editing / Conversion</a><ul>
@@ -1724,169 +1734,326 @@ ctrl<span class="p">+</span><span class="k">q</span>  # starts terminal output <
 <p>Displayed without comments / unchanged lines.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text"><strong>0644 user user</strong> <code class="docutils literal notranslate"><span class="pre">~/.vimrc</span></code></span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
-<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66
-67
-68
-69
-70
-71
-72
-73
-74
-75
-76
-77
-78
-79
-80
-81
-82
-83
-84
-85
-86
-87
-88
-89
-90
-91
-92
-93
-94
-95</pre></div></td><td class="code"><div class="highlight"><pre><span></span>&quot;&quot; If python (or any files) are tabbing incorrectly, modify the
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178</pre></div></td><td class="code"><div class="highlight"><pre><span></span>&quot;&quot; https://dougblack.io/words/a-good-vimrc.html#colors
+set nocompatible                             &quot; Do not use vi compatible settings
+set viminfo=%,&#39;50,\&quot;1000,/50,:0,h,f0,n~/.vim/.viminfo
+&quot;           | |   |      |   |  | |  + viminfo file path
+&quot;           | |   |      |   |  | + File marks 0-9,A-Z 0=NOT stored
+&quot;           | |   |      |   |  + Disable &#39;hlsearch&#39; loading viminfo
+&quot;           | |   |      |   + Max command-line history saved
+&quot;           | |   |      + Max search history saved
+&quot;           | |   + Max register lines saved
+&quot;           | + lines saved for each register
+&quot;           + save/restore buffer list
+&quot;&quot; https://stackoverflow.com/questions/23012391/how-and-where-is-my-viminfo-option-set
+
+&quot;&quot; COLOR SCHEME:
+&quot;&quot; -------------
+set t_Co=256                                 &quot; Use 256 colors. termguicolors (24bit) doesn&#39;t work with tmux
+colorscheme monokai                          &quot; Use custom monokai theme
+syntax enable                                &quot; Use colorscheme syntax highlighting
+set printoptions+=syntax:y                   &quot; Use colorscheme syntax highlighting when printing to paper
+highlight ColorColumn ctermbg=235 guibg=#2c2d27                              &quot; Vertical column highlighting
+highlight VertSplit ctermfg=222 ctermbg=238 guifg=#ffd787 guibg=#444444      &quot; Vertical split highlighting
+highlight User1 ctermfg=010 ctermbg=241 guifg=#00ff00 guibg=#626262          &quot; %1* color
+highlight User6 ctermfg=241 ctermbg=239 guifg=#626262 guibg=#4e4e4e          &quot; %6* color (inverted %1*)
+highlight User2 ctermfg=009 ctermbg=239 guifg=#ff0000 guibg=#4e4e4e          &quot; %2* color
+highlight User7 ctermfg=239 ctermbg=237 guifg=#4e4e4e guibg=#3a3a3a          &quot; %7* color (inverted %7*)
+highlight User3 ctermfg=222 ctermbg=237 guifg=#ffd787 guifg=#3a3a3a          &quot; %3* color
+highlight User8 ctermfg=237 ctermbg=235 guifg=#3a3a3a guifg=#262626          &quot; %8* color (inverted %3*)
+highlight User4 ctermfg=239 ctermbg=235 guifg=#4e4e4e guifg=#262626          &quot; %4* color
+highlight User9 ctermfg=235 ctermbg=233 guifg=#262626 guifg=#121212          &quot; %9* color (inverted %4*)
+
+&quot;&quot; FILE OPTIONS:
+&quot;&quot; -------------
+&quot;&quot; If python (or any files) are tabbing incorrectly, modify the
 &quot;&quot; /usr/share/vim/vim74/ftplugin/(filetype).vim file and comment out the
 &quot;&quot; setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=8
-&quot;&quot;
-set nocompatible
-set ruler
-set viminfo=&#39;50,\&quot;1000,:0
+filetype on                                  &quot; Enable filetype detection
+filetype indent on                           &quot; Load type specific indent files
 
-set popt+=syntax:y    &quot; Printing options
-set mouse=a           &quot; mouse will be on all the time
+&quot;&quot; SEARCHING:
+&quot;&quot; ----------
+set incsearch                                &quot; Search as characters are entered
+set hlsearch                                 &quot; Highlight search matches
+set ignorecase                               &quot; Ignore case when searching
+set smartcase                                &quot; If search contains a captial letter, make search case-sensitive
+nnoremap &lt;silent&gt; \ :nohlsearch&lt;CR&gt;          &quot; \ clears search highlights
 
-filetype on           &quot; enable filetype settings
-filetype plugin on
-filetype indent on
+&quot;&quot; GUI OPTIONS:
+&quot;&quot; ------------
+set guioptions=agirt                         &quot; No menu or toolbar in GUI
+set guifont=SF\ Mono                         &quot; Use SF Mono font in GUI
 
-set hlsearch          &quot; highlight search matches
-set background=dark
-set guioptions=agirt  &quot;no menu, no toolbar
-set guifont=Lucida\ Terminal
-&quot;&quot; clear highlights with \
-nnoremap \ :noh&lt;return&gt;
+&quot;&quot; CONSOLE OPTIONS:
+&quot;&quot; ----------------
+set mouse=a                                  &quot; Mouse will be on all the time
+set belloff=all                              &quot; Turn off visual/audio bells
+set encoding=utf8                            &quot; Encode non-ASCII to UTF8
+set tabstop=2                                &quot; Tab control characters are rendered with 5 spaces
+set softtabstop=2                            &quot; Number of spaces inserted when inserting a tab control character
+set expandtab                                &quot; Expand tab control character to spaces
+set shiftwidth=2                             &quot; Shifting (&lt;&lt; &gt;&gt;) is 2 spaces
+set backspace=2                              &quot; Make backspace behave like other editors
+set textwidth=0                              &quot; Disable hard text wrapping
+set wrapmargin=0                             &quot; Disable soft text wrapping
+set wildmenu                                 &quot; Visual autocomplete for command menus
+set number                                   &quot; Enable lines numbers by default (nonumber disable)
+set showcmd                                  &quot; Continue to show last command until new one is entered
+set cursorline                               &quot; Highlight current cursor line
+set showmatch                                &quot; Showing matching closure
+set ruler                                    &quot; Display position information
+set autoread                                 &quot; Auto-reload files if they change on disk
+set autoindent                               &quot; Copy indentation from current line when starting new line
 
-&quot;&quot;  CONSOLE AND GUI OPTIONS:
-&quot;&quot;  -----------------------
-set vb t_vb=          &quot; turn beeping off
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set expandtab         &quot; convert tabs to spaces
-set backspace=2       &quot; this makes backspace work
-set tw=80             &quot; wrap as close to 80 characters as possible.
+&quot;&quot; SPLIT MANAGEMENT:
+&quot;&quot; -----------------
+set splitbelow                               &quot; Horizontal splits always created below
+set splitright                               &quot; Vertical splits always created on right
+nnoremap &lt;silent&gt; &lt;leader&gt;\| :vsplit&lt;CR&gt;     &quot; \| Create vertical split
+nnoremap &lt;silent&gt; &lt;leader&gt;- :split&lt;CR&gt;       &quot; - Create horizontal split
+nnoremap &lt;silent&gt; &lt;leader&gt;&lt;left&gt;  &lt;c-w&gt;&lt;c-h&gt; &quot; left arrow select split left
+nnoremap &lt;silent&gt; &lt;leader&gt;&lt;right&gt; &lt;c-w&gt;&lt;c-l&gt; &quot; right arrow select split right
+nnoremap &lt;silent&gt; &lt;leader&gt;&lt;up&gt;    &lt;c-w&gt;&lt;c-k&gt; &quot; up arrow select split up
+nnoremap &lt;silent&gt; &lt;leader&gt;&lt;down&gt;  &lt;c-w&gt;&lt;c-j&gt; &quot; down arrow select split down
+set fillchars+=vert:│                        &quot; Use solid line for vertical split 
+
+&quot;&quot; NETRW FILE BROWSER:
+&quot;&quot; -------------------
+&quot;&quot; https://shapeshed.com/vim-netrw/#netrw---the-unloved-directory-browser
+let g:netrw_liststyle=3                      &quot; Tree view as default list view (i to rotate through)
+let g:netrw_sort_sequence=&#39;[\/]$,*&#39;          &quot; List directories on top, files below
+let g:netrw_browse_split=3                   &quot; Open files in previous window (was 3, tab)
+let g:netrw_altv=1                           &quot; Open files in vertical split
+let g:netrw_banner=0                         &quot; Disable the starting banner
+let g:netrw_winsize=25                       &quot; Only use 25% of screen for netrw
 
 &quot;&quot; STATUSBAR:
 &quot;&quot; ---------
-set laststatus=2
-set statusline=
-set statusline+=%-3.3n\                      &quot; buffer number
-set statusline+=%f\                          &quot; file name
-set statusline+=%h%m%r%w                     &quot; flags
-set statusline+=\[%{strlen(&amp;ft)?&amp;ft:&#39;none&#39;}, &quot; filetype
-set statusline+=%{&amp;encoding},                &quot; encoding
-set statusline+=%{&amp;fileformat}]              &quot; file format
-set statusline+=%=                           &quot; right align
-set statusline+=0x%-8B\                      &quot; current char
-set statusline+=%-14.(%l,%c%V%)\ %&lt;%P        &quot; offset
+&quot;&quot; Match coloring from tmux status bar
+set laststatus=2                             &quot; Always show the status bar
+set statusline=                              &quot; Clear status line
+set statusline+=%1*%f%6*                    &quot; File path
+set statusline+=%2*\ %{&amp;encoding}%7*        &quot; File encoding
+set statusline+=%3*\ %{&amp;fileformat}%8*      &quot; File format
+set statusline+=%4*\ %m%r%9*                &quot; [+] (modified file), [RO] (readonly)
+set statusline+=%=                           &quot; Items before this are left-aligned, after right-aligned
+set statusline+=%9*%4*0x%B\                 &quot; Hex code of character under cursor
+set statusline+=%8*%3*%c\                   &quot; column number
+set statusline+=%7*%2*%p%%\                 &quot; Percent through the file
+set statusline+=%6*%1*[%l/%L]               &quot; Show current line, total lines
 
-syntax on
+&quot;&quot; FOLDING:
+&quot;&quot; --------
+set foldenable                               &quot; Enable code folding
+set foldlevelstart=10                        &quot; Open 10 levels of folds by default
+set foldnestmax=10                           &quot; Max 10 nested fold level
+set foldmethod=indent                        &quot; Fold based on indentation level
 
 &quot;&quot; COMMENTING:
 &quot;&quot; ----------
-map ,# :s/^/#/&lt;CR&gt;:nohlsearch&lt;CR&gt;
-map ,/ :s/^/\/\//&lt;CR&gt;:nohlsearch&lt;CR&gt;
-map ,&gt; :s/^/&gt; /&lt;CR&gt;:nohlsearch&lt;CR&gt;
-map ,&quot; :s/^/\&quot;/&lt;CR&gt;:nohlsearch&lt;CR&gt;
-map ,% :s/^/%/&lt;CR&gt;:nohlsearch&lt;CR&gt;
-map ,! :s/^/!/&lt;CR&gt;:nohlsearch&lt;CR&gt;
-map ,; :s/^/;/&lt;CR&gt;:nohlsearch&lt;CR&gt;
-map ,- :s/^/--/&lt;CR&gt;:nohlsearch&lt;CR&gt;
-map ,c :s/^\/\/\\|^--\\|^&gt; \\|^[#&quot;%!;]//&lt;CR&gt;:nohlsearch&lt;CR&gt;
-&quot; wrapping comments
-map ,* :s/^\(.*\)$/\/\* \1 \*\//&lt;CR&gt;:nohlsearch&lt;CR&gt;
-map ,( :s/^\(.*\)$/\(\* \1 \*\)/&lt;CR&gt;:nohlsearch&lt;CR&gt;
-map ,&lt; :s/^\(.*\)$/&lt;!-- \1 --&gt;/&lt;CR&gt;:nohlsearch&lt;CR&gt;
-map ,d :s/^\([/(]\*\\|&lt;!--\) \(.*\) \(\*[/)]\\|--&gt;\)$/\2/&lt;CR&gt;:nohlsearch&lt;CR&gt;
+map ,# :s/^/#/&lt;CR&gt;:nohlsearch&lt;CR&gt;            &quot; Add # comment start block
+map ,/ :s/^/\/\//&lt;CR&gt;:nohlsearch&lt;CR&gt;         &quot; Add // comment start block
+map ,&gt; :s/^/&gt; /&lt;CR&gt;:nohlsearch&lt;CR&gt;           &quot; Add &gt; comment start block
+map ,&quot; :s/^/\&quot;/&lt;CR&gt;:nohlsearch&lt;CR&gt;           &quot; Add &quot; comment start block
+map ,% :s/^/%/&lt;CR&gt;:nohlsearch&lt;CR&gt;            &quot; Add % comment start block
+map ,! :s/^/!/&lt;CR&gt;:nohlsearch&lt;CR&gt;            &quot; Add ! comment start block
+map ,; :s/^/;/&lt;CR&gt;:nohlsearch&lt;CR&gt;            &quot; Add ; comment start block
+map ,- :s/^/--/&lt;CR&gt;:nohlsearch&lt;CR&gt;           &quot; Add -- comment start block
+map ,c :s/^\/\/\\|^--\\|^&gt; \\|^[#&quot;%!;]//&lt;CR&gt;:nohlsearch&lt;CR&gt;                  &quot; Clear comment start block
+&quot;&quot; Wrapping comments
+map ,* :s/^\(.*\)$/\/\* \1 \*\//&lt;CR&gt;:nohlsearch&lt;CR&gt;                          &quot; Insert /* */ for line
+map ,( :s/^\(.*\)$/\(\* \1 \*\)/&lt;CR&gt;:nohlsearch&lt;CR&gt;                          &quot; Insert (* *) for line
+map ,&lt; :s/^\(.*\)$/&lt;!-- \1 --&gt;/&lt;CR&gt;:nohlsearch&lt;CR&gt;                           &quot; Insert &lt;!-- --&gt; for line
+map ,d :s/^\([/(]\*\\|&lt;!--\) \(.*\) \(\*[/)]\\|--&gt;\)$/\2/&lt;CR&gt;:nohlsearch&lt;CR&gt; &quot; Clear wrapped comment
 
-&quot;&quot;---------------- OPTIONS YOU PROBABLY DON&quot;T WANT TO PLAY WITH -------------
-&quot; When editing a file, always jump to the last known cursor position.
-&quot; Don&#39;t do it when the position is invalid or when inside an event handler
-&quot; (happens when dropping a file on gvim).
+let mapleader=&#39; &#39;                            &quot; Use space instead of \ for leader key
+nnoremap &lt;silent&gt; &lt;leader&gt;h :source ~/.vimrc&lt;CR&gt;                             &quot; h to reload .vimrc
+nnoremap &lt;silent&gt; &lt;leader&gt;r :set relativenumber!&lt;CR&gt;                         &quot; m Toggle relative line numbers
+nnoremap &lt;silent&gt; &lt;leader&gt;n :set number!&lt;CR&gt;                                 &quot; n Toggle line numbers on/off
+nnoremap &lt;silent&gt; &lt;leader&gt;s :call StripTrailingWhitespace()&lt;CR&gt;              &quot; s Strip EOL/EOF trailing whitespace
+nnoremap &lt;silent&gt; &lt;leader&gt;g :call ColorRightGutters()&lt;CR&gt;                    &quot; g Toggle right gutter highlighting
+nnoremap &lt;silent&gt; &lt;Leader&gt;&lt;Leader&gt; :e#&lt;CR&gt;                                   &quot;   Toggle between last opened file
+nnoremap &lt;silent&gt; &lt;leader&gt;f za                                               &quot; f open/closes fold
+
+&quot;&quot; Jump to last known position when opening file.
 autocmd BufReadPost *
 \ if expand(&quot;&lt;afile&gt;:p:h&quot;) !=? $TEMP |
 \   if line(&quot;&#39;\&quot;&quot;) &gt; 0 &amp;&amp; line(&quot;&#39;\&quot;&quot;) &lt;= line(&quot;$&quot;) |
@@ -1894,25 +2061,34 @@ autocmd BufReadPost *
 \     let b:doopenfold = 1 |
 \   endif |
 \ endif
-&quot; Need to postpone using &quot;zv&quot; until after reading the modelines.
+
+&quot;&quot; When in GVIM don&#39;t do it when the position is invalid or when inside an event
+&quot;&quot; handler, delay using &quot;zv&quot; until after reading the modelines.
 autocmd BufWinEnter *
 \ if exists(&quot;b:doopenfold&quot;) |
 \   unlet b:doopenfold |
 \   exe &quot;normal zv&quot; |
 \ endif
 
-&quot; If we&#39;re in a wide window, enable line numbers.
-fun! &lt;SID&gt;WindowWidth()
-    if winwidth(0) &gt; 90
-        setlocal number
-    else
-        setlocal nonumber
-    endif
-endfun
-
-&quot; Always do a full syntax refresh
+&quot;&quot; Always do a full syntax refresh when loading
 autocmd BufEnter * syntax sync fromstart
-&quot;&quot;---------------------------------------------------------------------------
+
+&quot;&quot; Strip EOL/EOF trailing whitespace
+function! StripTrailingWhitespace()
+  let save_cursor = getpos(&#39;.&#39;)
+  silent! %s/\s\+$//e                        &quot; EOL whitespace
+  silent! %s#\($\n\)\+\%$##                  &quot; EOF whitespace
+  call setpos(&#39;.&#39;, save_cursor)
+endfunction
+
+&quot;&quot; Toggle right gutter highlighting
+function! ColorRightGutters()
+  if &amp;colorcolumn == &quot;&quot;
+    let &amp;colorcolumn=join(range(81,120),&quot;,&quot;).join(range(120,999),&quot;,&quot;)
+  else
+    set colorcolumn=
+  endif
+endfunction
 </pre></div>
 </td></tr></table></div>
 </div>
