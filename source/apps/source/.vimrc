@@ -14,12 +14,19 @@ set viminfo=%,'50,\"1000,/50,:0,h,f0,n~/.vim/.viminfo
 "" COLOR SCHEME:
 "" -------------
 set t_Co=256                                 " Use 256 colors. termguicolors (24bit) doesn't work with tmux
-colorscheme monokai                          " Use custom molokai theme
-"" Use lighter color for 81-120 and 121+ right hand boundries
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
-"let &colorcolumn=join(range(81,120),",").join(range(120,999),",")
+colorscheme monokai                          " Use custom monokai theme
 syntax enable                                " Use colorscheme syntax highlighting
 set printoptions+=syntax:y                   " Use colorscheme syntax highlighting when printing to paper
+highlight ColorColumn ctermbg=235 guibg=#2c2d27                              " Vertical column highlighting
+highlight VertSplit ctermfg=222 ctermbg=238 guifg=#ffd787 guibg=#444444      " Vertical split highlighting
+highlight User1 ctermfg=010 ctermbg=241 guifg=#00ff00 guibg=#626262          " %1* color
+highlight User6 ctermfg=241 ctermbg=239 guifg=#626262 guibg=#4e4e4e          " %6* color (inverted %1*)
+highlight User2 ctermfg=009 ctermbg=239 guifg=#ff0000 guibg=#4e4e4e          " %2* color
+highlight User7 ctermfg=239 ctermbg=237 guifg=#4e4e4e guibg=#3a3a3a          " %7* color (inverted %7*)
+highlight User3 ctermfg=222 ctermbg=237 guifg=#ffd787 guifg=#3a3a3a          " %3* color
+highlight User8 ctermfg=237 ctermbg=235 guifg=#3a3a3a guifg=#262626          " %8* color (inverted %3*)
+highlight User4 ctermfg=239 ctermbg=235 guifg=#4e4e4e guifg=#262626          " %4* color
+highlight User9 ctermfg=235 ctermbg=233 guifg=#262626 guifg=#121212          " %9* color (inverted %4*)
 
 "" FILE OPTIONS:
 "" -------------
@@ -74,7 +81,6 @@ nnoremap <silent> <leader><right> <c-w><c-l> " right arrow select split right
 nnoremap <silent> <leader><up>    <c-w><c-k> " up arrow select split up
 nnoremap <silent> <leader><down>  <c-w><c-j> " down arrow select split down
 set fillchars+=vert:│                        " Use solid line for vertical split 
-highlight VertSplit ctermfg=222 ctermbg=238 guifg=#ffd787 guibg=#444444
 
 "" NETRW FILE BROWSER:
 "" -------------------
@@ -89,20 +95,12 @@ let g:netrw_winsize=25                       " Only use 25% of screen for netrw
 "" STATUSBAR:
 "" ---------
 "" Match coloring from tmux status bar
-highlight User1 ctermfg=010 ctermbg=241 guifg=#00ff00 guibg=#626262
-highlight User6 ctermfg=241 ctermbg=239 guifg=#626262 guibg=#4e4e4e
-highlight User2 ctermfg=009 ctermbg=239 guifg=#ff0000 guibg=#4e4e4e
-highlight User7 ctermfg=239 ctermbg=237 guifg=#4e4e4e guibg=#3a3a3a
-highlight User3 ctermfg=222 ctermbg=237 guifg=#ffd787 guifg=#3a3a3a
-highlight User8 ctermfg=237 ctermbg=235 guifg=#3a3a3a guifg=#262626
-highlight User4 ctermfg=239 ctermbg=235 guifg=#4e4e4e guifg=#262626
-highlight User9 ctermfg=235 ctermbg=233 guifg=#262626 guifg=#121212
 set laststatus=2                             " Always show the status bar
 set statusline=                              " Clear status line
 set statusline+=%1*%f%6*                    " File path
-set statusline+=%2*%{&encoding}%7*          " File encoding
-set statusline+=%3*%{&fileformat}%8*        " File format
-set statusline+=%4*%m%r%9*                  " [+] (modified file), [RO] (readonly)
+set statusline+=%2*\ %{&encoding}%7*        " File encoding
+set statusline+=%3*\ %{&fileformat}%8*      " File format
+set statusline+=%4*\ %m%r%9*                " [+] (modified file), [RO] (readonly)
 set statusline+=%=                           " Items before this are left-aligned, after right-aligned
 set statusline+=%9*%4*0x%B\                 " Hex code of character under cursor
 set statusline+=%8*%3*%c\                   " column number
