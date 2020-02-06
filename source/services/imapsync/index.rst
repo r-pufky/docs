@@ -16,44 +16,41 @@ imapsync Setup
 .. code-block:: bash
   :caption: Install perl dependencies.
 
-  sudo apt-get install libio-tee-perl libmail-imapclient-perl
-  libterm-readkey-perl libunicode-string-perl libcrypt-openssl-rsa-perl
-  libdata-uniqid-perl libjson-perl liblwp-online-perl libreadonly-perl
+  apt install libio-tee-perl libmail-imapclient-perl libterm-readkey-perl libunicode-string-perl libcrypt-openssl-rsa-perl libdata-uniqid-perl libjson-perl liblwp-online-perl libreadonly-perl libfile-copy-recursive-perl libio-socket-inet6-perl libsys-meminfo-perl libregexp-common-perl libfile-tail-perl libauthen-ntlm-perl libcgi-pm-perl libclass-load-perl libcrypt-ssleay-perl libdigest-hmac-perl libdist-checkconflicts-perl libencode-imaputf7-perl libio-compress-perl libio-socket-ssl-perl libmodule-scandeps-perl libnet-dbus-perl libnet-ssleay-perl libpar-packer-perl libtest-fatal-perl libtest-mock-guard-perl libtest-mockobject-perl libtest-pod-perl libtest-requires-perl libtest-simple-perl liburi-perl libtest-nowarnings-perl libtest-deep-perl libtest-warn-perl libjson-webtoken-perl cpanminus make
+
+.. note::
+  Meeting prerequisites can be determined by running
+  ``./INSTALL.d/prerequisities_imapsync``.
 
 .. code-block:: bash
   :caption: Create secured password files, enter passwords.
 
-  touch .ssh/imapsync_{local,remote}
-  chmod 0600 .ssh/imapsync_{local,remote}
+  touch .ssh/imapsync_{personal,gmail}
+  chmod 0600 .ssh/imapsync_{personal,gmail}
 
 .. note::
   * Remote server is gmail, uses application specific password. `Setup here`_.
   * Local server is your personal IMAP server. Use IMAP password.
-  * We use ``.ssh`` directory here since it's already secured.
+  * Use ``.ssh`` directory here since it's already secured.
 
 .. code-block:: bash
   :caption: Set password files readonly.
 
-  chmod 0400 .ssh/imapsync_{local,remote}
+  chmod 0400 .ssh/imapsync_{personal,gmail}
 
 Testing
 *******
 .. code-block:: bash
   :caption: Test sync to ensure connecting properly.
 
-  ./imapsync --dry --host1 imap.gmail.com --port1 993 --user1
-  {GMAIL EMAIL USER} --passfile1 ~/.ssh/imapsync_remote --ssl1 --host2
-  {YOUR IMAP SERVER} --port2 993 --user2
-  {YOUR IMAP USER} --passfile2 ~/.ssh/imapsync_local --sslargs2
-  SSL_verify_mode=0 --ssl2 --subfolder2 gmail-archive --minage
-  30 --exitwhenover 2500000000 --delete --expunge1
+  ./imapsync --dry \
+  --host1 imap.gmail.com --port1 993 --user1 {GMAIL EMAIL USER} --passfile1 ~/.ssh/imapsync_gmail --ssl1 \
+  --host2 {YOUR IMAP SERVER} --port2 993 --user2 {YOUR IMAP USER} --passfile2 ~/.ssh/imapsync_personal --ssl2 \
+  --subfolder2 gmail-archive --minage 30 --exitwhenover 2500000000 --delete --expunge1
 
 * This will sync mail older than 30 days, and remove it from `gmail`_.
 * Gmail has a download limit of 2.5GB's a day, this will safetly exit when
   reached.
-* SSL Verification is disabled for local IMAP (assuming self-signed cert) - this
-  will allow for MITM attacks, you should get a :ref:`service-letsencrypt` cert
-  and remove this.
 * Ensure connections work, folders are identified, and local folder is set
   properly.
 
@@ -72,11 +69,10 @@ Install Service
 
   #!/bin/bash
 
-  /opt/imapsync/imapsync --host1 imap.gmail.com --port1 993 --user1 \
-  {GMAIL EMAIL USER} --passfile1 ~/.ssh/imapsync_remote --ssl1 --host2 \
-  {YOUR IMAP SERVER} --port2 993 --user2 {YOUR IMAP USER} --passfile2 \
-  ~/.ssh/imapsync_local --sslargs2 SSL_verify_mode=0 --ssl2 --subfolder2 \
-  gmail-archive --minage 30 --exitwhenover 2500000000 --delete --expunge1 \
+  /opt/imapsync/imapsync \
+  --host1 imap.gmail.com --port1 993 --user1 {GMAIL EMAIL USER} --passfile1 ~/.ssh/imapsync_gmail --ssl1 \
+  --host2 {YOUR IMAP SERVER} --port2 993 --user2 {YOUR IMAP USER} --passfile2 ~/.ssh/imapsync_personal --ssl2 \
+  --subfolder2 gmail-archive --minage 30 --exitwhenover 2500000000 --delete --expunge1 \
   --nolog &>/dev/null
 
 Add to `local crontab`_ to run nightly.
