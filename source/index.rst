@@ -10,7 +10,7 @@ Where'd everything go?
 Docs were re-organized to keep the growing documentation clean. You should link
 to the core doc repo and browse files.
 
-* :ref:`windows-10-pro-setup`
+* :ref:`windows-10`
 * :ref:`troubleshooting-pc-hardware`
 
 Assumptions
