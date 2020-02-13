@@ -876,6 +876,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../airsonic/index.html#using-subpaths">Using Subpaths</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../airsonic/index.html#postgres-backend">Postgres Backend</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../beets/index.html">beets.io</a><ul>
@@ -1030,6 +1031,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#using-subpaths">Using Subpaths</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#postgres-backend">Postgres Backend</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#fail2ban-setup">fail2ban Setup</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#roundcube-filters">Roundcube Filters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#roundcube-jails">Roundcube Jails</a></li>
@@ -1084,6 +1086,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../firefly/index.html#using-subdomains">Using Subdomains</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../firefly/index.html#postgress-backend">Postgress Backend</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../firefly/index.html#initial-setup">Initial Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../firefly/index.html#firefly-gotchas">Firefly Gotchas</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../firefly/index.html#attachment-disappears">Attachment Disappears</a></li>
@@ -1100,6 +1103,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../gitea/index.html#using-subpaths">Using Subpaths</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../gitea/index.html#postgres-backend">Postgres Backend</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../gitea/index.html#initial-setup">Initial Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../gitea/index.html#database-settings">Database Settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gitea/index.html#general-settings">General Settings</a></li>
@@ -1329,6 +1333,20 @@
 <li class="toctree-l4"><a class="reference internal" href="../../plex/troubleshooting.html#plex-stuck-at-initial-startup">Plex Stuck at Initial Startup</a></li>
 </ul>
 </li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../postgres/index.html">Postgresql</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../postgres/index.html#ports-postgres">Ports (postgres)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../postgres/index.html#important-file-locations-postgres">Important File Locations (postgres)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../postgres/index.html#docker-creation">Docker Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../postgres/index.html#creating-a-database">Creating A Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../postgres/index.html#import-a-database">Import A Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../postgres/index.html#initdb-d-scripts"><code class="docutils literal notranslate"><span class="pre">initdb.d</span></code> Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../postgres/index.html#database-backup">Database Backup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../postgres/index.html#backup-entire-instance">Backup Entire Instance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../postgres/index.html#backup-a-specific-database">Backup A Specific Database</a></li>
 </ul>
 </li>
 </ul>
@@ -1786,12 +1804,46 @@ on the mail server <code class="docutils literal notranslate"><span class="pre">
 </div>
 </div>
 </div>
+<div class="section" id="postgres-backend">
+<h2>Postgres Backend<a class="headerlink" href="#postgres-backend" title="Permalink to this headline">¶</a></h2>
+<p>Postgres may be used to store airsonic data in a centralized location. This
+assumes that <a class="reference internal" href="../../postgres/index.html#service-postgres"><span class="std std-ref">Postgresql</span></a> is already configured, with an empty
+database for airsonic to use (see <a class="reference internal" href="../../postgres/index.html#service-postgres-create-database"><span class="std std-ref">Creating A Database</span></a>).</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Import the Roundcube DB schema.</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="highlight-psql notranslate"><div class="highlight"><pre><span></span><span class="n">psql</span> <span class="o">-</span><span class="n">U</span> <span class="n">roundcube</span> <span class="o">-</span><span class="n">f</span> <span class="n">SQL</span><span class="o">/</span><span class="n">postgres</span><span class="mf">.</span><span class="n">initial</span><span class="mf">.</span><span class="n">sql</span> <span class="n">roundcube</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <a class="reference external" href="https://github.com/roundcube/roundcubemail/blob/master/SQL/postgres.initial.sql">roundcube DB schema</a> is defined in the roundcube respository.</p>
+</div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">Docker Compose Add Postgres Network.</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">networks</span><span class="p">:</span>
+  <span class="nt">db</span><span class="p">:</span>
+    <span class="nt">external</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="nt">roundcube</span><span class="p">:</span>
+  <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">roundcube/roundcubemail:latest-apache</span>
+  <span class="nt">networks</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">db</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text"><strong>0600 roundcube roundcube</strong> <code class="docutils literal notranslate"><span class="pre">/var/www/html/config/config.inc.php</span></code></span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$config[‘db_dsnw’] = ‘pgsql://{USER}:{PASS}@{HOST}/{DB}&#39;;</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="fail2ban-setup">
 <h2>fail2ban Setup<a class="headerlink" href="#fail2ban-setup" title="Permalink to this headline">¶</a></h2>
 <p>Enable fail2ban for <a class="reference internal" href="../../../glossary.html#term-mta"><span class="xref std std-term">MTA</span></a> and <a class="reference internal" href="../../../glossary.html#term-mda"><span class="xref std std-term">MDA</span></a> services.</p>
 <p>Use <a class="reference internal" href="../../fail2ban/setup-docker.html#service-fail2ban-docker"><span class="std std-ref">fail2ban for Docker</span></a> for the base fail2ban service setup.</p>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">Add read-only syslog logs to Docker Compose (f2b-docker)</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">Add read-only syslog logs to Docker Compose (f2b-docker)</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">f2b-system</span><span class="p">:</span>
   <span class="nt">volumes</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/var/log/syslog:/var/log/syslog:ro</span>
@@ -1799,8 +1851,8 @@ on the mail server <code class="docutils literal notranslate"><span class="pre">
 </div>
 </div>
 <p>Enable logging of sucessful user logins.</p>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/data/mail/roundcube/config/config.inc.php</span></code></span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/data/mail/roundcube/config/config.inc.php</span></code></span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
   <span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;log_logins&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">true</span>
 </pre></div>
@@ -1810,8 +1862,8 @@ on the mail server <code class="docutils literal notranslate"><span class="pre">
 <h3>Roundcube Filters<a class="headerlink" href="#roundcube-filters" title="Permalink to this headline">¶</a></h3>
 <p>Custom filter to match roundcube log messages in syslog, with roundcube
 operating behind a proxy.</p>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/data/filter.d/mail-roundcube.conf</span></code></span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/data/filter.d/mail-roundcube.conf</span></code></span><a class="headerlink" href="#id9" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Fail2Ban configuration file for docker roundcube web server behind proxy.
 
 [INCLUDES]
@@ -1834,8 +1886,8 @@ journalmatch = SYSLOG_IDENTIFIER=roundcube
 </div>
 <div class="section" id="roundcube-jails">
 <h3>Roundcube Jails<a class="headerlink" href="#roundcube-jails" title="Permalink to this headline">¶</a></h3>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/data/jail.d/roundcube.conf</span></code></span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/data/jail.d/roundcube.conf</span></code></span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">mail</span><span class="o">-</span><span class="n">roundcube</span><span class="p">]</span>
 <span class="n">enabled</span>  <span class="o">=</span> <span class="n">true</span>
 <span class="n">port</span>     <span class="o">=</span> <span class="n">http</span><span class="p">,</span><span class="n">https</span>

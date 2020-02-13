@@ -876,6 +876,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#using-subpaths">Using Subpaths</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#postgres-backend">Postgres Backend</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../beets/index.html">beets.io</a><ul>
@@ -1030,6 +1031,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../email/mua/setup.html#using-subpaths">Using Subpaths</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../email/mua/setup.html#postgres-backend">Postgres Backend</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../email/mua/setup.html#fail2ban-setup">fail2ban Setup</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../email/mua/setup.html#roundcube-filters">Roundcube Filters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../email/mua/setup.html#roundcube-jails">Roundcube Jails</a></li>
@@ -1084,6 +1086,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../firefly/index.html#using-subdomains">Using Subdomains</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../firefly/index.html#postgress-backend">Postgress Backend</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../firefly/index.html#initial-setup">Initial Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../firefly/index.html#firefly-gotchas">Firefly Gotchas</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../firefly/index.html#attachment-disappears">Attachment Disappears</a></li>
@@ -1100,6 +1103,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../gitea/index.html#using-subpaths">Using Subpaths</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../gitea/index.html#postgres-backend">Postgres Backend</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../gitea/index.html#initial-setup">Initial Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../gitea/index.html#database-settings">Database Settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../gitea/index.html#general-settings">General Settings</a></li>
@@ -1329,6 +1333,20 @@
 <li class="toctree-l4"><a class="reference internal" href="../plex/troubleshooting.html#plex-stuck-at-initial-startup">Plex Stuck at Initial Startup</a></li>
 </ul>
 </li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../postgres/index.html">Postgresql</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../postgres/index.html#ports-postgres">Ports (postgres)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../postgres/index.html#important-file-locations-postgres">Important File Locations (postgres)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../postgres/index.html#docker-creation">Docker Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../postgres/index.html#creating-a-database">Creating A Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../postgres/index.html#import-a-database">Import A Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../postgres/index.html#initdb-d-scripts"><code class="docutils literal notranslate"><span class="pre">initdb.d</span></code> Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../postgres/index.html#database-backup">Database Backup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../postgres/index.html#backup-entire-instance">Backup Entire Instance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../postgres/index.html#backup-a-specific-database">Backup A Specific Database</a></li>
 </ul>
 </li>
 </ul>
@@ -1817,13 +1835,57 @@ file if it doesn’t exist.</p>
 <p>Use environment <code class="docutils literal notranslate"><span class="pre">CONTEXT_PATH=URL_BASE</span></code> if airsonic is serving from a
 subpath.</p>
 </div>
+</div>
+</div>
+<div class="section" id="postgres-backend">
+<h2>Postgres Backend<a class="headerlink" href="#postgres-backend" title="Permalink to this headline">¶</a></h2>
+<p>Postgres may be used to store airsonic data in a centralized location. This
+assumes that <a class="reference internal" href="../postgres/index.html#service-postgres"><span class="std std-ref">Postgresql</span></a> is already configured, with an empty
+database for airsonic to use (see <a class="reference internal" href="../postgres/index.html#service-postgres-create-database"><span class="std std-ref">Creating A Database</span></a>).</p>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">Docker Compose Add Postgres Network.</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">networks</span><span class="p">:</span>
+  <span class="nt">db</span><span class="p">:</span>
+    <span class="nt">external</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="nt">airsonic</span><span class="p">:</span>
+  <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">linuxserver/airsonic</span>
+  <span class="nt">networks</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">db</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/data/airsonic.properties</span></code></span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">DatabaseConfigType</span><span class="o">=</span>embed
+<span class="nv">DatabaseConfigEmbedDriver</span><span class="o">=</span>org.postgresql.Driver
+<span class="nv">DatabaseConfigEmbedUsername</span><span class="o">={</span>USER<span class="o">}</span>
+<span class="nv">DatabaseConfigEmbedPassword</span><span class="o">={</span>PASS<span class="o">}</span>
+<span class="nv">DatabaseConfigEmbedUrl</span><span class="o">=</span>jdbc:postgresql://<span class="o">{</span>DB IP<span class="o">}</span>:<span class="o">{</span>DB PORT<span class="o">}</span>/airsonic?stringtype<span class="o">=</span>unspecified
+<span class="nv">DatabaseUsertableQuote</span><span class="o">=</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Launch airsonic and shutdown after it finishes starting up. The initial DB
+<a class="reference external" href="https://github.com/airsonic/airsonic/issues/1213">incorrectly defines two postgres datatypes</a>. Correct this by executing the
+following commands below when Airsonic is shutdown.</p>
+</div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">Set correct datatypes for columns in postgres.</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
+<div class="highlight-psql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span> <span class="k">TABLE</span> <span class="n">system_avatar</span> <span class="k">ALTER</span> <span class="k">COLUMN</span> <span class="k">data</span> <span class="k">TYPE</span> <span class="nb">bytea</span> <span class="k">USING</span> <span class="k">NULL</span><span class="p">;</span>
+<span class="go">ALTER TABLE custom_avatar ALTER COLUMN data TYPE bytea USING NULL;</span>
+</pre></div>
+</div>
+</div>
+<p>Restart Airsonic to complete DB setup.</p>
 <p class="rubric">References</p>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://airsonic.github.io/docs/configure/airsonic-properties/">Airsonic Configuration File</a></p></li>
 <li><p><a class="reference external" href="https://old.reddit.com/r/freenas/comments/b2ft7x/does_anyone_have_a_working_nginx_reverseproxy_for/">Airsonic reverse proxy</a></p></li>
 <li><p><a class="reference external" href="https://airsonic.github.io/docs/proxy/nginx/">Airsonic nginx reverse proxy</a></p></li>
+<li><p><a class="reference external" href="https://airsonic.github.io/docs/database/">Airsonic Database Support</a></p></li>
 </ol>
-</div>
 </div>
 </div>
 

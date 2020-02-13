@@ -876,6 +876,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../airsonic/index.html#using-subpaths">Using Subpaths</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../airsonic/index.html#postgres-backend">Postgres Backend</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../beets/index.html">beets.io</a><ul>
@@ -1030,6 +1031,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../email/mua/setup.html#using-subpaths">Using Subpaths</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../email/mua/setup.html#postgres-backend">Postgres Backend</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../email/mua/setup.html#fail2ban-setup">fail2ban Setup</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../email/mua/setup.html#roundcube-filters">Roundcube Filters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../email/mua/setup.html#roundcube-jails">Roundcube Jails</a></li>
@@ -1084,6 +1086,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#using-subdomains">Using Subdomains</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#postgress-backend">Postgress Backend</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#initial-setup">Initial Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#firefly-gotchas">Firefly Gotchas</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#attachment-disappears">Attachment Disappears</a></li>
@@ -1100,6 +1103,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../gitea/index.html#using-subpaths">Using Subpaths</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../gitea/index.html#postgres-backend">Postgres Backend</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../gitea/index.html#initial-setup">Initial Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../gitea/index.html#database-settings">Database Settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../gitea/index.html#general-settings">General Settings</a></li>
@@ -1329,6 +1333,20 @@
 <li class="toctree-l4"><a class="reference internal" href="../plex/troubleshooting.html#plex-stuck-at-initial-startup">Plex Stuck at Initial Startup</a></li>
 </ul>
 </li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../postgres/index.html">Postgresql</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../postgres/index.html#ports-postgres">Ports (postgres)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../postgres/index.html#important-file-locations-postgres">Important File Locations (postgres)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../postgres/index.html#docker-creation">Docker Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../postgres/index.html#creating-a-database">Creating A Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../postgres/index.html#import-a-database">Import A Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../postgres/index.html#initdb-d-scripts"><code class="docutils literal notranslate"><span class="pre">initdb.d</span></code> Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../postgres/index.html#database-backup">Database Backup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../postgres/index.html#backup-entire-instance">Backup Entire Instance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../postgres/index.html#backup-a-specific-database">Backup A Specific Database</a></li>
 </ul>
 </li>
 </ul>
@@ -1787,12 +1805,30 @@ connections (insecure).</p></li>
 <p>See <a class="reference external" href="https://github.com/firefly-iii/firefly-iii/issues/2109">subdomain reference</a>.</p>
 </div>
 </div>
+<div class="section" id="postgress-backend">
+<h2>Postgress Backend<a class="headerlink" href="#postgress-backend" title="Permalink to this headline">¶</a></h2>
+<p>Just include the external network and <strong>remove</strong> the DB docker definition if
+using an external Postgres backend. Use external DB credentials in firefly DB
+config section.</p>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">Docker Compose Add Postgres Network.</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">networks</span><span class="p">:</span>
+  <span class="nt">db</span><span class="p">:</span>
+    <span class="nt">external</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="nt">firefly</span><span class="p">:</span>
+  <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">jc5x/firefly-iii</span>
+  <span class="nt">networks</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">db</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="initial-setup">
 <h2>Initial Setup<a class="headerlink" href="#initial-setup" title="Permalink to this headline">¶</a></h2>
 <p>Start firefly and setup the initial database. This only needs to be done on
 initial container creation.</p>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">Initialize the DB.</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">Initialize the DB.</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker-compose up -d
 docker-compose <span class="nb">exec</span> firefly php artisan migrate --seed
 docker-compose <span class="nb">exec</span> firefly php artisan firefly:upgrade-database

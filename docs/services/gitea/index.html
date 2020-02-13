@@ -876,6 +876,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../airsonic/index.html#using-subpaths">Using Subpaths</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../airsonic/index.html#postgres-backend">Postgres Backend</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../beets/index.html">beets.io</a><ul>
@@ -1030,6 +1031,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../email/mua/setup.html#using-subpaths">Using Subpaths</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../email/mua/setup.html#postgres-backend">Postgres Backend</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../email/mua/setup.html#fail2ban-setup">fail2ban Setup</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../email/mua/setup.html#roundcube-filters">Roundcube Filters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../email/mua/setup.html#roundcube-jails">Roundcube Jails</a></li>
@@ -1084,6 +1086,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../firefly/index.html#using-subdomains">Using Subdomains</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../firefly/index.html#postgress-backend">Postgress Backend</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../firefly/index.html#initial-setup">Initial Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../firefly/index.html#firefly-gotchas">Firefly Gotchas</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../firefly/index.html#attachment-disappears">Attachment Disappears</a></li>
@@ -1100,6 +1103,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#using-subpaths">Using Subpaths</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#postgres-backend">Postgres Backend</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#initial-setup">Initial Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#database-settings">Database Settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#general-settings">General Settings</a></li>
@@ -1329,6 +1333,20 @@
 <li class="toctree-l4"><a class="reference internal" href="../plex/troubleshooting.html#plex-stuck-at-initial-startup">Plex Stuck at Initial Startup</a></li>
 </ul>
 </li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../postgres/index.html">Postgresql</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../postgres/index.html#ports-postgres">Ports (postgres)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../postgres/index.html#important-file-locations-postgres">Important File Locations (postgres)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../postgres/index.html#docker-creation">Docker Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../postgres/index.html#creating-a-database">Creating A Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../postgres/index.html#import-a-database">Import A Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../postgres/index.html#initdb-d-scripts"><code class="docutils literal notranslate"><span class="pre">initdb.d</span></code> Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../postgres/index.html#database-backup">Database Backup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../postgres/index.html#backup-entire-instance">Backup Entire Instance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../postgres/index.html#backup-a-specific-database">Backup A Specific Database</a></li>
 </ul>
 </li>
 </ul>
@@ -1774,8 +1792,35 @@ resolution or add to <code class="docutils literal notranslate"><span class="pre
 </div>
 </div>
 </div>
+<div class="section" id="postgres-backend">
+<h2>Postgres Backend<a class="headerlink" href="#postgres-backend" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Though there is some documentation on moving from <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code> to
+<code class="docutils literal notranslate"><span class="pre">postgresql</span></code> for gitea; all migrations seem to carry over artifacts that
+express different kinds of failures (like <code class="docutils literal notranslate"><span class="pre">500</span></code>’s on issue updates).</p>
+<p>Decide on a backend before committing any amount of metadata to Gitea.</p>
+</div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text"><strong>0600 gitea gitea</strong> <code class="docutils literal notranslate"><span class="pre">gitea/conf/app.ini</span></code></span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="highlight-ini notranslate"><div class="highlight"><pre><span></span><span class="k">[database]</span>
+<span class="na">DB_TYPE</span> <span class="o">=</span> <span class="s">postgres</span>
+<span class="na">HOST</span> <span class="o">=</span> <span class="s">{DB IP}:{DB PORT}</span>
+<span class="na">NAME</span> <span class="o">=</span> <span class="s">gitea</span>
+<span class="na">USER</span> <span class="o">=</span> <span class="s">{USER}</span>
+<span class="na">PASSWD</span> <span class="o">=</span> <span class="s">{PASS}</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">DB_PATH</span></code> can be removed if not using <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code>.</p>
+<p>These options should be set <strong>during</strong> the
+<a class="reference internal" href="#service-gitea-initial-setup"><span class="std std-ref">Initial Setup</span></a>.</p>
+</div>
+</div>
 <div class="section" id="initial-setup">
-<h2>Initial Setup<a class="headerlink" href="#initial-setup" title="Permalink to this headline">¶</a></h2>
+<span id="service-gitea-initial-setup"></span><h2>Initial Setup<a class="headerlink" href="#initial-setup" title="Permalink to this headline">¶</a></h2>
 <p>This will initially setup Gitea with restricted permissions during
 configuration:</p>
 <p>Navigate to: <code class="docutils literal notranslate"><span class="pre">{REVERSE</span> <span class="pre">PROXY</span> <span class="pre">URI}/install</span></code>.</p>
@@ -1915,8 +1960,8 @@ will appear that everything is working, however intersite links will fail
 <li><p><a class="reference external" href="https://stackoverflow.com/questions/5181845/git-push-existing-repo-to-a-new-and-different-remote-repo-server">Push a mirror</a> to this repository. All information will be retained.</p></li>
 <li><p>Disable <a class="reference external" href="https://stackoverflow.com/questions/11621768/how-can-i-make-git-accept-a-self-signed-certificate">SSL verification</a> if using self-signed certs.</p></li>
 </ul>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">Push mirror to Gitea.</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">Push mirror to Gitea.</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> my-repo-to-import
 git push --mirror https://<span class="o">{</span>IP<span class="o">}</span>:3000/<span class="o">{</span>USER<span class="o">}</span>/<span class="o">{</span>REPO<span class="o">}</span>.git
 </pre></div>
