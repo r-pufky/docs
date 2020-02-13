@@ -86,7 +86,7 @@ Using Subdomains
   :caption: **0644 root root** ``nginx/conf.d/reverse-proxy.conf``
 
 Using Subpaths
-===============
+==============
 .. literalinclude:: source/subpath.conf
   :caption: **0644 root root** ``nginx/conf.d/reverse-proxy.conf``
 
@@ -94,12 +94,54 @@ Using Subpaths
   Use environment ``CONTEXT_PATH=URL_BASE`` if airsonic is serving from a
   subpath.
 
+Postgres Backend
+****************
+Postgres may be used to store airsonic data in a centralized location. This
+assumes that :ref:`service-postgres` is already configured, with an empty
+database for airsonic to use (see :ref:`service-postgres-create-database`).
+
+.. code-block:: yaml
+  :caption: Docker Compose Add Postgres Network.
+
+  networks:
+    db:
+      external: True
+  airsonic:
+    image: linuxserver/airsonic
+    networks:
+      - db
+
+.. code-block:: bash
+  :caption: **0644 root root** ``/data/airsonic.properties``
+
+  DatabaseConfigType=embed
+  DatabaseConfigEmbedDriver=org.postgresql.Driver
+  DatabaseConfigEmbedUsername={USER}
+  DatabaseConfigEmbedPassword={PASS}
+  DatabaseConfigEmbedUrl=jdbc:postgresql://{DB IP}:{DB PORT}/airsonic?stringtype=unspecified
+  DatabaseUsertableQuote="
+
+.. note::
+  Launch airsonic and shutdown after it finishes starting up. The initial DB
+  `incorrectly defines two postgres datatypes`_. Correct this by executing the
+  following commands below when Airsonic is shutdown.
+
+.. code-block:: psql
+  :caption: Set correct datatypes for columns in postgres.
+
+  ALTER TABLE system_avatar ALTER COLUMN data TYPE bytea USING NULL;
+  ALTER TABLE custom_avatar ALTER COLUMN data TYPE bytea USING NULL;
+
+Restart Airsonic to complete DB setup.
+
 .. rubric:: References
 
 #. `Airsonic Configuration File <https://airsonic.github.io/docs/configure/airsonic-properties/>`_
 #. `Airsonic reverse proxy <https://old.reddit.com/r/freenas/comments/b2ft7x/does_anyone_have_a_working_nginx_reverseproxy_for/>`_
 #. `Airsonic nginx reverse proxy <https://airsonic.github.io/docs/proxy/nginx/>`_
+#. `Airsonic Database Support <https://airsonic.github.io/docs/database/>`_
 
 .. _Airsonic: https://airsonic.github.io/
 .. _Airsonic Docker and Documentation: https://hub.docker.com/r/linuxserver/airsonic
 .. _Java Xmx and Xms options: https://codeahoy.com/2019/09/02/java-xmx-vs-xms/
+.. _incorrectly defines two postgres datatypes: https://github.com/airsonic/airsonic/issues/1213

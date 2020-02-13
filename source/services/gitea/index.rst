@@ -80,6 +80,33 @@ Using Subpaths
 .. literalinclude:: source/subpath.conf
   :caption: **0644 root root** ``nginx/conf.d/reverse-proxy.conf``
 
+Postgres Backend
+****************
+.. warning::
+  Though there is some documentation on moving from ``sqlite3`` to
+  ``postgresql`` for gitea; all migrations seem to carry over artifacts that
+  express different kinds of failures (like ``500``'s on issue updates).
+
+  Decide on a backend before committing any amount of metadata to Gitea.
+
+.. code-block:: ini
+  :caption: **0600 gitea gitea** ``gitea/conf/app.ini``
+
+  [database]
+  DB_TYPE = postgres
+  HOST = {DB IP}:{DB PORT}
+  NAME = gitea
+  USER = {USER}
+  PASSWD = {PASS}
+
+.. note::
+  ``DB_PATH`` can be removed if not using ``sqlite3``.
+
+  These options should be set **during** the
+  :ref:`service-gitea-initial-setup`.
+
+.. _service-gitea-initial-setup:
+
 Initial Setup
 *************
 This will initially setup Gitea with restricted permissions during

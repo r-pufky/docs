@@ -87,6 +87,36 @@ Using Subpaths
 .. literalinclude:: source/subpath.conf
   :caption: **0644 root root** ``nginx/conf.d/reverse-proxy.conf``
 
+Postgres Backend
+****************
+Postgres may be used to store airsonic data in a centralized location. This
+assumes that :ref:`service-postgres` is already configured, with an empty
+database for airsonic to use (see :ref:`service-postgres-create-database`).
+
+.. code-block:: psql
+  :caption: Import the Roundcube DB schema.
+
+  psql -U roundcube -f SQL/postgres.initial.sql roundcube
+
+.. note::
+  The `roundcube DB schema`_ is defined in the roundcube respository.
+
+.. code-block:: yaml
+  :caption: Docker Compose Add Postgres Network.
+
+  networks:
+    db:
+      external: True
+  roundcube:
+    image: roundcube/roundcubemail:latest-apache
+    networks:
+      - db
+
+.. code-block:: php
+  :caption: **0600 roundcube roundcube** ``/var/www/html/config/config.inc.php``
+
+  $config[‘db_dsnw’] = ‘pgsql://{USER}:{PASS}@{HOST}/{DB}';
+
 fail2ban Setup
 **************
 Enable fail2ban for :term:`MTA` and :term:`MDA` services.
@@ -126,3 +156,4 @@ Roundcube Jails
 .. _certificate validation: https://github.com/roundcube/roundcubemail/wiki/FAQ
 .. _roundcube configuration: https://github.com/roundcube/roundcubemail/wiki/Configuration
 .. _defaults.inc.php: https://github.com/roundcube/roundcubemail/blob/master/config/defaults.inc.php
+.. _roundcube DB schema: https://github.com/roundcube/roundcubemail/blob/master/SQL/postgres.initial.sql

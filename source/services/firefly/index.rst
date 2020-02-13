@@ -96,6 +96,23 @@ Using Subdomains
 
 See `subdomain reference`_.
 
+Postgress Backend
+*****************
+Just include the external network and **remove** the DB docker definition if
+using an external Postgres backend. Use external DB credentials in firefly DB
+config section.
+
+.. code-block:: yaml
+  :caption: Docker Compose Add Postgres Network.
+
+  networks:
+    db:
+      external: True
+  firefly:
+    image: jc5x/firefly-iii
+    networks:
+      - db
+
 Initial Setup
 *************
 Start firefly and setup the initial database. This only needs to be done on

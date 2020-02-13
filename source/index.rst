@@ -142,6 +142,7 @@ git hub, or submit a CL :)
   services/pihole/index
   services/play-on/index
   services/plex/index
+  services/postgres/index
   services/radarr/index
   services/signal/index
   services/sonarr/index
