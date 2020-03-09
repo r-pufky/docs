@@ -112,6 +112,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#add-tag-to-previous-commit">Add Tag to Previous Commit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#squash-commits-to-a-single-commit-rebase">Squash Commits to a Single Commit (Rebase)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#remove-tracked-files-without-deleting-them">Remove Tracked Files without Deleting Them</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#list-all-respositories-for-an-organization-user">List All Respositories for An Organization/User</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pull-latest-tarball-release-from-github">Pull Latest Tarball Release from Github</a></li>
 </ul>
 </li>
@@ -713,6 +714,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../operating-systems/windows/10/additional-fixes.html#ntfs-file-ownership-access-denied">NTFS File Ownership Access Denied</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../operating-systems/windows/10/additional-fixes.html#oem-partition-low-disk-space-warning-after-1803-update">OEM Partition / Low Disk Space Warning After 1803 Update</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../operating-systems/windows/10/additional-fixes.html#application-using-the-wrong-audio-output-device">Application Using the Wrong Audio Output Device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../operating-systems/windows/10/additional-fixes.html#disable-caret-browsing-notifications">Disable Caret Browsing Notifications</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../operating-systems/windows/10/additional-fixes.html#windows-bootloader-missing-multiple-os">Windows Bootloader Missing / Multiple OS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../operating-systems/windows/10/additional-fixes.html#display-driver-has-been-restarted">Display Driver Has Been Restarted</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../operating-systems/windows/10/additional-fixes.html#show-password-on-wifi-network">Show Password on Wifi Network</a></li>
@@ -1110,6 +1112,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../services/gitea/index.html#optional-settings">Optional Settings</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../services/gitea/index.html#mirrors">Mirrors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../services/gitea/index.html#create-mirror">Create Mirror</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../services/gitea/index.html#importing-git-repositories">Importing Git Repositories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../services/gitea/index.html#ssl-client-cert-authentication">SSL Client Cert Authentication</a></li>
 </ul>
@@ -1349,6 +1355,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../services/postgres/index.html#backup-a-specific-database">Backup A Specific Database</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../services/postgres/index.html#query-active-connections">Query Active Connections</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../services/radarr/index.html">Radarr</a><ul>
@@ -1752,11 +1759,27 @@ Update as needed and commit as normal.</p>
 </div>
 </div>
 </div>
+<div class="section" id="list-all-respositories-for-an-organization-user">
+<h2>List All Respositories for An Organization/User<a class="headerlink" href="#list-all-respositories-for-an-organization-user" title="Permalink to this headline">¶</a></h2>
+<p>Useful for determining if there are new repositories to sync.</p>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">List all repositories for an organzation.</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl <span class="s2">&quot;https://api.github.com/orgs/{ORGANIZATION NAME}/repos?per_page=1000&amp;page=1&quot;</span> <span class="p">|</span> jq -r <span class="s1">&#39;.[] | .name&#39;</span> <span class="p">|</span> sort
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">List all repositories for a user.</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl <span class="s2">&quot;https://api.github.com/users/{USER}/repos?per_page=1000&amp;page=1&quot;</span> <span class="p">|</span> jq -r <span class="s1">&#39;.[] | .name&#39;</span> <span class="p">|</span> sort
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="pull-latest-tarball-release-from-github">
 <h2>Pull <a class="reference external" href="https://gist.github.com/lukechilds/a83e1d7127b78fef38c2914c4ececc3c#gistcomment-2574561">Latest Tarball Release</a> from Github<a class="headerlink" href="#pull-latest-tarball-release-from-github" title="Permalink to this headline">¶</a></h2>
 <p>Useful for projects that have periodic releases but are not in OS packages.</p>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text"><strong>0755 user user</strong> <code class="docutils literal notranslate"><span class="pre">update_latest_tarball</span></code></span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text"><strong>0755 user user</strong> <code class="docutils literal notranslate"><span class="pre">update_latest_tarball</span></code></span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
 #
 # Args:

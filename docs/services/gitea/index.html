@@ -112,6 +112,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#add-tag-to-previous-commit">Add Tag to Previous Commit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#squash-commits-to-a-single-commit-rebase">Squash Commits to a Single Commit (Rebase)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#remove-tracked-files-without-deleting-them">Remove Tracked Files without Deleting Them</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#list-all-respositories-for-an-organization-user">List All Respositories for An Organization/User</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#pull-latest-tarball-release-from-github">Pull Latest Tarball Release from Github</a></li>
 </ul>
 </li>
@@ -713,6 +714,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/additional-fixes.html#ntfs-file-ownership-access-denied">NTFS File Ownership Access Denied</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/additional-fixes.html#oem-partition-low-disk-space-warning-after-1803-update">OEM Partition / Low Disk Space Warning After 1803 Update</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/additional-fixes.html#application-using-the-wrong-audio-output-device">Application Using the Wrong Audio Output Device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/additional-fixes.html#disable-caret-browsing-notifications">Disable Caret Browsing Notifications</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/additional-fixes.html#windows-bootloader-missing-multiple-os">Windows Bootloader Missing / Multiple OS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/additional-fixes.html#display-driver-has-been-restarted">Display Driver Has Been Restarted</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/additional-fixes.html#show-password-on-wifi-network">Show Password on Wifi Network</a></li>
@@ -1110,6 +1112,10 @@
 <li class="toctree-l3"><a class="reference internal" href="#optional-settings">Optional Settings</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#mirrors">Mirrors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#create-mirror">Create Mirror</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#importing-git-repositories">Importing Git Repositories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ssl-client-cert-authentication">SSL Client Cert Authentication</a></li>
 </ul>
@@ -1349,6 +1355,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../postgres/index.html#backup-a-specific-database">Backup A Specific Database</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../postgres/index.html#query-active-connections">Query Active Connections</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../radarr/index.html">Radarr</a><ul>
@@ -1947,6 +1954,43 @@ will appear that everything is working, however intersite links will fail
 </tr>
 <tr class="row-even"><td><p>› Email Address</p></td>
 <td><p>{EMAIL}</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="mirrors">
+<h2>Mirrors<a class="headerlink" href="#mirrors" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/go-gitea/gitea/issues/4493">Gitea mirrors</a> can automaticallly manage sync’ing with upstream mirrors if
+setup to do so. This will also allow for local forking of those mirrors for
+indiviudal use.</p>
+<div class="section" id="create-mirror">
+<h3>Create Mirror<a class="headerlink" href="#create-mirror" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="3"><span class="guilabel">+ › New Migration</span></td>
+</tr>
+<tr class="row-even"><td><p>Migrate / Clone from URL</p></td>
+<td><p>{REMOTE REPOSITORY URL}</p></td>
+</tr>
+<tr class="row-odd"><td><p>Owner</p></td>
+<td><p>{ORGANIZATION OWNER}</p></td>
+</tr>
+<tr class="row-even"><td><p>Repository Name</p></td>
+<td><p>{SAME REPO NAME}</p></td>
+</tr>
+<tr class="row-odd"><td><p>Visibility</p></td>
+<td><p>☑ Make Repository Private</p></td>
+</tr>
+<tr class="row-even"><td><p>Migration Type</p></td>
+<td><p>☑ This repository will be a mirror</p></td>
+</tr>
+<tr class="row-odd"><td><p>Description</p></td>
+<td><p>{DESCRIPTION}</p></td>
 </tr>
 </tbody>
 </table>

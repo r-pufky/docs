@@ -112,6 +112,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#add-tag-to-previous-commit">Add Tag to Previous Commit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#squash-commits-to-a-single-commit-rebase">Squash Commits to a Single Commit (Rebase)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#remove-tracked-files-without-deleting-them">Remove Tracked Files without Deleting Them</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#list-all-respositories-for-an-organization-user">List All Respositories for An Organization/User</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#pull-latest-tarball-release-from-github">Pull Latest Tarball Release from Github</a></li>
 </ul>
 </li>
@@ -713,6 +714,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/additional-fixes.html#ntfs-file-ownership-access-denied">NTFS File Ownership Access Denied</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/additional-fixes.html#oem-partition-low-disk-space-warning-after-1803-update">OEM Partition / Low Disk Space Warning After 1803 Update</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/additional-fixes.html#application-using-the-wrong-audio-output-device">Application Using the Wrong Audio Output Device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/additional-fixes.html#disable-caret-browsing-notifications">Disable Caret Browsing Notifications</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/additional-fixes.html#windows-bootloader-missing-multiple-os">Windows Bootloader Missing / Multiple OS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/additional-fixes.html#display-driver-has-been-restarted">Display Driver Has Been Restarted</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/additional-fixes.html#show-password-on-wifi-network">Show Password on Wifi Network</a></li>
@@ -1110,6 +1112,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../gitea/index.html#optional-settings">Optional Settings</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../gitea/index.html#mirrors">Mirrors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gitea/index.html#create-mirror">Create Mirror</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../gitea/index.html#importing-git-repositories">Importing Git Repositories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../gitea/index.html#ssl-client-cert-authentication">SSL Client Cert Authentication</a></li>
 </ul>
@@ -1349,6 +1355,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#backup-a-specific-database">Backup A Specific Database</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#query-active-connections">Query Active Connections</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../radarr/index.html">Radarr</a><ul>
@@ -1863,6 +1870,21 @@ pg_dump -U <span class="o">{</span>DB ADMIN<span class="o">}</span> --no-owner <
 </pre></div>
 </div>
 </div>
+</div>
+</div>
+<div class="section" id="query-active-connections">
+<h2>Query Active Connections<a class="headerlink" href="#query-active-connections" title="Permalink to this headline">¶</a></h2>
+<p>Display client sessions that are currently connected to database.</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">select</span> <span class="n">pid</span> <span class="k">as</span> <span class="n">process_id</span><span class="p">,</span>
+     <span class="n">usename</span> <span class="k">as</span> <span class="n">username</span><span class="p">,</span>
+     <span class="n">datname</span> <span class="k">as</span> <span class="n">database_name</span><span class="p">,</span>
+     <span class="n">client_addr</span> <span class="k">as</span> <span class="n">client_address</span><span class="p">,</span>
+     <span class="n">application_name</span><span class="p">,</span>
+     <span class="n">backend_start</span><span class="p">,</span>
+     <span class="k">state</span><span class="p">,</span>
+     <span class="n">state_change</span>
+<span class="k">from</span> <span class="n">pg_stat_activity</span><span class="p">;</span>
+</pre></div>
 </div>
 </div>
 </div>

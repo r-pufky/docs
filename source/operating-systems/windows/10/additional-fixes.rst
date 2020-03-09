@@ -323,7 +323,7 @@ Internet Explorer.
   :data:      0
   :no_section:
 
-.. gpolicy:: Disable Caret Browsing Notifications via GPO
+.. wgpolicy:: Disable Caret Browsing Notifications via GPO
   :key_title: User Configuration -->
               Administrative Templates -->
               Windows Components -->

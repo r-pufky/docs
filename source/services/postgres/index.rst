@@ -135,7 +135,7 @@ Query Active Connections
 ************************
 Display client sessions that are currently connected to database.
 
-.. codeblock:: sql
+.. code-block:: sql
 
   select pid as process_id,
        usename as username,
