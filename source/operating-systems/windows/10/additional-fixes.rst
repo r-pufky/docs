@@ -311,6 +311,30 @@ via the settings menu.
 
    * Set preferred output for device (application must be running).
 
+`Disable Caret Browsing Notifications`_
+***************************************
+Remove notification on F7 press for caret browsing. This is a holdover from
+Internet Explorer.
+
+.. wregedit:: Disable Caret Browsing Notifications via Registry
+  :key_title: HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\CaretBrowsing
+  :names:     Enabled
+  :types:     DWORD
+  :data:      0
+  :no_section:
+
+.. gpolicy:: Disable Caret Browsing Notifications via GPO
+  :key_title: User Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Internet Explorer -->
+              Internet Control Panel -->
+              Advanced Page -->
+              Turn on Caret Browsing support
+  :option:    ☑
+  :setting:   Disabled
+  :no_section:
+
 Windows Bootloader Missing / Multiple OS
 ****************************************
 Fix the UEFI bootloader if it is missing or has extra entries.
@@ -470,3 +494,4 @@ Removed since Windows 7 but added back into Windows 10.
 .. _install_wim_tweak: https://github.com/shiitake/win6x_registry_tweak
 .. _USB Devices Slow: https://docs.microsoft.com/en-us/windows/client-management/change-default-removal-policy-external-storage-media
 .. _Windows Backup Schedule: https://www.tenforums.com/tutorials/75591-turn-off-schedule-windows-backup-windows-10-a.html
+.. _Disable Caret Browsing Notifications: https://www.thewindowsclub.com/enable-caret-browsing-internet-explorer

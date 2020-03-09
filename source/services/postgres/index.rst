@@ -131,6 +131,22 @@ Backup a specific database. Permissions will need to be restored with database.
   docker -exec -ti db /bin/bash
   pg_dump -U {DB ADMIN} --no-owner {DB} > {DUMP FILE}.sql
 
+Query Active Connections
+************************
+Display client sessions that are currently connected to database.
+
+.. codeblock:: sql
+
+  select pid as process_id,
+       usename as username,
+       datname as database_name,
+       client_addr as client_address,
+       application_name,
+       backend_start,
+       state,
+       state_change
+  from pg_stat_activity;
+
 .. _Postgres: https://www.postgresql.org/
 .. _Postgres Docker and Documentation: https://hub.docker.com/_/postgres
 .. _incorrectly defines two postgres datatypes: https://github.com/postgres/postgres/issues/1213

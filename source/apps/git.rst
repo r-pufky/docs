@@ -86,6 +86,20 @@ Remove Tracked Files without Deleting Them
 
   git rm -r --cached {DIR}
 
+List All Respositories for An Organization/User
+***********************************************
+Useful for determining if there are new repositories to sync.
+
+.. code-block:: bash
+  :caption: List all repositories for an organzation.
+
+  curl "https://api.github.com/orgs/{ORGANIZATION NAME}/repos?per_page=1000&page=1" | jq -r '.[] | .name' | sort
+
+.. code-block:: bash
+  :caption: List all repositories for a user.
+
+  curl "https://api.github.com/users/{USER}/repos?per_page=1000&page=1" | jq -r '.[] | .name' | sort
+
 Pull `Latest Tarball Release`_ from Github
 ******************************************
 Useful for projects that have periodic releases but are not in OS packages.

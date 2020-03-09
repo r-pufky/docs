@@ -193,6 +193,29 @@ Navigate to: ``{REVERSE PROXY URI}/install``.
   :no_caption:
   :no_launch:
 
+Mirrors
+*******
+`Gitea mirrors`_ can automaticallly manage sync'ing with upstream mirrors if
+setup to do so. This will also allow for local forking of those mirrors for
+indiviudal use.
+
+.. ggui:: Create Mirror
+  :key_title: + --> New Migration
+  :option:  Migrate / Clone from URL,
+            Owner,
+            Repository Name,
+            Visibility,
+            Migration Type,
+            Description
+  :setting: {REMOTE REPOSITORY URL},
+            {ORGANIZATION OWNER},
+            {SAME REPO NAME},
+            ☑ Make Repository Private,
+            ☑ This repository will be a mirror,
+            {DESCRIPTION}
+  :no_caption:
+  :no_launch:
+
 Importing Git Repositories
 **************************
 You can import other git repositories, including local and cloned ones:
@@ -227,3 +250,4 @@ See :ref:`service-nginx-cert-auth-git` to configure your git client.
 .. _SSL verification: https://stackoverflow.com/questions/11621768/how-can-i-make-git-accept-a-self-signed-certificate
 .. _latest stable version of Gitea: https://docs.gitea.io/en-us/install-with-docker/
 .. _handles these requests with custom written handlers: https://discuss.gogs.io/t/reverse-proxy-unauthorized-401-windows/2057
+.. _Gitea mirrors: https://github.com/go-gitea/gitea/issues/4493
