@@ -1158,11 +1158,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#docker-creation">Docker Creation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#initial-setup">Initial Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#create-domains-to-manage">Create Domains to Manage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#setup-auth-for-dns-provider">Setup Auth for DNS Provider</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#initial-setup">Initial Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#check-status">Check Status</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#checking-certificates">Checking Certificates</a></li>
 </ul>
@@ -1682,7 +1678,7 @@ attacks, which could include MITM or a compromise of Let’s Encrypt servers or
 the ACME protocol. <a class="reference external" href="https://www.reddit.com/r/PFSENSE/comments/4qwp8i/do_we_really_have_to_lock_every_thread_that/d4wuymx/?st=iwy5oece&amp;sh=a2a3c939">Don’t consider this secure</a>. It is better than having
 people accepting self-signed certificates, and it enables use of verifed SSL for
 things like mail and web services.</p>
-<p>See <a class="reference external" href="https://hub.docker.com/r/adferrand/letsencrypt-dns">Let’s Encrypt Docker and Documentation</a>. <a class="reference external" href="https://github.com/adferrand/docker-letsencrypt-dns">Source Documentation</a>.</p>
+<p>See <a class="reference external" href="https://hub.docker.com/r/adferrand/dnsrobocert">Let’s Encrypt Docker and Documentation</a>. <a class="reference external" href="https://dnsrobocert.readthedocs.io/en/latest/index.html">Source Documentation</a>.</p>
 <div class="section" id="ports-let-s-encrypt">
 <h2>Ports (Let’s Encrypt)<a class="headerlink" href="#ports-let-s-encrypt" title="Permalink to this headline">¶</a></h2>
 <p>None. The container will automatically add a <code class="docutils literal notranslate"><span class="pre">_acme_challenge</span></code> <code class="docutils literal notranslate"><span class="pre">TXT</span></code> record
@@ -1702,11 +1698,8 @@ certificates. <strong>No</strong> exposed ports are required.</p>
 <tr class="row-even"><td><p>/etc/letsencrypt</p></td>
 <td><p>Standard letencrypt directory. Can be imported.</p></td>
 </tr>
-<tr class="row-odd"><td><p>/etc/letsencrypt/domains.conf</p></td>
-<td><p>Domains to obtain certificates for.</p></td>
-</tr>
-<tr class="row-even"><td><p>/etc/letsencrypt/lexicon_{PROVIDER}.yml</p></td>
-<td><p>DNS provider auth settings.</p></td>
+<tr class="row-odd"><td><p>/etc/dnsrobocert/config.yml</p></td>
+<td><p>Certificate configuration settings.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1717,28 +1710,15 @@ certificates. <strong>No</strong> exposed ports are required.</p>
 <p>This container will automatically pull new certificates if none are found in the
 mapped <code class="docutils literal notranslate"><span class="pre">/etc/letsencrypt</span></code> directory. Renewal requests automatically happen
 every <strong>12 hours</strong>. Be sure to restart the container if changes are made.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">LETSENCRYPT_STAGING</span></code> will run requests against the staging server, allowing
-the ability to test setup.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">LEXICON_SLEEP_TIME</span></code> is the delay in seconds to validate DNS after making
-auth challenge change to the domain. Set to <code class="docutils literal notranslate"><span class="pre">150</span></code> as Google Cloud DNS
-guarantees updates in 120 seconds.</p></li>
-</ul>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-text">Docker Compose</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">letsencrypt</span><span class="p">:</span>
-  <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">adferrand/letsencrypt-dns:latest</span>
+  <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">adferrand/dnsrobocert:latest</span>
   <span class="nt">restart</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">unless-stopped</span>
   <span class="nt">environment</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">LETSENCRYPT_STAGING=True</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">LEXICON_SLEEP_TIME=150</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">LETSENCRYPT_USER_EMAIL=user@account.com</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CERTS_DIRS_MODE=0750</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CERTS_FILES_MODE=0640</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CERTS_USER_OWNER=root</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">CERTS_GROUP_OWNER=root</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">TZ=America/Los_Angeles</span>
   <span class="nt">volumes</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/data/services/dnsrobocert:/etc/dnsrobocert</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/data/services/letsencrypt:/etc/letsencrypt</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">/etc/localtime:/etc/localtime:ro</span>
 </pre></div>
@@ -1750,81 +1730,64 @@ encrypt, typically <code class="docutils literal notranslate"><span class="pre">
 </ul>
 </div>
 <div class="section" id="initial-setup">
-<h2>Initial Setup<a class="headerlink" href="#initial-setup" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="create-domains-to-manage">
-<span id="service-letsencrypt-domains"></span><h3>Create Domains to Manage<a class="headerlink" href="#create-domains-to-manage" title="Permalink to this headline">¶</a></h3>
-<p>A certificate will be created for the contents of each line.</p>
+<span id="service-letsencrypt-domains"></span><h2>Initial Setup<a class="headerlink" href="#initial-setup" title="Permalink to this headline">¶</a></h2>
+<p>Set configuration file before starting container. See <a class="reference external" href="https://dnsrobocert.readthedocs.io/en/latest/configuration_reference.html">Configuration Reference</a>.</p>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/letsencrypt/domains.conf</span></code></span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>*.example.com
-*.example2.com
-*.example3.com *.example4.com
+<div class="code-block-caption"><span class="caption-text"><strong>0400 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/dnsrobocert/config.yml</span></code></span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">acme</span><span class="p">:</span>
+  <span class="n">api_version</span><span class="p">:</span> <span class="mi">2</span>
+  <span class="n">certs_permissions</span><span class="p">:</span>
+    <span class="n">group</span><span class="p">:</span> <span class="n">root</span>
+    <span class="n">user</span><span class="p">:</span> <span class="n">root</span>
+    <span class="n">dirs_mode</span><span class="p">:</span> <span class="mi">0750</span>
+    <span class="n">files_mode</span><span class="p">:</span> <span class="mi">0640</span>
+  <span class="n">email_account</span><span class="p">:</span> <span class="p">{</span><span class="n">EMAIL</span><span class="p">}</span>
+  <span class="n">staging</span><span class="p">:</span> <span class="n">false</span>
+<span class="n">certificates</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">domains</span><span class="p">:</span>
+  <span class="o">-</span> <span class="s1">&#39;*.example.com&#39;</span>
+  <span class="o">-</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span>
+  <span class="n">name</span><span class="p">:</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span>
+  <span class="n">profile</span><span class="p">:</span> <span class="n">googleclouddns</span>
+<span class="o">-</span> <span class="n">domains</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">mail</span><span class="o">.</span><span class="n">example2</span><span class="o">.</span><span class="n">com</span>
+  <span class="n">name</span><span class="p">:</span> <span class="n">mail</span><span class="o">.</span><span class="n">example2</span><span class="o">.</span><span class="n">com</span>
+  <span class="n">profile</span><span class="p">:</span> <span class="n">googleclouddns</span>
+<span class="n">profiles</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">googleclouddns</span>
+  <span class="n">provider</span><span class="p">:</span> <span class="n">googleclouddns</span>
+  <span class="n">provider_options</span><span class="p">:</span>
+    <span class="n">auth_service_account_info</span><span class="p">:</span> <span class="o">&gt;-</span>
+      <span class="n">base64</span><span class="p">::</span><span class="n">asdfJDFDx99dsafd</span> <span class="o">...</span>
+  <span class="n">sleep_time</span><span class="p">:</span> <span class="mi">150</span>
 </pre></div>
 </div>
 </div>
-<ul>
-<li><p>This will produce three certificates:</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">*.example.com</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">*.example2.com</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">*.example3.com,*.example4.com</span></code></p></li>
-</ol>
-</div></blockquote>
-</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Changing or removing domains in this file will result in a request for new
-certificates (or deletion of existing ones) respectively on next renewal
-check.</p>
-</div>
-</div>
-<div class="section" id="setup-auth-for-dns-provider">
-<h3>Setup Auth for DNS Provider<a class="headerlink" href="#setup-auth-for-dns-provider" title="Permalink to this headline">¶</a></h3>
-<p>This will cover <a class="reference external" href="cloud.google.com">Google Cloud DNS</a> (<strong>not</strong> <code class="docutils literal notranslate"><span class="pre">domains.google.com</span></code> – this has
-no API). <code class="docutils literal notranslate"><span class="pre">domains.google.com</span></code> can be setup to use Google Cloud DNS servers for
-a domain.</p>
-<p><a class="reference external" href="https://github.com/AnalogJ/lexicon">Lexicon</a> is used to modify your domains, but requires specific authentication
-for each differ provider.</p>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">To find out your provider options.</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run -it --rm adferrand/letsencrypt-dns lexicon --help docker run -it --rm adferrand/letsencrypt-dns lexicon <span class="o">{</span>PROVIDER<span class="o">}</span> --help
-</pre></div>
-</div>
-</div>
-<ul class="simple">
-<li><p>Find your provider in the list, then find the required AUTH items. Follow
-instructions.</p></li>
-<li><p>These options are passed either to the environment container as
-<code class="docutils literal notranslate"><span class="pre">LEXICON_{PROVIDER}_AUTH_SOMEVAR</span></code> or <code class="docutils literal notranslate"><span class="pre">{provider}_auth_somevar</span></code> in YAML.</p></li>
-</ul>
 <div class="admonition danger">
 <p class="admonition-title">Danger</p>
-<p>The provider options can be passed in container environment, or preferrably in
-<code class="docutils literal notranslate"><span class="pre">/etc/letsencrypt/lexicon_{PROVIDER}.yml</span></code>. Be sure to secure (<code class="docutils literal notranslate"><span class="pre">0640</span></code>) this
-file as it gives full control over your domain.</p>
+<p>Secure this file as it gives full control over your DNS domain. Changing or
+removing domains in this file will result in a request for new certificates
+(or deletion of existing ones) respectively on next renewal check.</p>
 </div>
-<p>Create base64 encoded auth token.</p>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text"><strong>0640 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/letsencrypt/lexicon_googleclouddns.yml</span></code></span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">auth_service_account_info</span><span class="p">:</span> <span class="p p-Indicator">&gt;-</span>
-  <span class="no">base64::asdfJDFDx99dsafd ...</span>
-</pre></div>
-</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><a class="reference external" href="https://github.com/AnalogJ/lexicon">Lexicon</a> is used to modify your domains, but requires specific
+authentication for each differ provider.</p>
+<p>See <a class="reference external" href="https://dnsrobocert.readthedocs.io/en/latest/providers_options.html">Lexicon Providers</a> for specific options for each supported DNS provider.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Keys are <code class="docutils literal notranslate"><span class="pre">lexicon</span></code> provider options using <code class="docutils literal notranslate"><span class="pre">lower_with_underscores</span></code>.</p>
-<p>Google Cloud auth token <strong>requires</strong> base64 encoding if used in YAML file (per
-lexicon). <code class="docutils literal notranslate"><span class="pre">base64</span> <span class="pre">cloud-dns-auth-token.json</span></code>.</p>
-</div>
+<p><code class="docutils literal notranslate"><span class="pre">sleep_time</span></code> is the delay in seconds to validate DNS after making auth
+challenge change to the domain. Set to <code class="docutils literal notranslate"><span class="pre">150</span></code> as Google Cloud DNS guarantees
+updates in 120 seconds.</p>
+<p><code class="docutils literal notranslate"><span class="pre">staging</span></code> will run requests against the staging server, allowing the ability
+to test setup.</p>
 </div>
 </div>
 <div class="section" id="check-status">
 <h2>Check Status<a class="headerlink" href="#check-status" title="Permalink to this headline">¶</a></h2>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">Watch the container logs for renewal status and messages.</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Watch the container logs for renewal status and messages.</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker logs -f letsencrypt
 </pre></div>
 </div>
@@ -1832,8 +1795,8 @@ lexicon). <code class="docutils literal notranslate"><span class="pre">base64</s
 </div>
 <div class="section" id="checking-certificates">
 <h2>Checking Certificates<a class="headerlink" href="#checking-certificates" title="Permalink to this headline">¶</a></h2>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">See the current certificates that are being managed by the container.</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">See the current certificates that are being managed by the container.</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker <span class="nb">exec</span> -it letsencrypt sh
 certbot certificates
 </pre></div>
