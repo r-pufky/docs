@@ -21,11 +21,9 @@ certificates. **No** exposed ports are required.
 
 .. gflocation:: Important File Locations (Let's Encrypt)
   :file:    /etc/letsencrypt,
-            /etc/letsencrypt/domains.conf,
-            /etc/letsencrypt/lexicon_{PROVIDER}.yml
+            /etc/dnsrobocert/config.yml
   :purpose: Standard letencrypt directory. Can be imported.,
-            Domains to obtain certificates for.,
-            DNS provider auth settings.
+            Certificate configuration settings.
   :no_key_title:
   :no_caption:
   :no_launch:
@@ -36,98 +34,49 @@ This container will automatically pull new certificates if none are found in the
 mapped ``/etc/letsencrypt`` directory. Renewal requests automatically happen
 every **12 hours**. Be sure to restart the container if changes are made.
 
-* ``LETSENCRYPT_STAGING`` will run requests against the staging server, allowing
-  the ability to test setup.
-* ``LEXICON_SLEEP_TIME`` is the delay in seconds to validate DNS after making
-  auth challenge change to the domain. Set to ``150`` as Google Cloud DNS
-  guarantees updates in 120 seconds.
-
 .. code-block:: yaml
   :caption: Docker Compose
 
   letsencrypt:
-    image: adferrand/letsencrypt-dns:latest
+    image: adferrand/dnsrobocert:latest
     restart: unless-stopped
     environment:
-      - LETSENCRYPT_STAGING=True
-      - LEXICON_SLEEP_TIME=150
-      - LETSENCRYPT_USER_EMAIL=user@account.com
-      - CERTS_DIRS_MODE=0750
-      - CERTS_FILES_MODE=0640
-      - CERTS_USER_OWNER=root
-      - CERTS_GROUP_OWNER=root
       - TZ=America/Los_Angeles
     volumes:
+      - /data/services/dnsrobocert:/etc/dnsrobocert
       - /data/services/letsencrypt:/etc/letsencrypt
       - /etc/localtime:/etc/localtime:ro
 
 * Let's Encrypt local mount should just point the install location of let's
   encrypt, typically ``/etc/letsencrypt``.
 
-Initial Setup
-*************
-
 .. _service-letsencrypt-domains:
 
-Create Domains to Manage
-========================
-A certificate will be created for the contents of each line.
+Initial Setup
+*************
+Set configuration file before starting container. See `Configuration Reference`_.
 
-.. code-block:: bash
-  :caption: **0644 root root** ``/etc/letsencrypt/domains.conf``
-
-  *.example.com
-  *.example2.com
-  *.example3.com *.example4.com
-
-* This will produce three certificates:
-
-   #. ``*.example.com``
-   #. ``*.example2.com``
-   #. ``*.example3.com,*.example4.com``
-
-.. note::
-  Changing or removing domains in this file will result in a request for new
-  certificates (or deletion of existing ones) respectively on next renewal
-  check.
-
-Setup Auth for DNS Provider
-===========================
-This will cover `Google Cloud DNS`_ (**not** ``domains.google.com`` -- this has
-no API). ``domains.google.com`` can be setup to use Google Cloud DNS servers for
-a domain.
-
-`Lexicon`_ is used to modify your domains, but requires specific authentication
-for each differ provider.
-
-.. code-block:: bash
-  :caption: To find out your provider options.
-
-  docker run -it --rm adferrand/letsencrypt-dns lexicon --help docker run -it --rm adferrand/letsencrypt-dns lexicon {PROVIDER} --help
-
-* Find your provider in the list, then find the required AUTH items. Follow
-  instructions.
-* These options are passed either to the environment container as
-  ``LEXICON_{PROVIDER}_AUTH_SOMEVAR`` or ``{provider}_auth_somevar`` in YAML.
+.. literalinclude:: source/config.yml
+  :caption: **0400 root root** ``/etc/dnsrobocert/config.yml``
 
 .. danger::
-  The provider options can be passed in container environment, or preferrably in
-  ``/etc/letsencrypt/lexicon_{PROVIDER}.yml``. Be sure to secure (``0640``) this
-  file as it gives full control over your domain.
+  Secure this file as it gives full control over your DNS domain. Changing or
+  removing domains in this file will result in a request for new certificates
+  (or deletion of existing ones) respectively on next renewal check.
 
-Create base64 encoded auth token.
+.. important::
+  `Lexicon`_ is used to modify your domains, but requires specific
+  authentication for each differ provider.
 
-.. code-block:: yaml
-  :caption: **0640 root root** ``/etc/letsencrypt/lexicon_googleclouddns.yml``
-
-  auth_service_account_info: >-
-    base64::asdfJDFDx99dsafd ...
+  See `Lexicon Providers`_ for specific options for each supported DNS provider.
 
 .. note::
-  Keys are ``lexicon`` provider options using ``lower_with_underscores``.
+  ``sleep_time`` is the delay in seconds to validate DNS after making auth
+  challenge change to the domain. Set to ``150`` as Google Cloud DNS guarantees
+  updates in 120 seconds.
 
-  Google Cloud auth token **requires** base64 encoding if used in YAML file (per
-  lexicon). ``base64 cloud-dns-auth-token.json``.
+  ``staging`` will run requests against the staging server, allowing the ability
+  to test setup.
 
 Check Status
 ************
@@ -146,7 +95,8 @@ Checking Certificates
 
 .. _Let's Encrypt: https://letsencrypt.org
 .. _Don't consider this secure: https://www.reddit.com/r/PFSENSE/comments/4qwp8i/do_we_really_have_to_lock_every_thread_that/d4wuymx/?st=iwy5oece&sh=a2a3c939
-.. _Let's Encrypt Docker and Documentation: https://hub.docker.com/r/adferrand/letsencrypt-dns
-.. _Source Documentation: https://github.com/adferrand/docker-letsencrypt-dns
-.. _Google Cloud DNS: cloud.google.com
+.. _Let's Encrypt Docker and Documentation: https://hub.docker.com/r/adferrand/dnsrobocert
+.. _Source Documentation: https://dnsrobocert.readthedocs.io/en/latest/index.html
+.. _Configuration Reference: https://dnsrobocert.readthedocs.io/en/latest/configuration_reference.html
+.. _Lexicon Providers: https://dnsrobocert.readthedocs.io/en/latest/providers_options.html
 .. _Lexicon: https://github.com/AnalogJ/lexicon
