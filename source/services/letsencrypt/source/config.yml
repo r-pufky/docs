@@ -3,8 +3,8 @@ acme:
   certs_permissions:
     group: root
     user: root
-    dirs_mode: 0750
-    files_mode: 0640
+    dirs_mode: '0750'
+    files_mode: '0640'
   email_account: {EMAIL}
   staging: false
 certificates:
