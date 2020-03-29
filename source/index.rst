@@ -136,6 +136,7 @@ git hub, or submit a CL :)
   services/imapsync/index
   services/letsencrypt/index
   services/lidarr/index
+  services/mariadb/index
   services/mumble/index
   services/nginx/index
   services/nzbget/index
