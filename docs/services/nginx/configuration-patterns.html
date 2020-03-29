@@ -969,6 +969,17 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../dashmachine/index.html">dashmachine</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dashmachine/index.html#ports-dashmachine">Ports (dashmachine)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dashmachine/index.html#important-file-locations-dashmachine">Important File Locations (dashmachine)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dashmachine/index.html#docker-creation">Docker Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dashmachine/index.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dashmachine/index.html#using-subdomains">Using Subdomains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dashmachine/index.html#using-subpaths">Using Subpaths</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../deluge/index.html">Deluge</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../deluge/index.html#ports-deluge">Ports (Deluge)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../deluge/index.html#important-file-locations-deluge">Important File Locations (Deluge)</a></li>
@@ -1134,17 +1145,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../git-webhook-receiver/index.html#testing">Testing</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../heimdall/index.html">Heimdall</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../heimdall/index.html#ports-heimdall">Ports (Heimdall)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../heimdall/index.html#important-file-locations-heimdall">Important File Locations (Heimdall)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../heimdall/index.html#docker-creation">Docker Creation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../heimdall/index.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../heimdall/index.html#using-subdomains">Using Subdomains</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../heimdall/index.html#add-password-authentication">Add Password Authentication</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="../imapsync/index.html">imapsync</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../imapsync/index.html#imapsync-setup">imapsync Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../imapsync/index.html#testing">Testing</a></li>
@@ -1183,6 +1183,20 @@
 <li class="toctree-l3"><a class="reference internal" href="../lidarr/basic-configuration.html#download-clients">Download Clients</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../lidarr/basic-configuration.html#general">General</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../lidarr/basic-configuration.html#ui">UI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mariadb/index.html">MariaDB</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../mariadb/index.html#ports-mariadb">Ports (MariaDB)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mariadb/index.html#important-file-locations-mariadb">Important File Locations (MariaDB)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mariadb/index.html#docker-creation">Docker Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mariadb/index.html#creating-a-database">Creating A Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mariadb/index.html#import-a-database">Import A Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mariadb/index.html#initdb-d-scripts"><code class="docutils literal notranslate"><span class="pre">initdb.d</span></code> Scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mariadb/index.html#database-backup">Database Backup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../mariadb/index.html#backup-entire-instance">Backup Entire Instance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../mariadb/index.html#backup-a-specific-database">Backup A Specific Database</a></li>
 </ul>
 </li>
 </ul>
@@ -1723,7 +1737,7 @@ that site.</p>
 <div class="literal-block-wrapper docutils container" id="id7">
 <div class="code-block-caption"><span class="caption-text">Install password utilities and generate a user/password.</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt install apache2-utils
-sudo htpasswd -c /etc/nginx/heimdall.pass <span class="o">{</span>USER<span class="o">}</span>
+sudo htpasswd -c /etc/nginx/<span class="o">{</span>SITE<span class="o">}</span>.pass <span class="o">{</span>USER<span class="o">}</span>
 </pre></div>
 </div>
 </div>
@@ -1731,16 +1745,16 @@ sudo htpasswd -c /etc/nginx/heimdall.pass <span class="o">{</span>USER<span clas
 <div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">nginx/conf.d/reverse-proxy.conf</span></code></span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
 <div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span>server {
   listen 443 ssl http2;
-  server_name heimdall.{DOMAIN} heimdall;
+  server_name {SITE}.{DOMAIN} {SITE};
 
   location / {
     allow {TRUSTED NETWORK}/{TRUSTED NETWORK MASK};
     allow {TRUSTED IP};
     deny all;
-    auth_basic &#39;Heimdall&#39;;
-    auth_basic_user_file /etc/nginx/heimdall.pass;
+    auth_basic &#39;{SITE}&#39;;
+    auth_basic_user_file /etc/nginx/{SITE}.pass;
 
-    proxy_pass https://heimdall/;
+    proxy_pass https://{SITE}/;
     include /etc/nginx/conf.d/proxy-control.conf;
   }
 }
@@ -1751,7 +1765,7 @@ sudo htpasswd -c /etc/nginx/heimdall.pass <span class="o">{</span>USER<span clas
 <p class="admonition-title">Note</p>
 <p>This will allow specific subnets and trusted IP’s to access location without
 authentication, and force all others to authenticate, prompting with
-<code class="docutils literal notranslate"><span class="pre">Heimdall</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">{SITE}</span></code>.</p>
 <p>See <a class="reference internal" href="#service-nginx-site-auth"><span class="std std-ref">Site-wide Auth File</span></a> for applying auth to subnets.</p>
 </div>
 </div>
