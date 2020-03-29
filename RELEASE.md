@@ -1,5 +1,23 @@
 # [Changelog][3g]
 
+## 2020-03-29.0
+Add MariaDB, DashMachine, DNSRoboCert, Postgres containers.
+
+Added:
+* mariadb container.
+* dashmachine container.
+* postgres container.
+* dnsrobocert container.
+
+Changed:
+* vimrc updated with better organization, formatting.
+* imapsync documentation updated.
+* bulk downloader for reddit instructions added.
+
+Removed:
+* heimdall container (use dashmachine instead).
+* letsencrypt container (superceeded by dnsrobocert).
+
 ## 2020-02-02.0
 Dockerized Email Services.
 
