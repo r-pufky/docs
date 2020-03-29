@@ -125,6 +125,7 @@ git hub, or submit a CL :)
   services/beets/index
   services/certificate-authority/index
   services/crashplan/index
+  services/dashmachine/index
   services/deluge/index
   services/digikam/index
   services/email/index
@@ -132,7 +133,6 @@ git hub, or submit a CL :)
   services/firefly/index
   services/gitea/index
   services/git-webhook-receiver/index
-  services/heimdall/index
   services/imapsync/index
   services/letsencrypt/index
   services/lidarr/index

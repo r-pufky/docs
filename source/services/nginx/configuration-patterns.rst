@@ -56,23 +56,23 @@ Basic auth uses a file to authenticate users for NGINX locations.
   :caption: Install password utilities and generate a user/password.
 
   apt install apache2-utils
-  sudo htpasswd -c /etc/nginx/heimdall.pass {USER}
+  sudo htpasswd -c /etc/nginx/{SITE}.pass {USER}
 
 .. code-block:: nginx
   :caption: **0644 root root** ``nginx/conf.d/reverse-proxy.conf``
 
   server {
     listen 443 ssl http2;
-    server_name heimdall.{DOMAIN} heimdall;
+    server_name {SITE}.{DOMAIN} {SITE};
 
     location / {
       allow {TRUSTED NETWORK}/{TRUSTED NETWORK MASK};
       allow {TRUSTED IP};
       deny all;
-      auth_basic 'Heimdall';
-      auth_basic_user_file /etc/nginx/heimdall.pass;
+      auth_basic '{SITE}';
+      auth_basic_user_file /etc/nginx/{SITE}.pass;
 
-      proxy_pass https://heimdall/;
+      proxy_pass https://{SITE}/;
       include /etc/nginx/conf.d/proxy-control.conf;
     }
   }
@@ -80,7 +80,7 @@ Basic auth uses a file to authenticate users for NGINX locations.
 .. note::
   This will allow specific subnets and trusted IP's to access location without
   authentication, and force all others to authenticate, prompting with
-  ``Heimdall``.
+  ``{SITE}``.
 
   See :ref:`service-nginx-site-auth` for applying auth to subnets.
 
