@@ -187,8 +187,8 @@ PCI devices`. You only have to do this once.
 
     xe vm-param-set other-config:pci=0/0000:{B:D.f},0/0000:{B:D.f} uuid={VM UUID}
 
-Fix `Missing OS Templates`_
-***************************
+Fix / Upgrade `Missing OS Templates`_
+*************************************
 If there are missing OS templates when creating a VM, it generally means that
 the ``create-guest-templates`` script hasn't been run. Running it manually as
 root on the server will add/update all OS templates and populate the dropdown.
@@ -197,6 +197,11 @@ root on the server will add/update all OS templates and populate the dropdown.
   :caption: Re-create guest templates.
 
   /usr/bin/create-guest-templates
+
+.. code-block:: bash
+  :caption: Newer guest VM templates can be added via the *testing* repository.
+
+  yum update guest-templates* --enablerepo=xcp-ng-testing
 
 Auto Start VM on `Boot`_
 ************************
