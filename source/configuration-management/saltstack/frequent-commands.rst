@@ -47,6 +47,31 @@ Show Avaliable Grains On Minions
 
   salt {MINION} grains.items
 
+Jobs
+****
+All commands executed are placed into the job queue with results cached on the
+salt-master.
+
+.. important::
+  The CLI results read poorly and may initially appear that jobs fail with the
+  message:
+
+  ``Minion did not return. [No response]``
+
+  This is just stating that the remote command did not respond before the CLI
+  timed out. It is **automatically** added to jobs when executed and results are
+  cached for *24 hours* by default.
+
+.. code-block:: bash
+  :caption: List jobs that have run.
+
+  salt-run jobs.list_jobs
+
+.. code-block:: bash
+  :caption: Show results from job that has completed.
+
+  salt-run jobs.lookup_jid {ID}
+
 List Active Jobs
 ================
 .. code-block:: bash
@@ -55,7 +80,7 @@ List Active Jobs
 
 .. note::
   Useful for long-running comamnds (e.g. 'no response' commands) where the
-  command will not finish before`timeout` is reached. See `jobs`_ and
+  command will not finish before ``timeout`` is reached. See `jobs`_ and
   :ref:`salt-common-issues-no-return`.
 
 `Generate New Master Certificates`_

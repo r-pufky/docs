@@ -346,6 +346,9 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../configuration-management/saltstack/frequent-commands.html#get-status-of-all-minions">Get Status of All Minions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../configuration-management/saltstack/frequent-commands.html#show-minions-on-a-subnet">Show Minions On A Subnet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../configuration-management/saltstack/frequent-commands.html#show-avaliable-grains-on-minions">Show Avaliable Grains On Minions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../configuration-management/saltstack/frequent-commands.html#jobs">Jobs</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../configuration-management/saltstack/frequent-commands.html#list-active-jobs">List Active Jobs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../configuration-management/saltstack/frequent-commands.html#generate-new-master-certificates">Generate New Master Certificates</a></li>
 </ul>
@@ -804,7 +807,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#add-pci-device-passthrough">Add PCI Device Passthrough</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#fix-missing-os-templates">Fix Missing OS Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fix-upgrade-missing-os-templates">Fix / Upgrade Missing OS Templates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#auto-start-vm-on-boot">Auto Start VM on Boot</a></li>
 </ul>
 </li>
@@ -1894,8 +1897,8 @@ PCI devices</cite>. You only have to do this once.</p>
 </div>
 </div>
 </div>
-<div class="section" id="fix-missing-os-templates">
-<h2>Fix <a class="reference external" href="https://www.reddit.com/r/XenServer/comments/607pbi/my_xenserver_is_missing_templates/">Missing OS Templates</a><a class="headerlink" href="#fix-missing-os-templates" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="fix-upgrade-missing-os-templates">
+<h2>Fix / Upgrade <a class="reference external" href="https://www.reddit.com/r/XenServer/comments/607pbi/my_xenserver_is_missing_templates/">Missing OS Templates</a><a class="headerlink" href="#fix-upgrade-missing-os-templates" title="Permalink to this headline">¶</a></h2>
 <p>If there are missing OS templates when creating a VM, it generally means that
 the <code class="docutils literal notranslate"><span class="pre">create-guest-templates</span></code> script hasn’t been run. Running it manually as
 root on the server will add/update all OS templates and populate the dropdown.</p>
@@ -1905,12 +1908,18 @@ root on the server will add/update all OS templates and populate the dropdown.</
 </pre></div>
 </div>
 </div>
+<div class="literal-block-wrapper docutils container" id="id22">
+<div class="code-block-caption"><span class="caption-text">Newer guest VM templates can be added via the <em>testing</em> repository.</span><a class="headerlink" href="#id22" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>yum update guest-templates* --enablerepo<span class="o">=</span>xcp-ng-testing
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="auto-start-vm-on-boot">
 <h2>Auto Start VM on <a class="reference external" href="https://xen-orchestra.com/blog/auto-start-vm-on-xenserver-boot/">Boot</a><a class="headerlink" href="#auto-start-vm-on-boot" title="Permalink to this headline">¶</a></h2>
 <p>Start VM when Hypervisor is booted.</p>
-<div class="literal-block-wrapper docutils container" id="id22">
-<div class="code-block-caption"><span class="caption-text">Both the pool that the VM is in and the VM need to be enabled.</span><a class="headerlink" href="#id22" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id23">
+<div class="code-block-caption"><span class="caption-text">Both the pool that the VM is in and the VM need to be enabled.</span><a class="headerlink" href="#id23" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xe pool-list
 xe vm-param-set <span class="nv">uuid</span><span class="o">={</span>POOL<span class="o">}</span> other-config:auto_poweron<span class="o">=</span><span class="nb">true</span>
 xe vm-list

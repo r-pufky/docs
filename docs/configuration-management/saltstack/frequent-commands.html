@@ -346,6 +346,9 @@
 <li class="toctree-l4"><a class="reference internal" href="#get-status-of-all-minions">Get Status of All Minions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#show-minions-on-a-subnet">Show Minions On A Subnet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#show-avaliable-grains-on-minions">Show Avaliable Grains On Minions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#jobs">Jobs</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#list-active-jobs">List Active Jobs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#generate-new-master-certificates">Generate New Master Certificates</a></li>
 </ul>
@@ -804,7 +807,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#add-pci-device-passthrough">Add PCI Device Passthrough</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#fix-missing-os-templates">Fix Missing OS Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#fix-upgrade-missing-os-templates">Fix / Upgrade Missing OS Templates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#auto-start-vm-on-boot">Auto Start VM on Boot</a></li>
 </ul>
 </li>
@@ -1694,14 +1697,14 @@ information.</p>
 <p class="admonition-title">Note</p>
 <p>For windows minions, command should be run from the salt batch files to setup
 the appropriate environment.</p>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">Linux command.</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Linux command.</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>salt-call -l debug state.highstate <span class="nv">saltenv</span><span class="o">=</span>dev <span class="nv">pillarenv</span><span class="o">=</span>dev
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">Equivalent Windoes command.</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Equivalent Windoes command.</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>c:\salt\salt-call.bat -l debug state.highstate saltenv=dev pillarenv=dev
 </pre></div>
 </div>
@@ -1734,6 +1737,32 @@ salt -G os:ubuntu cmd.run <span class="s1">&#39;df -h&#39;</span>
 </pre></div>
 </div>
 </div>
+</div>
+<div class="section" id="jobs">
+<h2>Jobs<a class="headerlink" href="#jobs" title="Permalink to this headline">¶</a></h2>
+<p>All commands executed are placed into the job queue with results cached on the
+salt-master.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The CLI results read poorly and may initially appear that jobs fail with the
+message:</p>
+<p><code class="docutils literal notranslate"><span class="pre">Minion</span> <span class="pre">did</span> <span class="pre">not</span> <span class="pre">return.</span> <span class="pre">[No</span> <span class="pre">response]</span></code></p>
+<p>This is just stating that the remote command did not respond before the CLI
+timed out. It is <strong>automatically</strong> added to <code class="docutils literal notranslate"><span class="pre">jobs</span></code> when executed and
+results are cached for <em>24 hours</em> by default.</p>
+</div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">List jobs that have run.</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>salt-run jobs.list_jobs
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">Show results from job that has completed.</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>salt-run jobs.lookup_jid <span class="o">{</span>ID<span class="o">}</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="list-active-jobs">
 <h3>List Active Jobs<a class="headerlink" href="#list-active-jobs" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>salt-run jobs.active
@@ -1742,7 +1771,7 @@ salt -G os:ubuntu cmd.run <span class="s1">&#39;df -h&#39;</span>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Useful for long-running comamnds (e.g. ‘no response’ commands) where the
-command will not finish before`timeout` is reached. See <a class="reference external" href="https://docs.saltstack.com/en/latest/ref/runners/all/salt.runners.jobs.html#salt.runners.jobs.list_job">jobs</a> and
+command will not finish before <code class="docutils literal notranslate"><span class="pre">timeout</span></code> is reached. See <a class="reference external" href="https://docs.saltstack.com/en/latest/ref/runners/all/salt.runners.jobs.html#salt.runners.jobs.list_job">jobs</a> and
 <a class="reference internal" href="common-issues.html#salt-common-issues-no-return"><span class="std std-ref">Minion did not return. [Not connected].</span></a>.</p>
 </div>
 </div>
