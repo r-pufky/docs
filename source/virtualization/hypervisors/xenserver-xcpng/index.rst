@@ -16,7 +16,7 @@ Create a non-root user account with sudo access.
   :caption: Add a non-root account.
 
   useradd {USER}
-  passwd {PASS}
+  passwd {USER}
   visudo
 
 .. code-block:: bash
@@ -49,9 +49,11 @@ Disable Utils Webpage
 .. code-block:: bash
   :caption: Set index.html to empty file.
 
-  cp /opt/xensource/www/Citrix-index.html /home/{USER}/original-index.html
-  echo '' > /opt/xensource/www/Citrix-index.html
+  cp /opt/xensource/www/XCP-ng-index.html /home/{USER}/original-index.html
+  echo '' > /opt/xensource/www/XCP-ng-index.html
 
+.. note::
+  ``Citrix-index.html`` is used for XenServer.
 Restrict XAPI to Pre-defined Hosts
 ==================================
 Only allow explicit hosts access to the API.
