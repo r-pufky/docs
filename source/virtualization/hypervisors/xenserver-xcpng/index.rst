@@ -138,6 +138,24 @@ Determine the template name, and create a new VM from that template, start it.
   xe vm-install template="{TEMPLATE NAME}" new-name-label="{NEW VM}"
   xe vm-start uuid={NEW VM}
 
+`Copy VM to New Storage Repository`_
+************************************
+
+.. ggui:: Copy VM
+  :key_title: VM --> RMB --> Copy VM
+  :option:  Full copy
+  :setting: {NEW SR}
+  :no_section:
+  :no_caption:
+  :no_launch:
+
+.. warning::
+  MAC addresses are not copied; update VM with existing MAC address if needed.
+
+.. warning::
+  Snapshots must be individually copied or exported to a template on the new
+  repository.
+
 PCI Passthrough for Direct Hardware Access
 ******************************************
 Used for direct hardware access needs, like disks for ZFS and GPU's for plex.
@@ -215,6 +233,27 @@ Start VM when Hypervisor is booted.
   xe vm-list
   xe vm-param-set uuid={VM} other-config:auto_poweron=true
 
+`USB Local Storage`_
+********************
+Useful for migrations and where the local storage repository needed to be fully
+rebuilt.
+
+.. code-block:: bash
+  :caption: Determine USB block device and ID mapping
+
+  fdisk -l
+  ls -l /dev/disk/by-id
+
+.. code-block:: bash
+  :caption: Determine host UUID
+
+  cat /etc/xensource-inventory | grep -i installation_uuid
+
+.. code-block:: bash
+  :caption: Add USB device as new Storage Repository
+
+  xe sr-create type=lvm content-type=user device-config:device=/dev/disk/by-id/{USB BY-ID} name-label='USB Storage' host-uuid={HOST UUID} shared=false
+
 .. rubric:: References
 
 #. `Adding new usergroups to XenServer <https://discussions.citrix.com/topic/154063-add-new-usersgroup-to-xenserver/>`_
@@ -230,3 +269,5 @@ Start VM when Hypervisor is booted.
 .. _Keep 2 Days of Logs: https://discussions.citrix.com/topic/299016-how-to-disable-xenserver-logging/
 .. _listing system block devices: https://willhaley.com/blog/find-correspond-disk-belongs-which-hard-drive-controller-linux/
 .. _Boot: https://xen-orchestra.com/blog/auto-start-vm-on-xenserver-boot/
+.. _USB Local Storage: https://support.citrix.com/article/CTX205551
+.. _Copy VM to New Storage Repository: https://support.citrix.com/article/CTX116685
