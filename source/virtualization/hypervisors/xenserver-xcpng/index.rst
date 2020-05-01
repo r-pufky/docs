@@ -256,6 +256,14 @@ rebuilt.
 
   xe sr-create type=lvm content-type=user device-config:device=/dev/disk/by-id/{USB BY-ID} name-label='USB Storage' host-uuid={HOST UUID} shared=false
 
+.. code-block:: bash
+  :caption: `Detach and forget USB SR`_
+
+  xe sr-list name-label='USB Storage'
+  xe pbd-list sr-uuid={UUID USB SR}
+  xe pbd-unplug uuid={PBD UUID}
+  xe sr-forget uuid={UUID USB SR}
+
 .. rubric:: References
 
 #. `Adding new usergroups to XenServer <https://discussions.citrix.com/topic/154063-add-new-usersgroup-to-xenserver/>`_
@@ -273,3 +281,4 @@ rebuilt.
 .. _Boot: https://xen-orchestra.com/blog/auto-start-vm-on-xenserver-boot/
 .. _USB Local Storage: https://support.citrix.com/article/CTX205551
 .. _Copy VM to New Storage Repository: https://support.citrix.com/article/CTX116685
+.. _Detach and forget USB SR: https://support.citrix.com/article/CTX131328
