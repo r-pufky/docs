@@ -5,21 +5,36 @@
 Block nefarious websites & Ads.
 
 .. gport:: Ports (Pi-Hole)
-  :port:     443,
+  :port:     53,
              80,
-             53
-  :protocol: TCP,
+             443,
+             67,
+             547,
+             4711-4720
+  :protocol: UDP/TCP,
              TCP,
-             UDP/TCP
+             TCP,
+             UDP,
+             UDP,
+             TCP
   :type:     Public,
              Public,
+             Public,
+             Public,
+             Public,
              Public
-  :purpose:  HTTPS administration webface.,
+  :purpose:  DNS Service.,
              HTTP administration webface.,
-             DNS Service.
+             (Optional) HTTPS administration webface.,
+             (Optional) DHCP Service.,
+             (Optional) DHCPv6 Service.,
+             (Optional) FTL API Service.
   :no_key_title:
   :no_caption:
   :no_launch:
+
+.. note::
+  FTL API should not be acessible from any other interface.
 
 .. _service-pihole-file-locations:
 
