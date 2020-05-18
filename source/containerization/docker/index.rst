@@ -367,6 +367,25 @@ which may workaround this issue for specific containers.
     proxy_pass ...
   }
 
+UFW & Docker
+============
+Docker manually manipulates ``iptables`` to set container rules for ``expose``
+and ``ports``. **Any** firewall program currently breaks Docker routing when
+used.
+
+.. danger::
+  Do not enable **UFW** or other firewalls on Docker host until `Docker Bypasses
+  Firewall`_ is resolved.
+
+If ``UFW`` has been enabled and Docker services stop responding, fix by:
+
+.. code-block:: bash
+  :caption: Restore Docker services after UFW accidentally enabled.
+
+  ufw disable
+  service docker stop
+  service docker start
+
 Explore `Image Filesystem`_
 ***************************
 Container filesystems can be explored without launching the container by
@@ -441,6 +460,11 @@ bypassed by replacing the functionality with ``gnupg2`` and ``pass``.
   docker login
   docker push
 
+.. rubric:: References
+
+#. `Docker firewall issues <https://unrouted.io/2017/08/15/docker-firewall/>`_
+#. `UFW and Docker problems <https://stackoverflow.com/questions/30383845/what-is-the-best-practice-of-docker-ufw-under-ubuntu>`_
+
 .. _getting started: https://docs.docker.com/get-started/
 .. _cheetsheet: https://github.com/wsargent/docker-cheat-sheet
 .. _-t -d: https://stackoverflow.com/questions/30209776/docker-container-will-automatically-stop-after-docker-run-d
@@ -463,3 +487,4 @@ bypassed by replacing the functionality with ``gnupg2`` and ``pass``.
 .. _non-deterministic: https://dustymabe.com/2016/05/25/non-deterministic-docker-networking-and-source-based-ip-routing/
 .. _appropriate default gateway: https://stackoverflow.com/questions/36882945/change-default-route-in-docker-container
 .. _routing: https://github.com/moby/moby/issues/21741
+.. _Docker Bypasses Firewall: https://github.com/moby/moby/issues/22054#issuecomment-466663033
