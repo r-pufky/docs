@@ -498,6 +498,37 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/wireguard/index.html">Wireguard</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../services/wireguard/linux-setup.html">Wireguard Linux Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../services/wireguard/linux-setup.html#debian">Debian</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/wireguard/linux-setup.html#ubuntu">Ubuntu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/wireguard/linux-setup.html#autostart-tunnel-as-service">Autostart Tunnel as Service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/wireguard/windows-setup.html">Wireguard Windows Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../services/wireguard/windows-setup.html#slient-install">Slient Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/wireguard/windows-setup.html#add-pre-configured-tunnel">Add Pre-configured Tunnel</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/wireguard/configuration.html">Wireguard Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../services/wireguard/configuration.html#ports-wireguard">Ports (Wireguard)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/wireguard/configuration.html#key-generation">Key Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/wireguard/configuration.html#point-to-point-private-network">Point To Point Private Network</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../services/wireguard/configuration.html#server">Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../services/wireguard/configuration.html#clients">Clients</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../services/wireguard/configuration.html#testing">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/wireguard/configuration.html#vpn-network">VPN Network</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../services/wireguard/configuration.html#id1">Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../services/wireguard/configuration.html#client">Client</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../services/wireguard/configuration.html#id2">Testing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Operating Systems</span></p>
 <ul>
@@ -801,6 +832,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#convert-vm-to-a-template">Convert VM to a Template</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#modifying-a-vm-template">Modifying a VM Template</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#manually-creating-new-vm-from-template">Manually Creating New VM from Template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#copy-vm-to-new-storage-repository">Copy VM to New Storage Repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#pci-passthrough-for-direct-hardware-access">PCI Passthrough for Direct Hardware Access</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#find-device-ids">Find Device IDs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#prevent-dom0-driver-binding">Prevent dom0 Driver Binding</a></li>
@@ -809,6 +841,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#add-pci-device-passthrough">Add PCI Device Passthrough</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#fix-upgrade-missing-os-templates">Fix / Upgrade Missing OS Templates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#auto-start-vm-on-boot">Auto Start VM on Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#usb-local-storage">USB Local Storage</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../virtualization/hypervisors/kvm/index.html">KVM Server</a><ul>
@@ -858,6 +891,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#accessing-networks-from-other-compose-containers">Accessing Networks from Other Compose Containers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#default-gateway-is-not-correct">Default Gateway is Not Correct</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#forward-traffic-via-specific-interfaces">Forward Traffic via Specific Interfaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ufw-docker">UFW &amp; Docker</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#explore-image-filesystem">Explore Image Filesystem</a></li>
@@ -1497,6 +1531,37 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../services/wireguard/index.html">Wireguard</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../services/wireguard/linux-setup.html">Wireguard Linux Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../services/wireguard/linux-setup.html#debian">Debian</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/wireguard/linux-setup.html#ubuntu">Ubuntu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/wireguard/linux-setup.html#autostart-tunnel-as-service">Autostart Tunnel as Service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/wireguard/windows-setup.html">Wireguard Windows Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../services/wireguard/windows-setup.html#slient-install">Slient Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/wireguard/windows-setup.html#add-pre-configured-tunnel">Add Pre-configured Tunnel</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/wireguard/configuration.html">Wireguard Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../services/wireguard/configuration.html#ports-wireguard">Ports (Wireguard)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/wireguard/configuration.html#key-generation">Key Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/wireguard/configuration.html#point-to-point-private-network">Point To Point Private Network</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../services/wireguard/configuration.html#server">Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../services/wireguard/configuration.html#clients">Clients</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../services/wireguard/configuration.html#testing">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/wireguard/configuration.html#vpn-network">VPN Network</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../services/wireguard/configuration.html#id1">Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../services/wireguard/configuration.html#client">Client</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../services/wireguard/configuration.html#id2">Testing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../services/zfs/index.html">ZFS</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../services/zfs/index.html#zfs-install">ZFS Install</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/zfs/index.html#mounting-existing-zfs-pool">Mounting Existing ZFS Pool</a></li>
@@ -2106,13 +2171,33 @@ locations.</span><a class="headerlink" href="#id33" title="Permalink to this cod
 </div>
 </div>
 </div>
+<div class="section" id="ufw-docker">
+<h3>UFW &amp; Docker<a class="headerlink" href="#ufw-docker" title="Permalink to this headline">¶</a></h3>
+<p>Docker manually manipulates <code class="docutils literal notranslate"><span class="pre">iptables</span></code> to set container rules for <code class="docutils literal notranslate"><span class="pre">expose</span></code>
+and <code class="docutils literal notranslate"><span class="pre">ports</span></code>. <strong>Any</strong> firewall program currently breaks Docker routing when
+used.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Do not enable <strong>UFW</strong> or other firewalls on Docker host until <a class="reference external" href="https://github.com/moby/moby/issues/22054#issuecomment-466663033">Docker Bypasses
+Firewall</a> is resolved.</p>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">UFW</span></code> has been enabled and Docker services stop responding, fix by:</p>
+<div class="literal-block-wrapper docutils container" id="id34">
+<div class="code-block-caption"><span class="caption-text">Restore Docker services after UFW accidentally enabled.</span><a class="headerlink" href="#id34" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ufw disable
+service docker stop
+service docker start
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="explore-image-filesystem">
 <h2>Explore <a class="reference external" href="https://stackoverflow.com/questions/20813486/exploring-docker-containers-file-system">Image Filesystem</a><a class="headerlink" href="#explore-image-filesystem" title="Permalink to this headline">¶</a></h2>
 <p>Container filesystems can be explored without launching the container by
 specifying a replacement entrypoint. This is helpful for debugging issues.</p>
-<div class="literal-block-wrapper docutils container" id="id34">
-<div class="code-block-caption"><span class="caption-text">Explore container filesystem.</span><a class="headerlink" href="#id34" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id35">
+<div class="code-block-caption"><span class="caption-text">Explore container filesystem.</span><a class="headerlink" href="#id35" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run --rm -it --entrypoint<span class="o">=</span>/bin/sh <span class="o">{</span>IMAGE<span class="o">}</span>
 </pre></div>
 </div>
@@ -2126,8 +2211,8 @@ specifying a replacement entrypoint. This is helpful for debugging issues.</p>
 <div class="section" id="copy-data-from-container">
 <h2>Copy Data From Container<a class="headerlink" href="#copy-data-from-container" title="Permalink to this headline">¶</a></h2>
 <p>Files can be copied directly out of containers.</p>
-<div class="literal-block-wrapper docutils container" id="id35">
-<div class="code-block-caption"><span class="caption-text">Copy data from docker container.</span><a class="headerlink" href="#id35" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id36">
+<div class="code-block-caption"><span class="caption-text">Copy data from docker container.</span><a class="headerlink" href="#id36" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker cp <span class="o">{</span>NAME<span class="o">}</span>:/local/container/file .
 </pre></div>
 </div>
@@ -2136,15 +2221,15 @@ specifying a replacement entrypoint. This is helpful for debugging issues.</p>
 <div class="section" id="tagging-docker-images">
 <h2>Tagging Docker Images<a class="headerlink" href="#tagging-docker-images" title="Permalink to this headline">¶</a></h2>
 <p>Docker images can be tagged with <a class="reference external" href="https://stackoverflow.com/questions/31963525/is-it-possible-for-image-to-have-multiple-tags">multiple tags</a> for the same image.</p>
-<div class="literal-block-wrapper docutils container" id="id36">
-<div class="code-block-caption"><span class="caption-text">Create two tages for the same image.</span><a class="headerlink" href="#id36" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id37">
+<div class="code-block-caption"><span class="caption-text">Create two tages for the same image.</span><a class="headerlink" href="#id37" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker tag <span class="o">{</span>ID<span class="o">}</span> <span class="o">{</span>USER<span class="o">}</span>/<span class="o">{</span>IMAGE<span class="o">}</span>:0.2
 docker tag <span class="o">{</span>ID<span class="o">}</span> <span class="o">{</span>USER<span class="o">}</span>/<span class="o">{</span>IMAGE<span class="o">}</span>:latest
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id37">
-<div class="code-block-caption"><span class="caption-text">Multiple tags during docker image build.</span><a class="headerlink" href="#id37" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id38">
+<div class="code-block-caption"><span class="caption-text">Multiple tags during docker image build.</span><a class="headerlink" href="#id38" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker build -t <span class="o">{</span>USER<span class="o">}</span>/<span class="o">{</span>IMAGE<span class="o">}</span>:0.2 -t <span class="o">{</span>USER<span class="o">}</span>/<span class="o">{</span>IMAGE<span class="o">}</span>:latest .
 docker push <span class="o">{</span>USER<span class="o">}</span>/<span class="o">{</span>IMAGE<span class="o">}</span>
 </pre></div>
@@ -2154,8 +2239,8 @@ docker push <span class="o">{</span>USER<span class="o">}</span>/<span class="o"
 <div class="section" id="push-image-to-docker-hub">
 <h2>Push Image to Docker Hub<a class="headerlink" href="#push-image-to-docker-hub" title="Permalink to this headline">¶</a></h2>
 <p>Login to Docker Hub and push via the correct tag.</p>
-<div class="literal-block-wrapper docutils container" id="id38">
-<div class="code-block-caption"><span class="caption-text">Login and push image based on tags.</span><a class="headerlink" href="#id38" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id39">
+<div class="code-block-caption"><span class="caption-text">Login and push image based on tags.</span><a class="headerlink" href="#id39" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker login
 docker push <span class="o">{</span>USER<span class="o">}</span>/<span class="o">{</span>IMAGE<span class="o">}</span>:<span class="o">{</span>TAG<span class="o">}</span>
 </pre></div>
@@ -2167,8 +2252,8 @@ docker push <span class="o">{</span>USER<span class="o">}</span>/<span class="o"
 <p>Caused by the container Dockerfile not properly using the <code class="docutils literal notranslate"><span class="pre">Exec</span></code> specification
 for <a class="reference external" href="https://hynek.me/articles/docker-signals/">the entrypoint script</a>. Exec will hand over the process and enable signals
 to propagate into the container when <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stop</span></code> is issued.</p>
-<div class="literal-block-wrapper docutils container" id="id39">
-<div class="code-block-caption"><span class="caption-text">Specify entrypoint properly in Dockerfile.</span><a class="headerlink" href="#id39" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id40">
+<div class="code-block-caption"><span class="caption-text">Specify entrypoint properly in Dockerfile.</span><a class="headerlink" href="#id40" title="Permalink to this code">¶</a></div>
 <div class="highlight-dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">ENTRYPOINT</span> <span class="p">[</span><span class="s2">&quot;/my/entrypoint/script/with/signals&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -2179,14 +2264,19 @@ to propagate into the container when <code class="docutils literal notranslate">
 <p>Docker push requires <em>gnome-keyring</em> to login by default and will fail producing
 the error: <em>GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown</em>. This can be
 bypassed by replacing the functionality with <code class="docutils literal notranslate"><span class="pre">gnupg2</span></code> and <code class="docutils literal notranslate"><span class="pre">pass</span></code>.</p>
-<div class="literal-block-wrapper docutils container" id="id40">
-<div class="code-block-caption"><span class="caption-text">Install gnupg2 and pass to prevent error.</span><a class="headerlink" href="#id40" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id41">
+<div class="code-block-caption"><span class="caption-text">Install gnupg2 and pass to prevent error.</span><a class="headerlink" href="#id41" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt install gnupg2 pass
 docker login
 docker push
 </pre></div>
 </div>
 </div>
+<p class="rubric">References</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://unrouted.io/2017/08/15/docker-firewall/">Docker firewall issues</a></p></li>
+<li><p><a class="reference external" href="https://stackoverflow.com/questions/30383845/what-is-the-best-practice-of-docker-ufw-under-ubuntu">UFW and Docker problems</a></p></li>
+</ol>
 </div>
 </div>
 

@@ -498,6 +498,37 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../../services/wireguard/index.html">Wireguard</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../services/wireguard/linux-setup.html">Wireguard Linux Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/wireguard/linux-setup.html#debian">Debian</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/wireguard/linux-setup.html#ubuntu">Ubuntu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/wireguard/linux-setup.html#autostart-tunnel-as-service">Autostart Tunnel as Service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../services/wireguard/windows-setup.html">Wireguard Windows Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/wireguard/windows-setup.html#slient-install">Slient Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/wireguard/windows-setup.html#add-pre-configured-tunnel">Add Pre-configured Tunnel</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../services/wireguard/configuration.html">Wireguard Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/wireguard/configuration.html#ports-wireguard">Ports (Wireguard)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/wireguard/configuration.html#key-generation">Key Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/wireguard/configuration.html#point-to-point-private-network">Point To Point Private Network</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../services/wireguard/configuration.html#server">Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services/wireguard/configuration.html#clients">Clients</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services/wireguard/configuration.html#testing">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/wireguard/configuration.html#vpn-network">VPN Network</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../services/wireguard/configuration.html#id1">Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services/wireguard/configuration.html#client">Client</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services/wireguard/configuration.html#id2">Testing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Operating Systems</span></p>
 <ul>
@@ -801,6 +832,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#convert-vm-to-a-template">Convert VM to a Template</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#modifying-a-vm-template">Modifying a VM Template</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#manually-creating-new-vm-from-template">Manually Creating New VM from Template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#copy-vm-to-new-storage-repository">Copy VM to New Storage Repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#pci-passthrough-for-direct-hardware-access">PCI Passthrough for Direct Hardware Access</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#find-device-ids">Find Device IDs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#prevent-dom0-driver-binding">Prevent dom0 Driver Binding</a></li>
@@ -809,6 +841,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#add-pci-device-passthrough">Add PCI Device Passthrough</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#fix-upgrade-missing-os-templates">Fix / Upgrade Missing OS Templates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#auto-start-vm-on-boot">Auto Start VM on Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usb-local-storage">USB Local Storage</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../kvm/index.html">KVM Server</a><ul>
@@ -858,6 +891,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../containerization/docker/index.html#accessing-networks-from-other-compose-containers">Accessing Networks from Other Compose Containers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../containerization/docker/index.html#default-gateway-is-not-correct">Default Gateway is Not Correct</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../containerization/docker/index.html#forward-traffic-via-specific-interfaces">Forward Traffic via Specific Interfaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../containerization/docker/index.html#ufw-docker">UFW &amp; Docker</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../containerization/docker/index.html#explore-image-filesystem">Explore Image Filesystem</a></li>
@@ -1497,6 +1531,37 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../../services/wireguard/index.html">Wireguard</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../services/wireguard/linux-setup.html">Wireguard Linux Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/wireguard/linux-setup.html#debian">Debian</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/wireguard/linux-setup.html#ubuntu">Ubuntu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/wireguard/linux-setup.html#autostart-tunnel-as-service">Autostart Tunnel as Service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../services/wireguard/windows-setup.html">Wireguard Windows Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/wireguard/windows-setup.html#slient-install">Slient Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/wireguard/windows-setup.html#add-pre-configured-tunnel">Add Pre-configured Tunnel</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../services/wireguard/configuration.html">Wireguard Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/wireguard/configuration.html#ports-wireguard">Ports (Wireguard)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/wireguard/configuration.html#key-generation">Key Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/wireguard/configuration.html#point-to-point-private-network">Point To Point Private Network</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../services/wireguard/configuration.html#server">Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services/wireguard/configuration.html#clients">Clients</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services/wireguard/configuration.html#testing">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../services/wireguard/configuration.html#vpn-network">VPN Network</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../services/wireguard/configuration.html#id1">Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services/wireguard/configuration.html#client">Client</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../services/wireguard/configuration.html#id2">Testing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../../services/zfs/index.html">ZFS</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../services/zfs/index.html#zfs-install">ZFS Install</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../services/zfs/index.html#mounting-existing-zfs-pool">Mounting Existing ZFS Pool</a></li>
@@ -1695,36 +1760,36 @@
 <div class="section" id="console-non-root-user-setup">
 <h3>Console non-root User Setup<a class="headerlink" href="#console-non-root-user-setup" title="Permalink to this headline">¶</a></h3>
 <p>Create a non-root user account with sudo access.</p>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">Add a non-root account.</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Add a non-root account.</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>useradd <span class="o">{</span>USER<span class="o">}</span>
-passwd <span class="o">{</span>PASS<span class="o">}</span>
+passwd <span class="o">{</span>USER<span class="o">}</span>
 visudo
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">visudo</span></code></span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">visudo</span></code></span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>USER<span class="o">}</span>  <span class="nv">ALL</span><span class="o">=(</span>ALL<span class="o">)</span>  ALL
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">Confirm sudo works as new user.</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">Confirm sudo works as new user.</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo su -
 </pre></div>
 </div>
 </div>
 <p><a class="reference internal" href="../../../services/ssh/linux-setup.html#service-ssh-linux-setup"><span class="std std-ref">SSHD Linux Setup</span></a> to setup sercure SSH cert-only logins.</p>
 <p>Explicitly enable access only for users, not ssh group.</p>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/ssh/sshd_config</span></code></span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/ssh/sshd_config</span></code></span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>allowusers <span class="o">{</span>USER<span class="o">}</span>
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">Restart SSHD to apply changes.</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">Restart SSHD to apply changes.</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>service sshd restart
 </pre></div>
 </div>
@@ -1732,25 +1797,29 @@ visudo
 </div>
 <div class="section" id="disable-utils-webpage">
 <h3>Disable Utils Webpage<a class="headerlink" href="#disable-utils-webpage" title="Permalink to this headline">¶</a></h3>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">Set index.html to empty file.</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp /opt/xensource/www/Citrix-index.html /home/<span class="o">{</span>USER<span class="o">}</span>/original-index.html
-<span class="nb">echo</span> <span class="s1">&#39;&#39;</span> &gt; /opt/xensource/www/Citrix-index.html
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">Set index.html to empty file.</span><a class="headerlink" href="#id9" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp /opt/xensource/www/XCP-ng-index.html /home/<span class="o">{</span>USER<span class="o">}</span>/original-index.html
+<span class="nb">echo</span> <span class="s1">&#39;&#39;</span> &gt; /opt/xensource/www/XCP-ng-index.html
 </pre></div>
 </div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">Citrix-index.html</span></code> is used for XenServer.</p>
 </div>
 </div>
 <div class="section" id="restrict-xapi-to-pre-defined-hosts">
 <h3>Restrict XAPI to Pre-defined Hosts<a class="headerlink" href="#restrict-xapi-to-pre-defined-hosts" title="Permalink to this headline">¶</a></h3>
 <p>Only allow explicit hosts access to the API.</p>
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/hosts.deny</span></code></span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/hosts.deny</span></code></span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xapi:ALL
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id9">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/hosts.allow</span></code></span><a class="headerlink" href="#id9" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/hosts.allow</span></code></span><a class="headerlink" href="#id11" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xapi:<span class="o">{</span>IP<span class="o">}</span> <span class="o">{</span>IP<span class="o">}</span>
 </pre></div>
 </div>
@@ -1758,8 +1827,8 @@ visudo
 </div>
 <div class="section" id="disable-tls-1-2-for-ssl-connections">
 <h3>Disable TLS &lt; 1.2 for SSL Connections<a class="headerlink" href="#disable-tls-1-2-for-ssl-connections" title="Permalink to this headline">¶</a></h3>
-<div class="literal-block-wrapper docutils container" id="id10">
-<div class="code-block-caption"><span class="caption-text">Disable TLS &lt; 1.2 via CLI.</span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text">Disable TLS &lt; 1.2 via CLI.</span><a class="headerlink" href="#id12" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xe pool-disable-ssl-legacy
 </pre></div>
 </div>
@@ -1773,8 +1842,8 @@ visudo
 <div class="section" id="only-keep-2-days-of-logs">
 <h3>Only <a class="reference external" href="https://discussions.citrix.com/topic/299016-how-to-disable-xenserver-logging/">Keep 2 Days of Logs</a><a class="headerlink" href="#only-keep-2-days-of-logs" title="Permalink to this headline">¶</a></h3>
 <p>Keep 2 days of log rotations, instead of 31 by default.</p>
-<div class="literal-block-wrapper docutils container" id="id11">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/logrotate.conf</span></code></span><a class="headerlink" href="#id11" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/logrotate.conf</span></code></span><a class="headerlink" href="#id13" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rotate <span class="m">2</span>
 </pre></div>
 </div>
@@ -1785,15 +1854,15 @@ visudo
 <h2>Creating A <a class="reference external" href="https://xen-orchestra.com/blog/creating-a-local-iso-repository-in-xenserver/">Local ISO Repository</a><a class="headerlink" href="#creating-a-local-iso-repository" title="Permalink to this headline">¶</a></h2>
 <p>This will allow the use of ISO’s on <code class="docutils literal notranslate"><span class="pre">dom0</span></code> to be used during VM creation. From
 an SSH session, create a directory and create a Storage Repository on top of it.</p>
-<div class="literal-block-wrapper docutils container" id="id12">
-<div class="code-block-caption"><span class="caption-text">Create Local ISO repository.</span><a class="headerlink" href="#id12" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-text">Create Local ISO repository.</span><a class="headerlink" href="#id14" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir -p /var/opt/xen/iso_import
 xe sr-create name-label<span class="o">=</span>LocalISO <span class="nv">type</span><span class="o">=</span>iso device-config:location<span class="o">=</span>/var/opt/xen/isos device-config:legacy_mode<span class="o">=</span><span class="nb">true</span> content-type<span class="o">=</span>iso
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id13">
-<div class="code-block-caption"><span class="caption-text">Refresh ISO library contents.</span><a class="headerlink" href="#id13" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id15">
+<div class="code-block-caption"><span class="caption-text">Refresh ISO library contents.</span><a class="headerlink" href="#id15" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xe sr-list
 xe sr-scan <span class="nv">uuid</span><span class="o">={</span>UUID OF ISO REPOSITORY<span class="o">}</span>
 </pre></div>
@@ -1817,8 +1886,8 @@ xe sr-scan <span class="nv">uuid</span><span class="o">={</span>UUID OF ISO REPO
 <li><p>Copy the UUID from the template image <span class="guilabel">General › Properties › UUID</span></p></li>
 <li><p>SSH to the XenServer, change to root.</p></li>
 <li><p>Convert template to VM and start it.</p>
-<div class="literal-block-wrapper docutils container" id="id14">
-<div class="code-block-caption"><span class="caption-text">Start a Template VM.</span><a class="headerlink" href="#id14" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id16">
+<div class="code-block-caption"><span class="caption-text">Start a Template VM.</span><a class="headerlink" href="#id16" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xe vm-param-set <span class="nv">uuid</span><span class="o">={</span>UUID<span class="o">}</span> is-a-template<span class="o">=</span><span class="nb">false</span>
 xe vm-start <span class="nv">uuid</span><span class="o">={</span>UUID<span class="o">}</span>
 </pre></div>
@@ -1831,13 +1900,40 @@ xe vm-start <span class="nv">uuid</span><span class="o">={</span>UUID<span class
 <div class="section" id="manually-creating-new-vm-from-template">
 <h2>Manually Creating New VM from Template<a class="headerlink" href="#manually-creating-new-vm-from-template" title="Permalink to this headline">¶</a></h2>
 <p>Determine the template name, and create a new VM from that template, start it.</p>
-<div class="literal-block-wrapper docutils container" id="id15">
-<div class="code-block-caption"><span class="caption-text">Create a new VM from Template.</span><a class="headerlink" href="#id15" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id17">
+<div class="code-block-caption"><span class="caption-text">Create a new VM from Template.</span><a class="headerlink" href="#id17" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xe template-list
 xe vm-install <span class="nv">template</span><span class="o">=</span><span class="s2">&quot;{TEMPLATE NAME}&quot;</span> new-name-label<span class="o">=</span><span class="s2">&quot;{NEW VM}&quot;</span>
 xe vm-start <span class="nv">uuid</span><span class="o">={</span>NEW VM<span class="o">}</span>
 </pre></div>
 </div>
+</div>
+</div>
+<div class="section" id="copy-vm-to-new-storage-repository">
+<h2><a class="reference external" href="https://support.citrix.com/article/CTX116685">Copy VM to New Storage Repository</a><a class="headerlink" href="#copy-vm-to-new-storage-repository" title="Permalink to this headline">¶</a></h2>
+<div class="ggui docutils container" id="Copy VM">
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="3"><span class="guilabel">VM › RMB › Copy VM</span></td>
+</tr>
+<tr class="row-even"><td><p>Full copy</p></td>
+<td><p>{NEW SR}</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>MAC addresses are not copied; update VM with existing MAC address if needed.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Snapshots must be individually copied or exported to a template on the new
+repository.</p>
 </div>
 </div>
 <div class="section" id="pci-passthrough-for-direct-hardware-access">
@@ -1848,8 +1944,8 @@ xe vm-start <span class="nv">uuid</span><span class="o">={</span>NEW VM<span cla
 <p>On XenServer as <code class="docutils literal notranslate"><span class="pre">root</span></code>, list PCI devices and determine the device ID’s that
 you want. They are in the format <strong>B:D.f</strong> (beginning of line). You can see
 current drives attached to these PCI devices by <a class="reference external" href="https://willhaley.com/blog/find-correspond-disk-belongs-which-hard-drive-controller-linux/">listing system block devices</a>.</p>
-<div class="literal-block-wrapper docutils container" id="id16">
-<div class="code-block-caption"><span class="caption-text">List block devices.</span><a class="headerlink" href="#id16" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id18">
+<div class="code-block-caption"><span class="caption-text">List block devices.</span><a class="headerlink" href="#id18" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>lspci
 ls -a /sys/block
 </pre></div>
@@ -1859,16 +1955,16 @@ ls -a /sys/block
 <div class="section" id="prevent-dom0-driver-binding">
 <h3>Prevent dom0 Driver Binding<a class="headerlink" href="#prevent-dom0-driver-binding" title="Permalink to this headline">¶</a></h3>
 <p>This prevents dom0 from binding to hardware and presenting via a meta-layer.</p>
-<div class="literal-block-wrapper docutils container" id="id17">
-<div class="code-block-caption"><span class="caption-text">Prevent dom0 from binding to specific PCI hardware.</span><a class="headerlink" href="#id17" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id19">
+<div class="code-block-caption"><span class="caption-text">Prevent dom0 from binding to specific PCI hardware.</span><a class="headerlink" href="#id19" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/opt/xensource/libexec/xen-cmdline --set-dom0 <span class="s2">&quot;xen-pciback.hide=(04:00.0)&quot;</span>
 </pre></div>
 </div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<div class="literal-block-wrapper docutils container" id="id18">
-<div class="code-block-caption"><span class="caption-text">For multiple devices.</span><a class="headerlink" href="#id18" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id20">
+<div class="code-block-caption"><span class="caption-text">For multiple devices.</span><a class="headerlink" href="#id20" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/opt/xensource/libexec/xen-cmdline --set-dom0 <span class="s2">&quot;xen-pciback.hide=(04:00.0)(00:02.0)&quot;</span>
 </pre></div>
 </div>
@@ -1881,16 +1977,16 @@ ls -a /sys/block
 <h2>Add <a class="reference external" href="https://github.com/xcp-ng/xcp/wiki/PCI-Passtrough">PCI Device Passthrough</a><a class="headerlink" href="#add-pci-device-passthrough" title="Permalink to this headline">¶</a></h2>
 <p>With target VM off, determine UUID of vm with <code class="docutils literal notranslate"><span class="pre">xe</span> <span class="pre">vm-list</span></code>, then <cite>passthrough
 PCI devices</cite>. You only have to do this once.</p>
-<div class="literal-block-wrapper docutils container" id="id19">
-<div class="code-block-caption"><span class="caption-text">Add PCI device passthrough to a specific VM.</span><a class="headerlink" href="#id19" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id21">
+<div class="code-block-caption"><span class="caption-text">Add PCI device passthrough to a specific VM.</span><a class="headerlink" href="#id21" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xe vm-param-set other-config:pci<span class="o">=</span><span class="m">0</span>/0000:<span class="o">{</span>B:D.f<span class="o">}</span> <span class="nv">uuid</span><span class="o">={</span>VM UUID<span class="o">}</span>
 </pre></div>
 </div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<div class="literal-block-wrapper docutils container" id="id20">
-<div class="code-block-caption"><span class="caption-text">For <a class="reference external" href="https://discussions.citrix.com/topic/355675-xenserver-pci-passthrough-pv-hvm-multiple-devices/">multiple PCI devices</a>.</span><a class="headerlink" href="#id20" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id22">
+<div class="code-block-caption"><span class="caption-text">For <a class="reference external" href="https://discussions.citrix.com/topic/355675-xenserver-pci-passthrough-pv-hvm-multiple-devices/">multiple PCI devices</a>.</span><a class="headerlink" href="#id22" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xe vm-param-set other-config:pci<span class="o">=</span><span class="m">0</span>/0000:<span class="o">{</span>B:D.f<span class="o">}</span>,0/0000:<span class="o">{</span>B:D.f<span class="o">}</span> <span class="nv">uuid</span><span class="o">={</span>VM UUID<span class="o">}</span>
 </pre></div>
 </div>
@@ -1902,14 +1998,14 @@ PCI devices</cite>. You only have to do this once.</p>
 <p>If there are missing OS templates when creating a VM, it generally means that
 the <code class="docutils literal notranslate"><span class="pre">create-guest-templates</span></code> script hasn’t been run. Running it manually as
 root on the server will add/update all OS templates and populate the dropdown.</p>
-<div class="literal-block-wrapper docutils container" id="id21">
-<div class="code-block-caption"><span class="caption-text">Re-create guest templates.</span><a class="headerlink" href="#id21" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id23">
+<div class="code-block-caption"><span class="caption-text">Re-create guest templates.</span><a class="headerlink" href="#id23" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/usr/bin/create-guest-templates
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id22">
-<div class="code-block-caption"><span class="caption-text">Newer guest VM templates can be added via the <em>testing</em> repository.</span><a class="headerlink" href="#id22" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id24">
+<div class="code-block-caption"><span class="caption-text">Newer guest VM templates can be added via the <em>testing</em> repository.</span><a class="headerlink" href="#id24" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>yum update guest-templates* --enablerepo<span class="o">=</span>xcp-ng-testing
 </pre></div>
 </div>
@@ -1918,12 +2014,45 @@ root on the server will add/update all OS templates and populate the dropdown.</
 <div class="section" id="auto-start-vm-on-boot">
 <h2>Auto Start VM on <a class="reference external" href="https://xen-orchestra.com/blog/auto-start-vm-on-xenserver-boot/">Boot</a><a class="headerlink" href="#auto-start-vm-on-boot" title="Permalink to this headline">¶</a></h2>
 <p>Start VM when Hypervisor is booted.</p>
-<div class="literal-block-wrapper docutils container" id="id23">
-<div class="code-block-caption"><span class="caption-text">Both the pool that the VM is in and the VM need to be enabled.</span><a class="headerlink" href="#id23" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id25">
+<div class="code-block-caption"><span class="caption-text">Both the pool that the VM is in and the VM need to be enabled.</span><a class="headerlink" href="#id25" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xe pool-list
 xe vm-param-set <span class="nv">uuid</span><span class="o">={</span>POOL<span class="o">}</span> other-config:auto_poweron<span class="o">=</span><span class="nb">true</span>
 xe vm-list
 xe vm-param-set <span class="nv">uuid</span><span class="o">={</span>VM<span class="o">}</span> other-config:auto_poweron<span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="usb-local-storage">
+<h2><a class="reference external" href="https://support.citrix.com/article/CTX205551">USB Local Storage</a><a class="headerlink" href="#usb-local-storage" title="Permalink to this headline">¶</a></h2>
+<p>Useful for migrations and where the local storage repository needed to be fully
+rebuilt.</p>
+<div class="literal-block-wrapper docutils container" id="id26">
+<div class="code-block-caption"><span class="caption-text">Determine USB block device and ID mapping</span><a class="headerlink" href="#id26" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>fdisk -l
+ls -l /dev/disk/by-id
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id27">
+<div class="code-block-caption"><span class="caption-text">Determine host UUID</span><a class="headerlink" href="#id27" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat /etc/xensource-inventory <span class="p">|</span> grep -i installation_uuid
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id28">
+<div class="code-block-caption"><span class="caption-text">Add USB device as new Storage Repository</span><a class="headerlink" href="#id28" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xe sr-create <span class="nv">type</span><span class="o">=</span>lvm content-type<span class="o">=</span>user device-config:device<span class="o">=</span>/dev/disk/by-id/<span class="o">{</span>USB BY-ID<span class="o">}</span> name-label<span class="o">=</span><span class="s1">&#39;USB Storage&#39;</span> host-uuid<span class="o">={</span>HOST UUID<span class="o">}</span> <span class="nv">shared</span><span class="o">=</span><span class="nb">false</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id29">
+<div class="code-block-caption"><span class="caption-text"><a class="reference external" href="https://support.citrix.com/article/CTX131328">Detach and forget USB SR</a></span><a class="headerlink" href="#id29" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xe sr-list name-label<span class="o">=</span><span class="s1">&#39;USB Storage&#39;</span>
+xe pbd-list sr-uuid<span class="o">={</span>UUID USB SR<span class="o">}</span>
+xe pbd-unplug <span class="nv">uuid</span><span class="o">={</span>PBD UUID<span class="o">}</span>
+xe sr-forget <span class="nv">uuid</span><span class="o">={</span>UUID USB SR<span class="o">}</span>
 </pre></div>
 </div>
 </div>

@@ -498,6 +498,37 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../wireguard/index.html">Wireguard</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../wireguard/linux-setup.html">Wireguard Linux Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../wireguard/linux-setup.html#debian">Debian</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wireguard/linux-setup.html#ubuntu">Ubuntu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wireguard/linux-setup.html#autostart-tunnel-as-service">Autostart Tunnel as Service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../wireguard/windows-setup.html">Wireguard Windows Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../wireguard/windows-setup.html#slient-install">Slient Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wireguard/windows-setup.html#add-pre-configured-tunnel">Add Pre-configured Tunnel</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../wireguard/configuration.html">Wireguard Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../wireguard/configuration.html#ports-wireguard">Ports (Wireguard)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wireguard/configuration.html#key-generation">Key Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wireguard/configuration.html#point-to-point-private-network">Point To Point Private Network</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../wireguard/configuration.html#server">Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../wireguard/configuration.html#clients">Clients</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../wireguard/configuration.html#testing">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../wireguard/configuration.html#vpn-network">VPN Network</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../wireguard/configuration.html#id1">Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../wireguard/configuration.html#client">Client</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../wireguard/configuration.html#id2">Testing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Operating Systems</span></p>
 <ul>
@@ -801,6 +832,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#convert-vm-to-a-template">Convert VM to a Template</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#modifying-a-vm-template">Modifying a VM Template</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#manually-creating-new-vm-from-template">Manually Creating New VM from Template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#copy-vm-to-new-storage-repository">Copy VM to New Storage Repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#pci-passthrough-for-direct-hardware-access">PCI Passthrough for Direct Hardware Access</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#find-device-ids">Find Device IDs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#prevent-dom0-driver-binding">Prevent dom0 Driver Binding</a></li>
@@ -809,6 +841,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#add-pci-device-passthrough">Add PCI Device Passthrough</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#fix-upgrade-missing-os-templates">Fix / Upgrade Missing OS Templates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#auto-start-vm-on-boot">Auto Start VM on Boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#usb-local-storage">USB Local Storage</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../virtualization/hypervisors/kvm/index.html">KVM Server</a><ul>
@@ -858,6 +891,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../containerization/docker/index.html#accessing-networks-from-other-compose-containers">Accessing Networks from Other Compose Containers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../containerization/docker/index.html#default-gateway-is-not-correct">Default Gateway is Not Correct</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../containerization/docker/index.html#forward-traffic-via-specific-interfaces">Forward Traffic via Specific Interfaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../containerization/docker/index.html#ufw-docker">UFW &amp; Docker</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../containerization/docker/index.html#explore-image-filesystem">Explore Image Filesystem</a></li>
@@ -1493,6 +1527,37 @@
 <li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#router-configuration">Router Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#enable-unifi-controller-assignment-in-edgeos-or-dhcp-option-43">Enable Unifi Controller Assignment in EdgeOS or DHCP Option 43</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../wireguard/index.html">Wireguard</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../wireguard/linux-setup.html">Wireguard Linux Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../wireguard/linux-setup.html#debian">Debian</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wireguard/linux-setup.html#ubuntu">Ubuntu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wireguard/linux-setup.html#autostart-tunnel-as-service">Autostart Tunnel as Service</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../wireguard/windows-setup.html">Wireguard Windows Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../wireguard/windows-setup.html#slient-install">Slient Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wireguard/windows-setup.html#add-pre-configured-tunnel">Add Pre-configured Tunnel</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../wireguard/configuration.html">Wireguard Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../wireguard/configuration.html#ports-wireguard">Ports (Wireguard)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wireguard/configuration.html#key-generation">Key Generation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wireguard/configuration.html#point-to-point-private-network">Point To Point Private Network</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../wireguard/configuration.html#server">Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../wireguard/configuration.html#clients">Clients</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../wireguard/configuration.html#testing">Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../wireguard/configuration.html#vpn-network">VPN Network</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../wireguard/configuration.html#id1">Server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../wireguard/configuration.html#client">Client</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../wireguard/configuration.html#id2">Testing</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
