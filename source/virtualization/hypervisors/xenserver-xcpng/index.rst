@@ -54,6 +54,7 @@ Disable Utils Webpage
 
 .. note::
   ``Citrix-index.html`` is used for XenServer.
+
 Restrict XAPI to Pre-defined Hosts
 ==================================
 Only allow explicit hosts access to the API.
