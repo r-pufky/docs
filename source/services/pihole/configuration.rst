@@ -77,6 +77,49 @@ defined in the router itself).
 
 Restarting Pi-Hole may be required.
 
+Disable Blocking for Specific Clients
+*************************************
+Disabling ad blocking for specific clients. Disables can be all lists or
+specific lists.
+
+.. ggui:: Add Disable Group
+  :key_title: Group Managements --> Groups --> Add a new group
+  :option:  Name,
+            Description
+  :setting: Disable,
+            Disables PiHole domain blocking.
+  :no_section:
+
+.. ggui:: Enable Disable Group
+  :key_title: Group Managements --> Groups --> List of configured groups
+  :option:  Name,
+	          Status,
+            Description
+  :setting: Disable,
+	          Enabled,
+            Disables PiHole domain blocking.
+  :no_section:
+
+.. ggui:: Add Clients to Manage
+  :key_title: Group Managements --> Clients --> Add a new client
+  :option:  Known clients,
+            Comment
+  :setting: {HOST IP},
+            {HOST COMMENT}
+  :no_section:
+ 
+.. ggui:: Add Clients to Disable group
+  :key_title: Group Managements --> Clients --> List of configured clients
+  :option:  IP address,
+            Comment,
+						Group assignment,
+            ›
+  :setting: {HOST IP},
+            {HOST COMMENT},
+						☑ Disable,
+						☐ Default
+  :no_section:
+
 Router Configuration
 ********************
 Generic Configuration - will be located slightly differently for each router.
@@ -121,7 +164,7 @@ Generic Configuration - will be located slightly differently for each router.
   :no_caption:
   :no_launch:
 
-Clients Ensure clients flush the DNS cacheand new DNS server is set to start
+Clients Ensure clients flush the DNS cache and new DNS server is set to start
 resolution via Pi-Hole.
 
 See :ref:`networking-dnat-for-captive-dns` to finish captive DNS setup.

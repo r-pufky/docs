@@ -36,6 +36,10 @@ Block nefarious websites & Ads.
 .. note::
   FTL API should not be acessible from any other interface.
 
+.. attention::
+  See older revisions of this document for PiHole ``4.x`` and lower. ``5.x``+
+	now uses a single SQLlite database for configuration.
+
 .. _service-pihole-file-locations:
 
 .. gflocation:: Important File Locations (Pi-Hole)
@@ -44,15 +48,13 @@ Block nefarious websites & Ads.
             /etc/lighthttpd/external.conf,
             /etc/pihole,
             /etc/pihole/SetupVars.conf,
-            /etc/pihole/blacklist.txt,
-            /etc/pihole/gravity.list
+            /etc/pihole/gravity.db
   :purpose: DNS masqerade settings.,
             Static host/IP lookup.,
             Pi-Hole web server configuration.,
             Configuration Data.,
             Startup Configuration Settings.,
-            Compiled blacklisted domains.,
-            Compiled blocklist of domains.
+            PiHole whitelist,blacklist,group,regex settings.
   :no_key_title:
   :no_caption:
   :no_launch:
