@@ -18,8 +18,9 @@ error.
 Backup all files in :ref:`service-pihole-file-locations`.
 
 Reinstall the Pi-Hole server and setup vanilla. Then copy the following files to
-do a manual **teleporter** install. ``5.x``+ `may be exported to 4.x flat
-files`_ if needed.
+do a manual **teleporter** install. ``5.x`` `may be exported to 4.x flat
+files`_ if needed. A teleporter install in ``5.x`` will not carry over all
+settings.
 
 .. gflocation:: Teleporter Install
   :file:    /etc/hosts,
@@ -27,7 +28,7 @@ files`_ if needed.
             /etc/pihole/dhcp.leases,
             /etc/pihole/pihole-FTL.db
   :purpose: Hostname resolutions.,
-            PiHole list,group,client configuration.,
+            PiHole list/group/client settings.,
             Current DHCP leases (optional).,
             SQLite DNS resolution log (optional).
   :no_key_title:

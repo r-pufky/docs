@@ -1342,6 +1342,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="configuration.html">Pi-Hole Configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="configuration.html#static-host-ip-resolution">Static Host IP Resolution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#disable-blocking-for-specific-clients">Disable Blocking for Specific Clients</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuration.html#router-configuration">Router Configuration</a></li>
 </ul>
 </li>
@@ -1767,7 +1768,8 @@
 error.</p>
 <p>Backup all files in <a class="reference internal" href="setup.html#service-pihole-file-locations"><span class="std std-ref">Important File Locations (Pi-Hole)</span></a>.</p>
 <p>Reinstall the Pi-Hole server and setup vanilla. Then copy the following files to
-do a manual <strong>teleporter</strong> install.</p>
+do a manual <strong>teleporter</strong> install. <code class="docutils literal notranslate"><span class="pre">5.x</span></code> <a class="reference external" href="https://old.reddit.com/r/pihole/comments/gnhesb/v50python_pyphdb_export_your_adlists_whitelists/">may be exported to 4.x flat
+files</a> if needed.</p>
 <div class="gfilelocation docutils container" id="Teleporter Install">
 <table class="docutils align-default" id="id1">
 <caption><span class="caption-text">Teleporter Install</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
@@ -1782,22 +1784,13 @@ do a manual <strong>teleporter</strong> install.</p>
 <tr class="row-even"><td><p>/etc/hosts</p></td>
 <td><p>Hostname resolutions.</p></td>
 </tr>
-<tr class="row-odd"><td><p>/etc/pihole/adlists.txt</p></td>
-<td><p>Adlist URI’s to sync.</p></td>
+<tr class="row-odd"><td><p>/etc/pihole/gravity.db</p></td>
+<td><p>PiHole list/group/client settings.</p></td>
 </tr>
-<tr class="row-even"><td><p>/etc/pihole/whitelist.txt</p></td>
-<td><p>Manual whitelist overrides.</p></td>
-</tr>
-<tr class="row-odd"><td><p>/etc/pihole/blacklist.txt</p></td>
-<td><p>Manual blacklist overrides.</p></td>
-</tr>
-<tr class="row-even"><td><p>/etc/pihole/gravity.list</p></td>
-<td><p>Current sync of adlist sources.</p></td>
-</tr>
-<tr class="row-odd"><td><p>/etc/pihole/dhcp.leases</p></td>
+<tr class="row-even"><td><p>/etc/pihole/dhcp.leases</p></td>
 <td><p>Current DHCP leases (optional).</p></td>
 </tr>
-<tr class="row-even"><td><p>/etc/pihole/pihole-FTL.db</p></td>
+<tr class="row-odd"><td><p>/etc/pihole/pihole-FTL.db</p></td>
 <td><p>SQLite DNS resolution log (optional).</p></td>
 </tr>
 </tbody>

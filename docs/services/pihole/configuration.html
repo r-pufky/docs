@@ -1342,6 +1342,7 @@
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Pi-Hole Configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#static-host-ip-resolution">Static Host IP Resolution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#disable-blocking-for-specific-clients">Disable Blocking for Specific Clients</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#router-configuration">Router Configuration</a></li>
 </ul>
 </li>
@@ -1916,6 +1917,96 @@ defined in the router itself).</p>
 </div>
 <p>Restarting Pi-Hole may be required.</p>
 </div>
+<div class="section" id="disable-blocking-for-specific-clients">
+<h2>Disable Blocking for Specific Clients<a class="headerlink" href="#disable-blocking-for-specific-clients" title="Permalink to this headline">¶</a></h2>
+<p>Disabling ad blocking for specific clients. Disables can be all lists or
+specific lists.</p>
+<div class="ggui docutils container" id="Add Disable Group">
+<span class="guilabel">GUI</span><table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Add Disable Group</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="3"><span class="guilabel">Group Managements › Groups › Add a new group</span></td>
+</tr>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>Disable</p></td>
+</tr>
+<tr class="row-odd"><td><p>Description</p></td>
+<td><p>Disables PiHole domain blocking.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="ggui docutils container" id="Enable Disable Group">
+<span class="guilabel">GUI</span><table class="docutils align-default" id="id4">
+<caption><span class="caption-text">Enable Disable Group</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="3"><span class="guilabel">Group Managements › Groups › List of configured groups</span></td>
+</tr>
+<tr class="row-even"><td><p>Name</p></td>
+<td><p>Disable</p></td>
+</tr>
+<tr class="row-odd"><td><p>Status</p></td>
+<td><p>Enabled</p></td>
+</tr>
+<tr class="row-even"><td><p>Description</p></td>
+<td><p>Disables PiHole domain blocking.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="ggui docutils container" id="Add Clients to Manage">
+<span class="guilabel">GUI</span><table class="docutils align-default" id="id5">
+<caption><span class="caption-text">Add Clients to Manage</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="3"><span class="guilabel">Group Managements › Clients › Add a new client</span></td>
+</tr>
+<tr class="row-even"><td><p>Known clients</p></td>
+<td><p>{HOST IP}</p></td>
+</tr>
+<tr class="row-odd"><td><p>Comment</p></td>
+<td><p>{HOST COMMENT}</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="ggui docutils container" id="Add Clients to Disable group">
+<span class="guilabel">GUI</span><table class="docutils align-default" id="id6">
+<caption><span class="caption-text">Add Clients to Disable group</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="3"><span class="guilabel">Group Managements › Clients › List of configured clients</span></td>
+</tr>
+<tr class="row-even"><td><p>IP address</p></td>
+<td><p>{HOST IP}</p></td>
+</tr>
+<tr class="row-odd"><td><p>Comment</p></td>
+<td><p>{HOST COMMENT}</p></td>
+</tr>
+<tr class="row-even"><td><p>Group assignment</p></td>
+<td><p>☑ Disable</p></td>
+</tr>
+<tr class="row-odd"><td><p>›</p></td>
+<td><p>☐ Default</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <div class="section" id="router-configuration">
 <h2>Router Configuration<a class="headerlink" href="#router-configuration" title="Permalink to this headline">¶</a></h2>
 <p>Generic Configuration - will be located slightly differently for each router.</p>
@@ -1976,7 +2067,7 @@ defined in the router itself).</p>
 </tbody>
 </table>
 </div>
-<p>Clients Ensure clients flush the DNS cacheand new DNS server is set to start
+<p>Clients Ensure clients flush the DNS cache and new DNS server is set to start
 resolution via Pi-Hole.</p>
 <p>See <a class="reference internal" href="../../networking/ubiquiti/edge-os.html#networking-dnat-for-captive-dns"><span class="std std-ref">DNAT for Captive DNS</span></a> to finish captive DNS setup.</p>
 </div>

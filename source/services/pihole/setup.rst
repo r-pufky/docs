@@ -36,9 +36,9 @@ Block nefarious websites & Ads.
 .. note::
   FTL API should not be acessible from any other interface.
 
-.. attention::
-  See older revisions of this document for PiHole ``4.x`` and lower. ``5.x``+
-	now uses a single SQLlite database for configuration.
+.. warning::
+  See older revisions of this document for PiHole ``4.x`` and lower. ``5.x``
+  and above now uses a single SQLlite database for configuration.
 
 .. _service-pihole-file-locations:
 
@@ -54,7 +54,7 @@ Block nefarious websites & Ads.
             Pi-Hole web server configuration.,
             Configuration Data.,
             Startup Configuration Settings.,
-            PiHole whitelist,blacklist,group,regex settings.
+            PiHole list/group/user settings.
   :no_key_title:
   :no_caption:
   :no_launch:

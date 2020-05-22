@@ -1342,6 +1342,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="configuration.html">Pi-Hole Configuration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="configuration.html#static-host-ip-resolution">Static Host IP Resolution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#disable-blocking-for-specific-clients">Disable Blocking for Specific Clients</a></li>
 <li class="toctree-l3"><a class="reference internal" href="configuration.html#router-configuration">Router Configuration</a></li>
 </ul>
 </li>
@@ -1808,6 +1809,11 @@
 <p class="admonition-title">Note</p>
 <p>FTL API should not be acessible from any other interface.</p>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>See older revisions of this document for PiHole <code class="docutils literal notranslate"><span class="pre">4.x</span></code> and lower. <code class="docutils literal notranslate"><span class="pre">5.x</span></code>
+and above now uses a single SQLlite database for configuration.</p>
+</div>
 <div class="section" id="important-file-locations-pi-hole">
 <span id="service-pihole-file-locations"></span><h2>Important File Locations (Pi-Hole)<a class="headerlink" href="#important-file-locations-pi-hole" title="Permalink to this headline">¶</a></h2>
 <table class="docutils align-default">
@@ -1834,11 +1840,8 @@
 <tr class="row-even"><td><p>/etc/pihole/SetupVars.conf</p></td>
 <td><p>Startup Configuration Settings.</p></td>
 </tr>
-<tr class="row-odd"><td><p>/etc/pihole/blacklist.txt</p></td>
-<td><p>Compiled blacklisted domains.</p></td>
-</tr>
-<tr class="row-even"><td><p>/etc/pihole/gravity.list</p></td>
-<td><p>Compiled blocklist of domains.</p></td>
+<tr class="row-odd"><td><p>/etc/pihole/gravity.db</p></td>
+<td><p>PiHole list/group/user settings.</p></td>
 </tr>
 </tbody>
 </table>
