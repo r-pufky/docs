@@ -13,6 +13,11 @@ enforcement. A CRL should include all of the CRL's up to the Root CA.
   openssl ca -config /root/ca/inter/inter.ca -gencrl -out /root/ca/inter/crl/inter.crl.pem
   cat /root/ca/root/crl/root.crl.pem /root/ca/inter/crl/inter.crl.pem > /root/ca/ca-chain.crl.pem
 
+.. note::
+  Run these commands to regenerate the CRL's automatically with a new serial
+  number and expiry date. Expired CRL's will lead to certificate authentication
+  failures!
+
 .. code-block:: bash
   :caption: Check Current CRL Status.
 

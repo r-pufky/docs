@@ -43,6 +43,21 @@ Configure GPG Agent
 This will enable SSH and Putty usage with the gpg-agent.
 
 .. code-block:: powershell
+  :caption: ``%appdata%\gnupg\scdaemon.conf``
+
+   reader-port Yubico YubiKey OTP+FIDO+CCID 0
+
+.. note::
+  ``Yubico YubiKey OTP+FIDO+CCID 0`` is the device name as listed in Device
+   Manager. This prevents Windows Hello from attempting to act as an pagent
+   device (resulting in no key found errors).
+
+   :cmdmenu:`start --> Device Manager --> View --> Show Hidden Devices`
+   :cmdmenu:`start --> Device Manager --> Software Devices`
+
+   The name to use will be the full Yubikey device name.
+
+.. code-block:: powershell
   :caption: ``%appdata%\gnupg\gpg-agent.conf``
 
   enable-ssh-support
