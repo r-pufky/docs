@@ -89,9 +89,9 @@ Using Subpaths
 
 Postgres Backend
 ****************
-Postgres may be used to store airsonic data in a centralized location. This
+Postgres may be used to store roundcube data in a centralized location. This
 assumes that :ref:`service-postgres` is already configured, with an empty
-database for airsonic to use (see :ref:`service-postgres-create-database`).
+database for roundcube to use (see :ref:`service-postgres-create-database`).
 
 .. code-block:: psql
   :caption: Import the Roundcube DB schema.
