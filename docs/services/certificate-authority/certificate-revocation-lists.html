@@ -225,6 +225,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../../apps/putty.html#forwarding-x-windows">Forwarding X Windows</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../apps/python-venv.html">Python Virtual Environments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../apps/python-venv.html#creating-environment">Creating Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../apps/python-venv.html#using-virtual-environments">Using Virtual Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../apps/python-venv.html#export-import-environments">Export/Import Environments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../apps/python-venv.html#updating-environments">Updating Environments</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../apps/sublime-text/index.html">Sublime Text Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/sublime-text/index.html#installation">Installation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../apps/sublime-text/index.html#ubuntu-apt-repository">Ubuntu Apt Repository</a></li>
@@ -1685,8 +1694,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../sphinx-build.html">Document Generation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../sphinx-build.html#building">Building</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../sphinx-build.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../sphinx-build.html#link-checking">Link Checking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sphinx-build.html#manual-installation">Manual Installation</a></li>
 </ul>
 </li>
 </ul>
@@ -1766,6 +1774,12 @@ openssl ca -config /root/ca/inter/inter.ca -gencrl -out /root/ca/inter/crl/inter
 cat /root/ca/root/crl/root.crl.pem /root/ca/inter/crl/inter.crl.pem &gt; /root/ca/ca-chain.crl.pem
 </pre></div>
 </div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Run these commands to regenerate the CRL’s automatically with a new serial
+number and expiry date. Expired CRL’s will lead to certificate authentication
+failures!</p>
 </div>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text">Check Current CRL Status.</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>

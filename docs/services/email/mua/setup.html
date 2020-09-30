@@ -225,6 +225,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../apps/putty.html#forwarding-x-windows">Forwarding X Windows</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../../apps/python-venv.html">Python Virtual Environments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../apps/python-venv.html#creating-environment">Creating Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../apps/python-venv.html#using-virtual-environments">Using Virtual Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../apps/python-venv.html#export-import-environments">Export/Import Environments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../apps/python-venv.html#updating-environments">Updating Environments</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../../apps/sublime-text/index.html">Sublime Text Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../apps/sublime-text/index.html#installation">Installation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../apps/sublime-text/index.html#ubuntu-apt-repository">Ubuntu Apt Repository</a></li>
@@ -1685,8 +1694,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../sphinx-build.html">Document Generation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../sphinx-build.html#building">Building</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../sphinx-build.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../sphinx-build.html#link-checking">Link Checking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../sphinx-build.html#manual-installation">Manual Installation</a></li>
 </ul>
 </li>
 </ul>
@@ -1892,9 +1900,9 @@ on the mail server <code class="docutils literal notranslate"><span class="pre">
 </div>
 <div class="section" id="postgres-backend">
 <h2>Postgres Backend<a class="headerlink" href="#postgres-backend" title="Permalink to this headline">¶</a></h2>
-<p>Postgres may be used to store airsonic data in a centralized location. This
+<p>Postgres may be used to store roundcube data in a centralized location. This
 assumes that <a class="reference internal" href="../../postgres/index.html#service-postgres"><span class="std std-ref">Postgresql</span></a> is already configured, with an empty
-database for airsonic to use (see <a class="reference internal" href="../../postgres/index.html#service-postgres-create-database"><span class="std std-ref">Creating A Database</span></a>).</p>
+database for roundcube to use (see <a class="reference internal" href="../../postgres/index.html#service-postgres-create-database"><span class="std std-ref">Creating A Database</span></a>).</p>
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-text">Import the Roundcube DB schema.</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
 <div class="highlight-psql notranslate"><div class="highlight"><pre><span></span><span class="n">psql</span> <span class="o">-</span><span class="n">U</span> <span class="n">roundcube</span> <span class="o">-</span><span class="n">f</span> <span class="n">SQL</span><span class="o">/</span><span class="n">postgres</span><span class="mf">.</span><span class="n">initial</span><span class="mf">.</span><span class="n">sql</span> <span class="n">roundcube</span>

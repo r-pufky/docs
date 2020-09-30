@@ -225,6 +225,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../../apps/putty.html#forwarding-x-windows">Forwarding X Windows</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../apps/python-venv.html">Python Virtual Environments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../apps/python-venv.html#creating-environment">Creating Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../apps/python-venv.html#using-virtual-environments">Using Virtual Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../apps/python-venv.html#export-import-environments">Export/Import Environments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../apps/python-venv.html#updating-environments">Updating Environments</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../apps/sublime-text/index.html">Sublime Text Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/sublime-text/index.html#installation">Installation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../apps/sublime-text/index.html#ubuntu-apt-repository">Ubuntu Apt Repository</a></li>
@@ -1685,8 +1694,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../sphinx-build.html">Document Generation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../sphinx-build.html#building">Building</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../sphinx-build.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../sphinx-build.html#link-checking">Link Checking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../sphinx-build.html#manual-installation">Manual Installation</a></li>
 </ul>
 </li>
 </ul>
@@ -1769,7 +1777,8 @@ error.</p>
 <p>Backup all files in <a class="reference internal" href="setup.html#service-pihole-file-locations"><span class="std std-ref">Important File Locations (Pi-Hole)</span></a>.</p>
 <p>Reinstall the Pi-Hole server and setup vanilla. Then copy the following files to
 do a manual <strong>teleporter</strong> install. <code class="docutils literal notranslate"><span class="pre">5.x</span></code> <a class="reference external" href="https://old.reddit.com/r/pihole/comments/gnhesb/v50python_pyphdb_export_your_adlists_whitelists/">may be exported to 4.x flat
-files</a> if needed.</p>
+files</a> if needed. A teleporter install in <code class="docutils literal notranslate"><span class="pre">5.x</span></code> will not carry over all
+settings.</p>
 <div class="gfilelocation docutils container" id="Teleporter Install">
 <table class="docutils align-default" id="id1">
 <caption><span class="caption-text">Teleporter Install</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>

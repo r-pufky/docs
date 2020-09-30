@@ -225,6 +225,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../../putty.html#forwarding-x-windows">Forwarding X Windows</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../python-venv.html">Python Virtual Environments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../python-venv.html#creating-environment">Creating Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python-venv.html#using-virtual-environments">Using Virtual Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../python-venv.html#export-import-environments">Export/Import Environments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../python-venv.html#updating-environments">Updating Environments</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../sublime-text/index.html">Sublime Text Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../sublime-text/index.html#installation">Installation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../sublime-text/index.html#ubuntu-apt-repository">Ubuntu Apt Repository</a></li>
@@ -1685,8 +1694,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../sphinx-build.html">Document Generation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../sphinx-build.html#building">Building</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../sphinx-build.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../sphinx-build.html#link-checking">Link Checking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../sphinx-build.html#manual-installation">Manual Installation</a></li>
 </ul>
 </li>
 </ul>
@@ -1803,15 +1811,32 @@ and <strong>verify integrity</strong>.</p>
 <h2>Configure GPG Agent<a class="headerlink" href="#configure-gpg-agent" title="Permalink to this headline">¶</a></h2>
 <p>This will enable SSH and Putty usage with the gpg-agent.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">%appdata%\gnupg\gpg-agent.conf</span></code></span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">%appdata%\gnupg\scdaemon.conf</span></code></span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span> <span class="n">reader-port</span> <span class="n">Yubico</span> <span class="n">YubiKey</span> <span class="n">OTP</span><span class="p">+</span><span class="n">FIDO</span><span class="p">+</span><span class="n">CCID</span> <span class="n">0</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl>
+<dt><code class="docutils literal notranslate"><span class="pre">Yubico</span> <span class="pre">YubiKey</span> <span class="pre">OTP+FIDO+CCID</span> <span class="pre">0</span></code> is the device name as listed in Device</dt><dd><p>Manager. This prevents Windows Hello from attempting to act as an pagent
+device (resulting in no key found errors).</p>
+<p><span class="guilabel">start › Device Manager › View › Show Hidden Devices</span>
+<span class="guilabel">start › Device Manager › Software Devices</span></p>
+<p>The name to use will be the full Yubikey device name.</p>
+</dd>
+</dl>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">%appdata%\gnupg\gpg-agent.conf</span></code></span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">enable-ssh</span><span class="n">-support</span>
 <span class="nb">enable-putty</span><span class="n">-support</span>
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id2">
+<div class="literal-block-wrapper docutils container" id="id3">
 <span id="gpg-windows-restart-agent"></span><div class="code-block-caption"><span class="caption-text">Restart GPG Agent and Connect Agent to apply
-<a class="reference external" href="https://superuser.com/questions/1075404/how-can-i-restart-gpg-agent">configuration changes</a> (powershell).</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<a class="reference external" href="https://superuser.com/questions/1075404/how-can-i-restart-gpg-agent">configuration changes</a> (powershell).</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">gpgconf</span> <span class="p">-</span><span class="n">-kill</span> <span class="n">gpg-agent</span>
 <span class="s2">&quot;c:\Program Files (x86)\GnuPG\bin\gpg-connect-agent.exe&quot;</span> <span class="p">/</span><span class="n">bye</span>
 </pre></div>
@@ -1917,8 +1942,8 @@ for remote SSH targets.</p>
 </tbody>
 </table>
 </div>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/ssh/sshd_config</span></code> on Bastion.</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/ssh/sshd_config</span></code> on Bastion.</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>StreamLocalBindUnlink yes
 AllowAgentForwarding yes
 </pre></div>
@@ -1934,14 +1959,14 @@ AllowAgentForwarding yes
 <li><p>Removes current socket file for forwarding before creating a new one.</p></li>
 </ul>
 </div>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">Confirm new settings are loaded on Bastion.</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">Confirm new settings are loaded on Bastion.</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sshd -T <span class="p">|</span> grep -i allowagent
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/ssh/sshd_config</span></code> on Target.</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/ssh/sshd_config</span></code> on Target.</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>AllowAgentForwarding no
 </pre></div>
 </div>

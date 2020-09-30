@@ -224,6 +224,15 @@
 <li class="toctree-l2"><a class="reference internal" href="apps/putty.html#forwarding-x-windows">Forwarding X Windows</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="apps/python-venv.html">Python Virtual Environments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="apps/python-venv.html#creating-environment">Creating Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps/python-venv.html#using-virtual-environments">Using Virtual Environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps/python-venv.html#export-import-environments">Export/Import Environments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="apps/python-venv.html#updating-environments">Updating Environments</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="apps/sublime-text/index.html">Sublime Text Configuration</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="apps/sublime-text/index.html#installation">Installation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="apps/sublime-text/index.html#ubuntu-apt-repository">Ubuntu Apt Repository</a></li>
@@ -1684,8 +1693,7 @@
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Document Generation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#building">Building</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#link-checking">Link Checking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#manual-installation">Manual Installation</a></li>
 </ul>
 </li>
 </ul>
@@ -1753,12 +1761,15 @@
             
   <div class="section" id="document-generation">
 <span id="doc-generation"></span><h1>Document Generation<a class="headerlink" href="#document-generation" title="Permalink to this headline">¶</a></h1>
-<p>Site documentation is generated using <a class="reference external" href="http://www.sphinx-doc.org/en/master/">sphinx</a> using a python virtual
+<p>Site documentation is generated using <a class="reference external" href="http://www.sphinx-doc.org/en/master/">sphinx</a> with a python virtual
 environment and a custom makefile.</p>
 <div class="section" id="building">
 <span id="sphinx-build"></span><h2>Building<a class="headerlink" href="#building" title="Permalink to this headline">¶</a></h2>
-<p>Using an <a class="reference internal" href="#activated">activated</a> virtual environment for the <code class="docutils literal notranslate"><span class="pre">git/docs</span></code>
-location.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">python3-pip</span></code> and <code class="docutils literal notranslate"><span class="pre">python3-venv</span></code> are installed, the virtual environment
+will be created automatically and built with make. See <a class="reference internal" href="apps/python-venv.html#apps-python-venv"><span class="std std-ref">Python Virtual Environments</span></a>
+for manual steps.</p>
+<p>Documentation should be linkchecked for linkrot before building a new set of
+docs to be published.</p>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-text">One shot build and link verification.</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">clean</span> <span class="n">docs</span> <span class="n">linkcheck</span>
@@ -1782,66 +1793,28 @@ location.</p>
 <p class="admonition-title">Note</p>
 <p><em>master file […] checkouts/latest/contents.rst not found</em></p>
 <p>Usually occurs when <em>no</em> sphinx modules are found in the python environment.
-Ensure environment is <a class="reference internal" href="#activated">activated</a> properly and retry.</p>
+Ensure environment is properly and retry. See <a class="reference internal" href="apps/python-venv.html#venv-usage"><span class="std std-ref">Using Virtual Environments</span></a>.</p>
 <p>Additionally, you may force specify an alternative index in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>
 using <code class="docutils literal notranslate"><span class="pre">master_doc</span> <span class="pre">=</span> <span class="pre">'index'</span></code>. See <a class="reference external" href="https://github.com/readthedocs/readthedocs.org/issues/2569">contents.rst issue</a>.</p>
 </div>
 </div>
-<div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
-<p>See <a class="reference external" href="https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/">python pip and virtual environment</a> for reference material.</p>
+<div class="section" id="manual-installation">
+<h2>Manual Installation<a class="headerlink" href="#manual-installation" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><p>Install pip and virtual environment packages.</p></li>
-</ol>
-<blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">apt</span> <span class="n">install</span> <span class="n">python3</span><span class="o">-</span><span class="n">pip</span> <span class="n">python3</span><span class="o">-</span><span class="n">venv</span>
-</pre></div>
-</div>
-</div></blockquote>
-<ol class="arabic simple">
-<li><p>Create virtual environment for <em>sphinx</em>.</p></li>
-</ol>
-<blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mkdir ~/.python-env
-cd !$
-python3 -m venv sphinx
-</pre></div>
-</div>
-</div></blockquote>
-<ol class="arabic simple">
-<li><p>Update <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code> to force require virtual environments for <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p></li>
-</ol>
-<blockquote>
-<div><div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text"><strong>0600 user user</strong> <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code></span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">PIP_REQUIRE_VIRTUALENV</span><span class="o">=</span><span class="n">true</span>
-</pre></div>
-</div>
-</div>
-</div></blockquote>
-<ol class="arabic simple" id="activated">
-<li><p>Activate virtual environment for use.</p></li>
-</ol>
-<blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span> <span class="o">~/.</span><span class="n">python</span><span class="o">-</span><span class="n">env</span><span class="o">/</span><span class="n">sphinx</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Environment may be deactivated at any time by issuing <code class="docutils literal notranslate"><span class="pre">deactivate</span></code>
-command.</p>
-</div>
-</div></blockquote>
-<ol class="arabic simple">
+<li><p>See <a class="reference internal" href="apps/python-venv.html#apps-python-venv"><span class="std std-ref">Python Virtual Environments</span></a> to setup a working environment.</p></li>
 <li><p>Install sphinx and sphinx plugins.</p></li>
 </ol>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">Sphinx</span> <span class="n">sphinxcontrib</span><span class="o">-</span><span class="n">aafig2</span> <span class="n">sphinxcontrib</span><span class="o">-</span><span class="n">applehelp</span> <span class="n">sphinxcontrib</span><span class="o">-</span><span class="n">devhelp</span> <span class="n">sphinxcontrib</span><span class="o">-</span><span class="n">htmlhelp</span> <span class="n">sphinxcontrib</span><span class="o">-</span><span class="n">jsmath</span> <span class="n">sphinxcontrib</span><span class="o">-</span><span class="n">qthelp</span> <span class="n">sphinxcontrib</span><span class="o">-</span><span class="n">serializinghtml</span>
+<div><div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">Install packages from environment requirements.</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span> <span class="p">{</span><span class="n">ENV</span> <span class="n">DIR</span><span class="p">}</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+<span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">requirement</span> <span class="n">sphinx</span><span class="o">/</span><span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
+</div>
 </div>
 </div></blockquote>
 <ol class="arabic simple">
-<li><p>Install custom theme <a class="reference external" href="https://sphinx-rtd-theme.readthedocs.io/en/stable/">Read the Docs</a> for sphinx.</p></li>
+<li><p>Update custom theme <a class="reference external" href="https://sphinx-rtd-theme.readthedocs.io/en/stable/">Read the Docs</a> for sphinx, if wanted.</p></li>
 </ol>
 <blockquote>
 <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">readthedocs</span><span class="o">/</span><span class="n">sphinx_rtd_theme</span> <span class="o">/</span><span class="n">tmp</span>
@@ -1961,102 +1934,6 @@ command.</p>
 <p>Until <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">sphinx-rtd-theme</span></code> is fixed without error.</p>
 </div>
 </div></blockquote>
-<ol class="arabic simple">
-<li><p>Use custom <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> for building documentation.</p></li>
-</ol>
-<blockquote>
-<div><div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text"><strong>0640 user user</strong> <code class="docutils literal notranslate"><span class="pre">docs/Makefile</span></code></span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># Minimal makefile for Sphinx documentation
-#
-
-# You can set these variables from the command line, and also
-# from the environment for the first two.
-SPHINXOPTS    ?=
-SPHINXBUILD   ?= sphinx-build
-SOURCEDIR     = source
-CONFDIR       = sphinx
-BUILDDIR      = /tmp/docs
-TARGETDIR     = docs
-
-# Put it first so that &quot;make&quot; without argument is like &quot;make help&quot;.
-help:
-	@echo &quot;USAGE:&quot;
-	@echo &quot;  make docs&quot;
-	@echo &quot;        Build site documentation in $(BUILDDIR), trim extraneous&quot;
-	@echo &quot;        output and copy to $(TARGETDIR).&quot;
-	@echo
-	@echo &quot;  make html&quot;
-	@echo &quot;        Build site documentation in $(BUILDDIR).&quot;
-	@echo
-	@echo &quot;  make clean&quot;
-	@echo &quot;        Removes all build artifacts on filesystem.&quot;
-	@echo
-	@echo &quot;  make head&quot;
-	@echo &quot;        Reverts ALL changes to head in generated documentation: $(TARGETDIR).&quot;
-	@echo
-	@echo &quot;  make linkcheck&quot;
-	@echo &quot;        Verifies documentation links resolve properly.&quot;
-
-.PHONY: help Makefile
-
-# Catch-all target: route all unknown targets to Sphinx using the new
-# &quot;make mode&quot; option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
-#%: Makefile copy
-#	@$(SPHINXBUILD) -M $@ &quot;$(SOURCEDIR)&quot; &quot;$(BUILDDIR)&quot; $(SPHINXOPTS) $(O)
-
-docs: html copy
-
-clean:
-	@$(SPHINXBUILD) -M $@ &quot;$(SOURCEDIR)&quot; &quot;$(BUILDDIR)&quot; -c &quot;$(CONFDIR)&quot; $(SPHINXOPTS) $(O)
-	@rm -rfv &quot;$(TARGETDIR)&quot;/*
-
-head:
-	@git checkout -- $(TARGETDIR)
-	@git clean -fd $(TARGETDIR)
-
-html:
-	@$(SPHINXBUILD) -M $@ &quot;$(SOURCEDIR)&quot; &quot;$(BUILDDIR)&quot; -c &quot;$(CONFDIR)&quot; $(SPHINXOPTS) $(O)
-
-linkcheck:
-	@$(SPHINXBUILD) -M linkcheck &quot;$(SOURCEDIR)&quot; &quot;$(BUILDDIR)&quot; -c &quot;$(CONFDIR)&quot; $(SPHINXOPTS) $(O)
-
-copy:
-	@mkdir -p $(TARGETDIR)
-	@touch $(TARGETDIR)/.nojekyll
-	@cp -av $(BUILDDIR)/html/* &quot;$(TARGETDIR)&quot;
-	@rm -v &quot;$(TARGETDIR)/objects.inv&quot;
-	@rm -v &quot;$(TARGETDIR)/genindex.html&quot;
-	@rm -rfv &quot;$(TARGETDIR)/_sources&quot;
-</pre></div>
-</div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This will use:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">docs/source</span></code> directory as the source.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">docs/sphinx</span></code> as the configuration.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">/tmp/docs</span></code> as build directory.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">docs/docs</span></code> is the output directory.</p></li>
-</ul>
-<p>A new make command <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span> <span class="pre">docs</span></code> will automatically build the
-documentation and remove / update <code class="docutils literal notranslate"><span class="pre">docs/docs</span></code> with the latest
-documentation from the soruce tree.</p>
-</div>
-<p>See <a class="reference external" href="https://bitbucket.org/lbesson/web-sphinx/src/master/Makefile">sphinx makefile</a> for other custom examples.</p>
-</div></blockquote>
-</div>
-<div class="section" id="link-checking">
-<span id="sphinx-build-link-checking"></span><h2>Link Checking<a class="headerlink" href="#link-checking" title="Permalink to this headline">¶</a></h2>
-<p>Documentation can be automatically link checked:</p>
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text">Verify documentation links work.</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make linkcheck
-make clean docs linkcheck
-</pre></div>
-</div>
-</div>
 <p class="rubric">References</p>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://www.youtube.com/watch?v=hM4I58TA72g">Video Tutorial on Sphinx</a></p></li>
@@ -2083,6 +1960,7 @@ make clean docs linkcheck
 <li><p><a class="reference external" href="https://www.quackit.com/python/reference/python_3_escape_sequences.cfm">Unicode Python 3 escape sequences</a></p></li>
 <li><p><a class="reference external" href="https://www.compart.com/en/unicode/U+2023">Unicode triangular bullet</a></p></li>
 <li><p><a class="reference external" href="https://www.docslikecode.com/articles/github-pages-python-sphinx/">Using sphinx with github</a></p></li>
+<li><p><a class="reference external" href="https://bitbucket.org/lbesson/web-sphinx/src/master/Makefile">Custom Sphinx Makefile</a></p></li>
 </ol>
 </div>
 </div>
