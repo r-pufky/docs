@@ -1,5 +1,24 @@
 # [Changelog][3g]
 
+## 2020-09-30.0
+Add Wireguard, Pihole 5.x, Yubikey (Windows Hello), and sphinx venv to build.
+
+Added:
+* Add sphinx virtual python environment to build file. 
+* Add wireguard documentation.
+* Add notes about UFW conflicting with Docker.
+* Add documentation for removing storage repository.
+* Add saltstack job queue management notes.
+* Add XCP guest template update from testing repo.
+
+Updated:
+* Correct DB typos for MUA setup.
+* Update GPG/Yubikey for usage with Windows Hello Devices. 
+* Update documentation for PiHole 5.x.
+* Update Pi-Hole documentation with IPv6 port information.
+* Update XCP documentation for 8.1.
+* Update XCP documentation with VM copying / USB storage repository ins.
+
 ## 2020-03-29.0
 Add MariaDB, DashMachine, DNSRoboCert, Postgres containers.
 
@@ -53,7 +72,7 @@ Added:
 * Add facial recognition disable for Windows.
 * Add phone call, voice activation privacy sections for windows 10 1909.
 * Add voice activation to privacy settings for windows 1909.
-* Add ubiquity telemetry disabled instructions. Fucking idiots. …
+* Add ubiquity telemetry disabled instructions. Fucking idiots. 
 * Add GPG encryption documentation and yubikey verification.
 
 Changed:
