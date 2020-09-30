@@ -67,6 +67,7 @@ git hub, or submit a CL :)
   apps/gpg/index
   apps/mutt
   apps/putty
+  apps/python-venv
   apps/sublime-text/index
   apps/taskwarrior
   apps/vim

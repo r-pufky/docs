@@ -4,6 +4,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Ignore sphinx virtual environment.
+.sphinx/
+
 # C extensions
 *.so
 

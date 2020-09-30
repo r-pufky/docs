@@ -2,15 +2,19 @@
 
 Document Generation
 ###################
-Site documentation is generated using `sphinx`_ using a python virtual
+Site documentation is generated using `sphinx`_ with a python virtual
 environment and a custom makefile.
 
 .. _sphinx-build:
 
 Building
 ********
-Using an `activated`_ virtual environment for the ``git/docs``
-location.
+If ``python3-pip`` and ``python3-venv`` are installed, the virtual environment
+will be created automatically and built with make. See :ref:`apps-python-venv`
+for manual steps.
+
+Documentation should be linkchecked for linkrot before building a new set of
+docs to be published.
 
 .. code-block::
   :caption: One shot build and link verification.
@@ -32,55 +36,24 @@ location.
   *master file [...] checkouts/latest/contents.rst not found*
 
   Usually occurs when *no* sphinx modules are found in the python environment.
-  Ensure environment is `activated`_ properly and retry.
+  Ensure environment is properly and retry. See :ref:`venv-usage`.
 
   Additionally, you may force specify an alternative index in ``conf.py``
   using ``master_doc = 'index'``. See `contents.rst issue`_.
 
-Installation
-************
-See `python pip and virtual environment`_ for reference material.
-
-#. Install pip and virtual environment packages.
-
-  .. code-block::
-
-    apt install python3-pip python3-venv
-
-#. Create virtual environment for *sphinx*.
-
-  .. code-block::
-
-    mkdir ~/.python-env
-    cd !$
-    python3 -m venv sphinx
-
-#. Update ``.bashrc`` to force require virtual environments for ``pip``.
-
-  .. code-block::
-    :caption: **0600 user user** ``~/.bashrc``
-
-    export PIP_REQUIRE_VIRTUALENV=true
-
-.. _activated:
-
-#. Activate virtual environment for use.
-
-  .. code-block::
-
-    . ~/.python-env/sphinx/bin/activate
-
-  .. note::
-    Environment may be deactivated at any time by issuing ``deactivate``
-    command.
+Manual Installation
+*******************
+#. See :ref:`apps-python-venv` to setup a working environment.
 
 #. Install sphinx and sphinx plugins.
 
   .. code-block::
+    :caption: Install packages from environment requirements.
 
-    pip install Sphinx sphinxcontrib-aafig2 sphinxcontrib-applehelp sphinxcontrib-devhelp sphinxcontrib-htmlhelp sphinxcontrib-jsmath sphinxcontrib-qthelp sphinxcontrib-serializinghtml
+    . {ENV DIR}/bin/activate
+    python3 -m pip install --requirement sphinx/requirements.txt
 
-#. Install custom theme `Read the Docs`_ for sphinx.
+#. Update custom theme `Read the Docs`_ for sphinx, if wanted.
 
   .. code-block::
 
@@ -95,37 +68,6 @@ See `python pip and virtual environment`_ for reference material.
 
   .. todo::
     Until ``pip install sphinx-rtd-theme`` is fixed without error.
-
-#. Use custom ``Makefile`` for building documentation.
-
-  .. literalinclude:: ../Makefile
-    :caption: **0640 user user** ``docs/Makefile``
-
-  .. note::
-    This will use:
-
-    * ``docs/source`` directory as the source.
-    * ``docs/sphinx`` as the configuration.
-    * ``/tmp/docs`` as build directory.
-    * ``docs/docs`` is the output directory.
-
-    A new make command ``make clean docs`` will automatically build the
-    documentation and remove / update ``docs/docs`` with the latest
-    documentation from the soruce tree.
-
-  See `sphinx makefile`_ for other custom examples.
-
-.. _sphinx-build-link-checking:
-
-Link Checking
-*************
-Documentation can be automatically link checked:
-
-.. code-block:: bash
-  :caption: Verify documentation links work.
-
-  make linkcheck
-  make clean docs linkcheck
 
 .. rubric:: References
 
@@ -153,9 +95,8 @@ Documentation can be automatically link checked:
 #. `Unicode Python 3 escape sequences <https://www.quackit.com/python/reference/python_3_escape_sequences.cfm>`_
 #. `Unicode triangular bullet <https://www.compart.com/en/unicode/U+2023>`_
 #. `Using sphinx with github <https://www.docslikecode.com/articles/github-pages-python-sphinx/>`_
+#. `Custom Sphinx Makefile <https://bitbucket.org/lbesson/web-sphinx/src/master/Makefile>`_
 
 .. _sphinx: http://www.sphinx-doc.org/en/master/
-.. _python pip and virtual environment: https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/
-.. _sphinx makefile: https://bitbucket.org/lbesson/web-sphinx/src/master/Makefile
 .. _contents.rst issue: https://github.com/readthedocs/readthedocs.org/issues/2569
 .. _Read the Docs: https://sphinx-rtd-theme.readthedocs.io/en/stable/

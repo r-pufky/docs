@@ -7,6 +7,8 @@ SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = source
 CONFDIR       = sphinx
+VENVDIR       = $(CONFDIR)/.sphinx
+VENV          = $(VENVDIR)/bin/activate
 BUILDDIR      = /tmp/docs
 TARGETDIR     = docs
 
@@ -28,6 +30,9 @@ help:
 	@echo
 	@echo "  make linkcheck"
 	@echo "        Verifies documentation links resolve properly."
+	@echo
+	@echo "REQUIREMENTS:"
+	@echo "  python3-pip, python3-venv"
 
 .PHONY: help Makefile
 
@@ -41,16 +46,23 @@ docs: html copy
 clean:
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" -c "$(CONFDIR)" $(SPHINXOPTS) $(O)
 	@rm -rfv "$(TARGETDIR)"/*
+	@rm -rfv "$(VENVDIR)"
 
 head:
 	@git checkout -- $(TARGETDIR)
 	@git clean -fd $(TARGETDIR)
 
-html:
-	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" -c "$(CONFDIR)" $(SPHINXOPTS) $(O)
+sphinx-venv-setup:
+	@echo 'Setting up sphinx python virtual environment ...'
+	@test -d $(VENVDIR) || python3 -m venv $(VENVDIR)
+	@. $(VENV); python3 -m pip install --quiet --requirement $(CONFDIR)/requirements.txt
+	@echo 'Done.'
 
-linkcheck:
-	@$(SPHINXBUILD) -M linkcheck "$(SOURCEDIR)" "$(BUILDDIR)" -c "$(CONFDIR)" $(SPHINXOPTS) $(O)
+html: sphinx-venv-setup
+	@. $(VENV); $(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" -c "$(CONFDIR)" $(SPHINXOPTS) $(O)
+
+linkcheck: sphinx-venv-setup
+	@. $(VENV); $(SPHINXBUILD) -M linkcheck "$(SOURCEDIR)" "$(BUILDDIR)" -c "$(CONFDIR)" $(SPHINXOPTS) $(O)
 
 copy:
 	@mkdir -p $(TARGETDIR)
