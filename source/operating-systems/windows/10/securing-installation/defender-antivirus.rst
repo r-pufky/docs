@@ -17,8 +17,8 @@ See :ref:`windows-10-disable-telemetry` for additional telemetry services.
 
     .. ggui:: Disable Tamper Protection to remove Windows Defender
       :key_title: ⌘ + r -->
-                  windowsdefender: -->
-                  Virus & threat protection -->
+                  windowsdefender://settings -->
+                  Virus & threat protection settings -->
                   Manage Settings
       :option:    Tamper Protection
       :setting:   ☐
