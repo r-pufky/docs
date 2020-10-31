@@ -188,6 +188,36 @@ errors and the app to break. Partially fixed using `http_sub_module`_.
 * Second rules rewrites relative responses ``href="/other-page.html"`` to
   ``href="https://reverse-proxy-server/subpath/other-page.html"``.
 
+Enable NGINX Start/Running with Backends Down
+*********************************************
+`By design NGINX`_ will prevent startup or running if upstream backends are down
+as it is intepreted to be a configuration error.
+
+Docker services which are down do not resolve via Docker's DNS, and therefore
+will trigger this condition, requiring all Docker services to be up for NGINX to
+function.
+
+By `specifying an explicit IP`_ no DNS lookup is required which prevents the
+service health check, allowing NGINX to start or run with backends down. This
+will show ``502`` errors when the service is down. Does not affect
+cert-based authentication setups.
+
+.. code-block:: nginx
+  :caption: Static IP for upstream docker service.
+
+  upstream my-backend {
+    server {IP}:{PORT};
+  }
+
+  server {
+    listen 443 ssl http2;
+    server_name myservice.example.com myservice;
+
+    location / {
+      proxy_pass http://my-backend;
+    }
+  }
+
 .. _subdomain reverse proxy: https://community.home-assistant.io/t/nginx-reverse-proxy-set-up-guide-docker/54802
 .. _reference documentation: https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/
 .. _location block: https://www.digitalocean.com/community/tutorials/understanding-nginx-server-and-location-block-selection-algorithms
@@ -197,3 +227,5 @@ errors and the app to break. Partially fixed using `http_sub_module`_.
 .. _slow, error prone and hard to read: https://stackoverflow.com/questions/764247/why-are-regular-expressions-so-controversial
 .. _URI Path aware: https://stackoverflow.com/questions/32542282/how-do-i-rewrite-urls-in-a-proxy-response-in-nginx
 .. _http_sub_module: http://nginx.org/en/docs/http/ngx_http_sub_module.html
+.. _specifying an explicit IP: https://stackoverflow.com/questions/32845674/setup-nginx-not-to-crash-if-host-in-upstream-is-not-found
+.. _By design NGINX: https://trac.nginx.org/nginx/ticket/1040
