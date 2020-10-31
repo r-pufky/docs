@@ -188,6 +188,8 @@ errors and the app to break. Partially fixed using `http_sub_module`_.
 * Second rules rewrites relative responses ``href="/other-page.html"`` to
   ``href="https://reverse-proxy-server/subpath/other-page.html"``.
 
+.. _service-nginx-reverse-proxy-backends:
+
 Enable NGINX Start/Running with Backends Down
 *********************************************
 `By design NGINX`_ will prevent startup or running if upstream backends are down
@@ -196,6 +198,10 @@ as it is intepreted to be a configuration error.
 Docker services which are down do not resolve via Docker's DNS, and therefore
 will trigger this condition, requiring all Docker services to be up for NGINX to
 function.
+
+Another expression is a long running NGINX server where a backend has been
+restarted. This will mark the backend as bad and NGINX will no longer serve it
+even though the service may be running now.
 
 By `specifying an explicit IP`_ no DNS lookup is required which prevents the
 service health check, allowing NGINX to start or run with backends down. This

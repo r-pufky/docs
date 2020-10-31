@@ -119,6 +119,16 @@ NGINX can forward traffic via `specific interfaces`_ for *location* definitions.
     proxy_pass ...
   }
 
+Not Starting with Docker Services
+*********************************
+Expresses as NGINX not starting or failing to resolve if running (and backend
+services were restarted or down at some point).
+
+See :ref:`service-nginx-reverse-proxy-backends` to resolve.
+
+.. code-block:
+
+
 .. _docker container to do this: https://github.com/mendhak/docker-http-https-echo
 .. _debugging headers: https://serverfault.com/questions/404626/how-to-output-variable-in-nginx-log-for-debugging
 .. _inherently misunderstood: https://www.nginx.com/resources/wiki/start/topics/depth/ifisevil/
