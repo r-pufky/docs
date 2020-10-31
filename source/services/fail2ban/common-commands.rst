@@ -24,6 +24,13 @@ Unban an IP
   docker exec -it f2b sh
   fail2ban-client set {F2B JAIL NAME} unbanip {IP}
 
+Unban all IPs
+*************
+.. code-block:: bash
+
+  docker exec -it f2b sh
+  fail2ban-client unban --all
+
 Show Current Config Value
 *************************
 .. code-block:: bash
