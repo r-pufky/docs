@@ -35,17 +35,8 @@ Buster are not supported.
 
 Ubuntu
 ******
-Ubuntu **20.04** and later have wireguard built in. Just install the
+Ubuntu **18.04** and later have wireguard built in. Just install the
 ``wireguard`` package.
-
-**18.04** setup:
-
-.. code-block:: bash
-  :caption: Add wireguard PPA.
-
-  add-apt-repository ppa:wireguard/wireguard
-  apt update && apt upgrade
-  apt install wireguard
 
 Autostart Tunnel as Service
 ***************************
