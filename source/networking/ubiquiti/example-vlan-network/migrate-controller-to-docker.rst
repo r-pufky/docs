@@ -51,4 +51,4 @@ IP in docker container.
     info
     set-inform http://{DOCKER UNIFI CONTAINER IP}:8080/inform
 
-.. _Container IP on DHCP: https://help.ubnt.com/hc/en-us/articles/204909754-UniFi-Device-Adoption-Methods-for-Remote-UniFi-Controllers#7
+.. _Container IP on DHCP: https://help.ui.com/hc/en-us/articles/204909754-UniFi-Device-Adoption-Methods-for-Remote-UniFi-Controllers#7

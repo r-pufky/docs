@@ -256,7 +256,7 @@ proxy and determine how to throttle or drop requests over that limit. Read
   be dropped.
 
 .. _block and store in a file: https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/
-.. _Whitelist All Containers: https://docs.docker.com/v17.09/engine/userguide/networking/#the-default-bridge-network
+.. _Whitelist All Containers: https://docs.docker.com/network/bridge/#differences-between-user-defined-bridges-and-the-default-bridge
 .. _Whitelist Single Container: https://stackoverflow.com/questions/45358188/restrict-access-to-nginx-server-location-to-a-specific-docker-container-with-al
 .. _only evaluated when used: http://nginx.org/en/docs/http/ngx_http_geo_module.html
 .. _in-depth documentation: https://www.nginx.com/blog/rate-limiting-nginx/

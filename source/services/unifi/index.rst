@@ -168,7 +168,7 @@ For non-EdgeOS routers, this can be enabled in using ``option 43``.
 
 .. rubric:: References
 
-#. `Unifi Ports <https://help.ubnt.com/hc/en-us/articles/218506997-UniFi-Ports-Used>`_
-#. `Unifi controller DHCP option 43 <https://help.ubnt.com/hc/en-us/articles/204909754-UniFi-Device-Adoption-Methods-for-Remote-UniFi-Controllers#7>`_
+#. `Unifi Ports <https://help.ui.com/hc/en-us/articles/218506997-UniFi-Ports-Used>`_
+#. `Unifi controller DHCP option 43 <https://help.ui.com/hc/en-us/articles/204909754-UniFi-Device-Adoption-Methods-for-Remote-UniFi-Controllers#7>`_
 
 .. _Unifi Docker and Documentation: https://hub.docker.com/r/linuxserver/unifi/

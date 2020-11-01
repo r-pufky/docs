@@ -33,7 +33,7 @@ configuration.
 
 .. _setup instructions: https://tails.boum.org/install/win/usb-download/index.en.html
 .. _live USB: https://ubuntu.com/#download
-.. _Ironkey: https://www.kingston.com/us/usb-flash-drives/ironkey-d300-encrypted-usb-flash-drive
+.. _Ironkey:  https://www.kingston.com/unitedstates/us/usb-flash-drives/ironkey-d300-encrypted-usb-flash-drive
 .. _using VeraCrypt: https://github.com/drduh/YubiKey-Guide#backup
 .. _Yubikey 5: https://www.yubico.com/products/yubikey-5-overview/
 

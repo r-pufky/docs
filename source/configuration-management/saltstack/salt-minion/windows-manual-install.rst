@@ -27,5 +27,5 @@ Windows GUI Install
 * Optionally provide a default configuration file.
 * Enable delayed start (allows highstates requiring reboots to work).
 
-.. _Windows Manual Install: https://repo.saltstack.com/#windows
+.. _Windows Manual Install: https://repo.saltstack.com/windows
 .. _CLI or GUI: https://docs.saltstack.com/en/latest/topics/installation/windows.html

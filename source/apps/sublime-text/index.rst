@@ -129,5 +129,5 @@ Install ``MarkdownEditing`` and ``MonokaiC`` packages.
 .. _latest binary: https://www.sublimetext.com/3
 .. _custom user preferences: Preferences.sublime-settings
 .. _Automatically Installing Packages: https://github.com/mrmartineau/SublimeTextSetupWiki/issues/3
-.. _recommended packages: http://txfx.net/2014/11/08/my-sublime-text-3-packages/
+.. _recommended packages: https://txfx.net/2014/11/08/my-sublime-text-3-packages/
 .. _Force Unix Line Endings on Save: https://stackoverflow.com/questions/39680585/how-do-configure-sublime-to-always-convert-to-unix-line-endings-on-save

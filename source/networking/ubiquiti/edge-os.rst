@@ -474,16 +474,16 @@ Show a JSON-like representation of the current router configuration.
 .. rubric:: References
 
 #. `Creating DNS Entries <https://community.ui.com/questions/ab712740-d579-4c89-824a-cda582a6bdd4>`_
-#. `How to Create a Guest\LAN Firewall Rule <https://help.ubnt.com/hc/en-us/articles/218889067-EdgeMAX-How-to-Protect-a-Guest-Network-on-EdgeRouter>`_
+#. `How to Create a Guest\LAN Firewall Rule <https://help.ui.com/hc/en-us/articles/218889067-EdgeMAX-How-to-Protect-a-Guest-Network-on-EdgeRouter>`_
 
 .. _This is by design: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=316099
-.. _Hairpin NAT: https://help.ubnt.com/hc/en-us/articles/204952134-EdgeRouter-Hairpin-NAT
+.. _Hairpin NAT: https://help.ui.com/hc/en-us/articles/204952134-EdgeRouter-Hairpin-NAT
 .. _removed as well: https://community.ui.com/questions/DNS-resolution-of-local-hosts/3b0a70d6-aefb-44a2-872e-e3703e757cd2
 .. _there is a bug: https://community.ui.com/questions/12901fe9-f520-49cc-99f7-12cbbc8d6aed
 .. _SSL: https://www.stevejenkins.com/blog/2015/10/install-an-ssl-certificate-on-a-ubiquiti-edgemax-edgerouter/
-.. _Internet Only Access: https://help.ubnt.com/hc/en-us/articles/218889067-EdgeRouter-How-to-Create-a-Guest-LAN-Firewall-Rule
+.. _Internet Only Access: https://help.ui.com/hc/en-us/articles/218889067-EdgeRouter-How-to-Create-a-Guest-LAN-Firewall-Rule
 .. _exploitable: https://www.zdnet.com/google-amp/article/over-485000-ubiquiti-devices-vulnerable-to-new-attack/
-.. _Disable UBNT Discovery Service: https://help.ubnt.com/hc/en-us/articles/204976244-EdgeRouter-UBNT-Device-Discovery
+.. _Disable UBNT Discovery Service: https://help.ui.com/hc/en-us/articles/204976244-EdgeRouter-UBNT-Device-Discovery
 .. _Dump Configuration: https://community.ui.com/questions/66768622-c0a9-4c79-9dfa-331bd0a90e90
 .. _Captive DNS: https://old.reddit.com/r/pihole/comments/ahmg14/finally_set_up_a_dnat_for_hardcoded_dns/eeg114d/
 .. _Masquerade NAT Rule: https://i.imgur.com/IFYUX2T.png

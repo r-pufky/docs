@@ -170,7 +170,7 @@ resolution via Pi-Hole.
 See :ref:`networking-dnat-for-captive-dns` to finish captive DNS setup.
 
 .. _stricter blocking: https://firebog.net/
-.. _additional blocklists: http://www.ubuntuboss.com/how-to-install-pihole-on-ubuntu-16-04/
+.. _additional blocklists: https://www.ubuntuboss.com:443/how-to-install-pihole-on-ubuntu-16-04/
 .. _Ads and domains: https://www.smarthomebeginner.com/pi-hole-setup-guide/#Pi_Hole_Configuration_and_Customization
 .. _youtube: https://old.reddit.com/r/pihole/comments/84luw8/blocking_youtube_ads/
 .. _hit-or-miss: https://old.reddit.com/r/pihole/comments/7w4n81/having_trouble_blocking_youtube_ads_in_app_on_ios/dtyatmf/

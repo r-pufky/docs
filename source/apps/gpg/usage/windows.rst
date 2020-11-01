@@ -123,7 +123,7 @@ your GPG agent. This is compounded by GPG agent occasionally hanging and needing
 to be force restarted. This is remedied by triggering GPG agent refresh on
 screen unlock events, ensuring that the agent is always ready.
 
-See full instructions here: :ref:`scheduled-tasks-inconsistencies`; or just
+See full instructions here: :ref:`w10-scheduled-tasks-inconsistencies`; or just
 follow these.
 
 #. :ref:`scheduled-tasks-logon-logoff`.
@@ -181,7 +181,7 @@ for remote SSH targets.
 .. rubric:: References
 
 #. `Yubikey SSH authentication on windows <https://developers.yubico.com/PGP/SSH_authentication/Windows.html>`_
-#. `GPG key for SSH authentication <https://www.linode.com/docs/security/authentication/gpg-key-for-ssh-authentication/>`_
+#. `GPG key for SSH authentication <https://www.linode.com/docs/guides/gpg-key-for-ssh-authentication/>`_
 #. `Using GPG with Yubikey and WSL <https://codingnest.com/how-to-use-gpg-with-yubikey-wsl/>`_
 #. `Yubikey <https://ttmm.io/tech/yubikey/>`_
 #. `Yubikey SSH <https://occamy.chemistry.jhu.edu/references/pubsoft/YubikeySSH/index.php>`_

@@ -30,4 +30,4 @@ Related Material:
   windows-manual-install
   minion-configuration
 
-.. _Salt Minion: https://www.linode.com/docs/security/ssl/create-a-self-signed-tls-certificate
+.. _Salt Minion: https://www.linode.com/docs/guides/create-a-self-signed-tls-certificate/

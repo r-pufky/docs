@@ -101,7 +101,7 @@ Operating Systems
 
   :abbr:`WSL`
     Windows Subsystem for Linux. Run linux distros in windows 10. See
-    :ref:`os-windows-wsl`.
+    :ref:`w10-wsl`.
 
 .. _CLI Yubikey Manager: https://developers.yubico.com/yubikey-manager/
 .. _GUI Yubikey Manager: https://www.yubico.com/products/services-software/download/yubikey-manager/

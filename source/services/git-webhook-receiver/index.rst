@@ -163,4 +163,4 @@ Create a CL and push it to origin. Check the local repository to see update.
 
 .. _git webhook receiver: https://github.com/r-pufky/git-webhook-receiver
 .. _user: https://git-scm.com/book/en/v2/Git-Tools-Credential-Storage
-.. _credentials: https://stackoverflow.com/questions/35942754/how-to-save-username-and-password-in-git
+.. _credentials: https://stackoverflow.com/questions/35942754/how-to-save-username-and-password-in-git-gitextension

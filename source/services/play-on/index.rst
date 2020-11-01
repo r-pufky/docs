@@ -4,7 +4,7 @@ Play-On
 #######
 Steaming service recorder.
 
-Uses :ref:`windows-10-pro-setup` and assumes post template setup scripts have
+Uses :ref:`w10-pro-base` and assumes post template setup scripts have
 been run.
 
 .. gtable:: System Requirements.
@@ -53,7 +53,7 @@ been run.
 Server Setup
 ************
 
-#. Setup :ref:`hiding-local-desktop-crd`.
+#. Setup :ref:`w10-hiding-local-desktop-crd`.
 #. Setup :ref:`service-ssh-windows-setup` with only public key authentication.
 #. Ensure you are connected via the VM console (not CRD) for install, otherwise
    installer will fail.

@@ -116,8 +116,8 @@ Convert VM to a Template
 * VM: :cmdmenu:`RMB --> Convert to Template`.
 * Template: Custom Fields: add custom fields as needed.
 
-Modifying a `VM Template`_
-**************************
+Modifying a VM Template
+***********************
 * Copy the UUID from the template image :cmdmenu:`General --> Properties --> UUID`
 * SSH to the XenServer, change to root.
 * Convert template to VM and start it.
@@ -267,17 +267,15 @@ rebuilt.
 
 .. rubric:: References
 
-#. `Adding new usergroups to XenServer <https://discussions.citrix.com/topic/154063-add-new-usersgroup-to-xenserver/>`_
 #. `XenServer 7.0 release notes <https://docs.citrix.com/en-us/xenserver/7-0/downloads/release-notes.pdf>`_
 
 .. _Securing Xenserver: http://burm.net/2012/01/29/xenserver-basic-security-tips-how-do-you-secure-your-xenserver/
 .. _Missing OS Templates: https://www.reddit.com/r/XenServer/comments/607pbi/my_xenserver_is_missing_templates/
-.. _VM Template: https://discussions.citrix.com/topic/241867-guest-best-pratice-copy-vm-or-convert-to-template/
 .. _Local ISO Repository: https://xen-orchestra.com/blog/creating-a-local-iso-repository-in-xenserver/
 .. _passthrough PCI devices: https://wiki.xen.org/wiki/Xen_PCI_Passthrough
-.. _multiple PCI devices: https://discussions.citrix.com/topic/355675-xenserver-pci-passthrough-pv-hvm-multiple-devices/
+.. _multiple PCI devices: https://discussions.citrix.com/topic/389239-pci-pass-through-revisited/
 .. _PCI Device Passthrough: https://github.com/xcp-ng/xcp/wiki/PCI-Passtrough
-.. _Keep 2 Days of Logs: https://discussions.citrix.com/topic/299016-how-to-disable-xenserver-logging/
+.. _Keep 2 Days of Logs: https://support.citrix.com/article/CTX204339
 .. _listing system block devices: https://willhaley.com/blog/find-correspond-disk-belongs-which-hard-drive-controller-linux/
 .. _Boot: https://xen-orchestra.com/blog/auto-start-vm-on-xenserver-boot/
 .. _USB Local Storage: https://support.citrix.com/article/CTX205551

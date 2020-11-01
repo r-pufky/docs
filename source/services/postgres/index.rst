@@ -150,4 +150,4 @@ Display client sessions that are currently connected to database.
 .. _Postgres: https://www.postgresql.org/
 .. _Postgres Docker and Documentation: https://hub.docker.com/_/postgres
 .. _incorrectly defines two postgres datatypes: https://github.com/postgres/postgres/issues/1213
-.. _explicit table permissions: https://stackoverflow.com/questions/1348126/modify-owner-on-all-tables-simultaneously-in-postgresql
+.. _explicit table permissions: https://stackoverflow.com/questions/1348126/postgresql-modify-owner-on-all-tables-simultaneously-in-postgresql

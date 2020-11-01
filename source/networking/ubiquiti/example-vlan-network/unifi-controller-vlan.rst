@@ -304,12 +304,12 @@ Add Trunk Port Profiles
 
 .. rubric:: References
 
-#. `Using VLANs with Unifi Wireless Routing <https://help.ubnt.com/hc/en-us/articles/219654087-UniFi-Using-VLANs-with-UniFi-Wireless-Routing-Switching-Hardware#UAP>`_
-#. `Tagging and Untagging Traffic <https://help.ubnt.com/hc/en-us/articles/204962144#1>`_
+#. `Using VLANs with Unifi Wireless Routing <https://help.ui.com/hc/en-us/articles/219654087-UniFi-Using-VLANs-with-UniFi-Wireless-Routing-Switching-Hardware>`_
+#. `Tagging and Untagging Traffic <https://help.ui.com/hc/en-us/articles/204962144#1>`_
 #. `Lessons Learned from Deploying a Unifi Network <https://www.douglasisaksson.com/lessons-learned-from-deploying-a-unifi-network-at-home/>`_
 #. `Unifi Switch 8 and VLANs <https://www.youtube.com/watch?v=JblnjsnJNJU>`_
 
 .. _Unifi Controller: https://www.ui.com/download/?q=controller
-.. _super admin: https://help.ubnt.com/hc/en-us/articles/204909374-UniFi-Accounts-and-Passwords-for-Controller-Cloud-Key-and-Other-Devices
-.. _unifi controller DHCP option: https://help.ubnt.com/hc/en-us/articles/204909754-UniFi-Device-Adoption-Methods-for-Remote-UniFi-Controllers#7
+.. _super admin: https://help.ui.com/hc/en-us/articles/204909374-UniFi-Accounts-and-Passwords-for-Controller-Cloud-Key-and-Other-Devices 
+.. _unifi controller DHCP option: https://help.ui.com/hc/en-us/articles/204909754-UniFi-Device-Adoption-Methods-for-Remote-UniFi-Controllers#7
 .. _telemetry: https://community.ui.com/questions/Update-UniFi-Phone-Home-Performance-Data-Collection/f84a71c9-0b81-4d69-a3b3-45640aba1c8b

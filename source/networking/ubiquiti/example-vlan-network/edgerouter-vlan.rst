@@ -190,4 +190,4 @@ Confirm Management Network Working
   *10.1.1.1*. This means untagged traffic is being properly assigned to the
   management network.
 
-.. _router on a stick: https://help.ubnt.com/hc/en-us/articles/204959444-EdgeRouter-Router-on-a-Stick
+.. _router on a stick: https://help.ui.com/hc/en-us/articles/204959444-EdgeRouter-Router-on-a-Stick

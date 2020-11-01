@@ -139,4 +139,4 @@ Testing
 From the client access the Internet and verify that your data is routed through
 the VPN server.
 
-A quick test can be verifying different IP's from https://whatismyip.com.
+A quick test can be verifying different IP's from https://www.whatismyip.com.

@@ -59,5 +59,5 @@ Using Subpaths
 .. literalinclude:: source/subpath.conf
   :caption: **0644 root root** ``nginx/conf.d/reverse-proxy.conf``
 
-.. _dashmachine: https://dashmachine.site/
-.. _dashmachine Docker and Documentation: https://github.com/linuxserver/dashmachine
+.. _dashmachine: https://www.reddit.com/r/DashMachine
+.. _dashmachine Docker and Documentation: https://github.com/rmountjoy92/DashMachine

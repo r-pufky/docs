@@ -78,6 +78,11 @@ linkcheck_ignore = [
   # Redirects: behind authentication wall.
   r'https://security.google.com/\.*',
   r'https://plexapp.zendesk.com/\.*',
+  r'https://api.imgur.com/\.*',
+  # Redirects: youtube now redirects with next video.
+  r'https://www.youtube.com/watch\.*',
+  # Temporarily disable for repo DMCA.
+  r'https://github.com/ytdl-org/youtube-dl/releases',
 ]
 linkcheck_workers = 10
 

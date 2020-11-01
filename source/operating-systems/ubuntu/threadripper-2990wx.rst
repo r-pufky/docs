@@ -2,7 +2,7 @@
 
 2990WX Linux Patches
 ####################
-Until `Kernel 4.18.6 is released with the k10temp patch`_, Threadripper thermals
+Until Kernel 4.18.6 is released with the k10temp patch, Threadripper thermals
 will be mis-reported by 27c. Building a custom Kernel module will fix the issue
 temporarily.
 
@@ -212,7 +212,6 @@ Load the updated Kernel module and Add to ``ramfs``:
 #. `Get the CPU temperature in Ubuntu <https://askubuntu.com/questions/15832/how-do-i-get-the-cpu-temperature>`_
 #. `Ubuntu Kernel mainline build repository <https://wiki.ubuntu.com/Kernel/MainlineBuilds>`_
 
-.. _`Kernel 4.18.6 is released with the k10temp patch`: http://www.theubuntumaniac.com/2018/09/install-update-linux-kernel-4186-on.html
 .. _Gigabyte X399 Aorus Extreme: https://www.gigabyte.com/Motherboard/X399-AORUS-XTREME-rev-10
 .. _clone of that repository: https://github.com/rpavlik/it87
 .. _IT8792E and IT8795E: https://forum.level1techs.com/t/threadripper-lm-sensors-halp/119487/6

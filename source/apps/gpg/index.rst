@@ -30,8 +30,8 @@ understanding of what this is.
 
 .. rubric:: References
 
-#. `Using Yuibikey with OpenPGP <https://support.yubico.com/support/solutions/articles/15000006420-using-your-Yubikey-with-openpgp>`_
-#. `Using GPG for SSH Authentication <https://www.linode.com/docs/security/authentication/gpg-key-for-ssh-authentication/>`_
+#. `Using Yuibikey with OpenPGP <https://support.yubico.com/hc/en-us/articles/360013790259-Using-Your-YubiKey-with-OpenPGP>`_
+#. `Using GPG for SSH Authentication <https://www.linode.com/docs/guides/gpg-key-for-ssh-authentication/>`_
 
 .. _instructions are here: https://github.com/drduh/YubiKey-Guide
 .. _OpenPGP for Beginners: https://zacharyvoase.com/2009/08/20/openpgp/

@@ -5,6 +5,8 @@
 General style-guide for sphinx.
 
 * 80 character limit, exception for code blocks.
+* One section allowed beyond navbar render limit, using
+  ``.. rubric:: {SECTION}``.
 * Always verify links (:ref:`sphinx-build`) before uploading
   changes.
 

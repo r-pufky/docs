@@ -230,5 +230,5 @@ Prepare Yubikey to load GPG key material.
 
 .. _new certificate to be loaded: https://developers.yubico.com/PGP/Card_edit.html
 .. _authentication, encryption or signing request: https://suchsecurity.com/gpg-and-ssh-with-yubikey-on-windows.html
-.. _destroy any openpgp material: https://support.yubico.com/support/solutions/articles/15000006421-resetting-the-openpgp-applet-on-the-yubikey
+.. _destroy any openpgp material: https://support.yubico.com/hc/en-us/articles/360013761339-Resetting-the-OpenPGP-Applet-on-the-YubiKey
 .. _Yubikey Personalization Tool: https://www.yubico.com/products/services-software/download/yubikey-personalization-tools/

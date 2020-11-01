@@ -75,7 +75,7 @@ Manual Installation
 #. `Sphinx Getting Started Tutorial <https://sphinx-tutorial.readthedocs.io/start/>`_
 #. `Ascii Art Figure Manual <https://launchpadlibrarian.net/41870218/aafigure.pdf>`_
 #. `Ascii Art Figure Documentation <https://aafigure.readthedocs.io/en/latest/>`_
-#. `RST Primer Tutorial <http://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html#rst-primer>`_
+#. `RST Primer Tutorial <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html#rst-primer>`_
 #. `RST Live Editor <http://rst.ninjs.org>`_
 #. `Sphinx Live Editor <https://livesphinx.herokuapp.com/>`_
 #. `Sphinx RST Cheetsheet <https://sphinx-tutorial.readthedocs.io/cheatsheet/>`_
@@ -97,6 +97,6 @@ Manual Installation
 #. `Using sphinx with github <https://www.docslikecode.com/articles/github-pages-python-sphinx/>`_
 #. `Custom Sphinx Makefile <https://bitbucket.org/lbesson/web-sphinx/src/master/Makefile>`_
 
-.. _sphinx: http://www.sphinx-doc.org/en/master/
+.. _sphinx: https://www.sphinx-doc.org/en/master/
 .. _contents.rst issue: https://github.com/readthedocs/readthedocs.org/issues/2569
 .. _Read the Docs: https://sphinx-rtd-theme.readthedocs.io/en/stable/

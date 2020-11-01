@@ -473,8 +473,8 @@ bypassed by replacing the functionality with ``gnupg2`` and ``pass``.
 .. _longstanding bug: https://bugs.launchpad.net/ubuntu/+source/procps/+bug/50093
 .. _Iptables by default filters bridged interfaces: https://serverfault.com/questions/431590/how-to-make-sysctl-network-bridge-settings-persist-after-a-reboot
 .. _containers, even in read-only: https://www.lvh.io/posts/dont-expose-the-docker-socket-not-even-to-a-container/
-.. _Compose with Containers: https://docs.docker.com/v17.09/compose/overview/
-.. _values in XX:XX as Time: https://docs.docker.com/v17.09/compose/compose-file/#service-configuration-reference
+.. _Compose with Containers: https://docs.docker.com/compose/overview/
+.. _values in XX:XX as Time: https://docs.docker.com/compose/compose-file/#service-configuration-reference
 .. _Different Networks: https://runnable.com/docker/docker-compose-networking
 .. _isolation: https://www.docker.com/blog/docker-networking-design-philosophy/
 .. _Image Filesystem: https://stackoverflow.com/questions/20813486/exploring-docker-containers-file-system

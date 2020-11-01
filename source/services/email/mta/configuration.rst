@@ -299,6 +299,6 @@ Setup DNS entries to allow for properly resolution of mail server. Redirect
 .. _setup helper script: https://github.com/tomav/docker-mailserver/blob/master/setup.sh
 .. _DKIM data must be quoted: https://github.com/tomav/docker-mailserver/wiki/Configure-DKIM
 .. _DMARC policies: https://help.returnpath.com/hc/en-us/articles/222438007-What-are-the-different-types-of-DMARC-policies-
-.. _blackhole alias: http://madphilosopher.ca/2006/09/how-to-send-an-entire-domain-to-dev-null-in-postfix/
+.. _blackhole alias: https://madphilosopher.ca/2006/09/how-to-send-an-entire-domain-to-dev-null-in-postfix/
 .. _SASL SMTP postfix options: http://www.postfix.org/SASL_README.html
 .. _configure sieve filters: https://github.com/tomav/docker-mailserver/wiki/Configure-Sieve-filters

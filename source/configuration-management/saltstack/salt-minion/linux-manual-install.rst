@@ -9,7 +9,7 @@ configuration file.
 Generally, you should manage the minion configuration file via salt after the
 initial install and master connection.
 
-Platform releases may be found at: http://repo.saltstack.com/py3/.
+Platform releases may be found at: https://repo.saltstack.com.
 
 .. code-block:: bash
   :caption: **0644 root root** ``/etc/apt/sources.list.d/saltstack.list``

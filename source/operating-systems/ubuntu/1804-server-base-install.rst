@@ -247,7 +247,7 @@ boot:
 #. `Manually changing a password on a dmcrypt / LUKS volume <https://unix.stackexchange.com/questions/185390/list-open-dm-crypt-luks-volumes>`_
 #. `Reseting a password on an encrypted FS <https://unix.stackexchange.com/questions/126180/how-to-reset-password-on-an-encrypted-fs>`_
 #. `Howto change LUKS passphrase <https://askubuntu.com/questions/95137/how-to-change-luks-passphrase>`_
-#. `Full encryption with LVM and LUKS <https://www.linux.com/tutorials/how-full-encrypt-your-linux-system-lvm-luks>`_
+#. `Full encryption with LVM and LUKS <https://www.linux.com/training-tutorials/how-full-encrypt-your-linux-system-lvm-luks/>`_
 #. `Mounting LVM partitions <http://ask.xmodulo.com/mount-lvm-partition-linux.html>`_
 #. `Mounting LVM logical volumes <https://blog.sleeplessbeastie.eu/2015/11/16/how-to-mount-encrypted-lvm-logical-volume/>`_
 #. `Mounting encrypted LUKS drive at boot <https://askubuntu.com/questions/450895/mount-luks-encrypted-hard-drive-at-boot>`_

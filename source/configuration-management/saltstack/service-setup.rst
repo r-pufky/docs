@@ -54,6 +54,6 @@ Minions **require root** to properly install software, update apt and execute
 commands.
 
 .. _Service Setup: https://repo.saltstack.com/#ubuntu
-.. _Use TLS for protocol encryption: https://www.linode.com/docs/security/ssl/create-a-self-signed-tls-certificate
+.. _Use TLS for protocol encryption: https://www.linode.com/docs/guides/create-a-self-signed-tls-certificate/
 .. _Non-root User: https://docs.saltstack.com/en/2017.7/ref/configuration/nonroot.html
 .. _Best Practices: https://docs.saltstack.com/en/latest/topics/best_practices.html

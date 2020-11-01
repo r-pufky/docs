@@ -163,5 +163,5 @@ Yuibkeys, or to keep a pristine copy of GPG key data on encrypted storage.
 
   cp -avi $GPGBACKUP/* $GNUPGHOME
 
-.. _technical manual: https://support.yubico.com/support/solutions/articles/15000014219-yubikey-5-series-technical-manual
+.. _technical manual: https://support.yubico.com/hc/en-us/articles/360016614900-YubiKey-5-Series-Technical-Manual
 .. _Yubikey manager: https://developers.yubico.com/yubikey-manager/

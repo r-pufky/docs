@@ -10,8 +10,8 @@ Where'd everything go?
 Docs were re-organized to keep the growing documentation clean. You should link
 to the core doc repo and browse files.
 
-* :ref:`windows-10`
-* :ref:`troubleshooting-pc-hardware`
+* :ref:`w10-pro-base`
+* :ref:`troubleshooting-pc-issues`
 
 Assumptions
 ***********
@@ -97,7 +97,8 @@ git hub, or submit a CL :)
   :includehidden:
   :maxdepth: -1
 
-  operating-systems/windows/10/index
+  operating-systems/windows/10/base/index
+  operating-systems/windows/10/1903/index
   operating-systems/ubuntu/index
 
 .. toctree::
