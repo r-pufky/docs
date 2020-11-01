@@ -1,5 +1,18 @@
 # [Changelog][3g]
 
+## 2020-11-01.0
+Separated Windows 1903 settings and fix link rot.
+
+Added:
+* Proxy/troubleshooting docs for NGINX.
+
+Updated:
+* Separate Windows 1903 settings from core windows 10.
+* Ubuntu 18.04 no longer requires PPA for wireguard.
+* NGINX start/run with docker backends down.
+* Unban all fail2ban documentation.
+* Windows defender run URI fixed.
+
 ## 2020-09-30.0
 Add Wireguard, Pihole 5.x, Yubikey (Windows Hello), and sphinx venv to build.
 
