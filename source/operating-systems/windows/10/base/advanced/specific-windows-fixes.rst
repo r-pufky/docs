@@ -11,6 +11,20 @@ applied by default or without thought.
 
 Execution Policy: **Unrestricted** (see: :ref:`setting-execution-policy`).
 
+Reset Password
+**************
+Windows 10 has a `habit of locking out after updates`_. `Reset your password
+from safe mode`_.
+
+Be sure to hold ``shift`` until the troubleshooting options appear.
+:cmdmenu:`Login Screen --> shift (hold) + Restart --> Troubleshoot --> Advanced options --> Startup Settings --> Restart -> Enable Safe Mode with Command Prompt`
+
+.. code-block:: powershell
+  :caption: Find the correct user and set password.
+
+  net user
+  net user {USER} {PASS}
+
 Moving User Profile Locations to Alternate Location
 ***************************************************
 Relocate certain portions of your user profile to alternate location, to make
@@ -496,3 +510,5 @@ Removed since Windows 7 but added back into Windows 10.
 .. _USB Devices Slow: https://docs.microsoft.com/en-us/windows/client-management/change-default-removal-policy-external-storage-media
 .. _Windows Backup Schedule: https://www.tenforums.com/tutorials/75591-turn-off-schedule-windows-backup-windows-10-a.html
 .. _Disable Caret Browsing Notifications: https://www.thewindowsclub.com/enable-caret-browsing-internet-explorer
+.. _habit of locking out after updates: https://www.passfab.com/windows-tips/windows-10-password-incorrect-after-update.html
+.. _Reset your password from safe mode: https://www.wimware.com/how-to/reset-windows-10-password-command-prompt.html
