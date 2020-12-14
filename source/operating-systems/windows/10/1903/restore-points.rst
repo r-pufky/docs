@@ -41,8 +41,8 @@ this creeate a drastic performance hit.
   :no_section:
   :no_caption:
 
-:term:`Registry`
-****************
+:term:`Registry` Machine
+************************
 .. wregedit:: Disable system restore via Registry
   :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\SystemRestore
   :names:     DisableConfig
@@ -74,8 +74,8 @@ this creeate a drastic performance hit.
   :no_section:
   :no_launch:
 
-:term:`GPO`
-***********
+:term:`GPO` Computer
+********************
 .. wgpolicy:: Disable system restore via machine GPO
   :key_title: Computer Configuration -->
               Administrative Templates -->

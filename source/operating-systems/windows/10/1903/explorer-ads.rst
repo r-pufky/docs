@@ -21,8 +21,8 @@
 
   See `disable quick access pane in windows explorer`_.
 
-:term:`Registry`
-****************
+:term:`Registry` Machine
+*************************
 .. wregedit:: Set Explorer to use `This PC via Registry`_
   :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced
   :names:     LaunchTo
@@ -30,8 +30,17 @@
   :data:      1
   :no_section:
 
-.. wregedit:: Disable sync provider notifications for user via Registry
-  :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+.. wregedit:: Disable Quick Access Pane via Registry
+  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
+              Explorer
+  :names:     HubMode
+  :types:     DWORD
+  :data:      1
+  :no_section:
+  :no_launch:
+
+.. wregedit:: Disable sync provider notifications via Registry
+  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced
   :names:     ShowSyncProviderNotifications
   :types:     DWORD
   :data:      0
@@ -45,20 +54,13 @@
 
          * ☐ show sync provider notifications.
 
-.. wregedit:: Disable sync provider notifications via Registry
-  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+:term:`Registry` User
+*********************
+.. wregedit:: Disable sync provider notifications for user via Registry
+  :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced
   :names:     ShowSyncProviderNotifications
   :types:     DWORD
   :data:      0
-  :no_section:
-  :no_launch:
-
-.. wregedit:: Disable Quick Access Pane via Registry
-  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-              Explorer
-  :names:     HubMode
-  :types:     DWORD
-  :data:      1
   :no_section:
   :no_launch:
 

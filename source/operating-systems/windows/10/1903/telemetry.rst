@@ -7,7 +7,7 @@ hit. See `Telemetry Info`_.
 
 .. warning::
   ``0 - Security`` (the most restrictive option) can only be used in
-  enterprise installations. See `diagnostic data levels`_ for information
+  enterprise (AD) installations. See `diagnostic data levels`_ for information
   transmitted. *Disabling* removes policy and reverts to ``3 - Full``; so the
   most restrictive policy is setup in case telemetry services are re-enabled on
   updates.
@@ -31,8 +31,8 @@ Services
       Older versions of Windows 10 labeled this ``Diagnostic Tracking Services``
       It is the same service name ``DiagTrack``.
 
-:term:`Registry`
-****************
+:term:`Registry` Machine
+************************
 .. wregedit:: Restrict data collection to basic via Registry
   :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\
               DataCollection
@@ -89,8 +89,8 @@ Services
   :no_section:
   :no_launch:
 
-:term:`GPO`
-***********
+:term:`GPO` Computer
+********************
 .. note::
   The most restrictive :term:`GPO` is applied if both machine and user
   :term:`GPO`'s are set.
@@ -107,6 +107,42 @@ Services
               Basic
   :no_section:
 
+
+.. wgpolicy:: Disable sending browser history for Edge via machine GPO
+  :key_title: Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Data Collection and Preview Builds -->
+              Configure collection of browsing data for Microsoft 365 Analytics
+  :option:    ☑
+  :setting:   Disabled
+  :no_section:
+
+.. wgpolicy:: Disable `customer experience improvement program`_ via machine GPO
+  :key_title: Computer Configuration -->
+              Administrative Templates -->
+              System -->
+              Internet Communication Management -->
+              Internet Communication settings -->
+              Turn off Windows Customer Experience Improvement Program
+  :option:    ☑
+  :setting:   Enabled
+  :no_section:
+  :no_launch:
+
+.. wgpolicy:: Make Desktop Analytics use Telemetry setting via machine GPO
+  :key_title: Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Data Collection and Preview Builds -->
+              Limit Enhanced diagnostic data to the minimum required by Windows Analytics
+  :option:    ☑
+  :setting:   Disabled
+  :no_section:
+  :no_launch:
+
+:term:`GPO` User
+****************
 .. wgpolicy:: Restrict data collection to basic via user GPO
   :key_title: User Configuration -->
               Administrative Templates -->
@@ -131,27 +167,6 @@ Services
   :no_section:
   :no_launch:
 
-.. wgpolicy:: Make Desktop Analytics use Telemetry setting via machine GPO
-  :key_title: Computer Configuration -->
-              Administrative Templates -->
-              Windows Components -->
-              Data Collection and Preview Builds -->
-              Limit Enhanced diagnostic data to the minimum required by Windows Analytics
-  :option:    ☑
-  :setting:   Disabled
-  :no_section:
-  :no_launch:
-
-.. wgpolicy:: Disable sending browser history for Edge via machine GPO
-  :key_title: Computer Configuration -->
-              Administrative Templates -->
-              Windows Components -->
-              Data Collection and Preview Builds -->
-              Configure collection of browsing data for Microsoft 365 Analytics
-  :option:    ☑
-  :setting:   Disabled
-  :no_section:
-
 .. wgpolicy:: Disable sending browser history for Edge via user GPO
   :key_title: User Configuration -->
               Administrative Templates -->
@@ -163,17 +178,6 @@ Services
   :no_section:
   :no_launch:
 
-.. wgpolicy:: Disable `customer experience improvement program`_ via machine GPO
-  :key_title: Computer Configuration -->
-              Administrative Templates -->
-              System -->
-              Internet Communication Management -->
-              Internet Communication settings -->
-              Turn off Windows Customer Experience Improvement Program
-  :option:    ☑
-  :setting:   Enabled
-  :no_section:
-  :no_launch:
 
 Firewall
 ********

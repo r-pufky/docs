@@ -32,8 +32,8 @@ See :ref:`w10-1903-disable-telemetry` for additional telemetry services.
 
     Sysinternals `PSTools`_ need to be installed disable via powershell.
 
-:term:`Registry`
-****************
+:term:`Registry` Machine
+************************
 .. wregedit:: `Disable Tamper Protection`_ via Registry
   :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Defender\Features
   :names:     TamperProtection
@@ -129,8 +129,8 @@ See :ref:`w10-1903-disable-telemetry` for additional telemetry services.
   :no_section:
   :no_launch:
 
-:term:`GPO`
-***********
+:term:`GPO` Computer
+********************
 .. wgpolicy:: Disconnect from Microsoft Antimalware Protection Service via
               machine GPO
   :key_title: Computer Configuration -->

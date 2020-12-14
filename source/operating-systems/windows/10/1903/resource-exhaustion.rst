@@ -18,8 +18,8 @@ Services
   :no_section:
   :no_caption:
 
-:term:`GPO`
-***********
+:term:`GPO` Computer
+********************
 .. wgpolicy:: Disable automatic resource exhaustion policy
   :key_title: Computer Configuration -->
               Administrative Templates -->

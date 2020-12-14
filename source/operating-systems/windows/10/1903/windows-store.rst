@@ -26,8 +26,8 @@ promoted tiles from the start menu.
   :no_caption:
   :no_launch:
 
-:term:`Registry`
-****************
+:term:`Registry` Machine
+************************
 .. wregedit:: Disable tiles for install apps via Registry
   :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CloudContent
   :names:     DisableWindowsConsumerFeatures
@@ -36,20 +36,22 @@ promoted tiles from the start menu.
   :no_section:
 
 .. wregedit:: Disable silent app installs per user via Registry
+  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsStore
+  :names:     AutoDownload
+  :types:     DWORD
+  :data:      2
+  :admin:
+  :no_section:
+  :no_launch:
+
+:term:`Registry` User
+*********************
+.. wregedit:: Disable silent app installs per user via Registry
   :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
               ContentDeliveryManager
   :names:     SilentInstalledAppsEnabled
   :types:     DWORD
   :data:      0
-  :admin:
-  :no_section:
-  :no_launch:
-
-.. wregedit:: Disable silent app installs per user via Registry
-  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsStore
-  :names:     AutoDownload
-  :types:     DWORD
-  :data:      2
   :admin:
   :no_section:
   :no_launch:
@@ -68,8 +70,8 @@ promoted tiles from the start menu.
       Set all applications listed here; this list changes over time as Microsoft
       adds and removes applications. They should all be disabled (set to **0**).
 
-:term:`GPO`
-***********
+:term:`GPO` Computer
+********************
 .. wgpolicy:: Disable Windows store automatic install and updates via machine GPO
   :key_title: Computer Configuration -->
               Administrative Templates -->

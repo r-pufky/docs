@@ -5,8 +5,8 @@
 Wifi Sharing (Sense) will automatically make connections to Wifi Networks via
 crowdsharing and identified hotspots. Disable this.
 
-:term:`Registry`
-****************
+:term:`Registry` Machine
+************************
 .. wregedit:: Disable Wifi Sharing (Sense) via Registry
   :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WcmSvc\wifinetworkmanager\config
   :names:     AutoConnectAllowedOEM
@@ -19,8 +19,8 @@ crowdsharing and identified hotspots. Disable this.
 
       * ☐ all for sharing.
 
-:term:`GPO`
-***********
+:term:`GPO` Computer
+********************
 .. wgpolicy:: Disable Wifi Sharing (Sense) via machine GPO
   :key_title: Computer Configuration -->
               Administrative Templates -->

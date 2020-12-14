@@ -21,8 +21,8 @@ enabled by default and is the default location for all files. It cannot be remov
       :no_section:
       :no_launch:
 
-:term:`Registry`
-****************
+:term:`Registry` Classes
+************************
 .. wregedit:: `Remove OneDrive from Windows Explorer`_ via Registry
   :key_title: HKEY_CLASSES_ROOT\\CLSID\\{018D5C66-4533-4307-9B53-224DE2ED1FE6}
   :names:     System.IsPinnedToNameSpaceTree
@@ -31,8 +31,8 @@ enabled by default and is the default location for all files. It cannot be remov
   :admin:
   :no_section:
 
-:term:`GPO`
-***********
+:term:`GPO` Computer
+********************
 .. wgpolicy:: Disable one-drive from storing files via machine GPO
   :key_title: Computer Configuration -->
               Administrative Templates -->

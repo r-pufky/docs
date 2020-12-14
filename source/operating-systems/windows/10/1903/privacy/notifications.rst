@@ -59,7 +59,7 @@ Notifications
               Administrative Templates -->
               Windows Components -->
               App Privacy -->
-              Let Windows apps access location
+              Let Windows apps access notifications
   :option:    ☑,
               Default for all apps
   :setting:   Enabled,

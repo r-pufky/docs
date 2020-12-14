@@ -16,8 +16,8 @@ including location, browsing, voice, and search data.
      * Disable all options.
      * Clear all data.
 
-:term:`Registry`
-****************
+:term:`Registry` Machine
+************************
 .. wregedit:: Disable Cortana via Registry
   :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\
               Windows Search
@@ -62,8 +62,8 @@ including location, browsing, voice, and search data.
   :no_section:
   :no_launch:
 
-:term:`GPO`
-***********
+:term:`GPO` Computer
+********************
 .. wgpolicy:: Disable Cortana via machine GPO
   :key_title: Computer Configuration -->
               Administrative Templates -->
@@ -181,7 +181,7 @@ including location, browsing, voice, and search data.
               Search -->
               Prevent adding UNC locations to index from Control Panel
   :option:    ☑
-  :setting:   Disabled
+  :setting:   Enabled
   :no_section:
   :no_launch:
 
@@ -256,28 +256,6 @@ including location, browsing, voice, and search data.
               Windows Components -->
               Search -->
               Prevent clients from querying the index remotely
-  :option:    ☑
-  :setting:   Enabled
-  :no_section:
-  :no_launch:
-
-.. wgpolicy:: Prevent indexing email attachments via machine GPO
-  :key_title: Computer Configuration -->
-              Administrative Templates -->
-              Windows Components -->
-              Search -->
-              Prevent indexing e-mail attachments
-  :option:    ☑
-  :setting:   Enabled
-  :no_section:
-  :no_launch:
-
-.. wgpolicy:: Prevent indexing email attachments via machine GPO
-  :key_title: Computer Configuration -->
-              Administrative Templates -->
-              Windows Components -->
-              Search -->
-              Prevent indexing e-mail attachments
   :option:    ☑
   :setting:   Enabled
   :no_section:

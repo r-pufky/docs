@@ -8,8 +8,8 @@ ensure you are not affected by checking the `anti-virus compatibility list`_.
 
 `InSpectre`_ can be used to validate patches are applied.
 
-:term:`Registry`
-****************
+:term:`Registry` Machine
+************************
 .. wregedit:: Meltdown and sepctre patch via Registry
   :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
               QualityCompat

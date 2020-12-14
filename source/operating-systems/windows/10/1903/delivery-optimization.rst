@@ -13,8 +13,8 @@ Disable this.
   :no_section:
   :no_launch:
 
-:term:`Registry`
-****************
+:term:`Registry` Machine
+************************
 .. wregedit:: Disable delivery optimization via Registry
   :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DeliveryOptimization
   :names:     DODownloadMode
@@ -22,8 +22,8 @@ Disable this.
   :data:      0
   :no_section:
 
-:term:`GPO`
-***********
+:term:`GPO` Computer
+********************
 .. wgpolicy:: Disable delivery optimization via machine GPO
   :key_title: Computer Configuration -->
               Administrative Templates -->
@@ -35,6 +35,9 @@ Disable this.
   :setting:   Disabled,
               Bypass (100)
   :no_section:
+
+    .. note:: 
+      Either disable entirely, or enable with the ``Bypass (100)`` option.
 
 .. rubric:: References
 

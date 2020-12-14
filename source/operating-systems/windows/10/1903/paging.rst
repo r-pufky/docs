@@ -33,8 +33,8 @@ re-enabled if certain programs rely on the paging file existing.
     .. note::
       Be sure to set this for each drive explicitly.
 
-:term:`Registry`
-****************
+:term:`Registry` Machine
+************************
 .. wregedit:: Disable paging files on all drives via Registry
   :key_title: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\
               Session Manager\Memory Management

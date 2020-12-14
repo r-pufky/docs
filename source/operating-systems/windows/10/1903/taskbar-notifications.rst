@@ -1,7 +1,7 @@
 .. _w10-1903-taskbar-notifications:
 
-Taskbar Notifications
-#####################
+Taskbar Action Center Notifications
+###################################
 Taskbar is very noisey by default. Remore spurious alerts and information that
 is not needed.
 
@@ -14,8 +14,8 @@ is not needed.
   :no_section:
   :no_launch:
 
-:term:`Registry`
-****************
+:term:`Registry` Machine
+************************
 .. wregedit:: `Disable Taskbar Update Notifications`_ via Registry
   :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings
   :names:     TrayIconVisibility

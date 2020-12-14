@@ -6,8 +6,8 @@ Force remove items from Task Manager Startup list that cannot be removed in the
 GUI; such as Microsoft OneDrive which will leave a setup startup service on
 removal.
 
-:term:`Registry`
-****************
+:term:`Registry` Machine
+************************
 .. wregedit:: Remove startup items for system via Registry
   :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
               Explorer\StartupApproved\Run
@@ -20,6 +20,8 @@ removal.
       Delete entries that should not appear (or can't be removed from startup by
       other means). This applies to the entire **system**.
 
+:term:`Registry` User
+*********************
 .. wregedit:: Remove startup items for user via Registry
   :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
               Explorer\StartupApproved\Run

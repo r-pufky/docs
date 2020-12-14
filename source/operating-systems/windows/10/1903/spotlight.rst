@@ -8,8 +8,8 @@ this.
 .. danger::
   After every major windows update, verify these settings.
 
-:term:`Registry`
-****************
+:term:`Registry` Machine
+************************
 .. wregedit:: Disable all spotlight features via Registry
   :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CloudContent
   :names:     DisableWindowsSpotlightFeatures
@@ -65,8 +65,8 @@ this.
   :no_section:
   :no_launch:
 
-:term:`GPO`
-***********
+:term:`GPO` User
+****************
 .. wgpolicy:: Disable all spotlight features via user GPO
   :key_title: User Configuration -->
               Administrative Templates -->

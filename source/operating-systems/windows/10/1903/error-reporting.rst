@@ -8,8 +8,8 @@ including related metadata. Disable this.
 .. danger::
   After every major windows update, verify these settings.
 
-:term:`Registry`
-****************
+:term:`Registry` Machine
+************************
 .. wregedit:: Disable error reporting policy via Registry
   :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Error Reporting
   :names:     Disabled
@@ -25,8 +25,8 @@ including related metadata. Disable this.
   :no_section:
   :no_launch:
 
-:term:`GPO`
-***********
+:term:`GPO` Computer
+********************
 .. wgpolicy:: Disable Windows Error Reporting via machine GPO
   :key_title: Computer Configuration -->
               Administrative Templates -->

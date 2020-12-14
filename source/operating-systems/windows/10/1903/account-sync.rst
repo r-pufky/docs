@@ -8,8 +8,8 @@ to their servers. Disable this.
 .. danger::
   After every major windows update, verify these settings.
 
-:term:`Registry`
-****************
+:term:`Registry` Machine
+************************
 .. wregedit:: Disable user account sync via Registry
   :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SettingSync
   :names:     DisableSettingSync
@@ -25,8 +25,8 @@ to their servers. Disable this.
   :no_section:
   :no_launch:
 
-:term:`GPO`
-***********
+:term:`GPO` Computer
+********************
 .. wgpolicy:: Disable user account sync via machine GPO
   :key_title: Computer Configuration -->
               Administrative Templates -->

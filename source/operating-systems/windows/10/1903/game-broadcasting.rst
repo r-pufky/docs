@@ -11,8 +11,8 @@ Also removes the :cmdmenu:`⌘ + g` prompt when starting games.
 This occurs because of the xbox app on Windows 10. Removing the app will also
 fix this. See :ref:`w10-1903-remove-preinstalled-packages`.
 
-:term:`Registry`
-****************
+:term:`Registry` User
+*********************
 .. wregedit:: Removing ⌘ + g Prompt on Game Launch via Registry
   :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
               GameDVR
@@ -29,6 +29,8 @@ fix this. See :ref:`w10-1903-remove-preinstalled-packages`.
   :no_section:
   :no_launch:
 
+:term:`Registry` Machine
+************************
 .. wregedit:: `Disable xbox Game DVR for system`_ via Registry
   :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\GameDVR
   :names:     AllowgameDVR
@@ -45,8 +47,8 @@ fix this. See :ref:`w10-1903-remove-preinstalled-packages`.
   :no_section:
   :no_launch:
 
-:term:`GPO`
-***********
+:term:`GPO` Computer
+********************
 .. wgpolicy:: Disable game broadcasting suite policy via machine GPO
   :key_title: Computer Configuration -->
               Administrative Templates -->

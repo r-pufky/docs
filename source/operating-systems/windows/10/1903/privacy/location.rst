@@ -69,7 +69,7 @@ Location
                   Administrative Templates -->
                   Windows Components -->
                   Location and Sensors -->
-                  Windows Location Provider
+                  Windows Location Provider -->
                   Turn off Windows Location Provider
       :option:    ☑
       :setting:   Enabled
