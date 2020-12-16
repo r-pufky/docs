@@ -12,6 +12,7 @@
 #
 import os
 import sys
+import sphinx_rtd_theme
 sys.path.insert(0, os.path.abspath('./_ext'))
 
 
@@ -27,12 +28,13 @@ author = 'r-pufky'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+  'ct',
   'sphinx.ext.todo',
   'sphinx.ext.viewcode',
-  'sphinxcontrib.aafig',
-  'ct',
   'sphinx_panels',
   'sphinx_copybutton',
+  'sphinx_rtd_theme',
+  'sphinxcontrib.aafig',
 ]
 
 # pygments doesn't handle powershell well. Ignore warnings for code-blocks.
