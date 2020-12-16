@@ -31,6 +31,8 @@ extensions = [
   'sphinx.ext.viewcode',
   'sphinxcontrib.aafig',
   'ct',
+  'sphinx_panels',
+  'sphinx_copybutton',
 ]
 
 # pygments doesn't handle powershell well. Ignore warnings for code-blocks.
