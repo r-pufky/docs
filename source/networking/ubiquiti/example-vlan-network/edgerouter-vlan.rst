@@ -186,7 +186,7 @@ Setup DHCP & DNS for VLANs
 Confirm Management Network Working
 **********************************
 * Connect laptop to *eth0*.
-* Laptop should pull a :term:`management VLAN` network address, with the gateway
+* Laptop should pull a :term:`Management VLAN` network address, with the gateway
   *10.1.1.1*. This means untagged traffic is being properly assigned to the
   management network.
 

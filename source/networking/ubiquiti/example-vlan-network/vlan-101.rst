@@ -252,7 +252,7 @@ ever hitting network ports.
 Important things to note:
 
 * :term:`Untagged` traffic is traffic without any VLAN tags. `Within VLAN
-  aware`_ devices this is tagged as ``1`` or ``VLAN1``. :term:`All` also
+  aware`_ devices this is tagged as ``1`` or ``VLAN1``. :term:`ALL` also
   includes this traffic.
 * Ports will have a *default* or :term:`PVIF`. This is the default VLAN traffic
   will be tagged with, *if no tags are present*. If you connect a bunch of
