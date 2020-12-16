@@ -37,6 +37,10 @@ extensions = [
   'sphinxcontrib.aafig',
 ]
 
+# Expand default Read the Docs page width
+def setup(app):
+  app.add_css_file('expand_width.css')
+
 # pygments doesn't handle powershell well. Ignore warnings for code-blocks.
 suppress_warnings = ['misc.highlighting_failure']
 
