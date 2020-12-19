@@ -53,21 +53,11 @@ Manual Installation
     . {ENV DIR}/bin/activate
     python3 -m pip install --requirement sphinx/requirements.txt
 
-#. Update custom theme `Read the Docs`_ for sphinx, if wanted.
-
-  .. code-block::
-
-    git clone https://github.com/readthedocs/sphinx_rtd_theme /tmp
-    mv /tmp/sphinx_rtd_theme/sphinx_rtd_them docs/sphinx/_themes
-
 #. Use custom ``conf.py`` file for site customization.
 
   .. literalinclude:: ../sphinx/conf.py
     :caption: **0640 user user** ``docs/sphinx/conf.py``
-    :emphasize-lines: 20-22,30-33,37,50,53,60,69-71,73,75,77-78
-
-  .. todo::
-    Until ``pip install sphinx-rtd-theme`` is fixed without error.
+    :emphasize-lines: 21-23,31-37,41-42,44,48,61,68,76-93
 
 .. rubric:: References
 
