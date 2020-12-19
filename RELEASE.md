@@ -1,12 +1,28 @@
 # [Changelog][3g]
 
+## 2020-12-18.0
+Update sphinx core & enable additional extensions.
+
+Added:
+* sphinx-panel, sphinx_rtd_theme, sphinx_copybutton extensions.
+* Windows 10 reset password.
+
+Changed:
+* Sphinx upgraded to 3.3.1.
+* Sphinx dependencies updated.
+* RTD theme migrated from 0.4.3.dev0 to pypi 0.5.0.
+* Windows 1903 validated, using new templates.
+
+Removed:
+* static RTD theme.
+
 ## 2020-11-01.0
 Separated Windows 1903 settings and fix link rot.
 
 Added:
 * Proxy/troubleshooting docs for NGINX.
 
-Updated:
+Changed:
 * Separate Windows 1903 settings from core windows 10.
 * Ubuntu 18.04 no longer requires PPA for wireguard.
 * NGINX start/run with docker backends down.
@@ -24,7 +40,7 @@ Added:
 * Add saltstack job queue management notes.
 * Add XCP guest template update from testing repo.
 
-Updated:
+Changed:
 * Correct DB typos for MUA setup.
 * Update GPG/Yubikey for usage with Windows Hello Devices. 
 * Update documentation for PiHole 5.x.

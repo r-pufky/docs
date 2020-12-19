@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,27 +11,36 @@
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="_static/expand_width.css" type="text/css" />
+  <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Sphinx Style Guide" href="sphinx-style-guide.html" /> 
@@ -585,7 +593,15 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/base/advanced/index.html">Advanced</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/base/advanced/remove-optional-features.html">Remove Optional Features</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="operating-systems/windows/10/base/advanced/remove-optional-features.html#manually">Manually</a></li>
+<li class="toctree-l4"><a class="reference internal" href="operating-systems/windows/10/base/advanced/remove-optional-features.html#powershell">Powershell</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/base/advanced/remove-startup-items.html">Remove Startup Items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/base/advanced/remove-preinstalled-packages.html">Remove Preinstalled Packages</a></li>
 <li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/base/advanced/specific-windows-fixes.html">Specific Windows Fixes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="operating-systems/windows/10/base/advanced/specific-windows-fixes.html#reset-password">Reset Password</a></li>
 <li class="toctree-l4"><a class="reference internal" href="operating-systems/windows/10/base/advanced/specific-windows-fixes.html#moving-user-profile-locations-to-alternate-location">Moving User Profile Locations to Alternate Location</a></li>
 <li class="toctree-l4"><a class="reference internal" href="operating-systems/windows/10/base/advanced/specific-windows-fixes.html#format-refs-on-using-a-single-driv">Format ReFS on using a single driv</a></li>
 <li class="toctree-l4"><a class="reference internal" href="operating-systems/windows/10/base/advanced/specific-windows-fixes.html#addressing-100-disk-usage-issues">Addressing 100% Disk Usage Issues</a></li>
@@ -630,71 +646,33 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="operating-systems/windows/10/1903/index.html">Windows 1903</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/telemetry.html">Disable Telemetry</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/telemetry.html#services">Services</a></li>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/telemetry.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/telemetry.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/telemetry.html#firewall">Firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/disable-telemetry.html">Disable Telemetry</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/disable-telemetry.html#firewall">Firewall</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/onedrive.html">Disable OneDrive</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/onedrive.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/onedrive.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/onedrive.html#scheduled-tasks">Scheduled Tasks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/onedrive.html#firewall">Firewall</a></li>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/onedrive.html#remove">Remove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/disable-onedrive.html">Disable OneDrive</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/disable-onedrive.html#firewall">Firewall</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/defender-antivirus.html">Disable Windows Defender</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/defender-antivirus.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/defender-antivirus.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/defender-antivirus.html#firewall">Firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/disable-windows-defender.html">Disable Windows Defender</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/disable-windows-defender.html#firewall">Firewall</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/cortana-search.html">Disable Cortana &amp; Search</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/cortana-search.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/cortana-search.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/cortana-search.html#firewall">Firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/disable-cortana-search.html">Disable Cortana &amp; Search</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/disable-cortana-search.html#firewall">Firewall</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/windows-store.html">Disable Windows Store Promotions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/windows-store.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/windows-store.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/resource-exhaustion.html">Disable Resource Exhaustion</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/resource-exhaustion.html#services">Services</a></li>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/resource-exhaustion.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/game-broadcasting.html">Disable Game Broadcasting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/game-broadcasting.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/game-broadcasting.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/meltdown-spectre.html">Meltdown and Spectre Patch</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/meltdown-spectre.html#registry"><span class="xref std std-term">Registry</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/explorer-ads.html">Disable Explorer Ads</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/explorer-ads.html#registry"><span class="xref std std-term">Registry</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/wifi-sharing.html">Disable Wifi Sharing</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/wifi-sharing.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/wifi-sharing.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/optional-features.html">Remove Optional Features</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/optional-features.html#manually">Manually</a></li>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/optional-features.html#powershell">Powershell</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/disable-windows-store-promotions.html">Disable Windows Store Promotions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/disable-resource-exhaustion.html">Disable Resource Exhaustion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/disable-game-broadcasting.html">Disable Game Broadcasting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/meltdown-and-spectre-patch.html">Meltdown and Spectre Patch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/disable-explorer-ads.html">Disable Explorer Ads</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/disable-wifi-sharing.html">Disable Wifi Sharing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/privacy/index.html">Reasonable Privacy Settings</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/privacy/manual.html">Manual Setting Privacy Options</a></li>
 <li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/privacy/general.html">General</a></li>
 <li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/privacy/speech.html">Speech</a></li>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/privacy/ink-typing.html">Ink &amp; Typing Personalization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/privacy/ink-and-typing-personalization.html">Ink &amp; Typing Personalization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/privacy/diagnostics-feedback.html">Diagnostics &amp; Feedback</a></li>
 <li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/privacy/activity-history.html">Activity History</a></li>
 <li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/privacy/location.html">Location</a></li>
@@ -717,55 +695,21 @@
 <li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/privacy/pictures.html">Pictures</a></li>
 <li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/privacy/videos.html">Videos</a></li>
 <li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/privacy/file-system.html">File System</a></li>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/privacy/eye.html">Eye Tracker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/privacy/eye-tracker.html">Eye Tracker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/privacy/motion.html">Motion</a></li>
 <li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/privacy/phone-calls.html">Phone Calls</a></li>
 <li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/privacy/app-list.html">Determining App List</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/remove-startup-items.html">Remove Startup Items</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/remove-startup-items.html#registry"><span class="xref std std-term">Registry</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/remove-preinstalled-packages.html">Remove Preinstalled Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/paging.html">Disable Paging</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/paging.html#registry"><span class="xref std std-term">Registry</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/restore-points.html">Disable Restore Points</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/restore-points.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/restore-points.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/facial-recognition.html">Disable Facial Recognition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/error-reporting.html">Disable Error Reporting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/error-reporting.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/error-reporting.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/account-sync.html">Disable Account Sync</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/account-sync.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/account-sync.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/spotlight.html">Disable Spotlight</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/spotlight.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/spotlight.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/delivery-optimization.html">Disable Delivery Optimization</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/delivery-optimization.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/delivery-optimization.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/taskbar-notifications.html">Taskbar Notifications</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/taskbar-notifications.html#registry"><span class="xref std std-term">Registry</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/service.html">Disable Services</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="operating-systems/windows/10/1903/service.html#services">Services</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/disable-paging.html">Disable Paging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/disable-restore-points.html">Disable Restore Points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/disable-biometrics.html">Disable Biometrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/disable-error-reporting.html">Disable Error Reporting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/disable-account-sync.html">Disable Account Sync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/disable-spotlight.html">Disable Spotlight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/disable-delivery-optimization.html">Disable Delivery Optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/disable-update-notifications.html">Disable Update Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operating-systems/windows/10/1903/disable-services.html">Disable Services</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="operating-systems/ubuntu/index.html">Ubuntu</a><ul>
@@ -1761,21 +1705,21 @@ will be created automatically and built with make. See <a class="reference inter
 for manual steps.</p>
 <p>Documentation should be linkchecked for linkrot before building a new set of
 docs to be published.</p>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">One shot build and link verification.</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">One shot build and link verification.</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">clean</span> <span class="n">docs</span> <span class="n">linkcheck</span>
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">Build docs, then verify links separately.</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Build docs, then verify links separately.</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">clean</span> <span class="n">docs</span>
 <span class="n">make</span> <span class="n">linkcheck</span>
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">Clean docs/ to upload only source changes.</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Clean docs/ to upload only source changes.</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">head</span>
 </pre></div>
 </div>
@@ -1796,8 +1740,8 @@ using <code class="docutils literal notranslate"><span class="pre">master_doc</s
 <li><p>Install sphinx and sphinx plugins.</p></li>
 </ol>
 <blockquote>
-<div><div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">Install packages from environment requirements.</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div><div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Install packages from environment requirements.</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span> <span class="p">{</span><span class="n">ENV</span> <span class="n">DIR</span><span class="p">}</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
 <span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">requirement</span> <span class="n">sphinx</span><span class="o">/</span><span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
@@ -1805,20 +1749,11 @@ using <code class="docutils literal notranslate"><span class="pre">master_doc</s
 </div>
 </div></blockquote>
 <ol class="arabic simple">
-<li><p>Update custom theme <a class="reference external" href="https://sphinx-rtd-theme.readthedocs.io/en/stable/">Read the Docs</a> for sphinx, if wanted.</p></li>
-</ol>
-<blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">readthedocs</span><span class="o">/</span><span class="n">sphinx_rtd_theme</span> <span class="o">/</span><span class="n">tmp</span>
-<span class="n">mv</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">sphinx_rtd_theme</span><span class="o">/</span><span class="n">sphinx_rtd_them</span> <span class="n">docs</span><span class="o">/</span><span class="n">sphinx</span><span class="o">/</span><span class="n">_themes</span>
-</pre></div>
-</div>
-</div></blockquote>
-<ol class="arabic simple">
 <li><p>Use custom <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file for site customization.</p></li>
 </ol>
 <blockquote>
-<div><div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text"><strong>0640 user user</strong> <code class="docutils literal notranslate"><span class="pre">docs/sphinx/conf.py</span></code></span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div><div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text"><strong>0640 user user</strong> <code class="docutils literal notranslate"><span class="pre">docs/sphinx/conf.py</span></code></span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Configuration file for the Sphinx documentation builder.</span>
 <span class="c1">#</span>
 <span class="c1"># This file only contains a selection of the most common options. For a full</span>
@@ -1833,6 +1768,7 @@ using <code class="docutils literal notranslate"><span class="pre">master_doc</s
 <span class="c1">#</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">sphinx_rtd_theme</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;./_ext&#39;</span><span class="p">))</span>
 
 
@@ -1848,18 +1784,25 @@ using <code class="docutils literal notranslate"><span class="pre">master_doc</s
 <span class="c1"># extensions coming with Sphinx (named &#39;sphinx.ext.*&#39;) or your custom</span>
 <span class="c1"># ones.</span>
 <span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
-<span class="hll">  <span class="s1">&#39;sphinx.ext.todo&#39;</span><span class="p">,</span>
+<span class="hll">  <span class="s1">&#39;ct&#39;</span><span class="p">,</span>
+</span><span class="hll">  <span class="s1">&#39;sphinx.ext.todo&#39;</span><span class="p">,</span>
 </span><span class="hll">  <span class="s1">&#39;sphinx.ext.viewcode&#39;</span><span class="p">,</span>
+</span><span class="hll">  <span class="s1">&#39;sphinx_panels&#39;</span><span class="p">,</span>
+</span><span class="hll">  <span class="s1">&#39;sphinx_copybutton&#39;</span><span class="p">,</span>
+</span><span class="hll">  <span class="s1">&#39;sphinx_rtd_theme&#39;</span><span class="p">,</span>
 </span><span class="hll">  <span class="s1">&#39;sphinxcontrib.aafig&#39;</span><span class="p">,</span>
-</span><span class="hll">  <span class="s1">&#39;ct&#39;</span><span class="p">,</span>
 </span><span class="p">]</span>
 
-<span class="c1"># pygments doesn&#39;t handle powershell well. Ignore warnings for code-blocks.</span>
-<span class="hll"><span class="n">suppress_warnings</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;misc.highlighting_failure&#39;</span><span class="p">]</span>
+<span class="c1"># Expand default Read the Docs page width</span>
+<span class="hll"><span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="n">app</span><span class="p">):</span>
+</span><span class="hll">  <span class="n">app</span><span class="o">.</span><span class="n">add_css_file</span><span class="p">(</span><span class="s1">&#39;expand_width.css&#39;</span><span class="p">)</span>
 </span>
-<span class="c1"># Add any paths that contain templates here, relative to this directory.</span>
-<span class="n">templates_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_templates&#39;</span><span class="p">]</span>
+<span class="hll"><span class="c1"># pygments doesn&#39;t handle powershell well. Ignore warnings for code-blocks.</span>
+</span><span class="n">suppress_warnings</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;misc.highlighting_failure&#39;</span><span class="p">]</span>
 
+<span class="c1"># Add any paths that contain templates here, relative to this directory.</span>
+<span class="hll"><span class="n">templates_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_templates&#39;</span><span class="p">]</span>
+</span>
 <span class="c1"># List of patterns, relative to source directory, that match files and</span>
 <span class="c1"># directories to ignore when looking for source files.</span>
 <span class="c1"># This pattern also affects html_static_path and html_extra_path.</span>
@@ -1868,8 +1811,8 @@ using <code class="docutils literal notranslate"><span class="pre">master_doc</s
 <span class="n">today_fmt</span> <span class="o">=</span> <span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span>
 
 <span class="c1"># Include TODOs.</span>
-<span class="hll"><span class="n">todo_include_todos</span> <span class="o">=</span> <span class="kc">True</span>
-</span>
+<span class="n">todo_include_todos</span> <span class="o">=</span> <span class="kc">True</span>
+
 <span class="c1"># ConfigTable separator</span>
 <span class="hll"><span class="n">ct_separator</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\N{SINGLE RIGHT-POINTING ANGLE QUOTATION MARK}</span><span class="s1">&#39;</span>
 </span>
@@ -1886,25 +1829,25 @@ using <code class="docutils literal notranslate"><span class="pre">master_doc</s
 
 <span class="c1"># linkchecker exceptions. See: https://pythex.org</span>
 <span class="n">linkcheck_ignore</span> <span class="o">=</span> <span class="p">[</span>
-  <span class="c1"># Broken: local state/context needed to resolve.</span>
-<span class="hll">  <span class="sa">r</span><span class="s1">&#39;(http|https)://localhost\.*&#39;</span><span class="p">,</span>
+<span class="hll">  <span class="c1"># Broken: local state/context needed to resolve.</span>
+</span><span class="hll">  <span class="sa">r</span><span class="s1">&#39;(http|https)://localhost\.*&#39;</span><span class="p">,</span>
 </span><span class="hll">  <span class="sa">r</span><span class="s1">&#39;(http|https)://192.168.\.*&#39;</span><span class="p">,</span>
 </span><span class="hll">  <span class="sa">r</span><span class="s1">&#39;(http|https)://10\.*&#39;</span><span class="p">,</span>
-</span>  <span class="c1"># Broken: Will timeout after too many requests.</span>
-<span class="hll">  <span class="sa">r</span><span class="s1">&#39;https://v.firebog.net/hosts/\.*&#39;</span><span class="p">,</span>
-</span>  <span class="c1"># Broken: github dynamically adds anchors and cannot be checked.</span>
-<span class="hll">  <span class="sa">r</span><span class="s1">&#39;https://github.com/.*[#]+&#39;</span><span class="p">,</span>
-</span>  <span class="c1"># Redirects: latest tags are always redirected to versions on github.</span>
-<span class="hll">  <span class="sa">r</span><span class="s1">&#39;https://github.com/.*/latest.*&#39;</span><span class="p">,</span>
+</span><span class="hll">  <span class="c1"># Broken: Will timeout after too many requests.</span>
+</span><span class="hll">  <span class="sa">r</span><span class="s1">&#39;https://v.firebog.net/hosts/\.*&#39;</span><span class="p">,</span>
+</span><span class="hll">  <span class="c1"># Broken: github dynamically adds anchors and cannot be checked.</span>
+</span><span class="hll">  <span class="sa">r</span><span class="s1">&#39;https://github.com/.*[#]+&#39;</span><span class="p">,</span>
+</span><span class="hll">  <span class="c1"># Redirects: latest tags are always redirected to versions on github.</span>
+</span><span class="hll">  <span class="sa">r</span><span class="s1">&#39;https://github.com/.*/latest.*&#39;</span><span class="p">,</span>
 </span><span class="hll">  <span class="c1"># Redirects: behind authentication wall.</span>
-</span>  <span class="sa">r</span><span class="s1">&#39;https://security.google.com/\.*&#39;</span><span class="p">,</span>
-  <span class="sa">r</span><span class="s1">&#39;https://plexapp.zendesk.com/\.*&#39;</span><span class="p">,</span>
-  <span class="sa">r</span><span class="s1">&#39;https://api.imgur.com/\.*&#39;</span><span class="p">,</span>
-  <span class="c1"># Redirects: youtube now redirects with next video.</span>
-  <span class="sa">r</span><span class="s1">&#39;https://www.youtube.com/watch\.*&#39;</span><span class="p">,</span>
-  <span class="c1"># Temporarily disable for repo DMCA.</span>
-  <span class="sa">r</span><span class="s1">&#39;https://github.com/ytdl-org/youtube-dl/releases&#39;</span><span class="p">,</span>
-<span class="p">]</span>
+</span><span class="hll">  <span class="sa">r</span><span class="s1">&#39;https://security.google.com/\.*&#39;</span><span class="p">,</span>
+</span><span class="hll">  <span class="sa">r</span><span class="s1">&#39;https://plexapp.zendesk.com/\.*&#39;</span><span class="p">,</span>
+</span><span class="hll">  <span class="sa">r</span><span class="s1">&#39;https://api.imgur.com/\.*&#39;</span><span class="p">,</span>
+</span><span class="hll">  <span class="c1"># Redirects: youtube now redirects with next video.</span>
+</span><span class="hll">  <span class="sa">r</span><span class="s1">&#39;https://www.youtube.com/watch\.*&#39;</span><span class="p">,</span>
+</span><span class="hll">  <span class="c1"># Temporarily disable for repo DMCA.</span>
+</span><span class="hll">  <span class="sa">r</span><span class="s1">&#39;https://github.com/ytdl-org/youtube-dl/releases&#39;</span><span class="p">,</span>
+</span><span class="p">]</span>
 <span class="n">linkcheck_workers</span> <span class="o">=</span> <span class="mi">10</span>
 
 <span class="c1"># HTML rendering</span>
@@ -1924,10 +1867,6 @@ using <code class="docutils literal notranslate"><span class="pre">master_doc</s
 <span class="n">html_static_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_static&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-</div>
-<div class="admonition-todo admonition" id="id1">
-<p class="admonition-title">Todo</p>
-<p>Until <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">sphinx-rtd-theme</span></code> is fixed without error.</p>
 </div>
 </div></blockquote>
 <p class="rubric">References</p>
@@ -1986,7 +1925,12 @@ using <code class="docutils literal notranslate"><span class="pre">master_doc</s
   </div>
     
     
-      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -1997,7 +1941,6 @@ using <code class="docutils literal notranslate"><span class="pre">master_doc</s
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

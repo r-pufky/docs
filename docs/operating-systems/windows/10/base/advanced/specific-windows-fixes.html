@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,31 +11,40 @@
   
 
   
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/expand_width.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../../../../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../../../_static/language_data.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/language_data.js"></script>
+        <script src="../../../../../_static/clipboard.min.js"></script>
+        <script src="../../../../../_static/copybutton.js"></script>
     
     <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
     <link rel="next" title="Windows Subsystem for Linux (WSL)" href="windows-subsystem-for-linux-wsl.html" />
-    <link rel="prev" title="Advanced" href="index.html" /> 
+    <link rel="prev" title="Remove Preinstalled Packages" href="remove-preinstalled-packages.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -586,7 +594,15 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Advanced</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="remove-optional-features.html">Remove Optional Features</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="remove-optional-features.html#manually">Manually</a></li>
+<li class="toctree-l4"><a class="reference internal" href="remove-optional-features.html#powershell">Powershell</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="remove-startup-items.html">Remove Startup Items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="remove-preinstalled-packages.html">Remove Preinstalled Packages</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Specific Windows Fixes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#reset-password">Reset Password</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#moving-user-profile-locations-to-alternate-location">Moving User Profile Locations to Alternate Location</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#format-refs-on-using-a-single-driv">Format ReFS on using a single driv</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#addressing-100-disk-usage-issues">Addressing 100% Disk Usage Issues</a></li>
@@ -631,71 +647,33 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../1903/index.html">Windows 1903</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../1903/telemetry.html">Disable Telemetry</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/telemetry.html#services">Services</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/telemetry.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/telemetry.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/telemetry.html#firewall">Firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1903/disable-telemetry.html">Disable Telemetry</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../1903/disable-telemetry.html#firewall">Firewall</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../1903/onedrive.html">Disable OneDrive</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/onedrive.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/onedrive.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/onedrive.html#scheduled-tasks">Scheduled Tasks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/onedrive.html#firewall">Firewall</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/onedrive.html#remove">Remove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1903/disable-onedrive.html">Disable OneDrive</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../1903/disable-onedrive.html#firewall">Firewall</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../1903/defender-antivirus.html">Disable Windows Defender</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/defender-antivirus.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/defender-antivirus.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/defender-antivirus.html#firewall">Firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1903/disable-windows-defender.html">Disable Windows Defender</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../1903/disable-windows-defender.html#firewall">Firewall</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../1903/cortana-search.html">Disable Cortana &amp; Search</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/cortana-search.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/cortana-search.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/cortana-search.html#firewall">Firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1903/disable-cortana-search.html">Disable Cortana &amp; Search</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../1903/disable-cortana-search.html#firewall">Firewall</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../1903/windows-store.html">Disable Windows Store Promotions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/windows-store.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/windows-store.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../1903/resource-exhaustion.html">Disable Resource Exhaustion</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/resource-exhaustion.html#services">Services</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/resource-exhaustion.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../1903/game-broadcasting.html">Disable Game Broadcasting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/game-broadcasting.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/game-broadcasting.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../1903/meltdown-spectre.html">Meltdown and Spectre Patch</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/meltdown-spectre.html#registry"><span class="xref std std-term">Registry</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../1903/explorer-ads.html">Disable Explorer Ads</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/explorer-ads.html#registry"><span class="xref std std-term">Registry</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../1903/wifi-sharing.html">Disable Wifi Sharing</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/wifi-sharing.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/wifi-sharing.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../1903/optional-features.html">Remove Optional Features</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/optional-features.html#manually">Manually</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/optional-features.html#powershell">Powershell</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../../1903/disable-windows-store-promotions.html">Disable Windows Store Promotions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1903/disable-resource-exhaustion.html">Disable Resource Exhaustion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1903/disable-game-broadcasting.html">Disable Game Broadcasting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1903/meltdown-and-spectre-patch.html">Meltdown and Spectre Patch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1903/disable-explorer-ads.html">Disable Explorer Ads</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1903/disable-wifi-sharing.html">Disable Wifi Sharing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../1903/privacy/index.html">Reasonable Privacy Settings</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../1903/privacy/manual.html">Manual Setting Privacy Options</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../1903/privacy/general.html">General</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../1903/privacy/speech.html">Speech</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/privacy/ink-typing.html">Ink &amp; Typing Personalization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../1903/privacy/ink-and-typing-personalization.html">Ink &amp; Typing Personalization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../1903/privacy/diagnostics-feedback.html">Diagnostics &amp; Feedback</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../1903/privacy/activity-history.html">Activity History</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../1903/privacy/location.html">Location</a></li>
@@ -718,55 +696,21 @@
 <li class="toctree-l3"><a class="reference internal" href="../../1903/privacy/pictures.html">Pictures</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../1903/privacy/videos.html">Videos</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../1903/privacy/file-system.html">File System</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/privacy/eye.html">Eye Tracker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../1903/privacy/eye-tracker.html">Eye Tracker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../1903/privacy/motion.html">Motion</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../1903/privacy/phone-calls.html">Phone Calls</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../1903/privacy/app-list.html">Determining App List</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../1903/remove-startup-items.html">Remove Startup Items</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/remove-startup-items.html#registry"><span class="xref std std-term">Registry</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../1903/remove-preinstalled-packages.html">Remove Preinstalled Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../1903/paging.html">Disable Paging</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/paging.html#registry"><span class="xref std std-term">Registry</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../1903/restore-points.html">Disable Restore Points</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/restore-points.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/restore-points.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../1903/facial-recognition.html">Disable Facial Recognition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../1903/error-reporting.html">Disable Error Reporting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/error-reporting.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/error-reporting.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../1903/account-sync.html">Disable Account Sync</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/account-sync.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/account-sync.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../1903/spotlight.html">Disable Spotlight</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/spotlight.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/spotlight.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../1903/delivery-optimization.html">Disable Delivery Optimization</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/delivery-optimization.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/delivery-optimization.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../1903/taskbar-notifications.html">Taskbar Notifications</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/taskbar-notifications.html#registry"><span class="xref std std-term">Registry</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../1903/service.html">Disable Services</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../1903/service.html#services">Services</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../../1903/disable-paging.html">Disable Paging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1903/disable-restore-points.html">Disable Restore Points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1903/disable-biometrics.html">Disable Biometrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1903/disable-error-reporting.html">Disable Error Reporting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1903/disable-account-sync.html">Disable Account Sync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1903/disable-spotlight.html">Disable Spotlight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1903/disable-delivery-optimization.html">Disable Delivery Optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1903/disable-update-notifications.html">Disable Update Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../1903/disable-services.html">Disable Services</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../ubuntu/index.html">Ubuntu</a><ul>
@@ -1765,6 +1709,20 @@ applied by default or without thought.</p>
 recommendation here is <strong>not</strong> apply these.</p>
 </div>
 <p>Execution Policy: <strong>Unrestricted</strong> (see: <a class="reference internal" href="../execution-policy.html#setting-execution-policy"><span class="std std-ref">Setting Execution Policy</span></a>).</p>
+<div class="section" id="reset-password">
+<h2>Reset Password<a class="headerlink" href="#reset-password" title="Permalink to this headline">¶</a></h2>
+<p>Windows 10 has a <a class="reference external" href="https://www.passfab.com/windows-tips/windows-10-password-incorrect-after-update.html">habit of locking out after updates</a>. <a class="reference external" href="https://www.wimware.com/how-to/reset-windows-10-password-command-prompt.html">Reset your password
+from safe mode</a>.</p>
+<p>Be sure to hold <code class="docutils literal notranslate"><span class="pre">shift</span></code> until the troubleshooting options appear.
+<span class="guilabel">Login Screen › shift (hold) + Restart › Troubleshoot › Advanced options › Startup Settings › Restart -&gt; Enable Safe Mode with Command Prompt</span></p>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text">Find the correct user and set password.</span><a class="headerlink" href="#id11" title="Permalink to this code">¶</a></div>
+<div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="n">user</span>
+<span class="n">net</span> <span class="n">user</span> <span class="p">{</span><span class="n">USER</span><span class="p">}</span> <span class="p">{</span><span class="n">PASS</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="moving-user-profile-locations-to-alternate-location">
 <h2>Moving User Profile Locations to Alternate Location<a class="headerlink" href="#moving-user-profile-locations-to-alternate-location" title="Permalink to this headline">¶</a></h2>
 <p>Relocate certain portions of your user profile to alternate location, to make
@@ -1808,8 +1766,8 @@ read.</p>
 <div><p>Reboot to enable changes.</p>
 </div></blockquote>
 </div>
-<div class="literal-block-wrapper docutils container" id="id11">
-<div class="code-block-caption"><span class="caption-text">Setup disk for ReFS (powershell as admin).</span><a class="headerlink" href="#id11" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text">Setup disk for ReFS (powershell as admin).</span><a class="headerlink" href="#id12" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">diskpart</span>
 <span class="n">list</span> <span class="n">disk</span>
 <span class="nb">select </span><span class="n">disk</span> <span class="p">[</span><span class="c">#]</span>
@@ -1826,9 +1784,9 @@ read.</p>
 <li><p>Reformat drive with <a class="reference external" href="https://docs.microsoft.com/en-us/windows-server/storage/refs/integrity-streams">integrity enabled</a>.</p></li>
 </ul>
 </div></blockquote>
-<div class="literal-block-wrapper docutils container" id="id12">
+<div class="literal-block-wrapper docutils container" id="id13">
 <div class="code-block-caption"><span class="caption-text">Format Single Drive with Integrity Enabled &amp; Verify with Test File
-(powershell as admin).</span><a class="headerlink" href="#id12" title="Permalink to this code">¶</a></div>
+(powershell as admin).</span><a class="headerlink" href="#id13" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>format X: /fs:refs /i:enabled /q
 echo $null &gt;&gt; X:\test
 Get-Item X:\test | Get-FileIntegrity
@@ -1872,8 +1830,8 @@ this but may break functionality of your system.</p>
 SSD’s. Disable by <span class="guilabel">RMB › stop</span> and
 <span class="guilabel">RMB › properties › disable</span>.</p>
 <div class="wservice docutils container" id="Disable search service">
-<span class="guilabel">Start › services.msc</span><table class="docutils align-default" id="id13">
-<caption><span class="caption-text">Disable search service</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
+<span class="guilabel">Start › services.msc</span><table class="docutils align-default" id="id14">
+<caption><span class="caption-text">Disable search service</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -1894,8 +1852,8 @@ SSD’s. Disable by <span class="guilabel">RMB › stop</span> and
 </div></blockquote>
 </div>
 <div class="wservice docutils container" id="Disable superfetch service">
-<table class="docutils align-default" id="id14">
-<caption><span class="caption-text">Disable superfetch service</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<table class="docutils align-default" id="id15">
+<caption><span class="caption-text">Disable superfetch service</span><a class="headerlink" href="#id15" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -2035,8 +1993,8 @@ Level Authentication.</p></li>
 from the system. Symptoms include apps like xbox controller config never
 loading, or calculator prompting with trial expired. This resets the system to
 the default app installation state for windows 10.</p>
-<div class="literal-block-wrapper docutils container" id="id15">
-<div class="code-block-caption"><span class="caption-text">Reinstall default Windows applications (powershell as admin).</span><a class="headerlink" href="#id15" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id16">
+<div class="code-block-caption"><span class="caption-text">Reinstall default Windows applications (powershell as admin).</span><a class="headerlink" href="#id16" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Get-AppXPackage</span> <span class="n">-AllUsers</span> <span class="p">|</span> <span class="k">Foreach</span> <span class="p">{</span><span class="nb">Add-AppxPackage</span> <span class="n">-DisableDevelopmentMode</span> <span class="n">-Register</span> <span class="s2">&quot;</span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">InstallLocation</span><span class="p">)</span><span class="s2">\AppXManifest.xml&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -2083,8 +2041,8 @@ service still needs to be enabled.</p>
 <p>If your system doesn’t seem to be resuming from sleep properly (e.g. power is
 on, but keyboard/mouse won’t resume it), disable hibernation. This does affect
 power consumption and probably shouldn’t be used on laptops.</p>
-<div class="literal-block-wrapper docutils container" id="id16">
-<div class="code-block-caption"><span class="caption-text">Disable hibernation (powershell as admin).</span><a class="headerlink" href="#id16" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id17">
+<div class="code-block-caption"><span class="caption-text">Disable hibernation (powershell as admin).</span><a class="headerlink" href="#id17" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">powercfg</span> <span class="p">/</span><span class="nb">h </span><span class="n">off</span>
 </pre></div>
 </div>
@@ -2102,8 +2060,8 @@ the default <a class="reference external" href="https://docs.microsoft.com/en-us
 replaced with a specific user SID that no longer exists (and now can no longer
 be removed, prompting this perms error everytime you access it). You can fix
 this by replacing the old SID with the new SID:</p>
-<div class="literal-block-wrapper docutils container" id="id17">
-<div class="code-block-caption"><span class="caption-text">Replace old SID with current system SID (powershell as admin).</span><a class="headerlink" href="#id17" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id18">
+<div class="code-block-caption"><span class="caption-text">Replace old SID with current system SID (powershell as admin).</span><a class="headerlink" href="#id18" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>setacl.exe -on c:\ -ot file -actn trustee -trst &quot;n1:S-old-501;n2:S-new-501;ta:repltrst&quot; -rec cont
 </pre></div>
 </div>
@@ -2119,8 +2077,8 @@ SID’s set.</p>
 This happens as the upgrade now sets the OEM partition (~450MB) to be mounted on
 boot. This drive is <a class="reference external" href="https://www.thewindowsclub.com/faq-low-disk-space-notification-or-warning-in-windows-7-how-to-disable-etc">almost entirely full</a> (~400MB) and triggers a low disk
 warning.</p>
-<div class="literal-block-wrapper docutils container" id="id18">
-<div class="code-block-caption"><span class="caption-text">Unmount OEM partition from drive (powershell as admin).</span><a class="headerlink" href="#id18" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id19">
+<div class="code-block-caption"><span class="caption-text">Unmount OEM partition from drive (powershell as admin).</span><a class="headerlink" href="#id19" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>mountvol {OEM PARTITION DRIVE}: /d
 </pre></div>
 </div>
@@ -2160,8 +2118,8 @@ via the settings menu.</p>
 <p>Remove notification on F7 press for caret browsing. This is a holdover from
 Internet Explorer.</p>
 <div class="wregedit docutils container" id="Disable Caret Browsing Notifications via Registry">
-<span class="guilabel">Start › regedit.msc</span><table class="docutils align-default" id="id19">
-<caption><span class="caption-text">Disable Caret Browsing Notifications via Registry</span><a class="headerlink" href="#id19" title="Permalink to this table">¶</a></caption>
+<span class="guilabel">Start › regedit.msc</span><table class="docutils align-default" id="id20">
+<caption><span class="caption-text">Disable Caret Browsing Notifications via Registry</span><a class="headerlink" href="#id20" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -2178,8 +2136,8 @@ Internet Explorer.</p>
 </table>
 </div>
 <div class="wgrouppolicy docutils container" id="Disable Caret Browsing Notifications via GPO">
-<span class="guilabel">Start › gpedit.msc</span><table class="docutils align-default" id="id20">
-<caption><span class="caption-text">Disable Caret Browsing Notifications via GPO</span><a class="headerlink" href="#id20" title="Permalink to this table">¶</a></caption>
+<span class="guilabel">Start › gpedit.msc</span><table class="docutils align-default" id="id21">
+<caption><span class="caption-text">Disable Caret Browsing Notifications via GPO</span><a class="headerlink" href="#id21" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -2205,9 +2163,9 @@ Internet Explorer.</p>
 </div>
 <p>First remove any <a class="reference external" href="https://linuxbsdos.com/2015/09/05/how-to-delete-grub-files-from-a-boot-efi-partition-in-windows-10/">extra EFI boot configuration data</a> from other operating
 systems.</p>
-<div class="literal-block-wrapper docutils container" id="id21">
+<div class="literal-block-wrapper docutils container" id="id22">
 <div class="code-block-caption"><span class="caption-text">Remove extra EFI entries before rebuilding Boot Configuration Data
-for Windows.</span><a class="headerlink" href="#id21" title="Permalink to this code">¶</a></div>
+for Windows.</span><a class="headerlink" href="#id22" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">diskpart</span>
 <span class="nb">list</span> <span class="n">disk</span>
 <span class="hll"><span class="n">sel</span> <span class="n">disk</span> <span class="mi">0</span>
@@ -2227,9 +2185,9 @@ for Windows.</span><a class="headerlink" href="#id21" title="Permalink to this c
 for storing EFI data. Adjust highlighted lines as needed for specific case.
 <code class="docutils literal notranslate"><span class="pre">ubuntu</span></code> removed here. <code class="docutils literal notranslate"><span class="pre">Boot</span></code> and <code class="docutils literal notranslate"><span class="pre">Microsoft</span></code> should be left intact.</p>
 </div>
-<div class="literal-block-wrapper docutils container" id="id22">
+<div class="literal-block-wrapper docutils container" id="id23">
 <div class="code-block-caption"><span class="caption-text">Fix MBR, scan for all OS’s on drive and rebuild Boot Configuration
-Data for Windows.</span><a class="headerlink" href="#id22" title="Permalink to this code">¶</a></div>
+Data for Windows.</span><a class="headerlink" href="#id23" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bootrec</span> <span class="o">/</span><span class="n">fixmbr</span>
 <span class="n">bootrec</span> <span class="o">/</span><span class="n">scanos</span>
 <span class="n">bootrec</span> <span class="o">/</span><span class="n">rebuildbcd</span>
@@ -2269,8 +2227,8 @@ it is <strong>not</strong> recommended to disable TDR entirely.</p>
 </div>
 <div class="section" id="show-password-on-wifi-network">
 <h2>Show Password on Wifi Network<a class="headerlink" href="#show-password-on-wifi-network" title="Permalink to this headline">¶</a></h2>
-<div class="literal-block-wrapper docutils container" id="id23">
-<div class="code-block-caption"><span class="caption-text">Dump wifi configuration including password (powershell as admin).</span><a class="headerlink" href="#id23" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id24">
+<div class="code-block-caption"><span class="caption-text">Dump wifi configuration including password (powershell as admin).</span><a class="headerlink" href="#id24" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">netsh</span> <span class="n">wlan</span> <span class="n">show</span> <span class="n">profile</span> <span class="n">WiFi-name</span> <span class="n">key</span><span class="p">=</span><span class="nb">clear</span>
 </pre></div>
 </div>
@@ -2280,8 +2238,8 @@ it is <strong>not</strong> recommended to disable TDR entirely.</p>
 <h2>DRIVER_IRQL_NOT_LESS_OR_EQUAL (<a class="reference external" href="https://ugetfix.com/ask/how-to-fix-driver_irql_not_less_or_equal-epfwwfp-sys-error-on-windows/">Epfwwfp.sys</a>)<a class="headerlink" href="#driver-irql-not-less-or-equal-epfwwfp-sys" title="Permalink to this headline">¶</a></h2>
 <p><span class="guilabel">shift + Reset › Troubleshoot › Advanced options › Start-up Settings › Restart › 4 (Safe Mode)</span>
 <span class="guilabel">Troubleshoot › Command Prompt</span></p>
-<div class="literal-block-wrapper docutils container" id="id24">
-<div class="code-block-caption"><span class="caption-text">Remove ESET driver and reboot.</span><a class="headerlink" href="#id24" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id25">
+<div class="code-block-caption"><span class="caption-text">Remove ESET driver and reboot.</span><a class="headerlink" href="#id25" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>del /F /S /Q /A “c:\Windows\System32\drivers\epfwwfp.sys”
 </pre></div>
 </div>
@@ -2292,8 +2250,8 @@ it is <strong>not</strong> recommended to disable TDR entirely.</p>
 <h2><a class="reference external" href="https://www.intowindows.com/how-to-uninstall-remove-edge-browser-from-windows-10/">Uninstall Edge Browser</a><a class="headerlink" href="#uninstall-edge-browser" title="Permalink to this headline">¶</a></h2>
 <p>Heavily integrated into Windows 10. Will probably break stuff.</p>
 <p>Download and build <a class="reference external" href="https://github.com/shiitake/win6x_registry_tweak">install_wim_tweak</a>.</p>
-<div class="literal-block-wrapper docutils container" id="id25">
-<div class="code-block-caption"><span class="caption-text">Remove Edge browser and reboot.</span><a class="headerlink" href="#id25" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id26">
+<div class="code-block-caption"><span class="caption-text">Remove Edge browser and reboot.</span><a class="headerlink" href="#id26" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">REM</span> <span class="n">Move</span> <span class="n">to</span> <span class="n">script</span> <span class="n">dirrectory</span> <span class="k">for</span> <span class="n">working</span> <span class="n">directory</span> <span class="ow">and</span> <span class="n">remove</span> <span class="n">edge</span><span class="o">.</span>
 <span class="n">REM</span> <span class="n">Requires</span> <span class="n">install_wim_tweak</span> <span class="n">to</span> <span class="n">be</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">path</span><span class="o">.</span>
 <span class="nd">@echo</span> <span class="n">off</span>
@@ -2345,8 +2303,8 @@ behavior.</p>
 <div class="section" id="disable-windows-backup-schedule">
 <h2>Disable <a class="reference external" href="https://www.tenforums.com/tutorials/75591-turn-off-schedule-windows-backup-windows-10-a.html">Windows Backup Schedule</a><a class="headerlink" href="#disable-windows-backup-schedule" title="Permalink to this headline">¶</a></h2>
 <p>Removed since Windows 7 but added back into Windows 10.</p>
-<div class="literal-block-wrapper docutils container" id="id26">
-<div class="code-block-caption"><span class="caption-text">powershell (as admin).</span><a class="headerlink" href="#id26" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id27">
+<div class="code-block-caption"><span class="caption-text">powershell (as admin).</span><a class="headerlink" href="#id27" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">sdclt</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">DISABLEJOB</span>
 </pre></div>
 </div>
@@ -2365,7 +2323,7 @@ behavior.</p>
         <a href="windows-subsystem-for-linux-wsl.html" class="btn btn-neutral float-right" title="Windows Subsystem for Linux (WSL)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral float-left" title="Advanced" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="remove-preinstalled-packages.html" class="btn btn-neutral float-left" title="Remove Preinstalled Packages" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -2381,7 +2339,12 @@ behavior.</p>
   </div>
     
     
-      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -2392,7 +2355,6 @@ behavior.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,27 +11,36 @@
   
 
   
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/expand_width.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/clipboard.min.js"></script>
+        <script src="../../../_static/copybutton.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Wireguard" href="../../../services/wireguard/index.html" />
@@ -586,7 +594,15 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/index.html">Advanced</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/remove-optional-features.html">Remove Optional Features</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/remove-optional-features.html#manually">Manually</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/remove-optional-features.html#powershell">Powershell</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/remove-startup-items.html">Remove Startup Items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/remove-preinstalled-packages.html">Remove Preinstalled Packages</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/specific-windows-fixes.html">Specific Windows Fixes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#reset-password">Reset Password</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#moving-user-profile-locations-to-alternate-location">Moving User Profile Locations to Alternate Location</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#format-refs-on-using-a-single-driv">Format ReFS on using a single driv</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#addressing-100-disk-usage-issues">Addressing 100% Disk Usage Issues</a></li>
@@ -631,71 +647,33 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../operating-systems/windows/10/1903/index.html">Windows 1903</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/telemetry.html">Disable Telemetry</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/telemetry.html#services">Services</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/telemetry.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/telemetry.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/telemetry.html#firewall">Firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-telemetry.html">Disable Telemetry</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-telemetry.html#firewall">Firewall</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/onedrive.html">Disable OneDrive</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/onedrive.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/onedrive.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/onedrive.html#scheduled-tasks">Scheduled Tasks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/onedrive.html#firewall">Firewall</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/onedrive.html#remove">Remove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-onedrive.html">Disable OneDrive</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-onedrive.html#firewall">Firewall</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/defender-antivirus.html">Disable Windows Defender</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/defender-antivirus.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/defender-antivirus.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/defender-antivirus.html#firewall">Firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-windows-defender.html">Disable Windows Defender</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-windows-defender.html#firewall">Firewall</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/cortana-search.html">Disable Cortana &amp; Search</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/cortana-search.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/cortana-search.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/cortana-search.html#firewall">Firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-cortana-search.html">Disable Cortana &amp; Search</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-cortana-search.html#firewall">Firewall</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/windows-store.html">Disable Windows Store Promotions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/windows-store.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/windows-store.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/resource-exhaustion.html">Disable Resource Exhaustion</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/resource-exhaustion.html#services">Services</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/resource-exhaustion.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/game-broadcasting.html">Disable Game Broadcasting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/game-broadcasting.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/game-broadcasting.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/meltdown-spectre.html">Meltdown and Spectre Patch</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/meltdown-spectre.html#registry"><span class="xref std std-term">Registry</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/explorer-ads.html">Disable Explorer Ads</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/explorer-ads.html#registry"><span class="xref std std-term">Registry</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/wifi-sharing.html">Disable Wifi Sharing</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/wifi-sharing.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/wifi-sharing.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/optional-features.html">Remove Optional Features</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/optional-features.html#manually">Manually</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/optional-features.html#powershell">Powershell</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-windows-store-promotions.html">Disable Windows Store Promotions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-resource-exhaustion.html">Disable Resource Exhaustion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-game-broadcasting.html">Disable Game Broadcasting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/meltdown-and-spectre-patch.html">Meltdown and Spectre Patch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-explorer-ads.html">Disable Explorer Ads</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-wifi-sharing.html">Disable Wifi Sharing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/index.html">Reasonable Privacy Settings</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/manual.html">Manual Setting Privacy Options</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/general.html">General</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/speech.html">Speech</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/ink-typing.html">Ink &amp; Typing Personalization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/ink-and-typing-personalization.html">Ink &amp; Typing Personalization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/diagnostics-feedback.html">Diagnostics &amp; Feedback</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/activity-history.html">Activity History</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/location.html">Location</a></li>
@@ -718,55 +696,21 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/pictures.html">Pictures</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/videos.html">Videos</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/file-system.html">File System</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/eye.html">Eye Tracker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/eye-tracker.html">Eye Tracker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/motion.html">Motion</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/phone-calls.html">Phone Calls</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/app-list.html">Determining App List</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/remove-startup-items.html">Remove Startup Items</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/remove-startup-items.html#registry"><span class="xref std std-term">Registry</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/remove-preinstalled-packages.html">Remove Preinstalled Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/paging.html">Disable Paging</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/paging.html#registry"><span class="xref std std-term">Registry</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/restore-points.html">Disable Restore Points</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/restore-points.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/restore-points.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/facial-recognition.html">Disable Facial Recognition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/error-reporting.html">Disable Error Reporting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/error-reporting.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/error-reporting.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/account-sync.html">Disable Account Sync</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/account-sync.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/account-sync.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/spotlight.html">Disable Spotlight</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/spotlight.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/spotlight.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/delivery-optimization.html">Disable Delivery Optimization</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/delivery-optimization.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/delivery-optimization.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/taskbar-notifications.html">Taskbar Notifications</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/taskbar-notifications.html#registry"><span class="xref std std-term">Registry</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/service.html">Disable Services</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/service.html#services">Services</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-paging.html">Disable Paging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-restore-points.html">Disable Restore Points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-biometrics.html">Disable Biometrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-error-reporting.html">Disable Error Reporting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-account-sync.html">Disable Account Sync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-spotlight.html">Disable Spotlight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-delivery-optimization.html">Disable Delivery Optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-update-notifications.html">Disable Update Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-services.html">Disable Services</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../operating-systems/ubuntu/index.html">Ubuntu</a><ul>
@@ -1759,22 +1703,22 @@
 <div class="section" id="basic-concepts">
 <h2>Basic Concepts<a class="headerlink" href="#basic-concepts" title="Permalink to this headline">¶</a></h2>
 <dl class="glossary">
-<dt id="term-pif"><abbr title="Physical InterFace">PIF</abbr></dt><dd><p>Defines the physical port of a piece of equipment.</p>
+<dt id="term-PIF"><abbr title="Physical InterFace">PIF</abbr></dt><dd><p>Defines the physical port of a piece of equipment.</p>
 </dd>
-<dt id="term-pvid"><abbr title="Parent Vlan IDentification">PVID</abbr></dt><dt id="term-pvlan"><abbr title="Parent VLAN">PVLAN</abbr></dt><dd><p>Defines the default VLAN for traffic leaving a specified interface. Also
+<dt id="term-PVID"><abbr title="Parent Vlan IDentification">PVID</abbr></dt><dt id="term-PVLAN"><abbr title="Parent VLAN">PVLAN</abbr></dt><dd><p>Defines the default VLAN for traffic leaving a specified interface. Also
 referred to as <strong>Native Network</strong>, <strong>Parent VLAN</strong>. Untagged traffic will be
 tagged with this ID leaving the port.</p>
 </dd>
-<dt id="term-vif"><abbr title="Virtual InterFace">VIF</abbr></dt><dd><p>Defines a virtual port of a piece of equipment; Commonly swapped with
-<a class="reference internal" href="#term-vlan"><span class="xref std std-term">VLAN</span></a> or <a class="reference internal" href="#term-vid"><span class="xref std std-term">VID</span></a>.</p>
+<dt id="term-VIF"><abbr title="Virtual InterFace">VIF</abbr></dt><dd><p>Defines a virtual port of a piece of equipment; Commonly swapped with
+<a class="reference internal" href="#term-VLAN"><span class="xref std std-term">VLAN</span></a> or <a class="reference internal" href="#term-VID"><span class="xref std std-term">VID</span></a>.</p>
 </dd>
-<dt id="term-pvif"><abbr title="Parent Virtual InterFace">PVIF</abbr></dt><dd><p>Defines a parent virtual port of a piece of equipment; Commonly swapped with
-<a class="reference internal" href="#term-pvlan"><span class="xref std std-term">PVLAN</span></a> or <a class="reference internal" href="#term-pvid"><span class="xref std std-term">PVID</span></a>.</p>
+<dt id="term-PVIF"><abbr title="Parent Virtual InterFace">PVIF</abbr></dt><dd><p>Defines a parent virtual port of a piece of equipment; Commonly swapped with
+<a class="reference internal" href="#term-PVLAN"><span class="xref std std-term">PVLAN</span></a> or <a class="reference internal" href="#term-PVID"><span class="xref std std-term">PVID</span></a>.</p>
 </dd>
-<dt id="term-vid"><abbr title="Vlan IDentification">VID</abbr></dt><dd><p>Defines a virtual port of a piece of equipment; must be associated with a
-<a class="reference internal" href="#term-pif"><span class="xref std std-term">PIF</span></a>. Commonly used interchangeably with <a class="reference internal" href="#term-vlan"><span class="xref std std-term">VLAN</span></a>, <a class="reference internal" href="#term-vif"><span class="xref std std-term">VIF</span></a>.</p>
+<dt id="term-VID"><abbr title="Vlan IDentification">VID</abbr></dt><dd><p>Defines a virtual port of a piece of equipment; must be associated with a
+<a class="reference internal" href="#term-PIF"><span class="xref std std-term">PIF</span></a>. Commonly used interchangeably with <a class="reference internal" href="#term-VLAN"><span class="xref std std-term">VLAN</span></a>, <a class="reference internal" href="#term-VIF"><span class="xref std std-term">VIF</span></a>.</p>
 </dd>
-<dt id="term-vlan"><abbr title="Virtual Local Area Network">VLAN</abbr></dt><dd><p>A virtual network, creating logical separations within a switch. This allows
+<dt id="term-VLAN"><abbr title="Virtual Local Area Network">VLAN</abbr></dt><dd><p>A virtual network, creating logical separations within a switch. This allows
 for <em>multiple broadcast domains</em> on the switch.</p>
 <p>VLAN Attributes:</p>
 <ul class="simple">
@@ -1786,32 +1730,32 @@ for <em>multiple broadcast domains</em> on the switch.</p>
 tags</em>.</p></li>
 </ul>
 </dd>
-<dt id="term-vlanid"><abbr title="Virtual Local Area Network IDentification">VLANID</abbr></dt><dd><p>Integer number between <code class="docutils literal notranslate"><span class="pre">0-4095</span></code> identifying a specific VLAN.</p>
+<dt id="term-VLANID"><abbr title="Virtual Local Area Network IDentification">VLANID</abbr></dt><dd><p>Integer number between <code class="docutils literal notranslate"><span class="pre">0-4095</span></code> identifying a specific VLAN.</p>
 </dd>
-<dt id="term-all"><abbr title="All Networks">ALL</abbr></dt><dd><p>Concept used to denote <em>ALL</em> VLANS and untagged traffic. Typically used in
+<dt id="term-ALL"><abbr title="All Networks">ALL</abbr></dt><dd><p>Concept used to denote <em>ALL</em> VLANS and untagged traffic. Typically used in
 defining trunks. If ALL is not used, then untagged traffic must be
 <em>explicitly</em> allowed.</p>
 </dd>
-<dt id="term-tagged">Tagged</dt><dd><p>Network packet that has already been tagged with the <em>802.1Q</em> header,
+<dt id="term-Tagged">Tagged</dt><dd><p>Network packet that has already been tagged with the <em>802.1Q</em> header,
 identifying that packet as being on a specific VLAN.</p>
 </dd>
-<dt id="term-untagged">Untagged</dt><dd><p>Network packet that does <strong>not</strong> have the <em>802.1Q</em> header. This is standard
-network traffic. Also commonly referred to as the <a class="reference internal" href="#term-native-vlan"><span class="xref std std-term">Native VLAN</span></a>.</p>
+<dt id="term-Untagged">Untagged</dt><dd><p>Network packet that does <strong>not</strong> have the <em>802.1Q</em> header. This is standard
+network traffic. Also commonly referred to as the <a class="reference internal" href="#term-Native-VLAN"><span class="xref std std-term">Native VLAN</span></a>.</p>
 </dd>
-<dt id="term-management-vlan">Management VLAN</dt><dd><p>VLAN used for general management and adminstration; not typically for
+<dt id="term-Management-VLAN">Management VLAN</dt><dd><p>VLAN used for general management and adminstration; not typically for
 everyday data traffic. In common practice, the management VLAN is usually
-<a class="reference internal" href="#term-untagged"><span class="xref std std-term">Untagged</span></a> traffic to allow for <em>unconfigured devices</em> the ability to
+<a class="reference internal" href="#term-Untagged"><span class="xref std std-term">Untagged</span></a> traffic to allow for <em>unconfigured devices</em> the ability to
 be connected to when added to the network. Some devices (like Ubiquiti)
-treat the <a class="reference internal" href="#term-management-vlan"><span class="xref std std-term">Management VLAN</span></a>, <a class="reference internal" href="#term-untagged"><span class="xref std std-term">Untagged</span></a> traffic, and
-<a class="reference internal" href="#term-native-vlan"><span class="xref std std-term">Native VLAN</span></a> as <strong>VLANID 1</strong>.</p>
+treat the <a class="reference internal" href="#term-Management-VLAN"><span class="xref std std-term">Management VLAN</span></a>, <a class="reference internal" href="#term-Untagged"><span class="xref std std-term">Untagged</span></a> traffic, and
+<a class="reference internal" href="#term-Native-VLAN"><span class="xref std std-term">Native VLAN</span></a> as <strong>VLANID 1</strong>.</p>
 </dd>
-<dt id="term-native-vlan">Native VLAN</dt><dd><p>Synonym for <a class="reference internal" href="#term-untagged"><span class="xref std std-term">Untagged</span></a>. Standard network traffic to allow for
+<dt id="term-Native-VLAN">Native VLAN</dt><dd><p>Synonym for <a class="reference internal" href="#term-Untagged"><span class="xref std std-term">Untagged</span></a>. Standard network traffic to allow for
 <em>unconfigured devices</em> the ability to be connected to when added to the
-network. Some devices (like Ubiquiti) treat the <a class="reference internal" href="#term-management-vlan"><span class="xref std std-term">Management VLAN</span></a>,
-<a class="reference internal" href="#term-untagged"><span class="xref std std-term">Untagged</span></a> traffic, and <a class="reference internal" href="#term-native-vlan"><span class="xref std std-term">Native VLAN</span></a> as <strong>VLANID 1</strong>.</p>
+network. Some devices (like Ubiquiti) treat the <a class="reference internal" href="#term-Management-VLAN"><span class="xref std std-term">Management VLAN</span></a>,
+<a class="reference internal" href="#term-Untagged"><span class="xref std std-term">Untagged</span></a> traffic, and <a class="reference internal" href="#term-Native-VLAN"><span class="xref std std-term">Native VLAN</span></a> as <strong>VLANID 1</strong>.</p>
 </dd>
-<dt id="term-trunk">Trunk</dt><dd><p>Used for upstream or downstream links between switches and routers. Accepts
-and forwards traffic on multiple VLANS, usually including <a class="reference internal" href="#term-untagged"><span class="xref std std-term">Untagged</span></a>
+<dt id="term-Trunk">Trunk</dt><dd><p>Used for upstream or downstream links between switches and routers. Accepts
+and forwards traffic on multiple VLANS, usually including <a class="reference internal" href="#term-Untagged"><span class="xref std std-term">Untagged</span></a>
 traffic.</p>
 </dd>
 </dl>
@@ -1832,11 +1776,11 @@ only see traffic on VLAN 2, 4-6 sees only VLAN 3, 7-8 sees only VLAN4:</p>
 may also help to think of VLANs as ‘cables’ between switching devices.</p>
 <p>Clarifying Terms:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#term-pif"><span class="xref std std-term">PIF</span></a> will be used for all cases of <a class="reference internal" href="#term-pif"><span class="xref std std-term">PIF</span></a>, <a class="reference internal" href="#term-pvif"><span class="xref std std-term">PVIF</span></a>,
-<a class="reference internal" href="#term-pvid"><span class="xref std std-term">PVID</span></a>, Native Network and Parent VLAN.</p></li>
-<li><p><a class="reference internal" href="#term-vif"><span class="xref std std-term">VIF</span></a> will be used for all cases of <a class="reference internal" href="#term-vif"><span class="xref std std-term">VIF</span></a>, <a class="reference internal" href="#term-vid"><span class="xref std std-term">VID</span></a>,
-<a class="reference internal" href="#term-vlan"><span class="xref std std-term">VLAN</span></a>.</p></li>
-<li><p><a class="reference internal" href="#term-management-vlan"><span class="xref std std-term">Management VLAN</span></a> is defined as <a class="reference internal" href="#term-untagged"><span class="xref std std-term">Untagged</span></a> network (e.g. PIF 1,
+<li><p><a class="reference internal" href="#term-PIF"><span class="xref std std-term">PIF</span></a> will be used for all cases of <a class="reference internal" href="#term-PIF"><span class="xref std std-term">PIF</span></a>, <a class="reference internal" href="#term-PVIF"><span class="xref std std-term">PVIF</span></a>,
+<a class="reference internal" href="#term-PVID"><span class="xref std std-term">PVID</span></a>, Native Network and Parent VLAN.</p></li>
+<li><p><a class="reference internal" href="#term-VIF"><span class="xref std std-term">VIF</span></a> will be used for all cases of <a class="reference internal" href="#term-VIF"><span class="xref std std-term">VIF</span></a>, <a class="reference internal" href="#term-VID"><span class="xref std std-term">VID</span></a>,
+<a class="reference internal" href="#term-VLAN"><span class="xref std std-term">VLAN</span></a>.</p></li>
+<li><p><a class="reference internal" href="#term-Management-VLAN"><span class="xref std std-term">Management VLAN</span></a> is defined as <a class="reference internal" href="#term-Untagged"><span class="xref std std-term">Untagged</span></a> network (e.g. PIF 1,
 VLAN 1).</p></li>
 <li><p><strong>VLANS</strong> are <strong>NOT SUBNETS</strong>. A VLAN may transmit multiple subnets of traffic
 as long as those packets are tagged appropriately and are physically enforced
@@ -1845,47 +1789,47 @@ stack, typically in software. Generally you’ll see one subnet per VLAN.</p></l
 </ul>
 <div class="section" id="standard-device-on-a-port">
 <h3>Standard device on a port<a class="headerlink" href="#standard-device-on-a-port" title="Permalink to this headline">¶</a></h3>
-<p>Devices which do not support VLANs will send data <a class="reference internal" href="#term-untagged"><span class="xref std std-term">Untagged</span></a> onto the
-network. This untagged traffic will be tagged with the <a class="reference internal" href="#term-pif"><span class="xref std std-term">PIF</span></a> ID exiting
+<p>Devices which do not support VLANs will send data <a class="reference internal" href="#term-Untagged"><span class="xref std std-term">Untagged</span></a> onto the
+network. This untagged traffic will be tagged with the <a class="reference internal" href="#term-PIF"><span class="xref std std-term">PIF</span></a> ID exiting
 the port.</p>
 </div>
 </div>
 <div class="section" id="egress-traffic">
 <h2>Egress Traffic<a class="headerlink" href="#egress-traffic" title="Permalink to this headline">¶</a></h2>
-<p>Untagged traffic from a device will be untagged exiting the port if <a class="reference internal" href="#term-all"><span class="xref std std-term">ALL</span></a>
+<p>Untagged traffic from a device will be untagged exiting the port if <a class="reference internal" href="#term-ALL"><span class="xref std std-term">ALL</span></a>
 networks are allowed:</p>
 <a class="reference internal image-reference" href="../../../_images/aafig-7db97b082e0359790c9b35a3d7153bc2b93a2726.svg" id="untagged-traffic-with-a-trunk"><img alt="../../../_images/aafig-7db97b082e0359790c9b35a3d7153bc2b93a2726.svg" height="90.0" id="untagged-traffic-with-a-trunk" src="../../../_images/aafig-7db97b082e0359790c9b35a3d7153bc2b93a2726.svg" width="594.0" /></a>
-<p>Untagged traffic from a device will be tagged with the <a class="reference internal" href="#term-pif"><span class="xref std std-term">PIF</span></a> VLAN if it is
+<p>Untagged traffic from a device will be tagged with the <a class="reference internal" href="#term-PIF"><span class="xref std std-term">PIF</span></a> VLAN if it is
 explicitly defined:</p>
 <a class="reference internal image-reference" href="../../../_images/aafig-897fbd1e93352cbb13ed322313a98263721c797e.svg" id="tagged-untagged-traffic-with-pif"><img alt="../../../_images/aafig-897fbd1e93352cbb13ed322313a98263721c797e.svg" height="90.0" id="tagged-untagged-traffic-with-pif" src="../../../_images/aafig-897fbd1e93352cbb13ed322313a98263721c797e.svg" width="594.0" /></a>
-<p>Tagged and Untagged traffic will be filtered at the port based on <a class="reference internal" href="#term-pif"><span class="xref std std-term">PIF</span></a>
-and <a class="reference internal" href="#term-vif"><span class="xref std std-term">VIF</span></a>:</p>
+<p>Tagged and Untagged traffic will be filtered at the port based on <a class="reference internal" href="#term-PIF"><span class="xref std std-term">PIF</span></a>
+and <a class="reference internal" href="#term-VIF"><span class="xref std std-term">VIF</span></a>:</p>
 <a class="reference internal image-reference" href="../../../_images/aafig-70b89a5defaa56c5045d5deff8f7e70c71faea45.svg" id="blocking-vlan-traffic-at-the-port"><img alt="../../../_images/aafig-70b89a5defaa56c5045d5deff8f7e70c71faea45.svg" height="90.0" id="blocking-vlan-traffic-at-the-port" src="../../../_images/aafig-70b89a5defaa56c5045d5deff8f7e70c71faea45.svg" width="594.0" /></a>
 </div>
 <div class="section" id="ingress-traffic">
 <h2>Ingress Traffic<a class="headerlink" href="#ingress-traffic" title="Permalink to this headline">¶</a></h2>
-<p>Untagged traffic will be allow through the port to the device if <a class="reference internal" href="#term-all"><span class="xref std std-term">ALL</span></a>
+<p>Untagged traffic will be allow through the port to the device if <a class="reference internal" href="#term-ALL"><span class="xref std std-term">ALL</span></a>
 networks are allowed:</p>
 <a class="reference internal image-reference" href="../../../_images/aafig-8e80f23d533fa3bea1f2b5d2faa39e4c3c1b7a71.svg" id="port-allowing-untagged-traffic-in-via-all"><img alt="../../../_images/aafig-8e80f23d533fa3bea1f2b5d2faa39e4c3c1b7a71.svg" height="90.0" id="port-allowing-untagged-traffic-in-via-all" src="../../../_images/aafig-8e80f23d533fa3bea1f2b5d2faa39e4c3c1b7a71.svg" width="594.0" /></a>
-<p>Traffic must be tagged with the <a class="reference internal" href="#term-pif"><span class="xref std std-term">PIF</span></a> VLAN for it to reach the device:</p>
+<p>Traffic must be tagged with the <a class="reference internal" href="#term-PIF"><span class="xref std std-term">PIF</span></a> VLAN for it to reach the device:</p>
 <a class="reference internal image-reference" href="../../../_images/aafig-a20e33bc86a2d2c846cc0326063228ecd0af61fb.svg" id="pif-will-untag-traffic-sent-to-it"><img alt="../../../_images/aafig-a20e33bc86a2d2c846cc0326063228ecd0af61fb.svg" height="188.0" id="pif-will-untag-traffic-sent-to-it" src="../../../_images/aafig-a20e33bc86a2d2c846cc0326063228ecd0af61fb.svg" width="594.0" /></a>
-<p>Tagged and Untagged traffic will be filtered at the port based on <a class="reference internal" href="#term-pif"><span class="xref std std-term">PIF</span></a>
-and <a class="reference internal" href="#term-vif"><span class="xref std std-term">VIF</span></a>.</p>
+<p>Tagged and Untagged traffic will be filtered at the port based on <a class="reference internal" href="#term-PIF"><span class="xref std std-term">PIF</span></a>
+and <a class="reference internal" href="#term-VIF"><span class="xref std std-term">VIF</span></a>.</p>
 <a class="reference internal image-reference" href="../../../_images/aafig-21ec099e7edf7b2af2ebf914ecfda827932f95ef.svg" id="filter-tagged-and-untagged-traffic"><img alt="../../../_images/aafig-21ec099e7edf7b2af2ebf914ecfda827932f95ef.svg" height="90.0" id="filter-tagged-and-untagged-traffic" src="../../../_images/aafig-21ec099e7edf7b2af2ebf914ecfda827932f95ef.svg" width="594.0" /></a>
 </div>
 <div class="section" id="unifi-aps">
 <h2>Unifi APs<a class="headerlink" href="#unifi-aps" title="Permalink to this headline">¶</a></h2>
 <p>Unifi APs transmit both <em>tagged</em> and <em>untagged</em> data at the same time.</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#term-tagged"><span class="xref std std-term">Tagged</span></a>: <strong>AP data</strong>. If configured, AP data is explicitly tagged with
+<li><p><a class="reference internal" href="#term-Tagged"><span class="xref std std-term">Tagged</span></a>: <strong>AP data</strong>. If configured, AP data is explicitly tagged with
 a VLAN before leaving the device.</p></li>
-<li><p><a class="reference internal" href="#term-untagged"><span class="xref std std-term">Untagged</span></a>: <strong>AP Management Interface</strong>. By default the management
-interface is exposed with untagged traffic (<a class="reference internal" href="#term-management-vlan"><span class="xref std std-term">Management VLAN</span></a>, <code class="docutils literal notranslate"><span class="pre">VLAN</span>
+<li><p><a class="reference internal" href="#term-Untagged"><span class="xref std std-term">Untagged</span></a>: <strong>AP Management Interface</strong>. By default the management
+interface is exposed with untagged traffic (<a class="reference internal" href="#term-Management-VLAN"><span class="xref std std-term">Management VLAN</span></a>, <code class="docutils literal notranslate"><span class="pre">VLAN</span>
 <span class="pre">1</span></code>); to make adoption easier. In newer versions you can configure the
 management VLAN to a custom VLAN.</p></li>
 <li><p>The <code class="docutils literal notranslate"><span class="pre">LAN</span></code> network defined in <em>Networks</em> on the Unifi controller describes
-the properties of the <a class="reference internal" href="#term-management-vlan"><span class="xref std std-term">Management VLAN</span></a>. This is the network that
-<a class="reference internal" href="#term-untagged"><span class="xref std std-term">Untagged</span></a> traffic will be sent on.</p></li>
+the properties of the <a class="reference internal" href="#term-Management-VLAN"><span class="xref std std-term">Management VLAN</span></a>. This is the network that
+<a class="reference internal" href="#term-Untagged"><span class="xref std std-term">Untagged</span></a> traffic will be sent on.</p></li>
 </ul>
 </div>
 <div class="section" id="implementation-concepts">
@@ -1896,13 +1840,13 @@ be thought of as applying switch-level filters to prevent specific traffic from
 ever hitting network ports.</p>
 <p>Important things to note:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#term-untagged"><span class="xref std std-term">Untagged</span></a> traffic is traffic without any VLAN tags. <a class="reference external" href="https://community.ui.com/questions/6205cb0e-20d5-47ac-b5f9-60c0539a8634s">Within VLAN
-aware</a> devices this is tagged as <code class="docutils literal notranslate"><span class="pre">1</span></code> or <code class="docutils literal notranslate"><span class="pre">VLAN1</span></code>. <a class="reference internal" href="#term-all"><span class="xref std std-term">All</span></a> also
+<li><p><a class="reference internal" href="#term-Untagged"><span class="xref std std-term">Untagged</span></a> traffic is traffic without any VLAN tags. <a class="reference external" href="https://community.ui.com/questions/6205cb0e-20d5-47ac-b5f9-60c0539a8634s">Within VLAN
+aware</a> devices this is tagged as <code class="docutils literal notranslate"><span class="pre">1</span></code> or <code class="docutils literal notranslate"><span class="pre">VLAN1</span></code>. <a class="reference internal" href="#term-ALL"><span class="xref std std-term">ALL</span></a> also
 includes this traffic.</p></li>
-<li><p>Ports will have a <em>default</em> or <a class="reference internal" href="#term-pvif"><span class="xref std std-term">PVIF</span></a>. This is the default VLAN traffic
+<li><p>Ports will have a <em>default</em> or <a class="reference internal" href="#term-PVIF"><span class="xref std std-term">PVIF</span></a>. This is the default VLAN traffic
 will be tagged with, <em>if no tags are present</em>. If you connect a bunch of
 computers to a switch, and plug that switch into this port, they will all
-behave as though they are on the <em>default</em> or <a class="reference internal" href="#term-pvif"><span class="xref std std-term">PVIF</span></a> network.</p></li>
+behave as though they are on the <em>default</em> or <a class="reference internal" href="#term-PVIF"><span class="xref std std-term">PVIF</span></a> network.</p></li>
 <li><p>Ports will typically have an additional set of VLANS that are allowed. Traffic
 using these VLANS needs to be pre-tagged with VLAN IDs to be allowed through.
 Untagged traffic will be tagged with the default VLAN.</p></li>
@@ -1913,7 +1857,7 @@ all VLANS, while Trunks downstream should only specify VLANS that are actually
 used or needed on those devices. It my be helpful to look at the leaf nodes
 first and work your way back to prevent VLANS inadvertently being dropped on
 the way to the router.</p></li>
-<li><p>Set a spare port on switches for <a class="reference internal" href="#term-management-vlan"><span class="xref std std-term">Management VLAN</span></a> access so you can
+<li><p>Set a spare port on switches for <a class="reference internal" href="#term-Management-VLAN"><span class="xref std std-term">Management VLAN</span></a> access so you can
 locally manage devices if something goes wrong.</p></li>
 <li><p>You need to understand your current network and layout a plan for how the
 traffic should work on VLANS. Generally VLANs segregate traffic based on type;
@@ -1956,7 +1900,12 @@ e.g. wifi, iot, servers, desktops, etc.</p></li>
   </div>
     
     
-      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -1967,7 +1916,6 @@ e.g. wifi, iot, servers, desktops, etc.</p></li>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

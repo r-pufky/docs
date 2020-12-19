@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,27 +11,36 @@
   
 
   
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/expand_width.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+        <script src="../../../_static/clipboard.min.js"></script>
+        <script src="../../../_static/copybutton.js"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Configuration" href="configuration.html" />
@@ -551,6 +559,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/base/execution-policy.html#set-policy-via-script">Set Policy Via Script</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/base/force-upgrade.html">Force Upgrade</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/base/force-upgrade.html#determine-windows-version">Determine Windows Version</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/base/force-upgrade.html#manual-update">Manual Update</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/base/reinstall-checklist.html">Reinstall Checklist</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/base/reinstall-checklist.html#dump-existing-registry">Dump Existing Registry</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/base/reinstall-checklist.html#gamesave-manager">Gamesave Manager</a></li>
@@ -581,12 +594,17 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/index.html">Advanced</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/specific-windows-fixes.html">Specific Windows Fixes</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#moving-user-profile-locations-to-alternate-location">Moving User Profile Locations to Alternate Location</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#format-refs-on-using-a-single-driv">Format ReFS on using a single driv</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#disable-refs-scheduled-tasks">Disable ReFS Scheduled Tasks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/remove-optional-features.html">Remove Optional Features</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/remove-optional-features.html#manually">Manually</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/remove-optional-features.html#powershell">Powershell</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/remove-startup-items.html">Remove Startup Items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/remove-preinstalled-packages.html">Remove Preinstalled Packages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/specific-windows-fixes.html">Specific Windows Fixes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#reset-password">Reset Password</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#moving-user-profile-locations-to-alternate-location">Moving User Profile Locations to Alternate Location</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#format-refs-on-using-a-single-driv">Format ReFS on using a single driv</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#addressing-100-disk-usage-issues">Addressing 100% Disk Usage Issues</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#disable-prefetch-and-superfetch">Disable Prefetch and Superfetch</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#hiding-local-desktop-for-chrome-remote-desktop">Hiding Local Desktop for Chrome Remote Desktop</a></li>
@@ -604,28 +622,14 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#show-password-on-wifi-network">Show Password on Wifi Network</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#driver-irql-not-less-or-equal-epfwwfp-sys">DRIVER_IRQL_NOT_LESS_OR_EQUAL (Epfwwfp.sys)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#uninstall-edge-browser">Uninstall Edge Browser</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#usb-devices-slow">USB Devices Slow</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#enable-better-performance-for-usb-devices">Enable Better Performance for USB Devices</a></li>
-</ul>
-</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#usb-devices-slow">USB Devices Slow</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#disable-windows-backup-schedule">Disable Windows Backup Schedule</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/windows-subsystem-for-linux-wsl.html">Windows Subsystem for Linux (WSL)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/windows-subsystem-for-linux-wsl.html#enable-wsl-in-windows-10">Enable WSL in Windows 10</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/windows-subsystem-for-linux-wsl.html#installing-linux-distros">Installing Linux Distros</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/windows-subsystem-for-linux-wsl.html#manual-install">Manual Install</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/windows-subsystem-for-linux-wsl.html#windows-store-install">Windows Store Install</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/windows-subsystem-for-linux-wsl.html#troubleshooting">Troubleshooting</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/windows-subsystem-for-linux-wsl.html#installation-failed-with-error-0x80070003">Installation failed with error 0x80070003</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/windows-subsystem-for-linux-wsl.html#wsl-storage-settings">WSL Storage Settings</a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/windows-subsystem-for-linux-wsl.html#wslregisterdistribution-failed-with-error-0x8007019e">WslRegisterDistribution failed with error 0x8007019e</a></li>
-</ul>
-</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/windows-subsystem-for-linux-wsl.html#installing-linux-distros">Installing Linux Distros</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/windows-subsystem-for-linux-wsl.html#troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/scheduled-tasks-inconsistencies.html">Scheduled Tasks Inconsistencies</a><ul>
@@ -637,77 +641,39 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/scheduled-tasks-inconsistencies.html#demonstration-of-scheduled-task-at-login-failure">Demonstration of Scheduled Task at Login Failure</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/run-windows-on-usb.html">Run Windows 10 From USB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/base/advanced/run-windows-on-usb.html">Run Windows 10 On USB</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../operating-systems/windows/10/1903/index.html">1903 Settings</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/telemetry.html">Disable Telemetry</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/telemetry.html#services">Services</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/telemetry.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/telemetry.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/telemetry.html#firewall">Firewall</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../operating-systems/windows/10/1903/index.html">Windows 1903</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-telemetry.html">Disable Telemetry</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-telemetry.html#firewall">Firewall</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/onedrive.html">Disable OneDrive</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/onedrive.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/onedrive.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/onedrive.html#scheduled-tasks">Scheduled Tasks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/onedrive.html#firewall">Firewall</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/onedrive.html#remove">Remove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-onedrive.html">Disable OneDrive</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-onedrive.html#firewall">Firewall</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/defender-antivirus.html">Disable Windows Defender</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/defender-antivirus.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/defender-antivirus.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/defender-antivirus.html#firewall">Firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-windows-defender.html">Disable Windows Defender</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-windows-defender.html#firewall">Firewall</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/cortana-search.html">Disable Cortana &amp; Search</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/cortana-search.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/cortana-search.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/cortana-search.html#firewall">Firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-cortana-search.html">Disable Cortana &amp; Search</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-cortana-search.html#firewall">Firewall</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/windows-store.html">Disable Windows Store Promotions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/windows-store.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/windows-store.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/resource-exhaustion.html">Disable Resource Exhaustion</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/resource-exhaustion.html#services">Services</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/resource-exhaustion.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/game-broadcasting.html">Disable Game Broadcasting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/game-broadcasting.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/game-broadcasting.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/meltdown-spectre.html">Meltdown and Spectre Patch</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/meltdown-spectre.html#registry"><span class="xref std std-term">Registry</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/explorer-ads.html">Disable Explorer Ads</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/explorer-ads.html#registry"><span class="xref std std-term">Registry</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/wifi-sharing.html">Disable Wifi Sharing</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/wifi-sharing.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/wifi-sharing.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/optional-features.html">Remove Optional Features</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/optional-features.html#manually">Manually</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/optional-features.html#powershell">Powershell</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-windows-store-promotions.html">Disable Windows Store Promotions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-resource-exhaustion.html">Disable Resource Exhaustion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-game-broadcasting.html">Disable Game Broadcasting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/meltdown-and-spectre-patch.html">Meltdown and Spectre Patch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-explorer-ads.html">Disable Explorer Ads</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-wifi-sharing.html">Disable Wifi Sharing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/index.html">Reasonable Privacy Settings</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/manual.html">Manual Setting Privacy Options</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/general.html">General</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/speech.html">Speech</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/ink-typing.html">Ink &amp; Typing Personalization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/ink-and-typing-personalization.html">Ink &amp; Typing Personalization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/diagnostics-feedback.html">Diagnostics &amp; Feedback</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/activity-history.html">Activity History</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/location.html">Location</a></li>
@@ -730,55 +696,21 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/pictures.html">Pictures</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/videos.html">Videos</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/file-system.html">File System</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/eye.html">Eye Tracker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/eye-tracker.html">Eye Tracker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/motion.html">Motion</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/phone-calls.html">Phone Calls</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/privacy/app-list.html">Determining App List</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/remove-startup-items.html">Remove Startup Items</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/remove-startup-items.html#registry"><span class="xref std std-term">Registry</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/remove-preinstalled-packages.html">Remove Preinstalled Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/paging.html">Disable Paging</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/paging.html#registry"><span class="xref std std-term">Registry</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/restore-points.html">Disable Restore Points</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/restore-points.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/restore-points.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/facial-recognition.html">Disable Facial Recognition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/error-reporting.html">Disable Error Reporting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/error-reporting.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/error-reporting.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/account-sync.html">Disable Account Sync</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/account-sync.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/account-sync.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/spotlight.html">Disable Spotlight</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/spotlight.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/spotlight.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/delivery-optimization.html">Disable Delivery Optimization</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/delivery-optimization.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/delivery-optimization.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/taskbar-notifications.html">Taskbar Notifications</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/taskbar-notifications.html#registry"><span class="xref std std-term">Registry</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/service.html">Disable Services</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/windows/10/1903/service.html#services">Services</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-paging.html">Disable Paging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-restore-points.html">Disable Restore Points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-biometrics.html">Disable Biometrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-error-reporting.html">Disable Error Reporting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-account-sync.html">Disable Account Sync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-spotlight.html">Disable Spotlight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-delivery-optimization.html">Disable Delivery Optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-update-notifications.html">Disable Update Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/windows/10/1903/disable-services.html">Disable Services</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../operating-systems/ubuntu/index.html">Ubuntu</a><ul>
@@ -1769,8 +1701,8 @@
             
   <div class="section" id="setup">
 <span id="service-email-mta-setup"></span><h1>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h1>
-<p>The <a class="reference internal" href="../../../glossary.html#term-mta"><span class="xref std std-term">MTA</span></a> handles the transmission of email to and from the system, while
-the <a class="reference internal" href="../../../glossary.html#term-mda"><span class="xref std std-term">MDA</span></a> handles delivery of email on that system.</p>
+<p>The <a class="reference internal" href="../../../glossary.html#term-MTA"><span class="xref std std-term">MTA</span></a> handles the transmission of email to and from the system, while
+the <a class="reference internal" href="../../../glossary.html#term-MDA"><span class="xref std std-term">MDA</span></a> handles delivery of email on that system.</p>
 <p>In this configuration, <em>postfix</em> is the MTA and <em>dovecot</em> is the MDA.</p>
 <p>See <a class="reference external" href="https://hub.docker.com/r/tvial/docker-mailserver/">Email Docker and Documentation</a>.</p>
 <div class="section" id="ports-email">
@@ -1828,7 +1760,7 @@ the <a class="reference internal" href="../../../glossary.html#term-mda"><span c
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>POP3 and non TLS/SSL connections should be considered compromised by
-default. If enabling remote <a class="reference internal" href="../../../glossary.html#term-mua"><span class="xref std std-term">MUA</span></a> connections, Use <strong>TLS/SSL IMAP</strong>.</p>
+default. If enabling remote <a class="reference internal" href="../../../glossary.html#term-MUA"><span class="xref std std-term">MUA</span></a> connections, Use <strong>TLS/SSL IMAP</strong>.</p>
 <p>Port <code class="docutils literal notranslate"><span class="pre">465</span></code> is a defacto standard for client email submissions before the
 creation of <a class="reference external" href="https://tools.ietf.org/html/rfc2476">RFC 2476</a>. It is safe to disable this unless you are forcing
 connections to this port. Read <a class="reference external" href="https://blog.mailtrap.io/smtp-ports-25-465-587-used-for/">more about ports here</a>.</p>
@@ -1974,7 +1906,7 @@ Linux kernels.</p>
 </div>
 <div class="section" id="fail2ban-setup">
 <h2>fail2ban Setup<a class="headerlink" href="#fail2ban-setup" title="Permalink to this headline">¶</a></h2>
-<p>Enable fail2ban for <a class="reference internal" href="../../../glossary.html#term-mta"><span class="xref std std-term">MTA</span></a> and <a class="reference internal" href="../../../glossary.html#term-mda"><span class="xref std std-term">MDA</span></a> services.</p>
+<p>Enable fail2ban for <a class="reference internal" href="../../../glossary.html#term-MTA"><span class="xref std std-term">MTA</span></a> and <a class="reference internal" href="../../../glossary.html#term-MDA"><span class="xref std std-term">MDA</span></a> services.</p>
 <p>Use <a class="reference internal" href="../../fail2ban/setup-system.html#service-fail2ban-system"><span class="std std-ref">fail2ban for System</span></a> for the base fail2ban service setup.</p>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-text">Add read-only mail logs to Docker Compose (f2b-system)</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
@@ -2193,7 +2125,12 @@ ignoreregex =
   </div>
     
     
-      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -2204,7 +2141,6 @@ ignoreregex =
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

@@ -1,8 +1,7 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
@@ -12,27 +11,36 @@
   
 
   
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/expand_width.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+
+  
   
   
   
 
   
-  <script type="text/javascript" src="../../../../../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../../../_static/language_data.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/language_data.js"></script>
+        <script src="../../../../../_static/clipboard.min.js"></script>
+        <script src="../../../../../_static/copybutton.js"></script>
     
     <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
     <link rel="next" title="Documents" href="documents.html" />
@@ -586,7 +594,15 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../base/advanced/index.html">Advanced</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../base/advanced/remove-optional-features.html">Remove Optional Features</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../base/advanced/remove-optional-features.html#manually">Manually</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../base/advanced/remove-optional-features.html#powershell">Powershell</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../base/advanced/remove-startup-items.html">Remove Startup Items</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../base/advanced/remove-preinstalled-packages.html">Remove Preinstalled Packages</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../base/advanced/specific-windows-fixes.html">Specific Windows Fixes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../base/advanced/specific-windows-fixes.html#reset-password">Reset Password</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../base/advanced/specific-windows-fixes.html#moving-user-profile-locations-to-alternate-location">Moving User Profile Locations to Alternate Location</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../base/advanced/specific-windows-fixes.html#format-refs-on-using-a-single-driv">Format ReFS on using a single driv</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../base/advanced/specific-windows-fixes.html#addressing-100-disk-usage-issues">Addressing 100% Disk Usage Issues</a></li>
@@ -631,71 +647,33 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Windows 1903</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../telemetry.html">Disable Telemetry</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../telemetry.html#services">Services</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../telemetry.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../telemetry.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../telemetry.html#firewall">Firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../disable-telemetry.html">Disable Telemetry</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../disable-telemetry.html#firewall">Firewall</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../onedrive.html">Disable OneDrive</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../onedrive.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../onedrive.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../onedrive.html#scheduled-tasks">Scheduled Tasks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../onedrive.html#firewall">Firewall</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../onedrive.html#remove">Remove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../disable-onedrive.html">Disable OneDrive</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../disable-onedrive.html#firewall">Firewall</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../defender-antivirus.html">Disable Windows Defender</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../defender-antivirus.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../defender-antivirus.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../defender-antivirus.html#firewall">Firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../disable-windows-defender.html">Disable Windows Defender</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../disable-windows-defender.html#firewall">Firewall</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../cortana-search.html">Disable Cortana &amp; Search</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../cortana-search.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../cortana-search.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../cortana-search.html#firewall">Firewall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../disable-cortana-search.html">Disable Cortana &amp; Search</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../disable-cortana-search.html#firewall">Firewall</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../windows-store.html">Disable Windows Store Promotions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../windows-store.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../windows-store.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../resource-exhaustion.html">Disable Resource Exhaustion</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../resource-exhaustion.html#services">Services</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../resource-exhaustion.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../game-broadcasting.html">Disable Game Broadcasting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../game-broadcasting.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../game-broadcasting.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../meltdown-spectre.html">Meltdown and Spectre Patch</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../meltdown-spectre.html#registry"><span class="xref std std-term">Registry</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../explorer-ads.html">Disable Explorer Ads</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../explorer-ads.html#registry"><span class="xref std std-term">Registry</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../wifi-sharing.html">Disable Wifi Sharing</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../wifi-sharing.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../wifi-sharing.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../optional-features.html">Remove Optional Features</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../optional-features.html#manually">Manually</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../optional-features.html#powershell">Powershell</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../disable-windows-store-promotions.html">Disable Windows Store Promotions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../disable-resource-exhaustion.html">Disable Resource Exhaustion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../disable-game-broadcasting.html">Disable Game Broadcasting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../meltdown-and-spectre-patch.html">Meltdown and Spectre Patch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../disable-explorer-ads.html">Disable Explorer Ads</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../disable-wifi-sharing.html">Disable Wifi Sharing</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Reasonable Privacy Settings</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="manual.html">Manual Setting Privacy Options</a></li>
 <li class="toctree-l3"><a class="reference internal" href="general.html">General</a></li>
 <li class="toctree-l3"><a class="reference internal" href="speech.html">Speech</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ink-typing.html">Ink &amp; Typing Personalization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ink-and-typing-personalization.html">Ink &amp; Typing Personalization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="diagnostics-feedback.html">Diagnostics &amp; Feedback</a></li>
 <li class="toctree-l3"><a class="reference internal" href="activity-history.html">Activity History</a></li>
 <li class="toctree-l3"><a class="reference internal" href="location.html">Location</a></li>
@@ -718,55 +696,21 @@
 <li class="toctree-l3"><a class="reference internal" href="pictures.html">Pictures</a></li>
 <li class="toctree-l3"><a class="reference internal" href="videos.html">Videos</a></li>
 <li class="toctree-l3"><a class="reference internal" href="file-system.html">File System</a></li>
-<li class="toctree-l3"><a class="reference internal" href="eye.html">Eye Tracker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eye-tracker.html">Eye Tracker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="motion.html">Motion</a></li>
 <li class="toctree-l3"><a class="reference internal" href="phone-calls.html">Phone Calls</a></li>
 <li class="toctree-l3"><a class="reference internal" href="app-list.html">Determining App List</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../remove-startup-items.html">Remove Startup Items</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../remove-startup-items.html#registry"><span class="xref std std-term">Registry</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../remove-preinstalled-packages.html">Remove Preinstalled Packages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../paging.html">Disable Paging</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../paging.html#registry"><span class="xref std std-term">Registry</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../restore-points.html">Disable Restore Points</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../restore-points.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../restore-points.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../facial-recognition.html">Disable Facial Recognition</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../error-reporting.html">Disable Error Reporting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../error-reporting.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../error-reporting.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../account-sync.html">Disable Account Sync</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../account-sync.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../account-sync.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../spotlight.html">Disable Spotlight</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../spotlight.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../spotlight.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../delivery-optimization.html">Disable Delivery Optimization</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../delivery-optimization.html#registry"><span class="xref std std-term">Registry</span></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../delivery-optimization.html#gpo"><span class="xref std std-term">GPO</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../taskbar-notifications.html">Taskbar Notifications</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../taskbar-notifications.html#registry"><span class="xref std std-term">Registry</span></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../service.html">Disable Services</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../service.html#services">Services</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../disable-paging.html">Disable Paging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../disable-restore-points.html">Disable Restore Points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../disable-biometrics.html">Disable Biometrics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../disable-error-reporting.html">Disable Error Reporting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../disable-account-sync.html">Disable Account Sync</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../disable-spotlight.html">Disable Spotlight</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../disable-delivery-optimization.html">Disable Delivery Optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../disable-update-notifications.html">Disable Update Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../disable-services.html">Disable Services</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../ubuntu/index.html">Ubuntu</a><ul>
@@ -1758,10 +1702,23 @@
   <div class="section" id="app-diagnostics">
 <span id="w10-1903-reasonable-privacy-app-diagnostics"></span><h1>App Diagnostics<a class="headerlink" href="#app-diagnostics" title="Permalink to this headline">¶</a></h1>
 <p><span class="guilabel">⌘ + r › ms-settings:privacy-appdiagnostics</span></p>
-<p class="rubric">Allow access to app diagnostic info on this device</p>
-<div class="wregedit docutils container" id="Disable access to app diagnostics on this device via Registry">
-<span class="guilabel">Start › regedit.msc</span><table class="docutils align-default" id="id1">
-<caption><span class="caption-text">Disable access to app diagnostics on this device via Registry</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Allow access to app diagnostic info on this device<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<details class="sphinx-bs dropdown card mb-3 fade-in">
+<summary class="summary-title card-header font-weight-bold">
+<a class="reference internal" href="../../../../../glossary.html#term-Registry"><span class="xref std std-term">Registry</span></a><div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text"><code class="docutils literal notranslate"><span class="pre">Allow</span></code> enables access to app diagnostics.</p>
+<div class="wregedit docutils container" id="Disable access to app diagnostics on this device">
+<span class="guilabel">Start › regedit.msc</span><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -1770,18 +1727,60 @@
 <tbody>
 <tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\appDiagnostics</span></td>
 </tr>
-<tr class="row-even"><td><p>Value</p></td>
-<td><p>SZ</p></td>
-<td><p>Deny</p></td>
+<tr class="row-even"><td><p class="card-text">Value</p></td>
+<td><p class="card-text">SZ</p></td>
+<td><p class="card-text">Deny</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p class="rubric">Allow apps to access diagnostic info abour your other apps</p>
-<div class="wregedit docutils container" id="Disable apps to access diagnostic info abour your other apps via             Registry">
-<span class="guilabel">Start › regedit.msc</span><table class="docutils align-default" id="id2">
-<caption><span class="caption-text">Disable apps to access diagnostic info abour your other apps via
-            Registry</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 fade-in">
+<summary class="summary-title card-header font-weight-bold">
+<a class="reference internal" href="../../../../../glossary.html#term-GPO"><span class="xref std std-term">GPO</span></a><div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="wgrouppolicy docutils container" id="Disable apps to access diagnostic info abour your other apps">
+<span class="guilabel">Start › gpedit.msc</span><table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td colspan="3"><span class="guilabel">Computer Configuration › Administrative Templates › Windows Components › App Privacy › Let Windows apps access diagnostic information about other apps</span></td>
+</tr>
+<tr class="row-even"><td><p class="card-text">☑</p></td>
+<td><p class="card-text">Enabled</p></td>
+</tr>
+<tr class="row-odd"><td><p class="card-text">Default for all apps</p></td>
+<td><p class="card-text">Force Deny</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</details></div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Allow apps to access diagnostic info abour your other apps<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text">See <a class="reference internal" href="app-list.html#w10-1903-privacy-app-list"><span class="std std-ref">Determining App List</span></a> to generate a list of apps for more fine
+grained control of app access.</p>
+<details class="sphinx-bs dropdown card mb-3 fade-in">
+<summary class="summary-title card-header font-weight-bold">
+<a class="reference internal" href="../../../../../glossary.html#term-Registry"><span class="xref std std-term">Registry</span></a><div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<p class="card-text"><code class="docutils literal notranslate"><span class="pre">0</span></code> enables apps access to diagnostic info.</p>
+<div class="wregedit docutils container" id="Disable apps to access diagnostic info abour your other apps">
+<span class="guilabel">Start › regedit.msc</span><table class="docutils align-default">
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -1790,24 +1789,23 @@
 <tbody>
 <tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy</span></td>
 </tr>
-<tr class="row-even"><td><p>LetAppsGetDiagnosticInfo</p></td>
-<td><p>DWORD</p></td>
-<td><p>2</p></td>
+<tr class="row-even"><td><p class="card-text">LetAppsGetDiagnosticInfo</p></td>
+<td><p class="card-text">DWORD</p></td>
+<td><p class="card-text">2</p></td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<div><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>See <a class="reference internal" href="app-list.html#w10-1903-privacy-app-list"><span class="std std-ref">Determining App List</span></a> to generate a list of apps for more
-fine grained control of app access.</p>
 </div>
-</div></blockquote>
 </div>
-<div class="wgrouppolicy docutils container" id="Disable apps to access diagnostic info abour your other apps via             machine GPO">
-<span class="guilabel">Start › gpedit.msc</span><table class="docutils align-default" id="id3">
-<caption><span class="caption-text">Disable apps to access diagnostic info abour your other apps via
-            machine GPO</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+</details><details class="sphinx-bs dropdown card mb-3 fade-in">
+<summary class="summary-title card-header font-weight-bold">
+<a class="reference internal" href="../../../../../glossary.html#term-GPO"><span class="xref std std-term">GPO</span></a><div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="wgrouppolicy docutils container" id="Disable apps to access diagnostic info abour your other apps">
+<span class="guilabel">Start › gpedit.msc</span><table class="docutils align-default">
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -1815,23 +1813,18 @@ fine grained control of app access.</p>
 <tbody>
 <tr class="row-odd"><td colspan="3"><span class="guilabel">Computer Configuration › Administrative Templates › Windows Components › App Privacy › Let Windows apps access diagnostic information about other apps</span></td>
 </tr>
-<tr class="row-even"><td><p>☑</p></td>
-<td><p>Enabled</p></td>
+<tr class="row-even"><td><p class="card-text">☑</p></td>
+<td><p class="card-text">Enabled</p></td>
 </tr>
-<tr class="row-odd"><td><p>Default for all apps</p></td>
-<td><p>Force Deny</p></td>
+<tr class="row-odd"><td><p class="card-text">Default for all apps</p></td>
+<td><p class="card-text">Force Deny</p></td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<div><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>See <a class="reference internal" href="app-list.html#w10-1903-privacy-app-list"><span class="std std-ref">Determining App List</span></a> to generate a list of apps for more
-fine grained control of app access.</p>
 </div>
-</div></blockquote>
 </div>
-<p class="rubric">Rreferences</p>
+</details></div>
+</details><p class="rubric">Rreferences</p>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1820-app-diagnostics">App Diagnostics Windows Management Settings</a></p></li>
 </ol>
@@ -1864,7 +1857,12 @@ fine grained control of app access.</p>
   </div>
     
     
-      Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -1875,7 +1873,6 @@ fine grained control of app access.</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
