@@ -95,6 +95,8 @@ Operating Systems
     Group Policy for Windows. Provides centralized management and configuration
     of operating systems, applications, and users' settings
 
+    The most restrictive GPO is applied if both machine and user GPO's are set.
+
   :abbr:`Registry`
     Hierarchical database that stores low-level settings for Windows and
     applications that opt to use the registry.

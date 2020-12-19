@@ -482,6 +482,22 @@ Removed since Windows 7 but added back into Windows 10.
 
   sdclt.exe /DISABLEJOB
 
+`Disable Hyper-V Per Boot`_
+***************************
+Some applications and games detect Hyper-V virtualization and refuse to start.
+Disable Hyper-V on Windows boot instead of through the BIOS. This removes the
+hypervisor kernel modules which prevents this from happening without needing to
+turn it off.
+
+.. code-block:: powershell
+  :caption: powershell (as admin).
+
+  bcdedit --% /copy {current} /d "No Hyper-V"
+
+  bcdedit --%  /set {GUID} hypervisorlaunchtype off
+
+Restart holding :cmdmenu:`shift` to show boot options. Select ``No Hyper-V``.
+
 .. _integrity enabled: https://docs.microsoft.com/en-us/windows-server/storage/refs/integrity-streams
 .. _ReFS create moved to Windows 10 Workstation: https://arstechnica.com/gadgets/2017/08/microsoft-to-remove-full-refs-support-from-windows-10-pro-push-workstation-sku/
 .. _SSD activity issue: https://superuser.com/questions/1016152/100-ssd-activity-0-r-w-speed-system-hang-issue
@@ -512,3 +528,4 @@ Removed since Windows 7 but added back into Windows 10.
 .. _Disable Caret Browsing Notifications: https://www.thewindowsclub.com/enable-caret-browsing-internet-explorer
 .. _habit of locking out after updates: https://www.passfab.com/windows-tips/windows-10-password-incorrect-after-update.html
 .. _Reset your password from safe mode: https://www.wimware.com/how-to/reset-windows-10-password-command-prompt.html
+.. _Disable Hyper-V Per Boot: https://www.hanselman.com/blog/switch-easily-between-virtualbox-and-hyperv-with-a-bcdedit-boot-entry-in-windows-81
