@@ -57,7 +57,7 @@ Manual Installation
 
   .. literalinclude:: ../sphinx/conf.py
     :caption: **0640 user user** ``docs/sphinx/conf.py``
-    :emphasize-lines: 21-23,31-37,41-42,44,48,61,68,76-93
+    :emphasize-lines: 15,21-23,31-37,41-42,44,48,61,68,76-93
 
 .. rubric:: References
 
