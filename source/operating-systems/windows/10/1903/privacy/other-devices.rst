@@ -4,71 +4,90 @@ Other Devices
 #############
 :cmdmenu:`⌘ + r --> ms-settings:privacy-customdevices`
 
-.. rubric:: Communicate with unpaired devices
+.. dropdown:: Communicate with unpaired devices
+  :container: + shadow
+  :title: bg-primary text-white font-weight-bold
+  :animate: fade-in
 
-.. note::
   Option is worded poorly. This prevents apps from sending data
-  **automatically** to unpaired / other devices.
+  **automatically** to unpaired / other devices. It does not prevent all
+  communication.
 
-.. wregedit:: Disable communication with unpaired devices via Registry
-  :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
-  :names:     LetAppsSyncWithDevices
-  :types:     DWORD
-  :data:      2
-  :no_section:
+  See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more fine
+  grained control of app access.
 
-    .. note::
-      See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more
-      fine grained control of app access.
+  .. dropdown:: :term:`Registry`
+    :title: font-weight-bold
+    :animate: fade-in
 
-.. wgpolicy:: Disable communication with unpaired devices via machine GPO
-  :key_title: Computer Configuration -->
-              Administrative Templates -->
-              Windows Components -->
-              App Privacy -->
-              Let Windows apps communicate with unpaired devices
-  :option:    ☑,
-              Default for all apps
-  :setting:   Enabled,
-              Force Deny
-  :no_section:
+    ``0`` enables communication with unpaired devices.
 
-    .. note::
-      See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more
-      fine grained control of app access.
+    .. wregedit:: Disable communication with unpaired devices
+      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
+      :names:     LetAppsSyncWithDevices
+      :types:     DWORD
+      :data:      2
+      :no_section:
+      :no_caption:
 
-.. rubric:: Use trusted devices
+  .. dropdown:: :term:`GPO`
+    :title: font-weight-bold
+    :animate: fade-in
 
-.. note::
+    .. wgpolicy:: Disable communication with unpaired devices
+      :key_title: Computer Configuration -->
+                  Administrative Templates -->
+                  Windows Components -->
+                  App Privacy -->
+                  Let Windows apps communicate with unpaired devices
+      :option:    ☑,
+                  Default for all apps
+      :setting:   Enabled,
+                  Force Deny
+      :no_section:
+      :no_caption:
+
+.. dropdown:: Use trusted devices
+  :container: + shadow
+  :title: bg-primary text-white font-weight-bold
+  :animate: fade-in
+
   Option is worded poorly. This prevents apps from sending data
-  **automatically** to trusted devices.
+  **automatically** to trusted devices. It does not prevent all communication.
 
-.. wregedit:: Disable communication with unpaired devices via Registry
-  :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
-  :names:     LetAppsAccessTrustedDevices
-  :types:     DWORD
-  :data:      2
-  :no_section:
+  See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more fine
+  grained control of app access.
 
-    .. note::
-      See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more
-      fine grained control of app access.
+  .. dropdown:: :term:`Registry`
+    :title: font-weight-bold
+    :animate: fade-in
 
-.. wgpolicy:: Disable communication with unpaired devices via machine GPO
-  :key_title: Computer Configuration -->
-              Administrative Templates -->
-              Windows Components -->
-              App Privacy -->
-              Let Windows apps access trusted devices
-  :option:    ☑,
-              Default for all apps
-  :setting:   Enabled,
-              Force Deny
-  :no_section:
+    ``0`` enables communication with unpaired trusted devices.
 
-    .. note::
-      See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more
-      fine grained control of app access.
+    .. wregedit:: Disable communication with unpaired trusted devices
+      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
+      :names:     LetAppsAccessTrustedDevices
+      :types:     DWORD
+      :data:      2
+      :no_section:
+      :no_caption:
+
+  .. dropdown:: :term:`GPO`
+    :title: font-weight-bold
+    :animate: fade-in
+
+    .. wgpolicy:: Disable communication with unpaired devices
+      :key_title: Computer Configuration -->
+                  Administrative Templates -->
+                  Windows Components -->
+                  App Privacy -->
+                  Let Windows apps access trusted devices
+      :option:    ☑,
+                  Default for all apps
+      :setting:   Enabled,
+                  Force Deny
+      :no_section:
+      :no_caption:
 
 .. rubric:: Rreferences
 

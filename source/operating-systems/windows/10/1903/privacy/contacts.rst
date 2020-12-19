@@ -4,50 +4,87 @@ Contacts
 ########
 :cmdmenu:`⌘ + r --> ms-settings:privacy-contacts`
 
-.. rubric:: Allow access to contacts on this device
+.. dropdown:: Allow access to contacts on this device
+  :container: + shadow
+  :title: bg-primary text-white font-weight-bold
+  :animate: fade-in
 
-.. note::
   This disables all contacts options. See
-  :ref:`w10-1903-privacy-contacts` to manage access on a per app basis.
+  :ref:`Allow apps to access your contacts <w10-1903-privacy-contacts>` to
+  manage access on a per app basis.
 
-.. wregedit:: Disable access to contacts on this device via Registry
-  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-              CapabilityAccessManager\ConsentStore\contacts
-  :names:     Value
-  :types:     SZ
-  :data:      Deny
-  :no_section:
+  .. dropdown:: :term:`Registry`
+    :title: font-weight-bold
+    :animate: fade-in
+
+    ``Allow`` enables access to contacts on this device.
+
+    .. wregedit:: Disable access to contacts on this device
+      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
+                  CapabilityAccessManager\ConsentStore\contacts
+      :names:     Value
+      :types:     SZ
+      :data:      Deny
+      :no_section:
+      :no_caption:
+
+  .. dropdown:: :term:`GPO`
+    :title: font-weight-bold
+    :animate: fade-in
+
+    .. wgpolicy:: Disable apps access your contacts
+      :key_title: Computer Configuration -->
+                  Administrative Templates -->
+                  Windows Components -->
+                  App Privacy -->
+                  Let Windows apps access contacts
+      :option:    ☑,
+                  Default for all apps
+      :setting:   Enabled,
+                  Force Deny
+      :no_section:
+      :no_caption:
 
 .. _w10-1903-privacy-contacts:
 
-.. rubric:: Allow apps to access your contacts
+.. dropdown:: Allow apps to access your contacts
+  :container: + shadow
+  :title: bg-primary text-white font-weight-bold
+  :animate: fade-in
 
-.. wregedit:: Disable apps to access your contacts via Registry
-  :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
-  :names:     LetAppsAccessContacts
-  :types:     DWORD
-  :data:      2
-  :no_section:
+  See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more fine
+  grained control of app access.
 
-    .. note::
-      See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more
-      fine grained control of app access.
+  .. dropdown:: :term:`Registry`
+    :title: font-weight-bold
+    :animate: fade-in
 
-.. wgpolicy:: Disable apps access your contacts via machine GPO
-  :key_title: Computer Configuration -->
-              Administrative Templates -->
-              Windows Components -->
-              App Privacy -->
-              Let Windows apps access contacts
-  :option:    ☑,
-              Default for all apps
-  :setting:   Enabled,
-              Force Deny
-  :no_section:
+    ``0`` to enable app access to contacts.
 
-    .. note::
-      See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more
-      fine grained control of app access.
+    .. wregedit:: Disable apps to access your contacts
+      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
+      :names:     LetAppsAccessContacts
+      :types:     DWORD
+      :data:      2
+      :no_section:
+      :no_caption:
+
+  .. dropdown:: :term:`GPO`
+    :title: font-weight-bold
+    :animate: fade-in
+
+    .. wgpolicy:: Disable apps access your contacts
+      :key_title: Computer Configuration -->
+                  Administrative Templates -->
+                  Windows Components -->
+                  App Privacy -->
+                  Let Windows apps access contacts
+      :option:    ☑,
+                  Default for all apps
+      :setting:   Enabled,
+                  Force Deny
+      :no_section:
+      :no_caption:
 
 .. rubric:: Rreferences
 

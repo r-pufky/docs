@@ -4,50 +4,87 @@ Email
 #####
 :cmdmenu:`⌘ + r --> ms-settings:privacy-email`
 
-.. rubric:: Allow access to email on this device
-
-.. note::
+.. dropdown:: Allow access to email on this device
+  :container: + shadow
+  :title: bg-primary text-white font-weight-bold
+  :animate: fade-in
+  
   This disables all email options. See
-  :ref:`w10-1903-privacy-email` to manage access on a per app basis.
+  :ref:`Allow apps to access your email <w10-1903-privacy-email>` to manage
+  access on a per app basis.
 
-.. wregedit:: Disable access to email on this device via Registry
-  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-              CapabilityAccessManager\ConsentStore\email
-  :names:     Value
-  :types:     SZ
-  :data:      Deny
-  :no_section:
+  .. dropdown:: :term:`Registry`
+    :title: font-weight-bold
+    :animate: fade-in
+
+    ``Allow`` enables access to email on this device.
+
+    .. wregedit:: Disable access to email on this device
+      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
+                  CapabilityAccessManager\ConsentStore\email
+      :names:     Value
+      :types:     SZ
+      :data:      Deny
+      :no_section:
+      :no_caption:
+
+  .. dropdown:: :term:`GPO`
+    :title: font-weight-bold
+    :animate: fade-in
+
+    .. wgpolicy:: Disable apps access your email
+      :key_title: Computer Configuration -->
+                  Administrative Templates -->
+                  Windows Components -->
+                  App Privacy -->
+                  Let Windows apps access email
+      :option:    ☑,
+                  Default for all apps
+      :setting:   Enabled,
+                  Force Deny
+      :no_section:
+      :no_caption:
 
 .. _w10-1903-privacy-email:
 
-.. rubric:: Allow apps to access your email
+.. dropdown:: Allow apps to access your email
+  :container: + shadow
+  :title: bg-primary text-white font-weight-bold
+  :animate: fade-in
+  
+  See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more fine
+  grained control of app access.
 
-.. wregedit:: Disable apps to access your email via Registry
-  :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
-  :names:     LetAppsAccessEmail
-  :types:     DWORD
-  :data:      2
-  :no_section:
+  .. dropdown:: :term:`Registry`
+    :title: font-weight-bold
+    :animate: fade-in
 
-    .. note::
-      See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more
-      fine grained control of app access.
+    ``0`` enables apps access to email.
 
-.. wgpolicy:: Disable apps access your email via machine GPO
-  :key_title: Computer Configuration -->
-              Administrative Templates -->
-              Windows Components -->
-              App Privacy -->
-              Let Windows apps access email
-  :option:    ☑,
-              Default for all apps
-  :setting:   Enabled,
-              Force Deny
-  :no_section:
+    .. wregedit:: Disable apps to access your email
+      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
+      :names:     LetAppsAccessEmail
+      :types:     DWORD
+      :data:      2
+      :no_section:
+      :no_caption:
 
-    .. note::
-      See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more
-      fine grained control of app access.
+  .. dropdown:: :term:`GPO`
+    :title: font-weight-bold
+    :animate: fade-in
+
+    .. wgpolicy:: Disable apps access your email
+      :key_title: Computer Configuration -->
+                  Administrative Templates -->
+                  Windows Components -->
+                  App Privacy -->
+                  Let Windows apps access email
+      :option:    ☑,
+                  Default for all apps
+      :setting:   Enabled,
+                  Force Deny
+      :no_section:
+      :no_caption:
 
 .. rubric:: Rreferences
 

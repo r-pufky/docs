@@ -6,6 +6,9 @@ Advanced
 
 Advanced Windows configuration. Specific configuration for specific cases.
 
+* :ref:`w10-remove-optional-features` for removing software bloat.
+* :ref:`w10-remove-startup-items` to remove items that cannot be removed via GUI.
+* :ref:`w10-remove-preinstalled-packages` via powershell.
 * :ref:`w10-specific-windows-fixes` for unique cases.
 * :ref:`w10-wsl` to run Linux in Windows Kernel. 
 * :ref:`w10-scheduled-tasks-inconsistencies` to remediate scheduling service issues.
@@ -20,9 +23,9 @@ Advanced Windows configuration. Specific configuration for specific cases.
 
 .. rubric:: Group Policy (GPO)
 
-#. `Group Policy Administrative Templates Catalog <https://getadmx.com/>`_
+#. `Group Policy Administrative Templates Catalog (Registry, GPO) <https://admx.help/>`_
 #. `Windows Group Policy Reference <https://www.windows-security.org/group-policy-setting/3813-windows-group-policy-encyclopedia>`_
-#. `Deploying Regsitry Keys via GPO <https://thesolving.com/server-room/how-to-deploy-a-registry-key-via-group-policy/>`_
+#. `Deploying Registry Keys via GPO <https://thesolving.com/server-room/how-to-deploy-a-registry-key-via-group-policy/>`_
 
 .. rubric:: Windows Connections to Microsoft Services
 
@@ -38,6 +41,9 @@ Advanced Windows configuration. Specific configuration for specific cases.
    :hidden:
    :maxdepth: -1
 
+   remove-optional-features
+   remove-startup-items
+   remove-preinstalled-packages
    specific-windows-fixes
    windows-subsystem-for-linux-wsl
    scheduled-tasks-inconsistencies

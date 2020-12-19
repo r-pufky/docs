@@ -6,71 +6,123 @@ Messaging
 
 .. rubric:: Allow access to messaging on this device
 
-.. note::
-  This disables all email options. See
-  :ref:`w10-1903-privacy-messaging` to manage access on a per app basis.
+.. dropdown:: Allow access to messaging on this device
+  :container: + shadow
+  :title: bg-primary text-white font-weight-bold
+  :animate: fade-in
 
-.. wregedit:: Disable access to messaging on this device via Registry
-  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-              CapabilityAccessManager\ConsentStore\chat
-  :names:     Value
-  :types:     SZ
-  :data:      Deny
-  :no_section:
+  This disables all messaging options. See
+  :ref:`Allow apps to read or send messages <w10-1903-privacy-messaging>` to
+  manage access on a per app basis.
+
+  .. dropdown:: :term:`Registry`
+    :title: font-weight-bold
+    :animate: fade-in
+
+    ``Allow`` enables access to messaging on this device.
+
+    .. wregedit:: Disable access to messaging on this device
+      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
+                  CapabilityAccessManager\ConsentStore\chat
+      :names:     Value
+      :types:     SZ
+      :data:      Deny
+      :no_section:
+      :no_caption:
+
+  .. dropdown:: :term:`GPO`
+    :title: font-weight-bold
+    :animate: fade-in
+
+    .. wgpolicy:: Disable apps access your messaging
+      :key_title: Computer Configuration -->
+                  Administrative Templates -->
+                  Windows Components -->
+                  App Privacy -->
+                  Let Windows apps access messaging
+      :option:    ☑,
+                  Default for all apps
+      :setting:   Enabled,
+                  Force Deny
+      :no_section:
+      :no_caption:
 
 .. _w10-1903-privacy-messaging:
 
-.. rubric:: Allow apps to read or send messages
+.. dropdown:: Allow apps to read or send messages
+  :container: + shadow
+  :title: bg-primary text-white font-weight-bold
+  :animate: fade-in
 
-.. wregedit:: Disable apps to access your messaging via Registry
-  :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
-  :names:     LetAppsAccessMessaging
-  :types:     DWORD
-  :data:      2
-  :no_section:
+  See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more fine
+  grained control of app access.
 
-    .. note::
-      See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more
-      fine grained control of app access.
+  .. dropdown:: :term:`Registry`
+    :title: font-weight-bold
+    :animate: fade-in
 
-.. wgpolicy:: Disable apps access your messaging via machine GPO
-  :key_title: Computer Configuration -->
-              Administrative Templates -->
-              Windows Components -->
-              App Privacy -->
-              Let Windows apps access messaging
-  :option:    ☑,
-              Default for all apps
-  :setting:   Enabled,
-              Force Deny
-  :no_section:
+    ``0`` enabels apps access to messaging.
 
-    .. note::
-      See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more
-      fine grained control of app access.
+    .. wregedit:: Disable apps to access your messaging
+      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
+      :names:     LetAppsAccessMessaging
+      :types:     DWORD
+      :data:      2
+      :no_section:
+      :no_caption:
 
-.. rubric:: Turn off message sync
+  .. dropdown:: :term:`GPO`
+    :title: font-weight-bold
+    :animate: fade-in
 
-.. note::
+    .. wgpolicy:: Disable apps access your messaging
+      :key_title: Computer Configuration -->
+                  Administrative Templates -->
+                  Windows Components -->
+                  App Privacy -->
+                  Let Windows apps access messaging
+      :option:    ☑,
+                  Default for all apps
+      :setting:   Enabled,
+                  Force Deny
+      :no_section:
+      :no_caption:
+
+.. dropdown:: Turn off message sync
+  :container: + shadow
+  :title: bg-primary text-white font-weight-bold
+  :animate: fade-in
+
   This is not available in the GUI.
 
-.. wregedit:: Disable message sync via Registry
-  :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Messaging
-  :names:     AllowMessageSync
-  :types:     DWORD
-  :data:      0
-  :no_section:
+  .. dropdown:: :term:`Registry`
+    :title: font-weight-bold
+    :animate: fade-in
 
+    ``1`` enable message sync.
 
-.. wgpolicy:: Disable message sync via machine GPO
-  :key_title: Computer Configuration -->
-              Administrative Templates -->
-              Windows Components -->
-              Messaging -->
-              Allow Message Service Cloud Sync
-  :option:    ☑
-  :setting:   Disabled
-  :no_section:
+    .. wregedit:: Disable message sync
+      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Messaging
+      :names:     AllowMessageSync
+      :types:     DWORD
+      :data:      0
+      :no_section:
+      :no_caption:
+
+  .. dropdown:: :term:`GPO`
+    :title: font-weight-bold
+    :animate: fade-in
+
+    .. wgpolicy:: Disable message sync
+      :key_title: Computer Configuration -->
+                  Administrative Templates -->
+                  Windows Components -->
+                  Messaging -->
+                  Allow Message Service Cloud Sync
+      :option:    ☑
+      :setting:   Disabled
+      :no_section:
+      :no_caption:
 
 .. rubric:: Rreferences
 

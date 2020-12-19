@@ -4,71 +4,96 @@ Notifications
 #############
 :cmdmenu:`⌘ + r --> ms-settings:privacy-notifications`
 
-.. rubric:: Allow access to user notifications on this device
+.. dropdown:: Allow access to user notifications on this device
+  :container: + shadow
+  :title: bg-primary text-white font-weight-bold
+  :animate: fade-in
 
-.. note::
   This disables all notification options. See
-  :ref:`w10-1903-privacy-notifications` to manage access on a per app basis.
+  :ref:`Allow apps to access your notifications
+  <w10-1903-privacy-notifications>` to manage access on a per app basis.
 
-.. wregedit:: Disable access to user notifications on this device via Registry
-  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\
-              CurrentVersion\PushNotifications
-  :names:     NoCloudApplicationNotification
-  :types:     DWORD
-  :data:      1
-  :no_section:
+  .. dropdown:: :term:`Registry`
+    :title: font-weight-bold
+    :animate: fade-in
 
-.. wregedit:: Disable access to user notifications listener on this device via
-              Registry
-  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-              CapabilityAccessManager\ConsentStore\userNotificationListener
-  :names:     Value
-  :types:     SZ
-  :data:      Deny
-  :no_section:
-  :no_launch:
+    ``0`` to enable user notifications. ``Allow`` to enable notification
+    listener. 
 
-.. wgpolicy:: Disable access to user notifications on this device via machine
-              GPO
-  :key_title: Computer Configuration -->
-              Administrative Templates -->
-              Start Menu and Taskbar -->
-              Notifications -->
-              Turn off Notifications network usage
-  :option:    ☑
-  :setting:   Enabled
-  :no_section:
+    .. wregedit:: Disable access to user notifications on this device
+      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\
+                  CurrentVersion\PushNotifications
+      :names:     NoCloudApplicationNotification
+      :types:     DWORD
+      :data:      1
+      :no_section:
+      :no_caption:
+
+    .. wregedit:: Disable access to user notifications listener on this device
+      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
+                  CapabilityAccessManager\ConsentStore\userNotificationListener
+      :names:     Value
+      :types:     SZ
+      :data:      Deny
+      :no_section:
+      :no_caption:
+      :no_launch:
+
+  .. dropdown:: :term:`GPO`
+    :title: font-weight-bold
+    :animate: fade-in
+
+    .. wgpolicy:: Disable access to user notifications on this device
+      :key_title: Computer Configuration -->
+                  Administrative Templates -->
+                  Start Menu and Taskbar -->
+                  Notifications -->
+                  Turn off Notifications network usage
+      :option:    ☑
+      :setting:   Enabled
+      :no_section:
+      :no_caption:
 
 .. _w10-1903-privacy-notifications:
 
-.. rubric:: Allow apps to access your notifications
+.. dropdown:: Allow apps to access your notifications
+  :container: + shadow
+  :title: bg-primary text-white font-weight-bold
+  :animate: fade-in
 
-.. wregedit:: Disable apps to access your notifications via Registry
-  :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
-  :names:     LetAppsAccessNotifications
-  :types:     DWORD
-  :data:      2
-  :no_section:
+  See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more fine
+  grained control of app access.
 
-    .. note::
-      See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more
-      fine grained control of app access.
+  .. dropdown:: :term:`Registry`
+    :title: font-weight-bold
+    :animate: fade-in
 
-.. wgpolicy:: Disable apps to access your notifications via machine GPO
-  :key_title: Computer Configuration -->
-              Administrative Templates -->
-              Windows Components -->
-              App Privacy -->
-              Let Windows apps access notifications
-  :option:    ☑,
-              Default for all apps
-  :setting:   Enabled,
-              Force Deny
-  :no_section:
+    ``0`` enables app access to notifications.
 
-    .. note::
-      See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more
-      fine grained control of app access.
+    .. wregedit:: Disable apps to access your notifications
+      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
+      :names:     LetAppsAccessNotifications
+      :types:     DWORD
+      :data:      2
+      :no_section:
+      :no_caption:
+
+  .. dropdown:: :term:`GPO`
+    :title: font-weight-bold
+    :animate: fade-in
+
+    .. wgpolicy:: Disable apps to access your notifications
+      :key_title: Computer Configuration -->
+                  Administrative Templates -->
+                  Windows Components -->
+                  App Privacy -->
+                  Let Windows apps access notifications
+      :option:    ☑,
+                  Default for all apps
+      :setting:   Enabled,
+                  Force Deny
+      :no_section:
+      :no_caption:
 
 .. rubric:: Rreferences
 

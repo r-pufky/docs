@@ -4,47 +4,85 @@ Radios
 ######
 :cmdmenu:`⌘ + r --> ms-settings:privacy-radios`
 
-Leave Radios enabled -- usually required for Bluetooth and wifi applications to
-work properly. Disable all apps access to control radios.
+Leave radios enabled -- usually required for Bluetooth and Wifi applications to
+work properly. Disable all apps access to control radios; Windows controls will
+still work to manage radios.
 
-.. rubric:: Allow access to radios on this device
+.. dropdown:: Allow access to radios on this device
+  :container: + shadow
+  :title: bg-primary text-white font-weight-bold
+  :animate: fade-in
 
-.. wregedit:: Enable access to radios on this device via Registry
-  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-              CapabilityAccessManager\ConsentStore\radios
-  :names:     Value
-  :types:     SZ
-  :data:      Allow
-  :no_section:
+  .. dropdown:: :term:`Registry`
+    :title: font-weight-bold
+    :animate: fade-in
 
-.. rubric:: Allow apps to control device radios
+    ``Deny`` disables access to radios on this device.
 
-.. wregedit:: Disable apps to access your radios via Registry
-  :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
-  :names:     LetAppsAccessRadios
-  :types:     DWORD
-  :data:      2
-  :no_section:
+    .. wregedit:: Enable access to radios on this device
+      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
+                  CapabilityAccessManager\ConsentStore\radios
+      :names:     Value
+      :types:     SZ
+      :data:      Allow
+      :no_section:
+      :no_caption:
 
-    .. note::
-      See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more
-      fine grained control of app access.
+  .. dropdown:: :term:`GPO`
+    :title: font-weight-bold
+    :animate: fade-in
 
-.. wgpolicy:: Disable apps access your radios via machine GPO
-  :key_title: Computer Configuration -->
-              Administrative Templates -->
-              Windows Components -->
-              App Privacy -->
-              Let Windows apps control radios
-  :option:    ☑,
-              Default for all apps
-  :setting:   Enabled,
-              Force Deny
-  :no_section:
+    .. wgpolicy:: Disable apps access your radios
+      :key_title: Computer Configuration -->
+                  Administrative Templates -->
+                  Windows Components -->
+                  App Privacy -->
+                  Let Windows apps control radios
+      :option:    ☑,
+                  Default for all apps
+      :setting:   Enabled,
+                  Force Deny
+      :no_section:
+      :no_caption:
 
-    .. note::
-      See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more
-      fine grained control of app access.
+.. dropdown:: Allow apps to control device radios
+  :container: + shadow
+  :title: bg-primary text-white font-weight-bold
+  :animate: fade-in
+
+  See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more fine
+  grained control of app access.
+
+  .. dropdown:: :term:`Registry`
+    :title: font-weight-bold
+    :animate: fade-in
+
+    ``0`` enables apps access to radios.
+
+    .. wregedit:: Disable apps to access your radios
+      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
+      :names:     LetAppsAccessRadios
+      :types:     DWORD
+      :data:      2
+      :no_section:
+      :no_caption:
+
+  .. dropdown:: :term:`GPO`
+    :title: font-weight-bold
+    :animate: fade-in
+
+    .. wgpolicy:: Disable apps access your radios
+      :key_title: Computer Configuration -->
+                  Administrative Templates -->
+                  Windows Components -->
+                  App Privacy -->
+                  Let Windows apps control radios
+      :option:    ☑,
+                  Default for all apps
+      :setting:   Enabled,
+                  Force Deny
+      :no_section:
+      :no_caption:
 
 .. rubric:: Rreferences
 

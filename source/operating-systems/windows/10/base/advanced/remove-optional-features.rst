@@ -1,4 +1,4 @@
-.. _w10-1903-remove-optional-features:
+.. _w10-remove-optional-features:
 
 `Remove Optional Features`_
 ###########################

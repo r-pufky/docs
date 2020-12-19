@@ -8,44 +8,62 @@ apps.
 If the apps have been properly identified and denied, you will not be able to
 re-enable them from the GUI.
 
-.. code-block:: powershell
-  :caption: Get App package family names (powershell)
+.. dropdown:: Get App package family names
+  :container: + shadow
+  :title: bg-primary text-white font-weight-bold
+  :animate: fade-in
 
-  Get-AppPackage | Select Name,PackageFamilyName
-
-.. note::
   Searching with the GUI name and ``AppPackage name`` usually returns the
   related package name. Use this `AppPackage Names list`_ can be use to find the
   general package (then determine the ``PackageFamilyName``).
 
   An example PackageFamilyName is ``Microsoft.MicrosoftEdge_8wekyb3d8bbwe``.
 
-.. rubric:: Setting App List for GPO
+  .. code-block:: powershell
+    :caption: Get App package family names (powershell)
 
-Read the description for the :term:`GPO` in question for all options.
+    Get-AppPackage | Select Name,PackageFamilyName
 
-The identified package family names are added in the ``Force deny`` section.
 
-.. rubric:: Setting App List for Registry
+.. dropdown:: Setting App List
+  :container: + shadow
+  :title: bg-primary text-white font-weight-bold
+  :animate: fade-in
 
-``HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore``
+  .. dropdown:: :term:`Registry`
+    :title: font-weight-bold
+    :animate: fade-in
+    
+    A key needs to be made for each app to block. Valid values are ``Allow``
+    and ``Deny``.
 
-.. wregedit:: Example app privacy restriction using ConsentStore via Registry
-  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-              CapabilityAccessManager\ConsentStore\microphone\
-              {PACKAGE FAMILY NAME}
-  :names:     Value
-  :types:     SZ
-  :data:      Deny
-  :no_section:
+    :term:`GPO` policy settings can be found in the registry at
+    ``HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy`` but
+    are not modifiable.
 
-    .. note::
-      A key needs to be made for each app to block. Valid values are ``Allow``
-      and ``Deny``.
+    Base Registry location ``HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore``.
 
-      :term:`GPO` policy settings can be found in the registry at
-      ``HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy`` but
-      are not modifiable.
+    .. dropdown:: Example app privacy restriction
+      :title: font-weight-bold
+      :animate: fade-in
+
+      .. wregedit:: Example app privacy restriction using ConsentStore
+        :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
+                    CapabilityAccessManager\ConsentStore\microphone\
+                    {PACKAGE FAMILY NAME}
+        :names:     Value
+        :types:     SZ
+        :data:      Deny
+        :no_section:
+        :no_caption:
+
+  .. dropdown:: :term:`GPO`
+    :title: font-weight-bold
+    :animate: fade-in
+    
+    Read the description for the :term:`GPO` in question for all options.
+
+    The identified package family names are added in the ``Force deny`` section.
 
 .. rubric:: References
 

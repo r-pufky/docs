@@ -11,7 +11,7 @@ Disable this.
 #. :ref:`w10-1903-reasonable-privacy-manual`.
 #. :ref:`w10-1903-reasonable-privacy-general`.
 #. :ref:`w10-1903-reasonable-privacy-speech`.
-#. :ref:`w10-1903-reasonable-privacy-ink-typing`.
+#. :ref:`w10-1903-reasonable-privacy-ink-and-typing-personalization`.
 #. :ref:`w10-1903-reasonable-privacy-diagnostics-feedback`.
 #. :ref:`w10-1903-reasonable-privacy-activity-history`.
 #. :ref:`w10-1903-reasonable-privacy-location`.
@@ -35,7 +35,7 @@ Disable this.
 #. :ref:`w10-1903-reasonable-privacy-pictures`.
 #. :ref:`w10-1903-reasonable-privacy-videos`.
 #. :ref:`w10-1903-reasonable-privacy-file-system`.
-#. :ref:`w10-1903-reasonable-privacy-eye`.
+#. :ref:`w10-1903-reasonable-privacy-eye-tracker`.
 #. :ref:`w10-1903-reasonable-privacy-motion`.
 
 See :ref:`w10-1903-privacy-app-list` to generate specific lists of apps to
@@ -53,7 +53,7 @@ block while applying GPO's.
    manual
    general
    speech
-   ink-typing
+   ink-and-typing-personalization
    diagnostics-feedback
    activity-history
    location
@@ -76,7 +76,7 @@ block while applying GPO's.
    pictures
    videos
    file-system
-   eye
+   eye-tracker
    motion
    phone-calls
    app-list

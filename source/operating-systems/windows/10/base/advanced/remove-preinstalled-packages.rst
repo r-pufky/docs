@@ -1,4 +1,4 @@
-.. _w10-1903-remove-preinstalled-packages:
+.. _w10-remove-preinstalled-packages:
 
 `Remove Preinstalled Packages`_
 ###############################

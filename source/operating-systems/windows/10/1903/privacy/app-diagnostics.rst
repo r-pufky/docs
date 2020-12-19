@@ -4,46 +4,81 @@ App Diagnostics
 ###############
 :cmdmenu:`⌘ + r --> ms-settings:privacy-appdiagnostics`
 
-.. rubric:: Allow access to app diagnostic info on this device
+.. dropdown:: Allow access to app diagnostic info on this device
+  :container: + shadow
+  :title: bg-primary text-white font-weight-bold
+  :animate: fade-in
 
-.. wregedit:: Disable access to app diagnostics on this device via Registry
-  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-              CapabilityAccessManager\ConsentStore\appDiagnostics
-  :names:     Value
-  :types:     SZ
-  :data:      Deny
-  :no_section:
+  .. dropdown:: :term:`Registry`
+    :title: font-weight-bold
+    :animate: fade-in
 
-.. rubric:: Allow apps to access diagnostic info abour your other apps
+    ``Allow`` enables access to app diagnostics.
 
-.. wregedit:: Disable apps to access diagnostic info abour your other apps via
-              Registry
-  :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
-  :names:     LetAppsGetDiagnosticInfo
-  :types:     DWORD
-  :data:      2
-  :no_section:
+    .. wregedit:: Disable access to app diagnostics on this device
+      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
+                  CapabilityAccessManager\ConsentStore\appDiagnostics
+      :names:     Value
+      :types:     SZ
+      :data:      Deny
+      :no_section:
+      :no_caption:
 
-    .. note::
-      See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more
-      fine grained control of app access.
+  .. dropdown:: :term:`GPO`
+    :title: font-weight-bold
+    :animate: fade-in
 
-.. wgpolicy:: Disable apps to access diagnostic info abour your other apps via
-              machine GPO
-  :key_title: Computer Configuration -->
-              Administrative Templates -->
-              Windows Components -->
-              App Privacy -->
-              Let Windows apps access diagnostic information about other apps
-  :option:    ☑,
-              Default for all apps
-  :setting:   Enabled,
-              Force Deny
-  :no_section:
+    .. wgpolicy:: Disable apps to access diagnostic info abour your other apps
+      :key_title: Computer Configuration -->
+                  Administrative Templates -->
+                  Windows Components -->
+                  App Privacy -->
+                  Let Windows apps access diagnostic information about other apps
+      :option:    ☑,
+                  Default for all apps
+      :setting:   Enabled,
+                  Force Deny
+      :no_section:
+      :no_caption:
 
-    .. note::
-      See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more
-      fine grained control of app access.
+.. dropdown:: Allow apps to access diagnostic info abour your other apps
+  :container: + shadow
+  :title: bg-primary text-white font-weight-bold
+  :animate: fade-in
+
+  See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more fine
+  grained control of app access.
+
+  .. dropdown:: :term:`Registry`
+    :title: font-weight-bold
+    :animate: fade-in
+
+    ``0`` enables apps access to diagnostic info.
+
+    .. wregedit:: Disable apps to access diagnostic info abour your other apps
+      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
+      :names:     LetAppsGetDiagnosticInfo
+      :types:     DWORD
+      :data:      2
+      :no_section:
+      :no_caption:
+
+  .. dropdown:: :term:`GPO`
+    :title: font-weight-bold
+    :animate: fade-in
+
+    .. wgpolicy:: Disable apps to access diagnostic info abour your other apps
+      :key_title: Computer Configuration -->
+                  Administrative Templates -->
+                  Windows Components -->
+                  App Privacy -->
+                  Let Windows apps access diagnostic information about other apps
+      :option:    ☑,
+                  Default for all apps
+      :setting:   Enabled,
+                  Force Deny
+      :no_section:
+      :no_caption:
 
 .. rubric:: Rreferences
 

@@ -4,45 +4,57 @@ Location
 ########
 :cmdmenu:`⌘ + r --> ms-settings:privacy-location`
 
-.. rubric:: Allow access to location on this device
+.. dropdown:: Allow access to location on this device
+  :container: + shadow
+  :title: bg-primary text-white font-weight-bold
+  :animate: fade-in
 
-.. note::
   This disables all location privacy (hardware) options. See
-  :ref:`w10-1903-privacy-location` to manage access on a per app basis.
+  :ref:`Allow apps to access your location <w10-1903-privacy-location>` to
+  manage access on a per app basis.
 
-.. wregedit:: Disable access to location on this device via Registry
-  :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\
-              LocationAndSensors
-  :names:     DisableLocation
-  :types:     DWORD
-  :data:      1
-  :no_section:
+  .. dropdown:: :term:`Registry`
+    :title: font-weight-bold
+    :animate: fade-in
 
-.. wregedit:: Disable access to location on this device consentstore via
-              Registry
-  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-              CapabilityAccessManager\ConsentStore\location
-  :names:     Value
-  :types:     SZ
-  :data:      Deny
-  :no_section:
-  :no_launch:
+    See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more
+    fine grained control of app access.
 
-    .. note::
-      See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more
-      fine grained control of app access.
+    .. wregedit:: Disable access to location on this device
+      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\
+                  LocationAndSensors
+      :names:     DisableLocation
+      :types:     DWORD
+      :data:      1
+      :no_section:
+      :no_caption:
 
-.. wgpolicy:: Disable access to location on this device via machine GPO
-  :key_title: Computer Configuration -->
-              Administrative Templates -->
-              Windows Components -->
-              Location and Sensors -->
-              Turn off location
-  :option:    ☑
-  :setting:   Enabled
-  :no_section:
+    .. wregedit:: Disable access to location on this device consentstore
+      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
+                  CapabilityAccessManager\ConsentStore\location
+      :names:     Value
+      :types:     SZ
+      :data:      Deny
+      :no_section:
+      :no_caption:
+      :no_launch:
 
-    .. wgpolicy:: Disable Location sensors (hardware) via machine GPO
+  .. dropdown:: :term:`GPO`
+    :title: font-weight-bold
+    :animate: fade-in
+
+    .. wgpolicy:: Disable access to location on this device
+      :key_title: Computer Configuration -->
+                  Administrative Templates -->
+                  Windows Components -->
+                  Location and Sensors -->
+                  Turn off location
+      :option:    ☑
+      :setting:   Enabled
+      :no_section:
+      :no_caption:
+
+    .. wgpolicy:: Disable Location sensors (hardware)
       :key_title: Computer Configuration -->
                   Administrative Templates -->
                   Windows Components -->
@@ -51,9 +63,10 @@ Location
       :option:    ☑
       :setting:   Enabled
       :no_section:
+      :no_caption:
       :no_launch:
 
-    .. wgpolicy:: Disable Location scripting (hardware) via machine GPO
+    .. wgpolicy:: Disable Location scripting (hardware)
       :key_title: Computer Configuration -->
                   Administrative Templates -->
                   Windows Components -->
@@ -62,9 +75,10 @@ Location
       :option:    ☑
       :setting:   Enabled
       :no_section:
+      :no_caption:
       :no_launch:
 
-    .. wgpolicy:: Disable Location provider (hardware) via machine GPO
+    .. wgpolicy:: Disable Location provider (hardware)
       :key_title: Computer Configuration -->
                   Administrative Templates -->
                   Windows Components -->
@@ -74,38 +88,54 @@ Location
       :option:    ☑
       :setting:   Enabled
       :no_section:
+      :no_caption:
       :no_launch:
 
 .. _w10-1903-privacy-location:
 
-.. rubric:: Allow apps to access your location
+.. dropdown:: Allow apps to access your location
+  :container: + shadow
+  :title: bg-primary text-white font-weight-bold
+  :animate: fade-in
 
-.. wregedit:: Disable apps to access your location via Registry
-  :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
-  :names:     LetAppsAccessLocation
-  :types:     DWORD
-  :data:      2
-  :no_section:
+  Disable app access to location.
 
-    .. note::
-      See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more
-      fine grained control of app access.
+  .. dropdown:: :term:`Registry`
+    :title: font-weight-bold
+    :animate: fade-in
 
-.. wgpolicy:: Disable apps to access your location via machine GPO
-  :key_title: Computer Configuration -->
-              Administrative Templates -->
-              Windows Components -->
-              App Privacy -->
-              Let Windows apps access location
-  :option:    ☑,
-              Default for all apps
-  :setting:   Enabled,
-              Force Deny
-  :no_section:
+    See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more
+    fine grained control of app access.
 
-    .. note::
-      See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more
-      fine grained control of app access.
+    ``0`` enables location.
+
+    .. wregedit:: Disable apps to access your location
+      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
+      :names:     LetAppsAccessLocation
+      :types:     DWORD
+      :data:      2
+      :no_section:
+      :no_caption:
+
+  .. dropdown:: :term:`GPO`
+    :title: font-weight-bold
+    :animate: fade-in
+    
+    See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more
+    fine grained control of app access.
+
+    .. wgpolicy:: Disable apps to access your location
+      :key_title: Computer Configuration -->
+                  Administrative Templates -->
+                  Windows Components -->
+                  App Privacy -->
+                  Let Windows apps access location
+      :option:    ☑,
+                  Default for all apps
+      :setting:   Enabled,
+                  Force Deny
+      :no_section:
+      :no_caption:
 
 .. rubric:: Rreferences
 

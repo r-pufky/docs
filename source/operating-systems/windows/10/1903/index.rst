@@ -14,7 +14,7 @@ initial Windows setup.
 
 #. :ref:`w10-1903-disable-telemetry`.
 #. :ref:`w10-1903-disable-onedrive`.
-#. :ref:`w10-1903-disable-defender-antivirus`.
+#. :ref:`w10-1903-disable-windows-defender`.
 #. :ref:`w10-1903-disable-cortana-search`.
 #. :ref:`w10-1903-disable-windows-store-promotions`.
 #. :ref:`w10-1903-disable-resource-exhaustion`.
@@ -22,47 +22,41 @@ initial Windows setup.
 #. :ref:`w10-1903-meltdown-spectre`.
 #. :ref:`w10-1903-disable-explorer-ads`.
 #. :ref:`w10-1903-disable-wifi-sharing`.
-#. :ref:`w10-1903-remove-optional-features`.
 #. :ref:`w10-1903-reasonable-privacy`.
-#. :ref:`w10-1903-remove-startup-items`.
-#. :ref:`w10-1903-remove-preinstalled-packages`.
 #. :ref:`w10-1903-disable-paging`.
 #. :ref:`w10-1903-disable-restore-points`.
-#. :ref:`w10-1903-disable-facial-recognition`.
+#. :ref:`w10-1903-disable-biometrics`.
 #. :ref:`w10-1903-disable-error-reporting`.
 #. :ref:`w10-1903-disable-account-sync`.
 #. :ref:`w10-1903-disable-spotlight`.
 #. :ref:`w10-1903-disable-delivery-optimization`.
-#. :ref:`w10-1903-taskbar-notifications`.
-#. :ref:`w10-1903-disable-service`.
+#. :ref:`w10-1903-disable-update-notifications`.
+#. :ref:`w10-1903-disable-services`.
 
 .. toctree::
    :hidden:
    :maxdepth: -1
 
-   telemetry
-   onedrive
-   defender-antivirus
-   cortana-search
-   windows-store
-   resource-exhaustion
-   game-broadcasting
-   meltdown-spectre
-   explorer-ads
-   wifi-sharing
-   optional-features
+   disable-telemetry
+   disable-onedrive
+   disable-windows-defender
+   disable-cortana-search
+   disable-windows-store-promotions
+   disable-resource-exhaustion
+   disable-game-broadcasting
+   meltdown-and-spectre-patch
+   disable-explorer-ads
+   disable-wifi-sharing
    privacy/index
-   remove-startup-items
-   remove-preinstalled-packages
-   paging
-   restore-points
-   facial-recognition
-   error-reporting
-   account-sync
-   spotlight
-   delivery-optimization
-   taskbar-notifications
-   service
+   disable-paging
+   disable-restore-points
+   disable-biometrics
+   disable-error-reporting
+   disable-account-sync
+   disable-spotlight
+   disable-delivery-optimization
+   disable-update-notifications
+   disable-services
 
 .. rubric:: References
 

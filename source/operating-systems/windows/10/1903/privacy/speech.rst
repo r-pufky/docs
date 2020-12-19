@@ -4,47 +4,70 @@ Speech
 ######
 :cmdmenu:`⌘ + r --> ms-settings:privacy-speech`
 
-.. rubric:: Online speech recognition
+.. dropdown:: Online speech recognition
+  :container: + shadow
+  :title: bg-primary text-white font-weight-bold
+  :animate: fade-in
 
-.. wregedit:: Disable Online Speech Recognition via Registry
-  :key_title: HKEY_CURRENT_USER\Software\Microsoft\Speech_OneCore\Settings\
-              OnlineSpeechPrivacy
-  :names:     HasAccepted
-  :types:     DWORD
-  :data:      0
-  :no_section:
+  .. dropdown:: :term:`Registry`
+    :title: font-weight-bold
+    :animate: fade-in
 
-.. wgpolicy:: Disable Online Speech Recognition via machine GPO
-  :key_title: Computer Configuration -->
-              Administrative Templates -->
-              Control Panel -->
-              Regional and Language Options -->
-              Allow users to enable online speech recognition services
-  :option:    ☑
-  :setting:   Disabled
-  :no_section:
+    .. wregedit:: Disable Online Speech Recognition
+      :key_title: HKEY_CURRENT_USER\Software\Microsoft\Speech_OneCore\Settings\
+                  OnlineSpeechPrivacy
+      :names:     HasAccepted
+      :types:     DWORD
+      :data:      0
+      :no_section:
+      :no_caption:
 
-.. rubric:: Automatic updates of speech data
+  .. dropdown:: :term:`GPO`
+    :title: font-weight-bold
+    :animate: fade-in
 
-.. note::
-  There is no GUI equivalent.
+    .. wgpolicy:: Disable Online Speech Recognition
+      :key_title: Computer Configuration -->
+                  Administrative Templates -->
+                  Control Panel -->
+                  Regional and Language Options -->
+                  Allow users to enable online speech recognition services
+      :option:    ☑
+      :setting:   Disabled
+      :no_section:
+      :no_caption:
 
-.. wregedit:: Disable automatic updates of speech data via Registry
-  :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Speech
-  :names:     AllowSpeechModelUpdate
-  :types:     DWORD
-  :data:      0
-  :no_section:
+.. dropdown:: Automatic updates of speech data
+  :container: + shadow
+  :title: bg-primary text-white font-weight-bold
+  :animate: fade-in
 
-.. wgpolicy:: Disable automatic updates of speech data via machine GPO
-  :key_title: Computer Configuration -->
-              Administrative Templates -->
-              Windows Components -->
-              Speech -->
-              Allow automatic updates of Speech Data
-  :option:    ☑
-  :setting:   Disabled
-  :no_section:
+  .. dropdown:: :term:`Registry`
+    :title: font-weight-bold
+    :animate: fade-in
+
+    .. wregedit:: Disable automatic updates of speech data
+      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Speech
+      :names:     AllowSpeechModelUpdate
+      :types:     DWORD
+      :data:      0
+      :no_section:
+      :no_caption:
+
+  .. dropdown:: :term:`GPO`
+    :title: font-weight-bold
+    :animate: fade-in
+
+    .. wgpolicy:: Disable automatic updates of speech data
+      :key_title: Computer Configuration -->
+                  Administrative Templates -->
+                  Windows Components -->
+                  Speech -->
+                  Allow automatic updates of Speech Data
+      :option:    ☑
+      :setting:   Disabled
+      :no_section:
+      :no_caption:
 
 .. rubric:: Rreferences
 
