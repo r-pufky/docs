@@ -37,23 +37,63 @@ Standardized replacements used:
 
 Callouts (`admonitions`_)
 *************************
-
-* ``attention``
-* ``caution``
-* ``danger``
-* ``error``
-* ``hint``
-* ``important``
-* ``note``
-* ``tip``
-* ``warning``
-* ``pull-quote`` -- quote block, generally unformatted.
-* ``highlights`` -- highlight block, generally unformatted.
-* ``epigraph`` -- epigraph block, generally unformatted.
-* ``todo``
-* ``seealso``
-
 Only use multi-line admonitions.
+
+.. hint::
+  
+  ``hint``
+
+.. important::
+  
+  ``important``
+
+.. tip::
+ 
+  ``tip``
+
+.. note::
+
+  ``note``
+
+.. seealso::
+  
+  ``seealso``
+
+.. attention::
+
+  ``attention``
+
+.. caution::
+
+  ``caution``
+
+.. warning::
+   
+  ``warning``
+
+.. todo::
+
+  ``todo``
+
+.. danger::
+
+  ``danger``
+
+.. error::
+   
+  ``error``
+
+.. pull-quote::
+  
+  ``pull-quote`` -- quote block, generally unformatted.
+
+.. highlights::
+   
+  ``highlights`` -- highlight block, generally unformatted.
+
+.. epigraph::
+
+  ``epigraph`` -- epigraph block, generally unformatted.
 
 References
 **********
