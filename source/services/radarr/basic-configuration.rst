@@ -529,12 +529,18 @@ General
 .. ggui:: Radarr General Security
   :key_title: Settings --> General --> Security
   :option:  Authentication,
-            API Key
+            API Key,
+            Certificate Validation
   :setting: None,
-            {GENERATE API KEY}
+            {GENERATE API KEY},
+            Disabled for Local Addresses
   :no_section:
   :no_caption:
   :no_launch:
+
+    Certificate validation needs to be disabled for local addresses as let's
+    encrypt certs presented using a non-routable IP will fail full-chain
+    validation, which is the `default validation method`_ as of 2020-11-01.
 
 .. ggui:: Radarr General Proxy
   :key_title: Settings --> General --> Proxy
@@ -613,3 +619,5 @@ UI
   :no_section:
   :no_caption:
   :no_launch:
+
+.. _default validation method: https://old.reddit.com/r/radarr/comments/k3pifj/connection_to_sabnzbd_broken_after_update/
