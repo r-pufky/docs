@@ -1,5 +1,7 @@
 .. _w10-20h2-offline-maps:
 
+Offline maps
+############
 .. dropdown:: Disable Metered connections
   :container: + shadow
   :title: bg-primary text-white font-weight-bold

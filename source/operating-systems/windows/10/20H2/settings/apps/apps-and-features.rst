@@ -1,5 +1,7 @@
 .. _w10-20h2-apps-and-features:
 
+Apps & features
+###############
 .. dropdown:: Choose where to get apps
   :container: + shadow
   :title: bg-primary text-white font-weight-bold

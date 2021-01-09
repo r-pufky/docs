@@ -1,5 +1,7 @@
 .. _w10-20h2-game-mode:
 
+Game Mode
+#########
 .. dropdown:: Enable Game Mode  
   :container: + shadow
   :title: bg-primary text-white font-weight-bold

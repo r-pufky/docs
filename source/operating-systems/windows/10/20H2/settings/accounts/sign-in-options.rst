@@ -1,5 +1,8 @@
 .. _w10-20h2-sign-in-options:
 
+Sign-in options
+###############
+
 Require Sign-in
 ***************
 .. dropdown:: If you've been away, should Windows require you to sign-in again?

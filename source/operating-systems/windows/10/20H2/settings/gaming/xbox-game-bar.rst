@@ -1,5 +1,7 @@
 .. _w10-20h2-xbox-game-bar:
 
+Xbox Game Bar
+#############
 .. dropdown:: Disable Xbox Game Bar
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
