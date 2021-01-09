@@ -19,6 +19,7 @@ Each sub-section is a core panel within the settings GUI.
    personalization/index
    apps/index
    accounts/index
+   gaming/index
    disable-account-sync
    disable-biometrics
    disable-cortana-search
