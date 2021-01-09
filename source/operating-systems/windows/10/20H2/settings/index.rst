@@ -18,6 +18,7 @@ Each sub-section is a core panel within the settings GUI.
    network-and-internet/index
    personalization/index
    apps/index
+   accounts/index
    disable-account-sync
    disable-biometrics
    disable-cortana-search
