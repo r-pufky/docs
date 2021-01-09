@@ -20,6 +20,9 @@ Each sub-section is a core panel within the settings GUI.
    apps/index
    accounts/index
    gaming/index
+   search/index
+   privacy/index
+   update-security/index
    disable-account-sync
    disable-biometrics
    disable-cortana-search
@@ -37,8 +40,6 @@ Each sub-section is a core panel within the settings GUI.
    disable-wifi-sharing
    disable-windows-defender
    disable-windows-store-promotions
-   privacy/index
-   update-security/index
 
 
 .. rubric:: References
