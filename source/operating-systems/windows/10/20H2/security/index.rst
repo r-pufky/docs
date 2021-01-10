@@ -1,9 +1,7 @@
-.. _w10-20h2-settings-update-security:
+.. _w10-20h2-security:
 
-Updates & Security
-##################
-Open Windows Settings start -> settings ...
-
+Security
+########
 A reboot is required once these changes are made. See :ref:`w10-pro-base` for
 initial Windows setup.
 
@@ -15,11 +13,9 @@ initial Windows setup.
 
   Many settings only appear in :term:`GPO` or :term:`Registry` but not both.
 
-
 .. toctree::
    :maxdepth: -1
 
-   ../../security/index
 
 .. rubric:: References
 
