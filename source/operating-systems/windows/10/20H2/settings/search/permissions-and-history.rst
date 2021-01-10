@@ -15,6 +15,7 @@ Permissions & History
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
     :animate: fade-in
+    :open:
 
     ``1`` moderate, ``2`` strict.
 
@@ -60,6 +61,7 @@ Cloud content search
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
     :animate: fade-in
+    :open:
 
     ``MSA`` handles Microsoft accounts, ``AAD`` handles Azure Active Directory
     accounts (work or school accounts).
@@ -88,6 +90,7 @@ History
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
     :animate: fade-in
+    :open:
 
     .. wregedit:: Disable Search history on this device
       :key_title: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion

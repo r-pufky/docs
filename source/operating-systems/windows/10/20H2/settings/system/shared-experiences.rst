@@ -5,7 +5,6 @@ Shared Experiences
 
 Nearby Sharing
 **************
-
 .. dropdown:: Disable share content with a nearby device by using Bluetooth and Wi-Fi
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
@@ -49,7 +48,6 @@ Nearby Sharing
 
 Share across devices
 ********************
-
 .. dropdown:: Disable let apps on other devices (including linked phones and
               tablets) open and message apps on this device, and vice versa
   :container: + shadow
@@ -57,20 +55,6 @@ Share across devices
   :animate: fade-in
 
   Automatically accepts connections for sharing files.
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
-    :open:
-
-    .. wregedit:: Disable let apps on other devices (including linked phones and
-                  tablets) open and message apps on this device, and vice versa
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System
-      :names:     EnableCdp
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
 
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
@@ -88,5 +72,19 @@ Share across devices
                   Continue experiences on this device
       :option:    ☑
       :setting:   Disabled
+      :no_section:
+      :no_caption:
+
+  .. dropdown:: :term:`Registry`
+    :title: font-weight-bold
+    :animate: fade-in
+    :open:
+
+    .. wregedit:: Disable let apps on other devices (including linked phones and
+                  tablets) open and message apps on this device, and vice versa
+      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System
+      :names:     EnableCdp
+      :types:     DWORD
+      :data:      0
       :no_section:
       :no_caption:

@@ -12,6 +12,7 @@ Searching Windows
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
     :animate: fade-in
+    :open:
 
     ``1`` enhanced.
 
@@ -36,9 +37,7 @@ Indexer Performance
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
     :animate: fade-in
-
-    ``MSA`` handles Microsoft accounts, ``AAD`` handles Azure Active Directory
-    accounts (work or school accounts).
+    :open:
 
     .. wregedit:: Enable Respect Device Power Mode Settings
       :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Search\Gather

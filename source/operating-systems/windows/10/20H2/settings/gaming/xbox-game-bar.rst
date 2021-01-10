@@ -8,9 +8,28 @@ Xbox Game Bar
   :animate: fade-in
   :open:
 
+  `Reference <https://www.tenforums.com/tutorials/51180-enable-disable-windows-game-recording-broadcasting-windows-10-a.html>`_
+
+  .. dropdown:: :term:`GPO`
+    :title: font-weight-bold
+    :animate: fade-in
+    :open:
+
+    .. wgpolicy:: Disable game broadcasting suite
+      :key_title: Computer Configuration -->
+                  Administrative Templates -->
+                  Windows Components -->
+                  Windows Game Recording and Broadcasting -->
+                  Enables or disables Windows Game Recording and Broadcasting
+      :option:    ☑
+      :setting:   Disabled
+      :no_section:
+      :no_caption:
+
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
     :animate: fade-in
+    :open:
 
     .. wregedit:: Removing ⌘ + g Prompt on Game Launch
       :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
@@ -47,23 +66,6 @@ Xbox Game Bar
       :no_section:
       :no_caption:
       :no_launch:
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    `Reference <https://www.tenforums.com/tutorials/51180-enable-disable-windows-game-recording-broadcasting-windows-10-a.html>`_
-
-    .. wgpolicy:: Disable game broadcasting suite
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Windows Game Recording and Broadcasting -->
-                  Enables or disables Windows Game Recording and Broadcasting
-      :option:    ☑
-      :setting:   Disabled
-      :no_section:
-      :no_caption:
 
 .. _Disable xbox Game DVR: https://www.tenforums.com/tutorials/8637-turn-off-xbox-game-bar-windows-10-a.html
 .. _Disable xbox Game monitoring: https://www.windowscentral.com/how-disable-and-remove-game-bar-windows-10-creators-update

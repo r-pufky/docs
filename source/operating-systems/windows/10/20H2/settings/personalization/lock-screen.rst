@@ -2,11 +2,13 @@
 
 Lock screen
 ###########
-
 .. dropdown:: Disable get fun facts, tips, tricks, and more on your lock screen
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
+  :open:
+
+  Contacts Microsoft servers to get information to display.
 
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold

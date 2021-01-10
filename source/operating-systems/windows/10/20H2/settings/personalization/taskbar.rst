@@ -9,6 +9,21 @@ Taskbar
 
   `Reference <https://www.tenforums.com/tutorials/104265-enable-disable-lock-taskbar-windows-10-a.html>`_
 
+  .. dropdown:: :term:`GPO`
+    :title: font-weight-bold
+    :animate: fade-in
+    :open:
+
+    .. wgpolicy:: Lock the taskbar
+      :key_title: User Configuration -->
+                  Administrative Templates -->
+                  Start Menu and Taskbar -->
+                  Lock the Taskbar
+      :option:    ☑
+      :setting:   Enabled
+      :no_section:
+      :no_caption:
+
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
     :animate: fade-in
@@ -22,21 +37,6 @@ Taskbar
       :names:     LockTaskbar
       :types:     DWORD
       :data:      1
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-    :open:
-
-    .. wgpolicy:: Lock the taskbar
-      :key_title: User Configuration -->
-                  Administrative Templates -->
-                  Start Menu and Taskbar -->
-                  Lock the Taskbar
-      :option:    ☑
-      :setting:   Enabled
       :no_section:
       :no_caption:
 
@@ -91,6 +91,21 @@ Notification Area
 
   `Reference <https://www.tenforums.com/tutorials/5313-hide-show-notification-area-icons-taskbar-windows-10-a.html#option5>`_
 
+  .. dropdown:: :term:`GPO`
+    :title: font-weight-bold
+    :animate: fade-in
+    :open:
+
+    .. wgpolicy:: Lock the taskbar
+      :key_title: User Configuration -->
+                  Administrative Templates -->
+                  Start Menu and Taskbar -->
+                  Turn off notification area cleanup
+      :option:    ☑
+      :setting:   Enabled
+      :no_section:
+      :no_caption:
+
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
     :animate: fade-in
@@ -113,21 +128,7 @@ Notification Area
       :data:      0
       :no_section:
       :no_caption:
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-    :open:
-
-    .. wgpolicy:: Lock the taskbar
-      :key_title: User Configuration -->
-                  Administrative Templates -->
-                  Start Menu and Taskbar -->
-                  Turn off notification area cleanup
-      :option:    ☑
-      :setting:   Enabled
-      :no_section:
-      :no_caption:
+      :no_launch:
 
 .. TODO::
   Manually disable these system icons; there is no current Registry or GPO to
@@ -246,20 +247,6 @@ Notification Area
 
   `Reference <https://www.tenforums.com/tutorials/165990-how-add-remove-meet-now-icon-taskbar-windows-10-a.html>`_
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
-    :open:
-
-    .. wregedit:: Disable Meet Now Icon
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
-                  Policies\Explorer
-      :names:     HideSCAMeetNow
-      :types:     DWORD
-      :data:      1
-      :no_section:
-      :no_caption:
-
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
     :animate: fade-in
@@ -275,28 +262,28 @@ Notification Area
       :no_section:
       :no_caption:
 
+  .. dropdown:: :term:`Registry`
+    :title: font-weight-bold
+    :animate: fade-in
+    :open:
+
+    .. wregedit:: Disable Meet Now Icon
+      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
+                  Policies\Explorer
+      :names:     HideSCAMeetNow
+      :types:     DWORD
+      :data:      1
+      :no_section:
+      :no_caption:
+
 People
-*****************
+******
 .. dropdown:: Disable Show contacts on the taskbar
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
   `Reference <https://www.tenforums.com/tutorials/104877-enable-disable-people-bar-taskbar-windows-10-a.html>`_
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
-    :open:
-
-    .. wregedit:: Disable Show contacts on the taskbar
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows
-                  Explorer
-      :names:     HidePeopleBar
-      :types:     DWORD
-      :data:      1
-      :no_section:
-      :no_caption:
 
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
@@ -310,6 +297,20 @@ People
                   Remove the People Bar from the taskbar
       :option:    ☑
       :setting:   Enabled
+      :no_section:
+      :no_caption:
+
+  .. dropdown:: :term:`Registry`
+    :title: font-weight-bold
+    :animate: fade-in
+    :open:
+
+    .. wregedit:: Disable Show contacts on the taskbar
+      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows
+                  Explorer
+      :names:     HidePeopleBar
+      :types:     DWORD
+      :data:      1
       :no_section:
       :no_caption:
 

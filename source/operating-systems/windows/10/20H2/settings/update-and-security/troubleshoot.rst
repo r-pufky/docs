@@ -6,8 +6,9 @@ Troubleshoot
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
+  :open:
   
-  Data uploading is turned off so this won't work anyways.
+  Requires diagnostic data to be uploaded to Microsoft.
 
   `Reference <https://www.tenforums.com/tutorials/113553-turn-off-automatic-recommended-troubleshooting-windows-10-a.html>`_
     

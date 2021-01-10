@@ -6,6 +6,7 @@ Delivery Optimization
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
+  :open:
   
   `Reference <https://social.technet.microsoft.com/Forums/en-US/e1f7090b-2e93-4276-a12b-ee5c2463bb58/how-can-we-disable-peer-to-peer-update-with-gpo?forum=win10itprogeneral>`_
     
@@ -30,6 +31,7 @@ Delivery Optimization
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
     :animate: fade-in
+    :open:
 
     .. wregedit:: Disable delivery optimization
       :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows

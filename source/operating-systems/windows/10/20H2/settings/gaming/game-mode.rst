@@ -16,6 +16,7 @@ Game Mode
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
     :animate: fade-in
+    :open:
 
     .. wregedit:: Removing ⌘ + g Prompt on Game Launch
       :key_title: HKEY_CURRENT_USER\Software\Microsoft\GameBar

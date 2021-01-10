@@ -12,6 +12,7 @@ Offline maps
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
     :animate: fade-in
+    :open:
 
     .. wregedit:: Disable Metered connections
       :key_title: HKEY_LOCAL_MACHINE\SYSTEM\Maps
@@ -25,7 +26,6 @@ Offline maps
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-  :open:
   
   `Reference <https://www.tenforums.com/tutorials/106248-enable-disable-automatic-updates-offline-maps-windows-10-a.html>`_
     
@@ -48,6 +48,7 @@ Offline maps
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
     :animate: fade-in
+    :open:
 
     .. wregedit:: Disable Automatically update maps
       :key_title: KEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Maps

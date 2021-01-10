@@ -5,7 +5,6 @@ Wi-Fi
 
 Hotspot 2.0 networks
 ********************
-
 .. dropdown:: Disable let me use online sign-up to get connected
   :container: + shadow
   :title: bg-primary text-white font-weight-bold

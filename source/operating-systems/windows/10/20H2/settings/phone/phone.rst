@@ -7,11 +7,11 @@ Phone
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
+  :open:
 
   Phones are easy vectors that can bring in outside threats. Do not pair.
   
   `Reference <https://www.windowscentral.com/how-disable-phone-pc-linking-feature-windows-10>`_
-
     
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
@@ -32,8 +32,9 @@ Phone
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
     :animate: fade-in
+    :open:
 
-    MMX is the right name.
+    ``EnableMMX`` is an unfortunate name, but correct.
 
     .. wregedit:: Disable Add a phone
       :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System

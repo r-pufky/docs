@@ -9,7 +9,6 @@ Require Sign-in
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-  :open:
 
   Require sign-in whenever PC wakes from sleep.
   
@@ -48,6 +47,7 @@ Require Sign-in
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
     :animate: fade-in
+    :open:
 
     .. wregedit:: Require Sign-in for all users
       :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Power
@@ -67,10 +67,7 @@ Privacy
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-  :open:
 
-  Disable.
-  
   `Reference <https://www.tenforums.com/tutorials/52908-enable-disable-sign-screen-email-address-windows-10-a.html>`_
     
   .. dropdown:: :term:`GPO`
@@ -93,6 +90,7 @@ Privacy
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
     :animate: fade-in
+    :open:
 
     .. wregedit:: Disable Show account details such as my email address on the
                   sign-in screen
@@ -108,7 +106,6 @@ Privacy
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-  :open:
 
   Disable caching of credentials for auto-login. Registry edits require per-user
   SID edits, only GPO is shown.

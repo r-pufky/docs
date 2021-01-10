@@ -6,6 +6,7 @@ Find my device
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
+  :open:
   
   GPS information is uploaded to Microsoft if enabled.
 
@@ -30,6 +31,7 @@ Find my device
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
     :animate: fade-in
+    :open:
 
     .. wregedit:: Disable delivery optimization
       :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Settings\FindMyDevice

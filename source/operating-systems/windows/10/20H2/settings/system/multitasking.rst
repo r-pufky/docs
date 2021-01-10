@@ -15,6 +15,24 @@ Timeline
 
   App usage is recorded to show suggestions.
 
+  .. dropdown:: :term:`GPO`
+    :title: font-weight-bold
+    :animate: fade-in
+    :open:
+
+    `Reference <https://www.top-password.com/blog/disable-windows-10-timeline-with-group-policy/>`_
+
+    .. wgpolicy:: Disable timeline
+      :key_title: Computer Configuration -->
+                  Administrative Templates -->
+                  System -->
+                  OS Policies -->
+                  Enables Activity Feed
+      :option:    ☑
+      :setting:   Disabled
+      :no_section:
+      :no_caption:
+
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
     :animate: fade-in
@@ -42,30 +60,13 @@ Timeline
       :no_caption:
       :no_launch:
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-    :open:
-
-    `Reference <https://www.top-password.com/blog/disable-windows-10-timeline-with-group-policy/>`_
-
-    .. wgpolicy:: Disable timeline
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  System -->
-                  OS Policies -->
-                  Enables Activity Feed
-      :option:    ☑
-      :setting:   Disabled
-      :no_section:
-      :no_caption:
-
 .. dropdown:: Remove Edge tabs from alt+tab navigation
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  alt+tab is for OS navigation, not OS+specific browser.
+  :cmdmenu:`alt` + :cmdmenu:`tab` is for OS window navigation, not OS+specific browser window
+  navigation.
 
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold

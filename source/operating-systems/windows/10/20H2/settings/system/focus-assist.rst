@@ -2,7 +2,6 @@
 
 Focus Assist
 ############
-
 .. dropdown:: Disable focus assist
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
