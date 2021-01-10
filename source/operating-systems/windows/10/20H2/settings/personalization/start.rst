@@ -1,4 +1,4 @@
-.. _w10-20h2-start:
+.. _w10-20h2-personalization-start:
 
 Start
 #####
@@ -28,7 +28,7 @@ Start
       :no_section:
       :no_caption:
 
-.. _w10-20h2-most-used-apps:
+.. _w10-20h2-personalization-most-used-apps:
 
 .. dropdown:: Disable Show most used apps
   :container: + shadow

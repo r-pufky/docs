@@ -1,4 +1,4 @@
-.. _w10-20h2-multitasking:
+.. _w10-20h2-settings-system-multitasking:
 
 Multitasking
 ############
@@ -6,7 +6,7 @@ Multitasking
 Timeline
 ********
 
-.. _w10-20h2-timeline-suggestions:
+.. _w10-20h2-settings-system-timeline-suggestions:
 
 .. dropdown:: Disable show suggestions in your timeline
   :container: + shadow

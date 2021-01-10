@@ -1,4 +1,4 @@
-.. _w10-20h2-wi-fi:
+.. _w10-20h2-settings-network-and-internet-wi-fi:
 
 Wi-Fi
 #####

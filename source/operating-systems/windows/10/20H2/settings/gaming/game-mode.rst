@@ -1,4 +1,4 @@
-.. _w10-20h2-game-mode:
+.. _w10-20h2-settings-gaming-game-mode:
 
 Game Mode
 #########

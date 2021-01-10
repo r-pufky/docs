@@ -1,4 +1,4 @@
-.. _w10-20h2-focus-assist:
+.. _w10-20h2-settings-system-focus-assist:
 
 Focus Assist
 ############

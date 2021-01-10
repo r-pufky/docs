@@ -1,4 +1,4 @@
-.. _w10-20h2-apps-and-features:
+.. _w10-20h2-settings-apps-apps-and-features:
 
 Apps & features
 ###############

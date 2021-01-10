@@ -1,4 +1,4 @@
-.. _w10-20h2-notifications-and-actions:
+.. _w10-20h2-settings-system-notifications-and-actions:
 
 Notifications & Actions
 #######################
@@ -9,7 +9,7 @@ Notifications
   GPO's are currently broken. Apply **both** GPO and Registry for all options
   if available. `Reference <https://social.technet.microsoft.com/Forums/windows/en-US/c39301f4-dcc9-4f2b-a872-98a23bd6d86a/gpo-to-quotturn-off-toast-notifications-on-the-lock-screenquot-does-not-work?forum=win10itprogeneral>`_.
 
-.. _w10-20h2-get-notifications-from-apps:
+.. _w10-20h2-settings-system-get-notifications-from-apps:
 
 .. dropdown:: Disable get notifications from apps and other windows
   :container: + shadow
@@ -246,8 +246,8 @@ Notifications
 
 Get notifications from these senders
 ************************************
-:ref:`w10-20h2-get-notifications-from-apps` must be enabled for these per-app
-options to be enabled.
+:ref:`w10-20h2-settings-system-get-notifications-from-apps` must be enabled for
+these per-app options to be enabled.
 
 .. dropdown:: Notifications can be disabled on a per-app basis
   :container: + shadow

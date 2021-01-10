@@ -1,4 +1,4 @@
-.. _w10-20h2-sign-in-options:
+.. _w10-20h2-settings-accounts-sign-in-options:
 
 Sign-in options
 ###############

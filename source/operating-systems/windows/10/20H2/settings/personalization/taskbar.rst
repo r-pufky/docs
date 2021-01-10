@@ -1,4 +1,4 @@
-.. _w10-20h2-taskbar:
+.. _w10-20h2-personalization-taskbar:
 
 Taskbar
 #######

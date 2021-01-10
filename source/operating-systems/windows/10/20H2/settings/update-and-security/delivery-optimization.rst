@@ -1,4 +1,4 @@
-.. _w10-20h2-delivery-optimization:
+.. _w10-20h2-settings-update-and-security-delivery-optimization:
 
 Delivery Optimization
 #####################

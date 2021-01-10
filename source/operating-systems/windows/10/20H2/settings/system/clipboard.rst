@@ -1,4 +1,4 @@
-.. _w10-20h2-clipboard:
+.. _w10-20h2-settings-system-clipboard:
 
 Clipboard
 #########

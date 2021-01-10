@@ -1,4 +1,4 @@
-.. _w10-20h2-themes:
+.. _w10-20h2-personalization-themes:
 
 Themes
 ######

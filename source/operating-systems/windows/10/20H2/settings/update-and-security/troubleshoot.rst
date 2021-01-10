@@ -1,4 +1,4 @@
-.. _w10-20h2-troubleshoot:
+.. _w10-20h2-settings-update-and-security-troubleshoot:
 
 Troubleshoot
 ############

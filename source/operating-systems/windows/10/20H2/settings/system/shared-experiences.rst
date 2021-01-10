@@ -1,4 +1,4 @@
-.. _w10-20h2-shared-experiences:
+.. _w10-20h2-settings-system-shared-experiences:
 
 Shared Experiences
 ##################

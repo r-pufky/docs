@@ -1,4 +1,4 @@
-.. _w10-20h2-offline-maps:
+.. _w10-20h2-settings-apps-offline-maps:
 
 Offline maps
 ############

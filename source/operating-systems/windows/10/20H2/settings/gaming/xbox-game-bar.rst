@@ -1,4 +1,4 @@
-.. _w10-20h2-xbox-game-bar:
+.. _w10-20h2-settings-gaming-xbox-game-bar:
 
 Xbox Game Bar
 #############

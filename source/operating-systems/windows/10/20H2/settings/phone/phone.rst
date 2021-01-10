@@ -1,4 +1,4 @@
-.. _w10-20h2-phone:
+.. _w10-20h2-settings-phone-phone:
 
 Phone
 #####

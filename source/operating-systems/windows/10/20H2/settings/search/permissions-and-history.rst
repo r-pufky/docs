@@ -1,4 +1,4 @@
-.. _w10-20h2-permissions-and-history:
+.. _w10-20h2-settings-search-permissions-and-history:
 
 Permissions & History
 #####################

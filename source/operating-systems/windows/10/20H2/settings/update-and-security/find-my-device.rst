@@ -1,4 +1,4 @@
-.. _w10-20h2-find-my-device:
+.. _w10-20h2-settings-update-and-security-find-my-device:
 
 Find my device
 ##############
