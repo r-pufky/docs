@@ -26,11 +26,12 @@ See :ref:`w10-advanced-references` for advanced command references.
 
 .. only:: comment
 
-  Documentation updates:
-  * Cut existing to new directory
-  * find . -type f -name "*.rst" -exec sed -i -e 's/w10-{OLD}/w10-{NEW}/g' {} \;
-  * Prune and re-parse as needed to fit new windows release
-  * Check windows refs in docs and see if update (e.g. w10-1903, etc)
+  Documentation updates
+
+  #. Cut existing to new directory
+  #. ``find . -type f -name "*.rst" -exec sed -i -e 's/w10-{OLD}/w10-{NEW}/g' {} \;``
+  #. Prune and re-parse as needed to fit new windows release
+  #. Check windows refs in docs and see if update (e.g. w10-1903, etc)
 
 .. toctree::
    :hidden:

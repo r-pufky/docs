@@ -20,8 +20,6 @@ hit. See `Telemetry Info`_.
 
   Windows 10 collects user data and sends it to Microsoft.
   
-  `Reference <https://docs.microsoft.com/en-us/windows-server/security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server#connected-user-experiences-and-telemetry>`_
-
   .. wservice:: Disable Connected User Experiences and Telemetry
     :key_title: Connected User Experiences and Telemetry --> General
     :option:    Service name,
@@ -32,54 +30,11 @@ hit. See `Telemetry Info`_.
                 Stopped
     :no_section:
     :no_caption:
+  
+  `Reference <https://docs.microsoft.com/en-us/windows-server/security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server#connected-user-experiences-and-telemetry>`__
 
-.. dropdown:: Restrict data collection to Required 
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
-
-  Remove as much data collection as possible.
-
-  .. warning::
-    ``0 - Security`` (the most restrictive option) can only be used in
-    server and enterprise Windows versions. See `diagnostic data levels`_ for
-    information transmitted. *Disabling* removes policy and reverts to
-    ``3 - Optional`` (full data); so the most restrictive policy is setup in
-    case telemetry services are re-enabled on updates.
-
-  `Reference <https://docs.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization#diagnostic-data-settings>`_
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-    :open:
-
-    .. wgpolicy:: Restrict data collection to required
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Data Collection and Preview Builds -->
-                  Allow Telemetry
-      :option:    ☑,
-                  1
-      :setting:   Enabled,
-                  Required
-      :no_section:
-      :no_caption:
-
-    .. wgpolicy:: Restrict data collection to required
-      :key_title: User Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Data Collection and Preview Builds -->
-                  Allow Telemetry
-      :option:    ☑,
-                  1
-      :setting:   Enabled,
-                  Required
-      :no_section:
-      :no_caption:
-      :no_launch:
+  See :ref:`w10-20h2-settings-privacy-diagnostics-and-feedback` to restrict data
+  collection.
 
 .. dropdown:: Disable application telemetry 
   :container: + shadow
@@ -87,8 +42,6 @@ hit. See `Telemetry Info`_.
   :animate: fade-in
 
   Windows 10 collect information on application usage.
-
-  `Reference <https://admx.help/?Category=Windows_10_2016&Policy=Microsoft.Policies.ApplicationCompatibility::AppCompatTurnOffApplicationImpactTelemetry>`_
 
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
@@ -106,6 +59,8 @@ hit. See `Telemetry Info`_.
       :no_section:
       :no_caption:
 
+  `Reference <https://admx.help/?Category=Windows_10_2016&Policy=Microsoft.Policies.ApplicationCompatibility::AppCompatTurnOffApplicationImpactTelemetry>`__
+
 .. dropdown:: Disable customer experience improvment program 
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
@@ -113,8 +68,6 @@ hit. See `Telemetry Info`_.
 
   Windows 10 devices send hardware and software usage information to Microsoft
   via `customer experience improvement program`_.
-
-  `Reference <https://admx.help/?Category=Windows_10_2016&Policy=Microsoft.Policies.InternetCommunicationManagement::CEIPEnable>`_
 
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
@@ -133,14 +86,14 @@ hit. See `Telemetry Info`_.
       :no_section:
       :no_caption:
 
+  `Reference <https://admx.help/?Category=Windows_10_2016&Policy=Microsoft.Policies.InternetCommunicationManagement::CEIPEnable>`__
+
 .. dropdown:: Disable sending browser history for Edge
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
   Edge browser automatically reports browser history to Microsoft.
-
-  `Reference <https://admx.help/?Category=Windows_10_2016&Policy=Microsoft.Policies.MicrosoftEdge::ConfigureTelemetryForMicrosoft365Analytics>`_
 
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
@@ -170,6 +123,8 @@ hit. See `Telemetry Info`_.
       :no_caption:
       :no_launch:
 
+  `Reference <https://admx.help/?Category=Windows_10_2016&Policy=Microsoft.Policies.MicrosoftEdge::ConfigureTelemetryForMicrosoft365Analytics>`__
+
 .. dropdown:: Disable Malicious Software Removal Tool infection reporting
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
@@ -177,8 +132,6 @@ hit. See `Telemetry Info`_.
 
   Windows 10 Malicious Software Removal Tool automatically uploads file metadata
   for infection reporting.
-
-  `Reference <https://support.microsoft.com/en-us/help/891716/deploy-windows-malicious-software-removal-tool-in-an-enterprise-enviro>`_
 
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
@@ -193,6 +146,8 @@ hit. See `Telemetry Info`_.
       :no_section:
       :no_caption:
 
+  `Reference <https://support.microsoft.com/en-us/help/891716/deploy-windows-malicious-software-removal-tool-in-an-enterprise-enviro>`__
+
 .. dropdown:: Disable inventory collector
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
@@ -200,8 +155,6 @@ hit. See `Telemetry Info`_.
 
   Windows 10 Inventory Collector inventories applications, files, devices, and
   drivers on the system and sends the information to Microsoft.
-  
-  `Reference <https://admx.help/?Category=Windows_10_2016&Policy=Microsoft.Policies.ApplicationCompatibility::AppCompatTurnOffProgramInventory>`_
 
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
@@ -218,6 +171,8 @@ hit. See `Telemetry Info`_.
       :setting:   Enabled
       :no_section:
       :no_caption:
+  
+  `Reference <https://admx.help/?Category=Windows_10_2016&Policy=Microsoft.Policies.ApplicationCompatibility::AppCompatTurnOffProgramInventory>`__
 
 .. dropdown:: Disable program compatibility assistant
   :container: + shadow
@@ -229,8 +184,6 @@ hit. See `Telemetry Info`_.
   Windows, it notifies you if there is a problem and offers to fix it the next
   time you run the program. If the compatibility issue is serious, the Program
   Compatibility Assistant might warn you or block the program from running.
-
-  `Reference <https://admx.help/?Category=Windows_10_2016&Policy=Microsoft.Policies.ApplicationCompatibility::AppCompatTurnOffProgramCompatibilityAssistant_2>`_
 
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
@@ -248,6 +201,8 @@ hit. See `Telemetry Info`_.
       :no_section:
       :no_caption:
 
+  `Reference <https://admx.help/?Category=Windows_10_2016&Policy=Microsoft.Policies.ApplicationCompatibility::AppCompatTurnOffProgramCompatibilityAssistant_2>`__
+
 .. dropdown:: Disable steps recorder
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
@@ -255,8 +210,6 @@ hit. See `Telemetry Info`_.
 
   Steps Recorder automatically capture steps you take on a PC, including a text
   description of what you did and a picture of the screen during each step.
-
-  `Reference <https://admx.help/?Category=Windows_8.1_2012R2&Policy=Microsoft.Policies.ApplicationCompatibility::AppCompatTurnOffUserActionRecord>`_
 
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
@@ -274,14 +227,14 @@ hit. See `Telemetry Info`_.
       :no_section:
       :no_caption:
 
+  `Reference <https://admx.help/?Category=Windows_8.1_2012R2&Policy=Microsoft.Policies.ApplicationCompatibility::AppCompatTurnOffUserActionRecord>`__
+
 .. dropdown:: Force desktop analytics to honor telemetry settings
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
   `Desktop Analytics`_ will report additional telemetry information if enabled.
-
-  `Reference <https://admx.help/?Category=Windows_10_2016&Policy=Microsoft.Policies.DataCollection::LimitEnhancedDiagnosticDataWindowsAnalytics>`_
 
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
@@ -298,6 +251,8 @@ hit. See `Telemetry Info`_.
       :setting:   Disabled
       :no_section:
       :no_caption:
+
+  `Reference <https://admx.help/?Category=Windows_10_2016&Policy=Microsoft.Policies.DataCollection::LimitEnhancedDiagnosticDataWindowsAnalytics>`__
 
 Firewall
 ********
@@ -384,7 +339,6 @@ changed. See references for additional documentation.
 #. `Application Telemetry <https://getadmx.com/HKLM/Software/Policies/Microsoft/Windows/AppCompat>`_
 
 .. _Telemetry Info: https://www.forbes.com/sites/gordonkelly/2015/11/24/windows-10-automatic-spying-begins-again/
-.. _diagnostic data levels: https://docs.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization
 .. _Desktop Analytics: https://admx.help/?Category=Windows_10_2016&Policy=Microsoft.Policies.DataCollection::LimitEnhancedDiagnosticDataWindowsAnalytics
 .. _Endpoints for telemetry: https://docs.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization#how-microsoft-handles-diagnostic-data
 .. _customer experience improvement program: https://www.windowscentral.com/how-opt-out-customer-experience-improvement-program-windows-10
