@@ -10,8 +10,6 @@ Phone
   :open:
 
   Phones are easy vectors that can bring in outside threats. Do not pair.
-  
-  `Reference <https://www.windowscentral.com/how-disable-phone-pc-linking-feature-windows-10>`_
     
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
@@ -43,3 +41,5 @@ Phone
       :data:      0
       :no_section:
       :no_caption:
+
+  `Reference <https://www.windowscentral.com/how-disable-phone-pc-linking-feature-windows-10>`__

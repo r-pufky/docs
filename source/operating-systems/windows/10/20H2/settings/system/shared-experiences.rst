@@ -19,8 +19,6 @@ Nearby Sharing
 
     ``0`` off, ``1`` my devices only, ``2`` everyone.
 
-    `Reference <https://www.tenforums.com/tutorials/97582-turn-off-nearby-sharing-windows-10-a.html>`_
-
     .. wregedit:: Disable share content with a nearby device by using Bluetooth and Wi-Fi
       :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
                   CDP
@@ -46,6 +44,8 @@ Nearby Sharing
       :no_caption:
       :no_launch:
 
+  `Reference <https://www.tenforums.com/tutorials/97582-turn-off-nearby-sharing-windows-10-a.html>`__
+
 Share across devices
 ********************
 .. dropdown:: Disable let apps on other devices (including linked phones and
@@ -60,8 +60,6 @@ Share across devices
     :title: font-weight-bold
     :animate: fade-in
     :open:
-
-    `Reference <https://www.windowscentral.com/how-disable-shared-experiences-windows-10>`_
 
     .. wgpolicy:: Disable let apps on other devices (including linked phones and
                   tablets) open and message apps on this device, and vice versa
@@ -88,3 +86,5 @@ Share across devices
       :data:      0
       :no_section:
       :no_caption:
+
+  `Reference <https://www.windowscentral.com/how-disable-shared-experiences-windows-10>`__

@@ -9,8 +9,6 @@ Troubleshoot
   :open:
   
   Requires diagnostic data to be uploaded to Microsoft.
-
-  `Reference <https://www.tenforums.com/tutorials/113553-turn-off-automatic-recommended-troubleshooting-windows-10-a.html>`_
     
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
@@ -24,3 +22,5 @@ Troubleshoot
       :data:      1
       :no_section:
       :no_caption:
+
+  `Reference <https://www.tenforums.com/tutorials/113553-turn-off-automatic-recommended-troubleshooting-windows-10-a.html>`__

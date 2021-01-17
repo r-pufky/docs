@@ -18,8 +18,6 @@ Hotspot 2.0 networks
     :animate: fade-in
     :open:
 
-    `Reference <https://www.tips-howto.com/tips-how-to-activate-hotspot-2-0-wi-fi-networks-in-windows-10/>`_
-
     .. wregedit:: Disable let me use online sign-up to get connected
       :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WlanSvc\AnqpCache
       :names:     OsuRegistrationStatus
@@ -27,3 +25,5 @@ Hotspot 2.0 networks
       :data:      0
       :no_section:
       :no_caption:
+
+  `Reference <https://www.tips-howto.com/tips-how-to-activate-hotspot-2-0-wi-fi-networks-in-windows-10/>`__

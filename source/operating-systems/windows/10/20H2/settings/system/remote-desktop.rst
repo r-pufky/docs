@@ -9,8 +9,6 @@ Remote Desktop
   :open:
 
   Remote desktop is easily exploited and should never be enabled.
-  
-  `Reference <https://www.tenforums.com/tutorials/92433-enable-disable-remote-desktop-connections-windows-10-pc.html>`_
 
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
@@ -67,3 +65,5 @@ Remote Desktop
       :no_section:
       :no_caption:
       :no_launch:
+
+  `Reference <https://www.tenforums.com/tutorials/92433-enable-disable-remote-desktop-connections-windows-10-pc.html>`__

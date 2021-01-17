@@ -1,4 +1,4 @@
-.. _w10-20h2-personalization-themes:
+.. _w10-20h2-settings-personalization-themes:
 
 Themes
 ######
@@ -16,8 +16,6 @@ Themes
     :animate: fade-in
     :open:
 
-    `Reference <https://www.pelegit.co.il/remove-recycle-bin-using-group-policy/>`_
-
     .. wgpolicy:: Remove Recycle Bin from Desktop
       :key_title: User Configuration -->
                   Administrative Templates -->
@@ -28,14 +26,14 @@ Themes
       :no_section:
       :no_caption:
 
+    `Reference <https://www.pelegit.co.il/remove-recycle-bin-using-group-policy/>`__
+
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
     :animate: fade-in
     :open:
 
     This key should be deleted.
-
-    `Reference <https://www.computerhope.com/issues/ch001276.htm>`_
 
     .. wregedit:: Remove Recycle Bin from Desktop
       :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
@@ -45,3 +43,5 @@ Themes
       :data:      {DELETE}
       :no_section:
       :no_caption:
+
+    `Reference <https://www.computerhope.com/issues/ch001276.htm>`__

@@ -15,8 +15,6 @@ Focus Assist
     :animate: fade-in
     :open:
 
-    `Reference <https://www.itechtics.com/focus-assist-windows-10/>`_
-
     .. wgpolicy:: Disable get notifications from apps and other windows
       :key_title: User Configuration -->
                   Administrative Templates -->
@@ -27,3 +25,5 @@ Focus Assist
       :setting:   Enabled
       :no_section:
       :no_caption:
+
+  `Reference <https://www.itechtics.com/focus-assist-windows-10/>`__

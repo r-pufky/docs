@@ -6,8 +6,6 @@ Searching Windows
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-
-  `Reference <https://www.tenforums.com/tutorials/120447-turn-off-enhanced-mode-search-indexer-windows-10-a.html>`_
     
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
@@ -25,14 +23,14 @@ Searching Windows
       :no_section:
       :no_caption:
 
+  `Reference <https://www.tenforums.com/tutorials/120447-turn-off-enhanced-mode-search-indexer-windows-10-a.html>`__
+
 Indexer Performance
 *******************
 .. dropdown:: Enable Respect Device Power Mode Settings
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-
-  `Reference <https://www.tenforums.com/tutorials/139198-turn-off-search-indexer-respect-device-power-mode-settings.html>`_
     
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
@@ -47,3 +45,5 @@ Indexer Performance
       :data:      1
       :no_section:
       :no_caption:
+
+  `Reference <https://www.tenforums.com/tutorials/139198-turn-off-search-indexer-respect-device-power-mode-settings.html>`__

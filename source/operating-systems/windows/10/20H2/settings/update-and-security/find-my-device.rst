@@ -9,8 +9,6 @@ Find my device
   :open:
   
   GPS information is uploaded to Microsoft if enabled.
-
-  `Reference <https://www.tenforums.com/tutorials/28946-turn-off-find-my-device-windows-10-a.html>`_
     
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
@@ -40,3 +38,5 @@ Find my device
       :data:      0
       :no_section:
       :no_caption:
+
+  `Reference <https://www.tenforums.com/tutorials/28946-turn-off-find-my-device-windows-10-a.html>`__

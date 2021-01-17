@@ -9,8 +9,6 @@ Permissions & History
 
   Prevent filtering of results by Windows Search. Note the GPO only applies to
   Windows versions before 10.
-  
-  `Reference <https://www.tenforums.com/tutorials/82478-change-safesearch-setting-windows-10-a.html#option2>`_
     
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
@@ -28,6 +26,8 @@ Permissions & History
       :no_section:
       :no_caption:
 
+  `Reference <https://www.tenforums.com/tutorials/82478-change-safesearch-setting-windows-10-a.html#option2>`__
+
 Cloud content search
 ********************
 .. dropdown:: Disable Cloud content search
@@ -36,8 +36,6 @@ Cloud content search
   :animate: fade-in
 
   Disable both ``Microsoft account`` and ``Work or School account`` searching.
-
-  `Reference <https://www.tenforums.com/tutorials/88731-enable-disable-show-cloud-content-search-results-windows-10-a.html>`_
     
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
@@ -78,14 +76,14 @@ Cloud content search
       :no_section:
       :no_caption:
 
+  `Reference <https://www.tenforums.com/tutorials/88731-enable-disable-show-cloud-content-search-results-windows-10-a.html>`__
+
 History
 *******
 .. dropdown:: Disable Search history on this device
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-
-  `Reference <https://www.tenforums.com/tutorials/133365-how-turn-off-device-search-history-windows-10-a.html>`_
 
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
@@ -100,3 +98,5 @@ History
       :data:      0
       :no_section:
       :no_caption:
+
+  `Reference <https://www.tenforums.com/tutorials/133365-how-turn-off-device-search-history-windows-10-a.html>`__

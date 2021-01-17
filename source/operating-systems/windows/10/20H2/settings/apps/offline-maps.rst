@@ -6,8 +6,6 @@ Offline maps
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-  
-  `Reference <https://www.tenforums.com/tutorials/83220-turn-off-download-maps-over-metered-connections-windows-10-a.html>`_
     
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
@@ -22,12 +20,12 @@ Offline maps
       :no_section:
       :no_caption:
 
+  `Reference <https://www.tenforums.com/tutorials/83220-turn-off-download-maps-over-metered-connections-windows-10-a.html>`__
+
 .. dropdown:: Disable Automatically update maps
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-  
-  `Reference <https://www.tenforums.com/tutorials/106248-enable-disable-automatic-updates-offline-maps-windows-10-a.html>`_
     
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
@@ -57,3 +55,5 @@ Offline maps
       :data:      0
       :no_section:
       :no_caption:
+
+  `Reference <https://www.tenforums.com/tutorials/106248-enable-disable-automatic-updates-offline-maps-windows-10-a.html>`__

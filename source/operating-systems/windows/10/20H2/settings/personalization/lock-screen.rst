@@ -1,4 +1,4 @@
-.. _w10-20h2-personalization-lock-screen:
+.. _w10-20h2-settings-personalization-lock-screen:
 
 Lock screen
 ###########

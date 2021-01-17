@@ -20,8 +20,6 @@ Timeline
     :animate: fade-in
     :open:
 
-    `Reference <https://www.top-password.com/blog/disable-windows-10-timeline-with-group-policy/>`_
-
     .. wgpolicy:: Disable timeline
       :key_title: Computer Configuration -->
                   Administrative Templates -->
@@ -33,12 +31,12 @@ Timeline
       :no_section:
       :no_caption:
 
+    `Reference <https://www.top-password.com/blog/disable-windows-10-timeline-with-group-policy/>`__
+
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
     :animate: fade-in
     :open:
-
-    `Reference <https://www.tenforums.com/tutorials/102071-turn-off-timeline-suggestions-windows-10-a.html>`_
 
     .. wregedit:: Disable show suggestions in your timeline
       :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
@@ -49,7 +47,7 @@ Timeline
       :no_section:
       :no_caption:
 
-    `Reference <https://www.top-password.com/blog/disable-windows-10-timeline-with-group-policy/>`_
+    `Reference <https://www.tenforums.com/tutorials/102071-turn-off-timeline-suggestions-windows-10-a.html>`__
 
     .. wregedit:: Disable timeline
       :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System
@@ -59,6 +57,9 @@ Timeline
       :no_section:
       :no_caption:
       :no_launch:
+
+    `Reference <https://www.top-password.com/blog/disable-windows-10-timeline-with-group-policy/>`__
+
 
 .. dropdown:: Remove Edge tabs from alt+tab navigation
   :container: + shadow

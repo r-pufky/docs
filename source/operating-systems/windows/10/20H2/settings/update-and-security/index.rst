@@ -8,6 +8,6 @@ Update & Security
    :maxdepth: -1
 
    delivery-optimization
-   ../../security/index
+   windows-security
    troubleshoot
    find-my-device

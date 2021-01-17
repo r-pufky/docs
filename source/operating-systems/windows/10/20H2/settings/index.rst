@@ -26,10 +26,8 @@ Each sub-section is a core panel within the settings GUI.
    disable-account-sync
    disable-biometrics
    disable-cortana-search
-   disable-delivery-optimization
    disable-error-reporting
    disable-explorer-ads
-   disable-game-broadcasting
    disable-onedrive
    disable-paging
    disable-resource-exhaustion

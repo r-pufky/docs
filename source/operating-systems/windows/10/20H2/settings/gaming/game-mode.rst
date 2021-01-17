@@ -11,8 +11,6 @@ Game Mode
   Disables Windows updates while playing games. Game "performance" optimizes are
   minimal.
 
-  `Reference <https://www.tenforums.com/tutorials/75936-turn-off-game-mode-windows-10-a.html>`_
-
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
     :animate: fade-in
@@ -28,3 +26,5 @@ Game Mode
                   1
       :no_section:
       :no_caption:
+
+  `Reference <https://www.tenforums.com/tutorials/75936-turn-off-game-mode-windows-10-a.html>`__

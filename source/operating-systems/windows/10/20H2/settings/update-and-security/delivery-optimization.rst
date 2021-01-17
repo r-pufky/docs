@@ -7,8 +7,6 @@ Delivery Optimization
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
   :open:
-  
-  `Reference <https://social.technet.microsoft.com/Forums/en-US/e1f7090b-2e93-4276-a12b-ee5c2463bb58/how-can-we-disable-peer-to-peer-update-with-gpo?forum=win10itprogeneral>`_
     
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
@@ -41,3 +39,5 @@ Delivery Optimization
       :data:      0
       :no_section:
       :no_caption:
+
+  `Reference <https://social.technet.microsoft.com/Forums/en-US/e1f7090b-2e93-4276-a12b-ee5c2463bb58/how-can-we-disable-peer-to-peer-update-with-gpo?forum=win10itprogeneral>`__

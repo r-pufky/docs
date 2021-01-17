@@ -8,8 +8,6 @@ Xbox Game Bar
   :animate: fade-in
   :open:
 
-  `Reference <https://www.tenforums.com/tutorials/51180-enable-disable-windows-game-recording-broadcasting-windows-10-a.html>`_
-
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
     :animate: fade-in
@@ -66,6 +64,8 @@ Xbox Game Bar
       :no_section:
       :no_caption:
       :no_launch:
+
+  `Reference <https://www.tenforums.com/tutorials/51180-enable-disable-windows-game-recording-broadcasting-windows-10-a.html>`__
 
 .. _Disable xbox Game DVR: https://www.tenforums.com/tutorials/8637-turn-off-xbox-game-bar-windows-10-a.html
 .. _Disable xbox Game monitoring: https://www.windowscentral.com/how-disable-and-remove-game-bar-windows-10-creators-update

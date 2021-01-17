@@ -15,8 +15,6 @@ Clipboard history
   Long term multi-item storage of clipboard will likely contain passwords or
   confidential material.
 
-  `Reference <https://www.top-password.com/blog/disable-clipboard-history-in-windows-10/#:~:text=Method%202%3A%20Disable%20Clipboard%20History,OK%20and%20reboot%20your%20computer.>`_
-
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
     :animate: fade-in
@@ -50,6 +48,8 @@ Clipboard history
       :no_section:
       :no_caption:
 
+  `Reference <https://www.top-password.com/blog/disable-clipboard-history-in-windows-10/#:~:text=Method%202%3A%20Disable%20Clipboard%20History,OK%20and%20reboot%20your%20computer.>`__
+
 Sync across devices
 *******************
 .. dropdown:: Disable paste text on your other devices when you sign in with a
@@ -60,8 +60,6 @@ Sync across devices
 
   Sync of clipboard data will likely contain passwords or confidential material,
   and should **not** be transmitted to MS services even if encrypted.
-  
-  `Reference <https://www.tenforums.com/tutorials/110048-enable-disable-clipboard-sync-across-devices-windows-10-a.html>`_
 
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
@@ -94,3 +92,5 @@ Sync across devices
       :data:      0
       :no_section:
       :no_caption:
+
+  `Reference <https://www.tenforums.com/tutorials/110048-enable-disable-clipboard-sync-across-devices-windows-10-a.html>`__

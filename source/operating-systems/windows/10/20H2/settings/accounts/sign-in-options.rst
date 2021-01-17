@@ -11,8 +11,6 @@ Require Sign-in
   :animate: fade-in
 
   Require sign-in whenever PC wakes from sleep.
-  
-  `Reference <https://www.tenforums.com/tutorials/11129-turn-off-require-sign-wakeup-windows-10-a.html>`_
     
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
@@ -61,14 +59,14 @@ Require Sign-in
       :no_section:
       :no_caption:
 
+  `Reference <https://www.tenforums.com/tutorials/11129-turn-off-require-sign-wakeup-windows-10-a.html>`__
+
 Privacy
 *******
 .. dropdown:: Disable Show account details such as my email address on the sign-in screen.
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-
-  `Reference <https://www.tenforums.com/tutorials/52908-enable-disable-sign-screen-email-address-windows-10-a.html>`_
     
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
@@ -101,6 +99,8 @@ Privacy
       :no_section:
       :no_caption:
 
+  `Reference <https://www.tenforums.com/tutorials/52908-enable-disable-sign-screen-email-address-windows-10-a.html>`__
+
 .. dropdown:: Disable Use my sign-in info to automatically finish setting up my
               device after an update or restart
   :container: + shadow
@@ -109,8 +109,6 @@ Privacy
 
   Disable caching of credentials for auto-login. Registry edits require per-user
   SID edits, only GPO is shown.
-
-  `Reference <https://www.tenforums.com/tutorials/49963-use-sign-info-auto-finish-after-update-restart-windows-10-a.html>`_
     
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
@@ -128,3 +126,5 @@ Privacy
       :setting:   Disabled
       :no_section:
       :no_caption:
+
+  `Reference <https://www.tenforums.com/tutorials/49963-use-sign-info-auto-finish-after-update-restart-windows-10-a.html>`__

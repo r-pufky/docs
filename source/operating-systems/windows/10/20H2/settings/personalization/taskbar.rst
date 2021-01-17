@@ -1,4 +1,4 @@
-.. _w10-20h2-personalization-taskbar:
+.. _w10-20h2-settings-personalization-taskbar:
 
 Taskbar
 #######
@@ -6,8 +6,6 @@ Taskbar
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-
-  `Reference <https://www.tenforums.com/tutorials/104265-enable-disable-lock-taskbar-windows-10-a.html>`_
 
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
@@ -40,12 +38,12 @@ Taskbar
       :no_section:
       :no_caption:
 
+  `Reference <https://www.tenforums.com/tutorials/104265-enable-disable-lock-taskbar-windows-10-a.html>`__
+
 .. dropdown:: Replace Command Prompt with Windows Powershell in the menu when I right-click the start button or press Windows key+X
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-
-  `Reference <https://blogs.msmvps.com/russel/2016/11/18/defaulting-to-powershell-instead-of-cmd/>`_
 
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
@@ -61,12 +59,12 @@ Taskbar
       :no_section:
       :no_caption:
 
+  `Reference <https://blogs.msmvps.com/russel/2016/11/18/defaulting-to-powershell-instead-of-cmd/>`__
+
 .. dropdown:: Disable Show badges on taskbar buttons
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-
-  `Reference <https://www.tenforums.com/tutorials/48186-taskbar-buttons-hide-show-badges-windows-10-a.html>`_
 
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
@@ -82,14 +80,14 @@ Taskbar
       :no_section:
       :no_caption:
 
+  `Reference <https://www.tenforums.com/tutorials/48186-taskbar-buttons-hide-show-badges-windows-10-a.html>`__
+
 Notification Area
 *****************
 .. dropdown:: Always show all icons in the notification area
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-
-  `Reference <https://www.tenforums.com/tutorials/5313-hide-show-notification-area-icons-taskbar-windows-10-a.html#option5>`_
 
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
@@ -130,6 +128,8 @@ Notification Area
       :no_caption:
       :no_launch:
 
+  `Reference <https://www.tenforums.com/tutorials/5313-hide-show-notification-area-icons-taskbar-windows-10-a.html#option5>`__
+
 .. TODO::
   Manually disable these system icons; there is no current Registry or GPO to
   set these.
@@ -141,8 +141,6 @@ Notification Area
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-
-  `Reference <https://www.tenforums.com/tutorials/103041-turn-off-language-bar-input-indicator-windows-10-a.html>`_
 
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
@@ -157,12 +155,12 @@ Notification Area
       :no_section:
       :no_caption:
 
+  `Reference <https://www.tenforums.com/tutorials/103041-turn-off-language-bar-input-indicator-windows-10-a.html>`__
+
 .. dropdown:: Disable Windows Ink Workspace Icon
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-
-  `Reference <https://www.tenforums.com/tutorials/48147-hide-show-windows-ink-workspace-button-taskbar-windows-10-a.html>`_
 
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
@@ -178,12 +176,12 @@ Notification Area
       :no_section:
       :no_caption:
 
+  `Reference <https://www.tenforums.com/tutorials/48147-hide-show-windows-ink-workspace-button-taskbar-windows-10-a.html>`__
+
 .. dropdown:: Disable Touch Keyboard Icon
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-
-  `Reference <https://www.tenforums.com/tutorials/28436-hide-show-touch-keyboard-button-taskbar-windows-10-a.html>`_
 
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
@@ -198,12 +196,12 @@ Notification Area
       :no_section:
       :no_caption:
 
+  `Reference <https://www.tenforums.com/tutorials/28436-hide-show-touch-keyboard-button-taskbar-windows-10-a.html>`__
+
 .. dropdown:: Disable Touchpad Icon
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-
-  `Reference <https://www.tenforums.com/tutorials/69380-hide-show-touchpad-button-taskbar-windows-10-a.html>`_
 
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
@@ -218,12 +216,12 @@ Notification Area
       :no_section:
       :no_caption:
 
+  `Reference <https://www.tenforums.com/tutorials/69380-hide-show-touchpad-button-taskbar-windows-10-a.html>`__
+
 .. dropdown:: Disable Action Center Icon
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-
-  `Reference <https://www.tenforums.com/tutorials/86601-enable-disable-system-icons-taskbar-windows-10-a.html>`_
 
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
@@ -240,12 +238,12 @@ Notification Area
       :no_section:
       :no_caption:
 
+  `Reference <https://www.tenforums.com/tutorials/86601-enable-disable-system-icons-taskbar-windows-10-a.html>`__
+
 .. dropdown:: Disable Meet Now Icon
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-
-  `Reference <https://www.tenforums.com/tutorials/165990-how-add-remove-meet-now-icon-taskbar-windows-10-a.html>`_
 
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
@@ -276,14 +274,14 @@ Notification Area
       :no_section:
       :no_caption:
 
+  `Reference <https://www.tenforums.com/tutorials/165990-how-add-remove-meet-now-icon-taskbar-windows-10-a.html>`__
+
 People
 ******
 .. dropdown:: Disable Show contacts on the taskbar
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-
-  `Reference <https://www.tenforums.com/tutorials/104877-enable-disable-people-bar-taskbar-windows-10-a.html>`_
 
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
@@ -314,12 +312,12 @@ People
       :no_section:
       :no_caption:
 
+  `Reference <https://www.tenforums.com/tutorials/104877-enable-disable-people-bar-taskbar-windows-10-a.html>`__
+
 .. dropdown:: Disable Show my people notifications
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-
-  `Reference <https://www.tenforums.com/tutorials/84717-turn-off-show-my-people-pops-windows-10-a.html>`_
 
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
@@ -335,12 +333,12 @@ People
       :no_section:
       :no_caption:
 
+  `Reference <https://www.tenforums.com/tutorials/84717-turn-off-show-my-people-pops-windows-10-a.html>`__
+
 .. dropdown:: Disable Play a sound when a My People notification arrives
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-
-  `Reference <https://www.tenforums.com/tutorials/84725-turn-off-play-sound-my-people-pop-windows-10-a.html>`_
 
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
@@ -356,12 +354,12 @@ People
       :no_section:
       :no_caption:
 
+  `Reference <https://www.tenforums.com/tutorials/84725-turn-off-play-sound-my-people-pop-windows-10-a.html>`__
+
 .. dropdown:: Disable Show My People app suggestions
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-
-  `Reference <https://www.tenforums.com/tutorials/84725-turn-off-play-sound-my-people-pop-windows-10-a.html>`_
 
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
@@ -376,3 +374,5 @@ People
       :data:      0
       :no_section:
       :no_caption:
+
+  `Reference <https://www.tenforums.com/tutorials/84725-turn-off-play-sound-my-people-pop-windows-10-a.html>`__

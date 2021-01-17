@@ -18,8 +18,6 @@ Notifications
 
   Global toggle for notifications.
 
-  `Reference <https://www.tenforums.com/tutorials/4111-turn-off-notifications-apps-senders-windows-10-a.html#option2>`_
-
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
     :animate: fade-in
@@ -51,6 +49,8 @@ Notifications
       :data:      0
       :no_section:
       :no_caption:
+
+  `Reference <https://www.tenforums.com/tutorials/4111-turn-off-notifications-apps-senders-windows-10-a.html#option2>`__
 
 .. dropdown:: Disable show notifications on lock screen
   :container: + shadow
@@ -149,8 +149,6 @@ Notifications
     :animate: fade-in
     :open:
 
-    `Reference <https://www.makeuseof.com/tag/disable-windows-welcome-experience-page-windows-10/>`_
-
     .. wregedit:: Disable show me the windows welcome experience after updates
                   and occasionally when I sign in to highlight what's new and
                   suggested
@@ -162,13 +160,13 @@ Notifications
       :no_section:
       :no_caption:
 
+    `Reference <https://www.makeuseof.com/tag/disable-windows-welcome-experience-page-windows-10/>`__
+
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
     :animate: fade-in
 
     Broken.
-
-    `Reference <https://admx.help/?Category=Windows_10_2016&Policy=Microsoft.Policies.CloudContent%3A%3ADisableWindowsSpotlightWindowsWelcomeExperience>`_
 
     .. wgpolicy:: Disable show me the windows welcome experience after updates
                   and occasionally when I sign in to highlight what's new and
@@ -183,6 +181,8 @@ Notifications
       :no_section:
       :no_caption:
 
+    `Reference <https://admx.help/?Category=Windows_10_2016&Policy=Microsoft.Policies.CloudContent%3A%3ADisableWindowsSpotlightWindowsWelcomeExperience>`__
+
 .. dropdown:: Disable suggest ways I can finish setting up my device to get the
               most out of Windows
   :container: + shadow
@@ -194,8 +194,6 @@ Notifications
     :animate: fade-in
     :open:
 
-    `Reference <https://www.tenforums.com/tutorials/137645-turn-off-get-even-more-out-windows-suggestions-windows-10-a.html>`_
-
     .. wregedit:: Disable suggest ways I can finish setting up my device to get
                   the most out of Windows
       :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
@@ -206,12 +204,12 @@ Notifications
       :no_section:
       :no_caption:
 
+  `Reference <https://www.tenforums.com/tutorials/137645-turn-off-get-even-more-out-windows-suggestions-windows-10-a.html>`__
+
 .. dropdown:: Disable get tips, tricks, and suggestions as you use Windows
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-  
-  `Reference <https://www.tenforums.com/tutorials/30869-turn-off-tip-trick-suggestion-notifications-windows-10-a.html>`_
 
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
@@ -244,6 +242,8 @@ Notifications
       :no_section:
       :no_caption:
 
+  `Reference <https://www.tenforums.com/tutorials/30869-turn-off-tip-trick-suggestion-notifications-windows-10-a.html>`__
+
 Get notifications from these senders
 ************************************
 :ref:`w10-20h2-settings-system-get-notifications-from-apps` must be enabled for
@@ -255,8 +255,6 @@ these per-app options to be enabled.
   :animate: fade-in
 
   Each application will have specific notification settings to set.
-
-  `Reference <https://community.spiceworks.com/topic/2264044-how-to-manage-windows-10-notifications-via-gpo-for-specific-programs>`_
   
   .. wregedit:: Notifications can be disabled on a per-app basis
     :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
@@ -266,3 +264,5 @@ these per-app options to be enabled.
     :data:      0
     :no_section:
     :no_caption:
+
+  `Reference <https://community.spiceworks.com/topic/2264044-how-to-manage-windows-10-notifications-via-gpo-for-specific-programs>`__

@@ -9,8 +9,6 @@ Apps & features
   :open:
 
   Allow install from anywhere.
-  
-  `Reference <https://www.tenforums.com/tutorials/78213-choose-where-apps-can-installed-windows-10-a.html>`_
     
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
@@ -44,3 +42,5 @@ Apps & features
       :data:      Anywhere
       :no_section:
       :no_caption:
+
+  `Reference <https://www.tenforums.com/tutorials/78213-choose-where-apps-can-installed-windows-10-a.html>`__

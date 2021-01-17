@@ -1,4 +1,4 @@
-.. _w10-20h2-personalization-start:
+.. _w10-20h2-settings-personalization-start:
 
 Start
 #####
@@ -10,8 +10,6 @@ Start
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-
-  `Reference <https://social.technet.microsoft.com/Forums/windows/en-US/9fe12468-46d9-4efb-b4ed-2df4dd2204c5/group-policy-show-recently-added-apps?forum=win10itprogeneral>`_
 
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
@@ -28,14 +26,14 @@ Start
       :no_section:
       :no_caption:
 
-.. _w10-20h2-personalization-most-used-apps:
+  `Reference <https://social.technet.microsoft.com/Forums/windows/en-US/9fe12468-46d9-4efb-b4ed-2df4dd2204c5/group-policy-show-recently-added-apps?forum=win10itprogeneral>`__
+
+.. _w10-20h2-settings-personalization-start-most-used-apps:
 
 .. dropdown:: Disable Show most used apps
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-
-  `Reference <https://superuser.com/questions/1344696/windows-10-changing-the-show-the-most-used-apps-to-on-through-registry-gpo>`_
 
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
@@ -66,6 +64,8 @@ Start
       :no_section:
       :no_caption:
 
+  `Reference <https://superuser.com/questions/1344696/windows-10-changing-the-show-the-most-used-apps-to-on-through-registry-gpo>`__
+
 .. dropdown:: Disable Show suggestions occasionally in Start
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
@@ -74,16 +74,14 @@ Start
   GPO settings apply in ``Education`` and ``Enterprise`` Windows versions but
   should be set regardless.
 
-  `Reference <https://www.tenforums.com/tutorials/38945-enable-disable-app-suggestions-start-windows-10-a.html>`_
+  See :ref:`w10-20h2-settings-privacy-diagnostics-and-feedback-tailored-experiences`.
 
-  See :ref:`w10-20h2-tailored-experiences`
+  `Reference <https://www.tenforums.com/tutorials/38945-enable-disable-app-suggestions-start-windows-10-a.html>`__
 
 .. dropdown:: Disable Use Start full screen
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-
-  `Reference <https://www.tenforums.com/tutorials/3680-turn-off-full-screen-start-menu-windows-10-a.html#option2>`_
 
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
@@ -117,13 +115,13 @@ Start
       :no_section:
       :no_caption:
 
+  `Reference <https://www.tenforums.com/tutorials/3680-turn-off-full-screen-start-menu-windows-10-a.html#option2>`__
+
 .. dropdown:: Disable Show recently opened items in Jump Lists on Start or the
               taskbar and in File Explorer Quick Access
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-
-  `Reference <https://www.download3k.com/articles/How-to-Disable-Recent-Items-and-Frequent-Places-in-Windows-10-01398>`_
 
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
@@ -155,3 +153,5 @@ Start
       :data:      0
       :no_section:
       :no_caption:
+
+  `Reference <https://www.download3k.com/articles/How-to-Disable-Recent-Items-and-Frequent-Places-in-Windows-10-01398>`__

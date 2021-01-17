@@ -99,7 +99,7 @@ Operating Systems
 
     Policies can be manually applied with:
 
-    .. codeblock:: powershell
+    .. code-block:: powershell
 
       gpupdate /force
 
