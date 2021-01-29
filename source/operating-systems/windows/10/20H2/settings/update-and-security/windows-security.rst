@@ -2,4 +2,4 @@
 
 Windows Security
 ################
-:cmdmenu:`Open Windows Security` and see :ref:`w10-20h2-security`.
+See :ref:`w10-20h2-security` for detailed security setup.
