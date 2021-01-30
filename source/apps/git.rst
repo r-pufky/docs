@@ -86,6 +86,46 @@ Remove Tracked Files without Deleting Them
 
   git rm -r --cached {DIR}
 
+`Create a Branch`_
+******************
+Multiple branches can be made to focus changes on specific efforts. These are
+cut from the current branch; most cases this should be ``master``.
+
+.. code-block:: bash
+  :caption: List, create, and move to new branch.
+
+  git branch -a
+  git branch -b {NEW BRANCH}
+  git checkout {NEW BRANCH}
+
+Use git normally.
+
+Merging Branches
+****************
+Completed branches can be merged back into any branch, typically ``master``.
+
+.. code-block:: bash
+  :caption: List branches, switch to master, and merge.
+
+  git branch -a
+  git checkout master
+  git merge {BRANCH} --no-ff
+
+.. note::
+  ``--no-ff`` retains all commit messages from the branch. Leave this off to
+  squish the commit.
+
+Deleting Branches
+*****************
+Git will throw an error if deleting a branch with commits that has not been
+merged.
+
+.. code-block:: bash
+  :caption: Delete merged branch.
+
+  git branch -a
+  git branch -d {BRANCH}
+
 List All Respositories for An Organization/User
 ***********************************************
 Useful for determining if there are new repositories to sync.
@@ -109,3 +149,4 @@ Useful for projects that have periodic releases but are not in OS packages.
 
 .. _Latest Tarball Release: https://gist.github.com/lukechilds/a83e1d7127b78fef38c2914c4ececc3c#gistcomment-2574561
 .. _Rebase: https://www.internalpointers.com/post/squash-commits-into-one-git
+.. _Create a Branch: https://thenewstack.io/dont-mess-with-the-master-working-with-branches-in-git-and-github/
