@@ -265,6 +265,21 @@ rebuilt.
   xe pbd-unplug uuid={PBD UUID}
   xe sr-forget uuid={UUID USB SR}
 
+.. _xcp-exporting-vm-disks:
+
+Exporting VM Disks
+******************
+Disks can be `exported in standard formats`_ for other hypervisor consumption.
+
+.. code-block:: bash
+  :caption: Export VM disk to file.
+
+  xe vdi-list
+  xe vdi-export uuid={UUID} filename={FILE}.raw format=raw
+
+.. note::
+  ``vhd`` can be used as well.
+
 .. rubric:: References
 
 #. `XenServer 7.0 release notes <https://docs.citrix.com/en-us/xenserver/7-0/downloads/release-notes.pdf>`_
@@ -281,3 +296,4 @@ rebuilt.
 .. _USB Local Storage: https://support.citrix.com/article/CTX205551
 .. _Copy VM to New Storage Repository: https://support.citrix.com/article/CTX116685
 .. _Detach and forget USB SR: https://support.citrix.com/article/CTX131328
+.. _exported in standard formats: https://wiki.xenproject.org/wiki/Disk_import/export_APIs

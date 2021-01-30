@@ -107,6 +107,7 @@ git hub, or submit a CL :)
   :includehidden:
   :maxdepth: -1
 
+  virtualization/hypervisors/pve/index
   virtualization/hypervisors/xenserver-xcpng/index
   virtualization/hypervisors/kvm/index
 
