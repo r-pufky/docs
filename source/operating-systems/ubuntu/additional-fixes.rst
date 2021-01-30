@@ -3,6 +3,25 @@
 Additional Ubuntu Fixes
 #######################
 
+Make RAW Disk Image of Physical Disk
+************************************
+DD can be used to make a RAW image of a disk, and can be mounted in other linux
+systems for use.
+
+.. code-block:: bash
+  :caption: `Copy disk block device`_ to a file.
+
+  dd if=/dev/{BLOCK} of=/some/filesystem/{IMAGE}.raw bs=1M conv=noerror,sync status=progress
+
+.. code-block:: bash
+  :caption: `Mount RAW disk`_ image for use.
+
+  losetup -f -P /some/filesystem/{IMAGE}.raw
+  losetup -l
+  mount /dev/loop0p1 /mnt/test/
+  umount /dev/loop0p1
+  losetup -d /dev/loop0
+
 Grub OS Prober
 **************
 Grub will throw the following error on 4.9+ Kernels running VM's on block
@@ -44,3 +63,5 @@ install.
 
 .. _safely disabled if you are only running one OS: https://unix.stackexchange.com/questions/347466/debian-new-error-message-upgrading-kernel-to-4-9-reload-ioctl-error
 .. _systemd - 239-7ubuntu4: https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1766969
+.. _Mount RAW disk: https://blog.tinned-software.net/mount-raw-image-of-entire-disc/
+.. _Copy disk block device: https://blog.tinned-software.net/mount-raw-image-of-entire-disc/
