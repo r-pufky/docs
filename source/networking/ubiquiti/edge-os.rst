@@ -24,47 +24,101 @@ this device.
   configure
   set service ubnt-discover disable
   set service ubnt-discover-server disable
-  commit; save
+  commit
+  save
 
-Creating Duplicate DNS / Host Entries
-*************************************
-Effectively cnames for IP lookups without DNS.
+Create `DNS / Host`_ Entries
+****************************
+CNAME for IP lookups without DNS; static ``/etc/hosts`` mapping.
 
-.. uctree::   Add Static Host
-  :key_title: System --> static-host-mapping --> host-name --> Add
-  :option:    host-name
-  :setting:   {FQDN HOSTNAME}
-  :no_section:
-  :no_caption:
+Simulates NAT Reflection by statically adding multiple hostnames to the hosts
+file. Works with subdomains as well. This will provide an internal or custom IP
+for a given DNS request.
 
-    .. note::
-      :cmdmenu:`preview` and :cmdmenu:`Apply`. When doing the initial leaf
-      creation, you will get a failure message because it is not configured with
-      an alias or network address yet. This is normal.
+.. important::
+  Modifications should only be done via the GUI or CLI; do **not** modify
+  ``/etc/hosts`` manually as these are not recognized/kept by the system across
+  upgrades and restores.
 
+.. dropdown:: Add static host mapping via CLI.
+  :container: + shadow
+  :title: bg-primary text-white font-weight-bold
+  :animate: fade-in
+  :open:
 
-.. uctree::   Add Static Host
-  :key_title: System --> static-host-mapping --> host-name --> {FQDN HOSTNAME}
-  :option:    alias,
-              alias,
-              inet
-  :setting:   {FQDN HOSTNAME},
-              {ALIAS HOSTNAME},
-              {HOST NETWORK ADDRESS}
-  :no_section:
-  :no_caption:
-  :no_launch:
+  This will map ``computer`` and ``computer.example.com`` to ``12.12.12.12``.
+  Changes are reflected in the GUI. It will appear in ``/etc/hosts`` as:
 
-    .. note::
-      :cmdmenu:`preview` and :cmdmenu:`Apply`. Aliases should all resolve to the
-      same IP (base host). Verify by resolving both names on your network.
+  ``12.12.12.12  computer.example.com computer``
 
-    .. important::
-      With later versions of debian based systems, entries in the local host
-      file for the system will resolve to ``127.0.1.1``. `This is by design`_.
+  .. code-block:: bash
+    :caption: EdgeOS CLI.
 
-      * The alias will resolve to network IP.
-      * The hostname will resolve to ``127.0.1.1``.
+    configure
+    set system static-host-mapping host-name computer.example.com inet 12.12.12.12
+    set system static-host-mapping host-name computer.exmaple.com alias computer
+    commit
+    save
+
+.. dropdown:: Add static host mapping via GUI.
+  :container: + shadow
+  :title: bg-primary text-white font-weight-bold
+  :animate: fade-in
+
+  .. uctree::   Add Static Host
+    :key_title: System --> static-host-mapping --> host-name --> Add
+    :option:    host-name
+    :setting:   {FQDN HOSTNAME}
+    :no_section:
+    :no_caption:
+
+      .. note::
+        :cmdmenu:`preview` and :cmdmenu:`Apply`. When doing the initial leaf
+        creation, you will get a failure message because it is not configured with
+        an alias or network address yet. This is normal.
+
+  .. uctree::   Add Static Host
+    :key_title: System --> static-host-mapping --> host-name --> {FQDN HOSTNAME}
+    :option:    alias,
+                alias,
+                inet
+    :setting:   {FQDN HOSTNAME},
+                {ALIAS HOSTNAME},
+                {HOST NETWORK ADDRESS}
+    :no_section:
+    :no_caption:
+    :no_launch:
+
+      .. note::
+        :cmdmenu:`preview` and :cmdmenu:`Apply`. Aliases should all resolve to the
+        same IP (base host). Verify by resolving both names on your network.
+
+      .. important::
+        With later versions of debian based systems, entries in the local host
+        file for the system will resolve to ``127.0.1.1``. `This is by design`_.
+
+        * The alias will resolve to network IP.
+        * The hostname will resolve to ``127.0.1.1``.
+
+.. dropdown:: Add static host mapping via ``/etc/hosts``.
+  :container: + shadow
+  :title: bg-primary text-white font-weight-bold
+  :animate: fade-in
+
+  .. danger::
+    Provided only in case of need. Do not use this method as changes are not
+    tracked by sysem across upgrades and restores.
+
+  .. code-block:: bash
+    :caption: **0644 root root** ``/etc/hosts`` EdgeOS CLI.
+
+    12.12.12.12 computer.example.com computer # resolve to 12.12.12.12
+    12.12.12.12 computer2.example.com computer2 # resolve to 12.12.12.12
+
+  .. code-block:: bash
+    :caption: Reload hosts file (EdgeOS CLI).
+
+    /etc/init.d/dnsmasq force-reload
 
 Hairpin NAT (Internal Only NAT Reflection)
 ******************************************
@@ -104,23 +158,6 @@ However `there is a bug`_ in which these hosts are never deleted.
   :caption: **0644 root root** ``/etc/hosts`` EdgeOS CLI.
 
   #Delete hosts which are no longer used and reboot the router.
-
-Multiple Hostnames to One IP
-****************************
-Simulates NAT Reflection by statically adding multiple hostnames to the hosts
-file. Works with subdomains as well. This will provide a hard IP resolution for
-a given DNS request.
-
-.. code-block:: bash
-  :caption: **0644 root root** ``/etc/hosts`` EdgeOS CLI.
-
-  12.12.12.12 sub1.example.com # resolve to 12.12.12.12
-  12.12.12.12 sub2.example.com # resolve to 12.12.12.12
-
-.. code-block:: bash
-  :caption: Reload hosts file (EdgeOS CLI).
-
-  /etc/init.d/dnsmasq force-reload
 
 DNS Hostnames not Resolving
 ***************************
@@ -470,7 +507,6 @@ Show a JSON-like representation of the current router configuration.
 
   show configuration all
 
-
 .. rubric:: References
 
 #. `Creating DNS Entries <https://community.ui.com/questions/ab712740-d579-4c89-824a-cda582a6bdd4>`_
@@ -490,3 +526,4 @@ Show a JSON-like representation of the current router configuration.
 .. _all DNS: https://community.ui.com/questions/cd0a248d-ca54-4d16-84c6-a5ade3dc3272
 .. _Destination NAT Rule: https://old.reddit.com/r/Ubiquiti/comments/6lndq4/question_redirect_port_53_to_internal_dns_server/
 .. _telemetry: https://community.ui.com/questions/Update-UniFi-Phone-Home-Performance-Data-Collection/f84a71c9-0b81-4d69-a3b3-45640aba1c8b
+.. _DNS / Host: https://community.ui.com/questions/Create-DNS-enteries/ab712740-d579-4c89-824a-cda582a6bdd4 
