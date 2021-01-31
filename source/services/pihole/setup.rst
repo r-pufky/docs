@@ -73,27 +73,26 @@ website, but you should never blindly execute scripts from the Internet.
   sudo bash basic-install.sh
 
 .. ggui:: Base Configuration
-  :option:  Upstream DNS Provider;
-            Third Party Lists;
-            Protocols;
-            Static IP Address;
-            Web admin interface;
-            Web Server (required for webface if no other server);
-            Log Queries;
+  :option:  Upstream DNS Provider,
+            Third Party Lists,
+            Protocols,
+            Static IP Address,
+            Web admin interface,
+            Web Server (required for webface if no other server),
+            Log Queries,
             Privacy Mode
-  :setting: 1.1.1.1,8.8.8.8;
-            All;
-            All;
-            Use current DHCP settings;
-            ☑;
-            ☑;
-            ☑;
+  :setting: {ROUTER DNS SERVER},
+            All,
+            All,
+            Use current DHCP settings,
+            ☑,
+            ☑,
+            ☑,
             0
   :no_key_title:
   :no_section:
   :no_caption:
   :no_launch:
-  :delim: ;
 
 .. note::
   The *password* will be listed on the summary page. This can be set using
