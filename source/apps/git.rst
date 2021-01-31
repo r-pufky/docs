@@ -95,8 +95,7 @@ cut from the current branch; most cases this should be ``master``.
   :caption: List, create, and move to new branch.
 
   git branch -a
-  git branch -b {NEW BRANCH}
-  git checkout {NEW BRANCH}
+  git checkout -b {NEW BRANCH}
 
 Use git normally.
 
