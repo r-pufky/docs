@@ -482,6 +482,40 @@ Removed since Windows 7 but added back into Windows 10.
 
   sdclt.exe /DISABLEJOB
 
+`Debug DNS Issues`_
+*******************
+Windows 10 aggressively caches DNS with a DNS caching service and can sometimes
+lead to invalid results. First flush resolver caches and test.
+
+.. code-block:: powershell
+  :caption: powershell
+
+  ipconfig /flushdns
+  Clear-DnsClientCache
+
+If that does not work, disabling the DNS caching service can be used. **Cannot**
+be disabled via ``services.msc``.
+
+.. wregedit:: Disable DNS caching service
+  :key_title: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Dnscache
+  :names:     Start
+  :types:     DWORD
+  :data:      4
+  :admin:
+  :no_section:
+  :no_caption:
+
+After resolving, re-enable the caching service and **Reboot**.
+
+.. wregedit:: Enable DNS caching service
+  :key_title: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Dnscache
+  :names:     Start
+  :types:     DWORD
+  :data:      2
+  :admin:
+  :no_section:
+  :no_caption:
+
 `Disable Hyper-V Per Boot`_
 ***************************
 Some applications and games detect Hyper-V virtualization and refuse to start.
@@ -529,3 +563,4 @@ Restart holding :cmdmenu:`shift` to show boot options. Select ``No Hyper-V``.
 .. _habit of locking out after updates: https://www.passfab.com/windows-tips/windows-10-password-incorrect-after-update.html
 .. _Reset your password from safe mode: https://www.wimware.com/how-to/reset-windows-10-password-command-prompt.html
 .. _Disable Hyper-V Per Boot: https://www.hanselman.com/blog/switch-easily-between-virtualbox-and-hyperv-with-a-bcdedit-boot-entry-in-windows-81
+.. _Debug DNS Issues: https://wintechlab.com/enable-disable-dns-client-service/
