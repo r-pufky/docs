@@ -4,7 +4,7 @@ Prxomox (PVE)
 #############
 Prepare a USB drive with the latest ISO image from the `Proxmox repository <https://www.proxmox.com/en/downloads/category/proxmox-virtual-environment>`_.
 
-.. gport:: `Ports Exposed (Proxmox) <https://pve.proxmox.com/wiki/Firewall#_ports_used_by_proxmox_ve>`_
+.. gport:: Ports Exposed (Proxmox)
   :port:     22,
              85,
              111,
@@ -1081,6 +1081,16 @@ ascii codec can't decode byte 0xe2 in position
 Sed :ref:`pve-corrupted-terminal`.
 
 .. _pve-corrupted-terminal:
+
+Wrong Timezone
+==============
+Containers assume UTC. Explicitly set timezone.
+
+.. code-block:: bash
+
+  timedatectl
+  timedatectl list-timezones
+  timedatectl set-timezone America/Los_Angeles
 
 Corrupted Terminal Characters or No UTF-8 Support
 =================================================
