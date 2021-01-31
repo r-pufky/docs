@@ -51,6 +51,8 @@ for a given DNS request.
 
   ``12.12.12.12  computer.example.com computer``
 
+  :download:`create-host script <source/create-host>`.
+
   .. code-block:: bash
     :caption: EdgeOS CLI.
 
