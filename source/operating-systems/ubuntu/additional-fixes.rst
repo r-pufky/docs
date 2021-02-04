@@ -52,8 +52,6 @@ This is caused by the systemd resolver not properly resolving local DNS.
 Resolved in `systemd - 239-7ubuntu4`_, but it is currently not avaliable to
 install.
 
-
-
 .. code-block:: bash
   :caption: The workaround is to redirect the systemd resolver to the resolver
             specified from DHCP.
@@ -61,7 +59,26 @@ install.
   mv /etc/resolv.conf /etc/resolv.conf.broken
   ls -s /etc/run/systemd/resolve/resolv.conf resolv.conf
 
+.. _additional-ubuntu-fixes-disable-ipv6:
+
+`Disable IPv6`_
+***************
+Disable if IPv6 is not being actively used to prevent any IPv6 misconfiguration
+attacks.
+
+.. code-block:: bash
+  :caption: **0644 root root** ``/etc/sysctl.conf``
+
+  net.ipv6.conf.all.disable_ipv6 = 1
+  net.ipv6.conf.default.disable_ipv6 = 1
+  net.ipv6.conf.lo.disable_ipv6 = 1
+
+.. code-block:: bash
+  sysctl -p
+  reboot
+
 .. _safely disabled if you are only running one OS: https://unix.stackexchange.com/questions/347466/debian-new-error-message-upgrading-kernel-to-4-9-reload-ioctl-error
 .. _systemd - 239-7ubuntu4: https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1766969
 .. _Mount RAW disk: https://blog.tinned-software.net/mount-raw-image-of-entire-disc/
 .. _Copy disk block device: https://blog.tinned-software.net/mount-raw-image-of-entire-disc/
+.. _Disable IPv6: https://www.linuxbabe.com/ubuntu/disable-ipv6-on-ubuntu
