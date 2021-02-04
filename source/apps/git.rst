@@ -99,6 +99,8 @@ cut from the current branch; most cases this should be ``master``.
 
 Use git normally.
 
+.. _git-merging-branches:
+
 Merging Branches
 ****************
 Completed branches can be merged back into any branch, typically ``master``.
@@ -114,6 +116,8 @@ Completed branches can be merged back into any branch, typically ``master``.
   ``--no-ff`` retains all commit messages from the branch. Leave this off to
   squish the commit.
 
+.. _git-deleting-branches:
+
 Deleting Branches
 *****************
 Git will throw an error if deleting a branch with commits that has not been
@@ -124,6 +128,36 @@ merged.
 
   git branch -a
   git branch -d {BRANCH}
+
+Create Worktree
+***************
+Allows the use of `multiple branches simultaneously`_.
+
+.. code-block:: bash
+  :caption: Create a new worktree from a branch
+
+  git branch -a
+  git checkout -b {NEW BRANCH}
+  git checkout master
+  git worktree add ../{WORKTREE NAME} {BRANCH}
+
+Merge Worktree
+**************
+Works like normal branch merging. Execute merge from master worktree.
+
+See :ref:`git-merging-branches`.
+
+Removing Worktree
+*****************
+After the branch is merged worktree can be removed.
+
+.. code-block:: bash
+  :caption: Remove worktree.
+
+  cd {MASTER WORKTREE}
+  git worktree remove {WORKTREE}
+
+Then delete branch as normal. See :ref:`git-deleting-branches`.
 
 List All Respositories for An Organization/User
 ***********************************************
@@ -149,3 +183,4 @@ Useful for projects that have periodic releases but are not in OS packages.
 .. _Latest Tarball Release: https://gist.github.com/lukechilds/a83e1d7127b78fef38c2914c4ececc3c#gistcomment-2574561
 .. _Rebase: https://www.internalpointers.com/post/squash-commits-into-one-git
 .. _Create a Branch: https://thenewstack.io/dont-mess-with-the-master-working-with-branches-in-git-and-github/
+.. _multiple branches simultaneously: https://stackoverflow.com/questions/2048470/git-working-on-two-branches-simultaneously
