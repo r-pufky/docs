@@ -49,6 +49,18 @@ Snippets
   Download only videos not listed in file and adds any downloaded videos to
   the given file.
 
+Azure Media Services
+********************
+These can be downloaded by forcing a `m3u8` stream and downloading. This works
+for MS streaming vieos and other services using Azure Media Service backends.
+
+#. :cmdmenu:`ctrl + shift + i --> network --> all`
+#. Load the video/stream page
+#. Locate the `manifest(format=...)` URI in Chrome Dev Tools
+#. :cmdmenu:`RMB --> copy --> copy linke address`
+#. Use with `youtube-dl`, changing manifest portion of the URI to
+   `manifest(format=m3u8-aapl-v3)`
+
 .. rubric:: References
 
 #. `youtube-dl Source download (latest) <https://github.com/ytdl-org/youtube-dl/releases>`_
@@ -56,3 +68,4 @@ Snippets
 #. `Using youtube-dl <http://linuxaria.com/recensioni/how-to-download-youtube-video-or-audio-tracks-from-the-linux-terminal>`_
 #. `Using youtube-dl with LAME <https://www.linuxjournal.com/content/grabbing-your-music-youtube-do-it-your-way>`_
 #. `Convert webm format <https://askubuntu.com/questions/323944/convert-webm-to-other-formats>`_
+#. `Download any Azure Media Service <https://anduin.aiursoft.com/post/2020/5/15/download-any-azure-media-service-video-or-live-stream-with-ffmpeg>`_
