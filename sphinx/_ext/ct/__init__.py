@@ -23,6 +23,9 @@ from .ubnt import uctree
 from .ubnt import ufirewall
 from .ubnt import ucontroller
 
+from .v2 import regedit
+from .v2 import gpo
+
 def setup(app):
   app.add_config_value('ct_separator', config.DEFAULT_SEPARATOR, '')
   app.add_config_value('ct_separator_replace', config.DEFAULT_REPLACE, '')
@@ -44,6 +47,9 @@ def setup(app):
   uctree.setup(app)
   ufirewall.setup(app)
   ucontroller.setup(app)
+
+  regedit.setup(app)
+  gpo.setup(app)
 
   return {
     'version': '0.1',

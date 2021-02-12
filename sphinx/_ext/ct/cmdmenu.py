@@ -20,6 +20,29 @@ from docutils import nodes
 from docutils.parsers.rst import roles
 from sphinx.util.docutils import SphinxRole
 
+def gen_label(text, sep, rep, space=True):
+  """Generate primative text label from menuselection.
+
+  Args:
+    text: Unicode text to generate.
+    sep: Unicode menu separator to use.
+    rep: String separator replacement to use.
+    space: Boolean True to insert a single space before and after the unicode
+        separator, trimming existing whitespace as needed. False: leaves
+        whitespace as is. Default: True.
+
+  Returns:
+    String containing processed label with custom separators.
+  """
+  if space:
+    sep = ' %s ' % sep
+    menu_text = sep.join(map(lambda x: x.strip(), text.split(rep)))
+  else:
+    menu_text = text.replace(rep, sep)
+
+  return menu_text
+
+
 def gen_menu(text, sep, rep, space=True):
   """Generate menuselection role with specified options.
 
@@ -35,11 +58,7 @@ def gen_menu(text, sep, rep, space=True):
     List[nodes.Node] containing the rendered menuselection with custom
     separator.
   """
-  if space:
-    sep = ' %s ' % sep
-    menu_text = sep.join(map(lambda x: x.strip(), text.split(rep)))
-  else:
-    menu_text = text.replace(rep, sep)
+  menu_text = gen_label(text, sep, rep, space)
   menu_node = nodes.inline(rawtext=menu_text, classes=['guilabel'])
   spans = config.AMP_RE.split(menu_text)
   menu_node += nodes.Text(spans.pop(0))
