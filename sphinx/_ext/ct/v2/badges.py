@@ -32,6 +32,7 @@ badges = {
   '{OFF}': Template.danger % 'OFF',
   '{DISABLE}': Template.danger % 'DISABLE',
   '{DISABLED}': Template.danger % 'DISABLED',
+  '{OPTIONAL}': Template.info % 'OPTIONAL',
   '{ACCEPT}': Template.success % 'ACCEPT',
   '{ON}': Template.success % 'ON',
   # Regedit
@@ -81,6 +82,10 @@ badges = {
   '{TCP}': Template.info % 'TCP',
   '{UDP}': Template.info % 'UDP',
   '{TCP/UDP}': Template.info % 'TCP/UDP',
+  '{PUBLIC}': Template.warning % 'PUBLIC',
+  '{PRIVATE}': Template.info % 'PRIVATE',
+  '{EXPOSED}': Template.warning % 'EXPOSED',
+  '{RESTRICTED}': Template.info % 'RESTRICTED',
   '{UPSTREAM_SWITCH}': Template.info % 'UPSTREAM SWITCH',
   '{DOWNSTREAM_SWITCH}': Template.info % 'DOWNSTREAM SWITCH',
   '{EXPECTED_SWITCH}': Template.info % 'EXPECTED SWITCH',

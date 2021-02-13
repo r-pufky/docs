@@ -1,4 +1,4 @@
-# regedit config table.
+# ports config table.
 
 from .. import config
 from .. import ct
@@ -9,31 +9,26 @@ from docutils.parsers.rst import directives
 from sphinx.util.nodes import nested_parse_with_titles
 
 
-class Regedit(ct.AbstractConfigTable):
-  """Generate windows registry editor elements in a sphinx document.
+class Ports(ct.AbstractConfigTable):
+  """Generate port listing elements in a sphinx document.
 
   Badges ({KEYWORD}) are automatically converted using badges.badges.
 
   Directives:
-    :path:        String registry key path. Required.
-    :value{0..9}: List of Name, Type, Value strings for path.
-    :ref:         List of reference URI's.
-    :update:      String datetime last time references/settings were checked.
-    :delim:       Custom delimeter to use instead of config.DEFAULT_DELIM.
-    :generic:     Use generic 'Registry' dropdown label, in light-grey.
-    :open:        Set to expand the dropdown by default.
+    :value{0..20}: List of Port, Protocol, Type, Purpose strings for ports.
+    :ref:          List of reference URI's.
+    :update:       String datetime last time references/settings were checked.
+    :delim:        Custom delimeter to use instead of config.DEFAULT_DELIM.
+    :generic:      Use generic 'Ports' dropdown label, in light-grey.
+    :open:         Set to expand the dropdown by default.
 
   Examples:
-    .. regedit:: Dropdown opened by default, using commas as delim.
-      :path:   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-               CapabilityAccessManager\ConsentStore\microphone
-      :value0: Value1, {SZ}, Allow
-      :value1: Value2, {DWORD}, Allow
-      :value2: Value3, {DELETE}, {DELETE}
+    .. ports:: Ports for Plex
+      :value0: 32400, {TCP}, {PUBLIC}, Plex Media Server Access.
+      :value1: 5353, {UDP}, {PRIVATE}, (Optional) Bonjour/Avahi discovery.
       :ref:    https://some.reference.site,
                https://some.reference.site2
       :update: 2021-01-01
-      :delim:  ,
       :open:
 
       Dropdown opened by default, using commas as delim.
@@ -41,12 +36,9 @@ class Regedit(ct.AbstractConfigTable):
       .. info::
         Additional rst can be used here.
 
-    .. regedit:: Generic dropdown using ; as delims.
-      :path:   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-               CapabilityAccessManager\ConsentStore\microphone
-      :value0: Value1; {SZ}; Allow
-      :value1: Value2; {DWORD}; Allow
-      :value2: Value3; {DELETE}; {DELETE}
+    .. ports:: Ports for Plex
+      :value0: 32400; {TCP}; {PUBLIC}; Plex Media Server Access.
+      :value1: 5353; {UDP}; {PRIVATE}; (Optional), Bonjour/Avahi discovery.
       :ref:    https://some.reference.site,
                https://some.reference.site2
       :update: 2021-01-01
@@ -65,7 +57,6 @@ class Regedit(ct.AbstractConfigTable):
   has_content = True
   add_index = True
   option_spec = {
-    'path': directives.unchanged_required,
     'value0': directives.unchanged,
     'value1': directives.unchanged,
     'value2': directives.unchanged,
@@ -76,6 +67,17 @@ class Regedit(ct.AbstractConfigTable):
     'value7': directives.unchanged,
     'value8': directives.unchanged,
     'value9': directives.unchanged,
+    'value10': directives.unchanged,
+    'value11': directives.unchanged,
+    'value12': directives.unchanged,
+    'value13': directives.unchanged,
+    'value14': directives.unchanged,
+    'value15': directives.unchanged,
+    'value16': directives.unchanged,
+    'value17': directives.unchanged,
+    'value18': directives.unchanged,
+    'value19': directives.unchanged,
+    'value20': directives.unchanged,
     'ref': directives.unchanged,
     'update': directives.unchanged,
     'delim': directives.unchanged,
@@ -83,19 +85,37 @@ class Regedit(ct.AbstractConfigTable):
     'generic': directives.flag,
   }
 
-  def _add_value_row(self, data):
-    """Add RST row for :value: directive.
+  def _add_table_row(self, data, highlight):
+    """Render RST for table row.
 
     Args:
-      data: List of strings to render to row.
+      data: List of strings to render to table row.
+      highlight: Boolean True to set background color to bg-light.
     """
-    for x in data:
-      self._rst.append("    ---", self.c)
-      self._rst.append("    %s" % x, self.c)
+    if highlight:
+      bg = 'bg-light'
+    else:
+      bg = ''
+    self._rst.append("    ---", self.c)
+    self._rst.append("    :column: col-sm-2 p-0 m-0", self.c)
+    self._rst.append("    :body: text-right %s" % bg, self.c)
+    self._rst.append("    %s" % data[0], self.c)
+    self._rst.append("    ---", self.c)
+    self._rst.append("    :column: col-sm-2 p-0 m-0", self.c)
+    self._rst.append("    :body: %s" % bg, self.c)
+    self._rst.append("    %s" % data[1], self.c)
+    self._rst.append("    ---", self.c)
+    self._rst.append("    :column: col-sm-2 p-0 m-0", self.c)
+    self._rst.append("    :body: %s" % bg, self.c)
+    self._rst.append("    %s" % data[2], self.c)
+    self._rst.append("    ---", self.c)
+    self._rst.append("    :column: col-sm-6 p-0 m-0", self.c)
+    self._rst.append("    :body: %s" % bg, self.c)
+    self._rst.append("    %s" % data[3], self.c)
 
   def _add_dropdown_header(self):
     if 'generic' in self.options:
-      self._rst.append(".. dropdown:: Registry", self.c)
+      self._rst.append(".. dropdown:: Ports", self.c)
       self._rst.append("  :title: font-weight-bold", self.c)
       self._rst.append("  :animate: fade-in", self.c)
     else:
@@ -118,18 +138,23 @@ class Regedit(ct.AbstractConfigTable):
     for line in self.content:
       self._rst.append("    %s" % line, self.c)
 
-  def _add_path(self, path):
-    """Add RST row for :path: directive.
-
-    Args:
-      path: String to render to row.
-    """
+  def _add_table_headers(self):
     self._rst.append("    ---", self.c)
-    self._rst.append("    :column: col-lg-12 p-0 m-0 font-weight-bold", self.c)
+    self._rst.append("    :column: col-sm-2 p-0 m-0", self.c)
     self._rst.append("    :body: bg-light", self.c)
-    # repr is used to auto-escape strings for rendering in sudo-rst (e.g. \\)
-    # returns quoted, so strip quotes to ensure render correctly.
-    self._rst.append("    %s" % repr(path)[1:-1], self.c)
+    self._rst.append("    Port", self.c)
+    self._rst.append("    ---", self.c)
+    self._rst.append("    :column: col-sm-2 p-0 m-0", self.c)
+    self._rst.append("    :body: bg-light", self.c)
+    self._rst.append("    Protocol", self.c)
+    self._rst.append("    ---", self.c)
+    self._rst.append("    :column: col-sm-2 p-0 m-0", self.c)
+    self._rst.append("    :body: bg-light", self.c)
+    self._rst.append("    Type", self.c)
+    self._rst.append("    ---", self.c)
+    self._rst.append("    :column: col-md-6 p-0 m-0", self.c)
+    self._rst.append("    :body: bg-light", self.c)
+    self._rst.append("    Purpose", self.c)
 
   def _add_update(self, update):
     """Add RST row for :update: directive.
@@ -158,9 +183,11 @@ class Regedit(ct.AbstractConfigTable):
     """
     self._add_dropdown_header()
     self._add_panel_template()
-    self._add_path(self._sanitize_path())
-    for row in self._sanitize_data():
-      self._add_value_row(row)
+    self._add_table_headers()
+    highlight = True
+    for row in self._sanitize_data(20):
+      highlight = not highlight
+      self._add_table_row(row, highlight)
     self._add_update(self._sanitize_update())
     if 'ref' in self.options:
       for r in self._sanitize_ref():
@@ -173,4 +200,4 @@ class Regedit(ct.AbstractConfigTable):
     return node.children
 
 def setup(app):
-  app.add_directive('regedit', Regedit)
+  app.add_directive('ports', Ports)

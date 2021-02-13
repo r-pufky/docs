@@ -7,14 +7,11 @@ private repository use. Can be exposed and used publicly as well.
 
 See `Gitea Docker and Documentation`_ and `Gitea cheat sheet`_.
 
-.. gport:: Ports (Gitea)
-  :port:     3000
-  :protocol: TCP
-  :type:     Exposed
-  :purpose:  http/https connections.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: Gitea Ports
+  :value0: 3000, {TCP}, {EXPOSED}, HTTP/HTTPS connections
+  :open:
 
 .. gflocation:: Important File Locations (Gitea)
   :file:    /data/services/gitea/conf/app.ini,

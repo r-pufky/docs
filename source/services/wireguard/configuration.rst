@@ -5,18 +5,15 @@ Wireguard Configuration
 Standard configuration for Wireguard VPN. Assumes wireguard server is running on
 a Debian host.
 
-.. gport:: Ports (Wireguard)
-  :port:     51820
-  :protocol: UDP
-  :type:     Public
-  :purpose:  Wireguard Server endpoint.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: Wireguard Ports
+  :value0: 51820, {UDP}, {PUBLIC}, Wireguard Server endpoint
+  :open:
 
-Only the server endpoint needs to be exposed publically. Clients can globally
-roam as long as they have working Internet connections and can send UDP traffic
-to the given port.
+  Only the server endpoint needs to be exposed publically. Clients can globally
+  roam as long as they have working Internet connections and can send UDP
+  traffic to the given port.
 
 Key Generation
 **************

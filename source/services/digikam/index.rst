@@ -11,22 +11,13 @@ for all connections to docker containers using Let's Encrypt.
 
 See `digiKam Docker and Documentation`_
 
-.. gport:: Ports (digiKam)
-  :port:     443,
-             5800,
-             5900
-  :protocol: TCP,
-             TCP,
-             TCP
-  :type:     Public,
-             Private,
-             Private
-  :purpose:  https connections.,
-             websocket webGUI.,
-             VNC server.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: digiKam Ports
+  :value0:  443, {TCP},  {PUBLIC}, HTTPS connections
+  :value1: 5800, {TCP}, {PRIVATE}, websocket webGUI
+  :value2: 5900, {TCP}, {PRIVATE}, VNC server
+  :open:
 
 .. gflocation:: Important File Locations (digiKam)
   :file:    /config,

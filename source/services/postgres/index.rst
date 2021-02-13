@@ -6,14 +6,11 @@ Postgres is an opensource object-relational database.
 
 See `Postgres Docker and Documentation`_.
 
-.. gport:: Ports (postgres)
-  :port:     5432
-  :protocol: TCP
-  :type:     Exposed
-  :purpose:  postgres DB port.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: postgres Ports
+  :value0: 5432, {TCP}, {EXPOSED}, postgres DB port
+  :open:
 
 .. gflocation:: Important File Locations (postgres)
   :file:    /docker-entrypoint-initdb.d,

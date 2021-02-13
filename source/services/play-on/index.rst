@@ -16,22 +16,16 @@ been run.
   :no_caption:
   :no_launch:
 
-.. gport:: Ports Exposed (Play-on)
-  :port:     22,
-             57331*
-  :protocol: TCP,
-             TCP/UDP
-  :type:     External,
-             External
-  :purpose:  SSHD for sshfs connections.,
-             For streaming to other playon apps.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: Play-on Ports
+  :value0:    22,     {TCP},  {PUBLIC}, SSHD for sshfs connections 
+  :value1: 57331, {TCP/UDP}, {DISABLE}, For streaming to other playon apps
+  :open:
 
-    .. note::
-      Port ``57331`` is only used if you use playon to stream recordings /
-      provide a media library; by default this can be safetly disabled.
+  .. note::
+    Port ``57331`` is only used if you use playon to stream recordings /
+    provide a media library; by default this can be safetly disabled.
 
 .. gtable:: Services Used (Play-on)
   :header: Service,

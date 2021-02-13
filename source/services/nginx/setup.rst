@@ -2,18 +2,13 @@
 
 NGINX Setup
 ###########
-.. gport:: Ports (NGINX)
-  :port:     80,
-             443
-  :protocol: TCP,
-             TCP
-  :type:     Public,
-             Public
-  :purpose:  http connection -- redirected to https.,
-             https connections.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+
+Ports
+*****
+.. ports:: NGINX Ports
+  :value0:  80, {TCP}, {PUBLIC}, HTTPS connection (redirected to HTTPS)
+  :value1: 443, {TCP}, {PUBLIC}, HTTPS connections
+  :open:
 
 .. gflocation:: Important File Locations (NGINX)
   :file:    /etc/nginx/conf.d,

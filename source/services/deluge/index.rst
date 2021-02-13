@@ -6,18 +6,12 @@ Bittorrent downloader.
 
 See `Deluge Docker and Documentation`_.
 
-.. gport:: Ports (Deluge)
-  :port:     49160,
-             8112
-  :protocol: UDP/TCP,
-             TCP
-  :type:     Public,
-             Exposed
-  :purpose:  Peer Port for transfers.,
-             Webface.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: Deluge Ports
+  :value0: 49160, {TCP/UDP},  {PUBLIC}, Peer Port for transfers
+  :value1:  8112,     {TCP}, {EXPOSED}, Webface
+  :open:
 
 .. gflocation:: Important File Locations (Deluge)
   :file:    /config/core.conf,

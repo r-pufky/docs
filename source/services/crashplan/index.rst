@@ -7,18 +7,12 @@ crashplan.
 
 See `Crashplan Docker and Documentation`_.
 
-.. gport:: Ports (Crashplan Pro)
-  :port:     5800,
-             5900
-  :protocol: TCP,
-             TCP
-  :type:     Exposed,
-             Exposed
-  :purpose:  GUI web interface.,
-             GUI via VNC.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: Crashplan Pro Ports
+  :value0: 5800, {TCP}, {EXPOSED}, GUI web interface
+  :value1: 5900, {TCP}, {EXPOSED}, GUI via VNC
+  :open:
 
 .. gflocation:: Important File Locations (Crashplan Pro)
   :file:    /config/var,

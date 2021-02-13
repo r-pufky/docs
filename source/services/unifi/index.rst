@@ -9,50 +9,21 @@ See `Unifi Docker and Documentation`_.
 Read :ref:`example-vlan-network` for detailed configuration instructions on
 an example network.
 
-.. gport:: Ports (Unifi Controller)
-  :port:     3478,
-             8080,
-             8443,
-             8880,
-             8843,
-             6789,
-             27117,
-             5656-5699,
-             10001,
-             1900
-  :protocol: UDP,
-             TCP,
-             TCP,
-             TCP,
-             TCP,
-             TCP,
-             TCP,
-             UDP,
-             UDP,
-             UDP
-  :type:     Public,
-             Public,
-             Public,
-             Public,
-             Public,
-             Disabled,
-             Disabled,
-             Disabled,
-             Disabled,
-             Disabled
-  :purpose:  Port used for STUN.,
-             Port used for device and controller communication.,
-             Port used for controller GUI/API as seen in a web browser.,
-             Port used for HTTP portal redirection.,
-             Port used for HTTPS portal redirection.,
-             Port used for UniFi mobile speed test.,
-             Port used for local-bound database communication.,
-             Ports used by AP-EDU broadcasting.,
-             Port used for AP discovery.,
-             Port used for "Make controller discoverable on L2 network" in controller settings.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: Unifi Controller Ports
+  :value0:      3478, {UDP},  {PUBLIC}, STUN
+  :value1:      8080, {TCP},  {PUBLIC}, Device and controller communication
+  :value2:      8443, {TCP},  {PUBLIC}, Controller GUI/API webface
+  :value3:      8880, {TCP},  {PUBLIC}, HTTP portal redirection
+  :value4:      8843, {TCP},  {PUBLIC}, HTTPS portal redirection
+  :value5:      6789, {TCP}, {DISABLE}, UniFi mobile speed test
+  :value6:     27117, {TCP}, {DISABLE}, local-bound database communication
+  :value7: 5656-5699, {UDP}, {DISABLE}, AP-EDU broadcasting
+  :value8:     10001, {UDP}, {DISABLE}, AP discovery
+  :value9:      1900, {UDP}, {DISABLE}, "Make controller discoverable on L2
+                                        network" in controller setting
+  :open:
 
 .. gflocation:: Important File Locations (Unifi Controller)
   :file:    /config
@@ -117,9 +88,6 @@ slightly differently for each router.
 
 .. note::
   These are only needed if not using :term:`VLAN` separation.
-
-.. TODO::
-  Do firewall configuration first. These are pure firewall rules.
 
 .. ubiquiti:: Allow AP management to controller.
   :path:      Firewall/NAT --> Firewall Policies -->

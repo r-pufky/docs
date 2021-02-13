@@ -4,44 +4,23 @@ Prxomox (PVE)
 #############
 Prepare a USB drive with the latest ISO image from the `Proxmox repository <https://www.proxmox.com/en/downloads/category/proxmox-virtual-environment>`_.
 
-.. gport:: Ports Exposed (Proxmox)
-  :port:     22,
-             85,
-             111,
-             3128,
-             5404-5405,
-             5900-5999,
-             8006,
-             60000-60050
-  :protocol: TCP,
-             TCP,
-             TCP/UDP,
-             TCP,
-             UDP,
-             TCP,
-             TCP,
-             TCP
-  :type:     Restricted (cluster; management),
-             Restricted (cluster),
-             Public,
-             Public,
-             Restricted (cluster),
-             Public,
-             Restricted (management),
-             Restricted (cluster)
-  :purpose:  SSH,
-             Pvedaemon (listens 127.0.0.1:85) REST API,
-             Rpcbind (NFS services),
-             Spice proxy (client remote viewer),
-             Corosync cluster traffic,
-             VNC Web console websockets,
-             Web Interface,
-             Live Migrations
-  :no_key_title:
-  :no_caption:
-  :no_launch:
-
-  `Reference <https://pve.proxmox.com/wiki/Firewall#_ports_used_by_proxmox_ve>`__
+Ports
+*****
+.. ports:: Proxmox Ports
+  :value0:          22;     {TCP}; {RESTRICTED}; SSH (cluster, management only) 
+  :value1:          85;     {TCP}; {RESTRICTED}; REST API Pvedaemon on
+                                                 127.0.0.1:85 (cluster only)
+  :value2:         111; {TCP/UDP};     {PUBLIC}; Rpcbind (NFS services)
+  :value3:        3128;     {TCP};     {PUBLIC}; Spice proxy (client remote viewer)
+  :value4:   5404-5405;     {UDP}; {RESTRICTED}; Corosync cluster traffic
+                                                 (cluster only)
+  :value5:   5900-5999;     {TCP};     {PUBLIC}; VNC Web console websockets
+  :value6:        8006;     {TCP}; {RESTRICTED}; Web Interface (management only)
+  :value7: 60000-60050;     {TCP}; {RESTRICTED}; Live Migrations (cluster only)
+  :ref:    https://pve.proxmox.com/wiki/Firewall#_ports_used_by_proxmox_ve
+  :update: 2021-01-20
+  :delim: ;
+  :open:
 
 Install Service
 ***************

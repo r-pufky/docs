@@ -6,14 +6,11 @@ TV Management.
 
 See `Sonarr Docker and Documentation`_.
 
-.. gport:: Ports (Sonarr)
-  :port:     8989
-  :protocol: TCP
-  :type:     Exposed
-  :purpose:  Webface.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: Sonarr Ports
+  :value0: 8989, {TCP}, {EXPOSED}, Webface
+  :open:
 
 .. gflocation:: Important File Locations (Sonarr)
   :file:    /config,

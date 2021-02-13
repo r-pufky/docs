@@ -6,14 +6,11 @@ Music streaming.
 
 See `Airsonic Docker and Documentation`_.
 
-.. gport:: Ports (Airsonic)
-  :port:     4040
-  :protocol: TCP
-  :type:     Exposed
-  :purpose:  Airsonic webservice.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: Ports (Airsonic)
+  :value0: 4040, {TCP}, {EXPOSED}, Airsonic webservice
+  :open:
 
 .. gflocation:: Important File Locations (Airsonic)
   :file:    /config,

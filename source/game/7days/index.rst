@@ -21,29 +21,17 @@ See `7 Days Docker and Documentation`_.
 
     See `7 Days to Die Dedicated Server`_.
 
-.. gport:: Ports Exposed (7 Days to Die)
-  :port:     8080,
-             8081,
-             26900,
-             26900-26902
-  :protocol: TCP,
-             TCP,
-             TCP,
-             UDP
-  :type:     External,
-             External,
-             External,
-             External
-  :purpose:  Control Panel (Disabled).,
-             Telnet Port (Disabled).,
-             Dedicated Server (Steam Server).,
-             Dedicated Server (Steam Clients).
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: 7 Days to Die Ports
+  :value0:        8080, {TCP}, {DISABLE}, Control Panel
+  :value1:        8081, {TCP}, {DISABLE}, Telnet Port
+  :value2:       26900, {TCP},  {PUBLIC}, Dedicated Server (Steam Server)
+  :value3: 26900-26902, {UDP},  {PUBLIC}, Dedicated Server (Steam Clients)
+  :open:
 
-    .. note::
-      Control Panel and Telnet are insecure. **Disable** and **block**.
+  .. note::
+    Control Panel and Telnet are insecure. **Disable** and **block**.
 
 .. gflocation:: Important File Locations (7 Days to Die)
   :file:    /data/saves/serveradmin.xml;

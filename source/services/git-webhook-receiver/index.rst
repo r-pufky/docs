@@ -8,14 +8,11 @@ This is useful for addressing gitfs issues with saltstack, as well as always
 having an up-to-date local copy of head. As this makes a system call, anything
 can really be done.
 
-.. gport:: Ports (Git Webhook Receiver)
-  :port:     8666
-  :protocol: TCP
-  :type:     Exposed
-  :purpose:  Listen port for webhook.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: Git Webhook Receiver Ports
+  :value0: 8666, {TCP}, {EXPOSED}, Listen port for webhook
+  :open:
 
 .. gflocation:: Important File Locations (Git Webhook Receiver)
   :file:    /etc/systemd/system/git-webhook-receiver.service,

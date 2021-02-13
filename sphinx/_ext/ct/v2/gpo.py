@@ -95,7 +95,12 @@ class Gpo(ct.AbstractConfigTable):
       return self._parse_list('version')
     return None
 
-  def _get_value_row(self, data):
+  def _add_value_row(self, data):
+    """Add RST row for :value: directive.
+
+    Args:
+      data: List of strings to render to row.
+    """
     for x in data:
       self._rst.append("    ---", self.c)
       self._rst.append("    :column: col-md-6", self.c)
@@ -125,9 +130,14 @@ class Gpo(ct.AbstractConfigTable):
     self._rst.append("    :column: col-lg-12 p-0 m-0", self.c)
     for line in self.content:
       self._rst.append("    %s" % line, self.c)
-    self._rst.append("    ---", self.c)
 
   def _add_path(self, path):
+    """Add RST row for :path: directive.
+
+    Args:
+      path: String to render to row.
+    """
+    self._rst.append("    ---", self.c)
     self._rst.append("    :column: col-lg-12 p-0 m-0 font-weight-bold", self.c)
     self._rst.append("    :body: bg-light", self.c)
     # repr is used to auto-escape strings for rendering in sudo-rst (e.g. \\)
@@ -135,15 +145,30 @@ class Gpo(ct.AbstractConfigTable):
     self._rst.append("    %s" % repr(path)[1:-1], self.c)
 
   def _add_update(self, update):
+    """Add RST row for :update: directive.
+
+    Args:
+      update: String update time to render to row.
+    """
     self._rst.append("    ---", self.c)
     self._rst.append("    :column: col-lg-12 p-0 m-0", self.c)
     self._rst.append("    :body: text-right", self.c)
     self._rst.append("    %s" % badges.update(update), self.c)
 
   def _add_version(self, version):
+    """Add RST row for :version: directive.
+
+    Args:
+      version: String version to render to row.
+    """
     self._rst.append('    %s' % self._convert_to_badge(version), self.c)
 
   def _add_reference(self, ref):
+    """Add RST row for :ref: directive.
+
+    Args:
+      ref: String reference to render to row.
+    """
     self._rst.append('    %s' % badges.ref(ref), self.c)
 
   def run(self):
@@ -156,7 +181,7 @@ class Gpo(ct.AbstractConfigTable):
     self._add_panel_template()
     self._add_path(self.gen_label(self._sanitize_path()))
     for row in self._sanitize_data():
-      self._get_value_row(row)
+      self._add_value_row(row)
     self._add_update(self._sanitize_update())
     if 'version' in self.options:
       for v in self._sanitize_version():

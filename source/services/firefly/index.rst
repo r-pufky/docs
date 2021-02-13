@@ -9,22 +9,13 @@ for all connections to docker containers using Let's Encrypt.
 
 See `Firefly Docker and Documentation`_.
 
-.. gport:: Ports (Firefly)
-  :port:     443,
-             80,
-             5432
-  :protocol: TCP,
-             TCP,
-             TCP
-  :type:     Public,
-             Private,
-             Private
-  :purpose:  https connections.,
-             Firefly web UI.,
-             Postgres SQL.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: Firefly Ports
+  :value0:  443, {TCP},  {PUBLIC}, HTTPS connections
+  :value1:   80, {TCP}, {PRIVATE}, Firefly web UI
+  :value2: 5432, {TCP}, {PRIVATE}, Postgres SQL
+  :open:
 
 .. gflocation:: Important File Locations (Firefly)
   :file:    /var/www/firefly-iii/storage/export,

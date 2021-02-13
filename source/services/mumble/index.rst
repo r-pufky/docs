@@ -7,18 +7,12 @@ ACLs.
 
 Uses :ref:`debian-server-base-install`.
 
-.. gport:: Ports (Mumble)
-  :port:     64738,
-             64738
-  :protocol: TCP,
-             UDP
-  :type:     Public,
-             Public
-  :purpose:  Server/Voice.,
-             Voice.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: Mumble Ports
+  :value0: 64738, {TCP}, {PUBLIC}, Server/Voice
+  :value1: 64738, {UDP}, {PUBLIC}, Voice
+  :open:
 
 .. gflocation:: Important File Locations (Mumble)
   :file:    /etc/mumble-server.ini,

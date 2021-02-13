@@ -8,14 +8,11 @@ See `SSHD Docker and Documentation`_. This assumes a similiar setup to
 :ref:`service-ssh-linux-setup` with the additional of chrooting users into
 read-only directories.
 
-.. gport:: Ports (SSHD Docker)
-  :port:     55555
-  :protocol: TCP
-  :type:     Exposed
-  :purpose:  SSH Connections.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: SSHD Docker Ports
+  :value0: 55555, {TCP}, {EXPOSED}, SSH Connections
+  :open:
 
 .. gflocation:: Important File Locations (SSHD Docker)
   :file:    /etc/ssh,

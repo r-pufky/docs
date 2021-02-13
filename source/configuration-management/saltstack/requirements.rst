@@ -19,18 +19,13 @@ are defined here. Most users report actual usage minimum requirements as:
   :no_caption:
   :no_launch:
 
-.. gport:: Ports Exposed (Saltstack)
-  :port:         4505,
-                 4506
-  :protocol:     TCP,
-                 TCP
-  :type:         External,
-                 External
-  :purpose:      Minion listen port for pubsub messages.,
-                 Master file/data push; Minion push result data.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: Saltstack Ports
+  :value0: 4505; {TCP}; {PUBLIC}; Minion listen port for pubsub messages
+  :value1: 4506; {TCP}; {PUBLIC}; Master file/data push, Minion push result data
+  :delim: ;
+  :open:
 
   By default ``salt`` should resolve to the master IP for the minion, this can
   be configured in the minion as a DNS name or IP address.

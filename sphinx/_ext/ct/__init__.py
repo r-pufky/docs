@@ -8,7 +8,6 @@ from . import config
 
 from .generic import flocation
 from .generic import gui
-from .generic import port
 from .generic import table
 
 from .windows import wfirewall
@@ -22,6 +21,7 @@ from .windows import wtschedule
 from .v2 import regedit
 from .v2 import gpo
 from .v2 import ubiquiti
+from .v2 import ports
 
 def setup(app):
   app.add_config_value('ct_separator', config.DEFAULT_SEPARATOR, '')
@@ -30,7 +30,6 @@ def setup(app):
 
   flocation.setup(app)
   gui.setup(app)
-  port.setup(app)
   table.setup(app)
 
   wfirewall.setup(app)
@@ -44,6 +43,7 @@ def setup(app):
   regedit.setup(app)
   gpo.setup(app)
   ubiquiti.setup(app)
+  ports.setup(app)
 
   return {
     'version': '0.1',

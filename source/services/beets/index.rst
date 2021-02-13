@@ -6,14 +6,11 @@ Music organizer.
 
 See `beets.io Docker and Documentation`_.
 
-.. gport:: Ports (beets.io)
-  :port:     8337
-  :protocol: TCP
-  :type:     Exposed
-  :purpose:  Web GUI frontend for playback.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: beets.io Ports
+  :value0: 8337, {TCP}, {EXPOSED}, Web GUI frontend for playback
+  :open:
 
 .. gflocation:: Important File Locations (beets.io)
   :file:    /config.yaml,

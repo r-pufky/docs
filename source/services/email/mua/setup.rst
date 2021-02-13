@@ -7,14 +7,11 @@ Setup roundcube email :term:`MUA` for webmail.
 Setup :term:`MTA` and :term:`MDA` before configuration. See
 :ref:`service-email-mta-setup`.
 
-.. gport:: Ports (MUA)
-  :port:     80
-  :protocol: TCP
-  :type:     Disabled
-  :purpose:  Roundcube webface.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: MUA Ports
+  :value0: 80, {TCP}, {DISABLE}, Roundcube webface
+  :open:
 
 .. gflocation:: Important File Locations (MUA)
   :file:    /var/www/html/config,

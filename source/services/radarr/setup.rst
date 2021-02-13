@@ -6,14 +6,11 @@ Movie Management.
 
 See `Radarr Docker and Documentation`_.
 
-.. gport:: Ports (Radarr)
-  :port:     7878
-  :protocol: TCP
-  :type:     Exposed
-  :purpose:  Webface.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: Radarr Ports
+  :value0: 7878, {TCP}, {EXPOSED}, Webface
+  :open:
 
 .. gflocation:: Important File Locations (Radarr)
   :file:    /config,
