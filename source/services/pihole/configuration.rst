@@ -144,22 +144,15 @@ Generic Configuration - will be located slightly differently for each router.
               {IP_RANGE}
   :value0:    DNS server assigned for DHCP clients, {IP}
 
-.. ufirewall:: Allow TCP/UDP traffic on port 53 to Pi-Hole
-  :key_title:  Firewall Policies -->
-               WIFI_IN -->
-               Actions -->
-               Interfaces
-  :option:     Source,
-               Destination,
-               Protocol,
-               Action
-  :setting:    *,
-               {Pi-Hole IP}:53,
-               TCP/UDP,
-               Accept
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. ubiquiti:: Allow TCP/UDP traffic on port 53 to Pi-Hole
+  :path:      Firewall Policies -->
+              WIFI_IN -->
+              Actions -->
+              Interfaces
+  :value0:    Source, *
+  :value1:    Destination, Pi-Hole:53
+  :value2:    Protocol, {TCP/UDP}
+  :value3:    Action, {ACCEPT}
 
 Clients Ensure clients flush the DNS cache and new DNS server is set to start
 resolution via Pi-Hole.

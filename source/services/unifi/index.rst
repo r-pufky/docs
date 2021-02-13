@@ -115,43 +115,37 @@ Router Configuration
 Forward traffic to Unifi Controller for AP to be managed - will be located
 slightly differently for each router.
 
-.. ufirewall:: Allow AP management to controller.
-  :key_title:  Firewall Policies -->
-               WIFI_IN -->
-               Actions -->
-               Interfaces
-  :option:     Description,
-               Source,
-               Destination,
-               Protocol,
-               Action
-  :setting:    AP Management,
-               {AP IP},
-               {Unifi Controller IP} 8443 8080,
-               TCP,
-               Accept
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. note::
+  These are only needed if not using :term:`VLAN` separation.
 
-.. ufirewall:: Allow AP STUN to controller.
-  :key_title:  Firewall Policies -->
-               WIFI_IN -->
-               Actions -->
-               Interfaces
-  :option:     Description,
-               Source,
-               Destination,
-               Protocol,
-               Action
-  :setting:    AP STUN,
-               {AP IP},
-               {Unifi Controller IP} 3478,
-               UDP,
-               Accept
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. TODO::
+  Do firewall configuration first. These are pure firewall rules.
+
+.. ubiquiti:: Allow AP management to controller.
+  :path:      Firewall/NAT --> Firewall Policies -->
+              WIFI_IN -->
+              Actions -->
+              Edit Ruleset -->
+              Add New Rule
+  :value0:    Description, AP Management
+  :value1:    Source, {IP}
+  :value2:    Destination, {CONTROLLER}
+  :value3:    Destination Port, 8443 8080
+  :value4:    Protocol, {TCP}
+  :value5:    Action, {ACCEPT}
+
+.. ubiquiti:: Allow AP STUN to controller.
+  :path:      Firewall/NAT --> Firewall Policies -->
+              WIFI_IN -->
+              Actions -->
+              Edit Ruleset -->
+              Add New Rule
+  :value0:    Description, AP STUN
+  :value1:    Source, {IP}
+  :value2:    Destination, {CONTROLLER}
+  :value3:    Destination, 3478
+  :value4:    Protocol, {UDP}
+  :value5:    Action, {ACCEPT}
 
 Enable Unifi Controller Assignment in EdgeOS or DHCP Option 43
 ==============================================================

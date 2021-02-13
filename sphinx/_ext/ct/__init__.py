@@ -19,8 +19,6 @@ from .windows import wsysprop
 from .windows import wtmanager
 from .windows import wtschedule
 
-from .ubnt import ufirewall
-
 from .v2 import regedit
 from .v2 import gpo
 from .v2 import ubiquiti
@@ -42,8 +40,6 @@ def setup(app):
   wsysprop.setup(app)
   wtmanager.setup(app)
   wtschedule.setup(app)
-
-  ufirewall.setup(app)
 
   regedit.setup(app)
   gpo.setup(app)
