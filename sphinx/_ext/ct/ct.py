@@ -126,6 +126,7 @@ class AbstractConfigTable(Table):
     Returns:
       String raw text or rst formatted badge.
     """
-    if text[0] != '{' or text[-1] != '}':
+    try:
+      return self._text_badges[text]
+    except KeyError:
       return text
-    return self._text_badges[text]
