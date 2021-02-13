@@ -51,124 +51,71 @@ Set Static Switch IP
 
 Connect to Unifi Controller @ http://localhost:8443.
 
-.. ucontroller:: Set Static Switch IP
-  :key_title:    Devices --> Switch --> Properties --> Config --> Network
-  :option:       Configure IP,
-                 › IP Address,
-                 › Preferred DNS,
-                 › Subnet Mask,
-                 › Gateway,
-                 › DNS Suffix
-  :setting:      Static,
-                 10.1.1.6,
-                 10.1.1.1,
-                 255.255.255.0,
-                 10.1.1.1,
-                 {YOUR DOMAIN}
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. ubiquiti:: Set Static Switch IP
+  :path:      Devices --> Switch --> Properties --> Config --> Network
+  :value0:    Configure IP, {STATIC}
+  :value1:    › IP Address, 10.1.1.6
+  :value2:    › Preferred DNS, 10.1.1.1
+  :value3:    › Subnet Mask, 255.255.255.0
+  :value4:    › Gateway, 10.1.1.1
+  :value5:    › DNS Suffix, {DOMAIN}
 
-    .. note::
-      :cmdmenu:`Queue Changes --> Apply`
+  .. note::
+    :cmdmenu:`Queue Changes --> Apply`
 
-      * Wait for provisioning to finish.
-      * Ensure switch is pingable. ``ping 10.1.1.6``.
-      * Apply any firmware updates if needed.
+    * Wait for provisioning to finish.
+    * Ensure switch is pingable. ``ping 10.1.1.6``.
+    * Apply any firmware updates if needed.
 
 Configure Server Switch Management
 **********************************
-.. ucontroller:: General Server Switch Setup
-  :key_title:    Devices --> Switch --> Properties --> Config --> General
-  :option:       Alias,
-                 LED
-  :setting:      server,
-                 use site settings
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. ubiquiti:: General Server Switch Setup
+  :path:      Devices --> Switch --> Properties --> Config --> General
+  :value0:    Alias, server
+  :value1:    LED, use site settings
 
-.. ucontroller:: Server Switch Services Setup
-  :key_title:    Devices --> Switch --> Properties --> Config --> Services
-  :option:       VLAN,
-                 › Management VLAN,
-                 › Spanning Tree,
-                 › Priority,
-                 Security,
-                 › ☐,
-                 SNMP,
-                 › Location,
-                 › Contact
-  :setting:      ,
-                 LAN,
-                 RSTP,
-                 32768,
-                 ,
-                 Enable 802.1x control,
-                 ,
-                 ,
-                 ​ 
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. ubiquiti:: Server Switch Services Setup
+  :path:      Devices --> Switch --> Properties --> Config --> Services
+  :value0:    VLAN,
+  :value1:    › Management VLAN, LAN
+  :value2:    › Spanning Tree, RSTP
+  :value3:    › Priority, 32768
+  :value4:    Security,
+  :value5:    › ☐, Enable 802.1x control
+  :value6:    SNMP,
+  :value7:    › Location, {NONE}
+  :value8:    › Contact, {NONE}
 
 :cmdmenu:`Queue Changes --> Apply`
 
 Configure VLANs on Ports
 ************************
-.. ucontroller:: Configure Switch VLANs
-  :key_title:    Devices --> Switch --> Properties --> Ports
-  :option:       Port 1,
-                 › Name,
-                 › Switch Port Profile,
-                 Port 2-4,
-                 › Name,
-                 › Switch Port Profile,
-                 Port 5,
-                 › Name,
-                 › Switch Port Profile,
-                 › › Profile Overrides,
-                 › › › PoE,
-                 Port 6,
-                 › Name,
-                 › Switch Port Profile,
-                 › › Profile Overrides,
-                 › › › PoE,
-                 Port 7,
-                 › Name,
-                 › Switch Port Profile,
-                 › › Profile Overrides,
-                 › › › PoE,
-                 Port 8,
-                 › Name,
-                 › Switch Port Profile
-  :setting:      ,
-                 trunk,
-                 trunk-server,
-                 ,
-                 serve,
-                 server (5),
-                 ,
-                 infra,
-                 infrastructure (9),
-                 ,
-                 Off,
-                 ,
-                 serve,
-                 server (5),
-                 ,
-                 Off,
-                 ,
-                 management,
-                 All,
-                 ,
-                 Off,
-                 ,
-                 disable,
-                 Disabled
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. ubiquiti:: Configure Switch VLANs
+  :path:    Devices --> Switch --> Properties --> Ports
+  :value0:  Port 1,
+  :value1:  › Name, trunk
+  :value2:  › Switch Port Profile, trunk-server
+  :value3:  Port 2-4,
+  :value4:  › Name, serve
+  :value5:  › Switch Port Profile, server (5)
+  :value6:  Port 5,
+  :value7:  › Name, infra
+  :value8:  › Switch Port Profile, infrastructure (9)
+  :value9:  › › Profile Overrides,
+  :value10:  › › › PoE, {OFF}
+  :value11:  Port 6,
+  :value12:  › Name, serve
+  :value13:  › Switch Port Profile, server (5)
+  :value14:  › › Profile Overrides,
+  :value15:  › › › PoE, {OFF}
+  :value16:  Port 7,
+  :value17:  › Name, management
+  :value18:  › Switch Port Profile, All
+  :value19:  › › Profile Overrides,
+  :value20:  › › › PoE, {OFF}
+  :value21:  Port 8,
+  :value22:  › Name, {DISABLE}
+  :value23:  › Switch Port Profile, {DISABLED}
 
   .. warning::
     Switch will re-provision for each port modification. Wait for provisioning

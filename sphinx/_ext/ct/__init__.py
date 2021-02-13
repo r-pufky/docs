@@ -20,7 +20,6 @@ from .windows import wtmanager
 from .windows import wtschedule
 
 from .ubnt import ufirewall
-from .ubnt import ucontroller
 
 from .v2 import regedit
 from .v2 import gpo
@@ -45,7 +44,6 @@ def setup(app):
   wtschedule.setup(app)
 
   ufirewall.setup(app)
-  ucontroller.setup(app)
 
   regedit.setup(app)
   gpo.setup(app)

@@ -18,26 +18,19 @@ See :ref:`service-unifi-controller` for container creation.
 
 Export laptop Unifi Controller settings.
 
-.. ucontroller:: Add Docker Container IP on Original Unifi Controller
-  :key_title:    ⚙ --> Maintenance --> Backup
-  :option:       Backup Data Rentention
-  :setting:      Settings Only
-  :no_section:
-  :no_caption:
+.. ubiquiti:: Add Docker Container IP on Original Unifi Controller
+  :path:      ⚙ --> Maintenance --> Backup
+  :value0:    Backup Data Rentention, Settings Only
 
-    .. note::
-      Download the backup and ``shutdown`` the original Unifi Controller.
+  .. note::
+    Download the backup and ``shutdown`` the original Unifi Controller.
 
 Startup Docker Unifi Controller and import config, then set the correct inform
 IP in docker container.
 
-.. ucontroller:: Set Inform IP on docker Unifi Controller
-  :controller:   http://{DOCKER UNIFI CONTAINER IP}:8443
-  :key_title:    ⚙ --> Controller
-  :option:       Controller Hostname/IP
-  :setting:      {DOCKER UNIFI CONTROLLER IP}
-  :no_section:
-  :no_caption:
+.. ubiquiti:: Set Inform IP on docker Unifi Controller
+  :path:      ⚙ --> Controller
+  :value0:    Controller Hostname/IP, {IP}
 
 .. note::
   If the Controller IP is different, manually update inform URI for each device

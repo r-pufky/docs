@@ -141,7 +141,7 @@ Generic Configuration - will be located slightly differently for each router.
               shared-network-name -->
               {NETWORK} -->
               subnet -->
-              {IP RANGE}
+              {IP_RANGE}
   :value0:    DNS server assigned for DHCP clients, {IP}
 
 .. ufirewall:: Allow TCP/UDP traffic on port 53 to Pi-Hole
