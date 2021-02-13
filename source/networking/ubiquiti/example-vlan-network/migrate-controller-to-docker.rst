@@ -9,12 +9,12 @@ See :ref:`service-unifi-controller` for container creation.
 * Setup Unifi Docker `Container IP on DHCP`_.
 * Connect to Edgerouter GUI @ http://10.1.1.1.
 
-.. uctree::   Add Docker Container IP for Controller
-  :key_title: Services --> DHCP Server --> Management --> Action --> View Details
-  :option:    Unifi Controller
-  :setting:   {DOCKER UNIFI CONTAINER IP}
-  :no_section:
-  :no_caption:
+.. ubiquiti:: Add Docker Container IP for Controller
+  :path:      Services --> DHCP Server --> Management --> Action -->
+              View Details
+  :value0:    Unifi Controller, {IP}
+
+  Be sure to use the docker unifi container IP.
 
 Export laptop Unifi Controller settings.
 

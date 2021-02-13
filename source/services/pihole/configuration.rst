@@ -134,18 +134,15 @@ Generic Configuration - will be located slightly differently for each router.
   :no_caption:
   :no_launch:
 
-.. uctree::   Add Pi-Hole as DNS Server for DHCP
-  :key_title: Service -->
+.. ubiquiti:: Add Pi-Hole as DNS Server for DHCP
+  :path:      config tree -->
+              service -->
               dhcp-server -->
               shared-network-name -->
               {NETWORK} -->
               subnet -->
-              {IP Range}
-  :option:    DNS server assigned for DHCP clients
-  :setting:   {Pi-Hole IP}
-  :no_section:
-  :no_caption:
-  :no_launch:
+              {IP RANGE}
+  :value0:    DNS server assigned for DHCP clients, {IP}
 
 .. ufirewall:: Allow TCP/UDP traffic on port 53 to Pi-Hole
   :key_title:  Firewall Policies -->

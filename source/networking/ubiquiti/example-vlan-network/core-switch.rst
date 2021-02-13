@@ -46,17 +46,11 @@ Set Static Switch IP
 #. Connect to Edgerouter GUI @ http://192.168.1.1.
 #. Reserve a static DHCP address for the switch.
 
-.. uctree::   Add Static Reservation for Switch Management
-  :key_title: Services --> DHCP Server --> Management --> Action --> Leases
-  :option:    Map Static IP,
-              › IP Address,
-              › Name
-  :setting:   ,
-              10.1.1.5,
-              core
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. ubiquiti:: Add Static Reservation for Switch Management
+  :path:      Services --> DHCP Server --> Management --> Action --> Leases
+  :value0:    Map Static IP,
+  :value1:    › IP Address, 10.1.1.5
+  :value2:    › Name, core
 
 Connect to Unifi Controller @ http://localhost:8443.
 

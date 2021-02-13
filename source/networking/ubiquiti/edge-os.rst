@@ -44,7 +44,6 @@ for a given DNS request.
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-  :open:
 
   This will map ``computer`` and ``computer.example.com`` to ``12.12.12.12``.
   Changes are reflected in the GUI. It will appear in ``/etc/hosts`` as:
@@ -67,40 +66,37 @@ for a given DNS request.
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. uctree::   Add Static Host
-    :key_title: System --> static-host-mapping --> host-name --> Add
-    :option:    host-name
-    :setting:   {FQDN HOSTNAME}
-    :no_section:
-    :no_caption:
+  .. ubiquiti:: Add Static Host
+    :path:      config tree --> system --> static-host-mapping --> host-name -->
+                Add
+    :value0:    host-name, {FQDN}
+    :generic:
+    :open:
 
-      .. note::
-        :cmdmenu:`preview` and :cmdmenu:`Apply`. When doing the initial leaf
-        creation, you will get a failure message because it is not configured with
-        an alias or network address yet. This is normal.
+    .. note::
+      :cmdmenu:`preview` and :cmdmenu:`Apply`. When doing the initial leaf
+      creation, you will get a failure message because it is not configured with
+      an alias or network address yet. This is normal.
 
-  .. uctree::   Add Static Host
-    :key_title: System --> static-host-mapping --> host-name --> {FQDN HOSTNAME}
-    :option:    alias,
-                alias,
-                inet
-    :setting:   {FQDN HOSTNAME},
-                {ALIAS HOSTNAME},
-                {HOST NETWORK ADDRESS}
-    :no_section:
-    :no_caption:
-    :no_launch:
+  .. ubiquiti:: Add Static Host
+    :path:      config tree --> system --> static-host-mapping --> host-name -->
+                {FQDN}
+    :value0:    alias, {FQDN}
+    :value1:    alias, {ALIAS}
+    :value2:    inet, {IP}
+    :generic:
+    :open:
 
-      .. note::
-        :cmdmenu:`preview` and :cmdmenu:`Apply`. Aliases should all resolve to the
-        same IP (base host). Verify by resolving both names on your network.
+    .. note::
+      :cmdmenu:`preview` and :cmdmenu:`Apply`. Aliases should all resolve to the
+      same IP (base host). Verify by resolving both names on your network.
 
-      .. important::
-        With later versions of debian based systems, entries in the local host
-        file for the system will resolve to ``127.0.1.1``. `This is by design`_.
+    .. important::
+      With later versions of debian based systems, entries in the local host
+      file for the system will resolve to ``127.0.1.1``. `This is by design`_.
 
-        * The alias will resolve to network IP.
-        * The hostname will resolve to ``127.0.1.1``.
+      * The alias will resolve to network IP.
+      * The hostname will resolve to ``127.0.1.1``.
 
 .. dropdown:: Add static host mapping via ``/etc/hosts``.
   :container: + shadow
@@ -166,12 +162,9 @@ DNS Hostnames not Resolving
 DHCP server on the edgerouter needs to update the hosts file when new IP's are
 issued.
 
-.. uctree::   Enable Dynamic DNS
-  :key_title: Service --> dhcp-server --> dynamic-dns-update
-  :option:    Enable
-  :setting:   true
-  :no_section:
-  :no_caption:
+.. ubiquiti:: Enable Dynamic DNS
+  :path:      config tree --> service --> dhcp-server --> dynamic-dns-update
+  :value0:    Enable, true
 
 Allow Subnet (Wifi) Traffic `Internet Only Access`_
 ***************************************************

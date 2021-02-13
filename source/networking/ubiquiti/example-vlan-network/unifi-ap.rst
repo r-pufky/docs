@@ -17,17 +17,11 @@ Set Static AP IP
 * Connect to Edgerouter GUI @ http://10.1.1.1.
 * Reserve a static DHCP address for the switch.
 
-.. uctree::   Add Static Reservation for Switch Management
-  :key_title: Services --> DHCP Server --> Management --> Action --> Leases
-  :option:    Map Static IP,
-              › IP Address,
-              › Name
-  :setting:   ,
-              {AP IP},
-              {AP NAME}
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. ubiquiti:: Add Static Reservation for Switch Management
+  :path:      Services --> DHCP Server --> Management --> Action --> Leases
+  :value0:    Map Static IP,
+  :value1:    › IP Address, {IP}
+  :value2:    › Name, ap
 
 Configure Unifi AP
 ******************
