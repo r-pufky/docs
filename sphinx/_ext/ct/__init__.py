@@ -19,12 +19,12 @@ from .windows import wsysprop
 from .windows import wtmanager
 from .windows import wtschedule
 
-from .ubnt import uctree
 from .ubnt import ufirewall
 from .ubnt import ucontroller
 
 from .v2 import regedit
 from .v2 import gpo
+from .v2 import ubiquiti
 
 def setup(app):
   app.add_config_value('ct_separator', config.DEFAULT_SEPARATOR, '')
@@ -44,12 +44,12 @@ def setup(app):
   wtmanager.setup(app)
   wtschedule.setup(app)
 
-  uctree.setup(app)
   ufirewall.setup(app)
   ucontroller.setup(app)
 
   regedit.setup(app)
   gpo.setup(app)
+  ubiquiti.setup(app)
 
   return {
     'version': '0.1',

@@ -1,4 +1,4 @@
-# regedit config table.
+# ubiquiti two-column config table.
 
 from .. import config
 from .. import ct
@@ -9,54 +9,43 @@ from docutils.parsers.rst import directives
 from sphinx.util.nodes import nested_parse_with_titles
 
 
-class Regedit(ct.AbstractConfigTable):
-  """Generate windows registry editor elements in a sphinx document.
+class Ubiquiti(ct.AbstractConfigTable):
+  """Generate ubqiuiti two column elements in a sphinx document.
 
   Badges ({KEYWORD}) are automatically converted using badges.badges.
 
   Directives:
     :path:        String registry key path. Required.
-    :value{0..9}: List of Name, Type, Value strings for path.
+    :value{0..9}: List of Option, Setting strings for policy.
     :ref:         List of reference URI's.
+    :version:     List of supported windows versions - see self._text_badges.
     :update:      String datetime last time references/settings were checked.
     :delim:       Custom delimeter to use instead of config.DEFAULT_DELIM.
     :generic:     Use generic 'Registry' dropdown label, in light-grey.
     :open:        Set to expand the dropdown by default.
 
+  conf.py options:
+    ct_ubiquiti_separator: Unicode separator to use for path. This uses the
+        Unicode Character Name to resolve a glyph.
+        Default: '\N{TRIANGULAR BULLET}'.
+        Suggestions: http://xahlee.info/comp/unicode_arrows.html
+        Setting this overrides ct_{CLASS}_separator value for display.
+    ct_ubiquiti_separator_replace: String separator to replace with
+        ct_{CLASS}_separator.
+        Default: '-->'.
+
   Examples:
-    .. regedit:: Dropdown opened by default, using commas as delim.
-      :path:   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-               CapabilityAccessManager\ConsentStore\microphone
-      :value0: Value1, {SZ}, Allow
-      :value1: Value2, {DWORD}, Allow
-      :value2: Value3, {DELETE}, {DELETE}
-      :ref:    https://some.reference.site,
-               https://some.reference.site2
-      :update: 2021-01-01
-      :delim:  ,
+    .. ubiquiti:: Define Management Network on Interfaces
+      :path:      Dashboard --> eth0 --> Actions --> Config
+      :value0:    Address, Manually define IP address
+      :value1:    Address, 10.1.1.1/24
+      :ref:       https://example.link
+      :update:    2021-01-01
       :open:
 
       Dropdown opened by default, using commas as delim.
 
       .. info::
-        Additional rst can be used here.
-
-    .. regedit:: Generic dropdown using ; as delims.
-      :path:   HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-               CapabilityAccessManager\ConsentStore\microphone
-      :value0: Value1; {SZ}; Allow
-      :value1: Value2; {DWORD}; Allow
-      :value2: Value3; {DELETE}; {DELETE}
-      :ref:    https://some.reference.site,
-               https://some.reference.site2
-      :update: 2021-01-01
-      :delim:  ;
-      :generic:
-      :open:
-
-      Generic dropdown using ; as delims.
-
-      .. warning::
         Additional rst can be used here.
   """
   required_arguments = 1
@@ -83,14 +72,30 @@ class Regedit(ct.AbstractConfigTable):
     'generic': directives.flag,
   }
 
+  def __init__(self, *args, **kwargs):
+    super().__init__(*args, **kwargs)
+    self.sep = config.get_sep(
+      self.state.document.settings.env.config.ct_gpo_separator,
+      self.state.document.settings.env.config.ct_separator)
+    self.rep = config.get_rep(
+      self.state.document.settings.env.config.ct_gpo_separator_replace,
+      self.state.document.settings.env.config.ct_separator_replace)
+
+  def _sanitize_version(self):
+    """Returned sanitized List of supported versions."""
+    if 'version' in self.options:
+      return self._parse_list('version')
+    return None
+
   def _get_value_row(self, data):
     for x in data:
       self._rst.append("    ---", self.c)
-      self._rst.append("    %s" % x, self.c)
+      self._rst.append("    :column: col-md-6", self.c)
+      self._rst.append("    %s" % self._convert_to_badge(x), self.c)
 
   def _add_dropdown_header(self):
     if 'generic' in self.options:
-      self._rst.append(".. dropdown:: Registry", self.c)
+      self._rst.append(".. dropdown:: Ubiquiti", self.c)
       self._rst.append("  :title: font-weight-bold", self.c)
       self._rst.append("  :animate: fade-in", self.c)
     else:
@@ -127,6 +132,9 @@ class Regedit(ct.AbstractConfigTable):
     self._rst.append("    :body: text-right", self.c)
     self._rst.append("    %s" % badges.update(update), self.c)
 
+  def _add_version(self, version):
+    self._rst.append('    %s' % self._convert_to_badge(version), self.c)
+
   def _add_reference(self, ref):
     self._rst.append('    %s' % badges.ref(ref), self.c)
 
@@ -138,10 +146,13 @@ class Regedit(ct.AbstractConfigTable):
     """
     self._add_dropdown_header()
     self._add_panel_template()
-    self._add_path(self._sanitize_path())
+    self._add_path(self.gen_label(self._sanitize_path()))
     for row in self._sanitize_data():
       self._get_value_row(row)
     self._add_update(self._sanitize_update())
+    if 'version' in self.options:
+      for v in self._sanitize_version():
+        self._add_version(v)
     if 'ref' in self.options:
       for r in self._sanitize_ref():
         self._add_reference(r)
@@ -153,4 +164,6 @@ class Regedit(ct.AbstractConfigTable):
     return node.children
 
 def setup(app):
-  app.add_directive('regedit', Regedit)
+  app.add_config_value('ct_ubiquiti_separator', config.DEFAULT_SEPARATOR, '')
+  app.add_config_value('ct_ubiquiti_separator_replace', config.DEFAULT_REPLACE, '')
+  app.add_directive('ubiquiti', Ubiquiti)

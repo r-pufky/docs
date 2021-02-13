@@ -17,27 +17,40 @@ def ref(ref):
 def update(text):
   return '%s' % (Template.secondary % ('Updated: %s' % text or 'Never'))
 
-# Generic
-DELETE=Template.danger % 'DELETE'
-USER=Template.success % 'USER'
-PASS=Template.success % 'PASS'
-HOST=Template.success % 'HOST'
-
-# Regedit
-DWORD=':badge:`DWORD,badge-info badge-pill`'
-SZ=':badge:`SZ,badge-info badge-pill`'
-BINARY=':badge:`BINARY,badge-info badge-pill`'
-DWORD_LITTLE_ENDIAN=':badge:`DWORD_LITTLE_ENDIAN,badge-info badge-pill`'
-DWORD_BIG_ENDIAN=':badge:`DWORD_BIG_ENDIAN,badge-info badge-pill`'
-EXPAND_SZ=':badge:`EXPAND_SZ,badge-info badge-pill`'
-LINK=':badge:`LINK,badge-info badge-pill`'
-MULTI_SZ=':badge:`MULTI_SZ,badge-info badge-pill`'
-NONE=':badge:`NONE,badge-info badge-pill`'
-QWORD=':badge:`QWORD,badge-info badge-pill`'
-QWORD_LITTLE_ENDIAN=':badge:`QWORD_LITTLE_ENDIAN,badge-info badge-pill`'
-
-# GPO
-ENTERPRISE=':badge:`ENTERPRISE,badge-dark badge-pill`'
-EDU=':badge:`EDU,badge-dark badge-pill`'
-PRO=':badge:`PRO,badge-dark badge-pill`'
-HOME=':badge:`HOME,badge-dark badge-pill`'
+badges = {
+  # Generic
+  '{DELETE}': Template.danger % 'DELETE',
+  '{USER}': Template.info % 'USER',
+  '{PASS}': Template.info % 'PASS',
+  '{EMAIL}': Template.info % 'EMAIL',
+  '{HOST}': Template.info % 'HOST',
+  '{IP}': Template.info % 'IP',
+  '{DESCRIPTION}': Template.info % 'DESCRIPTION',
+  # Regedit
+  '{DWORD}': Template.info % 'DWORD',
+  '{SZ}': Template.info % 'SZ',
+  '{BINARY}': Template.info % 'BINARY',
+  '{DWORD_LITTLE_ENDIAN}': Template.info % 'DWORD_LITTLE_ENDIAN',
+  '{DWORD_BIG_ENDIAN}': Template.info % 'DWORD_BIG_ENDIAN',
+  '{EXPAND_SZ}': Template.info % 'EXPAND_SZ',
+  '{LINK}': Template.info % 'LINK',
+  '{MULTI_SZ}': Template.info % 'MULTI_SZ',
+  '{NONE}': Template.info % 'NONE',
+  '{QWORD}': Template.info % 'QWORD',
+  '{QWORD_LITTLE_ENDIAN}': Template.info % 'QWORD_LITTLE_ENDIAN',
+  # GPO
+  '{ENTERPRISE}': Template.dark % 'ENTERPRISE',
+  '{EDU}': Template.dark % 'EDU',
+  '{PRO}': Template.dark % 'PRO',
+  '{HOME}': Template.dark % 'HOME',
+  # Ubiquiti / Networking
+  '{IP_PUB_MASK}': '%s / %s' % (Template.info % 'PUBLIC IP', Template.info % 'NETMASK'),
+  '{IP_PUB_CIDR}': '%s / %s' % (Template.info % 'PUBLIC IP', Template.info % 'CIDR'),
+  '{GATEWAY}': Template.info % 'GATEWAY',
+  '{NETWORK}': Template.info % 'NETWORK',
+  '{FQDN}': Template.info % 'FQDN',
+  '{ALIAS}': Template.info % 'ALIAS',
+  '{IP RANGE}': Template.info % 'IP RANGE',
+  '{DOMAIN}': Template.info % 'DOMAIN',
+  '{SSH_PORT}': Template.info % 'SSH PORT',
+}

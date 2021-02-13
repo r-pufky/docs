@@ -2,6 +2,7 @@
 
 import inspect
 from . import config
+from .v2 import badges
 from docutils import nodes
 from docutils.statemachine import ViewList
 from docutils.parsers.rst import directives
@@ -20,7 +21,8 @@ class AbstractConfigTable(Table):
     title: node.title object containing the directive title.
     _rst: ViewList object containing generated rst. Must be cleared before each
         render operation.
-    _text_badges: Dictionary containing text:rst badge mappings.
+    sep: Unicode menu separator to use.
+    rep: String separator replacement to use.
   """
 
   def __init__(self, *args, **kwargs):
@@ -30,6 +32,8 @@ class AbstractConfigTable(Table):
     self.title, _ = self.make_title()
     self.c = inspect.currentframe().f_locals['self'].__class__.__name__
     self.delim = config.DEFAULT_DELIM
+    self.sep = self.state.document.settings.env.config.ct_separator
+    self.rep = self.state.document.settings.env.config.ct_separator_replace
 
   def _set_delim(self):
     """Sets delimeter based on :delim:, stripping whitespace."""
@@ -39,7 +43,7 @@ class AbstractConfigTable(Table):
   def _parse_list(self, key, split=None):
     """Parse directive options on key and return sanitized python list.
 
-    Uses self.delim to split.
+    Uses self.delim to split; automatically converts badges.
 
     Args:
       key: String key to use for self.options dictionary.
@@ -51,7 +55,7 @@ class AbstractConfigTable(Table):
     """
     if not split:
       split = self.delim
-    return [x.strip() for x in self.options[key].split(split)]
+    return [self._convert_to_badge(x.strip()) for x in self.options[key].split(split)]
 
   def _sanitize_path(self, sep='\n'):
     """String strips whitespace and combines to single string if needed.
@@ -60,12 +64,12 @@ class AbstractConfigTable(Table):
       sep: String path separator. Default: '\n'.
 
     Returns:
-      Tuple (path, data, ref, update). data is a list containing processed value
-      options.
+      String path with whitespace stripped, combined to a single string with
+      badge replacements. or None.
     """
     self._set_delim()
     if 'path' in self.options:
-      return ''.join(self._parse_list('path',sep))
+      return ''.join(self._parse_list('path', sep))
     return None
 
   def _sanitize_data(self, limit=10):
@@ -112,6 +116,25 @@ class AbstractConfigTable(Table):
       return self._parse_list('ref')
     return None
 
+  def gen_label(self, text, space=True):
+    """Generate primative text label from menuselection with badge replacement.
+
+    Args:
+      text: Unicode text to generate.
+      space: Boolean True to insert a single space before and after the unicode
+          separator, trimming existing whitespace as needed. False: leaves
+          whitespace as is. Default: True.
+
+    Returns:
+      String containing processed label with custom separators.
+    """
+    if space:
+      sep = ' %s ' % self.sep
+      menu_text = sep.join(map(lambda x: self._convert_to_badge(x.strip()), text.split(self.rep)))
+    else:
+      menu_text = text.replace(self.rep, self.sep)
+    return menu_text
+
   def _convert_to_badge(self, text):
     """Convert raw text to badge.
 
@@ -127,6 +150,6 @@ class AbstractConfigTable(Table):
       String raw text or rst formatted badge.
     """
     try:
-      return self._text_badges[text]
+      return badges.badges[text]
     except KeyError:
       return text

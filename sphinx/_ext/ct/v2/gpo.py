@@ -1,7 +1,6 @@
 # gpo config table.
 
 from .. import config
-from .. import cmdmenu
 from .. import ct
 from . import badges
 from docutils import nodes
@@ -13,14 +12,14 @@ from sphinx.util.nodes import nested_parse_with_titles
 class Gpo(ct.AbstractConfigTable):
   """Generate windows group policy elements in a sphinx document.
 
+  Badges ({KEYWORD}) are automatically converted using badges.badges.
+
   Directives:
     :path:        String registry key path. Required.
-    :value{0..9}: List of Option, Setting strings for policy. Uses badge
-        replacement - see self._text_badges.
+    :value{0..9}: List of Option, Setting strings for policy.
     :ref:         List of reference URI's.
     :version:     List of supported windows versions - see self._text_badges.
     :update:      String datetime last time references/settings were checked.
-        Required.
     :delim:       Custom delimeter to use instead of config.DEFAULT_DELIM.
     :generic:     Use generic 'Registry' dropdown label, in light-grey.
     :open:        Set to expand the dropdown by default.
@@ -75,7 +74,7 @@ class Gpo(ct.AbstractConfigTable):
     'value9': directives.unchanged,
     'ref': directives.unchanged,
     'version': directives.unchanged,
-    'update': directives.unchanged_required,
+    'update': directives.unchanged,
     'delim': directives.unchanged,
     'open': directives.flag,
     'generic': directives.flag,
@@ -89,12 +88,6 @@ class Gpo(ct.AbstractConfigTable):
     self.rep = config.get_rep(
       self.state.document.settings.env.config.ct_gpo_separator_replace,
       self.state.document.settings.env.config.ct_separator_replace)
-    self._text_badges = {
-      '{ENTERPRISE}': badges.ENTERPRISE,
-      '{EDU}': badges.EDU,
-      '{PRO}': badges.PRO,
-      '{HOME}': badges.HOME,
-    }
 
   def _sanitize_version(self):
     """Returned sanitized List of supported versions."""
@@ -106,7 +99,7 @@ class Gpo(ct.AbstractConfigTable):
     for x in data:
       self._rst.append("    ---", self.c)
       self._rst.append("    :column: col-md-6", self.c)
-      self._rst.append("    %s" % self._convert_to_badge(x), self.c)
+      self._rst.append("    %s" % x, self.c)
 
   def _add_dropdown_header(self):
     if 'generic' in self.options:
@@ -161,7 +154,7 @@ class Gpo(ct.AbstractConfigTable):
     """
     self._add_dropdown_header()
     self._add_panel_template()
-    self._add_path(cmdmenu.gen_label(self._sanitize_path(), self.sep, self.rep))
+    self._add_path(self.gen_label(self._sanitize_path()))
     for row in self._sanitize_data():
       self._get_value_row(row)
     self._add_update(self._sanitize_update())
