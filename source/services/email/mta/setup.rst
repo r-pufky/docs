@@ -32,20 +32,15 @@ Ports
     creation of `RFC 2476`_. It is safe to disable this unless you are forcing
     connections to this port. Read `more about ports here`_.
 
-.. gflocation:: Important File Locations (Email)
-  :file:    /var/mail,
-            /var/mail-state,
-            /var/log/mail,
-            /tmp/docker-mailserver,
-            /etc/letsencrypt
-  :purpose: Email storage location.,
-            Mail server state.,
-            Mail logs.,
-            Mail configuration files.,
-            Let's Encrypt certificates to use for SSL.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files:: Email Files
+  :value0: /var/mail, Email storage location
+  :value1: /var/mail-state, Mail server state
+  :value2: /var/log/mail, Mail logs
+  :value3: /tmp/docker-mailserver, Mail configuration files
+  :value4: /etc/letsencrypt, Let's Encrypt certificates to use for SSL
+  :open:
 
 .. note::
   Documentation assumes the following DNS preferences:

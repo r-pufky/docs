@@ -12,22 +12,16 @@ Ports
   :value0: 4040, {TCP}, {EXPOSED}, Airsonic webservice
   :open:
 
-.. gflocation:: Important File Locations (Airsonic)
-  :file:    /config,
-            /config/airsonic.properties,
-            /playlists,
-            /podcasts,
-            /music,
-            /media
-  :purpose: Airsonic configuration directory.,
-            Global airsonic configuration.,
-            Playlists data.,
-            Podcasts data.,
-            Music data.,
-            Additional media data (videos; etc).
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files:: Airsonic Files
+  :value0: /config, Airsonic configuration directory
+  :value1: /config/airsonic.properties, Global airsonic configuration
+  :value2: /playlists, Playlists data
+  :value3: /podcasts, Podcasts data
+  :value4: /music, Music data
+  :value5: /media, Additional media data (videos; etc)
+  :open:
 
 Docker Creation
 ***************

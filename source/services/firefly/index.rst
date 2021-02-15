@@ -17,16 +17,13 @@ Ports
   :value2: 5432, {TCP}, {PRIVATE}, Postgres SQL
   :open:
 
-.. gflocation:: Important File Locations (Firefly)
-  :file:    /var/www/firefly-iii/storage/export,
-            /var/www/firefly-iii/storage/upload,
-            /var/lib/postgresql/data
-  :purpose: Exported data location.,
-            Uploaded docs location.,
-            Postgres DB.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files:: Firefly Files
+  :value0: /var/www/firefly-iii/storage/export, Exported data location
+  :value1: /var/www/firefly-iii/storage/upload, Uploaded docs location
+  :value2: /var/lib/postgresql/data, Postgres DB
+  :open:
 
 `Docker Creation`_
 ******************

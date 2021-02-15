@@ -6,7 +6,6 @@ import re
 from . import cmdmenu
 from . import config
 
-from .generic import flocation
 from .generic import gui
 from .generic import table
 
@@ -22,6 +21,7 @@ from .v2 import regedit
 from .v2 import gpo
 from .v2 import ubiquiti
 from .v2 import ports
+from .v2 import files
 
 def setup(app):
   app.add_config_value('ct_separator', config.DEFAULT_SEPARATOR, '')
@@ -44,6 +44,7 @@ def setup(app):
   gpo.setup(app)
   ubiquiti.setup(app)
   ports.setup(app)
+  files.setup(app)
 
   return {
     'version': '0.1',

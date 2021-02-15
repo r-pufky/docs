@@ -14,14 +14,12 @@ Ports
   :value0: 8666, {TCP}, {EXPOSED}, Listen port for webhook
   :open:
 
-.. gflocation:: Important File Locations (Git Webhook Receiver)
-  :file:    /etc/systemd/system/git-webhook-receiver.service,
-            /srv/sync
-  :purpose: systemd service.,
-            Base sync location.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. files:: Git Webhook Receiver Files
+  :value0: /etc/systemd/system/git-webhook-receiver.service, systemd service
+  :value1: /srv/sync, Base sync location
+  :open:
 
 Setup Upstream Git Webhook
 **************************

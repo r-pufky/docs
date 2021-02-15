@@ -4,15 +4,13 @@ KVM Server
 ##########
 Basic KVM server setup on ubuntu (18.04).
 
-.. gflocation:: Important File Locations (KVM)
-  :key_title:   Linux File Locations
-  :file:        /etc/libvirtd/,
-                /var/lib/libvirt/images
-  :purpose:     KVM and VM configuration data.,
-                Default KVM VM/ISO image pool Location.
-  :no_launch:
-  :no_caption:
-
+Files
+*****
+.. files:: KVM Files
+  :value0: /etc/libvirtd/, KVM and VM configuration data
+  :value1: /var/lib/libvirt/images, Default KVM VM/ISO image pool Location
+  :open:
+  
 Install Service
 ***************
 

@@ -24,22 +24,16 @@ Ports
 
 .. _service-pihole-file-locations:
 
-.. gflocation:: Important File Locations (Pi-Hole)
-  :file:    /etc/dnsmasq.d/*,
-            /etc/hosts,
-            /etc/lighthttpd/external.conf,
-            /etc/pihole,
-            /etc/pihole/SetupVars.conf,
-            /etc/pihole/gravity.db
-  :purpose: DNS masqerade settings.,
-            Static host/IP lookup.,
-            Pi-Hole web server configuration.,
-            Configuration Data.,
-            Startup Configuration Settings.,
-            PiHole list/group/user settings.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files:: Pi-Hole Files
+  :value0: /etc/dnsmasq.d/*, DNS masqerade settings
+  :value1: /etc/hosts, Static host/IP lookup
+  :value2: /etc/lighthttpd/external.conf, Pi-Hole web server configuration
+  :value3: /etc/pihole, Configuration Data
+  :value4: /etc/pihole/SetupVars.conf, Startup Configuration Settings
+  :value5: /etc/pihole/gravity.db, PiHole list/group/user settings
+  :open:
 
 Installing
 **********

@@ -14,14 +14,12 @@ Ports
   :value1: 64738, {UDP}, {PUBLIC}, Voice
   :open:
 
-.. gflocation:: Important File Locations (Mumble)
-  :file:    /etc/mumble-server.ini,
-            /var/lib/mumble-server/mumble-server.sqlite
-  :purpose: Configuration.,
-            Server DB.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files:: Mumble Files
+  :value0: /etc/mumble-server.ini, Configuration.
+  :value1: /var/lib/mumble-server/mumble-server.sqlite, Server DB
+  :open:
 
 Server Setup
 ************

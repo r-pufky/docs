@@ -27,18 +27,14 @@ Ports
 
     See `Plex port usage`_.
 
-.. gflocation:: Important File Locations (Plex)
-  :file:    /config,
-            /transcode,
-            /tmp,
-            /data/media
-  :purpose: Server configuration.,
-            Transcoding directory.,
-            Temp directory for transcoding.,
-            Plex media server library.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files:: Plex Files
+  :value0: /config, Server configuration
+  :value1: /transcode, Transcoding directory
+  :value2: /tmp, Temp directory for transcoding
+  :value3: /data/media, Plex media server library
+  :open:
 
 Docker Creation
 ***************

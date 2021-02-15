@@ -13,18 +13,14 @@ Ports
   :value1:  8112,     {TCP}, {EXPOSED}, Webface
   :open:
 
-.. gflocation:: Important File Locations (Deluge)
-  :file:    /config/core.conf,
-            /config/web.conf,
-            /watch,
-            /downloads
-  :purpose: Daemon Settings.,
-            WebUI Settings.,
-            Watch directory.,
-            Downloads direcory.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files:: Deluge Files
+  :value0: /config/core.conf, Daemon Settings
+  :value1: /config/web.conf, WebUI Settings
+  :value2: /watch, Watch directory
+  :value3: /downloads, Downloads direcory
+  :open:
 
 Docker Creation
 ***************

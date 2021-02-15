@@ -14,14 +14,12 @@ Ports
   :value1: 5900, {TCP}, {EXPOSED}, GUI via VNC
   :open:
 
-.. gflocation:: Important File Locations (Crashplan Pro)
-  :file:    /config/var,
-            /storage
-  :purpose: Crashplan identity certs.,
-            Default map for backup location.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files:: Crashplan Pro Files
+  :value0: /config/var, Crashplan identity certs
+  :value1: /storage, Default map for backup location
+  :open:
 
 Docker Creation
 ***************

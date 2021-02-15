@@ -19,14 +19,12 @@ None. The container will automatically add a ``_acme_challenge`` ``TXT`` record
 to your DNS server, confirming you own the domain, and download the signed
 certificates. **No** exposed ports are required.
 
-.. gflocation:: Important File Locations (Let's Encrypt)
-  :file:    /etc/letsencrypt,
-            /etc/dnsrobocert/config.yml
-  :purpose: Standard letencrypt directory. Can be imported.,
-            Certificate configuration settings.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files:: Let's Encrypt Files
+  :value0: /etc/letsencrypt, Standard letencrypt directory. Can be imported.
+  :value1: /etc/dnsrobocert/config.yml, Certificate configuration settings
+  :open:
 
 Docker Creation
 ***************

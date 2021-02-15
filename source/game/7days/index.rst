@@ -33,19 +33,16 @@ Ports
   .. note::
     Control Panel and Telnet are insecure. **Disable** and **block**.
 
-.. gflocation:: Important File Locations (7 Days to Die)
-  :file:    /data/saves/serveradmin.xml;
-            /data/server/serverconfig.xml;
-            /data/server/startserver.sh;
-            /data/server/7DaysToDieServer_Data
-  :purpose: Defines user bans, whitelists, admins and server commands.;
-            Server configuration.;
-            Starts server.;
-            Server logs.
+Files
+*****
+.. files:: 7 Days to Die Files
+  :value0: /data/saves/serveradmin.xml;
+           Defines user bans, whitelists, admins and server commands
+  :value1: /data/server/serverconfig.xml; Server configuration
+  :value2: /data/server/startserver.sh; Starts server
+  :value3: /data/server/7DaysToDieServer_Data; Server logs
   :delim: ;
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+  :open:
 
 Docker Creation
 ***************

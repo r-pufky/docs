@@ -19,14 +19,12 @@ Ports
   :value2: 5900, {TCP}, {PRIVATE}, VNC server
   :open:
 
-.. gflocation:: Important File Locations (digiKam)
-  :file:    /config,
-            /data
-  :purpose: All digiKam configuration.,
-            Media location.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files:: digiKam Files
+  :value0: /config, All digiKam configuration
+  :value1: /data, Media location
+  :open:
 
 Docker Creation
 ***************

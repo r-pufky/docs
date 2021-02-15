@@ -25,12 +25,11 @@ Ports
                                         network" in controller setting
   :open:
 
-.. gflocation:: Important File Locations (Unifi Controller)
-  :file:    /config
-  :purpose: Unifi main service directory.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files:: Unifi Controller Files
+  :value0: /config, Unifi main service directory
+  :open:
 
 Docker Creation
 ***************

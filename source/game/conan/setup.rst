@@ -48,19 +48,19 @@ Ports
   * If connecting on local network, use the private IP of the server, not the
     public IP address.
 
-.. gflocation:: Important File Locations (Conan Exiles)
-  :file:    /data/server/ConanSandbox/Saved/Config/WindowsServer/Engine.ini,
-            /data/server/ConanSandbox/Saved/Config/WindowsServer/ServerSettings.ini,
-            /data/server/ConanSandbox/Saved/game.db
-  :purpose: Core engine settings (e.g. ports).,
-            Specific game instance settings.,
-            Game database and saves.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files:: Conan Exiles Files
+  :value0: /data/server/ConanSandbox/Saved/Config/WindowsServer/Engine.ini,
+           Core engine settings (e.g. ports)
+  :value1: /data/server/ConanSandbox/Saved/Config/WindowsServer/ServerSettings.ini,
+           Specific game instance settings
+  :value2: /data/server/ConanSandbox/Saved/game.db,
+           Game database and saves
+  :open:
 
-    See ``/data/server/ConanSandbox/Config/`` for default files with all
-    avaliable options.
+  See ``/data/server/ConanSandbox/Config/`` for default files with all avaliable
+  options.
 
 Docker Creation
 ***************

@@ -22,18 +22,12 @@ do a manual **teleporter** install. ``5.x`` `may be exported to 4.x flat
 files`_ if needed. A teleporter install in ``5.x`` will not carry over all
 settings.
 
-.. gflocation:: Teleporter Install
-  :file:    /etc/hosts,
-            /etc/pihole/gravity.db,
-            /etc/pihole/dhcp.leases,
-            /etc/pihole/pihole-FTL.db
-  :purpose: Hostname resolutions.,
-            PiHole list/group/client settings.,
-            Current DHCP leases (optional).,
-            SQLite DNS resolution log (optional).
-  :no_key_title:
-  :no_section:
-  :no_launch:
+.. files:: Teleporter Install
+  :value0: /etc/hosts, Hostname resolutions
+  :value1: /etc/pihole/gravity.db, PiHole list/group/client settings
+  :value2: /etc/pihole/dhcp.leases, Current DHCP leases (optional)
+  :value3: /etc/pihole/pihole-FTL.db, SQLite DNS resolution log (optional)
+  :open:
 
 .. warning::
   ``setupVars.conf``, ``pihole-FTL.conf`` and anything in ``dnsmasq.d`` are

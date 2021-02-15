@@ -13,14 +13,12 @@ Ports
   :value0: 3000, {TCP}, {EXPOSED}, HTTP/HTTPS connections
   :open:
 
-.. gflocation:: Important File Locations (Gitea)
-  :file:    /data/services/gitea/conf/app.ini,
-            /data/services/gitea/git
-  :purpose: Settings.,
-            Git repo location.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files:: Gitea Files
+  :value0: /data/services/gitea/conf/app.ini, Settings
+  :value1: /data/services/gitea/git, Git repo location
+  :open:
 
 Docker Creation
 ***************

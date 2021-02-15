@@ -13,14 +13,12 @@ Ports
   :value1: 6791, {TCP}, {EXPOSED}, Default NZBGet webservice (https)
   :open:
 
-.. gflocation:: Important File Locations (NZBGet)
-  :file:    /config,
-            /downloads
-  :purpose: NZBGet main service directory.,
-            NZBGet monitored downloads directory.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files:: NZBGet Files
+  :value0: /config, NZBGet main service directory
+  :value1: /downloads, NZBGet monitored downloads directory
+  :open:
 
 Docker Creation
 ***************

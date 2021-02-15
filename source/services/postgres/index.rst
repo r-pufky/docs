@@ -12,16 +12,13 @@ Ports
   :value0: 5432, {TCP}, {EXPOSED}, postgres DB port
   :open:
 
-.. gflocation:: Important File Locations (postgres)
-  :file:    /docker-entrypoint-initdb.d,
-            /var/lib/postgresql/data,
-            /var/lib/postgresql/data/postgres.conf
-  :purpose: DB initalization scripts if DB is empty.,
-            DB file storage location.,
-            DB configuration file.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files:: postgres Files
+  :value0:  /docker-entrypoint-initdb.d, DB initalization scripts if DB is empty
+  :value1:  /var/lib/postgresql/data, DB file storage location
+  :value2:  /var/lib/postgresql/data/postgres.conf, DB configuration file
+  :open:
 
 Docker Creation
 ***************

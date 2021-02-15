@@ -13,14 +13,12 @@ Download all user post content, subreddits, etc.
 
 Setup
 *****
-.. gflocation:: Important File Locations (Bulk Downloader for Reddit)
-  :file:    ~/Bulk Downloader for Reddit/config.json,
-            C:\Users\{USER}\Bulk Downloader for Reddit\config.json
-  :purpose: Linux default configuration location.,
-            Windows default configuration location.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+.. files:: Bulk Downloader for Reddit Files
+  :value0: ~/Bulk Downloader for Reddit/config.json,\
+           Linux default configuration location
+  :value1: C:\Users\{USER}\Bulk Downloader for Reddit\config.json,
+           Windows default configuration location
+  :open:
 
 .. note::
   ``config.json`` can be placed in the same directory as the downloader scripts

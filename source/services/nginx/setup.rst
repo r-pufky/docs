@@ -10,14 +10,12 @@ Ports
   :value1: 443, {TCP}, {PUBLIC}, HTTPS connections
   :open:
 
-.. gflocation:: Important File Locations (NGINX)
-  :file:    /etc/nginx/conf.d,
-            /etc/nginx/ssl
-  :purpose: Proxy configuration settings.,
-            SSL certificate location.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files:: NGINX Files
+  :value0: /etc/nginx/conf.d, Proxy configuration settings
+  :value1: /etc/nginx/ssl, SSL certificate location
+  :open:
 
 Docker Creation
 ***************
