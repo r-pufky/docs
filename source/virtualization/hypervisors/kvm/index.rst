@@ -57,20 +57,15 @@ VM images.
 
   virt-manager
 
-.. ggui::     Add storage pool to KVM
-  :key_title: Edit --> Connection Details --> Storage
-  :option:    Name,
-              Type,
-              Target Path
-  :setting:   {STORAGE POOL NAME},
-              dir: Filesystem Directory,
-              {STORAGE POOL LOCATION}
-  :no_caption:
-  :no_launch:
+.. gui::   Add storage pool to KVM
+  :path:   Edit --> Connection Details --> Storage
+  :value0: Name, {STORAGE POOL NAME}
+  :value1: Type, dir: Filesystem Directory
+  :value2: Target Path, {STORAGE POOL LOCATION}
 
-    .. note::
-      Virtual machines should typically **not** have their own storage pool
-      defined.
+  .. note::
+    Virtual machines should typically **not** have their own storage pool
+    defined.
 
 KVM Specific Issues
 *******************
@@ -168,17 +163,11 @@ Setup a standard VM to use the network bridge.
 
   virt-manager
 
-.. ggui::     Initial VM setup to use networking bridge
-  :key_title: File --> New Virtual Machine
-  :option:    ☑,
-              ☑,
-              ⋮ Network Selection
-  :setting:   Select or create custom storage,
-              Customize configuration before install,
-              Virtual Network 'br0': bridge network
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Initial VM setup to use networking bridge
+  :path:   File --> New Virtual Machine
+  :value0: ☑, Select or create custom storage
+  :value1: ☑, Customize configuration before install
+  :value2: Network Selection, Virtual Network 'br0': bridge network
 
   .. note::
     Only explicitly configured options are shown here. Disks should be created
@@ -189,25 +178,15 @@ Setup a standard VM to use the network bridge.
     :cmdmenu:`Specify Shared Device Name` option and explicitly typing your
     bridge name if the Virtual Network bridge is not created.
 
-.. ggui::     Add custom MAC
-  :key_title: NIC
-  :option:    MAC Address
-  :setting:   {SET CUSTOM MAC ADDRESS}
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Add custom MAC
+  :path:   NIC
+  :value0: MAC Address, {SET CUSTOM MAC ADDRESS}
 
-.. ggui::     Add virtio device
-  :key_title: Add Hardware --> Network
-  :option:    Network Source,
-              MAC Address,
-              Device Model
-  :setting:   Virtual Network 'br0': bridge network,
-              {CUSTOM MAC ADDRESS},
-              virtio
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Add virtio device
+  :path:   Add Hardware --> Network
+  :value0: Network Source, Virtual Network 'br0': bridge network
+  :value1: MAC Address, {CUSTOM MAC ADDRESS}
+  :value2: Device Model, virtio
 
 .. important::
   Be sure to :cmdmenu:`begin installation` for VM to be created.

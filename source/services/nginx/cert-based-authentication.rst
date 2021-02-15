@@ -153,23 +153,17 @@ Chrome Client Certificate
 `Setup chrome`_ to auto present correct certificate when challenged by proxy
 server.
 
-.. ggui:: Import Client Certificate to Chrome.
-  :key_title: chrome://settings -->
-              Settings -->
-              Advanced -->
-              Privacy and security -->
-              Manage certificates -->
-              Import
-  :option:    ☐,
-              ☐,
-              ☑,
-              ☑ Place all certificates in the following store
-  :setting:   Enable strong private key protection.,
-              Mark this key as exportable.,
-              Include all extended properties.,
-              Personal.
-  :no_section:
-  :no_launch:
+.. gui::   Import Client Certificate to Chrome
+  :path:   chrome://settings -->
+           Settings -->
+           Advanced -->
+           Privacy and security -->
+           Manage certificates -->
+           Import
+  :value0: ☐, Enable strong private key protection
+  :value1: ☐, Mark this key as exportable
+  :value2: ☑, Include all extended properties
+  :value3: ☑ Place all certificates in the following store, Personal
 
 .. note::
   Use export password to decrypt and import.

@@ -48,27 +48,17 @@ website, but you should never blindly execute scripts from the Internet.
   cd 'pi-hole/automated install/'
   sudo bash basic-install.sh
 
-.. ggui:: Base Configuration
-  :option:  Upstream DNS Provider,
-            Third Party Lists,
-            Protocols,
-            Static IP Address,
-            Web admin interface,
-            Web Server (required for webface if no other server),
-            Log Queries,
-            Privacy Mode
-  :setting: {ROUTER DNS SERVER},
-            All,
-            All,
-            Use current DHCP settings,
-            ☑,
-            ☑,
-            ☑,
-            0
-  :no_key_title:
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Base Configuration
+  :path:   Base Configuration
+  :value0: Upstream DNS Provider, {INTERNAL_DNS}
+  :value1: Third Party Lists, All
+  :value2: Protocols, All
+  :value3: Static IP Address, Use current DHCP settings
+  :value4: Web admin interface, ☑
+  :value5: Web Server (required for webface if no other server), ☑
+  :value6: Log Queries, ☑
+  :value7: Privacy Mode, 0
+  :open:
 
 .. note::
   The *password* will be listed on the summary page. This can be set using

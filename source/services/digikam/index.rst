@@ -74,23 +74,14 @@ Start digiKam and setup the initial configuration location and database. This
 only needs to be done on initial container creation. Only two sections are
 required for basic functionality:
 
-.. ggui:: Image Location
-  :option:  Configure where you keep your images
-  :setting: /data
-  :no_key_title:
-  :no_section:
-  :no_launch:
+.. gui::    Image Location
+  :path:    Image Location
+  :value0:: Configure where you keep your images, /data
 
-.. gtable:: Database Location
-  :header: Option,
-           Type,
-           Location
-  :c0:     Configure where you will store databases
-  :c1:     SQLLite
-  :c2:     /config
-  :no_key_title:
-  :no_section:
-  :no_launch:
+.. gui:: Database Location
+  :path: Configure where you will store databases
+  :value0: Option, SQLLite
+  :value1: Type, /config
 
 .. _digiKam: https://www.digikam.org/
 .. _digiKam Docker and Documentation: https://github.com/r-pufky/digikam

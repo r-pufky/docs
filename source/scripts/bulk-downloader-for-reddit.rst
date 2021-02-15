@@ -68,23 +68,14 @@ headless machines, `download the latest windows release`_ and copy finished
 
 This assumes setup is done on Windows machine.
 
-.. ggui:: Run simple query to generate configuration data.
-  :key_title: bulk-downloader-for-reddit.exe
-  :option:  download directory,
-            select program mode,
-            redditor,
-            select sort type,
-            select time filter,
-            limit (0 for none)
-  :setting: .,
-            [4] submitted,
-            {USER},
-            [2] top,
-            [6] all,
-            1
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Run simple query to generate configuration data
+  :path:   bulk-downloader-for-reddit.exe
+  :value0: download directory, .
+  :value1: select program mode, [4] submitted
+  :value2: redditor, {USER}
+  :value3: select sort type, [2] top
+  :value4: select time filter, [6] all
+  :value5: limit (0 for none), 1
 
 A web browser will open to imgur. Setup :ref:`bulk-downloader-for-reddit-imgur`
 if not already completed.

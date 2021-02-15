@@ -7,217 +7,117 @@ Unmentioned options are defaults.
 
 Media Management
 ****************
-.. ggui:: Sonarr Episode Naming
-  :key_title: Settings --> Media Management --> Episode Naming
-  :option:  Rename Episodes,
-            Include Series Title,
-            Include Episode Title,
-            Include Quality,
-            Replace Spaces,
-            Separator,
-            Numbering Style,
-            Season Folder Format,
-            Multi-Episode Style,
-            Single Episode Example,
-            Multi-Episode Example,
-            Daily-Episode Example,
-            Anime Episode Example,
-            Anime Multi-Episode Example,
-            Series Folder Example,
-            Season Folder Example
-  :setting: Yes,
-            Yes,
-            Yes,
-            No,
-            No,
-            Dash,
-            S01E05,
-            Season {season:00},
-            Prefixed Range,
-            The Series Title (2010) - S01E01 - Episode Title (1),
-            The Series Title (2010) - S01E01-E03 - Episode Title,
-            The Series Title (2010) - 2013-10-30 - Episode Title (1),
-            The Series Title (2010) - S01E01 - Episode Title (1),
-            The Series Title (2010) - S01E01-E03 - Episode Title,
-            The Series Title (2010),
-            Season 01
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::    Sonarr Episode Naming
+  :path:    Settings --> Media Management --> Episode Naming
+  :value0:  Rename Episodes, {YES}
+  :value1:  Include Series Title, {YES}
+  :value2:  Include Episode Title, {YES}
+  :value3:  Include Quality, {NO}
+  :value4:  Replace Spaces, {NO}
+  :value5:  Separator, Dash
+  :value6:  Numbering Style, S01E05
+  :value7:  Season Folder Format, Season {season:00}
+  :value8:  Multi-Episode Style, Prefixed Range
+  :value9:  Single Episode Example,
+            The Series Title (2010) - S01E01 - Episode Title (1)
+  :value10: Multi-Episode Example,
+            The Series Title (2010) - S01E01-E03 - Episode Title
+  :value11: Daily-Episode Example,
+            The Series Title (2010) - 2013-10-30 - Episode Title (1)
+  :value12: Anime Episode Example,
+            The Series Title (2010) - S01E01 - Episode Title (1)
+  :value13: Anime Multi-Episode Example,
+            The Series Title (2010) - S01E01-E03 - Episode Title
+  :value14: Series Folder Example, The Series Title (2010)
+  :value15: Season Folder Example, Season 01
 
-.. ggui:: Sonarr Folders
-  :key_title: Settings --> Media Management --> Folders
-  :option:  Create empty series folders,
-            Delete empty folders
-  :setting: No,
-            No
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Sonarr Folders
+  :path:   Settings --> Media Management --> Folders
+  :value0: Create empty series folders, {NO}
+  :value1: Delete empty folders, {NO}
 
-.. ggui:: Sonarr Importing
-  :key_title: Settings --> Media Management --> Importing
-  :option:  Skip Free Space Check,
-            Use Hardlinks Instead of Copy,
-            Import Extra Files
-  :setting: No,
-            No,
-            No
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Sonarr Importing
+  :path:   Settings --> Media Management --> Importing
+  :value0: Skip Free Space Check, {NO}
+  :value1: Use Hardlinks Instead of Copy, {NO}
+  :value2: Import Extra Files, {NO}
 
-.. ggui:: Sonarr File Management
-  :key_title: Settings --> Media Management --> File Management
-  :option:  Ignore Delete Episodes,
-            Download Propers,
-            Analyse video files,
-            Change File Date,
-            Recycling Bin
-  :setting: No,
-            Yes,
-            Yes,
-            None,
-            /data/downloads/sonarr-recycle/
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Sonarr File Management
+  :path:   Settings --> Media Management --> File Management
+  :value0: Ignore Delete Episodes, {NO}
+  :value1: Download Propers, {YES}
+  :value2: Analyse video files, {YES}
+  :value3: Change File Date, {NONE}
+  :value4: Recycling Bin, /data/downloads/sonarr-recycle/
 
-.. ggui:: Sonarr Permissions
-  :key_title: Settings --> Media Management --> Permissions
-  :option:  Set Permissions,
-            File chmod mask,
-            Folder chmod mask,
-            chown User,
-            chown Group
-  :setting: Yes,
-            2660,
-            2770,
-            sonarr {OR DOCKER UID},
-            media {OR DOCKER GID}
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Sonarr Permissions
+  :path:   Settings --> Media Management --> Permissions
+  :value0: Set Permissions, {YES}
+  :value1: File chmod mask, 2660
+  :value2: Folder chmod mask, 2770
+  :value3: chown User, sonarr (or docker UID)
+  :value4: chown Group, media (or docker GID)
 
 Profiles
 ********
-.. ggui:: Sonarr Profiles (Any)
-  :key_title: Settings --> Profiles --> Any
-  :option:  Name,
-            Language,
-            Cutoff,
-            Qualities,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›
-  :setting: Any,
-            English,
-            SDTV,
-            ,
-            ☑ HDTV-720p,
-            ☑ WEBDL-720p,
-            ☑ Bluray-720p,
-            ☑ HDTV-1080p,
-            ☑ WEBDL-1080p,
-            ☑ Bluray-1080p,
-            ☑ DVD,
-            ☑ WEBDL-480p,
-            ☑ SDTV
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui:: Sonarr Profiles (Any)
+  :path: Settings --> Profiles --> Any
+  :value0:  Name, Any
+  :value1:  Language, English
+  :value2:  Cutoff, SDTV
+  :value3:  Qualities,
+  :value4:  ›, ☑ HDTV-720p
+  :value5:  ›, ☑ WEBDL-720p
+  :value6:  ›, ☑ Bluray-720p
+  :value7:  ›, ☑ HDTV-1080p
+  :value8:  ›, ☑ WEBDL-1080p
+  :value9:  ›, ☑ Bluray-1080p
+  :value10: ›, ☑ DVD
+  :value11: ›, ☑ WEBDL-480p
+  :value12: ›, ☑ SDTV
 
-.. ggui:: Sonarr Profiles (SD)
-  :key_title: Settings --> Profiles --> SD
-  :option:  Name,
-            Language,
-            Cutoff,
-            Qualities,
-            ›,
-            ›,
-            ›
-  :setting: SD,
-            English,
-            SDTV,
-            ,
-            ☑ DVD,
-            ☑ WEBDL-480p,
-            ☑ SDTV
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Sonarr Profiles (SD)
+  :path:   Settings --> Profiles --> SD
+  :value0: Name, SD
+  :value1: Language, English
+  :value2: Cutoff, SDTV
+  :value3: Qualities,
+  :value4: ›, ☑ DVD
+  :value5: ›, ☑ WEBDL-480p
+  :value6: ›, ☑ SDTV
 
-.. ggui:: Sonarr Profiles (HD-720p)
-  :key_title: Settings --> Profiles --> HD-720p
-  :option:  Name,
-            Language,
-            Cutoff,
-            Qualities,
-            ›,
-            ›,
-            ›
-  :setting: HD-720p,
-            English,
-            SDTV,
-            ,
-            ☑ HDTV-720p,
-            ☑ WEBDL-720p,
-            ☑ Bluray-720p
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Sonarr Profiles (HD-720p)
+  :path:   Settings --> Profiles --> HD-720p
+  :value0: Name, HD-720p
+  :value1: Language, English
+  :value2: Cutoff, SDTV
+  :value3: Qualities,
+  :value4: ›, ☑ HDTV-720p
+  :value5: ›, ☑ WEBDL-720p
+  :value6: ›, ☑ Bluray-720p
 
-.. ggui:: Sonarr Profiles (HD-1080p)
-  :key_title: Settings --> Profiles --> HD-1080p
-  :option:  Name,
-            Language,
-            Cutoff,
-            Qualities,
-            ›,
-            ›,
-            ›
-  :setting: HD-1080p,
-            English,
-            HD-1080p,
-            ,
-            ☑ HDTV-1080p,
-            ☑ WEBDL-1080p,
-            ☑ Bluray-1080p
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Sonarr Profiles (HD-1080p)
+  :path:   Settings --> Profiles --> HD-1080p
+  :value0: Name, HD-1080p
+  :value1: Language, English
+  :value2: Cutoff, HD-1080p
+  :value3: Qualities,
+  :value4: ›, ☑ HDTV-1080p
+  :value5: ›, ☑ WEBDL-1080p
+  :value6: ›, ☑ Bluray-1080p
 
-.. ggui:: Sonarr Profiles (All)
-  :key_title: Settings --> Profiles --> All
-  :option:  Name,
-            Language,
-            Cutoff,
-            Qualities,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›
-  :setting: All,
-            English,
-            HD-720p,
-            ,
-            ☑ HDTV-720p,
-            ☑ WEBDL-720p,
-            ☑ Bluray-720p,
-            ☑ HDTV-1080p,
-            ☑ WEBDL-1080p,
-            ☑ Bluray-1080p
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Sonarr Profiles (All)
+  :path:   Settings --> Profiles --> All
+  :value0: Name, All
+  :value1: Language, English
+  :value2: Cutoff, HD-720p
+  :value3: Qualities,
+  :value4: ›, ☑ HDTV-720p
+  :value5: ›, ☑ WEBDL-720p
+  :value6: ›, ☑ Bluray-720p
+  :value7: ›, ☑ HDTV-1080p
+  :value8: ›, ☑ WEBDL-1080p
+  :value9: ›, ☑ Bluray-1080p
 
 .. gtable:: Sonarr Delay Profiles
   :key_title: Settings --> Profiles --> Delay Profiles --> +
@@ -279,231 +179,121 @@ Quality
 
 Indexers
 ********
-.. ggui:: Sonarr Indexers
-  :key_title: Settings --> Indexers --> +
-  :option:  Name;
-            Enable RSS;
-            Enable Search;
-            URL;
-            API Path;
-            API Key;
-            Categories;
-            Anime Categories;
-            Additional Parameters
-  :setting: {INDEXER NAME};
-            Yes;
-            Yes;
-            {INDEXER API URI};
-            /api;
-            {INDEXER API KEY};
-            5030,5040;
-            ;
-            None
-  :no_section:
-  :no_caption:
-  :no_launch:
-  :delim: ;
+.. gui::   Sonarr Indexers
+  :path:   Settings --> Indexers --> +
+  :value0: Name; {INDEXER NAME}
+  :value1: Enable RSS; {YES}
+  :value2: Enable Search; {YES}
+  :value3: URL; {INDEXER API URI}
+  :value4: API Path; /api
+  :value5: API Key; {KEY}
+  :value6: Categories; 5030,5040
+  :value7: Anime Categories;
+  :value8: Additional Parameters, {NONE}
+  :delim:  ;
 
-.. ggui:: Sonarr Options
-  :key_title: Settings --> Indexers --> Options
-  :option:  Minimum Age,
-            Retention,
-            Maximum Size,
-            RSS Sync Interval
-  :setting: 0,
-            0,
-            0,
-            15
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Sonarr Options
+  :path:   Settings --> Indexers --> Options
+  :value0: Minimum Age, 0
+  :value1: Retention, 0
+  :value2: Maximum Size, 0
+  :value3: RSS Sync Interval, 15
 
 Download Client
 ***************
-.. ggui:: Sonarr Download Client
-  :key_title: Settings --> Download Client --> +
-  :option:  Name,
-            Enable,
-            Host,
-            Port,
-            URL Base,
-            Username,
-            Password,
-            Category,
-            Recent Priority,
-            Older Priority,
-            Add Paused,
-            Use SSL
-  :setting: {INDEXER NAME},
-            Yes,
-            {NZBGET IP},
-            {NZBGET PORT},
-            ,
-            {API USERNAME},
-            {API PASSWORD},
-            tv,
-            Normal,
-            Normal,
-            No,
-            Yes
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui:: Sonarr Download Client
+  :path: Settings --> Download Client --> +
+  :value0:  Name, {INDEXER NAME}
+  :value1:  Enable, {YES}
+  :value2:  Host, {IP}
+  :value3:  Port, 6789
+  :value4:  URL Base,
+  :value5:  Username, {USER}
+  :value6:  Password, {PASS}
+  :value7:  Category, tv
+  :value8:  Recent Priority, Normal
+  :value9:  Older Priority, Normal
+  :value10: Add Paused, {NO}
+  :value11: Use SSL, {YES}
 
-.. ggui:: Sonarr Completed Download Handling
-  :key_title: Settings --> Download Client --> Completed Download Handling
-  :option:  Enable,
-            Remove
-  :setting: Yes,
-            Yes
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Sonarr Completed Download Handling
+  :path:   Settings --> Download Client --> Completed Download Handling
+  :value0: Enable, {YES}
+  :value1: Remove, {YES}
 
-.. ggui:: Sonarr Failed Download Handing
-  :key_title: Settings --> Download Client --> Failed Download Handling
-  :option:  Redownload
-  :setting: No
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Sonarr Failed Download Handing
+  :path:   Settings --> Download Client --> Failed Download Handling
+  :value0: Redownload, {NO}
 
-.. ggui:: Sonarr Drone Factory Options
-  :key_title: Settings --> Download Client --> Drone Factory Options
-  :option:  Drone Factory,
-            Drone Factory Interval
-  :setting: ,
-            0
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Sonarr Drone Factory Options
+  :path:   Settings --> Download Client --> Drone Factory Options
+  :value0: Drone Factory,
+  :value1: Drone Factory Interval, 0
 
 Connect
 *******
-.. ggui:: Sonarr Connect
-  :key_title: Settings --> Connect --> Connections --> +
-  :option:  Name,
-            On Grab,
-            On Download,
-            On Upgrade,
-            On Rename,
-            Filter Series Tags,
-            Host,
-            Port,
-            Username,
-            Password,
-            Update Library,
-            Use SSL
-  :setting: Plex Server,
-            No,
-            Yes,
-            Yes,
-            Yes,
-            ,
-            {PLEX IP},
-            {PLEX PORT},
-            {PLEX USERNAME},
-            {PLEX PASSWORD},
-            No,
-            Yes
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui:: Sonarr Connect
+  :path: Settings --> Connect --> Connections --> +
+  :value0:  Name, Plex Server
+  :value1:  On Grab, {NO}
+  :value2:  On Download, {YES}
+  :value3:  On Upgrade, {YES}
+  :value4:  On Rename, {YES}
+  :value5:  Filter Series Tags,
+  :value6:  Host, {IP}
+  :value7:  Port, {PORT}
+  :value8:  Username, {USER}
+  :value9:  Password, {PASS}
+  :value10: Update Library, {NO}
+  :value11: Use SSL, {YES}
 
 General
 *******
-.. ggui:: Sonarr General Host
-  :key_title: Settings --> General --> Start-Up
-  :option:  Bind Address,
-            Port Number,
-            URL Base,
-            Enable SSL,
-            Open browser on start
-  :setting: *,
-            8989,
-            ,
-            No,
-            No
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Sonarr General Host
+  :path:   Settings --> General --> Start-Up
+  :value0: Bind Address, *
+  :value1: Port Number, 8989
+  :value2: URL Base,
+  :value3: Enable SSL, {NO}
+  :value4: Open browser on start, {NO}
 
-.. ggui:: Sonarr General Security
-  :key_title: Settings --> General --> Security
-  :option:  Authentication,
-            API Key
-  :setting: None,
-            {GENERATE API KEY}
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Sonarr General Security
+  :path:   Settings --> General --> Security
+  :value0: Authentication, {NONE}
+  :value1: API Key, {KEY}
 
-.. ggui:: Sonarr General Proxy
-  :key_title: Settings --> General --> Proxy
-  :option:  Use Proxy
-  :setting: No
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Sonarr General Proxy
+  :path:   Settings --> General --> Proxy
+  :value0: Use Proxy, {NO}
 
-.. ggui:: Sonarr General Logging
-  :key_title: Settings --> General --> Logging
-  :option:  Log Level
-  :setting: info
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui:: Sonarr General Logging
+  :path: Settings --> General --> Logging
+  :value0:  Log Level, {INFO}
 
-.. ggui:: Sonarr General Analytics
-  :key_title: Settings --> General --> Analytics
-  :option:  Enable
-  :setting: No
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Sonarr General Analytics
+  :path:   Settings --> General --> Analytics
+  :value0: Enable, {NO}
 
-.. ggui:: Sonarr General Updates
-  :key_title: Settings --> General --> Updates
-  :option:  Branch,
-            Automatic,
-            Mechanism
-  :setting: master,
-            On,
-            Built-in
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Sonarr General Updates
+  :path:   Settings --> General --> Updates
+  :value0: Branch, master
+  :value1: Automatic, {ON}
+  :value2: Mechanism, Built-in
 
 UI
 **
-.. ggui:: Sonarr UI Calendar
-  :key_title: Settings --> UI --> Calendar
-  :option:  First Day of Week,
-            Week Column Header
-  :setting: Sunday,
-            Tue 3/25
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Sonarr UI Calendar
+  :path:   Settings --> UI --> Calendar
+  :value0: First Day of Week, Sunday
+  :value1: Week Column Header, Tue 3/25
 
-.. ggui:: Sonarr UI Dates
-  :key_title: Settings --> UI --> Dates
-  :option:  Short Date Format,
-            Long Date Format,
-            Time Format,
-            Show Relative Dates
-  :setting: YYYY-MM-DD,
-            Tuesday March 25 2014,
-            17:00/17:30,
-            No
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Sonarr UI Dates
+  :path:   Settings --> UI --> Dates
+  :value0: Short Date Format, YYYY-MM-DD
+  :value1: Long Date Format, Tuesday March 25 2014
+  :value2: Time Format, 17:00/17:30
+  :value3: Show Relative Dates, {NO}
 
-.. ggui:: Sonarr UI Style
-  :key_title: Settings --> UI --> Style
-  :option:  Enable Color-Impaired mode
-  :setting: No
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Sonarr UI Style
+  :path:   Settings --> UI --> Style
+  :value0: Enable Color-Impaired mode, {NO}

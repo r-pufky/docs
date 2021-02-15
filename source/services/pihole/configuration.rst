@@ -18,50 +18,29 @@ not using Pi-Hole DNS server yet.
   list could not be obtained.
 * Check `this list`_ for common services to whitelist.
 
-.. ggui:: Setup DNS Servers
-  :key_title: Settings --> DNS --> Upstream DNS Servers
-  :option:  Custom 1
-  :setting: {ROUTER DNS IP}
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Setup DNS Servers
+  :path:   Settings --> DNS --> Upstream DNS Servers
+  :value0: Custom 1, {INTERNAL_DNS}
 
-.. ggui:: Add Interface
-  :key_title: Settings --> DNS --> Interface Listening Behavior
-  :option:  ☑
-  :setting: Listen only on interface {INTERFACE}
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Add Interface
+  :path:   Settings --> DNS --> Interface Listening Behavior
+  :value0: ☑, Listen only on interface {INTERFACE}
 
-.. ggui:: Add Interface
-  :key_title: Settings --> DNS --> Advanced DNS Settings
-  :option:  ☐,
-            ☐
-  :setting: Never forward non-FQDNs,
-            Never forward reverse lookups for private IP ranges
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Add Interface
+  :path:   Settings --> DNS --> Advanced DNS Settings
+  :value0: ☐, Never forward non-FQDNs
+  :value1: ☐, Never forward reverse lookups for private IP ranges
 
-.. ggui:: Disable DHCP
-  :key_title: Settings --> DHCP --> DHCP Settings
-  :option:  ☐
-  :setting: DHCP Server Enabled
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Disable DHCP Server
+  :path:   Settings --> DHCP --> DHCP Settings
+  :value0: ☐, DHCP Server Enabled
 
-.. ggui:: Disable DHCP
-  :key_title: Settings -->
-              Privacy -->
-              Privacy settings -->
-              DNS resolver privacy level
-  :option:  ☑
-  :setting: Show everything and record everything
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Set DNS Resolver Privacy Settings
+  :path:   Settings -->
+           Privacy -->
+           Privacy settings -->
+           DNS resolver privacy level
+  :value0: ☑, Show everything and record everything
 
 Static Host IP Resolution
 *************************
@@ -82,57 +61,37 @@ Disable Blocking for Specific Clients
 Disabling ad blocking for specific clients. Disables can be all lists or
 specific lists.
 
-.. ggui:: Add Disable Group
-  :key_title: Group Managements --> Groups --> Add a new group
-  :option:  Name,
-            Description
-  :setting: Disable,
-            Disables PiHole domain blocking.
-  :no_section:
+.. gui::   Add Disable Group
+  :path:   Group Managements --> Groups --> Add a new group
+  :value0: Name, {DISABLE}
+  :value1: Description, Disables PiHole domain blocking 
 
-.. ggui:: Enable Disable Group
-  :key_title: Group Managements --> Groups --> List of configured groups
-  :option:  Name,
-	          Status,
-            Description
-  :setting: Disable,
-	          Enabled,
-            Disables PiHole domain blocking.
-  :no_section:
+.. gui::   Enable the Disable Group
+  :path:   Group Managements --> Groups --> List of configured groups
+  :value0: Name, {DISABLE}
+  :value1: Status, {ENABLE}
+  :value2: Description, Disables PiHole domain blocking
 
-.. ggui:: Add Clients to Manage
-  :key_title: Group Managements --> Clients --> Add a new client
-  :option:  Known clients,
-            Comment
-  :setting: {HOST IP},
-            {HOST COMMENT}
-  :no_section:
+.. gui::   Add Clients to Manage
+  :path:   Group Managements --> Clients --> Add a new client
+  :value0: Known clients, {IP}
+  :value1: Comment, {DESCRIPTION}
  
-.. ggui:: Add Clients to Disable group
-  :key_title: Group Managements --> Clients --> List of configured clients
-  :option:  IP address,
-            Comment,
-						Group assignment,
-            ›
-  :setting: {HOST IP},
-            {HOST COMMENT},
-						☑ Disable,
-						☐ Default
-  :no_section:
+.. gui::   Add Clients to Disable group
+  :path:   Group Managements --> Clients --> List of configured clients
+  :value0: IP address, {IP}
+  :value1: Comment, {DESCRIPTION}
+  :value2: Group assignment, ☑ Disable
+  :value3: ›, ☐ Default
 
 Router Configuration
 ********************
 Generic Configuration - will be located slightly differently for each router.
 
-.. ggui:: Add Upstream DNS Servers
-  :key_title: System --> DNS Servers
-  :option:  1.1.1.1,
-            8.8.8.8
-  :setting: cloudflare DNS resolver,
-            google DNS resolver
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Add Upstream DNS Servers
+  :path:   System --> DNS Servers
+  :value0: 1.1.1.1, cloudflare DNS resolver
+  :value1: 8.8.8.8, google DNS resolver
 
 .. ubiquiti:: Add Pi-Hole as DNS Server for DHCP
   :path:      config tree -->

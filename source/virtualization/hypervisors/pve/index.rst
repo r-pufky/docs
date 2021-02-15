@@ -280,44 +280,30 @@ Both management and LCX/VM adaptors should be used through ``bridges`` and not
 the physical adaptor directly. This allows for hardware changes and updates with
 minimal reconfiguration & failure.
 
-.. ggui:: Create management interface. 
-  :key_title: datacenter --> {SERVER} --> system --> network --> create --> bridge
-  :option:    Name,
-              IPv4,
-              Gateway,
-              Autostart,
-              VLAN Aware,
-              Bridge ports
-  :setting:   vmbr0,
-              {SERVER MANAGEMENT CIDR ADDRESS},
-              {GATEWAY ADDRESS},
-              ☑,
-              ☑,
-              {ADAPTOR}
-  :no_section:
-  :no_launch:
+.. gui::   Create management interface
+  :path:   datacenter --> {SERVER} --> system --> network --> create --> bridge
+  :value0: Name, vmbr0
+  :value1: IPv4, {IP_CIDR}
+  :value2: Gateway, {GATEWAY}
+  :value3: Autostart, ☑
+  :value4: VLAN Aware, ☑
+  :value5: Bridge ports, {ADAPTOR}
 
   ``vmbr0`` is used as the management interface. Typical default adaptor is
-  ``eno1``. The UI will show available adaptors.
+  ``eno1``. The UI will show available adaptors. Server address should be on the
+  ``management`` VLAN.
 
   .. note::
     If there only a single adaptor in the system this is all that is needed;
     LXC/VM's will use ``vmbr0`` as a bridge (not recommended).
 
-.. ggui:: Create bonded interface.
-  :key_title: datacenter --> {SERVER} --> system --> network --> create --> bond
-  :option:    Name,
-              Autostart,
-              Slaves,
-              Mode,
-              Hash policy
-  :setting:   bond0,
-              ☑,
-              {ADAPTOR 1} {ADAPTOR 2},
-              LACP (802.3ad),
-              layer2+3
-  :no_section:
-  :no_launch:
+.. gui::   Create bonded interface
+  :path:   datacenter --> {SERVER} --> system --> network --> create --> bond
+  :value0: Name, bond0
+  :value1: Autostart, ☑
+  :value2: Slaves, {ADAPTOR 1} {ADAPTOR 2}
+  :value3: Mode, LACP (802.3ad)
+  :value4: Hash policy, layer2+3
 
   ``bond0`` is the bonded device the bridge will use. No IP should be set.
   Adaptors are shown in management interface and should be separated by a space.
@@ -325,42 +311,28 @@ minimal reconfiguration & failure.
   .. note::
     This assumes ``802.3ad`` has been enabled on the switch.
      
-    .. ggui:: Create 802.3ad link aggregation.
-      :key_title: unifi --> devices --> device --> port --> edit -->
-                  profile overrides ---> operation --> aggregate
-      :option:    aggregate ports
-      :setting:   3-4
-      :no_section:
-      :no_launch:
+    .. gui::   Create 802.3ad link aggregation.
+      :path:   unifi --> devices --> device --> port --> edit -->
+               profile overrides ---> operation --> aggregate
+      :value0: aggregate ports, 3-4
 
       Unifi requires ``802.3ad`` ports to be next to each other. ``3-4`` used as
       example. :cmdmenu:`Apply Profile Override` to enable.
 
-.. ggui:: Create bonded, bridged interface for LXC/VM's. 
-  :key_title: datacenter --> {SERVER} --> system --> network --> create --> bridge
-  :option:    Name,
-              Autostart,
-              VLAN Aware,
-              Bridge ports
-  :setting:   vmbr1,
-              ☑,
-              ☑,
-              bond0
-  :no_section:
-  :no_launch:
+.. gui::   Create bonded, bridged interface for LXC/VM's
+  :path:   datacenter --> {SERVER} --> system --> network --> create --> bridge
+  :value0: Name, vmbr1
+  :value1: Autostart, ☑
+  :value2: VLAN Aware, ☑
+  :value3: Bridge ports, bond0
 
   ``vmbr1`` is the bridge device used by LXC/VM's. No IP should be set.
 
-.. ggui:: Setup Proxmox DNS Servers.
-  :key_title: datacenter --> {SERVER} --> system --> dns
-  :option:    DNS Server 1,
-              DNS Server 2,
-              DNS Server 3
-  :setting:   {INTERNAL DNS SERVER},
-              1.1.1.1,
-              1.0.0.1
-  :no_section:
-  :no_launch:
+.. gui::   Setup Proxmox DNS Servers
+  :path:   datacenter --> {SERVER} --> system --> dns
+  :value0: DNS Server 1, {INTERNAL_DNS}
+  :value1: DNS Server 2, 1.1.1.1
+  :value2: DNS Server 3, 1.0.0.1
 
 .. _pve-add-datacenter-cluster:
 
@@ -387,27 +359,18 @@ added; HA is only available after ``3`` servers are in the cluster.
   but this is due to the services being reloaded. Just reload the site (either
   server) and they should appear connected.
 
-.. ggui:: Create a new Cluster.
-  :key_title: datacenter --> cluster --> create cluster
-  :option:    Cluster Name,
-              Cluster Network Link,
-              Cluster Network IP
-  :setting:   {NAME},
-              0,
-              {SERVER MANAGEMENT CIDR ADDRESS}
-  :no_section:
-  :no_launch:
+.. gui::   Create a new Cluster
+  :path:   datacenter --> cluster --> create cluster
+  :value0: Cluster Name, {NAME}
+  :value1: Cluster Network Link, 0
+  :value2: Cluster Network IP, {IP_CIDR}
 
   :cmdmenu:`datacenter --> cluster --> join information --> copy information`
 
-.. ggui:: Add second server to cluster.
-  :key_title: datacenter --> cluster --> join cluster
-  :option:    Information,
-              Password
-  :setting:   {PASTE JOIN INFORMATION},
-              {ROOT PASSWORD ON CLUSTER SERVER}
-  :no_section:
-  :no_launch:
+.. gui::   Add second server to cluster
+  :path:   datacenter --> cluster --> join cluster
+  :value0: Information, {PASTE JOIN INFORMATION}
+  :value1: Password, {PASS}
 
 Firewall
 ********
@@ -436,450 +399,249 @@ cluster.
   LXC/VM bridged traffic is unaffected unless per LXC/VM firewalls are
   enabled.
 
-.. ggui:: Create ``cluster`` IP set for firewall.
-  :key_title: datacenter --> firewall --> ipset --> create
-  :option:    IPSet,
-              Comment
-  :setting:   Cluster,
-              pve servers
-  :no_section:
-  :no_launch:
+.. gui:: Create ``cluster`` IP set for firewall
+  :path: datacenter --> firewall --> ipset --> create
+  :value0: IPSet, Cluster
+  :value1: Comment, pve servers
 
-.. ggui:: Add cluster IPs to cluster IP set.
-  :key_title: datacenter --> firewall --> ipset --> Cluster --> add
-  :option:    IP/CIDR,
-              IP/CIDR
-  :setting:   {PVE SERVER 1},
-              {PVE SERVER 2}
-  :no_section:
-  :no_launch:
+.. gui::   Add cluster IPs to cluster IP set
+  :path:   datacenter --> firewall --> ipset --> Cluster --> add
+  :value0: IP/CIDR, {PVE SERVER 1}
+  :value1: IP/CIDR, {PVE SERVER 2}
 
-.. ggui:: Create ``management`` IP sets for firewall.
-  :key_title: datacenter --> firewall --> ipset --> create
-  :option:    IPSet,
-              Comment
-  :setting:   Management,
-              pve remote access
-  :no_section:
-  :no_launch:
+.. gui::   Create ``management`` IP sets for firewall
+  :path:   datacenter --> firewall --> ipset --> create
+  :value0: IPSet, Management
+  :value1: Comment, pve remote access
 
-.. ggui:: Add cluster IPs to ``management`` IP set.
-  :key_title: datacenter --> firewall --> ipset --> Management --> add
-  :option:    IP/CIDR,
-              IP/CIDR
-  :setting:   {REMOTE CLIENT IP 1},
-              {REMOTE CLIENT IP 2}
-  :no_section:
-  :no_launch:
+.. gui::   Add cluster IPs to ``management`` IP set
+  :path:   datacenter --> firewall --> ipset --> Management --> add
+  :value0: IP/CIDR, {REMOTE CLIENT IP 1}
+  :value1: IP/CIDR, {REMOTE CLIENT IP 2}
 
-.. ggui:: Create a ``proxmox`` ``Security Group`` for services.
-  :key_title: datacenter --> firewall --> security group --> create
-  :option:    Name,
-              Comment
-  :setting:   pve,
-              pve hypervisor firewall
-  :no_section:
-  :no_launch:
+.. gui::   Create a ``proxmox`` ``Security Group`` for services
+  :path:   datacenter --> firewall --> security group --> create
+  :value0: Name, pve
+  :value1: Comment, pve hypervisor firewall
 
-.. ggui:: Live Migration Rule.
-  :key_title: datacenter --> firewall --> security group --> pve --> add
-  :option:    Direction,
-              Action,
-              Source,
-              Destination,
-              Enable,
-              Macro,
-              Protocol,
-              Source port,
-              Dest. port,
-              Comment,
-              Log level
-  :setting:   in,
-              ACCEPT,
-              +cluster,
-              {EMPTY},
-              ☑,
-              {EMPTY},
-              tcp,
-              {EMPTY},
-              60000:60050,
-              Live Migrations,
-              nolog
-  :no_section:
-  :no_launch:
+.. gui::    Live Migration Rule
+  :path:    datacenter --> firewall --> security group --> pve --> add
+  :value0:    Direction, {IN}
+  :value1:       Action, {ACCEPT}
+  :value2:       Source, +cluster
+  :value3:  Destination,
+  :value4:       Enable, ☑
+  :value5:        Macro,
+  :value6:     Protocol, {TCP}
+  :value7:  Source port,
+  :value8:   Dest. port, 60000:60050
+  :value9:      Comment, Live Migrations
+  :value10:   Log level, nolog
 
-.. ggui:: Corosync cluster traffic Rule.
-  :key_title: datacenter --> firewall --> security group --> pve --> add
-  :option:    Direction,
-              Action,
-              Source,
-              Destination,
-              Enable,
-              Macro,
-              Protocol,
-              Source port,
-              Dest. port,
-              Comment,
-              Log level
-  :setting:   in,
-              ACCEPT,
-              +cluster,
-              {EMPTY},
-              ☑,
-              {EMPTY},
-              udp,
-              {EMPTY},
-              5404:5405,
-              Corosync cluster traffic,
-              nolog
-  :no_section:
-  :no_launch:
+.. gui::    Corosync cluster traffic Rule
+  :path:    datacenter --> firewall --> security group --> pve --> add
+  :value0:    Direction, {IN}
+  :value1:       Action, {ACCEPT}
+  :value2:       Source, +cluster
+  :value3:  Destination,
+  :value4:       Enable, ☑
+  :value5:        Macro,
+  :value6:     Protocol, {UDP}
+  :value7:  Source port,
+  :value8:   Dest. port, 5404:5405
+  :value9:      Comment, Corosync cluster traffic
+  :value10:   Log level, nolog
 
-.. ggui:: Web Interface Rule.
-  :key_title: datacenter --> firewall --> security group --> pve --> add
-  :option:    Direction,
-              Action,
-              Source,
-              Destination,
-              Enable,
-              Macro,
-              Protocol,
-              Source port,
-              Dest. port,
-              Comment,
-              Log level
-  :setting:   in,
-              ACCEPT,
-              +management,
-              {EMPTY},
-              ☑,
-              {EMPTY},
-              tcp,
-              {EMPTY},
-              8006,
-              Web Interface,
-              nolog
-  :no_section:
-  :no_launch:
+.. gui::    Web Interface Rule
+  :path:    datacenter --> firewall --> security group --> pve --> add
+  :value0:    Direction, {IN}
+  :value1:       Action, {ACCEPT}
+  :value2:       Source, +management
+  :value3:  Destination,
+  :value4:       Enable, ☑
+  :value5:        Macro,
+  :value6:     Protocol, {TCP}
+  :value7:  Source port,
+  :value8:   Dest. port, 8006
+  :value9:      Comment, Web Interface
+  :value10:   Log level, nolog
 
-.. ggui:: VNC Web Console Websockets Rule.
-  :key_title: datacenter --> firewall --> security group --> pve --> add
-  :option:    Direction,
-              Action,
-              Source,
-              Destination,
-              Enable,
-              Macro,
-              Protocol,
-              Source port,
-              Dest. port,
-              Comment,
-              Log level
-  :setting:   in,
-              ACCEPT,
-              {EMPTY},
-              {EMPTY},
-              ☑,
-              {EMPTY},
-              tcp,
-              {EMPTY},
-              5900:5999,
-              VNC Web console websockets,
-              nolog
-  :no_section:
-  :no_launch:
+.. gui::    VNC Web Console Websockets Rule
+  :path:    datacenter --> firewall --> security group --> pve --> add
+  :value0:    Direction, {IN}
+  :value1:       Action, {ACCEPT}
+  :value2:       Source,
+  :value3:  Destination,
+  :value4:       Enable, ☑
+  :value5:        Macro,
+  :value6:     Protocol, {TCP}
+  :value7:  Source port,
+  :value8:   Dest. port, 5900:5999
+  :value9:      Comment, VNC Web console websockets
+  :value10:   Log level, nolog
 
-.. ggui:: Pvedaemon Rule.
-  :key_title: datacenter --> firewall --> security group --> pve --> add
-  :option:    Direction,
-              Action,
-              Source,
-              Destination,
-              Enable,
-              Macro,
-              Protocol,
-              Source port,
-              Dest. port,
-              Comment,
-              Log level
-  :setting:   in,
-              ACCEPT,
-              +cluster,
-              {EMPTY},
-              ☑,
-              {EMPTY},
-              tcp,
-              {EMPTY},
-              85,
-              pvedaemon (listens 127.0.0.1:85) REST API,
-              nolog
-  :no_section:
-  :no_launch:
+.. gui::    Pvedaemon Rule
+  :path:    datacenter --> firewall --> security group --> pve --> add
+  :value0:    Direction, {IN}
+  :value1:       Action, {ACCEPT}
+  :value2:       Source, +cluster
+  :value3:  Destination,
+  :value4:       Enable, ☑
+  :value5:        Macro,
+  :value6:     Protocol, {TCP}
+  :value7:  Source port,
+  :value8:   Dest. port, 85
+  :value9:      Comment, pvedaemon (listens 127.0.0.1:85) REST API
+  :value10:   Log level, nolog
 
-.. ggui:: SSH (Cluster traffic) Rule.
-  :key_title: datacenter --> firewall --> security group --> pve --> add
-  :option:    Direction,
-              Action,
-              Source,
-              Destination,
-              Enable,
-              Macro,
-              Protocol,
-              Source port,
-              Dest. port,
-              Comment,
-              Log level
-  :setting:   in,
-              ACCEPT,
-              +cluster,
-              {EMPTY},
-              ☑,
-              {EMPTY},
-              tcp,
-              {EMPTY},
-              22,
-              SSH (cluster traffic),
-              nolog
-  :no_section:
-  :no_launch:
+.. gui::    SSH (Cluster traffic) Rule
+  :path:    datacenter --> firewall --> security group --> pve --> add
+  :value0:    Direction, {IN}
+  :value1:       Action, {ACCEPT}
+  :value2:       Source, +cluster
+  :value3:  Destination,
+  :value4:       Enable, ☑
+  :value5:        Macro,
+  :value6:     Protocol, {TCP}
+  :value7:  Source port,
+  :value8:   Dest. port, 22
+  :value9:      Comment, SSH (cluster traffic)
+  :value10:   Log level, nolog
 
-.. ggui:: SSH (Management traffic) Rule.
-  :key_title: datacenter --> firewall --> security group --> pve --> add
-  :option:    Direction,
-              Action,
-              Source,
-              Destination,
-              Enable,
-              Macro,
-              Protocol,
-              Source port,
-              Dest. port,
-              Comment,
-              Log level
-  :setting:   in,
-              ACCEPT,
-              +management,
-              {EMPTY},
-              ☑,
-              {EMPTY},
-              tcp,
-              {EMPTY},
-              22,
-              SSH (management traffic),
-              nolog
-  :no_section:
-  :no_launch:
+.. gui::    SSH (Management traffic) Rule
+  :path:    datacenter --> firewall --> security group --> pve --> add
+  :value0:    Direction, {IN}
+  :value1:       Action, {ACCEPT}
+  :value2:       Source, +management
+  :value3:  Destination,
+  :value4:       Enable, ☑
+  :value5:        Macro,
+  :value6:     Protocol, {TCP}
+  :value7:  Source port,
+  :value8:   Dest. port, 22
+  :value9:      Comment, SSH (management traffic)
+  :value10:   Log level, nolog
 
-.. ggui:: Rpcbind (NFS services TCP) Rule.
-  :key_title: datacenter --> firewall --> security group --> pve --> add
-  :option:    Direction,
-              Action,
-              Source,
-              Destination,
-              Enable,
-              Macro,
-              Protocol,
-              Source port,
-              Dest. port,
-              Comment,
-              Log level
-  :setting:   in,
-              ACCEPT,
-              {EMPTY},
-              {EMPTY},
-              ☑,
-              {EMPTY},
-              tcp,
-              {EMPTY},
-              111,
-              rpcbind (NFS services),
-              nolog
-  :no_section:
-  :no_launch:
+.. gui::    Rpcbind (NFS services TCP) Rule
+  :path:    datacenter --> firewall --> security group --> pve --> add
+  :value0:    Direction, {IN}
+  :value1:       Action, {ACCEPT}
+  :value2:       Source, 
+  :value3:  Destination,
+  :value4:       Enable, ☑
+  :value5:        Macro,
+  :value6:     Protocol, {TCP}
+  :value7:  Source port,
+  :value8:   Dest. port, 111
+  :value9:      Comment, rpcbind (NFS services)
+  :value10:   Log level, nolog
 
-.. ggui:: Rpcbind (NFS services UDP) Rule.
-  :key_title: datacenter --> firewall --> security group --> pve --> add
-  :option:    Direction,
-              Action,
-              Source,
-              Destination,
-              Enable,
-              Macro,
-              Protocol,
-              Source port,
-              Dest. port,
-              Comment,
-              Log level
-  :setting:   in,
-              ACCEPT,
-              {EMPTY},
-              {EMPTY},
-              ☑,
-              {EMPTY},
-              udp,
-              {EMPTY},
-              111,
-              rpcbind (NFS services),
-              nolog
-  :no_section:
-  :no_launch:
+.. gui::    Rpcbind (NFS services UDP) Rule
+  :path:    datacenter --> firewall --> security group --> pve --> add
+  :value0:    Direction, {IN}
+  :value1:       Action, {ACCEPT}
+  :value2:       Source, 
+  :value3:  Destination,
+  :value4:       Enable, ☑
+  :value5:        Macro,
+  :value6:     Protocol, {UDP}
+  :value7:  Source port,
+  :value8:   Dest. port, 111
+  :value9:      Comment, rpcbind (NFS services)
+  :value10:   Log level, nolog
 
-.. ggui:: Spice proxy Rule.
-  :key_title: datacenter --> firewall --> security group --> pve --> add
-  :option:    Direction,
-              Action,
-              Source,
-              Destination,
-              Enable,
-              Macro,
-              Protocol,
-              Source port,
-              Dest. port,
-              Comment,
-              Log level
-  :setting:   in,
-              ACCEPT,
-              {EMPTY},
-              {EMPTY},
-              ☑,
-              {EMPTY},
-              tcp,
-              {EMPTY},
-              3128,
-              spice proxy (client remote viewer),
-              nolog
-  :no_section:
-  :no_launch:
+.. gui::    Spice proxy Rule
+  :path:    datacenter --> firewall --> security group --> pve --> add
+  :value0:    Direction, {IN}
+  :value1:       Action, {ACCEPT}
+  :value2:       Source, 
+  :value3:  Destination,
+  :value4:       Enable, ☑
+  :value5:        Macro,
+  :value6:     Protocol, {TCP}
+  :value7:  Source port,
+  :value8:   Dest. port, 3128
+  :value9:      Comment, spice proxy (client remote viewer)
+  :value10:   Log level, nolog
 
 Enable the security group & add drop rule.
 
-.. ggui:: Enable the security group.
-  :key_title: datacenter --> firewall --> insert: security group --> pve
-  :option:    Security Group,
-              Interface,
-              Enable
-  :setting:   pve,
-              {EMPTY},
-              ☑
-  :no_section:
-  :no_launch:
+.. gui::   Enable the security group
+  :path:   datacenter --> firewall --> insert: security group --> pve
+  :value0: Security Group, pve
+  :value1: Interface,
+  :value2: Enable, ☑
 
-.. ggui:: Add DROP Rule (disabled).
-  :key_title: datacenter --> firewall --> add 
-  :option:    Direction,
-              Action,
-              Interface,
-              Source,
-              Destination,
-              Enable,
-              Macro,
-              Protocol,
-              Source port,
-              Dest. port,
-              Comment,
-              Log level
-  :setting:   in,
-              DROP,
-              {EMPTY},
-              {EMPTY},
-              {EMPTY},
-              ☐,
-              {EMPTY},
-              {EMPTY},
-              {EMPTY},
-              {EMPTY},
-              Drop all other traffic,
-              nolog
-  :no_section:
-  :no_launch:
+.. gui::    Add DROP Rule (disabled)
+  :path:    datacenter --> firewall --> add 
+  :value0:    Direction, {IN}
+  :value1:       Action, {DROP}
+  :value2:    Interface,
+  :value3:       Source, 
+  :value4:  Destination,
+  :value5:       Enable, ☐
+  :value6:        Macro,
+  :value7:     Protocol,
+  :value8:  Source port,
+  :value9:   Dest. port,
+  :value10:      Comment, Drop all other traffic
+  :value11:   Log level, nolog
 
 .. note::
   Add unchecked (**not** enabled) and move to **bottom** of rule list.
 
 Enable firewall & drop policy.
 
-.. ggui:: Enable firewall.
-  :key_title: datacenter --> firewall --> options 
-  :option:    Input Policy,
-              Firewall
-  :setting:   ACCEPT,
-              Yes
-  :no_section:
-  :no_launch:
+.. gui::   Enable firewall
+  :path:   datacenter --> firewall --> options 
+  :value0: Input Policy, {ACCEPT}
+  :value1:     Firewall, {YES}
 
 .. warning::
   Set input policy before enabling firewall, or you will drop all traffic.
 
-.. ggui:: Enable DROP policy Rule.
-  :key_title: datacenter --> firewall --> Drop all other traffic 
-  :option:    Enable
-  :setting:   ☑
-  :no_section:
-  :no_launch:
+.. gui::   Enable DROP policy Rule
+  :path:   datacenter --> firewall --> Drop all other traffic 
+  :value0: Enable, ☑
 
 Cluster Firewall
 ================
 Set :ref:`pve-datacenter-firewall` first to load global ``pve`` security group.
 Configure for each specific server in the cluster.
 
-.. ggui:: Enabled the security group on cluster.
-  :key_title: datacenter --> {SERVER} --> firewall --> insert: security group --> pve
-  :option:    Security Group,
-              Interface,
-              Enable
-  :setting:   pve,
-              {EMPTY},
-              ☑
-  :no_section:
-  :no_launch:
+.. gui::   Enabled the security group on cluster
+  :path:   datacenter --> {SERVER} --> firewall --> insert: security group --> pve
+  :value0: Security Group, pve
+  :value1: Interface,
+  :value2: Enable, ☑
 
-.. ggui:: Add DROP Rule (disabled).
-  :key_title: datacenter --> {SERVER} --> firewall --> add 
-  :option:    Direction,
-              Action,
-              Interface,
-              Source,
-              Destination,
-              Enable,
-              Macro,
-              Protocol,
-              Source port,
-              Dest. port,
-              Comment,
-              Log level
-  :setting:   in,
-              DROP,
-              {EMPTY},
-              {EMPTY},
-              {EMPTY},
-              ☐,
-              {EMPTY},
-              {EMPTY},
-              {EMPTY},
-              {EMPTY},
-              Drop all other traffic,
-              nolog
-  :no_section:
-  :no_launch:
+.. gui::    Add DROP Rule (disabled)
+  :path:    datacenter --> {SERVER} --> firewall --> add 
+  :value0:    Direction, {IN}
+  :value1:       Action, {DROP}
+  :value2:    Interface,
+  :value3:       Source, 
+  :value4:  Destination,
+  :value5:       Enable, ☐
+  :value6:        Macro,
+  :value7:     Protocol,
+  :value8:  Source port,
+  :value9:   Dest. port,
+  :value10:      Comment, Drop all other traffic
+  :value11:   Log level, nolog
 
 .. note::
   Add unchecked (**not** enabled) and move to **bottom** of rule list.
 
 Enable firewall & drop policy.
 
-.. ggui:: Enable firewall.
-  :key_title: datacenter --> {SERVER} --> firewall --> options 
-  :option:    Firewall
-  :setting:   Yes
-  :no_section:
-  :no_launch:
+.. gui::   Enable firewall
+  :path:   datacenter --> {SERVER} --> firewall --> options 
+  :value0: Firewall, {YES}
 
-.. ggui:: Enable DROP policy Rule.
-  :key_title: datacenter --> firewall --> Drop all other traffic 
-  :option:    Enable
-  :setting:   ☑
-  :no_section:
-  :no_launch:
+.. gui::   Enable DROP policy Rule
+  :path:   datacenter --> firewall --> Drop all other traffic 
+  :value0: Enable, ☑
 
 Remove Subscription Notice
 **************************
@@ -945,38 +707,22 @@ Enable container filesystem overlay for docker support.
 
   reboot
 
-.. ggui:: Create container to host Docker.
-  :key_title: datacenter --> {SERVER} --> RMB --> create ct
-  :option:    General,
-              › Hostname,
-              › Unprivileged container,
-              › password,
-              Template,
-              › Storage,
-              › Template,
-              Root Disk,
-              › Storage,
-              › Disk size,
-              CPU,
-              › Cores,
-              Memory,
-              › Memory
-  :setting:   ,
-              {HOST},
-              ☑,
-              {PASS},
-              ,
-              local,
-              {CONTAINER IMAGE},
-              ,
-              local-lvm,
-              20GB,
-              ,
-              64,
-              ,
-              125000
-  :no_section:
-  :no_launch:
+.. gui::    Create container to host Docker
+  :path:    datacenter --> {SERVER} --> RMB --> create ct
+  :value0:  General,
+  :value1:  › Hostname, {HOST}
+  :value2:  › Unprivileged container, ☑
+  :value3:  › password, {PASS}
+  :value4:  Template,
+  :value5:  › Storage, {LOCAL}
+  :value6:  › Template, {CONTAINER IMAGE}
+  :value7:  Root Disk,
+  :value8:  › Storage, local-lvm
+  :value9:  › Disk size, 20GB
+  :value10: CPU,
+  :value11: › Cores, 64
+  :value12: Memory,
+  :value13: › Memory, 125000
 
   Memory is in ``MiB`` not ``MB``. Create but do **not** start container. Note
   the ID of the container.
@@ -1105,8 +851,7 @@ Specify default locales for the container to use.
 LXC Long Boot Times or No Console
 =================================
 Debian based systems will pause for up to ``5`` minutes on boot waiting for
-``SLAAC`` IPv6 configuration information; appearing to have `no console <https://forum.proxmox.com/threads/no-console-with-proxmox-5-0-beta-2-and-debian-9-containers.35313/
->`_.
+``SLAAC`` IPv6 configuration information; appearing to have `no console <https://forum.proxmox.com/threads/no-console-with-proxmox-5-0-beta-2-and-debian-9-containers.35313/>`_.
 Disable IPv6 if not actively used.
 
 See :ref:`additional-ubuntu-fixes-disable-ipv6`.

@@ -117,13 +117,11 @@ initial container creation.
 
 Login to Site, first user created is an **administrator**.
 
-.. ggui:: Verify Password Security
-  :option:  ☑
-  :setting: Verify password security
-  :no_key_title:
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Verify Password Security
+  :path:   Administration -->
+           Configuration
+  :value0: ☑, Verify password security
+  :open:
 
 .. note::
   `Verifying password security`_ checks that the password used is not in known

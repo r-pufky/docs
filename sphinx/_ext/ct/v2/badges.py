@@ -18,23 +18,36 @@ def update(text):
   return '%s' % (Template.secondary % ('Updated: %s' % text or 'Never'))
 
 badges = {
-  # Generic
-  '{DELETE}': Template.danger % 'DELETE',
+  # Account / Authorization
   '{USER}': Template.info % 'USER',
   '{PASS}': Template.info % 'PASS',
   '{EMAIL}': Template.info % 'EMAIL',
-  '{HOST}': Template.info % 'HOST',
-  '{IP}': Template.info % 'IP',
-  '{!IP}': Template.info % '!IP',
-  '{TZ}': Template.info % 'TZ',
-  '{COUNTRY}': Template.info % 'COUNTRY',
-  '{DESCRIPTION}': Template.info % 'DESCRIPTION',
+  '{TOKEN}': Template.info % 'TOKEN',
+  '{KEY}': Template.info % 'KEY',
+
+  # Options
+  '{ON}': Template.success % 'ON',
   '{OFF}': Template.danger % 'OFF',
+  '{YES}': Template.success % 'YES',
+  '{NO}': Template.danger % 'NO',
+  '{ACTIVE}': Template.success % 'ACTIVE',
+  '{ACCEPT}': Template.success % 'ACCEPT',
+  '{DROP}': Template.danger % 'DROP',
   '{DISABLE}': Template.danger % 'DISABLE',
   '{DISABLED}': Template.danger % 'DISABLED',
+  '{ENABLED}': Template.success % 'ENABLED',
+  '{ENABLE}': Template.success % 'ENABLE',
+  '{ENTER}': Template.info % 'ENTER',
+
+  # Location / Time
+  '{TZ}': Template.info % 'TZ',
+  '{COUNTRY}': Template.info % 'COUNTRY',
+
+  # Descriptors
+  '{DELETE}': Template.danger % 'DELETE',
+  '{DESCRIPTION}': Template.info % 'DESCRIPTION',
   '{OPTIONAL}': Template.info % 'OPTIONAL',
-  '{ACCEPT}': Template.success % 'ACCEPT',
-  '{ON}': Template.success % 'ON',
+
   # Regedit
   '{DWORD}': Template.info % 'DWORD',
   '{REG_DWORD}': Template.info % 'DWORD',
@@ -58,12 +71,16 @@ badges = {
   '{REG_QWORD}': Template.info % 'QWORD',
   '{QWORD_LITTLE_ENDIAN}': Template.info % 'QWORD_LITTLE_ENDIAN',
   '{REG_QWORD_LITTLE_ENDIAN}': Template.info % 'QWORD_LITTLE_ENDIAN',
+
   # GPO
   '{ENTERPRISE}': Template.dark % 'ENTERPRISE',
   '{EDU}': Template.dark % 'EDU',
   '{PRO}': Template.dark % 'PRO',
   '{HOME}': Template.dark % 'HOME',
-  # Ubiquiti / Networking
+
+  # Networking
+  '{IP}': Template.info % 'IP',
+  '{!IP}': Template.info % '!IP',
   '{IP_PUB_MASK}': '%s / %s' % (Template.info % 'PUBLIC IP', Template.info % 'NETMASK'),
   '{IP_PUB_CIDR}': '%s / %s' % (Template.info % 'PUBLIC IP', Template.info % 'CIDR'),
   '{IP_CIDR}': '%s / %s' % (Template.info % 'IP', Template.info % 'CIDR'),
@@ -71,21 +88,34 @@ badges = {
   '{IP_RANGE}': Template.info % 'IP RANGE',
   '{GATEWAY}': Template.info % 'GATEWAY',
   '{NETWORK}': Template.info % 'NETWORK',
-  '{FQDN}': Template.info % 'FQDN',
-  '{SITE}': Template.info % 'SITE',
-  '{SSID}': Template.info % 'SSID',
-  '{ALIAS}': Template.info % 'ALIAS',
-  '{DOMAIN}': Template.info % 'DOMAIN',
   '{SSH_PORT}': Template.info % 'SSH PORT',
   '{STATIC}': Template.info % 'STATIC',
   '{DHCP}': Template.info % 'DHCP',
-  '{TCP}': Template.info % 'TCP',
-  '{UDP}': Template.info % 'UDP',
-  '{TCP/UDP}': Template.info % 'TCP/UDP',
+
+  # Networking / DNS
+  '{HOST}': Template.info % 'HOST',
+  '{LOCALHOST}': Template.info % 'LOCALHOST',
+  '{FQDN}': Template.info % 'FQDN',
+  '{ALIAS}': Template.info % 'ALIAS',
+  '{DOMAIN}': Template.info % 'DOMAIN',
+  '{PUBLIC_DNS}': Template.warning % 'PUBLIC DNS',
+  '{INTERNAL_DNS}': Template.info % 'INTERNAL DNS',
+
+  # Networking / Wifi
+  '{SITE}': Template.info % 'SITE',
+  '{SSID}': Template.info % 'SSID',
+  '{CONTROLLER}': Template.info % 'CONTROLLER',
+
+  # Networking / Firewall
   '{PUBLIC}': Template.warning % 'PUBLIC',
   '{PRIVATE}': Template.info % 'PRIVATE',
   '{EXPOSED}': Template.warning % 'EXPOSED',
   '{RESTRICTED}': Template.info % 'RESTRICTED',
+  '{TCP}': Template.info % 'TCP',
+  '{UDP}': Template.info % 'UDP',
+  '{TCP/UDP}': Template.info % 'TCP/UDP',
+
+  # Networking / VLANs
   '{UPSTREAM_SWITCH}': Template.info % 'UPSTREAM SWITCH',
   '{DOWNSTREAM_SWITCH}': Template.info % 'DOWNSTREAM SWITCH',
   '{EXPECTED_SWITCH}': Template.info % 'EXPECTED SWITCH',
@@ -95,8 +125,12 @@ badges = {
   '{INTERFACE}': Template.info % 'INTERFACE',
   '{IN}': Template.info % 'IN',
   '{OUT}': Template.info % 'OUT',
+
+  # Logging
+  '{INFO}': Template.info % 'INFO',
+
+  # Labels
   '{CAPTIVE_DNS_NAME}': '%s Captive DNS' % Template.info % 'NETWORK',
   '{CAPTIVE_DNS_EXCEPTIONS}': '%s Captive DNS Exceptions' % Template.info % 'NETWORK',
   '{DNAT_EXCEPTION_NAME}': '%s-dnat-exception-group' % Template.info % 'NETWORK',
-  '{CONTROLLER}': Template.info % 'CONTROLLER'
 }

@@ -76,15 +76,10 @@ Configure Putty
 ***************
 Configure a host in putty and ensure the following options are set:
 
-.. ggui:: Use pageant for Putty Auth.
-  :key_title: Putty --> Connection --> SSH --> Auth
-  :option:  ☑,
-            ›
-  :setting: Attempt authentication using Pageant,
-            Private key file for authentication
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Use pageant for Putty Auth
+  :path:   Putty --> Connection --> SSH --> Auth
+  :value0: ☑, Attempt authentication using Pageant
+  :value1: ›, Private key file for authentication
 
 Be sure to **save** your configuration changes.
 
@@ -141,13 +136,9 @@ for remote SSH targets.
 
 .. figure:: source/bastion.png
 
-.. ggui:: Enable GPG Agent Forwarding in Putty.
-  :key_title: Putty --> Connection --> SSH --> Auth
-  :option:    ☑
-  :setting:   Allow agent forwarding
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Enable GPG Agent Forwarding in Putty
+  :path:   Putty --> Connection --> SSH --> Auth
+  :value0: ☑, Allow agent forwarding
 
 .. code-block:: bash
   :caption: **0644 root root** ``/etc/ssh/sshd_config`` on Bastion.

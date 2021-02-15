@@ -28,57 +28,43 @@ adjust settings in ``git-webhook-receiver.py`` if needed.
 
 Create User for Pulling Repository
 ==================================
-.. ggui:: Add Webhook User.
-  :key_title: Site Administration -->
-              User Accounts -->
-              Create User Account
-  :option:    Authentication Source,
-              Username,
-              Email Address,
-              Password,
-              ☐
-  :setting:   local,
-              {WEBHOOK USER},
-              {WEBHOOK EMAIL},
-              {PASS},
-              Require user to change password
-  :no_section:
-  :no_launch:
+.. gui::   Add Webhook User
+  :path:   Site Administration -->
+           User Accounts -->
+           Create User Account
+  :value0: Authentication Source, {LOCAL}
+  :value1: Username, {USER}
+  :value2: Email Address, {EMAIL}
+  :value3: Password, {PASS}
+  :value4: ☐, Require user to change password
+  :open:
 
-.. ggui:: Edit New User.
-  :option:  ☐
-  :setting: may create organizations
-  :no_key_title:
-  :no_section:
-  :no_launch:
+.. gui::   Edit New User
+  :path:   Site Administration -->
+           User Accounts -->
+           Edit
+  :value0: ☐, may create organizations
+  :open:
 
-.. ggui:: Setup webhook for Each Desired Repository.
-  :key_title: Project -->
-              Settings -->
-              Collaborators -->
-              Add Collaborators
-  :option:    {USER}
-  :setting:   Read-Only
-  :no_section:
-  :no_launch:
+.. gui::   Setup webhook for Each Desired Repository
+  :path:   Project -->
+           Settings -->
+           Collaborators -->
+           Add Collaborators
+  :value0: {USER}, Read-Only
+  :open:
 
-.. ggui:: Add webhook.
-  :key_title: Project -->
-              Settings -->
-              Collaborators -->
-              Webhooks
-  :option:    Target URL,
-              Post,
-              Secret,
-              ☑,
-              ☑
-  :setting:   http://{MACHINE RUNNING RECEIVER}:8666,
-              application/json,
-              {AUTH TOKEN FOR WEBHOOK},
-              Push Events,
-              Active
-  :no_section:
-  :no_launch:
+.. gui::   Add webhook
+  :path:   Project -->
+           Settings -->
+           Collaborators -->
+           Webhooks
+  :value0: Target URL, http://{RECEIVER}:8666
+  :value1: Post, application/json
+  :value2: Secret, {TOKEN}
+  :value3: ☑, Push Events
+  :value4: ☑, {ACTIVE}
+  :open:
 
 Clone webhook Receiver and Setup Service
 ========================================

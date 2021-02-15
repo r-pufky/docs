@@ -1,4 +1,4 @@
-.. _xenserver:
+. _xenserver:
 
 XenServer (XCP-NG)
 ##################
@@ -144,13 +144,9 @@ Determine the template name, and create a new VM from that template, start it.
 `Copy VM to New Storage Repository`_
 ************************************
 
-.. ggui:: Copy VM
-  :key_title: VM --> RMB --> Copy VM
-  :option:  Full copy
-  :setting: {NEW SR}
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui:: Copy VM
+  :path: VM --> RMB --> Copy VM
+  :value0:  Full copy, {NEW SR}
 
 .. warning::
   MAC addresses are not copied; update VM with existing MAC address if needed.

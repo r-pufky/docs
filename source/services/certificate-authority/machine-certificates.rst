@@ -15,24 +15,15 @@ Create Machine Private Key and Certificate
   chmod 0400 /root/ca/inter/private/{MACHINE}.key.pem
   openssl req -config /root/ca/inter/inter.ca -key /root/ca/inter/private/{MACHINE}.key.pem -new -sha512 -out /root/ca/inter/csr/{MACHINE}.csr.pem
 
-.. ggui:: Create Machine Signing Request.
-  :option:  Country Name (2 letter code) [XX],
-            State or Province Name [XX],
-            Locality Name [XX],
-            Organization Name [{CA NAME}],
-            Organizational Unit Name [{CA NAME} Certificate Authority],
-            Common Name [{CA NAME} Intermediate CA],
-            Email Address [XX]
-  :setting: {ENTER},
-            {ENTER},
-            {ENTER},
-            {MACHINE},
-            machine,
-            {MACHINE}.machine,
-            {ENTER}
-  :no_key_title:
-  :no_section:
-  :no_launch:
+.. gui::   Create Machine Signing Request
+  :path:   Create Machine Signing Request
+  :value0:                          Country Name (2 letter code) [XX], {ENTER}
+  :value1:                                State or Province Name [XX], {ENTER}
+  :value2:                                         Locality Name [XX], {ENTER}
+  :value3:                              Organization Name [{CA NAME}], {MACHINE}
+  :value4: Organizational Unit Name [{CA NAME} Certificate Authority], machine
+  :value5:                    Common Name [{CA NAME} Intermediate CA], {MACHINE}.machine
+  :value6:                                         Email Address [XX], {ENTER}
 
 .. warning::
   Requiring a password ``-aes256`` for the private key will require that

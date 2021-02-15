@@ -55,36 +55,28 @@ Server Setup
 #. Connect via CRD.
 #. Launch Playon, skip through helper setup screens.
 
-.. ggui:: Playon Video Settings
-  :key_title: ⚙  --> Video Performance
-  :option:    Quality,
-              ☑,
-              Advanced options › H.264 Recording Profile
-  :setting:   HD,
-              Allow resumable playback,
-              High
-  :no_section:
-  :no_launch:
+.. gui::   Playon Video Settings
+  :path:   ⚙  --> Video Performance
+  :value0: Quality, HD
+  :value1: ☑, Allow resumable playback
+  :value2: Advanced options › H.264 Recording Profile, High
+  :open:
 
-    .. note::
-      All unmentioned options are disabled or unused.
+  .. note::
+    All unmentioned options are disabled or unused.
 
-.. ggui:: Playon System Check
-  :key_title: ⚙  --> System Check
-  :option:    Check
-  :setting:   Notify Automatically
-  :no_section:
-  :no_launch:
+.. gui::   Playon System Check
+  :path:   ⚙  --> System Check
+  :value0: Check, Notify Automatically
+  :open:
 
-.. ggui:: Playon Channels
-  :key_title: ⚙  --> Channels
-  :option:    ☐
-  :setting:   Disable all channels not used
-  :no_section:
-  :no_launch:
+.. gui::   Playon Channels
+  :path:   ⚙  --> Channels
+  :value0: ☐, Disable all channels not used
+  :open:
 
-    .. note::
-      Disable all channels not used. Login to ones that are.
+  .. note::
+    Disable all channels not used. Login to ones that are.
 
 .. rubric:: References
 
