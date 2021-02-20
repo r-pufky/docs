@@ -1,4 +1,4 @@
-.. _w10-20h2-windows-security:
+.. _w10-20h2-security:
 
 Windows Security
 ################
@@ -6,4 +6,9 @@ Windows Security
 :cmdmenu:`⌘ --> settings --> update & security --> windows security --> open windows security`
 
 .. toctree::
-   :maxdepth: -1
+  :numbered:
+  :maxdepth: -1
+
+  virus-and-threat-protection/index
+  account-protection
+  app-and-browser-control/index

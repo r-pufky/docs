@@ -5,7 +5,7 @@ Gaming
 :cmdmenu:`⌘ --> settings --> gaming`
 
 .. toctree::
-   :maxdepth: -1
+  :maxdepth: -1
 
   xbox-game-bar
   game-mode

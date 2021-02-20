@@ -5,6 +5,6 @@ Accounts
 :cmdmenu:`⌘ --> settings --> accounts`
 
 .. toctree::
-   :maxdepth: -1
+  :maxdepth: -1
 
   sign-in-options
