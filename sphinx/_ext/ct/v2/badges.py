@@ -24,6 +24,8 @@ badges = {
   '{EMAIL}': Template.info % 'EMAIL',
   '{TOKEN}': Template.info % 'TOKEN',
   '{KEY}': Template.info % 'KEY',
+  '{SID}': Template.info % 'SID',
+  '{UUID}': Template.info % 'UUID',
 
   # Options
   '{ON}': Template.success % 'ON',

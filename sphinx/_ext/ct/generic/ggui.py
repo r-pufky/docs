@@ -4,6 +4,7 @@ from docutils import nodes
 from docutils.parsers.rst import directives
 from docutils.parsers.rst.directives.tables import Table
 
+# TODO: delete when windows 20h2 updates are done and merged.
 
 class GGuiData(config_table.ConfigTableData):
   """Structure to hold gui data and provide convience methods."""
