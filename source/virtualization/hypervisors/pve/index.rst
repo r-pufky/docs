@@ -1126,8 +1126,7 @@ Specify default locales for the container to use.
 LXC Long Boot Times or No Console
 =================================
 Debian based systems will pause for up to ``5`` minutes on boot waiting for
-``SLAAC`` IPv6 configuration information; appearing to have `no console <https://forum.proxmox.com/threads/no-console-with-proxmox-5-0-beta-2-and-debian-9-containers.35313/
->`_.
+``SLAAC`` IPv6 configuration information; appearing to have `no console <https://forum.proxmox.com/threads/no-console-with-proxmox-5-0-beta-2-and-debian-9-containers.35313/>`_.
 Disable IPv6 if not actively used.
 
 See :ref:`additional-ubuntu-fixes-disable-ipv6`.

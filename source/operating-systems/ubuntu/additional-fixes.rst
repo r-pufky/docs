@@ -74,6 +74,7 @@ attacks.
   net.ipv6.conf.lo.disable_ipv6 = 1
 
 .. code-block:: bash
+
   sysctl -p
   reboot
 
