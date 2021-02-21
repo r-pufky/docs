@@ -120,6 +120,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../git.html#add-tag-to-previous-commit">Add Tag to Previous Commit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git.html#squash-commits-to-a-single-commit-rebase">Squash Commits to a Single Commit (Rebase)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git.html#remove-tracked-files-without-deleting-them">Remove Tracked Files without Deleting Them</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git.html#create-a-branch">Create a Branch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git.html#merging-branches">Merging Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git.html#deleting-branches">Deleting Branches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git.html#create-worktree">Create Worktree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git.html#merge-worktree">Merge Worktree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../git.html#removing-worktree">Removing Worktree</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git.html#list-all-respositories-for-an-organization-user">List All Respositories for An Organization/User</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../git.html#pull-latest-tarball-release-from-github">Pull Latest Tarball Release from Github</a></li>
 </ul>
@@ -287,8 +293,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../configuration-management/saltstack/index.html">Saltstack</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../configuration-management/saltstack/requirements.html">Requirements</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/requirements.html#ports-exposed-saltstack">Ports Exposed (Saltstack)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/requirements.html#important-file-locations-saltstack">Important File Locations (Saltstack)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/requirements.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/requirements.html#files">Files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/requirements.html#service-directory-best-practices">Service Directory Best Practices</a></li>
 </ul>
 </li>
@@ -412,14 +418,13 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../networking/ubiquiti/edge-os.html">Edge OS</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../networking/ubiquiti/edge-os.html#disable-ubnt-discovery-service">Disable UBNT Discovery Service</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../networking/ubiquiti/edge-os.html#creating-duplicate-dns-host-entries">Creating Duplicate DNS / Host Entries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../networking/ubiquiti/edge-os.html#create-dns-host-entries">Create DNS / Host Entries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../networking/ubiquiti/edge-os.html#hairpin-nat-internal-only-nat-reflection">Hairpin NAT (Internal Only NAT Reflection)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../networking/ubiquiti/edge-os.html#deleted-dhcp-host-still-resolves-in-dns">Deleted DHCP Host Still Resolves in DNS</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../networking/ubiquiti/edge-os.html#multiple-hostnames-to-one-ip">Multiple Hostnames to One IP</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../networking/ubiquiti/edge-os.html#dns-hostnames-not-resolving">DNS Hostnames not Resolving</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../networking/ubiquiti/edge-os.html#allow-subnet-wifi-traffic-internet-only-access">Allow Subnet (Wifi) Traffic Internet Only Access</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../networking/ubiquiti/edge-os.html#prevent-wifi-traffic-from-reaching-internal-networks">Prevent Wifi Traffic from Reaching Internal Networks</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../networking/ubiquiti/edge-os.html#allow-dns-traffic-to-router">Allow DNS Traffic to Router</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../networking/ubiquiti/edge-os.html#only-allow-dns-traffic-to-router">Only Allow DNS Traffic to Router</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../networking/ubiquiti/edge-os.html#dnat-for-captive-dns">DNAT for Captive DNS</a><ul>
@@ -528,7 +533,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/wireguard/configuration.html">Wireguard Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../services/wireguard/configuration.html#ports-wireguard">Ports (Wireguard)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/wireguard/configuration.html#ports">Ports</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../services/wireguard/configuration.html#key-generation">Key Generation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../services/wireguard/configuration.html#point-to-point-private-network">Point To Point Private Network</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../services/wireguard/configuration.html#server">Server</a></li>
@@ -624,6 +629,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#uninstall-edge-browser">Uninstall Edge Browser</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#usb-devices-slow">USB Devices Slow</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#disable-windows-backup-schedule">Disable Windows Backup Schedule</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#debug-dns-issues">Debug DNS Issues</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#disable-hyper-v-per-boot">Disable Hyper-V Per Boot</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/base/advanced/windows-subsystem-for-linux-wsl.html">Windows Subsystem for Linux (WSL)</a><ul>
@@ -641,7 +648,324 @@
 <li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/base/advanced/scheduled-tasks-inconsistencies.html#demonstration-of-scheduled-task-at-login-failure">Demonstration of Scheduled Task at Login Failure</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/base/advanced/determining-app-list.html">Determining App List</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/base/advanced/run-windows-on-usb.html">Run Windows 10 On USB</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../operating-systems/windows/10/20H2/index.html">Windows 20H2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../operating-systems/windows/10/20H2/standalone/index.html">Standalone Changes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/standalone/account-sync.html">1. Account Sync</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/standalone/biometrics.html">2. Biometrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/standalone/cortana-and-search.html">3. Cortana &amp; Search</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/standalone/cortana-and-search.html#firewall">3.1. Firewall</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/standalone/error-reporting.html">4. Error Reporting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/standalone/explorer-ads.html">5. Explorer Ads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/standalone/location.html">6. Location</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/standalone/meltdown-and-spectre-patch.html">7. Meltdown and Spectre Patch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/standalone/messaging.html">8. Messaging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/standalone/microsoft-defender.html">9. Microsoft Defender</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/standalone/microsoft-defender.html#firewall">9.1. Firewall</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/standalone/onedrive.html">10. OneDrive</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/standalone/onedrive.html#firewall">10.1. Firewall</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/standalone/paging.html">11. Paging</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/standalone/resource-exhaustion.html">12. Resource Exhaustion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/standalone/restore-points.html">13. Restore Points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/standalone/telemetry.html">14. Telemetry</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/standalone/telemetry.html#firewall">14.1. Firewall</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/standalone/update-notifications.html">15. Update Notifications</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/standalone/services.html">16. Services</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/standalone/speech.html">17. Speech</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/standalone/spotlight.html">18. Spotlight</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/standalone/windows-store-promotions.html">19. Windows Store Promotions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/index.html">Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/system/index.html">1. System</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/system/notifications-and-actions.html">1.1. Notifications &amp; Actions</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/system/notifications-and-actions.html#notifications">1.1.1. Notifications</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/system/notifications-and-actions.html#get-notifications-from-these-senders">1.1.2. Get notifications from these senders</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/system/focus-assist.html">1.2. Focus Assist</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/system/multitasking.html">1.3. Multitasking</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/system/multitasking.html#timeline">1.3.1. Timeline</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/system/shared-experiences.html">1.4. Shared Experiences</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/system/shared-experiences.html#nearby-sharing">1.4.1. Nearby Sharing</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/system/shared-experiences.html#share-across-devices">1.4.2. Share across devices</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/system/clipboard.html">1.5. Clipboard</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/system/clipboard.html#clipboard-history">1.5.1. Clipboard history</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/system/clipboard.html#sync-across-devices">1.5.2. Sync across devices</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/system/remote-desktop.html">1.6. Remote Desktop</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/phone/index.html">2. Phone</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/phone/phone.html">2.1. Phone</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/network-and-internet/index.html">3. Network &amp; Internet</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/network-and-internet/wi-fi.html">3.1. Wi-Fi</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/network-and-internet/wi-fi.html#hotspot-2-0-networks">3.1.1. Hotspot 2.0 networks</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/personalization/index.html">4. Personalization</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/personalization/lock-screen.html">4.1. Lock screen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/personalization/themes.html">4.2. Themes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/personalization/start.html">4.3. Start</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/personalization/taskbar.html">4.4. Taskbar</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/personalization/taskbar.html#notification-area">4.4.1. Notification Area</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/personalization/taskbar.html#people">4.4.2. People</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/apps/index.html">5. Apps</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/apps/apps-and-features.html">5.1. Apps &amp; features</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/apps/offline-maps.html">5.2. Offline maps</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/accounts/index.html">6. Accounts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/accounts/sign-in-options.html">6.1. Sign-in options</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/accounts/sign-in-options.html#require-sign-in">6.1.1. Require Sign-in</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/accounts/sign-in-options.html#privacy">6.1.2. Privacy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/gaming/index.html">7. Gaming</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/gaming/xbox-game-bar.html">7.1. Xbox Game Bar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/gaming/game-mode.html">7.2. Game Mode</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/search/index.html">8. Search</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/search/permissions-and-history.html">8.1. Permissions &amp; History</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/search/permissions-and-history.html#cloud-content-search">8.1.1. Cloud content search</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/search/permissions-and-history.html#history">8.1.2. History</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/search/searching-windows.html">8.2. Searching Windows</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/search/searching-windows.html#indexer-performance">8.2.1. Indexer Performance</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/index.html">9. Privacy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/manual.html">9.1. Manual Setting Privacy Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/general.html">9.2. General</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/general.html#change-privacy-options">9.2.1. Change privacy options</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/speech.html">9.3. Speech</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/speech.html#online-speech-recognition">9.3.1. Online speech recognition</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/ink-and-typing-personalization.html">9.4. Ink &amp; Typing Personalization</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/ink-and-typing-personalization.html#getting-to-know-you">9.4.1. Getting to know you</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/diagnostics-and-feedback.html">9.5. Diagnostics &amp; Feedback</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/diagnostics-and-feedback.html#diagnostic-data">9.5.1. Diagnostic data</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/diagnostics-and-feedback.html#improve-inking-and-typing">9.5.2. Improve inking and typing</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/diagnostics-and-feedback.html#tailored-experiences">9.5.3. Tailored experiences</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/diagnostics-and-feedback.html#view-diagnostic-data">9.5.4. View diagnostic data</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/diagnostics-and-feedback.html#delete-diagnostic-data">9.5.5. Delete diagnostic data</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/diagnostics-and-feedback.html#feedback-frequency">9.5.6. Feedback frequency</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/activity-history.html">9.6. Activity History</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/location.html">9.7. Location</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/location.html#allow-access-to-location-on-this-device">9.7.1. Allow access to location on this device</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/location.html#allow-apps-to-access-your-location">9.7.2. Allow apps to access your location</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/location.html#allow-desktop-apps-to-access-your-location">9.7.3. Allow desktop apps to access your location</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/camera.html">9.8. Camera</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/camera.html#allow-access-to-the-camera-on-this-device">9.8.1. Allow access to the camera on this device</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/camera.html#allow-apps-to-access-your-camera">9.8.2. Allow apps to access your camera</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/camera.html#choose-which-microsoft-store-apps-can-access-your-camera">9.8.3. Choose which Microsoft Store apps can access your camera</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/camera.html#allow-desktop-apps-to-access-your-camera">9.8.4. Allow desktop apps to access your camera</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/microphone.html">9.9. Microphone</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/microphone.html#allow-apps-to-access-your-microphone">9.9.1. Allow apps to access your microphone</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/microphone.html#choose-which-microsoft-store-apps-can-access-your-microphone">9.9.2. Choose which Microsoft Store apps can access your microphone</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/microphone.html#allow-desktop-apps-to-access-your-microphone">9.9.3. Allow desktop apps to access your microphone</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/voice-activation.html">9.10. Voice Activation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/voice-activation.html#allow-apps-to-use-voice-activation">9.10.1. Allow apps to use voice activation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/voice-activation.html#allow-apps-to-use-voice-activation-when-this-device-is-locked">9.10.2. Allow apps to use voice activation when this device is locked</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/voice-activation.html#choose-your-default-app-for-headset-button-press">9.10.3. Choose your default app for headset button press</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/voice-activation.html#choose-which-apps-can-use-voice-activation">9.10.4. Choose which apps can use voice activation</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/notifications.html">9.11. Notifications</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/notifications.html#allow-access-to-user-notifications-on-this-device">9.11.1. Allow access to user notifications on this device</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/notifications.html#allow-apps-to-access-your-notifications">9.11.2. Allow apps to access your notifications</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/notifications.html#choose-which-apps-can-access-your-location">9.11.3. Choose which apps can access your location</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/account-info.html">9.12. Account Info</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/account-info.html#allow-access-to-account-info-on-this-device">9.12.1. Allow access to account info on this device</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/account-info.html#allow-apps-to-access-your-account-info">9.12.2. Allow apps to access your account info</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/account-info.html#choose-which-apps-can-access-your-account-info">9.12.3. Choose which apps can access your account info</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/contacts.html">9.13. Contacts</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/contacts.html#allow-access-to-contacts-on-this-device">9.13.1. Allow access to contacts on this device</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/contacts.html#allow-apps-to-access-your-contacts">9.13.2. Allow apps to access your contacts</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/contacts.html#choose-which-apps-can-access-your-contacts">9.13.3. Choose which apps can access your contacts</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/calendar.html">9.14. Calendar</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/calendar.html#allow-access-to-calendar-on-this-device">9.14.1. Allow access to calendar on this device</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/calendar.html#allow-apps-to-access-your-contacts">9.14.2. Allow apps to access your contacts</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/calendar.html#choose-which-apps-can-access-your-calendar">9.14.3. Choose which apps can access your calendar</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/phone-calls.html">9.15. Phone Calls</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/phone-calls.html#allow-phone-calls-on-this-device">9.15.1. Allow phone calls on this device</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/phone-calls.html#allow-apps-to-make-phone-calls">9.15.2. Allow apps to make phone calls</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/phone-calls.html#choose-which-apps-can-make-phone-calls">9.15.3. Choose which apps can make phone calls</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/call-history.html">9.16. Call History</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/call-history.html#allow-access-to-call-history-on-this-device">9.16.1. Allow access to call history on this device</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/call-history.html#allow-apps-to-access-your-call-history">9.16.2. Allow apps to access your call history</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/call-history.html#choose-which-apps-can-access-your-call-history">9.16.3. Choose which apps can access your call history</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/email.html">9.17. Email</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/email.html#allow-access-to-email-on-this-device">9.17.1. Allow access to email on this device</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/email.html#allow-apps-to-access-your-email">9.17.2. Allow apps to access your email</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/email.html#choose-which-apps-can-access-your-email">9.17.3. Choose which apps can access your email</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/tasks.html">9.18. Tasks</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/tasks.html#allow-access-to-tasks-on-this-device">9.18.1. Allow access to tasks on this device</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/tasks.html#allow-apps-to-access-your-tasks">9.18.2. Allow apps to access your tasks</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/tasks.html#choose-which-apps-can-access-your-tasks">9.18.3. Choose which apps can access your tasks</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/messaging.html">9.19. Messaging</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/messaging.html#allow-access-to-messaging-on-this-device">9.19.1. Allow access to messaging on this device</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/messaging.html#allow-apps-to-read-or-send-messages">9.19.2. Allow apps to read or send messages</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/messaging.html#choose-which-apps-can-read-or-send-messages">9.19.3. Choose which apps can read or send messages</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/radios.html">9.20. Radios</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/radios.html#allow-access-to-radios-on-this-device">9.20.1. Allow access to radios on this device</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/radios.html#allow-apps-to-control-device-radios">9.20.2. Allow apps to control device radios</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/radios.html#choose-which-apps-can-control-your-device-radios">9.20.3. Choose which apps can control your device radios</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/other-devices.html">9.21. Other Devices</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/other-devices.html#communicate-with-unpaired-devices">9.21.1. Communicate with unpaired devices</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/other-devices.html#use-trusted-devices">9.21.2. Use trusted devices</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/background-apps.html">9.22. Background Apps</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/background-apps.html#let-apps-run-in-the-background">9.22.1. Let apps run in the background</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/background-apps.html#choose-which-apps-can-run-in-the-background">9.22.2. Choose which apps can run in the background</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/app-diagnostics.html">9.23. App Diagnostics</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/app-diagnostics.html#allow-access-to-app-diagnostic-info-on-this-device">9.23.1. Allow access to app diagnostic info on this device</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/app-diagnostics.html#allow-apps-to-access-diagnostic-info-abour-your-other-apps">9.23.2. Allow apps to access diagnostic info abour your other apps</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/app-diagnostics.html#chooose-which-apps-can-access-diagnostic-info-about-other-apps">9.23.3. Chooose which apps can access diagnostic info about other apps</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/automatic-file-downloads.html">9.24. Automatic file downloads</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/documents.html">9.25. Documents</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/documents.html#allow-access-to-document-libraries-on-this-device">9.25.1. Allow access to document libraries on this device</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/documents.html#allow-app-access-to-document-libraries-on-this-device">9.25.2. Allow app access to document libraries on this device</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/documents.html#choose-which-apps-can-access-your-documents-library">9.25.3. Choose which apps can access your documents library</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/pictures.html">9.26. Pictures</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/pictures.html#allow-access-to-picture-libraries-on-this-device">9.26.1. Allow access to picture libraries on this device</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/pictures.html#allow-app-access-to-picture-libraries-on-this-device">9.26.2. Allow app access to picture libraries on this device</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/pictures.html#choose-which-apps-can-access-your-pictures-library">9.26.3. Choose which apps can access your pictures library</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/videos.html">9.27. Videos</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/videos.html#allow-access-to-video-libraries-on-this-device">9.27.1. Allow access to video libraries on this device</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/videos.html#allow-app-access-to-video-libraries-on-this-device">9.27.2. Allow app access to video libraries on this device</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/videos.html#choose-which-apps-can-access-your-videos-library">9.27.3. Choose which apps can access your videos library</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/file-system.html">9.28. File System</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/file-system.html#allow-access-to-file-system-on-this-device">9.28.1. Allow access to file system on this device</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/file-system.html#allow-app-access-to-file-system-on-this-device">9.28.2. Allow app access to file system on this device</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/file-system.html#choose-which-apps-can-access-your-file-system">9.28.3. Choose which apps can access your file system</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/eye-tracker.html">9.29. Eye Tracker</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/eye-tracker.html#allow-access-to-eye-tracker-on-this-device">9.29.1. Allow access to eye tracker on this device</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/motion.html">9.30. Motion</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/privacy/motion.html#let-windows-and-your-apps-use-your-motion-data-and-collect-motion-history">9.30.1. Let Windows and your apps use your motion data and collect motion history</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/update-and-security/index.html">10. Update &amp; Security</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/update-and-security/delivery-optimization.html">10.1. Delivery Optimization</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/update-and-security/windows-security.html">10.2. Windows Security</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/update-and-security/troubleshoot.html">10.3. Troubleshoot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/settings/update-and-security/find-my-device.html">10.4. Find my device</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/index.html">Windows Security</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/virus-and-threat-protection/index.html">1. Virus &amp; threat protection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/virus-and-threat-protection/virus-and-threat-protection-settings.html">1.1. Virus &amp; threat protection settings</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/virus-and-threat-protection/virus-and-threat-protection-settings.html#cloud-delivered-protection">1.1.1. Cloud-delivered protection</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/virus-and-threat-protection/virus-and-threat-protection-settings.html#automatic-sample-submission">1.1.2. Automatic sample submission</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/virus-and-threat-protection/virus-and-threat-protection-settings.html#exclusions">1.1.3. Exclusions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/virus-and-threat-protection/virus-and-threat-protection-settings.html#notifications">1.1.4. Notifications</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/virus-and-threat-protection/virus-and-threat-protection-settings.html#virus-threat-protection-notifications">1.1.4.1. Virus &amp; threat protection notifications</a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/virus-and-threat-protection/virus-and-threat-protection-settings.html#get-account-protection-notifications">1.1.4.2. Get account protection notifications</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/virus-and-threat-protection/virus-and-threat-protection-settings.html#firewall">1.1.5. Firewall</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/account-protection.html">2. Account protection</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/account-protection.html#windows-hello">2.1. Windows Hello</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/app-and-browser-control/index.html">3. App &amp; browser control</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/app-and-browser-control/reputation-based-protection-setttings.html">3.1. Reputation-based protection settings</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/app-and-browser-control/reputation-based-protection-setttings.html#check-apps-and-files">3.1.1. Check apps and files</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/app-and-browser-control/reputation-based-protection-setttings.html#smartscreen-for-microsoft-edge">3.1.2. SmartScreen for Microsoft Edge</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/app-and-browser-control/reputation-based-protection-setttings.html#potentially-unwanted-app-blocking">3.1.3. Potentially unwanted app blocking</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/app-and-browser-control/reputation-based-protection-setttings.html#smartscreen-for-microsoft-store-apps">3.1.4. SmartScreen for Microsoft Store apps</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -734,8 +1058,10 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../operating-systems/ubuntu/additional-fixes.html">Additional Ubuntu Fixes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/ubuntu/additional-fixes.html#make-raw-disk-image-of-physical-disk">Make RAW Disk Image of Physical Disk</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../operating-systems/ubuntu/additional-fixes.html#grub-os-prober">Grub OS Prober</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../operating-systems/ubuntu/additional-fixes.html#nxdomain-errors-in-syslog">NXDOMAIN Errors in Syslog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/ubuntu/additional-fixes.html#disable-ipv6">Disable IPv6</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../operating-systems/ubuntu/threadripper-2990wx.html">2990WX Linux Patches</a><ul>
@@ -760,6 +1086,39 @@
 </ul>
 <p class="caption"><span class="caption-text">Virtualization</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html">Prxomox (PVE)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#ports">Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#install-service">Install Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#configuration">Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#enable-automatic-non-subscription-updates">Enable Automatic &amp; Non-subscription Updates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#add-local-user-sudo-secure-ssh">Add Local User, Sudo, &amp; Secure SSH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#enable-fail2ban">Enable fail2ban</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#add-wireguard-kernel-support">Add Wireguard Kernel Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#enable-hardware-virtualization-iommu">Enable Hardware Virtualization (IOMMU)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#setup-networking">Setup Networking</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#add-to-datacenter-cluster">Add to Datacenter Cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#firewall">Firewall</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#datacenter-firewall">Datacenter Firewall</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#cluster-firewall">Cluster Firewall</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#remove-subscription-notice">Remove Subscription Notice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#mount-external-zfs-pool">Mount External ZFS Pool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#add-isos">Add ISOs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#add-container-templates">Add Container Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#docker-migration">Docker Migration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#migrate-from-xcp">Migrate from XCP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#ascii-codec-can-t-decode-byte-0xe2-in-position">ascii codec can’t decode byte 0xe2 in position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#wrong-timezone">Wrong Timezone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#corrupted-terminal-characters-or-no-utf-8-support">Corrupted Terminal Characters or No UTF-8 Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#lxc-long-boot-times-or-no-console">LXC Long Boot Times or No Console</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html">XenServer (XCP-NG)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#securing-xenserver">Securing Xenserver</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#console-non-root-user-setup">Console non-root User Setup</a></li>
@@ -783,15 +1142,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#fix-upgrade-missing-os-templates">Fix / Upgrade Missing OS Templates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#auto-start-vm-on-boot">Auto Start VM on Boot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#usb-local-storage">USB Local Storage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/xenserver-xcpng/index.html#exporting-vm-disks">Exporting VM Disks</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../virtualization/hypervisors/kvm/index.html">KVM Server</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/kvm/index.html#important-file-locations-kvm">Important File Locations (KVM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/kvm/index.html#files">Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/kvm/index.html#install-service">Install Service</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/kvm/index.html#add-update-storage-pools">Add/Update storage pools</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/kvm/index.html#add-storage-pool-to-kvm">Add storage pool to KVM</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/kvm/index.html#add-update-storage-pools">Add/Update storage pools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/kvm/index.html#kvm-specific-issues">KVM Specific Issues</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/kvm/index.html#create-a-network-bridge">Create a Network Bridge</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/kvm/index.html#add-bridge-to-kvm-menu-drop-down">Add Bridge to KVM Menu Drop Down</a></li>
@@ -847,8 +1204,8 @@
 <p class="caption"><span class="caption-text">Services</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../services/airsonic/index.html">Airsonic</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../services/airsonic/index.html#ports-airsonic">Ports (Airsonic)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../services/airsonic/index.html#important-file-locations-airsonic">Important File Locations (Airsonic)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/airsonic/index.html#ports">Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/airsonic/index.html#files">Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/airsonic/index.html#docker-creation">Docker Creation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/airsonic/index.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../services/airsonic/index.html#enable-forward-headers">Enable Forward Headers</a></li>
@@ -860,8 +1217,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../services/beets/index.html">beets.io</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../services/beets/index.html#ports-beets-io">Ports (beets.io)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../services/beets/index.html#important-file-locations-beets-io">Important File Locations (beets.io)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/beets/index.html#ports">Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/beets/index.html#files">Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/beets/index.html#docker-creation">Docker Creation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/beets/index.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../services/beets/index.html#using-subdomains">Using Subdomains</a></li>
@@ -897,7 +1254,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../services/certificate-authority/index.html">Certificate Authority</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../services/certificate-authority/setup.html">Certificate Authority Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../services/certificate-authority/setup.html#important-file-locations-certificate-authority">Important File Locations (Certificate Authority)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/certificate-authority/setup.html#files">Files</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/certificate-authority/setup-root.html">Setup Root CA</a><ul>
@@ -931,8 +1288,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../services/crashplan/index.html">Crashplan Pro</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../services/crashplan/index.html#ports-crashplan-pro">Ports (Crashplan Pro)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../services/crashplan/index.html#important-file-locations-crashplan-pro">Important File Locations (Crashplan Pro)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/crashplan/index.html#ports">Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/crashplan/index.html#files">Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/crashplan/index.html#docker-creation">Docker Creation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/crashplan/index.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../services/crashplan/index.html#using-subdomains">Using Subdomains</a></li>
@@ -948,8 +1305,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../services/dashmachine/index.html">dashmachine</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../services/dashmachine/index.html#ports-dashmachine">Ports (dashmachine)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../services/dashmachine/index.html#important-file-locations-dashmachine">Important File Locations (dashmachine)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/dashmachine/index.html#ports">Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/dashmachine/index.html#files">Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/dashmachine/index.html#docker-creation">Docker Creation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/dashmachine/index.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../services/dashmachine/index.html#using-subdomains">Using Subdomains</a></li>
@@ -959,8 +1316,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../services/deluge/index.html">Deluge</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../services/deluge/index.html#ports-deluge">Ports (Deluge)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../services/deluge/index.html#important-file-locations-deluge">Important File Locations (Deluge)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/deluge/index.html#ports">Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/deluge/index.html#files">Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/deluge/index.html#docker-creation">Docker Creation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/deluge/index.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../services/deluge/index.html#using-subdomains">Using Subdomains</a></li>
@@ -972,8 +1329,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../services/digikam/index.html">digiKam</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../services/digikam/index.html#ports-digikam">Ports (digiKam)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../services/digikam/index.html#important-file-locations-digikam">Important File Locations (digiKam)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/digikam/index.html#ports">Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/digikam/index.html#files">Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/digikam/index.html#docker-creation">Docker Creation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/digikam/index.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../services/digikam/index.html#using-subdomains">Using Subdomains</a></li>
@@ -985,8 +1342,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../services/email/index.html">Email</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../services/email/mta/index.html">MTA/MDA</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../services/email/mta/setup.html">Setup</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../services/email/mta/setup.html#ports-email">Ports (Email)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../services/email/mta/setup.html#important-file-locations-email">Important File Locations (Email)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../services/email/mta/setup.html#ports">Ports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../services/email/mta/setup.html#files">Files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../services/email/mta/setup.html#docker-creation">Docker Creation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../services/email/mta/setup.html#fail2ban-setup">fail2ban Setup</a></li>
 </ul>
@@ -1014,8 +1371,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/email/mua/setup.html">MUA</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../services/email/mua/setup.html#ports-mua">Ports (MUA)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../services/email/mua/setup.html#important-file-locations-mua">Important File Locations (MUA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/email/mua/setup.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/email/mua/setup.html#files">Files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../services/email/mua/setup.html#docker-creation">Docker Creation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../services/email/mua/setup.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../services/email/mua/setup.html#using-subdomains">Using Subdomains</a></li>
@@ -1034,45 +1391,47 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../services/fail2ban/index.html">fail2ban</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../services/fail2ban/index.html#docker-capabilities">Docker Capabilities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../services/fail2ban/index.html#important-file-locations-fail2ban">Important File Locations (fail2ban)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../services/fail2ban/setup-system.html">fail2ban for System</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../services/fail2ban/setup-system.html#docker-creation">Docker Creation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../services/fail2ban/setup-system.html#system-setup">System Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/fail2ban/index.html#files">Files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../services/fail2ban/setup-system.html">fail2ban for System</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../services/fail2ban/setup-system.html#docker-creation">Docker Creation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../services/fail2ban/setup-system.html#system-setup">System Setup</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../services/fail2ban/setup-docker.html">fail2ban for Docker</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../services/fail2ban/setup-docker.html#enable-nginx-jails">Enable NGINX Jails</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../services/fail2ban/setup-docker.html#enable-nginx-filters">Enable NGINX Filters</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../services/fail2ban/setup-docker.html#detect-bad-bots">Detect Bad Bots</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../services/fail2ban/setup-docker.html#detect-bad-nginx-basic-auth-attempts">Detect Bad NGINX Basic Auth Attempts</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../services/fail2ban/setup-docker.html#detect-access-to-home-directories-via-web">Detect Access to Home Directories VIA Web</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../services/fail2ban/setup-docker.html#detect-use-of-server-as-a-ad-hoc-proxy">Detect Use of Server as a Ad-hoc Proxy</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../services/fail2ban/setup-docker.html#detect-attempts-to-directly-access-execute-scripts">Detect Attempts to Directly Access/Execute Scripts</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../services/fail2ban/setup-docker.html#detect-access-to-forbidden-indexes">Detect Access to Forbidden Indexes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../services/fail2ban/setup-docker.html#detect-attempts-to-access-invalid-files-directories">Detect Attempts to Access Invalid Files/Directories</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../services/fail2ban/setup-docker.html#detect-multiple-client-error-codes">Detect Multiple Client Error Codes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/fail2ban/setup-docker.html">fail2ban for Docker</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../services/fail2ban/setup-docker.html#enable-nginx-jails">Enable NGINX Jails</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../services/fail2ban/setup-docker.html#enable-nginx-filters">Enable NGINX Filters</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../services/fail2ban/setup-docker.html#detect-bad-bots">Detect Bad Bots</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../services/fail2ban/setup-docker.html#detect-bad-nginx-basic-auth-attempts">Detect Bad NGINX Basic Auth Attempts</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../services/fail2ban/setup-docker.html#detect-access-to-home-directories-via-web">Detect Access to Home Directories VIA Web</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../services/fail2ban/setup-docker.html#detect-use-of-server-as-a-ad-hoc-proxy">Detect Use of Server as a Ad-hoc Proxy</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../services/fail2ban/setup-docker.html#detect-attempts-to-directly-access-execute-scripts">Detect Attempts to Directly Access/Execute Scripts</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../services/fail2ban/setup-docker.html#detect-access-to-forbidden-indexes">Detect Access to Forbidden Indexes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../services/fail2ban/setup-docker.html#detect-attempts-to-access-invalid-files-directories">Detect Attempts to Access Invalid Files/Directories</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../services/fail2ban/setup-docker.html#detect-multiple-client-error-codes">Detect Multiple Client Error Codes</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../services/fail2ban/common-commands.html">Common Commands</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../services/fail2ban/common-commands.html#show-overall-ban-status">Show Overall Ban Status</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../services/fail2ban/common-commands.html#show-specific-jail-bans">Show Specific Jail Bans</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../services/fail2ban/common-commands.html#unban-an-ip">Unban an IP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../services/fail2ban/common-commands.html#unban-all-ips">Unban all IPs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../services/fail2ban/common-commands.html#show-current-config-value">Show Current Config Value</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../services/fail2ban/common-commands.html#show-iptables-rules">Show iptables Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/fail2ban/common-commands.html">Common Commands</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../services/fail2ban/common-commands.html#show-overall-ban-status">Show Overall Ban Status</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../services/fail2ban/common-commands.html#show-specific-jail-bans">Show Specific Jail Bans</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../services/fail2ban/common-commands.html#unban-an-ip">Unban an IP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../services/fail2ban/common-commands.html#unban-all-ips">Unban all IPs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../services/fail2ban/common-commands.html#show-current-config-value">Show Current Config Value</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../services/fail2ban/common-commands.html#show-iptables-rules">Show iptables Rules</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../services/fail2ban/troubleshooting.html">fail2ban Troubleshooting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../services/fail2ban/troubleshooting.html#bans-not-triggering">Bans Not Triggering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/fail2ban/troubleshooting.html">fail2ban Troubleshooting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../services/fail2ban/troubleshooting.html#bans-not-triggering">Bans Not Triggering</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../services/firefly/index.html">Firefly III</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../services/firefly/index.html#ports-firefly">Ports (Firefly)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../services/firefly/index.html#important-file-locations-firefly">Important File Locations (Firefly)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/firefly/index.html#ports">Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/firefly/index.html#files">Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/firefly/index.html#docker-creation">Docker Creation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/firefly/index.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../services/firefly/index.html#using-subdomains">Using Subdomains</a></li>
@@ -1087,8 +1446,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../services/gitea/index.html">Gitea</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../services/gitea/index.html#ports-gitea">Ports (Gitea)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../services/gitea/index.html#important-file-locations-gitea">Important File Locations (Gitea)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/gitea/index.html#ports">Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/gitea/index.html#files">Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/gitea/index.html#docker-creation">Docker Creation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/gitea/index.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../services/gitea/index.html#using-subdomains">Using Subdomains</a></li>
@@ -1096,23 +1455,15 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/gitea/index.html#postgres-backend">Postgres Backend</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../services/gitea/index.html#initial-setup">Initial Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../services/gitea/index.html#database-settings">Database Settings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../services/gitea/index.html#general-settings">General Settings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../services/gitea/index.html#optional-settings">Optional Settings</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../services/gitea/index.html#mirrors">Mirrors</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../services/gitea/index.html#create-mirror">Create Mirror</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/gitea/index.html#initial-setup">Initial Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/gitea/index.html#mirrors">Mirrors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/gitea/index.html#importing-git-repositories">Importing Git Repositories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/gitea/index.html#ssl-client-cert-authentication">SSL Client Cert Authentication</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../services/git-webhook-receiver/index.html">Git Webhook Receiver</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../services/git-webhook-receiver/index.html#ports-git-webhook-receiver">Ports (Git Webhook Receiver)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../services/git-webhook-receiver/index.html#important-file-locations-git-webhook-receiver">Important File Locations (Git Webhook Receiver)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/git-webhook-receiver/index.html#ports">Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/git-webhook-receiver/index.html#id1">Ports</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/git-webhook-receiver/index.html#setup-upstream-git-webhook">Setup Upstream Git Webhook</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../services/git-webhook-receiver/index.html#create-user-for-pulling-repository">Create User for Pulling Repository</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../services/git-webhook-receiver/index.html#clone-webhook-receiver-and-setup-service">Clone webhook Receiver and Setup Service</a></li>
@@ -1132,10 +1483,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../services/letsencrypt/index.html">Let’s Encrypt</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../services/letsencrypt/index.html#ports-let-s-encrypt">Ports (Let’s Encrypt)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../services/letsencrypt/index.html#important-file-locations-let-s-encrypt">Important File Locations (Let’s Encrypt)</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/letsencrypt/index.html#ports-let-s-encrypt">Ports (Let’s Encrypt)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/letsencrypt/index.html#files">Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/letsencrypt/index.html#docker-creation">Docker Creation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/letsencrypt/index.html#initial-setup">Initial Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/letsencrypt/index.html#check-status">Check Status</a></li>
@@ -1144,8 +1493,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../services/lidarr/index.html">Lidarr</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../services/lidarr/setup.html">Lidarr Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../services/lidarr/setup.html#ports-lidarr">Ports (Lidarr)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../services/lidarr/setup.html#important-file-locations-lidarr">Important File Locations (Lidarr)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/lidarr/setup.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/lidarr/setup.html#files">Files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../services/lidarr/setup.html#docker-creation">Docker Creation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../services/lidarr/setup.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../services/lidarr/setup.html#using-subdomains">Using Subdomains</a></li>
@@ -1167,8 +1516,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../services/mariadb/index.html">MariaDB</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../services/mariadb/index.html#ports-mariadb">Ports (MariaDB)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../services/mariadb/index.html#important-file-locations-mariadb">Important File Locations (MariaDB)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/mariadb/index.html#ports">Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/mariadb/index.html#files">Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/mariadb/index.html#docker-creation">Docker Creation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/mariadb/index.html#creating-a-database">Creating A Database</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/mariadb/index.html#import-a-database">Import A Database</a></li>
@@ -1181,8 +1530,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../services/mumble/index.html">Mumble</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../services/mumble/index.html#ports-mumble">Ports (Mumble)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../services/mumble/index.html#important-file-locations-mumble">Important File Locations (Mumble)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/mumble/index.html#ports">Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/mumble/index.html#files">Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/mumble/index.html#server-setup">Server Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/mumble/index.html#mumble-administration">Mumble Administration</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../services/mumble/index.html#adding-new-member">Adding New Member</a></li>
@@ -1193,8 +1542,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../services/nginx/index.html">NGINX</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../services/nginx/setup.html">NGINX Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../services/nginx/setup.html#ports-nginx">Ports (NGINX)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../services/nginx/setup.html#important-file-locations-nginx">Important File Locations (NGINX)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/nginx/setup.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/nginx/setup.html#files">Files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../services/nginx/setup.html#docker-creation">Docker Creation</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../services/nginx/setup.html#send-nginx-logs-to-system">Send NGINX Logs to System</a></li>
 </ul>
@@ -1229,10 +1578,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../services/nginx/cert-based-authentication.html#chrome-client-certificate">Chrome Client Certificate</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../services/nginx/cert-based-authentication.html#auto-select-client-certificate">Auto-select Client Certificate</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../../services/nginx/cert-based-authentication.html#id1">Auto-select Client Certificate</a></li>
-</ul>
-</li>
+<li class="toctree-l4"><a class="reference internal" href="../../services/nginx/cert-based-authentication.html#auto-select-client-certificate">Auto-select Client Certificate</a></li>
 </ul>
 </li>
 </ul>
@@ -1266,8 +1612,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../services/nzbget/index.html">NZBGet</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../services/nzbget/index.html#ports-nzbget">Ports (NZBGet)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../services/nzbget/index.html#important-file-locations-nzbget">Important File Locations (NZBGet)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/nzbget/index.html#ports">Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/nzbget/index.html#files">Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/nzbget/index.html#docker-creation">Docker Creation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/nzbget/index.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../services/nzbget/index.html#using-subdomains">Using Subdomains</a></li>
@@ -1279,8 +1625,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../services/pihole/index.html">Pi-Hole</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../services/pihole/setup.html">Pi-Hole Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../services/pihole/setup.html#ports-pi-hole">Ports (Pi-Hole)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../services/pihole/setup.html#important-file-locations-pi-hole">Important File Locations (Pi-Hole)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/pihole/setup.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/pihole/setup.html#files">Files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../services/pihole/setup.html#installing">Installing</a></li>
 </ul>
 </li>
@@ -1300,15 +1646,17 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../services/play-on/index.html">Play-On</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../services/play-on/index.html#system-requirements">System Requirements.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../services/play-on/index.html#ports-exposed-play-on">Ports Exposed (Play-on)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../services/play-on/index.html#services-used-play-on">Services Used (Play-on)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/play-on/index.html#ports">Ports</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../services/play-on/index.html#services-used-play-on">Services Used (Play-on)</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/play-on/index.html#server-setup">Server Setup</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../services/plex/index.html">Plex</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../services/plex/setup.html">Plex Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../services/plex/setup.html#ports-plex">Ports (Plex)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../services/plex/setup.html#important-file-locations-plex">Important File Locations (Plex)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/plex/setup.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/plex/setup.html#files">Files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../services/plex/setup.html#docker-creation">Docker Creation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../services/plex/setup.html#setup-transcode-with-tmpfs">Setup <code class="docutils literal notranslate"><span class="pre">/transcode</span></code> with tmpfs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../services/plex/setup.html#enable-secure-server-connection">Enable Secure Server Connection</a></li>
@@ -1336,8 +1684,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../services/postgres/index.html">Postgresql</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../services/postgres/index.html#ports-postgres">Ports (postgres)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../services/postgres/index.html#important-file-locations-postgres">Important File Locations (postgres)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/postgres/index.html#ports">Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/postgres/index.html#files">Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/postgres/index.html#docker-creation">Docker Creation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/postgres/index.html#creating-a-database">Creating A Database</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/postgres/index.html#import-a-database">Import A Database</a></li>
@@ -1352,8 +1700,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../services/radarr/index.html">Radarr</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../services/radarr/setup.html">Radarr Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../services/radarr/setup.html#ports-radarr">Ports (Radarr)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../services/radarr/setup.html#important-file-locations-radarr">Important File Locations (Radarr)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/radarr/setup.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/radarr/setup.html#files">Files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../services/radarr/setup.html#docker-creation">Docker Creation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../services/radarr/setup.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../services/radarr/setup.html#using-subdomains">Using Subdomains</a></li>
@@ -1378,7 +1726,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../services/signal/index.html">Signal</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../services/signal/index.html#important-file-locations-signal">Important File Locations (Signal)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/signal/index.html#files">Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/signal/index.html#server-setup">Server Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../services/signal/index.html#link-to-phone">Link to Phone</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../services/signal/index.html#send-test-message">Send Test Message</a></li>
@@ -1389,8 +1737,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../services/sonarr/index.html">Sonarr</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../services/sonarr/setup.html">Sonarr Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../services/sonarr/setup.html#ports-sonarr">Ports (Sonarr)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../services/sonarr/setup.html#important-file-locations-sonarr">Important File Locations (Sonarr)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/sonarr/setup.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/sonarr/setup.html#files">Files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../services/sonarr/setup.html#docker-creation">Docker Creation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../services/sonarr/setup.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../services/sonarr/setup.html#using-subdomains">Using Subdomains</a></li>
@@ -1430,8 +1778,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../services/ssh/windows-setup.html">SSHD Windows Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/ssh/docker/index.html">SSHD Docker</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../services/ssh/docker/setup.html">SSHD Docker Setup</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../services/ssh/docker/setup.html#ports-sshd-docker">Ports (SSHD Docker)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../services/ssh/docker/setup.html#important-file-locations-sshd-docker">Important File Locations (SSHD Docker)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../services/ssh/docker/setup.html#ports">Ports</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../services/ssh/docker/setup.html#files">Files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../services/ssh/docker/setup.html#docker-creation">Docker Creation</a></li>
 </ul>
 </li>
@@ -1461,8 +1809,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../services/unifi/index.html">Unifi Controller</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../services/unifi/index.html#ports-unifi-controller">Ports (Unifi Controller)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../services/unifi/index.html#important-file-locations-unifi-controller">Important File Locations (Unifi Controller)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/unifi/index.html#ports">Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../services/unifi/index.html#files">Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/unifi/index.html#docker-creation">Docker Creation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/unifi/index.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../services/unifi/index.html#using-subdomains">Using Subdomains</a></li>
@@ -1489,7 +1837,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../services/wireguard/configuration.html">Wireguard Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../services/wireguard/configuration.html#ports-wireguard">Ports (Wireguard)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../services/wireguard/configuration.html#ports">Ports</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../services/wireguard/configuration.html#key-generation">Key Generation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../services/wireguard/configuration.html#point-to-point-private-network">Point To Point Private Network</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../services/wireguard/configuration.html#server">Server</a></li>
@@ -1521,8 +1869,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../game/7days/index.html">7 Days to Die</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../game/7days/index.html#days-to-die-requirements">7 Days to Die Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../game/7days/index.html#ports-exposed-7-days-to-die">Ports Exposed (7 Days to Die)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../game/7days/index.html#important-file-locations-7-days-to-die">Important File Locations (7 Days to Die)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../game/7days/index.html#ports">Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../game/7days/index.html#files">Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../game/7days/index.html#docker-creation">Docker Creation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../game/7days/index.html#initial-startup">Initial Startup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../game/7days/index.html#disable-insecure-7-day-services">Disable Insecure 7 Day Services</a></li>
@@ -1531,13 +1879,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../game/conan/index.html">Conan Exiles</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../game/conan/setup.html">Conan Exiles Setup</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../game/conan/setup.html#conan-exiles-requirements">Conan Exiles Requirements</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../game/conan/setup.html#ports-exposed-conan-exiles">Ports Exposed (Conan Exiles)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../game/conan/setup.html#important-file-locations-conan-exiles">Important File Locations (Conan Exiles)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../game/conan/setup.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../game/conan/setup.html#files">Files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../game/conan/setup.html#docker-creation">Docker Creation</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../game/conan/configuration.html">Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../game/conan/configuration.html#option-values">Option Values</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../game/conan/configuration.html#installing-mods">Installing Mods</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../game/conan/configuration.html#obtain-workshop-mods">Obtain workshop mods</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../game/conan/configuration.html#enable-modlist">Enable modlist</a></li>
@@ -1559,7 +1906,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../scripts/bulk-downloader-for-reddit.html">Bulk Downloader for Reddit</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../scripts/bulk-downloader-for-reddit.html#setup">Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../scripts/bulk-downloader-for-reddit.html#important-file-locations-bulk-downloader-for-reddit">Important File Locations (Bulk Downloader for Reddit)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../scripts/bulk-downloader-for-reddit.html#create-imgur-api-account">Create Imgur API Account</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../scripts/bulk-downloader-for-reddit.html#initial-configuration">Initial Configuration</a></li>
 </ul>
@@ -1600,6 +1946,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../scripts/youtube.html">Youtube Extractor</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../scripts/youtube.html#snippets">Snippets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../scripts/youtube.html#azure-media-services">Azure Media Services</a></li>
 </ul>
 </li>
 </ul>
@@ -1720,90 +2067,297 @@ apt install libgtk2.0-0 sublime-text
 <span class="guilabel">preferences › settings</span>.</p>
 <p>Generally, you should never have to modify file directly; you can copy and paste
 directly with the menu settings.</p>
-<div class="gfilelocation docutils container" id="Windows">
-<table class="docutils align-default" id="id4">
-<caption><span class="caption-text">Windows</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p>Location</p></td>
-<td><p>Purpose</p></td>
-</tr>
-<tr class="row-even"><td><p>%appdata%\Sublime Text 3</p></td>
-<td><p>Configuration and package locations.</p></td>
-</tr>
-<tr class="row-odd"><td><p>%appdata%\Sublime Text 3\Packages\User\Preferences.sublime-settings</p></td>
-<td><p>User preferences.</p></td>
-</tr>
-<tr class="row-even"><td><p>%appdata%\Sublime Text 3\Packages\User\Package Control.sublime-settings</p></td>
-<td><p>User installed packages.</p></td>
-</tr>
-<tr class="row-odd"><td><p>%appdata%\Sublime Text 3\Installed Packages\Package Control.sublime-package</p></td>
-<td><p>Package control.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="gfilelocation docutils container" id="Linux">
-<table class="docutils align-default" id="id5">
-<caption><span class="caption-text">Linux</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p>Location</p></td>
-<td><p>Purpose</p></td>
-</tr>
-<tr class="row-even"><td><p>~/.config/sublime-text-3</p></td>
-<td><p>Configuration and package locations.</p></td>
-</tr>
-<tr class="row-odd"><td><p>~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings</p></td>
-<td><p>User preferences.</p></td>
-</tr>
-<tr class="row-even"><td><p>~/.config/sublime-text-3/Packages/User/Package Control.sublime-settings</p></td>
-<td><p>User installed packages.</p></td>
-</tr>
-<tr class="row-odd"><td><p>~/.config/sublime-text-3/Installed Packages/Package Control.sublime-package</p></td>
-<td><p>Package control.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="gfilelocation docutils container" id="OSX">
-<table class="docutils align-default" id="id6">
-<caption><span class="caption-text">OSX</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><p>Location</p></td>
-<td><p>Purpose</p></td>
-</tr>
-<tr class="row-even"><td><p>~/Library/Application Support/Sublime Text 3</p></td>
-<td><p>Configuration and package locations.</p></td>
-</tr>
-<tr class="row-odd"><td><p>~/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings</p></td>
-<td><p>User preferences.</p></td>
-</tr>
-<tr class="row-even"><td><p>~/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings</p></td>
-<td><p>User installed packages.</p></td>
-</tr>
-<tr class="row-odd"><td><p>~/Library/Application Support/Sublime Text 3/Installed Packages/Package Control.sublime-package</p></td>
-<td><p>Package control.</p></td>
-</tr>
-</tbody>
-</table>
+<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Windows<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
 </div>
 </div>
+</div>
+<div class="d-flex col-md-6 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">Location</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">Purpose</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">%appdata%\Sublime Text 3</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-sm-6 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">Configuration and package locations</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">%appdata%\Sublime Text 3\Packages\User\Preferences.sublime-settings</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-sm-6 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">User preferences</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">%appdata%\Sublime Text 3\Packages\User\Package Control.sublime-settings</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-sm-6 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">User installed packages</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">%appdata%\Sublime Text 3\Installed Packages\Package Control.sublime-package</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-sm-6 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">Package control</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: None</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Linux<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">Location</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">Purpose</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">~/.config/sublime-text-3</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-sm-6 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">Configuration and package locations</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">~/.config/sublime-text-3/Packages/User/Preferences.sublime-settings</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-sm-6 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">User preferences</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">~/.config/sublime-text-3/Packages/User/Package Control.sublime-settings</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-sm-6 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">User installed packages</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">~/.config/sublime-text-3/Installed Packages/Package Control.sublime-package</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-sm-6 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">Package control</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: None</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+OSX<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">Location</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">Purpose</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">~/Library/Application Support/Sublime Text 3</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-sm-6 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">Configuration and package locations</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">~/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-sm-6 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">User preferences</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">~/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-sm-6 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">User installed packages</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">~/Library/Application Support/Sublime Text 3/Installed Packages/Package Control.sublime-package</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-sm-6 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">Package control</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: None</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details></div>
 <div class="section" id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
-<div class="literal-block-wrapper docutils container" id="id7">
+<div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-text">Copy and paste into user preferences
-<span class="guilabel">preferences › settings</span>.</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
+<span class="guilabel">preferences › settings</span>.</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -1842,8 +2396,8 @@ directly with the menu settings.</p>
 <p>Sublime will automatically keep packages up to date if they are listed as
 Installed. You can use this to automatically installed Package Control, as well
 as packages on a fresh installation. Some <a class="reference external" href="https://txfx.net/2014/11/08/my-sublime-text-3-packages/">recommended packages</a> are here.</p>
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text">Download the package control binary and add installed packages.</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">Download the package control binary and add installed packages.</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://packagecontrol.io/Package%20Control.sublime-package &lt;sublime config&gt;/Installed<span class="se">\ </span>Packages/
 cp Package<span class="se">\ </span>Control.sublime-settings &lt;sublime config&gt;/Packages/User
 </pre></div>
@@ -1864,8 +2418,8 @@ setting.</p>
 <h2>Markdown Editing<a class="headerlink" href="#markdown-editing" title="Permalink to this headline">¶</a></h2>
 <p>Install <code class="docutils literal notranslate"><span class="pre">MarkdownEditing</span></code> and <code class="docutils literal notranslate"><span class="pre">MonokaiC</span></code> packages.</p>
 <p><span class="guilabel">preferences › package settings › markdown editing › markdown GFM Settings – user › Markdown.sublime-settings</span></p>
-<div class="literal-block-wrapper docutils container" id="id9">
-<div class="code-block-caption"><span class="caption-text"><strong>0600 user user</strong> <code class="docutils literal notranslate"><span class="pre">&lt;sublime</span> <span class="pre">config&gt;/Preferences/User/Markdown.sublime-settings</span></code></span><a class="headerlink" href="#id9" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text"><strong>0600 user user</strong> <code class="docutils literal notranslate"><span class="pre">&lt;sublime</span> <span class="pre">config&gt;/Preferences/User/Markdown.sublime-settings</span></code></span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">{</span>

@@ -1,5 +1,31 @@
 # [Changelog][3g]
 
+## 2021-02-20.0
+Split 20H2 documentation, update sphinx CT directives.
+
+Added:
+* Azure Media Services to youtube-dl scripts.
+* proxmox (PVE) hypervisor configuration.
+* git worktree/branch documentation.
+* EdgeOS script for creating hosts.
+* EdgeOS config to modify host file instead of manual edits.
+* DNS caching service debugging for windows.
+* Self-references for dropdowns.
+* Hyper-V kernel extension disable.
+* Highlight required sphinx import.
+
+Changed:
+* Use multi-core sphinx builds.
+* Thoroughly clean builds with 'make clean'.
+* timezone configuration for containers.
+* Pi-Hole setup should only specify the upstream DNS server.
+* radarr configuration to include full-chain cert workaround.
+* sphinx style guide admonitions.
+
+Removed:
+* non-existant blocklists from pihole.
+
+Update sphinx core & enable additional extensions.
 ## 2020-12-18.0
 Update sphinx core & enable additional extensions.
 
