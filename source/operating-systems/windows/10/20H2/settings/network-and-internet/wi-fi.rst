@@ -2,6 +2,7 @@
 
 Wi-Fi
 #####
+Wi-Fi `Sense removed in 20H2`_ due to privacy concerns.
 
 Hotspot 2.0 networks
 ********************
@@ -27,3 +28,5 @@ Hotspot 2.0 networks
       :no_caption:
 
   `Reference <https://www.tips-howto.com/tips-how-to-activate-hotspot-2-0-wi-fi-networks-in-windows-10/>`__
+
+.. _Sense removed in 20h2: https://threatpost.com/microsoft-quietly-kills-controversial-wi-fi-sense-feature/118124/

@@ -87,8 +87,9 @@ Change privacy options
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  See :ref:`w10-20h2-settings-personalization-start-most-used-apps` for
-  additional app tracking disable.
+  See :ref:`Disable Show most used apps
+  <w10-20h2-settings-personalization-start-most-used-apps>` for additional app
+  tracking disable.
 
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold

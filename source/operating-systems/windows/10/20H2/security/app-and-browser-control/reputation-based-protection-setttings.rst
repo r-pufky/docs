@@ -103,6 +103,8 @@ Potentially unwanted app blocking
 `Reference <https://www.tenforums.com/tutorials/32236-enable-disable-microsoft-defender-pua-protection-windows-10-a.html>`__
 `Reference <https://admx.help/?Category=Windows_10_2016&Policy=Microsoft.Policies.WindowsDefender::Root_PUAProtectio>`__
 `Reference <https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/detect-block-potentially-unwanted-apps-microsoft-defender-antivirus>`__
+`Reference <https://www.winhelponline.com/blog/defender-enable-pua-pup-adware-protection/>`__
+`Reference <https://www.winhelponline.com/blog/windows-defender-hostsfilehijack-alert-telemetry-block/>`__
 
 SmartScreen for Microsoft Store apps
 ************************************

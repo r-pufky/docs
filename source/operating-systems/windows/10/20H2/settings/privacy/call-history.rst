@@ -15,7 +15,7 @@ Allow access to call history on this device
   :animate: fade-in
 
   This disables all call history options. See
-  :ref:`_w10-20h2-settings-privacy-call-history-apps` to manage access on a per
+  :ref:`w10-20h2-settings-privacy-call-history-apps` to manage access on a per
   app basis.
 
   .. dropdown:: :term:`GPO`

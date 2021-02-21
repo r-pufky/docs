@@ -17,8 +17,25 @@ initial Windows setup.
    :numbered:
    :maxdepth: -1
 
-   disable-telemetry
+   account-sync
+   biometrics
+   cortana-and-search
+   error-reporting
+   explorer-ads
+   location
    meltdown-and-spectre-patch
+   messaging
+   microsoft-defender
+   onedrive
+   paging
+   resource-exhaustion
+   restore-points
+   telemetry
+   update-notifications
+   services
+   speech
+   spotlight
+   windows-store-promotions
 
 .. rubric:: References
 

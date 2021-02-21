@@ -9,7 +9,8 @@ Virus & threat protection settings
   After every major windows update, verify these settings.
 
 Windows Defender renamed to *Microsoft Defender* in 20H2. See 
-:ref:`w10-20h2-disable-telemetry` for additional telemetry services.
+:ref:`w10-20h2-standalone-microsoft-defender` for non-GUI Microsoft Defender
+settings. :ref:`w10-20h2-standalone-telemetry` for telemetry services.
 
 Cloud-delivered protection
 **************************

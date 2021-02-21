@@ -17,7 +17,7 @@ Diagnostic data
   .. warning::
     If the option is not set or set incorrectly, it will default to **full**.
 
-  See :ref:`w10-20h2-disable-telemetry` for additional diagnostic data
+  See :ref:`w10-20h2-standalone-telemetry` for additional diagnostic data
   & telemetry blocking.
 
   .. dropdown:: :term:`GPO`

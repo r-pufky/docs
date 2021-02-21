@@ -1,7 +1,7 @@
-.. _w10-20h2-disable-telemetry:
+.. _w10-20h2-standalone-telemetry:
 
-Disable Telemetry
-#################
+Telemetry
+#########
 These services either do user data tracking, or are an unnecessary performance
 hit. See `Telemetry Info`_.
 

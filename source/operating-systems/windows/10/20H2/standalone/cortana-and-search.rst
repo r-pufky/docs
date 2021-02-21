@@ -1,9 +1,9 @@
-.. _w10-20h2-disable-cortana-search:
+.. _w10-20h2-standalone-cortana-and-search:
 
-`Disable Cortana & Search`_
-###########################
+Cortana & Search
+################
 By default `Cortana data privacy`_ will transfer all data to Microsoft services,
-including location, browsing, voice, and search data.
+including location, browsing, voice, and search data. Disable.
 
 .. danger::
   After every major windows update, verify these settings.
@@ -334,7 +334,7 @@ have not changed. See references for additional documentation.
 
 .. rubric:: References
 
-#. `Cortana Endpoints to Microsoft Services <https://docs.microsoft.com/en-us/windows/privacy/manage-windows-1903-endpoints>`_
+#. `Cortana Endpoints to Microsoft Services <https://docs.microsoft.com/en-us/windows/privacy/manage-windows-20h2-endpoints>`_
 #. `Configure Windows Diagnostic Data <https://docs.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization>`_
 
 .. _Cortana data privacy: https://support.microsoft.com/en-us/topic/cortana-and-privacy-47e5856e-3680-d930-22e1-71ec6cdde231

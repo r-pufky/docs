@@ -23,21 +23,6 @@ Each sub-section is a core panel within the settings GUI.
    search/index
    privacy/index
    update-and-security/index
-   disable-account-sync
-   disable-biometrics
-   disable-cortana-search
-   disable-error-reporting
-   disable-explorer-ads
-   disable-onedrive
-   disable-paging
-   disable-resource-exhaustion
-   disable-update-notifications
-   disable-restore-points
-   disable-services
-   disable-spotlight
-   disable-wifi-sharing
-   disable-windows-defender
-   disable-windows-store-promotions
 
 .. rubric:: References
 

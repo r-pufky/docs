@@ -246,7 +246,7 @@ Notifications
 
 Get notifications from these senders
 ************************************
-:ref:`w10-20h2-settings-system-get-notifications-from-apps` must be enabled for
+:ref:`Notifications <w10-20h2-settings-system-get-notifications-from-apps>` must be enabled for
 these per-app options to be enabled.
 
 .. dropdown:: Notifications can be disabled on a per-app basis

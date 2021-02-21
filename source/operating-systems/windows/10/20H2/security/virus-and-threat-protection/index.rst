@@ -4,7 +4,7 @@ Virus & threat protection
 #########################
 :cmdmenu:`⌘ + r --> windowsdefender: --> Virus & threat protection`
 
-See :ref:`w10-20h2-disable-telemetry` for additional telemetry services.
+See :ref:`w10-20h2-standalone-telemetry` for additional telemetry services.
 
 .. toctree::
   :maxdepth: -1

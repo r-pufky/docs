@@ -6,4 +6,4 @@ Account protection
 
 Windows Hello
 *************
-See :ref:`w10-20h2-disable-biometrics` to disable windows hello.
+See :ref:`w10-20h2-standalone-biometrics` to disable windows hello.
