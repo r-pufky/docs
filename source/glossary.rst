@@ -97,6 +97,12 @@ Operating Systems
 
     The most restrictive GPO is applied if both machine and user GPO's are set.
 
+    Policies can be manually applied with:
+
+    .. code-block:: powershell
+
+      gpupdate /force
+
   :abbr:`Registry`
     Hierarchical database that stores low-level settings for Windows and
     applications that opt to use the registry.

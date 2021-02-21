@@ -98,6 +98,7 @@ git hub, or submit a CL :)
   :maxdepth: -1
 
   operating-systems/windows/10/base/index
+  operating-systems/windows/10/20H2/index
   operating-systems/windows/10/1903/index
   operating-systems/ubuntu/index
 

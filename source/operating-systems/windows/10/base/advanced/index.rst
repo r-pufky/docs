@@ -19,7 +19,8 @@ Advanced Windows configuration. Specific configuration for specific cases.
 .. rubric:: Advanced References
 
 #. `Windows Command Reference <https://ss64.com/nt/run.html>`_
-#. `Windows Launch Command Shortcuts <https://docs.microsoft.com/en-us/windows/uwp/launch-resume/launch-settings-app>`_
+#. `Windows Settings Shortcuts <https://docs.microsoft.com/en-us/windows/uwp/launch-resume/launch-settings-app>`_
+#. `Windows Settings Shortcuts (Alternative) <https://4sysops.com/wiki/list-of-ms-settings-uri-commands-to-open-specific-settings-in-windows-10/>`_
 
 .. rubric:: Group Policy (GPO)
 
@@ -47,4 +48,5 @@ Advanced Windows configuration. Specific configuration for specific cases.
    specific-windows-fixes
    windows-subsystem-for-linux-wsl
    scheduled-tasks-inconsistencies
+   determining-app-list
    run-windows-on-usb

@@ -44,9 +44,9 @@ help:
 docs: html copy
 
 clean:
-	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" -c "$(CONFDIR)" $(SPHINXOPTS) $(O)
 	@rm -rfv "$(TARGETDIR)"/*
 	@rm -rfv "$(VENVDIR)"
+	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" -c "$(CONFDIR)" $(SPHINXOPTS) $(O)
 
 head:
 	@git checkout -- $(TARGETDIR)
