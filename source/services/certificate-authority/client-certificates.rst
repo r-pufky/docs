@@ -14,24 +14,15 @@ Create Client Private Key and Certificate
   chmod 0400 /root/ca/inter/private/{USER EMAIL}.key.pem
   openssl req -config /root/ca/inter/inter.ca -key /root/ca/inter/private/{USER EMAIL}.key.pem -new -sha512 -out /root/ca/inter/csr/{USER EMAIL}.csr.pem
 
-.. ggui:: Create Client Signing Request.
-  :option:  Country Name (2 letter code) [XX],
-            State or Province Name [XX],
-            Locality Name [XX],
-            Organization Name [{CA NAME}],
-            Organizational Unit Name [{CA NAME} Certificate Authority],
-            Common Name [{CA NAME} Intermediate CA],
-            Email Address [XX]
-  :setting: {ENTER},
-            {ENTER},
-            {ENTER},
-            {ORG OR CA NAME},
-            {ORG OR CA NAME},
-            {USER NAME},
-            {USER EMAIL}
-  :no_key_title:
-  :no_section:
-  :no_launch:
+.. gui::   Create Client Signing Request
+  :path:   Create Client Signing Request
+  :value0:                          Country Name (2 letter code) [XX], {ENTER}
+  :value1:                                State or Province Name [XX], {ENTER}
+  :value2:                                         Locality Name [XX], {ENTER}
+  :value3:                              Organization Name [{CA NAME}], {ORG OR CA NAME}
+  :value4: Organizational Unit Name [{CA NAME} Certificate Authority], {ORG OR CA NAME}
+  :value5:                    Common Name [{CA NAME} Intermediate CA], {USER}
+  :value6:                                         Email Address [XX], {EMAIL}
 
 .. warning::
   This identifies a user and needs to contain enough information to identify

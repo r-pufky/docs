@@ -43,14 +43,18 @@ help:
 
 docs: html copy
 
-clean:
-	@rm -rfv "$(TARGETDIR)"/*
-	@rm -rfv "$(VENVDIR)"
-	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" -c "$(CONFDIR)" $(SPHINXOPTS) $(O)
+clean: head
+	@echo 'Cleaning build directories ...'
+	-@rm -rfv "$(VENVDIR)"
+	-@rm -rfv "$(BUILDDIR)"
+	-@find "$(CONFDIR)" -type d -name '__pycache__' -exec rm -rfv {} \;
+	@echo 'Done.'
 
 head:
+	@echo 'Setting html docs output to HEAD ...'
+	-@rm -rf "$(TARGETDIR)"/*
 	@git checkout -- $(TARGETDIR)
-	@git clean -fd $(TARGETDIR)
+	@echo 'Done.'
 
 sphinx-venv-setup:
 	@echo 'Setting up sphinx python virtual environment ...'
@@ -59,10 +63,10 @@ sphinx-venv-setup:
 	@echo 'Done.'
 
 html: sphinx-venv-setup
-	@. $(VENV); $(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" -c "$(CONFDIR)" $(SPHINXOPTS) $(O)
+	@. $(VENV); $(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" -j auto -c "$(CONFDIR)" $(SPHINXOPTS) $(O)
 
 linkcheck: sphinx-venv-setup
-	@. $(VENV); $(SPHINXBUILD) -M linkcheck "$(SOURCEDIR)" "$(BUILDDIR)" -c "$(CONFDIR)" $(SPHINXOPTS) $(O)
+	@. $(VENV); $(SPHINXBUILD) -M linkcheck "$(SOURCEDIR)" "$(BUILDDIR)" -j auto -c "$(CONFDIR)" $(SPHINXOPTS) $(O)
 
 copy:
 	@mkdir -p $(TARGETDIR)

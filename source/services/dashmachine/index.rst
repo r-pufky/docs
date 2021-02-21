@@ -6,21 +6,18 @@ Application Dashboard.
 
 See `dashmachine Docker and Documentation`_
 
-.. gport:: Ports (dashmachine)
-  :port:     5000
-  :protocol: TCP
-  :type:     Exposed
-  :purpose:  Webface.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: dashmachine Ports
+  :value0: 5000, {TCP}, {EXPOSED}, Webface
+  :open:
 
-.. gflocation:: Important File Locations (dashmachine)
-  :file:    /dashmachine/dashmachine/user_data
-  :purpose: dashmachine main service directory.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files:: dashmachine Files
+  :value0: /dashmachine/dashmachine/user_data,
+           dashmachine main service directory
+  :open:
 
 Docker Creation
 ***************

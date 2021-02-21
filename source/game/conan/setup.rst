@@ -33,46 +33,34 @@ See `Conan Docker and Documentation`_.
 
     See `Conan Exiles Dedicated Server`_.
 
-.. gport:: Ports Exposed (Conan Exiles)
-  :port:     27015,
-             27016,
-             7777,
-             7778
-  :protocol: UDP,
-             UDP,
-             UDP,
-             UDP
-  :type:     External,
-             External,
-             External,
-             External
-  :purpose:  Dedicated Server (steam).,
-             Dedicated Server (steam announce).,
-             Dedicated Server (clients direct).,
-             Dedicated Server (client via steam).
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: Conan Exiles Ports
+  :value0: 27015, {UDP}, {PUBLIC}, Dedicated Server (steam)
+  :value1: 27016, {UDP}, {PUBLIC}, Dedicated Server (steam announce)
+  :value2:  7777, {UDP}, {PUBLIC}, Dedicated Server (clients direct)
+  :value3:  7778, {UDP}, {PUBLIC}, Dedicated Server (client via steam)
+  :open:
 
-    * ``7778`` and ``27016`` should be opened for server to appear in steam
-      public lists or in player's history. Public lists are buggy and will not
-      always appear. Can take up to 15 minutes.
-    * If connecting on local network, use the private IP of the server, not the
-      public IP address.
+  * ``7778`` and ``27016`` should be opened for server to appear in steam
+    public lists or in player's history. Public lists are buggy and will not
+    always appear. Can take up to 15 minutes.
+  * If connecting on local network, use the private IP of the server, not the
+    public IP address.
 
-.. gflocation:: Important File Locations (Conan Exiles)
-  :file:    /data/server/ConanSandbox/Saved/Config/WindowsServer/Engine.ini,
-            /data/server/ConanSandbox/Saved/Config/WindowsServer/ServerSettings.ini,
-            /data/server/ConanSandbox/Saved/game.db
-  :purpose: Core engine settings (e.g. ports).,
-            Specific game instance settings.,
-            Game database and saves.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files:: Conan Exiles Files
+  :value0: /data/server/ConanSandbox/Saved/Config/WindowsServer/Engine.ini,
+           Core engine settings (e.g. ports)
+  :value1: /data/server/ConanSandbox/Saved/Config/WindowsServer/ServerSettings.ini,
+           Specific game instance settings
+  :value2: /data/server/ConanSandbox/Saved/game.db,
+           Game database and saves
+  :open:
 
-    See ``/data/server/ConanSandbox/Config/`` for default files with all
-    avaliable options.
+  See ``/data/server/ConanSandbox/Config/`` for default files with all avaliable
+  options.
 
 Docker Creation
 ***************

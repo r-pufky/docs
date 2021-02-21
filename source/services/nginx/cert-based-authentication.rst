@@ -153,23 +153,17 @@ Chrome Client Certificate
 `Setup chrome`_ to auto present correct certificate when challenged by proxy
 server.
 
-.. ggui:: Import Client Certificate to Chrome.
-  :key_title: chrome://settings -->
-              Settings -->
-              Advanced -->
-              Privacy and security -->
-              Manage certificates -->
-              Import
-  :option:    ☐,
-              ☐,
-              ☑,
-              ☑ Place all certificates in the following store
-  :setting:   Enable strong private key protection.,
-              Mark this key as exportable.,
-              Include all extended properties.,
-              Personal.
-  :no_section:
-  :no_launch:
+.. gui::   Import Client Certificate to Chrome
+  :path:   chrome://settings -->
+           Settings -->
+           Advanced -->
+           Privacy and security -->
+           Manage certificates -->
+           Import
+  :value0: ☐, Enable strong private key protection
+  :value1: ☐, Mark this key as exportable
+  :value2: ☑, Include all extended properties
+  :value3: ☑ Place all certificates in the following store, Personal
 
 .. note::
   Use export password to decrypt and import.
@@ -181,27 +175,27 @@ setup, then this should allow you to passthrough.
 Auto-select Client Certificate
 ==============================
 Auto selecting the `correct certificate`_ will enable transparent authentication
-for proxied sites. Enabled via Group Policy or `Reg Edit`_.
+for proxied sites. Enabled via Group Policy or Registry.
 
-.. wregedit:: Auto-select Client Certificate
-  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls
-  :names:     1
-  :types:     REG_SZ
-  :data:      {"pattern":"https://[*.]example.com","filter":{"ISSUER":{"O":"{SERVER}"}}}
-  :delim:     ;
-  :admin:
-  :no_caption:
+.. regedit:: Auto-select Client Certificate
+  :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls
+  :value0:   1; {SZ}; {"pattern":"https://[\*.]example.com","filter":{"ISSUER":{"O":"{SERVER}"}}}
+  :delim:    ;
+  :ref:      https://www.chromium.org/administrators/policy-list-3#AutoSelectCertificateForUrls
+  :update:   2021-02-12
+  :open:
 
-    * ``1`` incremental counter for which matching patterns to apply. If using
-      multiple certificates this will represent the resolution order.
-    * ``O`` is used to match the **Organizational Name** of the server CA
-      ``{SERVER}``. This will use this certificate for all ``{SERVER`` cert auth
-      requests.
-    * If using a **reg** file, ensure proper escaping:
+  * ``1`` incremental counter for which matching patterns to apply. If using
+    multiple certificates this will represent the resolution order.
+  * ``O`` is used to match the **Organizational Name** of the server CA
+    ``{SERVER}``. This will use this certificate for all ``{SERVER}`` cert auth
+    requests.
+  * If using a **reg** file, ensure proper escaping:
 
-      .. code-block::
+    .. code-block::
 
-        "1"="{\"pattern\":\"https://[*.]example.com\",\"filter\":{\"ISSUER\":{\"O\":\"{SERVER}\"}}}"
+      "1"="{\"pattern\":\"https://[*.]example.com\",\"filter\":{\"ISSUER\":{\"O\":\"{SERVER}\"}}}"
+
 
 Restarting chrome will pickup the configuration changes.
 
@@ -213,5 +207,4 @@ Restarting chrome will pickup the configuration changes.
 .. _Git Cert Auth for Specific Repo: http://www.wakoond.hu/2013/07/using-git-with-https-client-certificate.html
 .. _Setup chrome: https://www.tbs-certificates.co.uk/FAQ/en/installer_certificat_client_google_chrome.html
 .. _correct certificate: https://blogs.sap.com/2014/01/30/avoid-certification-selection-popup-in-chrome/
-.. _Reg Edit: https://www.chromium.org/administrators/policy-list-3#AutoSelectCertificateForUrls
 .. _specific site access to client certificates: https://stackoverflow.com/questions/41513400/nginx-authorization-based-on-client-certificates

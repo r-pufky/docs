@@ -19,28 +19,20 @@ options can be changed directly via the admin panel in game.
   :caption:  **0644 conan conan** ``/data/server/ConanSandbox/Saved/Config/WindowsServer/ServerSettings.ini``
   :emphasize-lines: 3,108-109,42,124-125
 
-.. ggui:: Option Values
-  :key_title: Option Values
-  :option:  MaxNudity;
-            IsBattleEyeEnabled;
-            IsVACEnabled;
-            serverRegion;
-            PVPEnabled;
-            AdminPassword
-  :setting: 2=Full, 1=Partial, 0=None;
-            Disable for linux.;
-            Disable for linux.;
-            3=Asia, 2=Americas, 1/0=Europe. Tested as of 2018-06-19.;
-            Boolean player versus player combat.;
-            Administrator password.
+.. gui::   Option Values
+  :path:   Option Values
+  :value0: MaxNudity; 2=Full, 1=Partial, 0=None
+  :value1: IsBattleEyeEnabled; Disable for linux
+  :value2: IsVACEnabled; Disable for linux
+  :value3: serverRegion; 3=Asia, 2=Americas, 1/0=Europe
+  :value4: PVPEnabled; Boolean player versus player combat
+  :value5: AdminPassword; {PASS}
   :delim: ;
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+  :update: 2018-06-19
 
-    .. note::
-      All other settings can be changed in **admin panel** when connected; see
-      ``/data/server/ConanSandbox/Config`` for all options.
+  .. note::
+    All other settings can be changed in **admin panel** when connected; see
+    ``/data/server/ConanSandbox/Config`` for all options.
 
 Installing Mods
 ***************

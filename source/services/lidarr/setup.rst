@@ -6,23 +6,18 @@ Music Management.
 
 See `Lidarr Docker and Documentation`_.
 
-.. gport:: Ports (Lidarr)
-  :port:     8686
-  :protocol: TCP
-  :type:     Exposed
-  :purpose:  Webface.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: Lidarr Ports
+  :value0: 8686, {TCP}, {EXPOSED}, Webface
+  :open:
 
-.. gflocation:: Important File Locations (Lidarr)
-  :file:    /config,
-            /downloads
-  :purpose: Lidarr main service directory.,
-            Lidarr monitored downloads directory.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files:: Lidarr Files
+  :value0: /config, Lidarr main service directory
+  :value1: /downloads, Lidarr monitored downloads directory
+  :open:
 
 Docker Creation
 ***************

@@ -20,67 +20,41 @@ Connect to Unifi Controller @ http://localhost:8443.
   **Skip** *device*, *wifi* and *cloud login* configuration during the intial
   configuration.
 
-.. ucontroller:: Basic Unifi Controller Setup
-  :key_title:    Setup Wizard
-  :option:       Select your Country,
-                 Select your Timezone,
-                 › ☑
-  :setting:      {COUNTRY},
-                 {YOUR TIMEZONE},
-                 Enable Auto Backup
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. ubiquiti:: Basic Unifi Controller Setup
+  :path:      Setup Wizard
+  :value0:    Select your Country, {COUNTRY}
+  :value1:    Select your Timezone, {TZ}
+  :value2:    › ☑, Enable Auto Backup
 
-.. ucontroller:: Basic Unifi Controller Access Setup
-  :key_title:    Setup Wizard --> Controller Access
-  :option:       Admin Name,
-                 Admin Email,
-                 Admin Password,
-                 Device Authentication,
-                 Device Password
-  :setting:      {ADMIN USER},
-                 {EMAIL},
-                 {ADMIN PW},
-                 {DEVICE USER},
-                 {DEVICE PW}
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. ubiquiti:: Basic Unifi Controller Access Setup
+  :path:      Setup Wizard --> Controller Access
+  :value0:    Admin Name, {USER}
+  :value1:    Admin Email, {EMAIL}
+  :value2:    Admin Password, {PASS}
+  :value3:    Device Authentication, {USER}
+  :value4:    Device Password, {PASS}
 
-    .. warning::
-      The *admin name* account is the `super admin`_ for the controller, meaning
-      that account can manage multiple sites as well as devices. The *device
-      authentication* account is used to manage physical devices via the UI or
-      SSH on that device.
+  .. warning::
+    The *admin name* account is the `super admin`_ for the controller, meaning
+    that account can manage multiple sites as well as devices. The *device
+    authentication* account is used to manage physical devices via the UI or
+    SSH on that device.
 
 .. _basic-controller-setup:
 
 Basic Controller Setup
 **********************
-.. ucontroller:: Basic Unifi Controller Setup
-  :key_title:    ⚙ --> Controller --> Controller Settings
-  :option:       Controller Name,
-                 Controller Hostname/IP,
-                 › ☐,
-                 › ☑,
-                 Store,
-                 Support Messaging,
-                 Real-time Updates in Web Browser,
-                 Analytics & Improvements,
-                 › ☐
-  :setting:      {CONTROLLER DNS NAME},
-                 {CONTROLLER IP},
-                 Override inform host with controller hostname/IP,
-                 Make controller discoverable on L2 network,
-                 Disable store for all users,
-                 Disable live support for all users,
-                 Automatically adapt rates of real-time updates,
-                 Off,
-                 Enable mail server
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. ubiquiti:: Basic Unifi Controller Setup
+  :path:      ⚙ --> Controller --> Controller Settings
+  :value0:    Controller Name, {HOST}
+  :value1:    Controller Hostname/IP, {IP}
+  :value2:    › ☐, Override inform host with controller hostname/IP
+  :value3:    › ☑, Make controller discoverable on L2 network
+  :value4:    Store, Disable store for all users
+  :value5:    Support Messaging, Disable live support for all users
+  :value6:    Real-time Updates in Web Browser, Automatically adapt rates of real-time updates
+  :value7:    Analytics & Improvements, {OFF}
+  :value8:    › ☐, Enable mail server
 
 .. warning::
   L2 device discovery will help to adopt controllers which are not receiving a
@@ -88,99 +62,56 @@ Basic Controller Setup
   with the laptop and may be changed or disabled after initial configuration to
   rely on DHCP or set inform.
 
-.. ucontroller:: Remote Access Controller Setup
-  :key_title:    ⚙ --> Remote Access --> Controller
-  :option:       Enable Remote Access,
-                 Enable Local Login with UBNT Account,
-                 Remote Access Status
-  :setting:      Off,
-                 Off,
-                 Disabled
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. ubiquiti:: Remote Access Controller Setup
+  :path:      ⚙ --> Remote Access --> Controller
+  :value0:    Enable Remote Access, {OFF}
+  :value1:    Enable Local Login with UBNT Account, {OFF}
+  :value2:    Remote Access Status, {DISABLED}
 
-.. ucontroller:: Remote Access Owner Setup
-  :key_title:    ⚙ --> Remote Access --> Owner
-  :option:       Configured for
-  :setting:      Not Configured
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. ubiquiti::  Remote Access Owner Setup
+  :path:       ⚙ --> Remote Access --> Owner
+  :value0:     Configured for, Not Configured
 
-.. ucontroller:: Remote Access Advanced Setup
-  :key_title:    ⚙ --> Remote Access --> Advanced Options
-  :option:       Report Errors to Ubiquiti
-  :setting:      ☐
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. ubiquiti:: Remote Access Advanced Setup
+  :path:      ⚙ --> Remote Access --> Advanced Options
+  :value0:    Report Errors to Ubiquiti, ☐
 
-.. ucontroller:: Site Configuration
-  :key_title:    ⚙ --> Site --> Site Configuration
-  :option:       Site Name,
-                 Country,
-                 Timezone
-  :setting:      {YOUR SITE NAME},
-                 {COUNTRY},
-                 {LOCAL TIMEZONE}
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. ubiquiti:: Site Configuration
+  :path:      ⚙ --> Site --> Site Configuration
+  :value0:    Site Name, {SITE}
+  :value1:    Country, {COUNTRY}
+  :value2:    Timezone, {TZ}
 
-.. ucontroller:: Service Configuration
-  :key_title:    ⚙ --> Site --> Services
-  :option:       ☐,
-                 ☑,
-                 ☐,
-                 ☐,
-                 ☐,
-                 ☑,
-                 ☑,
-                 ☐,
-                 ☐
-  :setting:      Advanced Features,
-                 Automatically upgrade AP firmware,
-                 Enable status LED,
-                 Enable alert emails,
-                 Enable periodic speed test every,
-                 Enable connectivity monitor and wireless uplink,
-                 Default gateway,
-                 Enable remote Syslog server,
-                 Enable Netconsole logging server
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. ubiquiti:: Service Configuration
+  :path:      ⚙ --> Site --> Services
+  :value0:    ☐, Advanced Features
+  :value1:    ☑, Automatically upgrade AP firmware
+  :value2:    ☐, Enable status LED
+  :value3:    ☐, Enable alert emails
+  :value4:    ☐, Enable periodic speed test every
+  :value5:    ☑, Enable connectivity monitor and wireless uplink
+  :value6:    ☑, Default gateway
+  :value7:    ☐, Enable remote Syslog server
+  :value8:    ☐, Enable Netconsole logging server
 
-    .. warning::
-      Alerts and advanced logging disabled for initial setup, change these after
-      finishing configuration.
+  .. warning::
+    Alerts and advanced logging disabled for initial setup, change these after
+    finishing configuration.
 
-.. ucontroller:: Provider Capabilities
-  :key_title:    ⚙ --> Site --> Provider Capabilities
-  :option:       Download,
-                 Upload
-  :setting:      1 Gbps,
-                 1 Gbps
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. ubiquiti:: Provider Capabilities
+  :path:    ⚙ --> Site --> Provider Capabilities
+  :value0:       Download, 1 Gbps
+  :value1:       Upload, 1 Gpbs
 
-    .. warning::
-      Upload/Download settings should be reflective of your Internet connection
-      for proper scaling of graphing data. It is *not* a throttle.
+  .. warning::
+    Upload/Download settings should be reflective of your Internet connection
+    for proper scaling of graphing data. It is *not* a throttle.
 
-.. ucontroller:: Device Authentication
-  :key_title:    ⚙ --> Site --> Device Authentication
-  :option:       ☑,
-                 Username,
-                 Password
-  :setting:      Enable SSH Authentication,
-                 {DEVICE USER},
-                 {DEVICE PW}
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. ubiquiti:: Device Authentication
+  :path:      ⚙ --> Site --> Device Authentication
+  :value0:    ☑, Enable SSH Authentication
+  :value1:    Username, {USER}
+  :value2:    Password, {PASS}
 
 Apply changes.
 
@@ -188,119 +119,74 @@ VLAN Configuration
 ******************
 Add all VLANS using the :ref:`VLAN Table <vlan-table>`.
 
-.. ucontroller:: Default LAN Network
-  :key_title:    ⚙ --> Networks --> LAN
-  :option:       ☑,
-                 ☑,
-                 Gateway/Subnet,
-                 Domain Name,
-                 › ☐,
-                 DHCP Server,
-                 › ☐,
-                 › ☐,
-                 IPv6 Interface Type
-  :setting:      Corporate,
-                 LAN,
-                 10.1.1.1/24,
-                 {YOUR DOMAIN},
-                 Enable IGMP Snooping,
-                 None,
-                 Enable DHCP gaurding,
-                 Enable UPnP LAN,
-                 None
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. ubiquiti:: Default LAN Network
+  :path:    ⚙ --> Networks --> LAN
+  :value0:       ☑, Corporate
+  :value1:       ☑, LAN
+  :value2:       Gateway/Subnet, 10.1.1.1/24
+  :value3:       Domain Name, {DOMAIN}
+  :value4:       › ☐, Enable IGMP Snooping
+  :value5:       DHCP Server, {NONE}
+  :value6:       › ☐, Enable DHCP gaurding
+  :value7:       › ☐, Enable UPnP LAN
+  :value8:       IPv6 Interface Type, {NONE}
 
-    .. warning::
-      This will be the default network when new devices are discovered before
-      they are adopted. This is also the untagged :term:`Management VLAN`
-      network. Configure with :term:`Management VLAN` settings.
+  .. warning::
+    This will be the default network when new devices are discovered before
+    they are adopted. This is also the untagged :term:`Management VLAN`
+    network. Configure with :term:`Management VLAN` settings.
 
-.. ucontroller:: Create All VLAN Networks
-  :key_title:    ⚙ --> Networks --> Create New Network
-  :option:       Name,
-                 ☑,
-                 VLAN
-  :setting:      Wired,
-                 VLAN Only,
-                 2
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. ubiquiti:: Create All VLAN Networks
+  :path:      ⚙ --> Networks --> Create New Network
+  :value0:    Name, Wired
+  :value1:    ☑, VLAN Only
+  :value2:    VLAN, 2
 
-    .. note::
-      Add all VLANS using the :ref:`VLAN Table <vlan-table>`. :term:`Management
-      VLAN` is not explicitly defined as a VLAN -- untagged traffic coming into
-      *eth0* IS management traffic.
+  .. note::
+    Add all VLANS using the :ref:`VLAN Table <vlan-table>`. :term:`Management
+    VLAN` is not explicitly defined as a VLAN -- untagged traffic coming into
+    *eth0* IS management traffic.
 
 Add Trunk Port Profiles
 ***********************
-.. ucontroller:: Add AP Wireless Trunk Port Profiles
-  :key_title:    ⚙ -->
-                 Profiles -->
-                 Switch Ports -->
-                 Add New Port Profile -->
-                 Create New Switch Port Profile
-  :option:       Profile Name,
-                 › POE,
-                 Networks/VLANs,
-                 › Native Network,
-                 › Tagged Networks,
-                 › Voice Network
-  :setting:      trunk-wifi,
-                 PoE/PoE+,
-                 ,
-                 LAN,
-                 wifi,
-                 None
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. ubiquiti:: Add AP Wireless Trunk Port Profiles
+  :path:      ⚙ -->
+              Profiles -->
+              Switch Ports -->
+              Add New Port Profile -->
+              Create New Switch Port Profile
+  :value0:    Profile Name, trunk-wifi
+  :value1:    › POE, PoE/PoE+
+  :value2:    Networks/VLANs,
+  :value3:    › Native Network, LAN
+  :value4:    › Tagged Networks, wifi
+  :value5:    › Voice Network, {NONE}
 
-.. ucontroller:: Add Wired Trunk Port Profiles
-  :key_title:    ⚙ -->
-                 Profiles -->
-                 Switch Ports -->
-                 Add New Port Profile -->
-                 Create New Switch Port Profile
-  :option:       Profile Name,
-                 › POE,
-                 Networks/VLANs,
-                 › Native Network,
-                 › Tagged Networks,
-                 › Voice Network
-  :setting:      trunk-wired,
-                 Off,
-                 ,
-                 LAN,
-                 wifi wired,
-                 None
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. ubiquiti:: Add Wired Trunk Port Profiles
+  :path:      ⚙ -->
+              Profiles -->
+              Switch Ports -->
+              Add New Port Profile -->
+              Create New Switch Port Profile
+  :value0:    Profile Name, trunk-wired
+  :value1:    › POE, {OFF}
+  :value2:    Networks/VLANs,
+  :value3:    › Native Network, LAN
+  :value4:    › Tagged Networks, wifi wired
+  :value5:    › Voice Network, {NONE}
 
-.. ucontroller:: Add Server Trunk Port Profiles
-  :key_title:    ⚙ -->
-                 Profiles -->
-                 Switch Ports -->
-                 Add New Port Profile -->
-                 Create New Switch Port Profile
-  :option:       Profile Name,
-                 › POE,
-                 Networks/VLANs,
-                 › Native Network,
-                 › Tagged Networks,
-                 › Voice Network
-  :setting:      trunk-server,
-                 Off,
-                 ,
-                 LAN,
-                 server infrastructure,
-                 None
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. ubiquiti:: Add Server Trunk Port Profiles
+  :path:      ⚙ -->
+              Profiles -->
+              Switch Ports -->
+              Add New Port Profile -->
+              Create New Switch Port Profile
+  :value0:    Profile Name, trunk-server
+  :value1:    › POE, {OFF}
+  :value2:    Networks/VLANs,
+  :value3:    › Native Network, LAN
+  :value4:    › Tagged Networks, server infrastructure
+  :value5:    › Voice Network, {NONE}
 
 .. rubric:: References
 

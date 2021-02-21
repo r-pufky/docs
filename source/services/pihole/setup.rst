@@ -4,37 +4,19 @@
 ################
 Block nefarious websites & Ads.
 
-.. gport:: Ports (Pi-Hole)
-  :port:     53,
-             80,
-             443,
-             67,
-             547,
-             4711-4720
-  :protocol: UDP/TCP,
-             TCP,
-             TCP,
-             UDP,
-             UDP,
-             TCP
-  :type:     Public,
-             Public,
-             Public,
-             Public,
-             Public,
-             Public
-  :purpose:  DNS Service.,
-             HTTP administration webface.,
-             (Optional) HTTPS administration webface.,
-             (Optional) DHCP Service.,
-             (Optional) DHCPv6 Service.,
-             (Optional) FTL API Service.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: Pi-Hole Ports
+  :value0:        53, {TCP/UDP},   {PUBLIC}, DNS Service 
+  :value1:        80,     {TCP},   {PUBLIC}, HTTP administration webface
+  :value2:       443,     {TCP}, {OPTIONAL}, HTTPS administration webface
+  :value3:        67,     {UDP}, {OPTIONAL}, DHCP Service
+  :value4:       547,     {UDP}, {OPTIONAL}, DHCPv6 Service
+  :value5: 4711-4720,     {TCP},  {DISABLE}, FTL API Service
+  :open:
 
-.. note::
-  FTL API should not be acessible from any other interface.
+  .. note::
+    FTL API should not be acessible from any other interface.
 
 .. warning::
   See older revisions of this document for PiHole ``4.x`` and lower. ``5.x``
@@ -42,22 +24,16 @@ Block nefarious websites & Ads.
 
 .. _service-pihole-file-locations:
 
-.. gflocation:: Important File Locations (Pi-Hole)
-  :file:    /etc/dnsmasq.d/*,
-            /etc/hosts,
-            /etc/lighthttpd/external.conf,
-            /etc/pihole,
-            /etc/pihole/SetupVars.conf,
-            /etc/pihole/gravity.db
-  :purpose: DNS masqerade settings.,
-            Static host/IP lookup.,
-            Pi-Hole web server configuration.,
-            Configuration Data.,
-            Startup Configuration Settings.,
-            PiHole list/group/user settings.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files:: Pi-Hole Files
+  :value0: /etc/dnsmasq.d/*, DNS masqerade settings
+  :value1: /etc/hosts, Static host/IP lookup
+  :value2: /etc/lighthttpd/external.conf, Pi-Hole web server configuration
+  :value3: /etc/pihole, Configuration Data
+  :value4: /etc/pihole/SetupVars.conf, Startup Configuration Settings
+  :value5: /etc/pihole/gravity.db, PiHole list/group/user settings
+  :open:
 
 Installing
 **********
@@ -72,27 +48,17 @@ website, but you should never blindly execute scripts from the Internet.
   cd 'pi-hole/automated install/'
   sudo bash basic-install.sh
 
-.. ggui:: Base Configuration
-  :option:  Upstream DNS Provider,
-            Third Party Lists,
-            Protocols,
-            Static IP Address,
-            Web admin interface,
-            Web Server (required for webface if no other server),
-            Log Queries,
-            Privacy Mode
-  :setting: {ROUTER DNS SERVER},
-            All,
-            All,
-            Use current DHCP settings,
-            ☑,
-            ☑,
-            ☑,
-            0
-  :no_key_title:
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Base Configuration
+  :path:   Base Configuration
+  :value0: Upstream DNS Provider, {INTERNAL_DNS}
+  :value1: Third Party Lists, All
+  :value2: Protocols, All
+  :value3: Static IP Address, Use current DHCP settings
+  :value4: Web admin interface, ☑
+  :value5: Web Server (required for webface if no other server), ☑
+  :value6: Log Queries, ☑
+  :value7: Privacy Mode, 0
+  :open:
 
 .. note::
   The *password* will be listed on the summary page. This can be set using

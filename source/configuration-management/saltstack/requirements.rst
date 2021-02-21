@@ -19,50 +19,52 @@ are defined here. Most users report actual usage minimum requirements as:
   :no_caption:
   :no_launch:
 
-.. gport:: Ports Exposed (Saltstack)
-  :port:         4505,
-                 4506
-  :protocol:     TCP,
-                 TCP
-  :type:         External,
-                 External
-  :purpose:      Minion listen port for pubsub messages.,
-                 Master file/data push; Minion push result data.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: Saltstack Ports
+  :value0: 4505; {TCP}; {PUBLIC}; Minion listen port for pubsub messages
+  :value1: 4506; {TCP}; {PUBLIC}; Master file/data push, Minion push result data
+  :delim: ;
+  :open:
 
   By default ``salt`` should resolve to the master IP for the minion, this can
   be configured in the minion as a DNS name or IP address.
 
-.. gflocation:: Important File Locations (Saltstack)
-  :file:    /etc/salt,
-            /etc/salt/gpgkeys,
-            /etc/salt/master,
-            /etc/salt/master.d,
-            /etc/salt/minion,
-            /etc/salt/minion.d,
-            /etc/salt/pki/minions,
-            /srv/salt,
-            /var/log/salt/master,
-            /var/log/salt/minion,
-            c:/salt/conf/minion,
-            c:/salt/conf/minion.d
-  :purpose: Salt configuration; both master and minion.,
-            Master private GPG keys for decrypting data. Hard coded.,
-            Master configuration flat file. This should be untouched for sane defaults. Set custom configuration in the master configuration directory.,
-            Master configuration directory.,
-            Minion configuration flat file. This should be untouched for sane defaults. Set custom configuration in the minion configuration directory.,
-            Minion configuration directory.,
-            Keyfile data for minions. Deleted minions should be automatically removed.,
-            Master service directory structure for hosting files/forumlas and data. See best practices (below).,
-            Master logging/error messages. Useful for debugging module errors. When setup with encryption and no-minion reporting errors will appear here for minions.,
-            Minion logging/error messages. Many minion errors are logged on the server side; especially for encrypted Pillar data.,
-            Minion configuration flat file for Windows. This should be untouched for sane defaults. Set custom configuration in the master configuration directory.,
-            Minion configuration directory.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files::  Saltstack Files
+  :value0:  /etc/salt, Salt configuration; both master and minion
+  :value1:  /etc/salt/gpgkeys,
+            Master private GPG keys for decrypting data. Hard coded.
+  :value2:  /etc/salt/master, 
+            Master configuration flat file. This should be untouched for sane
+            defaults. Set custom configuration in the master configuration
+            directory.
+  :value3:  /etc/salt/master.d, Master configuration directory
+  :value4:  /etc/salt/minion,
+            Minion configuration flat file. This should be untouched for sane
+            defaults. Set custom configuration in the minion configuration
+            directory.
+  :value5:  /etc/salt/minion.d, Minion configuration directory
+  :value6:  /etc/salt/pki/minions,
+            Keyfile data for minions. Deleted minions should be automatically
+            removed.
+  :value7:  /srv/salt,
+            Master service directory structure for hosting files/forumlas and
+            data. See best practices (below).
+  :value8:  /var/log/salt/master,
+            Master logging/error messages. Useful for debugging module errors.
+            When setup with encryption and no-minion reporting errors will
+            appear here for minions.
+  :value9:  /var/log/salt/minion,
+            Minion logging/error messages. Many minion errors are logged on the
+            server side; especially for encrypted Pillar data.
+  :value10: c:/salt/conf/minion,
+            Minion configuration flat file for Windows. This should be untouched
+            for sane defaults. Set custom configuration in the master
+            configuration directory.
+  :value11: c:/salt/conf/minion.d, Minion configuration directory
+  :open:
 
 .. _salt-service-directory-best-practices:
 

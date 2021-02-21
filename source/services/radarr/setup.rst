@@ -6,23 +6,18 @@ Movie Management.
 
 See `Radarr Docker and Documentation`_.
 
-.. gport:: Ports (Radarr)
-  :port:     7878
-  :protocol: TCP
-  :type:     Exposed
-  :purpose:  Webface.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: Radarr Ports
+  :value0: 7878, {TCP}, {EXPOSED}, Webface
+  :open:
 
-.. gflocation:: Important File Locations (Radarr)
-  :file:    /config,
-            /downloads
-  :purpose: Radarr main service directory.,
-            Radarr monitored downloads directory.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files:: Radarr Files
+  :value0: /config, Radarr main service directory
+  :value1: /downloads, Radarr monitored downloads directory
+  :open:
 
 Docker Creation
 ***************

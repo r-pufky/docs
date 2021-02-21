@@ -9,35 +9,28 @@ See :ref:`service-unifi-controller` for container creation.
 * Setup Unifi Docker `Container IP on DHCP`_.
 * Connect to Edgerouter GUI @ http://10.1.1.1.
 
-.. uctree::   Add Docker Container IP for Controller
-  :key_title: Services --> DHCP Server --> Management --> Action --> View Details
-  :option:    Unifi Controller
-  :setting:   {DOCKER UNIFI CONTAINER IP}
-  :no_section:
-  :no_caption:
+.. ubiquiti:: Add Docker Container IP for Controller
+  :path:      Services --> DHCP Server --> Management --> Action -->
+              View Details
+  :value0:    Unifi Controller, {IP}
+
+  Be sure to use the docker unifi container IP.
 
 Export laptop Unifi Controller settings.
 
-.. ucontroller:: Add Docker Container IP on Original Unifi Controller
-  :key_title:    ⚙ --> Maintenance --> Backup
-  :option:       Backup Data Rentention
-  :setting:      Settings Only
-  :no_section:
-  :no_caption:
+.. ubiquiti:: Add Docker Container IP on Original Unifi Controller
+  :path:      ⚙ --> Maintenance --> Backup
+  :value0:    Backup Data Rentention, Settings Only
 
-    .. note::
-      Download the backup and ``shutdown`` the original Unifi Controller.
+  .. note::
+    Download the backup and ``shutdown`` the original Unifi Controller.
 
 Startup Docker Unifi Controller and import config, then set the correct inform
 IP in docker container.
 
-.. ucontroller:: Set Inform IP on docker Unifi Controller
-  :controller:   http://{DOCKER UNIFI CONTAINER IP}:8443
-  :key_title:    ⚙ --> Controller
-  :option:       Controller Hostname/IP
-  :setting:      {DOCKER UNIFI CONTROLLER IP}
-  :no_section:
-  :no_caption:
+.. ubiquiti:: Set Inform IP on docker Unifi Controller
+  :path:      ⚙ --> Controller
+  :value0:    Controller Hostname/IP, {IP}
 
 .. note::
   If the Controller IP is different, manually update inform URI for each device

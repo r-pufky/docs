@@ -7,194 +7,109 @@ Unmentioned options are defaults.
 
 Media Management
 ****************
-.. ggui:: Lidarr Track Naming
-  :key_title: Settings --> Media Management --> Track Naming
-  :option:  ☑,
-            ☑,
-            Standard Track Format,
-            Multi Disc Track Format,
-            Artist Folder Format,
-            Album Folder Format
-  :setting: Rename Tracks,
-            Replace Illegal Characters,
-            {track:00} - {Track Title},
-            {Medium Format} {medium:00}/{Artist Name} - {Album Title} - {track:00} - {Track Title},
-            {Artist Name},
-            {Album Title}
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Lidarr Track Naming
+  :path:   Settings --> Media Management --> Track Naming
+  :value0: ☑, Rename Tracks
+  :value1: ☑, Replace Illegal Characters
+  :value2: Standard Track Format, {track:00} - {Track Title}
+  :value3: Multi Disc Track Format,
+           {Medium Format} {medium:00}/{Artist Name} - {Album Title} - {track:00} - {Track Title}
+  :value4: Artist Folder Format, {Artist Name}
+  :value5: Album Folder Format, {Album Title}
 
-.. ggui:: Lidarr Folders
-  :key_title: Settings --> Media Management --> Folders
-  :option:  Create empty artist folders,
-            Delete empty folders,
-            Import Extra Files
-  :setting: ☐,
-            ☐,
-            ☐
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Lidarr Folders
+  :path:   Settings --> Media Management --> Folders
+  :value0: Create empty artist folders, ☐
+  :value1: Delete empty folders, ☐
+  :value2: Import Extra Files, ☐
 
-.. ggui:: Lidarr Importing
-  :key_title: Settings --> Media Management --> Importing
-  :option:  Skip Free Space Check,
-            Use Hardlinks Instead of Copy,
-            Import Extra Files
-  :setting: ☐,
-            ☐,
-            ☐
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Lidarr Importing
+  :path:   Settings --> Media Management --> Importing
+  :value0: Skip Free Space Check, ☐
+           Use Hardlinks Instead of Copy, ☐
+           Import Extra Files, ☐
 
-.. ggui:: Lidarr File Management
-  :key_title: Settings --> Media Management --> File Management
-  :option:  Ignore Delete Tracks,
-            Propers and Repacks,
-            Allow Fingerprinting,
-            Change File Date,
-            Recycling Bin
-  :setting: ☐,
-            ☑,
-            ☑,
-            None,
-            /data/downloads/media-trashed
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Lidarr File Management
+  :path:   Settings --> Media Management --> File Management
+  :value0: Ignore Delete Tracks, ☐
+  :value1: Propers and Repacks, ☑
+  :value2: Allow Fingerprinting, ☑
+  :value3: Change File Date, {NONE}
+  :value4: Recycling Bin, /data/downloads/media-trashed
 
-.. ggui:: Lidarr Permissions
-  :key_title: Settings --> Media Management --> Permissions
-  :option:  Set Permissions,
-            File chmod mask,
-            Folder chmod mask,
-            chown User,
-            chown Group
-  :setting: ☑,
-            2660,
-            2770,
-            lidarr {OR DOCKER UID},
-            media {OR DOCKER GID}
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Lidarr Permissions
+  :path:   Settings --> Media Management --> Permissions
+  :value0: Set Permissions, ☑
+  :value1: File chmod mask, 2660
+  :value2: Folder chmod mask, 2770
+  :value3: chown User, lidarr (or docker UID)
+  :value4: chown Group, media {or docker GID)
 
 Profiles
 ********
-.. ggui:: Lidarr Profiles (Any)
-  :key_title: Settings --> Profiles --> Any
-  :option:  Name;
-            Upgrades Allowed;
-            Upgrade Until;
-            ☑ WAV;
-            ☑ APE;
-            ☑ WavPack;
-            ☑ Lossless;
-            ☑ High Quality Lossy;
-            ☑ Mid Quality Lossy;
-            ☑ Low Quality Lossy;
-            ☑ Poor Quality Lossy;
-            ☑ Trash Quality Lossy;
-            ☑ Unknown;
-  :setting: Any;
-            ☑;
-            Unknown;
-            ;
-            ;
-            ;
-            FLAC 24bit, FLAC, ALAC;
-            OGG Vorbis Q10, AAC-320, OGG Vorbis Q9, MP3-320, AAC-VBR, MP3-VBR-V0;
-            AAC-256, OGG Vorbis Q8, MP3-256, MP3-VBR-V2, OGG Vorbis Q7;
-            MP3-224, WMA, AAC-192, OGG Vorbis Q6, MP3-192;
-            MP3-160, OGG Vorbis Q5, MP3-128, MP3-112, MP3-96;
-            MP3-80, MP3-64, MP3-56, MP3-48, MP3-40, MP3-32, MP3-24, MP3-16, MP3-8;
-            ;
-  :delim: ;
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui:: Lidarr Profiles (Any)
+  :path: Settings --> Profiles --> Any
+  :value0:  Name; Any
+  :value1:  Upgrades Allowed; ☑
+  :value2:  Upgrade Until; Unknown
+  :value3:  ☑ WAV;
+  :value4:  ☑ APE;
+  :value5:  ☑ WavPack;
+  :value6:  ☑ Lossless; FLAC 24bit, FLAC, ALAC
+  :value7:  ☑ High Quality Lossy;
+            OGG Vorbis Q10, AAC-320, OGG Vorbis Q9, MP3-320, AAC-VBR, MP3-VBR-V0
+  :value8:  ☑ Mid Quality Lossy;
+            AAC-256, OGG Vorbis Q8, MP3-256, MP3-VBR-V2, OGG Vorbis Q7
+  :value9:  ☑ Low Quality Lossy; MP3-224, WMA, AAC-192, OGG Vorbis Q6, MP3-192
+  :value10: ☑ Poor Quality Lossy;
+            MP3-160, OGG Vorbis Q5, MP3-128, MP3-112, MP3-96
+  :value11: ☑ Trash Quality Lossy;
+            MP3-80, MP3-64, MP3-56, MP3-48, MP3-40, MP3-32, MP3-24, MP3-16, MP3-8
+  :value12: ☑ Unknown;
+  :delim:   ;
 
-.. ggui:: Lidarr Profiles (Lossless)
-  :key_title: Settings --> Profiles --> Lossless
-  :option:  Name;
-            Upgrades Allowed;
-            Upgrade Until;
-            ☐ WAV;
-            ☐ APE;
-            ☐ WavPack;
-            ☑ Lossless;
-            ☐ High Quality Lossy;
-            ☐ Mid Quality Lossy;
-            ☐ Low Quality Lossy;
-            ☐ Poor Quality Lossy;
-            ☐ Trash Quality Lossy;
-            ☐ Unknown;
-  :setting: Lossless;
-            ☑;
-            Lossless;
-            ;
-            ;
-            ;
-            FLAC 24bit, FLAC, ALAC;
-            ;
-            ;
-            ;
-            ;
-            ;
-            ;
-  :delim: ;
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui:: Lidarr Profiles (Lossless)
+  :path: Settings --> Profiles --> Lossless
+  :value0:  Name; Lossless
+  :value1:  Upgrades Allowed; ☑
+  :value2:  Upgrade Until; Lossless
+  :value3:  ☐ WAV;
+  :value4:  ☐ APE;
+  :value5:  ☐ WavPack;
+  :value6:  ☑ Lossless; FLAC 24bit, FLAC, ALAC
+  :value7:  ☐ High Quality Lossy;
+  :value8:  ☐ Mid Quality Lossy;
+  :value9:  ☐ Low Quality Lossy;
+  :value10: ☐ Poor Quality Lossy;
+  :value11: ☐ Trash Quality Lossy;
+  :value12: ☐ Unknown;
+  :delim:   ;
 
-.. ggui:: Lidarr Profiles (Standard)
-  :key_title: Settings --> Profiles --> Standard
-  :option:  Name;
-            Upgrades Allowed;
-            Upgrade Until;
-            ☐ WAV;
-            ☐ APE;
-            ☐ WavPack;
-            ☐ Lossless;
-            ☑ High Quality Lossy;
-            ☑ Mid Quality Lossy;
-            ☑ Low Quality Lossy;
-            ☐ Poor Quality Lossy;
-            ☐ Trash Quality Lossy;
-            ☐ Unknown;
-  :setting: Standard;
-            ☑;
-            High Quality Lossy;
-            ;
-            ;
-            ;
-            ;
-            OGG Vorbis Q10, AAC-320, OGG Vorbis Q9, MP3-320, AAC-VBR, MP3-VBR-V0;
-            AAC-256, OGG Vorbis Q8, MP3-256, MP3-VBR-V2, OGG Vorbis Q7;
-            MP3-224, WMA, AAC-192, OGG Vorbis Q6, MP3-192;
-            ;
-            ;
-            ;
-  :delim: ;
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui:: Lidarr Profiles (Standard)
+  :path: Settings --> Profiles --> Standard
+  :value0:  Name; Standard
+  :value1:  Upgrades Allowed; ☑
+  :value2:  Upgrade Until; High Quality Lossy
+  :value3:  ☐ WAV;
+  :value4:  ☐ APE;
+  :value5:  ☐ WavPack;
+  :value6:  ☐ Lossless;
+  :value7:  ☑ High Quality Lossy;
+            OGG Vorbis Q10, AAC-320, OGG Vorbis Q9, MP3-320, AAC-VBR, MP3-VBR-V0
+  :value8:  ☑ Mid Quality Lossy;
+            AAC-256, OGG Vorbis Q8, MP3-256, MP3-VBR-V2, OGG Vorbis Q7
+  :value9:  ☑ Low Quality Lossy; MP3-224, WMA, AAC-192, OGG Vorbis Q6, MP3-192
+  :value10: ☐ Poor Quality Lossy;
+  :value11: ☐ Trash Quality Lossy;
+  :value12: ☐ Unknown;
+  :delim:   ;
 
-.. ggui:: Lidarr Metadata Profiles (Standard)
-  :key_title: Settings --> Profiles --> Metadata Profiles --> Standard
-  :option:  Name,
-            Primary Types,
-            Secondary Types,
-            Release Studios
-  :setting: Standard,
-            ☑ Album,
-            ☑ Studio,
-            ☑ Official
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Lidarr Metadata Profiles (Standard)
+  :path:   Settings --> Profiles --> Metadata Profiles --> Standard
+  :value0: Name, Standard
+  :value1: Primary Types, ☑ Album
+  :value2: Secondary Types, ☑ Studio
+  :value3: Release Studios, ☑ Official
 
 .. gtable:: Lidarr Delay Profiles
   :key_title: Settings --> Profiles --> Delay Profiles --> +
@@ -228,193 +143,101 @@ Quality
 
 Indexers
 ********
-.. ggui:: Lidarr Indexers
-  :key_title: Settings --> Indexers --> +
-  :option:  Name;
-            Enable RSS;
-            Enable Automatic Search;
-            Enable Interactive Search;
-            URL;
-            API Path;
-            API Key;
-            Categories;
-            Early Download Limit;
-            Additional Parameters
-  :setting: {INDEXER NAME};
-            ☑;
-            ☑;
-            ☑;
-            {INDEXER API URI};
-            /api;
-            {INDEXER API KEY};
-            3000,3010,3020,3030,3040;
-            None;
-            None
-  :no_section:
-  :no_caption:
-  :no_launch:
-  :delim: ;
+.. gui::   Lidarr Indexers
+  :path:   Settings --> Indexers --> +
+  :value0: Name; {INDEXER NAME}
+  :value1: Enable RSS; ☑
+  :value2: Enable Automatic Search; ☑
+  :value3: Enable Interactive Search; ☑
+  :value4: URL; {INDEXER API URI}
+  :value5: API Path; /api
+  :value6: API Key; {KEY}
+  :value7: Categories; 3000,3010,3020,3030,3040
+  :value8: Early Download Limit; {NONE}
+  :value9: Additional Parameters; {NONE}
+  :delim:  ;
 
-.. ggui:: Lidarr Options
-  :key_title: Settings --> Indexers --> Options
-  :option:  Minimum Age,
-            Minimum Size,
-            Retention,
-            RSS Sync Interval
-  :setting: 0,
-            0,
-            0,
-            0
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Lidarr Options
+  :path:   Settings --> Indexers --> Options
+  :value0: Minimum Age, 0
+  :value1: Minimum Size, 0
+  :value2: Retention, 0
+  :value3: RSS Sync Interval, 0
 
 Download Clients
 ****************
-.. ggui:: Lidarr Download Clients
-  :key_title: Settings --> Download Clients --> +
-  :option:  Name,
-            Enable,
-            Host,
-            Port,
-            URL Base,
-            Username,
-            Password,
-            Category,
-            Recent Priority,
-            Older Priority,
-            Add Paused,
-            Use SSL
-  :setting: {INDEXER NAME},
-            ☑,
-            {NZBGET IP},
-            {NZBGET PORT},
-            ,
-            {API USERNAME},
-            {API PASSWORD},
-            music,
-            Normal,
-            Normal,
-            ☐,
-            ☑
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui:: Lidarr Download Clients
+  :path: Settings --> Download Clients --> +
+  :value0:  Name, {INDEXER NAME}
+  :value1:  Enable, ☑
+  :value2:  Host, {IP}
+  :value3:  Port, 6789
+  :value4:  URL Base,
+  :value5:  Username, {USER}
+  :value6:  Password, {PASS}
+  :value7:  Category, music
+  :value8:  Recent Priority, Normal
+  :value9:  Older Priority, Normal
+  :value10: Add Paused, ☐
+  :value11: Use SSL, ☑
 
-.. ggui:: Lidarr Completed Download Handling
-  :key_title: Settings --> Download Clients --> Completed Download Handling
-  :option:  ☑,
-            ☑
-  :setting: Enable,
-            Remove
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Lidarr Completed Download Handling
+  :path:   Settings --> Download Clients --> Completed Download Handling
+  :value0: ☑, {ENABLE}
+  :value1: ☑, Remove
 
-.. ggui:: Lidarr Failed Download Handing
-  :key_title: Settings --> Download Clients --> Failed Download Handling
-  :option:  ☐,
-            ☐
-  :setting: Redownload,
-            Remove
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Lidarr Failed Download Handing
+  :path:   Settings --> Download Clients --> Failed Download Handling
+  :value0: ☐, Redownload
+  :value1: ☐, Remove
 
 General
 *******
-.. ggui:: Lidarr General Host
-  :key_title: Settings --> General --> Host
-  :option:  Bind Address,
-            Port Number,
-            URL Base,
-            Enable SSL
-  :setting: *,
-            8686,
-            ,
-            ☐
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Lidarr General Host
+  :path:   Settings --> General --> Host
+  :value0: Bind Address, *
+  :value1: Port Number, 8686
+  :value2: URL Base,
+  :value3: Enable SSL, ☐
 
-.. ggui:: Lidarr General Security
-  :key_title: Settings --> General --> Security
-  :option:  Authentication,
-            API Key
-  :setting: None,
-            {GENERATE API KEY}
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Lidarr General Security
+  :path:   Settings --> General --> Security
+  :value0: Authentication, {NONE}
+  :value1: API Key, {KEY}
 
-.. ggui:: Lidarr General Proxy
-  :key_title: Settings --> General --> Proxy
-  :option:  Use Proxy
-  :setting: ☐
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Lidarr General Proxy
+  :path:   Settings --> General --> Proxy
+  :value0: Use Proxy, ☐
 
-.. ggui:: Lidarr General Logging
-  :key_title: Settings --> General --> Logging
-  :option:  Log Level
-  :setting: info
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Lidarr General Logging
+  :path:   Settings --> General --> Logging
+  :value0: Log Level, {INFO}
 
-.. ggui:: Lidarr General Analytics
-  :key_title: Settings --> General --> Analytics
-  :option:  Send Anonymous Usage Data
-  :setting: ☐
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Lidarr General Analytics
+  :path:   Settings --> General --> Analytics
+  :value0: Send Anonymous Usage Data, ☐
 
-.. ggui:: Lidarr General Backups
-  :key_title: Settings --> General --> Backups
-  :option:  Folder,
-            Interval,
-            Retention
-  :setting: Backups,
-            7,
-            28
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Lidarr General Backups
+  :path:   Settings --> General --> Backups
+  :value0: Folder, Backups
+  :value1: Interval, 7
+  :value2: Retention, 28
 
 UI
 **
-.. ggui:: Lidarr UI
-  :key_title: Settings --> UI --> Calendar
-  :option:  First Day of Week,
-            Week Column Header
-  :setting: Sunday,
-            Tue 3/25
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Lidarr UI
+  :path:   Settings --> UI --> Calendar
+  :value0: First Day of Week, Sunday
+  :value1: Week Column Header, Tue 3/25
 
-.. ggui:: Lidarr UI Dates
-  :key_title: Settings --> UI --> Dates
-  :option:  Short Date Format,
-            Long Date Format,
-            Time Format,
-            Show Relative Dates
-  :setting: YYYY-MM-DD,
-            Tuesday March 25 2014,
-            17:00/17:30,
-            ☐
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Lidarr UI Dates
+  :path:   Settings --> UI --> Dates
+  :value0: Short Date Format, YYYY-MM-DD
+  :value1: Long Date Format, Tuesday March 25 2014
+  :value2: Time Format, 17:00/17:30
+  :value3: Show Relative Dates, ☐
 
-.. ggui:: Lidarr UI Style
-  :key_title: Settings --> UI --> Style
-  :option:  Enable Color-Impaired mode,
-            Expand Items by Default
-  :setting: ☐,
-            ☐ (All)
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Lidarr UI Style
+  :path:   Settings --> UI --> Style
+  :value0: Enable Color-Impaired mode, ☐
+  :value1: Expand Items by Default, ☐ (All)

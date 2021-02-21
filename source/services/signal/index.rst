@@ -6,16 +6,14 @@ Send encrypted notifications directly to Signal users.
 
 Uses :ref:`1804-server-base-install`.
 
-.. gflocation:: Important File Locations (Signal)
-  :file:    ~/.local/share/signal-cli,
-            /data/signal/data,
-            /data/signal/cli/bin
-  :purpose: Default location for private Signal keys for messaging.,
-            Location for service Signal keys for messaging.,
-            Signal binary.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files:: Signal Files
+  :value0: ~/.local/share/signal-cli,
+           Default location for private Signal keys for messaging
+  :value2: /data/signal/data, Location for service Signal keys for messaging
+  :value3: /data/signal/cli/bin, Signal binary
+  :open:
 
 Server Setup
 ************

@@ -6,69 +6,35 @@ Media streaming service.
 
 See `Plex Docker and Documentation`_.
 
-.. gport:: Ports (Plex)
-  :port:     32400,
-             1900,
-             3005,
-             5353,
-             8324,
-             32410,
-             32412,
-             32413,
-             32414,
-             32469
-  :protocol: TCP,
-             UDP,
-             TCP,
-             UDP,
-             TCP,
-             UDP,
-             UDP,
-             UDP,
-             UDP,
-             TCP
-  :type:     Public,
-             Public,
-             Public,
-             Public,
-             Public,
-             Public,
-             Public,
-             Public,
-             Public,
-             Public
-  :purpose:  Plex Media Server Access.,
-             (Optional) Plex DLNA Server.,
-             (Optional) Control Plex Home Theater via Plex Companion.,
-             (Optional) Bonjour/Avahi discovery.,
-             (Optional) Control Plex for Roku via Plex Companion.,
-             (Optional) GDM network discovery.,
-             (Optional) GDM network discovery.,
-             (Optional) GDM network discovery.,
-             (Optional) GDM network discovery.,
-             (Optional) Plex DLNA Server.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: Plex Ports
+  :value0: 32400, {TCP},   {PUBLIC}, Plex Media Server Access
+  :value1:  1900, {UDP}, {OPTIONAL}, Plex DLNA Server
+  :value2:  3005, {TCP}, {OPTIONAL}, Control Plex Home Theater w/ Plex Companion
+  :value3:  5353, {UDP}, {OPTIONAL}, Bonjour/Avahi discovery
+  :value4:  8324, {TCP}, {OPTIONAL}, Control Plex for Roku w/ Plex Companion
+  :value5: 32410, {UDP}, {OPTIONAL}, GDM network discovery
+  :value6: 32412, {UDP}, {OPTIONAL}, GDM network discovery
+  :value7: 32413, {UDP}, {OPTIONAL}, GDM network discovery
+  :value8: 32414, {UDP}, {OPTIONAL}, GDM network discovery
+  :value9: 32469, {TCP}, {OPTIONAL}, Plex DLNA Server
+  :open:
 
-    .. note::
-      Using host networking will expose all of these ports. It may be better to
-      specify just ``32400``.
+  .. note::
+    Using host networking will expose all of these ports. It may be better to
+    specify just ``32400``.
 
-      See `Plex port usage`_.
+    See `Plex port usage`_.
 
-.. gflocation:: Important File Locations (Plex)
-  :file:    /config,
-            /transcode,
-            /tmp,
-            /data/media
-  :purpose: Server configuration.,
-            Transcoding directory.,
-            Temp directory for transcoding.,
-            Plex media server library.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files:: Plex Files
+  :value0: /config, Server configuration
+  :value1: /transcode, Transcoding directory
+  :value2: /tmp, Temp directory for transcoding
+  :value3: /data/media, Plex media server library
+  :open:
 
 Docker Creation
 ***************

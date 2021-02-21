@@ -6,9 +6,7 @@ import re
 from . import cmdmenu
 from . import config
 
-from .generic import flocation
-from .generic import gui
-from .generic import port
+from .generic import ggui
 from .generic import table
 
 from .windows import wfirewall
@@ -19,18 +17,19 @@ from .windows import wsysprop
 from .windows import wtmanager
 from .windows import wtschedule
 
-from .ubnt import uctree
-from .ubnt import ufirewall
-from .ubnt import ucontroller
+from .v2 import regedit
+from .v2 import gpo
+from .v2 import ubiquiti
+from .v2 import ports
+from .v2 import files
+from .v2 import gui
 
 def setup(app):
   app.add_config_value('ct_separator', config.DEFAULT_SEPARATOR, '')
   app.add_config_value('ct_separator_replace', config.DEFAULT_REPLACE, '')
   cmdmenu.setup(app)
 
-  flocation.setup(app)
-  gui.setup(app)
-  port.setup(app)
+  ggui.setup(app)
   table.setup(app)
 
   wfirewall.setup(app)
@@ -41,9 +40,12 @@ def setup(app):
   wtmanager.setup(app)
   wtschedule.setup(app)
 
-  uctree.setup(app)
-  ufirewall.setup(app)
-  ucontroller.setup(app)
+  regedit.setup(app)
+  gpo.setup(app)
+  ubiquiti.setup(app)
+  ports.setup(app)
+  files.setup(app)
+  gui.setup(app)
 
   return {
     'version': '0.1',

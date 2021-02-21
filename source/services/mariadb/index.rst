@@ -6,23 +6,18 @@ MariaDB is an opensource relational database.
 
 See `MariaDB Docker and Documentation`_.
 
-.. gport:: Ports (MariaDB)
-  :port:     3306
-  :protocol: TCP
-  :type:     Exposed
-  :purpose:  MariaDB DB port.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: MariaDB Ports
+  :value0: 3306, {TCP}, {EXPOSED}, MariaDB DB port
+  :open:
 
-.. gflocation:: Important File Locations (MariaDB)
-  :file:    /config,
-            /config/initdb.d
-  :purpose: DB configuration files and databases.,
-            DB initalization scripts if DB is empty.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files:: MariaDB Files
+  :value0: /config, DB configuration files and databases
+  :value1: /config/initdb.d, DB initalization scripts if DB is empty
+  :open:
 
 Docker Creation
 ***************

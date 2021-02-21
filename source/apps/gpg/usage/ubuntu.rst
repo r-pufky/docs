@@ -68,13 +68,9 @@ Allow User to Automount Yubikeys
 
 Disable Gnome SSH Fuckery
 *************************
-.. ggui:: Disable gnome SSH agent on startup.
-  :key_title: Ubuntu --> Settings --> Session --> Startup --> Advanced
-  :option:  ☐
-  :setting: Launch gnome services on startup
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Disable gnome SSH agent on startup
+  :path:   Ubuntu --> Settings --> Session --> Startup --> Advanced
+  :value0: ☐, Launch gnome services on startup
 
   .. note::
     May be listed as SSH agent

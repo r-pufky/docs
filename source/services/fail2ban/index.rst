@@ -17,16 +17,13 @@ See `fail2ban Docker and Documentation`_.
   :no_key_title:
   :no_launch:
 
-.. gflocation:: Important File Locations (fail2ban)
-  :file:    /data/jail.d,
-            /data/filter.d,
-            /var/log
-  :purpose: Defines how services are watched.,
-            Defines actions on services.,
-            Mapped log location to watch.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files:: fail2ban Files
+  :value0: /data/jail.d, Defines how services are watched
+  :value1: /data/filter.d, Defines actions on services
+  :value2: /var/log, Mapped log location to watch
+  :open:
 
 * Other containers may map their **logging** directories to the system
   ``/var/log`` which will enable ``fail2ban`` to monitor docker container

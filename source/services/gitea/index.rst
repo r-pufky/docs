@@ -7,23 +7,18 @@ private repository use. Can be exposed and used publicly as well.
 
 See `Gitea Docker and Documentation`_ and `Gitea cheat sheet`_.
 
-.. gport:: Ports (Gitea)
-  :port:     3000
-  :protocol: TCP
-  :type:     Exposed
-  :purpose:  http/https connections.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: Gitea Ports
+  :value0: 3000, {TCP}, {EXPOSED}, HTTP/HTTPS connections
+  :open:
 
-.. gflocation:: Important File Locations (Gitea)
-  :file:    /data/services/gitea/conf/app.ini,
-            /data/services/gitea/git
-  :purpose: Settings.,
-            Git repo location.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files:: Gitea Files
+  :value0: /data/services/gitea/conf/app.ini, Settings
+  :value1: /data/services/gitea/git, Git repo location
+  :open:
 
 Docker Creation
 ***************
@@ -114,84 +109,49 @@ configuration:
 
 Navigate to: ``{REVERSE PROXY URI}/install``.
 
-.. ggui:: Database Settings
-  :option:  Database,
-            Path
-  :setting: sqlite3,
-            /data/gitea/gitea.db
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+.. gui::   Database Settings
+  :path:   Database Settings
+  :value0: Database, sqlite3
+  :value1: Path, /data/gitea/gitea.db
 
-.. ggui:: General Settings
-  :option:  Site Title,
-            Repository Root Path,
-            Git LFS Root Path,
-            Run As Username,
-            SSH Server Domain,
-            SSH Server Port,
-            Gitea HTTP Listen Port,
-            Gitea Base URL,
-            Log Path
-  :setting: {YOUR SITE NAME},
-            /data/git/repositories,
-            /data/git/lfs,
-            git,
-            localhost,
-            22,
-            3000,
-            https://{YOUR SUBDOMMAIN OR DOMAIN/PATH}/,
-            /data/gitea/log
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+.. gui::   General Settings
+  :path:   General Settings
+  :value0: Site Title, {SITE}
+  :value1: Repository Root Path, /data/git/repositories
+  :value2: Git LFS Root Path, /data/git/lfs
+  :value3: Run As Username, git
+  :value4: SSH Server Domain, {LOCALHOST}
+  :value5: SSH Server Port, 22
+  :value6: Gitea HTTP Listen Port, 3000
+  :value7: Gitea Base URL, https://{YOUR SUBDOMMAIN OR DOMAIN/PATH}/
+  :value8: Log Path, /data/gitea/log
 
-.. warning::
-  If the base URL in web admin configuration page is not set to your domain, it
-  will appear that everything is working, however intersite links will fail
-  (such as issue updates). This can be changed by editing ``ROOT_URL`` in the
-  ``/data/services/gitea/conf/app.ini`` file post initial configuration.
+  .. warning::
+    If the base URL in web admin configuration page is not set to your domain,
+    it will appear that everything is working, however intersite links will fail
+    (such as issue updates). This can be changed by editing ``ROOT_URL`` in the
+    ``/data/services/gitea/conf/app.ini`` file post initial configuration.
 
-.. ggui:: Optional Settings
-  :option:  ☑,
-            ☑,
-            ☐,
-            ☐,
-            ☑,
-            ☐,
-            ☐,
-            ☑,
-            ☑,
-            ☐,
-            ☑,
-            ☑,
-            Hidden Email Domain,
-            Administrator Account Settings,
-            › Administration Username,
-            › Password,
-            › Confirm Password,
-            › Email Address
-  :setting: Enable Local Mode,
-            Disable Gravatar,
-            Enable Federated Avatars,
-            Enable OpenID Sign-In,
-            Disable Self-Registration,
-            Allow Registration Only Through External Services,
-            Enable OpenID Self-Registration,
-            Enable CAPTCHA,
-            Require Sign-In to View Pages,
-            Hide Email Addresses by Default,
-            Allow Creation of Organizations by Default,
-            Enable Time Tracking by Default,
-            users.noreply.{DOMAIN},
-            ,
-            {USER},
-            {PASS},
-            {PASS},
-            {EMAIL}
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+.. gui::    Optional Settings
+  :path:    Optional Settings
+  :value0:  ☑, Enable Local Mode
+  :value1:  ☑, Disable Gravatar
+  :value2:  ☐, Enable Federated Avatars
+  :value3:  ☐, Enable OpenID Sign-In
+  :value4:  ☑, Disable Self-Registration
+  :value5:  ☐, Allow Registration Only Through External Services
+  :value6:  ☐, Enable OpenID Self-Registration
+  :value7:  ☑, Enable CAPTCHA
+  :value8:  ☑, Require Sign-In to View Pages
+  :value9:  ☐, Hide Email Addresses by Default
+  :value10: ☑, Allow Creation of Organizations by Default
+  :value11: ☑, Enable Time Tracking by Default
+  :value12: Hidden Email Domain, users.noreply.{DOMAIN}
+  :value13: Administrator Account Settings,
+  :value14: › Administration Username, {USER}
+  :value15: › Password, {PASS}
+  :value16: › Confirm Password, {PASS}
+  :value17: › Email Address, {EMAIL}
 
 Mirrors
 *******
@@ -199,22 +159,14 @@ Mirrors
 setup to do so. This will also allow for local forking of those mirrors for
 indiviudal use.
 
-.. ggui:: Create Mirror
-  :key_title: + --> New Migration
-  :option:  Migrate / Clone from URL,
-            Owner,
-            Repository Name,
-            Visibility,
-            Migration Type,
-            Description
-  :setting: {REMOTE REPOSITORY URL},
-            {ORGANIZATION OWNER},
-            {SAME REPO NAME},
-            ☑ Make Repository Private,
-            ☑ This repository will be a mirror,
-            {DESCRIPTION}
-  :no_caption:
-  :no_launch:
+.. gui::   Create Mirror
+  :path:   + --> New Migration
+  :value0: Migrate / Clone from URL, {REMOTE REPOSITORY URL}
+  :value1: Owner, {ORGANIZATION OWNER}
+  :value2: Repository Name, {SAME REPO NAME}
+  :value3: Visibility, ☑ Make Repository Private
+  :value4: Migration Type, ☑ This repository will be a mirror
+  :value5: Description, {DESCRIPTION}
 
 Importing Git Repositories
 **************************

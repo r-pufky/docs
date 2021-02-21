@@ -71,30 +71,22 @@ working before final placement, it is probably a swapped connection.
 Verify the device downstream is the *correct device* using the *same trunk port
 profile*.
 
-.. ucontroller:: Add Static Host
-  :key_title:    Devices -->
-                 {UPSTREAM SWITCH} -->
-                 Properties -->
-                 Ports -->
-                 Status
-  :option:       Downlink,
-                 Profile
-  :setting:      {EXPECTED SWITCH},
-                 {EXPECTED SWITCH PORT PROFILE}
-  :no_section:
-  :no_caption:
+.. ubiquiti:: Verify downstream device is correct
+  :path:      Devices -->
+              {UPSTREAM_SWITCH} -->
+              Properties -->
+              Ports -->
+              Status
+  :value0:    Downlink, {EXPECTED_SWITCH}
+  :value1:    Profile, {EXPECTED_SWITCH_PORT_PROFILE}
 
-.. ucontroller:: Add Static Host
-  :key_title:    Devices -->
-                 {DOWNSTREAM SWITCH} -->
-                 Properties -->
-                 Ports -->
-                 Status
-  :option:       Downlink,
-                 Profile
-  :setting:      {EXPECTED SWITCH},
-                 {EXPECTED SWITCH PORT PROFILE}
-  :no_section:
-  :no_caption:
+.. ubiquiti:: Verify upstream device is correct
+  :path:      Devices -->
+              {DOWNSTREAM_SWITCH} -->
+              Properties -->
+              Ports -->
+              Status
+  :value0:    Downlink, {EXPECTED_SWITCH}
+  :value1:    Profile, {EXPECTED_SWITCH_PORT_PROFILE}
 
 .. _regardless of switch load: https://community.ui.com/questions/6068efd3-bc6f-4db3-b2f1-ee1fba98c178

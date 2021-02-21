@@ -16,22 +16,19 @@ Block location tracking
 
   Ask before sending (Recommended) = Disabled
 
-`Disable Software Reporting`_
-*****************************
+Disable Software Reporting
+**************************
 
-.. wregedit:: Disable Chrome running software reporting tool.
-  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome
-  :names:     ChromeCleanupEnabled
-  :types:     DWORD
-  :data:      0
-  :no_section:
+.. regedit:: Disable Chrome running software reporting tool.
+  :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome
+  :value0:   ChromeCleanupEnabled, {DWORD}, 0
+  :ref:      https://www.ghacks.net/2018/01/20/how-to-block-the-chrome-software-reporter-tool-software_reporter_tool-exe/
+  :update:   2021-02-12
+  :open:
 
-.. wregedit:: Disable reporting results to Google.
-  :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome
-  :names:     ChromeCleanupReportingEnabled
-  :types:     DWORD
-  :data:      0
-  :no_section:
-  :no_launch:
-
-.. _Disable Software Reporting: https://www.ghacks.net/2018/01/20/how-to-block-the-chrome-software-reporter-tool-software_reporter_tool-exe/
+.. regedit:: Disable reporting results to Google.
+  :path:      HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome
+  :value0:    ChromeCleanupReportingEnabled, {DWORD}, 0
+  :ref:      https://www.ghacks.net/2018/01/20/how-to-block-the-chrome-software-reporter-tool-software_reporter_tool-exe/
+  :update:    2021-02-12
+  :open:

@@ -9,33 +9,21 @@ for all connections to docker containers using Let's Encrypt.
 
 See `Firefly Docker and Documentation`_.
 
-.. gport:: Ports (Firefly)
-  :port:     443,
-             80,
-             5432
-  :protocol: TCP,
-             TCP,
-             TCP
-  :type:     Public,
-             Private,
-             Private
-  :purpose:  https connections.,
-             Firefly web UI.,
-             Postgres SQL.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: Firefly Ports
+  :value0:  443, {TCP},  {PUBLIC}, HTTPS connections
+  :value1:   80, {TCP}, {PRIVATE}, Firefly web UI
+  :value2: 5432, {TCP}, {PRIVATE}, Postgres SQL
+  :open:
 
-.. gflocation:: Important File Locations (Firefly)
-  :file:    /var/www/firefly-iii/storage/export,
-            /var/www/firefly-iii/storage/upload,
-            /var/lib/postgresql/data
-  :purpose: Exported data location.,
-            Uploaded docs location.,
-            Postgres DB.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files:: Firefly Files
+  :value0: /var/www/firefly-iii/storage/export, Exported data location
+  :value1: /var/www/firefly-iii/storage/upload, Uploaded docs location
+  :value2: /var/lib/postgresql/data, Postgres DB
+  :open:
 
 `Docker Creation`_
 ******************
@@ -129,13 +117,11 @@ initial container creation.
 
 Login to Site, first user created is an **administrator**.
 
-.. ggui:: Verify Password Security
-  :option:  ☑
-  :setting: Verify password security
-  :no_key_title:
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Verify Password Security
+  :path:   Administration -->
+           Configuration
+  :value0: ☑, Verify password security
+  :open:
 
 .. note::
   `Verifying password security`_ checks that the password used is not in known

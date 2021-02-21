@@ -7,311 +7,159 @@ Unmentioned options are defaults.
 
 Media Management
 ****************
-.. ggui:: Radarr Movie Naming
-  :key_title: Settings --> Media Management --> Movie Naming
-  :option:  Rename Episodes,
-            Replace Illegal Characters,
-            Colon Replacement Format,
-            Standard Movie Format,
-            Movie Folder Format
-  :setting: Yes,
-            Yes,
-            Delete,
-            {Movie TitleThe} ({Release Year}){ - Edition Tags},
-            {Movie TitleThe} ({Release Year})
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Radarr Movie Naming
+  :path:   Settings --> Media Management --> Movie Naming
+  :value0: Rename Episodes, {YES}
+  :value1: Replace Illegal Characters, {YES}
+  :value2: Colon Replacement Format, {DELETE}
+  :value3: Standard Movie Format, {Movie TitleThe} ({Release Year}){ - Edition Tags}
+  :value4: Movie Folder Format, {Movie TitleThe} ({Release Year})
 
-.. ggui:: Radarr Folders
-  :key_title: Settings --> Media Management --> Folders
-  :option:  Create empty movie folders,
-            Automatically Rename Folders,
-            Movie Paths Default to Static
-  :setting: No,
-            Yes,
-            Yes
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Radarr Folders
+  :path:   Settings --> Media Management --> Folders
+  :value0: Create empty movie folders, {NO}
+  :value1: Automatically Rename Folders, {YES}
+  :value2: Movie Paths Default to Static, {YES}
 
-.. ggui:: Radarr Importing
-  :key_title: Settings --> Media Management --> Importing
-  :option:  Skip Free Space Check,
-            Use Hardlinks Instead of Copy,
-            Import Extra Files
-  :setting: No,
-            No,
-            No
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Radarr Importing
+  :path:   Settings --> Media Management --> Importing
+  :value0: Skip Free Space Check, {NO}
+  :value1: Use Hardlinks Instead of Copy, {NO}
+  :value2: Import Extra Files, {NO}
 
-.. ggui:: Radarr File Management
-  :key_title: Settings --> Media Management --> File Management
-  :option:  Unmonitor Deleted Movies,
-            Download Propers,
-            Analyse video files,
-            Change File Date,
-            Recycling Bin
-  :setting: No,
-            Yes,
-            Yes,
-            None,
-            /data/downloads/media-trashed
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Radarr File Management
+  :path:   Settings --> Media Management --> File Management
+  :value0: Unmonitor Deleted Movies, {NO}
+  :value1: Download Propers, {YES}
+  :value2: Analyse video files, {YES}
+  :value3: Change File Date, {NONE}
+  :value4: Recycling Bin, /data/downloads/media-trashed
 
-.. ggui:: Radarr Permissions
-  :key_title: Settings --> Media Management --> Permissions
-  :option:  Set Permissions,
-            File chmod mask,
-            Folder chmod mask,
-            chown User,
-            chown Group
-  :setting: Yes,
-            2660,
-            2770,
-            radarr {OR DOCKER UID},
-            media {OR DOCKER GID}
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Radarr Permissions
+  :path:   Settings --> Media Management --> Permissions
+  :value0: Set Permissions, {YES}
+  :value1: File chmod mask, 2660
+  :value2: Folder chmod mask, 2770
+  :value3: chown User, radarr (or docker UID)
+  :value4: chown Group, media (or docker GID)
 
 Profiles
 ********
-.. ggui:: Radarr Profiles (Any)
-  :key_title: Settings --> Profiles --> Any
-  :option:  Name,
-            Language,
-            Preferred Tags,
-            Cutoff,
-            Custom Format Cutoff,
-            Qualities,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            Custom Formats
-  :setting: Any,
-            English,
-            ,
-            Bluray-480p,
-            None,
-            ,
-            ☐ Raw HD,
-            ☑ BR-DISK,
-            ☑ Remux-2160p,
-            ☑ Bluray-2160p,
-            ☑ WEBDL-2160p,
-            ☑ HDTV-2160p,
-            ☑ Remux-1080p,
-            ☑ Bluray-1080p,
-            ☑ WEBDL-1080p,
-            ☑ HDTV-1080p,
-            ☑ Bluray-720p,
-            ☑ WEBDL-720p,
-            ☑ HDTV-720p,
-            ☑ Bluray-576p,
-            ☑ Bluray-480p,
-            ☑ WEBDL-480p,
-            ☑ DVD-R,
-            ☑ DVD,
-            ☑ SDTV,
-            ☑ DVDSCR,
-            ☑ REGIONAL,
-            ☑ TELECINE,
-            ☑ TELESYNC,
-            ☑ CAM,
-            ☑ WORKPRINT,
-            ☐ Unknown,
-            ☑ None
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::    Radarr Profiles (Any)
+  :path:    Settings --> Profiles --> Any
+  :value0:  Name, {ANY}
+  :value1:  Language, English
+  :value2:  Preferred Tags,
+  :value3:  Cutoff, Bluray-480p
+  :value4:  Custom Format Cutoff, {NONE}
+  :value5:  Qualities,
+  :value6:  ›, ☐ Raw HD
+  :value7:  ›, ☑ BR-DISK
+  :value8:  ›, ☑ Remux-2160p
+  :value9:  ›, ☑ Bluray-2160p
+  :value10: ›, ☑ WEBDL-2160p
+  :value11: ›, ☑ HDTV-2160p
+  :value12: ›, ☑ Remux-1080p
+  :value13: ›, ☑ Bluray-1080p
+  :value14: ›, ☑ WEBDL-1080p
+  :value15: ›, ☑ HDTV-1080p
+  :value16: ›, ☑ Bluray-720p
+  :value17: ›, ☑ WEBDL-720p
+  :value18: ›, ☑ HDTV-720p
+  :value19: ›, ☑ Bluray-576p
+  :value20: ›, ☑ Bluray-480p
+  :value21: ›, ☑ WEBDL-480p
+  :value22: ›, ☑ DVD-R
+  :value23: ›, ☑ DVD
+  :value24: ›, ☑ SDTV
+  :value25: ›, ☑ DVDSCR
+  :value26: ›, ☑ REGIONAL
+  :value27: ›, ☑ TELECINE
+  :value28: ›, ☑ TELESYNC
+  :value29: ›, ☑ CAM
+  :value30: ›, ☑ WORKPRINT
+  :value31: ›, ☐ Unknown
+  :value32: Custom Formats, ☑ None
 
-.. ggui:: Radarr Profiles (SD)
-  :key_title: Settings --> Profiles --> SD
-  :option:  Name,
-            Language,
-            Preferred Tags,
-            Cutoff,
-            Custom Format Cutoff,
-            Qualities,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            Custom Formats
-  :setting: SD,
-            English,
-            ,
-            Bluray-480p,
-            None,
-            ,
-            ☑ Bluray-576p,
-            ☑ Bluray-480p,
-            ☑ WEBDL-480p,
-            ☑ DVD,
-            ☑ SDTV,
-            ☑ DVDSCR,
-            ☑ REGIONAL,
-            ☑ TELECINE,
-            ☑ TELESYNC,
-            ☑ CAM,
-            ☑ WORKPRINT,
-            ☑ None
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::    Radarr Profiles (SD)
+  :path:    Settings --> Profiles --> SD
+  :value0:  Name, SD
+  :value1:  Language, English
+  :value2:  Preferred Tags,
+  :value3:  Cutoff, Bluray-480p
+  :value4:  Custom Format Cutoff, {NONE}
+  :value5:  Qualities,
+  :value6:  ›, ☑ Bluray-576p
+  :value7:  ›, ☑ Bluray-480p
+  :value8:  ›, ☑ WEBDL-480p
+  :value9:  ›, ☑ DVD
+  :value10: ›, ☑ SDTV
+  :value11: ›, ☑ DVDSCR
+  :value12: ›, ☑ REGIONAL
+  :value13: ›, ☑ TELECINE
+  :value14: ›, ☑ TELESYNC
+  :value15: ›, ☑ CAM
+  :value16: ›, ☑ WORKPRINT
+  :value17: Custom Formats, ☑ None
 
-.. ggui:: Radarr Profiles (HD-720p)
-  :key_title: Settings --> Profiles --> HD-720p
-  :option:  Name,
-            Language,
-            Preferred Tags,
-            Cutoff,
-            Custom Format Cutoff,
-            Qualities,
-            ›,
-            ›,
-            ›,
-            Custom Formats
-  :setting: HD-720p,
-            English,
-            ,
-            Bluray-720p,
-            None,
-            ,
-            ☑ Bluray-720p,
-            ☑ WEBDL-720p,
-            ☑ HDTV-720p,
-            ☑ None
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Radarr Profiles (HD-720p)
+  :path:   Settings --> Profiles --> HD-720p
+  :value0: Name, HD-720p
+  :value1: Language, English
+  :value2: Preferred Tags,
+  :value3: Cutoff, Bluray-720p
+  :value4: Custom Format Cutoff, {NONE}
+  :value5: Qualities,
+  :value6: ›, ☑ Bluray-720p
+  :value7: ›, ☑ WEBDL-720p
+  :value8: ›, ☑ HDTV-720p
+  :value9: Custom Formats, ☑ None
 
-.. ggui:: Radarr Profiles (HD-1080p)
-  :key_title: Settings --> Profiles --> HD-1080p
-  :option:  Name,
-            Language,
-            Preferred Tags,
-            Cutoff,
-            Custom Format Cutoff,
-            Qualities,
-            ›,
-            ›,
-            ›,
-            ›,
-            Custom Formats
-  :setting: HD-1080p,
-            English,
-            ,
-            Bluray-480p,
-            None,
-            ,
-            ☑ Remux-1080p,
-            ☑ Bluray-1080p,
-            ☑ WEBDL-1080p,
-            ☑ HDTV-1080p,
-            ☑ None
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Radarr Profiles (HD-1080p)
+  :path:   Settings --> Profiles --> HD-1080p
+  :value0: Name, HD-1080p
+  :value1: Language, English
+  :value2: Preferred Tags,
+  :value3: Cutoff, Bluray-480p
+  :value4: Custom Format Cutoff, {NONE}
+  :value5: Qualities,
+  :value6: ›, ☑ Remux-1080p
+  :value7: ›, ☑ Bluray-1080p
+  :value8: ›, ☑ WEBDL-1080p
+  :value9: ›, ☑ HDTV-1080p
+  :value10: Custom Formats, ☑ None
 
-.. ggui:: Radarr Profiles (Ultra-HD)
-  :key_title: Settings --> Profiles --> Ultra-HD
-  :option:  Name,
-            Language,
-            Preferred Tags,
-            Cutoff,
-            Custom Format Cutoff,
-            Qualities,
-            ›,
-            ›,
-            ›,
-            ›,
-            Custom Formats
-  :setting: Ultra-HD,
-            English,
-            ,
-            Remux-2160p,
-            None,
-            ,
-            ☑ Remux-2160p,
-            ☑ Bluray-2160p,
-            ☑ WEBDL-2160p,
-            ☑ HDTV-2160p,
-            ☑ None
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui:: Radarr Profiles (Ultra-HD)
+  :path: Settings --> Profiles --> Ultra-HD
+  :value0: Name, Ultra-HD
+  :value1: Language, English
+  :value2: Preferred Tags,
+  :value3: Cutoff, Remux-2160p
+  :value4: Custom Format Cutoff, {NONE}
+  :value5: Qualities,
+  :value6: ›, ☑ Remux-2160p
+  :value7: ›, ☑ Bluray-2160p
+  :value8: ›, ☑ WEBDL-2160p
+  :value9: ›, ☑ HDTV-2160p
+  :value10: Custom Formats, ☑ None
 
-.. ggui:: Radarr Profiles (HD - 720p/1080p)
-  :key_title: Settings --> Profiles --> HD - 720p/1080p
-  :option:  Name,
-            Language,
-            Preferred Tags,
-            Cutoff,
-            Custom Format Cutoff,
-            Qualities,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            ›,
-            Custom Formats
-  :setting: HD - 720p/1080p,
-            English,
-            ,
-            Bluray-720p,
-            None,
-            ,
-            ☑ Remux-2160p,
-            ☑ Remux-1080p,
-            ☑ Bluray-1080p,
-            ☑ WEBDL-1080p,
-            ☑ HDTV-1080p,
-            ☑ Bluray-720p,
-            ☑ WEBDL-720p,
-            ☑ HDTV-720p,
-            ☑ None
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui:: Radarr Profiles (HD - 720p/1080p)
+  :path: Settings --> Profiles --> HD - 720p/1080p
+  :value0:  Name, HD - 720p/1080p
+  :value1:  Language, English
+  :value2:  Preferred Tags,
+  :value3:  Cutoff, Bluray-720p
+  :value4:  Custom Format Cutoff, {NONE}
+  :value5:  Qualities,
+  :value6:  ›, ☑ Remux-2160p
+  :value7:  ›, ☑ Remux-1080p
+  :value8:  ›, ☑ Bluray-1080p
+  :value9:  ›, ☑ WEBDL-1080p
+  :value10: ›, ☑ HDTV-1080p
+  :value11: ›, ☑ Bluray-720p
+  :value12: ›, ☑ WEBDL-720p
+  :value13: ›, ☑ HDTV-720p
+  :value14: Custom Formats, ☑ None
 
 .. gtable:: Radarr Delay Profiles
   :key_title: Settings --> Profiles --> Delay Profiles --> +
@@ -355,269 +203,143 @@ Quality
 
 Indexers
 ********
-.. ggui:: Radarr Indexers
-  :key_title: Settings --> Indexers --> +
-  :option:  Name;
-            Enable RSS;
-            Enable Search;
-            URL;
-            Multi Languages;
-            API Key;
-            Categories;
-            Anime Categories;
-            Additional Parameters;
-            Remove year from search string;
-            Search by Title
-  :setting: {INDEXER NAME};
-            Yes;
-            Yes;
-            {INDEXER API URI};
-            ;
-            {INDEXER API KEY};
-            2000,2010,2020,2030,2035,2040,2045,2050,2060;
-            ;
-            ;
-            No;
-            No
-  :no_section:
-  :no_caption:
-  :no_launch:
-  :delim: ;
+.. gui::    Radarr Indexers
+  :path:    Settings --> Indexers --> +
+  :value0:  Name; {INDEXER NAME}
+  :value1:  Enable RSS; {YES}
+  :value2:  Enable Search; {YES}
+  :value3:  URL; {INDEXER API URI}
+  :value4:  Multi Languages;
+  :value5:  API Key; {KEY}
+  :value6:  Categories; 2000,2010,2020,2030,2035,2040,2045,2050,2060
+  :value7:  Anime Categories;
+  :value8:  Additional Parameters;
+  :value9:  Remove year from search string; {NO}
+  :value10: Search by Title, {NO}
+  :delim:   ;
 
-.. ggui:: Radarr Options
-  :key_title: Settings --> Indexers --> Options
-  :option:  Minimum Age,
-            Retention,
-            Maximum Size,
-            Prefer Special Indexer Flags,
-            RSS Sync Interval,
-            Whiteliste Subtitle Tags,
-            Allow Hardcoded Subs,
-            Parser Leniency
-  :setting: 0,
-            0,
-            0,
-            No,
-            0,
-            ,
-            No,
-            Strict
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Radarr Options
+  :path:   Settings --> Indexers --> Options
+  :value0: Minimum Age, 0
+  :value1: Retention, 0
+  :value2: Maximum Size, 0
+  :value3: Prefer Special Indexer Flags, {NO}
+  :value4: RSS Sync Interval, 0
+  :value5: Whiteliste Subtitle Tags,
+  :value6: Allow Hardcoded Subs, {NO}
+  :value7: Parser Leniency, Strict
 
-.. ggui:: Radarr Availability Options
-  :key_title: Settings --> Indexers --> Availability Options
-  :option:  Availability Delay
-  :setting: 0
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Radarr Availability Options
+  :path:   Settings --> Indexers --> Availability Options
+  :value0: Availability Delay, 0
 
 Download Client
 ***************
-.. ggui:: Radarr Download Client
-  :key_title: Settings --> Download Client --> +
-  :option:  Name,
-            Enable,
-            Host,
-            Port,
-            URL Base,
-            Username,
-            Password,
-            Category,
-            Recent Priority,
-            Older Priority,
-            Use SSL,
-            Add Paused
-  :setting: {INDEXER NAME},
-            Yes,
-            {NZBGET IP},
-            {NZBGET PORT},
-            ,
-            {API USERNAME},
-            {API PASSWORD},
-            movies,
-            Normal,
-            Normal,
-            Yes,
-            No
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::    Radarr Download Client
+  :path:    Settings --> Download Client --> +
+  :value0:  Name, {INDEXER NAME} 
+  :value1:  Enable, {YES}
+  :value2:  Host, {IP}
+  :value3:  Port, 6789
+  :value4:  URL Base,
+  :value5:  Username, {USER}
+  :value6:  Password, {PASS}
+  :value7:  Category, movies
+  :value8:  Recent Priority, Normal
+  :value9:  Older Priority, Normal
+  :value10: Use SSL, {YES}
+  :value11: Add Paused, {NO}
 
-.. ggui:: Radarr Completed Download Handling
-  :key_title: Settings --> Download Client --> Completed Download Handling
-  :option:  Enable,
-            Remove,
-            Check For Finished Downloads Interval
-  :setting: Yes,
-            Yes,
-            1
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Radarr Completed Download Handling
+  :path:   Settings --> Download Client --> Completed Download Handling
+  :value0: Enable, {YES}
+  :value1: Remove, {YES}
+  :value2: Check For Finished Downloads Interval, 1
 
-.. ggui:: Radarr Failed Download Handing
-  :key_title: Settings --> Download Client --> Failed Download Handling
-  :option:  Redownload
-  :setting: No
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Radarr Failed Download Handing
+  :path:   Settings --> Download Client --> Failed Download Handling
+  :value0: Redownload, {NO}
 
-.. ggui:: Radarr Drone Factory Options
-  :key_title: Settings --> Download Client --> Drone Factory Options
-  :option:  Drone Factory,
-            Drone Factory Interval
-  :setting: ,
-            0
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Radarr Drone Factory Options
+  :path:   Settings --> Download Client --> Drone Factory Options
+  :value0: Drone Factory,
+  :value1: Drone Factory Interval, 0
 
 Connect
 *******
-.. ggui:: Radarr Connect
-  :key_title: Settings --> Connect --> Connections --> +
-  :option:  Name,
-            On Grab,
-            On Download,
-            On Upgrade,
-            On Rename,
-            Filter Movie Tags,
-            Host,
-            Port,
-            Username,
-            Password,
-            Update Library,
-            Use SSL
-  :setting: Plex Server,
-            No,
-            Yes,
-            Yes,
-            Yes,
-            ,
-            {PLEX IP},
-            {PLEX PORT},
-            {PLEX USERNAME},
-            {PLEX PASSWORD},
-            No,
-            Yes
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui:: Radarr Connect
+  :path: Settings --> Connect --> Connections --> +
+  :value0:  Name, Plex Server
+  :value1:  On Grab, {NO}
+  :value2:  On Download, {YES}
+  :value3:  On Upgrade, {YES}
+  :value4:  On Rename, {YES}
+  :value5:  Filter Movie Tags,
+  :value6:  Host, {IP}
+  :value7:  Port, {PASS}
+  :value8:  Username, {USER}
+  :value9:  Password, {PASS}
+  :value10: Update Library, {NO}
+  :value11: Use SSL, {YES}
 
 General
 *******
-.. ggui:: Radarr General Host
-  :key_title: Settings --> General --> Start-Up
-  :option:  Bind Address,
-            Port Number,
-            URL Base,
-            Enable SSL,
-            Open browser on start
-  :setting: *,
-            7878,
-            ,
-            No,
-            No
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Radarr General Host
+  :path:   Settings --> General --> Start-Up
+  :value0: Bind Address, *
+  :value1: Port Number, 7878
+  :value2: URL Base,
+  :value3: Enable SSL, {NO}
+  :value4: Open browser on start, {NO}
 
-.. ggui:: Radarr General Security
-  :key_title: Settings --> General --> Security
-  :option:  Authentication,
-            API Key,
-            Certificate Validation
-  :setting: None,
-            {GENERATE API KEY},
-            Disabled for Local Addresses
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Radarr General Security
+  :path:   Settings --> General --> Security
+  :value0: Authentication, {NONE}
+  :value1: API Key, {KEY}
+  :value2: Certificate Validation, Disabled for Local Addresses
 
-    Certificate validation needs to be disabled for local addresses as let's
-    encrypt certs presented using a non-routable IP will fail full-chain
-    validation, which is the `default validation method`_ as of 2020-11-01.
+  Certificate validation needs to be disabled for local addresses as let's
+  encrypt certs presented using a non-routable IP will fail full-chain
+  validation, which is the `default validation method`_ as of 2020-11-01.
 
-.. ggui:: Radarr General Proxy
-  :key_title: Settings --> General --> Proxy
-  :option:  Use Proxy
-  :setting: No
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Radarr General Proxy
+  :path:   Settings --> General --> Proxy
+  :value0: Use Proxy, {NO}
 
-.. ggui:: Radarr General Logging
-  :key_title: Settings --> General --> Logging
-  :option:  Log Level
-  :setting: info
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Radarr General Logging
+  :path:   Settings --> General --> Logging
+  :value0: Log Level, {INFO}
 
-.. ggui:: Radarr General Analytics
-  :key_title: Settings --> General --> Analytics
-  :option:  Enable
-  :setting: No
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Radarr General Analytics
+  :path:   Settings --> General --> Analytics
+  :value0: Enable, {NO}
 
-.. ggui:: Radarr General Updates
-  :key_title: Settings --> General --> Updates
-  :option:  Branch,
-            Automatic,
-            Mechanism
-  :setting: master,
-            On,
-            Built-in
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Radarr General Updates
+  :path:   Settings --> General --> Updates
+  :value0: Branch, master
+  :value1: Automatic, {ON}
+  :value2: Mechanism, Built-in
 
 UI
 **
-.. ggui:: Radarr UI Movies
-  :key_title: Settings --> UI --> Movies
-  :option:  Page Size
-  :setting: 250
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Radarr UI Movies
+  :path:   Settings --> UI --> Movies
+  :value0: Page Size, 250
 
-.. ggui:: Radarr UI Calendar
-  :key_title: Settings --> UI --> Calendar
-  :option:  First Day of Week,
-            Week Column Header
-  :setting: Sunday,
-            Tue 3/25
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Radarr UI Calendar
+  :path:   Settings --> UI --> Calendar
+  :value0: First Day of Week, Sunday
+  :value1: Week Column Header, Tue 3/25
 
-.. ggui:: Radarr UI Dates
-  :key_title: Settings --> UI --> Dates
-  :option:  Short Date Format,
-            Long Date Format,
-            Time Format,
-            Show Relative Dates
-  :setting: YYYY-MM-DD,
-            Tuesday March 25 2014,
-            17:00/17:30,
-            No
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui:: Radarr UI Dates
+  :path: Settings --> UI --> Dates
+  :value0: Short Date Format, YYYY-MM-DD
+  :value1: Long Date Format, Tuesday March 25 2014
+  :value2: Time Format, 17:00/17:30
+  :value3: Show Relative Dates, {NO}
 
-.. ggui:: Radarr UI Style
-  :key_title: Settings --> UI --> Style
-  :option:  Enable Color-Impaired mode
-  :setting: No
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Radarr UI Style
+  :path:   Settings --> UI --> Style
+  :value0: Enable Color-Impaired mode, {NO}
 
 .. _default validation method: https://old.reddit.com/r/radarr/comments/k3pifj/connection_to_sabnzbd_broken_after_update/

@@ -2,27 +2,20 @@
 
 NGINX Setup
 ###########
-.. gport:: Ports (NGINX)
-  :port:     80,
-             443
-  :protocol: TCP,
-             TCP
-  :type:     Public,
-             Public
-  :purpose:  http connection -- redirected to https.,
-             https connections.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
 
-.. gflocation:: Important File Locations (NGINX)
-  :file:    /etc/nginx/conf.d,
-            /etc/nginx/ssl
-  :purpose: Proxy configuration settings.,
-            SSL certificate location.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: NGINX Ports
+  :value0:  80, {TCP}, {PUBLIC}, HTTPS connection (redirected to HTTPS)
+  :value1: 443, {TCP}, {PUBLIC}, HTTPS connections
+  :open:
+
+Files
+*****
+.. files:: NGINX Files
+  :value0: /etc/nginx/conf.d, Proxy configuration settings
+  :value1: /etc/nginx/ssl, SSL certificate location
+  :open:
 
 Docker Creation
 ***************

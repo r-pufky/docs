@@ -9,57 +9,27 @@ See `Unifi Docker and Documentation`_.
 Read :ref:`example-vlan-network` for detailed configuration instructions on
 an example network.
 
-.. gport:: Ports (Unifi Controller)
-  :port:     3478,
-             8080,
-             8443,
-             8880,
-             8843,
-             6789,
-             27117,
-             5656-5699,
-             10001,
-             1900
-  :protocol: UDP,
-             TCP,
-             TCP,
-             TCP,
-             TCP,
-             TCP,
-             TCP,
-             UDP,
-             UDP,
-             UDP
-  :type:     Public,
-             Public,
-             Public,
-             Public,
-             Public,
-             Disabled,
-             Disabled,
-             Disabled,
-             Disabled,
-             Disabled
-  :purpose:  Port used for STUN.,
-             Port used for device and controller communication.,
-             Port used for controller GUI/API as seen in a web browser.,
-             Port used for HTTP portal redirection.,
-             Port used for HTTPS portal redirection.,
-             Port used for UniFi mobile speed test.,
-             Port used for local-bound database communication.,
-             Ports used by AP-EDU broadcasting.,
-             Port used for AP discovery.,
-             Port used for "Make controller discoverable on L2 network" in controller settings.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: Unifi Controller Ports
+  :value0:      3478, {UDP},  {PUBLIC}, STUN
+  :value1:      8080, {TCP},  {PUBLIC}, Device and controller communication
+  :value2:      8443, {TCP},  {PUBLIC}, Controller GUI/API webface
+  :value3:      8880, {TCP},  {PUBLIC}, HTTP portal redirection
+  :value4:      8843, {TCP},  {PUBLIC}, HTTPS portal redirection
+  :value5:      6789, {TCP}, {DISABLE}, UniFi mobile speed test
+  :value6:     27117, {TCP}, {DISABLE}, local-bound database communication
+  :value7: 5656-5699, {UDP}, {DISABLE}, AP-EDU broadcasting
+  :value8:     10001, {UDP}, {DISABLE}, AP discovery
+  :value9:      1900, {UDP}, {DISABLE}, "Make controller discoverable on L2
+                                        network" in controller setting
+  :open:
 
-.. gflocation:: Important File Locations (Unifi Controller)
-  :file:    /config
-  :purpose: Unifi main service directory.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files:: Unifi Controller Files
+  :value0: /config, Unifi main service directory
+  :open:
 
 Docker Creation
 ***************
@@ -115,43 +85,34 @@ Router Configuration
 Forward traffic to Unifi Controller for AP to be managed - will be located
 slightly differently for each router.
 
-.. ufirewall:: Allow AP management to controller.
-  :key_title:  Firewall Policies -->
-               WIFI_IN -->
-               Actions -->
-               Interfaces
-  :option:     Description,
-               Source,
-               Destination,
-               Protocol,
-               Action
-  :setting:    AP Management,
-               {AP IP},
-               {Unifi Controller IP} 8443 8080,
-               TCP,
-               Accept
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. note::
+  These are only needed if not using :term:`VLAN` separation.
 
-.. ufirewall:: Allow AP STUN to controller.
-  :key_title:  Firewall Policies -->
-               WIFI_IN -->
-               Actions -->
-               Interfaces
-  :option:     Description,
-               Source,
-               Destination,
-               Protocol,
-               Action
-  :setting:    AP STUN,
-               {AP IP},
-               {Unifi Controller IP} 3478,
-               UDP,
-               Accept
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. ubiquiti:: Allow AP management to controller.
+  :path:      Firewall/NAT --> Firewall Policies -->
+              WIFI_IN -->
+              Actions -->
+              Edit Ruleset -->
+              Add New Rule
+  :value0:    Description, AP Management
+  :value1:    Source, {IP}
+  :value2:    Destination, {CONTROLLER}
+  :value3:    Destination Port, 8443 8080
+  :value4:    Protocol, {TCP}
+  :value5:    Action, {ACCEPT}
+
+.. ubiquiti:: Allow AP STUN to controller.
+  :path:      Firewall/NAT --> Firewall Policies -->
+              WIFI_IN -->
+              Actions -->
+              Edit Ruleset -->
+              Add New Rule
+  :value0:    Description, AP STUN
+  :value1:    Source, {IP}
+  :value2:    Destination, {CONTROLLER}
+  :value3:    Destination, 3478
+  :value4:    Protocol, {UDP}
+  :value5:    Action, {ACCEPT}
 
 Enable Unifi Controller Assignment in EdgeOS or DHCP Option 43
 ==============================================================

@@ -2,20 +2,17 @@
 
 `Certificate Authority`_ Setup
 ##############################
-.. gflocation:: Important File Locations (Certificate Authority)
-  :file:    /root/ca/root,
-            /root/ca/inter,
-            /root/ca/inter/certs,
-            /root/ca/inter/crl,
-            /root/ca/pfx
-  :purpose: Root CA data.,
-            Intermediate CA data.,
-            Certificates signed by Intermediate CA.,
-            Certification Revocation List for Intermediate CA.,
-            Exported and encrypted pkcs#12 pfx files for client distribution.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+
+Files
+*****
+.. files:: Certificate Authority Files
+  :value0: /root/ca/root, Root CA data
+  :value1: /root/ca/inter, Intermediate CA data
+  :value2: /root/ca/inter/certs, Certificates signed by Intermediate CA
+  :value3: /root/ca/inter/crl, Certification Revocation List for Intermediate CA
+  :value4: /root/ca/pfx,
+           Exported and encrypted pkcs#12 pfx files for client distribution
+  :open:
 
 .. code-block:: bash
   :caption: Setup basic structure required to operate CA for client authentication and revocation lists.

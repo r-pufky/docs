@@ -11,31 +11,20 @@ for all connections to docker containers using Let's Encrypt.
 
 See `digiKam Docker and Documentation`_
 
-.. gport:: Ports (digiKam)
-  :port:     443,
-             5800,
-             5900
-  :protocol: TCP,
-             TCP,
-             TCP
-  :type:     Public,
-             Private,
-             Private
-  :purpose:  https connections.,
-             websocket webGUI.,
-             VNC server.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: digiKam Ports
+  :value0:  443, {TCP},  {PUBLIC}, HTTPS connections
+  :value1: 5800, {TCP}, {PRIVATE}, websocket webGUI
+  :value2: 5900, {TCP}, {PRIVATE}, VNC server
+  :open:
 
-.. gflocation:: Important File Locations (digiKam)
-  :file:    /config,
-            /data
-  :purpose: All digiKam configuration.,
-            Media location.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files:: digiKam Files
+  :value0: /config, All digiKam configuration
+  :value1: /data, Media location
+  :open:
 
 Docker Creation
 ***************
@@ -85,23 +74,14 @@ Start digiKam and setup the initial configuration location and database. This
 only needs to be done on initial container creation. Only two sections are
 required for basic functionality:
 
-.. ggui:: Image Location
-  :option:  Configure where you keep your images
-  :setting: /data
-  :no_key_title:
-  :no_section:
-  :no_launch:
+.. gui::    Image Location
+  :path:    Image Location
+  :value0:: Configure where you keep your images, /data
 
-.. gtable:: Database Location
-  :header: Option,
-           Type,
-           Location
-  :c0:     Configure where you will store databases
-  :c1:     SQLLite
-  :c2:     /config
-  :no_key_title:
-  :no_section:
-  :no_launch:
+.. gui:: Database Location
+  :path: Configure where you will store databases
+  :value0: Option, SQLLite
+  :value1: Type, /config
 
 .. _digiKam: https://www.digikam.org/
 .. _digiKam Docker and Documentation: https://github.com/r-pufky/digikam

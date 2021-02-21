@@ -11,38 +11,18 @@ See `Email Docker and Documentation`_.
 
 .. _service-email-ports:
 
-.. gport:: Ports (Email)
-  :port:     25,
-             110,
-             143,
-             465,
-             587,
-             993,
-             995
-  :protocol: TCP,
-             TCP,
-             TCP,
-             TCP,
-             TCP,
-             TCP,
-             TCP
-  :type:     Public,
-             Disabled,
-             Disabled,
-             Disabled,
-             Exposed,
-             Exposed,
-             Disabled
-  :purpose:  :term:`MTA` SMTP Mail Relay (Recieve mail from other mail servers).,
-             POP3 plaintext client.,
-             StartTLS IMAP client.,
-             SSL MUA email submission (old defacto standard).,
-             TLS MUA email submission (RFC 2476).,
-             TLS/SSL IMAP client.,
-             TLS/SSL POP3 client.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: Email Ports
+  :value0:  25, {TCP},  {PUBLIC}, :term:`MTA` SMTP Mail Relay (Recieve mail from
+                                  other mail servers)
+  :value1: 110, {TCP}, {DISABLE}, POP3 plaintext client
+  :value2: 143, {TCP}, {DISABLE}, StartTLS IMAP client
+  :value3: 465, {TCP}, {DISABLE}, SSL MUA email submission (defacto standard)
+  :value4: 587, {TCP}, {EXPOSED}, TLS MUA email submission (RFC 2476)
+  :value5: 993, {TCP}, {EXPOSED}, TLS/SSL IMAP client
+  :value6: 995, {TCP}, {DISABLE}, TLS/SSL POP3 client
+  :open:
 
   .. note::
     POP3 and non TLS/SSL connections should be considered compromised by
@@ -52,20 +32,15 @@ See `Email Docker and Documentation`_.
     creation of `RFC 2476`_. It is safe to disable this unless you are forcing
     connections to this port. Read `more about ports here`_.
 
-.. gflocation:: Important File Locations (Email)
-  :file:    /var/mail,
-            /var/mail-state,
-            /var/log/mail,
-            /tmp/docker-mailserver,
-            /etc/letsencrypt
-  :purpose: Email storage location.,
-            Mail server state.,
-            Mail logs.,
-            Mail configuration files.,
-            Let's Encrypt certificates to use for SSL.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Files
+*****
+.. files:: Email Files
+  :value0: /var/mail, Email storage location
+  :value1: /var/mail-state, Mail server state
+  :value2: /var/log/mail, Mail logs
+  :value3: /tmp/docker-mailserver, Mail configuration files
+  :value4: /etc/letsencrypt, Let's Encrypt certificates to use for SSL
+  :open:
 
 .. note::
   Documentation assumes the following DNS preferences:

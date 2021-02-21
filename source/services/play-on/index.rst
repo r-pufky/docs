@@ -16,22 +16,16 @@ been run.
   :no_caption:
   :no_launch:
 
-.. gport:: Ports Exposed (Play-on)
-  :port:     22,
-             57331*
-  :protocol: TCP,
-             TCP/UDP
-  :type:     External,
-             External
-  :purpose:  SSHD for sshfs connections.,
-             For streaming to other playon apps.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+Ports
+*****
+.. ports:: Play-on Ports
+  :value0:    22,     {TCP},  {PUBLIC}, SSHD for sshfs connections 
+  :value1: 57331, {TCP/UDP}, {DISABLE}, For streaming to other playon apps
+  :open:
 
-    .. note::
-      Port ``57331`` is only used if you use playon to stream recordings /
-      provide a media library; by default this can be safetly disabled.
+  .. note::
+    Port ``57331`` is only used if you use playon to stream recordings /
+    provide a media library; by default this can be safetly disabled.
 
 .. gtable:: Services Used (Play-on)
   :header: Service,
@@ -61,36 +55,28 @@ Server Setup
 #. Connect via CRD.
 #. Launch Playon, skip through helper setup screens.
 
-.. ggui:: Playon Video Settings
-  :key_title: ⚙  --> Video Performance
-  :option:    Quality,
-              ☑,
-              Advanced options › H.264 Recording Profile
-  :setting:   HD,
-              Allow resumable playback,
-              High
-  :no_section:
-  :no_launch:
+.. gui::   Playon Video Settings
+  :path:   ⚙  --> Video Performance
+  :value0: Quality, HD
+  :value1: ☑, Allow resumable playback
+  :value2: Advanced options › H.264 Recording Profile, High
+  :open:
 
-    .. note::
-      All unmentioned options are disabled or unused.
+  .. note::
+    All unmentioned options are disabled or unused.
 
-.. ggui:: Playon System Check
-  :key_title: ⚙  --> System Check
-  :option:    Check
-  :setting:   Notify Automatically
-  :no_section:
-  :no_launch:
+.. gui::   Playon System Check
+  :path:   ⚙  --> System Check
+  :value0: Check, Notify Automatically
+  :open:
 
-.. ggui:: Playon Channels
-  :key_title: ⚙  --> Channels
-  :option:    ☐
-  :setting:   Disable all channels not used
-  :no_section:
-  :no_launch:
+.. gui::   Playon Channels
+  :path:   ⚙  --> Channels
+  :value0: ☐, Disable all channels not used
+  :open:
 
-    .. note::
-      Disable all channels not used. Login to ones that are.
+  .. note::
+    Disable all channels not used. Login to ones that are.
 
 .. rubric:: References
 
