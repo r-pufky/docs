@@ -25,7 +25,7 @@ Create Server Private Key and Certificate
   :value2:                                         Locality Name [XX], {ENTER}
   :value3:                              Organization Name [{CA NAME}], {ENTER}
   :value4: Organizational Unit Name [{CA NAME} Certificate Authority], {SERVER}
-  :value5:                    Common Name [{CA NAME} Intermediate CA], *.example.com
+  :value5:                    Common Name [{CA NAME} Intermediate CA], \*.example.com
   :value6:                                         Email Address [XX], {ENTER}
 
 .. warning::

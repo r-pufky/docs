@@ -74,9 +74,9 @@ Start digiKam and setup the initial configuration location and database. This
 only needs to be done on initial container creation. Only two sections are
 required for basic functionality:
 
-.. gui::    Image Location
-  :path:    Image Location
-  :value0:: Configure where you keep your images, /data
+.. gui::   Image Location
+  :path:   Image Location
+  :value0: Configure where you keep your images, /data
 
 .. gui:: Database Location
   :path: Configure where you will store databases
