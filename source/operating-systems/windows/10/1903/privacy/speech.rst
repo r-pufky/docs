@@ -9,66 +9,48 @@ Speech
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable Online Speech Recognition
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Control Panel -->
+              Regional and Language value0s -->
+              Allow users to enable online speech recognition services
+    :value0:  ☑, {DISABLED}
+    :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#bkmk-priv-speech
+    :update:  2021-02-19
+    :generic:
+    :open:
 
-    .. wregedit:: Disable Online Speech Recognition
-      :key_title: HKEY_CURRENT_USER\Software\Microsoft\Speech_OneCore\Settings\
-                  OnlineSpeechPrivacy
-      :names:     HasAccepted
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wgpolicy:: Disable Online Speech Recognition
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Control Panel -->
-                  Regional and Language Options -->
-                  Allow users to enable online speech recognition services
-      :option:    ☑
-      :setting:   Disabled
-      :no_section:
-      :no_caption:
+  .. regedit:: Disable Online Speech Recognition
+    :path:     HKEY_CURRENT_USER\Software\Microsoft\Speech_OneCore\Settings\
+               OnlineSpeechPrivacy
+    :value0:   HasAccepted, {DWORD}, 0
+    :ref:      https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#bkmk-priv-speech
+    :update:   2021-02-19
+    :generic: 
+    :open:
 
 .. dropdown:: Automatic updates of speech data
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable automatic updates of speech data
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Speech -->
+              Allow automatic updates of Speech Data
+    :value0:  ☑, {DISABLED}
+    :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#bkmk-priv-speech
+    :update:  2021-02-19
+    :generic: 
+    :open:
 
-    .. wregedit:: Disable automatic updates of speech data
-      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Speech
-      :names:     AllowSpeechModelUpdate
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wgpolicy:: Disable automatic updates of speech data
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Speech -->
-                  Allow automatic updates of Speech Data
-      :option:    ☑
-      :setting:   Disabled
-      :no_section:
-      :no_caption:
-
-.. rubric:: Rreferences
-
-#. `Speech Windows Management Settings <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#bkmk-priv-speech>`_
+  .. regedit:: Disable automatic updates of speech data
+    :path:     HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Speech
+    :value0:   AllowSpeechModelUpdate, {DWORD}, 0
+    :ref:      https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#bkmk-priv-speech
+    :update:   2021-02-19
+    :generic: 
+    :open:

@@ -48,16 +48,12 @@ Recently `ReFS create moved to Windows 10 Workstation`_, effectively removing
 the ability to create ReFS containers in Windows 10 Pro, but they can still be
 read.
 
-.. wregedit:: REFS single drive regedit
-  :key_title: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\MiniNT
-  :names:     AllowRefsFormatOverNonmirrorVolume
-  :types:     DWORD
-  :data:      1
-  :admin:
-  :no_section:
-  :no_caption:
+.. regedit:: REFS single drive regedit
+  :path:     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\MiniNT
+  :value0:   AllowRefsFormatOverNonmirrorVolume, {DWORD}, 1
+  :update:   2021-02-19
 
-    Reboot to enable changes.
+  Reboot to enable changes.
 
 .. code-block:: powershell
   :caption: Setup disk for ReFS (powershell as admin).
@@ -132,28 +128,23 @@ SSD's. Disable by :cmdmenu:`RMB --> stop` and
 
     See `100% CPU usage issue`_ and `System & Compressed Memory Service issue`_.
 
-`Disable Prefetch and Superfetch`_
-**********************************
+Disable Prefetch and Superfetch
+*******************************
 This addresses 100% disk usage during idle in windows 10, even if you've already
 disabled the superfetching service.
 
-.. wregedit:: Disable prefetch and superfetch regedit
-  :key_title: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\
-              Session Manager\Memory Management\PrefetchParameters
-  :names:     EnablePrefetcher,
-              EnableSuperfetcher
-  :types:     DWORD,
-              DWORD
-  :data:      0,
-              0
-  :admin:
-  :no_section:
-  :no_caption:
+.. regedit:: Disable prefetch and superfetch regedit
+  :path:     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\
+             Session Manager\Memory Management\PrefetchParameters
+  :value0:   EnablePrefetcher,   {DWORD}, 0
+  :value1:   EnableSuperfetcher, {DWORD}, 0
+  :ref:      https://www.thewindowsclub.com/disable-superfetch-prefetch-ssd
+  :update:   2021-02-19
 
 .. _w10-hiding-local-desktop-crd:
 
-`Hiding Local Desktop for Chrome Remote Desktop`_
-*************************************************
+Hiding Local Desktop for Chrome Remote Desktop
+**********************************************
 By default Chrome Remote Desktop will always show locally what is happening when
 you remotely connect. This disables this feature and presents a login screen
 instead, allowing you to work privately remotely. CRD will open a connection,
@@ -175,25 +166,18 @@ Installing CRD (Chrome Remote Desktop):
 * Create a PIN for connection.
 * ☐ Improve CRD.
 
-.. wregedit:: Enable remote access curtain for CRD regedit
-  :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome
-  :names:     RemoteAccessHostRequireCurtain
-  :types:     DWORD
-  :data:      1
-  :admin:
-  :no_section:
-  :no_caption:
+.. regedit:: Enable remote access curtain for CRD regedit
+  :path:     HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome
+  :value0:   RemoteAccessHostRequireCurtain, {DWORD}, 1
+  :ref:      https://support.google.com/chrome/a/answer/2799701?hl=en&vid=0-243350879834-1495198101821
+  :update:   2021-02-19
 
-.. wregedit:: Enable RDP security regedit
-  :key_title: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\
-              Terminal Server\WinStations\RDP-Tcp
-  :names:     SecurityLayer
-  :types:     DWORD
-  :data:      1
-  :admin:
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. regedit:: Enable RDP security regedit
+  :path:     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\
+             Terminal Server\WinStations\RDP-Tcp
+  :value0:   SecurityLayer, {DWORD}, 1
+  :ref:      https://support.google.com/chrome/a/answer/2799701?hl=en&vid=0-243350879834-1495198101821
+  :update:   2021-02-19
 
 :cmdmenu:`⌘ + r --> control --> System and Security --> System --> Remote Settings --> Remote`
 
@@ -227,22 +211,21 @@ the default app installation state for windows 10.
 
   Get-AppXPackage -AllUsers | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
 
-`Enable Bitlocker on USB drives over RDP`_
-******************************************
+Enable Bitlocker on USB drives over RDP
+***************************************
 By default, bitlocker does not allow encryption to be enabled on USB devices
 over RDP connections -- this happens because RDP treats USB drives as mapped
 network drives and not external drives. This enables direct drive access for RDP
 connections. This is unsafe.
 
-.. wgpolicy:: Enable bitlocker on usb drives over rdp policy
-  :key_title: Computer Configuration -->
-              Administrative Templates -->
-              System -->
-              Removable Storage Access
-  :option:    All Removable Storage: Allow direct access in remote sessions
-  :setting:   Enabled
-  :no_section:
-  :no_caption:
+.. gpo::   Enable bitlocker on usb drives over rdp policy
+  :path:   Computer Configuration -->
+           Administrative Templates -->
+           System -->
+           Removable Storage Access
+  :value0: All Removable Storage: Allow direct access in remote sessions, Enabled
+  :ref:    https://superuser.com/questions/962125/bitlocker-refuses-to-enable-via-rdp-on-data-drive-but-ok-on-the-os-drive
+  :update: 2021-02-19
 
 .. _w10-background-apps:
 
@@ -293,8 +276,8 @@ SID's set.
 The affected NTFS partition should really be nuked and re-formatted using
 `well known SIDs`_ which will remove this issue.
 
-OEM Partition / `Low Disk Space Warning After 1803 Update`_
-***********************************************************
+OEM Partition / Low Disk Space Warning After 1803 Update
+********************************************************
 After updating to Windows 10 1803, a consistent low disk space warning appears.
 This happens as the upgrade now sets the OEM partition (~450MB) to be mounted on
 boot. This drive is `almost entirely full`_ (~400MB) and triggers a low disk
@@ -305,15 +288,12 @@ warning.
 
   mountvol {OEM PARTITION DRIVE}: /d
 
-.. wregedit:: Disable disk space warning checks for partition regedit
-  :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
-              Policies\Explorer
-  :names:     NoLowDiskSpaceChecks
-  :types:     DWORD
-  :data:      1
-  :admin:
-  :no_section:
-  :no_caption:
+.. regedit:: Disable disk space warning checks for partition
+  :path:     HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
+             Policies\Explorer
+  :value0:   NoLowDiskSpaceChecks, {DWORD}, 1
+  :ref:      https://answers.microsoft.com/en-us/insider/forum/insider_wintp-insider_install-insiderplat_pc/new-oem-partition-appears-in-file-explorer-after/29a0a95c-fe51-41a5-a345-72773c437b39
+  :update:   2021-02-19
 
 `Application Using the Wrong Audio Output Device`_
 **************************************************
@@ -325,29 +305,28 @@ via the settings menu.
 
    * Set preferred output for device (application must be running).
 
-`Disable Caret Browsing Notifications`_
-***************************************
+Disable Caret Browsing Notifications
+************************************
 Remove notification on F7 press for caret browsing. This is a holdover from
 Internet Explorer.
 
-.. wregedit:: Disable Caret Browsing Notifications via Registry
-  :key_title: HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\CaretBrowsing
-  :names:     Enabled
-  :types:     DWORD
-  :data:      0
-  :no_section:
+.. regedit:: Disable Caret Browsing Notifications
+  :path:     HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\CaretBrowsing
+  :value0:   Enabled, {DWORD}, 0
+  :ref:      https://www.thewindowsclub.com/enable-caret-browsing-internet-explorer
+  :update:   2021-02-19
 
-.. wgpolicy:: Disable Caret Browsing Notifications via GPO
-  :key_title: User Configuration -->
+.. gpo:: Disable Caret Browsing Notifications
+  :path: User Configuration -->
               Administrative Templates -->
               Windows Components -->
               Internet Explorer -->
               Internet Control Panel -->
               Advanced Page -->
               Turn on Caret Browsing support
-  :option:    ☑
-  :setting:   Disabled
-  :no_section:
+  :value0:    ☑, {DISABLED}
+  :ref:      https://www.thewindowsclub.com/enable-caret-browsing-internet-explorer
+  :update:   2021-02-19
 
 Windows Bootloader Missing / Multiple OS
 ****************************************
@@ -399,7 +378,7 @@ or use `EasyUEFI`_ to do it in windows directly.
 
 Display Driver Has Been Restarted
 *********************************
-Windows Vista+ has a feature called `Timeout Detection and Recovery`_, which
+Windows Vista+ has a feature called Timeout Detection and Recovery, which
 detects if the GPU becomes unresponsive and restarts the driver. The GPU running
 at 100% load can inadvertantly trip this reset the driver, causing applications
 to crash. This can saftely be increased from the default *2 seconds* to a larger
@@ -407,15 +386,11 @@ value with the only negative impact being that an actual crashing driver will
 take that much longer to be reset. A bump to *8 to 10* seconds is generally ok;
 it is **not** recommended to disable TDR entirely.
 
-.. wregedit:: Increase TDR delay to 8 seconds
-  :key_title: HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\
-              GraphicsDrivers
-  :names:     TdrDelay
-  :types:     DWORD
-  :data:      8
-  :admin:
-  :no_section:
-  :no_caption:
+.. regedit:: Increase TDR delay to 8 seconds
+  :path:     HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\GraphicsDrivers
+  :value0:   TdrDelay, {DWORD}, 8
+  :ref:      https://www.pugetsystems.com/labs/hpc/Working-around-TDR-in-Windows-for-a-better-GPU-computing-experience-777/
+  :update:   2021-02-19
 
 Show Password on Wifi Network
 *****************************
@@ -496,25 +471,17 @@ lead to invalid results. First flush resolver caches and test.
 If that does not work, disabling the DNS caching service can be used. **Cannot**
 be disabled via ``services.msc``.
 
-.. wregedit:: Disable DNS caching service
-  :key_title: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Dnscache
-  :names:     Start
-  :types:     DWORD
-  :data:      4
-  :admin:
-  :no_section:
-  :no_caption:
+.. regedit:: Disable DNS caching service
+  :path:     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Dnscache
+  :value0:   Start, {DWORD}, 4
+  :update:   2021-02-19
 
 After resolving, re-enable the caching service and **Reboot**.
 
-.. wregedit:: Enable DNS caching service
-  :key_title: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Dnscache
-  :names:     Start
-  :types:     DWORD
-  :data:      2
-  :admin:
-  :no_section:
-  :no_caption:
+.. regedit:: Enable DNS caching service
+  :path:     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Dnscache
+  :value0:   Start, {DWORD}, 2
+  :update:   2021-02-19
 
 `Disable Hyper-V Per Boot`_
 ***************************
@@ -537,29 +504,23 @@ Restart holding :cmdmenu:`shift` to show boot options. Select ``No Hyper-V``.
 .. _SSD activity issue: https://superuser.com/questions/1016152/100-ssd-activity-0-r-w-speed-system-hang-issue
 .. _100% CPU usage issue: https://www.ghacks.net/2018/05/01/all-the-issues-of-windows-10-version-1803-you-may-run-into/
 .. _System & Compressed Memory Service issue: http://whatsabyte.com/windows/system-and-compressed-memory-high-cpu/
-.. _Disable Prefetch and Superfetch: https://www.thewindowsclub.com/disable-superfetch-prefetch-ssd
 .. _Disabling ReFS Scheduled Tasks: http://bakins-bits.com/wordpress/?p=195
-.. _Hiding Local Desktop for Chrome Remote Desktop: https://support.google.com/chrome/a/answer/2799701?hl=en&vid=0-243350879834-1495198101821
 .. _Remote Desktop Extension: https://remotedesktop.google.com/access
 .. _See block inbound RDP connections with Windows Firewall:  https://superuser.com/questions/723832/windows-firewall-blocks-remote-desktop-with-custom-port
 .. _Fixing Broken Windows Store apps: https://community.spiceworks.com/how_to/122006-windows-10-your-trial-period-for-this-app-has-expired-visit-the-windows-store-to-purchase-the-full-app-problem
-.. _Enable Bitlocker on USB drives over RDP: https://superuser.com/questions/962125/bitlocker-refuses-to-enable-via-rdp-on-data-drive-but-ok-on-the-os-drive
 .. _Fix Windows Applications Not Appearing in Start Menu Searches: https://superuser.com/questions/947392/windows-10-search-cant-find-any-applications-even-calculator
 .. _Disable Hibernation for Windows 10 Sleep Resume Problems: https://www.tenforums.com/general-support/5265-turn-off-wake-up-problems.html
 .. _NTFS File Ownership Access Denied: https://superuser.com/questions/439675/how-to-bind-old-users-sid-to-new-user-to-remain-ntfs-file-ownership-and-permiss
 .. _well known SIDs: https://docs.microsoft.com/en-us/troubleshoot/windows-server/identity/security-identifiers-in-windows
-.. _Low Disk Space Warning After 1803 Update: https://answers.microsoft.com/en-us/insider/forum/insider_wintp-insider_install-insiderplat_pc/new-oem-partition-appears-in-file-explorer-after/29a0a95c-fe51-41a5-a345-72773c437b39
 .. _almost entirely full: https://www.thewindowsclub.com/faq-low-disk-space-notification-or-warning-in-windows-7-how-to-disable-etc
 .. _Application Using the Wrong Audio Output Device: https://www.intowindows.com/set-different-audio-output-devices-for-different-programs-in-windows-10/
 .. _EasyUEFI: https://www.easyuefi.com/index-us.html
-.. _Timeout Detection and Recovery: https://www.pugetsystems.com/labs/hpc/Working-around-TDR-in-Windows-for-a-better-GPU-computing-experience-777/
 .. _extra EFI boot configuration data: https://linuxbsdos.com/2015/09/05/how-to-delete-grub-files-from-a-boot-efi-partition-in-windows-10/
 .. _Epfwwfp.sys: https://ugetfix.com/ask/how-to-fix-driver_irql_not_less_or_equal-epfwwfp-sys-error-on-windows/
 .. _Uninstall Edge Browser: https://www.intowindows.com/how-to-uninstall-remove-edge-browser-from-windows-10/
 .. _install_wim_tweak: https://github.com/shiitake/win6x_registry_tweak
 .. _USB Devices Slow: https://docs.microsoft.com/en-us/windows/client-management/change-default-removal-policy-external-storage-media
 .. _Windows Backup Schedule: https://www.tenforums.com/tutorials/75591-turn-off-schedule-windows-backup-windows-10-a.html
-.. _Disable Caret Browsing Notifications: https://www.thewindowsclub.com/enable-caret-browsing-internet-explorer
 .. _habit of locking out after updates: https://www.passfab.com/windows-tips/windows-10-password-incorrect-after-update.html
 .. _Reset your password from safe mode: https://www.wimware.com/how-to/reset-windows-10-password-command-prompt.html
 .. _Disable Hyper-V Per Boot: https://www.hanselman.com/blog/switch-easily-between-virtualbox-and-hyperv-with-a-bcdedit-boot-entry-in-windows-81

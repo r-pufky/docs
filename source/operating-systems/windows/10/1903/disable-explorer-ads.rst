@@ -17,6 +17,7 @@
   .. dropdown:: GUI
     :title: font-weight-bold
     :animate: fade-in
+    :open:
 
     .. ggui:: Set explorer to use `this PC`_
       :key_title: ⌘ + e -->
@@ -25,39 +26,19 @@
                   General
       :option:    Open File Explorer to
       :setting:   This PC
-      :no_section:
-      :no_caption:
-      :no_launch:
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Set Explorer to use `this PC`_
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+    :value0:   LaunchTo, {DWORD}, 1
+    :update:   2021-02-19
+    :generic:
+    :open:
 
-    .. wregedit:: Set Explorer to use `this PC`_
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced
-      :names:     LaunchTo
-      :types:     DWORD
-      :data:      1
-      :no_section:
-      :no_caption:
-
-.. dropdown:: Disable Quick Access Pane
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wregedit:: Disable Quick Access Pane
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                  Explorer
-      :names:     HubMode
-      :types:     DWORD
-      :data:      1
-      :no_section:
-      :no_caption:
+.. regedit:: Disable Quick Access Pane
+  :path:      HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
+              Explorer
+  :value0:    HubMode, {DWORD}, 1
+  :update:    2021-02-19
 
 .. dropdown:: Disable sync provider notifications
   :container: + shadow
@@ -67,6 +48,7 @@
   .. dropdown:: GUI
     :title: font-weight-bold
     :animate: fade-in
+    :open:
 
     Typically done via explorer:
 
@@ -74,26 +56,19 @@
 
        * ☐ show sync provider notifications.
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Disable sync provider notifications
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+    :value0:   ShowSyncProviderNotifications, {DWORD}, 0
+    :update:   2021-02-19
+    :generic:
+    :open:
 
-    .. wregedit:: Disable sync provider notifications
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced
-      :names:     ShowSyncProviderNotifications
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
-
-    .. wregedit:: Disable sync provider notifications
-      :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced
-      :names:     ShowSyncProviderNotifications
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
-      :no_launch:
+  .. regedit:: Disable sync provider notifications
+    :path:     HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+    :value0:   ShowSyncProviderNotifications, {DWORD}, 0
+    :update:   2021-02-19
+    :generic:
+    :open:
 
 .. rubric:: References
 

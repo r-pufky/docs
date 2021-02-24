@@ -7,4 +7,4 @@ App & browser control
 .. toctree::
   :maxdepth: -1
 
-  reputation-based-protection-setttings
+  reputation-based-protection-settings

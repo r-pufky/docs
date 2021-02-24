@@ -26,26 +26,13 @@ enabled by default and is the default location for all files.
     :no_caption:
     :no_launch:
 
-.. dropdown:: Remove OneDrive from Windows Explorer
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
+.. regedit:: Remove OneDrive from Windows Explorer
+  :path:     HKEY_CLASSES_ROOT\\CLSID\\{018D5C66-4533-4307-9B53-224DE2ED1FE6}
+  :value0:   System.IsPinnedToNameSpaceTree, {DWORD}, 0
+  :ref:      https://www.techjunkie.com/remove-onedrive-file-explorer-sidebar-windows-10/
+  :update:   2021-02-19
 
-  OneDrive is integrated with Windows Explorer by default. `Remove OneDrive from
-  Windows Explorer`_.
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wregedit:: `Remove OneDrive from Windows Explorer`_
-      :key_title: HKEY_CLASSES_ROOT\\CLSID\\{018D5C66-4533-4307-9B53-224DE2ED1FE6}
-      :names:     System.IsPinnedToNameSpaceTree
-      :types:     DWORD
-      :data:      0
-      :admin:
-      :no_section:
-      :no_caption:
+  OneDrive is integrated with Windows Explorer by default.
 
 .. dropdown:: Disable OneDrive from storing files
   :container: + shadow
@@ -54,24 +41,21 @@ enabled by default and is the default location for all files.
 
   Windows updates may re-enable this task.
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wgpolicy:: Disable OneDrive from storing files
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  OneDrive -->
-                  Prevent the usage of OneDrive for file storage
-      :option:    ☑
-      :setting:   Enabled
-      :no_section:
-      :no_caption:
+  .. gpo::    Disable OneDrive from storing files
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              OneDrive -->
+              Prevent the usage of OneDrive for file storage
+    :value0:  ☑, {ENABLED}
+    :update:  2021-02-19
+    :generic:
+    :open:
 
   .. dropdown:: Scheduled Tasks
     :title: font-weight-bold
     :animate: fade-in
+    :open:
 
     .. wtschedule:: Disable OneDrive schedule update task
       :key_title:   OneDrive Standalone Update Task v2
@@ -130,4 +114,3 @@ changed. See references for additional documentation.
 
 .. _Endpoints for telemetry: https://docs.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization#how-microsoft-handles-diagnostic-data
 .. _Disable OneDrive: https://support.microsoft.com/en-us/office/turn-off-disable-or-uninstall-onedrive-f32a17ce-3336-40fe-9c38-6efb09f944b0?ui=en-us&rs=en-us&ad=us
-.. _Remove OneDrive from Windows Explorer: https://www.techjunkie.com/remove-onedrive-file-explorer-sidebar-windows-10/

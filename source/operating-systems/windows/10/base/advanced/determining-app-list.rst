@@ -30,40 +30,25 @@ re-enable them from the GUI.
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-    
-    Read the description for the :term:`GPO` in question for all options.
+  Read the description for the :term:`GPO` in question for all options.
+  :term:`GPO` policy settings can be found in the registry at
+  ``HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy`` but are
+  not modifiable.
 
-    The identified package family names are added in the ``Force deny`` section.
+  The identified package family names are added in the ``Force deny`` section.
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Example app privacy restriction using ConsentStore
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
+               CapabilityAccessManager\ConsentStore\microphone\
+               {PACKAGE FAMILY NAME}
+    :value0:   Value, {SZ}, Deny
+    :update:   2021-02-19
+    :open:
     
     A key needs to be made for each app to block. Valid values are ``Allow``
     and ``Deny``.
 
-    :term:`GPO` policy settings can be found in the registry at
-    ``HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy`` but
-    are not modifiable.
-
     Base Registry location ``HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore``.
-
-    .. dropdown:: Example app privacy restriction
-      :title: font-weight-bold
-      :animate: fade-in
-
-      .. wregedit:: Example app privacy restriction using ConsentStore
-        :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                    CapabilityAccessManager\ConsentStore\microphone\
-                    {PACKAGE FAMILY NAME}
-        :names:     Value
-        :types:     SZ
-        :data:      Deny
-        :no_section:
-        :no_caption:
 
 .. rubric:: References
 

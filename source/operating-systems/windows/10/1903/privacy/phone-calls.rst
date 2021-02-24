@@ -15,60 +15,38 @@ Phone Calls
   See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more fine
   grained control of app access.
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable apps make phone calls
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              App Privacy -->
+              Let Windows apps make phone calls
+    :value0:  ☑, {ENABLED}
+    :value1:  Default for all apps, Force Deny
+    :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1813-phone-calls
+    :update:  2021-02-19
+    :generic:
+    :open:
+
+  .. regedit:: Disable apps make phone calls
+    :path:     HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
+    :value0:   LetAppsAccessPhone, {DWORD}, 2
+    :ref:      https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1813-phone-calls
+    :update:   2021-02-19
+    :generic:
+    :open:
 
     ``0`` enable apps to make phone calls.
 
-    .. wregedit:: Disable apps make phone calls
-      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
-      :names:     LetAppsAccessPhone
-      :types:     DWORD
-      :data:      2
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wgpolicy:: Disable apps make phone calls
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  App Privacy -->
-                  Let Windows apps make phone calls
-      :option:    ☑,
-                  Default for all apps
-      :setting:   Enabled,
-                  Force Deny
-      :no_section:
-      :no_caption:
-
-.. dropdown:: Allow consent for phone calls.
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
+.. regedit:: Disable consent for phone calls
+  :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
+             CapabilityAccessManager\ConsentStore\phoneCall
+  :value0:   Value, {SZ}, Deny
+  :ref:      https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1813-phone-calls
+  :update:   2021-02-19
 
   See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more fine
   grained control of app access.
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  ``Allow`` enable consent for phone calls.
 
-    ``Allow`` enable consent for phone calls.
-
-    .. wregedit:: Disable consent for phone calls
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                  CapabilityAccessManager\ConsentStore\phoneCall
-      :names:     Value
-      :types:     SZ
-      :data:      Deny
-      :no_section:
-      :no_caption:
-
-.. rubric:: Rreferences
-
-#. `Phone Call Windows Management Settings <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1813-phone-calls>`_

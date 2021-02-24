@@ -13,37 +13,29 @@ still work to manage radios.
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable apps access your radios
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              App Privacy -->
+              Let Windows apps control radios
+    :value0:  ☑, {ENABLED}
+    :value1:  Default for all apps, Force Deny
+    :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1814-radios
+    :update:  2021-02-19
+    :generic:
+    :open:
+
+  .. regedit:: Enable access to radios on this device
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
+               CapabilityAccessManager\ConsentStore\radios
+    :value0:   Value, {SZ}, Allow
+    :ref:      https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1814-radios
+    :update:   2021-02-19
+    :generic:
+    :open:
 
     ``Deny`` disables access to radios on this device.
-
-    .. wregedit:: Enable access to radios on this device
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                  CapabilityAccessManager\ConsentStore\radios
-      :names:     Value
-      :types:     SZ
-      :data:      Allow
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wgpolicy:: Disable apps access your radios
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  App Privacy -->
-                  Let Windows apps control radios
-      :option:    ☑,
-                  Default for all apps
-      :setting:   Enabled,
-                  Force Deny
-      :no_section:
-      :no_caption:
 
 .. dropdown:: Allow apps to control device radios
   :container: + shadow
@@ -53,37 +45,25 @@ still work to manage radios.
   See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more fine
   grained control of app access.
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable apps access your radios
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              App Privacy -->
+              Let Windows apps control radios
+    :value0:  ☑, {ENABLED}
+    :value1:  Default for all apps, Force Deny
+    :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1814-radios
+    :update:  2021-02-19
+    :generic:
+    :open:
+
+  .. regedit:: Disable apps to access your radios
+    :path:     HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
+    :value0:   LetAppsAccessRadios, {DWORD}, 2
+    :ref:      https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1814-radios
+    :update:   2021-02-19
+    :generic:
+    :open:
 
     ``0`` enables apps access to radios.
-
-    .. wregedit:: Disable apps to access your radios
-      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
-      :names:     LetAppsAccessRadios
-      :types:     DWORD
-      :data:      2
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wgpolicy:: Disable apps access your radios
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  App Privacy -->
-                  Let Windows apps control radios
-      :option:    ☑,
-                  Default for all apps
-      :setting:   Enabled,
-                  Force Deny
-      :no_section:
-      :no_caption:
-
-.. rubric:: Rreferences
-
-#. `Radios Windows Management Settings <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1814-radios>`_

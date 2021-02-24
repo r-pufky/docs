@@ -14,43 +14,30 @@ including related metadata. Disable this.
   :animate: fade-in
   :open:
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable Windows Error Reporting
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Windows Error Reporting -->
+              Disable Windows Error Reporting
+    :value0:  ☑, {ENABLED}
+    :ref:     https://auditsquare.com/advisory/windows/error-reporting
+    :update:  2021-02-19
+    :generic:
+    :open:
 
-    .. wregedit:: Disable error reporting policy
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Error Reporting
-      :names:     Disabled
-      :types:     DWORD
-      :data:      1
-      :no_section:
-      :no_caption:
+  .. regedit:: Disable error reporting policy
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Error Reporting
+    :value0:   Disabled, {DWORD}, 1
+    :ref:      https://github.com/adolfintel/Windows10-Privacy#turn-off-windows-error-reporting
+    :update:   2021-02-19
+    :generic:
+    :open:
 
-    .. wregedit:: Disable error reporting
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Windows Error Reporting
-      :names:     Disabled
-      :types:     DWORD
-      :data:      1
-      :no_section:
-      :no_caption:
-      :no_launch:
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wgpolicy:: Disable Windows Error Reporting
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Windows Error Reporting -->
-                  Disable Windows Error Reporting
-      :option:    ☑
-      :setting:   Enabled
-      :no_section:
-      :no_caption:
-
-.. rubric:: References
-
-#. `Error Reporting Group Policy <https://auditsquare.com/advisory/windows/error-reporting>`_
-#. `Error Reporting Registry <https://github.com/adolfintel/Windows10-Privacy#turn-off-windows-error-reporting>`_
+  .. regedit:: Disable error reporting
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\Windows Error Reporting
+    :value0:   Disabled, {DWORD}, 1
+    :ref:      https://github.com/adolfintel/Windows10-Privacy#turn-off-windows-error-reporting
+    :update:   2021-02-19
+    :generic:
+    :open:

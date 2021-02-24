@@ -20,19 +20,15 @@ start menu search from breaking.
   See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more fine
   grained control of app access.
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Enable apps run in the background
+    :path:     HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
+    :value0:   LetAppsRunInBackground, {DWORD}, 0
+    :ref:      https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1817-background-apps
+    :update:   2021-02-19
+    :generic:
+    :open:
 
     ``2`` disables apps running in the background.
-
-    .. wregedit:: Enable apps run in the background
-      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
-      :names:     LetAppsRunInBackground
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
 
     .. gtable::   Disable specific app running in the background
       :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy\
@@ -149,75 +145,42 @@ start menu search from breaking.
       :no_caption:
       :no_launch:
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wgpolicy:: Disable Background apps access
-      :key_title: Computer Configuration -->
+    .. gpo:: Disable Background apps access
+      :path: Computer Configuration -->
                   Administrative Templates -->
                   Windows Components -->
                   App Privacy -->
                   Let Windows apps run in the background
-      :option:    ☑,
-                  Default for all apps,
-                  Force deny these specific apps (use Package Family Names):,
-                  ›,
-                  ›,
-                  ›,
-                  ›,
-                  ›,
-                  ›,
-                  ›,
-                  ›,
-                  ›,
-                  ›,
-                  ›,
-                  ›,
-                  ›,
-                  ›,
-                  ›,
-                  ›,
-                  ›,
-                  ›,
-                  ›,
-                  ›,
-                  ›,
-                  ›,
-                  ›,
-                  ›,
-                  ›
-      :setting:   Enabled,
-                  User is in control,
-                  Microsoft.WindowsAlarms_8wekyb3d8bbwe,
-                  Microsoft.WindowsCalculator_8wekyb3d8bbwe,
-                  Microsoft.WindowsCamera_8wekyb3d8bbwe,
-                  Microsoft.PPIProjection_cw5n1h2txyewy,
-                  Microsoft.WindowsFeedbackHub_8wekyb3d8bbwe,
-                  Microsoft.XboxGamingOverlay_8wekyb3d8bbwe,
-                  Microsoft.GetHelp_8wekyb3d8bbwe,
-                  Microsoft.ZuneMusic_8wekyb3d8bbwe,
-                  microsoft.windowscommunicationsapps_8wekyb3d8bbwe,
-                  Microsoft.WindowsMaps_8wekyb3d8bbwe,
-                  Microsoft.Messaging_8wekyb3d8bbwe,
-                  Microsoft.MicrosoftEdge_8wekyb3d8bbwe,
-                  Microsoft.WindowsStore_8wekyb3d8bbwe,
-                  Microsoft.MixedReality.Portal_8wekyb3d8bbwe,
-                  Microsoft.Microsoft3DViewer_8wekyb3d8bbwe,
-                  Microsoft.ZuneVideo_8wekyb3d8bbwe,
-                  Microsoft.MSPaint_8wekyb3d8bbwe,
-                  Microsoft.Windows.Photos_8wekyb3d8bbwe,
-                  windows.immersivecontrolpanel_cw5n1h2txyewy,
-                  Microsoft.ScreenSketch_8wekyb3d8bbwe,
-                  Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe,
-                  Microsoft.WindowsSoundRecorder_8wekyb3d8bbwe,
-                  Microsoft.Windows.SecHealthUI_cw5n1h2txyewy,
-                  Microsoft.XboxApp_8wekyb3d8bbwe,
-                  Microsoft.YourPhone_8wekyb3d8bbwe,
-                  Microsoft.XboxDevices_8wekyb3d8bbwe
-      :no_section:
-      :no_caption:
-
-.. rubric:: Rreferences
-
-#. `Background Apps Windows Management Settings <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1817-background-apps>`_
+      :value0:  ☑, {ENABLED}
+      :value1:  Default for all apps, User is in control
+      :value2:  Force deny these specific apps (use Package Family value0):,
+      :value3:  ›, Microsoft.WindowsAlarms_8wekyb3d8bbwe
+      :value4:  ›, Microsoft.WindowsCalculator_8wekyb3d8bbwe
+      :value5:  ›, Microsoft.WindowsCamera_8wekyb3d8bbwe
+      :value6:  ›, Microsoft.PPIProjection_cw5n1h2txyewy
+      :value7:  ›, Microsoft.WindowsFeedbackHub_8wekyb3d8bbwe
+      :value8:  ›, Microsoft.XboxGamingOverlay_8wekyb3d8bbwe
+      :value9:  ›, Microsoft.GetHelp_8wekyb3d8bbwe
+      :value10: ›, Microsoft.ZuneMusic_8wekyb3d8bbwe
+      :value11: ›, microsoft.windowscommunicationsapps_8wekyb3d8bbwe
+      :value12: ›, Microsoft.WindowsMaps_8wekyb3d8bbwe
+      :value13: ›, Microsoft.Messaging_8wekyb3d8bbwe
+      :value14: ›, Microsoft.MicrosoftEdge_8wekyb3d8bbwe
+      :value15: ›, Microsoft.WindowsStore_8wekyb3d8bbwe
+      :value16: ›, Microsoft.MixedReality.Portal_8wekyb3d8bbwe
+      :value17: ›, Microsoft.Microsoft3DViewer_8wekyb3d8bbwe
+      :value18: ›, Microsoft.ZuneVideo_8wekyb3d8bbwe
+      :value19: ›, Microsoft.MSPaint_8wekyb3d8bbwe
+      :value20: ›, Microsoft.Windows.Photos_8wekyb3d8bbwe
+      :value21: ›, windows.immersivecontrolpanel_cw5n1h2txyewy
+      :value22: ›, Microsoft.ScreenSketch_8wekyb3d8bbwe
+      :value23: ›, Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe
+      :value24: ›, Microsoft.WindowsSoundRecorder_8wekyb3d8bbwe
+      :value25: ›, Microsoft.Windows.SecHealthUI_cw5n1h2txyewy
+      :value26: ›, Microsoft.XboxApp_8wekyb3d8bbwe
+      :value27: ›, Microsoft.YourPhone_8wekyb3d8bbwe
+      :value28: ›, Microsoft.XboxDevices_8wekyb3d8bbwe
+      :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1817-background-apps
+      :update:  2021-02-19
+      :generic:
+      :open:

@@ -22,23 +22,18 @@ successful unlock events will have an ID of **4801**, and event login failures
 will have an ID of **4800**. The unlock event will trigger at screen unlock as
 well as logging into the machine.
 
-.. wgpolicy:: Enable logon logoff events policy
-  :key_title: Computer Configuration -->
-              Windows Settings -->
-              Security Settings -->
-              Advanced Audit Policy Configuration -->
-              System Audit Policies - Local Group Policy Object -->
-              Logon/Logoff -->
-              Audit Other Login/Logoff Events
-  :option:    ☑,
-              ☑,
-              ☑
-  :setting:   Configure the following audit events,
-              Success,
-              Failure
-  :admin:
-  :no_section:
-  :no_caption:
+.. gpo::   Enable logon logoff events policy
+  :path:   Computer Configuration -->
+           Windows Settings -->
+           Security Settings -->
+           Advanced Audit Policy Configuration -->
+           System Audit Policies - Local Group Policy Object -->
+           Logon/Logoff -->
+           Audit Other Login/Logoff Events
+  :value0: ☑, Configure the following audit events
+  :value1: ☑, {SUCCESS}
+  :value2: ☑, {FAILURE}
+  :update: 2021-02-19
 
 .. _scheduled-tasks-event-trigger:
 

@@ -33,6 +33,7 @@ re-enable them from the GUI.
   .. dropdown:: :term:`Registry`
     :title: font-weight-bold
     :animate: fade-in
+    :open:
     
     A key needs to be made for each app to block. Valid values are ``Allow``
     and ``Deny``.
@@ -47,19 +48,16 @@ re-enable them from the GUI.
       :title: font-weight-bold
       :animate: fade-in
 
-      .. wregedit:: Example app privacy restriction using ConsentStore
-        :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                    CapabilityAccessManager\ConsentStore\microphone\
-                    {PACKAGE FAMILY NAME}
-        :names:     Value
-        :types:     SZ
-        :data:      Deny
-        :no_section:
-        :no_caption:
+      .. regedit:: Example app privacy restriction using ConsentStore
+        :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
+                   CapabilityAccessManager\ConsentStore\microphone\
+                   {PACKAGE FAMILY NAME}
+        :value0:   Value, {SZ}, Deny
 
   .. dropdown:: :term:`GPO`
     :title: font-weight-bold
     :animate: fade-in
+    :open:
     
     Read the description for the :term:`GPO` in question for all options.
 

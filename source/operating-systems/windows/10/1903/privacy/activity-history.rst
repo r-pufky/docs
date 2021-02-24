@@ -11,32 +11,25 @@ Activity History
 
   Disable storing activity history.
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable storing of activity history
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              System -->
+              OS Policies -->
+              Allow publishing of User Activites
+    :value0:  ☑, {DISABLED}
+    :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1822-activity-history
+    :update:  2021-02-19
+    :generic:
+    :open:
 
-    .. wregedit:: Disable storing of activity history
-      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\System
-      :names:     PublishUserActivities
-      :types:     DWORD
-      :data:      2
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wgpolicy:: Disable storing of activity history
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  System -->
-                  OS Policies -->
-                  Allow publishing of User Activites
-      :option:    ☑
-      :setting:   Disabled
-      :no_section:
-      :no_caption:
+  .. regedit:: Disable storing of activity history
+    :path:     HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\System
+    :value0:   PublishUserActivities, {DWORD}, 2 
+    :ref:      https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1822-activity-history
+    :update:   2021-02-19
+    :generic:
+    :open:
 
 .. dropdown:: Send my activity history to Microsoft
   :container: + shadow
@@ -45,32 +38,25 @@ Activity History
 
   Disable sending activity to Microsoft.
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable sending activity history to Microsoft
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              System -->
+              OS Policies -->
+              Allow upload of User Activities
+    :value0:  ☑, {DISABLED}
+    :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1822-activity-history
+    :update:  2021-02-19
+    :generic:
+    :open:
 
-    .. wregedit:: Disable sending activity history to Microsoft
-      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\System
-      :names:     UploadUserActivities
-      :types:     DWORD
-      :data:      2
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wgpolicy:: Disable sending activity history to Microsoft
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  System -->
-                  OS Policies -->
-                  Allow upload of User Activities
-      :option:    ☑
-      :setting:   Disabled
-      :no_section:
-      :no_caption:
+  .. regedit:: Disable sending activity history to Microsoft
+    :path:     HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\System
+    :value0:   UploadUserActivities, {DWORD}, 2
+    :ref:      https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1822-activity-history
+    :update:   2021-02-19
+    :generic:
+    :open:
 
 .. dropdown:: Activity history
   :container: + shadow
@@ -79,33 +65,22 @@ Activity History
 
   Disable activity history.
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable activity history
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              System -->
+              OS Policies -->
+              Enables Activity Feed
+    :value0:  ☑, {DISABLED}
+    :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1822-activity-history
+    :update:  2021-02-19
+    :generic:
+    :open:
 
-    .. wregedit:: Disable activity history
-      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\System
-      :names:     EnableActivityFeed
-      :types:     DWORD
-      :data:      2
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wgpolicy:: Disable activity history
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  System -->
-                  OS Policies -->
-                  Enables Activity Feed
-      :option:    ☑
-      :setting:   Disabled
-      :no_section:
-      :no_caption:
-
-.. rubric:: Rreferences
-
-#. `Activity History Windows Management Settings <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1822-activity-history>`_
+  .. regedit:: Disable activity history
+    :path:     HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\System
+    :value0:   EnableActivityFeed, {DWORD}, 2
+    :ref:      https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1822-activity-history
+    :update:   2021-02-19
+    :generic:
+    :open:

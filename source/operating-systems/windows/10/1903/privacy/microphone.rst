@@ -7,23 +7,11 @@ Microphone
 Leave Microphone enabled, but disable all apps. This will allow mumble to use
 the microphone. See `1803 update breaks microphone`_.
 
-.. dropdown:: Allow access to the microphone on this device
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wregedit:: Enable access to the microphone on this device
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                  CapabilityAccessManager\ConsentStore\microphone
-      :names:     Value
-      :types:     SZ
-      :data:      Allow
-      :no_section:
-      :no_caption:
+.. regedit:: Allow access to the microphone on this device
+  :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
+             CapabilityAccessManager\ConsentStore\microphone
+  :value0:   Value, {SZ}, Allow
+  :update:   2021-02-19
 
 .. dropdown:: Allow apps to access your microphone
   :container: + shadow
@@ -33,19 +21,14 @@ the microphone. See `1803 update breaks microphone`_.
   See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more fine
   grained control of app access.
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Enable apps access to your microphone
+    :path:     HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
+    :value0:   LetAppsAccessMicrophone, {DWORD}, 0
+    :update:   2021-02-19
+    :generic:
+    :open:
 
     ``2`` disables app access to microphone.
-
-    .. wregedit:: Enable apps access to your microphone
-      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
-      :names:     LetAppsAccessMicrophone
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
 
     .. gtable::   Disable specific apps access to your microphone
       :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
@@ -114,50 +97,32 @@ the microphone. See `1803 update breaks microphone`_.
       :no_caption:
       :no_launch:
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wgpolicy:: Disable apps access to your microphone
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  App Privacy -->
-                  Let Windows access the microphone
-      :option:    ☑,
-                  Default for all apps,
-                  Force deny these specific apps (use Package Family Names):,
-                  ›,
-                  ›,
-                  ›,
-                  ›,
-                  ›,
-                  ›,
-                  ›,
-                  ›,
-                  ›,
-                  ›,
-                  ›,
-                  ›,
-                  ›
-      :setting:   Enabled,
-                  User is in control,
-                  Microsoft.WindowsCamera_8wekyb3d8bbwe,
-                  Microsoft.Windows.Cortana_cw5n1h2txyewy,
-                  Microsoft.Win32WebViewHost_cw5n1h2txyewy,
-                  Microsoft.WindowsFeedbackHub_8wekyb3d8bbwe,
-                  Microsoft.XboxGamingOverlay_8wekyb3d8bbwe,
-                  Microsoft.Messaging_8wekyb3d8bbwe,
-                  Microsoft.MicrosoftEdge_8wekyb3d8bbwe,
-                  Microsoft.WindowsStore_8wekyb3d8bbwe,
-                  Microsoft.MixedReality.Portal_8wekyb3d8bbwe,
-                  Microsoft.Microsoft3DViewer_8wekyb3d8bbwe,
-                  Microsoft.Windows.Photos_8wekyb3d8bbwe,
-                  Microsoft.Windows.SecureAssessmentBrowser_cw5n1h2txyewy,
-                  Microsoft.WindowsSoundRecorder_8wekyb3d8bbwe,
-                  Microsoft.XboxApp_8wekyb3d8bbwe
-      :no_section:
-      :no_caption:
+  .. gpo::    Disable apps access to your microphone
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              App Privacy -->
+              Let Windows access the microphone
+    :value0:  ☑, {ENABLED}
+    :value1:  Default for all apps, User is in control
+    :value2:  Force deny these specific apps (use Package Family Names):,
+    :value3:  ›, Microsoft.WindowsCamera_8wekyb3d8bbwe
+    :value4:  ›, Microsoft.Windows.Cortana_cw5n1h2txyewy
+    :value5:  ›, Microsoft.Win32WebViewHost_cw5n1h2txyewy
+    :value6:  ›, Microsoft.WindowsFeedbackHub_8wekyb3d8bbwe
+    :value7:  ›, Microsoft.XboxGamingOverlay_8wekyb3d8bbwe
+    :value8:  ›, Microsoft.Messaging_8wekyb3d8bbwe
+    :value9:  ›, Microsoft.MicrosoftEdge_8wekyb3d8bbwe
+    :value10: ›, Microsoft.WindowsStore_8wekyb3d8bbwe
+    :value11: ›, Microsoft.MixedReality.Portal_8wekyb3d8bbwe
+    :value12: ›, Microsoft.Microsoft3DViewer_8wekyb3d8bbwe
+    :value13: ›, Microsoft.Windows.Photos_8wekyb3d8bbwe
+    :value14: ›, Microsoft.Windows.SecureAssessmentBrowser_cw5n1h2txyewy
+    :value15: ›, Microsoft.WindowsSoundRecorder_8wekyb3d8bbwe
+    :value16: ›, Microsoft.XboxApp_8wekyb3d8bbwe
+    :update:   2021-02-19
+    :generic:
+    :open:
 
 .. rubric:: Rreferences
 

@@ -1,7 +1,7 @@
 .. _w10-20h2-security:
 
-Windows Security
-################
+Security
+########
 :cmdmenu:`⌘ + r --> windowsdefender:`
 :cmdmenu:`⌘ --> settings --> update & security --> windows security --> open windows security`
 

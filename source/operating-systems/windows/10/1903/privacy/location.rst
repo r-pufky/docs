@@ -9,87 +9,80 @@ Location
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  This disables all location privacy (hardware) options. See
+  This disables all location privacy (hardware) value0s. See
   :ref:`Allow apps to access your location <w10-1903-privacy-location>` to
   manage access on a per app basis.
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable access to location on this device
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Location and Sensors -->
+              Turn off location
+    :value0:  ☑, {ENABLED}
+    :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#182-location
+    :update:  2021-02-19
+    :generic:
+    :open:
+
+  .. gpo::    Disable Location sensors (hardware)
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Location and Sensors -->
+              Turn off sensors
+    :value0:  ☑, {ENABLED}
+    :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#182-location
+    :update:  2021-02-19
+    :generic:
+    :open:
+
+  .. gpo::    Disable Location scripting (hardware)
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Location and Sensors -->
+              Turn off location scripting
+    :value0:  ☑, {ENABLED}
+    :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#182-location
+    :update:  2021-02-19
+    :generic:
+    :open:
+
+  .. gpo::    Disable Location provider (hardware)
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Location and Sensors -->
+              Windows Location Provider -->
+              Turn off Windows Location Provider
+    :value0:  ☑, {ENABLED}
+    :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#182-location
+    :update:  2021-02-19
+    :generic:
+    :open:
+
+  .. regedit:: Disable access to location on this device
+    :path:     HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\
+               LocationAndSensors
+    :value0:   DisableLocation, {DWORD}, 1
+    :ref:      https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#182-location
+
+    :update:   2021-02-19
+    :generic:
+    :open:
 
     See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more
     fine grained control of app access.
 
-    .. wregedit:: Disable access to location on this device
-      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\
-                  LocationAndSensors
-      :names:     DisableLocation
-      :types:     DWORD
-      :data:      1
-      :no_section:
-      :no_caption:
-
-    .. wregedit:: Disable access to location on this device consentstore
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                  CapabilityAccessManager\ConsentStore\location
-      :names:     Value
-      :types:     SZ
-      :data:      Deny
-      :no_section:
-      :no_caption:
-      :no_launch:
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wgpolicy:: Disable access to location on this device
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Location and Sensors -->
-                  Turn off location
-      :option:    ☑
-      :setting:   Enabled
-      :no_section:
-      :no_caption:
-
-    .. wgpolicy:: Disable Location sensors (hardware)
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Location and Sensors -->
-                  Turn off sensors
-      :option:    ☑
-      :setting:   Enabled
-      :no_section:
-      :no_caption:
-      :no_launch:
-
-    .. wgpolicy:: Disable Location scripting (hardware)
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Location and Sensors -->
-                  Turn off location scripting
-      :option:    ☑
-      :setting:   Enabled
-      :no_section:
-      :no_caption:
-      :no_launch:
-
-    .. wgpolicy:: Disable Location provider (hardware)
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Location and Sensors -->
-                  Windows Location Provider -->
-                  Turn off Windows Location Provider
-      :option:    ☑
-      :setting:   Enabled
-      :no_section:
-      :no_caption:
-      :no_launch:
+  .. regedit:: Disable access to location on this device consentstore
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
+               CapabilityAccessManager\ConsentStore\location
+    :value0:   Value, {SZ}, Deny
+    :ref:      https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#182-location
+    :update:   2021-02-19
+    :generic:
+    :open:
 
 .. _w10-1903-privacy-location:
 
@@ -100,43 +93,31 @@ Location
 
   Disable app access to location.
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable apps to access your location
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              App Privacy -->
+              Let Windows apps access location
+    :value0:  ☑, {ENABLED}
+              Default for all apps, Force Deny
+    :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#182-location
+    :update:  2021-02-19
+    :generic:
+    :open:
+    
+    See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more
+    fine grained control of app access.
+
+  .. regedit:: Disable apps to access your location
+    :path:     HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
+    :value0:   LetAppsAccessLocation, {DWORD}, 2
+    :ref:      https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#182-location
+    :update:   2021-02-19
+    :generic:
+    :open:
 
     See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more
     fine grained control of app access.
 
     ``0`` enables location.
-
-    .. wregedit:: Disable apps to access your location
-      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
-      :names:     LetAppsAccessLocation
-      :types:     DWORD
-      :data:      2
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-    
-    See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more
-    fine grained control of app access.
-
-    .. wgpolicy:: Disable apps to access your location
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  App Privacy -->
-                  Let Windows apps access location
-      :option:    ☑,
-                  Default for all apps
-      :setting:   Enabled,
-                  Force Deny
-      :no_section:
-      :no_caption:
-
-.. rubric:: Rreferences
-
-#. `Location Windows Management Settings <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#182-location>`_

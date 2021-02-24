@@ -15,14 +15,14 @@ class Gpo(ct.AbstractConfigTable):
   Badges ({KEYWORD}) are automatically converted using badges.badges.
 
   Directives:
-    :path:        String registry key path. Required.
-    :value{0..9}: List of Option, Setting strings for policy.
-    :ref:         List of reference URI's.
-    :version:     List of supported windows versions - see self._text_badges.
-    :update:      String datetime last time references/settings were checked.
-    :delim:       Custom delimeter to use instead of config.DEFAULT_DELIM.
-    :generic:     Use generic 'Registry' dropdown label, in light-grey.
-    :open:        Set to expand the dropdown by default.
+    :path:         String registry key path. Required.
+    :value{0..30}: List of Option, Setting strings for policy.
+    :ref:          List of reference URI's.
+    :version:      List of supported windows versions - see self._text_badges.
+    :update:       String datetime last time references/settings were checked.
+    :delim:        Custom delimeter to use instead of config.DEFAULT_DELIM.
+    :generic:      Use generic 'Registry' dropdown label, in light-grey.
+    :open:         Set to expand the dropdown by default.
 
   conf.py options:
     ct_gpo_separator: Unicode separator to use for path. This uses the
@@ -72,6 +72,27 @@ class Gpo(ct.AbstractConfigTable):
     'value7': directives.unchanged,
     'value8': directives.unchanged,
     'value9': directives.unchanged,
+    'value10': directives.unchanged,
+    'value11': directives.unchanged,
+    'value12': directives.unchanged,
+    'value13': directives.unchanged,
+    'value14': directives.unchanged,
+    'value15': directives.unchanged,
+    'value16': directives.unchanged,
+    'value17': directives.unchanged,
+    'value18': directives.unchanged,
+    'value19': directives.unchanged,
+    'value20': directives.unchanged,
+    'value21': directives.unchanged,
+    'value22': directives.unchanged,
+    'value23': directives.unchanged,
+    'value24': directives.unchanged,
+    'value25': directives.unchanged,
+    'value26': directives.unchanged,
+    'value27': directives.unchanged,
+    'value28': directives.unchanged,
+    'value29': directives.unchanged,
+    'value30': directives.unchanged,
     'ref': directives.unchanged,
     'version': directives.unchanged,
     'update': directives.unchanged,
@@ -180,7 +201,7 @@ class Gpo(ct.AbstractConfigTable):
     self._add_dropdown_header()
     self._add_panel_template()
     self._add_path(self.gen_label(self._sanitize_path()))
-    for row in self._sanitize_data():
+    for row in self._sanitize_data(30):
       self._add_value_row(row)
     self._add_update(self._sanitize_update())
     if 'version' in self.options:

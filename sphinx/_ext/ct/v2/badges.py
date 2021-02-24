@@ -40,6 +40,9 @@ badges = {
   '{ENABLED}': Template.success % 'ENABLED',
   '{ENABLE}': Template.success % 'ENABLE',
   '{ENTER}': Template.info % 'ENTER',
+  '{ANY}': Template.info % 'ANY',
+  '{SUCCESS}': Template.success % 'SUCCESS',
+  '{FAILURE}': Template.danger % 'FAILURE',
 
   # Location / Time
   '{TZ}': Template.info % 'TZ',

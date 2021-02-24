@@ -11,41 +11,33 @@ Messaging
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  This disables all messaging options. See
+  This disables all messaging value0s. See
   :ref:`Allow apps to read or send messages <w10-1903-privacy-messaging>` to
   manage access on a per app basis.
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable apps access your messaging
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              App Privacy -->
+              Let Windows apps access messaging
+    :value0:  ☑, {ENABLED}
+    :value1:  Default for all apps, Force Deny
+    :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1812-messaging
+    :update:  2021-02-19
+    :generic:
+    :open:
+
+  .. regedit:: Disable access to messaging on this device
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
+               CapabilityAccessManager\ConsentStore\chat
+    :value0:   Value, {SZ}, Deny
+    :ref:      https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1812-messaging
+    :update:   2021-02-19
+    :generic:
+    :open:
 
     ``Allow`` enables access to messaging on this device.
-
-    .. wregedit:: Disable access to messaging on this device
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                  CapabilityAccessManager\ConsentStore\chat
-      :names:     Value
-      :types:     SZ
-      :data:      Deny
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wgpolicy:: Disable apps access your messaging
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  App Privacy -->
-                  Let Windows apps access messaging
-      :option:    ☑,
-                  Default for all apps
-      :setting:   Enabled,
-                  Force Deny
-      :no_section:
-      :no_caption:
 
 .. _w10-1903-privacy-messaging:
 
@@ -57,36 +49,28 @@ Messaging
   See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more fine
   grained control of app access.
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable apps access your messaging
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              App Privacy -->
+              Let Windows apps access messaging
+    :value0:  ☑, {ENABLED}
+              Default for all apps, Force Deny
+    :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1812-messaging
+    :update:  2021-02-19
+    :generic:
+    :open:
 
-    ``0`` enabels apps access to messaging.
+  .. regedit:: Disable apps to access your messaging
+    :path:     HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
+    :value0:   LetAppsAccessMessaging, {DWORD}, 2
+    :ref:      https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1812-messaging
+    :update:   2021-02-19
+    :generic:
+    :open:
 
-    .. wregedit:: Disable apps to access your messaging
-      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
-      :names:     LetAppsAccessMessaging
-      :types:     DWORD
-      :data:      2
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wgpolicy:: Disable apps access your messaging
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  App Privacy -->
-                  Let Windows apps access messaging
-      :option:    ☑,
-                  Default for all apps
-      :setting:   Enabled,
-                  Force Deny
-      :no_section:
-      :no_caption:
+    ``0`` enables apps access to messaging.
 
 .. dropdown:: Turn off message sync
   :container: + shadow
@@ -95,35 +79,24 @@ Messaging
 
   This is not available in the GUI.
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable message sync
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Messaging -->
+              Allow Message Service Cloud Sync
+    :value0:  ☑, {DISABLED}
+    :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1812-messaging
+    :update:  2021-02-19
+    :generic:
+    :open:
+
+  .. regedit:: Disable message sync
+    :path:     HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Messaging
+    :value0:   AllowMessageSync, {DWORD}, 0
+    :ref:      https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1812-messaging
+    :update:   2021-02-19
+    :generic:
+    :open:
 
     ``1`` enable message sync.
-
-    .. wregedit:: Disable message sync
-      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Messaging
-      :names:     AllowMessageSync
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wgpolicy:: Disable message sync
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Messaging -->
-                  Allow Message Service Cloud Sync
-      :option:    ☑
-      :setting:   Disabled
-      :no_section:
-      :no_caption:
-
-.. rubric:: Rreferences
-
-#. `Messaging Windows Management Settings <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1812-messaging>`_

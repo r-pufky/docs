@@ -6,8 +6,8 @@ Notifications & Actions
 Notifications
 *************
 .. note::
-  GPO's are currently broken. Apply **both** GPO and Registry for all options
-  if available. `Reference <https://social.technet.microsoft.com/Forums/windows/en-US/c39301f4-dcc9-4f2b-a872-98a23bd6d86a/gpo-to-quotturn-off-toast-notifications-on-the-lock-screenquot-does-not-work?forum=win10itprogeneral>`_.
+  GPO's work in ``Education`` and ``Enterprise``. Apply **both** GPO and
+  Registry for all options if available. `Reference <https://social.technet.microsoft.com/Forums/windows/en-US/c39301f4-dcc9-4f2b-a872-98a23bd6d86a/gpo-to-quotturn-off-toast-notifications-on-the-lock-screenquot-does-not-work?forum=win10itprogeneral>`_.
 
 .. _w10-20h2-settings-system-get-notifications-from-apps:
 
@@ -18,125 +18,73 @@ Notifications
 
   Global toggle for notifications.
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable get notifications from apps and other windows
+    :path:    User Configuration -->
+              Administrative Templates -->
+              Start Menu and Taskbar -->
+              Notifications -->
+              Turn off toast notifications
+    :value0:  ☑, {ENABLED}
+    :ref:     https://www.tenforums.com/tutorials/4111-turn-off-notifications-apps-senders-windows-10-a.html#option2
+    :update:  2021-02-19
+    :generic:
     :open:
 
-    Working.
-
-    .. wgpolicy:: Disable get notifications from apps and other windows
-      :key_title: User Configuration -->
-                  Administrative Templates -->
-                  Start Menu and Taskbar -->
-                  Notifications -->
-                  Turn off toast notifications
-      :option:    ☑
-      :setting:   Enabled
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Disable get notifications from apps and other windows
+    :path:     HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
+               PushNotifications
+    :value0:   ToastEnabled, {DWORD}, 0
+    :ref:      https://www.tenforums.com/tutorials/4111-turn-off-notifications-apps-senders-windows-10-a.html#option2
+    :update:   2021-02-19
+    :generic:
     :open:
-
-    .. wregedit:: Disable get notifications from apps and other windows
-      :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                  PushNotifications
-      :names:     ToastEnabled
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
-
-  `Reference <https://www.tenforums.com/tutorials/4111-turn-off-notifications-apps-senders-windows-10-a.html#option2>`__
 
 .. dropdown:: Disable show notifications on lock screen
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
+  Broken. Will enforce if it is already disabled, but will not force disable.
+  Use registry keys to force disable.
+
+  .. gpo:: Disable get notifications from apps and other windows
+    :path: User Configuration -->
+                Administrative Templates -->
+                Start Menu and Taskbar -->
+                Notifications -->
+                Turn off toast notifications on the lock screen
+    :value0:    ☑, {ENABLED}
+    :update:   2021-02-19
+    :generic:
     :open:
 
-    Broken. Will enforce if it is already disabled, but will not force disable.
-    Use registry keys to force disable.
-
-    .. wgpolicy:: Disable get notifications from apps and other windows
-      :key_title: User Configuration -->
-                  Administrative Templates -->
-                  Start Menu and Taskbar -->
-                  Notifications -->
-                  Turn off toast notifications on the lock screen
-      :option:    ☑
-      :setting:   Enabled
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Disable show notifications on lock screen
+    :path:     HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
+               Notifications\Settings
+    :value0:   NOC_GLOBAL_SETTING_ALLOW_TOASTS_ABOVE_LOCK, {DWORD}, 0
+    :update:   2021-02-19
+    :generic:
     :open:
 
-    .. wregedit:: Disable show notifications on lock screen
-      :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                  Notifications\Settings
-      :names:     NOC_GLOBAL_SETTING_ALLOW_TOASTS_ABOVE_LOCK
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
-
-    .. wregedit:: Disable show notifications on lock screen
-      :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                  PushNotifications
-      :names:     LockScreenToastEnabled
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
-      :no_launch:
-
-.. dropdown:: Disable show reminders and incomign VoIP calls on the lock screen
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Disable show notifications on lock screen
+    :path:     HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
+               PushNotifications
+    :value0:   LockScreenToastEnabled, {DWORD}, 0
+    :update:   2021-02-19
+    :generic:
     :open:
 
-    .. wregedit:: Disable show reminders and incomign VoIP calls on the lock screen
-      :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                  Notifications\Settings
-      :names:     NOC_GLOBAL_SETTING_ALLOW_CRITICAL_TOASTS_ABOVE_LOCK
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
+.. regedit:: Disable show reminders and incomign VoIP calls on the lock screen
+  :path:     HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
+             Notifications\Settings
+  :value0:   NOC_GLOBAL_SETTING_ALLOW_CRITICAL_TOASTS_ABOVE_LOCK, {DWORD}, 0
+  :update:   2021-02-19
 
-.. dropdown:: Disable allow notifications to play sounds
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
-    :open:
-
-    .. wregedit:: Disable allow notifications to play sounds
-      :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                  Notifications\Settings
-      :names:     NOC_GLOBAL_SETTING_ALLOW_NOTIFICATION_SOUND
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
+.. regedit:: Disable allow notifications to play sounds
+  :path:     HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
+             Notifications\Settings
+  :value0:   NOC_GLOBAL_SETTING_ALLOW_NOTIFICATION_SOUND, {DWORD}, 0
+  :update:   2021-02-19
 
 .. dropdown:: Disable show me the windows welcome experience after updates and 
               occasionally when I sign in to highlight what's new and suggested
@@ -144,125 +92,75 @@ Notifications
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable show me the windows welcome experience after updates
+              and occasionally when I sign in to highlight what's new and
+              suggested
+    :path:    User Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Cloud Content -->
+              Turn off the Windows Welcome Experience
+    :value0:  ☑, {ENABLED}
+    :ref:     https://admx.help/?Category=Windows_10_2016&Policy=Microsoft.Policies.CloudContent%3A%3ADisableWindowsSpotlightWindowsWelcomeExperience
+    :update:  2021-02-19
+    :generic:
     :open:
 
-    .. wregedit:: Disable show me the windows welcome experience after updates
-                  and occasionally when I sign in to highlight what's new and
-                  suggested
-      :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                  ContentDeliveryManager
-      :names:     SubscribedContent-310093Enabled
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
-
-    `Reference <https://www.makeuseof.com/tag/disable-windows-welcome-experience-page-windows-10/>`__
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    Broken.
-
-    .. wgpolicy:: Disable show me the windows welcome experience after updates
-                  and occasionally when I sign in to highlight what's new and
-                  suggested
-      :key_title: User Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Cloud Content -->
-                  Turn off the Windows Welcome Experience
-      :option:    ☑
-      :setting:   Enabled
-      :no_section:
-      :no_caption:
-
-    `Reference <https://admx.help/?Category=Windows_10_2016&Policy=Microsoft.Policies.CloudContent%3A%3ADisableWindowsSpotlightWindowsWelcomeExperience>`__
-
-.. dropdown:: Disable suggest ways I can finish setting up my device to get the
-              most out of Windows
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Disable show me the windows welcome experience after updates
+               and occasionally when I sign in to highlight what's new and
+               suggested
+    :path:     HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
+               ContentDeliveryManager
+    :value0:   SubscribedContent-310093Enabled, {DWORD}, 0
+    :ref:      https://www.makeuseof.com/tag/disable-windows-welcome-experience-page-windows-10/
+    :update:   2021-02-19
+    :generic:
     :open:
 
-    .. wregedit:: Disable suggest ways I can finish setting up my device to get
-                  the most out of Windows
-      :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                  UserProfileEngagement
-      :names:     ScoobeSystemSettingEnabled
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
-
-  `Reference <https://www.tenforums.com/tutorials/137645-turn-off-get-even-more-out-windows-suggestions-windows-10-a.html>`__
+.. regedit:: Disable suggest ways I can finish setting up my device to get
+             the most out of Windows
+  :path:     HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
+             UserProfileEngagement
+  :value0:   ScoobeSystemSettingEnabled, {DWORD}, 0
+  :ref:      https://www.tenforums.com/tutorials/137645-turn-off-get-even-more-out-windows-suggestions-windows-10-a.html
+  :update:   2021-02-19
 
 .. dropdown:: Disable get tips, tricks, and suggestions as you use Windows
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable get tips, tricks, and suggestions as you use Windows
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Cloud Content -->
+              Do not show Windows tips
+    :value0:  ☑, {ENABLED}
+    :ref:     https://www.tenforums.com/tutorials/30869-turn-off-tip-trick-suggestion-notifications-windows-10-a.html
+    :update:  2021-02-19
+    :generic:
     :open:
 
-    .. wregedit:: Disable get tips, tricks, and suggestions as you use Windows
-      :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                  ContentDeliveryManager
-      :names:     SubscribedContent-338389Enabled
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    Only works in ``Enterprise`` and ``Education`` Windows versions.
-
-    .. wgpolicy:: Disable get tips, tricks, and suggestions as you use Windows
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Cloud Content -->
-                  Do not show Windows tips
-      :option:    ☑
-      :setting:   Enabled
-      :no_section:
-      :no_caption:
-
-  `Reference <https://www.tenforums.com/tutorials/30869-turn-off-tip-trick-suggestion-notifications-windows-10-a.html>`__
+  .. regedit:: Disable get tips, tricks, and suggestions as you use Windows
+    :path:     HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
+               ContentDeliveryManager
+    :value0:   SubscribedContent-338389Enabled, {DWORD}, 0
+    :ref:      https://www.tenforums.com/tutorials/30869-turn-off-tip-trick-suggestion-notifications-windows-10-a.html
+    :update:   2021-02-19
+    :generic:
+    :open:
 
 Get notifications from these senders
 ************************************
-:ref:`Notifications <w10-20h2-settings-system-get-notifications-from-apps>` must be enabled for
-these per-app options to be enabled.
+:ref:`Notifications <w10-20h2-settings-system-get-notifications-from-apps>` must
+be enabled for these per-app options to be enabled.
 
-.. dropdown:: Notifications can be disabled on a per-app basis
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
+.. regedit:: Notifications can be disabled on a per-app basis
+  :path:     HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
+             Notifications\Settings\{APPLICATION}
+  :value0:   Enabled, {DWORD}, 0
+  :ref: https://community.spiceworks.com/topic/2264044-how-to-manage-windows-10-notifications-via-gpo-for-specific-programs
+  :update: 2021-02-19
 
   Each application will have specific notification settings to set.
-  
-  .. wregedit:: Notifications can be disabled on a per-app basis
-    :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                Notifications\Settings\{APPLICATION}
-    :names:     Enabled
-    :types:     DWORD
-    :data:      0
-    :no_section:
-    :no_caption:
-
-  `Reference <https://community.spiceworks.com/topic/2264044-how-to-manage-windows-10-notifications-via-gpo-for-specific-programs>`__

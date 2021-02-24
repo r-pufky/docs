@@ -22,42 +22,30 @@ Cloud-delivered protection
   Previous versions labeled this as 'Microsoft Antimalware Protection Service'
   (MAPS). Uploads files and file hashes to Microsoft for any suspect file.
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable Cloud-delivered protection (MAPS)
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Microsoft Defender Antivirus -->
+              MAPS -->
+              Join Microsoft MAPS
+    :value0:  ☑, {ENABLED}
+    :value1:  Join Microsoft MAPS, {DISABLED}
+    :ref:     http://windowsbulletin.com/how-to-enable-or-disable-sample-submission-in-windows-defender/
+    :update:  2021-02-19
+    :generic:
     :open:
 
     Policy must be enabled and set to disable to apply.
 
-    .. wgpolicy:: Disable Cloud-delivered protection (MAPS)
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Microsoft Defender Antivirus -->
-                  MAPS -->
-                  Join Microsoft MAPS
-      :option:    ☑,
-                  Join Microsoft MAPS
-      :setting:   Enabled,
-                  Disabled
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Disable Cloud-delivered protection (MAPS)
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\
+               Microsoft Defender\Spynet
+    :value0:   SpyNetReporting, {DWORD}, 0
+    :ref:      http://windowsbulletin.com/how-to-enable-or-disable-sample-submission-in-windows-defender/
+    :update:   2021-02-19
+    :generic:
     :open:
-
-    .. wregedit:: Disable Cloud-delivered protection (MAPS)
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\
-                  Microsoft Defender\Spynet
-      :names:     SpyNetReporting
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
-
-  `Reference <http://windowsbulletin.com/how-to-enable-or-disable-sample-submission-in-windows-defender/>`__
 
 Automatic sample submission
 ***************************
@@ -66,40 +54,28 @@ Automatic sample submission
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable Automatic sample submission
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Microsoft Defender Antivirus -->
+              MAPS -->
+              Send sample files when further analysis is required
+    :value0:  ☑, {ENABLED}
+    :value1:  Send sample files when further analysis is required, Never
+    :ref:     http://windowsbulletin.com/how-to-enable-or-disable-sample-submission-in-windows-defender/
+    :update:  2021-02-19
+    :generic:
     :open:
 
-    .. wgpolicy:: Disable Automatic sample submission
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Microsoft Defender Antivirus -->
-                  MAPS -->
-                  Send sample files when further analysis is required
-      :option:    ☑,
-                  Send sample files when further analysis is required
-      :setting:   Enabled,
-                  Never
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Disable Automatic sample submission
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\
+               Microsoft Defender\Spynet
+    :value0:   SubmitSamplesConsent, {DWORD}, 2
+    :ref:      http://windowsbulletin.com/how-to-enable-or-disable-sample-submission-in-windows-defender/
+    :update:   2021-02-19
+    :generic:
     :open:
-
-    .. wregedit:: Disable Automatic sample submission
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\
-                  Microsoft Defender\Spynet
-      :names:     SubmitSamplesConsent
-      :types:     DWORD
-      :data:      2
-      :no_section:
-      :no_caption:
-
-  `Reference <http://windowsbulletin.com/how-to-enable-or-disable-sample-submission-in-windows-defender/>`__
 
 Exclusions
 **********
@@ -112,44 +88,30 @@ Exclusions
   blackholes for telemetry. Do *not* add this exlcusion if you are not managing
   the host file yourself.
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Add hosts file exclusion
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Microsoft Defender Antivirus -->
+              Exclusions -->
+              Path Exclusions
+    :value0:  ☑, {ENABLED}
+    :value1:  Path Exclusions,
+    :value2:  › Value Name, C:\Windows\System32\drivers\etc\hosts
+    :value3:  › Value, 0
+    :ref:     https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/configure-extension-file-exclusions-microsoft-defender-antivirus
+    :update:  2021-02-19
+    :generic:
     :open:
 
-    .. wgpolicy:: Add hosts file exclusion
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Microsoft Defender Antivirus -->
-                  Exclusions -->
-                  Path Exclusions
-      :option:    ☑,
-                  Path Exclusions,
-                  › Value Name,
-                  › Value
-      :setting:   Enabled,
-                  ,
-                  C:\Windows\System32\drivers\etc\hosts,
-                  0
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Add hosts file exclusion
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Defender\
+               Exclusions\Paths
+    :value0:   C:\Windows\System32\drivers\etc\hosts, {DWORD}, 0
+    :ref:      https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/configure-extension-file-exclusions-microsoft-defender-antivirus
+    :update:   2021-02-19
+    :generic:
     :open:
-
-    .. wregedit:: Add hosts file exclusion
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Defender\
-                  Exclusions\Paths
-      :names:     C:\Windows\System32\drivers\etc\hosts
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
-
-  `Reference <https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/configure-extension-file-exclusions-microsoft-defender-antivirus>`__
 
 Notifications
 *************
@@ -160,74 +122,52 @@ Virus & threat protection notifications
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wregedit:: Disable Get informational notifications
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\
-                  Windows Defender Security Center\Notifications
-      :names:     DisableEnhancedNotifications
-      :types:     DWORD
-      :data:      1
-      :no_section:
-      :no_caption:
+  .. regedit:: Disable Get informational notifications
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\
+               Windows Defender Security Center\Notifications
+    :value0:   DisableEnhancedNotifications, {DWORD}, 1
+    :update:   2021-02-19
+    :generic:
+    :open:
 
 .. dropdown:: Disable Recent activity and scan results
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Disable Recent activity and scan results
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\
+               Windows Defender Security Center\Virus and threat protection
+    :value0:   SummaryNotificationDisabled, {DWORD}, 1
+    :update:   2021-02-19
+    :generic:
     :open:
-
-    .. wregedit:: Disable Recent activity and scan results
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\
-                  Windows Defender Security Center\Virus and threat protection
-      :names:     SummaryNotificationDisabled
-      :types:     DWORD
-      :data:      1
-      :no_section:
-      :no_caption:
 
 .. dropdown:: Disable Threats found but no immediate action is needed
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Disable Threats found but no immediate action is needed
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\
+               Windows Defender Security Center\Virus and threat protection
+    :value0:   NoActionNotificationDisabled, {DWORD}, 1
+    :update:   2021-02-19
+    :generic:
     :open:
-
-    .. wregedit:: Disable Threats found but no immediate action is needed
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\
-                  Windows Defender Security Center\Virus and threat protection
-      :names:     NoActionNotificationDisabled
-      :types:     DWORD
-      :data:      1
-      :no_section:
-      :no_caption:
 
 .. dropdown:: Disable Files or activities are blocked
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wregedit:: Disable Files or activities are blocked
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\
-                  Windows Defender Security Center\Virus and threat protection
-      :names:     FilesBlockedNotificationDisabled
-      :types:     DWORD
-      :data:      1
-      :no_section:
-      :no_caption:
+  .. regedit:: Disable Files or activities are blocked
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\
+               Windows Defender Security Center\Virus and threat protection
+    :value0:   FilesBlockedNotificationDisabled, {DWORD}, 1
+    :update:   2021-02-19
+    :generic:
+    :open:
 
 Get account protection notifications
 ====================================
@@ -236,59 +176,42 @@ Get account protection notifications
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Disable Get account protection notifications
+    :path:     HKEY_USERS\{SID}\SOFTWARE\Microsoft\
+               Windows Defender Security Center\Account protection
+    :value0:   DisableNotifications, {DWORD}, 1
+    :ref:      https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/configure-notifications-microsoft-defender-antivirus
+    :update:   2021-02-19
+    :generic:
     :open:
-
-    .. wregedit:: Disable Get account protection notifications
-      :key_title: HKEY_USERS\{SID}\SOFTWARE\Microsoft\
-                  Windows Defender Security Center\Account protection]
-      :names:     DisableNotifications
-      :types:     DWORD
-      :data:      1
-      :no_section:
-      :no_caption:
 
 .. dropdown:: Disable Problems with Windows Hello
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Disable Problems with Windows Hello
+    :path:     HKEY_USERS\{SID}\SOFTWARE\Microsoft\
+               Windows Defender Security Center\Account protection
+    :value0:   DisableWindowsHelloNotifications, {DWORD}, 1
+    :ref:      https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/configure-notifications-microsoft-defender-antivirus
+    :update:   2021-02-19
+    :generic:
     :open:
-
-    .. wregedit:: Disable Problems with Windows Hello
-      :key_title: HKEY_USERS\{SID}\SOFTWARE\Microsoft\
-                  Windows Defender Security Center\Account protection]
-      :names:     DisableWindowsHelloNotifications
-      :types:     DWORD
-      :data:      1
-      :no_section:
-      :no_caption:
 
 .. dropdown:: Disable Problems with Dynamic lock
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Disable Problems with Dynamic lock
+    :path:     HKEY_USERS\{SID}\SOFTWARE\Microsoft\
+               Windows Defender Security Center\Account protection]
+    :value0:   DisableDynamiclockNotifications, {DWORD}, 1
+    :ref:      https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/configure-notifications-microsoft-defender-antivirus
+    :update:   2021-02-19
+    :generic:
     :open:
-
-    .. wregedit:: Disable Problems with Dynamic lock
-      :key_title: HKEY_USERS\{SID}\SOFTWARE\Microsoft\
-                  Windows Defender Security Center\Account protection]
-      :names:     DisableDynamiclockNotifications
-      :types:     DWORD
-      :data:      1
-      :no_section:
-      :no_caption:
-
-`Reference <https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-antivirus/configure-notifications-microsoft-defender-antivirus>`__
 
 Firewall
 ********

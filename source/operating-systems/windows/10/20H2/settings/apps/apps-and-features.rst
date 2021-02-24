@@ -10,37 +10,25 @@ Apps & features
 
   Allow install from anywhere.
     
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Choose where to get apps
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Windows Defender SmartScreen -->
+              Explorer -->
+              Configure App Install Control
+    :value0:  ☑, {ENABLED}
+    :value1:  ›, Turn off app recommendations
+    :ref:     https://www.tenforums.com/tutorials/78213-choose-where-apps-can-installed-windows-10-a.html
+    :update:  2021-02-19
+    :generic:
     :open:
 
-    .. wgpolicy:: Choose where to get apps
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Windows Defender SmartScreen -->
-                  Explorer -->
-                  Configure App Install Control
-      :option:    ☑,
-                  › 
-      :setting:   Enabled,
-                  Turn off app recommendations
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Choose where to get apps
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
+               Explorer
+    :value0:   AicEnabled, {SZ}, Anywhere
+    :ref:      https://www.tenforums.com/tutorials/78213-choose-where-apps-can-installed-windows-10-a.html
+    :update:   2021-02-19
+    :generic:
     :open:
-
-    .. wregedit:: Choose where to get apps
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
-                  Explorer
-      :names:     AicEnabled
-      :types:     STRING
-      :data:      Anywhere
-      :no_section:
-      :no_caption:
-
-  `Reference <https://www.tenforums.com/tutorials/78213-choose-where-apps-can-installed-windows-10-a.html>`__

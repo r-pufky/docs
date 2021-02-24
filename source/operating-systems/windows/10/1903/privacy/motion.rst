@@ -17,37 +17,25 @@ Motion
 
   Disable access to motion data.
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable apps use your motion data and collect motion history
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              App Privacy -->
+              Let Windows apps access motion
+    :value0:  ☑, {ENABLED}
+    :value1:  Default for all apps, Force Deny
+    :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1818-motion
+    :update:  2021-02-19
+    :generic:
+    :open:
+
+  .. regedit:: Disable apps use your motion data and collect motion history
+    :path:     HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
+    :value0:   LetAppsAccessMotion, {DWORD}, 2
+    :ref:      https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1818-motion
+    :update:   2021-02-19
+    :generic:
+    :open:
 
     ``0`` enable apps usage of motion data.
-
-    .. wregedit:: Disable apps use your motion data and collect motion history
-      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
-      :names:     LetAppsAccessMotion
-      :types:     DWORD
-      :data:      2
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wgpolicy:: Disable apps use your motion data and collect motion history
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  App Privacy -->
-                  Let Windows apps access motion
-      :option:    ☑,
-                  Default for all apps
-      :setting:   Enabled,
-                  Force Deny
-      :no_section:
-      :no_caption:
-
-.. rubric:: Rreferences
-
-#. `Motion Windows Management Settings <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1818-motion>`_

@@ -41,83 +41,62 @@ hit. See `Telemetry Info`_.
     most restrictive policy is setup in case telemetry services are re-enabled
     on updates.
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Restrict data collection to basic
+    :path:     HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\
+               DataCollection
+    :value0:   AllowTelemetry, {DWORD}, 1
+    :update:   2021-02-19
+    :generic:
+    :open:
 
-    .. wregedit:: Restrict data collection to basic
-      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\
-                  DataCollection
-      :names:     AllowTelemetry
-      :types:     DWORD
-      :data:      1
-      :no_section:
-      :no_caption:
+  .. gpo::    Restrict data collection to basic
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Data Collection and Preview Builds -->
+              Allow Telemetry
+    :value0:  ☑, {ENABLED}
+    :value1:  1, Basic
+    :update:  2021-02-19
+    :generic:
+    :open:
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wgpolicy:: Restrict data collection to basic
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Data Collection and Preview Builds -->
-                  Allow Telemetry
-      :option:    ☑,
-                  1
-      :setting:   Enabled,
-                  Basic
-      :no_section:
-      :no_caption:
-
-    .. wgpolicy:: Restrict data collection to basic
-      :key_title: User Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Data Collection and Preview Builds -->
-                  Allow Telemetry
-      :option:    ☑,
-                  1
-      :setting:   Enabled,
-                  Basic
-      :no_section:
-      :no_caption:
-      :no_launch:
+  .. gpo::    Restrict data collection to basic
+    :path:    User Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Data Collection and Preview Builds -->
+              Allow Telemetry
+    :value0:  ☑, {ENABLED}
+    :value1:  1, Basic
+    :update:  2021-02-19
+    :generic:
+    :open:
 
 .. dropdown:: Disable application telemetry 
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  Windows 10 collect information on application usage.
+  Windows 10 collects information on application usage.
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Turn off application telemetry
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppCompat
+    :value0:   AITEnable, {DWORD}, 0
+    :update:   2021-02-19
+    :generic:
+    :open:
 
-    .. wregedit:: Turn off application telemetry
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppCompat
-      :names:     AITEnable
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wgpolicy:: Disable application telemetry
-      :key_title: User Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Application Compatibility -->
-                  Turn off Application Telemetry
-      :option:    ☑
-      :setting:   Enabled
-      :no_section:
-      :no_caption:
+  .. gpo::    Disable application telemetry
+    :path:    User Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Application Compatibility -->
+              Turn off Application Telemetry
+    :value0:  ☑, Enabled
+    :update:  2021-02-19
+    :generic:
+    :open:
 
 .. dropdown:: Disable customer experience improvment program 
   :container: + shadow
@@ -127,33 +106,24 @@ hit. See `Telemetry Info`_.
   Windows 10 devices send hardware and software usage information to Microsoft
   via `customer experience improvement program`_.
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Disable `customer experience improvement program`_
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SQMClient\Windows
+    :value0:   CEIPEnable, {DWORD}, 0
+    :update:   2021-02-19
+    :generic:
+    :open:
 
-    .. wregedit:: Disable `customer experience improvement program`_
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\SQMClient\Windows
-      :names:     CEIPEnable
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wgpolicy:: Disable `customer experience improvement program`_
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  System -->
-                  Internet Communication Management -->
-                  Internet Communication settings -->
-                  Turn off Windows Customer Experience Improvement Program
-      :option:    ☑
-      :setting:   Enabled
-      :no_section:
-      :no_caption:
+  .. gpo::    Disable `customer experience improvement program`_
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              System -->
+              Internet Communication Management -->
+              Internet Communication settings -->
+              Turn off Windows Customer Experience Improvement Program
+    :value0:  ☑, {ENABLED}
+    :update:  2021-02-19
+    :generic:
+    :open:
 
 .. dropdown:: Disable sending browser history for Edge
   :container: + shadow
@@ -162,77 +132,49 @@ hit. See `Telemetry Info`_.
 
   Edge browser automatically reports browser history to Microsoft.
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable sending browser history for Edge
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Data Collection and Preview Builds -->
+              Configure collection of browsing data for Microsoft 365 Analytics
+    :value0:  ☑, {DISABLED}
+    :update:  2021-02-19
+    :generic:
+    :open:
 
-    .. wgpolicy:: Disable sending browser history for Edge
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Data Collection and Preview Builds -->
-                  Configure collection of browsing data for Microsoft 365 Analytics
-      :option:    ☑
-      :setting:   Disabled
-      :no_section:
-      :no_caption:
+  .. gpo::    Disable sending browser history for Edge
+    :path:    User Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Data Collection and Preview Builds -->
+              Configure collection of browsing data for Microsoft 365 Analytics
+    :value0:  ☑, {DISABLED}
+    :update:  2021-02-19
+    :generic:
+    :open:
 
-    .. wgpolicy:: Disable sending browser history for Edge
-      :key_title: User Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Data Collection and Preview Builds -->
-                  Configure collection of browsing data for Microsoft 365 Analytics
-      :option:    ☑
-      :setting:   Disabled
-      :no_section:
-      :no_caption:
-      :no_launch:
-
-.. dropdown:: Disable infection reporting
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
-
+.. regedit:: Disable infection reporting
+  :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\MRT
+  :value0:   DontReportInfectionInformation, {DWORD}, 1
+  :ref:      https://support.microsoft.com/en-us/help/891716/deploy-windows-malicious-software-removal-tool-in-an-enterprise-enviro
+  :update:   2021-02-19
+  
   Windows 10 Malicious Software Removal Tool automatically uploads file metadata
   for infection reporting.
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wregedit:: `Disable infection reporting`_
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\MRT
-      :names:     DontReportInfectionInformation
-      :types:     DWORD
-      :data:      1
-      :no_section:
-      :no_caption:
-
-.. dropdown:: Disable inventory collector
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
+.. regedit:: Disable inventory collector
+  :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppCompat
+  :value0:   DisableInventory, {DWORD}, 1
+  :update:   2021-02-19
 
   Windows 10 Inventory Collector inventories applications, files, devices, and
   drivers on the system and sends the information to Microsoft.
-  
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
 
-    .. wregedit:: Disable inventory collector
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppCompat
-      :names:     DisableInventory
-      :types:     DWORD
-      :data:      1
-      :no_section:
-      :no_caption:
-
-.. dropdown:: Disable program compatibility assistant
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
+.. regedit:: Disable program compatibility assistant
+  :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppCompat
+  :value0:   DisablePCA, {DWORD}, 1
+  :update:   2021-02-19
 
   The Program Compatibility Assistant detects known compatibility issues in
   older programs. After you have run an older program in this version of
@@ -240,71 +182,40 @@ hit. See `Telemetry Info`_.
   time you run the program. If the compatibility issue is serious, the Program
   Compatibility Assistant might warn you or block the program from running.
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wregedit:: Disable program compatibility assistant
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppCompat
-      :names:     DisablePCA
-      :types:     DWORD
-      :data:      1
-      :no_section:
-      :no_caption:
-
-.. dropdown:: Disable steps recorder
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
+.. regedit:: Disable steps recorder
+  :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppCompat
+  :value0:   DisableUAR, {DWORD}, 1
+  :update:   2021-02-19
 
   Steps Recorder automatically capture steps you take on a PC, including a text
   description of what you did and a picture of the screen during each step.
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wregedit:: Disable steps recorder
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\AppCompat
-      :names:     DisableUAR
-      :types:     DWORD
-      :data:      1
-      :no_section:
-      :no_caption:
 
 .. dropdown:: Force desktop analytics to honor telemetry settings
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  `Desktop Analytics`_ will report additional telemetry information if enabled.
+  Desktop Analytics will report additional telemetry information if enabled.
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Make Desktop Analytics use Telemetry setting
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection
+    :value0:   LimitEnhancedDiagnosticDataWindowsAnalytics, {DWORD}, 0
+    :ref:      https://admx.help/?Category=Windows_10_2016&Policy=Microsoft.Policies.DataCollection::LimitEnhancedDiagnosticDataWindowsAnalytics
+    :update:   2021-02-19
+    :generic:
+    :open:
 
-    .. wregedit:: Make Desktop Analytics use Telemetry setting
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\DataCollection
-      :names:     LimitEnhancedDiagnosticDataWindowsAnalytics
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wgpolicy:: Make Desktop Analytics use Telemetry setting
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Data Collection and Preview Builds -->
-                  Limit Enhanced diagnostic data to the minimum required by Windows Analytics
-      :option:    ☑
-      :setting:   Disabled
-      :no_section:
-      :no_caption:
+  .. gpo::    Make Desktop Analytics use Telemetry setting
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Data Collection and Preview Builds -->
+              Limit Enhanced diagnostic data to the minimum required by Windows Analytics
+    :value0:  ☑, {DISABLED}
+    :ref:     https://admx.help/?Category=Windows_10_2016&Policy=Microsoft.Policies.DataCollection::LimitEnhancedDiagnosticDataWindowsAnalytics
+    :update:  2021-02-19
+    :generic:
+    :open:
 
 Firewall
 ********
@@ -392,7 +303,5 @@ changed. See references for additional documentation.
 
 .. _Telemetry Info: https://www.forbes.com/sites/gordonkelly/2015/11/24/windows-10-automatic-spying-begins-again/
 .. _diagnostic data levels: https://docs.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization
-.. _Disable infection reporting: https://support.microsoft.com/en-us/help/891716/deploy-windows-malicious-software-removal-tool-in-an-enterprise-enviro
-.. _Desktop Analytics: https://admx.help/?Category=Windows_10_2016&Policy=Microsoft.Policies.DataCollection::LimitEnhancedDiagnosticDataWindowsAnalytics
 .. _Endpoints for telemetry: https://docs.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization#how-microsoft-handles-diagnostic-data
 .. _customer experience improvement program: https://www.windowscentral.com/how-opt-out-customer-experience-improvement-program-windows-10
