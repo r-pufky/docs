@@ -11,9 +11,9 @@ from .generic import table
 
 from .windows import wfirewall
 from .windows import wservice
-from .windows import wsysprop
 from .windows import wtschedule
 
+from .v2 import sysdm
 from .v2 import taskmanager
 from .v2 import regedit
 from .v2 import gpo
@@ -32,9 +32,9 @@ def setup(app):
 
   wfirewall.setup(app)
   wservice.setup(app)
-  wsysprop.setup(app)
   wtschedule.setup(app)
 
+  sysdm.setup(app)
   taskmanager.setup(app)
   regedit.setup(app)
   gpo.setup(app)

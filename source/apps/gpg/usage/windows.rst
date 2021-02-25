@@ -23,20 +23,17 @@ to enable gpg use anywhere on the system.
 Download :download:`gpg4win <https://www.gpg4win.org/package-integrity.html>`
 and **verify integrity**.
 
-.. wsysprop:: Add gpg to user system path
-  :key_title: Advanced -->
-              Environment Variables -->
-              User variables for {USER} -->
-              Path -->
-              Edit -->
-              New
-  :option:    Path
-  :setting:   c:\Program Files (x86)\GnuPG\bin
-  :no_section:
-  :no_caption:
+.. sysdm:: Add gpg to user system path
+  :path:   Advanced -->
+           Environment Variables -->
+           User variables for {USER} -->
+           Path -->
+           Edit -->
+           New
+  :value0: Path, c:\Program Files (x86)\GnuPG\bin
+  :update: 2021-02-19
 
-    .. note::
-      GPG path should be added to end of list.
+  GPG path should be added to end of list.
 
 Configure GPG Agent
 *******************
