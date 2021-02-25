@@ -12,9 +12,9 @@ from .generic import table
 from .windows import wfirewall
 from .windows import wservice
 from .windows import wsysprop
-from .windows import wtmanager
 from .windows import wtschedule
 
+from .v2 import taskmanager
 from .v2 import regedit
 from .v2 import gpo
 from .v2 import ubiquiti
@@ -33,9 +33,9 @@ def setup(app):
   wfirewall.setup(app)
   wservice.setup(app)
   wsysprop.setup(app)
-  wtmanager.setup(app)
   wtschedule.setup(app)
 
+  taskmanager.setup(app)
   regedit.setup(app)
   gpo.setup(app)
   ubiquiti.setup(app)

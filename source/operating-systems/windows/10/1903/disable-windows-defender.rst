@@ -277,23 +277,18 @@ See :ref:`w10-1903-disable-telemetry` for additional telemetry services.
               Windows Security -->
               Systray
     :value0:  Hide Windows Security Systray, {ENABLED}
+    :ref:     https://appuals.com/how-to-remove-windows-defender-icon-on-windows-10/
     :update:  2021-02-19
     :generic:
     :open:
 
-    See `disabling windows defender icon`_.
-
-  .. dropdown:: Scheduled Tasks
-    :title: font-weight-bold
-    :animate: fade-in
+  .. taskmanager:: Disable windows defender notification icon manager
+    :path:         More Details --> Startup
+    :value0:       Windows Defender notification icon, {DISABLED}
+    :ref:          https://appuals.com/how-to-remove-windows-defender-icon-on-windows-10/
+    :update:       2021-02-19
+    :generic:
     :open:
-
-    .. wtmanager:: Disable windows defender notification icon manager
-      :key_title:  More Details --> Startup
-      :option:     Windows Defender notification icon
-      :setting:    Disabled
-      :no_section:
-      :no_caption:
 
 .. dropdown:: Disable Windows Defender
   :container: + shadow
@@ -386,6 +381,5 @@ changed. See references for additional documentation.
 
 .. _Endpoints for telemetry: https://docs.microsoft.com/en-us/windows/privacy/configure-windows-diagnostic-data-in-your-organization#how-microsoft-handles-diagnostic-data
 .. _Disable Windows Defender: https://www.tenforums.com/tutorials/5918-how-turn-off-microsoft-defender-antivirus-windows-10-a.html
-.. _disabling windows defender icon: https://appuals.com/how-to-remove-windows-defender-icon-on-windows-10/
 .. _PSTools: https://docs.microsoft.com/en-us/sysinternals/downloads/pstools
 .. _disables Windows Defender: https://docs.microsoft.com/en-us/windows-hardware/customize/desktop/unattend/security-malware-windows-defender-disableantispyware

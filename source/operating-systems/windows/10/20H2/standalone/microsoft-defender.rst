@@ -252,17 +252,13 @@ services.
     :generic:
     :open:
 
-  .. dropdown:: Scheduled Tasks
-    :title: font-weight-bold
-    :animate: fade-in
+  .. taskmanager:: Disable windows defender notification icon manager
+    :path:         More Details --> Startup
+    :value0:       Microsoft Defender notification icon, {DISABLED}
+    :ref:          https://appuals.com/how-to-remove-windows-defender-icon-on-windows-10/
+    :update:       2021-02-19
+    :generic:
     :open:
-
-    .. wtmanager:: Disable windows defender notification icon manager
-      :key_title:  More Details --> Startup
-      :option:     Microsoft Defender notification icon
-      :setting:    Disabled
-      :no_section:
-      :no_caption:
 
 .. dropdown:: Disable Microsoft Defender
   :container: + shadow
