@@ -18,41 +18,29 @@ Allow access to call history on this device
   :ref:`w10-20h2-settings-privacy-call-history-apps` to manage access on a per
   app basis.
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable apps access your call history on this device
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              App Privacy -->
+              Let Windows apps access call history
+    :value0:  ☑, {ENABLED}
+    :value1:  Default for all apps, Force Deny
+    :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1810-call-history
+    :update:  2021-02-19
+    :generic:
     :open:
 
-    .. wgpolicy:: Disable apps access your call history on this device
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  App Privacy -->
-                  Let Windows apps access call history
-      :option:    ☑,
-                  Default for all apps
-      :setting:   Enabled,
-                  Force Deny
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Disable access to call history on this device
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
+               CapabilityAccessManager\ConsentStore\phoneCallHistory
+    :value0:   Value, {SZ}, Deny
+    :ref:      https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1810-call-history
+    :update:   2021-02-19
+    :generic:
     :open:
 
     ``Allow`` to enable call history.
-
-    .. wregedit:: Disable access to call history on this device
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                  CapabilityAccessManager\ConsentStore\phoneCallHistory
-      :names:     Value
-      :types:     SZ
-      :data:      Deny
-      :no_section:
-      :no_caption:
-
-  `Reference <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1810-call-history>`__
 
 .. _w10-20h2-settings-privacy-call-history-apps:
 
@@ -63,40 +51,28 @@ Allow apps to access your call history
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable apps access your call history
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              App Privacy -->
+              Let Windows apps access call history
+    :value0:  ☑, {ENABLED}
+    :value1:  Default for all apps, Force Deny
+    :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1810-call-history
+    :update:  2021-02-19
+    :generic:
     :open:
 
-    .. wgpolicy:: Disable apps access your call history
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  App Privacy -->
-                  Let Windows apps access call history
-      :option:    ☑,
-                  Default for all apps
-      :setting:   Enabled,
-                  Force Deny
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Disable apps to access your call history
+    :path:     HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
+    :value0:   LetAppsAccessCallHistory, {DWORD}, 2
+    :ref:      https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1810-call-history
+    :update:   2021-02-19
+    :generic:
     :open:
 
     ``0`` to enable app access to call history.
-
-    .. wregedit:: Disable apps to access your call history
-      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
-      :names:     LetAppsAccessCallHistory
-      :types:     DWORD
-      :data:      2
-      :no_section:
-      :no_caption:
-
-  `Reference <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1810-call-history>`__
 
 Choose which apps can access your call history
 **********************************************

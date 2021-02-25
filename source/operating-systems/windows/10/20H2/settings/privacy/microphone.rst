@@ -9,24 +9,11 @@ Leave Microphone enabled. See `1803 update breaks microphone`_.
 See :ref:`w10-determining-app-list` to generate a list of apps for more fine
 grained control of app access.
 
-.. dropdown:: Allow access to the microphone on this device
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
-    :open:
-
-    .. wregedit:: Enable access to the microphone on this device
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                  CapabilityAccessManager\ConsentStore\microphone
-      :names:     Value
-      :types:     SZ
-      :data:      Allow
-      :no_section:
-      :no_caption:
+.. regedit:: Allow access to the microphone on this device
+  :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
+             CapabilityAccessManager\ConsentStore\microphone
+  :value0:   Value, {SZ}, Allow
+  :update:   2021-02-19
 
 .. _w10-20h2-settings-privacy-microphone-hardware:
 
@@ -37,40 +24,28 @@ Allow apps to access your microphone
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Enable apps access to your microphone
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              App Privacy -->
+              Let Windows access the microphone
+    :value0:  ☑, {ENABLED}
+    :value1:  Default for all apps, User is in control
+    :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#184-microphone
+    :update:  2021-02-19
+    :generic:
     :open:
 
-    .. wgpolicy:: Enable apps access to your microphone
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  App Privacy -->
-                  Let Windows access the microphone
-      :option:    ☑,
-                  Default for all apps
-      :setting:   Enabled,
-                  User is in control
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Enable apps access to your microphone
+    :path:     HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
+    :value0:   LetAppsAccessMicrophone, {DWORD}, 0
+    :ref:      https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#184-microphone
+    :update:   2021-02-19
+    :generic:
     :open:
 
     ``2`` disables app access to microphone.
-
-    .. wregedit:: Enable apps access to your microphone
-      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
-      :names:     LetAppsAccessMicrophone
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
-
-  `Reference <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#184-microphone>`__
 
 Choose which Microsoft Store apps can access your microphone
 ************************************************************

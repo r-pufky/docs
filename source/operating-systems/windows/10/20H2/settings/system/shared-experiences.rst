@@ -12,39 +12,28 @@ Nearby Sharing
 
   Automatically connects to machines for sharing files.
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Disable share content with a nearby device by using Bluetooth and Wi-Fi
+    :path:     HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\CDP
+    :value0:   NearShareChannelUserAuthzPolicy, {DWORD}, 0
+    :value1:   CdpSessionUserAuthzPolicy,       {DWORD}, 0
+    :ref:      https://www.tenforums.com/tutorials/97582-turn-off-nearby-sharing-windows-10-a.html
+    :update:   2021-02-19
+    :generic:
     :open:
 
     ``0`` off, ``1`` my devices only, ``2`` everyone.
 
-    .. wregedit:: Disable share content with a nearby device by using Bluetooth and Wi-Fi
-      :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                  CDP
-      :names:     NearShareChannelUserAuthzPolicy,
-                  CdpSessionUserAuthzPolicy
-      :types:     DWORD,
-                  DWORD
-      :data:      0,
-                  0
-      :no_section:
-      :no_caption:
+  .. regedit:: Disable share content with a nearby device by using Bluetooth and Wi-Fi
+    :path:     HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\CDP\
+               SettingsPage
+    :value0:   NearShareChannelUserAuthzPolicy, {DWORD}, 0
+    :value1:   BluetoothLastDisabledNearShare,  {DWORD}, 0
+    :ref:      https://www.tenforums.com/tutorials/97582-turn-off-nearby-sharing-windows-10-a.html
+    :update:   2021-02-19
+    :generic:
+    :open:
 
-    .. wregedit:: Disable share content with a nearby device by using Bluetooth and Wi-Fi
-      :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                  CDP\SettingsPage
-      :names:     NearShareChannelUserAuthzPolicy,
-                  BluetoothLastDisabledNearShare
-      :types:     DWORD,
-                  DWORD
-      :data:      0,
-                  0
-      :no_section:
-      :no_caption:
-      :no_launch:
-
-  `Reference <https://www.tenforums.com/tutorials/97582-turn-off-nearby-sharing-windows-10-a.html>`__
+    ``0`` off, ``1`` my devices only, ``2`` everyone.
 
 Share across devices
 ********************
@@ -56,35 +45,24 @@ Share across devices
 
   Automatically accepts connections for sharing files.
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable let apps on other devices (including linked phones and
+              tablets) open and message apps on this device, and vice versa
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              System -->
+              Group Policy -->
+              Continue experiences on this device
+    :value0:  ☑, {DISABLED}
+    :ref:     https://www.windowscentral.com/how-disable-shared-experiences-windows-10
+    :update:  2021-02-19
+    :generic:
     :open:
 
-    .. wgpolicy:: Disable let apps on other devices (including linked phones and
-                  tablets) open and message apps on this device, and vice versa
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  System -->
-                  Group Policy -->
-                  Continue experiences on this device
-      :option:    ☑
-      :setting:   Disabled
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Disable let apps on other devices (including linked phones and
+               tablets) open and message apps on this device, and vice versa
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System
+    :value0:   EnableCdp, {DWORD}, 0
+    :ref:      https://www.windowscentral.com/how-disable-shared-experiences-windows-10
+    :update:   2021-02-19
+    :generic:
     :open:
-
-    .. wregedit:: Disable let apps on other devices (including linked phones and
-                  tablets) open and message apps on this device, and vice versa
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System
-      :names:     EnableCdp
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
-
-  `Reference <https://www.windowscentral.com/how-disable-shared-experiences-windows-10>`__

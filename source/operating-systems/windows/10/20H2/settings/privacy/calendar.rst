@@ -18,41 +18,29 @@ Allow access to calendar on this device
   :ref:`w10-20h2-settings-privacy-calendar-apps` to manage access on a per app
   basis.
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-    :open:
-
-    .. wgpolicy:: Disable apps access your contacts
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  App Privacy -->
-                  Let Windows apps access the calendar
-      :option:    ☑,
-                  Default for all apps
-      :setting:   Enabled,
-                  Force Deny
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable apps access your contacts
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              App Privacy -->
+              Let Windows apps access the calendar
+    :value0:  ☑, {ENABLED}
+    :value1:  Default for all apps, Force Deny
+    :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#189-calendar
+    :update:  2021-02-19
+    :generic:
     :open:
 
     ``Allow`` to enable access to calednar on this device.
 
-    .. wregedit:: Disable access to calendar on this device
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                  CapabilityAccessManager\ConsentStore\appointments
-      :names:     Value
-      :types:     SZ
-      :data:      Deny
-      :no_section:
-      :no_caption:
-
-  `Reference <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#189-calendar>`__
+  .. regedit:: Disable access to calendar on this device
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
+               CapabilityAccessManager\ConsentStore\appointments
+    :value0:   Value, {SZ}, Deny
+    :ref:      https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#189-calendar
+    :update:   2021-02-19
+    :generic:
+    :open:
 
 .. _w10-20h2-settings-privacy-calendar-apps:
 
@@ -63,40 +51,28 @@ Allow apps to access your contacts
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-    :open:
-
-    .. wgpolicy:: Disable apps access your contacts
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  App Privacy -->
-                  Let Windows apps access the calendar
-      :option:    ☑,
-                  Default for all apps
-      :setting:   Enabled,
-                  Force Deny
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable apps access your contacts
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              App Privacy -->
+              Let Windows apps access the calendar
+    :value0:  ☑, {ENABLED}
+    :value1:  Default for all apps, Force Deny
+    :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#189-calendar
+    :update:  2021-02-19
+    :generic:
     :open:
 
     ``0`` to enable apps access to contacts.
 
-    .. wregedit:: Disable apps to access your contacts
-      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
-      :names:     LetAppsAccessCalendar
-      :types:     DWORD
-      :data:      2
-      :no_section:
-      :no_caption:
-
-  `Reference <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#189-calendar>`__
+  .. regedit:: Disable apps to access your contacts
+    :path:     HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
+    :value0:   LetAppsAccessCalendar, {DWORD}, 2
+    :ref:      https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#189-calendar
+    :update:   2021-02-19
+    :generic:
+    :open:
 
 Choose which apps can access your calendar
 ******************************************

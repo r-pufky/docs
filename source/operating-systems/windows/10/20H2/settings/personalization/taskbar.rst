@@ -79,7 +79,7 @@ Notification Area
     :generic:
     :open:
 
-.. TODO::
+.. todo::
   Manually disable these system icons; there is no current Registry or GPO to
   set these.
 

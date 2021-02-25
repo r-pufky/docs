@@ -16,6 +16,7 @@ Explorer Ads
   .. dropdown:: GUI
     :title: font-weight-bold
     :animate: fade-in
+    :open:
 
     .. ggui:: Set explorer to use this PC
       :key_title: ⌘ + e -->
@@ -28,40 +29,22 @@ Explorer Ads
       :no_caption:
       :no_launch:
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Set Explorer to use this PC
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
+               Explorer\Advanced
+    :value0:   LaunchTo, {DWORD}, 1
+    :ref:      https://www.maketecheasier.com/remove-quick-access-file-explorer/,
+               https://social.technet.microsoft.com/Forums/en-US/dc89a8e3-9f97-438a-bc2a-ccde6b443549/explorer-quick-access-how-to-set-via-group-policy-but-how-to-stop-users-from-tampering-with?forum=win10itprogeneral
+    :update:   2021-02-19
+    :generic:
+    :open:
 
-    .. wregedit:: Set Explorer to use this PC
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                  Explorer\Advanced
-      :names:     LaunchTo
-      :types:     DWORD
-      :data:      1
-      :no_section:
-      :no_caption:
-
-  `Reference <https://www.maketecheasier.com/remove-quick-access-file-explorer/>`__
-  `Reference <https://www.winhelponline.com/blog/remove-quick-access-other-shell-folders-file-explorer/>`__
-  `Reference <https://social.technet.microsoft.com/Forums/en-US/dc89a8e3-9f97-438a-bc2a-ccde6b443549/explorer-quick-access-how-to-set-via-group-policy-but-how-to-stop-users-from-tampering-with?forum=win10itprogeneral>`__
-
-.. dropdown:: Disable Quick Access Pane
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wregedit:: Disable Quick Access Pane
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                  Explorer
-      :names:     HubMode
-      :types:     DWORD
-      :data:      1
-      :no_section:
-      :no_caption:
+.. regedit:: Disable Quick Access Pane
+  :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
+             Explorer
+  :value0:   HubMode, {DWORD}, 1
+  :ref:      https://www.winhelponline.com/blog/remove-quick-access-other-shell-folders-file-explorer/,
+  :update:   2021-02-19
 
 .. dropdown:: Disable sync provider notifications
   :container: + shadow
@@ -71,6 +54,7 @@ Explorer Ads
   .. dropdown:: GUI
     :title: font-weight-bold
     :animate: fade-in
+    :open:
 
     Typically done via explorer:
 
@@ -78,29 +62,22 @@ Explorer Ads
 
        * ☐ show sync provider notifications.
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Disable sync provider notifications
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
+               Explorer\Advanced
+    :value0:   ShowSyncProviderNotifications, {DWORD}, 0
+    :ref:      https://winaero.com/disable-notifications-in-file-explorer-in-windows-10-sync-provider-notifications/
+    :update:   2021-02-19
+    :generic:
+    :open:
 
-    .. wregedit:: Disable sync provider notifications
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                  Explorer\Advanced
-      :names:     ShowSyncProviderNotifications
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
-
-    .. wregedit:: Disable sync provider notifications
-      :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                  Explorer\Advanced
-      :names:     ShowSyncProviderNotifications
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
-      :no_launch:
-
-  `Reference <https://winaero.com/disable-notifications-in-file-explorer-in-windows-10-sync-provider-notifications/>`__
+  .. regedit:: Disable sync provider notifications
+    :path:     HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
+               Explorer\Advanced
+    :value0:   ShowSyncProviderNotifications, {DWORD}, 0
+    :ref:      https://winaero.com/disable-notifications-in-file-explorer-in-windows-10-sync-provider-notifications/
+    :update:   2021-02-19
+    :generic:
+    :open:
 
 .. _Sync providers: https://www.extremetech.com/computing/245553-microsoft-now-puts-ads-windows-file-explorer

@@ -10,36 +10,25 @@ Phone
   :open:
 
   Phones are easy vectors that can bring in outside threats. Do not pair.
-    
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
+
+  .. gpo::    Disable Add a phone
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              System -->
+              Group Policy -->
+              Phone-PC linking this device
+    :value0:  ☑, {DISABLED}
+    :ref:     https://www.windowscentral.com/how-disable-phone-pc-linking-feature-windows-10
+    :update:  2021-02-19
+    :generic:
     :open:
 
-    .. wgpolicy:: Disable Add a phone
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  System -->
-                  Group Policy -->
-                  Phone-PC linking this device
-      :option:    ☑
-      :setting:   Disabled
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Disable Add a phone
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System
+    :value0:   EnableMmx, {DWORD}, 0
+    :ref:      https://www.windowscentral.com/how-disable-phone-pc-linking-feature-windows-10
+    :update:   2021-02-19
+    :generic:
     :open:
 
     ``EnableMMX`` is an unfortunate name, but correct.
-
-    .. wregedit:: Disable Add a phone
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System
-      :names:     EnableMmx
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
-
-  `Reference <https://www.windowscentral.com/how-disable-phone-pc-linking-feature-windows-10>`__

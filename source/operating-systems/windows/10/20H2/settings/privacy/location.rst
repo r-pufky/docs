@@ -18,37 +18,26 @@ Allow access to location on this device
   :ref:`Allow apps to access your location <w10-20h2-settings-privacy-location-access>`
   to manage access on a per app basis.
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable access to location on this device
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Location and Sensors -->
+              Turn off location
+    :value0:  ☑, {ENABLED}
+    :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#182-location>
+    :update:  2021-02-19
+    :generic:
     :open:
 
-    .. wgpolicy:: Disable access to location on this device
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Location and Sensors -->
-                  Turn off location
-      :option:    ☑
-      :setting:   Enabled
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Disable access to location on this device
+    :path:     HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\
+               LocationAndSensors
+    :value0:   DisableLocation, {DWORD}, 1
+    :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#182-location>
+    :update:  2021-02-19
+    :generic:
     :open:
-
-    .. wregedit:: Disable access to location on this device
-      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\
-                  LocationAndSensors
-      :names:     DisableLocation
-      :types:     DWORD
-      :data:      1
-      :no_section:
-      :no_caption:
-
-  `Reference <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#182-location>`__
 
 .. _w10-20h2-settings-privacy-location-access:
 
@@ -60,65 +49,37 @@ Allow apps to access your location
   :animate: fade-in
 
   Disable apps access to location. 
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-    :open:
     
-    .. wgpolicy:: Disable apps to access your location
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  App Privacy -->
-                  Let Windows apps access location
-      :option:    ☑,
-                  Default for all apps
-      :setting:   Enabled,
-                  Force Deny
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable apps to access your location
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              App Privacy -->
+              Let Windows apps access location
+    :value0:  ☑, {ENABLED}
+    :value1:  Default for all apps, Force Deny
+    :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#182-location
+    :update:  2021-02-19
+    :generic:
     :open:
 
     ``0`` enables location.
 
-    .. wregedit:: Disable apps to access your location
-      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
-      :names:     LetAppsAccessLocation
-      :types:     DWORD
-      :data:      2
-      :no_section:
-      :no_caption:
-
-  `Reference <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#182-location>`__
+  .. regedit:: Disable apps to access your location
+    :path:     HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
+    :value0:   LetAppsAccessLocation, {DWORD}, 2
+    :ref:      https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#182-location
+    :update:   2021-02-19
+    :generic:
+    :open:
 
 Allow desktop apps to access your location
 ******************************************
-.. dropdown:: Disable Allow desktop apps to access your location
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
+.. regedit:: Disable Allow desktop apps to access your location
+  :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
+             CapabilityAccessManager\ConsentStore\location
+  :value0:   Value, {SZ}, Deny
+  :ref:      https://www.tenforums.com/tutorials/138191-turn-off-location-access-desktop-apps-windows-10-a.html
+  :update:   2021-02-19
 
-  Disable desktop apps access to location. 
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
-    :open:
-
-    ``Allow`` enables location.
-
-    .. wregedit:: Disable desktop apps to access your location
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
-                  CapabilityAccessManager\ConsentStore\location
-      :names:     Value
-      :types:     SZ
-      :data:      Deny
-      :no_section:
-      :no_caption:
-
-  `Reference <https://www.tenforums.com/tutorials/138191-turn-off-location-access-desktop-apps-windows-10-a.html>`__
+  Disable desktop apps access to location. ``Allow`` enables location.

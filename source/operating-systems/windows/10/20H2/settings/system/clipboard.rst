@@ -15,40 +15,30 @@ Clipboard history
   Long term multi-item storage of clipboard will likely contain passwords or
   confidential material.
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable save multiple items to the clipboard to use later.
+              Press the Windows Logo Key + V to view your clipboard history
+              and paste from it.
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              System -->
+              OS Policies -->
+              Allow Clipboard History
+    :value0:  ☑, {DISABLED}
+    :ref:     https://www.top-password.com/blog/disable-clipboard-history-in-windows-10/#:~:text=Method%202%3A%20Disable%20Clipboard%20History,OK%20and%20reboot%20your%20computer.
+    :update:  2021-02-19
+    :generic:
     :open:
 
-    .. wgpolicy:: Disable save multiple items to the clipboard to use later.
-                  Press the Windows Logo Key + V to view your clipboard history
-                  and paste from it.
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  System -->
-                  OS Policies -->
-                  Allow Clipboard History
-      :option:    ☑
-      :setting:   Disabled
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Disable save multiple items to the clipboard to use later.
+               Press the Windows Logo Key + V to view your clipboard history
+               and paste from it.
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System
+    :value0:   AllowClipboardHistory, {DWORD}, 0
+    :ref:      https://www.top-password.com/blog/disable-clipboard-history-in-windows-10/#:~:text=Method%202%3A%20Disable%20Clipboard%20History,OK%20and%20reboot%20your%20computer.
+    :update:   2021-02-19
+    :generic:
     :open:
 
-    .. wregedit:: Disable save multiple items to the clipboard to use later.
-                  Press the Windows Logo Key + V to view your clipboard history
-                  and paste from it.
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System
-      :names:     AllowClipboardHistory
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
-
-  `Reference <https://www.top-password.com/blog/disable-clipboard-history-in-windows-10/#:~:text=Method%202%3A%20Disable%20Clipboard%20History,OK%20and%20reboot%20your%20computer.>`__
 
 Sync across devices
 *******************
@@ -61,36 +51,25 @@ Sync across devices
   Sync of clipboard data will likely contain passwords or confidential material,
   and should **not** be transmitted to MS services even if encrypted.
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable paste text on your other devices when you sign in with a
+              Microsoft account or work account.
+              and paste from it.
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              System -->
+              OS Policies -->
+              Allow Clipboard syncronization across devices
+    :value0:  ☑, {DISABLED}
+    :ref:     https://www.tenforums.com/tutorials/110048-enable-disable-clipboard-sync-across-devices-windows-10-a.html
+    :update:  2021-02-19
+    :generic:
     :open:
 
-    .. wgpolicy:: Disable paste text on your other devices when you sign in with a
-                  Microsoft account or work account.
-                  and paste from it.
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  System -->
-                  OS Policies -->
-                  Allow Clipboard syncronization across devices
-      :option:    ☑
-      :setting:   Disabled
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Disable paste text on your other devices when you sign in with a
+               Microsoft account or work account.
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System
+    :value0:   AllowCrossDeviceClipboard, {DWORD}, 0
+    :ref:      https://www.tenforums.com/tutorials/110048-enable-disable-clipboard-sync-across-devices-windows-10-a.html
+    :update:   2021-02-19
+    :generic:
     :open:
-
-    .. wregedit:: Disable paste text on your other devices when you sign in with a
-                  Microsoft account or work account.
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System
-      :names:     AllowCrossDeviceClipboard
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
-
-  `Reference <https://www.tenforums.com/tutorials/110048-enable-disable-clipboard-sync-across-devices-windows-10-a.html>`__

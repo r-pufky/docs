@@ -12,57 +12,29 @@ grained control of app access. There is no GPO equivalent.
 
 Allow access to file system on this device
 ******************************************
-.. dropdown:: Enable Allow access to file system on this device
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
+.. regedit:: Enable Allow access to file system on this device
+  :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
+             CapabilityAccessManager\ConsentStore\broadFileSystemAccess
+  :value0:   Value, {SZ}, Allow
+  :ref:      https://www.tenforums.com/tutorials/104030-allow-deny-apps-access-file-system-windows-10-a.html
+  :update:   2021-02-19
 
   Do not configure or leave enabled. Can restrict document folder access from
   all apps and Windows. There is no GPO equivalent.
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
-    :open:
-
-    ``Deny`` will disable all access.
-
-    .. wregedit:: Enable Allow access to file system on this device
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                  CapabilityAccessManager\ConsentStore\broadFileSystemAccess
-      :names:     Value
-      :types:     SZ
-      :data:      Allow
-      :no_section:
-      :no_caption:
-
-  `Reference <https://www.tenforums.com/tutorials/104030-allow-deny-apps-access-file-system-windows-10-a.html>`__
+  ``Deny`` will disable all access.
 
 Allow app access to file system on this device
 **********************************************
-.. dropdown:: Enable Allow app access to file system on this device
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
+.. regedit:: Enable Allow app access to file system on this device
+  :path:     HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\
+             CapabilityAccessManager\ConsentStore\broadFileSystemAccess
+  :value0:   Value, {SZ}, Allow
+  :ref:      https://www.tenforums.com/tutorials/104030-allow-deny-apps-access-file-system-windows-10-a.html
+  :update:   2021-02-19
 
   Do not configure or leave enabled. Can restrict document folder access from
   all apps and Windows. There is no GPO equivalent.
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
-    :open:
-
-    .. wregedit:: Enable Allow app access to file system on this device
-      :key_title: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\
-                  CapabilityAccessManager\ConsentStore\broadFileSystemAccess
-      :names:     Value
-      :types:     SZ
-      :data:      Allow
-      :no_section:
-      :no_caption:
-
-  `Reference <https://www.tenforums.com/tutorials/104030-allow-deny-apps-access-file-system-windows-10-a.html>`__
 
 Choose which apps can access your file system
 *********************************************

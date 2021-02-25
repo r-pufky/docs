@@ -43,6 +43,7 @@ badges = {
   '{ANY}': Template.info % 'ANY',
   '{SUCCESS}': Template.success % 'SUCCESS',
   '{FAILURE}': Template.danger % 'FAILURE',
+  '{EMPTY}': Template.danger % 'EMPTY',
 
   # Location / Time
   '{TZ}': Template.info % 'TZ',

@@ -7,37 +7,25 @@ Delivery Optimization
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
   :open:
-    
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
+
+  .. gpo::    Disable delivery optimization
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Delivery Optimization -->
+              Download Mode
+    :value0:  ☑, {ENABLED}
+    :value1:  Download Mode, Bypass (100)
+    :ref:     https://social.technet.microsoft.com/Forums/en-US/e1f7090b-2e93-4276-a12b-ee5c2463bb58/how-can-we-disable-peer-to-peer-update-with-gpo?forum=win10itprogeneral
+    :update:  2021-02-19
+    :generic:
     :open:
 
-    .. wgpolicy:: Disable delivery optimization
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Delivery Optimization -->
-                  Download Mode
-      :option:    ☑,
-                  Download Mode
-      :setting:   Enabled,
-                  Bypass (100)
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Disable delivery optimization
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows
+               DeliveryOptimization
+    :value0:   DODownloadMode, {DWORD}, 0
+    :ref:      https://social.technet.microsoft.com/Forums/en-US/e1f7090b-2e93-4276-a12b-ee5c2463bb58/how-can-we-disable-peer-to-peer-update-with-gpo?forum=win10itprogeneral
+    :update:   2021-02-19
+    :generic:
     :open:
-
-    .. wregedit:: Disable delivery optimization
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows
-                  DeliveryOptimization
-      :names:     DODownloadMode
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
-
-  `Reference <https://social.technet.microsoft.com/Forums/en-US/e1f7090b-2e93-4276-a12b-ee5c2463bb58/how-can-we-disable-peer-to-peer-update-with-gpo?forum=win10itprogeneral>`__

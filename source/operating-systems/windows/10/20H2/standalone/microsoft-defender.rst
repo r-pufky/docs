@@ -33,6 +33,7 @@ services.
   .. dropdown:: Manual
     :title: font-weight-bold
     :animate: fade-in
+    :open:
 
     .. ggui:: Disable Tamper Protection
       :key_title: ⌘ + r -->
@@ -45,26 +46,21 @@ services.
       :no_caption:
       :no_launch:
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Disable Tamper Protection
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Defender\Features
+    :value0:   TamperProtection, {DWORD}, 4
+    :value1:   TamperProtectionSource, {DWORD}, 2
+    :ref:      https://www.tenforums.com/tutorials/123792-turn-off-tamper-protection-microsoft-defender-antivirus.html
+    :update:   2021-02-19
+    :generic:
+    :open:
 
     There is no :term:`GPO` for this. ``5`` enables protection.
-
-    .. wregedit:: Disable Tamper Protection
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Defender\Features
-      :names:     TamperProtection,
-                  TamperProtectionSource
-      :types:     DWORD,
-                  DWORD
-      :data:      4,
-                  2
-      :no_section:
-      :no_caption:
 
   .. dropdown:: PS Exec
     :title: font-weight-bold
     :animate: fade-in
+    :open:
 
     .. code-block:: powershell
       :caption: powershell (as admin)
@@ -74,125 +70,77 @@ services.
 
     Sysinternals PSTools need to be installed disable via powershell.
 
-    `Reference <https://www.tenforums.com/tutorials/123792-turn-off-tamper-protection-microsoft-defender-antivirus.html>`__
+    `Reference <https://docs.microsoft.com/en-us/sysinternals/downloads/pstools>`__
 
-    .. wregedit:: Disable Cloud-delivered protection (MAPS)
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\
-                  Microsoft Defender\Updates
-      :names:     named
-      :types:     {DELETE}
-      :data:      {DELETE}
-      :no_section:
-      :no_caption:
-      :no_launch:
-
-  `Reference <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services>`__
-  `Reference <https://docs.microsoft.com/en-us/sysinternals/downloads/pstools>`__
-
-.. dropdown:: Disable Microsoft Defender notifications
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-    :open:
-
-    .. wgpolicy:: Disable Microsoft Defender notifications
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Microsoft Defender Antivirus -->
-                  Client Interface -->
-                  Suppress all notifications
-      :option:    ☑
-      :setting:   Enabled
-      :no_section:
-      :no_caption:
-
-  `Reference <https://admx.help/?Category=Windows_10_2016&Policy=Microsoft.Policies.WindowsDefender::Reporting_DisableEnhancedNotifications>`__
+.. gpo::   Disable Microsoft Defender notifications
+  :path:   Computer Configuration -->
+           Administrative Templates -->
+           Windows Components -->
+           Microsoft Defender Antivirus -->
+           Client Interface -->
+           Suppress all notifications
+  :value0: ☑, {ENABLED}
+  :ref:    https://admx.help/?Category=Windows_10_2016&Policy=Microsoft.Policies.WindowsDefender::Reporting_DisableEnhancedNotifications
+  :update: 2021-02-19
 
 .. dropdown:: Disable Microsoft Defender Enhanced Notifications
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable Microsoft Defender Enhanced Notifications
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Microsoft Defender Antivirus -->
+              Reporting -->
+              Turn off enhanced notifications
+    :value0:  ☑, {ENABLED}
+    :update:  2021-02-19
+    :generic:
+    :open:
 
-    .. wregedit:: Disable Microsoft Defender Enhanced Notifications
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Microsoft Defender\
-                  Reporting
-      :names:     DisableEnhancedNotifications
-      :types:     SZ
-      :data:      1
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wgpolicy:: Disable Microsoft Defender Enhanced Notifications
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Microsoft Defender Antivirus -->
-                  Reporting -->
-                  Turn off enhanced notifications
-      :option:    ☑
-      :setting:   Enabled
-      :no_section:
-      :no_caption:
+  .. regedit:: Disable Microsoft Defender Enhanced Notifications
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Microsoft Defender\
+               Reporting
+    :value0:   DisableEnhancedNotifications, {SZ}, 1
+    :update:   2021-02-19
+    :generic:
+    :open:
 
 .. dropdown:: Disable Microsoft Defender Updates
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Stop downloading updates for Microsoft Defender
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Microsoft Defender Antivirus -->
+              Security Intelligence Updates
+              Allow real-time security intelligence updates based on reports to Microsoft MAPS
+    :value0:  ☑, {ENABLED}
+    :update:  2021-02-19
+    :generic:
+    :open:
 
-    .. wregedit:: Delete named setting for Microsoft Defender
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Microsoft Defender\
-                  Updates
-      :names:     named
-      :types:     {DELETE}
-      :data:      {DELETE}
-      :no_section:
-      :no_caption:
+  .. regedit:: Delete named setting for Microsoft Defender
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\
+               Microsoft Defender\Updates
+    :value0:   named, {DELETE}, {DELETE}
+    :update:   2021-02-19
+    :generic:
+    :open:
 
-    .. wregedit:: Stop downloading updates for Microsoft Defender
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Microsoft Defender\
-                  Signature Updates
-      :names:     FallbackOrder,
-                  DefinitionUpdateFileSharesSources
-      :types:     SZ,
-                  {DELETE}
-      :data:      FileShares,
-                  {DELETE}
-      :no_section:
-      :no_caption:
-      :no_launch:
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wgpolicy:: Stop downloading updates for Microsoft Defender
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Microsoft Defender Antivirus -->
-                  Security Intelligence Updates
-                  Allow real-time security intelligence updates based on reports to Microsoft MAPS
-      :option:    ☑
-      :setting:   Enabled
-      :no_section:
-      :no_caption:
+  .. regedit:: Stop downloading updates for Microsoft Defender
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Microsoft Defender\
+               Signature Updates
+    :value0:   FallbackOrder, {SZ}, FileShares
+    :value1:   DefinitionUpdateFileSharesSources, {DELETE}, {DELETE}
+    :update:   2021-02-19
+    :generic:
+    :open:
 
 .. dropdown:: Disable Malicious Software Reporting Tool
   :container: + shadow
@@ -201,159 +149,113 @@ services.
 
   This reports file information to Microsoft.
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable Malicious Software Reporting Tool
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Microsoft Defender Antivirus -->
+              MAPS -->
+              Send file samples when further analysis is required
+    :value0:  ☑, Never Send
+    :update:  2021-02-19
+    :generic:
+    :open:
 
-    .. wregedit:: Disable Malicious Software Reporting Tool
-      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\MRT
-      :names:     DontReportInfectionInformation
-      :types:     DWORD
-      :data:      1
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wgpolicy:: Disable Malicious Software Reporting Tool
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Microsoft Defender Antivirus -->
-                  MAPS -->
-                  Send file samples when further analysis is required
-      :option:    ☑
-      :setting:   Never Send
-      :no_section:
-      :no_caption:
+  .. regedit:: Disable Malicious Software Reporting Tool
+    :path:     HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\MRT
+    :value0:   DontReportInfectionInformation, {DWORD}, 1
+    :update:   2021-02-19
+    :generic:
+    :open:
 
 .. dropdown:: Disable Microsoft Defender Smart Screen
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable Microsoft Defender Smart Screen for system
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Microsoft Defender SmartScreen -->
+              Explorer -->
+              Configure Microsoft Defender SmartScreen
+    :value0:  ☑, {DISABLED}
+    :update:  2021-02-19
+    :generic:
+    :open:
 
-    .. wregedit:: Disable Microsoft Defender Smart Screen Windows store only app
-                  recommendations
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Microsoft Defender\
-                  SmartScreen
-      :names:     ConfigureAppInstallControlEnabled,
-                  ConfigureAppInstallControl
-      :types:     DWORD,
-                  SZ
-      :data:      1,
-                  Anywhere
-      :no_section:
-      :no_caption:
-      :no_launch:
+  .. gpo::    Disable Microsoft Defender Smart Screen Windows store only app
+              recommendations
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Microsoft Defender SmartScreen -->
+              Explorer -->
+              Configure App Install Control
+    :value0:  ☑, {ENABLED}
+    :value1:  ›, Turn off app recommendations
+    :update:  2021-02-19
+    :generic:
+    :open:
 
-        .. note::
-          Logically inversed from the equivalent GPO.
+  .. regedit:: Disable Microsoft Defender Smart Screen Windows store only app
+               recommendations
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Microsoft Defender\
+               SmartScreen
+    :value0:   ConfigureAppInstallControlEnabled, {DWORD}, 1
+    :value1:   ConfigureAppInstallControl, {SZ}, Anywhere
+    :update:   2021-02-19
+    :generic:
+    :open:
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
+    Logically inversed from the equivalent GPO.
 
-    .. wgpolicy:: Disable Microsoft Defender Smart Screen for system
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Microsoft Defender SmartScreen -->
-                  Explorer -->
-                  Configure Microsoft Defender SmartScreen
-      :option:    ☑
-      :setting:   Disabled
-      :no_section:
-      :no_caption:
-
-    .. wgpolicy:: Disable Microsoft Defender Smart Screen Windows store only app
-                  recommendations
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Microsoft Defender SmartScreen -->
-                  Explorer -->
-                  Configure App Install Control
-      :option:    ☑,
-                  ›
-      :setting:   Enabled,
-                  Turn off app recommendations
-      :no_section:
-      :no_caption:
-      :no_launch:
-
-.. dropdown:: Disable Microsoft Defender real-time protection
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wgpolicy:: Disable Microsoft Defender real-time protection
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Microsoft Defender Antivirus -->
-                  Real-time Protection
-      :option:    Turn off real-time protection,
-                  Turn on behavior monitoring,
-                  Scan all downloaded files and attachments,
-                  Monitor file and program activity on your computer,
-                  Turn on raw volume write notifications,
-                  Turn on process scanning whenever real-time protection is enabled,
-                  Define the maximum size of downloaded files and attachments to be scanned,
-                  Configure local setting override for turn on behavior monitoring,
-                  Configure local setting override for scanning all downloaded files and attachments,
-                  Configure local setting override for monitoring file and program activity on your computer,
-                  Configure local setting override to turn on real-time protection,
-                  Configure local setting override for monitoring for incoming and outgoing file activity,
-                  Configure monitoring for incoming and outgoing file and program activity
-      :setting:   Enabled,
-                  Disabled,
-                  Disabled,
-                  Disabled,
-                  Disabled,
-                  Disabled,
-                  Disabled,
-                  Disabled,
-                  Disabled,
-                  Disabled,
-                  Disabled,
-                  Disabled,
-                  Disabled
-      :no_section:
-      :no_caption:
+.. gpo::    Disable Microsoft Defender real-time protection
+  :path:    Computer Configuration -->
+            Administrative Templates -->
+            Windows Components -->
+            Microsoft Defender Antivirus -->
+            Real-time Protection
+  :value0:                                              Turn off real-time protection, {ENABLED}
+  :value1:                                                Turn on behavior monitoring, {DISABLED}
+  :value2:                                  Scan all downloaded files and attachments, {DISABLED}
+  :value3:                         Monitor file and program activity on your computer, {DISABLED}
+  :value4:                                     Turn on raw volume write notifications, {DISABLED}
+  :value5:          Turn on process scanning whenever real-time protection is enabled, {DISABLED}
+  :value6:  Define the maximum size of downloaded files and attachments to be scanned, {DISABLED}
+  :value7:           Configure local setting override for turn on behavior monitoring, {DISABLED}
+  :value8:  Configure local setting override for scanning all downloaded files and attachments,
+            {DISABLED}
+  :value9:  Configure local setting override for monitoring file and program activity on your computer,
+            {DISABLED}
+  :value10:          Configure local setting override to turn on real-time protection, {DISABLED}
+  :value11: Configure local setting override for monitoring for incoming and outgoing file activity,
+            {DISABLED}
+  :value12:  Configure monitoring for incoming and outgoing file and program activity, {DISABLED}
+  :update:  2021-02-19
 
 .. dropdown:: Disable windows defender notification icon
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wgpolicy:: Disable windows defender notification icon
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Windows Security -->
-                  Systray
-      :option:    Hide Windows Security Systray
-      :setting:   Enabled
-      :no_section:
-      :no_caption:
+  .. gpo::    Disable windows defender notification icon
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Windows Security -->
+              Systray
+    :value0:  Hide Windows Security Systray, {ENABLED}
+    :ref:     https://appuals.com/how-to-remove-windows-defender-icon-on-windows-10/
+    :update:  2021-02-19
+    :generic:
+    :open:
 
   .. dropdown:: Scheduled Tasks
     :title: font-weight-bold
     :animate: fade-in
+    :open:
 
     .. wtmanager:: Disable windows defender notification icon manager
       :key_title:  More Details --> Startup
@@ -361,8 +263,6 @@ services.
       :setting:    Disabled
       :no_section:
       :no_caption:
-
-  `Reference <https://appuals.com/how-to-remove-windows-defender-icon-on-windows-10/>`__
 
 .. dropdown:: Disable Microsoft Defender
   :container: + shadow
@@ -372,34 +272,25 @@ services.
   As of Windows ``1903`` this setting only disables Microsoft Defender for
   Windows Server. Other settings still apply.
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Turn off Microsoft Defender
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Microsoft Defender Antivirus -->
+              Turn off Microsoft Defender Antivirus
+    :value0:  ☑, {ENABLED}
+    :ref:     https://docs.microsoft.com/en-us/windows-hardware/customize/desktop/unattend/security-malware-windows-defender-disableantispyware
+    :update:  2021-02-19
+    :generic:
+    :open:
 
-    .. wgpolicy:: Turn off Microsoft Defender
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Microsoft Defender Antivirus -->
-                  Turn off Microsoft Defender Antivirus
-      :option:    ☑
-      :setting:   Enabled
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wregedit:: Disable Microsoft Defender
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Microsoft Defender
-      :names:     DisableAntiSpyware
-      :types:     DWORD
-      :data:      1
-      :no_section:
-      :no_caption:
-
-  `Reference <https://docs.microsoft.com/en-us/windows-hardware/customize/desktop/unattend/security-malware-windows-defender-disableantispyware>`__
+  .. regedit:: Disable Microsoft Defender
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Microsoft Defender
+    :value0:   DisableAntiSpyware, {DWORD}, 1
+    :ref:      https://docs.microsoft.com/en-us/windows-hardware/customize/desktop/unattend/security-malware-windows-defender-disableantispyware
+    :update:   2021-02-19
+    :generic:
+    :open:
 
 Firewall
 ********

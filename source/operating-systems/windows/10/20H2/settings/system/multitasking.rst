@@ -15,70 +15,40 @@ Timeline
 
   App usage is recorded to show suggestions.
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable timeline
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              System -->
+              OS Policies -->
+              Enables Activity Feed
+    :value0:  ☑, {DISABLED}
+    :ref:     https://www.top-password.com/blog/disable-windows-10-timeline-with-group-policy/
+    :update:  2021-02-19
+    :generic:
     :open:
 
-    .. wgpolicy:: Disable timeline
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  System -->
-                  OS Policies -->
-                  Enables Activity Feed
-      :option:    ☑
-      :setting:   Disabled
-      :no_section:
-      :no_caption:
-
-    `Reference <https://www.top-password.com/blog/disable-windows-10-timeline-with-group-policy/>`__
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Disable show suggestions in your timeline
+    :path:     HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
+               ContentDeliveryManager
+    :value0:   SubscribedContent-353698Enabled, {DWORD}, 0
+    :ref:      https://www.tenforums.com/tutorials/102071-turn-off-timeline-suggestions-windows-10-a.html
+    :update:   2021-02-19
+    :generic:
     :open:
 
-    .. wregedit:: Disable show suggestions in your timeline
-      :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                  ContentDeliveryManager
-      :names:     SubscribedContent-353698Enabled
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
+  .. regedit:: Disable timeline
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System
+    :value0:   EnableActivityFeed, {DWORD}, 0
+    :ref:      https://www.top-password.com/blog/disable-windows-10-timeline-with-group-policy/
+    :update:   2021-02-19
+    :generic:
+    :open:
 
-    `Reference <https://www.tenforums.com/tutorials/102071-turn-off-timeline-suggestions-windows-10-a.html>`__
-
-    .. wregedit:: Disable timeline
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System
-      :names:     EnableActivityFeed
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
-      :no_launch:
-
-    `Reference <https://www.top-password.com/blog/disable-windows-10-timeline-with-group-policy/>`__
-
-
-.. dropdown:: Remove Edge tabs from alt+tab navigation
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
+.. regedit:: Remove Edge tabs from alt+tab nagivation
+  :path:     HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
+             Explorer\Advanced
+  :value0:   MultiTaskingAltTabFilter, {DWORD}, 3
+  :update:   2021-02-19
 
   :cmdmenu:`alt` + :cmdmenu:`tab` is for OS window navigation, not OS+specific browser window
   navigation.
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
-    :open:
-
-    .. wregedit:: Remove Edge tabs from alt+tab nagivation
-      :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                  Explorer\Advanced
-      :names:     MultiTaskingAltTabFilter
-      :types:     DWORD
-      :data:      3
-      :no_section:
-      :no_caption:

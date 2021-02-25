@@ -27,22 +27,16 @@ re-enabled if certain programs rely on the paging file existing.
       :no_section:
       :no_caption:
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Disable paging files on all drives via Registry
+    :path:     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\
+               PriorityControl
+    :value0:   Win32PrioritySeparation, {DWORD}, 2
+    :update:   2021-02-19
+    :generic:
     :open:
 
     ``2`` is the value used for the GUI setting. ``26`` is the highest
     foreground priority. ``18`` prefers background services.
-
-    .. wregedit:: Disable paging files on all drives via Registry
-      :key_title: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\
-                  PriorityControl
-      :names:     Win32PrioritySeparation
-      :types:     DWORD
-      :data:      2
-      :no_section:
-      :no_caption:
 
 .. dropdown:: Disable paging files for all drives
   :container: + shadow
@@ -69,40 +63,19 @@ re-enabled if certain programs rely on the paging file existing.
       :no_section:
       :no_caption:
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Disable paging files on all drives
+    :path:     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\
+               Session Manager\Memory Management
+    :value0:   PagingFiles, {SZ}, {EMPTY}
+    :ref:      https://petri.com/pagefile_optimization
+    :update:   2021-02-19
+    :generic:
     :open:
 
-    .. wregedit:: Disable paging files on all drives
-      :key_title: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\
-                  Session Manager\Memory Management
-      :names:     PagingFiles
-      :types:     MULTI_SZ
-      :data:      {EMPTY}
-      :no_section:
-      :no_caption:
-
-  `Reference <https://petri.com/pagefile_optimization>`__
-
-.. dropdown:: Disable swapfile for windows components
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
-    :open:
-
-    .. wregedit:: Disable swapfile for windows components via Registry
-      :key_title: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\
-                  Session Manager\Memory Management
-      :names:     SwapfileControl
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
-
-  `Reference <https://www.windowscentral.com/what-swapfilesys-and-do-i-need-it-my-windows-10-pc>`__
-  `Reference <https://github.com/Disassembler0/Win10-Initial-Setup-Script/issues/190>`__
+.. regedit:: Disable swapfile for windows components
+  :path:     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\
+             Session Manager\Memory Management
+  :value0:   SwapfileControl, {DWORD}, 0
+  :ref:      https://www.windowscentral.com/what-swapfilesys-and-do-i-need-it-my-windows-10-pc,
+             https://github.com/Disassembler0/Win10-Initial-Setup-Script/issues/190
+  :update:   2021-02-19

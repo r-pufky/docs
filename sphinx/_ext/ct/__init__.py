@@ -10,8 +10,6 @@ from .generic import ggui
 from .generic import table
 
 from .windows import wfirewall
-from .windows import wgpolicy
-from .windows import wregedit
 from .windows import wservice
 from .windows import wsysprop
 from .windows import wtmanager
@@ -33,8 +31,6 @@ def setup(app):
   table.setup(app)
 
   wfirewall.setup(app)
-  wgpolicy.setup(app)
-  wregedit.setup(app)
   wservice.setup(app)
   wsysprop.setup(app)
   wtmanager.setup(app)

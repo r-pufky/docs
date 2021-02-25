@@ -1,7 +1,7 @@
 .. _w10-20h2-standalone-windows-store-promotions:
 
-`Windows Store Promotions`_
-###########################
+Windows Store Promotions
+########################
 Windows Store will automatically install promoted and unwanted applications,
 then advertise them in the start menu. Disables those downloads and remove
 promoted tiles from the start menu.
@@ -36,73 +36,48 @@ promoted tiles from the start menu.
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable silent app installs
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Store -->
+              Turn off Automatic Download and Install of updates
+    :value0:  ☑, {ENABLED}
+    :ref:     https://www.easeus.com/computer-instruction/stop-windows-10-installing-apps.html,
+              https://www.youtube.com/watch?v=wgKJMsJ-6XU&feature=youtu.be&t=4m47s
+    :update:  2021-02-19
+    :generic:
+    :open:
 
-    .. wregedit:: Disable silent app installs
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsStore
-      :names:     AutoDownload
-      :types:     DWORD
-      :data:      2
-      :admin:
-      :no_section:
-      :no_caption:
+  .. regedit:: Disable silent app installs
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsStore
+    :value0:   AutoDownload, {DWORD}, 2
+    :ref:      https://www.easeus.com/computer-instruction/stop-windows-10-installing-apps.html,
+               https://www.youtube.com/watch?v=wgKJMsJ-6XU&feature=youtu.be&t=4m47s
+    :update:   2021-02-19
+    :generic:
+    :open:
 
-    .. wregedit:: Disable silent app installs per user
-      :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                  ContentDeliveryManager
-      :names:     SilentInstalledAppsEnabled
-      :types:     DWORD
-      :data:      0
-      :admin:
-      :no_section:
-      :no_caption:
-      :no_launch:
+  .. regedit:: Disable silent app installs per user
+    :path:     HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
+               ContentDeliveryManager
+    :value0:   SilentInstalledAppsEnabled, {DWORD}, 0
+    :ref:      https://www.easeus.com/computer-instruction/stop-windows-10-installing-apps.html,
+               https://www.youtube.com/watch?v=wgKJMsJ-6XU&feature=youtu.be&t=4m47s
+    :update:   2021-02-19
+    :generic:
+    :open:
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
+.. regedit:: Disable suggested apps
+  :path:     HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\
+             ContentDeliveryManager\SuggestedApps
+  :value0:   {ANY}, {DWORD}, 0
+  :ref:      https://www.howtogeek.com/259946/how-to-get-rid-of-suggested-apps-in-windows-10,
+             https://superuser.com/questions/1221042/stop-windows-10-from-automatically-downloading-promoted-apps
+  :update:   2021-02-19
 
-    .. wgpolicy:: Disable silent app installs
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Store -->
-                  Turn off Automatic Download and Install of updates
-      :option:    ☑
-      :setting:   Enabled
-      :no_section:
-      :no_caption:
-
-  `Reference <https://www.easeus.com/computer-instruction/stop-windows-10-installing-apps.html>`__
-  `Reference <https://www.youtube.com/watch?v=wgKJMsJ-6XU&feature=youtu.be&t=4m47s>`__
-
-.. dropdown:: Disable suggested apps
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    Set all applications listed here; this list changes over time as Microsoft
-    adds and removes applications. They should all be disabled (set to ``0``).
-
-    .. wregedit:: Disable suggested apps
-      :key_title: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\
-                  ContentDeliveryManager\SuggestedApps
-      :names:     *
-      :types:     DWORD
-      :data:      0
-      :admin:
-      :no_section:
-      :no_caption:
+  Set all applications listed here; this list changes over time as Microsoft
+  adds and removes applications. They should all be disabled (set to ``0``).
 
   See :ref:`w10-20h2-settings-privacy-diagnostics-and-feedback-tailored-experiences`
   to Disable Tailored experiences.
-
-  `Reference <https://www.howtogeek.com/259946/how-to-get-rid-of-suggested-apps-in-windows-10>`__
-
-.. _Disable Windows Store Promotions: https://superuser.com/questions/1221042/stop-windows-10-from-automatically-downloading-promoted-apps

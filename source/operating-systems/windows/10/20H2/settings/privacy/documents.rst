@@ -9,59 +9,31 @@ grained control of app access.
 
 Allow access to document libraries on this device
 *************************************************
-.. dropdown:: Enable Allow access to document libraries on this device
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
+.. regedit:: Enable Allow access to document libraries on this device
+  :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
+             CapabilityAccessManager\ConsentStore\documentsLibrary
+  :value0:   Value, {SZ}, Allow
+  :ref:      https://www.tenforums.com/tutorials/102595-allow-deny-os-apps-access-documents-library-windows-10-a.html
+  :update:   2021-02-19
 
   Do not configure or leave enabled. Can restrict document folder access from
   all apps and Windows. There is no GPO equivalent.
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
-    :open:
-
-    ``Deny`` will disable all access.
-
-    .. wregedit:: Enable Allow access to document libraries on this device
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                  CapabilityAccessManager\ConsentStore\documentsLibrary
-      :names:     Value
-      :types:     SZ
-      :data:      Allow
-      :no_section:
-      :no_caption:
-
-  `Reference <https://www.tenforums.com/tutorials/102595-allow-deny-os-apps-access-documents-library-windows-10-a.html>`__
+  ``Deny`` will disable all access.
 
 Allow app access to document libraries on this device
 *****************************************************
-.. dropdown:: Enable Allow app access to document libraries on this device
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
+.. regedit:: Enable Allow app access to document libraries on this device
+  :path:     HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\
+             CapabilityAccessManager\ConsentStore\documentsLibrary
+  :value0:   Value, {SZ}, Allow
+  :ref:      https://www.tenforums.com/tutorials/102595-allow-deny-os-apps-access-documents-library-windows-10-a.html
+  :update:   2021-02-19
 
   Do not configure or leave enabled. Can restrict document folder access from
   all apps and Windows. There is no GPO equivalent.
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
-    :open:
-    
-    ``Deny`` will disable all access.
-
-    .. wregedit:: Enable Allow app access to document libraries on this device
-      :key_title: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\
-                  CapabilityAccessManager\ConsentStore\documentsLibrary
-      :names:     Value
-      :types:     SZ
-      :data:      Allow
-      :no_section:
-      :no_caption:
-      
-  `Reference <https://www.tenforums.com/tutorials/102595-allow-deny-os-apps-access-documents-library-windows-10-a.html>`__
+  ``Deny`` will disable all access.
 
 Choose which apps can access your documents library
 ***************************************************

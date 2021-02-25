@@ -15,49 +15,36 @@ Getting to know you
   :animate: fade-in
   :open:
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable Getting to know you inking and typing recognition
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Text Input -->
+              Improve inking and typing recognition
+    :value0:  ☑, {DISABLED}
+    :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1821-inking--typing
+    :update:  2021-02-19
+    :generic:
     :open:
 
-    .. wgpolicy:: Disable Getting to know you inking and typing recognition
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Text Input -->
-                  Improve inking and typing recognition
-      :option:    ☑
-      :setting:   Disabled
-      :no_section:
-      :no_caption:
-
-    .. wgpolicy:: Disable Getting to know you automatic learning
-      :key_title: User Configuration -->
-                  Administrative Templates -->
-                  Control Panel -->
-                  Regional and Language Options -->
-                  Handwriting personalization -->
-                  Turn off automatic learning
-      :option:    ☑
-      :setting:   Disabled
-      :no_section:
-      :no_caption:
-      :no_launch:
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable Getting to know you automatic learning
+    :path:    User Configuration -->
+              Administrative Templates -->
+              Control Panel -->
+              Regional and Language Options -->
+              Handwriting personalization -->
+              Turn off automatic learning
+    :value0:  ☑, {DISABLED}
+    :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1821-inking--typing
+    :update:  2021-02-19
+    :generic:
     :open:
 
-    .. wregedit:: Disable Getting to know you
-      :key_title: HKEY_CURRENT_USER\Software\Microsoft\InputPersonalization
-      :names:     RestrictImplicitTextCollection,
-                  RestrictImplicitInkCollection
-      :types:     DWORD,
-                  DWORD
-      :data:      1,
-                  1
-      :no_section:
-      :no_caption:
-
-  `Reference <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1821-inking--typing>`__
+  .. regedit:: Disable Getting to know you
+    :path:     HKEY_CURRENT_USER\Software\Microsoft\InputPersonalization
+    :value0:   RestrictImplicitTextCollection, {DWORD}, 1
+    :value1:    RestrictImplicitInkCollection, {DWORD}, 1
+    :ref:      https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1821-inking--typing
+    :update:   2021-02-19
+    :generic:
+    :open:

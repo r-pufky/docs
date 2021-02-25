@@ -9,34 +9,23 @@ Find my device
   :open:
   
   GPS information is uploaded to Microsoft if enabled.
-    
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
+
+  .. gpo::    Disable Find my device
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Find My Device -->
+              Turn On/Off Find My Device
+    :value0:  ☑, {DISABLED}
+    :ref:     https://www.tenforums.com/tutorials/28946-turn-off-find-my-device-windows-10-a.html
+    :update:  2021-02-19
+    :generic:
     :open:
 
-    .. wgpolicy:: Disable Find my device
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Find My Device -->
-                  Turn On/Off Find My Device
-      :option:    ☑
-      :setting:   Disabled
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Disable delivery optimization
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Settings\FindMyDevice
+    :value0:   LocationSyncEnabled, {DWORD}, 0
+    :ref:      https://www.tenforums.com/tutorials/28946-turn-off-find-my-device-windows-10-a.html
+    :update:   2021-02-19
+    :generic:
     :open:
-
-    .. wregedit:: Disable delivery optimization
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Settings\FindMyDevice
-      :names:     LocationSyncEnabled
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
-
-  `Reference <https://www.tenforums.com/tutorials/28946-turn-off-find-my-device-windows-10-a.html>`__

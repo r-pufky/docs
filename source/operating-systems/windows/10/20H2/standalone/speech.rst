@@ -4,8 +4,8 @@ Speech
 ######
 :cmdmenu:`⌘ + r › ms-settings:privacy-speech`
 
-These speech options are not available in the GUI. See
-:ref:`w10-20h2-settings-privacy-speech` for GUI options.
+These speech value0s are not available in the GUI. See
+:ref:`w10-20h2-settings-privacy-speech` for GUI value0s.
 
 .. dropdown:: Disable Automatic updates of speech data
   :container: + shadow
@@ -13,33 +13,22 @@ These speech options are not available in the GUI. See
   :animate: fade-in
   :open:
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::   Disable automatic updates of speech data
+    :path:   Computer Configuration -->
+             Administrative Templates -->
+             Windows Components -->
+             Speech -->
+             Allow automatic updates of Speech Data
+    :value0: ☑, {DISABLED}
+    :ref:    https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#bkmk-priv-speech
+    :update: 2021-02-19
+    :generic:
     :open:
 
-    .. wgpolicy:: Disable automatic updates of speech data
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Speech -->
-                  Allow automatic updates of Speech Data
-      :option:    ☑
-      :setting:   Disabled
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. regedit:: Disable automatic updates of speech data
+    :path: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Speech
+    :value0:     AllowSpeechModelUpdate, {DWORD}, 0
+    :ref:    https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#bkmk-priv-speech
+    :update: 2021-02-19
+    :generic:
     :open:
-
-    .. wregedit:: Disable automatic updates of speech data
-      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Speech
-      :names:     AllowSpeechModelUpdate
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
-
-  `Reference <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#bkmk-priv-speech>`_

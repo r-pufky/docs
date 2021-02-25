@@ -2,46 +2,23 @@
 
 Themes
 ######
-.. dropdown:: Remove Recycle Bin from Desktop
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
-  :open:
+.. gpo::   Remove Recycle Bin from Desktop
+  :path:   User Configuration -->
+           Administrative Templates -->
+           Desktop -->
+           Remove Recycle Bin icon from desktop
+  :value0: ☑, {ENABLED}
+  :ref:    https://www.pelegit.co.il/remove-recycle-bin-using-group-policy/
+  :update: 2021-02-19
 
   Recycle bin can still be accessed via
   :cmdmenu:`⌘ --> recycle bin --> recycle bin properties`
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-    :open:
+.. regedit:: Remove Recycle Bin from Desktop
+  :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
+             Explorer\Desktop\NameSpace
+  :value0:   {645FF040-5081-101B-9F08-00AA002F954E}, {DELETE}, {DELETE}
+  :ref:      https://www.computerhope.com/issues/ch001276.htm
+  :update:   2021-02-19
 
-    .. wgpolicy:: Remove Recycle Bin from Desktop
-      :key_title: User Configuration -->
-                  Administrative Templates -->
-                  Desktop -->
-                  Remove Recycle Bin icon from desktop
-      :option:    ☑
-      :setting:   Enabled
-      :no_section:
-      :no_caption:
-
-    `Reference <https://www.pelegit.co.il/remove-recycle-bin-using-group-policy/>`__
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
-    :open:
-
-    This key should be deleted.
-
-    .. wregedit:: Remove Recycle Bin from Desktop
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
-                  Explorer\Desktop\NameSpace
-      :names:     {645FF040-5081-101B-9F08-00AA002F954E}
-      :types:     {DELETE}
-      :data:      {DELETE}
-      :no_section:
-      :no_caption:
-
-    `Reference <https://www.computerhope.com/issues/ch001276.htm>`__
+  This key should be deleted.

@@ -16,42 +16,31 @@ to their servers. Disable this.
 
   Disable account sync and prevent users from turning it on.
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable user account sync
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              Sync your settings -->
+              Do not sync
+    :value0:  ☑, {ENABLED}
+    :value1:  ☐, Allow users to turn syncing on
+    :ref:     https://www.tenforums.com/tutorials/43246-enable-disable-sync-your-settings-windows-10-a.html
+    :update:  2021-02-19
+    :generic:
+    :open:
     
-    .. wregedit:: Disable user account sync
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SettingSync
-      :names:     DisableSettingSync
-      :types:     DWORD
-      :data:      2
-      :no_section:
-      :no_caption:
+  .. regedit:: Disable user account sync
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SettingSync
+    :value0:   DisableSettingSync, {DWORD}, 2
+    :ref:      https://www.tenforums.com/tutorials/43246-enable-disable-sync-your-settings-windows-10-a.html
+    :update:   2021-02-19
+    :generic:
+    :open:
 
-    .. wregedit:: Disable user account sync override
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SettingSync
-      :names:     DisableSettingSyncUserOverride
-      :types:     DWORD
-      :data:      1
-      :no_section:
-      :no_caption:
-      :no_launch:
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wgpolicy:: Disable user account sync
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  Sync your settings -->
-                  Do not sync
-      :option:    ☑,
-                  ☐
-      :setting:   Enabled,
-                  Allow users to turn syncing on.
-      :no_section:
-      :no_caption:
-
-  `Reference <https://www.tenforums.com/tutorials/43246-enable-disable-sync-your-settings-windows-10-a.html>`__
+  .. regedit:: Disable user account sync override
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SettingSync
+    :value0:   DisableSettingSyncUserOverride, {DWORD}, 1
+    :ref:      https://www.tenforums.com/tutorials/43246-enable-disable-sync-your-settings-windows-10-a.html
+    :update:   2021-02-19
+    :generic:
+    :open:

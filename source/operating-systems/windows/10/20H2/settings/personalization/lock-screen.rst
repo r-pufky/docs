@@ -2,29 +2,16 @@
 
 Lock screen
 ###########
-.. dropdown:: Disable get fun facts, tips, tricks, and more on your lock screen
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
+.. todo::
+  ``Show lock screen background picture on the sign-in screen`` should be set,
+  no discovered options yet.
+
+.. regedit:: Disable get fun facts, tips, tricks, and more on your lock
+             screen
+  :path:     HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
+             ContentDeliveryManager
+  :value0:   SubscribedContent-338387Enabled, {DWORD}, 0
+  :update:   2021-02-19
   :open:
 
   Contacts Microsoft servers to get information to display.
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
-    :open:
-
-    .. wregedit:: Disable get fun facts, tips, tricks, and more on your lock
-                  screen
-      :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                  ContentDeliveryManager
-      :names:     SubscribedContent-338387Enabled
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
-
-.. TODO::
-  ``Show lock screen background picture on the sign-in screen`` should be set,
-  no discovered options yet.

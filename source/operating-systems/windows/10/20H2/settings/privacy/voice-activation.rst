@@ -11,40 +11,28 @@ Allow apps to use voice activation
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-    :open:
-
-    .. wgpolicy:: Disable apps using voice activation
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  App Privacy -->
-                  Let Windows apps activate with voice
-      :option:    ☑,
-                  Default for all apps
-      :setting:   Enabled,
-                  Force Deny
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable apps using voice activation
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              App Privacy -->
+              Let Windows apps activate with voice
+    :value0:  ☑, {ENABLED}
+    :value1:  Default for all apps, Force Deny
+    :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#bkmk-voice-act
+    :update:  2021-02-19
+    :generic:
     :open:
 
     ``0`` enable apps access to voice activation.
 
-    .. wregedit:: Disable apps using voice activation
-      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
-      :names:     LetAppsActivateWithVoice
-      :types:     DWORD
-      :data:      2
-      :no_section:
-      :no_caption:
-
-  `Reference <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#bkmk-voice-act>`__
+  .. regedit:: Disable apps using voice activation
+    :path:     HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
+    :value0:   LetAppsActivateWithVoice, {DWORD}, 2
+    :ref:      https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#bkmk-voice-act
+    :update:   2021-02-19
+    :generic:
+    :open:
 
 Allow apps to use voice activation when this device is locked
 *************************************************************
@@ -53,63 +41,38 @@ Allow apps to use voice activation when this device is locked
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-    :open:
-
-    .. wgpolicy:: Disable app using voice activation when device locked
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  Windows Components -->
-                  App Privacy -->
-                  Let Windows apps activate with voice while the system is locked
-      :option:    ☑,
-                  Default for all apps
-      :setting:   Enabled,
-                  Force Deny
-      :no_section:
-      :no_caption:
-
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable app using voice activation when device locked
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              Windows Components -->
+              App Privacy -->
+              Let Windows apps activate with voice while the system is locked
+    :value0:  ☑, {ENABLED}
+    :value1:  Default for all apps, Force Deny
+    :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#bkmk-voice-act
+    :update:  2021-02-19
+    :generic:
     :open:
 
     ``0`` enable apps access to voice activation on lockscreen.
 
-    .. wregedit:: Disable app using voice activation when device locked
-      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Messaging
-      :names:     LetAppsActivateWithVoiceAboveLock
-      :types:     DWORD
-      :data:      2
-      :no_section:
-      :no_caption:
-
-  `References <https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#bkmk-voice-act>`__
+  .. regedit:: Disable app using voice activation when device locked
+    :path:     HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Messaging
+    :value0:   LetAppsActivateWithVoiceAboveLock, {DWORD}, 2
+    :ref:      https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#bkmk-voice-act
+    :update:   2021-02-19
+    :generic:
+    :open:
 
 Choose your default app for headset button press
 ************************************************
-.. dropdown:: Disable Choose your default app for headset button press
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
+.. regedit:: Disable Choose your default app for headset button press
+  :path:     HKEY_CURRENT_USER\SOFTWARE\Microsoft\Speech_OneCore\Settings
+             VoiceActivation\UserPreferenceForAllApps
+  :value0:   AgentActivationLastUsed, {DWORD}, 0
+  :update:   2021-02-19
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
-    :open:
-
-    ``1`` enables.
-
-    .. wregedit:: Disable app using voice activation when device locked
-      :key_title: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Speech_OneCore\Settings
-                  VoiceActivation\UserPreferenceForAllApps
-      :names:     AgentActivationLastUsed
-      :types:     DWORD
-      :data:      0
-      :no_section:
-      :no_caption:
+  ``1`` enables.
 
 Choose which apps can use voice activation
 ******************************************

@@ -13,6 +13,7 @@ this creeate a drastic performance hit. Disable restore points.
   .. dropdown:: GUI
     :title: font-weight-bold
     :animate: fade-in
+    :open:
 
     Be sure to set this for each drive explicitly.
 
@@ -35,6 +36,7 @@ this creeate a drastic performance hit. Disable restore points.
   .. dropdown:: Powershell
     :title: font-weight-bold
     :animate: fade-in
+    :open:
 
     .. code-block:: powershell
       :caption: Disable restore points powershell (as admin)
@@ -49,47 +51,40 @@ this creeate a drastic performance hit. Disable restore points.
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable system restore
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              System -->
+              System Restore -->
+              Turn off System Restore
+    :value0:  ☑, {ENABLED}
+    :ref:     https://www.tenforums.com/tutorials/99782-enable-disable-system-restore-windows.html
+    :update:  2021-02-19
+    :generic:
+    :open:
 
-    .. wregedit:: Disable system restore
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\
-                  SystemRestore
-      :names:     DisableSR
-      :types:     DWORD
-      :data:      1
-      :no_section:
-      :no_caption:
+  .. regedit:: Disable system restore
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\
+               SystemRestore
+    :value0:   DisableSR, {DWORD}, 1
+    :ref:      https://www.tenforums.com/tutorials/99782-enable-disable-system-restore-windows.html
+    :update:   2021-02-19
+    :generic:
+    :open:
 
-    .. wregedit:: Disable system restore
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\
-                  CurrentVersion\SystemRestore
-      :names:     DisableSR
-      :types:     DWORD
-      :data:      1
-      :no_section:
-      :no_caption:
-      :no_launch:
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wgpolicy:: Disable system restore
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  System -->
-                  System Restore -->
-                  Turn off System Restore
-      :option:    ☑
-      :setting:   Enabled
-      :no_section:
-      :no_caption:
+  .. regedit:: Disable system restore
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\
+               CurrentVersion\SystemRestore
+    :value0:   DisableSR, {DWORD}, 1
+    :ref:      https://www.tenforums.com/tutorials/99782-enable-disable-system-restore-windows.html
+    :update:   2021-02-19
+    :generic:
+    :open:
 
   .. dropdown:: Scheduled Tasks
     :title: font-weight-bold
     :animate: fade-in
+    :open:
 
     .. wtschedule:: Disable system restore scheduled tasks
       :key_title:   Microsoft --> Windows --> SystemRestore --> SR -->
@@ -101,8 +96,6 @@ this creeate a drastic performance hit. Disable restore points.
       :no_section:
       :no_caption:
 
-  `Reference <https://www.tenforums.com/tutorials/99782-enable-disable-system-restore-windows.html>`__
-
 .. dropdown:: Disable system restore configuration
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
@@ -111,42 +104,32 @@ this creeate a drastic performance hit. Disable restore points.
   .. note::
     Windows updates can re-enable restore points even though this is disabled.
 
-  .. dropdown:: :term:`Registry`
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gpo::    Disable system restore configuration
+    :path:    Computer Configuration -->
+              Administrative Templates -->
+              System -->
+              System Restore -->
+              Turn off Configuration
+    :value0:  ☑, {ENABLED}
+    :ref:     https://www.tenforums.com/tutorials/99782-enable-disable-system-restore-windows.html
+    :update:  2021-02-19
+    :generic:
+    :open:
 
-    .. wregedit:: Disable system restore configuration
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\
-                  SystemRestore
-      :names:     DisableConfig
-      :types:     DWORD
-      :data:      1
-      :no_section:
-      :no_caption:
+  .. regedit:: Disable system restore configuration
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows NT\
+               SystemRestore
+    :value0:   DisableConfig, {DWORD}, 1
+    :ref:      https://www.tenforums.com/tutorials/99782-enable-disable-system-restore-windows.html
+    :update:   2021-02-19
+    :generic:
+    :open:
 
-    .. wregedit:: Disable system restore configuration
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\
-                  CurrentVersion\SystemRestore
-      :names:     DisableConfig
-      :types:     DWORD
-      :data:      1
-      :no_section:
-      :no_caption:
-      :no_launch:
-
-  .. dropdown:: :term:`GPO`
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wgpolicy:: Disable system restore configuration
-      :key_title: Computer Configuration -->
-                  Administrative Templates -->
-                  System -->
-                  System Restore -->
-                  Turn off Configuration
-      :option:    ☑
-      :setting:   Enabled
-      :no_section:
-      :no_caption:
-
-  `Reference <https://www.tenforums.com/tutorials/99782-enable-disable-system-restore-windows.html>`__
+  .. regedit:: Disable system restore configuration
+    :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\
+               CurrentVersion\SystemRestore
+    :value0:   DisableConfig, {DWORD}, 1
+    :ref:      https://www.tenforums.com/tutorials/99782-enable-disable-system-restore-windows.html
+    :update:   2021-02-19
+    :generic:
+    :open:
