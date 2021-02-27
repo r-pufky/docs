@@ -10,7 +10,6 @@ from .generic import ggui
 from .generic import table
 
 from .windows import wservice
-from .windows import wtschedule
 
 from .v2 import regedit
 from .v2 import gpo
@@ -27,7 +26,6 @@ def setup(app):
   table.setup(app)
 
   wservice.setup(app)
-  wtschedule.setup(app)
 
   regedit.setup(app)
   gpo.setup(app)

@@ -44,88 +44,68 @@ Setup triggered events to refresh GPG agent on screen unlocks.
 See :ref:`scheduled-tasks-powershell-create-event` for a powershell script that
 does this for you.
 
-.. wtschedule:: Manually add general section schedule
-  :key_title:   Action --> Create Task --> General
-  :option:      Name,
-                Description,
-                Check,
-                Configure for,
-                Check
-  :setting:     GpgAgentRefreshUnlock,
-                Restarts GPG agent on windows unlock,
-                Run only when user is logged on,
-                Windows 10,
-                Hidden
-  :no_section:
-  :no_caption:
 
-.. wtschedule:: Manually add triggers section schedule
-  :key_title:   Triggers --> New
-  :option:      Begin the task,
-                Check,
-                Log,
-                Source,
-                Event ID,
-                Check
-  :setting:     On an event,
-                Basic,
-                Security,
-                Microsoft Windows security auditing,
-                4801,
-                Enabled
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. dropdown:: Manaually add event triggered scheduled task
+  :container: + shadow
+  :title: bg-primary text-white font-weight-bold
+  :animate: fade-in
 
-.. wtschedule:: Manually add actions section gpg kill schedule
-  :key_title:   Actions --> New
-  :option:      Action,
-                Program/Script,
-                Add arguments (optional)
-  :setting:     Start a program,
-                gpgconf,
-                --kill gpg-agent
-  :no_section:
-  :no_caption:
-  :no_launch:
+  .. gui::   Manually add general section schedule
+    :label:  Task Scheduler
+    :nav:    ⌘ --> Task Scheduler --> Task Scheduler Library
+    :path:   Action --> Create Task --> General
+    :value0:          Name, GpgAgentRefreshUnlock
+    :value1:   Description, Restarts GPG agent on windows unlock
+    :value2:         Check, Run only when user is logged on
+    :value3: Configure for, Windows 10
+    :value4:             ☑, Hidden
+    :update: 2021-02-19
 
-.. wtschedule:: Manually add actions section gpg agent schedule
-  :key_title:   Actions --> New
-  :option:      Action,
-                Program/Script,
-                Add arguments (optional)
-  :setting:     Start a program,
-                gpg-connect-agent,
-                /bye
-  :no_section:
-  :no_caption:
-  :no_launch:
+  .. gui::   Manually add triggers section schedule
+    :label:  Task Scheduler
+    :path:   Triggers --> New
+    :value0: Begin the task, On an event
+    :value1:          Check, Basic
+    :value2:            Log, Security
+    :value3:         Source, Microsoft Windows security auditing
+    :value4:       Event ID, 4801
+    :value5:              ☑, Hidden
+    :update: 2021-02-19
+
+  .. gui::   Manually add actions section gpg kill schedule
+    :label:  Task Scheduler
+    :path:   Actions --> New
+    :value0:                   Action, Start a program
+    :value1:           Program/Script, gpgconf
+    :value2: Add arguments (optional), --kill gpg-agent
+    :update: 2021-02-19
+
+  .. gui::   Manually add actions section gpg agent schedule
+    :label:  Task Scheduler
+    :path:   Actions --> New
+    :value0:                   Action, Start a program
+    :value1:           Program/Script, gpg-connect-agent
+    :value2: Add arguments (optional), /bye
+    :update: 2021-02-19
 
     .. note::
       ``gpgconf --kill gpg-agent`` action should always be executed before
       restarting the connect agent.
 
-.. wtschedule:: Manually add conditions section schedule
-  :key_title:   Conditions
-  :option:      *
-  :setting:     ☐
-  :no_section:
-  :no_caption:
-  :no_launch:
+  .. gui::   Manually add conditions section schedule
+    :label:  Task Scheduler
+    :path:   Conditions
+    :value0: *, ☐
+    :update: 2021-02-19
 
-.. wtschedule:: Manually add settings section schedule
-  :key_title:   Settings
-  :option:      Allow task to be run on demand,
-                Stop the task if it runs longer than,
-                Stop the task if it runs longer than,
-                All Remaining
-  :setting:     ☑,
-                ☑,
-                3 days,
-                ☐
-  :no_section:
-  :no_caption:
-  :no_launch:
+  .. gui::   Manually add settings section schedule
+    :label:  Task Scheduler
+    :path:   Settings
+    :value0:       Allow task to be run on demand, ☑
+    :value1: Stop the task if it runs longer than, ☑
+    :value2: Stop the task if it runs longer than, 3 days
+    :value3:                        All Remaining, ☐
+    :update: 2021-02-19
 
 This can be verified to work by restarting your machine or killing the current
 agent with ``gpgconf --kill gpg-agent`` and locking/unlocking your screen then
@@ -208,24 +188,21 @@ this**.
 
   CreateObject("Wscript.Shell").Run "" & WScript.Arguments(0) & "", 0, False
 
-.. wtschedule:: Use wrapper script for GPG conf task
-  :key_title:   GPGAgentRefreshUnlock --> Actions --> Edit --> Start a Program
-  :option:      Program/Script,
-                Add arguments
-  :setting:     quiet_launcher.vbs,
-                gpgconf --kill gpg-agent
-  :no_section:
-  :no_caption:
+.. gui::   Use wrapper script for GPG conf task
+  :label:  Task Scheduler
+  :nav:    ⌘ --> Task Scheduler --> Task Scheduler Library
+  :path:   GPGAgentRefreshUnlock --> Actions --> Edit --> Start a Program
+  :value0: Program/Script, quiet_launcher.vbs
+  :value1:  Add arguments, gpgconf --kill gpg-agent
+  :update: 2021-02-19
 
-.. wtschedule:: Use wrapper script for GPG connect task
-  :key_title:   GPGAgentRefreshUnlock --> actions --> edit --> Start a program
-  :option:      Program/Script,
-                Add arguments
-  :setting:     quiet_launcher.vbs,
-                gpg-connect-agent /bye
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Use wrapper script for GPG connect task
+  :label:  Task Scheduler
+  :nav:    ⌘ --> Task Scheduler --> Task Scheduler Library
+  :path:   GPGAgentRefreshUnlock --> actions --> edit --> Start a program
+  :value0: Program/Script, quiet_launcher.vbs
+  :value1:  Add arguments, gpg-connect-agent /bye
+  :update: 2021-02-19
 
 Demonstration of Scheduled Task at Login Failure
 ************************************************

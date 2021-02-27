@@ -88,14 +88,13 @@ checks after windows crashes), which cause 100% disk usage on system PID 4.
 `Disabling ReFS Scheduled Tasks`_ prevents these from automatically being
 scheduled, but can still be manually run.
 
-.. wtschedule:: Disable REFS scheduled tasks task
-  :key_title:   Microsoft --> Windows --> Data Integrity Scan
-  :option:      Data Integrity Scan,
-                Data Integrity Scan for Crash Recovery
-  :setting:     Disabled,
-                Disabled
-  :no_section:
-  :no_caption:
+.. gui::   Disable REFS scheduled tasks task
+  :label:  Task Scheduler
+  :nav:    ⌘ --> Task Scheduler --> Task Scheduler Library
+  :path:   Microsoft --> Windows --> Data Integrity Scan
+  :value0:                    Data Integrity Scan, {DISABLED}
+  :value1: Data Integrity Scan for Crash Recovery, {DISABLED}
+  :update: 2021-02-19
 
 Addressing 100% Disk Usage Issues
 *********************************
@@ -312,17 +311,17 @@ Internet Explorer.
   :ref:      https://www.thewindowsclub.com/enable-caret-browsing-internet-explorer
   :update:   2021-02-19
 
-.. gpo:: Disable Caret Browsing Notifications
-  :path: User Configuration -->
-              Administrative Templates -->
-              Windows Components -->
-              Internet Explorer -->
-              Internet Control Panel -->
-              Advanced Page -->
-              Turn on Caret Browsing support
-  :value0:    ☑, {DISABLED}
-  :ref:      https://www.thewindowsclub.com/enable-caret-browsing-internet-explorer
-  :update:   2021-02-19
+.. gpo::   Disable Caret Browsing Notifications
+  :path:   User Configuration -->
+           Administrative Templates -->
+           Windows Components -->
+           Internet Explorer -->
+           Internet Control Panel -->
+           Advanced Page -->
+           Turn on Caret Browsing support
+  :value0: ☑, {DISABLED}
+  :ref:    https://www.thewindowsclub.com/enable-caret-browsing-internet-explorer
+  :update: 2021-02-19
 
 Windows Bootloader Missing / Multiple OS
 ****************************************

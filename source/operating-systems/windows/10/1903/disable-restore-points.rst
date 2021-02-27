@@ -10,28 +10,20 @@ this creeate a drastic performance hit.
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: GUI
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gui::    Disable restore points for each drive
+    :path:    ⌘ + r -->
+              systempropertiesprotection -->
+              Protection Settings -->
+              {DRIVE} -->
+              Configure
+    :value0:  ☑, Disable system protection
+    :value1:  Max Usage, 0
+    :value2:  Delete all restore points for this drive, {DELETE}
+    :update:  2021-02-19
+    :generic:
     :open:
 
     Be sure to set this for each drive explicitly.
-
-    .. ggui:: Disable restore points for each drive
-      :key_title: ⌘ + r -->
-                  systempropertiesprotection -->
-                  Protection Settings -->
-                  {DRIVE} -->
-                  Configure
-      :option:    ☑,
-                  Max Usage,
-                  Delete all restore points for this drive
-      :setting:   Disable system protection,
-                  0,
-                  Delete
-      :no_section:
-      :no_caption:
-      :no_launch:
 
   .. dropdown:: Powershell
     :title: font-weight-bold
@@ -77,16 +69,16 @@ this creeate a drastic performance hit.
     :generic:
     :open:
 
-  .. dropdown:: Scheduled Tasks
-    :title: font-weight-bold
-    :animate: fade-in
-
-    .. wtschedule:: Disable system restore scheduled tasks
-      :key_title:   Microsoft --> Windows --> SystemRestore --> SR --> RMB --> Disable
-      :option:      Name,
-                    Description
-      :setting:     SR,
-                    This task creates regular system protection points.
+  .. gui::    Disable system restore scheduled tasks
+    :label:   Task Scheduler
+    :nav:     ⌘ --> Task Scheduler --> Task Scheduler Library
+    :path:    Microsoft --> Windows --> SystemRestore --> SR -->
+              RMB --> Disable
+    :value0:  Name, SR
+    :value1:  Description, This task creates regular system protection points.
+    :update:  2021-02-19
+    :generic:
+    :open:
 
 .. _Disable restore points: https://github.com/adolfintel/Windows10-Privacy#system-restore
 

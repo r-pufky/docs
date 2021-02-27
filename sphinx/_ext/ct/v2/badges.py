@@ -50,10 +50,13 @@ badges = {
   '{TZ}': Template.info % 'TZ',
   '{COUNTRY}': Template.info % 'COUNTRY',
 
-  # Descriptors
+  # Descriptors / Actions
   '{DELETE}': Template.danger % 'DELETE',
   '{DESCRIPTION}': Template.info % 'DESCRIPTION',
   '{OPTIONAL}': Template.info % 'OPTIONAL',
+  '{DRIVE}': Template.info % 'DRIVE',
+  '{LMB}': Template.info % 'LMB',
+  '{RMB}': Template.info % 'RMB',
 
   # Regedit
   '{DWORD}': Template.info % 'DWORD',
