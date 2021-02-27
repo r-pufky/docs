@@ -23,7 +23,8 @@ to enable gpg use anywhere on the system.
 Download :download:`gpg4win <https://www.gpg4win.org/package-integrity.html>`
 and **verify integrity**.
 
-.. sysdm:: Add gpg to user system path
+.. gui:: Add gpg to user system path
+  :nav:    ⌘ --> sysdm.cpl
   :path:   Advanced -->
            Environment Variables -->
            User variables for {USER} -->

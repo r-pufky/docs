@@ -43,22 +43,24 @@ Set Static Switch IP
 #. Connect to Edgerouter GUI @ http://10.1.1.1.
 #. Reserve a static DHCP address for the switch.
 
-.. ubiquiti:: Add Static Reservation for Switch Management
-  :path:      Services --> DHCP Server --> Management --> Action --> Leases
-  :value0:    Map Static IP,
-  :value1:    › IP Address, 10.1.1.6
-  :value2:    › Name, server
+.. gui::   Add Static Reservation for Switch Management
+  :label:  Ubiquiti
+  :path:   Services --> DHCP Server --> Management --> Action --> Leases
+  :value0: Map Static IP,
+  :value1: › IP Address, 10.1.1.6
+  :value2: › Name, server
 
 Connect to Unifi Controller @ http://localhost:8443.
 
-.. ubiquiti:: Set Static Switch IP
-  :path:      Devices --> Switch --> Properties --> Config --> Network
-  :value0:    Configure IP, {STATIC}
-  :value1:    › IP Address, 10.1.1.6
-  :value2:    › Preferred DNS, 10.1.1.1
-  :value3:    › Subnet Mask, 255.255.255.0
-  :value4:    › Gateway, 10.1.1.1
-  :value5:    › DNS Suffix, {DOMAIN}
+.. gui::   Set Static Switch IP
+  :label:  Ubiquiti
+  :path:   Devices --> Switch --> Properties --> Config --> Network
+  :value0: Configure IP, {STATIC}
+  :value1: › IP Address, 10.1.1.6
+  :value2: › Preferred DNS, 10.1.1.1
+  :value3: › Subnet Mask, 255.255.255.0
+  :value4: › Gateway, 10.1.1.1
+  :value5: › DNS Suffix, {DOMAIN}
 
   .. note::
     :cmdmenu:`Queue Changes --> Apply`
@@ -69,28 +71,31 @@ Connect to Unifi Controller @ http://localhost:8443.
 
 Configure Server Switch Management
 **********************************
-.. ubiquiti:: General Server Switch Setup
-  :path:      Devices --> Switch --> Properties --> Config --> General
-  :value0:    Alias, server
-  :value1:    LED, use site settings
+.. gui::   General Server Switch Setup
+  :label:  Ubiquiti
+  :path:   Devices --> Switch --> Properties --> Config --> General
+  :value0: Alias, server
+  :value1: LED, use site settings
 
-.. ubiquiti:: Server Switch Services Setup
-  :path:      Devices --> Switch --> Properties --> Config --> Services
-  :value0:    VLAN,
-  :value1:    › Management VLAN, LAN
-  :value2:    › Spanning Tree, RSTP
-  :value3:    › Priority, 32768
-  :value4:    Security,
-  :value5:    › ☐, Enable 802.1x control
-  :value6:    SNMP,
-  :value7:    › Location, {NONE}
-  :value8:    › Contact, {NONE}
+.. gui::   Server Switch Services Setup
+  :label:  Ubiquiti
+  :path:   Devices --> Switch --> Properties --> Config --> Services
+  :value0: VLAN,
+  :value1: › Management VLAN, LAN
+  :value2: › Spanning Tree, RSTP
+  :value3: › Priority, 32768
+  :value4: Security,
+  :value5: › ☐, Enable 802.1x control
+  :value6: SNMP,
+  :value7: › Location, {NONE}
+  :value8: › Contact, {NONE}
 
 :cmdmenu:`Queue Changes --> Apply`
 
 Configure VLANs on Ports
 ************************
-.. ubiquiti:: Configure Switch VLANs
+.. gui::    Configure Switch VLANs
+  :label:   Ubiquiti
   :path:    Devices --> Switch --> Properties --> Ports
   :value0:  Port 1,
   :value1:  › Name, trunk
@@ -102,20 +107,20 @@ Configure VLANs on Ports
   :value7:  › Name, infra
   :value8:  › Switch Port Profile, infrastructure (9)
   :value9:  › › Profile Overrides,
-  :value10:  › › › PoE, {OFF}
-  :value11:  Port 6,
-  :value12:  › Name, serve
-  :value13:  › Switch Port Profile, server (5)
-  :value14:  › › Profile Overrides,
-  :value15:  › › › PoE, {OFF}
-  :value16:  Port 7,
-  :value17:  › Name, management
-  :value18:  › Switch Port Profile, All
-  :value19:  › › Profile Overrides,
-  :value20:  › › › PoE, {OFF}
-  :value21:  Port 8,
-  :value22:  › Name, {DISABLE}
-  :value23:  › Switch Port Profile, {DISABLED}
+  :value10: › › › PoE, {OFF}
+  :value11: Port 6,
+  :value12: › Name, serve
+  :value13: › Switch Port Profile, server (5)
+  :value14: › › Profile Overrides,
+  :value15: › › › PoE, {OFF}
+  :value16: Port 7,
+  :value17: › Name, management
+  :value18: › Switch Port Profile, All
+  :value19: › › Profile Overrides,
+  :value20: › › › PoE, {OFF}
+  :value21: Port 8,
+  :value22: › Name, {DISABLE}
+  :value23: › Switch Port Profile, {DISABLED}
 
   .. warning::
     Switch will re-provision for each port modification. Wait for provisioning

@@ -57,6 +57,13 @@ class AbstractConfigTable(Table):
       split = self.delim
     return [self._convert_to_badge(x.strip()) for x in self.options[key].split(split)]
 
+  def _add_nav_to_path(self):
+    """Combines nav and path options to path, if existing."""
+    if 'nav' in self.options:
+      self.options['path'] = '%s %s %s' % (self.options['nav'],
+                                           self.sep,
+                                           self.options['path'])
+
   def _sanitize_path(self, sep='\n'):
     """String strips whitespace and combines to single string if needed.
 

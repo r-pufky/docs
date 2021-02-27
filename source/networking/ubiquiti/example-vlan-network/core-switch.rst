@@ -46,22 +46,24 @@ Set Static Switch IP
 #. Connect to Edgerouter GUI @ http://192.168.1.1.
 #. Reserve a static DHCP address for the switch.
 
-.. ubiquiti:: Add Static Reservation for Switch Management
-  :path:      Services --> DHCP Server --> Management --> Action --> Leases
-  :value0:    Map Static IP,
-  :value1:    › IP Address, 10.1.1.5
-  :value2:    › Name, core
+.. gui::   Add Static Reservation for Switch Management
+  :label:  Ubiquiti
+  :path:   Services --> DHCP Server --> Management --> Action --> Leases
+  :value0: Map Static IP,
+  :value1: › IP Address, 10.1.1.5
+  :value2: › Name, core
 
 Connect to Unifi Controller @ http://localhost:8443.
 
-.. ubiquiti:: Set Static Switch IP
-  :path:      Devices --> Switch --> Properties --> Config --> Network
-  :value0:    Configure IP, {STATIC}
-  :value1:    › IP Address, 10.1.1.5
-  :value2:    › Preferred DNS, 10.1.1.1
-  :value3:    › Subnet Mask,255.255.255.0
-  :value4:    › Gateway, 10.1.1.1
-  :value5:    › DNS Suffix, {DOMAIN}
+.. gui::   Set Static Switch IP
+  :label:  Ubiquiti
+  :path:   Devices --> Switch --> Properties --> Config --> Network
+  :value0: Configure IP, {STATIC}
+  :value1: › IP Address, 10.1.1.5
+  :value2: › Preferred DNS, 10.1.1.1
+  :value3: › Subnet Mask,255.255.255.0
+  :value4: › Gateway, 10.1.1.1
+  :value5: › DNS Suffix, {DOMAIN}
 
   .. note::
     :cmdmenu:`Queue Changes --> Apply`
@@ -72,52 +74,55 @@ Connect to Unifi Controller @ http://localhost:8443.
 
 Configure Core Switch Management
 ********************************
-.. ubiquiti:: General Core Switch Setup
-  :path:      Devices --> Switch --> Properties --> Config --> General
-  :value0:    Alias, core
-  :value1:    LED, use site settings
+.. gui::   General Core Switch Setup
+  :label:  Ubiquiti
+  :path:   Devices --> Switch --> Properties --> Config --> General
+  :value0: Alias, core
+  :value1: LED, use site settings
 
-.. ubiquiti:: Core Switch Services Setup
-  :path:      Devices --> Switch --> Properties --> Config --> Services
-  :value0:    VLAN,
-  :value1:    › Management VLAN, LAN
-  :value2:    › Spanning Tree, RSTP
-  :value3:    › Priority, 32768
-  :value4:    Security,
-  :value5:    › ☐, Enable 802.1x control
-  :value6:    SNMP,
-  :value7:    › Location, {NONE}
-  :value8:    › Contact, {NONE}
+.. gui::   Core Switch Services Setup
+  :label:  Ubiquiti
+  :path:   Devices --> Switch --> Properties --> Config --> Services
+  :value0: VLAN,
+  :value1: › Management VLAN, LAN
+  :value2: › Spanning Tree, RSTP
+  :value3: › Priority, 32768
+  :value4: Security,
+  :value5: › ☐, Enable 802.1x control
+  :value6: SNMP,
+  :value7: › Location, {NONE}
+  :value8: › Contact, {NONE}
 
 :cmdmenu:`Queue Changes --> Apply`
 
 Configure VLANs on Ports
 ************************
-.. ubiquiti:: Configure Switch VLANs
-  :path:      Devices --> Switch --> Properties --> Ports
-  :value0:    Port 1,
-  :value1:    › Name, trunk
-  :value2:    › Switch Port Profile, All
-  :value3:    Port 2,
-  :value4:    › Name, {DISABLE}
-  :value5:    › Switch Port Profile, {DISABLED}
-  :value6:    Port 3,
-  :value7:    › Name, wired 
-  :value8:    › Switch Port Profile, trunk-wired
-  :value9:    Port 4,
-  :value10:    › Name, server
-  :value11:    › Switch Port Profile, trunk-server
-  :value12:   Port 5-6,
-  :value13:    › Name, {DISABLE}
-  :value14:    › Switch Port Profile, {DISABLED}
-  :value15:    Port 7,
-  :value16:    › Name, management
-  :value17:    › Switch Port Profile, All
-  :value18:    › › Profile Overrides,
-  :value19:    › › › PoE, {OFF}
-  :value20:    Port 8,
-  :value21:    › Name, wifi
-  :value22:    › Switch Port Profile, trunk-wifi
+.. gui::    Configure Switch VLANs
+  :label:   Ubiquiti
+  :path:    Devices --> Switch --> Properties --> Ports
+  :value0:  Port 1,
+  :value1:  › Name, trunk
+  :value2:  › Switch Port Profile, All
+  :value3:  Port 2,
+  :value4:  › Name, {DISABLE}
+  :value5:  › Switch Port Profile, {DISABLED}
+  :value6:  Port 3,
+  :value7:  › Name, wired 
+  :value8:  › Switch Port Profile, trunk-wired
+  :value9:  Port 4,
+  :value10:  › Name, server
+  :value11:  › Switch Port Profile, trunk-server
+  :value12: Port 5-6,
+  :value13:  › Name, {DISABLE}
+  :value14:  › Switch Port Profile, {DISABLED}
+  :value15:  Port 7,
+  :value16:  › Name, management
+  :value17:  › Switch Port Profile, All
+  :value18:  › › Profile Overrides,
+  :value19:  › › › PoE, {OFF}
+  :value20:  Port 8,
+  :value21:  › Name, wifi
+  :value22:  › Switch Port Profile, trunk-wifi
 
   .. warning::
     Switch will re-provision for each port modification. Wait for provisioning

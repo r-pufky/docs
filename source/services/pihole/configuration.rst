@@ -93,25 +93,27 @@ Generic Configuration - will be located slightly differently for each router.
   :value0: 1.1.1.1, cloudflare DNS resolver
   :value1: 8.8.8.8, google DNS resolver
 
-.. ubiquiti:: Add Pi-Hole as DNS Server for DHCP
-  :path:      config tree -->
-              service -->
-              dhcp-server -->
-              shared-network-name -->
-              {NETWORK} -->
-              subnet -->
-              {IP_RANGE}
-  :value0:    DNS server assigned for DHCP clients, {IP}
+.. gui::   Add Pi-Hole as DNS Server for DHCP
+  :label:  Ubiquiti
+  :path:   config tree -->
+           service -->
+           dhcp-server -->
+           shared-network-name -->
+           {NETWORK} -->
+           subnet -->
+           {IP_RANGE}
+  :value0: DNS server assigned for DHCP clients, {IP}
 
-.. ubiquiti:: Allow TCP/UDP traffic on port 53 to Pi-Hole
-  :path:      Firewall Policies -->
-              WIFI_IN -->
-              Actions -->
-              Interfaces
-  :value0:    Source, *
-  :value1:    Destination, Pi-Hole:53
-  :value2:    Protocol, {TCP/UDP}
-  :value3:    Action, {ACCEPT}
+.. gui::   Allow TCP/UDP traffic on port 53 to Pi-Hole
+  :label:  Ubiquiti
+  :path:   Firewall Policies -->
+           WIFI_IN -->
+           Actions -->
+           Interfaces
+  :value0: Source, *
+  :value1: Destination, Pi-Hole:53
+  :value2: Protocol, {TCP/UDP}
+  :value3: Action, {ACCEPT}
 
 Clients Ensure clients flush the DNS cache and new DNS server is set to start
 resolution via Pi-Hole.

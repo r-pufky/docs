@@ -71,22 +71,24 @@ working before final placement, it is probably a swapped connection.
 Verify the device downstream is the *correct device* using the *same trunk port
 profile*.
 
-.. ubiquiti:: Verify downstream device is correct
-  :path:      Devices -->
-              {UPSTREAM_SWITCH} -->
-              Properties -->
-              Ports -->
-              Status
-  :value0:    Downlink, {EXPECTED_SWITCH}
-  :value1:    Profile, {EXPECTED_SWITCH_PORT_PROFILE}
+.. gui::   Verify downstream device is correct
+  :label:  Ubiquiti
+  :path:   Devices -->
+           {UPSTREAM_SWITCH} -->
+           Properties -->
+           Ports -->
+           Status
+  :value0: Downlink, {EXPECTED_SWITCH}
+  :value1: Profile, {EXPECTED_SWITCH_PORT_PROFILE}
 
-.. ubiquiti:: Verify upstream device is correct
-  :path:      Devices -->
-              {DOWNSTREAM_SWITCH} -->
-              Properties -->
-              Ports -->
-              Status
-  :value0:    Downlink, {EXPECTED_SWITCH}
-  :value1:    Profile, {EXPECTED_SWITCH_PORT_PROFILE}
+.. gui::   Verify upstream device is correct
+  :label:  Ubiquiti
+  :path:   Devices -->
+           {DOWNSTREAM_SWITCH} -->
+           Properties -->
+           Ports -->
+           Status
+  :value0: Downlink, {EXPECTED_SWITCH}
+  :value1: Profile, {EXPECTED_SWITCH_PORT_PROFILE}
 
 .. _regardless of switch load: https://community.ui.com/questions/6068efd3-bc6f-4db3-b2f1-ee1fba98c178

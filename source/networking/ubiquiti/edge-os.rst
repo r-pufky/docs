@@ -66,10 +66,11 @@ for a given DNS request.
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. ubiquiti:: Add Static Host
-    :path:      config tree --> system --> static-host-mapping --> host-name -->
-                Add
-    :value0:    host-name, {FQDN}
+  .. gui::    Add Static Host
+    :label:   Ubiquiti
+    :path:    config tree --> system --> static-host-mapping --> host-name -->
+              Add
+    :value0:  host-name, {FQDN}
     :generic:
     :open:
 
@@ -78,12 +79,13 @@ for a given DNS request.
       creation, you will get a failure message because it is not configured with
       an alias or network address yet. This is normal.
 
-  .. ubiquiti:: Add Static Host
-    :path:      config tree --> system --> static-host-mapping --> host-name -->
-                {FQDN}
-    :value0:    alias, {FQDN}
-    :value1:    alias, {ALIAS}
-    :value2:    inet, {IP}
+  .. gui::    Add Static Host
+    :label:   Ubiquiti
+    :path:    config tree --> system --> static-host-mapping --> host-name -->
+              {FQDN}
+    :value0:  alias, {FQDN}
+    :value1:  alias, {ALIAS}
+    :value2:  inet, {IP}
     :generic:
     :open:
 
@@ -128,12 +130,13 @@ need to do this for every subnet on the network.
 This may be used for *faking* subdomains, assuming there is a wildcard DNS setup
 on your Registrar and it resolves to your public IP.
 
-.. ubiquiti:: Hairpin NAT (Internal Only NAT Reflection)
-  :path:      Firewall/NAT --> Port Forwarding
-  :value0:    WAN Interface, eth3
-  :value1:    Hairpin NAT, ☑ Enable hairpin NAT (also known as 'NAT loopback' or
-                           'NAT reflection')
-  :value2:    LAN Interface, eth0.5
+.. gui::   Hairpin NAT (Internal Only NAT Reflection)
+  :label:  Ubiquiti
+  :path:   Firewall/NAT --> Port Forwarding
+  :value0: WAN Interface, eth3
+  :value1: Hairpin NAT, ☑ Enable hairpin NAT (also known as 'NAT loopback' or
+                       'NAT reflection')
+  :value2: LAN Interface, eth0.5
 
     .. note::
       Do not use WAN interface for the *Inbound Interface*. Defaults for
@@ -154,9 +157,10 @@ DNS Hostnames not Resolving
 DHCP server on the edgerouter needs to update the hosts file when new IP's are
 issued.
 
-.. ubiquiti:: Enable Dynamic DNS
-  :path:      config tree --> service --> dhcp-server --> dynamic-dns-update
-  :value0:    Enable, true
+.. gui::   Enable Dynamic DNS
+  :label:  Ubiquiti
+  :path:   config tree --> service --> dhcp-server --> dynamic-dns-update
+  :value0: Enable, true
 
 Allow Subnet (Wifi) Traffic `Internet Only Access`_
 ***************************************************
@@ -164,18 +168,20 @@ May be applied to any subnet that should only have Internet access.
 
 Create network group that contains all private IPv4 addresses.
 
-.. ubiquiti:: Define RFC1918 Private Address Group
-  :path:      Firewall/NAT --> Firewall/NAT Groups --> Add Group
-  :value0:    Name, RFC1918
-  :value1:    Description, Private IPv4 address space
-  :value2:    Group Type, ☑ Network Group
+.. gui::   Define RFC1918 Private Address Group
+  :label:  Ubiquiti
+  :path:   Firewall/NAT --> Firewall/NAT Groups --> Add Group
+  :value0: Name, RFC1918
+  :value1: Description, Private IPv4 address space
+  :value2: Group Type, ☑ Network Group
 
-.. ubiquiti:: Define Networks within RFC 1918
-  :path:      Firewall/NAT --> Firewall/NAT Groups --> RFC1918 --> Actions -->
-              Config
-  :value0:    Network, 192.168.0.0/16
-  :value1:    Network, 172.16.0.0/12
-  :value2:    Network, 10.0.0.0/8
+.. gui::   Define Networks within RFC 1918
+  :label:  Ubiquiti
+  :path:   Firewall/NAT --> Firewall/NAT Groups --> RFC1918 --> Actions -->
+           Config
+  :value0: Network, 192.168.0.0/16
+  :value1: Network, 172.16.0.0/12
+  :value2: Network, 10.0.0.0/8
 
   .. note::
     Use :cmdmenu:`add new` to add each individual network. Be sure to
@@ -183,88 +189,96 @@ Create network group that contains all private IPv4 addresses.
 
 Prevent Wifi Traffic from Reaching Internal Networks
 ====================================================
-.. ubiquiti:: WIFI_IN Creation
-  :path:      Firewall/NAT --> Firewall Policies --> Add Ruleset
-  :value0:    Name, WIFI_IN
-  :value1:    Description, Wifi to LAN
-  :value2:    Default action, ☑ Accept
-  :value3:    Default Log, ☐
+.. gui::   WIFI_IN Creation
+  :label:  Ubiquiti
+  :path:   Firewall/NAT --> Firewall Policies --> Add Ruleset
+  :value0: Name, WIFI_IN
+  :value1: Description, Wifi to LAN
+  :value2: Default action, ☑ Accept
+  :value3: Default Log, ☐
 
-.. ubiquiti:: Drop Wifi to LAN Basic
-  :path:      Firewall/NAT --> Firewall Policies -->
-              WIFI_IN -->
-              Actions -->
-              Edit Ruleset -->
-              Add New Rule -->
-              Basic
-  :value0:    Description, Drop Wifi to LAN
-  :value1:    Action, ☑ Drop
-  :value2:    Protocol, ☑ All protocols
+.. gui::   Drop Wifi to LAN Basic
+  :label:  Ubiquiti
+  :path:   Firewall/NAT --> Firewall Policies -->
+           WIFI_IN -->
+           Actions -->
+           Edit Ruleset -->
+           Add New Rule -->
+           Basic
+  :value0: Description, Drop Wifi to LAN
+  :value1: Action, ☑ Drop
+  :value2: Protocol, ☑ All protocols
 
-.. ubiquiti:: Drop Wifi to LAN Destination
-  :path:      Firewall/NAT --> Firewall Policies -->
-              WIFI_IN -->
-              Actions -->
-              Edit Ruleset -->
-              Drop Wifi to LAN -->
-              Actions -->
-              Destination
-  :value0:    Network Group, Private IPv4 address space
+.. gui::   Drop Wifi to LAN Destination
+  :label:  Ubiquiti
+  :path:   Firewall/NAT --> Firewall Policies -->
+           WIFI_IN -->
+           Actions -->
+           Edit Ruleset -->
+           Drop Wifi to LAN -->
+           Actions -->
+           Destination
+  :value0: Network Group, Private IPv4 address space
 
   .. note::
     This can be done in the previous step by switching tabs.
 
-.. ubiquiti:: Drop Wifi to LAN Interface
-  :path:      Firewall/NAT --> Firewall Policies -->
-              WIFI_IN -->
-              Actions -->
-              Interfaces
-  :value0:    Interface, {WIFI}
-  :value1:    Direction, {IN}
+.. gui::   Drop Wifi to LAN Interface
+  :label:  Ubiquiti
+  :path:   Firewall/NAT --> Firewall Policies -->
+           WIFI_IN -->
+           Actions -->
+           Interfaces
+  :value0: Interface, {WIFI}
+  :value1: Direction, {IN}
 
   .. warning::
     Ensure Interface is set to the appropriate Wifi interface or VLAN.
 
 Only Allow DNS Traffic to Router
 ================================
-.. ubiquiti:: Only Allow DNS Traffic to Router
-  :path:      Firewall/NAT --> Firewall Policies --> Add Ruleset
-  :value0:    Name, WIFI_LOCAL
-  :value1:    Description, Wifi to Router
-  :value2:    Default action, ☑ Drop
-  :value3:    Default Log, ☐
+.. gui::   Only Allow DNS Traffic to Router
+  :label:  Ubiquiti
+  :path:   Firewall/NAT --> Firewall Policies --> Add Ruleset
+  :value0: Name, WIFI_LOCAL
+  :value1: Description, Wifi to Router
+  :value2: Default action, ☑ Drop
+  :value3: Default Log, ☐
 
-.. ubiquiti:: Drop Wifi to LAN Basic
-  :path:      Firewall/NAT --> Firewall Policies -->
-              WIFI_LOCAL -->
-              Actions -->
-              Edit Ruleset -->
-              Add New Rule -->
-              Basic
-  :value0:    Description, Allow DNS
-  :value1:    Action, ☑ Accept
-  :value2:    Protocol, ☑ Both TCP and UDP
+.. gui::   Drop Wifi to LAN Basic
+  :label:  Ubiquiti
+  :path:   Firewall/NAT --> Firewall Policies -->
+           WIFI_LOCAL -->
+           Actions -->
+           Edit Ruleset -->
+           Add New Rule -->
+           Basic
+  :value0: Description, Allow DNS
+  :value1: Action, ☑ Accept
+  :value2: Protocol, ☑ Both TCP and UDP
 
-.. ubiquiti:: Drop Wifi to LAN Destination
-  :path:      Firewall/NAT --> Firewall Policies -->
-              WIFI_LOCAL -->
-              Actions -->
-              Edit Ruleset -->
-              Drop Wifi to LAN -->
-              Actions -->
-              Destination
-  :value0:    Destination, 53
+.. gui::   Drop Wifi to LAN Destination
+  :label:  Ubiquiti
+  :path:   Firewall/NAT --> Firewall Policies -->
+           WIFI_LOCAL -->
+           Actions -->
+           Edit Ruleset -->
+           Drop Wifi to LAN -->
+           Actions -->
+           Destination
+  :value0: Destination, 53
 
   .. note::
     This can be done in the previous step by switching tabs.
 
-.. ubiquiti:: Drop Wifi to LAN Interface
-  :path:      Firewall/NAT --> Firewall Policies -->
-              WIFI_LOCAL -->
-              Actions -->
-              Interfaces
-  :value0:    Interface, {WIFI}
-  :value1:    Direction, {LOCAL}
+.. gui::   Drop Wifi to LAN Interface
+  :label:  Ubiquiti
+  :path:   Firewall/NAT --> Firewall Policies -->
+           WIFI_LOCAL -->
+           Actions -->
+           Interfaces
+  :value0: Interface, {WIFI}
+  :value1: Direction, {LOCAL}
 
   .. warning::
     Ensure Interface is set to the appropriate Wifi interface or VLAN.
@@ -283,19 +297,20 @@ server.
 
 Add a `Destination NAT Rule`_ for each interface serving internal networks:
 
-.. ubiquiti:: Captive DNS Destination Setup
-  :path:      Firewall/NAT --> NAT --> Add Destination NAT Rule
-  :value0:    Description, {CAPTIVE_DNS_NAME}
-  :value1:    Enable, ☑
-  :value2:    Inbound Interface, {INTERFACE}
-  :value3:    Translations Address, {IP}
-  :value4:    Translations Port, 53
-  :value5:    Exclude from NAT, ☐
-  :value6:    Enable Logging, ☐
-  :value7:    Protocol, ☑ Both TCP and UDP
-  :value8:    Source Address, {IP_NET_CIDR}
-  :value9:    Destination Address, {!IP}
-  :value10:   Destination Port, 53
+.. gui::    Captive DNS Destination Setup
+  :label:   Ubiquiti
+  :path:    Firewall/NAT --> NAT --> Add Destination NAT Rule
+  :value0:  Description, {CAPTIVE_DNS_NAME}
+  :value1:  Enable, ☑
+  :value2:  Inbound Interface, {INTERFACE}
+  :value3:  Translations Address, {IP}
+  :value4:  Translations Port, 53
+  :value5:  Exclude from NAT, ☐
+  :value6:  Enable Logging, ☐
+  :value7:  Protocol, ☑ Both TCP and UDP
+  :value8:  Source Address, {IP_NET_CIDR}
+  :value9:  Destination Address, {!IP}
+  :value10: Destination Port, 53
 
   .. note::
     Note the **!** to negate matching for destination address. IP is the DNS
@@ -310,18 +325,19 @@ responses):
 
 :download:`local image <source/IFYUX2T.png>`.
 
-.. ubiquiti:: Captive DNS Masquerade Setup
-  :path:      Firewall/NAT --> NAT --> Add Source NAT Rule
-  :value0:    Description, {CAPTIVE_DNS_NAME}
-  :value1:    Enable, ☑
-  :value2:    Outbound Interface, {INTERFACE}
-  :value3:    Translation, ☑ Use Masquerade
-  :value4:    Exclude from NAT, ☐
-  :value5:    Enable Logging, ☐
-  :value6:    Protocol, ☑ Both TCP and UDP
-  :value7:    Source Address, {IP_NET_CIDR}
-  :value8:    Destination Address, {IP}
-  :value9:    Destination Port, 53
+.. gui::   Captive DNS Masquerade Setup
+  :label:  Ubiquiti
+  :path:   Firewall/NAT --> NAT --> Add Source NAT Rule
+  :value0: Description, {CAPTIVE_DNS_NAME}
+  :value1: Enable, ☑
+  :value2: Outbound Interface, {INTERFACE}
+  :value3: Translation, ☑ Use Masquerade
+  :value4: Exclude from NAT, ☐
+  :value5: Enable Logging, ☐
+  :value6: Protocol, ☑ Both TCP and UDP
+  :value7: Source Address, {IP_NET_CIDR}
+  :value8: Destination Address, {IP}
+  :value9: Destination Port, 53
 
 Captive DNS Exceptions
 ======================
@@ -330,34 +346,37 @@ Allow for specific client exceptions to DNAT rules. These should be an
 
 Create a *Source Address Group* to manage all clients for the exception:
 
-.. ubiquiti:: Create Captive DNS Exceptions Group
-  :path:      Firewall/NAT --> Firewall/NAT Groups --> Add Group
-  :value0:    Name, {DNAT_EXCEPTION_NAME}
-  :value1:    Description, Disable DNAT / Captive DNS for exceptions
-  :value2:    Group Type, ☑ Address Group
+.. gui::   Create Captive DNS Exceptions Group
+  :label:  Ubiquiti
+  :path:   Firewall/NAT --> Firewall/NAT Groups --> Add Group
+  :value0: Name, {DNAT_EXCEPTION_NAME}
+  :value1: Description, Disable DNAT / Captive DNS for exceptions
+  :value2: Group Type, ☑ Address Group
 
-.. ubiquiti:: Add Clients to Exceptions Group
-  :path:      Firewall/NAT --> Firewall/NAT Groups -->
-              {DNAT_EXCEPTION_NAME} -->
-              Actions -->
-              Edit
-  :value0:    Address, {IP}
+.. gui::   Add Clients to Exceptions Group
+  :label:  Ubiquiti
+  :path:   Firewall/NAT --> Firewall/NAT Groups -->
+           {DNAT_EXCEPTION_NAME} -->
+           Actions -->
+           Edit
+  :value0: Address, {IP}
 
 Add an additional `Destination NAT Rule`_ for each interface serving internal
 networks:
 
-.. ubiquiti:: Captive DNS Destination Exceptions Setup
-  :path:      Firewall/NAT --> NAT --> Add Destination NAT Rule
-  :value0:    Description, {CAPTIVE_DNS_EXCEPTIONS}
-  :value1:    Enable, ☑
-  :value2:    Inbound Interface, {INTERFACE}
-  :value3:    Translations Address, {IP}
-  :value4:    Translations Port, 53
-  :value5:    Exclude from NAT, ☐
-  :value6:    Enable Logging, ☐
-  :value7:    Protocol, ☑ Both TCP and UDP
-  :value8:    Source Address, {DNAT_EXCEPTION_NAME}
-  :value9:    Destination Port, 53
+.. gui::   Captive DNS Destination Exceptions Setup
+  :label:  Ubiquiti
+  :path:   Firewall/NAT --> NAT --> Add Destination NAT Rule
+  :value0: Description, {CAPTIVE_DNS_EXCEPTIONS}
+  :value1: Enable, ☑
+  :value2: Inbound Interface, {INTERFACE}
+  :value3: Translations Address, {IP}
+  :value4: Translations Port, 53
+  :value5: Exclude from NAT, ☐
+  :value6: Enable Logging, ☐
+  :value7: Protocol, ☑ Both TCP and UDP
+  :value8: Source Address, {DNAT_EXCEPTION_NAME}
+  :value9: Destination Port, 53
 
   .. warning::
     Set rule above the captive DNS rule for the specific network for the

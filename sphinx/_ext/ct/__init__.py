@@ -13,11 +13,8 @@ from .windows import wfirewall
 from .windows import wservice
 from .windows import wtschedule
 
-from .v2 import sysdm
-from .v2 import taskmanager
 from .v2 import regedit
 from .v2 import gpo
-from .v2 import ubiquiti
 from .v2 import ports
 from .v2 import files
 from .v2 import gui
@@ -34,11 +31,8 @@ def setup(app):
   wservice.setup(app)
   wtschedule.setup(app)
 
-  sysdm.setup(app)
-  taskmanager.setup(app)
   regedit.setup(app)
   gpo.setup(app)
-  ubiquiti.setup(app)
   ports.setup(app)
   files.setup(app)
   gui.setup(app)

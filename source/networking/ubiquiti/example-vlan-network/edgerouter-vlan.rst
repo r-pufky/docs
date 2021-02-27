@@ -33,29 +33,32 @@ Basic Setup Wizard
 ******************
 Basic Setup (Basic Setup is the same as *WAN+2LAN2*).
 
-.. ubiquiti:: Configure WAN / Internet port
-  :path:      Internet (eth3/SFP)
-  :value0:    ☑, Static IP
-  :value1:    › Address, {IP_PUB_MASK}
-  :value2:    › Gateway, {GATEWAY}
-  :value3:    › DNS, 1.1.1.1
-  :value4:    ☐, Internet connection is on VLAN
-  :value5:    ☑, Enable the default firewall
-  :value6:    ☐, Enable DHCPv6 Prefix Delegation
-  :value7:    ☐, Bridge LAN interfaces into a single network
+.. gui::   Configure WAN / Internet port
+  :label:  Ubiquiti
+  :path:   Internet (eth3/SFP)
+  :value0: ☑, Static IP
+  :value1: › Address, {IP_PUB_MASK}
+  :value2: › Gateway, {GATEWAY}
+  :value3: › DNS, 1.1.1.1
+  :value4: ☐, Internet connection is on VLAN
+  :value5: ☑, Enable the default firewall
+  :value6: ☐, Enable DHCPv6 Prefix Delegation
+  :value7: ☐, Bridge LAN interfaces into a single network
 
-.. ubiquiti:: Configure LAN Management Ports
-  :path:      LAN Ports (eth2)
-  :value0:    Address, 192.168.2.1 / 255.255.255.0
+.. gui::   Configure LAN Management Ports
+  :label:  Ubiquiti
+  :path:   LAN Ports (eth2)
+  :value0: Address, 192.168.2.1 / 255.255.255.0
 
   .. note::
     This will become static management port for the router, in case anything
     happens.
 
-.. ubiquiti:: Configure New Admin User
-  :path:      User Setup
-  :value0:    Username, {USER}
-  :value1:    Password, {PASS}
+.. gui::   Configure New Admin User
+  :label:  Ubiquiti
+  :path:   User Setup
+  :value0: Username, {USER}
+  :value1: Password, {PASS}
 
 Apply and reboot router.
 
@@ -69,33 +72,37 @@ Setup VLANs on eth0
 #. Set laptop DHCP. Connect to *eth2*.
 #. Connect to Edgerouter GUI @ http://192.168.1.1.
 
-.. ubiquiti:: Configure Host and Domain
-  :path:      Management Settings --> System
-  :value0:    Host Name, {HOST}
-  :value1:    Domain Name, {DOMAIN}
-  :value2:    ☐, Ubntu Discovery
+.. gui::   Configure Host and Domain
+  :label:  Ubiquiti
+  :path:   Management Settings --> System
+  :value0: Host Name, {HOST}
+  :value1: Domain Name, {DOMAIN}
+  :value2: ☐, Ubntu Discovery
 
-.. ubiquiti:: Configure SSH Server
-  :path:      Management Settings --> SSH Server
-  :value0:    ☑, Enable
-  :value1:    Port, {SSH_PORT}
+.. gui::   Configure SSH Server
+  :label:  Ubiquiti
+  :path:   Management Settings --> SSH Server
+  :value0: ☑, Enable
+  :value1: Port, {SSH_PORT}
 
-.. ubiquiti:: Define Management Network on Interfaces
-  :path:      Dashboard --> eth0 --> Actions --> Config
-  :value0:    Address, Manually define IP address
-  :value1:    Address, 10.1.1.1/24
+.. gui::   Define Management Network on Interfaces
+  :label:  Ubiquiti
+  :path:   Dashboard --> eth0 --> Actions --> Config
+  :value0: Address, Manually define IP address
+  :value1: Address, 10.1.1.1/24
 
 .. important::
   This handles untagged traffic coming into the router; this is the
   :term:`Management VLAN` network.
 
-.. ubiquiti:: Add Wired Network VLAN
-  :path:      Dashboard --> Add Interface --> Add VLAN
-  :value0:    VLANID, 2
-  :value1:    Interface, eth0
-  :value2:    Description, {DESCRIPTION}
-  :value3:    Address, Manually define IP address
-  :value4:    Address, 10.2.2.1/24
+.. gui::   Add Wired Network VLAN
+  :label:  Ubiquiti
+  :path:   Dashboard --> Add Interface --> Add VLAN
+  :value0: VLANID, 2
+  :value1: Interface, eth0
+  :value2: Description, {DESCRIPTION}
+  :value3: Address, Manually define IP address
+  :value4: Address, 10.2.2.1/24
 
 .. warning::
   Add all VLANS using the :ref:`VLAN Table <vlan-table>` to *eth0*.
@@ -107,16 +114,17 @@ Setup VLANs on eth0
 Setup DHCP & DNS for VLANs
 **************************
 
-.. ubiquiti:: Add DHCP Server for Each Network
-  :path:      Services --> DHCP Server --> Add DHCP Server
-  :value0:    DHCP Name, Wired
-  :value1:    Subnet, 10.2.2.0/24
-  :value2:    Range Start, 10.2.2.10
-  :value3:    Range End, 10.2.2.240
-  :value4:    Router, 10.2.2.1
-  :value5:    DNS 1, 10.2.2.1
-  :value6:    Domain, {DOMAIN}
-  :value7:    Domain, ☑ Enable
+.. gui::   Add DHCP Server for Each Network
+  :label:  Ubiquiti
+  :path:   Services --> DHCP Server --> Add DHCP Server
+  :value0: DHCP Name, Wired
+  :value1: Subnet, 10.2.2.0/24
+  :value2: Range Start, 10.2.2.10
+  :value3: Range End, 10.2.2.240
+  :value4: Router, 10.2.2.1
+  :value5: DNS 1, 10.2.2.1
+  :value6: Domain, {DOMAIN}
+  :value7: Domain, ☑ Enable
 
 .. warning::
   Add DHCP for all VLANS. For the *management* DHCP server, set the *Unifi

@@ -282,11 +282,13 @@ See :ref:`w10-1903-disable-telemetry` for additional telemetry services.
     :generic:
     :open:
 
-  .. taskmanager:: Disable windows defender notification icon manager
-    :path:         More Details --> Startup
-    :value0:       Windows Defender notification icon, {DISABLED}
-    :ref:          https://appuals.com/how-to-remove-windows-defender-icon-on-windows-10/
-    :update:       2021-02-19
+  .. gui::    Disable windows defender notification icon manager
+    :label:   Task Manager
+    :nav:     ⌘ --> Task Manager
+    :path:    More Details --> Startup
+    :value0:  Windows Defender notification icon, {DISABLED}
+    :ref:     https://appuals.com/how-to-remove-windows-defender-icon-on-windows-10/
+    :update:  2021-02-19
     :generic:
     :open:
 

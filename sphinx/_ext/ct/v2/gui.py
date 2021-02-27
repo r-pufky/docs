@@ -16,6 +16,8 @@ class Gui(ct.AbstractConfigTable):
 
   Directives:
     :path:         String GUI navigation path to window. Required.
+    :nav:          String GUI navigation path to application.
+    :label:        Alternative generic label, defualt 'GUI'.
     :value{0..35}: List of Option, Setting strings for GUI.
     :ref:          List of reference URI's.
     :update:       String datetime last time references/settings were checked.
@@ -35,6 +37,7 @@ class Gui(ct.AbstractConfigTable):
 
   Examples:
     .. gui::   Radarr Importing
+      :nav:    ⌘ --> chrome --> https://radarr
       :path:   Settings --> Media Management --> Importing
       :value0: Skip Free Space Check, No
       :value1: Use Hardlinks Instead of Copy, No
@@ -49,6 +52,7 @@ class Gui(ct.AbstractConfigTable):
 
     .. gui::   Radarr Importing
       :path:   Settings --> Media Management --> Importing
+      :label:  Chrome
       :value0: Skip Free Space Check; No
       :value1: Use Hardlinks Instead of Copy; No
       :value2: Import Extra Files; No
@@ -57,7 +61,7 @@ class Gui(ct.AbstractConfigTable):
       :generic:
       :open:
 
-      Generic GUI dropdown, using ; as delim.
+      Generic GUI dropdown, using ; as delim and Chome as the label.
 
       .. info::
         Additional rst can be used here.
@@ -110,6 +114,8 @@ class Gui(ct.AbstractConfigTable):
     'delim': directives.unchanged,
     'open': directives.flag,
     'generic': directives.flag,
+    'nav': directives.unchanged,
+    'label': directives.unchanged,
   }
 
   def __init__(self, *args, **kwargs):
@@ -140,7 +146,10 @@ class Gui(ct.AbstractConfigTable):
 
   def _add_dropdown_header(self):
     if 'generic' in self.options:
-      self._rst.append(".. dropdown:: GUI", self.c)
+      if 'label' in self.options:
+        self._rst.append(".. dropdown:: %s" % self.options['label'], self.c)
+      else:
+        self._rst.append(".. dropdown:: GUI", self.c)
       self._rst.append("  :title: font-weight-bold", self.c)
       self._rst.append("  :animate: fade-in", self.c)
     else:
@@ -211,6 +220,7 @@ class Gui(ct.AbstractConfigTable):
     """
     self._add_dropdown_header()
     self._add_panel_template()
+    self._add_nav_to_path()
     self._add_path(self.gen_label(self._sanitize_path()))
     for row in self._sanitize_data(35):
       self._add_value_row(row)

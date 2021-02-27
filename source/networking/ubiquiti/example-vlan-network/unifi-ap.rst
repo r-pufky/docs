@@ -17,11 +17,12 @@ Set Static AP IP
 * Connect to Edgerouter GUI @ http://10.1.1.1.
 * Reserve a static DHCP address for the switch.
 
-.. ubiquiti:: Add Static Reservation for Switch Management
-  :path:      Services --> DHCP Server --> Management --> Action --> Leases
-  :value0:    Map Static IP,
-  :value1:    › IP Address, {IP}
-  :value2:    › Name, {HOST}
+.. gui::   Add Static Reservation for Switch Management
+  :label:  Ubiquiti
+  :path:   Services --> DHCP Server --> Management --> Action --> Leases
+  :value0: Map Static IP,
+  :value1: › IP Address, {IP}
+  :value2: › Name, {HOST}
 
 Configure Unifi AP
 ******************
@@ -34,19 +35,21 @@ Configure Unifi AP
 
 :cmdmenu:`Devices --> AP --> Adopt`
 
-.. ubiquiti:: General Switch Setup
-  :path:      Devices --> Switch --> Properties --> Config --> General
-  :value0:    Alias, {HOST}
-  :value1:    LED, use site settings
+.. gui::   General Switch Setup
+  :label:  Ubiquiti
+  :path:   Devices --> Switch --> Properties --> Config --> General
+  :value0: Alias, {HOST}
+  :value1: LED, use site settings
 
-.. ubiquiti:: Set Static Switch IP
-  :path:      Devices --> Switch --> Properties --> Config --> Network
-  :value0:    Configure IP, {STATIC}
-  :value1:    › IP Address, {IP}
-  :value2:    › Preferred DNS, 10.1.1.1
-  :value3:    › Subnet Mask, 255.255.255.0
-  :value4:    › Gateway, 10.1.1.1
-  :value5:    › DNS Suffix, {DOMAIN}
+.. gui::   Set Static Switch IP
+  :label:  Ubiquiti
+  :path:   Devices --> Switch --> Properties --> Config --> Network
+  :value0: Configure IP, {STATIC}
+  :value1: › IP Address, {IP}
+  :value2: › Preferred DNS, 10.1.1.1
+  :value3: › Subnet Mask, 255.255.255.0
+  :value4: › Gateway, 10.1.1.1
+  :value5: › DNS Suffix, {DOMAIN}
 
   .. note::
     :cmdmenu:`Queue Changes --> Apply`
@@ -55,13 +58,15 @@ Configure Unifi AP
     * HOST/IP is AP. Ensure switch is pingable. ``ping {AP IP}``.
     * Apply any firmware updates if needed.
 
-.. ubiquiti:: Set WLAN Group
-  :path:      Devices --> AP --> Properties --> Config --> WLANS
-  :value0:    WLAN Group, wifi
+.. gui::   Set WLAN Group
+  :label:  Ubiquiti
+  :path:   Devices --> AP --> Properties --> Config --> WLANS
+  :value0: WLAN Group, wifi
 
-.. ubiquiti:: Set Management VLAN
-  :path:      Devices --> AP --> Properties --> Config --> Services --> VLAN
-  :value0:    Management VLAN, LAN
+.. gui::   Set Management VLAN
+  :label:  Ubiquiti
+  :path:   Devices --> AP --> Properties --> Config --> Services --> VLAN
+  :value0: Management VLAN, LAN
 
 Confirm Wireless Network Working
 ********************************

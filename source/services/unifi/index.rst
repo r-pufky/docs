@@ -88,31 +88,33 @@ slightly differently for each router.
 .. note::
   These are only needed if not using :term:`VLAN` separation.
 
-.. ubiquiti:: Allow AP management to controller.
-  :path:      Firewall/NAT --> Firewall Policies -->
-              WIFI_IN -->
-              Actions -->
-              Edit Ruleset -->
-              Add New Rule
-  :value0:    Description, AP Management
-  :value1:    Source, {IP}
-  :value2:    Destination, {CONTROLLER}
-  :value3:    Destination Port, 8443 8080
-  :value4:    Protocol, {TCP}
-  :value5:    Action, {ACCEPT}
+.. gui::   Allow AP management to controller.
+  :label:  Ubiquiti
+  :path:   Firewall/NAT --> Firewall Policies -->
+           WIFI_IN -->
+           Actions -->
+           Edit Ruleset -->
+           Add New Rule
+  :value0: Description, AP Management
+  :value1: Source, {IP}
+  :value2: Destination, {CONTROLLER}
+  :value3: Destination Port, 8443 8080
+  :value4: Protocol, {TCP}
+  :value5: Action, {ACCEPT}
 
-.. ubiquiti:: Allow AP STUN to controller.
-  :path:      Firewall/NAT --> Firewall Policies -->
-              WIFI_IN -->
-              Actions -->
-              Edit Ruleset -->
-              Add New Rule
-  :value0:    Description, AP STUN
-  :value1:    Source, {IP}
-  :value2:    Destination, {CONTROLLER}
-  :value3:    Destination, 3478
-  :value4:    Protocol, {UDP}
-  :value5:    Action, {ACCEPT}
+.. gui::   Allow AP STUN to controller.
+  :label:  Ubiquiti
+  :path:   Firewall/NAT --> Firewall Policies -->
+           WIFI_IN -->
+           Actions -->
+           Edit Ruleset -->
+           Add New Rule
+  :value0: Description, AP STUN
+  :value1: Source, {IP}
+  :value2: Destination, {CONTROLLER}
+  :value3: Destination, 3478
+  :value4: Protocol, {UDP}
+  :value5: Action, {ACCEPT}
 
 Enable Unifi Controller Assignment in EdgeOS or DHCP Option 43
 ==============================================================
