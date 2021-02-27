@@ -185,19 +185,15 @@ Installing CRD (Chrome Remote Desktop):
 * ☐ Allow connections only from computers running Remote Desktop with Network
   Level Authentication.
 
-.. wfirewall:: Block inbound rdp connections firewall
-  :key_title: Advanced Settings --> Inbound Rules
-  :option:    Remote Desktop - Shadow (TCP-in),
-              Remote Desktop - User Mode (TCP-in),
-              Remote Desktop - User Mode (UDP-in)
-  :setting:   Block,
-              Block,
-              Block
-  :admin:
-  :no_section:
-  :no_caption:
-
-    `See block inbound RDP connections with Windows Firewall`_.
+.. gui::   Block inbound rdp connections firewall
+  :label:  Firewall
+  :nav:    ⌘ -->Control Panel --> System and Security --> Windows Defender Firewall
+  :path:   Advanced Settings --> Inbound Rules
+  :value0:    Remote Desktop - Shadow (TCP-in), {BLOCK}
+  :value1: Remote Desktop - User Mode (TCP-in), {BLOCK}
+  :value2: Remote Desktop - User Mode (UDP-in), {BLOCK}
+  :ref:    https://superuser.com/questions/723832/windows-firewall-blocks-remote-desktop-with-custom-port
+  :update: 2021-02-19
 
 `Fixing Broken Windows Store apps`_ / 'Trial Expired' Apps
 **********************************************************
@@ -506,7 +502,6 @@ Restart holding :cmdmenu:`shift` to show boot options. Select ``No Hyper-V``.
 .. _System & Compressed Memory Service issue: http://whatsabyte.com/windows/system-and-compressed-memory-high-cpu/
 .. _Disabling ReFS Scheduled Tasks: http://bakins-bits.com/wordpress/?p=195
 .. _Remote Desktop Extension: https://remotedesktop.google.com/access
-.. _See block inbound RDP connections with Windows Firewall:  https://superuser.com/questions/723832/windows-firewall-blocks-remote-desktop-with-custom-port
 .. _Fixing Broken Windows Store apps: https://community.spiceworks.com/how_to/122006-windows-10-your-trial-period-for-this-app-has-expired-visit-the-windows-store-to-purchase-the-full-app-problem
 .. _Fix Windows Applications Not Appearing in Start Menu Searches: https://superuser.com/questions/947392/windows-10-search-cant-find-any-applications-even-calculator
 .. _Disable Hibernation for Windows 10 Sleep Resume Problems: https://www.tenforums.com/general-support/5265-turn-off-wake-up-problems.html

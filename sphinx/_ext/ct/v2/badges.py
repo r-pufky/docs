@@ -44,6 +44,7 @@ badges = {
   '{SUCCESS}': Template.success % 'SUCCESS',
   '{FAILURE}': Template.danger % 'FAILURE',
   '{EMPTY}': Template.danger % 'EMPTY',
+  '{BLOCK}': Template.danger % 'BLOCK',
 
   # Location / Time
   '{TZ}': Template.info % 'TZ',

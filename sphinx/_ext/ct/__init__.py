@@ -9,7 +9,6 @@ from . import config
 from .generic import ggui
 from .generic import table
 
-from .windows import wfirewall
 from .windows import wservice
 from .windows import wtschedule
 
@@ -27,7 +26,6 @@ def setup(app):
   ggui.setup(app)
   table.setup(app)
 
-  wfirewall.setup(app)
   wservice.setup(app)
   wtschedule.setup(app)
 
