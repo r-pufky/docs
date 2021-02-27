@@ -59,11 +59,11 @@ Files
   :value9:  /var/log/salt/minion,
             Minion logging/error messages. Many minion errors are logged on the
             server side; especially for encrypted Pillar data.
-  :value10: c:/salt/conf/minion,
+  :value10: c:\salt\conf\minion,
             Minion configuration flat file for Windows. This should be untouched
             for sane defaults. Set custom configuration in the master
             configuration directory.
-  :value11: c:/salt/conf/minion.d, Minion configuration directory
+  :value11: c:\salt\conf\minion.d, Minion configuration directory
   :open:
 
 .. _salt-service-directory-best-practices:

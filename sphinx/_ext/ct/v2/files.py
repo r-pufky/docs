@@ -102,7 +102,7 @@ class Files(ct.AbstractConfigTable):
     self._rst.append("    ---", self.c)
     self._rst.append("    :column: col-sm-6 p-0 m-0", self.c)
     self._rst.append("    :body: %s" % bg, self.c)
-    self._rst.append("    %s" % data[1], self.c)
+    self._rst.append("    %s" % repr(data[1])[1:-1], self.c)
 
   def _add_dropdown_header(self):
     if 'generic' in self.options:

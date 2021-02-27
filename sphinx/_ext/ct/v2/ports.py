@@ -99,19 +99,19 @@ class Ports(ct.AbstractConfigTable):
     self._rst.append("    ---", self.c)
     self._rst.append("    :column: col-sm-2 p-0 m-0", self.c)
     self._rst.append("    :body: text-right %s" % bg, self.c)
-    self._rst.append("    %s" % data[0], self.c)
+    self._rst.append("    %s" % repr(data[0])[1:-1], self.c)
     self._rst.append("    ---", self.c)
     self._rst.append("    :column: col-sm-2 p-0 m-0", self.c)
     self._rst.append("    :body: %s" % bg, self.c)
-    self._rst.append("    %s" % data[1], self.c)
+    self._rst.append("    %s" % repr(data[1])[1:-1], self.c)
     self._rst.append("    ---", self.c)
     self._rst.append("    :column: col-sm-2 p-0 m-0", self.c)
     self._rst.append("    :body: %s" % bg, self.c)
-    self._rst.append("    %s" % data[2], self.c)
+    self._rst.append("    %s" % repr(data[2])[1:-1], self.c)
     self._rst.append("    ---", self.c)
     self._rst.append("    :column: col-sm-6 p-0 m-0", self.c)
     self._rst.append("    :body: %s" % bg, self.c)
-    self._rst.append("    %s" % data[3], self.c)
+    self._rst.append("    %s" % repr(data[3])[1:-1], self.c)
 
   def _add_dropdown_header(self):
     if 'generic' in self.options:

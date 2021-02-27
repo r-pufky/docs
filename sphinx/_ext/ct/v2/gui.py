@@ -136,7 +136,7 @@ class Gui(ct.AbstractConfigTable):
     for x in data:
       self._rst.append("    ---", self.c)
       self._rst.append("    :column: col-md-6", self.c)
-      self._rst.append("    %s" % x, self.c)
+      self._rst.append("    %s" % repr(x)[1:-1], self.c)
 
   def _add_dropdown_header(self):
     if 'generic' in self.options:
