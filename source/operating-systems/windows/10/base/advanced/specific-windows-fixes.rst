@@ -418,30 +418,25 @@ Download and build `install_wim_tweak`_.
 
 :download:`remove-edge.cmd <source/remove-edge.cmd>`
 
-`USB Devices Slow`_
-*******************
+USB Devices Slow
+****************
 In Windows 1809+ default USB removal policy changed to ``Quick removal`` for
 additional safety instead of ``Better performance`` for additional speed; as a
 result USB devices may appear slower than normal. This reverts to the old
 behavior.
 
-.. ggui:: Enable Better Performance for USB Devices
-  :key_title: win + x -->
-              Disk Management -->
-              RMB {USB DEVICE} -->
-              Properties -->
-              Policies
-  :option:    Removal policy,
-              › ☑,
-              Write-caching policy,
-              › ☑
-  :setting:   ,
-              Better performance,
-              ,
-              Enable write caching on the device
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Enable Better Performance for USB Devices
+  :path:   ⌘ + x -->
+           Disk Management -->
+           RMB {USB DEVICE} -->
+           Properties -->
+           Policies
+  :value0: Removal policy,
+  :value1: › ☑, Better performance
+  :value2: Write-caching policy,
+  :value3: › ☑, Enable write caching on the device
+  :ref:    https://docs.microsoft.com/en-us/windows/client-management/change-default-removal-policy-external-storage-media
+  :update: 2021-02-19
 
 Disable `Windows Backup Schedule`_
 **********************************
@@ -510,7 +505,6 @@ Restart holding :cmdmenu:`shift` to show boot options. Select ``No Hyper-V``.
 .. _Epfwwfp.sys: https://ugetfix.com/ask/how-to-fix-driver_irql_not_less_or_equal-epfwwfp-sys-error-on-windows/
 .. _Uninstall Edge Browser: https://www.intowindows.com/how-to-uninstall-remove-edge-browser-from-windows-10/
 .. _install_wim_tweak: https://github.com/shiitake/win6x_registry_tweak
-.. _USB Devices Slow: https://docs.microsoft.com/en-us/windows/client-management/change-default-removal-policy-external-storage-media
 .. _Windows Backup Schedule: https://www.tenforums.com/tutorials/75591-turn-off-schedule-windows-backup-windows-10-a.html
 .. _habit of locking out after updates: https://www.passfab.com/windows-tips/windows-10-password-incorrect-after-update.html
 .. _Reset your password from safe mode: https://www.wimware.com/how-to/reset-windows-10-password-command-prompt.html

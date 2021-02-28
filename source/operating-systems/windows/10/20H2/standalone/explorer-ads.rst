@@ -13,21 +13,17 @@ Explorer Ads
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: GUI
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gui::    Set explorer to use this PC
+    :path:    ⌘ + e -->
+              File -->
+              Change folder and search options -->
+              General
+    :value0:  Open File Explorer to, This PC
+    :ref:     https://www.maketecheasier.com/remove-quick-access-file-explorer/,
+              https://social.technet.microsoft.com/Forums/en-US/dc89a8e3-9f97-438a-bc2a-ccde6b443549/explorer-quick-access-how-to-set-via-group-policy-but-how-to-stop-users-from-tampering-with?forum=win10itprogeneral
+    :update:  2021-02-19
+    :generic:
     :open:
-
-    .. ggui:: Set explorer to use this PC
-      :key_title: ⌘ + e -->
-                  File -->
-                  Change folder and search options -->
-                  General
-      :option:    Open File Explorer to
-      :setting:   This PC
-      :no_section:
-      :no_caption:
-      :no_launch:
 
   .. regedit:: Set Explorer to use this PC
     :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\

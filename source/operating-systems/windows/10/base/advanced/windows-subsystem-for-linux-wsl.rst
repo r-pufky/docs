@@ -78,13 +78,11 @@ See main `Troubleshooting`_ page for additional fixes.
 WSL is only intended to run on the system drive (usually ``c:\``). WSL was
 installed to a different drive.
 
-.. ggui:: WSL Storage Settings
-  :key_title: ⌘ -->  Settings --> Storage --> More Storage Settings
-  :option:  New apps will save to
-  :setting: c:\
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   WSL Storage Settings
+  :path:   ⌘ -->  Settings --> Storage --> More Storage Settings
+  :value0: New apps will save to, c:\
+  :ref:    https://docs.microsoft.com/en-us/windows/wsl/troubleshooting
+  :update: 2021-02-19
 
 Then reinstall your distro.
 
@@ -97,4 +95,3 @@ WSL is not enabled. See :ref:`w10-wsl-enable`.
 .. _WSL: https://docs.microsoft.com/en-us/windows/wsl/install-win10
 .. _Manual Install: https://docs.microsoft.com/en-us/windows/wsl/install-manual
 .. _Initialize: https://docs.microsoft.com/en-us/windows/wsl/initialize-distro
-.. _Troubleshooting: https://docs.microsoft.com/en-us/windows/wsl/troubleshooting

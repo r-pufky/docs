@@ -19,21 +19,16 @@ See :ref:`w10-1903-disable-telemetry` for additional telemetry services.
   Windows 1903+ requires ``Tamper Protection`` to be **disabled** before Windows
   Defender can be disabled.
 
-  .. dropdown:: Manual
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gui::    Disable Tamper Protection
+    :path:    ⌘ + r -->
+              windowsdefender://settings -->
+              Virus & threat protection settings -->
+              Manage Settings
+    :value0:  Tamper Protection, ☐
+    :ref:     https://www.tenforums.com/tutorials/123792-turn-off-tamper-protection-microsoft-defender-antivirus.html
+    :update:  2021-02-19
+    :generic:
     :open:
-
-    .. ggui:: Disable Tamper Protection to remove Windows Defender
-      :key_title: ⌘ + r -->
-                  windowsdefender://settings -->
-                  Virus & threat protection settings -->
-                  Manage Settings
-      :option:    Tamper Protection
-      :setting:   ☐
-      :no_section:
-      :no_caption:
-      :no_launch:
 
   .. regedit:: Disable Tamper Protection
     :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Defender\Features

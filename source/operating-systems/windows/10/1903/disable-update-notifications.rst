@@ -11,19 +11,14 @@ is not needed.
   :animate: fade-in
   :open:
 
-  .. dropdown:: GUI
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gui::    Disable Taskbar Update Notifications
+    :path:    ⌘ + r -->
+              ms-settings:taskbar -->
+              Select which icons appear on the taskbar
+    :value0:  Windows Update Status, ☐
+    :update:  2021-02-19
+    :generic:
     :open:
-
-    .. ggui:: Disable Taskbar Update Notifications
-      :key_title: ⌘ + r -->
-                  ms-settings:taskbar -->
-                  Select which icons appear on the taskbar
-      :option:    Windows Update Status
-      :setting:   ☐
-      :no_section:
-      :no_caption:
 
   .. regedit:: Disable Taskbar Update Notifications
     :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\WindowsUpdate\UX\Settings

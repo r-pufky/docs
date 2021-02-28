@@ -13,23 +13,14 @@ promoted tiles from the start menu.
   Applications installed from the Windows Store must be manually updated after
   this.
 
-.. dropdown:: Disable Windows Store App Install from GUI
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
-
-  .. ggui:: Disable Windows Store App Installs from user app
-    :key_title: ⌘ + r -->
-                ms-windows-store://home -->
-                User Icon (⋮ if signed in) -->
-                Settings
-    :option:  Update apps automatically,
-              Show products on tile
-    :setting: Disabled,
-              Disabled
-    :no_section:
-    :no_caption:
-    :no_launch:
+.. gui::    Disable Windows Store App Installs from GUI
+  :path:    ⌘ + r -->
+            ms-windows-store://home -->
+            User Icon (⋮ if signed in) -->
+            Settings
+  :value0:  Update apps automatically, {DISABLED}
+  :value1:      Show products on tile, {DISABLED}
+  :update:  2021-02-19
 
 .. dropdown:: Disable silent app installs
   :container: + shadow

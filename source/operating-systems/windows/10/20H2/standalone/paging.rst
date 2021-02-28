@@ -10,22 +10,17 @@ re-enabled if certain programs rely on the paging file existing.
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: GUI
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gui::    Give priority to foreground applications
+    :path:    ⌘ + r -->
+              systempropertiesadvanced -->
+              Performance -->
+              Settings -->
+              Advanced -->
+              Processor scheduling
+    :value0:  ☑, Programs
+    :update:  2021-02-19
+    :generic:
     :open:
-
-    .. ggui:: Give priority to foreground applications
-      :key_title: ⌘ + r -->
-                  systempropertiesadvanced -->
-                  Performance -->
-                  Settings -->
-                  Advanced -->
-                  Processor scheduling
-      :option:    ☑
-      :setting:   Programs
-      :no_section:
-      :no_caption:
 
   .. regedit:: Disable paging files on all drives via Registry
     :path:     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\
@@ -43,25 +38,20 @@ re-enabled if certain programs rely on the paging file existing.
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: GUI
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gui::    Disable paging files for all drives
+    :path:    ⌘ + r -->
+              systempropertiesadvanced -->
+              Performance -->
+              Settings -->
+              Advanced -->
+              Virtual memory -->
+              Change...
+    :value0:  ☑, No paging file
+    :update:  2021-02-19
+    :generic:
     :open:
 
     Be sure to set this for each drive explicitly.
-
-    .. ggui:: Disable paging files for all drives
-      :key_title: ⌘ + r -->
-                  systempropertiesadvanced -->
-                  Performance -->
-                  Settings -->
-                  Advanced -->
-                  Virtual memory -->
-                  Change...
-      :option:    ☑
-      :setting:   No paging file
-      :no_section:
-      :no_caption:
 
   .. regedit:: Disable paging files on all drives
     :path:     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\

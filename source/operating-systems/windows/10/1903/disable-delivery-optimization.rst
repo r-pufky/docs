@@ -11,19 +11,14 @@ Disable this.
   :animate: fade-in
   :open:
 
-  .. dropdown:: GUI
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gui::    Disable delivery optimization
+    :path:    ⌘ + r -->
+              ms-settings:delivery-optimization
+    :value0:  Allow downloads from other PCs, ☐
+    :ref:     https://www.tenforums.com/windows-updates-activation/94567-windows-update-using-all-available-bandwidth-disabled-p2p-updates-3.html
+    :update:  2021-02-19
+    :generic:
     :open:
-
-    .. ggui:: Disable delivery optimization
-      :key_title: ⌘ + r -->
-                  ms-settings:delivery-optimization
-      :option:    Allow downloads from other PCs
-      :setting:   ☐
-      :no_section:
-      :no_caption:
-      :no_launch:
 
   .. gpo::    Disable delivery optimization
     :path:    Computer Configuration -->

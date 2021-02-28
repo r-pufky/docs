@@ -30,21 +30,16 @@ services.
     honored). It must be **disabled manually** before changing Windows Defender
     settings.
 
-  .. dropdown:: Manual
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gui::    Disable Tamper Protection
+    :path:    ⌘ + r -->
+              windowsdefender://settings -->
+              Virus & threat protection settings -->
+              Manage Settings
+    :value0:  Tamper Protection, ☐
+    :ref:     https://www.tenforums.com/tutorials/123792-turn-off-tamper-protection-microsoft-defender-antivirus.html
+    :update:  2021-02-19
+    :generic:
     :open:
-
-    .. ggui:: Disable Tamper Protection
-      :key_title: ⌘ + r -->
-                  windowsdefender://settings -->
-                  Virus & threat protection settings -->
-                  Manage Settings
-      :option:    Tamper Protection
-      :setting:   ☐
-      :no_section:
-      :no_caption:
-      :no_launch:
 
   .. regedit:: Disable Tamper Protection
     :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft Defender\Features

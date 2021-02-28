@@ -14,18 +14,15 @@
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  .. dropdown:: GUI
-    :title: font-weight-bold
-    :animate: fade-in
+  .. gui::    Set explorer to use this PC
+    :path:    ⌘ + e -->
+              File -->
+              Change folder and search options -->
+              General
+    :value0:  Open File Explorer to, This PC
+    :update:  2021-02-19
+    :generic:
     :open:
-
-    .. ggui:: Set explorer to use `this PC`_
-      :key_title: ⌘ + e -->
-                  File -->
-                  Change folder and search options -->
-                  General
-      :option:    Open File Explorer to
-      :setting:   This PC
 
   .. regedit:: Set Explorer to use `this PC`_
     :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced

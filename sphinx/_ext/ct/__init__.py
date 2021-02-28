@@ -6,7 +6,6 @@ import re
 from . import cmdmenu
 from . import config
 
-from .generic import ggui
 from .generic import table
 
 from .v2 import regedit
@@ -20,7 +19,6 @@ def setup(app):
   app.add_config_value('ct_separator_replace', config.DEFAULT_REPLACE, '')
   cmdmenu.setup(app)
 
-  ggui.setup(app)
   table.setup(app)
 
   regedit.setup(app)
