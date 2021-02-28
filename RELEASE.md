@@ -1,5 +1,14 @@
 # [Changelog][3g]
 
+## 2021-02-28.0
+Finish sphinx CT directive migration.
+
+Changed:
+* gtable, ggui, w* directives migrated.
+
+Removed:
+* v1 ct sphinx tables removed.
+
 ## 2021-02-20.0
 Split 20H2 documentation, update sphinx CT directives.
 
@@ -25,7 +34,6 @@ Changed:
 Removed:
 * non-existant blocklists from pihole.
 
-Update sphinx core & enable additional extensions.
 ## 2020-12-18.0
 Update sphinx core & enable additional extensions.
 
