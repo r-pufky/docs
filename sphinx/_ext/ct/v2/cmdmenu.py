@@ -15,7 +15,7 @@
 #          before and after the unicode separator, trimming existing whitespace
 #          as needed. False: leaves whitespace as is. Default: True.
 
-from . import config
+from .. import config
 from docutils import nodes
 from docutils.parsers.rst import roles
 from sphinx.util.docutils import SphinxRole

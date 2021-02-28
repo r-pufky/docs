@@ -45,16 +45,15 @@ Create Imgur API Account
 ========================
 https://api.imgur.com/oauth2/addclient
 
-.. gtable:: Imgur Oauth2 Client Settings
-  :c0:     Application Name,
-           ☑,
-           Email
-  :c1:     bulk,
-           oauth2 without a callback URL,
-           {EMAIL}
-  :no_key_title:
-  :no_section:
-  :no_launch:
+Imgur Oauth2 Client Settings
+
++------------------+-------------------------------+
+| Application Name | bulk                          |
++------------------+-------------------------------+
+| ☑                | oauth2 without a callback URL |
++------------------+-------------------------------+
+| Email            | {EMAIL}                       |
++------------------+-------------------------------+
 
 .. note::
   On success, a ``Client ID`` and ``Client Secret`` will be displayed. Use these
@@ -80,14 +79,11 @@ This assumes setup is done on Windows machine.
 A web browser will open to imgur. Setup :ref:`bulk-downloader-for-reddit-imgur`
 if not already completed.
 
-.. gtable:: Set imgur API configuration.
-  :c0:     imgur_client_id,
-           imgur_client_secret
-  :c1:     {IMGUR CLIENT ID},
-           {IMGUR CLIENT SECRET}
-  :no_key_title:
-  :no_section:
-  :no_launch:
++---------------------+-----------------------+
+| imgur_client_id     | {IMGUR CLIENT ID}     |
++---------------------+-----------------------+
+| imgur_client_secret | {IMGUR CLIENT SECRET} |
++---------------------+-----------------------+
 
 A second web browser window will open to reddit.
 

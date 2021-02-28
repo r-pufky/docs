@@ -30,120 +30,63 @@ start menu search from breaking.
 
     ``2`` disables apps running in the background.
 
-    .. gtable::   Disable specific app running in the background
-      :key_title: HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy\
-                  LetAppsRunInBackground
-      :header: Key,
-               Name,
-               Type,
-               Data
-      :c0:     Microsoft.WindowsAlarms_8wekyb3d8bbwe,
-               Microsoft.WindowsCalculator_8wekyb3d8bbwe,
-               Microsoft.WindowsCamera_8wekyb3d8bbwe,
-               Microsoft.PPIProjection_cw5n1h2txyewy,
-               Microsoft.WindowsFeedbackHub_8wekyb3d8bbwe,
-               Microsoft.XboxGamingOverlay_8wekyb3d8bbwe,
-               Microsoft.GetHelp_8wekyb3d8bbwe,
-               Microsoft.ZuneMusic_8wekyb3d8bbwe,
-               microsoft.windowscommunicationsapps_8wekyb3d8bbwe,
-               Microsoft.WindowsMaps_8wekyb3d8bbwe,
-               Microsoft.Messaging_8wekyb3d8bbwe,
-               Microsoft.MicrosoftEdge_8wekyb3d8bbwe,
-               Microsoft.WindowsStore_8wekyb3d8bbwe,
-               Microsoft.MixedReality.Portal_8wekyb3d8bbwe,
-               Microsoft.Microsoft3DViewer_8wekyb3d8bbwe,
-               Microsoft.ZuneVideo_8wekyb3d8bbwe,
-               Microsoft.MSPaint_8wekyb3d8bbwe,
-               Microsoft.Windows.Photos_8wekyb3d8bbwe,
-               windows.immersivecontrolpanel_cw5n1h2txyewy,
-               Microsoft.ScreenSketch_8wekyb3d8bbwe,
-               Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe,
-               Microsoft.WindowsSoundRecorder_8wekyb3d8bbwe,
-               Microsoft.Windows.SecHealthUI_cw5n1h2txyewy,
-               Microsoft.XboxApp_8wekyb3d8bbwe,
-               Microsoft.YourPhone_8wekyb3d8bbwe,
-               Microsoft.XboxDevices_8wekyb3d8bbwe
-      :c1:     Value,
-               Value,
-               Value,
-               Value,
-               Value,
-               Value,
-               Value,
-               Value,
-               Value,
-               Value,
-               Value,
-               Value,
-               Value,
-               Value,
-               Value,
-               Value,
-               Value,
-               Value,
-               Value,
-               Value,
-               Value,
-               Value,
-               Value,
-               Value,
-               Value,
-               Value
-      :c2:     SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ
-      :c3:     Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny
-      :no_section:
-      :no_caption:
-      :no_launch:
+    ``HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy\LetAppsRunInBackground``
+
+    +------------------------------------------------------+----------+---------+--------+
+    | Key                                                  | Name     | Type    | Data   |
+    +======================================================+==========+=========+========+
+    | Microsoft.WindowsAlarms_8wekyb3d8bbwe                | Value    | SZ      | Deny   |
+    +------------------------------------------------------+----------+---------+--------+
+    | Microsoft.WindowsCalculator_8wekyb3d8bbwe            | Value    | SZ      | Deny   |
+    +------------------------------------------------------+----------+---------+--------+
+    | Microsoft.WindowsCamera_8wekyb3d8bbwe                | Value    | SZ      | Deny   |
+    +------------------------------------------------------+----------+---------+--------+
+    | Microsoft.PPIProjection_cw5n1h2txyewy                | Value    | SZ      | Deny   |
+    +------------------------------------------------------+----------+---------+--------+
+    | Microsoft.WindowsFeedbackHub_8wekyb3d8bbwe           | Value    | SZ      | Deny   |
+    +------------------------------------------------------+----------+---------+--------+
+    | Microsoft.XboxGamingOverlay_8wekyb3d8bbwe            | Value    | SZ      | Deny   |
+    +------------------------------------------------------+----------+---------+--------+
+    | Microsoft.GetHelp_8wekyb3d8bbwe                      | Value    | SZ      | Deny   |
+    +------------------------------------------------------+----------+---------+--------+
+    | Microsoft.ZuneMusic_8wekyb3d8bbwe                    | Value    | SZ      | Deny   |
+    +------------------------------------------------------+----------+---------+--------+
+    | microsoft.windowscommunicationsapps_8wekyb3d8bbwe    | Value    | SZ      | Deny   |
+    +------------------------------------------------------+----------+---------+--------+
+    | Microsoft.WindowsMaps_8wekyb3d8bbwe                  | Value    | SZ      | Deny   |
+    +------------------------------------------------------+----------+---------+--------+
+    | Microsoft.Messaging_8wekyb3d8bbwe                    | Value    | SZ      | Deny   |
+    +------------------------------------------------------+----------+---------+--------+
+    | Microsoft.MicrosoftEdge_8wekyb3d8bbwe                | Value    | SZ      | Deny   |
+    +------------------------------------------------------+----------+---------+--------+
+    | Microsoft.WindowsStore_8wekyb3d8bbwe                 | Value    | SZ      | Deny   |
+    +------------------------------------------------------+----------+---------+--------+
+    | Microsoft.MixedReality.Portal_8wekyb3d8bbwe          | Value    | SZ      | Deny   |
+    +------------------------------------------------------+----------+---------+--------+
+    | Microsoft.Microsoft3DViewer_8wekyb3d8bbwe            | Value    | SZ      | Deny   |
+    +------------------------------------------------------+----------+---------+--------+
+    | Microsoft.ZuneVideo_8wekyb3d8bbwe                    | Value    | SZ      | Deny   |
+    +------------------------------------------------------+----------+---------+--------+
+    | Microsoft.MSPaint_8wekyb3d8bbwe                      | Value    | SZ      | Deny   |
+    +------------------------------------------------------+----------+---------+--------+
+    | Microsoft.Windows.Photos_8wekyb3d8bbwe               | Value    | SZ      | Deny   |
+    +------------------------------------------------------+----------+---------+--------+
+    | windows.immersivecontrolpanel_cw5n1h2txyewy          | Value    | SZ      | Deny   |
+    +------------------------------------------------------+----------+---------+--------+
+    | Microsoft.ScreenSketch_8wekyb3d8bbwe                 | Value    | SZ      | Deny   |
+    +------------------------------------------------------+----------+---------+--------+
+    | Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe         | Value    | SZ      | Deny   |
+    +------------------------------------------------------+----------+---------+--------+
+    | Microsoft.WindowsSoundRecorder_8wekyb3d8bbwe         | Value    | SZ      | Deny   |
+    +------------------------------------------------------+----------+---------+--------+
+    | Microsoft.Windows.SecHealthUI_cw5n1h2txyewy          | Value    | SZ      | Deny   |
+    +------------------------------------------------------+----------+---------+--------+
+    | Microsoft.XboxApp_8wekyb3d8bbwe                      | Value    | SZ      | Deny   |
+    +------------------------------------------------------+----------+---------+--------+
+    | Microsoft.YourPhone_8wekyb3d8bbwe                    | Value    | SZ      | Deny   |
+    +------------------------------------------------------+----------+---------+--------+
+    | Microsoft.XboxDevices_8wekyb3d8bbwe                  | Value    | SZ      | Deny   |
+    +------------------------------------------------------+----------+---------+--------+
 
     .. gpo:: Disable Background apps access
       :path: Computer Configuration -->

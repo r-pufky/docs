@@ -121,19 +121,15 @@ associated with an email message through cryptographic authentication.
 
   Data is saved to ``/data/mail/config/opendkim/keys``
 
-.. gtable:: DKIM DNS Entry
-  :c0:     Record,
-           Name,
-           Target/Value/Data,
-           TTL
-  :c1:     TXT,
-           mail._domainkey_.{DOMAIN}.,
-           "v=DKIM1; k=rsa; " "p=AZER..." "aUIOPQSDF...",
-           5 seconds
-  :no_key_title:
-  :no_caption:
-  :no_section:
-  :no_launch:
++-------------------+-----------------------------------------------+
+| Record            | TXT                                           |
++-------------------+-----------------------------------------------+
+| Name              | mail._domainkey_.{DOMAIN}.                    |
++-------------------+-----------------------------------------------+
+| Target/Value/Data | "v=DKIM1; k=rsa; " "p=AZER..." "aUIOPQSDF..." |
++-------------------+-----------------------------------------------+
+| TTL               | 5 seconds                                     |
++-------------------+-----------------------------------------------+
 
 .. note::
   The `DKIM data must be quoted`_ for it to be properly stored. The generated
@@ -148,19 +144,15 @@ Setup :term:`SPF` Policy
 ************************
 Setup soft-failing for SPF policy enforcment.
 
-.. gtable:: SPF DNS Entry
-  :c0:     Record,
-           Name,
-           Target/Value/Data,
-           TTL
-  :c1:     TXT,
-           mail.{DOMAIN}.,
-           "v=spf1 mx ~all",
-           300 seconds
-  :no_key_title:
-  :no_caption:
-  :no_section:
-  :no_launch:
++-------------------+------------------+
+| Record            | TXT              |
++-------------------+------------------+
+| Name              | mail.{DOMAIN}.   |
++-------------------+------------------+
+| Target/Value/Data | "v=spf1 mx ~all" |
++-------------------+------------------+
+| TTL               | 300 seconds      |
++-------------------+------------------+
 
 .. note::
   The ``MX`` for ``mail.{DOMAIN}`` must exist for this to work. see
@@ -178,19 +170,15 @@ Protects from phishing attacks by validating ``From`` fields. `Setup DMARC`_ for
 quarantine of flagged emails. The mailserver will automatically configure DMARC
 using the ``POSTMASTER_ADDRESS`` in the docker compose definition.
 
-.. gtable:: DMARC DNS Entry
-  :c0:     Record,
-           Name,
-           Target/Value/Data,
-           TTL
-  :c1:     TXT,
-           _dmarc.{DOMAIN}.,
-           "v=DMARC1; p=quarantine; rua=mailto:postmaster@{DOMAIN}",
-           300 seconds
-  :no_key_title:
-  :no_caption:
-  :no_section:
-  :no_launch:
++-------------------+----------------------------------------------------------+
+| Record            | TXT                                                      |
++-------------------+----------------------------------------------------------+
+| Name              | _dmarc.{DOMAIN}.                                         |
++-------------------+----------------------------------------------------------+
+| Target/Value/Data | "v=DMARC1; p=quarantine; rua=mailto:postmaster@{DOMAIN}" |
++-------------------+----------------------------------------------------------+
+| TTL               | 300 seconds                                              |
++-------------------+----------------------------------------------------------+
 
 .. note::
   Use ``p=none`` to test and ensure everything is working correctly.
@@ -234,61 +222,53 @@ Setup Mail DNS Entries
 Setup DNS entries to allow for properly resolution of mail server. Redirect
 {DOMAIN} to mail.{DOMAIN} for mail inquries.
 
-.. gtable:: Root Domain Mail Redirect MX DNS Entry
-  :c0:     Record,
-           Name,
-           Target/Value/Data,
-           TTL
-  :c1:     MX,
-           {DOMAIN},
-           10 mail.{DOMAIN}.,
-           300 seconds
-  :no_key_title:
-  :no_caption:
-  :no_section:
-  :no_launch:
+Root Domain Mail Redirect MX DNS Entry
 
-.. gtable:: Mail subdomain MX DNS Entry
-  :c0:     Record,
-           Name,
-           Target/Value/Data,
-           TTL
-  :c1:     MX,
-           {DOMAIN},
-           10 {IP}.,
-           300 seconds
-  :no_key_title:
-  :no_caption:
-  :no_section:
-  :no_launch:
++-------------------+-------------------+
+| Record            | MX                |
++-------------------+-------------------+
+| Name              | {DOMAIN}          |
++-------------------+-------------------+
+| Target/Value/Data | 10 mail.{DOMAIN}. |
++-------------------+-------------------+
+| TTL               | 300 seconds       |
++-------------------+-------------------+
 
-.. gtable:: Mail subdomain A DNS Entry
-  :c0:     Record,
-           Name,
-           Target/Value/Data,
-           TTL
-  :c1:     A,
-           mail.{DOMAIN}.,
-           10 {IP}.,
-           300 seconds
-  :no_key_title:
-  :no_caption:
-  :no_section:
-  :no_launch:
+Mail subdomain MX DNS Entry
 
-.. gtable:: Wildcard subdomain MX DNS Entry
-  :c0:     Record,
-           Name,
-           Target/Value/Data,
-           TTL
-  :c1:     MX,
-           @.{DOMAIN}.,
-           10 mail.{DOMAIN}.,
-           21600 seconds
-  :no_key_title:
-  :no_caption:
-  :no_section:
-  :no_launch:
++-------------------+-------------+
+| Record            | MX          |
++-------------------+-------------+
+| Name              | {DOMAIN}    |
++-------------------+-------------+
+| Target/Value/Data | 10 {IP}.    |
++-------------------+-------------+
+| TTL               | 300 seconds |
++-------------------+-------------+
+
+Mail subdomain A DNS Entry
+
++-------------------+----------------+
+| Record            | A              |
++-------------------+----------------+
+| Name              | mail.{DOMAIN}. |
++-------------------+----------------+
+| Target/Value/Data | 10 {IP}.       |
++-------------------+----------------+
+| TTL               | 300 seconds    |
++-------------------+----------------+
+
+Wildcard subdomain MX DNS Entry
+
++-------------------+-------------------+
+| Record            | MX                |
++-------------------+-------------------+
+| Name              | @.{DOMAIN}.       |
++-------------------+-------------------+
+| Target/Value/Data | 10 mail.{DOMAIN}. |
++-------------------+-------------------+
+| TTL               | 21600 seconds     |
++-------------------+-------------------+
 
 * Ensure DKIM DNS entry exists. See :ref:`service-email-dkim`.
 * Ensure SPF DNS entry exists. See :ref:`service-email-spf`.

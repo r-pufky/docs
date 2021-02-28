@@ -129,8 +129,8 @@ Profiles
   :value9: ›, ☑ HDTV-1080p
   :value10: Custom Formats, ☑ None
 
-.. gui:: Radarr Profiles (Ultra-HD)
-  :path: Settings --> Profiles --> Ultra-HD
+.. gui::   Radarr Profiles (Ultra-HD)
+  :path:   Settings --> Profiles --> Ultra-HD
   :value0: Name, Ultra-HD
   :value1: Language, English
   :value2: Preferred Tags,
@@ -143,8 +143,8 @@ Profiles
   :value9: ›, ☑ HDTV-2160p
   :value10: Custom Formats, ☑ None
 
-.. gui:: Radarr Profiles (HD - 720p/1080p)
-  :path: Settings --> Profiles --> HD - 720p/1080p
+.. gui::    Radarr Profiles (HD - 720p/1080p)
+  :path:    Settings --> Profiles --> HD - 720p/1080p
   :value0:  Name, HD - 720p/1080p
   :value1:  Language, English
   :value2:  Preferred Tags,
@@ -161,45 +161,23 @@ Profiles
   :value13: ›, ☑ HDTV-720p
   :value14: Custom Formats, ☑ None
 
-.. gtable:: Radarr Delay Profiles
-  :key_title: Settings --> Profiles --> Delay Profiles --> +
-  :header: Protocol,
-           Usenet Delay,
-           Torrent Delay,
-           Tags
-  :c0:     Usenet,
-           60 minutes,
-           No Delay,
-           None
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Radarr Delay Profiles
+  :path:   Settings --> Profiles --> Delay Profiles --> +
+  :value0:      Protocol, Usenet
+  :value1:  Usenet Delay, 60 Minutes
+  :value2: Torrent Delay, No Delay
+  :value3:          Tags, {NONE}
 
 Quality
 *******
-.. gtable:: Radarr Quality
-  :header: Quality,
-           Title,
-           GB Low Min,
-           GB High Min,
-           GB Low Max,
-           GB High Max
-  :c0:     {<= WEBDL-1080p},
-           {> WEBDL-1080p}
-  :c1:     ALL,
-           ALL
-  :c2:     0,
-           0
-  :c3:     0,
-           0
-  :c4:     8.79GB,
-           Unlimited
-  :c5:     13.67GB,
-           Unlimited
-  :no_key_title:
-  :no_section:
-  :no_caption:
-  :no_launch:
+
++------------------+-------+------------+-------------+------------+-------------+
+| Quality          | Title | GB Low Min | GB High Min | GB Low Max | GB High Max |
++==================+=======+============+=============+============+=============+
+| {<= WEBDL-1080p} | ALL   | 0          | 0           | 8.79GB     | 13.67GB     |
++------------------+-------+------------+-------------+------------+-------------+
+| {> WEBDL-1080p}  | ALL   | 0          | 0           | Unlimited  | Unlimited   |
++------------------+-------+------------+-------------+------------+-------------+
 
 Indexers
 ********
@@ -267,8 +245,8 @@ Download Client
 
 Connect
 *******
-.. gui:: Radarr Connect
-  :path: Settings --> Connect --> Connections --> +
+.. gui::    Radarr Connect
+  :path:    Settings --> Connect --> Connections --> +
   :value0:  Name, Plex Server
   :value1:  On Grab, {NO}
   :value2:  On Download, {YES}
@@ -331,8 +309,8 @@ UI
   :value0: First Day of Week, Sunday
   :value1: Week Column Header, Tue 3/25
 
-.. gui:: Radarr UI Dates
-  :path: Settings --> UI --> Dates
+.. gui::   Radarr UI Dates
+  :path:   Settings --> UI --> Dates
   :value0: Short Date Format, YYYY-MM-DD
   :value1: Long Date Format, Tuesday March 25 2014
   :value2: Time Format, 17:00/17:30

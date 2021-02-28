@@ -331,44 +331,28 @@ changed. See references for additional documentation.
   Microsoft Defender Advanced Threat Protection is country specific and the
   prefix changes by country, e.g.: **de**.vortex-win.data.microsoft.com
 
-  .. gtable:: Connected User Experiences and Telemetry endpoints
-    :header: Release,
-             Diagnostic Endpoint,
-             Functional Endpoint,
-             Settings Endpoint
-    :c0:     1703 with 2018-09 cumulative update,
-             1803 without 2018-09 cumulative update,
-             1709 or earlier
-    :c1:     v10c.vortex-win.data.microsoft.com,
-             v10.events.data.microsoft.com,
-             v10.vortex-win.data.microsoft.com
-    :c2:     v20.vortex-win.data.microsoft.com,
-             v20.vortex-win.data.microsoft.com,
-             v20.vortex-win.data.microsoft.com
-    :c3:     settings-win.data.microsoft.com,
-             settings-win.data.microsoft.com,
-             settings-win.data.microsoft.com
-    :no_key_title:
-    :no_section:
-    :no_caption:
-    :no_launch:
+  +----------------------------------------+------------------------------------+-----------------------------------+---------------------------------+
+  | Release                                | Diagnostic Endpoint                | Functional Endpoint               | Settings Endpoint               |
+  +========================================+====================================+===================================+=================================+
+  | 1703 with 2018-09 cumulative update    | v10c.vortex-win.data.microsoft.com | v20.vortex-win.data.microsoft.com | settings-win.data.microsoft.com |
+  +----------------------------------------+------------------------------------+-----------------------------------+---------------------------------+
+  | 1803 without 2018-09 cumulative update | v10.events.data.microsoft.com      | v20.vortex-win.data.microsoft.com | settings-win.data.microsoft.com |
+  +----------------------------------------+------------------------------------+-----------------------------------+---------------------------------+
+  | 1709 or earlier                        | v10.vortex-win.data.microsoft.com  | v20.vortex-win.data.microsoft.com | settings-win.data.microsoft.com |
+  +----------------------------------------+------------------------------------+-----------------------------------+---------------------------------+
 
 .. dropdown:: Diagnostic data services endpoints
   :container: + shadow
   :title: bg-info text-white font-weight-bold
   :animate: fade-in
 
-  .. gtable:: Diagnostic data services
-    :header: Service,
-             Endpoint
-    :c0:     Microsoft Defender Advanced Threat Protection,
-             ›
-    :c1:     https://wdcp.microsoft.com,
-             https://wdcpalt.microsoft.com
-    :no_key_title:
-    :no_section:
-    :no_caption:
-    :no_launch:
+  +-----------------------------------------------+-------------------------------+
+  | Service                                       | Endpoint                      |
+  +===============================================+===============================+
+  | Microsoft Defender Advanced Threat Protection | https://wdcp.microsoft.com    |
+  +-----------------------------------------------+-------------------------------+
+  | ›                                             | https://wdcpalt.microsoft.com |
+  +-----------------------------------------------+-------------------------------+
 
 .. rubric:: References
 

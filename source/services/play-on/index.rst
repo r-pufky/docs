@@ -7,14 +7,13 @@ Steaming service recorder.
 Uses :ref:`w10-pro-base` and assumes post template setup scripts have
 been run.
 
-.. gtable:: System Requirements.
-  :header: Memory,
-           Disk
-  :c0:     8GB
-  :c1:     60GB
-  :no_key_title:
-  :no_caption:
-  :no_launch:
+System Requirements
+
++--------+------+
+| Memory | Disk |
++========+======+
+| 8GB    | 60GB |
++--------+------+
 
 Ports
 *****
@@ -27,22 +26,19 @@ Ports
     Port ``57331`` is only used if you use playon to stream recordings /
     provide a media library; by default this can be safetly disabled.
 
-.. gtable:: Services Used (Play-on)
-  :header: Service,
-           Purpose
-  :c0:     SSH,
-           CRD,
-           RDC,
-           Flash,
-           Playon Server
-  :c1:     SSHFS remote file access for copying videos.,
-           Chrome Remote Desktop for remote login.,
-           Remote desktop (localhost connection only) for Chrome Remote Desktop.,
-           Adobe flash used for recording via playon.,
-           mediamallserver.exe Server used to manage recordings and accounts.
-  :no_key_title:
-  :no_caption:
-  :no_launch:
++---------------+-----------------------------------------------------------------------+
+| Service       | Purpose                                                               |
++===============+=======================================================================+
+| SSH           | SSHFS remote file access for copying videos.                          |
++---------------+-----------------------------------------------------------------------+
+| CRD           | Chrome Remote Desktop for remote login.                               |
++---------------+-----------------------------------------------------------------------+
+| RDC           | Remote desktop (localhost connection only) for Chrome Remote Desktop. |
++---------------+-----------------------------------------------------------------------+
+| Flash         | Adobe flash used for recording via playon.                            |
++---------------+-----------------------------------------------------------------------+
+| Playon Server | mediamallserver.exe Server used to manage recordings and accounts.    |
++---------------+-----------------------------------------------------------------------+
 
 Server Setup
 ************

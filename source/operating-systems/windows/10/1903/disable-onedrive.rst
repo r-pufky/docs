@@ -82,17 +82,13 @@ changed. See references for additional documentation.
   :title: bg-info text-white font-weight-bold
   :animate: fade-in
 
-  .. gtable:: Diagnostic data services
-    :header: Service,
-             Endpoint
-    :c0:     OneDrive app for Windows 10,
-             ›
-    :c1:     https://vortex.data.microsoft.com/collect/v1,
-             vortex.data.microsoft.com/collect/v1
-    :no_key_title:
-    :no_section:
-    :no_caption:
-    :no_launch:
+  +-----------------------------+----------------------------------------------+
+  | Service                     | Endpoint                                     |
+  +=============================+==============================================+
+  | OneDrive app for Windows 10 | https://vortex.data.microsoft.com/collect/v1 |
+  +-----------------------------+----------------------------------------------+
+  | ›                           | vortex.data.microsoft.com/collect/v1         |
+  +-----------------------------+----------------------------------------------+
 
 .. rubric:: References
 

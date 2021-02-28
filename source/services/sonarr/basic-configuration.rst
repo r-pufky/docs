@@ -60,8 +60,8 @@ Media Management
 
 Profiles
 ********
-.. gui:: Sonarr Profiles (Any)
-  :path: Settings --> Profiles --> Any
+.. gui::    Sonarr Profiles (Any)
+  :path:    Settings --> Profiles --> Any
   :value0:  Name, Any
   :value1:  Language, English
   :value2:  Cutoff, SDTV
@@ -119,63 +119,29 @@ Profiles
   :value8: ›, ☑ WEBDL-1080p
   :value9: ›, ☑ Bluray-1080p
 
-.. gtable:: Sonarr Delay Profiles
-  :key_title: Settings --> Profiles --> Delay Profiles --> +
-  :header: Protocol,
-           Usenet Delay,
-           Torrent Delay,
-           Tags
-  :c0:     Usenet,
-           60 minutes,
-           No Delay,
-           None
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Sonarr Delay Profiles
+  :path:   Settings --> Profiles --> Delay Profiles --> +
+  :value0:      Protocol, Usenet
+  :value1:  Usenet Delay, 60 minutes
+  :value2: Torrent Delay, No Delay
+  :value3:          Tags, {NONE}
 
 Quality
 *******
-.. gtable:: Sonarr Quality
-  :header: Quality,
-           Title,
-           GB Low Min,
-           GB High Min,
-           GB Low Max,
-           GB High Max
-  :c0:     All,
-           Raw-HD,
-           HDTV-2160p,
-           WEBDL-2160p,
-           Bluray-2160p
-  :c1:     ALL,
-           Raw-HD,
-           HDTV-2160p,
-           WEBDL-2160p,
-           Bluray-2160p
-  :c2:     0,
-           0,
-           0,
-           0,
-           0
-  :c3:     0,
-           0,
-           0,
-           0,
-           0
-  :c4:     2.93GB,
-           Unlimited,
-           Unlimited,
-           Unlimited,
-           Unlimited
-  :c5:     5.86GB,
-           Unlimited,
-           Unlimited,
-           Unlimited,
-           Unlimited
-  :no_key_title:
-  :no_section:
-  :no_caption:
-  :no_launch:
+
++--------------+--------------+------------+-------------+------------+-------------+
+| Quality      | Title        | GB Low Min | GB High Min | GB Low Max | GB High Max |
++==============+==============+============+=============+============+=============+
+| All          | ALL          | 0          | 0           | 2.93GB     | 5.86GB      |
++--------------+--------------+------------+-------------+------------+-------------+
+| Raw-HD       | Raw-HD       | 0          | 0           | Unlimited  | Unlimited   |
++--------------+--------------+------------+-------------+------------+-------------+
+| HDTV-2160p   | HDTV-2160p   | 0          | 0           | Unlimited  | Unlimited   |
++--------------+--------------+------------+-------------+------------+-------------+
+| WEBDL-2160p  | WEBDL-2160p  | 0          | 0           | Unlimited  | Unlimited   |
++--------------+--------------+------------+-------------+------------+-------------+
+| Bluray-2160p | Bluray-2160p | 0          | 0           | Unlimited  | Unlimited   |
++--------------+--------------+------------+-------------+------------+-------------+
 
 Indexers
 ********

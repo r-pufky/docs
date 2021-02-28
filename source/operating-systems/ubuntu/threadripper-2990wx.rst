@@ -107,18 +107,17 @@ according to the board layout diagram in the `manual`_.
   temp2:        -55.0°C  (low  = +127.0°C, high = +127.0°C)  sensor = thermistor
   temp3:        +41.0°C  (low  = +127.0°C, high = +127.0°C)  sensor = thermistor
 
-.. gtable:: it8792 Fan Mapping.
-  :header: Layout Name,
-           Sensor Name
-  :c0:     fan1,
-           fan2,
-           fan3
-  :c1:     SYS_FAN5_PUMP,
-           SYS_FAN6_PUMP,
-           SYS_FAN4
-  :no_key_title:
-  :no_section:
-  :no_launch:
+it8792 Fan Mapping
+
++-------------+---------------+
+| Layout Name | Sensor Name   |
++=============+===============+
+| fan1        | SYS_FAN5_PUMP |
++-------------+---------------+
+| fan2        | SYS_FAN6_PUMP |
++-------------+---------------+
+| fan3        | SYS_FAN4      |
++-------------+---------------+
 
 .. code-block:: bash
   :caption: it8686-isa-0a40.
@@ -144,27 +143,26 @@ according to the board layout diagram in the `manual`_.
   temp5:        +49.0°C  (low  = +127.0°C, high = +127.0°C)  sensor = thermistor
   temp6:        -55.0°C  (low  = +127.0°C, high = +127.0°C)  sensor = thermistor
 
-.. gtable:: it8686 Fan Mapping.
-  :header: Layout Name,
-           Sensor Name
-  :c0:     fan1,
-           fan2,
-           fan3,
-           fan4,
-           fan5,
-           temp3
-  :c1:     CPU_FAN,
-           SYS_FAN1,
-           SYS_FAN2 (Built in VRM fans).,
-           SYS_FAN3,
-           CPU_OPT,
-           Threadripper CPU temp (AMD AMDSI).
-  :no_key_title:
-  :no_section:
-  :no_launch:
+it8686 Fan Mapping
 
-    .. note::
-      ``SYS_FAN2`` is unlisited in `manual`_.
++-------------+------------------------------------+
+| Layout Name | Sensor Name                        |
++=============+====================================+
+| fan1        | CPU_FAN                            |
++-------------+------------------------------------+
+| fan2        | SYS_FAN1                           |
++-------------+------------------------------------+
+| fan3        | SYS_FAN2 (Built in VRM fans).      |
++-------------+------------------------------------+
+| fan4        | SYS_FAN3                           |
++-------------+------------------------------------+
+| fan5        | CPU_OPT                            |
++-------------+------------------------------------+
+| temp3       | Threadripper CPU temp (AMD AMDSI). |
++-------------+------------------------------------+
+
+.. note::
+  ``SYS_FAN2`` is unlisited in `manual`_.
 
 Building Kernel 4.18.6+
 ***********************

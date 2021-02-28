@@ -30,72 +30,41 @@ the microphone. See `1803 update breaks microphone`_.
 
     ``2`` disables app access to microphone.
 
-    .. gtable::   Disable specific apps access to your microphone
-      :key_title: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\
-                  CapabilityAccessManager\ConsentStore\microphone
-      :header: Key,
-               Name,
-               Type,
-               Data
-      :c0:     Microsoft.WindowsCamera_8wekyb3d8bbwe,
-               Microsoft.Windows.Cortana_cw5n1h2txyewy,
-               Microsoft.Win32WebViewHost_cw5n1h2txyewy,
-               Microsoft.WindowsFeedbackHub_8wekyb3d8bbwe,
-               Microsoft.XboxGamingOverlay_8wekyb3d8bbwe,
-               Microsoft.Messaging_8wekyb3d8bbwe,
-               Microsoft.MicrosoftEdge_8wekyb3d8bbwe,
-               Microsoft.WindowsStore_8wekyb3d8bbwe,
-               Microsoft.MixedReality.Portal_8wekyb3d8bbwe,
-               Microsoft.Microsoft3DViewer_8wekyb3d8bbwe,
-               Microsoft.Windows.Photos_8wekyb3d8bbwe,
-               Microsoft.Windows.SecureAssessmentBrowser_cw5n1h2txyewy,
-               Microsoft.WindowsSoundRecorder_8wekyb3d8bbwe,
-               Microsoft.XboxApp_8wekyb3d8bbwe
-      :c1:     Value,
-               Value,
-               Value,
-               Value,
-               Value,
-               Value,
-               Value,
-               Value,
-               Value,
-               Value,
-               Value,
-               Value,
-               Value,
-               Value
-      :c2:     SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ,
-               SZ
-      :c3:     Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny,
-               Deny
-      :no_section:
-      :no_caption:
-      :no_launch:
+    Disable specific apps access to your microphone
+
+    ``HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\microphone``
+
+    +---------------------------------------------------------------+-------------+-----------+-----------+
+    | Key                                                           | Name        | Type      | Data      |
+    +===============================================================+=============+===========+===========+
+    | Microsoft.WindowsCamera_8wekyb3d8bbwe                         | Value       | SZ        | Deny      |
+    +---------------------------------------------------------------+-------------+-----------+-----------+
+    | Microsoft.Windows.Cortana_cw5n1h2txyewy                       | Value       | SZ        | Deny      |
+    +---------------------------------------------------------------+-------------+-----------+-----------+
+    | Microsoft.Win32WebViewHost_cw5n1h2txyewy                      | Value       | SZ        | Deny      |
+    +---------------------------------------------------------------+-------------+-----------+-----------+
+    | Microsoft.WindowsFeedbackHub_8wekyb3d8bbwe                    | Value       | SZ        | Deny      |
+    +---------------------------------------------------------------+-------------+-----------+-----------+
+    | Microsoft.XboxGamingOverlay_8wekyb3d8bbwe                     | Value       | SZ        | Deny      |
+    +---------------------------------------------------------------+-------------+-----------+-----------+
+    | Microsoft.Messaging_8wekyb3d8bbwe                             | Value       | SZ        | Deny      |
+    +---------------------------------------------------------------+-------------+-----------+-----------+
+    | Microsoft.MicrosoftEdge_8wekyb3d8bbwe                         | Value       | SZ        | Deny      |
+    +---------------------------------------------------------------+-------------+-----------+-----------+
+    | Microsoft.WindowsStore_8wekyb3d8bbwe                          | Value       | SZ        | Deny      |
+    +---------------------------------------------------------------+-------------+-----------+-----------+
+    | Microsoft.MixedReality.Portal_8wekyb3d8bbwe                   | Value       | SZ        | Deny      |
+    +---------------------------------------------------------------+-------------+-----------+-----------+
+    | Microsoft.Microsoft3DViewer_8wekyb3d8bbwe                     | Value       | SZ        | Deny      |
+    +---------------------------------------------------------------+-------------+-----------+-----------+
+    | Microsoft.Windows.Photos_8wekyb3d8bbwe                        | Value       | SZ        | Deny      |
+    +---------------------------------------------------------------+-------------+-----------+-----------+
+    | Microsoft.Windows.SecureAssessmentBrowser_cw5n1h2txyewy       | Value       | SZ        | Deny      |
+    +---------------------------------------------------------------+-------------+-----------+-----------+
+    | Microsoft.WindowsSoundRecorder_8wekyb3d8bbwe                  | Value       | SZ        | Deny      |
+    +---------------------------------------------------------------+-------------+-----------+-----------+
+    | Microsoft.XboxApp_8wekyb3d8bbwe                               | Value       | SZ        | Deny      |
+    +---------------------------------------------------------------+-------------+-----------+-----------+
 
   .. gpo::    Disable apps access to your microphone
     :path:    Computer Configuration -->

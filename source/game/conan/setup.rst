@@ -6,32 +6,19 @@ Conan Exiles dedicated server on steam.
 
 See `Conan Docker and Documentation`_.
 
-.. gtable:: Conan Exiles Requirements
-  :header: Players,
-           CPU,
-           Memory,
-           Disk
-  :c0:     10,
-           35,
-           50,
-           70
-  :c1:     2c/2t @3.0Ghz,
-           4c/4t @3.1Ghz,
-           4c/8t @3.5Ghz,
-           4c/8t @4.0Ghz
-  :c2:     8GB,
-           8GB,
-           12GB,
-           12GB
-  :c3:     35Gb,
-           35Gb,
-           35Gb,
-           35Gb
-  :no_key_title:
-  :no_caption:
-  :no_launch:
++---------+---------------+--------+------+
+| Players | CPU           | Memory | Disk |
++=========+===============+========+======+
+| 10      | 2c/2t @3.0Ghz | 8GB    | 35Gb |
++---------+---------------+--------+------+
+| 35      | 4c/4t @3.1Ghz | 8GB    | 35Gb |
++---------+---------------+--------+------+
+| 50      | 4c/8t @3.5Ghz | 12GB   | 35Gb |
++---------+---------------+--------+------+
+| 70      | 4c/8t @4.0Ghz | 12GB   | 35Gb |
++---------+---------------+--------+------+
 
-    See `Conan Exiles Dedicated Server`_.
+See `Conan Exiles Dedicated Server`_.
 
 Ports
 *****

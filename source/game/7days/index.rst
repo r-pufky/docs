@@ -6,20 +6,17 @@
 
 See `7 Days Docker and Documentation`_.
 
-.. gtable:: 7 Days to Die Requirements
-  :header: Minimum,
-           Recommended
-  :c0:     2c/4t @2.4Ghz,
-           6GB RAM,
-           4GB Disk
-  :c1:     4c/8t @3.0Ghz,
-           12GB RAM,
-           4GB Disk
-  :no_key_title:
-  :no_caption:
-  :no_launch:
++---------------+---------------+
+| Minimum       | Recommended   |
++===============+===============+
+| 2c/4t @2.4Ghz | 4c/8t @3.0Ghz |
++---------------+---------------+
+| 6GB RAM       | 12GB RAM      |
++---------------+---------------+
+| 4GB Disk      | 4GB Disk      |
++---------------+---------------+
 
-    See `7 Days to Die Dedicated Server`_.
+See `7 Days to Die Dedicated Server`_.
 
 Ports
 *****

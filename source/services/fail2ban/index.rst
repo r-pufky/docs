@@ -7,15 +7,15 @@ docker services.
 
 See `fail2ban Docker and Documentation`_.
 
-.. gtable:: Docker Capabilities
-  :header: Capability,
-           Action
-  :c0:     NET_ADMIN,
-           NET_RAW
-  :c1:     ADD,
-           ADD
-  :no_key_title:
-  :no_launch:
+Docker Capabilities
+
++------------+--------+
+| Capability | Action |
++============+========+
+| NET_ADMIN  | ADD    |
++------------+--------+
+| NET_RAW    | ADD    |
++------------+--------+
 
 Files
 *****

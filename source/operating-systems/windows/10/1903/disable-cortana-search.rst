@@ -220,32 +220,27 @@ have not changed. See references for additional documentation.
   :title: bg-info text-white font-weight-bold
   :animate: fade-in
 
-  .. gtable:: Cortana and Search
-    :header: Service;
-             Endpoint
-    :c0:     Cortana, Greetings, Tips, Live Tiles;
-             ›;
-             ›;
-             ›;
-             ›;
-             ›;
-             ›;
-             ›;
-             ›
-    :c1:     https://www.bing.com/client;
-             https://www.bing.com;
-             https://www.bing.com/proactive;
-             https://www.bing.com/threshold/xls.aspx;
-             http://exo-ring.msedge.net;
-             http://fp.msedge.net;
-             http://fp-vp.azureedge.net;
-             http://odinvzc.azureedge.net;
-             http://spo-ring.msedge.net
-    :no_key_title:
-    :no_section:
-    :no_caption:
-    :no_launch:
-    :delim: ;
+  +--------------------------------------+-----------------------------------------+
+  | Service                              | Endpoint                                |
+  +======================================+=========================================+
+  | Cortana, Greetings, Tips, Live Tiles | https://www.bing.com/client             |
+  +--------------------------------------+-----------------------------------------+
+  | ›                                    | https://www.bing.com                    |
+  +--------------------------------------+-----------------------------------------+
+  | ›                                    | https://www.bing.com/proactive          |
+  +--------------------------------------+-----------------------------------------+
+  | ›                                    | https://www.bing.com/threshold/xls.aspx |
+  +--------------------------------------+-----------------------------------------+
+  | ›                                    | http://exo-ring.msedge.net              |
+  +--------------------------------------+-----------------------------------------+
+  | ›                                    | http://fp.msedge.net                    |
+  +--------------------------------------+-----------------------------------------+
+  | ›                                    | http://fp-vp.azureedge.net              |
+  +--------------------------------------+-----------------------------------------+
+  | ›                                    | http://odinvzc.azureedge.net            |
+  +--------------------------------------+-----------------------------------------+
+  | ›                                    | http://spo-ring.msedge.net              |
+  +--------------------------------------+-----------------------------------------+
 
 .. rubric:: References
 

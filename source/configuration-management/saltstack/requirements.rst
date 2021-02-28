@@ -5,19 +5,17 @@
 There are no specific requirements for Salt Open Source. Enterprise requirements
 are defined here. Most users report actual usage minimum requirements as:
 
-.. gtable:: Saltstack Minimum Requirements.
-  :header: < 500 Minions,
-           > 500 Minions
-  :c0:     RAM: 2GB,
-           CPU: 1,
-           DISK: 20GB
-  :c1:     RAM: 4GB,
-           CPU: 4,
-           DISK: 20GB
-  :no_key_title:
-  :no_section:
-  :no_caption:
-  :no_launch:
+Saltstack Minimum Requirements
+
++---------------+---------------+
+| < 500 Minions | > 500 Minions |
++===============+===============+
+| RAM: 2GB      | RAM: 4GB      |
++---------------+---------------+
+| CPU: 1        | CPU: 4        |
++---------------+---------------+
+| DISK: 20GB    | DISK: 20GB    |
++---------------+---------------+
 
 Ports
 *****
@@ -81,20 +79,15 @@ following requirements:
   *static, globally avaliable unencrypted minion files*. Only minions with
   explicit access to data can read it.
 
-.. gtable:: Service Directory Best Practice.
-  :header: Service Directory;
-           Purpose
-  :c0:     /srv/salt/data/{prod,dev};
-           /srv/salt/template/{prod,dev};
-           /srv/salt/static/{prod,dev,base}
-  :c1:     prod and dev Pillar data.;
-           prod and dev salt formulas.;
-           prod, dev, and base globally avaliable static data. Base is ununsed other than to provide a catch-all for any minion not in dev or prod.
+.. files:: Service Directory Best Practice.
+  :value0:        /srv/salt/data/{prod,dev}; prod and dev Pillar data
+  :value1:    /srv/salt/template/{prod,dev}; prod and dev salt formulas
+  :value2: /srv/salt/static/{prod,dev,base}; prod, dev, and base globally
+                                             avaliable static data. Base is
+                                             unused other than to provide a
+                                             catch-all for any minion not in dev
+                                             or prod.
   :delim: ;
-  :no_key_title:
-  :no_section:
-  :no_caption:
-  :no_launch:
 
 .. rubric:: References
 

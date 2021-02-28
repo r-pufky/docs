@@ -47,8 +47,8 @@ Media Management
 
 Profiles
 ********
-.. gui:: Lidarr Profiles (Any)
-  :path: Settings --> Profiles --> Any
+.. gui::    Lidarr Profiles (Any)
+  :path:    Settings --> Profiles --> Any
   :value0:  Name; Any
   :value1:  Upgrades Allowed; ☑
   :value2:  Upgrade Until; Unknown
@@ -68,8 +68,8 @@ Profiles
   :value12: ☑ Unknown;
   :delim:   ;
 
-.. gui:: Lidarr Profiles (Lossless)
-  :path: Settings --> Profiles --> Lossless
+.. gui::    Lidarr Profiles (Lossless)
+  :path:    Settings --> Profiles --> Lossless
   :value0:  Name; Lossless
   :value1:  Upgrades Allowed; ☑
   :value2:  Upgrade Until; Lossless
@@ -85,8 +85,8 @@ Profiles
   :value12: ☐ Unknown;
   :delim:   ;
 
-.. gui:: Lidarr Profiles (Standard)
-  :path: Settings --> Profiles --> Standard
+.. gui::    Lidarr Profiles (Standard)
+  :path:    Settings --> Profiles --> Standard
   :value0:  Name; Standard
   :value1:  Upgrades Allowed; ☑
   :value2:  Upgrade Until; High Quality Lossy
@@ -111,35 +111,21 @@ Profiles
   :value2: Secondary Types, ☑ Studio
   :value3: Release Studios, ☑ Official
 
-.. gtable:: Lidarr Delay Profiles
-  :key_title: Settings --> Profiles --> Delay Profiles --> +
-  :header: Protocol,
-           Usenet Delay,
-           Torrent Delay,
-           Tags
-  :c0:     Usenet,
-           60 minutes,
-           No Delay,
-           None
-  :no_section:
-  :no_caption:
-  :no_launch:
+.. gui::   Lidarr Delay Profiles
+  :path:   Settings --> Profiles --> Delay Profiles --> +
+  :value0:      Protocol, Usenet
+  :value1:  Usenet Delay, 60 minutes
+  :value2: Torrent Delay, No Delay
+  :value3:          Tags, {NONE}
 
 Quality
 *******
-.. gtable:: Lidarr Quality
-  :header: Quality,
-           Title,
-           Kbps Min,
-           Kbps Max
-  :c0:     ALL
-  :c1:     ALL
-  :c2:     0
-  :c3:     1500
-  :no_key_title:
-  :no_section:
-  :no_caption:
-  :no_launch:
+
++---------+-------+----------+----------+
+| Quality | Title | Kbps Min | Kbps Max |
++=========+=======+==========+==========+
+| ALL     | ALL   | 0        | 1500     |
++---------+-------+----------+----------+
 
 Indexers
 ********
@@ -166,8 +152,8 @@ Indexers
 
 Download Clients
 ****************
-.. gui:: Lidarr Download Clients
-  :path: Settings --> Download Clients --> +
+.. gui::    Lidarr Download Clients
+  :path:    Settings --> Download Clients --> +
   :value0:  Name, {INDEXER NAME}
   :value1:  Enable, ☑
   :value2:  Host, {IP}

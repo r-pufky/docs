@@ -143,19 +143,17 @@ Use https://mxtoolbox.com to validate settings and ensure
   ISP set this up for you or setup a hosted solution where you control the IP
   space.
 
-  .. gtable:: `PTR`_ DNS Entry
-    :c0:     Record,
-             Name,
-             Target/Value/Data,
-             TTL
-    :c1:     PTR,
-             {REVERSED IP OCTETS}.in-addr.arpa.,
-             mail.{DOMAIN}.,
-             300 seconds
-    :no_key_title:
-    :no_caption:
-    :no_section:
-    :no_launch:
+`PTR`_ DNS Entry
+
++-------------------+------------------------------------+
+| Record            | PTR                                |
++===================+====================================+
+| Name              | {REVERSED IP OCTETS}.in-addr.arpa. |
++-------------------+------------------------------------+
+| Target/Value/Data | mail.{DOMAIN}.                     |
++-------------------+------------------------------------+
+| TTL               | 300 seconds                        |
++-------------------+------------------------------------+
 
 .. _PTR: https://community.spiceworks.com/topic/405534-dns-ptr-record-issues
 .. _testing outbound email via command line: https://support.sugarcrm.com/Knowledge_Base/Email/Testing_Outbound_Email_Using_Command_Line/
