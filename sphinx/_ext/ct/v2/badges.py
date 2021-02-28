@@ -58,6 +58,11 @@ badges = {
   '{LMB}': Template.info % 'LMB',
   '{RMB}': Template.info % 'RMB',
 
+  # Services
+  '{STARTED}': Template.success % 'STARTED',
+  '{STOPPED}': Template.danger % 'STOPPED',
+  '{AUTOMATIC}': Template.info % 'AUTOMATIC',
+
   # Regedit
   '{DWORD}': Template.info % 'DWORD',
   '{REG_DWORD}': Template.info % 'DWORD',

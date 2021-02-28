@@ -4,19 +4,12 @@ Disable Services
 ################
 These services either do user data tracking, or are unnecessary.
 
-.. dropdown:: Disable razer game scanner Service
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
+.. gui::   Disable razer game scanner Service
+  :label:  Service
+  :nav:    ⌘ --> services.msc
+  :path:   Razer Game Scanner --> General
+  :value0:   Service name, GameScannerService
+  :value1:   Startup type, {DISABLED}
+  :value2: Service status, {STOPPED}
+  :update: 2021-02-19
   :open:
-
-  .. wservice:: Disable razer game scanner sService
-    :key_title: Razer Game Scanner --> General
-    :option:    Service name,
-                Startup type,
-                Service status
-    :setting:   GameScannerService,
-                Disabled,
-                Stopped
-    :no_section:
-    :no_caption:

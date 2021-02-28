@@ -106,26 +106,26 @@ These services either do user data tracking, or are a major performance hit for
 SSD's. Disable by :cmdmenu:`RMB --> stop` and
 :cmdmenu:`RMB --> properties --> disable`.
 
-.. wservice:: Disable search service
-  :key_title: Windows Search --> General
-  :option:    Startup type,
-              Service status
-  :setting:   Disabled,
-              Stopped
-  :no_section:
+.. gui::   Disable search service
+  :label:  Service
+  :nav:    ⌘ --> services.msc
+  :path:   Windows Search --> General
+  :value0:   Service name, WService
+  :value1:   Startup type, {DISABLED}
+  :value2: Service status, {STOPPED}
+  :ref:    https://superuser.com/questions/1016152/100-ssd-activity-0-r-w-speed-system-hang-issue
+  :update: 2021-02-19
 
-    See `SSD activity issue`_.
-
-.. wservice:: Disable superfetch service
-  :key_title: Windows Search --> General
-  :option:    Startup type,
-              Service status
-  :setting:   Disabled,
-              Stopped
-  :no_section:
-  :no_launch:
-
-    See `100% CPU usage issue`_ and `System & Compressed Memory Service issue`_.
+.. gui::   Disable superfetch service
+  :label:  Service
+  :nav:    ⌘ --> services.msc
+  :path:   Superfetch --> General
+  :value0:   Service name, SysMain
+  :value1:   Startup type, {DISABLED}
+  :value2: Service status, {STOPPED}
+  :ref:    https://www.ghacks.net/2018/05/01/all-the-issues-of-windows-10-version-1803-you-may-run-into/,
+           http://whatsabyte.com/windows/system-and-compressed-memory-high-cpu/
+  :update: 2021-02-19
 
 Disable Prefetch and Superfetch
 *******************************
@@ -496,9 +496,6 @@ Restart holding :cmdmenu:`shift` to show boot options. Select ``No Hyper-V``.
 
 .. _integrity enabled: https://docs.microsoft.com/en-us/windows-server/storage/refs/integrity-streams
 .. _ReFS create moved to Windows 10 Workstation: https://arstechnica.com/gadgets/2017/08/microsoft-to-remove-full-refs-support-from-windows-10-pro-push-workstation-sku/
-.. _SSD activity issue: https://superuser.com/questions/1016152/100-ssd-activity-0-r-w-speed-system-hang-issue
-.. _100% CPU usage issue: https://www.ghacks.net/2018/05/01/all-the-issues-of-windows-10-version-1803-you-may-run-into/
-.. _System & Compressed Memory Service issue: http://whatsabyte.com/windows/system-and-compressed-memory-high-cpu/
 .. _Disabling ReFS Scheduled Tasks: http://bakins-bits.com/wordpress/?p=195
 .. _Remote Desktop Extension: https://remotedesktop.google.com/access
 .. _Fixing Broken Windows Store apps: https://community.spiceworks.com/how_to/122006-windows-10-your-trial-period-for-this-app-has-expired-visit-the-windows-store-to-purchase-the-full-app-problem

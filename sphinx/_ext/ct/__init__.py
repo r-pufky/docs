@@ -9,8 +9,6 @@ from . import config
 from .generic import ggui
 from .generic import table
 
-from .windows import wservice
-
 from .v2 import regedit
 from .v2 import gpo
 from .v2 import ports
@@ -24,8 +22,6 @@ def setup(app):
 
   ggui.setup(app)
   table.setup(app)
-
-  wservice.setup(app)
 
   regedit.setup(app)
   gpo.setup(app)

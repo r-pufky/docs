@@ -19,13 +19,14 @@ and extract to ``c:\Program Files\``.
   powershell.exe -ExecutionPolicy Bypass -File ./FixHostFilePermissions.ps1
   New-NetFirewallRule -Protocol TCP -LocalPort 22 -Direction Inbound -Action Allow -DisplayName SSH
 
-.. wservice:: Enable sshd service
-  :key_title: SSHD --> General
-  :option:    Startup type,
-              Service status
-  :setting:   Automatic,
-              Started
-  :no_section:
+.. gui::   Enable sshd service
+  :label:  Service
+  :nav:    ⌘ --> services.msc
+  :path:   SSHD --> General
+  :value0:   Service name, sshd
+  :value1:   Startup type, {AUTOMATIC}
+  :value2: Service status, {STARTED}
+  :update: 2021-02-19
 
 Set up publickey authentication:
 

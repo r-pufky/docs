@@ -8,24 +8,20 @@ hit. See `Telemetry Info`_.
 .. danger::
   After every major windows update, verify these settings.
 
-.. dropdown:: Disable Connected User Experiences and Telemetry Service
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
+.. gui::   Disable Connected User Experiences and Telemetry Service
+  :label:  Service
+  :nav:    ⌘ --> services.msc
+  :path:   Connected User Experiences and Telemetry --> General
+  :value0:   Service name, DiagTrack
+  :value1:   Startup type, {DISABLED}
+  :value2: Service status, {STOPPED}
+  :ref:    https://docs.microsoft.com/en-us/windows-server/security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server#connected-user-experiences-and-telemetry
+  :update: 2021-02-19
+
+  Windows 10 collects user data and sends it to Microsoft.
 
   Older versions of Windows 10 labeled this ``Diagnostic Tracking Services``. It
   is the same service name ``DiagTrack``.
-
-  .. wservice:: Disable Connected User Experiences and Telemetry
-    :key_title: Connected User Experiences and Telemetry --> General
-    :option:    Service name,
-                Startup type,
-                Service status
-    :setting:   DiagTrack,
-                Disabled,
-                Stopped
-    :no_section:
-    :no_caption:
 
 .. dropdown:: Restrict data collection to Basic 
   :container: + shadow

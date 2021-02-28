@@ -5,21 +5,14 @@ Resource Exhaustion
 Automatic Resource Exhaustion Resolution will force close applications in use
 when memory starts to fill up. Prevent Windows from closing your active Windows.
 
-.. dropdown:: Disable automatic resource exhaustion Service
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
-  :animate: fade-in
-
-  .. wservice:: Disable Diagnostic Service
-    :key_title: Diagnostic Policy Service --> General
-    :option:    Service name,
-                Startup type,
-                Service status
-    :setting:   DPS,
-                Disabled,
-                Stopped
-    :no_section:
-    :no_caption:
+.. gui::   Disable Diagnostic Service
+  :label:  Service
+  :nav:    ⌘ --> services.msc
+  :path:   Diagnostic Policy Service --> General
+  :value0:   Service name, DPS
+  :value1:   Startup type, {DISABLED}
+  :value2: Service status, {STOPPED}
+  :update: 2021-02-19
 
 .. gpo::   Disable automatic resource exhaustion
   :path:   Computer Configuration -->
