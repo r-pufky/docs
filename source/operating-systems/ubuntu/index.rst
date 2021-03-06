@@ -21,3 +21,4 @@ Related Material:
    additional-fixes
    threadripper-2990wx
    preseed/index
+   apt-auto-selections
