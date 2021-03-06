@@ -27,6 +27,27 @@ this device.
   commit
   save
 
+Create `DHCP Static`_ Entries
+*****************************
+
+.. dropdown:: Add static DHCP mapping via CLI.
+  :container: + shadow
+  :title: bg-primary text-white font-weight-bold
+  :animate: fade-in
+
+  This will map ``computer`` to ``10.0.0.2`` on ``Test`` DHCP server using the
+  MAC address AA:BB:CC:11:22:33.
+  Changes are reflected in the GUI.
+
+  .. code-block:: bash
+    :caption: EdgeOS CLI.
+
+    configure
+    set service dhcp-server shared-network-name Test subnet 10.0.0.0/24 static-mapping computer ip-address 10.0.0.2
+    set service dhcp-server shared-network-name Test subnet 10.0.0.0/24 static-mapping computer mac-address AA:BB:CC:11:22:33
+    commit
+    save
+
 Create `DNS / Host`_ Entries
 ****************************
 CNAME for IP lookups without DNS; static ``/etc/hosts`` mapping.
@@ -439,3 +460,4 @@ Show a JSON-like representation of the current router configuration.
 .. _Destination NAT Rule: https://old.reddit.com/r/Ubiquiti/comments/6lndq4/question_redirect_port_53_to_internal_dns_server/
 .. _telemetry: https://community.ui.com/questions/Update-UniFi-Phone-Home-Performance-Data-Collection/f84a71c9-0b81-4d69-a3b3-45640aba1c8b
 .. _DNS / Host: https://community.ui.com/questions/Create-DNS-enteries/ab712740-d579-4c89-824a-cda582a6bdd4 
+.. _DHCP Static: https://help.ui.com/hc/en-us/articles/360044494093-EdgeRouter-DHCP-Server-Static-Mapping
