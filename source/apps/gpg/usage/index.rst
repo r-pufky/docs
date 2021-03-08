@@ -15,4 +15,5 @@ backed GPG Key for SSH connections.
 
    windows
    ubuntu
+   windows-forward-gpg
    encryption

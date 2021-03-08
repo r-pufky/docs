@@ -36,6 +36,8 @@ and **verify integrity**.
 
   GPG path should be added to end of list.
 
+.. _gpg-windows-configure-gpg-agent:
+
 Configure GPG Agent
 *******************
 This will enable SSH and Putty usage with the gpg-agent.
