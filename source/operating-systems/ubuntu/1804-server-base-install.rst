@@ -174,6 +174,13 @@ made on whether to keep this or disable this.
 **********************
 Fonts must be imported for use in applications, such as sublime text.
 
+.. note::
+  ``fc-cache`` added a .uuid file generation on updating font caches, leading to
+  problems with state management. This change is likely to be reverted for
+  better configuration management support.
+
+  See: https://gitlab.freedesktop.org/fontconfig/fontconfig/-/issues/130
+
 .. code-block:: bash
   :caption: Install font management tools.
 
