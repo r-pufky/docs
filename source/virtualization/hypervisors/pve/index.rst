@@ -807,6 +807,25 @@ Sed :ref:`pve-corrupted-terminal`.
 
 .. _pve-corrupted-terminal:
 
+Failed to run vncproxy
+======================
+Root cause is ssh vncproxy proxy tunnel between pve nodes is
+`not auto-accepted. <https://forum.proxmox.com/threads/task-error-failed-to-run-vncproxy.49954/>`_.
+
+VM consoles can be access on each local cluster node, but not on remote cluster
+nodes. May be confirmed by manually ssh'ing to other nodes and confirming that
+the *connection is denied* or the *host key has changed*. Frequently happens
+when node host keys are regenerated.
+
+Resolve by clearing root and host `known_hosts` and sync'ing pve certificates.
+
+.. code-block:: bash
+  :caption: On affected nodes
+
+  rm /root/.ssh/known_hosts
+  rm /etc/ssh/ssh_known_hosts
+  pvecm updatecerts
+
 Wrong Timezone
 ==============
 Containers assume UTC. Explicitly set timezone.
