@@ -65,6 +65,7 @@ git hub, or submit a CL :)
   apps/chrome
   apps/git
   apps/gpg/index
+  apps/movie-studio
   apps/mutt
   apps/putty
   apps/python-venv
