@@ -159,6 +159,36 @@ After the branch is merged worktree can be removed.
 
 Then delete branch as normal. See :ref:`git-deleting-branches`.
 
+Repo git hooks
+**************
+Hooks are located in ``.git/hooks`` but are not versioned. This enables
+`repository tracked hooks`_.
+
+See ``.git/hooks`` for examples. Custom `pre-commit example`_. Hooks must have
+exact names.
+
+.. code-block:: bash
+  :caption: Create repo hooks
+
+  mkdir {REPO}/.githooks
+
+.. code-block:: bash
+  :caption: Set local gitconfig hookspath to custom location
+
+  git config -f .gitconfig core.hooksPath .githooks
+
+.. literalinclude:: source/pre-commit
+  :caption: **0755 user user** ``.githooks/pre-commit``
+
+.. code-block:: bash
+  :caption: Use a Makefile or manually run on repo checkout to setup.
+
+  git config --local include.path ../.gitconfig
+
+.. note::
+  Command executes from ``.git`` directory, hence going up a directory to read
+  the config.
+
 List All Respositories for An Organization/User
 ***********************************************
 Useful for determining if there are new repositories to sync.
@@ -184,3 +214,5 @@ Useful for projects that have periodic releases but are not in OS packages.
 .. _Rebase: https://www.internalpointers.com/post/squash-commits-into-one-git
 .. _Create a Branch: https://thenewstack.io/dont-mess-with-the-master-working-with-branches-in-git-and-github/
 .. _multiple branches simultaneously: https://stackoverflow.com/questions/2048470/git-working-on-two-branches-simultaneously
+.. _repository tracked hooks: https://pilot34.medium.com/store-your-git-hooks-in-a-repository-2de1d319848c
+.. _pre-commit example: https://selivan.github.io/2017/04/08/ansible-check-on-commit-vault-files-are-encrypted.html
