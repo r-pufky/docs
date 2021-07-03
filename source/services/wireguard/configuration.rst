@@ -137,3 +137,19 @@ From the client access the Internet and verify that your data is routed through
 the VPN server.
 
 A quick test can be verifying different IP's from https://www.whatismyip.com.
+
+Debugging
+=========
+Issues with wireguard connections can be debugged by enabling dynamic debug in
+the kernel. Requires Kernel ``5.6``.
+
+.. code-block:: bash
+  :caption: Enable wireguard dynamic kernel debugging and show log.
+
+  echo 'module wireguard +p' | sudo tee /sys/kernel/debug/dynamic_debug/control
+  dmesg -wH
+
+.. code-block:: bash
+  :caption: Disable wireguard dynamic kernel debugging.
+
+  echo 'module wireguard -p' | sudo tee /sys/kernel/debug/dynamic_debug/control
