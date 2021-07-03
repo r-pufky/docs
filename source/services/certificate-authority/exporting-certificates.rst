@@ -17,3 +17,27 @@ clients.
   password.
 * ``ca-chain`` is included to provide chain of trust to the client using the
   certificate and validate the server.
+
+Extract Public/Private Keys from PFX
+************************************
+Keys can be extracted from the PFX file for use if needed.
+
+.. code-block:: bash
+  :caption: Extract private key certificate.
+
+  openssl pkcs12 -in {CLIENT}.pfx -nocerts -nodes -out private.pem
+
+.. code-block:: bash
+  :caption: Convert certificate to RSA private key. 
+
+  openssl rsa -in private.pem -out private.key 
+
+.. code-block:: bash
+  :caption: Convert certificate to RSA public key. 
+
+  openssl rsa -in private.pem -pubout
+
+.. code-block:: bash
+  :caption: Extract certificate
+
+  openssl pkcs12 -in {CLIENT}.pfx -nokeys -out public.pem
