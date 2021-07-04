@@ -20,3 +20,4 @@ See `Wireguard Technical Whitepaper`_.
    linux-setup
    windows-setup
    configuration
+   wireguard-initramfs
