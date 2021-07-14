@@ -62,14 +62,14 @@ Add the non-subscription repository.
 .. code-block:: bash
   :caption: **0644 root root** ``/etc/apt/sources.list``
 
-  deb http://download.proxmox.com/debian buster pve-no-subscription
+  deb http://download.proxmox.com/debian/pve {DEBIAN CODENAME} pve-no-subscription
 
 Remove the subscription repository.
 
 .. code-block:: bash
   :caption: **0644 root root** ``/etc/apt/sources.list.d/pve-enterprise.list``
 
-  #deb https://enterprise.proxmox.com/debian/pve buster pve-enterprise
+  #deb https://enterprise.proxmox.com/debian/pve {DEBIAN CODENAME} pve-enterprise
 
 Enable automatic updates.
 
@@ -218,25 +218,17 @@ Restart service and verify jails are started.
 
 Add Wireguard Kernel Support
 ============================
-This is only needed if ``LXC containers`` or ``promox`` will use wireguard. VM's
-can use wireguard without it being enabled in the proxmox kernel.
+This is only needed if ``LXC containers`` or ``promox`` will use wireguard.
+VM's can use wireguard without it being enabled in the proxmox kernel.
 
-.. todo::
-  Remove `wireguard configuration <https://nixvsevil.com/posts/wireguard-in-proxmox-lxc/>`_
-  when proxmox releases ``5.6`` kernel to stable (built-in to kernel).
-
-Add debian backports for wireguard usage.
-
-.. code-block:: bash
-  :caption: **0644 root root** ``/etc/apt/sources.list``
-
-  deb http://deb.debian.org/debian buster-backports main
+As of proxmox 7, wireguard backports are no longer needed (running kernel
+``5.11``).
 
 .. code-block:: bash
   :caption: Update and install wireguard.
 
   apt update && apt install pve-headers
-  apt install -t buster-backports wireguard-dkms
+  apt install wireguard wireguard-tools wireguard-dkms
   modprobe wireguard
 
 Enabled wireguard on boot.
@@ -279,6 +271,9 @@ Setup Networking
 Both management and LCX/VM adaptors should be used through ``bridges`` and not
 the physical adaptor directly. This allows for hardware changes and updates with
 minimal reconfiguration & failure.
+
+In proxmox 7, you may need to install ``ifupdown2`` if container networking is
+`not working <https://forum.proxmox.com/threads/update-to-7-network-problem.92452/>`_.
 
 .. gui::   Create management interface
   :path:   datacenter --> {SERVER} --> system --> network --> create --> bridge
@@ -733,7 +728,7 @@ Remove security constraints on container.
   :caption: **0644 root root** ``/etc/pve/lxc/{ID}.conf``
 
   lxc.apparmor.profile: unconfined
-  lxc.cgroup.devices.allow: a
+  lxc.cgroup2.devices.allow: a
   lxc.cap.drop:
 
 .. code-block:: bash
@@ -878,6 +873,7 @@ See :ref:`additional-ubuntu-fixes-disable-ipv6`.
 .. rubric:: References (Unused)
 
 .. rubric:: GPU Passthru for Windows, Plex servers
+On proxmox 7, use ``cgroup2`` in place of ``cgroup``.
 
 #. `GPU passthru to Windows VM <https://www.youtube.com/watch?v=fgx3NMk6F54>`_
 #. `Proxmox, Plex w/ PCI passhtru & hardware encoding <https://www.youtube.com/watch?v=-HCzLhnNf-A>`_
