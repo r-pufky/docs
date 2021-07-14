@@ -177,6 +177,7 @@ git hub, or submit a CL :)
   scripts/bulk-downloader-for-reddit
   scripts/copying-data
   scripts/scripts
+  scripts/steam-older-game-versions
   scripts/video-editing-conversion
   scripts/wiping-data
   scripts/youtube
