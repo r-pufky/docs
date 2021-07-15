@@ -9,6 +9,7 @@ concepts).
 #. :ref:`service-zfs-install`.
 #. :ref:`service-zfs-operations`.
 #. :ref:`service-zfs-encryption`.
+#. :ref:`service-zfs-sync-backup`.
 #. :ref:`service-zfs-replacing-disks`.
 
 .. toctree::
@@ -18,4 +19,5 @@ concepts).
    install
    operations
    encryption
+   sync-backup
    replacing-disks

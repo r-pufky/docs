@@ -97,3 +97,7 @@ works **before** loading data onto the dataset.
 
 .. danger::
   Do not overwrite or delete the old key until the new key is in place.
+
+.. rubric:: References
+#. `ZFS Native Encryption <https://arstechnica.com/gadgets/2021/06/a-quick-start-guide-to-openzfs-native-encryption/>`_
+#. `ZFS Encryption at Rest <https://blog.heckel.io/2017/01/08/zfs-encryption-openzfs-zfs-on-linux/>`_
