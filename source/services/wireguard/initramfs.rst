@@ -1,4 +1,4 @@
-.. _service-wireguard-wireguard-initramfs:
+.. _service-wireguard-initramfs:
 
 wireguard-initramfs
 ###################

@@ -90,7 +90,6 @@ git hub, or submit a CL :)
   networking/netplan
   networking/ubiquiti/edge-os
   networking/ubiquiti/example-vlan-network/index
-  services/wireguard/index
 
 .. toctree::
   :caption: Operating Systems
@@ -134,6 +133,7 @@ git hub, or submit a CL :)
   services/dashmachine/index
   services/deluge/index
   services/digikam/index
+  services/dropbear/index
   services/email/index
   services/fail2ban/index
   services/firefly/index

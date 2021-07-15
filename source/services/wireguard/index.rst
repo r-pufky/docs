@@ -9,6 +9,7 @@ See `Wireguard Technical Whitepaper`_.
 #. :ref:`service-wireguard-linux-setup`.
 #. :ref:`service-wireguard-windows-setup`.
 #. :ref:`service-wireguard-configuration`.
+#. :ref:`service-wireguard-initramfs`.
 
 .. _wireguard: https://www.wireguard.com/
 .. _Wireguard Technical Whitepaper: https://www.wireguard.com/papers/wireguard.pdf
@@ -20,4 +21,5 @@ See `Wireguard Technical Whitepaper`_.
    linux-setup
    windows-setup
    configuration
-   wireguard-initramfs
+   
+   initramfs
