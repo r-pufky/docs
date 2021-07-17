@@ -640,7 +640,24 @@ Enable firewall & drop policy.
 
 Remove Subscription Notice
 **************************
-This will prompt on every login. `Disable notification <https://johnscs.com/remove-proxmox51-subscription-notice/>`_.
+This will prompt on every login.
+
+Disable via Service
+===================
+`Preferred method <https://github.com/Jamesits/pve-fake-subscription>`_; will
+survive updates and reboots without modifying any PVE files. `Download the
+latest release <https://github.com/Jamesits/pve-fake-subscription/releases/>`_.
+
+.. code-block:: bash
+  :caption: Install service and disable subscription key checking.
+
+  dpkg -i pve-fake-subscription_*.deb
+  echo '127.0.0.1 shop.maurer-it.com' | sudo tee -a /etc/hosts
+
+Disable via Javascript
+======================
+Will not survive updates or upgrades and modifies PVE files. `Not preferred
+<https://johnscs.com/remove-proxmox51-subscription-notice/>`_.
 
 .. code-block:: bash
   :caption: Disable subscription notice.
@@ -873,11 +890,13 @@ See :ref:`additional-ubuntu-fixes-disable-ipv6`.
 .. rubric:: References (Unused)
 
 .. rubric:: GPU Passthru for Windows, Plex servers
-On proxmox 7, use ``cgroup2`` in place of ``cgroup``.
 
 #. `GPU passthru to Windows VM <https://www.youtube.com/watch?v=fgx3NMk6F54>`_
 #. `Proxmox, Plex w/ PCI passhtru & hardware encoding <https://www.youtube.com/watch?v=-HCzLhnNf-A>`_
 #. `Guide to GPU passthru <https://old.reddit.com/r/homelab/comments/b5xpua/the_ultimate_beginners_guide_to_gpu_passthrough/>`_
+
+.. note::
+  On proxmox 7, use ``cgroup2`` in place of ``cgroup``.
 
 .. rubric:: Wireguard on unprivleged containers
 
