@@ -142,7 +142,7 @@ See `7 Days to Die server configuration reference`_ for all potential settings.
   :caption: **0644 7days 7days** ``/data/server/serverconfig.xml``
   :emphasize-lines: 26,28,30,32,41
 
-Access to administrative commands is granted based on SteamID, in
+Access to `administrative commands`_ are granted based on SteamID, in
 ``serveradmin.xml``. A server restart is needed to apply changes.
 
 .. literalinclude:: source/serveradmin.xml
@@ -153,3 +153,4 @@ Access to administrative commands is granted based on SteamID, in
 .. _7 Days Docker and Documentation: https://hub.docker.com/r/rpufky/steam
 .. _7 Days to Die Dedicated Server: https://7daystodie.gamepedia.com/System_Requirements
 .. _7 Days to Die server configuration reference: https://developer.valvesoftware.com/wiki/7_Days_to_Die_Dedicated_Server#Installation
+.. _administrative commands: https://www.gameserverkings.com/knowledge-base/7-days-to-die/7d2d-new-user-guide/
