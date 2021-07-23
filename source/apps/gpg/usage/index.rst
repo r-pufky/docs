@@ -6,14 +6,14 @@ These instructions show configuration of operation systems to use a Yubikey
 backed GPG Key for SSH connections.
 
 * :ref:`gpg-windows`.
-* :ref:`gpg-ubuntu`.
-* :ref:`gpg-encryption`.
+* :ref:`gpg-debian`.
+* :ref:`gpg-operations`.
 
 .. toctree::
    :hidden:
    :maxdepth: -1
 
    windows
-   ubuntu
+   debian
    windows-forward-gpg
-   encryption
+   operations

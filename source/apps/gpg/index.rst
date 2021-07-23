@@ -23,7 +23,7 @@ Be sure to see :ref:`gpg-troubleshooting` to resolve any issues.
 
 See :ref:`service-ssh` to setup SSH services.
 
-Core (out of date) `instructions are here`_. Alternative step-by-step
+Core `instructions are here`_. Alternative step-by-step
 walkthrough instructions for configuring `multi-platform GPG/Yubikey SSH usage
 are here`_. `OpenPGP for Beginners`_ is a good starting point if you have no
 understanding of what this is.

@@ -79,7 +79,7 @@ git hub, or submit a CL :)
   :includehidden:
   :maxdepth: -1
 
-  configuration-management/saltstack/index
+  configuration-management/ansible/index
 
 .. toctree::
   :caption: Networking

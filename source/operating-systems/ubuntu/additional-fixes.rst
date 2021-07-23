@@ -78,6 +78,24 @@ attacks.
   sysctl -p
   reboot
 
+Shadow Passwords
+****************
+linux hash *sha512*. Use either the ``mkpasswd`` tool or the `python script`_
+below to generate a *salted, sha512 hash* in the correct format for consumption
+in ``/etc/shadow``. GPG encrypt this data if storing in configuration
+management tools.
+
+.. code-block:: bash
+  :caption: Using ``mkpasswd``.
+
+  apt install whois
+  mkpasswd -m sha-512
+
+.. code-block:: bash
+  :caption: Python 3 version.
+
+  python3 -c "import crypt, getpass; print(crypt.crypt(getpass.getpass('password to hash: '), crypt.mksalt(crypt.METHOD_SHA512)))"
+
 .. _safely disabled if you are only running one OS: https://unix.stackexchange.com/questions/347466/debian-new-error-message-upgrading-kernel-to-4-9-reload-ioctl-error
 .. _systemd - 239-7ubuntu4: https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1766969
 .. _Mount RAW disk: https://blog.tinned-software.net/mount-raw-image-of-entire-disc/
