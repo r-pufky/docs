@@ -1,7 +1,7 @@
-.. _ansible-command:
+.. _ansible-commands:
 
 Common Commands
-###############i
+###############
 
 Grab Remote Facts from Host
 ***************************

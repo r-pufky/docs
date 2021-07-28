@@ -23,8 +23,8 @@ See :ref:`gpg-with-yubikey`.
 .. literalinclude:: source/vault-gpg
   :caption: Create script to decrypt the password for use.
 
-
 Set ansible configuration to use the script for password prompts.
+
 .. code-block:: bash
   :caption: ``ansible.cfg``
 

@@ -21,7 +21,7 @@ Required Materials
   ``apt install libssl-dev swig libpcsclite-dev``
 
 .. code-block:: bash
-  :caption: _Optionally_ install yubikey manager to manage yubikeys.
+  :caption: **Optionally** install yubikey manager to manage yubikeys.
 
   apt install python3-pip python3-pyscard
   pip3 install PyOpenSSL
