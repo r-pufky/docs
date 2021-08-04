@@ -159,6 +159,25 @@ After the branch is merged worktree can be removed.
 
 Then delete branch as normal. See :ref:`git-deleting-branches`.
 
+Migrate git stash to another machine
+************************************
+Export a stash as a patch to import in another git client.
+
+.. code-block:: bash
+  :caption: Export stash 0 to a patch.
+
+  git stash show "stash@{0}" -p > changes.patch
+
+.. code-block:: bash
+  :caption: Import patch to client.
+
+  git apply changes.patch
+
+.. code-block:: bash
+  :caption: Patch can be reverted if there are issues.
+
+  git apply changes.patch --reverse
+
 Repo git hooks
 **************
 Hooks are located in ``.git/hooks`` but are not versioned. This enables
