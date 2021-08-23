@@ -114,7 +114,11 @@ Completed branches can be merged back into any branch, typically ``master``.
 
 .. note::
   ``--no-ff`` retains all commit messages from the branch. Leave this off to
-  squish the commit.
+  squish the commit (it may be helpful to get branch log for merge message
+   ``git --no-pager log > /tmp/git.log``.
+
+  You may reset the merge before committing with no data loss with
+  ``get merge --abort``.
 
 .. _git-deleting-branches:
 
