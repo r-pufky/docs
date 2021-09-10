@@ -23,21 +23,11 @@ Extract Public/Private Keys from PFX
 Keys can be extracted from the PFX file for use if needed.
 
 .. code-block:: bash
-  :caption: Extract private key certificate.
+  :caption: Extract RSA private key (using PEM keypair)
 
-  openssl pkcs12 -in {CLIENT}.pfx -nocerts -nodes -out private.pem
-
-.. code-block:: bash
-  :caption: Convert certificate to RSA private key. 
-
-  openssl rsa -in private.pem -out private.key 
+  openssl pkcs12 -in {CLIENT}.pfx -nocerts -nodes | openssl rsa -out rsa.key
 
 .. code-block:: bash
-  :caption: Convert certificate to RSA public key. 
+  :caption: Extract RSA public key 
 
-  openssl rsa -in private.pem -pubout
-
-.. code-block:: bash
-  :caption: Extract certificate
-
-  openssl pkcs12 -in {CLIENT}.pfx -nokeys -out public.pem
+  openssl pkcs12 -in {CLIENT}.pfx -clcerts -nokeys | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > rsa.pub

@@ -120,6 +120,8 @@ Completed branches can be merged back into any branch, typically ``master``.
   You may reset the merge before committing with no data loss with
   ``get merge --abort``.
 
+`Reference <https://nvie.com/posts/a-successful-git-branching-model/>`__
+
 .. _git-deleting-branches:
 
 Deleting Branches
