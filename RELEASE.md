@@ -1,5 +1,57 @@
 # [Changelog][3g]
 
+## 2021-09-22.0
+Remove Saltstack; add Ansible.
+
+Added:
+* Add Movie Studio encoding templates.
+* Add fix for failed to run vncproxy on pve.
+* Add note about fc-cache now generating .uuid files.
+* Add GPG agent forwarding for WSL2 and Linux machines.
+* Add CLI static DHCP configuration.
+* Add apt auto selection to docs.
+* Add 7 days to die administrative commands link.
+* Add git commands for creating repository tracked hooks.
+* Add disable for Asus Armoury Crate.
+* Add additional git merge instructions for backing out and generating log.
+* Add firefly baremetal setup instructions.
+* Add git stash notes.
+* Add crashplan LXC/KVM/Baremetal instructions.
+* Add Instructions for GPU passthru to LXC containers.
+* Add pve subscription removal service.
+* Add gitea troubleshooting information for timeouts and duplicate keys.
+* Add dropbear service.
+* Add ZFS sync send/recv commands with automation.
+* Add installing older game versions on Steam.
+* Add SSH blocked through wireguard network resolution.
+* Add wireguard-initramfs instructions.
+* Add PFX RSA public/private, certificate extraction instructions.
+* Add wireguard kernel debugging configuration.
+* Add ansible notes.
+* Add ansible auto-decrypt vault with security key scripts.
+* Add Movie Studio encoding templates.
+* Add fix for failed to run vncproxy on pve.
+* Add note about fc-cache now generating .uuid files.
+* Add GPG agent forwarding for WSL2 and Linux machines.
+* Add CLI static DHCP configuration.
+* Add apt auto selection to docs.
+
+Changed:
+* Correct links and formatting for gpg/ansible docs as well.
+* Update ZFS manaul disk replacement instructions.
+* Update for automatic partitioning, manual swap, locating devices/ZFS GUID.
+* Update PFX RSA cert extraction to single commands.
+* Update ZFS instructions with Encryption and dataset usage.
+* Update proxmox instructions for version 7.
+* Update PVE with GPU passthru instructions.
+
+Removed:
+* Remove saltstack configuration notes, add ansible configuration notes.
+
+Fixed:
+* Update pygments to 2.7.4 addressing CVE-2021-27291
+* Update jinja, urllibs based on security advisories.
+
 ## 2021-02-28.0
 Finish sphinx CT directive migration.
 

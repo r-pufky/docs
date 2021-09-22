@@ -15,8 +15,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/expand_width.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
 
   
@@ -43,7 +43,7 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="ZFS" href="../zfs/index.html" />
+    <link rel="next" title="Wireguard" href="../wireguard/index.html" />
     <link rel="prev" title="Troubleshooting" href="../ssh/troubleshooting.html" /> 
 </head>
 
@@ -126,6 +126,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#create-worktree">Create Worktree</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#merge-worktree">Merge Worktree</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#removing-worktree">Removing Worktree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#migrate-git-stash-to-another-machine">Migrate git stash to another machine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#repo-git-hooks">Repo git hooks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#list-all-respositories-for-an-organization-user">List All Respositories for An Organization/User</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#pull-latest-tarball-release-from-github">Pull Latest Tarball Release from Github</a></li>
 </ul>
@@ -201,20 +203,38 @@
 <li class="toctree-l4"><a class="reference internal" href="../../apps/gpg/usage/windows.html#forward-gpg-agent-through-multiple-servers">Forward GPG Agent Through Multiple Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../apps/gpg/usage/ubuntu.html">Ubuntu GPG Yubikey</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../apps/gpg/usage/ubuntu.html#required-materials">Required Materials</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../apps/gpg/usage/ubuntu.html#configure-gpg-agent">Configure GPG Agent</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../apps/gpg/usage/ubuntu.html#allow-user-to-automount-yubikeys">Allow User to Automount Yubikeys</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../apps/gpg/usage/ubuntu.html#disable-gnome-ssh-fuckery">Disable Gnome SSH Fuckery</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../apps/gpg/usage/ubuntu.html#verify-ssh-works">Verify SSH Works</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../apps/gpg/usage/debian.html">Debian GPG Yubikey</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../apps/gpg/usage/debian.html#required-materials">Required Materials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../apps/gpg/usage/debian.html#configure-gpg-gpg-agent">Configure GPG/GPG Agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../apps/gpg/usage/debian.html#verify-ssh-works">Verify SSH Works</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../apps/gpg/usage/encryption.html">Encrypting Files</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../apps/gpg/usage/encryption.html#required-materials">Required Materials</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../apps/gpg/usage/encryption.html#import-public-key">Import Public Key</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../apps/gpg/usage/encryption.html#encrypt-file">Encrypt File</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../apps/gpg/usage/encryption.html#create-a-detached-signature">Create a Detached Signature</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../apps/gpg/usage/encryption.html#validate-file-using-detached-signature">Validate File Using Detached Signature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../apps/gpg/usage/windows-forward-gpg.html">Windows Forward GPG</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../apps/gpg/usage/windows-forward-gpg.html#setup-gpg-relay-in-wsl">Setup GPG Relay in WSL</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../apps/gpg/usage/windows-forward-gpg.html#required-materials">Required Materials</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../apps/gpg/usage/windows-forward-gpg.html#install-wsl-usb-bridges-on-windows">Install WSL USB Bridges on Windows</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../apps/gpg/usage/windows-forward-gpg.html#install-gpg-relay-on-wsl">Install GPG Relay on WSL</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../apps/gpg/usage/windows-forward-gpg.html#forward-gpg-to-linux">Forward GPG to Linux</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../apps/gpg/usage/windows-forward-gpg.html#determine-sockets">Determine Sockets</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../apps/gpg/usage/windows-forward-gpg.html#update-sshd-config">Update SSHD Config</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../apps/gpg/usage/windows-forward-gpg.html#create-gpg-tunnel-config">Create GPG Tunnel Config</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../apps/gpg/usage/windows-forward-gpg.html#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../apps/gpg/usage/windows-forward-gpg.html#notify-await-message-on-start"><code class="docutils literal notranslate"><span class="pre">--notify-await</span></code> message on start</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../apps/gpg/usage/windows-forward-gpg.html#gpg-error-retrieving-gpgid-via-wkd-general-error"><code class="docutils literal notranslate"><span class="pre">gpg:</span> <span class="pre">error</span> <span class="pre">retrieving</span> <span class="pre">{GPGID}</span> <span class="pre">via</span> <span class="pre">WKD:</span> <span class="pre">General</span> <span class="pre">error</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../apps/gpg/usage/operations.html">GPG Operations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../apps/gpg/usage/operations.html#import">Import</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../apps/gpg/usage/operations.html#export">Export</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../apps/gpg/usage/operations.html#encrypt">Encrypt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../apps/gpg/usage/operations.html#create-a-detached-signature">Create a Detached Signature</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../apps/gpg/usage/operations.html#validate-file-using-detached-signature">Validate File Using Detached Signature</a></li>
 </ul>
 </li>
 </ul>
@@ -227,6 +247,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../../apps/gpg/troubleshooting.html#please-insert-card-with-serial-number">Please insert card with serial number</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../apps/movie-studio.html">Movie Studio</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../apps/movie-studio.html#encoding-templates">Encoding Templates</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../apps/mutt.html">Mutt Maildir Setup</a><ul>
@@ -291,115 +315,12 @@
 </ul>
 <p class="caption"><span class="caption-text">Configuration Management</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../configuration-management/saltstack/index.html">Saltstack</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../configuration-management/saltstack/requirements.html">Requirements</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/requirements.html#ports">Ports</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/requirements.html#files">Files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/requirements.html#service-directory-best-practices">Service Directory Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../configuration-management/ansible/index.html">Ansible</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../configuration-management/ansible/commands.html">Common Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/ansible/commands.html#grab-remote-facts-from-host">Grab Remote Facts from Host</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../configuration-management/saltstack/service-setup.html">Service Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/service-setup.html#use-tls-for-protocol-encryption">Use TLS for protocol encryption</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/service-setup.html#non-root-user">Non-root User</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../configuration-management/saltstack/salt-master/index.html">Salt Master</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/salt-master/setup.html">Salt Master Configuration</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/salt-master/setup.html#file-section">File Section</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/salt-master/setup.html#pillar-section">Pillar Section</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/salt-master/setup.html#primary-section">Primary Section</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/salt-master/setup.html#security-section">Security Section</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/salt-master/setup.html#state-section">State Section</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/salt-master/pillar.html">Using Pillar</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/salt-master/pillar.html#pillar-top-sls">Pillar top.sls</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/salt-master/pillar.html#pillar-environment-data">Pillar Environment Data</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/salt-master/nodegroups.html">Nodegroups</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/salt-master/nodegroups.html#create-nodegroups">Create Nodegroups</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/salt-master/nodegroups.html#apply-state-to-nodegroups">Apply State to Nodegroups</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/salt-master/state-management.html">State Management</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/salt-master/state-management.html#install-a-package">Install a Package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/salt-master/state-management.html#deploy-file-with-content-from-server">Deploy File with Content from Server</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/salt-master/formula-management.html">Formula Management</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/salt-master/minion-management.html">Minion Management</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/salt-master/minion-management.html#signing-cert-requests">Signing Cert Requests</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/salt-master/minion-management.html#revoking-certs">Revoking Certs</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/salt-master/gpg.html">GPG Encrypt Pillar Data</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/salt-master/gpg.html#encrypting-data">Encrypting Data</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/salt-master/gpg.html#encrypt-shadow-passwords">Encrypt Shadow Passwords</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/salt-master/gpg.html#add-to-pillar">Add to Pillar</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/salt-master/gpg.html#refresh-pillar-and-push-data">Refresh Pillar and Push Data</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../configuration-management/saltstack/salt-minion/index.html">Salt Minion</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/salt-minion/bootstrap-install.html">Bootstrap Install</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/salt-minion/linux-manual-install.html">Linux Manual Install</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/salt-minion/windows-manual-install.html">Windows Manual Install</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/salt-minion/windows-manual-install.html#windows-cli-install">Windows CLI Install</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/salt-minion/windows-manual-install.html#windows-gui-install">Windows GUI Install</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/salt-minion/minion-configuration.html">Minion Configuration</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/salt-minion/minion-configuration.html#schedule-section">Schedule Section</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/salt-minion/minion-configuration.html#file-section">File Section</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/salt-minion/minion-configuration.html#logging-section">Logging Section</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/salt-minion/minion-configuration.html#pillar-section">Pillar Section</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/salt-minion/minion-configuration.html#primary-section">Primary Section</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/salt-minion/minion-configuration.html#security-section">Security Section</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/salt-minion/minion-configuration.html#startup-section">Startup Section</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/salt-minion/minion-configuration.html#state-section">State Section</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../configuration-management/saltstack/frequent-commands.html">Frequent Commands</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/frequent-commands.html#general-master-commands">General Master Commands</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/frequent-commands.html#run-command-on-minions-from-salt-master">Run Command On Minions From Salt Master</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/frequent-commands.html#get-status-of-all-minions">Get Status of All Minions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/frequent-commands.html#show-minions-on-a-subnet">Show Minions On A Subnet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/frequent-commands.html#show-avaliable-grains-on-minions">Show Avaliable Grains On Minions</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/frequent-commands.html#jobs">Jobs</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/frequent-commands.html#list-active-jobs">List Active Jobs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/frequent-commands.html#generate-new-master-certificates">Generate New Master Certificates</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/frequent-commands.html#general-minion-commands">General Minion Commands</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/frequent-commands.html#run-a-specific-state">Run A Specific State</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/frequent-commands.html#manual-minion-run-with-specific-environments">Manual Minion Run with Specific Environments</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../configuration-management/saltstack/frequent-commands.html#print-only-changes-or-errors">Print Only Changes or Errors</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../configuration-management/saltstack/common-issues.html">Common Issues</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/common-issues.html#run-salt-minion-with-debugging">Run Salt Minion with Debugging</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/common-issues.html#run-salt-master-with-debugging">Run Salt Master with Debugging</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/common-issues.html#debug-jinja-templates">Debug jinja Templates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/common-issues.html#minon-frequently-times-out-or-does-not-connect">Minon Frequently Times Out or does Not Connect</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/common-issues.html#minion-did-not-return-not-connected">Minion did not return. [Not connected].</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/common-issues.html#rendering-sls-pillar-data-failed-jinja-variable">Rendering SLS ‘{PILLAR DATA}’ failed: Jinja variable …</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/common-issues.html#no-top-file-or-external-nodes-data-matches-found">No Top file or External Nodes Data Matches Found</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/common-issues.html#show-avaliable-files-to-minions">Show Avaliable Files to Minions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/common-issues.html#clear-minion-cache">Clear Minion Cache</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../configuration-management/saltstack/working-notes.html">Working Notes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../configuration-management/saltstack/working-notes.html#using-chocolately-for-windows">Using Chocolately for Windows</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../../configuration-management/ansible/gpg-vault.html">Vault</a></li>
 </ul>
 </li>
 </ul>
@@ -418,6 +339,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../networking/ubiquiti/edge-os.html">Edge OS</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../networking/ubiquiti/edge-os.html#disable-ubnt-discovery-service">Disable UBNT Discovery Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../networking/ubiquiti/edge-os.html#create-dhcp-static-entries">Create DHCP Static Entries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../networking/ubiquiti/edge-os.html#create-dns-host-entries">Create DNS / Host Entries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../networking/ubiquiti/edge-os.html#hairpin-nat-internal-only-nat-reflection">Hairpin NAT (Internal Only NAT Reflection)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../networking/ubiquiti/edge-os.html#deleted-dhcp-host-still-resolves-in-dns">Deleted DHCP Host Still Resolves in DNS</a></li>
@@ -516,37 +438,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../networking/ubiquiti/example-vlan-network/vlan-101.html#ingress-traffic">Ingress Traffic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../networking/ubiquiti/example-vlan-network/vlan-101.html#unifi-aps">Unifi APs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../networking/ubiquiti/example-vlan-network/vlan-101.html#implementation-concepts">Implementation Concepts</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../wireguard/index.html">Wireguard</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../wireguard/linux-setup.html">Wireguard Linux Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../wireguard/linux-setup.html#debian">Debian</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../wireguard/linux-setup.html#ubuntu">Ubuntu</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../wireguard/linux-setup.html#autostart-tunnel-as-service">Autostart Tunnel as Service</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../wireguard/windows-setup.html">Wireguard Windows Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../wireguard/windows-setup.html#slient-install">Slient Install</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../wireguard/windows-setup.html#add-pre-configured-tunnel">Add Pre-configured Tunnel</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../wireguard/configuration.html">Wireguard Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../wireguard/configuration.html#ports">Ports</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../wireguard/configuration.html#key-generation">Key Generation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../wireguard/configuration.html#point-to-point-private-network">Point To Point Private Network</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../wireguard/configuration.html#server">Server</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../wireguard/configuration.html#clients">Clients</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../wireguard/configuration.html#testing">Testing</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../wireguard/configuration.html#vpn-network">VPN Network</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../wireguard/configuration.html#id1">Server</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../wireguard/configuration.html#client">Client</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../wireguard/configuration.html#id2">Testing</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -936,7 +827,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/index.html">Windows Security</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/index.html">Security</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/virus-and-threat-protection/index.html">1. Virus &amp; threat protection</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/virus-and-threat-protection/virus-and-threat-protection-settings.html">1.1. Virus &amp; threat protection settings</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/virus-and-threat-protection/virus-and-threat-protection-settings.html#cloud-delivered-protection">1.1.1. Cloud-delivered protection</a></li>
@@ -957,11 +848,11 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/app-and-browser-control/index.html">3. App &amp; browser control</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/app-and-browser-control/reputation-based-protection-setttings.html">3.1. Reputation-based protection settings</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/app-and-browser-control/reputation-based-protection-setttings.html#check-apps-and-files">3.1.1. Check apps and files</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/app-and-browser-control/reputation-based-protection-setttings.html#smartscreen-for-microsoft-edge">3.1.2. SmartScreen for Microsoft Edge</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/app-and-browser-control/reputation-based-protection-setttings.html#potentially-unwanted-app-blocking">3.1.3. Potentially unwanted app blocking</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/app-and-browser-control/reputation-based-protection-setttings.html#smartscreen-for-microsoft-store-apps">3.1.4. SmartScreen for Microsoft Store apps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/app-and-browser-control/reputation-based-protection-settings.html">3.1. Reputation-based protection settings</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/app-and-browser-control/reputation-based-protection-settings.html#check-apps-and-files">3.1.1. Check apps and files</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/app-and-browser-control/reputation-based-protection-settings.html#smartscreen-for-microsoft-edge">3.1.2. SmartScreen for Microsoft Edge</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/app-and-browser-control/reputation-based-protection-settings.html#potentially-unwanted-app-blocking">3.1.3. Potentially unwanted app blocking</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../operating-systems/windows/10/20H2/security/app-and-browser-control/reputation-based-protection-settings.html#smartscreen-for-microsoft-store-apps">3.1.4. SmartScreen for Microsoft Store apps</a></li>
 </ul>
 </li>
 </ul>
@@ -1062,6 +953,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../operating-systems/ubuntu/additional-fixes.html#grub-os-prober">Grub OS Prober</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../operating-systems/ubuntu/additional-fixes.html#nxdomain-errors-in-syslog">NXDOMAIN Errors in Syslog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../operating-systems/ubuntu/additional-fixes.html#disable-ipv6">Disable IPv6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/ubuntu/additional-fixes.html#shadow-passwords">Shadow Passwords</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../operating-systems/ubuntu/threadripper-2990wx.html">2990WX Linux Patches</a><ul>
@@ -1081,40 +973,62 @@
 <li class="toctree-l3"><a class="reference internal" href="../../operating-systems/ubuntu/preseed/build-custom-iso.html">Build Custom ISO</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../operating-systems/ubuntu/apt-auto-selections.html">Apt Auto Selection</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/ubuntu/apt-auto-selections.html#install-with-options">Install with Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/ubuntu/apt-auto-selections.html#set-options">Set Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../operating-systems/ubuntu/apt-auto-selections.html#example">Example</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 <p class="caption"><span class="caption-text">Virtualization</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html">Prxomox (PVE)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#ports">Ports</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#install-service">Install Service</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#configuration">Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#enable-automatic-non-subscription-updates">Enable Automatic &amp; Non-subscription Updates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#add-local-user-sudo-secure-ssh">Add Local User, Sudo, &amp; Secure SSH</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#enable-fail2ban">Enable fail2ban</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#add-wireguard-kernel-support">Add Wireguard Kernel Support</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#enable-hardware-virtualization-iommu">Enable Hardware Virtualization (IOMMU)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#setup-networking">Setup Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html">Proxmox (PVE)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/pve/install.html">Prxomox Install</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/install.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/install.html#install-service">Install Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/install.html#configuration">Configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../virtualization/hypervisors/pve/install.html#enable-automatic-non-subscription-updates">Enable Automatic &amp; Non-subscription Updates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../virtualization/hypervisors/pve/install.html#add-local-user-sudo-secure-ssh">Add Local User, Sudo, &amp; Secure SSH</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../virtualization/hypervisors/pve/install.html#enable-fail2ban">Enable fail2ban</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../virtualization/hypervisors/pve/install.html#add-wireguard-kernel-support">Add Wireguard Kernel Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../virtualization/hypervisors/pve/install.html#enable-hardware-virtualization-iommu">Enable Hardware Virtualization (IOMMU)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../virtualization/hypervisors/pve/install.html#setup-networking">Setup Networking</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#add-to-datacenter-cluster">Add to Datacenter Cluster</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#firewall">Firewall</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#datacenter-firewall">Datacenter Firewall</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#cluster-firewall">Cluster Firewall</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/install.html#add-to-datacenter-cluster">Add to Datacenter Cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/install.html#firewall">Firewall</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../virtualization/hypervisors/pve/install.html#datacenter-firewall">Datacenter Firewall</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../virtualization/hypervisors/pve/install.html#cluster-firewall">Cluster Firewall</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#remove-subscription-notice">Remove Subscription Notice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#mount-external-zfs-pool">Mount External ZFS Pool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#add-isos">Add ISOs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#add-container-templates">Add Container Templates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#docker-migration">Docker Migration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#migrate-from-xcp">Migrate from XCP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#troubleshooting">Troubleshooting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#ascii-codec-can-t-decode-byte-0xe2-in-position">ascii codec can’t decode byte 0xe2 in position</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#wrong-timezone">Wrong Timezone</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#corrupted-terminal-characters-or-no-utf-8-support">Corrupted Terminal Characters or No UTF-8 Support</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/index.html#lxc-long-boot-times-or-no-console">LXC Long Boot Times or No Console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/install.html#remove-subscription-notice">Remove Subscription Notice</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../virtualization/hypervisors/pve/install.html#disable-via-service">Disable via Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../virtualization/hypervisors/pve/install.html#disable-via-javascript">Disable via Javascript</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/install.html#mount-external-zfs-pool">Mount External ZFS Pool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/install.html#add-isos">Add ISOs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/install.html#add-container-templates">Add Container Templates</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/pve/gpu-passthru.html">GPU Passthru</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/gpu-passthru.html#pve-cluster-node">PVE Cluster Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/gpu-passthru.html#lxc-container">LXC Container</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/pve/migration.html">Migration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/migration.html#docker-migration">Docker Migration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/migration.html#migrate-from-xcp">Migrate from XCP</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../virtualization/hypervisors/pve/troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/troubleshooting.html#ascii-codec-can-t-decode-byte-0xe2-in-position">ascii codec can’t decode byte 0xe2 in position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/troubleshooting.html#failed-to-run-vncproxy">Failed to run vncproxy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/troubleshooting.html#wrong-timezone">Wrong Timezone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/troubleshooting.html#corrupted-terminal-characters-or-no-utf-8-support">Corrupted Terminal Characters or No UTF-8 Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../virtualization/hypervisors/pve/troubleshooting.html#lxc-long-boot-times-or-no-console">LXC Long Boot Times or No Console</a></li>
 </ul>
 </li>
 </ul>
@@ -1280,7 +1194,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../certificate-authority/client-certificates.html#create-client-private-key-and-certificate">Create Client Private Key and Certificate</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../certificate-authority/exporting-certificates.html">Exporting Certificates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../certificate-authority/exporting-certificates.html">Exporting Certificates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../certificate-authority/exporting-certificates.html#extract-public-private-keys-from-pfx">Extract Public/Private Keys from PFX</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../certificate-authority/certificate-revocation-lists.html">Certificate Revocation Lists</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../certificate-authority/certificate-revocation-lists.html#revoking-certificate">Revoking Certificate</a></li>
 </ul>
@@ -1288,18 +1205,39 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../crashplan/index.html">Crashplan Pro</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../crashplan/index.html#ports">Ports</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../crashplan/index.html#files">Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../crashplan/index.html#docker-creation">Docker Creation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../crashplan/index.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../crashplan/index.html#using-subdomains">Using Subdomains</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../crashplan/index.html#using-subpaths">Using Subpaths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../crashplan/lxc.html">Crashplan LXC/KVM/Baremetal Install</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../crashplan/lxc.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../crashplan/lxc.html#files">Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../crashplan/lxc.html#install">Install</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../crashplan/lxc.html#dependencies">Dependencies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../crashplan/lxc.html#sshd-config">SSHD Config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../crashplan/lxc.html#install-service-gui">Install Service/GUI</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../crashplan/index.html#initial-setup">Initial Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../crashplan/index.html#add-existing-certs">Add Existing Certs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../crashplan/index.html#bump-inotify-limits">Bump Inotify Limits</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../crashplan/index.html#taking-over-existing-backups">Taking Over Existing Backups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../crashplan/lxc.html#connect-to-gui">Connect to GUI</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../crashplan/lxc.html#windows">Windows</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../crashplan/docker.html">Crashplan Docker Install</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../crashplan/docker.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../crashplan/docker.html#files">Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../crashplan/docker.html#docker-creation">Docker Creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../crashplan/docker.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../crashplan/docker.html#using-subdomains">Using Subdomains</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../crashplan/docker.html#using-subpaths">Using Subpaths</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../crashplan/docker.html#initial-setup">Initial Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../crashplan/docker.html#add-existing-certs">Add Existing Certs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../crashplan/adoption.html">Backup Set Adoption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../crashplan/troubleshooting.html">Crashplan Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../crashplan/troubleshooting.html#inotify-limits">Inotify Limits</a></li>
 </ul>
 </li>
 </ul>
@@ -1337,6 +1275,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../digikam/index.html#initial-setup">Initial Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dropbear/index.html">Dropbear</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dropbear/index.html#dropbear-setup">Dropbear Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dropbear/index.html#update-kernel">Update Kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dropbear/index.html#remote-unlock">Remote Unlock</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../email/index.html">Email</a><ul>
@@ -1390,7 +1334,6 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../fail2ban/index.html">fail2ban</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../fail2ban/index.html#docker-capabilities">Docker Capabilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../fail2ban/index.html#files">Files</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../fail2ban/setup-system.html">fail2ban for System</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../fail2ban/setup-system.html#docker-creation">Docker Creation</a></li>
@@ -1430,17 +1373,32 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../firefly/index.html">Firefly III</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../firefly/index.html#ports">Ports</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../firefly/index.html#files">Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../firefly/index.html#docker-creation">Docker Creation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../firefly/index.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../firefly/index.html#using-subdomains">Using Subdomains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../firefly/lxc.html">Firefly LXC/KVM/Baremetal Install</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../firefly/lxc.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../firefly/lxc.html#files">Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../firefly/lxc.html#install">Install</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../firefly/lxc.html#dependencies">Dependencies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../firefly/lxc.html#install-versioned">Install Versioned</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../firefly/index.html#postgress-backend">Postgress Backend</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../firefly/index.html#initial-setup">Initial Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../firefly/index.html#firefly-gotchas">Firefly Gotchas</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../firefly/index.html#attachment-disappears">Attachment Disappears</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../firefly/lxc.html#database-config">Database Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../firefly/lxc.html#updating-firefly">Updating Firefly</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../firefly/docker.html">Firefly III Docker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../firefly/docker.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../firefly/docker.html#files">Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../firefly/docker.html#docker-creation">Docker Creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../firefly/docker.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../firefly/docker.html#using-subdomains">Using Subdomains</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../firefly/docker.html#postgress-backend">Postgress Backend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../firefly/docker.html#initial-setup">Initial Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../firefly/docker.html#firefly-gotchas">Firefly Gotchas</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../firefly/docker.html#attachment-disappears">Attachment Disappears</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1459,6 +1417,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../gitea/index.html#mirrors">Mirrors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../gitea/index.html#importing-git-repositories">Importing Git Repositories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../gitea/index.html#ssl-client-cert-authentication">SSL Client Cert Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gitea/index.html#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../gitea/index.html#migration-fails-with-pq-duplicate-key-value-violates-unique-constraint-db-table-pkey">Migration Fails with <code class="docutils literal notranslate"><span class="pre">pq:</span> <span class="pre">duplicate</span> <span class="pre">key</span> <span class="pre">value</span> <span class="pre">violates</span> <span class="pre">unique</span> <span class="pre">constraint</span> <span class="pre">&quot;{DB</span> <span class="pre">TABLE}_pkey&quot;</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../gitea/index.html#mirror-fails-with-could-not-read-username">Mirror Fails with ‘could not read Username’</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../git-webhook-receiver/index.html">Git Webhook Receiver</a><ul>
@@ -1645,11 +1608,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../play-on/index.html">Play-On</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../play-on/index.html#system-requirements">System Requirements.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../play-on/index.html#ports">Ports</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../play-on/index.html#services-used-play-on">Services Used (Play-on)</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../play-on/index.html#ports">Ports</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../play-on/index.html#server-setup">Server Setup</a></li>
 </ul>
 </li>
@@ -1849,18 +1808,50 @@
 <li class="toctree-l4"><a class="reference internal" href="../wireguard/configuration.html#id1">Server</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../wireguard/configuration.html#client">Client</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../wireguard/configuration.html#id2">Testing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../wireguard/configuration.html#debugging">Debugging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../wireguard/configuration.html#troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../wireguard/configuration.html#ssh-not-working-ufw-allowing-ssh-no-nat">SSH not working, UFW allowing SSH, No NAT</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../wireguard/initramfs.html">wireguard-initramfs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../wireguard/initramfs.html#install">Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wireguard/initramfs.html#configure">Configure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../wireguard/initramfs.html#dropbear-remote-unlock">Dropbear Remote Unlock</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../zfs/index.html">ZFS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../zfs/index.html#zfs-install">ZFS Install</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../zfs/index.html#mounting-existing-zfs-pool">Mounting Existing ZFS Pool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../zfs/index.html#creating-new-zfs-pool">Creating New ZFS Pool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../zfs/index.html#upgrading-zfs-with-larger-disks">Upgrading ZFS with Larger Disks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../zfs/index.html#setup-monthly-zfs-scrub">Setup Monthly ZFS Scrub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../zfs/install.html">ZFS Install</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../zfs/install.html#creating-new-zfs-pool">Creating New ZFS Pool</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../zfs/operations.html">ZFS Operations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../zfs/operations.html#mounting-existing-zfs-pool">Mounting Existing ZFS Pool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../zfs/operations.html#zfs-filesystem-options">ZFS Filesystem Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../zfs/operations.html#id1">Setup Monthly ZFS Scrub</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../zfs/encryption.html">Encryption</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../zfs/encryption.html#mount-encrypted-dataset">Mount Encrypted Dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../zfs/encryption.html#change-encryption-keys-method">Change Encryption Keys/Method</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../zfs/sync-backup.html">Sync / Backup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../zfs/sync-backup.html#sync-ing-datasets">Sync’ing Datasets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../zfs/sync-backup.html#automation">Automation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../zfs/sync-backup.html#removing-old-snapshots">Removing Old Snapshots</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../zfs/replacing-disks.html">Replacing Disks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../zfs/replacing-disks.html#offline-replacement-bad-disk">Offline Replacement Bad Disk</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../zfs/replacing-disks.html#hotswap-bad-disk">Hotswap Bad Disk</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../zfs/replacing-disks.html#id1">Upgrade with Larger Disks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../zfs/replacing-disks.html#combination-of-raw-disks-and-partitions-in-pool">Combination of Raw Disks and Partitions in Pool</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../service-template.html">Service Templates</a></li>
@@ -1868,7 +1859,6 @@
 <p class="caption"><span class="caption-text">Game Servers</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../game/7days/index.html">7 Days to Die</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../game/7days/index.html#days-to-die-requirements">7 Days to Die Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../game/7days/index.html#ports">Ports</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../game/7days/index.html#files">Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../game/7days/index.html#docker-creation">Docker Creation</a></li>
@@ -1878,7 +1868,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../game/conan/index.html">Conan Exiles</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../game/conan/setup.html">Conan Exiles Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../game/conan/setup.html#conan-exiles-requirements">Conan Exiles Requirements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../game/conan/setup.html#ports">Ports</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../game/conan/setup.html#files">Files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../game/conan/setup.html#docker-creation">Docker Creation</a></li>
@@ -1914,6 +1903,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../scripts/copying-data.html">Copying Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../scripts/scripts.html">Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../scripts/steam-older-game-versions.html">Steam Older Game Versions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../scripts/video-editing-conversion.html">Video Editing / Conversion</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../scripts/video-editing-conversion.html#snippets">Snippets</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../scripts/video-editing-conversion.html#splitting-mkv-files-into-smaller-mkvs-based-on-timestamps">Splitting MKV Files into Smaller MKV’s Based on Timestamps</a></li>
@@ -2369,8 +2359,7 @@ Unifi Controller Ports<div class="summary-down docutils">
 <div class="d-flex col-sm-6 p-0 m-0 docutils">
 <div class="card w-100 border-0 docutils">
 <div class="card-body bg-light docutils">
-<p class="card-text">“Make controller discoverable on L2
-network” in controller setting</p>
+<p class="card-text">“Make controller discoverable on L2nnetwork” in controller setting</p>
 </div>
 </div>
 </div>
@@ -2842,7 +2831,7 @@ subnet 10.10.10.0 netmask 255.255.255.0 {
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../zfs/index.html" class="btn btn-neutral float-right" title="ZFS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../wireguard/index.html" class="btn btn-neutral float-right" title="Wireguard" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../ssh/troubleshooting.html" class="btn btn-neutral float-left" title="Troubleshooting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

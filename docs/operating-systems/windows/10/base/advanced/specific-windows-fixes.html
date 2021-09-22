@@ -15,8 +15,8 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/expand_width.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
 
   
@@ -126,6 +126,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../../apps/git.html#create-worktree">Create Worktree</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../apps/git.html#merge-worktree">Merge Worktree</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../apps/git.html#removing-worktree">Removing Worktree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../apps/git.html#migrate-git-stash-to-another-machine">Migrate git stash to another machine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../apps/git.html#repo-git-hooks">Repo git hooks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../apps/git.html#list-all-respositories-for-an-organization-user">List All Respositories for An Organization/User</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../apps/git.html#pull-latest-tarball-release-from-github">Pull Latest Tarball Release from Github</a></li>
 </ul>
@@ -201,20 +203,38 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../../apps/gpg/usage/windows.html#forward-gpg-agent-through-multiple-servers">Forward GPG Agent Through Multiple Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../apps/gpg/usage/ubuntu.html">Ubuntu GPG Yubikey</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../apps/gpg/usage/ubuntu.html#required-materials">Required Materials</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../apps/gpg/usage/ubuntu.html#configure-gpg-agent">Configure GPG Agent</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../apps/gpg/usage/ubuntu.html#allow-user-to-automount-yubikeys">Allow User to Automount Yubikeys</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../apps/gpg/usage/ubuntu.html#disable-gnome-ssh-fuckery">Disable Gnome SSH Fuckery</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../apps/gpg/usage/ubuntu.html#verify-ssh-works">Verify SSH Works</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../apps/gpg/usage/debian.html">Debian GPG Yubikey</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../apps/gpg/usage/debian.html#required-materials">Required Materials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../apps/gpg/usage/debian.html#configure-gpg-gpg-agent">Configure GPG/GPG Agent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../apps/gpg/usage/debian.html#verify-ssh-works">Verify SSH Works</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../apps/gpg/usage/encryption.html">Encrypting Files</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../apps/gpg/usage/encryption.html#required-materials">Required Materials</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../apps/gpg/usage/encryption.html#import-public-key">Import Public Key</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../apps/gpg/usage/encryption.html#encrypt-file">Encrypt File</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../apps/gpg/usage/encryption.html#create-a-detached-signature">Create a Detached Signature</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../apps/gpg/usage/encryption.html#validate-file-using-detached-signature">Validate File Using Detached Signature</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../apps/gpg/usage/windows-forward-gpg.html">Windows Forward GPG</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../apps/gpg/usage/windows-forward-gpg.html#setup-gpg-relay-in-wsl">Setup GPG Relay in WSL</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../apps/gpg/usage/windows-forward-gpg.html#required-materials">Required Materials</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../apps/gpg/usage/windows-forward-gpg.html#install-wsl-usb-bridges-on-windows">Install WSL USB Bridges on Windows</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../apps/gpg/usage/windows-forward-gpg.html#install-gpg-relay-on-wsl">Install GPG Relay on WSL</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../apps/gpg/usage/windows-forward-gpg.html#forward-gpg-to-linux">Forward GPG to Linux</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../apps/gpg/usage/windows-forward-gpg.html#determine-sockets">Determine Sockets</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../apps/gpg/usage/windows-forward-gpg.html#update-sshd-config">Update SSHD Config</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../apps/gpg/usage/windows-forward-gpg.html#create-gpg-tunnel-config">Create GPG Tunnel Config</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../apps/gpg/usage/windows-forward-gpg.html#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../apps/gpg/usage/windows-forward-gpg.html#notify-await-message-on-start"><code class="docutils literal notranslate"><span class="pre">--notify-await</span></code> message on start</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../../../apps/gpg/usage/windows-forward-gpg.html#gpg-error-retrieving-gpgid-via-wkd-general-error"><code class="docutils literal notranslate"><span class="pre">gpg:</span> <span class="pre">error</span> <span class="pre">retrieving</span> <span class="pre">{GPGID}</span> <span class="pre">via</span> <span class="pre">WKD:</span> <span class="pre">General</span> <span class="pre">error</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../apps/gpg/usage/operations.html">GPG Operations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../apps/gpg/usage/operations.html#import">Import</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../apps/gpg/usage/operations.html#export">Export</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../apps/gpg/usage/operations.html#encrypt">Encrypt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../apps/gpg/usage/operations.html#create-a-detached-signature">Create a Detached Signature</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../apps/gpg/usage/operations.html#validate-file-using-detached-signature">Validate File Using Detached Signature</a></li>
 </ul>
 </li>
 </ul>
@@ -227,6 +247,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../../apps/gpg/troubleshooting.html#please-insert-card-with-serial-number">Please insert card with serial number</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../apps/movie-studio.html">Movie Studio</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../apps/movie-studio.html#encoding-templates">Encoding Templates</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../apps/mutt.html">Mutt Maildir Setup</a><ul>
@@ -291,115 +315,12 @@
 </ul>
 <p class="caption"><span class="caption-text">Configuration Management</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../configuration-management/saltstack/index.html">Saltstack</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../configuration-management/saltstack/requirements.html">Requirements</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../configuration-management/saltstack/requirements.html#ports">Ports</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../configuration-management/saltstack/requirements.html#files">Files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../configuration-management/saltstack/requirements.html#service-directory-best-practices">Service Directory Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../configuration-management/ansible/index.html">Ansible</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../configuration-management/ansible/commands.html">Common Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../configuration-management/ansible/commands.html#grab-remote-facts-from-host">Grab Remote Facts from Host</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../configuration-management/saltstack/service-setup.html">Service Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../configuration-management/saltstack/service-setup.html#use-tls-for-protocol-encryption">Use TLS for protocol encryption</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../configuration-management/saltstack/service-setup.html#non-root-user">Non-root User</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-master/index.html">Salt Master</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-master/setup.html">Salt Master Configuration</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-master/setup.html#file-section">File Section</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-master/setup.html#pillar-section">Pillar Section</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-master/setup.html#primary-section">Primary Section</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-master/setup.html#security-section">Security Section</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-master/setup.html#state-section">State Section</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-master/pillar.html">Using Pillar</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-master/pillar.html#pillar-top-sls">Pillar top.sls</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-master/pillar.html#pillar-environment-data">Pillar Environment Data</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-master/nodegroups.html">Nodegroups</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-master/nodegroups.html#create-nodegroups">Create Nodegroups</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-master/nodegroups.html#apply-state-to-nodegroups">Apply State to Nodegroups</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-master/state-management.html">State Management</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-master/state-management.html#install-a-package">Install a Package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-master/state-management.html#deploy-file-with-content-from-server">Deploy File with Content from Server</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-master/formula-management.html">Formula Management</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-master/minion-management.html">Minion Management</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-master/minion-management.html#signing-cert-requests">Signing Cert Requests</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-master/minion-management.html#revoking-certs">Revoking Certs</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-master/gpg.html">GPG Encrypt Pillar Data</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-master/gpg.html#encrypting-data">Encrypting Data</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-master/gpg.html#encrypt-shadow-passwords">Encrypt Shadow Passwords</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-master/gpg.html#add-to-pillar">Add to Pillar</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-master/gpg.html#refresh-pillar-and-push-data">Refresh Pillar and Push Data</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-minion/index.html">Salt Minion</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-minion/bootstrap-install.html">Bootstrap Install</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-minion/linux-manual-install.html">Linux Manual Install</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-minion/windows-manual-install.html">Windows Manual Install</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-minion/windows-manual-install.html#windows-cli-install">Windows CLI Install</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-minion/windows-manual-install.html#windows-gui-install">Windows GUI Install</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-minion/minion-configuration.html">Minion Configuration</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-minion/minion-configuration.html#schedule-section">Schedule Section</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-minion/minion-configuration.html#file-section">File Section</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-minion/minion-configuration.html#logging-section">Logging Section</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-minion/minion-configuration.html#pillar-section">Pillar Section</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-minion/minion-configuration.html#primary-section">Primary Section</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-minion/minion-configuration.html#security-section">Security Section</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-minion/minion-configuration.html#startup-section">Startup Section</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/salt-minion/minion-configuration.html#state-section">State Section</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../configuration-management/saltstack/frequent-commands.html">Frequent Commands</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../configuration-management/saltstack/frequent-commands.html#general-master-commands">General Master Commands</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/frequent-commands.html#run-command-on-minions-from-salt-master">Run Command On Minions From Salt Master</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/frequent-commands.html#get-status-of-all-minions">Get Status of All Minions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/frequent-commands.html#show-minions-on-a-subnet">Show Minions On A Subnet</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/frequent-commands.html#show-avaliable-grains-on-minions">Show Avaliable Grains On Minions</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../configuration-management/saltstack/frequent-commands.html#jobs">Jobs</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/frequent-commands.html#list-active-jobs">List Active Jobs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/frequent-commands.html#generate-new-master-certificates">Generate New Master Certificates</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../configuration-management/saltstack/frequent-commands.html#general-minion-commands">General Minion Commands</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/frequent-commands.html#run-a-specific-state">Run A Specific State</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/frequent-commands.html#manual-minion-run-with-specific-environments">Manual Minion Run with Specific Environments</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../configuration-management/saltstack/frequent-commands.html#print-only-changes-or-errors">Print Only Changes or Errors</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../configuration-management/saltstack/common-issues.html">Common Issues</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../configuration-management/saltstack/common-issues.html#run-salt-minion-with-debugging">Run Salt Minion with Debugging</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../configuration-management/saltstack/common-issues.html#run-salt-master-with-debugging">Run Salt Master with Debugging</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../configuration-management/saltstack/common-issues.html#debug-jinja-templates">Debug jinja Templates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../configuration-management/saltstack/common-issues.html#minon-frequently-times-out-or-does-not-connect">Minon Frequently Times Out or does Not Connect</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../configuration-management/saltstack/common-issues.html#minion-did-not-return-not-connected">Minion did not return. [Not connected].</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../configuration-management/saltstack/common-issues.html#rendering-sls-pillar-data-failed-jinja-variable">Rendering SLS ‘{PILLAR DATA}’ failed: Jinja variable …</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../configuration-management/saltstack/common-issues.html#no-top-file-or-external-nodes-data-matches-found">No Top file or External Nodes Data Matches Found</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../configuration-management/saltstack/common-issues.html#show-avaliable-files-to-minions">Show Avaliable Files to Minions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../configuration-management/saltstack/common-issues.html#clear-minion-cache">Clear Minion Cache</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../configuration-management/saltstack/working-notes.html">Working Notes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../configuration-management/saltstack/working-notes.html#using-chocolately-for-windows">Using Chocolately for Windows</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../configuration-management/ansible/gpg-vault.html">Vault</a></li>
 </ul>
 </li>
 </ul>
@@ -418,6 +339,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../networking/ubiquiti/edge-os.html">Edge OS</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../networking/ubiquiti/edge-os.html#disable-ubnt-discovery-service">Disable UBNT Discovery Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../networking/ubiquiti/edge-os.html#create-dhcp-static-entries">Create DHCP Static Entries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../networking/ubiquiti/edge-os.html#create-dns-host-entries">Create DNS / Host Entries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../networking/ubiquiti/edge-os.html#hairpin-nat-internal-only-nat-reflection">Hairpin NAT (Internal Only NAT Reflection)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../networking/ubiquiti/edge-os.html#deleted-dhcp-host-still-resolves-in-dns">Deleted DHCP Host Still Resolves in DNS</a></li>
@@ -516,37 +438,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../../networking/ubiquiti/example-vlan-network/vlan-101.html#ingress-traffic">Ingress Traffic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../networking/ubiquiti/example-vlan-network/vlan-101.html#unifi-aps">Unifi APs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../networking/ubiquiti/example-vlan-network/vlan-101.html#implementation-concepts">Implementation Concepts</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../services/wireguard/index.html">Wireguard</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../services/wireguard/linux-setup.html">Wireguard Linux Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/wireguard/linux-setup.html#debian">Debian</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/wireguard/linux-setup.html#ubuntu">Ubuntu</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/wireguard/linux-setup.html#autostart-tunnel-as-service">Autostart Tunnel as Service</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../services/wireguard/windows-setup.html">Wireguard Windows Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/wireguard/windows-setup.html#slient-install">Slient Install</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/wireguard/windows-setup.html#add-pre-configured-tunnel">Add Pre-configured Tunnel</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../services/wireguard/configuration.html">Wireguard Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/wireguard/configuration.html#ports">Ports</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/wireguard/configuration.html#key-generation">Key Generation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/wireguard/configuration.html#point-to-point-private-network">Point To Point Private Network</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../services/wireguard/configuration.html#server">Server</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../services/wireguard/configuration.html#clients">Clients</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../services/wireguard/configuration.html#testing">Testing</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/wireguard/configuration.html#vpn-network">VPN Network</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../services/wireguard/configuration.html#id1">Server</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../services/wireguard/configuration.html#client">Client</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../services/wireguard/configuration.html#id2">Testing</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -936,7 +827,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../20H2/security/index.html">Windows Security</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../20H2/security/index.html">Security</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../20H2/security/virus-and-threat-protection/index.html">1. Virus &amp; threat protection</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../20H2/security/virus-and-threat-protection/virus-and-threat-protection-settings.html">1.1. Virus &amp; threat protection settings</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../20H2/security/virus-and-threat-protection/virus-and-threat-protection-settings.html#cloud-delivered-protection">1.1.1. Cloud-delivered protection</a></li>
@@ -957,11 +848,11 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../20H2/security/app-and-browser-control/index.html">3. App &amp; browser control</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../20H2/security/app-and-browser-control/reputation-based-protection-setttings.html">3.1. Reputation-based protection settings</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="../../20H2/security/app-and-browser-control/reputation-based-protection-setttings.html#check-apps-and-files">3.1.1. Check apps and files</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../20H2/security/app-and-browser-control/reputation-based-protection-setttings.html#smartscreen-for-microsoft-edge">3.1.2. SmartScreen for Microsoft Edge</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../20H2/security/app-and-browser-control/reputation-based-protection-setttings.html#potentially-unwanted-app-blocking">3.1.3. Potentially unwanted app blocking</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../../20H2/security/app-and-browser-control/reputation-based-protection-setttings.html#smartscreen-for-microsoft-store-apps">3.1.4. SmartScreen for Microsoft Store apps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../20H2/security/app-and-browser-control/reputation-based-protection-settings.html">3.1. Reputation-based protection settings</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../20H2/security/app-and-browser-control/reputation-based-protection-settings.html#check-apps-and-files">3.1.1. Check apps and files</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../20H2/security/app-and-browser-control/reputation-based-protection-settings.html#smartscreen-for-microsoft-edge">3.1.2. SmartScreen for Microsoft Edge</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../20H2/security/app-and-browser-control/reputation-based-protection-settings.html#potentially-unwanted-app-blocking">3.1.3. Potentially unwanted app blocking</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../20H2/security/app-and-browser-control/reputation-based-protection-settings.html#smartscreen-for-microsoft-store-apps">3.1.4. SmartScreen for Microsoft Store apps</a></li>
 </ul>
 </li>
 </ul>
@@ -1062,6 +953,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../ubuntu/additional-fixes.html#grub-os-prober">Grub OS Prober</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../ubuntu/additional-fixes.html#nxdomain-errors-in-syslog">NXDOMAIN Errors in Syslog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../ubuntu/additional-fixes.html#disable-ipv6">Disable IPv6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../ubuntu/additional-fixes.html#shadow-passwords">Shadow Passwords</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../ubuntu/threadripper-2990wx.html">2990WX Linux Patches</a><ul>
@@ -1081,40 +973,62 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../ubuntu/preseed/build-custom-iso.html">Build Custom ISO</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../ubuntu/apt-auto-selections.html">Apt Auto Selection</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../ubuntu/apt-auto-selections.html#install-with-options">Install with Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../ubuntu/apt-auto-selections.html#set-options">Set Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../ubuntu/apt-auto-selections.html#example">Example</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 <p class="caption"><span class="caption-text">Virtualization</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/index.html">Prxomox (PVE)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/index.html#ports">Ports</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/index.html#install-service">Install Service</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/index.html#configuration">Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/index.html#enable-automatic-non-subscription-updates">Enable Automatic &amp; Non-subscription Updates</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/index.html#add-local-user-sudo-secure-ssh">Add Local User, Sudo, &amp; Secure SSH</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/index.html#enable-fail2ban">Enable fail2ban</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/index.html#add-wireguard-kernel-support">Add Wireguard Kernel Support</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/index.html#enable-hardware-virtualization-iommu">Enable Hardware Virtualization (IOMMU)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/index.html#setup-networking">Setup Networking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/index.html">Proxmox (PVE)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/install.html">Prxomox Install</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/install.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/install.html#install-service">Install Service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/install.html#configuration">Configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/install.html#enable-automatic-non-subscription-updates">Enable Automatic &amp; Non-subscription Updates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/install.html#add-local-user-sudo-secure-ssh">Add Local User, Sudo, &amp; Secure SSH</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/install.html#enable-fail2ban">Enable fail2ban</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/install.html#add-wireguard-kernel-support">Add Wireguard Kernel Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/install.html#enable-hardware-virtualization-iommu">Enable Hardware Virtualization (IOMMU)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/install.html#setup-networking">Setup Networking</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/index.html#add-to-datacenter-cluster">Add to Datacenter Cluster</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/index.html#firewall">Firewall</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/index.html#datacenter-firewall">Datacenter Firewall</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/index.html#cluster-firewall">Cluster Firewall</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/install.html#add-to-datacenter-cluster">Add to Datacenter Cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/install.html#firewall">Firewall</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/install.html#datacenter-firewall">Datacenter Firewall</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/install.html#cluster-firewall">Cluster Firewall</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/index.html#remove-subscription-notice">Remove Subscription Notice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/index.html#mount-external-zfs-pool">Mount External ZFS Pool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/index.html#add-isos">Add ISOs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/index.html#add-container-templates">Add Container Templates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/index.html#docker-migration">Docker Migration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/index.html#migrate-from-xcp">Migrate from XCP</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/index.html#troubleshooting">Troubleshooting</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/index.html#ascii-codec-can-t-decode-byte-0xe2-in-position">ascii codec can’t decode byte 0xe2 in position</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/index.html#wrong-timezone">Wrong Timezone</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/index.html#corrupted-terminal-characters-or-no-utf-8-support">Corrupted Terminal Characters or No UTF-8 Support</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/index.html#lxc-long-boot-times-or-no-console">LXC Long Boot Times or No Console</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/install.html#remove-subscription-notice">Remove Subscription Notice</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/install.html#disable-via-service">Disable via Service</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/install.html#disable-via-javascript">Disable via Javascript</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/install.html#mount-external-zfs-pool">Mount External ZFS Pool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/install.html#add-isos">Add ISOs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/install.html#add-container-templates">Add Container Templates</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/gpu-passthru.html">GPU Passthru</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/gpu-passthru.html#pve-cluster-node">PVE Cluster Node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/gpu-passthru.html#lxc-container">LXC Container</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/migration.html">Migration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/migration.html#docker-migration">Docker Migration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/migration.html#migrate-from-xcp">Migrate from XCP</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/troubleshooting.html">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/troubleshooting.html#ascii-codec-can-t-decode-byte-0xe2-in-position">ascii codec can’t decode byte 0xe2 in position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/troubleshooting.html#failed-to-run-vncproxy">Failed to run vncproxy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/troubleshooting.html#wrong-timezone">Wrong Timezone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/troubleshooting.html#corrupted-terminal-characters-or-no-utf-8-support">Corrupted Terminal Characters or No UTF-8 Support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../virtualization/hypervisors/pve/troubleshooting.html#lxc-long-boot-times-or-no-console">LXC Long Boot Times or No Console</a></li>
 </ul>
 </li>
 </ul>
@@ -1280,7 +1194,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../../services/certificate-authority/client-certificates.html#create-client-private-key-and-certificate">Create Client Private Key and Certificate</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../services/certificate-authority/exporting-certificates.html">Exporting Certificates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../services/certificate-authority/exporting-certificates.html">Exporting Certificates</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/certificate-authority/exporting-certificates.html#extract-public-private-keys-from-pfx">Extract Public/Private Keys from PFX</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../services/certificate-authority/certificate-revocation-lists.html">Certificate Revocation Lists</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../services/certificate-authority/certificate-revocation-lists.html#revoking-certificate">Revoking Certificate</a></li>
 </ul>
@@ -1288,18 +1205,39 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../services/crashplan/index.html">Crashplan Pro</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../services/crashplan/index.html#ports">Ports</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../services/crashplan/index.html#files">Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../services/crashplan/index.html#docker-creation">Docker Creation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../services/crashplan/index.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/crashplan/index.html#using-subdomains">Using Subdomains</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/crashplan/index.html#using-subpaths">Using Subpaths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../services/crashplan/lxc.html">Crashplan LXC/KVM/Baremetal Install</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/crashplan/lxc.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/crashplan/lxc.html#files">Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/crashplan/lxc.html#install">Install</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../services/crashplan/lxc.html#dependencies">Dependencies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../services/crashplan/lxc.html#sshd-config">SSHD Config</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../services/crashplan/lxc.html#install-service-gui">Install Service/GUI</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../services/crashplan/index.html#initial-setup">Initial Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/crashplan/index.html#add-existing-certs">Add Existing Certs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/crashplan/index.html#bump-inotify-limits">Bump Inotify Limits</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/crashplan/index.html#taking-over-existing-backups">Taking Over Existing Backups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/crashplan/lxc.html#connect-to-gui">Connect to GUI</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../services/crashplan/lxc.html#windows">Windows</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../services/crashplan/docker.html">Crashplan Docker Install</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/crashplan/docker.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/crashplan/docker.html#files">Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/crashplan/docker.html#docker-creation">Docker Creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/crashplan/docker.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../services/crashplan/docker.html#using-subdomains">Using Subdomains</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../services/crashplan/docker.html#using-subpaths">Using Subpaths</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/crashplan/docker.html#initial-setup">Initial Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../services/crashplan/docker.html#add-existing-certs">Add Existing Certs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../services/crashplan/adoption.html">Backup Set Adoption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../services/crashplan/troubleshooting.html">Crashplan Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/crashplan/troubleshooting.html#inotify-limits">Inotify Limits</a></li>
 </ul>
 </li>
 </ul>
@@ -1337,6 +1275,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../services/digikam/index.html#initial-setup">Initial Setup</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../services/dropbear/index.html">Dropbear</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../services/dropbear/index.html#dropbear-setup">Dropbear Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../services/dropbear/index.html#update-kernel">Update Kernel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../services/dropbear/index.html#remote-unlock">Remote Unlock</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../services/email/index.html">Email</a><ul>
@@ -1390,7 +1334,6 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../services/fail2ban/index.html">fail2ban</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../services/fail2ban/index.html#docker-capabilities">Docker Capabilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../services/fail2ban/index.html#files">Files</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../services/fail2ban/setup-system.html">fail2ban for System</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../services/fail2ban/setup-system.html#docker-creation">Docker Creation</a></li>
@@ -1430,17 +1373,32 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../services/firefly/index.html">Firefly III</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../services/firefly/index.html#ports">Ports</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../services/firefly/index.html#files">Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../services/firefly/index.html#docker-creation">Docker Creation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../services/firefly/index.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/firefly/index.html#using-subdomains">Using Subdomains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../services/firefly/lxc.html">Firefly LXC/KVM/Baremetal Install</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/firefly/lxc.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/firefly/lxc.html#files">Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/firefly/lxc.html#install">Install</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../services/firefly/lxc.html#dependencies">Dependencies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../services/firefly/lxc.html#install-versioned">Install Versioned</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../services/firefly/index.html#postgress-backend">Postgress Backend</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../services/firefly/index.html#initial-setup">Initial Setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../services/firefly/index.html#firefly-gotchas">Firefly Gotchas</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/firefly/index.html#attachment-disappears">Attachment Disappears</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/firefly/lxc.html#database-config">Database Config</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/firefly/lxc.html#updating-firefly">Updating Firefly</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../services/firefly/docker.html">Firefly III Docker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/firefly/docker.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/firefly/docker.html#files">Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/firefly/docker.html#docker-creation">Docker Creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/firefly/docker.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../services/firefly/docker.html#using-subdomains">Using Subdomains</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/firefly/docker.html#postgress-backend">Postgress Backend</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/firefly/docker.html#initial-setup">Initial Setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/firefly/docker.html#firefly-gotchas">Firefly Gotchas</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../services/firefly/docker.html#attachment-disappears">Attachment Disappears</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1459,6 +1417,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../../services/gitea/index.html#mirrors">Mirrors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../services/gitea/index.html#importing-git-repositories">Importing Git Repositories</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../services/gitea/index.html#ssl-client-cert-authentication">SSL Client Cert Authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../services/gitea/index.html#troubleshooting">Troubleshooting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/gitea/index.html#migration-fails-with-pq-duplicate-key-value-violates-unique-constraint-db-table-pkey">Migration Fails with <code class="docutils literal notranslate"><span class="pre">pq:</span> <span class="pre">duplicate</span> <span class="pre">key</span> <span class="pre">value</span> <span class="pre">violates</span> <span class="pre">unique</span> <span class="pre">constraint</span> <span class="pre">&quot;{DB</span> <span class="pre">TABLE}_pkey&quot;</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/gitea/index.html#mirror-fails-with-could-not-read-username">Mirror Fails with ‘could not read Username’</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../services/git-webhook-receiver/index.html">Git Webhook Receiver</a><ul>
@@ -1645,11 +1608,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../services/play-on/index.html">Play-On</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../services/play-on/index.html#system-requirements">System Requirements.</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../services/play-on/index.html#ports">Ports</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/play-on/index.html#services-used-play-on">Services Used (Play-on)</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../services/play-on/index.html#ports">Ports</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../services/play-on/index.html#server-setup">Server Setup</a></li>
 </ul>
 </li>
@@ -1849,18 +1808,50 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../../services/wireguard/configuration.html#id1">Server</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../services/wireguard/configuration.html#client">Client</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../services/wireguard/configuration.html#id2">Testing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../services/wireguard/configuration.html#debugging">Debugging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../services/wireguard/configuration.html#troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/wireguard/configuration.html#ssh-not-working-ufw-allowing-ssh-no-nat">SSH not working, UFW allowing SSH, No NAT</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../services/wireguard/initramfs.html">wireguard-initramfs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/wireguard/initramfs.html#install">Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/wireguard/initramfs.html#configure">Configure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/wireguard/initramfs.html#dropbear-remote-unlock">Dropbear Remote Unlock</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../services/zfs/index.html">ZFS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../services/zfs/index.html#zfs-install">ZFS Install</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../services/zfs/index.html#mounting-existing-zfs-pool">Mounting Existing ZFS Pool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../services/zfs/index.html#creating-new-zfs-pool">Creating New ZFS Pool</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../services/zfs/index.html#upgrading-zfs-with-larger-disks">Upgrading ZFS with Larger Disks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../services/zfs/index.html#setup-monthly-zfs-scrub">Setup Monthly ZFS Scrub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../services/zfs/install.html">ZFS Install</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/zfs/install.html#creating-new-zfs-pool">Creating New ZFS Pool</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../services/zfs/operations.html">ZFS Operations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/zfs/operations.html#mounting-existing-zfs-pool">Mounting Existing ZFS Pool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/zfs/operations.html#zfs-filesystem-options">ZFS Filesystem Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/zfs/operations.html#id1">Setup Monthly ZFS Scrub</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../services/zfs/encryption.html">Encryption</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/zfs/encryption.html#mount-encrypted-dataset">Mount Encrypted Dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/zfs/encryption.html#change-encryption-keys-method">Change Encryption Keys/Method</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../services/zfs/sync-backup.html">Sync / Backup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/zfs/sync-backup.html#sync-ing-datasets">Sync’ing Datasets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/zfs/sync-backup.html#automation">Automation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/zfs/sync-backup.html#removing-old-snapshots">Removing Old Snapshots</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../services/zfs/replacing-disks.html">Replacing Disks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/zfs/replacing-disks.html#offline-replacement-bad-disk">Offline Replacement Bad Disk</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/zfs/replacing-disks.html#hotswap-bad-disk">Hotswap Bad Disk</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/zfs/replacing-disks.html#id1">Upgrade with Larger Disks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../services/zfs/replacing-disks.html#combination-of-raw-disks-and-partitions-in-pool">Combination of Raw Disks and Partitions in Pool</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../services/service-template.html">Service Templates</a></li>
@@ -1868,7 +1859,6 @@
 <p class="caption"><span class="caption-text">Game Servers</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../game/7days/index.html">7 Days to Die</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../game/7days/index.html#days-to-die-requirements">7 Days to Die Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../game/7days/index.html#ports">Ports</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../game/7days/index.html#files">Files</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../game/7days/index.html#docker-creation">Docker Creation</a></li>
@@ -1878,7 +1868,6 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../game/conan/index.html">Conan Exiles</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../game/conan/setup.html">Conan Exiles Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../game/conan/setup.html#conan-exiles-requirements">Conan Exiles Requirements</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../game/conan/setup.html#ports">Ports</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../game/conan/setup.html#files">Files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../game/conan/setup.html#docker-creation">Docker Creation</a></li>
@@ -1914,6 +1903,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../scripts/copying-data.html">Copying Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../scripts/scripts.html">Scripts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../scripts/steam-older-game-versions.html">Steam Older Game Versions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../scripts/video-editing-conversion.html">Video Editing / Conversion</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../scripts/video-editing-conversion.html#snippets">Snippets</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../scripts/video-editing-conversion.html#splitting-mkv-files-into-smaller-mkvs-based-on-timestamps">Splitting MKV Files into Smaller MKV’s Based on Timestamps</a></li>
@@ -2062,8 +2052,8 @@ recommendation here is <strong>not</strong> apply these.</p>
 from safe mode</a>.</p>
 <p>Be sure to hold <code class="docutils literal notranslate"><span class="pre">shift</span></code> until the troubleshooting options appear.
 <span class="guilabel">Login Screen › shift (hold) + Restart › Troubleshoot › Advanced options › Startup Settings › Restart -&gt; Enable Safe Mode with Command Prompt</span></p>
-<div class="literal-block-wrapper docutils container" id="id13">
-<div class="code-block-caption"><span class="caption-text">Find the correct user and set password.</span><a class="headerlink" href="#id13" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">Find the correct user and set password.</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="n">user</span>
 <span class="n">net</span> <span class="n">user</span> <span class="p">{</span><span class="n">USER</span><span class="p">}</span> <span class="p">{</span><span class="n">PASS</span><span class="p">}</span>
 </pre></div>
@@ -2093,28 +2083,62 @@ default.</p>
 <p>Recently <a class="reference external" href="https://arstechnica.com/gadgets/2017/08/microsoft-to-remove-full-refs-support-from-windows-10-pro-push-workstation-sku/">ReFS create moved to Windows 10 Workstation</a>, effectively removing
 the ability to create ReFS containers in Windows 10 Pro, but they can still be
 read.</p>
-<div class="wregedit docutils container" id="REFS single drive regedit">
-<span class="guilabel">Start › regedit.msc (as admin)</span><table class="docutils align-default">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\MiniNT</span></td>
-</tr>
-<tr class="row-even"><td><p>AllowRefsFormatOverNonmirrorVolume</p></td>
-<td><p>DWORD</p></td>
-<td><p>1</p></td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<div><p>Reboot to enable changes.</p>
-</div></blockquote>
+<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+REFS single drive regedit<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">Reboot to enable changes.</p>
 </div>
-<div class="literal-block-wrapper docutils container" id="id14">
-<div class="code-block-caption"><span class="caption-text">Setup disk for ReFS (powershell as admin).</span><a class="headerlink" href="#id14" title="Permalink to this code">¶</a></div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\MiniNT</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">AllowRefsFormatOverNonmirrorVolume</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">DWORD</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">1</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">Setup disk for ReFS (powershell as admin).</span><a class="headerlink" href="#id9" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">diskpart</span>
 <span class="n">list</span> <span class="n">disk</span>
 <span class="nb">select </span><span class="n">disk</span> <span class="p">[</span><span class="c">#]</span>
@@ -2131,9 +2155,9 @@ read.</p>
 <li><p>Reformat drive with <a class="reference external" href="https://docs.microsoft.com/en-us/windows-server/storage/refs/integrity-streams">integrity enabled</a>.</p></li>
 </ul>
 </div></blockquote>
-<div class="literal-block-wrapper docutils container" id="id15">
+<div class="literal-block-wrapper docutils container" id="id10">
 <div class="code-block-caption"><span class="caption-text">Format Single Drive with Integrity Enabled &amp; Verify with Test File
-(powershell as admin).</span><a class="headerlink" href="#id15" title="Permalink to this code">¶</a></div>
+(powershell as admin).</span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>format X: /fs:refs /i:enabled /q
 echo $null &gt;&gt; X:\test
 Get-Item X:\test | Get-FileIntegrity
@@ -2149,25 +2173,67 @@ Get-Item X:\test | Get-FileIntegrity
 checks after windows crashes), which cause 100% disk usage on system PID 4.
 <a class="reference external" href="http://bakins-bits.com/wordpress/?p=195">Disabling ReFS Scheduled Tasks</a> prevents these from automatically being
 scheduled, but can still be manually run.</p>
-<div class="wtaskscheduler docutils container" id="Disable REFS scheduled tasks task">
-<span class="guilabel">Start › Task Scheduler › Task Scheduler Library</span><table class="docutils align-default">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td colspan="3"><span class="guilabel">Microsoft › Windows › Data Integrity Scan</span></td>
-</tr>
-<tr class="row-even"><td><p>Data Integrity Scan</p></td>
-<td><p>Disabled</p></td>
-</tr>
-<tr class="row-odd"><td><p>Data Integrity Scan for Crash Recovery</p></td>
-<td><p>Disabled</p></td>
-</tr>
-</tbody>
-</table>
+<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Disable REFS scheduled tasks task<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
 </div>
 </div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › Task Scheduler › Task Scheduler Library › Microsoft › Windows › Data Integrity Scan</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">Data Integrity Scan</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DISABLED</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">Data Integrity Scan for Crash Recovery</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DISABLED</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details></div>
 <div class="section" id="addressing-100-disk-usage-issues">
 <h2>Addressing 100% Disk Usage Issues<a class="headerlink" href="#addressing-100-disk-usage-issues" title="Permalink to this headline">¶</a></h2>
 <p>Generally speaking, 100% disk usage issues usually means there’s a Filesystem
@@ -2176,79 +2242,240 @@ this but may break functionality of your system.</p>
 <p>These services either do user data tracking, or are a major performance hit for
 SSD’s. Disable by <span class="guilabel">RMB › stop</span> and
 <span class="guilabel">RMB › properties › disable</span>.</p>
-<div class="wservice docutils container" id="Disable search service">
-<span class="guilabel">Start › services.msc</span><table class="docutils align-default" id="id16">
-<caption><span class="caption-text">Disable search service</span><a class="headerlink" href="#id16" title="Permalink to this table">¶</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td colspan="3"><span class="guilabel">Windows Search › General</span></td>
-</tr>
-<tr class="row-even"><td><p>Startup type</p></td>
-<td><p>Disabled</p></td>
-</tr>
-<tr class="row-odd"><td><p>Service status</p></td>
-<td><p>Stopped</p></td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<div><p>See <a class="reference external" href="https://superuser.com/questions/1016152/100-ssd-activity-0-r-w-speed-system-hang-issue">SSD activity issue</a>.</p>
-</div></blockquote>
-</div>
-<div class="wservice docutils container" id="Disable superfetch service">
-<table class="docutils align-default" id="id17">
-<caption><span class="caption-text">Disable superfetch service</span><a class="headerlink" href="#id17" title="Permalink to this table">¶</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td colspan="3"><span class="guilabel">Windows Search › General</span></td>
-</tr>
-<tr class="row-even"><td><p>Startup type</p></td>
-<td><p>Disabled</p></td>
-</tr>
-<tr class="row-odd"><td><p>Service status</p></td>
-<td><p>Stopped</p></td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<div><p>See <a class="reference external" href="https://www.ghacks.net/2018/05/01/all-the-issues-of-windows-10-version-1803-you-may-run-into/">100% CPU usage issue</a> and <a class="reference external" href="http://whatsabyte.com/windows/system-and-compressed-memory-high-cpu/">System &amp; Compressed Memory Service issue</a>.</p>
-</div></blockquote>
+<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Disable search service<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
 </div>
 </div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › services.msc › Windows Search › General</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">Service name</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">WService</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">Startup type</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DISABLED</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">Service status</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">STOPPED</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span>
+<a class="sphinx-bs badge badge-info badge-pill reference external" href="https://superuser.com/questions/1016152/100-ssd-activity-0-r-w-speed-system-hang-issue"><span>Reference</span></a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Disable superfetch service<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › services.msc › Superfetch › General</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">Service name</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">SysMain</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">Startup type</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DISABLED</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">Service status</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">STOPPED</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span>
+<a class="sphinx-bs badge badge-info badge-pill reference external" href="https://www.ghacks.net/2018/05/01/all-the-issues-of-windows-10-version-1803-you-may-run-into/"><span>Reference</span></a>
+<a class="sphinx-bs badge badge-info badge-pill reference external" href="http://whatsabyte.com/windows/system-and-compressed-memory-high-cpu/"><span>Reference</span></a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details></div>
 <div class="section" id="disable-prefetch-and-superfetch">
-<h2><a class="reference external" href="https://www.thewindowsclub.com/disable-superfetch-prefetch-ssd">Disable Prefetch and Superfetch</a><a class="headerlink" href="#disable-prefetch-and-superfetch" title="Permalink to this headline">¶</a></h2>
+<h2>Disable Prefetch and Superfetch<a class="headerlink" href="#disable-prefetch-and-superfetch" title="Permalink to this headline">¶</a></h2>
 <p>This addresses 100% disk usage during idle in windows 10, even if you’ve already
 disabled the superfetching service.</p>
-<div class="wregedit docutils container" id="Disable prefetch and superfetch regedit">
-<span class="guilabel">Start › regedit.msc (as admin)</span><table class="docutils align-default">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters</span></td>
-</tr>
-<tr class="row-even"><td><p>EnablePrefetcher</p></td>
-<td><p>DWORD</p></td>
-<td><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>EnableSuperfetcher</p></td>
-<td><p>DWORD</p></td>
-<td><p>0</p></td>
-</tr>
-</tbody>
-</table>
+<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Disable prefetch and superfetch regedit<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
 </div>
 </div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\PrefetchParameters</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">EnablePrefetcher</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">DWORD</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">0</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">EnableSuperfetcher</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">DWORD</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">0</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span>
+<a class="sphinx-bs badge badge-info badge-pill reference external" href="https://www.thewindowsclub.com/disable-superfetch-prefetch-ssd"><span>Reference</span></a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details></div>
 <div class="section" id="hiding-local-desktop-for-chrome-remote-desktop">
-<span id="w10-hiding-local-desktop-crd"></span><h2><a class="reference external" href="https://support.google.com/chrome/a/answer/2799701?hl=en&amp;vid=0-243350879834-1495198101821">Hiding Local Desktop for Chrome Remote Desktop</a><a class="headerlink" href="#hiding-local-desktop-for-chrome-remote-desktop" title="Permalink to this headline">¶</a></h2>
+<span id="w10-hiding-local-desktop-crd"></span><h2>Hiding Local Desktop for Chrome Remote Desktop<a class="headerlink" href="#hiding-local-desktop-for-chrome-remote-desktop" title="Permalink to this headline">¶</a></h2>
 <p>By default Chrome Remote Desktop will always show locally what is happening when
 you remotely connect. This disables this feature and presents a login screen
 instead, allowing you to work privately remotely. CRD will open a connection,
@@ -2269,106 +2496,263 @@ then locally connect to remote desktop to hide your current session.</p>
 <li><p>Create a PIN for connection.</p></li>
 <li><p>☐ Improve CRD.</p></li>
 </ul>
-<div class="wregedit docutils container" id="Enable remote access curtain for CRD regedit">
-<span class="guilabel">Start › regedit.msc (as admin)</span><table class="docutils align-default">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome</span></td>
-</tr>
-<tr class="row-even"><td><p>RemoteAccessHostRequireCurtain</p></td>
-<td><p>DWORD</p></td>
-<td><p>1</p></td>
-</tr>
-</tbody>
-</table>
+<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Enable remote access curtain for CRD regedit<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
 </div>
-<div class="wregedit docutils container" id="Enable RDP security regedit">
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp</span></td>
-</tr>
-<tr class="row-even"><td><p>SecurityLayer</p></td>
-<td><p>DWORD</p></td>
-<td><p>1</p></td>
-</tr>
-</tbody>
-</table>
 </div>
-<p><span class="guilabel">⌘ + r › control › System and Security › System › Remote Settings › Remote</span></p>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">RemoteAccessHostRequireCurtain</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">DWORD</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">1</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span>
+<a class="sphinx-bs badge badge-info badge-pill reference external" href="https://support.google.com/chrome/a/answer/2799701?hl=en&amp;vid=0-243350879834-1495198101821"><span>Reference</span></a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Enable RDP security regedit<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">SecurityLayer</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">DWORD</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">1</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span>
+<a class="sphinx-bs badge badge-info badge-pill reference external" href="https://support.google.com/chrome/a/answer/2799701?hl=en&amp;vid=0-243350879834-1495198101821"><span>Reference</span></a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><p><span class="guilabel">⌘ + r › control › System and Security › System › Remote Settings › Remote</span></p>
 <ul class="simple">
 <li><p>☑ Allow remote connections to this computer.</p></li>
 <li><p>☐ Allow connections only from computers running Remote Desktop with Network
 Level Authentication.</p></li>
 </ul>
-<div class="wfirewall docutils container" id="Block inbound rdp connections firewall">
-<span class="guilabel">Start › Control Panel › System and Security › Windows Defender Firewall (as admin)</span><table class="docutils align-default">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td colspan="3"><span class="guilabel">Advanced Settings › Inbound Rules</span></td>
-</tr>
-<tr class="row-even"><td><p>Remote Desktop - Shadow (TCP-in)</p></td>
-<td><p>Block</p></td>
-</tr>
-<tr class="row-odd"><td><p>Remote Desktop - User Mode (TCP-in)</p></td>
-<td><p>Block</p></td>
-</tr>
-<tr class="row-even"><td><p>Remote Desktop - User Mode (UDP-in)</p></td>
-<td><p>Block</p></td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<div><p><a class="reference external" href="https://superuser.com/questions/723832/windows-firewall-blocks-remote-desktop-with-custom-port">See block inbound RDP connections with Windows Firewall</a>.</p>
-</div></blockquote>
+<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Block inbound rdp connections firewall<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
 </div>
 </div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › Control Panel › System and Security › Windows Defender Firewall › Advanced Settings › Inbound Rules</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">Remote Desktop - Shadow (TCP-in)</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">BLOCK</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">Remote Desktop - User Mode (TCP-in)</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">BLOCK</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">Remote Desktop - User Mode (UDP-in)</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">BLOCK</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span>
+<a class="sphinx-bs badge badge-info badge-pill reference external" href="https://superuser.com/questions/723832/windows-firewall-blocks-remote-desktop-with-custom-port"><span>Reference</span></a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details></div>
 <div class="section" id="fixing-broken-windows-store-apps-trial-expired-apps">
 <h2><a class="reference external" href="https://community.spiceworks.com/how_to/122006-windows-10-your-trial-period-for-this-app-has-expired-visit-the-windows-store-to-purchase-the-full-app-problem">Fixing Broken Windows Store apps</a> / ‘Trial Expired’ Apps<a class="headerlink" href="#fixing-broken-windows-store-apps-trial-expired-apps" title="Permalink to this headline">¶</a></h2>
 <p>Default windows 10 applications may stop working if you remove dependent apps
 from the system. Symptoms include apps like xbox controller config never
 loading, or calculator prompting with trial expired. This resets the system to
 the default app installation state for windows 10.</p>
-<div class="literal-block-wrapper docutils container" id="id18">
-<div class="code-block-caption"><span class="caption-text">Reinstall default Windows applications (powershell as admin).</span><a class="headerlink" href="#id18" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text">Reinstall default Windows applications (powershell as admin).</span><a class="headerlink" href="#id11" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="nb">Get-AppXPackage</span> <span class="n">-AllUsers</span> <span class="p">|</span> <span class="k">Foreach</span> <span class="p">{</span><span class="nb">Add-AppxPackage</span> <span class="n">-DisableDevelopmentMode</span> <span class="n">-Register</span> <span class="s2">&quot;</span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">InstallLocation</span><span class="p">)</span><span class="s2">\AppXManifest.xml&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="enable-bitlocker-on-usb-drives-over-rdp">
-<h2><a class="reference external" href="https://superuser.com/questions/962125/bitlocker-refuses-to-enable-via-rdp-on-data-drive-but-ok-on-the-os-drive">Enable Bitlocker on USB drives over RDP</a><a class="headerlink" href="#enable-bitlocker-on-usb-drives-over-rdp" title="Permalink to this headline">¶</a></h2>
+<h2>Enable Bitlocker on USB drives over RDP<a class="headerlink" href="#enable-bitlocker-on-usb-drives-over-rdp" title="Permalink to this headline">¶</a></h2>
 <p>By default, bitlocker does not allow encryption to be enabled on USB devices
 over RDP connections – this happens because RDP treats USB drives as mapped
 network drives and not external drives. This enables direct drive access for RDP
 connections. This is unsafe.</p>
-<div class="wgrouppolicy docutils container" id="Enable bitlocker on usb drives over rdp policy">
-<span class="guilabel">Start › gpedit.msc</span><table class="docutils align-default">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td colspan="3"><span class="guilabel">Computer Configuration › Administrative Templates › System › Removable Storage Access</span></td>
-</tr>
-<tr class="row-even"><td><p>All Removable Storage: Allow direct access in remote sessions</p></td>
-<td><p>Enabled</p></td>
-</tr>
-</tbody>
-</table>
+<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Enable bitlocker on usb drives over rdp policy<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
 </div>
 </div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">Computer Configuration › Administrative Templates › System › Removable Storage Access</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">All Removable Storage: Allow direct access in remote sessions</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">Enabled</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span>
+<a class="sphinx-bs badge badge-info badge-pill reference external" href="https://superuser.com/questions/962125/bitlocker-refuses-to-enable-via-rdp-on-data-drive-but-ok-on-the-os-drive"><span>Reference</span></a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details></div>
 <div class="section" id="fix-windows-applications-not-appearing-in-start-menu-searches">
 <span id="w10-background-apps"></span><h2><a class="reference external" href="https://superuser.com/questions/947392/windows-10-search-cant-find-any-applications-even-calculator">Fix Windows Applications Not Appearing in Start Menu Searches</a><a class="headerlink" href="#fix-windows-applications-not-appearing-in-start-menu-searches" title="Permalink to this headline">¶</a></h2>
 <p>Background Tasks need to be enabled for the application index to be updated when
@@ -2388,8 +2772,8 @@ service still needs to be enabled.</p>
 <p>If your system doesn’t seem to be resuming from sleep properly (e.g. power is
 on, but keyboard/mouse won’t resume it), disable hibernation. This does affect
 power consumption and probably shouldn’t be used on laptops.</p>
-<div class="literal-block-wrapper docutils container" id="id19">
-<div class="code-block-caption"><span class="caption-text">Disable hibernation (powershell as admin).</span><a class="headerlink" href="#id19" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text">Disable hibernation (powershell as admin).</span><a class="headerlink" href="#id12" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">powercfg</span> <span class="p">/</span><span class="nb">h </span><span class="n">off</span>
 </pre></div>
 </div>
@@ -2407,8 +2791,8 @@ the default <a class="reference external" href="https://docs.microsoft.com/en-us
 replaced with a specific user SID that no longer exists (and now can no longer
 be removed, prompting this perms error everytime you access it). You can fix
 this by replacing the old SID with the new SID:</p>
-<div class="literal-block-wrapper docutils container" id="id20">
-<div class="code-block-caption"><span class="caption-text">Replace old SID with current system SID (powershell as admin).</span><a class="headerlink" href="#id20" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-text">Replace old SID with current system SID (powershell as admin).</span><a class="headerlink" href="#id13" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>setacl.exe -on c:\ -ot file -actn trustee -trst &quot;n1:S-old-501;n2:S-new-501;ta:repltrst&quot; -rec cont
 </pre></div>
 </div>
@@ -2419,35 +2803,72 @@ SID’s set.</p>
 <a class="reference external" href="https://docs.microsoft.com/en-us/troubleshoot/windows-server/identity/security-identifiers-in-windows">well known SIDs</a> which will remove this issue.</p>
 </div>
 <div class="section" id="oem-partition-low-disk-space-warning-after-1803-update">
-<h2>OEM Partition / <a class="reference external" href="https://answers.microsoft.com/en-us/insider/forum/insider_wintp-insider_install-insiderplat_pc/new-oem-partition-appears-in-file-explorer-after/29a0a95c-fe51-41a5-a345-72773c437b39">Low Disk Space Warning After 1803 Update</a><a class="headerlink" href="#oem-partition-low-disk-space-warning-after-1803-update" title="Permalink to this headline">¶</a></h2>
+<h2>OEM Partition / Low Disk Space Warning After 1803 Update<a class="headerlink" href="#oem-partition-low-disk-space-warning-after-1803-update" title="Permalink to this headline">¶</a></h2>
 <p>After updating to Windows 10 1803, a consistent low disk space warning appears.
 This happens as the upgrade now sets the OEM partition (~450MB) to be mounted on
 boot. This drive is <a class="reference external" href="https://www.thewindowsclub.com/faq-low-disk-space-notification-or-warning-in-windows-7-how-to-disable-etc">almost entirely full</a> (~400MB) and triggers a low disk
 warning.</p>
-<div class="literal-block-wrapper docutils container" id="id21">
-<div class="code-block-caption"><span class="caption-text">Unmount OEM partition from drive (powershell as admin).</span><a class="headerlink" href="#id21" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-text">Unmount OEM partition from drive (powershell as admin).</span><a class="headerlink" href="#id14" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>mountvol {OEM PARTITION DRIVE}: /d
 </pre></div>
 </div>
 </div>
-<div class="wregedit docutils container" id="Disable disk space warning checks for partition regedit">
-<span class="guilabel">Start › regedit.msc (as admin)</span><table class="docutils align-default">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer</span></td>
-</tr>
-<tr class="row-even"><td><p>NoLowDiskSpaceChecks</p></td>
-<td><p>DWORD</p></td>
-<td><p>1</p></td>
-</tr>
-</tbody>
-</table>
+<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Disable disk space warning checks for partition<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
 </div>
 </div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">NoLowDiskSpaceChecks</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">DWORD</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">1</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span>
+<a class="sphinx-bs badge badge-info badge-pill reference external" href="https://answers.microsoft.com/en-us/insider/forum/insider_wintp-insider_install-insiderplat_pc/new-oem-partition-appears-in-file-explorer-after/29a0a95c-fe51-41a5-a345-72773c437b39"><span>Reference</span></a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details></div>
 <div class="section" id="application-using-the-wrong-audio-output-device">
 <h2><a class="reference external" href="https://www.intowindows.com/set-different-audio-output-devices-for-different-programs-in-windows-10/">Application Using the Wrong Audio Output Device</a><a class="headerlink" href="#application-using-the-wrong-audio-output-device" title="Permalink to this headline">¶</a></h2>
 <p>Some applications will not respect the default output device in Windows 10 and
@@ -2461,44 +2882,111 @@ via the settings menu.</p>
 </div></blockquote>
 </div>
 <div class="section" id="disable-caret-browsing-notifications">
-<h2><a class="reference external" href="https://www.thewindowsclub.com/enable-caret-browsing-internet-explorer">Disable Caret Browsing Notifications</a><a class="headerlink" href="#disable-caret-browsing-notifications" title="Permalink to this headline">¶</a></h2>
+<h2>Disable Caret Browsing Notifications<a class="headerlink" href="#disable-caret-browsing-notifications" title="Permalink to this headline">¶</a></h2>
 <p>Remove notification on F7 press for caret browsing. This is a holdover from
 Internet Explorer.</p>
-<div class="wregedit docutils container" id="Disable Caret Browsing Notifications via Registry">
-<span class="guilabel">Start › regedit.msc</span><table class="docutils align-default" id="id22">
-<caption><span class="caption-text">Disable Caret Browsing Notifications via Registry</span><a class="headerlink" href="#id22" title="Permalink to this table">¶</a></caption>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\CaretBrowsing</span></td>
-</tr>
-<tr class="row-even"><td><p>Enabled</p></td>
-<td><p>DWORD</p></td>
-<td><p>0</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="wgrouppolicy docutils container" id="Disable Caret Browsing Notifications via GPO">
-<span class="guilabel">Start › gpedit.msc</span><table class="docutils align-default" id="id23">
-<caption><span class="caption-text">Disable Caret Browsing Notifications via GPO</span><a class="headerlink" href="#id23" title="Permalink to this table">¶</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td colspan="3"><span class="guilabel">User Configuration › Administrative Templates › Windows Components › Internet Explorer › Internet Control Panel › Advanced Page › Turn on Caret Browsing support</span></td>
-</tr>
-<tr class="row-even"><td><p>☑</p></td>
-<td><p>Disabled</p></td>
-</tr>
-</tbody>
-</table>
+<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Disable Caret Browsing Notifications<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
 </div>
 </div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\CaretBrowsing</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">Enabled</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">DWORD</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">0</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span>
+<a class="sphinx-bs badge badge-info badge-pill reference external" href="https://www.thewindowsclub.com/enable-caret-browsing-internet-explorer"><span>Reference</span></a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Disable Caret Browsing Notifications<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">User Configuration › Administrative Templates › Windows Components › Internet Explorer › Internet Control Panel › Advanced Page › Turn on Caret Browsing support</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DISABLED</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span>
+<a class="sphinx-bs badge badge-info badge-pill reference external" href="https://www.thewindowsclub.com/enable-caret-browsing-internet-explorer"><span>Reference</span></a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details></div>
 <div class="section" id="windows-bootloader-missing-multiple-os">
 <h2>Windows Bootloader Missing / Multiple OS<a class="headerlink" href="#windows-bootloader-missing-multiple-os" title="Permalink to this headline">¶</a></h2>
 <p>Fix the UEFI bootloader if it is missing or has extra entries.</p>
@@ -2510,9 +2998,9 @@ Internet Explorer.</p>
 </div>
 <p>First remove any <a class="reference external" href="https://linuxbsdos.com/2015/09/05/how-to-delete-grub-files-from-a-boot-efi-partition-in-windows-10/">extra EFI boot configuration data</a> from other operating
 systems.</p>
-<div class="literal-block-wrapper docutils container" id="id24">
+<div class="literal-block-wrapper docutils container" id="id15">
 <div class="code-block-caption"><span class="caption-text">Remove extra EFI entries before rebuilding Boot Configuration Data
-for Windows.</span><a class="headerlink" href="#id24" title="Permalink to this code">¶</a></div>
+for Windows.</span><a class="headerlink" href="#id15" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">diskpart</span>
 <span class="nb">list</span> <span class="n">disk</span>
 <span class="hll"><span class="n">sel</span> <span class="n">disk</span> <span class="mi">0</span>
@@ -2532,9 +3020,9 @@ for Windows.</span><a class="headerlink" href="#id24" title="Permalink to this c
 for storing EFI data. Adjust highlighted lines as needed for specific case.
 <code class="docutils literal notranslate"><span class="pre">ubuntu</span></code> removed here. <code class="docutils literal notranslate"><span class="pre">Boot</span></code> and <code class="docutils literal notranslate"><span class="pre">Microsoft</span></code> should be left intact.</p>
 </div>
-<div class="literal-block-wrapper docutils container" id="id25">
+<div class="literal-block-wrapper docutils container" id="id16">
 <div class="code-block-caption"><span class="caption-text">Fix MBR, scan for all OS’s on drive and rebuild Boot Configuration
-Data for Windows.</span><a class="headerlink" href="#id25" title="Permalink to this code">¶</a></div>
+Data for Windows.</span><a class="headerlink" href="#id16" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bootrec</span> <span class="o">/</span><span class="n">fixmbr</span>
 <span class="n">bootrec</span> <span class="o">/</span><span class="n">scanos</span>
 <span class="n">bootrec</span> <span class="o">/</span><span class="n">rebuildbcd</span>
@@ -2547,35 +3035,72 @@ or use <a class="reference external" href="https://www.easyuefi.com/index-us.htm
 </div>
 <div class="section" id="display-driver-has-been-restarted">
 <h2>Display Driver Has Been Restarted<a class="headerlink" href="#display-driver-has-been-restarted" title="Permalink to this headline">¶</a></h2>
-<p>Windows Vista+ has a feature called <a class="reference external" href="https://www.pugetsystems.com/labs/hpc/Working-around-TDR-in-Windows-for-a-better-GPU-computing-experience-777/">Timeout Detection and Recovery</a>, which
+<p>Windows Vista+ has a feature called Timeout Detection and Recovery, which
 detects if the GPU becomes unresponsive and restarts the driver. The GPU running
 at 100% load can inadvertantly trip this reset the driver, causing applications
 to crash. This can saftely be increased from the default <em>2 seconds</em> to a larger
 value with the only negative impact being that an actual crashing driver will
 take that much longer to be reset. A bump to <em>8 to 10</em> seconds is generally ok;
 it is <strong>not</strong> recommended to disable TDR entirely.</p>
-<div class="wregedit docutils container" id="Increase TDR delay to 8 seconds">
-<span class="guilabel">Start › regedit.msc (as admin)</span><table class="docutils align-default">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\GraphicsDrivers</span></td>
-</tr>
-<tr class="row-even"><td><p>TdrDelay</p></td>
-<td><p>DWORD</p></td>
-<td><p>8</p></td>
-</tr>
-</tbody>
-</table>
+<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Increase TDR delay to 8 seconds<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
 </div>
 </div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\GraphicsDrivers</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">TdrDelay</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">DWORD</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">8</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span>
+<a class="sphinx-bs badge badge-info badge-pill reference external" href="https://www.pugetsystems.com/labs/hpc/Working-around-TDR-in-Windows-for-a-better-GPU-computing-experience-777/"><span>Reference</span></a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details></div>
 <div class="section" id="show-password-on-wifi-network">
 <h2>Show Password on Wifi Network<a class="headerlink" href="#show-password-on-wifi-network" title="Permalink to this headline">¶</a></h2>
-<div class="literal-block-wrapper docutils container" id="id26">
-<div class="code-block-caption"><span class="caption-text">Dump wifi configuration including password (powershell as admin).</span><a class="headerlink" href="#id26" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id17">
+<div class="code-block-caption"><span class="caption-text">Dump wifi configuration including password (powershell as admin).</span><a class="headerlink" href="#id17" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">netsh</span> <span class="n">wlan</span> <span class="n">show</span> <span class="n">profile</span> <span class="n">WiFi-name</span> <span class="n">key</span><span class="p">=</span><span class="nb">clear</span>
 </pre></div>
 </div>
@@ -2585,8 +3110,8 @@ it is <strong>not</strong> recommended to disable TDR entirely.</p>
 <h2>DRIVER_IRQL_NOT_LESS_OR_EQUAL (<a class="reference external" href="https://ugetfix.com/ask/how-to-fix-driver_irql_not_less_or_equal-epfwwfp-sys-error-on-windows/">Epfwwfp.sys</a>)<a class="headerlink" href="#driver-irql-not-less-or-equal-epfwwfp-sys" title="Permalink to this headline">¶</a></h2>
 <p><span class="guilabel">shift + Reset › Troubleshoot › Advanced options › Start-up Settings › Restart › 4 (Safe Mode)</span>
 <span class="guilabel">Troubleshoot › Command Prompt</span></p>
-<div class="literal-block-wrapper docutils container" id="id27">
-<div class="code-block-caption"><span class="caption-text">Remove ESET driver and reboot.</span><a class="headerlink" href="#id27" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id18">
+<div class="code-block-caption"><span class="caption-text">Remove ESET driver and reboot.</span><a class="headerlink" href="#id18" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span>del /F /S /Q /A “c:\Windows\System32\drivers\epfwwfp.sys”
 </pre></div>
 </div>
@@ -2597,8 +3122,8 @@ it is <strong>not</strong> recommended to disable TDR entirely.</p>
 <h2><a class="reference external" href="https://www.intowindows.com/how-to-uninstall-remove-edge-browser-from-windows-10/">Uninstall Edge Browser</a><a class="headerlink" href="#uninstall-edge-browser" title="Permalink to this headline">¶</a></h2>
 <p>Heavily integrated into Windows 10. Will probably break stuff.</p>
 <p>Download and build <a class="reference external" href="https://github.com/shiitake/win6x_registry_tweak">install_wim_tweak</a>.</p>
-<div class="literal-block-wrapper docutils container" id="id28">
-<div class="code-block-caption"><span class="caption-text">Remove Edge browser and reboot.</span><a class="headerlink" href="#id28" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id19">
+<div class="code-block-caption"><span class="caption-text">Remove Edge browser and reboot.</span><a class="headerlink" href="#id19" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">REM</span> <span class="n">Move</span> <span class="n">to</span> <span class="n">script</span> <span class="n">dirrectory</span> <span class="k">for</span> <span class="n">working</span> <span class="n">directory</span> <span class="ow">and</span> <span class="n">remove</span> <span class="n">edge</span><span class="o">.</span>
 <span class="n">REM</span> <span class="n">Requires</span> <span class="n">install_wim_tweak</span> <span class="n">to</span> <span class="n">be</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">path</span><span class="o">.</span>
 <span class="nd">@echo</span> <span class="n">off</span>
@@ -2617,41 +3142,104 @@ it is <strong>not</strong> recommended to disable TDR entirely.</p>
 <p><a class="reference download internal" download="" href="../../../../../_downloads/51f0f39d9f07930c5ef26e62bc65b1e9/remove-edge.cmd"><code class="xref download docutils literal notranslate"><span class="pre">remove-edge.cmd</span></code></a></p>
 </div>
 <div class="section" id="usb-devices-slow">
-<h2><a class="reference external" href="https://docs.microsoft.com/en-us/windows/client-management/change-default-removal-policy-external-storage-media">USB Devices Slow</a><a class="headerlink" href="#usb-devices-slow" title="Permalink to this headline">¶</a></h2>
+<h2>USB Devices Slow<a class="headerlink" href="#usb-devices-slow" title="Permalink to this headline">¶</a></h2>
 <p>In Windows 1809+ default USB removal policy changed to <code class="docutils literal notranslate"><span class="pre">Quick</span> <span class="pre">removal</span></code> for
 additional safety instead of <code class="docutils literal notranslate"><span class="pre">Better</span> <span class="pre">performance</span></code> for additional speed; as a
 result USB devices may appear slower than normal. This reverts to the old
 behavior.</p>
-<div class="ggui docutils container" id="Enable Better Performance for USB Devices">
-<table class="docutils align-default">
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td colspan="3"><span class="guilabel">win + x › Disk Management › RMB {USB DEVICE} › Properties › Policies</span></td>
-</tr>
-<tr class="row-even"><td><p>Removal policy</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>› ☑</p></td>
-<td><p>Better performance</p></td>
-</tr>
-<tr class="row-even"><td><p>Write-caching policy</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p>› ☑</p></td>
-<td><p>Enable write caching on the device</p></td>
-</tr>
-</tbody>
-</table>
+<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Enable Better Performance for USB Devices<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
 </div>
 </div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ + x › Disk Management › RMB {USB DEVICE} › Properties › Policies</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">Removal policy</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">Better performance</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">Write-caching policy</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">Enable write caching on the device</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span>
+<a class="sphinx-bs badge badge-info badge-pill reference external" href="https://docs.microsoft.com/en-us/windows/client-management/change-default-removal-policy-external-storage-media"><span>Reference</span></a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details></div>
 <div class="section" id="disable-windows-backup-schedule">
 <h2>Disable <a class="reference external" href="https://www.tenforums.com/tutorials/75591-turn-off-schedule-windows-backup-windows-10-a.html">Windows Backup Schedule</a><a class="headerlink" href="#disable-windows-backup-schedule" title="Permalink to this headline">¶</a></h2>
 <p>Removed since Windows 7 but added back into Windows 10.</p>
-<div class="literal-block-wrapper docutils container" id="id29">
-<div class="code-block-caption"><span class="caption-text">powershell (as admin).</span><a class="headerlink" href="#id29" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id20">
+<div class="code-block-caption"><span class="caption-text">powershell (as admin).</span><a class="headerlink" href="#id20" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">sdclt</span><span class="p">.</span><span class="n">exe</span> <span class="p">/</span><span class="n">DISABLEJOB</span>
 </pre></div>
 </div>
@@ -2661,8 +3249,8 @@ behavior.</p>
 <h2><a class="reference external" href="https://wintechlab.com/enable-disable-dns-client-service/">Debug DNS Issues</a><a class="headerlink" href="#debug-dns-issues" title="Permalink to this headline">¶</a></h2>
 <p>Windows 10 aggressively caches DNS with a DNS caching service and can sometimes
 lead to invalid results. First flush resolver caches and test.</p>
-<div class="literal-block-wrapper docutils container" id="id30">
-<div class="code-block-caption"><span class="caption-text">powershell</span><a class="headerlink" href="#id30" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id21">
+<div class="code-block-caption"><span class="caption-text">powershell</span><a class="headerlink" href="#id21" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">ipconfig</span> <span class="p">/</span><span class="n">flushdns</span>
 <span class="nb">Clear-DnsClientCache</span>
 </pre></div>
@@ -2670,50 +3258,122 @@ lead to invalid results. First flush resolver caches and test.</p>
 </div>
 <p>If that does not work, disabling the DNS caching service can be used. <strong>Cannot</strong>
 be disabled via <code class="docutils literal notranslate"><span class="pre">services.msc</span></code>.</p>
-<div class="wregedit docutils container" id="Disable DNS caching service">
-<span class="guilabel">Start › regedit.msc (as admin)</span><table class="docutils align-default">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Dnscache</span></td>
-</tr>
-<tr class="row-even"><td><p>Start</p></td>
-<td><p>DWORD</p></td>
-<td><p>4</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>After resolving, re-enable the caching service and <strong>Reboot</strong>.</p>
-<div class="wregedit docutils container" id="Enable DNS caching service">
-<span class="guilabel">Start › regedit.msc (as admin)</span><table class="docutils align-default">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td colspan="4"><span class="guilabel">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Dnscache</span></td>
-</tr>
-<tr class="row-even"><td><p>Start</p></td>
-<td><p>DWORD</p></td>
-<td><p>2</p></td>
-</tr>
-</tbody>
-</table>
+<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Disable DNS caching service<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
 </div>
 </div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Dnscache</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">Start</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">DWORD</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">4</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><p>After resolving, re-enable the caching service and <strong>Reboot</strong>.</p>
+<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Enable DNS caching service<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\Dnscache</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">Start</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">DWORD</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">2</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details></div>
 <div class="section" id="disable-hyper-v-per-boot">
 <h2><a class="reference external" href="https://www.hanselman.com/blog/switch-easily-between-virtualbox-and-hyperv-with-a-bcdedit-boot-entry-in-windows-81">Disable Hyper-V Per Boot</a><a class="headerlink" href="#disable-hyper-v-per-boot" title="Permalink to this headline">¶</a></h2>
 <p>Some applications and games detect Hyper-V virtualization and refuse to start.
 Disable Hyper-V on Windows boot instead of through the BIOS. This removes the
 hypervisor kernel modules which prevents this from happening without needing to
 turn it off.</p>
-<div class="literal-block-wrapper docutils container" id="id31">
-<div class="code-block-caption"><span class="caption-text">powershell (as admin).</span><a class="headerlink" href="#id31" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id22">
+<div class="code-block-caption"><span class="caption-text">powershell (as admin).</span><a class="headerlink" href="#id22" title="Permalink to this code">¶</a></div>
 <div class="highlight-powershell notranslate"><div class="highlight"><pre><span></span><span class="n">bcdedit</span> <span class="p">--%</span> <span class="p">/</span><span class="nb">copy </span><span class="p">{</span><span class="n">current</span><span class="p">}</span> <span class="p">/</span><span class="n">d</span> <span class="s2">&quot;No Hyper-V&quot;</span>
 
 <span class="n">bcdedit</span> <span class="p">--%</span>  <span class="p">/</span><span class="nb">set </span><span class="p">{</span><span class="n">GUID</span><span class="p">}</span> <span class="n">hypervisorlaunchtype</span> <span class="n">off</span>
