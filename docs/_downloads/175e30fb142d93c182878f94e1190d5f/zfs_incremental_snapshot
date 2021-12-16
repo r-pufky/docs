@@ -16,7 +16,7 @@
 # Configuration options
 ################################################################################
 # Recursive datasets to send. (-R) will remove snapshots that have been deleted
-# locally on the remote end as well. Dataset does *NOT* need to have children. 
+# locally on the remote end as well. Dataset does *NOT* need to have children.
 datasets=(
   tank/example
 )

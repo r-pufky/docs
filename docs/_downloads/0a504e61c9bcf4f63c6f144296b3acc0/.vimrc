@@ -80,7 +80,7 @@ nnoremap <silent> <leader><left>  <c-w><c-h> " left arrow select split left
 nnoremap <silent> <leader><right> <c-w><c-l> " right arrow select split right
 nnoremap <silent> <leader><up>    <c-w><c-k> " up arrow select split up
 nnoremap <silent> <leader><down>  <c-w><c-j> " down arrow select split down
-set fillchars+=vert:│                        " Use solid line for vertical split 
+set fillchars+=vert:│                        " Use solid line for vertical split
 
 "" NETRW FILE BROWSER:
 "" -------------------

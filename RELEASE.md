@@ -1,5 +1,14 @@
 # [Changelog][3g]
 
+## 2021-12-15.0
+Add Manjaro Setup.
+
+Added:
+* Manjaro setup instructions.
+
+Fixed:
+* Remove pkg-resources==0.0.0 from requirements.txt
+
 ## 2021-09-22.0
 Remove Saltstack; add Ansible.
 
@@ -119,7 +128,7 @@ Changed:
 Add Wireguard, Pihole 5.x, Yubikey (Windows Hello), and sphinx venv to build.
 
 Added:
-* Add sphinx virtual python environment to build file. 
+* Add sphinx virtual python environment to build file.
 * Add wireguard documentation.
 * Add notes about UFW conflicting with Docker.
 * Add documentation for removing storage repository.
@@ -128,7 +137,7 @@ Added:
 
 Changed:
 * Correct DB typos for MUA setup.
-* Update GPG/Yubikey for usage with Windows Hello Devices. 
+* Update GPG/Yubikey for usage with Windows Hello Devices.
 * Update documentation for PiHole 5.x.
 * Update Pi-Hole documentation with IPv6 port information.
 * Update XCP documentation for 8.1.
@@ -187,7 +196,7 @@ Added:
 * Add facial recognition disable for Windows.
 * Add phone call, voice activation privacy sections for windows 10 1909.
 * Add voice activation to privacy settings for windows 1909.
-* Add ubiquity telemetry disabled instructions. Fucking idiots. 
+* Add ubiquity telemetry disabled instructions. Fucking idiots.
 * Add GPG encryption documentation and yubikey verification.
 
 Changed:
