@@ -37,7 +37,7 @@ when migrating/managing the pool:
 
   .. code-block:: bash
     :caption: Upgrade ZFS pool to latest version.
-    
+
     zpool upgrade -v
     zpool upgrade -a
 
@@ -45,7 +45,7 @@ when migrating/managing the pool:
   Always **confirm** key works before loading data.
 
   This means: unmount, unload encryption key, and remount before proceeding.
-  
+
   This checks **you** and confirms you are using the password intended for the
   dataset; preventing dataloss on a missing key/password.
 
@@ -99,5 +99,6 @@ works **before** loading data onto the dataset.
   Do not overwrite or delete the old key until the new key is in place.
 
 .. rubric:: References
+
 #. `ZFS Native Encryption <https://arstechnica.com/gadgets/2021/06/a-quick-start-guide-to-openzfs-native-encryption/>`_
 #. `ZFS Encryption at Rest <https://blog.heckel.io/2017/01/08/zfs-encryption-openzfs-zfs-on-linux/>`_

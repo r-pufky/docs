@@ -27,22 +27,22 @@ Configure
 
   # Wireguard interface name.
   INTERFACE=example_vpn
-  
+
   # CIDR wireguard interface address.
   INTERFACE_ADDR=172.31.255.10/32
-  
+
   # Peer public key (server's public key).
   PEER_PUBLIC_KEY=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-  
+
   # IP:PORT of the peer (server); any reachable IP/DNS.
   PEER_ENDPOINT=wg.example.com:51820
-  
+
   # Client Private key. Specify location of file containing only the private key.
   CLIENT_PRIVATE_KEYFILE=/etc/wireguard-initramfs/private_key
-  
+
   # Persistent Keepalive. Required to ensure connection for non-exposed ports.
   PERSISTENT_KEEPALIVES=25
-  
+
   # Allowed IP's (CIDR) on wireguard; for boot this should be the peer (server).
   ALLOWED_IPS=172.31.255.254/32
 
@@ -69,7 +69,7 @@ Dropbear Remote Unlock
 Unlock an encrypted root filesystem remotely on boot over wireguard.
 
 Ensure that both Dropbear and :ref:`service-wireguard`,
-:ref:`service-wireguard-wireguard-initramfs` are setup and working correctly.
+:ref:`service-wireguard-initramfs` are setup and working correctly.
 Then set dropbear to only listen over wireguard network:
 
 .. code-block:: bash

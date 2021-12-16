@@ -15,5 +15,6 @@ backed GPG Key for SSH connections.
 
    windows
    debian
+   manjaro
    windows-forward-gpg
    operations

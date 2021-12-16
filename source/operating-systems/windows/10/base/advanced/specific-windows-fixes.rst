@@ -37,7 +37,7 @@ drives.
    * Move existing files into the new location.
    * Apply.
 
-Format ReFS on using a single driv
+Format ReFS on using a single drive
 ***********************************
 ReFS allows for integrated file checksums, duplication, and error recovery;
 however by default it requires two disks. This will allow you to use this
@@ -46,7 +46,12 @@ default.
 
 Recently `ReFS create moved to Windows 10 Workstation`_, effectively removing
 the ability to create ReFS containers in Windows 10 Pro, but they can still be
-read.
+read. Virtual disks with ReFS formatting can be created and exported for use in
+10 Pro machines.
+
+Premade 1TB sparse virtual disk formatted ReFS with integrity enabled:
+
+:download:`refsi.vhdx.tar.xz [ReFS 1TB integrity enabled] (200k)<source/refsi.vhdx.tar.xz>`
 
 .. regedit:: REFS single drive regedit
   :path:     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\MiniNT
@@ -74,7 +79,7 @@ read.
   :caption: Format Single Drive with Integrity Enabled & Verify with Test File
             (powershell as admin).
 
-  format X: /fs:refs /i:enabled /q
+  format X: /fs:refs /i:enable /q
   echo $null >> X:\test
   Get-Item X:\test | Get-FileIntegrity
 

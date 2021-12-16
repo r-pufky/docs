@@ -13,7 +13,7 @@ Diagnostic data
 
   Only ``Enterprise`` editions of Windows can disable diagnostic data entirely.
   ``Required`` is the most restricted otherwise. See `diagnostic data levels`_.
-  
+
   .. warning::
     If the option is not set or set incorrectly, it will default to **full**.
 

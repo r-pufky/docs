@@ -101,6 +101,7 @@ git hub, or submit a CL :)
   operating-systems/windows/10/20H2/index
   operating-systems/windows/10/1903/index
   operating-systems/ubuntu/index
+  operating-systems/manjaro/index
 
 .. toctree::
   :caption: Virtualization

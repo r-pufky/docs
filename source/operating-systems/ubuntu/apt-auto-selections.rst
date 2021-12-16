@@ -5,8 +5,7 @@ Apt Auto Selection
 Automatically select user-required options during package install.
 
 This is used for configuration management and preseeding for automatic installs
-that require user input. See :ref:`ubuntu-preseed-installation` and
-:ref:`salt-saltstack`.
+that require user input. See :ref:`ubuntu-preseed-installation`.
 
 `Reference <https://serverfault.com/questions/407317/passing-default-answers-to-apt-get-package-install-questions>`__
 

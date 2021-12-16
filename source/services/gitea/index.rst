@@ -227,7 +227,7 @@ Increase default timeout of mirroring:
   :caption: Backup gitea and rebuild database tables.
 
   gitea dump -c /etc/gitea/gitea.ini -t /data/gitea/tmp/ -V
-  gitea doctor recreate-table -c /etc/gitea/gitea.ini
+  gitea doctor recreate-table -c /etc/gitea/gitea.ini
 
 Mirror Fails with 'could not read Username'
 ===========================================
@@ -238,12 +238,12 @@ setting Migration Interval to ``0``.
   :caption: Example log when source repo is deleted/private.
 
   2021/07/15 03:53:42 ...ces/mirror/mirror.go:242:runSync() [E] Failed to update mirror repository &{272 10 {USER} <nil> {REPO} {REPO} Mirror of https://github.com/{USER}/{REPO}.  2 https://github.com/{USER}/{REPO} master 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 true false false true <nil> 0 map[] map[] [] <nil> false 0 <nil> false 0 <nil> 35674663 <nil> <nil> false false [] default  1582936274 1573978478}:
-        Stdout: Fetching origin
+  Stdout: Fetching origin
 
-        Stderr: fatal: could not read Username for 'https://github.com': terminal prompts disabled
-        error: Could not fetch origin
+  Stderr: fatal: could not read Username for 'https://github.com': terminal prompts disabled
+  error: Could not fetch origin
 
-        Err: <nil>
+  Err: <nil>
 
 .. _Gitea: https://docs.gitea.io/en-us/
 .. _Gitea Docker and Documentation: https://hub.docker.com/r/gitea/gitea/

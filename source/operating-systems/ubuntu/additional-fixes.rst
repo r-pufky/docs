@@ -80,7 +80,7 @@ attacks.
 
 Shadow Passwords
 ****************
-linux hash *sha512*. Use either the ``mkpasswd`` tool or the `python script`_
+linux hash *sha512*. Use either the ``mkpasswd`` tool or the python script
 below to generate a *salted, sha512 hash* in the correct format for consumption
 in ``/etc/shadow``. GPG encrypt this data if storing in configuration
 management tools.

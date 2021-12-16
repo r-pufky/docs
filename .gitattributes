@@ -1,0 +1,13 @@
+# git lfs track "{FILTER}"
+#
+# Update .git/hooks/pre-commit to add check for unencrypted files.
+#
+# Quotes are required.
+# https://github.com/building5/ansible-vault-tools
+#
+# Determine if matched for LFS:
+#   git add .
+#   git lfs status
+#   git lfs ls-files
+*.tar.gz filter=lfs diff=lfs merge=lfs -text
+*.tar.xz filter=lfs diff=lfs merge=lfs -text

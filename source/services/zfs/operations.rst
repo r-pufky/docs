@@ -23,7 +23,7 @@ Mounting Existing ZFS Pool
   Set mountpoint to immutable without the ZFS dataset mounted. This prevents
   writes when the dataset is not ready: ``chattr +i {MOUNTPOINT}``
 
-.. _service-zfs-create-new-pool:
+.. _service-zfs-filesystem-options:
 
 ZFS Filesystem Options
 **********************

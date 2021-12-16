@@ -40,15 +40,15 @@ Callouts (`admonitions`_)
 Only use multi-line admonitions.
 
 .. hint::
-  
+
   ``hint``
 
 .. important::
-  
+
   ``important``
 
 .. tip::
- 
+
   ``tip``
 
 .. note::
@@ -56,7 +56,7 @@ Only use multi-line admonitions.
   ``note``
 
 .. seealso::
-  
+
   ``seealso``
 
 .. attention::
@@ -68,7 +68,7 @@ Only use multi-line admonitions.
   ``caution``
 
 .. warning::
-   
+
   ``warning``
 
 .. todo::
@@ -80,15 +80,15 @@ Only use multi-line admonitions.
   ``danger``
 
 .. error::
-   
+
   ``error``
 
 .. pull-quote::
-  
+
   ``pull-quote`` -- quote block, generally unformatted.
 
 .. highlights::
-   
+
   ``highlights`` -- highlight block, generally unformatted.
 
 .. epigraph::
