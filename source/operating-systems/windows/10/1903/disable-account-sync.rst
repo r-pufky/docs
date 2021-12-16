@@ -28,7 +28,7 @@ to their servers. Disable this.
     :update:  2021-02-19
     :generic:
     :open:
-  
+
   .. regedit:: Disable user account sync
     :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\SettingSync
     :value0:   DisableSettingSync, {DWORD}, 2

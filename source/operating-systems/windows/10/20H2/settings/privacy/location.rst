@@ -48,8 +48,8 @@ Allow apps to access your location
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  Disable apps access to location. 
-    
+  Disable apps access to location.
+
   .. gpo::    Disable apps to access your location
     :path:    Computer Configuration -->
               Administrative Templates -->

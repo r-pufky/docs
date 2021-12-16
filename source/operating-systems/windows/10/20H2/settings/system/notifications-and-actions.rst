@@ -86,7 +86,7 @@ Notifications
   :value0:   NOC_GLOBAL_SETTING_ALLOW_NOTIFICATION_SOUND, {DWORD}, 0
   :update:   2021-02-19
 
-.. dropdown:: Disable show me the windows welcome experience after updates and 
+.. dropdown:: Disable show me the windows welcome experience after updates and
               occasionally when I sign in to highlight what's new and suggested
   :container: + shadow
   :title: bg-primary text-white font-weight-bold

@@ -16,7 +16,7 @@ File System
 
   Leave enabled. Can restrict document folder access from all apps and Windows.
   There is no GPO equivalent.
-  
+
   ``Deny`` will disable all access.
 
 .. regedit:: Allow app ccess to file system on this device

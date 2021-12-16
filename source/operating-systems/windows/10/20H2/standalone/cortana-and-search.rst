@@ -207,7 +207,7 @@ have not changed. See references for additional documentation.
     :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\WindowsFirewall\
                FirewallRules
     :value0:   {0DE40C8E-C126-4A27-9371-A27DAB1039F7},
-               {SZ}, 
+               {SZ},
                v2.25|Action=Block|Active=TRUE|Dir=Out|Protocol=6|App=%windir%\SystemApps\Microsoft.Windows.Cortana_cw5n1h2txyewy\searchUI.exe|Name=Block outbound Cortana|
     :update:   2021-02-19
     :generic:

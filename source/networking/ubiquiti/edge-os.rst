@@ -459,5 +459,5 @@ Show a JSON-like representation of the current router configuration.
 .. _all DNS: https://community.ui.com/questions/cd0a248d-ca54-4d16-84c6-a5ade3dc3272
 .. _Destination NAT Rule: https://old.reddit.com/r/Ubiquiti/comments/6lndq4/question_redirect_port_53_to_internal_dns_server/
 .. _telemetry: https://community.ui.com/questions/Update-UniFi-Phone-Home-Performance-Data-Collection/f84a71c9-0b81-4d69-a3b3-45640aba1c8b
-.. _DNS / Host: https://community.ui.com/questions/Create-DNS-enteries/ab712740-d579-4c89-824a-cda582a6bdd4 
+.. _DNS / Host: https://community.ui.com/questions/Create-DNS-enteries/ab712740-d579-4c89-824a-cda582a6bdd4
 .. _DHCP Static: https://help.ui.com/hc/en-us/articles/360044494093-EdgeRouter-DHCP-Server-Static-Mapping

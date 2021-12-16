@@ -175,4 +175,4 @@ traffic to the wireguard server in UFW and subsequently blocked.
 .. rubric:: References
 
 #. `Wireguard VPN setup  <https://www.ckn.io/blog/2017/11/14/wireguard-vpn-typical-setup/>`_
-#. `SSH blocked between wireguard clients <https://serverfault.com/questions/985482/wireguard-access-between-clients-ufw-block>`_ 
+#. `SSH blocked between wireguard clients <https://serverfault.com/questions/985482/wireguard-access-between-clients-ufw-block>`_

@@ -34,7 +34,7 @@ re-enable them from the GUI.
     :title: font-weight-bold
     :animate: fade-in
     :open:
-    
+
     A key needs to be made for each app to block. Valid values are ``Allow``
     and ``Deny``.
 
@@ -58,7 +58,7 @@ re-enable them from the GUI.
     :title: font-weight-bold
     :animate: fade-in
     :open:
-    
+
     Read the description for the :term:`GPO` in question for all options.
 
     The identified package family names are added in the ``Force deny`` section.

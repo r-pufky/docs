@@ -8,7 +8,7 @@ Getting to know you
 *******************
 .. dropdown:: Disable When this is switched off your personal typing and inking
               dictionary will be cleared, but the standard dictionary will
-              continue to provide typing suggestions and handwriting 
+              continue to provide typing suggestions and handwriting
               recognition.
   :container: + shadow
   :title: bg-primary text-white font-weight-bold

@@ -24,7 +24,7 @@ Enable WSL in Windows 10
 
 .. note::
   Force update Windows after this step.
-  
+
   Windows versions up to ``1909`` must install `KB4566116`_. :ref:`w10-version` if needed.
 
 .. code-block:: powershell

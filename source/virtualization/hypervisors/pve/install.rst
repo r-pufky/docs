@@ -7,7 +7,7 @@ Prepare a USB drive with the latest ISO image from the `Proxmox repository <http
 Ports
 *****
 .. ports:: Proxmox Ports
-  :value0:          22;     {TCP}; {RESTRICTED}; SSH (cluster, management only) 
+  :value0:          22;     {TCP}; {RESTRICTED}; SSH (cluster, management only)
   :value1:          85;     {TCP}; {RESTRICTED}; REST API Pvedaemon on
                                                  127.0.0.1:85 (cluster only)
   :value2:         111; {TCP/UDP};     {PUBLIC}; Rpcbind (NFS services)
@@ -310,7 +310,7 @@ not working.
 
   .. note::
     This assumes ``802.3ad`` has been enabled on the switch.
-     
+
     .. gui::   Create 802.3ad link aggregation.
       :path:   unifi --> devices --> device --> port --> edit -->
                profile overrides ---> operation --> aggregate
@@ -530,7 +530,7 @@ cluster.
   :path:    datacenter --> firewall --> security group --> pve --> add
   :value0:    Direction, {IN}
   :value1:       Action, {ACCEPT}
-  :value2:       Source, 
+  :value2:       Source,
   :value3:  Destination,
   :value4:       Enable, ☑
   :value5:        Macro,
@@ -544,7 +544,7 @@ cluster.
   :path:    datacenter --> firewall --> security group --> pve --> add
   :value0:    Direction, {IN}
   :value1:       Action, {ACCEPT}
-  :value2:       Source, 
+  :value2:       Source,
   :value3:  Destination,
   :value4:       Enable, ☑
   :value5:        Macro,
@@ -558,7 +558,7 @@ cluster.
   :path:    datacenter --> firewall --> security group --> pve --> add
   :value0:    Direction, {IN}
   :value1:       Action, {ACCEPT}
-  :value2:       Source, 
+  :value2:       Source,
   :value3:  Destination,
   :value4:       Enable, ☑
   :value5:        Macro,
@@ -577,11 +577,11 @@ Enable the security group & add drop rule.
   :value2: Enable, ☑
 
 .. gui::    Add DROP Rule (disabled)
-  :path:    datacenter --> firewall --> add 
+  :path:    datacenter --> firewall --> add
   :value0:    Direction, {IN}
   :value1:       Action, {DROP}
   :value2:    Interface,
-  :value3:       Source, 
+  :value3:       Source,
   :value4:  Destination,
   :value5:       Enable, ☐
   :value6:        Macro,
@@ -597,7 +597,7 @@ Enable the security group & add drop rule.
 Enable firewall & drop policy.
 
 .. gui::   Enable firewall
-  :path:   datacenter --> firewall --> options 
+  :path:   datacenter --> firewall --> options
   :value0: Input Policy, {ACCEPT}
   :value1:     Firewall, {YES}
 
@@ -605,7 +605,7 @@ Enable firewall & drop policy.
   Set input policy before enabling firewall, or you will drop all traffic.
 
 .. gui::   Enable DROP policy Rule
-  :path:   datacenter --> firewall --> Drop all other traffic 
+  :path:   datacenter --> firewall --> Drop all other traffic
   :value0: Enable, ☑
 
 Cluster Firewall
@@ -620,11 +620,11 @@ Configure for each specific server in the cluster.
   :value2: Enable, ☑
 
 .. gui::    Add DROP Rule (disabled)
-  :path:    datacenter --> {SERVER} --> firewall --> add 
+  :path:    datacenter --> {SERVER} --> firewall --> add
   :value0:    Direction, {IN}
   :value1:       Action, {DROP}
   :value2:    Interface,
-  :value3:       Source, 
+  :value3:       Source,
   :value4:  Destination,
   :value5:       Enable, ☐
   :value6:        Macro,
@@ -640,11 +640,11 @@ Configure for each specific server in the cluster.
 Enable firewall & drop policy.
 
 .. gui::   Enable firewall
-  :path:   datacenter --> {SERVER} --> firewall --> options 
+  :path:   datacenter --> {SERVER} --> firewall --> options
   :value0: Firewall, {YES}
 
 .. gui::   Enable DROP policy Rule
-  :path:   datacenter --> firewall --> Drop all other traffic 
+  :path:   datacenter --> firewall --> Drop all other traffic
   :value0: Enable, ☑
 
 Remove Subscription Notice
@@ -701,7 +701,7 @@ Templates are updated via the GUI
 :cmdmenu:`datacenter --> {SERVER} --> local --> ct templates` or command line.
 
 .. code-block:: bash
-  
+
   pveam update
   pveam available
   pveam download {STORAGE} {NAME}

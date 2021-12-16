@@ -27,7 +27,7 @@ Speech
     :value0:   HasAccepted, {DWORD}, 0
     :ref:      https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#bkmk-priv-speech
     :update:   2021-02-19
-    :generic: 
+    :generic:
     :open:
 
 .. dropdown:: Automatic updates of speech data
@@ -44,7 +44,7 @@ Speech
     :value0:  ☑, {DISABLED}
     :ref:     https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#bkmk-priv-speech
     :update:  2021-02-19
-    :generic: 
+    :generic:
     :open:
 
   .. regedit:: Disable automatic updates of speech data
@@ -52,5 +52,5 @@ Speech
     :value0:   AllowSpeechModelUpdate, {DWORD}, 0
     :ref:      https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#bkmk-priv-speech
     :update:   2021-02-19
-    :generic: 
+    :generic:
     :open:

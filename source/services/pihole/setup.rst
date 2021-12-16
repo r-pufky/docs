@@ -7,7 +7,7 @@ Block nefarious websites & Ads.
 Ports
 *****
 .. ports:: Pi-Hole Ports
-  :value0:        53, {TCP/UDP},   {PUBLIC}, DNS Service 
+  :value0:        53, {TCP/UDP},   {PUBLIC}, DNS Service
   :value1:        80,     {TCP},   {PUBLIC}, HTTP administration webface
   :value2:       443,     {TCP}, {OPTIONAL}, HTTPS administration webface
   :value3:        67,     {UDP}, {OPTIONAL}, DHCP Service

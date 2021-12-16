@@ -105,7 +105,7 @@ Location
     :update:  2021-02-19
     :generic:
     :open:
-    
+
     See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more
     fine grained control of app access.
 

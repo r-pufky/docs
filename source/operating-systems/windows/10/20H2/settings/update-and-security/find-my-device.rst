@@ -7,7 +7,7 @@ Find my device
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
   :open:
-  
+
   GPS information is uploaded to Microsoft if enabled.
 
   .. gpo::    Disable Find my device

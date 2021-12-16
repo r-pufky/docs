@@ -31,7 +31,7 @@ Allow access to the camera on this device
     :open:
 
     ``0`` to disable camera
-  
+
   .. regedit:: Disable access to camera on this device
     :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Camera
     :value0:   AllowCamera, {DWORD}, 1

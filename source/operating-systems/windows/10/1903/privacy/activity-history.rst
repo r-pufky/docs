@@ -25,7 +25,7 @@ Activity History
 
   .. regedit:: Disable storing of activity history
     :path:     HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\System
-    :value0:   PublishUserActivities, {DWORD}, 2 
+    :value0:   PublishUserActivities, {DWORD}, 2
     :ref:      https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1822-activity-history
     :update:   2021-02-19
     :generic:

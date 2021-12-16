@@ -9,7 +9,7 @@ Apps & features
   :open:
 
   Allow install from anywhere.
-    
+
   .. gpo::    Choose where to get apps
     :path:    Computer Configuration -->
               Administrative Templates -->

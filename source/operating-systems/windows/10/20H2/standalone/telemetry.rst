@@ -12,7 +12,7 @@ hit. See `Telemetry Info`_.
   As of 20H2, only :term:`GPO`'s are covered, unless the value0 cannot be set or
   enforced via GPO. A reference link is provided to determine the appropriate
   :term:`Registry` value to use.
-  
+
 .. gui::   Disable Connected User Experiences and Telemetry Service
   :label:  Service
   :nav:    ⌘ --> services.msc

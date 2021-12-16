@@ -93,7 +93,7 @@ Determine Sockets
 
 .. code-block:: bash
   :caption: Find your extra socket on your local machine.
-   
+
   gpgconf --list-dir agent-extra-socket
 
 .. code-block:: bash
@@ -150,7 +150,7 @@ You need to import your {GPGID} public key into the local keyring to use it.
 
   $ gpg --list-keys
   $ gpg --edit-key {KEY ID}
-  
+
   > trust
   > 5
   > quit

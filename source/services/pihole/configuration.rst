@@ -64,7 +64,7 @@ specific lists.
 .. gui::   Add Disable Group
   :path:   Group Managements --> Groups --> Add a new group
   :value0: Name, {DISABLE}
-  :value1: Description, Disables PiHole domain blocking 
+  :value1: Description, Disables PiHole domain blocking
 
 .. gui::   Enable the Disable Group
   :path:   Group Managements --> Groups --> List of configured groups
@@ -76,7 +76,7 @@ specific lists.
   :path:   Group Managements --> Clients --> Add a new client
   :value0: Known clients, {IP}
   :value1: Comment, {DESCRIPTION}
- 
+
 .. gui::   Add Clients to Disable group
   :path:   Group Managements --> Clients --> List of configured clients
   :value0: IP address, {IP}

@@ -8,7 +8,7 @@ Crashplan Troubleshooting
 Inotify Limits
 **************
 You may receive inotify warnings if the limit is low. Increase inotify max watch
-limits on host so crashplan can watch all monitored files. 
+limits on host so crashplan can watch all monitored files.
 
 .. code-block:: bash
   :caption: **0644 root root** ``/etc/sysctl.conf``

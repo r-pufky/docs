@@ -45,7 +45,7 @@ Notifications
     :generic:
     :open:
 
-    ``Allow`` to enable notification listener. 
+    ``Allow`` to enable notification listener.
 
 .. _w10-1903-privacy-notifications:
 

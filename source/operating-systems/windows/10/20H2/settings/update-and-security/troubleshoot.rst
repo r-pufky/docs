@@ -8,5 +8,5 @@ Troubleshoot
   :ref:      https://www.tenforums.com/tutorials/113553-turn-off-automatic-recommended-troubleshooting-windows-10-a.html
   :update:   2021-02-19
   :open:
-  
+
   Requires diagnostic data to be uploaded to Microsoft.

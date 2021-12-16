@@ -23,7 +23,7 @@ hit. See `Telemetry Info`_.
   Older versions of Windows 10 labeled this ``Diagnostic Tracking Services``. It
   is the same service name ``DiagTrack``.
 
-.. dropdown:: Restrict data collection to Basic 
+.. dropdown:: Restrict data collection to Basic
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
@@ -69,7 +69,7 @@ hit. See `Telemetry Info`_.
     :generic:
     :open:
 
-.. dropdown:: Disable application telemetry 
+.. dropdown:: Disable application telemetry
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
@@ -94,7 +94,7 @@ hit. See `Telemetry Info`_.
     :generic:
     :open:
 
-.. dropdown:: Disable customer experience improvment program 
+.. dropdown:: Disable customer experience improvment program
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
@@ -155,7 +155,7 @@ hit. See `Telemetry Info`_.
   :value0:   DontReportInfectionInformation, {DWORD}, 1
   :ref:      https://support.microsoft.com/en-us/help/891716/deploy-windows-malicious-software-removal-tool-in-an-enterprise-enviro
   :update:   2021-02-19
-  
+
   Windows 10 Malicious Software Removal Tool automatically uploads file metadata
   for infection reporting.
 

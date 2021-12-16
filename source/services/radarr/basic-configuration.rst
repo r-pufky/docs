@@ -215,7 +215,7 @@ Download Client
 ***************
 .. gui::    Radarr Download Client
   :path:    Settings --> Download Client --> +
-  :value0:  Name, {INDEXER NAME} 
+  :value0:  Name, {INDEXER NAME}
   :value1:  Enable, {YES}
   :value2:  Host, {IP}
   :value3:  Port, 6789

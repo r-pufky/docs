@@ -2,7 +2,7 @@
 
 Taskbar
 #######
-.. dropdown:: Lock the taskbar 
+.. dropdown:: Lock the taskbar
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
@@ -26,7 +26,7 @@ Taskbar
     :update:   2021-02-19
     :generic:
     :open:
-  
+
     Reference is inverted. ``1`` will lock the taskbar.
 
 .. regedit:: Replace Command Prompt with Windows Powershell in the menu when I right-click the start button or press Windows key+X

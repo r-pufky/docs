@@ -38,7 +38,7 @@ to backup and manage snapshots automatically.
   Encrypted datasets do not need to mounted. Blocks are transferred encrypted,
   meaning the remote machine does not need the key to sync the data, but will
   require the key to mount and read/write the data.
-  
+
   The remote rollback to the latest snapshot ensures the new snapshot is
   transferred correctly, otherwise a syncronization error will occur.
 

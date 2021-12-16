@@ -107,7 +107,7 @@ Configure VLANs on Ports
   :value4:  › Name, {DISABLE}
   :value5:  › Switch Port Profile, {DISABLED}
   :value6:  Port 3,
-  :value7:  › Name, wired 
+  :value7:  › Name, wired
   :value8:  › Switch Port Profile, trunk-wired
   :value9:  Port 4,
   :value10:  › Name, server

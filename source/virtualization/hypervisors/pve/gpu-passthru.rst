@@ -67,7 +67,7 @@ Populate ``/dev`` on boot with nvidia devices.
     | 30%   42C    P8     9W / 125W |      1MiB /  7982MiB |      0%      Default |
     |                               |                      |                  N/A |
     +-------------------------------+----------------------+----------------------+
-    
+
     +-----------------------------------------------------------------------------+
     | Processes:                                                                  |
     |  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
@@ -88,7 +88,7 @@ ID's and devices should be recorded.
     lxc.cgroup2.devices.allow: c 226:* rwm
     lxc.cgroup2.devices.allow: c 236:* rwm
     lxc.cgroup2.devices.allow: c 508:* rwm
-  
+
   find /dev/nvidia* -type c ! -name nvidia-cap* | awk '{ print "lxc.mount.entry: "$1" "$1" none bind,optional,create=file" }'
 
     lxc.mount.entry: /dev/nvidia0 /dev/nvidia0 none bind,optional,create=file
@@ -153,7 +153,7 @@ driver version on the PVE host.
     | 30%   42C    P8     9W / 125W |      1MiB /  7982MiB |      0%      Default |
     |                               |                      |                  N/A |
     +-------------------------------+----------------------+----------------------+
-    
+
     +-----------------------------------------------------------------------------+
     | Processes:                                                                  |
     |  GPU   GI   CI        PID   Type   Process name                  GPU Memory |

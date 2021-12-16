@@ -15,7 +15,7 @@ Allow access to picture libraries on this device
   :value0:   Value, {SZ}, Allow
   :ref:      https://www.tenforums.com/tutorials/102590-allow-deny-os-apps-access-pictures-library-windows-10-a.html
   :update:   2021-02-19
-  
+
   Do not configure or leave enabled. Can restrict picture folder access from all
   apps and Windows. There is no GPO equivalent.
 

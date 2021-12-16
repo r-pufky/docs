@@ -34,7 +34,7 @@ Dependencies
 .. code-block:: bash
   :caption: Install firefly denpendencies
 
-  apt install nginx curl php7.4 php7.4-cli php7.4-zip php7.4-gd php7.4-fpm php7.4-json php7.4-common php7.4-pgsql php7.4-zip php7.4-mbstring php7.4-curl php7.4-xml php7.4-bcmath php7.4-imap php7.4-ldap php7.4-intl 
+  apt install nginx curl php7.4 php7.4-cli php7.4-zip php7.4-gd php7.4-fpm php7.4-json php7.4-common php7.4-pgsql php7.4-zip php7.4-mbstring php7.4-curl php7.4-xml php7.4-bcmath php7.4-imap php7.4-ldap php7.4-intl
 
 Set 512MB php limit.
 
@@ -126,7 +126,7 @@ Set the NGINX configuration to server firefly.
   DB_DATABASE=firefly
   DB_USERNAME=firefly
   DB_PASSWORD={PASS}
-  
+
   APP_URL=http://localhost
 
 .. note::
@@ -151,7 +151,7 @@ initalization if new DB or wiping existing DB contents are ok.
 
 .. code-block:: bash
   :caption: Migrate the database.
-  
+
   rm -rf /var/www/html/firefly-iii-{VERSION}/bootstrap/cache/*
   php artisan cache:clear
   php artisan migrate --seed

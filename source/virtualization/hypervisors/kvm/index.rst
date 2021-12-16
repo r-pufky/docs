@@ -10,7 +10,7 @@ Files
   :value0: /etc/libvirtd/, KVM and VM configuration data
   :value1: /var/lib/libvirt/images, Default KVM VM/ISO image pool Location
   :open:
-  
+
 Install Service
 ***************
 

@@ -71,7 +71,7 @@ Potentially unwanted app blocking
     :update:  2021-02-19
     :generic:
     :open:
-  
+
     Policy must be enabled and set to disable to apply.
 
   .. regedit:: Disable Potentially unwanted app blocking
@@ -93,7 +93,7 @@ SmartScreen for Microsoft Store apps
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  Warnings will occur if notifications are enabled. 
+  Warnings will occur if notifications are enabled.
 
   .. regedit:: Disable SmartScreen for Microsoft Store apps
     :path:     HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\

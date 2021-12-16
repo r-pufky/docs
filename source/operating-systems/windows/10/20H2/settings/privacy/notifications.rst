@@ -31,7 +31,7 @@ Allow access to user notifications on this device
     :open:
 
     ``0`` to enable user notifications. ``Allow`` to enable notification
-    listener. 
+    listener.
 
   .. regedit:: Disable access to user notifications on this device
     :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\

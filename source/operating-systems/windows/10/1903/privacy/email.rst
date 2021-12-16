@@ -8,7 +8,7 @@ Email
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-  
+
   This disables all email value0s. See
   :ref:`Allow apps to access your email <w10-1903-privacy-email>` to manage
   access on a per app basis.
@@ -43,7 +43,7 @@ Email
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-  
+
   See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more fine
   grained control of app access.
 

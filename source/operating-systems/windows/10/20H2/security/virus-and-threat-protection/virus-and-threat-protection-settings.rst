@@ -5,10 +5,10 @@ Virus & threat protection settings
 .. danger::
   As of ``20H2`` `Microsoft Defender can no longer be disabled`_ unless
   antivirus is installed. ``Tamper Protection`` can no longer be disabled.
-  
+
   After every major windows update, verify these settings.
 
-Windows Defender renamed to *Microsoft Defender* in 20H2. See 
+Windows Defender renamed to *Microsoft Defender* in 20H2. See
 :ref:`w10-20h2-standalone-microsoft-defender` for non-GUI Microsoft Defender
 settings. :ref:`w10-20h2-standalone-telemetry` for telemetry services.
 

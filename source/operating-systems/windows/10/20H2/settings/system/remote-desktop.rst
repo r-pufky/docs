@@ -46,7 +46,7 @@ Remote Desktop
     :update:   2021-02-19
     :generic:
     :open:
-  
+
   .. regedit:: Require network authentication
     :path:     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\
                Terminal Server\WinStations\RDP-Tcp

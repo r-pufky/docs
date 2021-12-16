@@ -7,7 +7,7 @@ Permissions & History
              SearchSettings
   :value0:   SafeSearchMode, {DWORD}, 0
   :ref:      https://www.tenforums.com/tutorials/82478-change-safesearch-setting-windows-10-a.html#option2
-  :update:   2021-02-19  
+  :update:   2021-02-19
 
   Prevent filtering of results by Windows Search. Note the GPO only applies to
   Windows versions before 10.

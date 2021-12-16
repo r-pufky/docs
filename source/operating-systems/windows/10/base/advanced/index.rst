@@ -10,7 +10,7 @@ Advanced Windows configuration. Specific configuration for specific cases.
 * :ref:`w10-remove-startup-items` to remove items that cannot be removed via GUI.
 * :ref:`w10-remove-preinstalled-packages` via powershell.
 * :ref:`w10-specific-windows-fixes` for unique cases.
-* :ref:`w10-wsl` to run Linux in Windows Kernel. 
+* :ref:`w10-wsl` to run Linux in Windows Kernel.
 * :ref:`w10-scheduled-tasks-inconsistencies` to remediate scheduling service issues.
 * :ref:`w10-run-windows-on-usb` to run (not install) Windows on USB.
 

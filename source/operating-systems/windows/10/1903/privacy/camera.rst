@@ -57,7 +57,7 @@ Camera
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more fine 
+  See :ref:`w10-1903-privacy-app-list` to generate a list of apps for more fine
   grained control of app access.
 
   .. gpo::    Disable apps access to your camera

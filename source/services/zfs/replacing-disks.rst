@@ -37,7 +37,7 @@ Identify the drive serial number for easy hardware swapping when off.
 
 .. code-block:: bash
   :caption: Identify the ZFS GUID for the bad disk
-  
+
   zdb
 
 .. code-block:: bash
@@ -56,7 +56,7 @@ Identify the drive serial number for easy hardware swapping when off.
         com.delphix:vdev_zap_leaf: 131
 
 .. code-block:: bash
-  :caption: Offline the bad disk in the pool 
+  :caption: Offline the bad disk in the pool
 
   zpool status {POOL}
   zpool offline {POOL} {BAD DISK}
@@ -92,7 +92,7 @@ pool, which will look like:
            4.15T scanned at 26.4G/s, 3.55G issued at 22.6M/s, 45.7T total
            0B resilvered, 0.01% done, 24 days 13:33:50 to go
    config:
-  
+
            NAME                                STATE     READ WRITE CKSUM
            hundo                               DEGRADED     0     0     0
              raidz2-0                          DEGRADED     0     0     0
@@ -118,7 +118,7 @@ pool, which will look like:
           9.07T scanned at 10.1G/s, 570G issued at 636M/s, 45.7T total
           93.7G resilvered, 1.22% done, 20:40:40 to go
   config:
-  
+
           NAME                                STATE     READ WRITE CKSUM
           hundo                               DEGRADED     0     0     0
             raidz2-0                          DEGRADED     0     0     0
@@ -180,7 +180,7 @@ upgrade requirements have been met.
   (``zpool offline {POOL} {OLD DISK}``), the new disk physically changed, and
   then replace (``zpool replace {POOL} {NEW DISK}``), if constrained by
   hardware.
-  
+
   **Data destructive**. Verify the correct drive is selected.
 
 Combination of Raw Disks and Partitions in Pool

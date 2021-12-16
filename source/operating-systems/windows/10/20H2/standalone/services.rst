@@ -11,7 +11,7 @@ These services either do user data tracking, or are unnecessary.
   :value0:   Service name, GameScannerService
   :value1:   Startup type, {DISABLED}
   :value2: Service status, {STOPPED}
-  :update: 2021-02-19  
+  :update: 2021-02-19
 
 .. gui::   Disable ASUS Armoury Crate
   :label:  Service
@@ -21,7 +21,7 @@ These services either do user data tracking, or are unnecessary.
   :value1:   Startup type, {DISABLED}
   :value2: Service status, {STOPPED}
   :ref: https://old.reddit.com/r/Amd/comments/koh9ca/turning_offdisabling_my_rgb_g_skill_trident_z_neo/
-  :update: 2021-04-08  
+  :update: 2021-04-08
 
 .. gui::   Disable ASUS Com Service
   :label:  Service
@@ -31,7 +31,7 @@ These services either do user data tracking, or are unnecessary.
   :value1:   Startup type, {DISABLED}
   :value2: Service status, {STOPPED}
   :ref: https://old.reddit.com/r/Amd/comments/koh9ca/turning_offdisabling_my_rgb_g_skill_trident_z_neo/
-  :update: 2021-04-08  
+  :update: 2021-04-08
 
 .. gui::   Disable Asus Service
   :label:  Service
@@ -41,7 +41,7 @@ These services either do user data tracking, or are unnecessary.
   :value1:   Startup type, {DISABLED}
   :value2: Service status, {STOPPED}
   :ref: https://old.reddit.com/r/Amd/comments/koh9ca/turning_offdisabling_my_rgb_g_skill_trident_z_neo/
-  :update: 2021-04-08  
+  :update: 2021-04-08
 
 .. gui::   Disable AsusUpdateCheck Service
   :label:  Service
@@ -51,4 +51,4 @@ These services either do user data tracking, or are unnecessary.
   :value1:   Startup type, {DISABLED}
   :value2: Service status, {STOPPED}
   :ref: https://old.reddit.com/r/Amd/comments/koh9ca/turning_offdisabling_my_rgb_g_skill_trident_z_neo/
-  :update: 2021-04-08  
+  :update: 2021-04-08

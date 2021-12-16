@@ -3,7 +3,7 @@
 Email
 #####
 :cmdmenu:`⌘ + r --> ms-settings:privacy-email`
-  
+
 See :ref:`w10-determining-app-list` to generate a list of apps for more fine
 grained control of app access.
 
@@ -13,7 +13,7 @@ Allow access to email on this device
   :container: + shadow
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
-  
+
   This disables all email options. See
   :ref:`w10-20h2-settings-privacy-email-apps` to manage access on a per app
   basis.

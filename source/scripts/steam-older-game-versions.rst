@@ -17,7 +17,7 @@ mechanism to install an old version for a game.
 #. Open the Steam console from browser: `steam://nav/console <steam://nav/console>`_.
    Steam Client Bootstrapper should launch.
 #. Download the old version:
-   
+
    .. code-block:: bash
      :caption: download_depot <AppID> <DepotID> <ManifestID>
 

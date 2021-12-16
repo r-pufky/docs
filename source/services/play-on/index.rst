@@ -18,7 +18,7 @@ System Requirements
 Ports
 *****
 .. ports:: Play-on Ports
-  :value0:    22,     {TCP},  {PUBLIC}, SSHD for sshfs connections 
+  :value0:    22,     {TCP},  {PUBLIC}, SSHD for sshfs connections
   :value1: 57331, {TCP/UDP}, {DISABLE}, For streaming to other playon apps
   :open:
 

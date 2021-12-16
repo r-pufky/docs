@@ -27,7 +27,7 @@ Disable this.
               Delivery Optimization -->
               Download Mode
     :value0:  ☑, {DISABLED}
-    :value1:  Download Mode, Bypass (100) 
+    :value1:  Download Mode, Bypass (100)
     :ref:     https://www.tenforums.com/windows-updates-activation/94567-windows-update-using-all-available-bandwidth-disabled-p2p-updates-3.html
     :update:  2021-02-19
     :generic:

@@ -28,6 +28,6 @@ Keys can be extracted from the PFX file for use if needed.
   openssl pkcs12 -in {CLIENT}.pfx -nocerts -nodes | openssl rsa -out rsa.key
 
 .. code-block:: bash
-  :caption: Extract RSA public key 
+  :caption: Extract RSA public key
 
   openssl pkcs12 -in {CLIENT}.pfx -clcerts -nokeys | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > rsa.pub

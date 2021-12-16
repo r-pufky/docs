@@ -44,7 +44,7 @@ re-enable them from the GUI.
     :value0:   Value, {SZ}, Deny
     :update:   2021-02-19
     :open:
-    
+
     A key needs to be made for each app to block. Valid values are ``Allow``
     and ``Deny``.
 

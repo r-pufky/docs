@@ -32,7 +32,7 @@ Best practice from years of ZFS use are:
 * Set mountpoints immutable ``chattr +i {MOUNTPOINT}`` when dataset is not
   mounted. This prevents writing to those mountpoints when the pool/dataset is
   not mounted or unlocked.
-  
+
 See :ref:`service-zfs-encryption`.
 
 .. code-block:: bash

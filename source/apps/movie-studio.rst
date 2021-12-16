@@ -35,7 +35,7 @@ Templates below work well with shadowplay videos and youtube uploads.
     :value7:                     Profile, Main
     :value8:                  Frame rate, 60.000000
     :value9:                           ☑, Allow source to adjust frame rate
-    :value10:                Field order, None (progressive scan) 
+    :value10:                Field order, None (progressive scan)
     :value11:         Pixel aspect ratio, 1.0000
     :value12: Number of reference frames, 2
     :value13:                          ☐, Use deblocking filter
@@ -102,7 +102,7 @@ Templates below work well with shadowplay videos and youtube uploads.
     :value7:                     Profile, Main
     :value8:                  Frame rate, 59.683000
     :value9:                           ☑, Allow source to adjust frame rate
-    :value10:                Field order, None (progressive scan) 
+    :value10:                Field order, None (progressive scan)
     :value11:         Pixel aspect ratio, 1.0000
     :value12: Number of reference frames, 2
     :value13:                          ☐, Use deblocking filter
@@ -169,7 +169,7 @@ Templates below work well with shadowplay videos and youtube uploads.
     :value7:                     Profile, Main
     :value8:                  Frame rate, 60.000000
     :value9:                           ☑, Allow source to adjust frame rate
-    :value10:                Field order, None (progressive scan) 
+    :value10:                Field order, None (progressive scan)
     :value11:         Pixel aspect ratio, 1.0000
     :value12: Number of reference frames, 2
     :value13:                          ☐, Use deblocking filter
@@ -236,7 +236,7 @@ Templates below work well with shadowplay videos and youtube uploads.
     :value7:                     Profile, Main
     :value8:                  Frame rate, 60.000000
     :value9:                           ☑, Allow source to adjust frame rate
-    :value10:                Field order, None (progressive scan) 
+    :value10:                Field order, None (progressive scan)
     :value11:         Pixel aspect ratio, 1.0000
     :value12: Number of reference frames, 2
     :value13:                          ☐, Use deblocking filter
@@ -303,7 +303,7 @@ Templates below work well with shadowplay videos and youtube uploads.
     :value7:                     Profile, Main
     :value8:                  Frame rate, 60.000000
     :value9:                           ☑, Allow source to adjust frame rate
-    :value10:                Field order, None (progressive scan) 
+    :value10:                Field order, None (progressive scan)
     :value11:         Pixel aspect ratio, 1.0000
     :value12: Number of reference frames, 2
     :value13:                          ☐, Use deblocking filter
