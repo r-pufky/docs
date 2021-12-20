@@ -1,7 +1,7 @@
-.. _manjaro-kde-plasma:
+.. _manjaro-kde:
 
-Manjaro KDE Plasma
-##################
+Manjaro KDE
+###########
 Install and configure Manjaro with KDE Plasma.
 
 .. toctree::

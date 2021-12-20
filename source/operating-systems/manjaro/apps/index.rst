@@ -1,4 +1,4 @@
-.. _manjaro-kde-plasma-apps:
+.. _manjaro-kde-apps:
 
 .. code-block:: bash
   :caption: Install common Applications
@@ -15,10 +15,10 @@
 
   git lfs install
 
-#. :ref:`manjaro-kde-plasma-apps-chrome`
-#. :ref:`manjaro-kde-plasma-apps-vscodium`
-#. :ref:`manjaro-kde-plasma-apps-steam`
-#. :ref:`manjaro-kde-plasma-apps-sublime`
+#. :ref:`manjaro-kde-apps-chrome`
+#. :ref:`manjaro-kde-apps-vscodium`
+#. :ref:`manjaro-kde-apps-steam`
+#. :ref:`manjaro-kde-apps-sublime`
 
 .. toctree::
    :hidden:

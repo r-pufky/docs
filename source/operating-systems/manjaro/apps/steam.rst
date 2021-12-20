@@ -1,4 +1,4 @@
-.. _manjaro-kde-plasma-apps-steam:
+.. _manjaro-kde-apps-steam:
 
 Steam
 #####

@@ -1,4 +1,4 @@
-.. _manajaro-kde-plasma-system-date-and-time:
+.. _manajaro-kde-system-date-and-time:
 
 System Date and Time
 ####################

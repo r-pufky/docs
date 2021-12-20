@@ -1,4 +1,4 @@
-.. _manjaro-kde-plasma-apps-chrome:
+.. _manjaro-kde-apps-chrome:
 
 Chrome
 ######
@@ -42,7 +42,7 @@ This must be updated manually.
   git pull
   makepkg -si
 
-Disable Background services
+Disable Background Services
 ***************************
 Chrome background services will cause "failed to restore properly" messages on
 startup.

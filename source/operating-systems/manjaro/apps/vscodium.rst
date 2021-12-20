@@ -1,4 +1,4 @@
-.. _manjaro-kde-plasma-apps-vscodium:
+.. _manjaro-kde-apps-vscodium:
 
 VSCodium (VSCode)
 #################
@@ -12,7 +12,7 @@ https://github.com/microsoft/vscode/issues/104319
 
 .. gui:: Enable AUR Repository
   :nav:    ⌘ --> add/remove software
-  :path:   ... --> preferences --> third party
+  :path:   ⋮ --> preferences --> third party
   :value0: ☑, enable AUR support
   :value1: ☑, check for updates
   :value2: ☑, check for development packages updates

@@ -1,4 +1,4 @@
-.. _manajaro-kde-plasma-ui-settings:
+.. _manajaro-kde-ui-settings:
 
 UI Settings
 ###########
@@ -15,402 +15,457 @@ Themes
 
 Re-login.
 
-:cmdmenu:`⌘ --> system settings --> appearance --> global theme`
+Global Theme
+************
+.. gui:: General
+  :nav:    ⌘ --> system settings
+  :path:   appearance --> global theme
+  :value0: ☑, arc dark
+  :update: 2021-12-20
 
-* arc dark
+.. gui:: Application Style
+  :nav:    ⌘ --> system settings
+  :path:   appearance --> global theme --> application style
+  :value0:                                       ☑, breeze
+  :value1: › configure gnome/gtk application style, arc dark
+  :update: 2021-12-20
 
-:cmdmenu:`⌘ --> system settings --> appearance --> global theme --> application style`
+.. gui:: Plasma Style
+  :nav:    ⌘ --> system settings
+  :path:   appearance --> global theme --> plasma style
+  :value0: ☑, arc dark
+  :update: 2021-12-20
 
-* breeze
-* configure gnome/gtk application style
-  * arc-dark
+.. gui:: Colors
+  :nav:    ⌘ --> system settings
+  :path:   appearance --> global theme --> colors
+  :value0: ☑, arc dark
+  :update: 2021-12-20
 
-:cmdmenu:`⌘ --> system settings --> appearance --> global theme --> plasma style`
+.. gui:: Theme
+  :nav:    ⌘ --> system settings
+  :path:   appearance --> global theme --> window decorations --> theme
+  :value0: ☑, arc dark
+  :update: 2021-12-20
 
-* arc dark
+.. gui:: Titlebar Buttons
+  :nav:    ⌘ --> system settings
+  :path:   appearance --> global theme --> window decorations
+           titlebar buttons
+  :value0: {DELETE}, on all desktops
+  :value1: {DELETE}, more actions for this window
+  :value2:        ☑, shade (right side - left of minimize)
+  :value3:        ☑, keep below other windows (leftmost)
+  :value4:        ☑, keep above other windows (right of keep below)
+  :update: 2021-12-20
 
-:cmdmenu:`⌘ --> system settings --> appearance --> global theme --> colors`
+.. gui:: Fonts
+  :nav:    ⌘ --> system settings
+  :path:   appearance --> global theme --> fonts
+  :value0: fixed width, SFMono Nerd Font 11pt regular
+  :update: 2021-12-20
 
-* arc dark
+.. gui:: Icons
+  :nav:    ⌘ --> system settings
+  :path:   appearance --> global theme --> fonts
+  :value0: ☑, papirus-dark
+  :update: 2021-12-20
 
-:cmdmenu:`⌘ --> system settings --> appearance --> global theme --> window decorations --> theme`
+.. gui:: Cursors
+  :nav:    ⌘ --> system settings
+  :path:   appearance --> global theme --> cursors
+  :value0: ☑, breeze
+  :update: 2021-12-20
 
-* arc dark
+.. gui:: Launch Feedback
+  :nav:    ⌘ --> system settings
+  :path:   appearance --> global theme --> launch feedback
+  :value0:               cursor, no feedback
+  :value1:         task manager, check enable animation
+  :value2: stop animation after, 5 seconds
+  :update: 2021-12-20
 
-:cmdmenu:`⌘ --> system settings --> appearance --> global theme --> window decorations --> titlebar buttons`
-
-* Remove: on all desktops
-* Remove: more actions for this window
-* Add: shade (right side, left of minimize)
-* Add: keep below other windows (leftmost)
-* Add: keep above other windows (right of keep below)
-
-:cmdmenu:`⌘ --> system settings --> appearance --> global theme --> fonts`
-
-* fixed width: SFMono Nerd Font 11pt regular
-
-:cmdmenu:`⌘ --> system settings --> appearance --> global theme --> icons`
-
-* papirus-dark
-
-:cmdmenu:`⌘ --> system settings --> appearance --> global theme --> cursors`
-
-* breeze
-
-:cmdmenu:`⌘ --> system settings --> appearance --> global theme --> launch feedback`
-
-* cursor: no feedback
-* task manager: check enable animation
-* stop animation after: 5 seconds
-
-:cmdmenu:`⌘ --> system settings --> appearance --> global theme --> splash screen`
-
-* QuarksSplashDarker (install from UI)
-
-:cmdmenu:`⌘ --> system settings --> sddm login screen (sddm) --> login screen`
-
-* Chili for Plasma (install from UI)
-* background: ``/usr/share/wallpapers/SafeLanding/contents/images/*.jpg``
-
-Langauge Packs
-**************
-:cmdmenu:`⌘ --> system settings --> language packs`
-
-* Install all
-
-Workspace Behavior
-******************
-:cmdmenu:`⌘ --> system settings --> workspace behavior`
-
-:cmdmenu:`general behavior`
-
-* clicking in scrollbar track: scrolls to clicked location
-
-:cmdmenu:`dekstop effects`
-
-* accessibility
-
-  * zoom (configured automatically with 150% scaling)
-
-* appearance
-
-  * blur
-  * destaturate unresponsive applications
-  * fading popups
-  * fall apart
-  * full screen
-  * login
-  * logout
-  * maximize
-  * morphing popups
-  * screen edge
-  * sliding popups
-  * translucency
-  * squash
-
-* focus
-
-  * dialog parent
-  * dim screen for administrative mode
-
-* show desktop animation
-
-  * eye on screen
-
-* virtual desktop switchin animation
-
-  * slide
-
-* window management
-
-  * desktop grid
-  * present windows
-
-* window open/close animation
-
-  * glide
-
-:cmdmenu:`screen edges`
-
-* Upper left: lock screen
-* Upper right: present windows - all desktops
-
-:cmdmenu:`screen locking`
-
-* ☑ lock screen automatically: 5mins
-* ☑ after waking from sleep
-* allow unlocking without a password for: 0 seconds
-* keyboard shortcut: super + L
-* appearance
-
-  * ☑ clock
-  * ☐ media controls
-  * image: safe landing (same as login screen)
-
-:cmdmenu:`virtual desktops`
-
-* Remove additional desktops
-
-:cmdmenu:`activities > privacy`
-
-* keep history: 1 month (minimum time, clear current)
-* remember opened documents: only for specific applications
-
-  * sublime
-  * ☑ blacklist applications not in the list
+.. gui:: Splash Screen
+  :nav:    ⌘ --> system settings
+  :path:   appearance --> global theme --> splash screen
+  :value0: ☑, QuarksSplashDarker (Install from UI)
+  :update: 2021-12-20
 
 Startup & Shutdown
 ******************
-:cmdmenu:`⌘ --> system settings --> startup and shutdown --> autostart`
+.. gui:: Login Screen
+  :nav:    ⌘ --> system settings --> startup and shutdown
+  :path:   login screen (sddm)
+  :value0:            ☑, Chili for Plasma (Install from UI)
+  :value1: › background, ``/usr/share/wallpapers/SafeLanding/contents/images/*.jpg``
+  :update: 2021-12-20
 
-* remove all
+.. gui:: Autostart
+  :nav:    ⌘ --> system settings --> startup and shutdown
+  :path:   autostart
+  :value0: {DELETE}, all
+  :update: 2021-12-20
+
+Langauge Packs
+**************
+.. gui:: Language Packs
+  :nav:    ⌘ --> system settings
+  :path:   language packs
+  :value0: {ADD}, all language packs
+  :update: 2021-12-20
+  :open:
+
+Workspace Behavior
+******************
+.. gui:: General Behavior
+  :nav:    ⌘ --> system settings --> workspace behavior
+  :path:   general behavior
+  :value0: clicking in scrollbar track: scrolls to clicked location
+  :update: 2021-12-20
+
+.. gui:: Desktop Effects
+  :nav:     ⌘ --> system settings --> workspace behavior
+  :path:    desktop effects
+  :value0:                         accessibility,  
+  :value1:                                   › ☑, zoom (configured automatically with 150% scaling)
+  :value2:                            appearance,  
+  :value3:                                   › ☑, blur
+  :value4:                                   › ☑, destaturate unresponsive applications
+  :value5:                                   › ☑, fading popups
+  :value6:                                   › ☑, fall apart
+  :value7:                                   › ☑, full screen
+  :value8:                                   › ☑, login
+  :value9:                                   › ☑, logout
+  :value10:                                  › ☑, maximize
+  :value11:                                  › ☑, morphing popups
+  :value12:                                  › ☑, screen edge
+  :value13:                                  › ☑, sliding popups
+  :value14:                                  › ☑, translucency
+  :value15:                                  › ☑, squash
+  :value16:                                focus,  
+  :value17:                                  › ☑, dialog parent
+  :value18:                                  › ☑, dim screen for administrative mode
+  :value19:               show desktop animation,  
+  :value20:                                  › ☑, eye on screen
+  :value21:  virtual desktop switching animation,  
+  :value22:                                  › ☑, slide
+  :value23:                    window management,  
+  :value24:                                  › ☑, desktop grid
+  :value25:                                  › ☑, present windows
+  :value26:          window open/close animation,  
+  :value27:                                  › ☑, glide
+  :update: 2021-12-20
+
+.. gui:: Screen Edges
+  :nav:    ⌘ --> system settings --> workspace behavior
+  :path:   screen edges
+  :value0:             {UPPPER LEFT}, lock screen
+  :value1:             {UPPER RIGHT}, present windows - all desktops
+  :value2:                         ☑, windows dragged to top edge
+  :value3:                         ☑, windows dragged to left or right edge
+  :value4: trigger quarter tiling in, outer 25%
+  :value5:    switch on desktop edge, {OFF}
+  :value6:          activation delay, 500ms
+  :value7:        reactivation delay, 1000ms
+  :update: 2021-12-20
+
+.. gui:: Screen Locking
+  :nav:    ⌘ --> system settings --> workspace behavior
+  :path:   screen locking
+  :value0:            ☑ lock screen automatically, 5mins
+  :value1:                                    › ☑, after waking from sleep
+  :value2: allow unlocking without a password for, 0 seconds
+  :value3:                      keyboard shortcut, ⌘ + L
+  :value4:                             appearance,  
+  :value5:                                    › ☑, clock
+  :value6:                                    › ☐, media controls
+  :value7:                                › image, safe landing (same as login screen)
+  :update: 2021-12-20
+
+.. gui:: Virtual Desktops
+  :nav:    ⌘ --> system settings --> workspace behavior
+  :path:   virtual desktops
+  :value0: {DELETE}, all
+  :update: 2021-12-20
+
+.. gui:: Activities
+  :nav:    ⌘ --> system settings --> workspace behavior
+  :path:   activities --> privacy
+  :value0:              keep history, 1 month
+  :value1: remember opened documents, only for specific applications
+  :value2:                         ›, sublime
+  :value3:                         ☑, blacklist applications not in the list
+  :update: 2021-12-20
+
+  The minimum time is one month; clear current data.
 
 Windows Management
 ******************
-:cmdmenu:`⌘ --> system settings --> windows management`
+.. gui:: Window Behavior
+  :nav:    ⌘ --> system settings --> windows management
+  :path:   window behavior
+  :value0:                       focus,  
+  :value1:  › window activation policy, focus follows mouse
+  :value2:            › delay focus by, 300ms
+  :value3: › focus stealing prevention, low
+  :value4:                         › ☑, click raises active window
+  :update: 2021-12-20
 
-:cmdmenu:`window behavior`
-
-* focus
-
-  * window activation policy: focus follows mouse
-  * delay focus by: 300ms
-  * focus stealing prevention: low
-  * raising windows: ☑ click raises active window
-
-:cmdmenu:`task switcher`
-
-* main
-
-  * ☑ show selected window
-  * ☑ thumbnail grid
+.. gui:: Task Switcher
+  :nav:    ⌘ --> system settings --> windows management
+  :path:   task switcher
+  :value0: main,  
+  :value1: › ☑, show selected window
+  :value2: › ☑, thumbnail grid
+  :update: 2021-12-20
 
 Shortcuts
 *********
-:cmdmenu:`⌘ --> system settings --> shortcuts`
+.. gui:: KWin
+  :nav:    ⌘ --> system settings --> shortcuts
+  :path:   system services --> kwin
+  :value0: make window fullscreen, alt+return
+  :update: 2021-12-20
 
-:cmdmenu:`shortcuts --> system services --> kwin`
+.. gui:: KRunner
+  :nav:    ⌘ --> system settings --> shortcuts
+  :path:   applications --> krunner
+  :value0: krunner,  
+  :value1:    › ☐, alt + f2
+  :value2:    › ☑, search
+  :value3:    › ☑, alt + space
+  :update: 2021-12-20
 
-* make window fullscreen: alt+return
+.. gui:: Activity Switching
+  :nav:    ⌘ --> system settings --> shortcuts
+  :path:   system services --> activity switching
+  :value0: activate application launcher widget,  
+  :value1: {DELETE}, alt + f1
+  :value2:    {ADD}, ⌘ + space
+  :update: 2021-12-20
 
-:cmdmenu:`shortcuts --> applications --> krunner`
-
-* krunner
-
-  * ☐ alt+f2
-  * ☑ search
-  * ☑ alt+space
-
-:cmdmenu:`shortcuts --> system services --> plasma`
-
-* activate application launcher widget (activity switching)
-
-  * delete: alt+f1
-  * add: meta+space
-
-.. note::
   This will enable meta only key and meta+space key for app launcher.
 
 Search
 ******
-:cmdmenu:`⌘ --> system settings --> search`
+.. gui:: File Search
+  :nav:    ⌘ --> system settings --> search
+  :path:   file search
+  :value0: ☐, enable file search
+  :update: 2021-12-20
 
-:cmdmenu:`file search`
+.. gui:: KRunner
+  :nav:    ⌘ --> system settings --> search
+  :path:   krunner
+  :value0: ☐, bookmarks
+  :value1: ☐, browser history
+  :value2: ☐, browser tabs
+  :value3: ☐, kate sessions
+  :value4: ☐, konsole proflies
+  :value5: ☐, web search keywords
+  :update: 2021-12-20
 
-* ☐ enable file search
-
-:cmdmenu:`krunner`
-
-* ☐ bookmarks
-* ☐ browser history
-* ☐ browser tabs
-* ☐ kate sessions
-* ☐ konsole proflies
-* ☐ web search keywords
-
-.. note::
   Krunner must be enabled for start searches
 
-:cmdmenu:`web search keywords`
+.. gui:: Web Search Keywods
+  :nav:    ⌘ --> system settings --> search
+  :path:   web search keywords
+  :value0: ☐, enable web search keywords
+  :update: 2021-12-20
 
-* ☐ enable web search keywords
+.. _manajaro-kde-ui-settings-personalization:
 
 Personalization
 ***************
-:cmdmenu:`⌘ --> system settings --> personalization`
+.. gui:: Notifications
+  :nav:    ⌘ --> system settings --> personalization
+  :path:   notifications
+  :value0:        do not disturb mode, ☐ enable when screens are minimized
+  :value1:     critical notifications, ☑ show in do not disturb mode
+  :value2:       normal notifications, ☐ show over full screen windows
+  :value3: low priority notifications, ☑ show popup
+  :value4:                      popup, ☑ show near notification icon
+  :value5:                 hide after, 5secs
+  :value6:       application progress,  
+  :value7:                        › ☐, show in task manager  (enable if GUI copy progress not showing)
+  :value8:                        › ☐, show in notifications (enable if GUI copy progress not showing)
+  :value9:                        › ☑, keep popup open during progress
+  :value10:      notifications badges, ☑ show in task manager
+  :update: 2021-12-20
 
-:cmdmenu:`notifications`
+.. gui:: Accessibility
+  :nav:    ⌘ --> system settings --> personalization
+  :path:   accessibility
+  :value0:             bell,  
+  :value1:              › ☐, audible bell
+  :value2:              › ☐, visible bell
+  :value3:    modifier keys,  
+  :value4:              › ☐, sticky keys
+  :value5: keyboard filters,  
+  :value6:              › ☐, slow keys
+  :value7:    screen reader,  
+  :value8:              › ☐, enable screen reader
+  :update: 2021-12-20
 
-* do not disturb mode: ☐ enable when screens are minimized
-* critical notifications: ☑ show in do not disturb mode
-* normal notifications: ☐ show over full screen windows
-* low priority notifications: ☑ show popup
-* popup: ☑ show near notification icon
-* hide after: 5secs
-* application progress
-
-  * ☐ show in task manager  (enable if GUI copy progress not showing)
-  * ☐ show in notifications (enable if GUI copy progress not showing)
-  * ☑ keep popup open during progress
-
-* notifications badges: ☑ show in task manager
-
-:cmdmenu:`accessibility`
-
-* bell
-
-  * ☐ audible bell
-  * ☐ visible bell
-
-* modifier keys
-
-  * ☐ sticky keys
-
-* keyboard filters
-
-  * ☐ slow keys
-
-* screen reader
-
-  * ☐ enable screen reader
-
-:cmdmenu:`applications --> default applications`
-
-* email client: google chrome
-* terminal emulator: alacritty
+.. gui:: Default Applications
+  :nav:    ⌘ --> system settings --> personalization
+  :path:   applications --> default applications
+  :value0:      email client, google chrome
+  :value1: terminal emulator, alacritty
+  :update: 2021-12-20
 
 KDE Wallet
 **********
-:cmdmenu:`⌘ --> system settings --> kde wallet`
+.. gui:: Wallet Preferences
+  :nav:    ⌘ --> system settings --> kde wallet
+  :path:   wallet preferences
+  :value0: ☐, enable the kde wallet subsystem
+  :update: 2021-12-20
 
-* wallet preferences
-
-  * ☐ enable the kde wallet subsystem
-
-* access control
-
-  * ☑ prompt when an application accesses a wallet
+.. gui:: Access Control
+  :nav:    ⌘ --> system settings --> kde wallet
+  :path:   access control
+  :value0: ☑, prompt when an application accesses a wallet
+  :update: 2021-12-20
 
 User Feedback
 *************
-:cmdmenu:`⌘ --> system settings --> user feedback`
-
-* disable
+.. gui:: User Feedback
+  :nav:    ⌘ --> system settings
+  :path:   user feedback
+  :value0: {DISABLE},  
+  :update: 2021-12-20
 
 Input Devices
 *************
-:cmdmenu:`⌘ --> system settings --> hardware --> input devices --> touchpad`
-
-* general
-
-  * ☑ device enabled
-  * ☑ disable when typing
-  * ☐ left handed mode
-  * ☐ press left and right buttons for middle click
-  * 0.00: pointer accleration
-  * acceleration profile: ☑ adaptive
-  * ☑ tap to click
-  * ☑ tap and drag
-  * ☐ tap and drag lock
-  * two finger click: ☑ right click (three-finger tap to middle click)
-  * scrolling: ☑ two fingers
-  * ☐ invert scroll direction
-  * ☐ disable horizontal scrolling
-  * right-click: ☑ press bottom-right corner
-  * middle-click: ☑ press bottom-middle
+.. gui:: Touchpad
+  :nav:     ⌘ --> system settings --> hardware --> input devices
+  :path:    touchpad
+  :value0:                     ☑, device enabled
+  :value1:                     ☑, disable when typing
+  :value2:                     ☐, left handed mode
+  :value3:                     ☐, press left and right buttons for middle click
+  :value4:                  0.00, pointer accleration
+  :value5:  acceleration profile, ☑ adaptive
+  :value6:                     ☑, tap to click
+  :value7:                     ☑, tap and drag
+  :value8:                     ☐, tap and drag lock
+  :value9:      two finger click, ☑ right click (three-finger tap to middle click)
+  :value10:            scrolling, ☑ two fingers
+  :value11:                    ☐, invert scroll direction
+  :value12:                    ☐, disable horizontal scrolling
+  :value13:          right-click, ☑ press bottom-right corner
+  :value14:         middle-click, ☑ press bottom-middle
+  :update: 2021-12-20
 
 Night Color
 ***********
-:cmdmenu:`⌘ --> system settings --> hardware --> display and monitor --> night color`
-
-* ☐ activate night color
+.. gui:: Night Color
+  :nav:    ⌘ --> system settings --> hardware --> display and monitor
+  :path:   night color
+  :value0: ☐, activate night color
+  :update: 2021-12-20
 
 Taskbar Clock
 *************
-:cmdmenu:`clock (lower right) --> settings --> appearance`
-
-* information: ☑ show date (adaptive location)
-* show time zone: ☑ only when different from local time zone
-* display time zone as: code
-* time display: 24-hour
-* date format: iso date
+.. gui:: Night Color
+  :nav:    taskbar clock --> {RMB} --> configure digital clock
+  :path:   appearance
+  :value0:                    ☐, activate night color
+  :value1:          information, ☑ show date (adaptive location)
+  :value2:       show time zone, ☑ only when different from local time zone
+  :value3: display time zone as, code
+  :value4:         time display, 24-hour
+  :value5:          date format, iso date
+  :update: 2021-12-20
 
 System Tray
 ***********
-:cmdmenu:`system tray --> settings --> general` or
-:cmdmenu:`system tray --> RMB --> enter edit mode`
+.. gui:: General
+  :nav:    system tray --> {RMB} --> configure system tray
+  :path:   general
+  :value0: ☑, scale with panel height
+  :update: 2021-12-20
 
-* panel icon size: ☑ scale with panel height
+.. gui:: Entries
+  :nav:     system tray --> {RMB} --> configure system tray
+  :path:    entries
+  :value0:                        ☑, always show all entries
+  :value1:       application status,  
+  :value2:                › default, always shown
+  :value3:           › media player, show when relevant
+  :value4:          › notifications, show when relevant (required for GUI file copy progress)
+  :value5:         hardware control,  
+  :value6:                › default, show when relevant
+  :value7:  › display configuration, {DISABLED}
+  :value8:               › touchpad, {DISABLED}
+  :value9:        › key lock status, {DISABLED}
+  :value10:       › keyboard layout, {DISABLED}
+  :value11:           › kde connect, {DISABLED}
+  :value12:         system services,  
+  :value13:             › clipboard, {DISABLED}
+  :value14:            › disk quota, {DISABLED}
+  :value15:   › night color control, {DISABLED}
+  :value16: c         miscellaneous,  
+  :value17:          › kate session, {DISABLED}
+  :value18:        › weather report, {DISABLED}
+  :update: 2021-12-20
 
-:cmdmenu:`system tray --> settings --> entries`
+  File copy progress also requires notifications settings to be enabled. See
+  :ref:`manajaro-kde-ui-settings-personalization`.
 
-* ☑ always show all entries
-* application status
+.. gui:: Remove Show Desktop
+  :nav:    system tray --> {RMB}
+  :path:   enter edit mode
+  :value0: {DELETE}, show desktop
+  :update: 2021-12-20
 
-  * default: always shown
-  * media player: show when relevant
-  * notifications: show when relevant (required for GUI file copy progress; unless disable in notifications settings)
+.. gui:: Remove News
+  :nav:    system tray --> news
+  :path:   settings
+  :value0: ☐, autostart
+  :value1: ☐, show error notifications
+  :update: 2021-12-20
 
-* hardware control
+  Manually quit News.
 
-  * default: show when relevant
-  * display configuration: disabled
-  * touchpad: disabled
-  * key lock status: disabled
-  * keyboard layout: disabled
-  * kde connect: disabled
+.. gui:: Remove Show Desktop
+  :nav:    system tray --> manjaro settings manager
+  :path:   options
+  :value0: ☐, check unsupported kernels
+  :value1: ☐, check new kernels
+  :value2: ☐, check missing language packs
+  :update: 2021-12-20
 
-* system services
+  Manually quit Manajero Settings Manager.
 
-  * clipboard: disabled
-  * disk quota: disabled
-  * night color control: disabled
+.. gui:: Remove Key Lock Status
+  :nav:    system tray
+  :path:   key lock status
+  :value0: {DELETE}
+  :update: 2021-12-20
 
-* miscellaneous
-
-  * kate session: disabled
-  * weather report: disabled
-
-:cmdmenu:`system tray --> RMB --> enter edit mode`
-
-* delete: show desktop
-
-:cmdmenu:`system tray --> news --> settings`
-
-* ☐ autostart
-* ☐ show error notifications
-* quit
-
-:cmdmenu:`system tray --> manjaro settings manager --> options`
-
-* ☐ check unsupported kernels
-* ☐ check new kernels
-* ☐ check missing language packs
-* quit
-
-:cmdmenu:`system tray --> key lock status`
-
-* remove
-
-:cmdmenu:`system tray --> shorcuts`
-
-* remove all
+.. gui:: Remove Shortcuts
+  :nav:    system tray
+  :path:   shortcuts
+  :value0: {DELETE}
+  :update: 2021-12-20
 
 Rename Terminals
 ****************
-:cmdmenu:`⌘ --> alacritty --> edit`
+.. gui:: Make Alacritty Default 'Terminal'
+  :nav:    ⌘ --> alacritty
+  :path:   edit
+  :value0:     general,  
+  :value1:        name, terminal
+  :value2: application,  
+  :value3:        name, terminal
+  :value4: description, terminal
+  :update: 2021-12-20
 
-* general
-
-  * name: terminal
-
-* application
-
-  * name: terminal
-  * description: terminal
-
-:cmdmenu:`⌘ --> konsole --> edit`
-
-* application
-
-  * description: konsole
+.. gui:: Rename Konsole to 'konsole' (from terminal)
+  :nav:    ⌘ --> konsole
+  :path:   edit
+  :value0: application,  
+  :value4: description, konsole
+  :update: 2021-12-20

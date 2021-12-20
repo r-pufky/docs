@@ -1,4 +1,4 @@
-.. _manajaro-kde-plasma-amt:
+.. _manajaro-kde-amt:
 
 Disable AMT
 ###########

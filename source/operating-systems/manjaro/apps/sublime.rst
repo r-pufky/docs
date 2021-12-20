@@ -1,4 +1,4 @@
-.. _manjaro-kde-plasma-apps-sublime:
+.. _manjaro-kde-apps-sublime:
 
 Sublime
 #######

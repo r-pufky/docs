@@ -1,4 +1,4 @@
-.. _manajaro-kde-plasma-fonts:
+.. _manajaro-kde-fonts:
 
 Fonts
 #####

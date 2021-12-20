@@ -1,4 +1,4 @@
-.. _manajaro-kde-plasma-mirrors-and-updates:
+.. _manajaro-kde-mirrors-and-updates:
 
 Use Latest Mirrors & Updates
 ############################
@@ -7,18 +7,18 @@ refresh country list first.
 
 .. gui:: General
   :nav:    ⌘ --> add/remove software
-  :path:   ... --> preferences --> general
-  :value0: ☑,                     check for updates
+  :path:   ⋮ --> preferences --> general
+  :value0:                      ☑, check for updates
   :value1: update check frequency, every day
-  :value2: ☑,                     automatically download updates
-  :value3: ☑,                     hide tray icon when no updates
-  :value4: use mirrors from,       United_States
+  :value2:                      ☑, automatically download updates
+  :value3:                      ☑, hide tray icon when no updates
+  :value4:       use mirrors from, United_States
   :update: 2021-12-15
   :open:
 
 .. gui:: Advanced
   :nav:    ⌘ --> add/remove software
-  :path:   ... --> preferences --> advanced
+  :path:   ⋮ --> preferences --> advanced
   :value0: ☑, check available disk space
   :value1: ☑, remove unrequried dependencies
   :update: 2021-12-15
@@ -26,7 +26,7 @@ refresh country list first.
 
 .. gui:: Third Party
   :nav:    ⌘ --> add/remove software
-  :path:   ... --> preferences --> third party
+  :path:   ⋮ --> preferences --> third party
   :value0: ☑, enable AUR support
   :value1: ☑, keep built packages
   :value2: ☑, check for updates

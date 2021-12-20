@@ -1,4 +1,4 @@
-.. _manajaro-kde-plasma-base:
+.. _manajaro-kde-base:
 
 Manjaro KDE Plasma
 ##################
@@ -13,13 +13,15 @@ Base Utilities
 
   pacman -Syu vim alacritty
 
+Enable Fractional UI Scaling
+****************************
+Use for high DPI displays per preference.
+
 .. gui:: Enable fractional scaling for UI
   :nav:  ⌘ --> system settings
   :path: display and monitor --> display configuration
   :value0: global scale, 150%
-  :value1: ☑, for any display arrangement
-
-  Use for high DPI displays per preference.
+  :value1:            ☑, for any display arrangement
 
 Capslock as Control
 *******************

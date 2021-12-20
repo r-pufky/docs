@@ -1,4 +1,4 @@
-.. _manajaro-kde-plasma-lockout:
+.. _manajaro-kde-lockout:
 
 Increase Failed auth Lockout Attempts
 #####################################

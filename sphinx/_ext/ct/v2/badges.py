@@ -51,6 +51,7 @@ badges = {
   '{COUNTRY}': Template.info % 'COUNTRY',
 
   # Descriptors / Actions
+  '{ADD}': Template.success % 'ADD',
   '{DELETE}': Template.danger % 'DELETE',
   '{DESCRIPTION}': Template.info % 'DESCRIPTION',
   '{OPTIONAL}': Template.info % 'OPTIONAL',

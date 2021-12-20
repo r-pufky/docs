@@ -1,4 +1,4 @@
-.. _manajaro-kde-plasma-kernel:
+.. _manajaro-kde-kernel:
 
 Update to Latest Non-experimental Kernel
 ########################################
