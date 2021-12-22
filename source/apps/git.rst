@@ -26,6 +26,26 @@ Should use :ref:`revert-with-history`.
 
   Currently checked out versions of this repository will break.
 
+Force Pull from Master Repository
+*********************************
+Forces local repository to be in sync with master, discarding all local changes
+and unpushed commits.
+
+.. code-block:: bash
+
+  git fetch --all
+  git reset --hard origin/master
+
+.. code-block:: bash
+  :caption: Apply to a branch only
+
+  git checkout {BRANCH}
+  git fetch --all
+  git branch {BRANCH}-backup
+  git reset --hard origin/{BRANCH}
+
+`Reference <https://stackoverflow.com/questions/1125968/how-do-i-force-git-pull-to-overwrite-local-files>`__
+
 Revert Entire Directory to HEAD
 *******************************
 .. code-block:: bash
