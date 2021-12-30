@@ -148,6 +148,8 @@ certificate authentication is supported both locally and via URI matching.
   ``--global`` will force certification authentication for all repositories.
   This is probably not what you want to do.
 
+.. _service-nginx-chrome-client-certificate:
+
 Chrome Client Certificate
 *************************
 `Setup chrome`_ to auto present correct certificate when challenged by proxy
@@ -177,13 +179,12 @@ Auto-select Client Certificate
 Auto selecting the `correct certificate`_ will enable transparent authentication
 for proxied sites. Enabled via Group Policy or Registry.
 
-.. regedit:: Auto-select Client Certificate
+.. regedit:: Auto-select Client Certificate (Windows)
   :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls
   :value0:   1; {SZ}; {"pattern":"https://[\*.]example.com","filter":{"ISSUER":{"O":"{SERVER}"}}}
   :delim:    ;
-  :ref:      https://www.chromium.org/administrators/policy-list-3#AutoSelectCertificateForUrls
-  :update:   2021-02-12
-  :open:
+  :ref:      https://chromeenterprise.google/policies/#AutoSelectCertificateForUrls
+  :update:   2021-12-29
 
   * ``1`` incremental counter for which matching patterns to apply. If using
     multiple certificates this will represent the resolution order.
@@ -196,6 +197,21 @@ for proxied sites. Enabled via Group Policy or Registry.
 
       "1"="{\"pattern\":\"https://[*.]example.com\",\"filter\":{\"ISSUER\":{\"O\":\"{SERVER}\"}}}"
 
+.. dropdown:: Auto-select Client Certificate (Linux)
+  :container: + shadow
+  :title: bg-primary text-white font-weight-bold
+  :animate: fade-in
+
+  All directories should be readable by ``other``.
+
+  .. code-block::
+    :caption: **0644 root root** ``/etc/opt/chrome/policies/managed/auto_select_certificate.json``
+
+    {
+      "AutoSelectCertificateForUrls": [
+        "{\"pattern\":\"https://[*.]example.com\",\"filter\":{\"ISSUER\":{\"O\":\"{SERVER}\"}}}"
+      ]
+    }
 
 Restarting chrome will pickup the configuration changes.
 

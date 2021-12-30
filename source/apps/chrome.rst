@@ -2,6 +2,8 @@
 
 Chrome Configuration
 ####################
+See :ref:`service-nginx-chrome-client-certificate` to setup auto selection of
+client certificate for matched sites.
 
 Block location tracking
 ***********************

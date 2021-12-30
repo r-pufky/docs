@@ -44,4 +44,7 @@ Create Client Private Key and Certificate
 * both ``ca-chain.cert.pem`` and ``{USER EMAIL}.cert.pem`` need to be
   distributed if Root CA is not in the trusted CA store.
 
+See :ref:`service-nginx-chrome-client-certificate` to setup auto selection of
+client certificate for matched sites.
+
 .. _Client Certificates: https://jamielinux.com/docs/openssl-certificate-authority/sign-server-and-client-certificates.html

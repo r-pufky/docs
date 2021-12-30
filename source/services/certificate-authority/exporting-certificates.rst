@@ -18,6 +18,9 @@ clients.
 * ``ca-chain`` is included to provide chain of trust to the client using the
   certificate and validate the server.
 
+See :ref:`service-nginx-chrome-client-certificate` to setup auto selection of
+client certificate for matched sites.
+
 Extract Public/Private Keys from PFX
 ************************************
 Keys can be extracted from the PFX file for use if needed.
