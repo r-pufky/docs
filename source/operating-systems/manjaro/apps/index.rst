@@ -1,5 +1,8 @@
 .. _manjaro-kde-apps:
 
+Apps
+####
+
 .. code-block:: bash
   :caption: Install common Applications
 

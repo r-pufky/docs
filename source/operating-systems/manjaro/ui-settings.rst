@@ -93,12 +93,7 @@ Global Theme
 
 Startup & Shutdown
 ******************
-.. gui:: Login Screen
-  :nav:    ⌘ --> system settings --> startup and shutdown
-  :path:   login screen (sddm)
-  :value0:            ☑, Chili for Plasma (Install from UI)
-  :value1: › background, ``/usr/share/wallpapers/SafeLanding/contents/images/*.jpg``
-  :update: 2021-12-20
+See :ref:`manajaro-kde-login-screen` for detailed login screen configuration.
 
 .. gui:: Autostart
   :nav:    ⌘ --> system settings --> startup and shutdown

@@ -17,4 +17,5 @@ Install and configure Manjaro with KDE Plasma.
    apps/index
    fonts
    ui-settings
+   login-screen
    pacman
