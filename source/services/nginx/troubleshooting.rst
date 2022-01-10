@@ -7,7 +7,7 @@ Validating Upstream Parameters
 ******************************
 To validate parameters passed to upstream services, the request should be dumped
 by the service or intercepted by another service temporarily. There is a `docker
-container to do this`_. This will dump the recieved headers from both http
+container to do this`_. This will dump the received headers from both http
 and https communication to the upstream service.
 
 .. code-block:: yaml

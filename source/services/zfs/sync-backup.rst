@@ -2,7 +2,7 @@
 
 Sync / Backup
 #############
-ZFS send & recieve allows for a powerful syncronization and backup mechanism.
+ZFS send & receive allows for a powerful syncronization and backup mechanism.
 It should be used instead of typical ``rsync`` linux methods. ZFS will send only
 block level changes with typically a lower throughput, while ``rsync`` sends
 entire files with higher throughput.

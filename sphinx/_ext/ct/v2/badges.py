@@ -107,6 +107,8 @@ badges = {
   '{SSH_PORT}': Template.info % 'SSH PORT',
   '{STATIC}': Template.info % 'STATIC',
   '{DHCP}': Template.info % 'DHCP',
+  '{HTTPS}': Template.info % 'HTTPS',
+  '{HTTP}': Template.info % 'HTTP',
 
   # Networking / DNS
   '{HOST}': Template.info % 'HOST',

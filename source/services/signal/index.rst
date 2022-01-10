@@ -75,7 +75,7 @@ service.
 
 .. note::
   You can actually send the message from and to the same number. It will be
-  recieved in Signal as a ``Note to Self``.
+  received in Signal as a ``Note to Self``.
 
 .. code-block:: bash
   :caption: Copy configuration to service directory.

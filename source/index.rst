@@ -104,6 +104,14 @@ git hub, or submit a CL :)
   operating-systems/manjaro/index
 
 .. toctree::
+  :caption: Printing
+  :hidden:
+  :includehidden:
+  :maxdepth: -1
+
+  printing/brother-mfcl2750dw/index
+
+.. toctree::
   :caption: Virtualization
   :hidden:
   :includehidden:

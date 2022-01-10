@@ -268,7 +268,7 @@ all containers will end up on the same default network. This enables network
 
 Create a custom network named ``custom_net_name`` on the subnet
 ``172.40.0.0/16`` for this compose container. Containers will automatically
-recieve an IP on this network when turning up.
+receive an IP on this network when turning up.
 
 .. code-block:: yaml
   :caption:  **0640 root staff** ``{SERVICE}/docker-compose.yml``

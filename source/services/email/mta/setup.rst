@@ -14,8 +14,8 @@ See `Email Docker and Documentation`_.
 Ports
 *****
 .. ports:: Email Ports
-  :value0:  25, {TCP},  {PUBLIC}, :term:`MTA` SMTP Mail Relay (Recieve mail from
-                                  other mail servers)
+  :value0:  25, {TCP},  {PUBLIC}, :term:`MTA` SMTP Mail Relay (Receive mail
+                                  from other mail servers)
   :value1: 110, {TCP}, {DISABLE}, POP3 plaintext client
   :value2: 143, {TCP}, {DISABLE}, StartTLS IMAP client
   :value3: 465, {TCP}, {DISABLE}, SSL MUA email submission (defacto standard)
