@@ -15,8 +15,8 @@
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../_static/expand_width.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
 
   
@@ -116,6 +116,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">GIT</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#revert-changes-and-keep-commit-history">Revert Changes and Keep Commit History</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#force-repository-to-previous-commit">Force Repository to Previous Commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#force-pull-from-master-repository">Force Pull from Master Repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#revert-entire-directory-to-head">Revert Entire Directory to HEAD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#add-tag-to-previous-commit">Add Tag to Previous Commit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#squash-commits-to-a-single-commit-rebase">Squash Commits to a Single Commit (Rebase)</a></li>
@@ -506,6 +507,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../operating-systems/windows/10/base/advanced/specific-windows-fixes.html">Specific Windows Fixes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#reset-password">Reset Password</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#moving-user-profile-locations-to-alternate-location">Moving User Profile Locations to Alternate Location</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#refs-on-windows-10-pro">ReFS on Windows 10 Pro</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#format-refs-on-using-a-single-drive">Format ReFS on using a single drive</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#addressing-100-disk-usage-issues">Addressing 100% Disk Usage Issues</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../operating-systems/windows/10/base/advanced/specific-windows-fixes.html#disable-prefetch-and-superfetch">Disable Prefetch and Superfetch</a></li>
@@ -987,13 +989,14 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../operating-systems/manjaro/index.html">Manjaro KDE Plasma</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../operating-systems/manjaro/index.html">Manjaro KDE</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../operating-systems/manjaro/base.html">1. Manjaro KDE Plasma</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/base.html#base-utilities">1.1. Base Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/base.html#capslock-as-control">1.2. Capslock as Control</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/base.html#use-bash-shell">1.3. Use Bash Shell</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/base.html#gnupg-and-yubikey">1.4. GnuPG and Yubikey</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/base.html#remove-nobody-user">1.5. Remove Nobody User</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/base.html#enable-fractional-ui-scaling">1.2. Enable Fractional UI Scaling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/base.html#capslock-as-control">1.3. Capslock as Control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/base.html#use-bash-shell">1.4. Use Bash Shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/base.html#gnupg-and-yubikey">1.5. GnuPG and Yubikey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/base.html#remove-nobody-user">1.6. Remove Nobody User</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../operating-systems/manjaro/amt.html">2. Disable AMT</a></li>
@@ -1005,40 +1008,83 @@
 <li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/system-date-and-time.html#force-iso8601-date-time">6.2. Force ISO8601 date/time</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../operating-systems/manjaro/apps/vscodium.html">7. VSCodium (VSCode)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/apps/vscodium.html#sync-settings">7.1. Sync Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../operating-systems/manjaro/apps/index.html">7. Apps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/apps/vscodium.html">7.1. VSCodium (VSCode)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../operating-systems/manjaro/apps/vscodium.html#sync-settings">7.1.1. Sync Settings</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../operating-systems/manjaro/apps/chrome.html">8. Chrome</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/apps/chrome.html#gui">8.1. GUI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/apps/chrome.html#automated-build">8.2. Automated Build</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/apps/chrome.html#manual-git-build">8.3. Manual git Build</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/apps/chrome.html#disable-background-services">8.4. Disable Background services</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/apps/chrome.html#use-system-gtk-themes">8.5. Use System GTK Themes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/apps/chrome.html">7.2. Chrome</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../operating-systems/manjaro/apps/chrome.html#gui">7.2.1. GUI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../operating-systems/manjaro/apps/chrome.html#automated-build">7.2.2. Automated Build</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../operating-systems/manjaro/apps/chrome.html#manual-git-build">7.2.3. Manual git Build</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../operating-systems/manjaro/apps/chrome.html#disable-background-services">7.2.4. Disable Background Services</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../operating-systems/manjaro/apps/chrome.html#use-system-gtk-themes">7.2.5. Use System GTK Themes</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../operating-systems/manjaro/apps/steam.html">9. Steam</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../operating-systems/manjaro/apps/sublime.html">10. Sublime</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../operating-systems/manjaro/fonts.html">11. Fonts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html">12. UI Settings</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#themes">12.1. Themes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#langauge-packs">12.2. Langauge Packs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#workspace-behavior">12.3. Workspace Behavior</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#startup-shutdown">12.4. Startup &amp; Shutdown</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#windows-management">12.5. Windows Management</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#shortcuts">12.6. Shortcuts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#search">12.7. Search</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#personalization">12.8. Personalization</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#kde-wallet">12.9. KDE Wallet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#user-feedback">12.10. User Feedback</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#input-devices">12.11. Input Devices</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#night-color">12.12. Night Color</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#taskbar-clock">12.13. Taskbar Clock</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#system-tray">12.14. System Tray</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#rename-terminals">12.15. Rename Terminals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/apps/steam.html">7.3. Steam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/apps/sublime.html">7.4. Sublime</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../operating-systems/manjaro/pacman.html">13. Pacman</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../operating-systems/manjaro/fonts.html">8. Fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html">9. UI Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#themes">9.1. Themes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#global-theme">9.2. Global Theme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#startup-shutdown">9.3. Startup &amp; Shutdown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#langauge-packs">9.4. Langauge Packs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#workspace-behavior">9.5. Workspace Behavior</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#windows-management">9.6. Windows Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#shortcuts">9.7. Shortcuts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#search">9.8. Search</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#personalization">9.9. Personalization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#kde-wallet">9.10. KDE Wallet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#user-feedback">9.11. User Feedback</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#input-devices">9.12. Input Devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#night-color">9.13. Night Color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#taskbar-clock">9.14. Taskbar Clock</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#system-tray">9.15. System Tray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/ui-settings.html#rename-terminals">9.16. Rename Terminals</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../operating-systems/manjaro/login-screen.html">10. Login Screen (sddm)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/login-screen.html#multiple-monitors">10.1. Multiple Monitors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../operating-systems/manjaro/login-screen.html#sddm-configuration">10.2. SDDM configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../operating-systems/manjaro/pacman.html">11. Pacman</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Printing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../printing/brother-mfcl2750dw/index.html">Brother MFC-L2750DW</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../printing/brother-mfcl2750dw/config.html">1. Printer Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../printing/brother-mfcl2750dw/config.html#administrator">1.1. Administrator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../printing/brother-mfcl2750dw/config.html#network">1.2. Network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../printing/brother-mfcl2750dw/config.html#general">1.3. General</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../printing/brother-mfcl2750dw/config.html#print">1.4. Print</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../printing/brother-mfcl2750dw/config.html#scan">1.5. Scan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../printing/brother-mfcl2750dw/config.html#common-endpoints">1.6. Common Endpoints</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../printing/brother-mfcl2750dw/windows.html">2. Windows Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../printing/brother-mfcl2750dw/windows.html#manual-install">2.1. Manual Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../printing/brother-mfcl2750dw/windows.html#full-install">2.2. Full Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../printing/brother-mfcl2750dw/windows.html#iprint-scan">2.3. iPrint&amp;Scan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../printing/brother-mfcl2750dw/windows.html#controlcenter4">2.4. ControlCenter4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../printing/brother-mfcl2750dw/windows.html#validate-install">2.5. Validate Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../printing/brother-mfcl2750dw/windows.html#complete-uninstall">2.6. Complete Uninstall</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../printing/brother-mfcl2750dw/linux.html">3. Linux Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../printing/brother-mfcl2750dw/linux.html#add-printer">3.1. Add Printer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../printing/brother-mfcl2750dw/linux.html#add-scanner">3.2. Add Scanner</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../printing/brother-mfcl2750dw/linux.html#gimp">3.2.1. GIMP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../printing/brother-mfcl2750dw/linux.html#gscan2pdf">3.2.2. gscan2pdf</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../printing/brother-mfcl2750dw/linux.html#web-services-device-scanner">3.3. Web Services Device (Scanner)</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -2114,6 +2160,25 @@ git push --force origin master
 <p>Currently checked out versions of this repository will break.</p>
 </div>
 </div>
+<div class="section" id="force-pull-from-master-repository">
+<h2>Force Pull from Master Repository<a class="headerlink" href="#force-pull-from-master-repository" title="Permalink to this headline">¶</a></h2>
+<p>Forces local repository to be in sync with master, discarding all local changes
+and unpushed commits.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git fetch --all
+git reset --hard origin/master
+</pre></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Apply to a branch only</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout <span class="o">{</span>BRANCH<span class="o">}</span>
+git fetch --all
+git branch <span class="o">{</span>BRANCH<span class="o">}</span>-backup
+git reset --hard origin/<span class="o">{</span>BRANCH<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<p><a class="reference external" href="https://stackoverflow.com/questions/1125968/how-do-i-force-git-pull-to-overwrite-local-files">Reference</a></p>
+</div>
 <div class="section" id="revert-entire-directory-to-head">
 <h2>Revert Entire Directory to HEAD<a class="headerlink" href="#revert-entire-directory-to-head" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git checkout -- <span class="o">{</span>DIR<span class="o">}</span>
@@ -2159,20 +2224,20 @@ Update as needed and commit as normal.</p>
 </div>
 <div class="section" id="remove-tracked-files-without-deleting-them">
 <h2>Remove Tracked Files without Deleting Them<a class="headerlink" href="#remove-tracked-files-without-deleting-them" title="Permalink to this headline">¶</a></h2>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">Single file.</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Single file.</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git rm --cached <span class="o">{</span>FILE TO REMOVE FROM COMMIT<span class="o">}</span>
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">Multiple files.</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">Multiple files.</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git rm --cached <span class="o">{</span>FILE1<span class="o">}</span> <span class="o">{</span>FILEN<span class="o">}</span>
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">All contents of a directory.</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">All contents of a directory.</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git rm -r --cached <span class="o">{</span>DIR<span class="o">}</span>
 </pre></div>
 </div>
@@ -2182,8 +2247,8 @@ Update as needed and commit as normal.</p>
 <h2><a class="reference external" href="https://thenewstack.io/dont-mess-with-the-master-working-with-branches-in-git-and-github/">Create a Branch</a><a class="headerlink" href="#create-a-branch" title="Permalink to this headline">¶</a></h2>
 <p>Multiple branches can be made to focus changes on specific efforts. These are
 cut from the current branch; most cases this should be <code class="docutils literal notranslate"><span class="pre">master</span></code>.</p>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">List, create, and move to new branch.</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">List, create, and move to new branch.</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git branch -a
 git checkout -b <span class="o">{</span>NEW BRANCH<span class="o">}</span>
 </pre></div>
@@ -2194,8 +2259,8 @@ git checkout -b <span class="o">{</span>NEW BRANCH<span class="o">}</span>
 <div class="section" id="merging-branches">
 <span id="git-merging-branches"></span><h2>Merging Branches<a class="headerlink" href="#merging-branches" title="Permalink to this headline">¶</a></h2>
 <p>Completed branches can be merged back into any branch, typically <code class="docutils literal notranslate"><span class="pre">master</span></code>.</p>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">List branches, switch to master, and merge.</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">List branches, switch to master, and merge.</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git branch -a
 git checkout master
 git merge <span class="o">{</span>BRANCH<span class="o">}</span> --no-ff
@@ -2216,8 +2281,8 @@ squish the commit (it may be helpful to get branch log for merge message
 <span id="git-deleting-branches"></span><h2>Deleting Branches<a class="headerlink" href="#deleting-branches" title="Permalink to this headline">¶</a></h2>
 <p>Git will throw an error if deleting a branch with commits that has not been
 merged.</p>
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text">Delete merged branch.</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">Delete merged branch.</span><a class="headerlink" href="#id9" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git branch -a
 git branch -d <span class="o">{</span>BRANCH<span class="o">}</span>
 </pre></div>
@@ -2227,8 +2292,8 @@ git branch -d <span class="o">{</span>BRANCH<span class="o">}</span>
 <div class="section" id="create-worktree">
 <h2>Create Worktree<a class="headerlink" href="#create-worktree" title="Permalink to this headline">¶</a></h2>
 <p>Allows the use of <a class="reference external" href="https://stackoverflow.com/questions/2048470/git-working-on-two-branches-simultaneously">multiple branches simultaneously</a>.</p>
-<div class="literal-block-wrapper docutils container" id="id9">
-<div class="code-block-caption"><span class="caption-text">Create a new worktree from a branch</span><a class="headerlink" href="#id9" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">Create a new worktree from a branch</span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git branch -a
 git checkout -b <span class="o">{</span>NEW BRANCH<span class="o">}</span>
 git checkout master
@@ -2245,8 +2310,8 @@ git worktree add ../<span class="o">{</span>WORKTREE NAME<span class="o">}</span
 <div class="section" id="removing-worktree">
 <h2>Removing Worktree<a class="headerlink" href="#removing-worktree" title="Permalink to this headline">¶</a></h2>
 <p>After the branch is merged worktree can be removed.</p>
-<div class="literal-block-wrapper docutils container" id="id10">
-<div class="code-block-caption"><span class="caption-text">Remove worktree.</span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text">Remove worktree.</span><a class="headerlink" href="#id11" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> <span class="o">{</span>MASTER WORKTREE<span class="o">}</span>
 git worktree remove <span class="o">{</span>WORKTREE<span class="o">}</span>
 </pre></div>
@@ -2257,20 +2322,20 @@ git worktree remove <span class="o">{</span>WORKTREE<span class="o">}</span>
 <div class="section" id="migrate-git-stash-to-another-machine">
 <h2>Migrate git stash to another machine<a class="headerlink" href="#migrate-git-stash-to-another-machine" title="Permalink to this headline">¶</a></h2>
 <p>Export a stash as a patch to import in another git client.</p>
-<div class="literal-block-wrapper docutils container" id="id11">
-<div class="code-block-caption"><span class="caption-text">Export stash 0 to a patch.</span><a class="headerlink" href="#id11" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text">Export stash 0 to a patch.</span><a class="headerlink" href="#id12" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git stash show <span class="s2">&quot;stash@{0}&quot;</span> -p &gt; changes.patch
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id12">
-<div class="code-block-caption"><span class="caption-text">Import patch to client.</span><a class="headerlink" href="#id12" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-text">Import patch to client.</span><a class="headerlink" href="#id13" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git apply changes.patch
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id13">
-<div class="code-block-caption"><span class="caption-text">Patch can be reverted if there are issues.</span><a class="headerlink" href="#id13" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-text">Patch can be reverted if there are issues.</span><a class="headerlink" href="#id14" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git apply changes.patch --reverse
 </pre></div>
 </div>
@@ -2282,20 +2347,20 @@ git worktree remove <span class="o">{</span>WORKTREE<span class="o">}</span>
 <a class="reference external" href="https://pilot34.medium.com/store-your-git-hooks-in-a-repository-2de1d319848c">repository tracked hooks</a>.</p>
 <p>See <code class="docutils literal notranslate"><span class="pre">.git/hooks</span></code> for examples. Custom <a class="reference external" href="https://selivan.github.io/2017/04/08/ansible-check-on-commit-vault-files-are-encrypted.html">pre-commit example</a>. Hooks must have
 exact names.</p>
-<div class="literal-block-wrapper docutils container" id="id14">
-<div class="code-block-caption"><span class="caption-text">Create repo hooks</span><a class="headerlink" href="#id14" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id15">
+<div class="code-block-caption"><span class="caption-text">Create repo hooks</span><a class="headerlink" href="#id15" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir <span class="o">{</span>REPO<span class="o">}</span>/.githooks
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id15">
-<div class="code-block-caption"><span class="caption-text">Set local gitconfig hookspath to custom location</span><a class="headerlink" href="#id15" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id16">
+<div class="code-block-caption"><span class="caption-text">Set local gitconfig hookspath to custom location</span><a class="headerlink" href="#id16" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git config -f .gitconfig core.hooksPath .githooks
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id16">
-<div class="code-block-caption"><span class="caption-text"><strong>0755 user user</strong> <code class="docutils literal notranslate"><span class="pre">.githooks/pre-commit</span></code></span><a class="headerlink" href="#id16" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id17">
+<div class="code-block-caption"><span class="caption-text"><strong>0755 user user</strong> <code class="docutils literal notranslate"><span class="pre">.githooks/pre-commit</span></code></span><a class="headerlink" href="#id17" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/usr/bin/env bash
 #
 # Called by &quot;git commit&quot; with no arguments.  The hook should
@@ -2345,8 +2410,8 @@ exit $EXIT_STATUS
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id17">
-<div class="code-block-caption"><span class="caption-text">Use a Makefile or manually run on repo checkout to setup.</span><a class="headerlink" href="#id17" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id18">
+<div class="code-block-caption"><span class="caption-text">Use a Makefile or manually run on repo checkout to setup.</span><a class="headerlink" href="#id18" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git config --local include.path ../.gitconfig
 </pre></div>
 </div>
@@ -2360,14 +2425,14 @@ the config.</p>
 <div class="section" id="list-all-respositories-for-an-organization-user">
 <h2>List All Respositories for An Organization/User<a class="headerlink" href="#list-all-respositories-for-an-organization-user" title="Permalink to this headline">¶</a></h2>
 <p>Useful for determining if there are new repositories to sync.</p>
-<div class="literal-block-wrapper docutils container" id="id18">
-<div class="code-block-caption"><span class="caption-text">List all repositories for an organzation.</span><a class="headerlink" href="#id18" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id19">
+<div class="code-block-caption"><span class="caption-text">List all repositories for an organzation.</span><a class="headerlink" href="#id19" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl <span class="s2">&quot;https://api.github.com/orgs/{ORGANIZATION NAME}/repos?per_page=1000&amp;page=1&quot;</span> <span class="p">|</span> jq -r <span class="s1">&#39;.[] | .name&#39;</span> <span class="p">|</span> sort
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id19">
-<div class="code-block-caption"><span class="caption-text">List all repositories for a user.</span><a class="headerlink" href="#id19" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id20">
+<div class="code-block-caption"><span class="caption-text">List all repositories for a user.</span><a class="headerlink" href="#id20" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl <span class="s2">&quot;https://api.github.com/users/{USER}/repos?per_page=1000&amp;page=1&quot;</span> <span class="p">|</span> jq -r <span class="s1">&#39;.[] | .name&#39;</span> <span class="p">|</span> sort
 </pre></div>
 </div>
@@ -2376,8 +2441,8 @@ the config.</p>
 <div class="section" id="pull-latest-tarball-release-from-github">
 <h2>Pull <a class="reference external" href="https://gist.github.com/lukechilds/a83e1d7127b78fef38c2914c4ececc3c#gistcomment-2574561">Latest Tarball Release</a> from Github<a class="headerlink" href="#pull-latest-tarball-release-from-github" title="Permalink to this headline">¶</a></h2>
 <p>Useful for projects that have periodic releases but are not in OS packages.</p>
-<div class="literal-block-wrapper docutils container" id="id20">
-<div class="code-block-caption"><span class="caption-text"><strong>0755 user user</strong> <code class="docutils literal notranslate"><span class="pre">update_latest_tarball</span></code></span><a class="headerlink" href="#id20" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id21">
+<div class="code-block-caption"><span class="caption-text"><strong>0755 user user</strong> <code class="docutils literal notranslate"><span class="pre">update_latest_tarball</span></code></span><a class="headerlink" href="#id21" title="Permalink to this code">¶</a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#!/bin/bash
 #
 # Args:

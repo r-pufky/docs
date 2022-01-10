@@ -1,5 +1,22 @@
 # [Changelog][3g]
 
+## 2022-01-09.0
+Add Printing Setup.
+
+Added:
+* Manjaro setup instructions.
+* Add empty ReFS mirrored virtual disk.
+* Clean up Manjaro documention, Add 'ADD' badge.
+* Add multi-screen, arc-dark SDDM login setup for KDE Plasma.
+* Add force pull for git.
+* Add network printing configuration.
+* Linux settings for Chrome cert auto-select.
+
+Fixed:
+* Remove pkg-resources==0.0.0 from requirements.txt
+* Updated sphinx badges with HTTPS and HTTP support.
+* Corrected 'received' spelling error.
+
 ## 2021-12-15.0
 Add Manjaro Setup.
 

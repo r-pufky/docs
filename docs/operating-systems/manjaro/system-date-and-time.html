@@ -15,8 +15,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/expand_width.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
 
   
@@ -43,7 +43,7 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="&lt;no title&gt;" href="apps/index.html" />
+    <link rel="next" title="7. Apps" href="apps/index.html" />
     <link rel="prev" title="5. Increase Failed auth Lockout Attempts" href="lockout.html" /> 
 </head>
 
@@ -116,6 +116,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../apps/git.html">GIT</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#revert-changes-and-keep-commit-history">Revert Changes and Keep Commit History</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#force-repository-to-previous-commit">Force Repository to Previous Commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#force-pull-from-master-repository">Force Pull from Master Repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#revert-entire-directory-to-head">Revert Entire Directory to HEAD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#add-tag-to-previous-commit">Add Tag to Previous Commit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#squash-commits-to-a-single-commit-rebase">Squash Commits to a Single Commit (Rebase)</a></li>
@@ -506,6 +507,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../windows/10/base/advanced/specific-windows-fixes.html">Specific Windows Fixes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../windows/10/base/advanced/specific-windows-fixes.html#reset-password">Reset Password</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../windows/10/base/advanced/specific-windows-fixes.html#moving-user-profile-locations-to-alternate-location">Moving User Profile Locations to Alternate Location</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../windows/10/base/advanced/specific-windows-fixes.html#refs-on-windows-10-pro">ReFS on Windows 10 Pro</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../windows/10/base/advanced/specific-windows-fixes.html#format-refs-on-using-a-single-drive">Format ReFS on using a single drive</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../windows/10/base/advanced/specific-windows-fixes.html#addressing-100-disk-usage-issues">Addressing 100% Disk Usage Issues</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../windows/10/base/advanced/specific-windows-fixes.html#disable-prefetch-and-superfetch">Disable Prefetch and Superfetch</a></li>
@@ -987,13 +989,14 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Manjaro KDE Plasma</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Manjaro KDE</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="base.html">1. Manjaro KDE Plasma</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="base.html#base-utilities">1.1. Base Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="base.html#capslock-as-control">1.2. Capslock as Control</a></li>
-<li class="toctree-l3"><a class="reference internal" href="base.html#use-bash-shell">1.3. Use Bash Shell</a></li>
-<li class="toctree-l3"><a class="reference internal" href="base.html#gnupg-and-yubikey">1.4. GnuPG and Yubikey</a></li>
-<li class="toctree-l3"><a class="reference internal" href="base.html#remove-nobody-user">1.5. Remove Nobody User</a></li>
+<li class="toctree-l3"><a class="reference internal" href="base.html#enable-fractional-ui-scaling">1.2. Enable Fractional UI Scaling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="base.html#capslock-as-control">1.3. Capslock as Control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="base.html#use-bash-shell">1.4. Use Bash Shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="base.html#gnupg-and-yubikey">1.5. GnuPG and Yubikey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="base.html#remove-nobody-user">1.6. Remove Nobody User</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="amt.html">2. Disable AMT</a></li>
@@ -1005,40 +1008,83 @@
 <li class="toctree-l3"><a class="reference internal" href="#force-iso8601-date-time">6.2. Force ISO8601 date/time</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="apps/vscodium.html">7. VSCodium (VSCode)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="apps/vscodium.html#sync-settings">7.1. Sync Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps/index.html">7. Apps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="apps/vscodium.html">7.1. VSCodium (VSCode)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="apps/vscodium.html#sync-settings">7.1.1. Sync Settings</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="apps/chrome.html">8. Chrome</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="apps/chrome.html#gui">8.1. GUI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="apps/chrome.html#automated-build">8.2. Automated Build</a></li>
-<li class="toctree-l3"><a class="reference internal" href="apps/chrome.html#manual-git-build">8.3. Manual git Build</a></li>
-<li class="toctree-l3"><a class="reference internal" href="apps/chrome.html#disable-background-services">8.4. Disable Background services</a></li>
-<li class="toctree-l3"><a class="reference internal" href="apps/chrome.html#use-system-gtk-themes">8.5. Use System GTK Themes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="apps/chrome.html">7.2. Chrome</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="apps/chrome.html#gui">7.2.1. GUI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps/chrome.html#automated-build">7.2.2. Automated Build</a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps/chrome.html#manual-git-build">7.2.3. Manual git Build</a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps/chrome.html#disable-background-services">7.2.4. Disable Background Services</a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps/chrome.html#use-system-gtk-themes">7.2.5. Use System GTK Themes</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="apps/steam.html">9. Steam</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps/sublime.html">10. Sublime</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fonts.html">11. Fonts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ui-settings.html">12. UI Settings</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#themes">12.1. Themes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#langauge-packs">12.2. Langauge Packs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#workspace-behavior">12.3. Workspace Behavior</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#startup-shutdown">12.4. Startup &amp; Shutdown</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#windows-management">12.5. Windows Management</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#shortcuts">12.6. Shortcuts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#search">12.7. Search</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#personalization">12.8. Personalization</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#kde-wallet">12.9. KDE Wallet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#user-feedback">12.10. User Feedback</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#input-devices">12.11. Input Devices</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#night-color">12.12. Night Color</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#taskbar-clock">12.13. Taskbar Clock</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#system-tray">12.14. System Tray</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#rename-terminals">12.15. Rename Terminals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="apps/steam.html">7.3. Steam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="apps/sublime.html">7.4. Sublime</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="pacman.html">13. Pacman</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fonts.html">8. Fonts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui-settings.html">9. UI Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#themes">9.1. Themes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#global-theme">9.2. Global Theme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#startup-shutdown">9.3. Startup &amp; Shutdown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#langauge-packs">9.4. Langauge Packs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#workspace-behavior">9.5. Workspace Behavior</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#windows-management">9.6. Windows Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#shortcuts">9.7. Shortcuts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#search">9.8. Search</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#personalization">9.9. Personalization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#kde-wallet">9.10. KDE Wallet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#user-feedback">9.11. User Feedback</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#input-devices">9.12. Input Devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#night-color">9.13. Night Color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#taskbar-clock">9.14. Taskbar Clock</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#system-tray">9.15. System Tray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ui-settings.html#rename-terminals">9.16. Rename Terminals</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="login-screen.html">10. Login Screen (sddm)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="login-screen.html#multiple-monitors">10.1. Multiple Monitors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="login-screen.html#sddm-configuration">10.2. SDDM configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pacman.html">11. Pacman</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Printing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../printing/brother-mfcl2750dw/index.html">Brother MFC-L2750DW</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../printing/brother-mfcl2750dw/config.html">1. Printer Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../printing/brother-mfcl2750dw/config.html#administrator">1.1. Administrator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../printing/brother-mfcl2750dw/config.html#network">1.2. Network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../printing/brother-mfcl2750dw/config.html#general">1.3. General</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../printing/brother-mfcl2750dw/config.html#print">1.4. Print</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../printing/brother-mfcl2750dw/config.html#scan">1.5. Scan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../printing/brother-mfcl2750dw/config.html#common-endpoints">1.6. Common Endpoints</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../printing/brother-mfcl2750dw/windows.html">2. Windows Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../printing/brother-mfcl2750dw/windows.html#manual-install">2.1. Manual Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../printing/brother-mfcl2750dw/windows.html#full-install">2.2. Full Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../printing/brother-mfcl2750dw/windows.html#iprint-scan">2.3. iPrint&amp;Scan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../printing/brother-mfcl2750dw/windows.html#controlcenter4">2.4. ControlCenter4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../printing/brother-mfcl2750dw/windows.html#validate-install">2.5. Validate Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../printing/brother-mfcl2750dw/windows.html#complete-uninstall">2.6. Complete Uninstall</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../printing/brother-mfcl2750dw/linux.html">3. Linux Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../printing/brother-mfcl2750dw/linux.html#add-printer">3.1. Add Printer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../printing/brother-mfcl2750dw/linux.html#add-scanner">3.2. Add Scanner</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../printing/brother-mfcl2750dw/linux.html#gimp">3.2.1. GIMP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../printing/brother-mfcl2750dw/linux.html#gscan2pdf">3.2.2. gscan2pdf</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../printing/brother-mfcl2750dw/linux.html#web-services-device-scanner">3.3. Web Services Device (Scanner)</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -2075,7 +2121,7 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="index.html">Manjaro KDE Plasma</a> &raquo;</li>
+          <li><a href="index.html">Manjaro KDE</a> &raquo;</li>
         
       <li><span class="section-number">6. </span>System Date and Time</li>
     
@@ -2095,7 +2141,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="system-date-and-time">
-<span id="manajaro-kde-plasma-system-date-and-time"></span><h1><span class="section-number">6. </span>System Date and Time<a class="headerlink" href="#system-date-and-time" title="Permalink to this headline">¶</a></h1>
+<span id="manajaro-kde-system-date-and-time"></span><h1><span class="section-number">6. </span>System Date and Time<a class="headerlink" href="#system-date-and-time" title="Permalink to this headline">¶</a></h1>
 <details class="sphinx-bs dropdown card mb-3 shadow fade-in" open="open">
 <summary class="summary-title card-header bg-primary text-white font-weight-bold">
 Time and Date<div class="summary-down docutils">
@@ -2288,7 +2334,7 @@ text: Qt.formatDate<span class="o">(</span>timeSource.data<span class="o">[</spa
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="apps/index.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="apps/index.html" class="btn btn-neutral float-right" title="7. Apps" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="lockout.html" class="btn btn-neutral float-left" title="5. Increase Failed auth Lockout Attempts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

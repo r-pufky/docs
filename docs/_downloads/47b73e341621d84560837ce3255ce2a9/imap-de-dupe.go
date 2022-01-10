@@ -91,7 +91,7 @@ type excludedPaths struct {
 	path []string
 }
 
-// reciever for excludedPaths to determine if a given file string is
+// receiver for excludedPaths to determine if a given file string is
 // excluded. Returns boolean true for exclude, false otherwise.
 func (p *excludedPaths) Excluded(file string) bool {
 	for _, excluded_path := range p.path {
@@ -124,7 +124,7 @@ type singleFdupeMatch struct {
 	keeper       string
 }
 
-// reciever for singleMatch to filter out messages for a given set of matches
+// receiver for singleMatch to filter out messages for a given set of matches
 // Initially keeps all files that are in excluded paths, then prefers the
 // first excluded path for the final file to keep.
 func (f *singleFdupeMatch) Filter(e excludedPaths) {
@@ -146,7 +146,7 @@ func (f *singleFdupeMatch) Filter(e excludedPaths) {
 	}
 }
 
-// reciever for singleFdupeMatch to generate a list of files to discard,
+// receiver for singleFdupeMatch to generate a list of files to discard,
 // assuming keeper is set. If no keeper is set, all files are discarded.
 // Returns a slice of strings containing files to discard.
 func (f *singleFdupeMatch) Discard() []string {

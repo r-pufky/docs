@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>12. UI Settings &mdash; Generic service &amp; computer documentation.  documentation</title>
+  <title>9. UI Settings &mdash; Generic service &amp; computer documentation.  documentation</title>
   
 
   
@@ -15,8 +15,8 @@
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/expand_width.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
 
   
@@ -43,8 +43,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="13. Pacman" href="pacman.html" />
-    <link rel="prev" title="11. Fonts" href="fonts.html" /> 
+    <link rel="next" title="10. Login Screen (sddm)" href="login-screen.html" />
+    <link rel="prev" title="8. Fonts" href="fonts.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -116,6 +116,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../apps/git.html">GIT</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#revert-changes-and-keep-commit-history">Revert Changes and Keep Commit History</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#force-repository-to-previous-commit">Force Repository to Previous Commit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#force-pull-from-master-repository">Force Pull from Master Repository</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#revert-entire-directory-to-head">Revert Entire Directory to HEAD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#add-tag-to-previous-commit">Add Tag to Previous Commit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../apps/git.html#squash-commits-to-a-single-commit-rebase">Squash Commits to a Single Commit (Rebase)</a></li>
@@ -506,6 +507,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../windows/10/base/advanced/specific-windows-fixes.html">Specific Windows Fixes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../windows/10/base/advanced/specific-windows-fixes.html#reset-password">Reset Password</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../windows/10/base/advanced/specific-windows-fixes.html#moving-user-profile-locations-to-alternate-location">Moving User Profile Locations to Alternate Location</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../windows/10/base/advanced/specific-windows-fixes.html#refs-on-windows-10-pro">ReFS on Windows 10 Pro</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../windows/10/base/advanced/specific-windows-fixes.html#format-refs-on-using-a-single-drive">Format ReFS on using a single drive</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../windows/10/base/advanced/specific-windows-fixes.html#addressing-100-disk-usage-issues">Addressing 100% Disk Usage Issues</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../windows/10/base/advanced/specific-windows-fixes.html#disable-prefetch-and-superfetch">Disable Prefetch and Superfetch</a></li>
@@ -987,13 +989,14 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">Manjaro KDE Plasma</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Manjaro KDE</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="base.html">1. Manjaro KDE Plasma</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="base.html#base-utilities">1.1. Base Utilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="base.html#capslock-as-control">1.2. Capslock as Control</a></li>
-<li class="toctree-l3"><a class="reference internal" href="base.html#use-bash-shell">1.3. Use Bash Shell</a></li>
-<li class="toctree-l3"><a class="reference internal" href="base.html#gnupg-and-yubikey">1.4. GnuPG and Yubikey</a></li>
-<li class="toctree-l3"><a class="reference internal" href="base.html#remove-nobody-user">1.5. Remove Nobody User</a></li>
+<li class="toctree-l3"><a class="reference internal" href="base.html#enable-fractional-ui-scaling">1.2. Enable Fractional UI Scaling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="base.html#capslock-as-control">1.3. Capslock as Control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="base.html#use-bash-shell">1.4. Use Bash Shell</a></li>
+<li class="toctree-l3"><a class="reference internal" href="base.html#gnupg-and-yubikey">1.5. GnuPG and Yubikey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="base.html#remove-nobody-user">1.6. Remove Nobody User</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="amt.html">2. Disable AMT</a></li>
@@ -1005,40 +1008,83 @@
 <li class="toctree-l3"><a class="reference internal" href="system-date-and-time.html#force-iso8601-date-time">6.2. Force ISO8601 date/time</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="apps/vscodium.html">7. VSCodium (VSCode)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="apps/vscodium.html#sync-settings">7.1. Sync Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apps/index.html">7. Apps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="apps/vscodium.html">7.1. VSCodium (VSCode)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="apps/vscodium.html#sync-settings">7.1.1. Sync Settings</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="apps/chrome.html">8. Chrome</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="apps/chrome.html#gui">8.1. GUI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="apps/chrome.html#automated-build">8.2. Automated Build</a></li>
-<li class="toctree-l3"><a class="reference internal" href="apps/chrome.html#manual-git-build">8.3. Manual git Build</a></li>
-<li class="toctree-l3"><a class="reference internal" href="apps/chrome.html#disable-background-services">8.4. Disable Background services</a></li>
-<li class="toctree-l3"><a class="reference internal" href="apps/chrome.html#use-system-gtk-themes">8.5. Use System GTK Themes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="apps/chrome.html">7.2. Chrome</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="apps/chrome.html#gui">7.2.1. GUI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps/chrome.html#automated-build">7.2.2. Automated Build</a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps/chrome.html#manual-git-build">7.2.3. Manual git Build</a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps/chrome.html#disable-background-services">7.2.4. Disable Background Services</a></li>
+<li class="toctree-l4"><a class="reference internal" href="apps/chrome.html#use-system-gtk-themes">7.2.5. Use System GTK Themes</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="apps/steam.html">9. Steam</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apps/sublime.html">10. Sublime</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fonts.html">11. Fonts</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">12. UI Settings</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#themes">12.1. Themes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#langauge-packs">12.2. Langauge Packs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#workspace-behavior">12.3. Workspace Behavior</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#startup-shutdown">12.4. Startup &amp; Shutdown</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#windows-management">12.5. Windows Management</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#shortcuts">12.6. Shortcuts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#search">12.7. Search</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#personalization">12.8. Personalization</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#kde-wallet">12.9. KDE Wallet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#user-feedback">12.10. User Feedback</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#input-devices">12.11. Input Devices</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#night-color">12.12. Night Color</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#taskbar-clock">12.13. Taskbar Clock</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#system-tray">12.14. System Tray</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#rename-terminals">12.15. Rename Terminals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="apps/steam.html">7.3. Steam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="apps/sublime.html">7.4. Sublime</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="pacman.html">13. Pacman</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fonts.html">8. Fonts</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">9. UI Settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#themes">9.1. Themes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#global-theme">9.2. Global Theme</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#startup-shutdown">9.3. Startup &amp; Shutdown</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#langauge-packs">9.4. Langauge Packs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#workspace-behavior">9.5. Workspace Behavior</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#windows-management">9.6. Windows Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shortcuts">9.7. Shortcuts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#search">9.8. Search</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#personalization">9.9. Personalization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#kde-wallet">9.10. KDE Wallet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#user-feedback">9.11. User Feedback</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#input-devices">9.12. Input Devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#night-color">9.13. Night Color</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#taskbar-clock">9.14. Taskbar Clock</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#system-tray">9.15. System Tray</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rename-terminals">9.16. Rename Terminals</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="login-screen.html">10. Login Screen (sddm)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="login-screen.html#multiple-monitors">10.1. Multiple Monitors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="login-screen.html#sddm-configuration">10.2. SDDM configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pacman.html">11. Pacman</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Printing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../printing/brother-mfcl2750dw/index.html">Brother MFC-L2750DW</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../printing/brother-mfcl2750dw/config.html">1. Printer Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../printing/brother-mfcl2750dw/config.html#administrator">1.1. Administrator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../printing/brother-mfcl2750dw/config.html#network">1.2. Network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../printing/brother-mfcl2750dw/config.html#general">1.3. General</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../printing/brother-mfcl2750dw/config.html#print">1.4. Print</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../printing/brother-mfcl2750dw/config.html#scan">1.5. Scan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../printing/brother-mfcl2750dw/config.html#common-endpoints">1.6. Common Endpoints</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../printing/brother-mfcl2750dw/windows.html">2. Windows Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../printing/brother-mfcl2750dw/windows.html#manual-install">2.1. Manual Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../printing/brother-mfcl2750dw/windows.html#full-install">2.2. Full Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../printing/brother-mfcl2750dw/windows.html#iprint-scan">2.3. iPrint&amp;Scan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../printing/brother-mfcl2750dw/windows.html#controlcenter4">2.4. ControlCenter4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../printing/brother-mfcl2750dw/windows.html#validate-install">2.5. Validate Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../printing/brother-mfcl2750dw/windows.html#complete-uninstall">2.6. Complete Uninstall</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../printing/brother-mfcl2750dw/linux.html">3. Linux Setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../printing/brother-mfcl2750dw/linux.html#add-printer">3.1. Add Printer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../printing/brother-mfcl2750dw/linux.html#add-scanner">3.2. Add Scanner</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../printing/brother-mfcl2750dw/linux.html#gimp">3.2.1. GIMP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../printing/brother-mfcl2750dw/linux.html#gscan2pdf">3.2.2. gscan2pdf</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../printing/brother-mfcl2750dw/linux.html#web-services-device-scanner">3.3. Web Services Device (Scanner)</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -2075,9 +2121,9 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="index.html">Manjaro KDE Plasma</a> &raquo;</li>
+          <li><a href="index.html">Manjaro KDE</a> &raquo;</li>
         
-      <li><span class="section-number">12. </span>UI Settings</li>
+      <li><span class="section-number">9. </span>UI Settings</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -2095,11 +2141,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="ui-settings">
-<span id="manajaro-kde-plasma-ui-settings"></span><h1><span class="section-number">12. </span>UI Settings<a class="headerlink" href="#ui-settings" title="Permalink to this headline">¶</a></h1>
+<span id="manajaro-kde-ui-settings"></span><h1><span class="section-number">9. </span>UI Settings<a class="headerlink" href="#ui-settings" title="Permalink to this headline">¶</a></h1>
 <p>KDE requires a logout for the fonts to become active in the session or just
 import the fonts manually in <code class="docutils literal notranslate"><span class="pre">font</span> <span class="pre">management</span></code> after setup.</p>
 <div class="section" id="themes">
-<h2><span class="section-number">12.1. </span>Themes<a class="headerlink" href="#themes" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.1. </span>Themes<a class="headerlink" href="#themes" title="Permalink to this headline">¶</a></h2>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">Install Arc and Papirus themes</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pacman -Syu papirus-icon-theme arc-gtk-theme
@@ -2108,459 +2154,3918 @@ wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/maste
 </div>
 </div>
 <p>Re-login.</p>
-<p><span class="guilabel">⌘ › system settings › appearance › global theme</span></p>
-<ul class="simple">
-<li><p>arc dark</p></li>
-</ul>
-<p><span class="guilabel">⌘ › system settings › appearance › global theme › application style</span></p>
-<ul class="simple">
-<li><p>breeze</p></li>
-<li><p>configure gnome/gtk application style
-* arc-dark</p></li>
-</ul>
-<p><span class="guilabel">⌘ › system settings › appearance › global theme › plasma style</span></p>
-<ul class="simple">
-<li><p>arc dark</p></li>
-</ul>
-<p><span class="guilabel">⌘ › system settings › appearance › global theme › colors</span></p>
-<ul class="simple">
-<li><p>arc dark</p></li>
-</ul>
-<p><span class="guilabel">⌘ › system settings › appearance › global theme › window decorations › theme</span></p>
-<ul class="simple">
-<li><p>arc dark</p></li>
-</ul>
-<p><span class="guilabel">⌘ › system settings › appearance › global theme › window decorations › titlebar buttons</span></p>
-<ul class="simple">
-<li><p>Remove: on all desktops</p></li>
-<li><p>Remove: more actions for this window</p></li>
-<li><p>Add: shade (right side, left of minimize)</p></li>
-<li><p>Add: keep below other windows (leftmost)</p></li>
-<li><p>Add: keep above other windows (right of keep below)</p></li>
-</ul>
-<p><span class="guilabel">⌘ › system settings › appearance › global theme › fonts</span></p>
-<ul class="simple">
-<li><p>fixed width: SFMono Nerd Font 11pt regular</p></li>
-</ul>
-<p><span class="guilabel">⌘ › system settings › appearance › global theme › icons</span></p>
-<ul class="simple">
-<li><p>papirus-dark</p></li>
-</ul>
-<p><span class="guilabel">⌘ › system settings › appearance › global theme › cursors</span></p>
-<ul class="simple">
-<li><p>breeze</p></li>
-</ul>
-<p><span class="guilabel">⌘ › system settings › appearance › global theme › launch feedback</span></p>
-<ul class="simple">
-<li><p>cursor: no feedback</p></li>
-<li><p>task manager: check enable animation</p></li>
-<li><p>stop animation after: 5 seconds</p></li>
-</ul>
-<p><span class="guilabel">⌘ › system settings › appearance › global theme › splash screen</span></p>
-<ul class="simple">
-<li><p>QuarksSplashDarker (install from UI)</p></li>
-</ul>
-<p><span class="guilabel">⌘ › system settings › sddm login screen (sddm) › login screen</span></p>
-<ul class="simple">
-<li><p>Chili for Plasma (install from UI)</p></li>
-<li><p>background: <code class="docutils literal notranslate"><span class="pre">/usr/share/wallpapers/SafeLanding/contents/images/*.jpg</span></code></p></li>
-</ul>
 </div>
-<div class="section" id="langauge-packs">
-<h2><span class="section-number">12.2. </span>Langauge Packs<a class="headerlink" href="#langauge-packs" title="Permalink to this headline">¶</a></h2>
-<p><span class="guilabel">⌘ › system settings › language packs</span></p>
-<ul class="simple">
-<li><p>Install all</p></li>
-</ul>
+<div class="section" id="global-theme">
+<h2><span class="section-number">9.2. </span>Global Theme<a class="headerlink" href="#global-theme" title="Permalink to this headline">¶</a></h2>
+<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+General<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
 </div>
-<div class="section" id="workspace-behavior">
-<h2><span class="section-number">12.3. </span>Workspace Behavior<a class="headerlink" href="#workspace-behavior" title="Permalink to this headline">¶</a></h2>
-<p><span class="guilabel">⌘ › system settings › workspace behavior</span></p>
-<p><span class="guilabel">general behavior</span></p>
-<ul class="simple">
-<li><p>clicking in scrollbar track: scrolls to clicked location</p></li>
-</ul>
-<p><span class="guilabel">dekstop effects</span></p>
-<ul class="simple">
-<li><p>accessibility</p>
-<ul>
-<li><p>zoom (configured automatically with 150% scaling)</p></li>
-</ul>
-</li>
-<li><p>appearance</p>
-<ul>
-<li><p>blur</p></li>
-<li><p>destaturate unresponsive applications</p></li>
-<li><p>fading popups</p></li>
-<li><p>fall apart</p></li>
-<li><p>full screen</p></li>
-<li><p>login</p></li>
-<li><p>logout</p></li>
-<li><p>maximize</p></li>
-<li><p>morphing popups</p></li>
-<li><p>screen edge</p></li>
-<li><p>sliding popups</p></li>
-<li><p>translucency</p></li>
-<li><p>squash</p></li>
-</ul>
-</li>
-<li><p>focus</p>
-<ul>
-<li><p>dialog parent</p></li>
-<li><p>dim screen for administrative mode</p></li>
-</ul>
-</li>
-<li><p>show desktop animation</p>
-<ul>
-<li><p>eye on screen</p></li>
-</ul>
-</li>
-<li><p>virtual desktop switchin animation</p>
-<ul>
-<li><p>slide</p></li>
-</ul>
-</li>
-<li><p>window management</p>
-<ul>
-<li><p>desktop grid</p></li>
-<li><p>present windows</p></li>
-</ul>
-</li>
-<li><p>window open/close animation</p>
-<ul>
-<li><p>glide</p></li>
-</ul>
-</li>
-</ul>
-<p><span class="guilabel">screen edges</span></p>
-<ul class="simple">
-<li><p>Upper left: lock screen</p></li>
-<li><p>Upper right: present windows - all desktops</p></li>
-</ul>
-<p><span class="guilabel">screen locking</span></p>
-<ul class="simple">
-<li><p>☑ lock screen automatically: 5mins</p></li>
-<li><p>☑ after waking from sleep</p></li>
-<li><p>allow unlocking without a password for: 0 seconds</p></li>
-<li><p>keyboard shortcut: super + L</p></li>
-<li><p>appearance</p>
-<ul>
-<li><p>☑ clock</p></li>
-<li><p>☐ media controls</p></li>
-<li><p>image: safe landing (same as login screen)</p></li>
-</ul>
-</li>
-</ul>
-<p><span class="guilabel">virtual desktops</span></p>
-<ul class="simple">
-<li><p>Remove additional desktops</p></li>
-</ul>
-<p><span class="guilabel">activities &gt; privacy</span></p>
-<ul class="simple">
-<li><p>keep history: 1 month (minimum time, clear current)</p></li>
-<li><p>remember opened documents: only for specific applications</p>
-<ul>
-<li><p>sublime</p></li>
-<li><p>☑ blacklist applications not in the list</p></li>
-</ul>
-</li>
-</ul>
 </div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › appearance › global theme</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">arc dark</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Application Style<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › appearance › global theme › application style</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">breeze</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› configure gnome/gtk application style</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">arc dark</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Plasma Style<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › appearance › global theme › plasma style</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">arc dark</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Colors<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › appearance › global theme › colors</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">arc dark</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Theme<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › appearance › global theme › window decorations › theme</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">arc dark</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Titlebar Buttons<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › appearance › global theme › window decorationstitlebar buttons</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DELETE</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">on all desktops</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DELETE</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">more actions for this window</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">shade (right side - left of minimize)</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">keep below other windows (leftmost)</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">keep above other windows (right of keep below)</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Fonts<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › appearance › global theme › fonts</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">fixed width</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">SFMono Nerd Font 11pt regular</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Icons<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › appearance › global theme › fonts</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">papirus-dark</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Cursors<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › appearance › global theme › cursors</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">breeze</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Launch Feedback<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › appearance › global theme › launch feedback</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">cursor</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">no feedback</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">task manager</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">check enable animation</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">stop animation after</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">5 seconds</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Splash Screen<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › appearance › global theme › splash screen</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">QuarksSplashDarker (Install from UI)</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details></div>
 <div class="section" id="startup-shutdown">
-<h2><span class="section-number">12.4. </span>Startup &amp; Shutdown<a class="headerlink" href="#startup-shutdown" title="Permalink to this headline">¶</a></h2>
-<p><span class="guilabel">⌘ › system settings › startup and shutdown › autostart</span></p>
-<ul class="simple">
-<li><p>remove all</p></li>
-</ul>
+<h2><span class="section-number">9.3. </span>Startup &amp; Shutdown<a class="headerlink" href="#startup-shutdown" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="login-screen.html#manajaro-kde-login-screen"><span class="std std-ref">Login Screen (sddm)</span></a> for detailed login screen configuration.</p>
+<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Autostart<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
 </div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › startup and shutdown › autostart</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DELETE</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">all</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details></div>
+<div class="section" id="langauge-packs">
+<h2><span class="section-number">9.4. </span>Langauge Packs<a class="headerlink" href="#langauge-packs" title="Permalink to this headline">¶</a></h2>
+<details class="sphinx-bs dropdown card mb-3 shadow fade-in" open="open">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Language Packs<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › language packs</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-success badge-pill">ADD</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">all language packs</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details></div>
+<div class="section" id="workspace-behavior">
+<h2><span class="section-number">9.5. </span>Workspace Behavior<a class="headerlink" href="#workspace-behavior" title="Permalink to this headline">¶</a></h2>
+<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+General Behavior<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › workspace behavior › general behavior</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">clicking in scrollbar track: scrolls to clicked location</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Desktop Effects<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › workspace behavior › desktop effects</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">accessibility</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">zoom (configured automatically with 150% scaling)</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">appearance</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">blur</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">destaturate unresponsive applications</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">fading popups</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">fall apart</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">full screen</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">login</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">logout</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">maximize</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">morphing popups</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">screen edge</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">sliding popups</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">translucency</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">squash</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">focus</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">dialog parent</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">dim screen for administrative mode</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">show desktop animation</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">eye on screen</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">virtual desktop switching animation</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">slide</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">window management</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">desktop grid</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">present windows</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">window open/close animation</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">glide</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Screen Edges<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › workspace behavior › screen edges</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">{UPPPER LEFT}</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">lock screen</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">{UPPER RIGHT}</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">present windows - all desktops</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">windows dragged to top edge</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">windows dragged to left or right edge</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">trigger quarter tiling in</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">outer 25%</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">switch on desktop edge</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">OFF</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">activation delay</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">500ms</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">reactivation delay</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">1000ms</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Screen Locking<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › workspace behavior › screen locking</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑ lock screen automatically</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">5mins</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">after waking from sleep</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">allow unlocking without a password for</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">0 seconds</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">keyboard shortcut</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">⌘ + L</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">appearance</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">clock</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☐</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">media controls</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› image</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">safe landing (same as login screen)</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Virtual Desktops<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › workspace behavior › virtual desktops</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DELETE</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">all</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Activities<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">The minimum time is one month; clear current data.</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › workspace behavior › activities › privacy</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">keep history</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">1 month</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">remember opened documents</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">only for specific applications</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">›</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">sublime</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">blacklist applications not in the list</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details></div>
 <div class="section" id="windows-management">
-<h2><span class="section-number">12.5. </span>Windows Management<a class="headerlink" href="#windows-management" title="Permalink to this headline">¶</a></h2>
-<p><span class="guilabel">⌘ › system settings › windows management</span></p>
-<p><span class="guilabel">window behavior</span></p>
-<ul class="simple">
-<li><p>focus</p>
-<ul>
-<li><p>window activation policy: focus follows mouse</p></li>
-<li><p>delay focus by: 300ms</p></li>
-<li><p>focus stealing prevention: low</p></li>
-<li><p>raising windows: ☑ click raises active window</p></li>
-</ul>
-</li>
-</ul>
-<p><span class="guilabel">task switcher</span></p>
-<ul class="simple">
-<li><p>main</p>
-<ul>
-<li><p>☑ show selected window</p></li>
-<li><p>☑ thumbnail grid</p></li>
-</ul>
-</li>
-</ul>
+<h2><span class="section-number">9.6. </span>Windows Management<a class="headerlink" href="#windows-management" title="Permalink to this headline">¶</a></h2>
+<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Window Behavior<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
 </div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › windows management › window behavior</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">focus</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› window activation policy</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">focus follows mouse</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› delay focus by</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">300ms</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› focus stealing prevention</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">low</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">click raises active window</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Task Switcher<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › windows management › task switcher</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">main</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">show selected window</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">thumbnail grid</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details></div>
 <div class="section" id="shortcuts">
-<h2><span class="section-number">12.6. </span>Shortcuts<a class="headerlink" href="#shortcuts" title="Permalink to this headline">¶</a></h2>
-<p><span class="guilabel">⌘ › system settings › shortcuts</span></p>
-<p><span class="guilabel">shortcuts › system services › kwin</span></p>
-<ul class="simple">
-<li><p>make window fullscreen: alt+return</p></li>
-</ul>
-<p><span class="guilabel">shortcuts › applications › krunner</span></p>
-<ul class="simple">
-<li><p>krunner</p>
-<ul>
-<li><p>☐ alt+f2</p></li>
-<li><p>☑ search</p></li>
-<li><p>☑ alt+space</p></li>
-</ul>
-</li>
-</ul>
-<p><span class="guilabel">shortcuts › system services › plasma</span></p>
-<ul class="simple">
-<li><p>activate application launcher widget (activity switching)</p>
-<ul>
-<li><p>delete: alt+f1</p></li>
-<li><p>add: meta+space</p></li>
-</ul>
-</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This will enable meta only key and meta+space key for app launcher.</p>
+<h2><span class="section-number">9.7. </span>Shortcuts<a class="headerlink" href="#shortcuts" title="Permalink to this headline">¶</a></h2>
+<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+KWin<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
 </div>
 </div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › shortcuts › system services › kwin</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">make window fullscreen</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">alt+return</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+KRunner<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › shortcuts › applications › krunner</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">krunner</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☐</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">alt + f2</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">search</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">alt + space</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Activity Switching<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">This will enable meta only key and meta+space key for app launcher.</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › shortcuts › system services › activity switching</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">activate application launcher widget</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DELETE</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">alt + f1</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-success badge-pill">ADD</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">⌘ + space</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details></div>
 <div class="section" id="search">
-<h2><span class="section-number">12.7. </span>Search<a class="headerlink" href="#search" title="Permalink to this headline">¶</a></h2>
-<p><span class="guilabel">⌘ › system settings › search</span></p>
-<p><span class="guilabel">file search</span></p>
-<ul class="simple">
-<li><p>☐ enable file search</p></li>
-</ul>
-<p><span class="guilabel">krunner</span></p>
-<ul class="simple">
-<li><p>☐ bookmarks</p></li>
-<li><p>☐ browser history</p></li>
-<li><p>☐ browser tabs</p></li>
-<li><p>☐ kate sessions</p></li>
-<li><p>☐ konsole proflies</p></li>
-<li><p>☐ web search keywords</p></li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Krunner must be enabled for start searches</p>
+<h2><span class="section-number">9.8. </span>Search<a class="headerlink" href="#search" title="Permalink to this headline">¶</a></h2>
+<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+File Search<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
 </div>
-<p><span class="guilabel">web search keywords</span></p>
-<ul class="simple">
-<li><p>☐ enable web search keywords</p></li>
-</ul>
 </div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › search › file search</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☐</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">enable file search</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+KRunner<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">Krunner must be enabled for start searches</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › search › krunner</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☐</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">bookmarks</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☐</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">browser history</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☐</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">browser tabs</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☐</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">kate sessions</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☐</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">konsole proflies</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☐</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">web search keywords</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Web Search Keywods<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › search › web search keywords</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☐</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">enable web search keywords</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details></div>
 <div class="section" id="personalization">
-<h2><span class="section-number">12.8. </span>Personalization<a class="headerlink" href="#personalization" title="Permalink to this headline">¶</a></h2>
-<p><span class="guilabel">⌘ › system settings › personalization</span></p>
-<p><span class="guilabel">notifications</span></p>
-<ul class="simple">
-<li><p>do not disturb mode: ☐ enable when screens are minimized</p></li>
-<li><p>critical notifications: ☑ show in do not disturb mode</p></li>
-<li><p>normal notifications: ☐ show over full screen windows</p></li>
-<li><p>low priority notifications: ☑ show popup</p></li>
-<li><p>popup: ☑ show near notification icon</p></li>
-<li><p>hide after: 5secs</p></li>
-<li><p>application progress</p>
-<ul>
-<li><p>☐ show in task manager  (enable if GUI copy progress not showing)</p></li>
-<li><p>☐ show in notifications (enable if GUI copy progress not showing)</p></li>
-<li><p>☑ keep popup open during progress</p></li>
-</ul>
-</li>
-<li><p>notifications badges: ☑ show in task manager</p></li>
-</ul>
-<p><span class="guilabel">accessibility</span></p>
-<ul class="simple">
-<li><p>bell</p>
-<ul>
-<li><p>☐ audible bell</p></li>
-<li><p>☐ visible bell</p></li>
-</ul>
-</li>
-<li><p>modifier keys</p>
-<ul>
-<li><p>☐ sticky keys</p></li>
-</ul>
-</li>
-<li><p>keyboard filters</p>
-<ul>
-<li><p>☐ slow keys</p></li>
-</ul>
-</li>
-<li><p>screen reader</p>
-<ul>
-<li><p>☐ enable screen reader</p></li>
-</ul>
-</li>
-</ul>
-<p><span class="guilabel">applications › default applications</span></p>
-<ul class="simple">
-<li><p>email client: google chrome</p></li>
-<li><p>terminal emulator: alacritty</p></li>
-</ul>
+<span id="manajaro-kde-ui-settings-personalization"></span><h2><span class="section-number">9.9. </span>Personalization<a class="headerlink" href="#personalization" title="Permalink to this headline">¶</a></h2>
+<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Notifications<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
 </div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › personalization › notifications</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">do not disturb mode</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☐ enable when screens are minimized</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">critical notifications</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑ show in do not disturb mode</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">normal notifications</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☐ show over full screen windows</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">low priority notifications</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑ show popup</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">popup</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑ show near notification icon</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">hide after</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">5secs</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">application progress</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☐</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">show in task manager  (enable if GUI copy progress not showing)</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☐</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">show in notifications (enable if GUI copy progress not showing)</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">keep popup open during progress</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">notifications badges</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑ show in task manager</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Accessibility<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › personalization › accessibility</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">bell</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☐</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">audible bell</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☐</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">visible bell</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">modifier keys</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☐</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">sticky keys</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">keyboard filters</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☐</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">slow keys</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">screen reader</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› ☐</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">enable screen reader</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Default Applications<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › personalization › applications › default applications</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">email client</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">google chrome</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">terminal emulator</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">alacritty</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details></div>
 <div class="section" id="kde-wallet">
-<h2><span class="section-number">12.9. </span>KDE Wallet<a class="headerlink" href="#kde-wallet" title="Permalink to this headline">¶</a></h2>
-<p><span class="guilabel">⌘ › system settings › kde wallet</span></p>
-<ul class="simple">
-<li><p>wallet preferences</p>
-<ul>
-<li><p>☐ enable the kde wallet subsystem</p></li>
-</ul>
-</li>
-<li><p>access control</p>
-<ul>
-<li><p>☑ prompt when an application accesses a wallet</p></li>
-</ul>
-</li>
-</ul>
+<h2><span class="section-number">9.10. </span>KDE Wallet<a class="headerlink" href="#kde-wallet" title="Permalink to this headline">¶</a></h2>
+<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Wallet Preferences<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
 </div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › kde wallet › wallet preferences</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☐</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">enable the kde wallet subsystem</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Access Control<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › kde wallet › access control</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">prompt when an application accesses a wallet</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details></div>
 <div class="section" id="user-feedback">
-<h2><span class="section-number">12.10. </span>User Feedback<a class="headerlink" href="#user-feedback" title="Permalink to this headline">¶</a></h2>
-<p><span class="guilabel">⌘ › system settings › user feedback</span></p>
-<ul class="simple">
-<li><p>disable</p></li>
-</ul>
+<h2><span class="section-number">9.11. </span>User Feedback<a class="headerlink" href="#user-feedback" title="Permalink to this headline">¶</a></h2>
+<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+User Feedback<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
 </div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › user feedback</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DISABLE</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details></div>
 <div class="section" id="input-devices">
-<h2><span class="section-number">12.11. </span>Input Devices<a class="headerlink" href="#input-devices" title="Permalink to this headline">¶</a></h2>
-<p><span class="guilabel">⌘ › system settings › hardware › input devices › touchpad</span></p>
-<ul class="simple">
-<li><p>general</p>
-<ul>
-<li><p>☑ device enabled</p></li>
-<li><p>☑ disable when typing</p></li>
-<li><p>☐ left handed mode</p></li>
-<li><p>☐ press left and right buttons for middle click</p></li>
-<li><p>0.00: pointer accleration</p></li>
-<li><p>acceleration profile: ☑ adaptive</p></li>
-<li><p>☑ tap to click</p></li>
-<li><p>☑ tap and drag</p></li>
-<li><p>☐ tap and drag lock</p></li>
-<li><p>two finger click: ☑ right click (three-finger tap to middle click)</p></li>
-<li><p>scrolling: ☑ two fingers</p></li>
-<li><p>☐ invert scroll direction</p></li>
-<li><p>☐ disable horizontal scrolling</p></li>
-<li><p>right-click: ☑ press bottom-right corner</p></li>
-<li><p>middle-click: ☑ press bottom-middle</p></li>
-</ul>
-</li>
-</ul>
+<h2><span class="section-number">9.12. </span>Input Devices<a class="headerlink" href="#input-devices" title="Permalink to this headline">¶</a></h2>
+<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Touchpad<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
 </div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › hardware › input devices › touchpad</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">device enabled</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">disable when typing</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☐</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">left handed mode</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☐</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">press left and right buttons for middle click</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">0.00</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">pointer accleration</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">acceleration profile</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑ adaptive</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">tap to click</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">tap and drag</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☐</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">tap and drag lock</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">two finger click</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑ right click (three-finger tap to middle click)</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">scrolling</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑ two fingers</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☐</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">invert scroll direction</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☐</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">disable horizontal scrolling</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">right-click</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑ press bottom-right corner</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">middle-click</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑ press bottom-middle</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details></div>
 <div class="section" id="night-color">
-<h2><span class="section-number">12.12. </span>Night Color<a class="headerlink" href="#night-color" title="Permalink to this headline">¶</a></h2>
-<p><span class="guilabel">⌘ › system settings › hardware › display and monitor › night color</span></p>
-<ul class="simple">
-<li><p>☐ activate night color</p></li>
-</ul>
+<h2><span class="section-number">9.13. </span>Night Color<a class="headerlink" href="#night-color" title="Permalink to this headline">¶</a></h2>
+<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Night Color<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
 </div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › system settings › hardware › display and monitor › night color</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☐</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">activate night color</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details></div>
 <div class="section" id="taskbar-clock">
-<h2><span class="section-number">12.13. </span>Taskbar Clock<a class="headerlink" href="#taskbar-clock" title="Permalink to this headline">¶</a></h2>
-<p><span class="guilabel">clock (lower right) › settings › appearance</span></p>
-<ul class="simple">
-<li><p>information: ☑ show date (adaptive location)</p></li>
-<li><p>show time zone: ☑ only when different from local time zone</p></li>
-<li><p>display time zone as: code</p></li>
-<li><p>time display: 24-hour</p></li>
-<li><p>date format: iso date</p></li>
-</ul>
+<h2><span class="section-number">9.14. </span>Taskbar Clock<a class="headerlink" href="#taskbar-clock" title="Permalink to this headline">¶</a></h2>
+<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Night Color<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
 </div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">taskbar clock › <span class="sphinx-bs badge badge-info badge-pill">RMB</span> › configure digital clock › appearance</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☐</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">activate night color</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">information</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑ show date (adaptive location)</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">show time zone</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑ only when different from local time zone</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">display time zone as</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">code</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">time display</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">24-hour</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">date format</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">iso date</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details></div>
 <div class="section" id="system-tray">
-<h2><span class="section-number">12.14. </span>System Tray<a class="headerlink" href="#system-tray" title="Permalink to this headline">¶</a></h2>
-<p><span class="guilabel">system tray › settings › general</span> or
-<span class="guilabel">system tray › RMB › enter edit mode</span></p>
-<ul class="simple">
-<li><p>panel icon size: ☑ scale with panel height</p></li>
-</ul>
-<p><span class="guilabel">system tray › settings › entries</span></p>
-<ul class="simple">
-<li><p>☑ always show all entries</p></li>
-<li><p>application status</p>
-<ul>
-<li><p>default: always shown</p></li>
-<li><p>media player: show when relevant</p></li>
-<li><p>notifications: show when relevant (required for GUI file copy progress; unless disable in notifications settings)</p></li>
-</ul>
-</li>
-<li><p>hardware control</p>
-<ul>
-<li><p>default: show when relevant</p></li>
-<li><p>display configuration: disabled</p></li>
-<li><p>touchpad: disabled</p></li>
-<li><p>key lock status: disabled</p></li>
-<li><p>keyboard layout: disabled</p></li>
-<li><p>kde connect: disabled</p></li>
-</ul>
-</li>
-<li><p>system services</p>
-<ul>
-<li><p>clipboard: disabled</p></li>
-<li><p>disk quota: disabled</p></li>
-<li><p>night color control: disabled</p></li>
-</ul>
-</li>
-<li><p>miscellaneous</p>
-<ul>
-<li><p>kate session: disabled</p></li>
-<li><p>weather report: disabled</p></li>
-</ul>
-</li>
-</ul>
-<p><span class="guilabel">system tray › RMB › enter edit mode</span></p>
-<ul class="simple">
-<li><p>delete: show desktop</p></li>
-</ul>
-<p><span class="guilabel">system tray › news › settings</span></p>
-<ul class="simple">
-<li><p>☐ autostart</p></li>
-<li><p>☐ show error notifications</p></li>
-<li><p>quit</p></li>
-</ul>
-<p><span class="guilabel">system tray › manjaro settings manager › options</span></p>
-<ul class="simple">
-<li><p>☐ check unsupported kernels</p></li>
-<li><p>☐ check new kernels</p></li>
-<li><p>☐ check missing language packs</p></li>
-<li><p>quit</p></li>
-</ul>
-<p><span class="guilabel">system tray › key lock status</span></p>
-<ul class="simple">
-<li><p>remove</p></li>
-</ul>
-<p><span class="guilabel">system tray › shorcuts</span></p>
-<ul class="simple">
-<li><p>remove all</p></li>
-</ul>
+<h2><span class="section-number">9.15. </span>System Tray<a class="headerlink" href="#system-tray" title="Permalink to this headline">¶</a></h2>
+<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+General<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
 </div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">system tray › <span class="sphinx-bs badge badge-info badge-pill">RMB</span> › configure system tray › general</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">scale with panel height</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Entries<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">File copy progress also requires notifications settings to be enabled. See
+<a class="reference internal" href="#manajaro-kde-ui-settings-personalization"><span class="std std-ref">Personalization</span></a>.</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">system tray › <span class="sphinx-bs badge badge-info badge-pill">RMB</span> › configure system tray › entries</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☑</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">always show all entries</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">application status</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› default</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">always shown</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› media player</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">show when relevant</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› notifications</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">show when relevant (required for GUI file copy progress)</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">hardware control</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› default</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">show when relevant</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› display configuration</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DISABLED</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› touchpad</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DISABLED</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› key lock status</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DISABLED</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› keyboard layout</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DISABLED</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› kde connect</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DISABLED</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">system services</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› clipboard</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DISABLED</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› disk quota</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DISABLED</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› night color control</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DISABLED</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">c         miscellaneous</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› kate session</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DISABLED</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">› weather report</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DISABLED</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Remove Show Desktop<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">system tray › {RMB} › enter edit mode</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DELETE</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">show desktop</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Remove News<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">Manually quit News.</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">system tray › news › settings</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☐</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">autostart</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☐</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">show error notifications</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Remove Show Desktop<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">Manually quit Manajero Settings Manager.</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">system tray › manjaro settings manager › options</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☐</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">check unsupported kernels</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☐</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">check new kernels</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">☐</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">check missing language packs</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Remove Key Lock Status<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">system tray › key lock status</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DELETE</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Remove Shortcuts<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">system tray › shortcuts</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DELETE</span></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details></div>
 <div class="section" id="rename-terminals">
-<h2><span class="section-number">12.15. </span>Rename Terminals<a class="headerlink" href="#rename-terminals" title="Permalink to this headline">¶</a></h2>
-<p><span class="guilabel">⌘ › alacritty › edit</span></p>
-<ul class="simple">
-<li><p>general</p>
-<ul>
-<li><p>name: terminal</p></li>
-</ul>
-</li>
-<li><p>application</p>
-<ul>
-<li><p>name: terminal</p></li>
-<li><p>description: terminal</p></li>
-</ul>
-</li>
-</ul>
-<p><span class="guilabel">⌘ › konsole › edit</span></p>
-<ul class="simple">
-<li><p>application</p>
-<ul>
-<li><p>description: konsole</p></li>
-</ul>
-</li>
-</ul>
+<h2><span class="section-number">9.16. </span>Rename Terminals<a class="headerlink" href="#rename-terminals" title="Permalink to this headline">¶</a></h2>
+<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Make Alacritty Default ‘Terminal’<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
 </div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › alacritty › edit</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">general</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">name</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">terminal</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">application</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">name</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">terminal</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">description</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">terminal</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
+<summary class="summary-title card-header bg-primary text-white font-weight-bold">
+Rename Konsole to ‘konsole’ (from terminal)<div class="summary-down docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="summary-up docutils">
+<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="summary-content card-body docutils">
+<div class="sphinx-bs container-lg pb-3 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body bg-light docutils">
+<p class="card-text">⌘ › konsole › edit</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">application</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">description</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-md-6 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body docutils">
+<p class="card-text">konsole</p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-12 p-0 m-0 docutils">
+<div class="card w-100 border-0 docutils">
+<div class="card-body text-right docutils">
+<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-12-20</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details></div>
 </div>
 
 
@@ -2571,10 +6076,10 @@ wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/maste
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pacman.html" class="btn btn-neutral float-right" title="13. Pacman" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="login-screen.html" class="btn btn-neutral float-right" title="10. Login Screen (sddm)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="fonts.html" class="btn btn-neutral float-left" title="11. Fonts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="fonts.html" class="btn btn-neutral float-left" title="8. Fonts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -97,7 +97,7 @@ process() {
     echo "zfs sending ${snap} to ${rds}"
   fi
   # Receive options: Always use snapshot as base (remote changes on after
-  # snapshot will cause recieve to fail otherwise); recieving pool receieves
+  # snapshot will cause receive to fail otherwise); receiving pool receieves
   # filesystem unmounted to prevent mount collisions.
   if ! sudo /usr/sbin/zfs send "${send_opts[@]}" "${inc_opts[@]}" "${snap}" | SSH /usr/sbin/zfs recv -Fuv "${rds}"; then
     echo "[ERROR] failed to send $snap to ${remote_server} ${rds}" >&2
