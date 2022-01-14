@@ -89,6 +89,47 @@ cleanup multiple commits before pushing upstream.
   If done correctly, this will show all commit messages that were rolled up.
   Update as needed and commit as normal.
 
+Modify Specific Historical Commit
+*********************************
+.. warning::
+  This will re-write commit history from the changed commit; if tags, releases
+  are used they will need to be deleted and re-created. Existing clones will
+  break. Be careful.
+
+
+.. code-block:: bash
+  :caption: Rebase to one commit **before** the intended change
+
+  git rebase --interactive '{COMMIT}^'
+
+.. note::
+  Set **edit** for the desired commit; save and exit. Make desired changes.
+
+.. code-block:: bash
+  :caption: Finish rebasing to HEAD
+
+  git commit --all --amend --no-edit
+  git rebase --continue
+
+.. code-block:: bash
+  :caption: Reset affected tags
+
+  git tag -l
+  git rev-list -n 1 {TAG}
+  git tag -d {TAG}
+  git push --delete origin {TAG}
+  git tag {TAG} {NEW COMMIT HASH}
+  git push --tags
+
+.. note::
+  Ensure affected releases, tags are removed before pushing the changed repo.
+
+.. code-block:: bash
+
+  git push -f
+
+`Reference <https://stackoverflow.com/questions/1186535/how-to-modify-a-specified-commit>`__
+
 Remove Tracked Files without Deleting Them
 ******************************************
 .. code-block:: bash
