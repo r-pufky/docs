@@ -1,5 +1,25 @@
 # [Changelog][3g]
 
+## 2022-01-21.0
+Add Windows 10 21H2 documentation.
+
+Added:
+* Used 20H2 as base and revalidated for 21H2.
+* Added RTC/UTC clock for Windows dual boot.
+* Added git commands for rebasing historical commits.
+
+Changed:
+* Dropped regedits when possible.
+* Updated settings to be reflective of out-of-box usage; versus strict
+  lockdown (e.g. camera, microphone are enabled but enough info is there
+  for a user to disable if wanted).
+* Moved 10 base to Windows base install.
+* Separated base advanced settings into separate files.
+* Updated SNMP requirements for Brother printer.
+
+Removed:
+* Removed 1903 documentation.
+
 ## 2022-01-09.0
 Add Printing Setup.
 
