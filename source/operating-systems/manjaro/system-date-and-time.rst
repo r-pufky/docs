@@ -20,20 +20,8 @@ System Date and Time
 Windows Dual boot
 *****************
 Dual booting requires Windows 10 to use UTC instead of RTC. Disable the NTP
-client for windows use manjaro to adjust the clock.
-
-.. regedit:: Use UTC for windows system clock
-  :path:     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation
-  :value0:   RealTimeIsUniversal, {DWORD}, 1
-  :ref:      https://forum.manjaro.org/t/root-tip-get-your-time-timezone-right-using-manjaro-windows-dual-boot/1167
-  :update:   2021-12-15
-
-.. regedit:: Disable NTP sync
-  :path:     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\
-             TimeProviders\NtpClient
-  :value0:   Enabled, {DWORD}, 0
-  :ref:      https://forum.manjaro.org/t/root-tip-get-your-time-timezone-right-using-manjaro-windows-dual-boot/1167
-  :update:   2021-12-15
+client for windows use manjaro to adjust the clock. See:
+:ref:`w10-21h2-settings-time-and-language-date-and-time-utc-realtime-clock`.
 
 Force ISO8601 date/time
 ***********************

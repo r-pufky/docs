@@ -1,12 +1,13 @@
 .. _w10-20h2:
 
-Windows 20H2
-############
-See :ref:`w10-pro-base` for initial Windows setup.
+Windows 10 20H2
+###############
+See :ref:`wbase-pro-install` for initial Windows setup.
 
-* `Notable changes`_
-* `Release information`_
-* `Technical notes`_
+* `Notable changes <https://en.wikipedia.org/wiki/Windows_10_version_history#Version_20H2_(October_2020_Update)>`__
+* `Release information <https://docs.microsoft.com/en-us/windows/release-information/status-windows-10-20H2>`__
+* `Technical notes <https://docs.microsoft.com/en-us/windows/whats-new/whats-new-windows-10-version-20H2>`__
+* `Shortcut keys <https://support.microsoft.com/en-us/windows/keyboard-shortcuts-in-windows-dcc61a57-8ff0-cffe-9796-cb9706c75eec>`__
 
 .. important::
   :term:`GPO` should be thought of a template framework that applies specific
@@ -30,11 +31,3 @@ See :ref:`w10-pro-base` for initial Windows setup.
    standalone/index
    settings/index
    security/index
-
-.. rubric:: References
-
-#. `All Windows Release Information <https://docs.microsoft.com/en-us/windows/release-information/>`_
-
-.. _Notable changes: https://en.wikipedia.org/wiki/Windows_10_version_history#Version_20H2_(October_2020_Update)
-.. _Release information: https://docs.microsoft.com/en-us/windows/release-information/status-windows-10-20H2
-.. _Technical notes: https://docs.microsoft.com/en-us/windows/whats-new/whats-new-windows-10-version-20H2

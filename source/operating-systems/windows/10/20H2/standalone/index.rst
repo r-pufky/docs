@@ -2,7 +2,7 @@
 
 Standalone Changes
 ##################
-A reboot is required once these changes are made. See :ref:`w10-pro-base` for
+A reboot is required once these changes are made. See :ref:`wbase` for
 initial Windows setup.
 
 `Notable changes`_, `release information`_, and `technical notes`_.

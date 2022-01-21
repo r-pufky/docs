@@ -4,7 +4,7 @@ Play-On
 #######
 Steaming service recorder.
 
-Uses :ref:`w10-pro-base` and assumes post template setup scripts have
+Uses :ref:`wbase` and assumes post template setup scripts have
 been run.
 
 System Requirements
@@ -43,7 +43,7 @@ Ports
 Server Setup
 ************
 
-#. Setup :ref:`w10-hiding-local-desktop-crd`.
+#. Setup :ref:`wbase-specific-windows-fixes-hiding-local-desktop-crd`.
 #. Setup :ref:`service-ssh-windows-setup` with only public key authentication.
 #. Ensure you are connected via the VM console (not CRD) for install, otherwise
    installer will fail.

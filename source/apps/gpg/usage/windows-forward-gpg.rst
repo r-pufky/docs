@@ -25,7 +25,7 @@ Required Materials
 ==================
 #. `npiperelay`_ downloaded. **Verify Integrity**.
 #. `wsl-ssh-pageant`_ **Verify Integrity**.
-#. Recent Linux Distro on WSL2 installed. See :ref:`w10-wsl`.
+#. Recent Linux Distro on WSL2 installed. See :ref:`wbase-wsl`.
 #. `Putty`_ installed.
 #. Pre-configured Yubikey using :ref:`gpg-export-to-yubikey`.
 

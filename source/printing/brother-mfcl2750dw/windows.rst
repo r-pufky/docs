@@ -14,7 +14,7 @@ Manual Install
 **************
 Recommended. This will install the printer/scanner via the print management
 console using only drivers and basic scanning software. Also applies to adding
-printer across subnets.
+printer across subnets. Requires SNMP and WebServices to be enabled.
 
 .. gui:: Enable Internet Printing Client
   :nav:    ⌘ --> settings --> manage optional features -->
@@ -51,6 +51,29 @@ printer across subnets.
            Brother Laser Type1 Class Driver --> RMB --> Delete
   :value0:  , {DELETE}
   :update: 2021-01-09
+
+iPrint&Scan
+===========
+Enables all scanning options when using the scanning feature.
+
+Download and extract **Brother iPrint&Scan** from the `Support Site`_. Install.
+
+.. gui:: Disable Analytics Reporting
+  :nav:    ⌘ --> iprint & scan
+  :path:   settings -> product information
+  :value0: ☐, send information
+  :value1: ☐, check for software updates
+  :update: 2021-01-09
+
+  Read the disable wording carefully.
+
+.. gui:: Disable Report Sharing
+  :nav:    ⌘ --> iprint & scan --> select your machine --> Brother Analytics
+  :path:   configure
+  :value0:  , {DISABLE}
+  :update: 2021-01-09
+
+  Read the disable wording carefully.
 
 Full Install
 ************
@@ -104,33 +127,10 @@ enabled.
   :cmdmenu:`⌘ --> settings --> printers --> add a printer or scanner` or Manual
   install, see :ref:`printing-brother-mfcl2750dw-windows-manual-install`.
 
-iPrint&Scan
-***********
-Enables all scanning options when using the scanning feature.
-
-Download and extract **Brother iPrint&Scan** from the `Support Site`_. Install.
-
-.. gui:: Disable Analytics Reporting
-  :nav:    ⌘ --> iprint & scan
-  :path:   settings -> product information
-  :value0: ☐, send information
-  :value1: ☐, check for software updates
-  :update: 2021-01-09
-
-  Read the disable wording carefully.
-
-.. gui:: Disable Report Sharing
-  :nav:    ⌘ --> iprint & scan --> select your machine --> Brother Analytics
-  :path:   configure
-  :value0:  , {DISABLE}
-  :update: 2021-01-09
-
-  Read the disable wording carefully.
-
 ControlCenter4
 **************
-Enables advanced post-scanning options. Generally this can be done by other
-applications. Not recommended.
+Advanced post-scanning options. Generally this can be done by other
+applications. **Not** recommended.
 
 .. dropdown:: ControlCenter4 Install
   :container: + shadow

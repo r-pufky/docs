@@ -6,7 +6,7 @@ Microphone
 
 Leave Microphone enabled. See `1803 update breaks microphone`_.
 
-See :ref:`w10-determining-app-list` to generate a list of apps for more fine
+See :ref:`wbase-determining-app-list` to generate a list of apps for more fine
 grained control of app access.
 
 .. regedit:: Allow access to the microphone on this device

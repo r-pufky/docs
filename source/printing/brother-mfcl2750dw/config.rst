@@ -13,8 +13,7 @@ left at defaults.
   being used. **Always** set non-default passwords and enforce restrictions on
   the device as well as firewall rules.
 
-  It is assumed that the printer is on an isolated VLAN with no SNMP services
-  with all Wifi disabled.
+  It is assumed that the printer is on an isolated VLAN with all Wifi disabled.
 
 Administrator
 *************
@@ -95,7 +94,7 @@ equipment.
   :nav:     network --> network
   :path:    protocol
   :value0:  ☑, Web Based Management (Web Server)
-  :value1:  ☐, SNMP
+  :value1:  ☑, SNMP
   :value2:  ☐, Remote Setup
   :value3:  ☐, LPD
   :value4:  ☐, Raw Port (jetdirect)
@@ -138,6 +137,32 @@ equipment.
   :update: 2021-01-09
 
   All HTTP Server Settings links go to the same settings page.
+
+.. gui:: SNMP Advanced Settings
+  :nav:    network --> network --> protocol
+  :path:   SNMP --> Advanced Settings
+  :value0:  SNMP Mode of Operation, SNMPv3 read-write access and v1/v2c read-only access
+  :value1:                Username, {USER}
+  :value2:                Key Type, Password
+  :value3:   Authentication Method, SHA1
+  :value4: Authentication Password, {PASS}
+  :value5:        Privacy Password, {PASS}
+  :value6:            Context Name, authNoPriv
+  :ref:    https://www.webnms.com/simulator/help/sim_network/netsim_conf_snmpv3.html
+  :update: 2021-01-09
+
+  SNMP v1/2 must be enabled for scanner to be detected across subnets. Password
+  limit is **16** characters.
+
+  +--------------+------------+
+  | Password     | Context    |
+  +--------------+------------+
+  | auth         | authNoPriv |
+  +--------------+------------+
+  | privacy      |   authPriv |
+  +--------------+------------+
+  | context name | authNoPriv |
+  +--------------+------------+
 
 .. gui:: Web Services Advanced Settings
   :nav:    network --> network --> protocol

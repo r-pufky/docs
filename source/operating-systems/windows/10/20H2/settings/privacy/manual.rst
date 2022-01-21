@@ -14,7 +14,8 @@ consistently. See other sections in :ref:`w10-20h2-settings-privacy`.
 
   .. note::
     If start menu searches start to fail, it is because background apps
-    service has been disabled. See :ref:`w10-background-apps`.
+    service has been disabled. See
+    :ref:`wbase-specific-windows-fixes-background-apps`.
 
 * :cmdmenu:`Camera` Leave enabled, but disable all apps.
 * :cmdmenu:`Microphone` Leave enabled, but disable all apps. This will allow

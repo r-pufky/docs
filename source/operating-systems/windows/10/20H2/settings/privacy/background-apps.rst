@@ -7,12 +7,13 @@ Background Apps
 Leave background service **enabled**, but **disable** all apps. This will
 prevent the start menu search from breaking.
 
-See :ref:`w10-determining-app-list` to generate a list of apps for more fine
+See :ref:`wbase-determining-app-list` to generate a list of apps for more fine
 grained control of app access.
 
 .. important::
   If start menu searches start to fail, it is because background apps
-  service has been disabled. See :ref:`w10-background-apps`.
+  service has been disabled. See
+  :ref:`wbase-specific-windows-fixes-background-apps`.
 
 Let apps run in the background
 ******************************

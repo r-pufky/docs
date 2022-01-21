@@ -7,7 +7,7 @@ Windows 10 automatically shares most information with Microsoft out of the box. 
 .. warning::
   After every major update all of these options should be re-validated.
 
-See :ref:`w10-determining-app-list` to generate specific lists of apps to
+See :ref:`wbase-determining-app-list` to generate specific lists of apps to
 block while applying GPO's.
 
 .. rubric:: References

@@ -7,7 +7,7 @@ File System
 Option is worded poorly. This prevents apps from accessing private data on the
 file system.
 
-See :ref:`w10-determining-app-list` to generate a list of apps for more fine
+See :ref:`wbase-determining-app-list` to generate a list of apps for more fine
 grained control of app access. There is no GPO equivalent.
 
 Allow access to file system on this device

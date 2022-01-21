@@ -118,7 +118,7 @@ your GPG agent. This is compounded by GPG agent occasionally hanging and needing
 to be force restarted. This is remedied by triggering GPG agent refresh on
 screen unlock events, ensuring that the agent is always ready.
 
-See full instructions here: :ref:`w10-scheduled-tasks-inconsistencies`; or just
+See full instructions here: :ref:`wbase-scheduled-tasks-inconsistencies`; or just
 follow these.
 
 #. :ref:`scheduled-tasks-logon-logoff`.

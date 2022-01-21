@@ -7,7 +7,7 @@ Radios
 Applies to non-OS application controlling radios. Bluetooth and Wifi system
 controls will still work properly. Disable all apps access to control radios.
 
-See :ref:`w10-determining-app-list` to generate a list of apps for more fine
+See :ref:`wbase-determining-app-list` to generate a list of apps for more fine
 grained control of app access.
 
 Allow access to radios on this device

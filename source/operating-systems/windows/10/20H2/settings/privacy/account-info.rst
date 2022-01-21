@@ -4,7 +4,7 @@ Account Info
 ############
 :cmdmenu:`⌘ + r --> ms-settings:privacy-accountinfo`
 
-See :ref:`w10-determining-app-list` to generate a list of apps for more fine
+See :ref:`wbase-determining-app-list` to generate a list of apps for more fine
 grained control of app access.
 
 Allow access to account info on this device
