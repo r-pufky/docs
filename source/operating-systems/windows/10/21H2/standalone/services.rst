@@ -52,3 +52,5 @@ These services either do user data tracking, or are unnecessary.
   :value2: Service status, {STOPPED}
   :ref: https://old.reddit.com/r/Amd/comments/koh9ca/turning_offdisabling_my_rgb_g_skill_trident_z_neo/
   :update: 2021-04-08
+
+See :ref:`realtek-nahimic` for complete Nahimic service disable steps.

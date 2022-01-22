@@ -69,6 +69,7 @@ git hub, or submit a CL :)
   apps/mutt
   apps/putty
   apps/python-venv
+  apps/realtek-nahimic/index
   apps/sublime-text/index
   apps/taskwarrior
   apps/vim
