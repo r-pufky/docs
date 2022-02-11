@@ -43,6 +43,7 @@ Advanced Windows configuration. Specific configuration for specific cases.
    run-windows-on-usb
    scheduled-tasks-inconsistencies
    show-password-on-wifi-network
+   system-volume
    uninstall-edge-browser
    usb-devices-slow
    windows-bootloader-missing
