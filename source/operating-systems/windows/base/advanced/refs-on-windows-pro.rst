@@ -10,8 +10,8 @@ read. Virtual disks with ReFS formatting can be created and exported for use in
 Empty ReFS formatted disk images below, ensure disk is **updated** and
 **optimized** in storage spaces before use. bitlocker can be used.
 
-* ReFS 1TB single virtual disk with integrity enabled: :download:`refsi.vhdx.tar.xz (200k)<source/refsi.vhdx.tar.xz>`
-* ReFS 1TB mirrored virutal disk: :download:`refsi-mirrored.vhdx.tar.xz (450k)<source/refs-mirrored.vhdx.tar.xz>`
+* ReFS 1TB single virtual disk with integrity enabled: :download:`refsi.zip (784k)<source/refsi.zip>`
+* ReFS 1TB mirrored virutal disk: :download:`refsi-mirrored.zip (1.8M)<source/refs-mirrored.zip>`
 
 `Reference <https://arstechnica.com/gadgets/2017/08/microsoft-to-remove-full-refs-support-from-windows-10-pro-push-workstation-sku/>`__
 
