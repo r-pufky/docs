@@ -22,6 +22,7 @@ Apps
 #. :ref:`manjaro-kde-apps-vscodium`
 #. :ref:`manjaro-kde-apps-steam`
 #. :ref:`manjaro-kde-apps-sublime`
+#. :ref:`manjaro-kde-apps-captive-portal`
 
 .. toctree::
    :hidden:
@@ -31,3 +32,4 @@ Apps
    chrome
    steam
    sublime
+   captive-portal

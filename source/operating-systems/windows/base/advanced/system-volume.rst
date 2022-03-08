@@ -13,3 +13,4 @@ Take ownership and grant full privileges for everyone to remove the directory.
   takeown /f ".\System Volume Information" /a /r /d y
   icacls ".\System Volume Information" /t /c /grant administrators:F System:F everyone:F
   rd ".\System Volume Information"
+
