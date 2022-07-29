@@ -41,3 +41,23 @@ A personal access token is required: https://github.com/settings/tokens with
   * Use github personal access token
 
 #. :cmdmenu:`shift+alt+d` will install all extensions and settings
+
+Be sure to disable private syncing of local cached copies:
+
+#. Open ``~/.config/VSCodium/User/syncLocalSettings.json``
+#. Add/Update ``ignoreUploadFolders``:
+
+    .. code-block:: json
+
+      "ignoreUploadFolders": [
+        "workspaceStorage",
+        "History",
+        "globalStorage"
+      ],
+
+#. Force update settings gist: :cmdmenu:`shift+altu`
+#. Verify extra files are **not** listed on the code tab of the gist. If so,
+   check out the gist, remove from revision history, and force upload the gist
+   again.
+
+`Reference <https://github.com/shanalikhan/code-settings-sync/issues/1341sync>`__
