@@ -56,8 +56,9 @@ badges = {
   '{DESCRIPTION}': Template.info % 'DESCRIPTION',
   '{OPTIONAL}': Template.info % 'OPTIONAL',
   '{DRIVE}': Template.info % 'DRIVE',
-  '{LMB}': Template.info % 'LMB',
-  '{RMB}': Template.info % 'RMB',
+  '{LMB}': Template.info % '🖯',
+  '{MMB}': Template.info % '🖰',
+  '{RMB}': Template.info % '🖱',
 
   # Services
   '{STARTED}': Template.success % 'STARTED',

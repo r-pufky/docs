@@ -26,7 +26,7 @@ Enable container filesystem overlay for docker support.
   reboot
 
 .. gui::    Create container to host Docker
-  :path:    datacenter --> {SERVER} --> RMB --> create ct
+  :path:    datacenter --> {SERVER} --> {RMB} --> create ct
   :value0:  General,
   :value1:  › Hostname, {HOST}
   :value2:  › Unprivileged container, ☑

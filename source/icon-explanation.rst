@@ -5,11 +5,23 @@ Icon Explanation
 
 .. glossary::
 
-  LMB
+  LMB 🖯
     Left mouse button. This means left click.
 
-  RMB
+    u+1F5AF
+    https://www.fileformat.info/info/unicode/char/1f5af/index.htm
+
+  RMB 🖰
     Right mouse button. This means right click.
+
+    u+1F5B0
+    https://www.fileformat.info/info/unicode/char/1f5b0/index.htm
+
+  MMB 🖱
+    Middle mouse button. This means middle click.
+
+    u+1F5B1
+    https://www.fileformat.info/info/unicode/char/1f5b1/index.htm
 
   ✋
     Hover mouse. Hover the mouse over the indicated location next to this

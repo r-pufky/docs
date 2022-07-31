@@ -28,7 +28,7 @@ runs.
     :label:  Service
     :nav:    ⌘ + x --> Device Manager
     :path:   Software components --> A-Volute Nh3 Audio Effects Component
-    :value0: RMB, Disable Device
+    :value0: {RMB}, Disable Device
     :ref:    https://old.reddit.com/r/MSI_Gaming/comments/ilys2o/nahimic_is_literal_malware_no_matter_how_you/
     :update: 2022-01-22
 
@@ -36,7 +36,7 @@ runs.
     :label:  Service
     :nav:    ⌘ + x --> Device Manager
     :path:   Sound, video and game controllers --> Nahimic Mirroring Device
-    :value0: RMB, Disable Device
+    :value0: {RMB}, Disable Device
     :ref:    https://old.reddit.com/r/MSI_Gaming/comments/ilys2o/nahimic_is_literal_malware_no_matter_how_you/
     :update: 2022-01-22
 
@@ -44,7 +44,7 @@ runs.
     :label:  Service
     :nav:    ⌘ + x --> Device Manager
     :path:   Sound, video and game controllers --> Sonic Studio Virtual Mixer
-    :value0: RMB, Disable Device
+    :value0: {RMB}, Disable Device
     :ref:    https://old.reddit.com/r/MSI_Gaming/comments/ilys2o/nahimic_is_literal_malware_no_matter_how_you/
     :update: 2022-01-22
 

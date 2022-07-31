@@ -47,7 +47,7 @@ unlock your computer with your camera/fingerprint reader. Disable this.
     :label:   Task Scheduler
     :nav:     ⌘ --> Task Scheduler --> Task Scheduler Library
     :path:    Microsoft --> Windows --> HelloFace --> FODCleanupTask -->
-              RMB --> Disable
+              {RMB} --> Disable
     :value0:  Name, FODCleanupTask
     :ref:     https://github.com/adolfintel/Windows10-Privacy#hello-face
     :update:  2021-02-19

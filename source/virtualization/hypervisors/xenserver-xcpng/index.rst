@@ -113,7 +113,7 @@ Convert VM to a Template
 * shutdown cleanly.
 * VM: set vCPU priority to lowest (if reasonable).
 * VM: set Memory to dynamic, 512-1024MB (if reasonable).
-* VM: :cmdmenu:`RMB --> Convert to Template`.
+* VM: :cmdmenu:`{RMB} --> Convert to Template`.
 * Template: Custom Fields: add custom fields as needed.
 
 Modifying a VM Template
@@ -145,7 +145,7 @@ Determine the template name, and create a new VM from that template, start it.
 ************************************
 
 .. gui:: Copy VM
-  :path: VM --> RMB --> Copy VM
+  :path: VM --> {RMB} --> Copy VM
   :value0:  Full copy, {NEW SR}
 
 .. warning::

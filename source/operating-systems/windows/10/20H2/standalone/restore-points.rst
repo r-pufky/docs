@@ -77,7 +77,7 @@ this creeate a drastic performance hit. Disable restore points.
     :label:   Task Scheduler
     :nav:     ⌘ --> Task Scheduler --> Task Scheduler Library
     :path:    Microsoft --> Windows --> SystemRestore --> SR -->
-              RMB --> Disable
+              {RMB} --> Disable
     :value0:  Name, SR
     :value1:  Description, This task creates regular system protection points.
     :update:  2021-02-19

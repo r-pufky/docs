@@ -142,7 +142,7 @@ This re-creates the same task as manually specified above.
   *GPGAgentRefreshUnlock*.
 * The ``Subscription`` query on line 35 is extracted from the manually created
   scheduled task, instead of manually generating it. Just
-  :cmdmenu:`RMB --> export` and look in the XML file for ``Subscription``.
+  :cmdmenu:`{RMB} --> export` and look in the XML file for ``Subscription``.
 
 This can be verified to work by restarting your machine or killing the current
 agent with ``gpgconf --kill gpg-agent`` and locking/unlocking your screen then

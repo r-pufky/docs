@@ -81,8 +81,8 @@ check happening, or another service is hammering the disk. These will address
 this but may break functionality of your system.
 
 These services either do user data tracking, or are a major performance hit for
-SSD's. Disable by :cmdmenu:`RMB --> stop` and
-:cmdmenu:`RMB --> properties --> disable`.
+SSD's. Disable by :cmdmenu:`{RMB} --> stop` and
+:cmdmenu:`{RMB} --> properties --> disable`.
 
 .. gui::   Disable search service
   :label:  Service

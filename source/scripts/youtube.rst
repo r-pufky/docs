@@ -65,7 +65,7 @@ for MS streaming vieos and other services using Azure Media Service backends.
 #. :cmdmenu:`ctrl + shift + i --> network --> all`
 #. Load the video/stream page
 #. Locate the `manifest(format=...)` URI in Chrome Dev Tools
-#. :cmdmenu:`RMB --> copy --> copy linke address`
+#. :cmdmenu:`{RMB} --> copy --> copy linke address`
 #. Use with `youtube-dl`, changing manifest portion of the URI to
    `manifest(format=m3u8-aapl-v3)`
 

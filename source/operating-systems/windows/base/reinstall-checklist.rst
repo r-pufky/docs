@@ -37,7 +37,7 @@ Dump Existing Registry
 **********************
 Backup the existing registry in case anything is missed after reinstall.
 
-:cmdmenu:`⌘ --> regedit --> Computer --> RMB --> Export`
+:cmdmenu:`⌘ --> regedit --> Computer --> {RMB} --> Export`
 
 Gamesave Manager
 ****************

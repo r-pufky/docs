@@ -10,7 +10,7 @@ behavior.
 .. gui::   Enable Better Performance for USB Devices
   :path:   ⌘ + x -->
            Disk Management -->
-           RMB {USB DEVICE} -->
+           {USB DEVICE} --> {RMB} -->
            Properties -->
            Policies
   :value0: Removal policy,

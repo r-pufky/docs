@@ -9,7 +9,7 @@ enabled by default. It is the default location for all files; disabled this.
   After every major windows update, verify these settings.
 
 .. gui::   Unlink OneDrive before disabling
-  :path:   taskbar --> RMB OneDrive --> More --> Settings --> Account
+  :path:   taskbar --> OneDrive --> {RMB} --> More --> Settings --> Account
   :value0: Unlink this PC, {LMB}
   :value1: Unlink account, {LMB}
   :ref:    https://support.microsoft.com/en-us/office/turn-off-disable-or-uninstall-onedrive-f32a17ce-3336-40fe-9c38-6efb09f944b0?ui=en-us&rs=en-us&ad=us,

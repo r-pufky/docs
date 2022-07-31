@@ -6,7 +6,7 @@ Relocate certain portions of your user profile to alternate location, to make
 reinstallation easier, as well as keep music and media folders on separate
 drives.
 
-:cmdmenu:`⌘ + e --> select location --> RMB --> properties --> location tab --> move`
+:cmdmenu:`⌘ + e --> select location --> {RMB} --> properties --> location tab --> move`
 
    * Select new (or existing) location to relocate.
    * Move existing files into the new location.

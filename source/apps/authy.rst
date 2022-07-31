@@ -42,7 +42,7 @@ Export TOTP from Authy
 #. :cmdmenu:`chrome --> more tools --> extensions`
 
    * Enable *Developer Mode*.
-   * :cmdmenu:`LMB --> Details` on *Authy* extension.
+   * :cmdmenu:`{LMB} --> Details` on *Authy* extension.
    * :cmdmenu:`Inspect Views --> main.html`
    * Switch to ``Console`` tab.
    * Insert following code (not my work) and generate TOTP QR codes:

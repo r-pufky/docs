@@ -48,12 +48,12 @@ Mumble Administration
 *********************
 Adding New Member
 =================
-#. :cmdmenu:`RMB (on user) --> Register`
+#. :cmdmenu:`(on user) --> {RMB} --> Register`
 #. User should now appear with a :cmdmenu:`+` icon:
 
    .. image:: source/new-member-01.png
 
-#. :cmdmenu:`RMB (root channel) --> Edit`
+#. :cmdmenu:`(root channel) --> {RMB} --> Edit`
 
    .. image:: source/new-member-02.png
 
@@ -71,7 +71,7 @@ Adding New Member
 
 Create New Channel
 ==================
-#. :cmdmenu:`RMB (root channel) --> Add`
+#. :cmdmenu:`(root channel) --> {RMB} --> Add`
 
    .. image:: source/create-channel-01.png
 

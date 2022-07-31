@@ -67,7 +67,7 @@ copy/paste or resizing disabled. Install as normal.
 #. Edit xlaunch shortcut
 
    * ``c:\ProgramData\Microsoft\Windows\Start Menu\Programs\VcXsrv``
-   * :cmdmenu:`XLaunch --> RMB --> properties --> Target`
+   * :cmdmenu:`XLaunch --> {RMB} --> properties --> Target`
 
      .. code-block:: powershell
 

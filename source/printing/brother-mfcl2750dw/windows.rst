@@ -35,7 +35,7 @@ printer across subnets. Requires SNMP and WebServices to be enabled.
 
 .. gui:: Update Driver
   :nav:    ⌘ --> run --> PrintManagement.msc
-  :path:   print servers --> (local) --> printers --> Brother --> RMB -->
+  :path:   print servers --> (local) --> printers --> Brother --> {RMB} -->
            properties -> advanced -> new driver
   :value0: Driver, Have Disk
   :value1:     › , {EXTRACTED DRIVER LOCATION}
@@ -48,7 +48,7 @@ printer across subnets. Requires SNMP and WebServices to be enabled.
 .. gui:: Remove Generic Driver
   :nav:    ⌘ --> run --> PrintManagement.msc
   :path:   print servers --> (local) --> drivers -->
-           Brother Laser Type1 Class Driver --> RMB --> Delete
+           Brother Laser Type1 Class Driver --> {RMB} --> Delete
   :value0:  , {DELETE}
   :update: 2021-01-09
 
@@ -143,7 +143,7 @@ applications. **Not** recommended.
   * Manually install from extracted package: ``Msi/ControlCenter4.msi``
   * Run the ControlCenter4 Updater
   * Reboot (required to launch.)
-  * :cmdmenu:`⌘ --> taskbar --> controlcenter4 --> RMB --> preferences`
+  * :cmdmenu:`⌘ --> taskbar --> controlcenter4 --> {RMB} --> preferences`
 
     * ☑ start ControlCenter on computer startup
 
@@ -183,7 +183,7 @@ need to be removed.
   :title: bg-primary text-white font-weight-bold
   :animate: fade-in
 
-  * :cmdmenu:`⌘ --> RMB --> device manager` (remove driver with uninstall):
+  * :cmdmenu:`⌘ --> {RMB} --> device manager` (remove driver with uninstall):
 
     * printer: brother*
     * imaging devices: brother*
@@ -199,7 +199,7 @@ need to be removed.
     * paperport*
     * httptousb*
     * (look at related installs on the same date)
-  * :cmdmenu:`taskbar --> RMB --> Task Manager`
+  * :cmdmenu:`taskbar --> {RMB} --> Task Manager`
 
     * PaperPort Scan Manager
     * Nuance Imaging Scanner TWAIN Client
@@ -230,7 +230,7 @@ need to be removed.
 
     * cleanup system files
     * clean all files
-  * :cmdmenu:`⌘ --> run --> PrintManagement.msc --> print servers --> (local) --> drivers --> Brother* --> RMB --> Delete`
+  * :cmdmenu:`⌘ --> run --> PrintManagement.msc --> print servers --> (local) --> drivers --> Brother* --> {RMB} --> Delete`
   * Reboot to ensure memory is unloaded
 
 .. _Support Site: https://support.brother.com/g/b/downloadtop.aspx?c=us&lang=en&prod=mfcl2750dw_us_eu_as

@@ -126,7 +126,7 @@ Turn on developer tools (Chrome):
 * :cmdmenu:`Developer Tools --> Network --> All`
 * Filter by ``m3u8``.
 * Determine stream URL to use.
-* :cmdmenu:`RMB --> Copy --> Copy link address`
+* :cmdmenu:`{RMB} --> Copy --> Copy link address`
 
 .. rubric:: References
 
