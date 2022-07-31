@@ -202,7 +202,7 @@ Windows Management
   :value0:                       focus,  
   :value1:  › window activation policy, focus follows mouse
   :value2:            › delay focus by, 300ms
-  :value3: › focus stealing prevention, low
+  :value3: › focus stealing prevention, none
   :value4:                         › ☑, click raises active window
   :update: 2021-12-20
 

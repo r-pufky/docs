@@ -23,6 +23,7 @@ Apps
 #. :ref:`manjaro-kde-apps-steam`
 #. :ref:`manjaro-kde-apps-sublime`
 #. :ref:`manjaro-kde-apps-captive-portal`
+#. :ref:`manjaro-kde-apps-nodejs`
 
 .. toctree::
    :hidden:
@@ -33,3 +34,4 @@ Apps
    steam
    sublime
    captive-portal
+   nodejs

@@ -5,11 +5,19 @@ Youtube Extractor
 Download and extract data from youtube videos.
 
 .. code-block:: bash
-  :caption: Install Utilities.
+  :caption: Install Utilities (linux).
 
   curl http://yt-dl.org/latest/youtube-dl -o /usr/local/bin/youtube-dl
   chmod +x /usr/local/bin/youtube-dl
   apt install lame libav-tools
+
+Windows `requires manual installation of the binary and libav tools <https://stackoverflow.com/questions/30770155/ffprobe-or-avprobe-not-found-please-install-one>`_:
+
+* `youtube-dl binary <http://ytdl-org.github.io/youtube-dl/download.html>`_
+* `libav-tools <http://builds.libav.org/windows/release-gpl/>`
+
+Copy all `.dll` and `.exe` from `libav-tools/win64/usr/bin` to the location of
+`youtube-dl.exe`.
 
 Snippets
 ********
