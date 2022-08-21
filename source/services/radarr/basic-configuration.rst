@@ -12,8 +12,9 @@ Media Management
   :value0: Rename Episodes, {YES}
   :value1: Replace Illegal Characters, {YES}
   :value2: Colon Replacement Format, {DELETE}
-  :value3: Standard Movie Format, {Movie TitleThe} ({Release Year}){ - Edition Tags}
+  :value3: Standard Movie Format, {Movie TitleThe} ({Release Year}) {edition-{Edition Tags}}
   :value4: Movie Folder Format, {Movie TitleThe} ({Release Year})
+  :ref: https://support.plex.tv/articles/multiple-editions/
 
 .. gui::   Radarr Folders
   :path:   Settings --> Media Management --> Folders
@@ -38,8 +39,8 @@ Media Management
 .. gui::   Radarr Permissions
   :path:   Settings --> Media Management --> Permissions
   :value0: Set Permissions, {YES}
-  :value1: File chmod mask, 2660
-  :value2: Folder chmod mask, 2770
+  :value1: File chmod mask, 664
+  :value2: Folder chmod mask, 775
   :value3: chown User, radarr (or docker UID)
   :value4: chown Group, media (or docker GID)
 

@@ -53,8 +53,8 @@ Media Management
 .. gui::   Sonarr Permissions
   :path:   Settings --> Media Management --> Permissions
   :value0: Set Permissions, {YES}
-  :value1: File chmod mask, 2660
-  :value2: Folder chmod mask, 2770
+  :value1: File chmod mask, 664
+  :value2: Folder chmod mask, 775
   :value3: chown User, sonarr (or docker UID)
   :value4: chown Group, media (or docker GID)
 
