@@ -215,6 +215,37 @@ for proxied sites. Enabled via Group Policy or Registry.
 
 Restarting chrome will pickup the configuration changes.
 
+
+.. _service-nginx-firfox-client-certificate:
+
+Firefox Client Certificate
+*************************
+Setup Firefox to auto present correct certificate when challenged by proxy
+server.
+
+.. gui::   Import Client Certificate to Firefox
+  :path:   about:preferences#privacy -->
+           Certificates -->
+           OSCP -->
+           View Certificates -->
+           Your Certificates -->
+           Import
+
+.. note::
+  Use export password to decrypt and import.
+
+.. gui::   Disable client certificate sync'ing.
+  :path:   about:config -->
+           Accept the Risk and Continue -->
+           services.sync.prefs.sync.security.default_personal_cert
+  :value0: {false}
+  :ref:    https://stackoverflow.com/questions/27864553/how-can-i-choose-a-different-client-certificate-in-firefox
+
+Restart Firefox. Nagivate to a proxied site and the certificate prompt should
+appear to select which cert to authenticate with. If NGINX has been reloaded and
+setup, then this should allow you to passthrough. Remember decision to prevent
+additional certificate prompts on revisit.
+
 .. _Cert Based Authentication: https://fardog.io/blog/2017/12/30/client-side-certificate-authentication-with-nginx/
 .. _basic certificate usage: https://jamielinux.com/docs/openssl-certificate-authority/introduction.html
 .. _if is evil: https://www.nginx.com/resources/wiki/start/topics/depth/ifisevil/
