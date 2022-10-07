@@ -60,71 +60,43 @@ Media Management
 
 Profiles
 ********
-.. gui::    Sonarr Profiles (Any)
-  :path:    Settings --> Profiles --> Any
-  :value0:  Name, Any
-  :value1:  Language, English
-  :value2:  Cutoff, SDTV
-  :value3:  Qualities,
-  :value4:  ›, ☑ HDTV-720p
-  :value5:  ›, ☑ WEBDL-720p
-  :value6:  ›, ☑ Bluray-720p
-  :value7:  ›, ☑ HDTV-1080p
-  :value8:  ›, ☑ WEBDL-1080p
-  :value9:  ›, ☑ Bluray-1080p
-  :value10: ›, ☑ DVD
-  :value11: ›, ☑ WEBDL-480p
-  :value12: ›, ☑ SDTV
+Remove all existing profiles. Set a basic high-quality profile.
 
-.. gui::   Sonarr Profiles (SD)
-  :path:   Settings --> Profiles --> SD
-  :value0: Name, SD
-  :value1: Language, English
-  :value2: Cutoff, SDTV
-  :value3: Qualities,
-  :value4: ›, ☑ DVD
-  :value5: ›, ☑ WEBDL-480p
-  :value6: ›, ☑ SDTV
+Size limits are applied using the global setting via indexer settings.
 
-.. gui::   Sonarr Profiles (HD-720p)
-  :path:   Settings --> Profiles --> HD-720p
-  :value0: Name, HD-720p
-  :value1: Language, English
-  :value2: Cutoff, SDTV
-  :value3: Qualities,
-  :value4: ›, ☑ HDTV-720p
-  :value5: ›, ☑ WEBDL-720p
-  :value6: ›, ☑ Bluray-720p
+.. gui::    Sonarr Profiles (Max 720/1080: 1080p upgrade)
+  :path:    Settings --> Profiles --> +
+  :value0:  Name, Max 720/1080: 1080p upgrade
+  :value1:  Upgrades Allowed, ☑
+  :value2:  Upgrade Until, Bluray-1080p Remux
+  :value3:  Language, English
+  :value4:  Qualities,
+  :value5:  ›, ☑ Blueray-1080p Remux
+  :value6:  ›, ☑ Bluray-1080p
+  :value7:  ›, ☑ WEB 1080p
+  :value8:  ›, ☑ Bluray-720p
+  :value9:  ›, ☑ WEB 720p
+  :value10: ›, ☑ Raw-HD
+  :value11: ›, ☑ HDTV-1080p
+  :value12: ›, ☑ HDTV-720p
+  :value13: ›, ☑ Bluray-480p
+  :value14: ›, ☑ DVD
+  :value15: ›, ☑ WEB 480p
+  :value16: ›, ☑ SDTV
+  :value17: ›, ☑ Unknown
 
-.. gui::   Sonarr Profiles (HD-1080p)
-  :path:   Settings --> Profiles --> HD-1080p
-  :value0: Name, HD-1080p
-  :value1: Language, English
-  :value2: Cutoff, HD-1080p
-  :value3: Qualities,
-  :value4: ›, ☑ HDTV-1080p
-  :value5: ›, ☑ WEBDL-1080p
-  :value6: ›, ☑ Bluray-1080p
-
-.. gui::   Sonarr Profiles (All)
-  :path:   Settings --> Profiles --> All
-  :value0: Name, All
-  :value1: Language, English
-  :value2: Cutoff, HD-720p
-  :value3: Qualities,
-  :value4: ›, ☑ HDTV-720p
-  :value5: ›, ☑ WEBDL-720p
-  :value6: ›, ☑ Bluray-720p
-  :value7: ›, ☑ HDTV-1080p
-  :value8: ›, ☑ WEBDL-1080p
-  :value9: ›, ☑ Bluray-1080p
+.. gui::   Sonarr Language Profiles
+  :path:   Settings --> Profiles --> Language Profiles --> +
+  :value0: Name, English
+  :value1: Upgrades Allowed, ☑
+  :value2: Languages, English (top)
 
 .. gui::   Sonarr Delay Profiles
   :path:   Settings --> Profiles --> Delay Profiles --> +
-  :value0:      Protocol, Usenet
-  :value1:  Usenet Delay, 60 minutes
+  :value0: Protocol, Usenet
+  :value1: Usenet Delay, 60 minutes
   :value2: Torrent Delay, No Delay
-  :value3:          Tags, {NONE}
+  :value3: Tags, {NONE}
 
 Quality
 *******
@@ -162,7 +134,7 @@ Indexers
   :path:   Settings --> Indexers --> Options
   :value0: Minimum Age, 0
   :value1: Retention, 0
-  :value2: Maximum Size, 0
+  :value2: Maximum Size, 5000
   :value3: RSS Sync Interval, 15
 
 Download Client

@@ -99,7 +99,7 @@ class AbstractConfigTable(Table):
         data.append(self._parse_list(value))
     if data:
       return data
-    return None
+    return []
 
   def _sanitize_update(self):
     """Strips whitespace and combines to single string if needed.

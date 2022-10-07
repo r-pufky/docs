@@ -13,7 +13,9 @@ Themes
   pacman -Syu papirus-icon-theme arc-gtk-theme
   wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install.sh | sh
 
-Re-login.
+.. attention::
+  **Login** required. KDE will not display themes correctly until logging off
+  and logging back in.
 
 Global Theme
 ************

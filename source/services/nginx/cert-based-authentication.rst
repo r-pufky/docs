@@ -219,7 +219,7 @@ Restarting chrome will pickup the configuration changes.
 .. _service-nginx-firfox-client-certificate:
 
 Firefox Client Certificate
-*************************
+**************************
 Setup Firefox to auto present correct certificate when challenged by proxy
 server.
 

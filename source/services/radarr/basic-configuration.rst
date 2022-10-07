@@ -46,128 +46,58 @@ Media Management
 
 Profiles
 ********
-.. gui::    Radarr Profiles (Any)
-  :path:    Settings --> Profiles --> Any
-  :value0:  Name, {ANY}
-  :value1:  Language, English
-  :value2:  Preferred Tags,
-  :value3:  Cutoff, Bluray-480p
-  :value4:  Custom Format Cutoff, {NONE}
-  :value5:  Qualities,
-  :value6:  ›, ☐ Raw HD
-  :value7:  ›, ☑ BR-DISK
-  :value8:  ›, ☑ Remux-2160p
-  :value9:  ›, ☑ Bluray-2160p
-  :value10: ›, ☑ WEBDL-2160p
-  :value11: ›, ☑ HDTV-2160p
-  :value12: ›, ☑ Remux-1080p
-  :value13: ›, ☑ Bluray-1080p
-  :value14: ›, ☑ WEBDL-1080p
-  :value15: ›, ☑ HDTV-1080p
-  :value16: ›, ☑ Bluray-720p
-  :value17: ›, ☑ WEBDL-720p
-  :value18: ›, ☑ HDTV-720p
-  :value19: ›, ☑ Bluray-576p
-  :value20: ›, ☑ Bluray-480p
-  :value21: ›, ☑ WEBDL-480p
-  :value22: ›, ☑ DVD-R
-  :value23: ›, ☑ DVD
-  :value24: ›, ☑ SDTV
-  :value25: ›, ☑ DVDSCR
-  :value26: ›, ☑ REGIONAL
-  :value27: ›, ☑ TELECINE
-  :value28: ›, ☑ TELESYNC
-  :value29: ›, ☑ CAM
-  :value30: ›, ☑ WORKPRINT
-  :value31: ›, ☐ Unknown
-  :value32: Custom Formats, ☑ None
+Remove all existing profiles. Set a basic high-quality profile and a
+max-quality profile.
 
-.. gui::    Radarr Profiles (SD)
-  :path:    Settings --> Profiles --> SD
-  :value0:  Name, SD
-  :value1:  Language, English
-  :value2:  Preferred Tags,
-  :value3:  Cutoff, Bluray-480p
-  :value4:  Custom Format Cutoff, {NONE}
-  :value5:  Qualities,
-  :value6:  ›, ☑ Bluray-576p
-  :value7:  ›, ☑ Bluray-480p
-  :value8:  ›, ☑ WEBDL-480p
-  :value9:  ›, ☑ DVD
-  :value10: ›, ☑ SDTV
-  :value11: ›, ☑ DVDSCR
-  :value12: ›, ☑ REGIONAL
-  :value13: ›, ☑ TELECINE
-  :value14: ›, ☑ TELESYNC
-  :value15: ›, ☑ CAM
-  :value16: ›, ☑ WORKPRINT
-  :value17: Custom Formats, ☑ None
+Size limits are applied using the global setting via indexer settings.
 
-.. gui::   Radarr Profiles (HD-720p)
-  :path:   Settings --> Profiles --> HD-720p
-  :value0: Name, HD-720p
-  :value1: Language, English
-  :value2: Preferred Tags,
-  :value3: Cutoff, Bluray-720p
-  :value4: Custom Format Cutoff, {NONE}
-  :value5: Qualities,
-  :value6: ›, ☑ Bluray-720p
-  :value7: ›, ☑ WEBDL-720p
-  :value8: ›, ☑ HDTV-720p
-  :value9: Custom Formats, ☑ None
+.. gui::    Radarr Profiles (Max 720/1080: 1080p upgrade)
+  :path:    Settings --> Profiles --> +
+  :value0:  Name, Max 720/1080: 1080p upgrade
+  :value1:  Upgrades Allowed, ☑
+  :value2:  Upgrade Until, Remux-1080p
+  :value3:  Language, English
+  :value4:  Qualities,
+  :value5:  ›, ☑ Remux-1080p
+  :value6:  ›, ☑ Bluray-1080p
+  :value7:  ›, ☑ WEB 1080p
+  :value8:  ›, ☑ HDTV-1080p
+  :value9:  ›, ☑ Bluray-720p
+  :value10: ›, ☑ WEB 720p
+  :value11: ›, ☑ HDTV-720p
+  :value12: ›, ☑ blueray-576p
+  :value13: ›, ☑ blueray-480p
+  :value14: ›, ☑ WEB 480p
+  :value15: ›, ☑ DVD R
+  :value16: ›, ☑ DVD
+  :value17: ›, ☑ SDTV
+  :value18: ›, ☑ DVDSCR
+  :value19: ›, ☑ REGIONAL
+  :value20: ›, ☑ TELECINE
+  :value21: ›, ☑ TELESYNC
+  :value22: ›, ☑ WORKPRINT
+  :value23: ›, ☑ Unknown
 
-.. gui::   Radarr Profiles (HD-1080p)
-  :path:   Settings --> Profiles --> HD-1080p
-  :value0: Name, HD-1080p
-  :value1: Language, English
-  :value2: Preferred Tags,
-  :value3: Cutoff, Bluray-480p
-  :value4: Custom Format Cutoff, {NONE}
-  :value5: Qualities,
-  :value6: ›, ☑ Remux-1080p
-  :value7: ›, ☑ Bluray-1080p
-  :value8: ›, ☑ WEBDL-1080p
-  :value9: ›, ☑ HDTV-1080p
-  :value10: Custom Formats, ☑ None
-
-.. gui::   Radarr Profiles (Ultra-HD)
-  :path:   Settings --> Profiles --> Ultra-HD
-  :value0: Name, Ultra-HD
-  :value1: Language, English
-  :value2: Preferred Tags,
-  :value3: Cutoff, Remux-2160p
-  :value4: Custom Format Cutoff, {NONE}
-  :value5: Qualities,
-  :value6: ›, ☑ Remux-2160p
-  :value7: ›, ☑ Bluray-2160p
-  :value8: ›, ☑ WEBDL-2160p
-  :value9: ›, ☑ HDTV-2160p
-  :value10: Custom Formats, ☑ None
-
-.. gui::    Radarr Profiles (HD - 720p/1080p)
-  :path:    Settings --> Profiles --> HD - 720p/1080p
-  :value0:  Name, HD - 720p/1080p
-  :value1:  Language, English
-  :value2:  Preferred Tags,
-  :value3:  Cutoff, Bluray-720p
-  :value4:  Custom Format Cutoff, {NONE}
-  :value5:  Qualities,
-  :value6:  ›, ☑ Remux-2160p
-  :value7:  ›, ☑ Remux-1080p
-  :value8:  ›, ☑ Bluray-1080p
-  :value9:  ›, ☑ WEBDL-1080p
-  :value10: ›, ☑ HDTV-1080p
-  :value11: ›, ☑ Bluray-720p
-  :value12: ›, ☑ WEBDL-720p
-  :value13: ›, ☑ HDTV-720p
-  :value14: Custom Formats, ☑ None
+.. gui::    Radarr Profiles (2K/4K/Raw)
+  :path:    Settings --> Profiles --> +
+  :value0:  Name, 2K/4K/Raw
+  :value1:  Upgrades Allowed, ☑
+  :value2:  Upgrade Until, Remux-2160p
+  :value3:  Language, English
+  :value4:  Qualities,
+  :value5:  ›, ☑ Raw-HD
+  :value6:  ›, ☑ BR-DISK
+  :value7:  ›, ☑ Remux-2160p
+  :value8:  ›, ☑ Bluray-2160p
+  :value9:  ›, ☑ WEB 2160p
+  :value10: ›, ☑ HDTV-2160p
 
 .. gui::   Radarr Delay Profiles
   :path:   Settings --> Profiles --> Delay Profiles --> +
-  :value0:      Protocol, Usenet
-  :value1:  Usenet Delay, 60 Minutes
+  :value0: Protocol, Usenet
+  :value1: Usenet Delay, 60 Minutes
   :value2: Torrent Delay, No Delay
-  :value3:          Tags, {NONE}
+  :value3: Tags, {NONE}
 
 Quality
 *******
@@ -201,12 +131,15 @@ Indexers
   :path:   Settings --> Indexers --> Options
   :value0: Minimum Age, 0
   :value1: Retention, 0
-  :value2: Maximum Size, 0
+  :value2: Maximum Size, 15000
   :value3: Prefer Special Indexer Flags, {NO}
   :value4: RSS Sync Interval, 0
   :value5: Whiteliste Subtitle Tags,
   :value6: Allow Hardcoded Subs, {NO}
   :value7: Parser Leniency, Strict
+
+  Maximum size sets a hard limit for file download size, regardless of Quality
+  options.
 
 .. gui::   Radarr Availability Options
   :path:   Settings --> Indexers --> Availability Options
