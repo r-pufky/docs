@@ -4,6 +4,21 @@ GIT
 ###
 GIT version management snippets.
 
+Sane Global Settings
+********************
+Rebasing when pulling makes the branch history cleaner, avoiding pull merge
+commits. Prune on fetch automatically clean Git objects in your repository
+locally whenever you fetch changes from remote, minimizes the number of
+branches on your local machine. Highlight moved code block sections.
+
+.. code-block:: bash
+
+  git config --global pull.rebase true
+  git config --global fetch.prune true
+  git config --global diff.colorMoved zebra
+
+`Reference <https://spin.atomicobject.com/2020/05/05/git-configurations-default/>`__
+
 .. _revert-with-history:
 
 Revert Changes and Keep Commit History
