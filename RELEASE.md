@@ -1,5 +1,37 @@
 # [Changelog][3g]
 
+## 2022-10-06.0
+Added:
+* Nahimic service disable.
+* Deletion of system volume information.
+* Linux captive portal login configuration.
+* Deletion of windows system volume information for foreign disks.
+* Corrected link for realtek service disable.
+* Privacy fix for vscodium setttings-sync extension.
+* nodejs non-root installation in manjaro
+* VSCodium new terminal preferences configuration
+* Windows youtube-dl libav tool installation
+* Multiple edition configuration for radarr.
+* Multiple edition plex support in radarr configuration.
+* Firefox certificate authenticaiton to NGINX.
+
+Changed:
+* Convert refs archives to zip for easy windows use.
+* Update manjaro/youtube documentation.
+* KDE reduced focus steal prevention to none
+* VSCodium settings sync added new ignore directory ('node_modules')
+* Standardize mouse click instructions to use badges.
+* Converted all LMB/MMB/RMB in RST to badges ({LMB}, etc).
+* Rendered icons are now unicode runes.
+* Radarr/Sonarr quality options updated.
+* Radarr/Sonarr indexer hard limits set.
+* Add attention header for manjaro KDE theme settings.
+
+Fixed:
+* Use empty list for ct._sanitize_data on no data passed.
+* Fix broken refsi-mirror.zip link.
+* Fix header length issue for firefox client certificate.
+
 ## 2022-01-21.0
 Add Windows 10 21H2 documentation.
 
