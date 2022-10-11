@@ -1,0 +1,139 @@
+#!/usr/bin/env bash
+#
+# Incremental ZFS send/recv backup script
+# Original: https://github.com/bahamas10/zincrsend
+# This Version: https://github.com/r-pufky/zincrsend
+#
+# Exit codes:
+#   0: success.
+#   1: local snapshot creation failed.
+#   2: latest remote snapshot does not exist locally (manual intervention
+#      required).
+#   3: ZFS send/recv failed.
+
+
+################################################################################
+# Configuration options
+################################################################################
+# Recursive datasets to send. (-R) will remove snapshots that have been deleted
+# locally on the remote end as well. Dataset does *NOT* need to have children.
+datasets=(
+  tank/example
+)
+
+# Remote server connection settings.
+remote_server='172.31.255.254'
+remote_user='example_user'
+remote_port='22'
+remote_pool='backup_tank'
+remote_command_prefix='sudo'
+remote_ssh_opts=(-i example_user.key)
+
+# prefix to use for snapshots created by this script
+snapshot_prefix=''
+# Number of snapshots to retain after successful sync. 0 disables.
+snapshot_retention=2
+# snapshot options: https://openzfs.github.io/openzfs-docs/man/8/zfs-snapshot.8.html
+snapshot_opts=(-r)
+# send options: https://openzfs.github.io/openzfs-docs/man/8/zfs-send.8.html
+send_opts=(-R -w)
+################################################################################
+
+SSH() {
+  echo "ssh ${remote_ssh_opts[*]} ${remote_server} ${remote_command_prefix} $*"
+  ssh \
+    "${remote_ssh_opts[@]}" \
+    -l "${remote_user}" \
+    -p "${remote_port}" \
+    "${remote_server}" \
+    "${remote_command_prefix}" \
+    "${@}"
+}
+
+process() {
+  local ds=${1}
+
+  echo ''
+  echo "processing dataset: ${ds}"
+  echo ''
+
+  # Step 1 - snapshot locally
+  local now=$(date +%s)
+  local snap=${ds}@${snapshot_prefix}${now}
+  echo "creating snapshot locally: ${snap}"
+  if ! sudo /usr/sbin/zfs snapshot "${snapshot_opts[@]}" "${snap}"; then
+    echo "[ERROR] failed to snapshot ${ds}" >&2
+    exit 1
+  fi
+
+  # Step 2 - find the latest remote snapshot
+  local rds=$remote_pool/${ds#*/}
+  local inc_snap=
+  local inc_opts=()
+  echo "fetching latest remote snapshot for dataset: ${rds}"
+  local rsnap=$(SSH /usr/sbin/zfs list -H -o name,creation -p -t snapshot -r "${rds}" | \
+        grep "^${rds}@" | \
+        sort -n -k 2 | \
+        tail -1 | \
+        awk '{ print $1 }')
+
+  if [[ -n ${rsnap} ]]; then
+    echo "latest remote snapshot: ${rsnap}"
+    inc_snap=${rsnap#*@}
+    # assert that ${inc_snap} exists locally
+    if ! sudo /usr/sbin/zfs list -t snapshot "${ds}@${inc_snap}" &>/dev/null; then
+      echo "[ERROR] could not find ${rsnap} locally (${ds}@${inc_snap} not found)" >&2
+      exit 2
+    fi
+    inc_opts+=(-I "@${inc_snap}")
+  else
+    echo "no snapshot found for ${ds} - doing full send/recv"
+  fi
+
+  # Step 3: send from latest remote to newly created or do a full send
+  if [[ -n ${inc_snap} ]]; then
+    echo "zfs sending (incremental) @${inc_snap} -> ${snap} to ${rds}"
+  else
+    echo "zfs sending ${snap} to ${rds}"
+  fi
+  # Receive options: Always use snapshot as base (remote changes on after
+  # snapshot will cause receive to fail otherwise); receiving pool receieves
+  # filesystem unmounted to prevent mount collisions.
+  if ! sudo /usr/sbin/zfs send "${send_opts[@]}" "${inc_opts[@]}" "${snap}" | SSH /usr/sbin/zfs recv -Fuv "${rds}"; then
+    echo "[ERROR] failed to send $snap to ${remote_server} ${rds}" >&2
+    exit 3
+  fi
+
+  # Step 4: After successful sync, trim the last X snapshots (sync'ed on next run).
+  if [[ ${snapshot_retention} -gt 0 ]]; then
+    echo "retainng the last ${snapshot_retention} snapshots for ${ds}"
+    # Identify the latest X snapshots for a given dataset (creation, newest to oldest)
+    zfs_latest=`/usr/sbin/zfs list -H -t snapshot -o name -S creation | grep ^${ds}@ | head -${snapshot_retention}`
+    # Identify ALL snapshots for a given dataset (creation, newest to oldest)
+    zfs_delete=`/usr/sbin/zfs list -H -t snapshot -o name -S creation | grep ^${ds}@`
+
+    echo "all snapshots:       $(echo ${zfs_delete[@]})"
+    echo "retained snapshots:  $(echo ${zfs_latest[@]})"
+    # Remove latest snapshots from all set.
+    for keep_snap in ${zfs_latest[@]}; do
+       zfs_delete=( "${zfs_delete[@]/${keep_snap}}" );
+    done
+
+    echo "snapshots to remove: $(echo ${zfs_delete[@]})"
+    # Destroy old snapshots
+    for snap in ${zfs_delete[@]}; do
+      /usr/sbin/zfs destroy ${snap}
+    done
+  else
+    echo "zfs snapshot rentention management disabled"
+  fi
+}
+
+echo "starting on $(date)"
+
+code=0
+for ds in "${datasets[@]}"; do
+  process "${ds}"
+done
+echo
+echo "script ran for ~$((SECONDS / 60)) minutes (${SECONDS} seconds)"

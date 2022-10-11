@@ -1,0 +1,12 @@
+#!/bin/vbash
+#
+# create-host {HOST} {IP}
+#
+source /opt/vyatta/etc/functions/script-template
+
+configure
+set system static-host-mapping host-name ${1}.example.com inet ${2}
+set system static-host-mapping host-name ${1}.example.com alias ${1}
+commit
+save
+exit
