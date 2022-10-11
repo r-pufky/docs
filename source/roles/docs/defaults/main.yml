@@ -1,0 +1,28 @@
+---
+###############################################################################
+# Sphinx Document Generation Role Configuration
+###############################################################################
+# Automatically build sphinx documentation. Role does not manage sphinx
+# configuration and setup, and assumes local usage.
+
+# User that sphinx will run under. Assumes externally managed.
+sphinx_user:  'mono'
+sphinx_group: 'mono'
+
+# Full path to sphinx source root documentation directory.
+sphinx_source_dir: '{{ playbook_dir }}'
+
+# Full path to virtualenv setup location.
+sphinx_venv_dir: '/opt/venvs/sphinx'
+
+# Ansible path to sphinx configuration data.
+sphinx_config_dir: '{{ playbook_dir }}/sphinx'
+
+# Full path to build staging location.
+sphinx_build_dir: '/tmp/srv/docs'
+
+# Ansible path to place rendered documentation.
+sphinx_target_dir: 'host_vars/xadjudicator.pufky.com/files/srv/docs'
+
+# Perform link check on documentation?
+sphinx_link_check: false

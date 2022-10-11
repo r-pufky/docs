@@ -1,0 +1,28 @@
+---
+###############################################################################
+# Ports Configuration
+###############################################################################
+# Ports should be managed externally via an OS role.
+#
+# Reference:
+# * https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml
+# * https://r-pufky.github.io/docs/services/email/mta/setup.html
+
+ports:
+  - {proto: 'tcp', from_ip: 'any',       from_port: 'any', to_ip: '127.0.0.1', to_port: 25,    comment: 'MTA smtp email submission'}
+  - {proto: 'udp', from_ip: 'any',       from_port: 'any', to_ip: '127.0.0.1', to_port: 25,    comment: 'MTA smtp email submission'}
+  - {proto: 'tcp', from_ip: 'any',       from_port: 'any', to_ip: '127.0.0.1', to_port: 143,   comment: 'imapv4'}
+  - {proto: 'udp', from_ip: 'any',       from_port: 'any', to_ip: '127.0.0.1', to_port: 143,   comment: 'imapv4'}
+  - {proto: 'tcp', from_ip: 'any',       from_port: 'any', to_ip: '127.0.0.1', to_port: 465,   comment: 'SSL MUA email submission (defacto standard)'}
+  - {proto: 'tcp', from_ip: 'any',       from_port: 'any', to_ip: '127.0.0.1', to_port: 587,   comment: 'TLS MUA email submission (RFC 2476)'}
+  - {proto: 'udp', from_ip: 'any',       from_port: 'any', to_ip: '127.0.0.1', to_port: 587,   comment: 'TLS MUA email submission (RFC 2476)'}
+  - {proto: 'tcp', from_ip: 'any',       from_port: 'any', to_ip: '127.0.0.1', to_port: 993,   comment: 'imapv4 over TLS'}
+  - {proto: 'udp', from_ip: 'any',       from_port: 'any', to_ip: '127.0.0.1', to_port: 993,   comment: 'imapv4 over TLS'}
+  - {proto: 'tcp', from_ip: '127.0.0.1', from_port: 'any', to_ip: '127.0.0.1', to_port: 8891,  comment: 'opendkim validation service'}
+  - {proto: 'tcp', from_ip: '127.0.0.1', from_port: 'any', to_ip: '127.0.0.1', to_port: 8893,  comment: 'opendmarc validation service'}
+  - {proto: 'tcp', from_ip: '127.0.0.1', from_port: 'any', to_ip: '127.0.0.1', to_port: 10001, comment: 'postsrsd forward lookup'}
+  - {proto: 'tcp', from_ip: '127.0.0.1', from_port: 'any', to_ip: '127.0.0.1', to_port: 10002, comment: 'postsrsd reverse lookup'}
+  - {proto: 'tcp', from_ip: '127.0.0.1', from_port: 'any', to_ip: '127.0.0.1', to_port: 10023, comment: 'postgrey check'}
+  - {proto: 'tcp', from_ip: '127.0.0.1', from_port: 'any', to_ip: '127.0.0.1', to_port: 10024, comment: 'amavis outgoing email queue'}
+  - {proto: 'tcp', from_ip: '127.0.0.1', from_port: 'any', to_ip: '127.0.0.1', to_port: 10025, comment: 'smtpd receiving from amavis incoming email queue'}
+  - {proto: 'tcp', from_ip: '127.0.0.1', from_port: 'any', to_ip: '127.0.0.1', to_port: 10026, comment: 'amavis incoming email queue'}

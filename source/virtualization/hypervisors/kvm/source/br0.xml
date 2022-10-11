@@ -1,5 +1,0 @@
-<network>
-  <name>br0</name>
-  <bridge name='br0'/>
-  <forward mode='bridge'/>
-</network>

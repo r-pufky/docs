@@ -1,0 +1,22 @@
+---
+###############################################################################
+# Ports Configuration
+###############################################################################
+# Ports should be managed externally via an OS role.
+#
+# Reference:
+# * https://help.ui.com/hc/en-us/articles/218506997-UniFi-Ports-Used
+# * https://docs.ansible.com/ansible/latest/collections/community/general/ufw_module.html
+
+ports:
+  - {proto: 'udp', from_ip: 'any', to_port: 3478,        direction: 'in', comment: 'STUN'}
+  - {proto: 'udp', from_ip: 'any', to_port: 5514,        direction: 'in', comment: 'remote syslog capture'}
+  - {proto: 'udp', from_ip: 'any', to_port: '5656:5699', direction: 'in', comment: 'AP-EDU broadcasting'}
+  - {proto: 'udp', from_ip: 'any', to_port: 10001,       direction: 'in', comment: 'device discovery'}
+  - {proto: 'udp', from_ip: 'any', to_port: 1900,        direction: 'in', comment: 'L2 network discovery'}
+  - {proto: 'tcp', from_ip: 'any', to_port: 8080,        direction: 'in', comment: 'device/application communication'}
+  - {proto: 'tcp', from_ip: 'any', to_port: 8443,        direction: 'in', comment: 'WebUI'}
+  - {proto: 'tcp', from_ip: 'any', to_port: 8880,        direction: 'in', comment: 'HTTP portal redirection'}
+  - {proto: 'tcp', from_ip: 'any', to_port: 8843,        direction: 'in', comment: 'HTTPS portal redirection'}
+  - {proto: 'tcp', from_ip: 'any', to_port: 6789,        direction: 'in', comment: 'unifi mobile speed test'}
+  - {proto: 'tcp', from_ip: '127.0.0.1', to_ip: '127.0.0.1', to_port: 27117, direction: 'in', comment: 'database communication (localhost only)'}

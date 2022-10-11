@@ -1,0 +1,68 @@
+---
+###############################################################################
+# Sphinx Python Virtual Environment
+###############################################################################
+# Configure Python Virtual Environment.
+
+- name: 'virtualenv | virtual environment configuration (may take a while)'
+  ansible.builtin.debug:
+    msg: |
+      Virtual environment is being configured. This will take a few minutes.
+
+- name: 'virtualenv | create environments location'
+  ansible.builtin.file:
+    path:  '{{ sphinx_venv_dir|dirname }}'
+    owner: 'root'
+    group: 'root'
+    mode:  0755
+    recurse: true
+    state: 'directory'
+  changed_when: false
+
+- name: 'virtualenv | create sphinx environment location'
+  ansible.builtin.file:
+    path:  '{{ sphinx_venv_dir }}'
+    owner: '{{ sphinx_user }}'
+    group: '{{ sphinx_group }}'
+    mode:  0755
+    recurse: true
+    state: 'directory'
+  changed_when: false
+
+- name: 'virtualenv | setup virtual environment'
+  ansible.builtin.pip:
+    virtualenv:         '{{ sphinx_venv_dir }}'
+    virtualenv_command: 'virtualenv'
+    virtualenv_python:  'python3'
+    extra_args: '--upgrade'
+    name:
+      - 'pip'
+      - 'setuptools'
+      - 'wheel'
+  become: true
+  become_user: '{{ sphinx_user }}'
+  # Reference: https://github.com/ansible/ansible/issues/16048#issuecomment-229012509
+  vars:
+    ansible_ssh_pipelining: true
+
+- name: 'virtualenv | setup virtual environment (sphinx features)'
+  ansible.builtin.pip:
+    virtualenv:         '{{ sphinx_venv_dir }}'
+    virtualenv_command: 'virtualenv'
+    virtualenv_python:  'python3'
+    requirements:       '{{ sphinx_config_dir }}/requirements.txt'
+  become: true
+  become_user: '{{ sphinx_user }}'
+  # Reference: https://github.com/ansible/ansible/issues/16048#issuecomment-229012509
+  vars:
+    ansible_ssh_pipelining: true
+
+- name: 'virtualenv | secure virtual environment'
+  ansible.builtin.file:
+    path:  '{{ sphinx_venv_dir }}'
+    owner: '{{ sphinx_user }}'
+    group: '{{ sphinx_group }}'
+    mode:  'a-st,g-w,o-rwx'
+    recurse: true
+    state: 'directory'
+  changed_when: false

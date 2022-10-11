@@ -1,0 +1,91 @@
+---
+###############################################################################
+# ACME (let's encrypt) Role Configuration
+###############################################################################
+# Note: If certs fail to renew, check cert/logs/letsencrypt.log
+#
+# 'certbot.errors.CertStorageError: expected .../cert.pem to be a symlink`
+#
+# Means the certificate location changed, likely due to cert path change:
+# * Confirm full path for acme/cert/live/{DOMAIN}/*.pem
+# * Update related configuration files in acme/cert/renewal/*.conf
+# * Ensure local path matches configuration path in cert/config
+
+# User that roundcube will run under. Assumes externally managed.
+acme_user:  'acme'
+acme_group: 'acme'
+
+# Create 'acme' user if not detected? See: vars/main.yml.
+acme_create_user: false
+
+# Install and working directory for ACME certificates. Default: '/etc/acme'
+# (user home directory).
+acme_base: '{{ acme_default_user.home }}'
+
+# ACME certifcate storage location. Default: '{{ acme_base }}/cert'
+acme_cert: '{{ acme_base }}/cert'
+
+###############################################################################
+# dnsrobocert config.yml (acme section)
+###############################################################################
+#
+# Reference:
+# * https://dnsrobocert.readthedocs.io/en/latest/user_guide.html#configuring-acme-section
+
+acme_config_acme:
+  email_account: 'user@example.com'
+  staging:       true
+  api_version:   2
+  certs_permissions:
+    user:       '{{ acme_user }}'
+    group:      '{{ acme_group }}'
+    dirs_mode:  '0750'
+    files_mode: '0640'
+
+###############################################################################
+# dnsrobocert config.yml (profiles section)
+###############################################################################
+# sleep_time is the delay in seconds to validate DNS after making auth
+# challenge change to the domain. Set to ``150`` as Google Cloud DNS guarantees
+# updates in 120 seconds.
+#
+# staging will run requests against the staging server, allowing the ability
+# to test setup.
+#
+# Reference:
+# * https://dnsrobocert.readthedocs.io/en/latest/user_guide.html#configuring-profiles-section
+
+acme_config_profiles:
+  - name: 'googleclouddns'
+    provider:   'googleclouddns'
+    sleep_time: 150
+    provider_options:
+      # base64 encoded password. Use vault.
+      auth_service_account_info: 'base64::...'
+
+###############################################################################
+# dnsrobocert config.yml (certificates section)
+###############################################################################
+#
+# Reference:
+# * https://dnsrobocert.readthedocs.io/en/latest/user_guide.html#configuring-certificates-section
+
+acme_config_certificates:
+  - name:    'example.com'
+    domains:
+      -      '*.example.com'
+      -      'example.com'
+    profile: 'googleclouddns'
+  - name:    'mail.example.com'
+    domains:
+      -      'mail.example.com'
+    profile: 'googleclouddns'
+  - name:    'example2.com'
+    domains:
+      -      '*.example2.com'
+      -      'example2.com'
+    profile: 'googleclouddns'
+  - name:    'mail.example2.com'
+    domains:
+      -      'mail.example2.com'
+    profile: 'googleclouddns'

@@ -1,0 +1,34 @@
+---
+###############################################################################
+# User configuration
+###############################################################################
+# All specified users/groups must exist on the system (role will create these
+# using defaults if they don't exist).
+#
+# Custom users/groups will be checked for existence and fail if they cannot be
+# found.
+
+mail_postfix_user:       'postfix'
+mail_postfix_group:      'postfix'
+mail_postsrsd_user:      'postsrsd'
+mail_postsrsd_group:     'postsrsd'
+mail_clamav_user:        'clamav'
+mail_clamav_group:       'clamav'
+mail_opendkim_user:      'opendkim'
+mail_opendkim_group:     'opendkim'
+mail_policyd_spf_user:   'policyd-spf'
+mail_policyd_spf_group:  'policyd-spf'
+mail_dovecot_user:       'dovecot'
+mail_dovecot_group:      'dovecot'
+mail_dovenull_user:      'dovenull'
+mail_dovenull_group:     'dovenull'
+mail_postgrey_user:      'postgrey'
+mail_postgrey_group:     'postgrey'
+mail_opendmarc_user:     'opendmarc'
+mail_opendmarc_group:    'opendmarc'
+mail_debian_spamd_user:  'debian-spamd'
+mail_debian_spamd_group: 'debian-spamd'
+mail_amavis_user:        'amavis'
+mail_amavis_group:       'amavis'
+mail_vmail_user:         'vmail'
+mail_vmail_group:        'vmail'

@@ -1,0 +1,15 @@
+---
+###############################################################################
+# Sphinx Document Generation Dependencies
+###############################################################################
+# Default required packages for sphinx docs generation.
+
+sphinx_default_debian_packages:
+  - 'python3-pip'
+  - 'python3-venv'
+  - 'rsync'
+
+sphinx_default_arch_packages:
+  - 'python-pip'
+  - 'python-virtualenv'
+  - 'rsync'

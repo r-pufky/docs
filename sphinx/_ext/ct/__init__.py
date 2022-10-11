@@ -11,6 +11,7 @@ from .v2 import gpo
 from .v2 import gui
 from .v2 import ports
 from .v2 import regedit
+from .v2 import role
 
 def setup(app):
   app.add_config_value('ct_separator', config.DEFAULT_SEPARATOR, '')
@@ -22,6 +23,7 @@ def setup(app):
   gui.setup(app)
   ports.setup(app)
   regedit.setup(app)
+  role.setup(app)
 
   return {
     'version': '0.1',

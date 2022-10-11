@@ -1,0 +1,197 @@
+---
+###############################################################################
+# mariadb Role Configuration
+###############################################################################
+# From https://github.com/geerlingguy/ansible-role-mysql with patches.
+#
+# Debian auto-install 'mysql' user. Use ansible template to ensure managed.
+
+# User that maria will run under. Assumes externally managed.
+db_maria_user:  'mysql'
+db_maria_group: 'mysql'
+
+# Create 'maria' user if not detected? See: vars/main.yml.
+db_maria_create_user: false
+
+# Maria version to install.
+db_maria_version: '10.5'
+
+db_maria_packages:
+  - 'mariadb-server-{{ db_maria_version }}'
+
+db_maria_python_packages:
+  - 'python3-pymysql'
+  - 'python3-mysqldb'
+
+db_maria_locales:
+  - 'en_US.UTF-8'
+
+# MariaDB root user & local folder for login configuration.
+db_maria_root_home:     '/root'
+db_maria_root_username: 'root'
+db_maria_root_password: ''
+
+# Backup location
+db_maria_backup_dir: '/var/lib/mysql-backup'
+
+# mysqldump options
+db_maria_backup_options: >
+  --routines
+  --events
+  --triggers
+  --complete-insert
+  --create-options
+  --single-transaction
+# Enable separate weekly cronjob to backup databases (includes compression).
+db_maria_enable_weekly: true
+
+# databases created if non-existent, and auto-imported from latest backup.
+# https://docs.ansible.com/ansible/latest/collections/community/mysql/mysql_db_module.html
+db_maria_databases: []
+# - name: exampledb # required
+#   collation:      # default: 'utf8_general_ci'
+#   encoding:       # default: 'utf8'
+#   state:          # default: 'present'
+
+# https://docs.ansible.com/ansible/latest/collections/community/mysql/mysql_user_module.html
+db_maria_users: []
+# - name: example    # required
+#   host:            # default: 'localhost'
+#   password:        # required (use vault)
+#   priv:            # default: '*.*:USAGE'
+#   resource_limits: # default: ''
+#   state:           # default: 'present'
+#   append_privs:    # default: 'no'
+#   encrypted:       # default: 'no'
+
+###############################################################################
+# mariadb mariadb.cnf Configuration
+###############################################################################
+# Defaults for maria 10.5 on debian 10
+#
+# Only explicitly defined vars int the default config have definitions. Use
+# _extensions to add in additional config settings per section as needed.
+
+# [client-server]
+db_maria_client_server_socket: '/run/mysqld/mysqld.sock'
+
+# Freeform configuration text for adding additional section options
+db_maria_client_server_extensions: ''
+
+###############################################################################
+# mariadb mariadb.conf.d/50-server.cnf Configuration
+###############################################################################
+# Defaults for maria 10.5 on debian 10
+#
+# Only explicitly defined vars int the default config have definitions. Use
+# _extensions to add in additional config settings per section as needed.
+
+# [server]
+# Freeform configuration text for adding additional section options
+db_maria_server_extensions: ''
+
+# [mysqld]
+db_maria_mysqld_user:                  '{{ db_maria_user }}'
+db_maria_mysqld_pid_file:              '/run/mysqld/mysqld.pid'
+db_maria_mysqld_base_dir:              '/usr'
+db_maria_mysqld_data_dir:              '/var/lib/mysql'
+db_maria_mysqld_tmp_dir:               '/tmp'
+db_maria_mysqld_lc_messages_dir:       '/usr/share/mysql'
+db_maria_mysqld_lc_messages:           'en_US'
+db_maria_mysqld_skip_external_locking: true
+db_maria_mysqld_bind_address:          '127.0.0.1'
+
+# Default: commented out in mariadb.cnf
+db_maria_mysqld_port: 3306 # mariadb tcp port
+
+db_maria_mysqld_expire_logs_days:     10
+db_maria_mysqld_max_binlog_size:      '100M'
+db_maria_mysqld_character_set_server: 'utf8mb4'
+db_maria_mysqld_collation_server:     'utf8mb4_general_ci'
+
+# Freeform configuration text for adding additional section options
+db_maria_mysqld_extensions: ''
+
+# [embedded]
+# Freeform configuration text for adding additional section options
+db_maria_embedded_extensions: ''
+
+# [mariadb]
+# Freeform configuration text for adding additional section options
+db_maria_mariadb_extensions: ''
+
+# [mariadb-10.5]
+# Freeform configuration text for adding additional section options
+db_maria_mariadb_10_5_extensions: ''
+
+###############################################################################
+# mariadb mariadb.conf.d/60-galera.cnf Configuration
+###############################################################################
+# Defaults for maria 10.5 on debian 10
+#
+# Only explicitly defined vars int the default config have definitions. Use
+# _extensions to add in additional config settings per section as needed.
+
+# [galera]
+# Freeform configuration text for adding additional section options
+db_maria_galera_extensions: ''
+
+###############################################################################
+# mariadb mariadb.conf.d/50-mysql-clients.cnf Configuration
+###############################################################################
+# Defaults for maria 10.5 on debian 10
+#
+# Only explicitly defined vars int the default config have definitions. Use
+# _extensions to add in additional config settings per section as needed.
+
+# [mysql]
+# Freeform configuration text for adding additional section options
+db_maria_mysql_extensions: ''
+
+# [mysql_upgrade]
+# Freeform configuration text for adding additional section options
+db_maria_mysql_upgrade_extensions: ''
+
+# [mysqladmin]
+# Freeform configuration text for adding additional section options
+db_maria_mysqladmin_extensions: ''
+
+# [mysqlbinlog]
+# Freeform configuration text for adding additional section options
+db_maria_mysqlbinlog_extensions: ''
+
+# [mysqlcheck]
+# Freeform configuration text for adding additional section options
+db_maria_mysqlcheck_extensions: ''
+
+# [mysqldump]
+# Freeform configuration text for adding additional section options
+db_maria_mysqldump_extensions: ''
+
+# [mysqlimport]
+# Freeform configuration text for adding additional section options
+db_maria_mysqlimport_extensions: ''
+
+# [mysqlshow]
+# Freeform configuration text for adding additional section options
+db_maria_mysqlshow_extensions: ''
+
+# [mysqlslap]
+# Freeform configuration text for adding additional section options
+db_maria_mysqlslap_extensions: ''
+
+###############################################################################
+# mariadb mariadb.conf.d/50-client.cnf Configuration
+###############################################################################
+# Defaults for maria 10.5 on debian 10
+#
+# Only explicitly defined vars int the default config have definitions. Use
+# _extensions to add in additional config settings per section as needed.
+
+# [client]
+# Freeform configuration text for adding additional section options
+db_maria_client_extensions: ''
+
+# [client-mariadb]
+# Freeform configuration text for adding additional section options
+db_maria_client_mariadb_extensions: ''

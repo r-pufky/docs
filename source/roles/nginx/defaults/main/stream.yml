@@ -1,0 +1,34 @@
+---
+###############################################################################
+# NGINX Stream (port forwarding) Configuration
+###############################################################################
+# Streaming enables specific connections to be forwarded through the proxy,
+# bypassing proxy configuration (generally, this removes a layer of security).
+#
+# Only services EXPECTING incoming connections that cannot be proxied via https
+# should use this (deluge, plex, mail). These are applied on the proxy and not
+# on the host machine (hence a different UFW config).
+#
+# Setup appropriate stream config in files/stream.d
+#
+# UFW can handle IP and CIDR notation. Use 'any' for no restriction on specific
+# direction. Default is to allow SSH connections.
+#
+# Set ip to force connections through a proxy.
+#
+# All rules use: {proto: '{PROTO}', ip: 'any|{IP}', port: {PORT}, comment: ''}
+# see reference for all supported UFW values.
+#
+# nginx_stream_in:
+#   - {proto: 'tcp', ip: 'any', port: 49160, comment: 'deluge torrent service'}
+#
+# nginx_stream_out:
+#   - {proto: 'tcp', ip: '10.5.5.230', port: 49160, comment: 'deluge torrent service'}
+#
+# Reference:
+# * https://docs.nginx.com/nginx/admin-guide/load-balancer/tcp-udp-load-balancer/
+# * http://nginx.org/en/docs/stream/ngx_stream_core_module.html
+# * https://docs.ansible.com/ansible/latest/collections/community/general/ufw_module.html
+
+nginx_stream_in: []
+nginx_stream_out: []

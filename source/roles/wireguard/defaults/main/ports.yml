@@ -1,0 +1,13 @@
+---
+###############################################################################
+# Ports Configuration
+###############################################################################
+# Ports should be managed externally via an OS role.
+#
+# Port exposure is only required for wireguard servers accepting connetions.
+#
+# Reference:
+# * https://docs.ansible.com/ansible/latest/collections/community/general/ufw_module.html
+
+ports:
+  - {proto: 'udp', from_ip: 'any', to_port: 51820, direction: 'in', comment: 'wireguard service'}

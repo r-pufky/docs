@@ -9,7 +9,7 @@
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-#
+import datetime
 import os
 import sys
 import sphinx_rtd_theme
@@ -19,7 +19,7 @@ sys.path.insert(0, os.path.abspath('./_ext'))
 # -- Project information -----------------------------------------------------
 
 project = 'Generic service & computer documentation.'
-copyright = '2019, r-pufky'
+copyright = '%s, r-pufky' % datetime.date.today().year
 author = 'r-pufky'
 
 # -- General configuration ---------------------------------------------------
@@ -33,6 +33,7 @@ extensions = [
   'sphinx.ext.viewcode',
   'sphinx_panels',
   'sphinx_copybutton',
+  'sphinx_collapse',
   'sphinx_rtd_theme',
   'sphinxcontrib.aafig',
 ]
@@ -85,12 +86,12 @@ linkcheck_ignore = [
   r'https://github.com/.*/latest.*',
   # Redirects: behind authentication wall.
   r'https://security.google.com/\.*',
+  r'https://console.developers.google.com\.*',
+  r'https://console.cloud.google.com\.*',
   r'https://plexapp.zendesk.com/\.*',
   r'https://api.imgur.com/\.*',
   # Redirects: youtube now redirects with next video.
   r'https://www.youtube.com/watch\.*',
-  # Temporarily disable for repo DMCA.
-  r'https://github.com/ytdl-org/youtube-dl/releases',
 ]
 linkcheck_workers = 10
 

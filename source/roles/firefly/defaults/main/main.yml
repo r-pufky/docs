@@ -1,0 +1,35 @@
+---
+###############################################################################
+# Firefly III Configuration
+###############################################################################
+# Requires a minimum of 512MB RAM.
+#
+# Reference:
+# * https://computingforgeeks.com/setup-firefly-personal-finance-manager-on-ubuntu/
+# * https://docs.firefly-iii.org/firefly-iii/installation/self_hosted/
+# * https://docs.firefly-iii.org/firefly-iii/installation/upgrade/
+
+# User that firefly will run under. Assumes externally managed.
+firefly_user:  'www-data'
+firefly_group: 'www-data'
+
+# Create 'www-data' user if not detected? See: vars/main.yml.
+firefly_create_user: false
+
+# Version. Default: 'latest'. Changing to a later version will automatically
+# apply an upgrade with related DB changes.
+firefly_version: 'latest'
+
+# Should old firefly installs be removed automatically on upgrade success?
+firefly_delete_old_versions: true
+
+# Force (re)create database. Data destructive. First time installs will not
+# create a database and instead run database migrations when false.
+firefly_create_database: false
+
+# Link to specificed storage mount point when defined (should contain export,
+# upload directories).
+firefly_link_storage: '/data/storage'
+
+# Hostname used by the proxy; so proxied requests redirect correctly.
+firefly_proxy_hostname: ''

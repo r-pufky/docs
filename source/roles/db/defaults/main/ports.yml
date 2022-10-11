@@ -1,0 +1,12 @@
+---
+###############################################################################
+# Ports Configuration
+###############################################################################
+# Ports should be managed externally via an OS role.
+#
+# Reference:
+# * https://docs.ansible.com/ansible/latest/collections/community/general/ufw_module.html
+
+ports:
+  - {proto: 'tcp', from_ip: 'any', to_port: 3306, direction: 'in', comment: 'mysql service'}
+  - {proto: 'tcp', from_ip: 'any', to_port: 5432, direction: 'in', comment: 'postgresql service'}

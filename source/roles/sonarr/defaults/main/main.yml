@@ -1,0 +1,42 @@
+---
+###############################################################################
+# Sonarr Role Configuration
+###############################################################################
+# User that sonarr will run under. Assumes externally managed.
+sonarr_user:  'media'
+sonarr_group: 'media'
+
+# Create 'media' user if not detected? See: vars/main.yml.
+sonarr_create_user: false
+
+# Installation directory
+sonarr_dir: '/var/lib/sonarr'
+
+# Staging directory for backups
+sonarr_staging: '/var/lib/sonarr-staging'
+
+# Target location of backup file on ansible host.
+sonarr_local_backup: 'host_vars/data/sonarr-config.tar.gz'
+
+###############################################################################
+# Sonarr config.xml Configuration
+###############################################################################
+
+sonarr_port:                  '8989' # http port
+sonarr_bind_address:          '*'
+# Sonarr requires ssl port to be defined even if unused
+sonarr_ssl_port:              '9898' # https port
+sonarr_enable_ssl:            false
+sonarr_api_key:               ''
+sonarr_authentication_method: 'None'
+sonarr_log_level:             'info'
+# Default: undefined
+sonarr_launch_browser:        false
+sonarr_branch:                'main'
+sonarr_ssl_cert_hash:         ''
+sonarr_update_mechanism:      'BuiltIn'
+# Default: undefined
+sonarr_analytics_enabled:     false
+# Default: undefined
+sonarr_update_automatically:  false
+sonarr_url_base:              ''

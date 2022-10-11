@@ -10,12 +10,16 @@ class Template(object):
   light=':badge:`%s,badge-light badge-pill`'
   dark=':badge:`%s,badge-dark badge-pill`'
   ref=':link-badge:`%s,"Reference",cls=badge-info badge-pill`'
+  name=':link-badge:`%s,"%s",cls=badge-info text-white badge-pill`'
 
 def ref(ref):
   return '%s' % (Template.ref % ref)
 
 def update(text):
   return '%s' % (Template.secondary % ('Updated: %s' % text or 'Never'))
+
+def named(text, ref):
+  return '%s' % (Template.name % (ref, text))
 
 badges = {
   # Account / Authorization
@@ -127,9 +131,9 @@ badges = {
 
   # Networking / Firewall
   '{PUBLIC}': Template.warning % 'PUBLIC',
-  '{PRIVATE}': Template.info % 'PRIVATE',
+  '{PRIVATE}': Template.warning % 'PRIVATE',
   '{EXPOSED}': Template.warning % 'EXPOSED',
-  '{RESTRICTED}': Template.info % 'RESTRICTED',
+  '{RESTRICTED}': Template.warning % 'RESTRICTED',
   '{TCP}': Template.info % 'TCP',
   '{UDP}': Template.info % 'UDP',
   '{TCP/UDP}': Template.info % 'TCP/UDP',

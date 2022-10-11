@@ -1,0 +1,24 @@
+---
+###############################################################################
+# Sphinx Document Generation Packages
+###############################################################################
+# Install packages.
+
+- name: 'packages | add packages (may take a while)'
+  ansible.builtin.debug:
+    msg: |
+      Packages are being installed. This will take a few minutes.
+
+- name: 'packages | install debian dependencies'
+  ansible.builtin.apt:
+    name: '{{ sphinx_default_debian_packages }}'
+    update_cache: true
+    state: 'latest'
+  when: ansible_distribution == 'Debian'
+
+- name: 'packages | install arch dependencies'
+  community.general.pacman:
+    name: '{{ sphinx_default_arch_packages }}'
+    update_cache: true
+    state: 'latest'
+  when: ansible_distribution == 'Archlinux'

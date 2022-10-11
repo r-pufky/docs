@@ -1,0 +1,21 @@
+---
+###############################################################################
+# Ports Configuration
+###############################################################################
+# Ports should be managed externally.
+#
+# Reference:
+# * https://support.plex.tv/articles/201543147-what-network-ports-do-i-need-to-allow-through-my-firewall/
+# * https://docs.ansible.com/ansible/latest/collections/community/general/ufw_module.html
+
+ports:
+  - {proto: 'udp', from_ip: 'any', to_port: 1900,  direction: 'in', comment: 'plex DLNA server'}
+  - {proto: 'udp', from_ip: 'any', to_port: 5353,  direction: 'in', comment: 'bonjour/avahi discovery'}
+  - {proto: 'udp', from_ip: 'any', to_port: 32410, direction: 'in', comment: 'GDM network discovery'}
+  - {proto: 'udp', from_ip: 'any', to_port: 32412, direction: 'in', comment: 'GDM network discovery'}
+  - {proto: 'udp', from_ip: 'any', to_port: 32413, direction: 'in', comment: 'GDM network discovery'}
+  - {proto: 'udp', from_ip: 'any', to_port: 32414, direction: 'in', comment: 'GDM network discovery'}
+  - {proto: 'tcp', from_ip: 'any', to_port: 32400, direction: 'in', comment: 'plex media server access'}
+  - {proto: 'tcp', from_ip: 'any', to_port: 3005,  direction: 'in', comment: 'control plex home theater w/ plex companion'}
+  - {proto: 'tcp', from_ip: 'any', to_port: 8324,  direction: 'in', comment: 'control plex for roku w/ plex companion'}
+  - {proto: 'tcp', from_ip: 'any', to_port: 32469, direction: 'in', comment: 'plex DLNA server'}

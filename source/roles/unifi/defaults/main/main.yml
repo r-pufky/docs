@@ -1,0 +1,35 @@
+---
+###############################################################################
+# Unifi Controller Role Configuration
+###############################################################################
+# If unifi controller IP changes, ssh to each device to migrate to new IP:
+#
+#   set-inform http://{IP}:8080/inform
+#
+# Backup/Restore tasks: automatic upgrade will fail unless a backup is made.
+#
+# Reference:
+# * https://community.ui.com/questions/unifi-apt-get-upgrade-prompt-for-backups/f2ac7635-07f4-46fe-aeda-2933af474174
+
+# User that unifi will run under. Assumes externally managed.
+unifi_user:  'unifi'
+unifi_group: 'unifi'
+
+# User that MongoDB will run under. Assumes externally managed.
+mongo_user:  'mongodb'
+mongo_group: 'mongodb'
+
+# Create 'unifi'/'mongodb' user if not detected? See: vars/main.yml.
+unifi_create_user: false
+
+# Installation directory
+unifi_data: '/var/lib/unifi'
+
+# Staging directory for backups
+unifi_staging: '/var/lib/unifi-staging'
+
+# Target location of backup file on ansible host.
+unifi_local_backup: 'host_vars/data/unifi-config.tar.gz'
+
+# Backup MongoDB on upgrades? (If false autoupgrades will fail).
+unifi_backup: true

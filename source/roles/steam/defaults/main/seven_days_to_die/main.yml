@@ -1,0 +1,23 @@
+---
+###############################################################################
+# 7 Days to Die (+10GB)
+###############################################################################
+#       Minimum   Recommended
+# CPU:  2c/4t     4c/8t@3.0Ghz
+# RAM:  6GB       12GB
+# Disk: 10GB      10GB
+
+# Install preconfigured 7days server?
+steam_7days_enable: false
+
+# Root install location.
+steam_7days_dir: '/home/steam/7days'
+
+# Additional steamcmd options to use during app_update. Default: ''.
+steam_7days_app_extras: ''
+
+# Update steamcmd. Default: true.
+steam_7days_update_steamcmd: true
+
+# Update 7days server. Default: true.
+steam_7days_update_server: true

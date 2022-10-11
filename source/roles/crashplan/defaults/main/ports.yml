@@ -1,0 +1,14 @@
+---
+###############################################################################
+# Ports Configuration
+###############################################################################
+# Ports should be managed externally via an OS role.
+#
+# Reference:
+# * https://docs.ansible.com/ansible/latest/collections/community/general/ufw_module.html
+
+ports:
+  - {proto: 'tcp', from_ip: 'any', to_port: 443,  direction: 'in', comment: 'code42 console'}
+  - {proto: 'tcp', from_ip: 'any', to_port: 4285, direction: 'in', comment: 'crashplan service (console)'}
+  - {proto: 'tcp', from_ip: 'any', to_port: 4287, direction: 'in', comment: 'crashplan service (online)'}
+  - {proto: 'tcp', from_ip: '127.0.0.1', to_ip: '127.0.0.1', to_port: 4244, direction: 'in', comment: 'service to ui communication (localhost only)'}

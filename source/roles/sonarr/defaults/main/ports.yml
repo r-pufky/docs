@@ -1,0 +1,14 @@
+---
+###############################################################################
+# Ports Configuration
+###############################################################################
+# Ports should be managed externally via an OS role.
+#
+# Reference:
+# * https://docs.ansible.com/ansible/latest/collections/community/general/ufw_module.html
+
+ports:
+  - {proto: 'tcp', from_ip: 'any',       to_port: 8989, direction: 'in', comment: 'sonarr http'}
+  - {proto: 'tcp', from_ip: '127.0.0.1', to_port: 8989, direction: 'in', comment: 'sonarr http api'}
+  - {proto: 'tcp', from_ip: 'any',       to_port: 9898, direction: 'in', comment: 'sonarr https'}
+  - {proto: 'tcp', from_ip: '127.0.0.1', to_port: 9898, direction: 'in', comment: 'sonarr https api'}

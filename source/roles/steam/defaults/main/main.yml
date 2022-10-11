@@ -1,0 +1,30 @@
+---
+###############################################################################
+# Steam Role Configuration (~2GB)
+###############################################################################
+# Install steamcmd with additional dependencies for running windows servers.
+# Preconfigure server settings may be deployed by enabling specific games or
+# manually installed after the role is applied.
+#
+# Preconfigured servers will install all files and services required to run a
+# game.
+
+# User that steam will run under. Assumes externally managed.
+steam_user:  'steam'
+steam_group: 'steam'
+
+# Create 'steam' user if not detected? See: vars/main.yml.
+steam_create_user: false
+
+# Install wine if enabled. May be automatically enabled if a preconfigured
+# game is enabled. Default: true.
+steam_wine_enable: false
+
+# Wine release to install (stable, devel, staging). Default: 'stable'.
+steam_wine_release: 'stable'
+
+# Enable CAP_NET_RAW to allow applications that need to send and receive raw IP
+# packets to do so. This is disabled by default because it carries a potential
+# security risk, and the vast majority of applications do not need that
+# capability; though some wine applications/games my need it. Default: false.
+steam_wine_raw_network_enable: false

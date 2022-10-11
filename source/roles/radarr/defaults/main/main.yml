@@ -1,0 +1,48 @@
+---
+###############################################################################
+# Radarr Role Configuration
+###############################################################################
+# User that radarr will run under. Assumes externally managed.
+radarr_user:  'media'
+radarr_group: 'media'
+
+# Create 'media' user if not detected? See: vars/main.yml.
+radarr_create_user: false
+
+# Generic architecture for platform: x64, arm, arm64
+radarr_arch_generic: 'x64'
+
+# C architecture for platform: linux, linuxmusl
+radarr_arch_c: 'linux'
+
+# Installation directory
+radarr_dir: '/var/lib/radarr'
+
+# Configuration directory
+radarr_config: '/var/lib/radarr-config'
+
+# Staging directory for backups
+radarr_staging: '/var/lib/radarr-staging'
+
+# Target location of backup file on ansible host.
+radarr_local_backup: 'host_vars/data/radarr-config.tar.gz'
+
+###############################################################################
+# Radarr config.xml Configuration
+###############################################################################
+
+radarr_port:                  '7878' # http port
+radarr_bind_address:          '*'
+# Radarr requires ssl port to be defined even if unused
+radarr_ssl_port:              '9898' # https port
+radarr_enable_ssl:            false
+radarr_api_key:               ''
+radarr_authentication_method: 'None'
+radarr_log_level:             'info'
+radarr_launch_browser:        false # Default: undefined
+radarr_branch:                'master'
+radarr_ssl_cert_hash:         ''
+radarr_update_mechanism:      'BuiltIn'
+radarr_analytics_enabled:     false # Default: undefined
+radarr_update_automatically:  false # Default: undefined
+radarr_url_base:              ''

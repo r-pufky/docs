@@ -1,0 +1,17 @@
+---
+###############################################################################
+# Ports Configuration
+###############################################################################
+# Ports should be managed externally via an OS role.
+#
+# Reference:
+# * https://docs.pi-hole.net/main/prerequisites/?h=port#ports
+# * https://docs.ansible.com/ansible/latest/collections/community/general/ufw_module.html
+
+ports:
+  - {proto: 'udp', from_ip: 'any', to_port: 53,  direction: 'in', comment: 'dns server'}
+  - {proto: 'udp', from_ip: 'any', to_port: 67,  direction: 'in', comment: 'dhcp ipv4 server'}
+  - {proto: 'udp', from_ip: 'any', to_port: 547, direction: 'in', comment: 'dhcp ipv6 server'}
+  - {proto: 'tcp', from_ip: 'any', to_port: 53,  direction: 'in', comment: 'dns server'}
+  - {proto: 'tcp', from_ip: 'any', to_port: 80,  direction: 'in', comment: 'webui'}
+  - {proto: 'tcp', from_ip: '127.0.0.1', to_ip: '127.0.0.1', to_port: 4711, direction: 'in', comment: 'ftl service (localhost only)'}

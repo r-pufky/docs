@@ -1,0 +1,88 @@
+---
+###############################################################################
+# Fail2ban Settings
+###############################################################################
+
+# Location of custom filters to place in /etc/fail2ban/filter.d; from root
+# ansible directory. Pre-existing filters installed can be found in
+# files/filter.d. Use a trailing slash when specifying filter directory.
+#
+# Default: ''
+fail2ban_filterd_path: ''
+
+# Location of custom actions to place in /etc/fail2ban/action.d; from root
+# ansible directory. Pre-existing actions installed can be found in
+# files/action.d. Use a trailing slash when specifying action directory.
+#
+# Default: ''
+fail2ban_actiond_path: ''
+
+# Location of custom jails to place in /etc/fail2ban/jail.d; from root ansible
+# directory. Pre-existing jails installed can be found in files/jail.d. Use a
+# trailing slash when specifying jail directory for correct copying.
+#
+# Default: ''
+fail2ban_jaild_path: ''
+
+# Services configuration. Defines all services that fail2ban will monitor.
+#
+# Defined using the same key/value pairs as in jail.conf.
+#
+# Services that are defined in action/jail/filter directories can be enabled
+# by just setting the service name (enabled is automatically set to true if
+# not set):
+#
+#   fail2ban_services:
+#     - name:   'sshd'
+#
+# Multiple services can be defined and configured at once. This defines the ssh
+# service and uses the apache-wordpress-login service defined in
+# actions/jails/filters.
+#
+#   fail2ban_services:
+#     - name:    'sshd'
+#       port:    'ssh'
+#       logpath: '%(sshd_log)s'
+#       backend: '%(sshd_backend)s'
+#       enabled: true
+#     - name:     'apache-wordpress-logins'
+#       port:     'http,https'
+#       filter:   'apache-wordpress-logins'
+#       logpath:  '/var/log/apache2/access.log'
+#       maxretry: 5
+#       findtime: 120
+
+# By default, sshd service is enabled on installation.
+fail2ban_services:
+  - name:    'sshd'
+    port:    'ssh'
+    logpath: '%(sshd_log)s'
+    backend: '%(sshd_backend)s'
+    enabled: true
+
+###############################################################################
+# Default fail2ban.conf Settings
+###############################################################################
+# Default settings for fail2ban.conf actions/jails.
+#
+# Default values are defined in vars/main/fail2ban.yml. Any of these values may
+# be overridden by using the config value with 'fail2ban_' prepended, e.g. to
+# set loglevel, you would:
+#
+#   fail2ban_loglevel: 'CRITICAL'
+
+###############################################################################
+# Default jail.conf Settings
+###############################################################################
+# Default settings for jail.conf actions/jails.
+#
+# Default values are defined in vars/main/jail.yml. Any of these values may be
+# overridden by using the config value with 'fail2ban_' prepended, e.g. to set
+# banaction, you would:
+#
+#   fail2ban_banaction: 'iptables-multiport'
+#
+# Use booleans and lists as appropriate for each value.
+
+# Add rules to the input chain.
+fail2ban_chain: 'INPUT'

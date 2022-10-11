@@ -1,0 +1,346 @@
+---
+###############################################################################
+# Mail Role Configuration
+###############################################################################
+# All options are required unless stated otherwise.
+#
+# Other default files:
+# * ports.yml: defines all service ports, for use in firewall configuration.
+#       no configuration needed.
+# * users.yml: defines all user accounts. No configuration needed, unless
+#       custom users/groups are wanted. They must be created before this role
+#       is applied.
+
+###############################################################################
+# Mail Purge Install
+###############################################################################
+# During role setup, should existing mail configuration data be purged before
+# installing packages and configuring? Required.
+#
+# No user data (e.g. actual mail) will be touched.
+#
+# Dataype: boolean (default: false)
+# Special case: None
+
+mail_purge_install: false
+
+###############################################################################
+# Mail Manual Confirmations
+###############################################################################
+# During role configuration sections where potential end-user interactions are
+# required (e.g. DNS edits), should execution of role be paused until user
+# confirms? Required.
+#
+# This will allow you to get exact DNS information to add, as well as review
+# configuration settings before installing.
+#
+# Datatype: boolean (default: true)
+# Special case: Recommend 'true' for the initial configuration to confirm DNS,
+#               then 'false' afterwards for automatic role application.
+
+mail_confirmation_prompt: true
+
+###############################################################################
+# Mail Domains
+###############################################################################
+# Domains to host email.
+#
+# The first domain listed is the 'primary domain'. A 'primary domain' is the
+# domain email will originate from when the sender isn't fully specified (e.g.
+# local accounts), as well as the mail server name.
+#
+# Datatype: list of strings (default: [])
+# Special case: [] (domain will be determined from system hostname)
+
+mail_domains: []
+
+###############################################################################
+# Mail MX Record
+###############################################################################
+# The MX Record to use for serving mail on 'mail_domains'.
+#
+# Typically 'mail.example.com'
+#
+# All hosted domains should have this defined.
+#
+# Configuration will automatically generate appropriate DNS records for you if
+# none are defined, and provide instructions on how to setup DNS.
+#
+# Datatype: string (default: 'mail')
+# Special case: None
+
+mail_mx_record: 'mail'
+
+###############################################################################
+# Trusted Networks
+###############################################################################
+# Networks which are automatically trusted by the mail server.
+#
+# These should be minimized as no mail authentication will be required to send
+# from these networks; these will also bypass DKIM,DMARC checks.
+#
+# Accepted formats:
+# * IP (168.192.0.1)
+# * CIDR (168.192.0.0/24)
+# * Hostnames (desktop.example.com) (DMARC,DKIM only)
+# * Wildcard hostnames (*.example.com) (DMARC,DKIM only)
+#
+# Datatype: list of strings (default: [])
+# Special case:
+# * localhost addresses
+#     127.0.0.1, localhost, 127.0.0.0/8 will **always** be pre-pended to the
+#     trusted network list. Do not add.
+#
+# * hostnames (example.com, *.example.com)
+#     hostnames and wildcard hostnames will only be applied to DMARC, DKIM for
+#     trusted hosts; not mail server (postfix).
+
+mail_trusted_networks: []
+
+###############################################################################
+# OpenDKIM
+###############################################################################
+# OpenDKIM is an open source implementation of the DKIM (Domain Keys Identified
+# Mail) sender authentication system. Used for validating authentic email and
+# ensuring a high domain reputation. Required.
+#
+# Configuration will automatically generate keys for you if none are defined,
+# and provide instructions on how to setup DNS. These keys should be added to
+# vault so they are not regenerated every run. Keys are located:
+#
+#   /etc/opendkim/keys/{DOMAIN}/{SELECTOR}.{txt,private}
+#
+# Keys are automatically tested and validated against live DNS servers before
+# allowing configuration to proceed.
+#
+# Datatype: list of dics (required after initial deployment)
+#     {
+#       domain: 'example.com',
+#       selector: '{OPTIONAL default: "mail"}',
+#       private: '{OPTIONAL first run}',
+#       public: '{OPTIONAL first run}'
+#     }
+# Special case:
+# * OPTIONAL
+#     Optional values do not need to be defined until required.
+#
+# * mail
+#     Both 'mail' and 'default' are well-known de-facto DKIM selectors. If you
+#     don't know what these are, just use 'mail'.
+
+mail_dkim_domains: []
+
+###############################################################################
+# Certificate Data
+###############################################################################
+# Location of SSL certificates to use.
+#
+# Certificate management is **not** managed in this role. Always point to the
+# location of live certificates. This location must include 'fullchain.pem' and
+# 'privkey.pem'.
+#
+# Typically let's encrypt certificates are here: '/etc/cert/live/{DOMAIN}'. Use
+# primary domain certificates.
+#
+# Datatype: string (default: '/etc/ssl/certs/live/{{ mail_domains[0] }}')
+# Special case:
+# * /etc/ssl/certs/ssl-cert-snakeoil.pem
+#     Use self-signed SSL certificates. These will force users to trust SSL
+#     certificates and remove high-domain reputation. Only use for quickly
+#     testing without setting up valid certificates. DO NOT USE LIVE.
+
+mail_certs: '/etc/cert/live/{{ mail_domains[0] }}'
+
+###############################################################################
+# Mail Data
+###############################################################################
+# Location of mail data storage.
+#
+# If mail data is mounted, specify the mounted data location. This will be
+# symlinked to /var/vmail for mail storage.
+#
+# Datatype: string (default: '' or '/var/vmail' -- will use /var/vmail)
+# Special case: None
+
+mail_data: '/var/vmail'
+
+###############################################################################
+# Logging Level
+###############################################################################
+# Amount of detail to log in all service logs.
+#
+# Applied to all services and translated to the equivalent numeric log level as
+# needed. Increase logging level while debugging issues; keep at info or below
+# for standard operation.
+#
+# Using debug or higher levels will potentially record private key material or
+# passwords in logs. Increasing the log level will provide previous log level
+# along with the new level of detail.
+#
+# Datatype: string (default: 'info')
+# Special case:
+# * critical
+#     Only log critical messages.
+# * error:
+#     Only show error messages.
+# * warn:
+#     Only show warnings.
+# * info:
+#     Normal logging detail (default).
+# * debug:
+#     Include debugging information.
+# * trace:
+#     As much information as possible.
+
+mail_log_level: 'info'
+
+###############################################################################
+# Detected Virus Autodelete
+###############################################################################
+# Delete emails containing viruses that were auto-detected.
+#
+# Measured in days.
+#
+# Datatype: integer (default: 7)
+# Special case: 0 (detected emails will be kept indefinitely)
+
+mail_virus_purge: 0
+
+###############################################################################
+# Postfix Reporting Interval
+###############################################################################
+# Emails status information, including potential errors/corrections for mail
+# server.
+#
+# Datatype: string (default: 'weekly')
+# Special case:
+# * Accepted options are: annually, daily, hourly, monthly, weekly, yearly,
+#                         reboot, disable
+#
+#     reboot: will send report on system reboot.
+#     disable: disables reporting.
+
+mail_report_interval: 'weekly'
+
+###############################################################################
+# Postfix Reporting Recipient
+###############################################################################
+# Defines who recieves the postfix reports.
+#
+# Datatype: string (default: '')
+# Special case: '' (use primary domain postmaster address)
+# empty: Postmaster address.
+
+mail_report_recipient: ''
+
+###############################################################################
+# Mail Accounts
+###############################################################################
+# Mail user accounts for the mail server.
+#
+# These are virtual user accounts with no access to the underlying OS.
+# Passwords should **not** be the same as any OS password.
+#
+# Datatype: list of dicts (requires minimum 1 user)
+#     {
+#       user: '{USER}@{DOMAIN}',
+#       pass: '{HASH OR PASS}',
+#       uid: '{OPTIONAL}',
+#       gid: '{OPTIONAL},
+#       gecos: '{OPTIONAL}',
+#       home: '{OPTIONAL}',
+#       shell: '{OPTIONAL}',
+#       extra: '{OPTIONAL}'
+#     }
+# Special case:
+# * primary mail user / first user:
+#     The first defined user in 'mail_users' is considered to be the primary
+#     user of the mail system. This user, by default, will receive reporting,
+#     abuse, postmaster, and any other alerts a mail admin might care about.
+#
+# * OPTIONAL
+#     Optional values do not need to be defined if unused.
+#
+# * pass:
+#     Use vault to protect passwords. Plaintext passwords (anything not
+#     detected as ARGON2ID) will automatically be hashed with ARGON2ID.
+#
+#     Using plaintext passwords will trigger password hash regeneration on
+#     every ansible run.
+#
+#     ARGON2ID passwords may be generated using:
+#
+#       doveadm pw -s ARGON2ID
+
+mail_users: []
+
+###############################################################################
+# Mail Aliases
+###############################################################################
+# Alias email addresses to 'mail_users'.
+#
+# Datatype: list of dicts (default: [])
+#     {
+#       'map': {FQDN EMAIL},
+#       'to': {VALID USER FROM 'mail_users'}
+#     }
+# Special case:
+# * Blackhole Email:
+#     Accepts mail for delivery then immediately sends it to /dev/null
+#     (discards).
+#
+#     Use to:'blackhole@localhost'.
+#
+# * Catch-all:
+#     Catches all email not addressed to an existing user and redirects it to
+#     a specific user.
+#
+#     Default: automatically create catch-all on all domains and send to first
+#              user in 'mail_users'.
+#     Custom: Use map:'@{DOMAIN}' at the end of aliases to redirect to a custom
+#             user.
+#     Disable: Use map:'@example.com' at the end of aliases to disable catch-all
+#              for all domains.
+#
+#     A custom definition will disable autocreation of catch-alls for all
+#     domains. Multiple custom definitions can be defined.
+#
+# * RFC 821,2142:
+#     Require abuse@, postmaster@ on hosted domains for high domain reputation.
+#
+#     Default: abuse@, postmaster@ are autocreated for all hosted domains and
+#              directed to the first user in 'mail_users'.
+#
+#     Custom: Use map:'abuse@{DOMAIN}' and map:'postmaster@{DOMAIN}' to
+#             redirect to an alternative user.
+#
+#     A custom definition will disable autocreation for all domains. Define
+#     **ALL** abuse@, postmaster@ addresses to minimize the risk of being
+#     blacklisted.
+
+mail_aliases: []
+
+###############################################################################
+# Map User Mailboxes to Another User
+###############################################################################
+# Nearly all cases should use aliases, see: 'mail_aliases'.
+#
+# Defined users will automatically have their mailboxes mapped. Only local
+# accounts should be mapped here if needed; use 'mail_aliases'.
+#
+# Datatype: list of dicts (default: [])
+#     {
+#       'map': {FQDN EMAIL},
+#       'to': {VALID USER FROM 'mail_users'}
+#     }
+# Special case: Never list a virtual mailbox mapping as a virtual alias, this
+#               will result in undeliverable mail. Example:
+#
+#               mail_box_mappings:
+#                 - {map:'mapped_user@example2.com', to:'user@example.com'}
+#               mail_aliases:
+#                 - {map:'mapped_user@example2.com', to:'user@example.com'}
+#
+#               This breaks delivery, don't do it!
+
+mail_box_mappings: []

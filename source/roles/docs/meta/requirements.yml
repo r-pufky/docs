@@ -1,0 +1,12 @@
+---
+# Ansible galaxy packages
+
+collections:
+  # https://docs.ansible.com/ansible/latest/collections/community/general/
+  # pacman
+  - community.general
+  # https://docs.ansible.com/ansible/latest/collections/ansible/posix/index.html
+  # sysctl synchronize, authorized_key
+  - ansible.posix
+
+roles: []

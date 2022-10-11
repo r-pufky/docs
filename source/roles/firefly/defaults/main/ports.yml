@@ -1,0 +1,11 @@
+---
+###############################################################################
+# Ports Configuration
+###############################################################################
+# Ports should be managed externally via an OS role.
+#
+# Reference:
+# * https://docs.ansible.com/ansible/latest/collections/community/general/ufw_module.html
+
+ports:
+  - {proto: 'tcp', from_ip: 'any', to_port: 80, direction: 'in', comment: 'firefly http'}

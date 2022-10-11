@@ -1,0 +1,9 @@
+---
+###############################################################################
+# Ports Configuration
+###############################################################################
+# Ports should be managed externally via an OS role.
+
+ports:
+  - {proto: 'udp', from_ip: 'any', to_port: '26900:26902', direction: 'in', comment: 'steam clients'}
+  - {proto: 'tcp', from_ip: 'any', to_port: 26900,         direction: 'in', comment: 'steam server'}

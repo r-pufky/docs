@@ -1,0 +1,93 @@
+---
+###############################################################################
+# serveradmin.xml Configuration
+###############################################################################
+# If enabled define at least one admin; and ensure serverconfig.xml is set
+# appropriately.
+#
+# This file holds the settings for who is banned, whitelisted, admins and
+# server command permissions. Steam ID can be found using http://steamid.co/
+#
+# STEAM ID INSTRUCTIONS:
+# ===============================================================
+# You can find the SteamID64 of any user with one of the following pages:
+# https://steamdb.info/calculator/, https://steamid.io/lookup,
+# http://steamid.co/
+# instructions:
+# Input the player's name in the search field. example: Kinyajuu
+# If the name doesn't work, you can also use the url of their steam page.
+# Also you may add/remove admins, mods, whitelist, blacklist using in game
+# commands. You will want the STEAM64ID. example: 76561198021925107
+#
+# PERMISSION LEVEL INSTRUCTIONS:
+# ===============================================================
+# permission level : 0-1000, a user may run any command equal to or above their
+# permission level. Users not given a permission level in this file will have a
+# default permission level of 1000!
+#
+# COMMAND PERMISSIONS INSTRUCTIONS:
+# ===============================================================
+# cmd: This is the command name, any command not in this list will not be
+#      usable by anyone but the server.
+# permission level: 0-1000, a user may run any command equal to or above their
+#            permission level. Commands not specified in this file will have a
+#            default permission level of 0!
+#
+# <!-- <permission cmd="dm" permission_level="0" /> -->
+# <!-- <permission cmd="kick" permission_level="1" /> -->
+# <!-- <permission cmd="say" permission_level="1000" /> -->
+#
+# Reference:
+# * https://www.gameserverkings.com/knowledge-base/7-days-to-die/7d2d-new-user-guide/
+# * https://r-pufky.github.io/docs/game/7days/index.html
+
+# Enable to create and write serveradmin.xml
+steam_7days_server_admin_enable: false
+
+# Server admins: Use https://steamid.io/lookup to find the SteamID64.
+#
+# steam_7days_server_admin:
+#   - {id: '{SteamID64}', level='{PERMISSION LEVEL}'
+#
+# Commands are granted access by all levels *above* the assigned permission.
+# 0: root.
+steam_7days_server_admins: []
+
+# Whitelist users by SteamID64. Only whitelisted or admins can join once
+# populated.
+#
+# steam_7days_whitelist:
+#   - '{SteamID64}'
+#
+steam_7days_whitelist: []
+
+# Blacklist users by SteamID64. Default (empty unbandate) is permenant ban.
+#
+# steam_7days_blacklist:
+#   - {id: '{SteamID64}', unbandate: '{YYYY-MM-DD HH:MM:SS}'}
+#
+steam_7days_blacklist: []
+
+# Permissions.
+# Commands are granted access by all levels *above* the assigned permission.
+# 0: root.
+#
+# steam_7days_permissions:
+#   - {command: '{SERVER COMMAND}', level: '{PERMISSION LEVEL}'}
+#
+# Reference:
+# * https://7daystodie.fandom.com/wiki/Command_Console
+steam_7days_permissions:
+#  - {command: 'dm',            level: '0'}
+#  - {command: 'kick',          level: '1'}
+#  - {command: 'say',           level: '1000'}
+  - {command: 'chunkcache',    level: '1000'}
+  - {command: 'debugweather',  level: '1000'}
+  - {command: 'getgamepref',   level: '1000'}
+  - {command: 'getgamestat',   level: '1000'}
+  - {command: 'gettime',       level: '1000'}
+  - {command: 'help',          level: '1000'}
+  - {command: 'listplayerids', level: '1000'}
+  - {command: 'listthreads',   level: '1000'}
+  - {command: 'memcl',         level: '1000'}
+  - {command: 'settempunit',   level: '1000'}

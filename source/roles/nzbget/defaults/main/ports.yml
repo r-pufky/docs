@@ -1,0 +1,12 @@
+---
+###############################################################################
+# Ports Configuration
+###############################################################################
+# Ports should be managed externally via an OS role.
+#
+# Reference:
+# * https://docs.ansible.com/ansible/latest/collections/community/general/ufw_module.html
+
+ports:
+  - {proto: 'tcp', from_ip: 'any', to_port: 6789, direction: 'in', comment: 'nzbget http'}
+  - {proto: 'tcp', from_ip: 'any', to_port: 6791, direction: 'in', comment: 'nzbget https'}

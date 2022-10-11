@@ -1,0 +1,193 @@
+---
+###############################################################################
+# Deluge Role Configuration
+###############################################################################
+# User that deluge will run under. Assumes externally managed.
+deluge_user:        'media'
+deluge_group:       'media'
+
+# Create 'media' user if not detected? See: vars/main.yml.
+deluge_create_user: false
+
+# Location to store delug configuration.
+deluge_config:         '/var/lib/deluge'
+
+# Log location.
+deluge_log:            '/var/log/deluge'
+
+# Logging level.
+deluge_log_level:      'warning'
+
+###############################################################################
+# Deluge core.conf configuration
+###############################################################################
+
+deluge_file:                            1
+deluge_format:                          1
+deluge_add_paused:                      false
+deluge_allow_remote:                    false
+deluge_auto_manage_prefer_seeds:        false
+deluge_auto_managed:                    true
+deluge_cache_expiry:                    60
+deluge_cache_size:                      512
+deluge_copy_torrent_file:               false
+deluge_daemon_port:                     58846
+deluge_del_copy_torrent_file:           false
+deluge_dht:                             true
+deluge_dont_count_slow_torrents:        false
+deluge_download_location:               '/bin/false/Downloads'
+deluge_download_location_paths_list:    []
+deluge_enabled_plugins:
+  - 'AutoAdd'
+deluge_enc_in_policy:                   1
+deluge_enc_level:                       2
+deluge_enc_out_policy:                  1
+deluge_geoip_db_location:               '/usr/share/GeoIP/GeoIP.dat'
+deluge_ignore_limits_on_local_network:  true
+deluge_info_sent:                       0.0
+deluge_listen_interface:                ''
+deluge_listen_ports: # incoming torrent ports
+  - 6881
+  - 6891
+deluge_listen_random_port:              58379
+deluge_listen_reuse_port:               true
+deluge_listen_use_sys_port:             false
+deluge_lsd:                             true
+deluge_max_active_downloading:          3
+deluge_max_active_limit:                8
+deluge_max_active_seeding:              5
+deluge_max_connections_global:          200
+deluge_max_connections_per_second:      20
+deluge_max_connections_per_torrent:     -1
+deluge_max_download_speed:              -1.0
+deluge_max_download_speed_per_torrent:  -1
+deluge_max_half_open_connections:       50
+deluge_max_upload_slots_global:         4
+deluge_max_upload_slots_per_torrent:    -1
+deluge_max_upload_speed:                -1.0
+deluge_max_upload_speed_per_torrent:    -1
+deluge_move_completed:                  false
+deluge_move_completed_path:             '/bin/false/Downloads'
+deluge_move_completed_paths_list:       []
+deluge_natpmp:                          true
+deluge_new_release_check:               false
+deluge_outgoing_interface:              ''
+deluge_outgoing_ports: # outgoing torrent ports
+  - 0
+  - 0
+deluge_path_chooser_accelerator_string:               'Tab'
+deluge_path_chooser_auto_complete_enabled:            true
+deluge_path_chooser_max_popup_rows:                   20
+deluge_path_chooser_show_chooser_button_on_localhost: true
+deluge_path_chooser_show_hidden_files:  false
+deluge_peer_tos:                        '0x00'
+deluge_plugins_location:                '/var/lib/deluge/plugins'
+deluge_pre_allocate_storage:            false
+deluge_prioritize_first_last_pieces:    false
+deluge_proxy_anonymous_mode:            false
+deluge_proxy_force_proxy:               false
+deluge_proxy_hostname:                  ''
+deluge_proxy_password:                  ''
+deluge_proxy_port:                      8080 # socks proxy port
+deluge_proxy_proxy_hostnames:           true
+deluge_proxy_proxy_peer_connections:    true
+deluge_proxy_proxy_tracker_connections: true
+deluge_proxy_type:                      0
+deluge_proxy_username:                  ''
+deluge_queue_new_to_top:                false
+deluge_random_outgoing_ports:           true
+deluge_random_port:                     true
+deluge_rate_limit_ip_overhead:          true
+deluge_remove_seed_at_ratio:            false
+deluge_seed_time_limit:                 3
+deluge_seed_time_ratio_limit:           7.0
+deluge_send_info:                       false
+deluge_sequential_download:             false
+deluge_share_ratio_limit:               2.0
+deluge_shared:                          false
+deluge_stop_seed_at_ratio:              false
+deluge_stop_seed_ratio:                 2.0
+deluge_super_seeding:                   false
+deluge_torrentfiles_location:           '/bin/false/Downloads'
+deluge_upnp:                            true
+deluge_utpex:                           true
+
+###############################################################################
+# Deluge web.conf configuration
+###############################################################################
+# Default web password is 'deluge'
+# Passwords are salted SHA1 hashes: https://git.deluge-torrent.org/deluge/tree/deluge/ui/web/auth.py#n191
+# Easiest to load defaults, change password and store resulting hashes.
+
+deluge_web_file:                     2
+deluge_web_format:                   1
+deluge_web_base:                     '/'
+deluge_web_cert:                     'ssl/daemon.cert'
+deluge_web_default_daemon:           ''
+deluge_web_enabled_plugins:          []
+deluge_web_first_login:              true
+deluge_web_https:                    false
+deluge_web_interface:                '0.0.0.0'
+deluge_web_language:                 ''
+deluge_web_pkey:                     'ssl/daemon.pkey'
+deluge_web_port:                     8112 # http port
+deluge_web_pwd_salt:                 'c26ab3bbd8b137f99cd83c2c1c0963bcc1a35cad'
+deluge_web_pwd_sha1:                 '2ce1a410bcdcc53064129b6d950f2e9fee4edc1e'
+deluge_web_session_timeout:          3600
+deluge_web_sessions:                 {}
+deluge_web_show_session_speed:       false
+deluge_web_show_sidebar:             true
+deluge_web_sidebar_multiple_filters: true
+deluge_web_sidebar_show_zero:        false
+deluge_web_theme:                    'gray'
+
+###############################################################################
+# Deluga AutoAdd (watch) configuration
+###############################################################################
+
+deluge_autoadd_file: 2
+deluge_autoadd_format: 1
+#
+# List of Dicts containing watched directory settings
+# deluge_autoadd_watchdirs: [
+#   {
+#    abspath:                    '/data/downloads/watched',
+#    add_paused:                 true,
+#    add_paused_toggle:          false,
+#    append_extension:           '.added',
+#    append_extension_toggle:    true,
+#    auto_managed:               true,
+#    auto_managed_toggle:        false,
+#    copy_torrent:               '',
+#    copy_torrent_toggle:        false,
+#    delete_copy_torrent_toggle: false,
+#    download_location:          '/data/downloads/incomplete',
+#    download_location_toggle:   false,
+#    enabled:                    true,
+#    label:                      '',
+#    label_toggle:               false,
+#    max_connections:            -1,
+#    max_connections_toggle:     false,
+#    max_download_speed:         0,
+#    max_download_speed_toggle:  false,
+#    max_upload_slots:           -1,
+#    max_upload_slots_toggle:    false,
+#    max_upload_speed:           0,
+#    max_upload_speed_toggle:    false,
+#    move_completed:             true,
+#    move_completed_path:        '/data/downloads/complete/deluge',
+#    move_completed_toggle:      false,
+#    owner:                      'localclient',
+#    path:                       '/data/downloads/watched',
+#    queue_to_top:               true,
+#    queue_to_top_toggle:        false,
+#    remove_at_ratio:            true,
+#    remove_at_ratio_toggle:     false,
+#    seed_mode:                  false,
+#    stop_at_ratio:              true,
+#    stop_at_ratio_toggle:       false,
+#    stop_ratio:                 0,
+#    stop_ratio_toggle:          false
+#  }]
+#
+deluge_autoadd_watchdirs: []

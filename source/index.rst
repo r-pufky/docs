@@ -5,14 +5,6 @@ notes for services I run in my home. These notes have been made generic enough
 so that you can implement these services and setups with relative ease. Be sure
 to check the :ref:`glossary` if you see unknown symbols.
 
-Where'd everything go?
-**********************
-Docs were re-organized to keep the growing documentation clean. You should link
-to the core doc repo and browse files.
-
-* :ref:`wbase`
-* :ref:`troubleshooting-pc-issues`
-
 Assumptions
 ***********
 These notes make the following assumptions:
@@ -60,19 +52,19 @@ git hub, or submit a CL :)
   :includehidden:
   :maxdepth: -1
 
-  apps/authy
-  apps/bash
-  apps/chrome
-  apps/git
-  apps/gpg/index
-  apps/movie-studio
-  apps/mutt
-  apps/putty
-  apps/python-venv
-  apps/realtek-nahimic
-  apps/sublime-text/index
-  apps/taskwarrior
-  apps/vim
+  docs/apps/authy
+  docs/apps/bash
+  docs/apps/chrome
+  docs/apps/git
+  docs/apps/gpg/index
+  docs/apps/movie-studio
+  docs/apps/mutt
+  docs/apps/putty
+  docs/apps/python-venv
+  docs/apps/realtek-nahimic
+  docs/apps/sublime-text/index
+  docs/apps/taskwarrior
+  docs/apps/vim
 
 .. toctree::
   :caption: Configuration Management
@@ -80,7 +72,7 @@ git hub, or submit a CL :)
   :includehidden:
   :maxdepth: -1
 
-  configuration-management/ansible/index
+  docs/configuration-management/ansible/index
 
 .. toctree::
   :caption: Networking
@@ -88,9 +80,9 @@ git hub, or submit a CL :)
   :includehidden:
   :maxdepth: -1
 
-  networking/netplan
-  networking/ubiquiti/edge-os
-  networking/ubiquiti/example-vlan-network/index
+  docs/networking/netplan
+  docs/networking/ubiquiti/edge-os
+  docs/networking/ubiquiti/example-vlan-network/index
 
 .. toctree::
   :caption: Operating Systems
@@ -98,12 +90,12 @@ git hub, or submit a CL :)
   :includehidden:
   :maxdepth: -1
 
-  operating-systems/manjaro/index
-  operating-systems/ubuntu/index
-  operating-systems/windows/base/index
-  operating-systems/windows/10/21H2/index
-  operating-systems/windows/10/20H2/index
-  operating-systems/windows/11/index
+  docs/operating-systems/manjaro/index
+  docs/operating-systems/ubuntu/index
+  docs/operating-systems/windows/base/index
+  docs/operating-systems/windows/10/21H2/index
+  docs/operating-systems/windows/10/20H2/index
+  docs/operating-systems/windows/11/index
 
 .. toctree::
   :caption: Printing
@@ -111,7 +103,7 @@ git hub, or submit a CL :)
   :includehidden:
   :maxdepth: -1
 
-  printing/brother-mfcl2750dw/index
+  docs/printing/brother-mfcl2750dw/index
 
 .. toctree::
   :caption: Virtualization
@@ -119,17 +111,7 @@ git hub, or submit a CL :)
   :includehidden:
   :maxdepth: -1
 
-  virtualization/hypervisors/pve/index
-  virtualization/hypervisors/xenserver-xcpng/index
-  virtualization/hypervisors/kvm/index
-
-.. toctree::
-  :caption: Containerization
-  :hidden:
-  :includehidden:
-  :maxdepth: -1
-
-  containerization/docker/index
+  roles/pve/docs/index
 
 .. toctree::
   :caption: Services
@@ -137,38 +119,33 @@ git hub, or submit a CL :)
   :includehidden:
   :maxdepth: -1
 
-  services/airsonic/index
-  services/beets/index
-  services/certificate-authority/index
-  services/crashplan/index
-  services/dashmachine/index
-  services/deluge/index
-  services/digikam/index
-  services/dropbear/index
-  services/email/index
-  services/fail2ban/index
-  services/firefly/index
-  services/gitea/index
-  services/git-webhook-receiver/index
-  services/imapsync/index
-  services/letsencrypt/index
-  services/lidarr/index
-  services/mariadb/index
-  services/mumble/index
-  services/nginx/index
-  services/nzbget/index
-  services/pihole/index
-  services/play-on/index
-  services/plex/index
-  services/postgres/index
-  services/radarr/index
-  services/signal/index
-  services/sonarr/index
-  services/ssh/index
-  services/unifi/index
-  services/wireguard/index
-  services/zfs/index
-  services/service-template
+  roles/acme/docs/index
+  roles/ca/docs/index
+  roles/crashplan/docs/index
+  roles/deluge/docs/index
+  roles/dropbear/docs/index
+  roles/mail/docs/index
+  roles/fail2ban/docs/index
+  roles/firefly/docs/index
+  roles/git_wrapper/docs/index
+  docs/services/imapsync/index
+  docs/services/lidarr/index
+  roles/db/docs/mariadb/index
+  docs/services/mumble/index
+  roles/nginx/docs/index
+  roles/nzbget/docs/index
+  roles/steam/docs/index
+  roles/pihole/docs/index
+  docs/services/play-on/index
+  roles/plex/docs/index
+  roles/db/docs/postgres/index
+  roles/radarr/docs/index
+  roles/roundcube/docs/index
+  roles/sonarr/docs/index
+  roles/sshd/docs/index
+  roles/unifi/docs/index
+  roles/wireguard/docs/index
+  roles/zfs/docs/index
 
 .. toctree::
   :caption: Game Servers
@@ -176,8 +153,10 @@ git hub, or submit a CL :)
   :includehidden:
   :maxdepth: -1
 
-  game/7days/index
-  game/conan/index
+  roles/steam/docs/seven_days_to_die
+  roles/steam/docs/conan_exiles
+  roles/steam/docs/left_4_dead
+  roles/steam/docs/left_4_dead_2
 
 .. toctree::
   :caption: Scripts
@@ -185,13 +164,13 @@ git hub, or submit a CL :)
   :includehidden:
   :maxdepth: -1
 
-  scripts/bulk-downloader-for-reddit
-  scripts/copying-data
-  scripts/scripts
-  scripts/steam-older-game-versions
-  scripts/video-editing-conversion
-  scripts/wiping-data
-  scripts/youtube
+  docs/scripts/bulk-downloader-for-reddit
+  docs/scripts/copying-data
+  docs/scripts/scripts
+  docs/scripts/steam-older-game-versions
+  docs/scripts/video-editing-conversion
+  docs/scripts/wiping-data
+  docs/scripts/youtube
 
 .. toctree::
   :caption: Appendix
@@ -199,8 +178,8 @@ git hub, or submit a CL :)
   :includehidden:
   :maxdepth: -1
 
-  glossary
-  icon-explanation
+  docs/glossary
+  docs/icon-explanation
 
 .. toctree::
   :caption: Buildings Docs
@@ -208,5 +187,5 @@ git hub, or submit a CL :)
   :includehidden:
   :maxdepth: -1
 
-  sphinx-style-guide
-  sphinx-build
+  docs/sphinx-style-guide
+  docs/sphinx-build

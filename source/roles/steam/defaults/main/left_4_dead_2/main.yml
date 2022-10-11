@@ -1,0 +1,137 @@
+---
+###############################################################################
+# Left 4 Dead 2 (+10GB)
+###############################################################################
+
+# Install preconfigured L4D2 server?
+steam_l4d2_enable: false
+
+# Root install location.
+steam_l4d2_dir: '/home/steam/l4d2'
+
+# Additional steamcmd options to use during app_update. Default: ''.
+steam_l4d2_app_extras: ''
+
+# Update steamcmd. Default: true.
+steam_l4d2_update_steamcmd: true
+
+# Update L4D2 server. Default: true.
+steam_l4d2_update_server: true
+
+# Target location of sourcemod install tarball on ansible host. Empty disables.
+#
+# Reference:
+# * https://www.sourcemod.net/
+steam_l4d2_sourcemod: 'host_vars/data/sourcemod-1.10.0-git6510-linux.tar.gz'
+
+# Target location of metamod install tarball on ansible host. Empty disables.
+#
+# Reference:
+# * http://www.sourcemm.net/
+steam_l4d2_metamod: 'host_vars/data/mmsource-1.11.0-git1145-linux.tar.gz'
+
+###############################################################################
+# Host Message (host.txt)
+###############################################################################
+# Contents for the HOST file. Generally these are very finicky and
+# mis-documented throughout the web. Use plain text or use a single line
+# pointing to a **HTTP** only link, which will render the MOTD banner.
+#
+# Reference:
+# * http://www.custwiki.cyberwurx.com/index.php/Using_host.txt_for_a_Server_Banner
+
+steam_l4d2_host: ''
+
+###############################################################################
+# Message of the Day (motd.txt)
+###############################################################################
+# Contents for the MOTD file. Generally these are very finicky and
+# mis-documented throughout the web. Prefer plain text or use a single line
+# pointing to a **HTTP** only link, which will render the MOTD banner.
+#
+# Reference:
+# * http://www.custwiki.cyberwurx.com/index.php/Using_host.txt_for_a_Server_Banner
+
+steam_l4d2_motd: ''
+
+###############################################################################
+# Server Configuration (server.cfg)
+###############################################################################
+# Valve disabled 'sv_password' for L4D2; will get password prompts on connect
+# but login will fail. Use group management & 'sv_search_key' to restrict to a
+# group of players. Alternatively remove server steam advertisements and direct
+# connect.
+#
+# Reference:
+# * https://developer.valvesoftware.com/wiki/List_of_L4D2_Cvars
+# * https://www.linode.com/docs/guides/left-4-dead-2-multiplayer-server-installation/
+# * https://old.reddit.com/r/l4d2/comments/1jkrr6/dedicated_server_problems/
+# * https://forums.srcds.com/viewtopic/17642
+# * https://raw.githubusercontent.com/linode/docs-scripts/master/hosted_scripts/
+# * https://pingperfect.com/index.php/knowledgebase/534/Left-for-Dead-2-LFD2--Server-Configuration.html
+# * https://raw.githubusercontent.com/linode/docs-scripts/master/hosted_scripts/left-4-dead-2-multiplayer-server-installation/detailed-server.cfg
+# * https://steamcommunity.com/sharedfiles/filedetails/?id=276173458
+
+steam_l4d2_server:
+  # Server
+  hostname:                    'L4D2 Server'
+  sv_search_key:               'L4D2'
+  sv_allow_lobby_connect_only: 0
+  sv_steamgroup:               0
+  sv_steamgroup_exclusive:     0
+  sv_gametypes:                'coop,survival,versus,teamversus,realism,teamscavenge'
+  mp_gamemode:                 'coop,survival,versus,teamversus,realism,teamscavenge'
+  rcon_password:               ''
+  sv_rcon_banpenalty:          360
+  sv_rcon_log:                 1
+  sv_rcon_maxfailures:         3
+  sv_rcon_minfailuretime:      600
+
+  # General: Play
+  motd_enabled:          1
+  mp_disable_autokick:   1
+  sv_allow_wait_command: 0
+  sv_alltalk:            0
+  sv_alternateticks:     0
+  sv_cheats:             0
+  sv_consistency:        1
+  sv_contact:            ''
+  sv_downloadurl:        ''
+  sv_pausable:           0
+  sv_lan:                0
+  sv_region:             1
+
+  # Rate: settings
+  # Min bandwidth rate allowed on: server
+  sv_minrate:    40000
+  # Max bandwidth rate allowed on: server
+  sv_maxrate:    50000
+  # Minimum cmd rate (match server: tickrate)
+  sv_mincmdrate: 0
+  # Minimum cmd rate (match server: tickrate)
+  sv_maxcmdrate: 67
+
+  # Server: Logging
+  sv_log_onefile: 0
+  sv_logbans:     1
+  sv_logecho:     1
+  sv_logfile:     1
+  # log to disk on each write (slow)
+  sv_logflush:    0
+  # logs folder relative to game directory
+  sv_logsdir:     'logs'
+
+###############################################################################
+# Sourcemod Simple Admins (admins_simple.ini)
+###############################################################################
+# Simple admin privleges through Steam ID mamangement. Anymore more complicated
+# requires manual management of files. Only applied if not empty and sourcemod
+# is enabled. See references for formats.
+#
+# steam_l4d2_admins: [{user: 'STEAMID', priv: 'PRIV STRING'}]
+#
+# Reference:
+# * https://wiki.alliedmods.net/Adding_Admins_(SourceMod)
+# * https://www.steamidfinder.com/
+
+steam_l4d2_admins: []

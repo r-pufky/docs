@@ -1,0 +1,173 @@
+---
+###############################################################################
+# Pi-Hole Role Configuration
+###############################################################################
+# DB configuration is optional. DB updates are applied then gravity update is
+# run to ensure database ID's are consistent. Apply before UI changes are made
+# to ensure consistency.
+#
+# Exact configuration state may be exported/imported with teleporter. this
+# provides a pre-configured deployement for Pi-Hole service.
+#
+# Configuration contains basic setup and domain blocking lists. Lists can be
+# set via Group Management -> Adlists; and updated via Tools -> Update Gravity.
+#
+# If running multiple instances; be sure changes are applied to both.
+
+# Target location of backup file on ansible host.
+pihole_local_backup: 'group_vars/pihole/data/pihole-teleporter.tar.gz'
+
+# Use pi-hole CLI for all possible DB modifications instead of direct edits.
+# Default: False.
+pihole_use_cli: false
+
+# Apply any pihole updates during configuration? Otherwise updates must be done
+# via the GUI or CLI. Default: False.
+pihole_update_enable: false
+
+###############################################################################
+# Pi-Hole setupVars.conf
+###############################################################################
+# Pihole reads True/False as STRINGS; use strings or install will fail.
+
+pihole_blocking_enabled:   'true'
+pihole_admin_email:        ''
+pihole_webui_boxed_layout: 'boxed'
+pihole_webtheme:           'default-dark'
+# A random password will be set if empty.
+pihole_webpassword:           ''
+pihole_dnsmasq_listening:     'single'
+pihole_dns_fqdn_required:     'false'
+pihole_dns_bogus_priv:        'false'
+pihole_dnssec:                'false'
+pihole_rev_server:            'false'
+pihole_pihole_interface:      '{{ ansible_default_ipv4.interface }}'
+pihole_ipv4_address:          "{{ (ansible_default_ipv4.address + '/' + ansible_default_ipv4.netmask) | ansible.utils.ipaddr('address/prefix') }}"
+pihole_ipv6_address:          ''
+pihole_dhcp_active:           'false'
+pihole_dhcp_start:            "{{ (ansible_default_ipv4.address + '/' + ansible_default_ipv4.netmask) | ansible.utils.nthhost(200) }}"
+pihole_dhcp_end:              "{{ (ansible_default_ipv4.address + '/' + ansible_default_ipv4.netmask) | ansible.utils.nthhost(-5) }}"
+pihole_dhcp_router:           '{{ ansible_default_ipv4.gateway }}'
+pihole_dhcp_leasetime:        '24'
+pihole_pihole_domain:         'lan'
+pihole_dhcp_ipv6:             'false'
+pihole_dhcp_rapid_commit:     'false'
+pihole_pihole_dns_1:          "{{ ansible_dns.nameservers | ansible.utils.ipv4() | first | default('1.1.1.1') }}#53"
+pihole_pihole_dns_2:          ''
+pihole_query_logging:         'true'
+pihole_install_web_server:    'true'
+pihole_install_web_interface: 'true'
+pihole_lighttpd_enabled:      'true'
+pihole_cache_size:            '10000'
+
+###############################################################################
+# Pi-Hole Adlist Table
+###############################################################################
+# Define Adlist sources for generating domain blocklists.
+#
+# Pi-Hole currently adds the stevenblack adlist when installing, as ID 1.
+#   https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+#
+# pihole_ad_sources:
+#   - id: int (unique id starting at 2)
+#     address: str (URL for adlist)
+#     enabled: bool (enable use)
+#     comment: str (user comment)
+#
+# Reference:
+# * https://docs.pi-hole.net/database/gravity/#adlist-table-adlist
+
+pihole_ad_sources: []
+
+###############################################################################
+# Pi-Hole Domain Blocklist Table
+###############################################################################
+# Define domain blocking behavior (whitelist, blacklist).
+#
+# pihole_domain_blocklists:
+#   - id: int (unique id starting at 1)
+#     type: int (0 = exact whitelist,
+#                1 = exact blacklist,
+#                2 = regex whitelist,
+#                3 = regex blacklist)
+#     domain: str (domain)
+#     enabled: bool (enable use)
+#     comment: str (user comment)
+#
+# Reference:
+# * https://docs.pi-hole.net/database/gravity/#domain-tables-domainlist
+
+pihole_domain_blocklists: []
+
+###############################################################################
+# Pi-Hole Clients Table
+###############################################################################
+# Define Pi-Hole clients.
+#
+# pihole_clients:
+#   - id: int (unique id starting at 1)
+#     ip: str (IPv4,IPv6,CIDR)
+#     comment: str (user comment)
+#
+# Reference:
+# * https://docs.pi-hole.net/database/gravity/#client-table-client
+
+pihole_clients: []
+
+###############################################################################
+# Pi-Hole Groups Table
+###############################################################################
+# Define Pi-Hole group management.
+#
+# pihole_groups:
+#   - id: int (unique id starting at 1)
+#     enabled: bool (enable use)
+#     name: str (group name)
+#     description: str (description)
+#
+# Reference:
+# * https://docs.pi-hole.net/database/gravity/groups/#group-management
+
+pihole_groups: []
+
+###############################################################################
+# Pi-Hole Groups Adlist Table
+###############################################################################
+# Define Pi-Hole group adlist management.
+#
+# pihole_ad_groups_blocklist:
+#   - adlist_id: int (existing adlist ID)
+#     group_id: int (existing group ID)
+#
+# Reference:
+# * https://docs.pi-hole.net/database/gravity/groups/
+
+pihole_ad_groups_blocklist: []
+
+###############################################################################
+# Pi-Hole Groups Clients Table
+###############################################################################
+# Define Pi-Hole group clients management.
+#
+# pihole_ad_groups_blocklist:
+#   - client_id: int (existing client ID)
+#     group_id: int (existing group ID)
+#
+# Reference:
+# * https://docs.pi-hole.net/database/gravity/groups/
+
+pihole_client_groups_blocklist: []
+
+###############################################################################
+# Pi-Hole Groups Domain Blocklists Table
+###############################################################################
+# Define Pi-Hole group domain blocklists management.
+#
+# pihole_ad_groups_blocklist:
+#   - domainlist_id: int (existing domain blocklist ID)
+#     group_id: int (existing group ID)
+#
+# Reference:
+# * https://docs.pi-hole.net/database/gravity/groups/
+
+pihole_domain_groups_blocklist: []
