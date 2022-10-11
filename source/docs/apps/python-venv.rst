@@ -59,14 +59,18 @@ Environments may be exported for easy configuration with services and scripts.
   python3 -m pip install --requirement {ENV CONFIG}
 
 Updating Environments
-=====================
+*********************
 Update environment and re-export.
+
+.. important::
+  ``requirements.txt`` ({ENV CONFIG}) must be updated to use **>=** before
+  attempting to update.
 
 .. code-block::
   :caption: Update environment.
 
   . {ENV DIR}/bin/activate
-  python3 -m pip install --upgrade --requirement {ENV CONFIG}
+  python3 -m pip install --requirement {ENV CONFIG} --upgrade
   python3 -m pip freeze > {ENV CONFIG}
 
 .. rubric:: References
