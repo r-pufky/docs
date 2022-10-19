@@ -10,9 +10,7 @@
       <link rel="stylesheet" href="../../../../../../../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../../../_static/sphinx_collapse.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../../../_static/expand_width.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../../../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -23,6 +21,7 @@
         <script src="../../../../../../../_static/doctools.js"></script>
         <script src="../../../../../../../_static/clipboard.min.js"></script>
         <script src="../../../../../../../_static/copybutton.js"></script>
+        <script src="../../../../../../../_static/design-tabs.js"></script>
     <script src="../../../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../../../search.html" />
@@ -380,7 +379,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../networking/ubiquiti/example-vlan-network/unifi-ap.html#confirm-wireless-network-working">Confirm Wireless Network Working</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../../networking/ubiquiti/example-vlan-network/migrate-controller-to-docker.html">Migrate Unifi Controller to Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../networking/ubiquiti/example-vlan-network/migrate-controller-to-container.html">Migrate Unifi Controller to Container</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../../networking/ubiquiti/example-vlan-network/unifi-device-troubleshooting.html">Unifi Device Troubleshooting</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../networking/ubiquiti/example-vlan-network/unifi-device-troubleshooting.html#slow-adoption">Slow Adoption</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../networking/ubiquiti/example-vlan-network/unifi-device-troubleshooting.html#adoption-failure">Adoption Failure</a></li>
@@ -505,6 +504,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../../ubuntu/additional-fixes.html#nxdomain-errors-in-syslog">NXDOMAIN Errors in Syslog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../ubuntu/additional-fixes.html#disable-ipv6">Disable IPv6</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../ubuntu/additional-fixes.html#shadow-passwords">Shadow Passwords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../ubuntu/additional-fixes.html#grub-cryptfs-password-typo">GRUB CryptFS Password Typo</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../ubuntu/threadripper-2990wx.html">2990WX Linux Patches</a><ul>
@@ -1495,28 +1495,26 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../../../services/imapsync/index.html#removing-duplicates-on-local-maildir">Removing Duplicates On Local Maildir</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../../services/lidarr/index.html">Lidarr</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../../services/lidarr/setup.html">Lidarr Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../services/lidarr/setup.html#ports">Ports</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../services/lidarr/setup.html#files">Files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../services/lidarr/setup.html#docker-creation">Docker Creation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../services/lidarr/setup.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../../services/lidarr/setup.html#using-subdomains">Using Subdomains</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../../services/lidarr/setup.html#using-subpaths">Using Subpaths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../../roles/lidarr/docs/index.html">Lidarr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../roles/lidarr/docs/network.html">Network</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../roles/lidarr/docs/network.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../roles/lidarr/docs/network.html#using-subdomains">Using Subdomains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../roles/lidarr/docs/network.html#using-subpaths">Using Subpaths</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../roles/lidarr/docs/basic-configuration.html">Basic Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../roles/lidarr/docs/basic-configuration.html#media-management">Media Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../roles/lidarr/docs/basic-configuration.html#profiles">Profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../roles/lidarr/docs/basic-configuration.html#quality">Quality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../roles/lidarr/docs/basic-configuration.html#indexers">Indexers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../roles/lidarr/docs/basic-configuration.html#download-clients">Download Clients</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../roles/lidarr/docs/basic-configuration.html#metadata">Metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../roles/lidarr/docs/basic-configuration.html#general">General</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../roles/lidarr/docs/basic-configuration.html#ui">UI</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../../services/lidarr/basic-configuration.html">Basic Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../services/lidarr/basic-configuration.html#media-management">Media Management</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../services/lidarr/basic-configuration.html#profiles">Profiles</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../services/lidarr/basic-configuration.html#quality">Quality</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../services/lidarr/basic-configuration.html#indexers">Indexers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../services/lidarr/basic-configuration.html#download-clients">Download Clients</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../services/lidarr/basic-configuration.html#general">General</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../services/lidarr/basic-configuration.html#ui">UI</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../roles/lidarr/docs/index.html#ports">Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../roles/lidarr/docs/index.html#defaults">Defaults</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../../../roles/db/docs/mariadb/index.html">MariaDB</a><ul>
@@ -1586,13 +1584,12 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#one-server-site-per-config-file">One Server Site Per Config File</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#password-authencation-basic-auth">Password Authencation (Basic Auth)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#site-wide-auth-file">Site-wide Auth File</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#remove-auth-requirement-for-docker-containers">Remove Auth Requirement for Docker Containers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#remove-auth-requirement-for-proxies">Remove Auth Requirement for Proxies</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#whitelist-all-containers">Whitelist All Containers</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#whitelist-single-container">Whitelist Single Container</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#disable-auth-for-a-specific-location">Disable Auth for a specific location</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#accessing-networks-from-other-compose-containers">Accessing Networks from Other Compose Containers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#classify-networks-to-variables">Classify Networks to Variables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#rate-limiting">Rate Limiting</a></li>
 </ul>
@@ -1606,7 +1603,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../../roles/nginx/docs/troubleshooting.html#dump-loaded-nginx-configuration">Dump Loaded NGINX Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../../roles/nginx/docs/troubleshooting.html#nginx-queries-originate-from-wrong-gateway">NGINX Queries Originate from Wrong Gateway</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../../roles/nginx/docs/troubleshooting.html#forward-traffic-via-specific-interfaces">Forward Traffic via Specific Interfaces</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../../roles/nginx/docs/troubleshooting.html#not-starting-with-docker-services">Not Starting with Docker Services</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../../../roles/nginx/docs/index.html#ports">Ports</a></li>
@@ -1639,6 +1635,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../../../../roles/steam/docs/left_4_dead_2.html">Left 4 Dead 2</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../../roles/steam/docs/left_4_dead_2.html#ports">Ports</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../../roles/steam/docs/left_4_dead_2.html#defaults">Defaults</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../../roles/steam/docs/satisfactory.html">Satisfactory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../roles/steam/docs/satisfactory.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../../roles/steam/docs/satisfactory.html#defaults">Defaults</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../../../roles/steam/docs/seven_days_to_die.html">7 Days to Die</a><ul>
@@ -2058,126 +2059,120 @@
 grained control of app access.</p>
 <section id="allow-access-to-contacts-on-this-device">
 <h2><span class="section-number">9.13.1. </span>Allow access to contacts on this device<a class="headerlink" href="#allow-access-to-contacts-on-this-device" title="Permalink to this headline"></a></h2>
-<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Disable Allow access to contacts on this device<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text">This disables all contacts options. See
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-note" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5zm1.75-.25a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25v-8.5a.25.25 0 00-.25-.25H1.75zM3.5 6.25a.75.75 0 01.75-.75h7a.75.75 0 010 1.5h-7a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h4a.75.75 0 000-1.5h-4z"></path></svg></span>Disable Allow access to contacts on this device<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">This disables all contacts options. See
 <a class="reference internal" href="#w10-20h2-settings-privacy-contacts-apps"><span class="std std-ref">Allow apps to access your contacts</span></a> to manage access on a per app
 basis.</p>
-<details class="sphinx-bs dropdown card mb-3 fade-in" open="open">
-<summary class="summary-title card-header font-weight-bold">
-GPO<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><code class="docutils literal notranslate"><span class="pre">Allow</span></code> enables access to contacts on this device.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in" open="open">
+<summary class="sd-summary-title sd-card-header sd-bg-light sd-bg-text-light">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-note" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5zm1.75-.25a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25v-8.5a.25.25 0 00-.25-.25H1.75zM3.5 6.25a.75.75 0 01.75-.75h7a.75.75 0 010 1.5h-7a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h4a.75.75 0 000-1.5h-4z"></path></svg></span>GPO<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Computer Configuration › Administrative Templates › Windows Components › App Privacy › Let Windows apps access contacts</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">Computer Configuration › Administrative Templates › Windows Components › App Privacy › Let Windows apps access contacts</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☑</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">ENABLED</span></p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☑</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Default for all apps</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Force Deny</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-success badge-pill">ENABLED</span></p>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Allow</span></code> enables access to contacts on this device.</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Default for all apps</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Force Deny</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span>
-<a class="sphinx-bs badge badge-info badge-pill reference external" href="https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#188-contacts"><span>Reference</span></a></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: 2021-02-19</span> <a class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info reference external" href="https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#188-contacts"><span>Reference</span></a></p>
+</div></blockquote>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</details><details class="sphinx-bs dropdown card mb-3 fade-in" open="open">
-<summary class="summary-title card-header font-weight-bold">
-Registry<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in" open="open">
+<summary class="sd-summary-title sd-card-header sd-bg-light sd-bg-text-light">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-stack" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M7.122.392a1.75 1.75 0 011.756 0l5.003 2.902c.83.481.83 1.68 0 2.162L8.878 8.358a1.75 1.75 0 01-1.756 0L2.119 5.456a1.25 1.25 0 010-2.162L7.122.392zM8.125 1.69a.25.25 0 00-.25 0l-4.63 2.685 4.63 2.685a.25.25 0 00.25 0l4.63-2.685-4.63-2.685zM1.601 7.789a.75.75 0 011.025-.273l5.249 3.044a.25.25 0 00.25 0l5.249-3.044a.75.75 0 01.752 1.298l-5.248 3.044a1.75 1.75 0 01-1.756 0L1.874 8.814A.75.75 0 011.6 7.789zm0 3.5a.75.75 0 011.025-.273l5.249 3.044a.25.25 0 00.25 0l5.249-3.044a.75.75 0 01.752 1.298l-5.248 3.044a1.75 1.75 0 01-1.756 0l-5.248-3.044a.75.75 0 01-.273-1.025z"></path></svg></span>Regedit<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\contacts</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\CapabilityAccessManager\ConsentStore\contacts</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Value</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">SZ</span></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Deny</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Value</p>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">SZ</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Deny</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span>
-<a class="sphinx-bs badge badge-info badge-pill reference external" href="https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#188-contacts"><span>Reference</span></a></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: 2021-02-19</span> <a class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info reference external" href="https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#188-contacts"><span>Reference</span></a></p>
+</div></blockquote>
 </div>
 </div>
 </div>
@@ -2188,123 +2183,117 @@ Registry<div class="summary-down docutils">
 </details></section>
 <section id="allow-apps-to-access-your-contacts">
 <span id="w10-20h2-settings-privacy-contacts-apps"></span><h2><span class="section-number">9.13.2. </span>Allow apps to access your contacts<a class="headerlink" href="#allow-apps-to-access-your-contacts" title="Permalink to this headline"></a></h2>
-<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Disable Allow apps to access your contacts<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<details class="sphinx-bs dropdown card mb-3 fade-in" open="open">
-<summary class="summary-title card-header font-weight-bold">
-GPO<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><code class="docutils literal notranslate"><span class="pre">0</span></code> to enable app access to contacts.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-note" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5zm1.75-.25a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25v-8.5a.25.25 0 00-.25-.25H1.75zM3.5 6.25a.75.75 0 01.75-.75h7a.75.75 0 010 1.5h-7a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h4a.75.75 0 000-1.5h-4z"></path></svg></span>Disable Allow apps to access your contacts<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in" open="open">
+<summary class="sd-summary-title sd-card-header sd-bg-light sd-bg-text-light">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-note" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5zm1.75-.25a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25v-8.5a.25.25 0 00-.25-.25H1.75zM3.5 6.25a.75.75 0 01.75-.75h7a.75.75 0 010 1.5h-7a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h4a.75.75 0 000-1.5h-4z"></path></svg></span>GPO<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Computer Configuration › Administrative Templates › Windows Components › App Privacy › Let Windows apps access contacts</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">Computer Configuration › Administrative Templates › Windows Components › App Privacy › Let Windows apps access contacts</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☑</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">ENABLED</span></p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☑</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Default for all apps</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Force Deny</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-success badge-pill">ENABLED</span></p>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">0</span></code> to enable app access to contacts.</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Default for all apps</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Force Deny</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span>
-<a class="sphinx-bs badge badge-info badge-pill reference external" href="https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#188-contacts"><span>Reference</span></a></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: 2021-02-19</span> <a class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info reference external" href="https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#188-contacts"><span>Reference</span></a></p>
+</div></blockquote>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</details><details class="sphinx-bs dropdown card mb-3 fade-in" open="open">
-<summary class="summary-title card-header font-weight-bold">
-Registry<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in" open="open">
+<summary class="sd-summary-title sd-card-header sd-bg-light sd-bg-text-light">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-stack" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M7.122.392a1.75 1.75 0 011.756 0l5.003 2.902c.83.481.83 1.68 0 2.162L8.878 8.358a1.75 1.75 0 01-1.756 0L2.119 5.456a1.25 1.25 0 010-2.162L7.122.392zM8.125 1.69a.25.25 0 00-.25 0l-4.63 2.685 4.63 2.685a.25.25 0 00.25 0l4.63-2.685-4.63-2.685zM1.601 7.789a.75.75 0 011.025-.273l5.249 3.044a.25.25 0 00.25 0l5.249-3.044a.75.75 0 01.752 1.298l-5.248 3.044a1.75 1.75 0 01-1.756 0L1.874 8.814A.75.75 0 011.6 7.789zm0 3.5a.75.75 0 011.025-.273l5.249 3.044a.25.25 0 00.25 0l5.249-3.044a.75.75 0 01.752 1.298l-5.248 3.044a1.75 1.75 0 01-1.756 0l-5.248-3.044a.75.75 0 01-.273-1.025z"></path></svg></span>Regedit<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">LetAppsAccessContacts</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">DWORD</span></p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">2</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">LetAppsAccessContacts</p>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">DWORD</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">2</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span>
-<a class="sphinx-bs badge badge-info badge-pill reference external" href="https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#188-contacts"><span>Reference</span></a></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: 2021-02-19</span> <a class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info reference external" href="https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#188-contacts"><span>Reference</span></a></p>
+</div></blockquote>
 </div>
 </div>
 </div>

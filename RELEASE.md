@@ -1,5 +1,12 @@
 # [Changelog][3g]
 
+## 2022-10-19.0
+Changed:
+* Migrate sphinx/documentation to sphinx-design.
+* Config Table updated to use sphinx-design (sphinx-panels deprecated).
+* Updated documentation to use new sphinx-design base directives.
+* Makefile updated with additional purge_cache command.
+
 ## 2022-10-06.0
 Added:
 * Nahimic service disable.

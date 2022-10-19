@@ -10,9 +10,7 @@
       <link rel="stylesheet" href="../../../../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/sphinx_collapse.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/expand_width.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -23,6 +21,7 @@
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/clipboard.min.js"></script>
         <script src="../../../../_static/copybutton.js"></script>
+        <script src="../../../../_static/design-tabs.js"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -380,7 +379,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../docs/networking/ubiquiti/example-vlan-network/unifi-ap.html#confirm-wireless-network-working">Confirm Wireless Network Working</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../docs/networking/ubiquiti/example-vlan-network/migrate-controller-to-docker.html">Migrate Unifi Controller to Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../docs/networking/ubiquiti/example-vlan-network/migrate-controller-to-container.html">Migrate Unifi Controller to Container</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../docs/networking/ubiquiti/example-vlan-network/unifi-device-troubleshooting.html">Unifi Device Troubleshooting</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../docs/networking/ubiquiti/example-vlan-network/unifi-device-troubleshooting.html#slow-adoption">Slow Adoption</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../docs/networking/ubiquiti/example-vlan-network/unifi-device-troubleshooting.html#adoption-failure">Adoption Failure</a></li>
@@ -505,6 +504,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../docs/operating-systems/ubuntu/additional-fixes.html#nxdomain-errors-in-syslog">NXDOMAIN Errors in Syslog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../docs/operating-systems/ubuntu/additional-fixes.html#disable-ipv6">Disable IPv6</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../docs/operating-systems/ubuntu/additional-fixes.html#shadow-passwords">Shadow Passwords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../docs/operating-systems/ubuntu/additional-fixes.html#grub-cryptfs-password-typo">GRUB CryptFS Password Typo</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../docs/operating-systems/ubuntu/threadripper-2990wx.html">2990WX Linux Patches</a><ul>
@@ -1495,28 +1495,26 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../docs/services/imapsync/index.html#removing-duplicates-on-local-maildir">Removing Duplicates On Local Maildir</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../docs/services/lidarr/index.html">Lidarr</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../docs/services/lidarr/setup.html">Lidarr Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/setup.html#ports">Ports</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/setup.html#files">Files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/setup.html#docker-creation">Docker Creation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/setup.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../docs/services/lidarr/setup.html#using-subdomains">Using Subdomains</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../docs/services/lidarr/setup.html#using-subpaths">Using Subpaths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lidarr/docs/index.html">Lidarr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../lidarr/docs/network.html">Network</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/network.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/network.html#using-subdomains">Using Subdomains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/network.html#using-subpaths">Using Subpaths</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../lidarr/docs/basic-configuration.html">Basic Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/basic-configuration.html#media-management">Media Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/basic-configuration.html#profiles">Profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/basic-configuration.html#quality">Quality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/basic-configuration.html#indexers">Indexers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/basic-configuration.html#download-clients">Download Clients</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/basic-configuration.html#metadata">Metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/basic-configuration.html#general">General</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/basic-configuration.html#ui">UI</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../docs/services/lidarr/basic-configuration.html">Basic Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/basic-configuration.html#media-management">Media Management</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/basic-configuration.html#profiles">Profiles</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/basic-configuration.html#quality">Quality</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/basic-configuration.html#indexers">Indexers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/basic-configuration.html#download-clients">Download Clients</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/basic-configuration.html#general">General</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/basic-configuration.html#ui">UI</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../lidarr/docs/index.html#ports">Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../lidarr/docs/index.html#defaults">Defaults</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">MariaDB</a><ul class="current">
@@ -1586,13 +1584,12 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../nginx/docs/manual-configuration/configuration-patterns.html#one-server-site-per-config-file">One Server Site Per Config File</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../nginx/docs/manual-configuration/configuration-patterns.html#password-authencation-basic-auth">Password Authencation (Basic Auth)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../nginx/docs/manual-configuration/configuration-patterns.html#site-wide-auth-file">Site-wide Auth File</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../nginx/docs/manual-configuration/configuration-patterns.html#remove-auth-requirement-for-docker-containers">Remove Auth Requirement for Docker Containers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../nginx/docs/manual-configuration/configuration-patterns.html#remove-auth-requirement-for-proxies">Remove Auth Requirement for Proxies</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../../nginx/docs/manual-configuration/configuration-patterns.html#whitelist-all-containers">Whitelist All Containers</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../../nginx/docs/manual-configuration/configuration-patterns.html#whitelist-single-container">Whitelist Single Container</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="../../../nginx/docs/manual-configuration/configuration-patterns.html#disable-auth-for-a-specific-location">Disable Auth for a specific location</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../nginx/docs/manual-configuration/configuration-patterns.html#accessing-networks-from-other-compose-containers">Accessing Networks from Other Compose Containers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../nginx/docs/manual-configuration/configuration-patterns.html#classify-networks-to-variables">Classify Networks to Variables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../nginx/docs/manual-configuration/configuration-patterns.html#rate-limiting">Rate Limiting</a></li>
 </ul>
@@ -1606,7 +1603,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../nginx/docs/troubleshooting.html#dump-loaded-nginx-configuration">Dump Loaded NGINX Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../nginx/docs/troubleshooting.html#nginx-queries-originate-from-wrong-gateway">NGINX Queries Originate from Wrong Gateway</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../nginx/docs/troubleshooting.html#forward-traffic-via-specific-interfaces">Forward Traffic via Specific Interfaces</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../nginx/docs/troubleshooting.html#not-starting-with-docker-services">Not Starting with Docker Services</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../nginx/docs/index.html#ports">Ports</a></li>
@@ -1639,6 +1635,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../steam/docs/left_4_dead_2.html">Left 4 Dead 2</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../steam/docs/left_4_dead_2.html#ports">Ports</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../steam/docs/left_4_dead_2.html#defaults">Defaults</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../steam/docs/satisfactory.html">Satisfactory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../steam/docs/satisfactory.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../steam/docs/satisfactory.html#defaults">Defaults</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../steam/docs/seven_days_to_die.html">7 Days to Die</a><ul>

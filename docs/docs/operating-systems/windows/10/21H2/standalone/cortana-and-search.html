@@ -10,9 +10,7 @@
       <link rel="stylesheet" href="../../../../../../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../../_static/sphinx_collapse.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../../_static/expand_width.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -23,6 +21,7 @@
         <script src="../../../../../../_static/doctools.js"></script>
         <script src="../../../../../../_static/clipboard.min.js"></script>
         <script src="../../../../../../_static/copybutton.js"></script>
+        <script src="../../../../../../_static/design-tabs.js"></script>
     <script src="../../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../../search.html" />
@@ -380,7 +379,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../../networking/ubiquiti/example-vlan-network/unifi-ap.html#confirm-wireless-network-working">Confirm Wireless Network Working</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../networking/ubiquiti/example-vlan-network/migrate-controller-to-docker.html">Migrate Unifi Controller to Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../networking/ubiquiti/example-vlan-network/migrate-controller-to-container.html">Migrate Unifi Controller to Container</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../networking/ubiquiti/example-vlan-network/unifi-device-troubleshooting.html">Unifi Device Troubleshooting</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../networking/ubiquiti/example-vlan-network/unifi-device-troubleshooting.html#slow-adoption">Slow Adoption</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../networking/ubiquiti/example-vlan-network/unifi-device-troubleshooting.html#adoption-failure">Adoption Failure</a></li>
@@ -505,6 +504,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../ubuntu/additional-fixes.html#nxdomain-errors-in-syslog">NXDOMAIN Errors in Syslog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../ubuntu/additional-fixes.html#disable-ipv6">Disable IPv6</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../ubuntu/additional-fixes.html#shadow-passwords">Shadow Passwords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../ubuntu/additional-fixes.html#grub-cryptfs-password-typo">GRUB CryptFS Password Typo</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../ubuntu/threadripper-2990wx.html">2990WX Linux Patches</a><ul>
@@ -1495,28 +1495,26 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../../services/imapsync/index.html#removing-duplicates-on-local-maildir">Removing Duplicates On Local Maildir</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../services/lidarr/index.html">Lidarr</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../services/lidarr/setup.html">Lidarr Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/lidarr/setup.html#ports">Ports</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/lidarr/setup.html#files">Files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/lidarr/setup.html#docker-creation">Docker Creation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/lidarr/setup.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../services/lidarr/setup.html#using-subdomains">Using Subdomains</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../services/lidarr/setup.html#using-subpaths">Using Subpaths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../roles/lidarr/docs/index.html">Lidarr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../roles/lidarr/docs/network.html">Network</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/lidarr/docs/network.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/lidarr/docs/network.html#using-subdomains">Using Subdomains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/lidarr/docs/network.html#using-subpaths">Using Subpaths</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../roles/lidarr/docs/basic-configuration.html">Basic Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/lidarr/docs/basic-configuration.html#media-management">Media Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/lidarr/docs/basic-configuration.html#profiles">Profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/lidarr/docs/basic-configuration.html#quality">Quality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/lidarr/docs/basic-configuration.html#indexers">Indexers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/lidarr/docs/basic-configuration.html#download-clients">Download Clients</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/lidarr/docs/basic-configuration.html#metadata">Metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/lidarr/docs/basic-configuration.html#general">General</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/lidarr/docs/basic-configuration.html#ui">UI</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../services/lidarr/basic-configuration.html">Basic Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/lidarr/basic-configuration.html#media-management">Media Management</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/lidarr/basic-configuration.html#profiles">Profiles</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/lidarr/basic-configuration.html#quality">Quality</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/lidarr/basic-configuration.html#indexers">Indexers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/lidarr/basic-configuration.html#download-clients">Download Clients</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/lidarr/basic-configuration.html#general">General</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/lidarr/basic-configuration.html#ui">UI</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../roles/lidarr/docs/index.html#ports">Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../roles/lidarr/docs/index.html#defaults">Defaults</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../../roles/db/docs/mariadb/index.html">MariaDB</a><ul>
@@ -1586,13 +1584,12 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#one-server-site-per-config-file">One Server Site Per Config File</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#password-authencation-basic-auth">Password Authencation (Basic Auth)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#site-wide-auth-file">Site-wide Auth File</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#remove-auth-requirement-for-docker-containers">Remove Auth Requirement for Docker Containers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#remove-auth-requirement-for-proxies">Remove Auth Requirement for Proxies</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#whitelist-all-containers">Whitelist All Containers</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#whitelist-single-container">Whitelist Single Container</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#disable-auth-for-a-specific-location">Disable Auth for a specific location</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#accessing-networks-from-other-compose-containers">Accessing Networks from Other Compose Containers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#classify-networks-to-variables">Classify Networks to Variables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#rate-limiting">Rate Limiting</a></li>
 </ul>
@@ -1606,7 +1603,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/nginx/docs/troubleshooting.html#dump-loaded-nginx-configuration">Dump Loaded NGINX Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/nginx/docs/troubleshooting.html#nginx-queries-originate-from-wrong-gateway">NGINX Queries Originate from Wrong Gateway</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/nginx/docs/troubleshooting.html#forward-traffic-via-specific-interfaces">Forward Traffic via Specific Interfaces</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/nginx/docs/troubleshooting.html#not-starting-with-docker-services">Not Starting with Docker Services</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../../roles/nginx/docs/index.html#ports">Ports</a></li>
@@ -1639,6 +1635,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../../../roles/steam/docs/left_4_dead_2.html">Left 4 Dead 2</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/steam/docs/left_4_dead_2.html#ports">Ports</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/steam/docs/left_4_dead_2.html#defaults">Defaults</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../roles/steam/docs/satisfactory.html">Satisfactory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/steam/docs/satisfactory.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/steam/docs/satisfactory.html#defaults">Defaults</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../../roles/steam/docs/seven_days_to_die.html">7 Days to Die</a><ul>
@@ -2058,125 +2059,70 @@ including location, browsing, voice, and search data. Disable.</p>
 <p class="admonition-title">Danger</p>
 <p>After every major windows update, verify these settings.</p>
 </div>
-<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Manually disable Cortana<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text">Most settings are managed via GPO; not needed if applying Registry/GPO
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-terminal" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0114.25 15H1.75A1.75 1.75 0 010 13.25V2.75zm1.75-.25a.25.25 0 00-.25.25v10.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V2.75a.25.25 0 00-.25-.25H1.75zM7.25 8a.75.75 0 01-.22.53l-2.25 2.25a.75.75 0 11-1.06-1.06L5.44 8 3.72 6.28a.75.75 0 111.06-1.06l2.25 2.25c.141.14.22.331.22.53zm1.5 1.5a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3z"></path></svg></span>Manually disable Cortana<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Most settings are managed via GPO; not needed if applying Registry/GPO
 policies.</p>
-<p class="card-text"><span class="guilabel">⌘ + r › ms-settings:cortana</span></p>
+<p class="sd-card-text"><span class="guilabel">⌘ + r › ms-settings:cortana</span></p>
 <blockquote>
 <div><ul class="simple">
-<li><p class="card-text">Disable all options.</p></li>
-<li><p class="card-text">Clear all data.</p></li>
+<li><p class="sd-card-text">Disable all options.</p></li>
+<li><p class="sd-card-text">Clear all data.</p></li>
 </ul>
 </div></blockquote>
 </div>
-</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Disable Cortana<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<details class="sphinx-bs dropdown card mb-3 fade-in" open="open">
-<summary class="summary-title card-header font-weight-bold">
-GPO<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-note" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5zm1.75-.25a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25v-8.5a.25.25 0 00-.25-.25H1.75zM3.5 6.25a.75.75 0 01.75-.75h7a.75.75 0 010 1.5h-7a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h4a.75.75 0 000-1.5h-4z"></path></svg></span>Disable Cortana<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in" open="open">
+<summary class="sd-summary-title sd-card-header sd-bg-light sd-bg-text-light">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-note" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5zm1.75-.25a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25v-8.5a.25.25 0 00-.25-.25H1.75zM3.5 6.25a.75.75 0 01.75-.75h7a.75.75 0 010 1.5h-7a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h4a.75.75 0 000-1.5h-4z"></path></svg></span>GPO<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Computer Configuration › Administrative Templates › Windows Components › Search › Allow Cortana</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">Computer Configuration › Administrative Templates › Windows Components › Search › Allow Cortana</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☑</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">DISABLED</span></p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☑</p>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DISABLED</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span>
-<a class="sphinx-bs badge badge-info badge-pill reference external" href="https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#bkmk-cortana"><span>Reference</span></a></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</details></div>
-</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Disable Cortana &amp; Search access to location<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<details class="sphinx-bs dropdown card mb-3 fade-in" open="open">
-<summary class="summary-title card-header font-weight-bold">
-GPO<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">Computer Configuration › Administrative Templates › Windows Components › Search › Allow search and Cortana to use location</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☑</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DISABLED</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: 2021-02-19</span> <a class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info reference external" href="https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#bkmk-cortana"><span>Reference</span></a></p>
+</div></blockquote>
 </div>
 </div>
 </div>
@@ -2184,99 +2130,53 @@ GPO<div class="summary-down docutils">
 </div>
 </div>
 </details></div>
-</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Disable web search from windows desktop &amp; Cortana<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<details class="sphinx-bs dropdown card mb-3 fade-in" open="open">
-<summary class="summary-title card-header font-weight-bold">
-GPO<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-note" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5zm1.75-.25a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25v-8.5a.25.25 0 00-.25-.25H1.75zM3.5 6.25a.75.75 0 01.75-.75h7a.75.75 0 010 1.5h-7a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h4a.75.75 0 000-1.5h-4z"></path></svg></span>Disable Cortana &amp; Search access to location<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in" open="open">
+<summary class="sd-summary-title sd-card-header sd-bg-light sd-bg-text-light">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-note" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5zm1.75-.25a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25v-8.5a.25.25 0 00-.25-.25H1.75zM3.5 6.25a.75.75 0 01.75-.75h7a.75.75 0 010 1.5h-7a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h4a.75.75 0 000-1.5h-4z"></path></svg></span>GPO<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Computer Configuration › Administrative Templates › Windows Components › Search › Allow search and Cortana to use location</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">Computer Configuration › Administrative Templates › Windows Components › Search › Do not allow web search</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☑</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">DISABLED</span></p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☑</p>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-success badge-pill">ENABLED</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</details><details class="sphinx-bs dropdown card mb-3 fade-in" open="open">
-<summary class="summary-title card-header font-weight-bold">
-GPO<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">Computer Configuration › Administrative Templates › Windows Components › Search › Don’t search the web or display web results in Search</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☑</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-success badge-pill">ENABLED</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: 2021-02-19</span></p>
+</div></blockquote>
 </div>
 </div>
 </div>
@@ -2284,239 +2184,99 @@ GPO<div class="summary-down docutils">
 </div>
 </div>
 </details></div>
-</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Disable Cortana &amp; Search indexing<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-note" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5zm1.75-.25a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25v-8.5a.25.25 0 00-.25-.25H1.75zM3.5 6.25a.75.75 0 01.75-.75h7a.75.75 0 010 1.5h-7a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h4a.75.75 0 000-1.5h-4z"></path></svg></span>Disable web search from windows desktop &amp; Cortana<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in" open="open">
+<summary class="sd-summary-title sd-card-header sd-bg-light sd-bg-text-light">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-note" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5zm1.75-.25a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25v-8.5a.25.25 0 00-.25-.25H1.75zM3.5 6.25a.75.75 0 01.75-.75h7a.75.75 0 010 1.5h-7a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h4a.75.75 0 000-1.5h-4z"></path></svg></span>GPO<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Computer Configuration › Administrative Templates › Windows Components › Search › Do not allow web search</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">Computer Configuration › Administrative Templates › Windows Components › Search</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☑</p>
 </div>
 </div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">ENABLED</span></p>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Prevent automatically adding shared folders to the Windows Search index</p>
 </div>
 </div>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-success badge-pill">ENABLED</span></p>
 </div>
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: 2021-02-19</span></p>
+</div></blockquote>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Enable indexing of online delegate mailboxes</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DISABLED</span></p>
 </div>
 </div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in" open="open">
+<summary class="sd-summary-title sd-card-header sd-bg-light sd-bg-text-light">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-note" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5zm1.75-.25a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25v-8.5a.25.25 0 00-.25-.25H1.75zM3.5 6.25a.75.75 0 01.75-.75h7a.75.75 0 010 1.5h-7a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h4a.75.75 0 000-1.5h-4z"></path></svg></span>GPO<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Computer Configuration › Administrative Templates › Windows Components › Search › Don’t search the web or display web results in Search</p>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Allow indexing of encrypted files</p>
 </div>
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☑</p>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DISABLED</span></p>
 </div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">ENABLED</span></p>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Prevent indexing when running on battery power to conserve energy</p>
 </div>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-success badge-pill">ENABLED</span></p>
 </div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Prevent indexing e-mail attachments</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-success badge-pill">ENABLED</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Prevent indexing files in offline files cache</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-success badge-pill">ENABLED</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Prevent indexing Microsoft Office Outlook</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-success badge-pill">ENABLED</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Prevent indexing public folders</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-success badge-pill">ENABLED</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Enable indexing uncached Exchange folders</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DISABLED</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Prevent clients from querying the index remotely</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-success badge-pill">ENABLED</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Prevent adding UNC locations to index from Control Panel</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-success badge-pill">ENABLED</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Disable Cortana on lock screen<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<details class="sphinx-bs dropdown card mb-3 fade-in" open="open">
-<summary class="summary-title card-header font-weight-bold">
-GPO<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">Computer Configuration › Administrative Templates › Windows Components › Search › Allow Cortana above lock screen</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☑</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DISABLED</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: 2021-02-19</span></p>
+</div></blockquote>
 </div>
 </div>
 </div>
@@ -2524,92 +2284,312 @@ GPO<div class="summary-down docutils">
 </div>
 </div>
 </details></div>
-</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Disable web search<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-note" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5zm1.75-.25a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25v-8.5a.25.25 0 00-.25-.25H1.75zM3.5 6.25a.75.75 0 01.75-.75h7a.75.75 0 010 1.5h-7a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h4a.75.75 0 000-1.5h-4z"></path></svg></span>Disable Cortana &amp; Search indexing<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Computer Configuration › Administrative Templates › Windows Components › Search</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">Computer Configuration › Administrative Templates › Windows Components › Search › Don’t search the web or display web results in Search</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Prevent automatically adding shared folders to the Windows Search index</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">ENABLED</span></p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☑</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Enable indexing of online delegate mailboxes</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">DISABLED</span></p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-success badge-pill">ENABLED</span></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Allow indexing of encrypted files</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">DISABLED</span></p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2022-01-20</span></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Prevent indexing when running on battery power to conserve energy</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">ENABLED</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Prevent indexing e-mail attachments</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">ENABLED</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Prevent indexing files in offline files cache</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">ENABLED</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Prevent indexing Microsoft Office Outlook</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">ENABLED</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Prevent indexing public folders</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">ENABLED</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Enable indexing uncached Exchange folders</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">DISABLED</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Prevent clients from querying the index remotely</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">ENABLED</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Prevent adding UNC locations to index from Control Panel</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">ENABLED</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: 2021-02-19</span></p>
+</div></blockquote>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Disable web search over metered connections<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-note" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5zm1.75-.25a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25v-8.5a.25.25 0 00-.25-.25H1.75zM3.5 6.25a.75.75 0 01.75-.75h7a.75.75 0 010 1.5h-7a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h4a.75.75 0 000-1.5h-4z"></path></svg></span>Disable Cortana on lock screen<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in" open="open">
+<summary class="sd-summary-title sd-card-header sd-bg-light sd-bg-text-light">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-note" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5zm1.75-.25a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25v-8.5a.25.25 0 00-.25-.25H1.75zM3.5 6.25a.75.75 0 01.75-.75h7a.75.75 0 010 1.5h-7a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h4a.75.75 0 000-1.5h-4z"></path></svg></span>GPO<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Computer Configuration › Administrative Templates › Windows Components › Search › Allow Cortana above lock screen</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">Computer Configuration › Administrative Templates › Windows Components › Search › Don’t search the web or display web results in Search over metered connections</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☑</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">DISABLED</span></p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☑</p>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-success badge-pill">ENABLED</span></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: 2021-02-19</span></p>
+</div></blockquote>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span></p>
+</div>
+</div>
+</div>
+</details></div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-note" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5zm1.75-.25a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25v-8.5a.25.25 0 00-.25-.25H1.75zM3.5 6.25a.75.75 0 01.75-.75h7a.75.75 0 010 1.5h-7a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h4a.75.75 0 000-1.5h-4z"></path></svg></span>Disable web search<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Computer Configuration › Administrative Templates › Windows Components › Search › Don’t search the web or display web results in Search</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☑</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">ENABLED</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: 2022-01-20</span></p>
+</div></blockquote>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-note" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5zm1.75-.25a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25v-8.5a.25.25 0 00-.25-.25H1.75zM3.5 6.25a.75.75 0 01.75-.75h7a.75.75 0 010 1.5h-7a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h4a.75.75 0 000-1.5h-4z"></path></svg></span>Disable web search over metered connections<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Computer Configuration › Administrative Templates › Windows Components › Search › Don’t search the web or display web results in Search over metered connections</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☑</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">ENABLED</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: 2021-02-19</span></p>
+</div></blockquote>
 </div>
 </div>
 </div>
@@ -2625,205 +2605,183 @@ have not changed. See references for additional documentation.</p>
 <p>These endpoints should be blocked or routed to a blackhole. See
 <a class="reference internal" href="../../../../../../roles/pihole/docs/index.html#service-pihole"><span class="std std-ref">Pi-Hole</span></a> and <a class="reference internal" href="../../../../../networking/ubiquiti/edge-os.html#networking-dnat-for-captive-dns"><span class="std std-ref">DNAT for Captive DNS</span></a>.</p>
 </div>
-<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-info text-white font-weight-bold">
-Block outbound Cortana Connections<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<details class="sphinx-bs dropdown card mb-3 fade-in" open="open">
-<summary class="summary-title card-header font-weight-bold">
-GPO<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-note" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5zm1.75-.25a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25v-8.5a.25.25 0 00-.25-.25H1.75zM3.5 6.25a.75.75 0 01.75-.75h7a.75.75 0 010 1.5h-7a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h4a.75.75 0 000-1.5h-4z"></path></svg></span>Block outbound Cortana Connections<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in" open="open">
+<summary class="sd-summary-title sd-card-header sd-bg-light sd-bg-text-light">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-note" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5zm1.75-.25a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25v-8.5a.25.25 0 00-.25-.25H1.75zM3.5 6.25a.75.75 0 01.75-.75h7a.75.75 0 010 1.5h-7a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h4a.75.75 0 000-1.5h-4z"></path></svg></span>GPO<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Computer Configuration › Windows Settings › Security Settings › Windows Defender Firewall with Advanced Security › Windows Defender Firewall with Advanced Security - Local Group Policy Object › Outbound Rules › New Rule</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">Computer Configuration › Windows Settings › Security Settings › Windows Defender Firewall with Advanced Security › Windows Defender Firewall with Advanced Security - Local Group Policy Object › Outbound Rules › New Rule</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Rule Type</p>
 </div>
 </div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Program</p>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Rule Type</p>
 </div>
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">This program path</p>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Program</p>
 </div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">%windir%\systemapps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApp.exe</p>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">This program path</p>
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Action</p>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">%windir%\systemapps\Microsoft.Windows.Search_cw5n1h2txyewy\SearchApp.exe</p>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Block the connection</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Action</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Profile</p>
 </div>
 </div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Block the connection</p>
 </div>
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">› Domain</p>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Profile</p>
 </div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☑</p>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">› Private</p>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">› Domain</p>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☑</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☑</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">› Public</p>
 </div>
 </div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☑</p>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">› Private</p>
 </div>
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Name</p>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☑</p>
 </div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Block outbound Cortana</p>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">› Public</p>
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Protocols and Ports</p>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☑</p>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Name</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Protocol Type</p>
 </div>
 </div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">TCP</span></p>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Block outbound Cortana</p>
 </div>
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Local port</p>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Protocols and Ports</p>
 </div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">All Ports</p>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Remote port</p>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Protocol Type</p>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">All Ports</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">TCP</span></p>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Local port</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">All Ports</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Remote port</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">All Ports</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2022-01-20</span></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: 2022-01-20</span></p>
+</div></blockquote>
 </div>
 </div>
 </div>
@@ -2831,50 +2789,50 @@ GPO<div class="summary-down docutils">
 </div>
 </div>
 </details></div>
-</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-info text-white font-weight-bold">
-Cortana and Search endpoints<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-table" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v3.585a.746.746 0 010 .83v8.085A1.75 1.75 0 0114.25 16H6.309a.748.748 0 01-1.118 0H1.75A1.75 1.75 0 010 14.25V6.165a.746.746 0 010-.83V1.75zM1.5 6.5v7.75c0 .138.112.25.25.25H5v-8H1.5zM5 5H1.5V1.75a.25.25 0 01.25-.25H5V5zm1.5 1.5v8h7.75a.25.25 0 00.25-.25V6.5h-8zm8-1.5h-8V1.5h7.75a.25.25 0 01.25.25V5z"></path></svg></span>Cortana and Search endpoints<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 48%" />
 <col style="width: 52%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p class="card-text">Service</p></th>
-<th class="head"><p class="card-text">Endpoint</p></th>
+<tr class="row-odd"><th class="head"><p class="sd-card-text">Service</p></th>
+<th class="head"><p class="sd-card-text">Endpoint</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p class="card-text">Cortana, Greetings, Tips, Live Tiles</p></td>
-<td><p class="card-text"><a class="reference external" href="https://www.bing.com/client">https://www.bing.com/client</a></p></td>
+<tr class="row-even"><td><p class="sd-card-text">Cortana, Greetings, Tips, Live Tiles</p></td>
+<td><p class="sd-card-text"><a class="reference external" href="https://www.bing.com/client">https://www.bing.com/client</a></p></td>
 </tr>
-<tr class="row-odd"><td><p class="card-text">›</p></td>
-<td><p class="card-text"><a class="reference external" href="https://www.bing.com">https://www.bing.com</a></p></td>
+<tr class="row-odd"><td><p class="sd-card-text">›</p></td>
+<td><p class="sd-card-text"><a class="reference external" href="https://www.bing.com">https://www.bing.com</a></p></td>
 </tr>
-<tr class="row-even"><td><p class="card-text">›</p></td>
-<td><p class="card-text"><a class="reference external" href="https://www.bing.com/proactive">https://www.bing.com/proactive</a></p></td>
+<tr class="row-even"><td><p class="sd-card-text">›</p></td>
+<td><p class="sd-card-text"><a class="reference external" href="https://www.bing.com/proactive">https://www.bing.com/proactive</a></p></td>
 </tr>
-<tr class="row-odd"><td><p class="card-text">›</p></td>
-<td><p class="card-text"><a class="reference external" href="https://www.bing.com/threshold/xls.aspx">https://www.bing.com/threshold/xls.aspx</a></p></td>
+<tr class="row-odd"><td><p class="sd-card-text">›</p></td>
+<td><p class="sd-card-text"><a class="reference external" href="https://www.bing.com/threshold/xls.aspx">https://www.bing.com/threshold/xls.aspx</a></p></td>
 </tr>
-<tr class="row-even"><td><p class="card-text">›</p></td>
-<td><p class="card-text"><a class="reference external" href="http://exo-ring.msedge.net">http://exo-ring.msedge.net</a></p></td>
+<tr class="row-even"><td><p class="sd-card-text">›</p></td>
+<td><p class="sd-card-text"><a class="reference external" href="http://exo-ring.msedge.net">http://exo-ring.msedge.net</a></p></td>
 </tr>
-<tr class="row-odd"><td><p class="card-text">›</p></td>
-<td><p class="card-text"><a class="reference external" href="http://fp.msedge.net">http://fp.msedge.net</a></p></td>
+<tr class="row-odd"><td><p class="sd-card-text">›</p></td>
+<td><p class="sd-card-text"><a class="reference external" href="http://fp.msedge.net">http://fp.msedge.net</a></p></td>
 </tr>
-<tr class="row-even"><td><p class="card-text">›</p></td>
-<td><p class="card-text"><a class="reference external" href="http://fp-vp.azureedge.net">http://fp-vp.azureedge.net</a></p></td>
+<tr class="row-even"><td><p class="sd-card-text">›</p></td>
+<td><p class="sd-card-text"><a class="reference external" href="http://fp-vp.azureedge.net">http://fp-vp.azureedge.net</a></p></td>
 </tr>
-<tr class="row-odd"><td><p class="card-text">›</p></td>
-<td><p class="card-text"><a class="reference external" href="http://odinvzc.azureedge.net">http://odinvzc.azureedge.net</a></p></td>
+<tr class="row-odd"><td><p class="sd-card-text">›</p></td>
+<td><p class="sd-card-text"><a class="reference external" href="http://odinvzc.azureedge.net">http://odinvzc.azureedge.net</a></p></td>
 </tr>
-<tr class="row-even"><td><p class="card-text">›</p></td>
-<td><p class="card-text"><a class="reference external" href="http://spo-ring.msedge.net">http://spo-ring.msedge.net</a></p></td>
+<tr class="row-even"><td><p class="sd-card-text">›</p></td>
+<td><p class="sd-card-text"><a class="reference external" href="http://spo-ring.msedge.net">http://spo-ring.msedge.net</a></p></td>
 </tr>
 </tbody>
 </table>

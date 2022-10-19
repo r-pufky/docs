@@ -10,9 +10,7 @@
       <link rel="stylesheet" href="../../../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/sphinx_collapse.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/expand_width.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-      <link rel="stylesheet" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -23,6 +21,7 @@
         <script src="../../../_static/doctools.js"></script>
         <script src="../../../_static/clipboard.min.js"></script>
         <script src="../../../_static/copybutton.js"></script>
+        <script src="../../../_static/design-tabs.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -380,7 +379,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../docs/networking/ubiquiti/example-vlan-network/unifi-ap.html#confirm-wireless-network-working">Confirm Wireless Network Working</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../docs/networking/ubiquiti/example-vlan-network/migrate-controller-to-docker.html">Migrate Unifi Controller to Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../docs/networking/ubiquiti/example-vlan-network/migrate-controller-to-container.html">Migrate Unifi Controller to Container</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../docs/networking/ubiquiti/example-vlan-network/unifi-device-troubleshooting.html">Unifi Device Troubleshooting</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../docs/networking/ubiquiti/example-vlan-network/unifi-device-troubleshooting.html#slow-adoption">Slow Adoption</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../docs/networking/ubiquiti/example-vlan-network/unifi-device-troubleshooting.html#adoption-failure">Adoption Failure</a></li>
@@ -505,6 +504,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../docs/operating-systems/ubuntu/additional-fixes.html#nxdomain-errors-in-syslog">NXDOMAIN Errors in Syslog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../docs/operating-systems/ubuntu/additional-fixes.html#disable-ipv6">Disable IPv6</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../docs/operating-systems/ubuntu/additional-fixes.html#shadow-passwords">Shadow Passwords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../docs/operating-systems/ubuntu/additional-fixes.html#grub-cryptfs-password-typo">GRUB CryptFS Password Typo</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../docs/operating-systems/ubuntu/threadripper-2990wx.html">2990WX Linux Patches</a><ul>
@@ -1495,28 +1495,26 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../docs/services/imapsync/index.html#removing-duplicates-on-local-maildir">Removing Duplicates On Local Maildir</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../docs/services/lidarr/index.html">Lidarr</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../docs/services/lidarr/setup.html">Lidarr Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../docs/services/lidarr/setup.html#ports">Ports</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../docs/services/lidarr/setup.html#files">Files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../docs/services/lidarr/setup.html#docker-creation">Docker Creation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../docs/services/lidarr/setup.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../docs/services/lidarr/setup.html#using-subdomains">Using Subdomains</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../docs/services/lidarr/setup.html#using-subpaths">Using Subpaths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lidarr/docs/index.html">Lidarr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../lidarr/docs/network.html">Network</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../lidarr/docs/network.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../lidarr/docs/network.html#using-subdomains">Using Subdomains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../lidarr/docs/network.html#using-subpaths">Using Subpaths</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../lidarr/docs/basic-configuration.html">Basic Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../lidarr/docs/basic-configuration.html#media-management">Media Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../lidarr/docs/basic-configuration.html#profiles">Profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../lidarr/docs/basic-configuration.html#quality">Quality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../lidarr/docs/basic-configuration.html#indexers">Indexers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../lidarr/docs/basic-configuration.html#download-clients">Download Clients</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../lidarr/docs/basic-configuration.html#metadata">Metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../lidarr/docs/basic-configuration.html#general">General</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../lidarr/docs/basic-configuration.html#ui">UI</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../docs/services/lidarr/basic-configuration.html">Basic Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../docs/services/lidarr/basic-configuration.html#media-management">Media Management</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../docs/services/lidarr/basic-configuration.html#profiles">Profiles</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../docs/services/lidarr/basic-configuration.html#quality">Quality</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../docs/services/lidarr/basic-configuration.html#indexers">Indexers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../docs/services/lidarr/basic-configuration.html#download-clients">Download Clients</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../docs/services/lidarr/basic-configuration.html#general">General</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../docs/services/lidarr/basic-configuration.html#ui">UI</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../../lidarr/docs/index.html#ports">Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../lidarr/docs/index.html#defaults">Defaults</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../db/docs/mariadb/index.html">MariaDB</a><ul>
@@ -1586,13 +1584,12 @@
 <li class="toctree-l4"><a class="reference internal" href="manual-configuration/configuration-patterns.html#one-server-site-per-config-file">One Server Site Per Config File</a></li>
 <li class="toctree-l4"><a class="reference internal" href="manual-configuration/configuration-patterns.html#password-authencation-basic-auth">Password Authencation (Basic Auth)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="manual-configuration/configuration-patterns.html#site-wide-auth-file">Site-wide Auth File</a></li>
-<li class="toctree-l4"><a class="reference internal" href="manual-configuration/configuration-patterns.html#remove-auth-requirement-for-docker-containers">Remove Auth Requirement for Docker Containers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="manual-configuration/configuration-patterns.html#remove-auth-requirement-for-proxies">Remove Auth Requirement for Proxies</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="manual-configuration/configuration-patterns.html#whitelist-all-containers">Whitelist All Containers</a></li>
 <li class="toctree-l5"><a class="reference internal" href="manual-configuration/configuration-patterns.html#whitelist-single-container">Whitelist Single Container</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="manual-configuration/configuration-patterns.html#disable-auth-for-a-specific-location">Disable Auth for a specific location</a></li>
-<li class="toctree-l4"><a class="reference internal" href="manual-configuration/configuration-patterns.html#accessing-networks-from-other-compose-containers">Accessing Networks from Other Compose Containers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="manual-configuration/configuration-patterns.html#classify-networks-to-variables">Classify Networks to Variables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="manual-configuration/configuration-patterns.html#rate-limiting">Rate Limiting</a></li>
 </ul>
@@ -1606,7 +1603,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#dump-loaded-nginx-configuration">Dump Loaded NGINX Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#nginx-queries-originate-from-wrong-gateway">NGINX Queries Originate from Wrong Gateway</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#forward-traffic-via-specific-interfaces">Forward Traffic via Specific Interfaces</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#not-starting-with-docker-services">Not Starting with Docker Services</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#ports">Ports</a></li>
@@ -1639,6 +1635,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../../steam/docs/left_4_dead_2.html">Left 4 Dead 2</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../steam/docs/left_4_dead_2.html#ports">Ports</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../steam/docs/left_4_dead_2.html#defaults">Defaults</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../steam/docs/satisfactory.html">Satisfactory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../steam/docs/satisfactory.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../steam/docs/satisfactory.html#defaults">Defaults</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../steam/docs/seven_days_to_die.html">7 Days to Die</a><ul>
@@ -2053,10 +2054,10 @@
 <span id="service-nginx-troubleshooting"></span><h1>NGNIX Troubleshooting<a class="headerlink" href="#ngnix-troubleshooting" title="Permalink to this headline"></a></h1>
 <section id="validating-upstream-parameters">
 <h2>Validating Upstream Parameters<a class="headerlink" href="#validating-upstream-parameters" title="Permalink to this headline"></a></h2>
-<p>To validate parameters passed to upstream services, the request should be dumped
-by the service or intercepted by another service temporarily. There is a <a class="reference external" href="https://github.com/mendhak/docker-http-https-echo">docker
-container to do this</a>. This will dump the received headers from both http
-and https communication to the upstream service.</p>
+<p>To validate parameters passed to upstream services, the request should be
+dumped by the service or intercepted by another service temporarily. This will
+dump the received headers from both http and https communication to the
+upstream service.</p>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-text"><strong>0640 root root</strong> <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code></span><a class="headerlink" href="#id2" title="Permalink to this code"></a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">http-echo</span><span class="p">:</span><span class="w"></span>
@@ -2073,11 +2074,12 @@ and https communication to the upstream service.</p>
 <p class="admonition-title">Note</p>
 <p>Headers will be dumped directly to the page.</p>
 </div>
+<p><a class="reference external" href="https://github.com/mendhak/docker-http-https-echo">Reference</a></p>
 </section>
 <section id="debug-nginx-configs">
 <span id="service-nginx-debug-nginx-configs"></span><h2>Debug NGINX configs<a class="headerlink" href="#debug-nginx-configs" title="Permalink to this headline"></a></h2>
 <p>There is no existing logging functionality in NGINX to write directly to logs
-from configuration files. Work around by directly injecting <a class="reference external" href="https://serverfault.com/questions/404626/how-to-output-variable-in-nginx-log-for-debugging">debugging headers</a>
+from configuration files. Work around by directly injecting debugging headers
 in configuration files to dump information to logs. NGINX variables may be used
 as well.</p>
 <div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="k">add_header</span><span class="w"> </span><span class="s">X-debug-message</span><span class="w"> </span><span class="s">&quot;some</span><span class="w"> </span><span class="s">message</span><span class="w"> </span><span class="s">to</span><span class="w"> </span><span class="s">write</span><span class="w"> </span><span class="nv">$ssl_client_s_dn&quot;</span><span class="w"> </span><span class="s">always</span><span class="p">;</span><span class="w"></span>
@@ -2085,83 +2087,51 @@ as well.</p>
 </div>
 <p>Headers are found in the page response.</p>
 <img alt="../../../_images/debug-headers.png" src="../../../_images/debug-headers.png" />
+<p><a class="reference external" href="https://serverfault.com/questions/404626/how-to-output-variable-in-nginx-log-for-debugging">Reference</a></p>
 </section>
 <section id="if-is-evil">
 <span id="id1"></span><h2>If is Evil<a class="headerlink" href="#if-is-evil" title="Permalink to this headline"></a></h2>
-<p>If operates as a rewrite and is <a class="reference external" href="https://www.nginx.com/resources/wiki/start/topics/depth/ifisevil/">inherently misunderstood</a>.</p>
+<p>If operates as a rewrite and is <strong>inherently misunderstood</strong>.</p>
 <p>Within a location block the only <strong>safe</strong> operations are:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">return</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">rewrite</span></code>.</p></li>
 </ul>
-<p><strong>All</strong> if operations must be explicitly tested for <a class="reference external" href="https://serverfault.com/questions/687033/nginx-use-geo-module-with-allow-deny-directives">appropriate behavior</a>.
-Other <a class="reference external" href="https://agentzh.blogspot.com/2011/03/how-nginx-location-if-works.html">evil examples</a>.</p>
+<p><strong>All</strong> if operations must be explicitly tested for appropriate behavior.
+Other references for other “evil” examples.</p>
+<p><a class="reference external" href="https://www.nginx.com/resources/wiki/start/topics/depth/ifisevil/">Reference</a></p>
+<p><a class="reference external" href="https://agentzh.blogspot.com/2011/03/how-nginx-location-if-works.html">Reference</a></p>
+<p><a class="reference external" href="https://serverfault.com/questions/687033/nginx-use-geo-module-with-allow-deny-directives">Reference</a></p>
 </section>
 <section id="dump-loaded-nginx-configuration">
 <h2>Dump Loaded NGINX Configuration<a class="headerlink" href="#dump-loaded-nginx-configuration" title="Permalink to this headline"></a></h2>
 <p>Dump the currently loaded configuration in config file formatting. Useful to
-inspect <a class="reference external" href="https://stackoverflow.com/questions/12832033/dump-conf-from-running-nginx-process">current nginx state</a>.</p>
+inspect current nginx state.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nginx -T
 </pre></div>
 </div>
+<p><a class="reference external" href="https://stackoverflow.com/questions/12832033/dump-conf-from-running-nginx-process">Reference</a></p>
 </section>
 <section id="nginx-queries-originate-from-wrong-gateway">
 <h2>NGINX Queries Originate from Wrong Gateway<a class="headerlink" href="#nginx-queries-originate-from-wrong-gateway" title="Permalink to this headline"></a></h2>
-<p><a class="reference external" href="https://github.com/docker/libnetwork/issues/1141#issuecomment-215522809">Docker does not provide a way</a> to set the <a class="reference external" href="https://stackoverflow.com/questions/36882945/change-default-route-in-docker-container">appropriate default gateway</a> for
-multi-network containers. This results in <a class="reference external" href="https://dustymabe.com/2016/05/25/non-deterministic-docker-networking-and-source-based-ip-routing/">non-deterministic</a> source IP
-<a class="reference external" href="https://github.com/moby/moby/issues/21741">routing</a>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>When a container is connected to multiple networks, its external connectivity
-is provided via the first non-internal network, in lexical order.</p>
-</div>
-<p>NGINX expresses this bug by forwarding/proxying any traffic <strong>over</strong> the default
-gateway for the first lexical named network that appears.</p>
-<p>The current fix is to inspect the container and find the first <code class="docutils literal notranslate"><span class="pre">gateway</span></code>
-listed in the connected networks. This will be the <code class="docutils literal notranslate"><span class="pre">default</span> <span class="pre">gateway</span></code> for the
-container.</p>
-<p>There is currently no clean way to set a default gateway via compose.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker inspect proxy_nginx_1
-</pre></div>
-</div>
+<p>NGINX express this bug by forwarding/proxying any traffic <strong>over</strong> the default
+gateway for the first lexical named network that appears. This results in
+non-deterministic source IP routing.</p>
+<p>Set an appropriate default gateway in the networking config.</p>
+<p><a class="reference external" href="https://github.com/moby/moby/issues/21741">Reference</a></p>
+<p><a class="reference external" href="https://github.com/docker/libnetwork/issues/1141#issuecomment-215522809">Reference</a></p>
 </section>
 <section id="forward-traffic-via-specific-interfaces">
 <h2>Forward Traffic via Specific Interfaces<a class="headerlink" href="#forward-traffic-via-specific-interfaces" title="Permalink to this headline"></a></h2>
-<p>NGINX can forward traffic via <a class="reference external" href="https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/#proxy_bind">specific interfaces</a> for <em>location</em> definitions.</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text"><strong>0640 root root</strong> <code class="docutils literal notranslate"><span class="pre">{SERVICE}/docker-compose.yml</span></code></span><a class="headerlink" href="#id3" title="Permalink to this code"></a></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">networks</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">custom_net_name</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">external</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-
-<span class="nt">services</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">my_proxy</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">my_proxy_network</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">ipv4_address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">172.1.1.1</span><span class="w"></span>
-<span class="w">      </span><span class="nt">custom_net_name</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="nt">ipv4_address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">172.2.1.1</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">custom_net_name</span></code> is a network defined in another container. Once this is
-added, the proxy container will be able to do DNS resolution of container
-names as usual, including proxying traffic to that network.</p></li>
-<li><p>Use IPv4 address for <code class="docutils literal notranslate"><span class="pre">proxy_bind</span></code> command for specific locations.</p></li>
-</ul>
+<p>NGINX can forward traffic via specific interfaces for <em>location</em> definitions.</p>
+<p>Use IPv4 address in <code class="docutils literal notranslate"><span class="pre">proxy_bind</span></code> command for specific locations.</p>
 <div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span>location / {
   proxy_bind {NGINX NETWORK IP};
   proxy_pass ...
 }
 </pre></div>
 </div>
-</section>
-<section id="not-starting-with-docker-services">
-<h2>Not Starting with Docker Services<a class="headerlink" href="#not-starting-with-docker-services" title="Permalink to this headline"></a></h2>
-<p>Expresses as NGINX not starting or failing to resolve if running (and backend
-services were restarted or down at some point).</p>
-<p>See <a class="reference internal" href="manual-configuration/reverse-proxies.html#service-nginx-reverse-proxy-backends"><span class="std std-ref">Enable NGINX Start/Running with Backends Down</span></a> to resolve.</p>
+<p><a class="reference external" href="https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/#proxy_bind">Reference</a></p>
 </section>
 </section>
 

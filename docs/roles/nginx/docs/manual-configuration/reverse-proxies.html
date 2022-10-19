@@ -10,9 +10,7 @@
       <link rel="stylesheet" href="../../../../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/sphinx_collapse.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/expand_width.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -23,6 +21,7 @@
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/clipboard.min.js"></script>
         <script src="../../../../_static/copybutton.js"></script>
+        <script src="../../../../_static/design-tabs.js"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -380,7 +379,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../docs/networking/ubiquiti/example-vlan-network/unifi-ap.html#confirm-wireless-network-working">Confirm Wireless Network Working</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../docs/networking/ubiquiti/example-vlan-network/migrate-controller-to-docker.html">Migrate Unifi Controller to Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../docs/networking/ubiquiti/example-vlan-network/migrate-controller-to-container.html">Migrate Unifi Controller to Container</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../docs/networking/ubiquiti/example-vlan-network/unifi-device-troubleshooting.html">Unifi Device Troubleshooting</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../docs/networking/ubiquiti/example-vlan-network/unifi-device-troubleshooting.html#slow-adoption">Slow Adoption</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../docs/networking/ubiquiti/example-vlan-network/unifi-device-troubleshooting.html#adoption-failure">Adoption Failure</a></li>
@@ -505,6 +504,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../docs/operating-systems/ubuntu/additional-fixes.html#nxdomain-errors-in-syslog">NXDOMAIN Errors in Syslog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../docs/operating-systems/ubuntu/additional-fixes.html#disable-ipv6">Disable IPv6</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../docs/operating-systems/ubuntu/additional-fixes.html#shadow-passwords">Shadow Passwords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../docs/operating-systems/ubuntu/additional-fixes.html#grub-cryptfs-password-typo">GRUB CryptFS Password Typo</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../docs/operating-systems/ubuntu/threadripper-2990wx.html">2990WX Linux Patches</a><ul>
@@ -1495,28 +1495,26 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../docs/services/imapsync/index.html#removing-duplicates-on-local-maildir">Removing Duplicates On Local Maildir</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../docs/services/lidarr/index.html">Lidarr</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../docs/services/lidarr/setup.html">Lidarr Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/setup.html#ports">Ports</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/setup.html#files">Files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/setup.html#docker-creation">Docker Creation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/setup.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../docs/services/lidarr/setup.html#using-subdomains">Using Subdomains</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../docs/services/lidarr/setup.html#using-subpaths">Using Subpaths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lidarr/docs/index.html">Lidarr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../lidarr/docs/network.html">Network</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/network.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/network.html#using-subdomains">Using Subdomains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/network.html#using-subpaths">Using Subpaths</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../lidarr/docs/basic-configuration.html">Basic Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/basic-configuration.html#media-management">Media Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/basic-configuration.html#profiles">Profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/basic-configuration.html#quality">Quality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/basic-configuration.html#indexers">Indexers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/basic-configuration.html#download-clients">Download Clients</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/basic-configuration.html#metadata">Metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/basic-configuration.html#general">General</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/basic-configuration.html#ui">UI</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../docs/services/lidarr/basic-configuration.html">Basic Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/basic-configuration.html#media-management">Media Management</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/basic-configuration.html#profiles">Profiles</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/basic-configuration.html#quality">Quality</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/basic-configuration.html#indexers">Indexers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/basic-configuration.html#download-clients">Download Clients</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/basic-configuration.html#general">General</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/basic-configuration.html#ui">UI</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../lidarr/docs/index.html#ports">Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../lidarr/docs/index.html#defaults">Defaults</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../db/docs/mariadb/index.html">MariaDB</a><ul>
@@ -1586,13 +1584,12 @@
 <li class="toctree-l4"><a class="reference internal" href="configuration-patterns.html#one-server-site-per-config-file">One Server Site Per Config File</a></li>
 <li class="toctree-l4"><a class="reference internal" href="configuration-patterns.html#password-authencation-basic-auth">Password Authencation (Basic Auth)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="configuration-patterns.html#site-wide-auth-file">Site-wide Auth File</a></li>
-<li class="toctree-l4"><a class="reference internal" href="configuration-patterns.html#remove-auth-requirement-for-docker-containers">Remove Auth Requirement for Docker Containers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="configuration-patterns.html#remove-auth-requirement-for-proxies">Remove Auth Requirement for Proxies</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="configuration-patterns.html#whitelist-all-containers">Whitelist All Containers</a></li>
 <li class="toctree-l5"><a class="reference internal" href="configuration-patterns.html#whitelist-single-container">Whitelist Single Container</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="configuration-patterns.html#disable-auth-for-a-specific-location">Disable Auth for a specific location</a></li>
-<li class="toctree-l4"><a class="reference internal" href="configuration-patterns.html#accessing-networks-from-other-compose-containers">Accessing Networks from Other Compose Containers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="configuration-patterns.html#classify-networks-to-variables">Classify Networks to Variables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="configuration-patterns.html#rate-limiting">Rate Limiting</a></li>
 </ul>
@@ -1606,7 +1603,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../troubleshooting.html#dump-loaded-nginx-configuration">Dump Loaded NGINX Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../troubleshooting.html#nginx-queries-originate-from-wrong-gateway">NGINX Queries Originate from Wrong Gateway</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../troubleshooting.html#forward-traffic-via-specific-interfaces">Forward Traffic via Specific Interfaces</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../troubleshooting.html#not-starting-with-docker-services">Not Starting with Docker Services</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#ports">Ports</a></li>
@@ -1639,6 +1635,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../steam/docs/left_4_dead_2.html">Left 4 Dead 2</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../steam/docs/left_4_dead_2.html#ports">Ports</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../steam/docs/left_4_dead_2.html#defaults">Defaults</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../steam/docs/satisfactory.html">Satisfactory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../steam/docs/satisfactory.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../steam/docs/satisfactory.html#defaults">Defaults</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../steam/docs/seven_days_to_die.html">7 Days to Die</a><ul>
@@ -2053,25 +2054,24 @@
   <section id="adding-reverse-proxies">
 <span id="service-nginx-reverse-proxies"></span><h1>Adding Reverse Proxies<a class="headerlink" href="#adding-reverse-proxies" title="Permalink to this headline"></a></h1>
 <p>This will cover the basic usage of NGINX as a reverse proxy; covering services
-on the URI path, not as a custom subdomain. See <a class="reference external" href="https://community.home-assistant.io/t/nginx-reverse-proxy-set-up-guide-docker/54802">subdomain reverse proxy</a> for
+on the URI path, not as a custom subdomain. See subdomain reverse proxy for
 setting up subdomains.</p>
-<p>Use <a class="reference external" href="https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/">reference documentation</a> and <a class="reference external" href="https://www.digitalocean.com/community/tutorials/understanding-nginx-server-and-location-block-selection-algorithms">location block</a> references for additional
+<p>Use reference documentation and location block references for additional
 information.</p>
 <p><code class="docutils literal notranslate"><span class="pre">location</span></code> blocks should be placed in the <code class="docutils literal notranslate"><span class="pre">server</span></code> block.</p>
+<p><a class="reference external" href="https://community.home-assistant.io/t/nginx-reverse-proxy-set-up-guide-docker/54802">Reference</a></p>
+<p><a class="reference external" href="https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/">Reference</a></p>
+<p><a class="reference external" href="https://www.digitalocean.com/community/tutorials/understanding-nginx-server-and-location-block-selection-algorithms">Reference</a></p>
 <section id="service-gotchas">
 <h2>Service Gotchas<a class="headerlink" href="#service-gotchas" title="Permalink to this headline"></a></h2>
 <p>Ensure the services running behind the proxy are in a known configuration:</p>
 <ul class="simple">
-<li><p>Running on expected protocols (http or https).</p></li>
-<li><p>Externally accessible ports (e.g. non-proxied external requests) are setup as
-<code class="docutils literal notranslate"><span class="pre">ports</span></code>.</p></li>
-<li><p>Internally accessible ports (e.g. proxied external requests) are setup as
-<code class="docutils literal notranslate"><span class="pre">expose</span></code> ports.</p></li>
+<li><p>Running on expected protocols (http or https) and ports.</p></li>
+<li><p>Have firewalls setup to only allow traffic in/out of those ports to and from
+the proxy.</p></li>
 </ul>
-<p>See <a class="reference external" href="https://www.freecodecamp.org/news/a-beginners-guide-to-docker-how-to-create-a-client-server-side-with-docker-compose-12c8cf0ae0aa/">expose versus ports</a>.</p>
 <section id="trailing-slash-gotchas">
-<h3><a class="reference external" href="https://stackoverflow.com/questions/22759345/nginx-trailing-slash-in-proxy-pass-url">Trailing Slash Gotchas</a><a class="headerlink" href="#trailing-slash-gotchas" title="Permalink to this headline"></a></h3>
-<p>See <a class="reference external" href="http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass">proxy_pass reference documentation</a>.</p>
+<h3>Trailing Slash Gotchas<a class="headerlink" href="#trailing-slash-gotchas" title="Permalink to this headline"></a></h3>
 <p>In Short:</p>
 <ul class="simple">
 <li><p>Services already using URI paths for the services should leave <strong>off</strong>
@@ -2083,8 +2083,8 @@ slashes in <code class="docutils literal notranslate"><span class="pre">location
 <p>If the <code class="docutils literal notranslate"><span class="pre">proxy_pass</span></code> directive is specified with a URI, then when a request is
 passed to the server, the part of a <em>normalized request URI matching the
 location is replaced by a URI specified in the directive</em>:</p>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">Trailing slash example.</span><a class="headerlink" href="#id2" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Trailing slash example.</span><a class="headerlink" href="#id1" title="Permalink to this code"></a></div>
 <div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="k">location</span><span class="w"> </span><span class="s">/name/</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="s">http://app/remote/</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
@@ -2101,8 +2101,8 @@ though it was called from app’s page.</p></li>
 server <em>in the same form</em> as sent by a client when the original request is
 processed, or the <em>full normalized request URI is passed when processing the
 changed URI</em>:</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">No trailing slash example.</span><a class="headerlink" href="#id3" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">No trailing slash example.</span><a class="headerlink" href="#id2" title="Permalink to this code"></a></div>
 <div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="k">location</span><span class="w"> </span><span class="s">/name/</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="s">http://app/remote</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
@@ -2114,15 +2114,17 @@ changed URI</em>:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">http://app/remote/</span></code> sees request as <code class="docutils literal notranslate"><span class="pre">https://app/remote/name/path?params=1</span></code>.</p></li>
 <li><p>Essentially the URI path is <strong>concatenated</strong> to the end of the remote path.</p></li>
 </ul>
+<p><a class="reference external" href="http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass">Reference</a></p>
+<p><a class="reference external" href="https://stackoverflow.com/questions/22759345/nginx-trailing-slash-in-proxy-pass-url">Reference</a></p>
 </section>
 <section id="regex-versus-trailing-slashes">
 <h3>Regex Versus Trailing Slashes<a class="headerlink" href="#regex-versus-trailing-slashes" title="Permalink to this headline"></a></h3>
-<p>Most examples on the web use regex, but regex is generally <a class="reference external" href="https://stackoverflow.com/questions/764247/why-are-regular-expressions-so-controversial">slow, error prone
-and hard to read</a>. In NGINX most regexes may be replaced with trailing slash to
+<p>Most examples on the web use regex, but regex is generally slow, error prone
+and hard to read. In NGINX most regexes may be replaced with trailing slash to
 replace the matched URI path instead. It’s cleaner and easier to read, and
 usually covers the regex case.</p>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">Web Regex Example (<strong>bad</strong>) proxies <code class="docutils literal notranslate"><span class="pre">/nzbget</span></code> to <code class="docutils literal notranslate"><span class="pre">https://nzbget:6791/</span></code>.</span><a class="headerlink" href="#id4" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Web Regex Example (<strong>bad</strong>) proxies <code class="docutils literal notranslate"><span class="pre">/nzbget</span></code> to <code class="docutils literal notranslate"><span class="pre">https://nzbget:6791/</span></code>.</span><a class="headerlink" href="#id3" title="Permalink to this code"></a></div>
 <div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="k">location</span><span class="w"> </span><span class="p">~</span><span class="w"> </span><span class="sr">^/nzbget$</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="kn">return</span><span class="w">                </span><span class="mi">302</span><span class="w"> </span><span class="nv">$scheme://$host$request_uri/</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
@@ -2136,14 +2138,14 @@ usually covers the regex case.</p>
 </div>
 </div>
 <ul class="simple">
-<li><p>First rule regex matches <code class="docutils literal notranslate"><span class="pre">nzbget</span></code> and returns a <strong>302</strong> to the same URI with
-a trailing slash.</p></li>
+<li><p>First rule regex matches <code class="docutils literal notranslate"><span class="pre">nzbget</span></code> and returns a <strong>302</strong> to the same URI
+with a trailing slash.</p></li>
 <li><p>Second rule accepts <code class="docutils literal notranslate"><span class="pre">/nzbget</span></code> with parameters and proxies to the service.</p></li>
-<li><p>This results in two proxy hits and two regex comprehensions; it’s also hard to
-understand what the regex is doing immediately.</p></li>
+<li><p>This results in two proxy hits and two regex comprehensions; it’s also hard
+to understand what the regex is doing immediately.</p></li>
 </ul>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">Using trailing slashes (<strong>good</strong>) proxies <code class="docutils literal notranslate"><span class="pre">/nzbget</span></code> to <code class="docutils literal notranslate"><span class="pre">https://nzbget:6791/</span></code>.</span><a class="headerlink" href="#id5" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Using trailing slashes (<strong>good</strong>) proxies <code class="docutils literal notranslate"><span class="pre">/nzbget</span></code> to <code class="docutils literal notranslate"><span class="pre">https://nzbget:6791/</span></code>.</span><a class="headerlink" href="#id4" title="Permalink to this code"></a></div>
 <div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="k">location</span><span class="w"> </span><span class="s">/nzbget/</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="kn">proxy_pass</span><span class="w">            </span><span class="s">https://nzbget:6791/</span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="kn">include</span><span class="w">               </span><span class="s">/etc/nginx/conf.d/proxy.conf</span><span class="p">;</span><span class="w"></span>
@@ -2152,12 +2154,13 @@ understand what the regex is doing immediately.</p></li>
 </pre></div>
 </div>
 </div>
+<p><a class="reference external" href="https://stackoverflow.com/questions/764247/why-are-regular-expressions-so-controversial">Reference</a></p>
 </section>
 </section>
 <section id="redirect-path-to-base-uri">
 <h2>Redirect Path to Base URI<a class="headerlink" href="#redirect-path-to-base-uri" title="Permalink to this headline"></a></h2>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">For applications that serve <code class="docutils literal notranslate"><span class="pre">https://app/</span></code>.</span><a class="headerlink" href="#id6" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">For applications that serve <code class="docutils literal notranslate"><span class="pre">https://app/</span></code>.</span><a class="headerlink" href="#id5" title="Permalink to this code"></a></div>
 <div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="k">location</span><span class="w"> </span><span class="s">/gogs/</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="s">https://gogs:3000/</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
@@ -2171,8 +2174,8 @@ understand what the regex is doing immediately.</p></li>
 </section>
 <section id="redirect-path-to-service-uri-path">
 <h2>Redirect Path to Service URI Path<a class="headerlink" href="#redirect-path-to-service-uri-path" title="Permalink to this headline"></a></h2>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">For applications that serve <code class="docutils literal notranslate"><span class="pre">https://app/path</span></code>.</span><a class="headerlink" href="#id7" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">For applications that serve <code class="docutils literal notranslate"><span class="pre">https://app/path</span></code>.</span><a class="headerlink" href="#id6" title="Permalink to this code"></a></div>
 <div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="k">location</span><span class="w"> </span><span class="s">/sonarr</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="kn">proxy_pass</span><span class="w"> </span><span class="s">http://sonarr:8989/sonarr</span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="kn">include</span><span class="w"> </span><span class="s">/etc/nginx/conf.d/proxy-control.conf</span><span class="p">;</span><span class="w"></span>
@@ -2187,8 +2190,8 @@ understand what the regex is doing immediately.</p></li>
 </section>
 <section id="custom-path-for-service">
 <h2>Custom Path for Service<a class="headerlink" href="#custom-path-for-service" title="Permalink to this headline"></a></h2>
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text">Enable different paths to the same service.</span><a class="headerlink" href="#id8" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">Enable different paths to the same service.</span><a class="headerlink" href="#id7" title="Permalink to this code"></a></div>
 <div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="k">location</span><span class="w"> </span><span class="s">/tv</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="kn">return</span><span class="w">     </span><span class="mi">301</span><span class="w"> </span><span class="nv">$scheme://$host/sonarr/</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
@@ -2206,8 +2209,8 @@ understand what the regex is doing immediately.</p></li>
 </section>
 <section id="enable-websockets">
 <h2>Enable Websockets<a class="headerlink" href="#enable-websockets" title="Permalink to this headline"></a></h2>
-<div class="literal-block-wrapper docutils container" id="id9">
-<div class="code-block-caption"><span class="caption-text">Allow for apps requiring websockets to be used.</span><a class="headerlink" href="#id9" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">Allow for apps requiring websockets to be used.</span><a class="headerlink" href="#id8" title="Permalink to this code"></a></div>
 <div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="k">location</span><span class="w"> </span><span class="s">/crashplan/</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="kn">proxy_pass</span><span class="w">                    </span><span class="s">https://crashplan:5800/</span><span class="p">;</span><span class="w"></span>
 <span class="w">  </span><span class="kn">include</span><span class="w">                       </span><span class="s">/etc/nginx/conf.d/proxy-control.conf</span><span class="p">;</span><span class="w"></span>
@@ -2231,9 +2234,9 @@ to enable the connection upgrade or close the connection.</p></li>
 </section>
 <section id="rewrite-reponses-with-subpath">
 <h2>Rewrite Reponses with Subpath<a class="headerlink" href="#rewrite-reponses-with-subpath" title="Permalink to this headline"></a></h2>
-<p>Some applications are not <a class="reference external" href="https://stackoverflow.com/questions/32542282/how-do-i-rewrite-urls-in-a-proxy-response-in-nginx">URI Path aware</a> and will re-write all responses
-behind the proxy using a static relative path or hostname; which will cause 404
-errors and the app to break. Partially fixed using <a class="reference external" href="http://nginx.org/en/docs/http/ngx_http_sub_module.html">http_sub_module</a>.</p>
+<p>Some applications are not URI Path aware and will re-write all responses behind
+the proxy using a static relative path or hostname; which will cause 404 errors
+and the app to break. Partially fixed using http_sub_module.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Re-writing the proxy respones generally won’t fix a complicated application as
@@ -2251,23 +2254,24 @@ Usually this is resolved using a sub-domain instead.</p>
 <li><p>Second rules rewrites relative responses <code class="docutils literal notranslate"><span class="pre">href=&quot;/other-page.html&quot;</span></code> to
 <code class="docutils literal notranslate"><span class="pre">href=&quot;https://reverse-proxy-server/subpath/other-page.html&quot;</span></code>.</p></li>
 </ul>
+<p><a class="reference external" href="https://stackoverflow.com/questions/32542282/how-do-i-rewrite-urls-in-a-proxy-response-in-nginx">Reference</a></p>
+<p><a class="reference external" href="http://nginx.org/en/docs/http/ngx_http_sub_module.html">Reference</a></p>
 </section>
 <section id="enable-nginx-start-running-with-backends-down">
 <span id="service-nginx-reverse-proxy-backends"></span><h2>Enable NGINX Start/Running with Backends Down<a class="headerlink" href="#enable-nginx-start-running-with-backends-down" title="Permalink to this headline"></a></h2>
-<p><a class="reference external" href="https://trac.nginx.org/nginx/ticket/1040">By design NGINX</a> will prevent startup or running if upstream backends are down
+<p>By design NGINX will prevent startup or running if upstream backends are down
 as it is intepreted to be a configuration error.</p>
-<p>Docker services which are down do not resolve via Docker’s DNS, and therefore
-will trigger this condition, requiring all Docker services to be up for NGINX to
-function.</p>
+<p>Services which are down may not resolve via DNS, and therefore will trigger
+this condition, requiring all services to be up for NGINX to function.</p>
 <p>Another expression is a long running NGINX server where a backend has been
 restarted. This will mark the backend as bad and NGINX will no longer serve it
 even though the service may be running now.</p>
-<p>By <a class="reference external" href="https://stackoverflow.com/questions/32845674/setup-nginx-not-to-crash-if-host-in-upstream-is-not-found">specifying an explicit IP</a> no DNS lookup is required which prevents the
+<p>By specifying an explicit IP no DNS lookup is required which prevents the
 service health check, allowing NGINX to start or run with backends down. This
 will show <code class="docutils literal notranslate"><span class="pre">502</span></code> errors when the service is down. Does not affect
 cert-based authentication setups.</p>
-<div class="literal-block-wrapper docutils container" id="id10">
-<div class="code-block-caption"><span class="caption-text">Static IP for upstream docker service.</span><a class="headerlink" href="#id10" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">Static IP for upstream service.</span><a class="headerlink" href="#id9" title="Permalink to this code"></a></div>
 <div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="k">upstream</span><span class="w"> </span><span class="s">my-backend</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="kn">server</span><span class="w"> </span><span class="p">{</span><span class="kn">IP}:{PORT}</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
@@ -2283,6 +2287,8 @@ cert-based authentication setups.</p>
 </pre></div>
 </div>
 </div>
+<p><a class="reference external" href="https://trac.nginx.org/nginx/ticket/1040">Reference</a></p>
+<p><a class="reference external" href="https://stackoverflow.com/questions/32845674/setup-nginx-not-to-crash-if-host-in-upstream-is-not-found">Reference</a></p>
 </section>
 </section>
 

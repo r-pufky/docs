@@ -10,9 +10,7 @@
       <link rel="stylesheet" href="../../../../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/sphinx_collapse.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/expand_width.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -23,6 +21,7 @@
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/clipboard.min.js"></script>
         <script src="../../../../_static/copybutton.js"></script>
+        <script src="../../../../_static/design-tabs.js"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -380,7 +379,7 @@
 <li class="toctree-l3"><a class="reference internal" href="unifi-ap.html#confirm-wireless-network-working">Confirm Wireless Network Working</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="migrate-controller-to-docker.html">Migrate Unifi Controller to Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migrate-controller-to-container.html">Migrate Unifi Controller to Container</a></li>
 <li class="toctree-l2"><a class="reference internal" href="unifi-device-troubleshooting.html">Unifi Device Troubleshooting</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="unifi-device-troubleshooting.html#slow-adoption">Slow Adoption</a></li>
 <li class="toctree-l3"><a class="reference internal" href="unifi-device-troubleshooting.html#adoption-failure">Adoption Failure</a></li>
@@ -505,6 +504,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/ubuntu/additional-fixes.html#nxdomain-errors-in-syslog">NXDOMAIN Errors in Syslog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/ubuntu/additional-fixes.html#disable-ipv6">Disable IPv6</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/ubuntu/additional-fixes.html#shadow-passwords">Shadow Passwords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../operating-systems/ubuntu/additional-fixes.html#grub-cryptfs-password-typo">GRUB CryptFS Password Typo</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../operating-systems/ubuntu/threadripper-2990wx.html">2990WX Linux Patches</a><ul>
@@ -1495,28 +1495,26 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../services/imapsync/index.html#removing-duplicates-on-local-maildir">Removing Duplicates On Local Maildir</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../services/lidarr/index.html">Lidarr</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../services/lidarr/setup.html">Lidarr Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../services/lidarr/setup.html#ports">Ports</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../services/lidarr/setup.html#files">Files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../services/lidarr/setup.html#docker-creation">Docker Creation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../services/lidarr/setup.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../services/lidarr/setup.html#using-subdomains">Using Subdomains</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../services/lidarr/setup.html#using-subpaths">Using Subpaths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../roles/lidarr/docs/index.html">Lidarr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../roles/lidarr/docs/network.html">Network</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../roles/lidarr/docs/network.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../roles/lidarr/docs/network.html#using-subdomains">Using Subdomains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../roles/lidarr/docs/network.html#using-subpaths">Using Subpaths</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../roles/lidarr/docs/basic-configuration.html">Basic Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../roles/lidarr/docs/basic-configuration.html#media-management">Media Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../roles/lidarr/docs/basic-configuration.html#profiles">Profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../roles/lidarr/docs/basic-configuration.html#quality">Quality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../roles/lidarr/docs/basic-configuration.html#indexers">Indexers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../roles/lidarr/docs/basic-configuration.html#download-clients">Download Clients</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../roles/lidarr/docs/basic-configuration.html#metadata">Metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../roles/lidarr/docs/basic-configuration.html#general">General</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../roles/lidarr/docs/basic-configuration.html#ui">UI</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../services/lidarr/basic-configuration.html">Basic Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../services/lidarr/basic-configuration.html#media-management">Media Management</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../services/lidarr/basic-configuration.html#profiles">Profiles</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../services/lidarr/basic-configuration.html#quality">Quality</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../services/lidarr/basic-configuration.html#indexers">Indexers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../services/lidarr/basic-configuration.html#download-clients">Download Clients</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../services/lidarr/basic-configuration.html#general">General</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../services/lidarr/basic-configuration.html#ui">UI</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../roles/lidarr/docs/index.html#ports">Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../roles/lidarr/docs/index.html#defaults">Defaults</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../roles/db/docs/mariadb/index.html">MariaDB</a><ul>
@@ -1586,13 +1584,12 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#one-server-site-per-config-file">One Server Site Per Config File</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#password-authencation-basic-auth">Password Authencation (Basic Auth)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#site-wide-auth-file">Site-wide Auth File</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#remove-auth-requirement-for-docker-containers">Remove Auth Requirement for Docker Containers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#remove-auth-requirement-for-proxies">Remove Auth Requirement for Proxies</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#whitelist-all-containers">Whitelist All Containers</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#whitelist-single-container">Whitelist Single Container</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#disable-auth-for-a-specific-location">Disable Auth for a specific location</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#accessing-networks-from-other-compose-containers">Accessing Networks from Other Compose Containers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#classify-networks-to-variables">Classify Networks to Variables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#rate-limiting">Rate Limiting</a></li>
 </ul>
@@ -1606,7 +1603,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../roles/nginx/docs/troubleshooting.html#dump-loaded-nginx-configuration">Dump Loaded NGINX Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../roles/nginx/docs/troubleshooting.html#nginx-queries-originate-from-wrong-gateway">NGINX Queries Originate from Wrong Gateway</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../roles/nginx/docs/troubleshooting.html#forward-traffic-via-specific-interfaces">Forward Traffic via Specific Interfaces</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../roles/nginx/docs/troubleshooting.html#not-starting-with-docker-services">Not Starting with Docker Services</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../roles/nginx/docs/index.html#ports">Ports</a></li>
@@ -1639,6 +1635,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../roles/steam/docs/left_4_dead_2.html">Left 4 Dead 2</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../roles/steam/docs/left_4_dead_2.html#ports">Ports</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../roles/steam/docs/left_4_dead_2.html#defaults">Defaults</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../roles/steam/docs/satisfactory.html">Satisfactory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../roles/steam/docs/satisfactory.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../roles/steam/docs/satisfactory.html#defaults">Defaults</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../roles/steam/docs/seven_days_to_die.html">7 Days to Die</a><ul>
@@ -2068,95 +2069,158 @@ devices; disabled by default.</p>
 <p><strong>Skip</strong> <em>device</em>, <em>wifi</em> and <em>cloud login</em> configuration during the intial
 configuration.</p>
 </div>
-<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Basic Unifi Controller Setup<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-browser" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0114.25 15H1.75A1.75 1.75 0 010 13.25V2.75zm1.75-.25a.25.25 0 00-.25.25V4.5h2v-2H1.75zM5 2.5v2h2v-2H5zm3.5 0v2h6V2.75a.25.25 0 00-.25-.25H8.5zm6 3.5h-13v7.25c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V6z"></path></svg></span>Basic Unifi Controller Setup<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Setup Wizard</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">Setup Wizard</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Select your Country</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">COUNTRY</span></p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Select your Country</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Select your Timezone</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">TZ</span></p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">COUNTRY</span></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">› ☑</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Enable Auto Backup</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Select your Timezone</p>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">TZ</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">› ☑</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Enable Auto Backup</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: None</span></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: None</span></p>
+</div></blockquote>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Basic Unifi Controller Access Setup<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-browser" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0114.25 15H1.75A1.75 1.75 0 010 13.25V2.75zm1.75-.25a.25.25 0 00-.25.25V4.5h2v-2H1.75zM5 2.5v2h2v-2H5zm3.5 0v2h6V2.75a.25.25 0 00-.25-.25H8.5zm6 3.5h-13v7.25c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V6z"></path></svg></span>Basic Unifi Controller Access Setup<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Setup Wizard › Controller Access</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Admin Name</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">USER</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Admin Email</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">EMAIL</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Admin Password</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">PASS</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Device Authentication</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">USER</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Device Password</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">PASS</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p class="card-text">The <em>admin name</em> account is the <a class="reference external" href="https://help.ui.com/hc/en-us/articles/204909374-UniFi-Accounts-and-Passwords-for-Controller-Cloud-Key-and-Other-Devices">super admin</a> for the controller, meaning
+<p class="sd-card-text">The <em>admin name</em> account is the <a class="reference external" href="https://help.ui.com/hc/en-us/articles/204909374-UniFi-Accounts-and-Passwords-for-Controller-Cloud-Key-and-Other-Devices">super admin</a> for the controller, meaning
 that account can manage multiple sites as well as devices. The <em>device
 authentication</em> account is used to manage physical devices via the UI or
 SSH on that device.</p>
@@ -2164,87 +2228,12 @@ SSH on that device.</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">Setup Wizard › Controller Access</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Admin Name</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">USER</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Admin Email</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">EMAIL</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Admin Password</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">PASS</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Device Authentication</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">USER</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Device Password</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">PASS</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: None</span></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: None</span></p>
+</div></blockquote>
 </div>
 </div>
 </div>
@@ -2254,158 +2243,142 @@ SSH on that device.</p>
 </details></section>
 <section id="basic-controller-setup">
 <span id="id2"></span><h2>Basic Controller Setup<a class="headerlink" href="#basic-controller-setup" title="Permalink to this headline"></a></h2>
-<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Basic Unifi Controller Setup<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-browser" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0114.25 15H1.75A1.75 1.75 0 010 13.25V2.75zm1.75-.25a.25.25 0 00-.25.25V4.5h2v-2H1.75zM5 2.5v2h2v-2H5zm3.5 0v2h6V2.75a.25.25 0 00-.25-.25H8.5zm6 3.5h-13v7.25c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V6z"></path></svg></span>Basic Unifi Controller Setup<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">⚙ › Controller › Controller Settings</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">⚙ › Controller › Controller Settings</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Controller Name</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">HOST</span></p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Controller Name</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Controller Hostname/IP</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">IP</span></p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">HOST</span></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">› ☐</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Override inform host with controller hostname/IP</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Controller Hostname/IP</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">› ☑</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Make controller discoverable on L2 network</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">IP</span></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Store</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Disable store for all users</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">› ☐</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Support Messaging</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Disable live support for all users</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Override inform host with controller hostname/IP</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Real-time Updates in Web Browser</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Automatically adapt rates of real-time updates</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">› ☑</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Analytics &amp; Improvements</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">OFF</span></p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Make controller discoverable on L2 network</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">› ☐</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Enable mail server</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Store</p>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Disable store for all users</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Support Messaging</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Disable live support for all users</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Real-time Updates in Web Browser</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Automatically adapt rates of real-time updates</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Analytics &amp; Improvements</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">OFF</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">› ☐</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Enable mail server</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: None</span></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: None</span></p>
+</div></blockquote>
 </div>
 </div>
 </div>
@@ -2419,542 +2392,512 @@ Basic Unifi Controller Setup<div class="summary-down docutils">
 with the laptop and may be changed or disabled after initial configuration to
 rely on DHCP or set inform.</p>
 </div>
-<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Remote Access Controller Setup<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-browser" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0114.25 15H1.75A1.75 1.75 0 010 13.25V2.75zm1.75-.25a.25.25 0 00-.25.25V4.5h2v-2H1.75zM5 2.5v2h2v-2H5zm3.5 0v2h6V2.75a.25.25 0 00-.25-.25H8.5zm6 3.5h-13v7.25c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V6z"></path></svg></span>Remote Access Controller Setup<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">⚙ › Remote Access › Controller</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">⚙ › Remote Access › Controller</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Enable Remote Access</p>
 </div>
 </div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">OFF</span></p>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Enable Remote Access</p>
 </div>
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Enable Local Login with UBNT Account</p>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">OFF</span></p>
 </div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">OFF</span></p>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Enable Local Login with UBNT Account</p>
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Remote Access Status</p>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">OFF</span></p>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">DISABLED</span></p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Remote Access Status</p>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DISABLED</span></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: None</span></p>
+</div></blockquote>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: None</span></p>
 </div>
 </div>
 </div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-browser" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0114.25 15H1.75A1.75 1.75 0 010 13.25V2.75zm1.75-.25a.25.25 0 00-.25.25V4.5h2v-2H1.75zM5 2.5v2h2v-2H5zm3.5 0v2h6V2.75a.25.25 0 00-.25-.25H8.5zm6 3.5h-13v7.25c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V6z"></path></svg></span>Remote Access Owner Setup<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">⚙ › Remote Access › Owner</p>
 </div>
 </div>
 </div>
-</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Remote Access Owner Setup<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Configured for</p>
 </div>
 </div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Not Configured</p>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">⚙ › Remote Access › Owner</p>
 </div>
 </div>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Configured for</p>
 </div>
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: None</span></p>
+</div></blockquote>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Not Configured</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: None</span></p>
 </div>
 </div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-browser" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0114.25 15H1.75A1.75 1.75 0 010 13.25V2.75zm1.75-.25a.25.25 0 00-.25.25V4.5h2v-2H1.75zM5 2.5v2h2v-2H5zm3.5 0v2h6V2.75a.25.25 0 00-.25-.25H8.5zm6 3.5h-13v7.25c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V6z"></path></svg></span>Remote Access Advanced Setup<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">⚙ › Remote Access › Advanced Options</p>
 </div>
 </div>
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Report Errors to Ubiquiti</p>
 </div>
-</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Remote Access Advanced Setup<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
 </div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☐</p>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">⚙ › Remote Access › Advanced Options</p>
 </div>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Report Errors to Ubiquiti</p>
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: None</span></p>
+</div></blockquote>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☐</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: None</span></p>
 </div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-browser" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0114.25 15H1.75A1.75 1.75 0 010 13.25V2.75zm1.75-.25a.25.25 0 00-.25.25V4.5h2v-2H1.75zM5 2.5v2h2v-2H5zm3.5 0v2h6V2.75a.25.25 0 00-.25-.25H8.5zm6 3.5h-13v7.25c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V6z"></path></svg></span>Site Configuration<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">⚙ › Site › Site Configuration</p>
 </div>
 </div>
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Site Name</p>
 </div>
 </div>
-</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Site Configuration<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">SITE</span></p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">⚙ › Site › Site Configuration</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Country</p>
 </div>
 </div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">COUNTRY</span></p>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Site Name</p>
 </div>
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Timezone</p>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">SITE</span></p>
 </div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">TZ</span></p>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Country</p>
 </div>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">COUNTRY</span></p>
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: None</span></p>
+</div></blockquote>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Timezone</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">TZ</span></p>
 </div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-browser" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0114.25 15H1.75A1.75 1.75 0 010 13.25V2.75zm1.75-.25a.25.25 0 00-.25.25V4.5h2v-2H1.75zM5 2.5v2h2v-2H5zm3.5 0v2h6V2.75a.25.25 0 00-.25-.25H8.5zm6 3.5h-13v7.25c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V6z"></path></svg></span>Service Configuration<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">⚙ › Site › Services</p>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: None</span></p>
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☐</p>
 </div>
 </div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Advanced Features</p>
 </div>
 </div>
 </div>
-</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Service Configuration<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☑</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Automatically upgrade AP firmware</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☐</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Enable status LED</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☐</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Enable alert emails</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☐</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Enable periodic speed test every</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☑</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Enable connectivity monitor and wireless uplink</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☑</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Default gateway</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☐</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Enable remote Syslog server</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☐</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Enable Netconsole logging server</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p class="card-text">Alerts and advanced logging disabled for initial setup, change these after
+<p class="sd-card-text">Alerts and advanced logging disabled for initial setup, change these after
 finishing configuration.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">⚙ › Site › Services</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☐</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Advanced Features</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☑</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Automatically upgrade AP firmware</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☐</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Enable status LED</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☐</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Enable alert emails</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☐</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Enable periodic speed test every</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☑</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Enable connectivity monitor and wireless uplink</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☑</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Default gateway</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☐</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Enable remote Syslog server</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☐</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Enable Netconsole logging server</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: None</span></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: None</span></p>
+</div></blockquote>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Provider Capabilities<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-browser" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0114.25 15H1.75A1.75 1.75 0 010 13.25V2.75zm1.75-.25a.25.25 0 00-.25.25V4.5h2v-2H1.75zM5 2.5v2h2v-2H5zm3.5 0v2h6V2.75a.25.25 0 00-.25-.25H8.5zm6 3.5h-13v7.25c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V6z"></path></svg></span>Provider Capabilities<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">⚙ › Site › Provider Capabilities</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Download</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">1 Gbps</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Upload</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">1 Gpbs</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p class="card-text">Upload/Download settings should be reflective of your Internet connection
+<p class="sd-card-text">Upload/Download settings should be reflective of your Internet connection
 for proper scaling of graphing data. It is <em>not</em> a throttle.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">⚙ › Site › Provider Capabilities</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Download</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">1 Gbps</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Upload</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">1 Gpbs</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: None</span></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: None</span></p>
+</div></blockquote>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Device Authentication<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-browser" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0114.25 15H1.75A1.75 1.75 0 010 13.25V2.75zm1.75-.25a.25.25 0 00-.25.25V4.5h2v-2H1.75zM5 2.5v2h2v-2H5zm3.5 0v2h6V2.75a.25.25 0 00-.25-.25H8.5zm6 3.5h-13v7.25c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V6z"></path></svg></span>Device Authentication<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">⚙ › Site › Device Authentication</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">⚙ › Site › Device Authentication</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☑</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Enable SSH Authentication</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☑</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Username</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">USER</span></p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Enable SSH Authentication</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Password</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">PASS</span></p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Username</p>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">USER</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Password</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">PASS</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: None</span></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: None</span></p>
+</div></blockquote>
 </div>
 </div>
 </div>
@@ -2966,244 +2909,224 @@ Device Authentication<div class="summary-down docutils">
 <section id="vlan-configuration">
 <h2>VLAN Configuration<a class="headerlink" href="#vlan-configuration" title="Permalink to this headline"></a></h2>
 <p>Add all VLANS using the <a class="reference internal" href="network-overview.html#vlan-table"><span class="std std-ref">VLAN Table</span></a>.</p>
-<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Default LAN Network<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-browser" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0114.25 15H1.75A1.75 1.75 0 010 13.25V2.75zm1.75-.25a.25.25 0 00-.25.25V4.5h2v-2H1.75zM5 2.5v2h2v-2H5zm3.5 0v2h6V2.75a.25.25 0 00-.25-.25H8.5zm6 3.5h-13v7.25c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V6z"></path></svg></span>Default LAN Network<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">⚙ › Networks › LAN</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☑</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Corporate</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☑</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">LAN</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Gateway/Subnet</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">10.1.1.1/24</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Domain Name</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">DOMAIN</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">› ☐</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Enable IGMP Snooping</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">DHCP Server</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">NONE</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">› ☐</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Enable DHCP gaurding</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">› ☐</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Enable UPnP LAN</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">IPv6 Interface Type</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">NONE</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p class="card-text">This will be the default network when new devices are discovered before
+<p class="sd-card-text">This will be the default network when new devices are discovered before
 they are adopted. This is also the untagged <a class="reference internal" href="vlan-101.html#term-Management-VLAN"><span class="xref std std-term">Management VLAN</span></a>
 network. Configure with <a class="reference internal" href="vlan-101.html#term-Management-VLAN"><span class="xref std std-term">Management VLAN</span></a> settings.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">⚙ › Networks › LAN</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☑</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Corporate</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☑</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">LAN</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Gateway/Subnet</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">10.1.1.1/24</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Domain Name</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">DOMAIN</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">› ☐</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Enable IGMP Snooping</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">DHCP Server</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">NONE</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">› ☐</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Enable DHCP gaurding</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">› ☐</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Enable UPnP LAN</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">IPv6 Interface Type</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">NONE</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: None</span></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: None</span></p>
+</div></blockquote>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Create All VLAN Networks<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-browser" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0114.25 15H1.75A1.75 1.75 0 010 13.25V2.75zm1.75-.25a.25.25 0 00-.25.25V4.5h2v-2H1.75zM5 2.5v2h2v-2H5zm3.5 0v2h6V2.75a.25.25 0 00-.25-.25H8.5zm6 3.5h-13v7.25c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V6z"></path></svg></span>Create All VLAN Networks<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">⚙ › Networks › Create New Network</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Name</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Wired</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☑</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">VLAN Only</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">VLAN</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">2</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p class="card-text">Add all VLANS using the <a class="reference internal" href="network-overview.html#vlan-table"><span class="std std-ref">VLAN Table</span></a>. <a class="reference internal" href="vlan-101.html#term-Management-VLAN"><span class="xref std std-term">Management
+<p class="sd-card-text">Add all VLANS using the <a class="reference internal" href="network-overview.html#vlan-table"><span class="std std-ref">VLAN Table</span></a>. <a class="reference internal" href="vlan-101.html#term-Management-VLAN"><span class="xref std std-term">Management
 VLAN</span></a> is not explicitly defined as a VLAN – untagged traffic coming into
 <em>eth0</em> IS management traffic.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">⚙ › Networks › Create New Network</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Name</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Wired</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☑</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">VLAN Only</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">VLAN</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">2</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: None</span></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: None</span></p>
+</div></blockquote>
 </div>
 </div>
 </div>
@@ -3213,345 +3136,315 @@ VLAN</span></a> is not explicitly defined as a VLAN – untagged traffic coming 
 </details></section>
 <section id="add-trunk-port-profiles">
 <h2>Add Trunk Port Profiles<a class="headerlink" href="#add-trunk-port-profiles" title="Permalink to this headline"></a></h2>
-<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Add AP Wireless Trunk Port Profiles<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-browser" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0114.25 15H1.75A1.75 1.75 0 010 13.25V2.75zm1.75-.25a.25.25 0 00-.25.25V4.5h2v-2H1.75zM5 2.5v2h2v-2H5zm3.5 0v2h6V2.75a.25.25 0 00-.25-.25H8.5zm6 3.5h-13v7.25c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V6z"></path></svg></span>Add AP Wireless Trunk Port Profiles<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">⚙ › Profiles › Switch Ports › Add New Port Profile › Create New Switch Port Profile</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">⚙ › Profiles › Switch Ports › Add New Port Profile › Create New Switch Port Profile</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Profile Name</p>
 </div>
 </div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">trunk-wifi</p>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Profile Name</p>
 </div>
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">› POE</p>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">trunk-wifi</p>
 </div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">PoE/PoE+</p>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">› POE</p>
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Networks/VLANs</p>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">PoE/PoE+</p>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Networks/VLANs</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">› Native Network</p>
 </div>
 </div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">LAN</p>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
 </div>
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">› Tagged Networks</p>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">› Native Network</p>
 </div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">wifi</p>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">LAN</p>
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">› Voice Network</p>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">› Tagged Networks</p>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">NONE</span></p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">wifi</p>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">› Voice Network</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: None</span></p>
+</div></blockquote>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">NONE</span></p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: None</span></p>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-browser" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0114.25 15H1.75A1.75 1.75 0 010 13.25V2.75zm1.75-.25a.25.25 0 00-.25.25V4.5h2v-2H1.75zM5 2.5v2h2v-2H5zm3.5 0v2h6V2.75a.25.25 0 00-.25-.25H8.5zm6 3.5h-13v7.25c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V6z"></path></svg></span>Add Wired Trunk Port Profiles<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">⚙ › Profiles › Switch Ports › Add New Port Profile › Create New Switch Port Profile</p>
 </div>
 </div>
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Profile Name</p>
 </div>
 </div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">trunk-wired</p>
 </div>
-</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Add Wired Trunk Port Profiles<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
 </div>
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">› POE</p>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">⚙ › Profiles › Switch Ports › Add New Port Profile › Create New Switch Port Profile</p>
 </div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">OFF</span></p>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Profile Name</p>
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Networks/VLANs</p>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">trunk-wired</p>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">› POE</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">› Native Network</p>
 </div>
 </div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">LAN</p>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">OFF</span></p>
 </div>
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">› Tagged Networks</p>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Networks/VLANs</p>
 </div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">wifi wired</p>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">› Voice Network</p>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">› Native Network</p>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">NONE</span></p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">LAN</p>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">› Tagged Networks</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: None</span></p>
+</div></blockquote>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">wifi wired</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">› Voice Network</p>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-browser" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0114.25 15H1.75A1.75 1.75 0 010 13.25V2.75zm1.75-.25a.25.25 0 00-.25.25V4.5h2v-2H1.75zM5 2.5v2h2v-2H5zm3.5 0v2h6V2.75a.25.25 0 00-.25-.25H8.5zm6 3.5h-13v7.25c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V6z"></path></svg></span>Add Server Trunk Port Profiles<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">⚙ › Profiles › Switch Ports › Add New Port Profile › Create New Switch Port Profile</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">NONE</span></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Profile Name</p>
 </div>
 </div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">trunk-server</p>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: None</span></p>
 </div>
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">› POE</p>
 </div>
 </div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">OFF</span></p>
 </div>
 </div>
-</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Add Server Trunk Port Profiles<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Networks/VLANs</p>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">⚙ › Profiles › Switch Ports › Add New Port Profile › Create New Switch Port Profile</p>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Profile Name</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">› Native Network</p>
 </div>
 </div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">LAN</p>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">trunk-server</p>
 </div>
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">› Tagged Networks</p>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">› POE</p>
 </div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">server infrastructure</p>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">OFF</span></p>
 </div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">› Voice Network</p>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Networks/VLANs</p>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info">NONE</span></p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">› Native Network</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">LAN</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">› Tagged Networks</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">server infrastructure</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">› Voice Network</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-info badge-pill">NONE</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: None</span></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: None</span></p>
+</div></blockquote>
 </div>
 </div>
 </div>

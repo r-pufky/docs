@@ -10,9 +10,7 @@
       <link rel="stylesheet" href="../../../../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/sphinx_collapse.css" type="text/css" />
       <link rel="stylesheet" href="../../../../_static/expand_width.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -23,6 +21,7 @@
         <script src="../../../../_static/doctools.js"></script>
         <script src="../../../../_static/clipboard.min.js"></script>
         <script src="../../../../_static/copybutton.js"></script>
+        <script src="../../../../_static/design-tabs.js"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -380,7 +379,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../docs/networking/ubiquiti/example-vlan-network/unifi-ap.html#confirm-wireless-network-working">Confirm Wireless Network Working</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../docs/networking/ubiquiti/example-vlan-network/migrate-controller-to-docker.html">Migrate Unifi Controller to Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../docs/networking/ubiquiti/example-vlan-network/migrate-controller-to-container.html">Migrate Unifi Controller to Container</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../docs/networking/ubiquiti/example-vlan-network/unifi-device-troubleshooting.html">Unifi Device Troubleshooting</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../docs/networking/ubiquiti/example-vlan-network/unifi-device-troubleshooting.html#slow-adoption">Slow Adoption</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../docs/networking/ubiquiti/example-vlan-network/unifi-device-troubleshooting.html#adoption-failure">Adoption Failure</a></li>
@@ -505,6 +504,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../docs/operating-systems/ubuntu/additional-fixes.html#nxdomain-errors-in-syslog">NXDOMAIN Errors in Syslog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../docs/operating-systems/ubuntu/additional-fixes.html#disable-ipv6">Disable IPv6</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../docs/operating-systems/ubuntu/additional-fixes.html#shadow-passwords">Shadow Passwords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../docs/operating-systems/ubuntu/additional-fixes.html#grub-cryptfs-password-typo">GRUB CryptFS Password Typo</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../docs/operating-systems/ubuntu/threadripper-2990wx.html">2990WX Linux Patches</a><ul>
@@ -1495,28 +1495,26 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../docs/services/imapsync/index.html#removing-duplicates-on-local-maildir">Removing Duplicates On Local Maildir</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../docs/services/lidarr/index.html">Lidarr</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../docs/services/lidarr/setup.html">Lidarr Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/setup.html#ports">Ports</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/setup.html#files">Files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/setup.html#docker-creation">Docker Creation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/setup.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../docs/services/lidarr/setup.html#using-subdomains">Using Subdomains</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../docs/services/lidarr/setup.html#using-subpaths">Using Subpaths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../lidarr/docs/index.html">Lidarr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../lidarr/docs/network.html">Network</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/network.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/network.html#using-subdomains">Using Subdomains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/network.html#using-subpaths">Using Subpaths</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../lidarr/docs/basic-configuration.html">Basic Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/basic-configuration.html#media-management">Media Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/basic-configuration.html#profiles">Profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/basic-configuration.html#quality">Quality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/basic-configuration.html#indexers">Indexers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/basic-configuration.html#download-clients">Download Clients</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/basic-configuration.html#metadata">Metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/basic-configuration.html#general">General</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../lidarr/docs/basic-configuration.html#ui">UI</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../docs/services/lidarr/basic-configuration.html">Basic Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/basic-configuration.html#media-management">Media Management</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/basic-configuration.html#profiles">Profiles</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/basic-configuration.html#quality">Quality</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/basic-configuration.html#indexers">Indexers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/basic-configuration.html#download-clients">Download Clients</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/basic-configuration.html#general">General</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../docs/services/lidarr/basic-configuration.html#ui">UI</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../lidarr/docs/index.html#ports">Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../lidarr/docs/index.html#defaults">Defaults</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../db/docs/mariadb/index.html">MariaDB</a><ul>
@@ -1586,13 +1584,12 @@
 <li class="toctree-l4"><a class="reference internal" href="#one-server-site-per-config-file">One Server Site Per Config File</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#password-authencation-basic-auth">Password Authencation (Basic Auth)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#site-wide-auth-file">Site-wide Auth File</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#remove-auth-requirement-for-docker-containers">Remove Auth Requirement for Docker Containers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#remove-auth-requirement-for-proxies">Remove Auth Requirement for Proxies</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#whitelist-all-containers">Whitelist All Containers</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#whitelist-single-container">Whitelist Single Container</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#disable-auth-for-a-specific-location">Disable Auth for a specific location</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#accessing-networks-from-other-compose-containers">Accessing Networks from Other Compose Containers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#classify-networks-to-variables">Classify Networks to Variables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#rate-limiting">Rate Limiting</a></li>
 </ul>
@@ -1606,7 +1603,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../troubleshooting.html#dump-loaded-nginx-configuration">Dump Loaded NGINX Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../troubleshooting.html#nginx-queries-originate-from-wrong-gateway">NGINX Queries Originate from Wrong Gateway</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../troubleshooting.html#forward-traffic-via-specific-interfaces">Forward Traffic via Specific Interfaces</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../troubleshooting.html#not-starting-with-docker-services">Not Starting with Docker Services</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../index.html#ports">Ports</a></li>
@@ -1639,6 +1635,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../steam/docs/left_4_dead_2.html">Left 4 Dead 2</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../steam/docs/left_4_dead_2.html#ports">Ports</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../steam/docs/left_4_dead_2.html#defaults">Defaults</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../steam/docs/satisfactory.html">Satisfactory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../steam/docs/satisfactory.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../steam/docs/satisfactory.html#defaults">Defaults</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../steam/docs/seven_days_to_die.html">7 Days to Die</a><ul>
@@ -2058,16 +2059,16 @@ proxy for a while.</p>
 <h2>One Proxy File Per Site<a class="headerlink" href="#one-proxy-file-per-site" title="Permalink to this headline"></a></h2>
 <p>Minimizes errors by keeping proxy configuration in one location. Useful when
 needing the same proxy config multiple times in a site.</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">Create a proxy directory.</span><a class="headerlink" href="#id3" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Create a proxy directory.</span><a class="headerlink" href="#id1" title="Permalink to this code"></a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir /etc/nginx/conf.d/include/proxy
 </pre></div>
 </div>
 </div>
 <p>Add each site proxy config to <code class="docutils literal notranslate"><span class="pre">/etc/nginx/conf.d/include/proxy/{SITE}</span></code>. These
 can be imported in server/location blocks as needed.</p>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/nginx/conf.d/include/server/{SITE}</span></code></span><a class="headerlink" href="#id4" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/nginx/conf.d/include/server/{SITE}</span></code></span><a class="headerlink" href="#id2" title="Permalink to this code"></a></div>
 <div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="k">server</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="kn">include</span><span class="w"> </span><span class="s">/etc/nginx/conf.d/include/proxy/</span><span class="p">{</span><span class="kn">SITE}</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
@@ -2079,16 +2080,16 @@ can be imported in server/location blocks as needed.</p>
 <h2>One Server Site Per Config File<a class="headerlink" href="#one-server-site-per-config-file" title="Permalink to this headline"></a></h2>
 <p>Keep one site per configuration file to focus only on that site. This will help
 reduce errors and allow fast lookup / disable of configurations.</p>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">Create a server directory.</span><a class="headerlink" href="#id5" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Create a server directory.</span><a class="headerlink" href="#id3" title="Permalink to this code"></a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir /etc/nginx/conf.d/include/server
 </pre></div>
 </div>
 </div>
 <p>Add each site to <code class="docutils literal notranslate"><span class="pre">/etc/nginx/conf.d/include/server/{SITE}</span></code>. Then modify
 default config to auto import sites / services.</p>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/nginx/conf.d/default.conf</span></code></span><a class="headerlink" href="#id6" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/nginx/conf.d/default.conf</span></code></span><a class="headerlink" href="#id4" title="Permalink to this code"></a></div>
 <div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="k">include</span><span class="w"> </span><span class="n">/etc/nginx/conf.d/include/server/*</span>;<span class="w"></span>
 </pre></div>
 </div>
@@ -2097,17 +2098,17 @@ default config to auto import sites / services.</p>
 that site.</p>
 </section>
 <section id="password-authencation-basic-auth">
-<span id="service-nginx-basic-auth"></span><h2>Password Authencation (<a class="reference external" href="https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/#pass">Basic Auth</a>)<a class="headerlink" href="#password-authencation-basic-auth" title="Permalink to this headline"></a></h2>
+<span id="service-nginx-basic-auth"></span><h2>Password Authencation (Basic Auth)<a class="headerlink" href="#password-authencation-basic-auth" title="Permalink to this headline"></a></h2>
 <p>Basic auth uses a file to authenticate users for NGINX locations.</p>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">Install password utilities and generate a user/password.</span><a class="headerlink" href="#id7" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">Install password utilities and generate a user/password.</span><a class="headerlink" href="#id5" title="Permalink to this code"></a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt install apache2-utils
 sudo htpasswd -c /etc/nginx/<span class="o">{</span>SITE<span class="o">}</span>.pass <span class="o">{</span>USER<span class="o">}</span>
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">nginx/conf.d/reverse-proxy.conf</span></code></span><a class="headerlink" href="#id8" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">nginx/conf.d/reverse-proxy.conf</span></code></span><a class="headerlink" href="#id6" title="Permalink to this code"></a></div>
 <div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span>server {
   listen 443 ssl http2;
   server_name {SITE}.{DOMAIN} {SITE};
@@ -2133,14 +2134,15 @@ authentication, and force all others to authenticate, prompting with
 <code class="docutils literal notranslate"><span class="pre">{SITE}</span></code>.</p>
 <p>See <a class="reference internal" href="#service-nginx-site-auth"><span class="std std-ref">Site-wide Auth File</span></a> for applying auth to subnets.</p>
 </div>
+<p><a class="reference external" href="https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/#pass">Reference</a></p>
 </section>
 <section id="site-wide-auth-file">
 <span id="service-nginx-site-auth"></span><h2>Site-wide Auth File<a class="headerlink" href="#site-wide-auth-file" title="Permalink to this headline"></a></h2>
 <p>Keep authentication definitions for different services to one file to maintain
 authentication consistency across multiple sites.</p>
-<p>Create an authentication <a class="reference external" href="https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/">block and store in a file</a>.</p>
-<div class="literal-block-wrapper docutils container" id="id9">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/nginx/conf.d/site-auth.conf</span></code></span><a class="headerlink" href="#id9" title="Permalink to this code"></a></div>
+<p>Create an authentication block, and store in a file.</p>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/nginx/conf.d/site-auth.conf</span></code></span><a class="headerlink" href="#id7" title="Permalink to this code"></a></div>
 <div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="c1"># Allow all on 10.1.1.0/24 through, and force auth for everyone else.</span>
 <span class="k">satisfy</span><span class="w">              </span><span class="s">any</span><span class="p">;</span><span class="w"></span>
 <span class="k">allow</span><span class="w">                </span><span class="mi">10</span><span class="s">.1.1.0/24</span><span class="p">;</span><span class="w"></span>
@@ -2151,8 +2153,8 @@ authentication consistency across multiple sites.</p>
 </div>
 </div>
 <p>Include authentication block where authentication would be required:</p>
-<div class="literal-block-wrapper docutils container" id="id10">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/nginx/conf.d/services/my-site.conf</span></code></span><a class="headerlink" href="#id10" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/nginx/conf.d/services/my-site.conf</span></code></span><a class="headerlink" href="#id8" title="Permalink to this code"></a></div>
 <div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span>location / {
   include    /etc/nginx/conf.d/site-auth.conf;
   proxy_pass ...
@@ -2160,48 +2162,33 @@ authentication consistency across multiple sites.</p>
 </pre></div>
 </div>
 </div>
+<p><a class="reference external" href="https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/">Reference</a></p>
 </section>
-<section id="remove-auth-requirement-for-docker-containers">
-<h2>Remove Auth Requirement for Docker Containers<a class="headerlink" href="#remove-auth-requirement-for-docker-containers" title="Permalink to this headline"></a></h2>
-<p>For docker containers running with NGINX, the docker network or specific IP
-would need to be whitelisted. This allows dashboards and services to communicate
-using FQDNs without needing basic auth.</p>
+<section id="remove-auth-requirement-for-proxies">
+<h2>Remove Auth Requirement for Proxies<a class="headerlink" href="#remove-auth-requirement-for-proxies" title="Permalink to this headline"></a></h2>
+<p>NGINX may be whitelisted to allow dashboards and services to communicate with
+each other using FQDNs without needing basic auth.</p>
 <section id="whitelist-all-containers">
-<h3><a class="reference external" href="https://docs.docker.com/network/bridge/#differences-between-user-defined-bridges-and-the-default-bridge">Whitelist All Containers</a><a class="headerlink" href="#whitelist-all-containers" title="Permalink to this headline"></a></h3>
-<div class="literal-block-wrapper docutils container" id="id11">
-<div class="code-block-caption"><span class="caption-text">Determine network that containers are on.</span><a class="headerlink" href="#id11" title="Permalink to this code"></a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker network ls
-docker network inspect docker_default
-</pre></div>
-</div>
-</div>
+<h3>Whitelist All Containers<a class="headerlink" href="#whitelist-all-containers" title="Permalink to this headline"></a></h3>
 <p>Add IP range to the authorization file:</p>
-<div class="literal-block-wrapper docutils container" id="id12">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/nginx/conf.d/site-auth.conf</span></code></span><a class="headerlink" href="#id12" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/nginx/conf.d/site-auth.conf</span></code></span><a class="headerlink" href="#id9" title="Permalink to this code"></a></div>
 <div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="k">allow</span><span class="w"> </span><span class="mi">172</span><span class="s">.18.0.0/16</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
+<p><a class="reference external" href="https://docs.docker.com/network/bridge/#differences-between-user-defined-bridges-and-the-default-bridge">Reference</a></p>
 </section>
 <section id="whitelist-single-container">
-<h3><a class="reference external" href="https://stackoverflow.com/questions/45358188/restrict-access-to-nginx-server-location-to-a-specific-docker-container-with-al">Whitelist Single Container</a><a class="headerlink" href="#whitelist-single-container" title="Permalink to this headline"></a></h3>
-<p>Set static IP for docker container (otherwise it is random).</p>
-<div class="literal-block-wrapper docutils container" id="id13">
-<div class="code-block-caption"><span class="caption-text"><strong>0640 root root</strong> <code class="docutils literal notranslate"><span class="pre">docker-compose.yml</span></code></span><a class="headerlink" href="#id13" title="Permalink to this code"></a></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">container_name</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">networks</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">agent</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">ipv4_address</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">172.18.0.101</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
+<h3>Whitelist Single Container<a class="headerlink" href="#whitelist-single-container" title="Permalink to this headline"></a></h3>
 <p>Whitelist specific IP in auth file:</p>
-<div class="literal-block-wrapper docutils container" id="id14">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/nginx/conf.d/site-auth.conf</span></code></span><a class="headerlink" href="#id14" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/nginx/conf.d/site-auth.conf</span></code></span><a class="headerlink" href="#id10" title="Permalink to this code"></a></div>
 <div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="k">allow</span><span class="w"> </span><span class="mi">172</span><span class="s">.18.0.101</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
+<p><a class="reference external" href="https://stackoverflow.com/questions/45358188/restrict-access-to-nginx-server-location-to-a-specific-docker-container-with-al">Reference</a></p>
 </section>
 </section>
 <section id="disable-auth-for-a-specific-location">
@@ -2211,8 +2198,8 @@ specific location. This is for proxied sites that do their own authentication
 (e.g. git) or for specific locations which shouldn’t be auth’ed.</p>
 <p>Explicitly set <strong>no</strong> authentication and <code class="docutils literal notranslate"><span class="pre">allow</span> <span class="pre">all</span></code> to prevent any
 configuration carried over from the default site.</p>
-<div class="literal-block-wrapper docutils container" id="id15">
-<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/nginx/conf.d/services/my-site.conf</span></code></span><a class="headerlink" href="#id15" title="Permalink to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text"><strong>0644 root root</strong> <code class="docutils literal notranslate"><span class="pre">/etc/nginx/conf.d/services/my-site.conf</span></code></span><a class="headerlink" href="#id11" title="Permalink to this code"></a></div>
 <div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span>location / {
   auth_basic off;
   allow      all;
@@ -2220,31 +2207,6 @@ configuration carried over from the default site.</p>
 }
 </pre></div>
 </div>
-</div>
-</section>
-<section id="accessing-networks-from-other-compose-containers">
-<h2>Accessing Networks from Other Compose Containers<a class="headerlink" href="#accessing-networks-from-other-compose-containers" title="Permalink to this headline"></a></h2>
-<p>Custom networks may be explicitly accessed by other containers (e.g. a
-reverse-proxy) by explicitly defining them within the compose definition.</p>
-<div class="literal-block-wrapper docutils container" id="id16">
-<div class="code-block-caption"><span class="caption-text"><strong>0640 root root</strong> <code class="docutils literal notranslate"><span class="pre">{SERVICE}/docker-compose.yml</span></code></span><a class="headerlink" href="#id16" title="Permalink to this code"></a></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">networks</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">custom_net_name</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">external</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-
-<span class="nt">services</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">my_proxy</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">networks</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">my_proxy_network</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="nt">custom_net_name</span><span class="p">:</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><code class="docutils literal notranslate"><span class="pre">custom_net_name</span></code> is a network defined in another container. Once this is
-added, the proxy container will be able to do DNS resolution of container
-names as usual, including proxying traffic to that network.</p>
 </div>
 </section>
 <section id="classify-networks-to-variables">
@@ -2262,8 +2224,8 @@ Enables use of logic within NGINX to make decisions based on remote IP address.<
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">$client</span></code> will store a value based on the most specific match and can be
 checked in other sections.</p></li>
-<li><p>There is essentially no cost for a large list of matches; <a class="reference external" href="http://nginx.org/en/docs/http/ngx_http_geo_module.html">only evaluated when
-used</a>.</p></li>
+<li><p>There is essentially no cost for a large list of matches; only evaluated when
+used.</p></li>
 </ul>
 <div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="k">server</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="kn">location</span><span class="w"> </span><span class="s">/</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -2275,12 +2237,13 @@ used</a>.</p></li>
 <span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
+<p><a class="reference external" href="http://nginx.org/en/docs/http/ngx_http_geo_module.html">Reference</a></p>
 </section>
 <section id="rate-limiting">
 <h2>Rate Limiting<a class="headerlink" href="#rate-limiting" title="Permalink to this headline"></a></h2>
 <p>Restrict the amount of requests a user can simultaneously issue to the NGINX
 proxy and determine how to throttle or drop requests over that limit. Read
-<a class="reference external" href="https://www.nginx.com/blog/rate-limiting-nginx/">in-depth documentation</a> to fully understand rate limiting.</p>
+in-depth documentation reference to fully understand rate limiting.</p>
 <div class="highlight-nginx notranslate"><div class="highlight"><pre><span></span><span class="k">limit_req_zone</span><span class="w"> </span><span class="nv">$binary_remote_addr</span><span class="w"> </span><span class="s">zone=binip:10m</span><span class="w"> </span><span class="s">rate=10r/s</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
@@ -2306,6 +2269,7 @@ space.</p></li>
 any request amount over 10 until the queue is cleared. Excessive queries will
 be dropped.</p></li>
 </ul>
+<p><cite>Reference &lt;https://www.nginx.com/blog/rate-limiting-nginx/&gt;</cite></p>
 </section>
 </section>
 

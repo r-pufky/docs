@@ -10,9 +10,7 @@
       <link rel="stylesheet" href="../../../../../../_static/copybutton.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../../_static/sphinx_collapse.css" type="text/css" />
       <link rel="stylesheet" href="../../../../../../_static/expand_width.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-      <link rel="stylesheet" href="../../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../../../../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -23,6 +21,7 @@
         <script src="../../../../../../_static/doctools.js"></script>
         <script src="../../../../../../_static/clipboard.min.js"></script>
         <script src="../../../../../../_static/copybutton.js"></script>
+        <script src="../../../../../../_static/design-tabs.js"></script>
     <script src="../../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../../search.html" />
@@ -380,7 +379,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../../networking/ubiquiti/example-vlan-network/unifi-ap.html#confirm-wireless-network-working">Confirm Wireless Network Working</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../networking/ubiquiti/example-vlan-network/migrate-controller-to-docker.html">Migrate Unifi Controller to Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../networking/ubiquiti/example-vlan-network/migrate-controller-to-container.html">Migrate Unifi Controller to Container</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../networking/ubiquiti/example-vlan-network/unifi-device-troubleshooting.html">Unifi Device Troubleshooting</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../networking/ubiquiti/example-vlan-network/unifi-device-troubleshooting.html#slow-adoption">Slow Adoption</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../networking/ubiquiti/example-vlan-network/unifi-device-troubleshooting.html#adoption-failure">Adoption Failure</a></li>
@@ -505,6 +504,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../ubuntu/additional-fixes.html#nxdomain-errors-in-syslog">NXDOMAIN Errors in Syslog</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../ubuntu/additional-fixes.html#disable-ipv6">Disable IPv6</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../ubuntu/additional-fixes.html#shadow-passwords">Shadow Passwords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../ubuntu/additional-fixes.html#grub-cryptfs-password-typo">GRUB CryptFS Password Typo</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../ubuntu/threadripper-2990wx.html">2990WX Linux Patches</a><ul>
@@ -1495,28 +1495,26 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../../services/imapsync/index.html#removing-duplicates-on-local-maildir">Removing Duplicates On Local Maildir</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../../services/lidarr/index.html">Lidarr</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../services/lidarr/setup.html">Lidarr Setup</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/lidarr/setup.html#ports">Ports</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/lidarr/setup.html#files">Files</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/lidarr/setup.html#docker-creation">Docker Creation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/lidarr/setup.html#reverse-proxy-setup">Reverse Proxy Setup</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../services/lidarr/setup.html#using-subdomains">Using Subdomains</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../services/lidarr/setup.html#using-subpaths">Using Subpaths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../roles/lidarr/docs/index.html">Lidarr</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../roles/lidarr/docs/network.html">Network</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/lidarr/docs/network.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/lidarr/docs/network.html#using-subdomains">Using Subdomains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/lidarr/docs/network.html#using-subpaths">Using Subpaths</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../roles/lidarr/docs/basic-configuration.html">Basic Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/lidarr/docs/basic-configuration.html#media-management">Media Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/lidarr/docs/basic-configuration.html#profiles">Profiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/lidarr/docs/basic-configuration.html#quality">Quality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/lidarr/docs/basic-configuration.html#indexers">Indexers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/lidarr/docs/basic-configuration.html#download-clients">Download Clients</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/lidarr/docs/basic-configuration.html#metadata">Metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/lidarr/docs/basic-configuration.html#general">General</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/lidarr/docs/basic-configuration.html#ui">UI</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../../services/lidarr/basic-configuration.html">Basic Configuration</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/lidarr/basic-configuration.html#media-management">Media Management</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/lidarr/basic-configuration.html#profiles">Profiles</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/lidarr/basic-configuration.html#quality">Quality</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/lidarr/basic-configuration.html#indexers">Indexers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/lidarr/basic-configuration.html#download-clients">Download Clients</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/lidarr/basic-configuration.html#general">General</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../services/lidarr/basic-configuration.html#ui">UI</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../roles/lidarr/docs/index.html#ports">Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../roles/lidarr/docs/index.html#defaults">Defaults</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../../roles/db/docs/mariadb/index.html">MariaDB</a><ul>
@@ -1586,13 +1584,12 @@
 <li class="toctree-l4"><a class="reference internal" href="../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#one-server-site-per-config-file">One Server Site Per Config File</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#password-authencation-basic-auth">Password Authencation (Basic Auth)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#site-wide-auth-file">Site-wide Auth File</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#remove-auth-requirement-for-docker-containers">Remove Auth Requirement for Docker Containers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#remove-auth-requirement-for-proxies">Remove Auth Requirement for Proxies</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#whitelist-all-containers">Whitelist All Containers</a></li>
 <li class="toctree-l5"><a class="reference internal" href="../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#whitelist-single-container">Whitelist Single Container</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#disable-auth-for-a-specific-location">Disable Auth for a specific location</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#accessing-networks-from-other-compose-containers">Accessing Networks from Other Compose Containers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#classify-networks-to-variables">Classify Networks to Variables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../../roles/nginx/docs/manual-configuration/configuration-patterns.html#rate-limiting">Rate Limiting</a></li>
 </ul>
@@ -1606,7 +1603,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/nginx/docs/troubleshooting.html#dump-loaded-nginx-configuration">Dump Loaded NGINX Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/nginx/docs/troubleshooting.html#nginx-queries-originate-from-wrong-gateway">NGINX Queries Originate from Wrong Gateway</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/nginx/docs/troubleshooting.html#forward-traffic-via-specific-interfaces">Forward Traffic via Specific Interfaces</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/nginx/docs/troubleshooting.html#not-starting-with-docker-services">Not Starting with Docker Services</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../../roles/nginx/docs/index.html#ports">Ports</a></li>
@@ -1639,6 +1635,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../../../../roles/steam/docs/left_4_dead_2.html">Left 4 Dead 2</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/steam/docs/left_4_dead_2.html#ports">Ports</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/steam/docs/left_4_dead_2.html#defaults">Defaults</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../roles/steam/docs/satisfactory.html">Satisfactory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/steam/docs/satisfactory.html#ports">Ports</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../../roles/steam/docs/satisfactory.html#defaults">Defaults</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../../roles/steam/docs/seven_days_to_die.html">7 Days to Die</a><ul>
@@ -2064,231 +2065,222 @@ hit. See <a class="reference external" href="https://www.forbes.com/sites/gordon
 enforced via GPO. A reference link is provided to determine the appropriate
 <a class="reference internal" href="../../../../../glossary.html#term-Registry"><span class="xref std std-term">Registry</span></a> value to use.</p>
 </div>
-<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Disable Connected User Experiences and Telemetry Service<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Windows 10 collects user data and sends it to Microsoft.</p>
-<p class="card-text">See <a class="reference internal" href="../settings/privacy/diagnostics-and-feedback.html#w10-21h2-settings-privacy-diagnostics-and-feedback"><span class="std std-ref">Diagnostics &amp; Feedback</span></a> to restrict data
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-browser" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0114.25 15H1.75A1.75 1.75 0 010 13.25V2.75zm1.75-.25a.25.25 0 00-.25.25V4.5h2v-2H1.75zM5 2.5v2h2v-2H5zm3.5 0v2h6V2.75a.25.25 0 00-.25-.25H8.5zm6 3.5h-13v7.25c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V6z"></path></svg></span>Disable Connected User Experiences and Telemetry Service<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">⌘ › services.msc › Connected User Experiences and Telemetry › General</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Service name</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">DiagTrack</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Startup type</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">DISABLED</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Service status</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">STOPPED</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Windows 10 collects user data and sends it to Microsoft.</p>
+<p class="sd-card-text">See <a class="reference internal" href="../settings/privacy/diagnostics-and-feedback.html#w10-21h2-settings-privacy-diagnostics-and-feedback"><span class="std std-ref">Diagnostics &amp; Feedback</span></a> to restrict data
 collection.</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">⌘ › services.msc › Connected User Experiences and Telemetry › General</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Service name</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">DiagTrack</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Startup type</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DISABLED</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Service status</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">STOPPED</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span>
-<a class="sphinx-bs badge badge-info badge-pill reference external" href="https://docs.microsoft.com/en-us/windows-server/security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server#connected-user-experiences-and-telemetry"><span>Reference</span></a></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: 2021-02-19</span> <a class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info reference external" href="https://docs.microsoft.com/en-us/windows-server/security/windows-services/security-guidelines-for-disabling-system-services-in-windows-server#connected-user-experiences-and-telemetry"><span>Reference</span></a></p>
+</div></blockquote>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Disable application telemetry<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Windows 10 collects information on application usage.</p>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-note" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5zm1.75-.25a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25v-8.5a.25.25 0 00-.25-.25H1.75zM3.5 6.25a.75.75 0 01.75-.75h7a.75.75 0 010 1.5h-7a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h4a.75.75 0 000-1.5h-4z"></path></svg></span>Disable application telemetry<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Computer Configuration › Administrative Templates › Windows Components › Application Compatibility › Turn off Application Telemetry</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">Computer Configuration › Administrative Templates › Windows Components › Application Compatibility › Turn off Application Telemetry</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☑</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">ENABLED</span></p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☑</p>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Windows 10 collects information on application usage.</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-success badge-pill">ENABLED</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span>
-<a class="sphinx-bs badge badge-info badge-pill reference external" href="https://admx.help/?Category=Windows_10_2016&amp;Policy=Microsoft.Policies.ApplicationCompatibility::AppCompatTurnOffApplicationImpactTelemetry"><span>Reference</span></a></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: 2021-02-19</span> <a class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info reference external" href="https://admx.help/?Category=Windows_10_2016&amp;Policy=Microsoft.Policies.ApplicationCompatibility::AppCompatTurnOffApplicationImpactTelemetry"><span>Reference</span></a></p>
+</div></blockquote>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Disable customer experience improvement program<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Windows 10 devices send hardware and software usage information to Microsoft
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-note" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5zm1.75-.25a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25v-8.5a.25.25 0 00-.25-.25H1.75zM3.5 6.25a.75.75 0 01.75-.75h7a.75.75 0 010 1.5h-7a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h4a.75.75 0 000-1.5h-4z"></path></svg></span>Disable customer experience improvement program<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Computer Configuration › Administrative Templates › System › Internet Communication Management › Internet Communication settings › Turn off Windows Customer Experience Improvement Program</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☑</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">ENABLED</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Windows 10 devices send hardware and software usage information to Microsoft
 via customer experience improvement program.</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">Computer Configuration › Administrative Templates › System › Internet Communication Management › Internet Communication settings › Turn off Windows Customer Experience Improvement Program</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☑</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-success badge-pill">ENABLED</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span>
-<a class="sphinx-bs badge badge-info badge-pill reference external" href="https://admx.help/?Category=Windows_10_2016&amp;Policy=Microsoft.Policies.InternetCommunicationManagement::CEIPEnable"><span>Reference</span></a>
-<a class="sphinx-bs badge badge-info badge-pill reference external" href="https://www.windowscentral.com/how-opt-out-customer-experience-improvement-program-windows-10"><span>Reference</span></a></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: 2021-02-19</span> <a class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info reference external" href="https://admx.help/?Category=Windows_10_2016&amp;Policy=Microsoft.Policies.InternetCommunicationManagement::CEIPEnable"><span>Reference</span></a> <a class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info reference external" href="https://www.windowscentral.com/how-opt-out-customer-experience-improvement-program-windows-10"><span>Reference</span></a></p>
+</div></blockquote>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Disable sending browser history for Edge<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text">Edge browser automatically reports browser history to Microsoft.</p>
-<details class="sphinx-bs dropdown card mb-3 fade-in" open="open">
-<summary class="summary-title card-header font-weight-bold">
-GPO<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-note" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5zm1.75-.25a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25v-8.5a.25.25 0 00-.25-.25H1.75zM3.5 6.25a.75.75 0 01.75-.75h7a.75.75 0 010 1.5h-7a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h4a.75.75 0 000-1.5h-4z"></path></svg></span>Disable sending browser history for Edge<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Edge browser automatically reports browser history to Microsoft.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in" open="open">
+<summary class="sd-summary-title sd-card-header sd-bg-light sd-bg-text-light">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-note" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5zm1.75-.25a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25v-8.5a.25.25 0 00-.25-.25H1.75zM3.5 6.25a.75.75 0 01.75-.75h7a.75.75 0 010 1.5h-7a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h4a.75.75 0 000-1.5h-4z"></path></svg></span>GPO<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Computer Configuration › Administrative Templates › Windows Components › Data Collection and Preview Builds › Configure collection of browsing data for Desktop Analytics</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">Computer Configuration › Administrative Templates › Windows Components › Data Collection and Preview Builds › Configure collection of browsing data for Desktop Analytics</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☑</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">DISABLED</span></p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☑</p>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DISABLED</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span>
-<a class="sphinx-bs badge badge-info badge-pill reference external" href="https://admx.help/?Category=Windows_10_2016&amp;Policy=Microsoft.Policies.MicrosoftEdge::ConfigureTelemetryForMicrosoft365Analytics"><span>Reference</span></a></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: 2021-02-19</span> <a class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info reference external" href="https://admx.help/?Category=Windows_10_2016&amp;Policy=Microsoft.Policies.MicrosoftEdge::ConfigureTelemetryForMicrosoft365Analytics"><span>Reference</span></a></p>
+</div></blockquote>
 </div>
 </div>
 </div>
@@ -2296,68 +2288,86 @@ GPO<div class="summary-down docutils">
 </div>
 </div>
 </details></div>
-</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Disable inventory collector<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Windows 10 Inventory Collector inventories applications, files, devices, and
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-note" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5zm1.75-.25a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25v-8.5a.25.25 0 00-.25-.25H1.75zM3.5 6.25a.75.75 0 01.75-.75h7a.75.75 0 010 1.5h-7a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h4a.75.75 0 000-1.5h-4z"></path></svg></span>Disable inventory collector<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Computer Configuration › Administrative Templates › Windows Components › Application Compatibility › Turn off Inventory Collector</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☑</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">ENABLED</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Windows 10 Inventory Collector inventories applications, files, devices, and
 drivers on the system and sends the information to Microsoft.</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">Computer Configuration › Administrative Templates › Windows Components › Application Compatibility › Turn off Inventory Collector</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☑</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-success badge-pill">ENABLED</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span>
-<a class="sphinx-bs badge badge-info badge-pill reference external" href="https://admx.help/?Category=Windows_10_2016&amp;Policy=Microsoft.Policies.ApplicationCompatibility::AppCompatTurnOffProgramInventory"><span>Reference</span></a></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: 2021-02-19</span> <a class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info reference external" href="https://admx.help/?Category=Windows_10_2016&amp;Policy=Microsoft.Policies.ApplicationCompatibility::AppCompatTurnOffProgramInventory"><span>Reference</span></a></p>
+</div></blockquote>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Disable program compatibility assistant<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">The Program Compatibility Assistant detects known compatibility issues in
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-note" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5zm1.75-.25a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25v-8.5a.25.25 0 00-.25-.25H1.75zM3.5 6.25a.75.75 0 01.75-.75h7a.75.75 0 010 1.5h-7a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h4a.75.75 0 000-1.5h-4z"></path></svg></span>Disable program compatibility assistant<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Computer Configuration › Administrative Templates › Windows Components › Application Compatibility › Turn off Program Compatibility Assistant</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☑</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">ENABLED</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">The Program Compatibility Assistant detects known compatibility issues in
 older programs. After you have run an older program in this version of
 Windows, it notifies you if there is a problem and offers to fix it the next
 time you run the program. If the compatibility issue is serious, the Program
@@ -2365,129 +2375,107 @@ Compatibility Assistant might warn you or block the program from running.</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">Computer Configuration › Administrative Templates › Windows Components › Application Compatibility › Turn off Program Compatibility Assistant</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☑</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-success badge-pill">ENABLED</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span>
-<a class="sphinx-bs badge badge-info badge-pill reference external" href="https://admx.help/?Category=Windows_10_2016&amp;Policy=Microsoft.Policies.ApplicationCompatibility::AppCompatTurnOffProgramCompatibilityAssistant_2"><span>Reference</span></a></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: 2021-02-19</span> <a class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info reference external" href="https://admx.help/?Category=Windows_10_2016&amp;Policy=Microsoft.Policies.ApplicationCompatibility::AppCompatTurnOffProgramCompatibilityAssistant_2"><span>Reference</span></a></p>
+</div></blockquote>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Disable steps recorder<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Steps Recorder automatically capture steps you take on a PC, including a text
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-note" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5zm1.75-.25a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25v-8.5a.25.25 0 00-.25-.25H1.75zM3.5 6.25a.75.75 0 01.75-.75h7a.75.75 0 010 1.5h-7a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h4a.75.75 0 000-1.5h-4z"></path></svg></span>Disable steps recorder<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Computer Configuration › Administrative Templates › Windows Components › Application Compatibility › Turn off Steps Recorder</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☑</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">ENABLED</span></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Steps Recorder automatically capture steps you take on a PC, including a text
 description of what you did and a picture of the screen during each step.</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">Computer Configuration › Administrative Templates › Windows Components › Application Compatibility › Turn off Steps Recorder</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☑</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-success badge-pill">ENABLED</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span>
-<a class="sphinx-bs badge badge-info badge-pill reference external" href="https://admx.help/?Category=Windows_8.1_2012R2&amp;Policy=Microsoft.Policies.ApplicationCompatibility::AppCompatTurnOffUserActionRecord"><span>Reference</span></a></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: 2021-02-19</span> <a class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info reference external" href="https://admx.help/?Category=Windows_8.1_2012R2&amp;Policy=Microsoft.Policies.ApplicationCompatibility::AppCompatTurnOffUserActionRecord"><span>Reference</span></a></p>
+</div></blockquote>
 </div>
 </div>
 </div>
 </div>
 </div>
 </div>
-</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-primary text-white font-weight-bold">
-Force desktop analytics to honor telemetry settings<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">Desktop Analytics will report additional telemetry information if enabled.</p>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-primary sd-bg-text-primary">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-note" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0114.25 14H1.75A1.75 1.75 0 010 12.25v-8.5zm1.75-.25a.25.25 0 00-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25v-8.5a.25.25 0 00-.25-.25H1.75zM3.5 6.25a.75.75 0 01.75-.75h7a.75.75 0 010 1.5h-7a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h4a.75.75 0 000-1.5h-4z"></path></svg></span>Force desktop analytics to honor telemetry settings<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-0 sd-p-0 docutils">
+<div class="sd-row sd-row-cols-1 sd-row-cols-xs-1 sd-row-cols-sm-1 sd-row-cols-md-1 sd-row-cols-lg-1 sd-g-1 sd-g-xs-1 sd-g-sm-1 sd-g-md-1 sd-g-lg-1 docutils">
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 sd-font-weight-bold sd-bg-light docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Computer Configuration › Administrative Templates › Windows Components › Data Collection and Preview Builds › Limit Enhanced diagnostic data to the minimum required by Windows Analytics</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-lg-12 p-0 m-0 font-weight-bold docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body bg-light docutils">
-<p class="card-text">Computer Configuration › Administrative Templates › Windows Components › Data Collection and Preview Builds › Limit Enhanced diagnostic data to the minimum required by Windows Analytics</p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">☑</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-w-50 sd-m-0 sd-shadow-none sd-border-0 sd-rounded-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">DISABLED</span></p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text">☑</p>
+<div class="sd-col sd-d-flex-row sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Desktop Analytics will report additional telemetry information if enabled.</p>
 </div>
 </div>
 </div>
-<div class="d-flex col-md-6 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-danger badge-pill">DISABLED</span></p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-12 p-0 m-0 docutils">
-<div class="card w-100 border-0 docutils">
-<div class="card-body text-right docutils">
-<p class="card-text"><span class="sphinx-bs badge badge-secondary badge-pill">Updated: 2021-02-19</span>
-<a class="sphinx-bs badge badge-info badge-pill reference external" href="https://admx.help/?Category=Windows_10_2016&amp;Policy=Microsoft.Policies.DataCollection::LimitEnhancedDiagnosticDataWindowsAnalytics"><span>Reference</span></a></p>
+<div class="sd-col sd-d-flex-row sd-col-12 sd-col-xs-12 sd-col-sm-12 sd-col-md-12 sd-col-lg-12 sd-m-0 sd-p-0 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-none sd-text-right sd-border-0 docutils">
+<div class="sd-card-body docutils">
+<blockquote>
+<div><p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-secondary sd-bg-text-secondary">Updated: 2021-02-19</span> <a class="sd-sphinx-override sd-badge sd-bg-info sd-bg-text-info reference external" href="https://admx.help/?Category=Windows_10_2016&amp;Policy=Microsoft.Policies.DataCollection::LimitEnhancedDiagnosticDataWindowsAnalytics"><span>Reference</span></a></p>
+</div></blockquote>
 </div>
 </div>
 </div>
@@ -2503,14 +2491,14 @@ changed. See references for additional documentation.</p>
 <p>These endpoints should be blocked or routed to a blackhole. See
 <a class="reference internal" href="../../../../../../roles/pihole/docs/index.html#service-pihole"><span class="std std-ref">Pi-Hole</span></a> and <a class="reference internal" href="../../../../../networking/ubiquiti/edge-os.html#networking-dnat-for-captive-dns"><span class="std std-ref">DNAT for Captive DNS</span></a>.</p>
 </div>
-<details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-info text-white font-weight-bold">
-Connected User Experiences and Telemetry endpoints<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
-<p class="card-text">Microsoft Defender Advanced Threat Protection is country specific and the
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-table" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v3.585a.746.746 0 010 .83v8.085A1.75 1.75 0 0114.25 16H6.309a.748.748 0 01-1.118 0H1.75A1.75 1.75 0 010 14.25V6.165a.746.746 0 010-.83V1.75zM1.5 6.5v7.75c0 .138.112.25.25.25H5v-8H1.5zM5 5H1.5V1.75a.25.25 0 01.25-.25H5V5zm1.5 1.5v8h7.75a.25.25 0 00.25-.25V6.5h-8zm8-1.5h-8V1.5h7.75a.25.25 0 01.25.25V5z"></path></svg></span>Connected User Experiences and Telemetry endpoints<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Microsoft Defender Advanced Threat Protection is country specific and the
 prefix changes by country, e.g.: <strong>de</strong>.vortex-win.data.microsoft.com</p>
 <table class="docutils align-default">
 <colgroup>
@@ -2520,84 +2508,84 @@ prefix changes by country, e.g.: <strong>de</strong>.vortex-win.data.microsoft.c
 <col style="width: 23%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p class="card-text">Release</p></th>
-<th class="head"><p class="card-text">Diagnostic Endpoint</p></th>
-<th class="head"><p class="card-text">Functional Endpoint</p></th>
-<th class="head"><p class="card-text">Settings Endpoint</p></th>
+<tr class="row-odd"><th class="head"><p class="sd-card-text">Release</p></th>
+<th class="head"><p class="sd-card-text">Diagnostic Endpoint</p></th>
+<th class="head"><p class="sd-card-text">Functional Endpoint</p></th>
+<th class="head"><p class="sd-card-text">Settings Endpoint</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p class="card-text">1703 with 2018-09 cumulative update</p></td>
-<td><p class="card-text">v10c.vortex-win.data.microsoft.com</p></td>
-<td><p class="card-text">v20.vortex-win.data.microsoft.com</p></td>
-<td><p class="card-text">settings-win.data.microsoft.com</p></td>
+<tr class="row-even"><td><p class="sd-card-text">1703 with 2018-09 cumulative update</p></td>
+<td><p class="sd-card-text">v10c.vortex-win.data.microsoft.com</p></td>
+<td><p class="sd-card-text">v20.vortex-win.data.microsoft.com</p></td>
+<td><p class="sd-card-text">settings-win.data.microsoft.com</p></td>
 </tr>
-<tr class="row-odd"><td><p class="card-text">1803 without 2018-09 cumulative update</p></td>
-<td><p class="card-text">v10.events.data.microsoft.com</p></td>
-<td><p class="card-text">v20.vortex-win.data.microsoft.com</p></td>
-<td><p class="card-text">settings-win.data.microsoft.com</p></td>
+<tr class="row-odd"><td><p class="sd-card-text">1803 without 2018-09 cumulative update</p></td>
+<td><p class="sd-card-text">v10.events.data.microsoft.com</p></td>
+<td><p class="sd-card-text">v20.vortex-win.data.microsoft.com</p></td>
+<td><p class="sd-card-text">settings-win.data.microsoft.com</p></td>
 </tr>
-<tr class="row-even"><td><p class="card-text">1709 or earlier</p></td>
-<td><p class="card-text">v10.vortex-win.data.microsoft.com</p></td>
-<td><p class="card-text">v20.vortex-win.data.microsoft.com</p></td>
-<td><p class="card-text">settings-win.data.microsoft.com</p></td>
+<tr class="row-even"><td><p class="sd-card-text">1709 or earlier</p></td>
+<td><p class="sd-card-text">v10.vortex-win.data.microsoft.com</p></td>
+<td><p class="sd-card-text">v20.vortex-win.data.microsoft.com</p></td>
+<td><p class="sd-card-text">settings-win.data.microsoft.com</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-</details><details class="sphinx-bs dropdown card mb-3 shadow fade-in">
-<summary class="summary-title card-header bg-info text-white font-weight-bold">
-Diagnostic data services endpoints<div class="summary-down docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="summary-up docutils">
-<svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="summary-content card-body docutils">
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 sd-shadow-sm sd-fade-in">
+<summary class="sd-summary-title sd-card-header sd-bg-info sd-bg-text-info">
+<span class="sd-summary-icon"><svg version="1.1" width="1.0em" height="1.0em" class="sd-octicon sd-octicon-table" viewBox="0 0 16 16" aria-hidden="true"><path fill-rule="evenodd" d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v3.585a.746.746 0 010 .83v8.085A1.75 1.75 0 0114.25 16H6.309a.748.748 0 01-1.118 0H1.75A1.75 1.75 0 010 14.25V6.165a.746.746 0 010-.83V1.75zM1.5 6.5v7.75c0 .138.112.25.25.25H5v-8H1.5zM5 5H1.5V1.75a.25.25 0 01.25-.25H5V5zm1.5 1.5v8h7.75a.25.25 0 00.25-.25V6.5h-8zm8-1.5h-8V1.5h7.75a.25.25 0 01.25.25V5z"></path></svg></span>Diagnostic data services endpoints<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 51%" />
 <col style="width: 49%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p class="card-text">Service</p></th>
-<th class="head"><p class="card-text">Endpoint</p></th>
+<tr class="row-odd"><th class="head"><p class="sd-card-text">Service</p></th>
+<th class="head"><p class="sd-card-text">Endpoint</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p class="card-text">Windows Error Reporting</p></td>
-<td><p class="card-text">watson.telemetry.microsoft.com</p></td>
+<tr class="row-even"><td><p class="sd-card-text">Windows Error Reporting</p></td>
+<td><p class="sd-card-text">watson.telemetry.microsoft.com</p></td>
 </tr>
-<tr class="row-odd"><td><p class="card-text">›</p></td>
-<td><p class="card-text">ceuswatcab01.blob.core.windows.net</p></td>
+<tr class="row-odd"><td><p class="sd-card-text">›</p></td>
+<td><p class="sd-card-text">ceuswatcab01.blob.core.windows.net</p></td>
 </tr>
-<tr class="row-even"><td><p class="card-text">›</p></td>
-<td><p class="card-text">ceuswatcab02.blob.core.windows.net</p></td>
+<tr class="row-even"><td><p class="sd-card-text">›</p></td>
+<td><p class="sd-card-text">ceuswatcab02.blob.core.windows.net</p></td>
 </tr>
-<tr class="row-odd"><td><p class="card-text">›</p></td>
-<td><p class="card-text">eaus2watcab01.blob.core.windows.net</p></td>
+<tr class="row-odd"><td><p class="sd-card-text">›</p></td>
+<td><p class="sd-card-text">eaus2watcab01.blob.core.windows.net</p></td>
 </tr>
-<tr class="row-even"><td><p class="card-text">›</p></td>
-<td><p class="card-text">eaus2watcab02.blob.core.windows.net</p></td>
+<tr class="row-even"><td><p class="sd-card-text">›</p></td>
+<td><p class="sd-card-text">eaus2watcab02.blob.core.windows.net</p></td>
 </tr>
-<tr class="row-odd"><td><p class="card-text">›</p></td>
-<td><p class="card-text">weus2watcab01.blob.core.windows.net</p></td>
+<tr class="row-odd"><td><p class="sd-card-text">›</p></td>
+<td><p class="sd-card-text">weus2watcab01.blob.core.windows.net</p></td>
 </tr>
-<tr class="row-even"><td><p class="card-text">›</p></td>
-<td><p class="card-text">weus2watcab02.blob.core.windows.net</p></td>
+<tr class="row-even"><td><p class="sd-card-text">›</p></td>
+<td><p class="sd-card-text">weus2watcab02.blob.core.windows.net</p></td>
 </tr>
-<tr class="row-odd"><td><p class="card-text">Online Crash Analysis</p></td>
-<td><p class="card-text">oca.telemetry.microsoft.com</p></td>
+<tr class="row-odd"><td><p class="sd-card-text">Online Crash Analysis</p></td>
+<td><p class="sd-card-text">oca.telemetry.microsoft.com</p></td>
 </tr>
-<tr class="row-even"><td><p class="card-text">OneDrive app for Windows 10</p></td>
-<td><p class="card-text"><a class="reference external" href="https://vortex.data.microsoft.com/collect/v1">https://vortex.data.microsoft.com/collect/v1</a></p></td>
+<tr class="row-even"><td><p class="sd-card-text">OneDrive app for Windows 10</p></td>
+<td><p class="sd-card-text"><a class="reference external" href="https://vortex.data.microsoft.com/collect/v1">https://vortex.data.microsoft.com/collect/v1</a></p></td>
 </tr>
-<tr class="row-odd"><td><p class="card-text">›</p></td>
-<td><p class="card-text">vortex.data.microsoft.com/collect/v1</p></td>
+<tr class="row-odd"><td><p class="sd-card-text">›</p></td>
+<td><p class="sd-card-text">vortex.data.microsoft.com/collect/v1</p></td>
 </tr>
-<tr class="row-even"><td><p class="card-text">Microsoft Defender Advanced Threat Protection</p></td>
-<td><p class="card-text"><a class="reference external" href="https://wdcp.microsoft.com">https://wdcp.microsoft.com</a></p></td>
+<tr class="row-even"><td><p class="sd-card-text">Microsoft Defender Advanced Threat Protection</p></td>
+<td><p class="sd-card-text"><a class="reference external" href="https://wdcp.microsoft.com">https://wdcp.microsoft.com</a></p></td>
 </tr>
-<tr class="row-odd"><td><p class="card-text">›</p></td>
-<td><p class="card-text"><a class="reference external" href="https://wdcpalt.microsoft.com">https://wdcpalt.microsoft.com</a></p></td>
+<tr class="row-odd"><td><p class="sd-card-text">›</p></td>
+<td><p class="sd-card-text"><a class="reference external" href="https://wdcpalt.microsoft.com">https://wdcpalt.microsoft.com</a></p></td>
 </tr>
 </tbody>
 </table>
