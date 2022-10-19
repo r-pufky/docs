@@ -6,9 +6,10 @@ Systems with more than **8GB** memory should disable paging. This may need to be
 re-enabled if certain programs rely on the paging file existing.
 
 .. dropdown:: Give priority to foreground applications
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: browser
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gui::    Give priority to foreground applications
     :path:    ⌘ + r -->
@@ -34,9 +35,10 @@ re-enabled if certain programs rely on the paging file existing.
     foreground priority. ``18`` prefers background services.
 
 .. dropdown:: Disable paging files for all drives
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: browser
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gui::    Disable paging files for all drives
     :path:    ⌘ + r -->

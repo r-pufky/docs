@@ -15,6 +15,7 @@ Manage Ubiquity Unifi APs & Switches.
   :galaxy:      https://galaxy.ansible.com/r_pufky/unifi
   :source:      https://github.com/r-pufky/ansible_unifi
   :service_doc: https://help.ui.com/hc/en-us/categories/6583256751383-UniFi
+  :blocking:    Universal repo, Java dependency current requires backport.
   :update:      2022-10-09
   :open:
 

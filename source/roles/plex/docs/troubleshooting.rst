@@ -20,7 +20,7 @@ transcoding directory.
 
 #. Ensure ``Transcoding`` directory is setup properly on Plex Server.
 #. Ensure ``/tmp/Transcode`` is owned by the right user. Changing the running
-   user on docker without re-creating this directory will cause this to happen.
+   user without re-creating this directory will cause this to happen.
 
 Spinning playback icon, no playback
 ===================================
@@ -30,11 +30,11 @@ transcoding* failing. Turn on debug logging on the server and look for:
 .. pull-quote::
   *EAE timeout! EAE not running, or wrong folder? Could not read*
 
-This means you need to remap the docker ``/tmp`` directory to your transcoding
+This means you need to remap the ``/tmp`` directory to your transcoding
 directory, as plex updated transcoding and split out audio and video encoding
 into separate locations. Video transcodes in ``/transcode`` while audio
-transcodes in ``/tmp``. Mapping ``/tmp`` in docker to the transcoding directory
-fixes this.
+transcodes in ``/tmp``. Mapping ``/tmp`` to the transcoding directory fixes
+this.
 
 .. code-block:: yaml
   :caption: Correctly mapping Plex ``/tmp`` to tmpfs.

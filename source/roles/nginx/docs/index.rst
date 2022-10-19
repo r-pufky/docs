@@ -15,8 +15,9 @@ web server designed for maximum performance and stability.
 .. role:: nginx
   :service_doc: https://nginx.org/en/docs/
   :ref:         https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/
-  :update:      2022-10-10
+  :blocking:    Requires upstream source repo update.
   :private:
+  :update:      2022-10-10
   :open:
 
   Role handles all steps that are provided in this documentation. You must

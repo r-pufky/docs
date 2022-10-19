@@ -3,14 +3,14 @@
 `Cert Based Authentication`_
 ############################
 Configure NGINX to verify client certifcate before responding to requests. This
-provides another security layer to NGINX enabling only known certificates access
-to make requests for the proxy. Generally, these should be considered *machine
-certificates* as they do not identify a particular user, just a machine with a
-certificate.
+provides another security layer to NGINX enabling only known certificates
+access to make requests for the proxy. Generally, these should be considered
+*machine certificates* as they do not identify a particular user, just a
+machine with a certificate.
 
-See :ref:`service-certificate-authority` for instructions on setting up required
-certificates used here. An excellent reference for `basic certificate usage`_
-and should be well understood before proceeding.
+See :ref:`service-certificate-authority` for instructions on setting up
+required certificates used here. An excellent reference for `basic certificate
+usage`_ and should be well understood before proceeding.
 
 Nginx Configuration
 *******************
@@ -18,13 +18,13 @@ If the ``default_server`` is set to not require cert-based authentication and
 additional server blocks do, clients that do not support it will fall back to
 the ``default_server`` and be **able** to make valid requests. Therefore the
 default server should act as a **catch all** for non-cert based requests and
-specifically respond to those requests. In this case we will respond immediately
-with a ``403``.
+specifically respond to those requests. In this case we will respond
+immediately with a ``403``.
 
 .. danger::
   You are entering a dangerous space. Once a client has a valid SSL connection,
-  certificate validation needs to be explicitly enforced; otherwise a client can
-  access other SSL areas (due to a pre-existing valid SSL connection).
+  certificate validation needs to be explicitly enforced; otherwise a client
+  can access other SSL areas (due to a pre-existing valid SSL connection).
 
   **ALWAYS** explicitly check for valid client certificates and do penetration
   testing to verify your assumptions.
@@ -171,13 +171,13 @@ server.
   Use export password to decrypt and import.
 
 Restart Chrome. Nagivate to a proxied site and the certificate prompt should
-appear to select which cert to authenticate with. If NGINX has been reloaded and
-setup, then this should allow you to passthrough.
+appear to select which cert to authenticate with. If NGINX has been reloaded
+and setup, then this should allow you to passthrough.
 
 Auto-select Client Certificate
 ==============================
-Auto selecting the `correct certificate`_ will enable transparent authentication
-for proxied sites. Enabled via Group Policy or Registry.
+Auto selecting the `correct certificate`_ will enable transparent
+authentication for proxied sites. Enabled via Group Policy or Registry.
 
 .. regedit:: Auto-select Client Certificate (Windows)
   :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls
@@ -198,9 +198,10 @@ for proxied sites. Enabled via Group Policy or Registry.
       "1"="{\"pattern\":\"https://[*.]example.com\",\"filter\":{\"ISSUER\":{\"O\":\"{SERVER}\"}}}"
 
 .. dropdown:: Auto-select Client Certificate (Linux)
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   All directories should be readable by ``other``.
 
@@ -238,13 +239,13 @@ server.
   :path:   about:config -->
            Accept the Risk and Continue -->
            services.sync.prefs.sync.security.default_personal_cert
-  :value0: {false}
+  :value0: {FALSE},  
   :ref:    https://stackoverflow.com/questions/27864553/how-can-i-choose-a-different-client-certificate-in-firefox
 
 Restart Firefox. Nagivate to a proxied site and the certificate prompt should
-appear to select which cert to authenticate with. If NGINX has been reloaded and
-setup, then this should allow you to passthrough. Remember decision to prevent
-additional certificate prompts on revisit.
+appear to select which cert to authenticate with. If NGINX has been reloaded
+and setup, then this should allow you to passthrough. Remember decision to
+prevent additional certificate prompts on revisit.
 
 .. _Cert Based Authentication: https://fardog.io/blog/2017/12/30/client-side-certificate-authentication-with-nginx/
 .. _basic certificate usage: https://jamielinux.com/docs/openssl-certificate-authority/introduction.html

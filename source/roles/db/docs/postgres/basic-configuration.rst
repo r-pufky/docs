@@ -11,7 +11,6 @@ Creating A Database
 .. code-block:: psql
   :caption: Create new DB user and database.
 
-  docker -exec -ti db /bin/bash
   psql -U {ADMIN USER} -d postgres
 
   CREATE USER {DB USER} PASSWORD '{DB USER PASS}';
@@ -32,7 +31,6 @@ for the DB user to access the data.
 .. code-block:: psql
   :caption: Import DB and set appropriate DB permissions.
 
-  docker -exec -ti db /bin/bash
   psql -v ON_ERROR_STOP=1 --username {DB ADMIN} {DB} < {DB DUMP}
   psql -U {ADMIN USER} -d postgres
 

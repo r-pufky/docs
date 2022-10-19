@@ -24,9 +24,10 @@ promoted tiles from the start menu.
   :update:  2022-01-20
 
 .. dropdown:: Disable silent app installs
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable silent app installs
     :path:    Computer Configuration -->

@@ -6,8 +6,8 @@ Left 4 Dead
 
 .. role:: steam
   :service_doc: https://developer.valvesoftware.com/wiki/List_of_L4D_Cvars
-  :update:      2022-10-10
   :private:
+  :update:      2022-10-10
   :open:
 
   Left 4 Dead dedicated server.

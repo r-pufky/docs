@@ -6,8 +6,8 @@ Conan Exiles
 
 .. role:: steam
   :service_doc: https://www.conanexiles.com/dedicated-servers/
-  :update:      2022-10-10
   :private:
+  :update:      2022-10-10
   :open:
 
   Conan Exiles Isle of Sepitah dedicated server.

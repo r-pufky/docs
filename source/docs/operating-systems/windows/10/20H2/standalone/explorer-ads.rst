@@ -9,9 +9,10 @@ Explorer Ads
   option or this will break explorer.
 
 .. dropdown:: Set explorer to use this PC
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: browser
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gui::    Set explorer to use this PC
     :path:    ⌘ + e -->
@@ -43,12 +44,13 @@ Explorer Ads
   :update:   2021-02-19
 
 .. dropdown:: Disable sync provider notifications
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: browser
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. dropdown:: GUI
-    :title: font-weight-bold
+    :icon: browser
     :animate: fade-in
     :open:
 

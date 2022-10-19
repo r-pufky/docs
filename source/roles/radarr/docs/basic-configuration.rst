@@ -7,42 +7,42 @@ Unmentioned options are defaults.
 
 Media Management
 ****************
-.. gui::   Radarr Movie Naming
+.. gui::   Movie Naming
   :path:   Settings --> Media Management --> Movie Naming
-  :value0: Rename Episodes, {YES}
-  :value1: Replace Illegal Characters, {YES}
-  :value2: Colon Replacement Format, {DELETE}
+  :value0: Rename Episodes, ☑
+  :value1: Replace Illegal Characters, ☑
+  :value2: Colon Replacement Format, Delete
   :value3: Standard Movie Format, {Movie TitleThe} ({Release Year}) {edition-{Edition Tags}}
-  :value4: Movie Folder Format, {Movie TitleThe} ({Release Year})
+  :value4: Movie Folder Format, {Movie TitleThe} ({Release Year}) {edition-{Edition Tags}}
   :ref: https://support.plex.tv/articles/multiple-editions/
 
-.. gui::   Radarr Folders
+.. gui::   Folders
   :path:   Settings --> Media Management --> Folders
-  :value0: Create empty movie folders, {NO}
-  :value1: Automatically Rename Folders, {YES}
-  :value2: Movie Paths Default to Static, {YES}
+  :value0: Create empty movie folders, ☐
+  :value1: Delete empty folders, ☐
 
-.. gui::   Radarr Importing
+.. gui::   Importing
   :path:   Settings --> Media Management --> Importing
-  :value0: Skip Free Space Check, {NO}
-  :value1: Use Hardlinks Instead of Copy, {NO}
-  :value2: Import Extra Files, {NO}
+  :value0: Skip Free Space Check, ☐
+  :value1: Minimum Free space, 100MB
+  :value2: Use Hardlinks Instead of Copy, ☐
+  :value3: Import Extra Files, ☐
 
-.. gui::   Radarr File Management
+.. gui::   File Management
   :path:   Settings --> Media Management --> File Management
-  :value0: Unmonitor Deleted Movies, {NO}
-  :value1: Download Propers, {YES}
-  :value2: Analyse video files, {YES}
-  :value3: Change File Date, {NONE}
-  :value4: Recycling Bin, /data/downloads/media-trashed
+  :value0: Unmonitor Deleted Movies, ☐
+  :value1: Propers and Repacks, Prefer and Upgrade
+  :value2: Analyse video files, ☑
+  :value3: Rescan Movie Folder after Refresh, Always
+  :value4: Change File Date, None
+  :value5: Recycling Bin, /data/downloads/media-trashed
+  :value6: Recycling Bin Cleanup, 7
 
-.. gui::   Radarr Permissions
+.. gui::   Permissions
   :path:   Settings --> Media Management --> Permissions
-  :value0: Set Permissions, {YES}
-  :value1: File chmod mask, 664
-  :value2: Folder chmod mask, 775
-  :value3: chown User, radarr (or docker UID)
-  :value4: chown Group, media (or docker GID)
+  :value0: Set Permissions, ☑
+  :value1: chmod Folder, 775
+  :value2: chown Group, media
 
 Profiles
 ********
@@ -51,13 +51,13 @@ max-quality profile.
 
 Size limits are applied using the global setting via indexer settings.
 
-.. gui::    Radarr Profiles (Max 720/1080: 1080p upgrade)
-  :path:    Settings --> Profiles --> +
+.. gui::    Profiles (Max 720/1080: 1080p upgrade)
+  :path:    Settings --> Profiles
   :value0:  Name, Max 720/1080: 1080p upgrade
   :value1:  Upgrades Allowed, ☑
   :value2:  Upgrade Until, HDTV-1080p
   :value3:  Language, English
-  :value4:  Qualities,
+  :value4:  Qualities,  
   :value5:  ›, ☑ Remux-1080p
   :value6:  ›, ☑ Bluray-1080p
   :value7:  ›, ☑ WEB 1080p
@@ -78,13 +78,13 @@ Size limits are applied using the global setting via indexer settings.
   :value22: ›, ☑ WORKPRINT
   :value23: ›, ☑ Unknown
 
-.. gui::    Radarr Profiles (2K/4K/Raw)
-  :path:    Settings --> Profiles --> +
+.. gui::    Profiles (2K/4K/Raw)
+  :path:    Settings --> Profiles
   :value0:  Name, 2K/4K/Raw
   :value1:  Upgrades Allowed, ☑
   :value2:  Upgrade Until, HDTV-2160p
   :value3:  Language, English
-  :value4:  Qualities,
+  :value4:  Qualities,  
   :value5:  ›, ☑ Raw-HD
   :value6:  ›, ☑ BR-DISK
   :value7:  ›, ☑ Remux-2160p
@@ -92,27 +92,29 @@ Size limits are applied using the global setting via indexer settings.
   :value9:  ›, ☑ WEB 2160p
   :value10: ›, ☑ HDTV-2160p
 
-.. gui::   Radarr Delay Profiles
-  :path:   Settings --> Profiles --> Delay Profiles --> +
+.. gui::   Delay Profiles
+  :path:   Settings --> Profiles --> Delay Profiles
   :value0: Protocol, Usenet
   :value1: Usenet Delay, 60 Minutes
   :value2: Torrent Delay, No Delay
   :value3: Tags, {NONE}
 
-.. gui::   Radarr Library Filters (released: missing)
-  :path:   Movies --> Filter --> Custom Filters --> +
-  :value0: released: missing
-  :value1: Minimum Availability, is Released
-  :value2: Size on Disk, <= 100MB
-  :value3: Considered Available, is true
+.. gui::   Library Filters (released: missing)
+  :path:   Movies --> Filter --> Custom Filters
+  :value0: Label, released: missing,  
+  :value1: Filters,  
+  :value2: ›, Minimum Availability is Released
+  :value3: ›, Size on Disk <= 100MB
+  :value4: ›, Considered Available is true
 
   Applying this filter on the library will show all movies that are actually
   missing (default view is to show all missing, including unreleased).
 
-.. gui::   Radarr Movie Search Filters (<15GB)
+.. gui::   Movie Search Filters (<15GB)
   :path:   Movies --> {Any Movie --> Search --> Filter --> Custom Filters
-  :value0: <15GB
-  :value1: Size, less than 15GB
+  :value0: Label, <15GB
+  :value1: Filters,  
+  :value2: ›, Size less than 15GB
 
   Limits manual search to specific NZB sizes, regardless of quality.
 
@@ -129,99 +131,107 @@ Quality
 
 Indexers
 ********
-.. gui::    Radarr Indexers
-  :path:    Settings --> Indexers --> +
+.. gui::    Indexers
+  :path:    Settings --> Indexers
   :value0:  Name; {INDEXER NAME}
-  :value1:  Enable RSS; {YES}
-  :value2:  Enable Search; {YES}
-  :value3:  URL; {INDEXER API URI}
-  :value4:  Multi Languages;
-  :value5:  API Key; {KEY}
-  :value6:  Categories; 2000,2010,2020,2030,2035,2040,2045,2050,2060
-  :value7:  Anime Categories;
-  :value8:  Additional Parameters;
-  :value9:  Remove year from search string; {NO}
-  :value10: Search by Title, {NO}
+  :value1:  Enable RSS; ☑
+  :value2:  Enable Automatic Search; ☑
+  :value3:  Enable Interactive Search; ☑
+  :value4:  URL; {INDEXER API URI}
+  :value5:  API Path; /api
+  :value6:  Multi Languages; {NONE}
+  :value7:  API Key; {KEY}
+  :value8:  Categories; ☑ (All)
+  :value9:  Additional Parameters; {NONE}
+  :value10: Remove year from search string; ☐
+  :value11: Indexer Priority; 25
+  :value12: Download Client; (Any)
+  :value13: Tags; {NONE}
   :delim:   ;
 
-.. gui::   Radarr Options
+.. gui::   Options
   :path:   Settings --> Indexers --> Options
   :value0: Minimum Age, 0
   :value1: Retention, 0
   :value2: Maximum Size, 15360
-  :value3: Prefer Special Indexer Flags, {NO}
-  :value4: RSS Sync Interval, 0
-  :value5: Whiteliste Subtitle Tags,
-  :value6: Allow Hardcoded Subs, {NO}
-  :value7: Parser Leniency, Strict
+  :value3: Prefer Indexer Flags, ☐
+  :value4: Availability Delay, 0
+  :value5: RSS Sync Interval, 0
+  :value6: Whiteliste Subtitle Tags, {NONE}
+  :value7: Allow Hardcoded Subs, ☐
 
   Maximum size sets a hard limit for file download size, regardless of Quality
   options.
 
-.. gui::   Radarr Availability Options
-  :path:   Settings --> Indexers --> Availability Options
-  :value0: Availability Delay, 0
-
 Download Client
 ***************
-.. gui::    Radarr Download Client
-  :path:    Settings --> Download Client --> +
+.. gui::    Download Client
+  :path:    Settings --> Download Client
   :value0:  Name, {INDEXER NAME}
-  :value1:  Enable, {YES}
+  :value1:  Enable, ☑
   :value2:  Host, {IP}
   :value3:  Port, 6789
-  :value4:  URL Base,
-  :value5:  Username, {USER}
-  :value6:  Password, {PASS}
-  :value7:  Category, movies
-  :value8:  Recent Priority, Normal
-  :value9:  Older Priority, Normal
-  :value10: Use SSL, {YES}
-  :value11: Add Paused, {NO}
+  :value4:  Use SSL, ☐
+  :value5:  URL Base, {NONE}
+  :value6:  Username, {USER}
+  :value7:  Password, {PASS}
+  :value8:  Category, movies
+  :value9:  Recent Priority, Normal
+  :value10: Older Priority, Normal
+  :value11: Add Paused, ☐
+  :value12: Client Priority, 1
+  :value13: Remove Completed, ☑
+  :value14: Remove Failed, ☑
 
-.. gui::   Radarr Completed Download Handling
+.. gui::   Completed Download Handling
   :path:   Settings --> Download Client --> Completed Download Handling
-  :value0: Enable, {YES}
-  :value1: Remove, {YES}
-  :value2: Check For Finished Downloads Interval, 1
+  :value0: Enable, ☑
+  :value1: Check For Finished Downloads Interval, 1
 
-.. gui::   Radarr Failed Download Handing
+.. gui::   Failed Download Handing
   :path:   Settings --> Download Client --> Failed Download Handling
-  :value0: Redownload, {NO}
-
-.. gui::   Radarr Drone Factory Options
-  :path:   Settings --> Download Client --> Drone Factory Options
-  :value0: Drone Factory,
-  :value1: Drone Factory Interval, 0
+  :value0: Redownload, ☑
 
 Connect
 *******
-.. gui::    Radarr Connect
-  :path:    Settings --> Connect --> Connections --> +
+.. gui::    Connect
+  :path:    Settings --> Connect --> Connections
   :value0:  Name, Plex Server
-  :value1:  On Grab, {NO}
-  :value2:  On Download, {YES}
-  :value3:  On Upgrade, {YES}
-  :value4:  On Rename, {YES}
-  :value5:  Filter Movie Tags,
-  :value6:  Host, {IP}
-  :value7:  Port, {PASS}
-  :value8:  Username, {USER}
-  :value9:  Password, {PASS}
-  :value10: Update Library, {NO}
-  :value11: Use SSL, {YES}
+  :value1:  ☐, On Grab
+  :value2:  ☑, On Download
+  :value3:  ☑, On Upgrade
+  :value4:  ☑, On Rename
+  :value5:  ☐, On Movie Added
+  :value6:  ☑, On Movie Delete
+  :value7:  ☑, On Movie File Delete
+  :value8:  ☑, On Movie File Delete For Upgrade
+  :value9:  ☐, On Health Issue
+  :value10: ☐, On Application Update
+  :value11: Tags, {NONE}
+  :value12: Host, {IP}
+  :value13: Port, {PASS}
+  :value14: Use SSL, ☑
+  :value15: Auth Token, {Token}
+  :value16: Authenticate with Plex.tv, {Authenticate}
+  :value17: Update Library, ☐
+  :value18: Map Paths From, {NONE}
+  :value19: Map Paths To, {NONE}
+
+  Re-authenticate to plex.tv only if there is no auth token, or it does not
+  work.
 
 General
 *******
-.. gui::   Radarr General Host
-  :path:   Settings --> General --> Start-Up
+.. gui::   Host
+  :path:   Settings --> General --> Host
   :value0: Bind Address, *
   :value1: Port Number, 7878
-  :value2: URL Base,
-  :value3: Enable SSL, {NO}
-  :value4: Open browser on start, {NO}
+  :value2: Instance Name, Radarr
+  :value3: Application URL, {NONE}
+  :value4: Enable SSL, ☐
+  :value5: Open browser on start, {NO}
 
-.. gui::   Radarr General Security
+.. gui::   Security
   :path:   Settings --> General --> Security
   :value0: Authentication, {NONE}
   :value1: API Key, {KEY}
@@ -232,42 +242,53 @@ General
   encrypt certs presented using a non-routable IP will fail full-chain
   validation, which is the default validation method as of 2020-11-01.
 
-.. gui::   Radarr General Proxy
+.. gui::   Proxy
   :path:   Settings --> General --> Proxy
-  :value0: Use Proxy, {NO}
+  :value0: Use Proxy, ☐
 
-.. gui::   Radarr General Logging
+.. gui::   Logging
   :path:   Settings --> General --> Logging
   :value0: Log Level, {INFO}
 
-.. gui::   Radarr General Analytics
+.. gui::   Analytics
   :path:   Settings --> General --> Analytics
-  :value0: Enable, {NO}
+  :value0: Enable, ☐
 
-.. gui::   Radarr General Updates
+.. gui::   Updates
   :path:   Settings --> General --> Updates
   :value0: Branch, master
-  :value1: Automatic, {ON}
+  :value1: Automatic, ☑
   :value2: Mechanism, Built-in
+
+.. gui::   Backups
+  :path:   Settings --> General --> Backups
+  :value0: Folder, Backups
+  :value1: Interval, 7
+  :value2: Retention, 28
 
 UI
 **
-.. gui::   Radarr UI Movies
-  :path:   Settings --> UI --> Movies
-  :value0: Page Size, 250
-
-.. gui::   Radarr UI Calendar
+.. gui::   Calendar
   :path:   Settings --> UI --> Calendar
   :value0: First Day of Week, Sunday
   :value1: Week Column Header, Tue 3/25
 
-.. gui::   Radarr UI Dates
+.. gui::   Movies
+  :path:   Settings --> UI --> Movies
+  :value0: Runtime Format, 1h 15m
+
+.. gui::   Dates
   :path:   Settings --> UI --> Dates
   :value0: Short Date Format, YYYY-MM-DD
   :value1: Long Date Format, Tuesday March 25 2014
   :value2: Time Format, 17:00/17:30
-  :value3: Show Relative Dates, {NO}
+  :value3: Show Relative Dates, ☐
 
-.. gui::   Radarr UI Style
+.. gui::   Style
   :path:   Settings --> UI --> Style
-  :value0: Enable Color-Impaired mode, {NO}
+  :value0: Enable Color-Impaired mode, ☐
+
+.. gui::   Language
+  :path:   Settings --> UI --> Language
+  :value0: Movie Info Language, English
+  :value1: UI Language, English

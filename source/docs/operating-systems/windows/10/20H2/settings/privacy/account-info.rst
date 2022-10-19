@@ -10,9 +10,10 @@ grained control of app access.
 Allow access to account info on this device
 *******************************************
 .. dropdown:: Disable Allow access to account info on this device
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   This disables all account info options. See
   :ref:`w10-20h2-settings-privacy-account-info-apps` to manage access on a per
@@ -47,9 +48,10 @@ Allow access to account info on this device
 Allow apps to access your account info
 **************************************
 .. dropdown:: Disable Allow apps to access your account info
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable apps access your account info
     :path:    Computer Configuration -->

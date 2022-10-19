@@ -18,9 +18,10 @@ Start
 .. _w10-20h2-settings-personalization-start-most-used-apps:
 
 .. dropdown:: Disable Show most used apps
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable Show most used apps
     :path:    Computer Configuration -->
@@ -43,9 +44,10 @@ Start
     :open:
 
 .. dropdown:: Disable Show suggestions occasionally in Start
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   GPO settings apply in ``Education`` and ``Enterprise`` Windows versions but
   should be set regardless.
@@ -55,9 +57,10 @@ Start
   `Reference <https://www.tenforums.com/tutorials/38945-enable-disable-app-suggestions-start-windows-10-a.html>`__
 
 .. dropdown:: Disable Use Start full screen
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable Use Start full screen
     :path:    Computer Configuration -->
@@ -83,9 +86,10 @@ Start
 
 .. dropdown:: Disable Show recently opened items in Jump Lists on Start or the
               taskbar and in File Explorer Quick Access
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable Show recently opened items in Jump Lists on Start or
               the taskbar and in File Explorer Quick Access

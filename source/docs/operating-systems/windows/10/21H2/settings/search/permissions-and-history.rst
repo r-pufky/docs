@@ -17,9 +17,10 @@ Permissions & History
 Cloud content search
 ********************
 .. dropdown:: Disable Cloud content search
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Disable both ``Microsoft account`` and ``Work or School account`` searching.
 

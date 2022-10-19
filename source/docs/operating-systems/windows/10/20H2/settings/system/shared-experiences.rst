@@ -6,9 +6,10 @@ Shared Experiences
 Nearby Sharing
 **************
 .. dropdown:: Disable share content with a nearby device by using Bluetooth and Wi-Fi
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: stack
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Automatically connects to machines for sharing files.
 
@@ -39,9 +40,10 @@ Share across devices
 ********************
 .. dropdown:: Disable let apps on other devices (including linked phones and
               tablets) open and message apps on this device, and vice versa
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Automatically accepts connections for sharing files.
 

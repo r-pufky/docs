@@ -12,10 +12,10 @@ Media streaming service.
    troubleshooting
 
 .. role:: plex
-  :galaxy:      https://galaxy.ansible.com/r_pufky/plex
-  :source:      https://github.com/r-pufky/ansible_plex
-  :service_doc: https://support.plex.tv/articles/
-  :update:      2022-10-08
+  :galaxy:       https://galaxy.ansible.com/r_pufky/plex
+  :source:       https://github.com/r-pufky/ansible_plex
+  :service_doc:  https://support.plex.tv/articles/
+  :update:       2022-10-08
   :open:
 
   You can copy your existing library from ``/var/lib/plexmediaserver/*`` to

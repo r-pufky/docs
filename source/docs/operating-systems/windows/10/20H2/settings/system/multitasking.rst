@@ -9,9 +9,10 @@ Timeline
 ********
 
 .. dropdown:: Disable show suggestions in your timeline
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   App usage is recorded to show suggestions.
 

@@ -96,6 +96,19 @@ management tools.
 
   python3 -c "import crypt, getpass; print(crypt.crypt(getpass.getpass('password to hash: '), crypt.mksalt(crypt.METHOD_SHA512)))"
 
+GRUB CryptFS Password Typo
+**************************
+Unlocked CryptFS on GRUB boot will stall if typo'ing the password. Restart the
+unlock and boot process without restarting:
+
+.. code-block:: bash
+
+  cryptomount -a
+  insmod normal
+  normal
+
+`Reference <https://wiki.archlinux.org/title/GRUB#GRUB_rescue_and_encrypted_/boot>`__
+
 .. _safely disabled if you are only running one OS: https://unix.stackexchange.com/questions/347466/debian-new-error-message-upgrading-kernel-to-4-9-reload-ioctl-error
 .. _systemd - 239-7ubuntu4: https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1766969
 .. _Mount RAW disk: https://blog.tinned-software.net/mount-raw-image-of-entire-disc/

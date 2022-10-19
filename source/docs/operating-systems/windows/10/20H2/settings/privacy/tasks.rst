@@ -10,9 +10,10 @@ grained control of app access.
 Allow access to tasks on this device
 ************************************
 .. dropdown:: Disable Allow access to tasks on this device
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   This disables all email options. See
   :ref:`w10-20h2-settings-privacy-tasks-apps` to manage access on a per app
@@ -47,9 +48,10 @@ Allow access to tasks on this device
 Allow apps to access your tasks
 *******************************
 .. dropdown:: Disable Allow apps to access your tasks
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable apps access your tasks
     :path:    Computer Configuration -->

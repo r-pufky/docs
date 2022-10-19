@@ -15,12 +15,12 @@ private repository use. Can be exposed and used publicly.
    troubleshooting
 
 .. role:: do1jlr.gitea
-  :galaxy:      https://galaxy.ansible.com/do1jlr/gitea
-  :source:      https://github.com/roles-ansible/ansible_role_gitea
-  :service_doc: https://docs.gitea.io/en-us/
-  :ref:         https://github.com/go-gitea/gitea,
-                https://docs.gitea.io/en-us/config-cheat-sheet/
-  :update:      2022-10-08
+  :galaxy:       https://galaxy.ansible.com/do1jlr/gitea
+  :source:       https://github.com/roles-ansible/ansible_role_gitea
+  :service_doc:  https://docs.gitea.io/en-us/
+  :ref:          https://github.com/go-gitea/gitea,
+                 https://docs.gitea.io/en-us/config-cheat-sheet/
+  :update:       2022-10-08
   :open:
 
   * Though there is some documentation on moving from ``sqlite3`` to

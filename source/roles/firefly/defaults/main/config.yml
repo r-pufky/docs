@@ -32,7 +32,7 @@ firefly_default_locale: 'equal'
 # Change this value to your preferred time zone.
 firefly_tz: 'America/Los_Angeles'
 
-# TRUSTED_PROXIES is a useful variable when using Docker and/or a reverse proxy.
+# TRUSTED_PROXIES is a useful variable when using a reverse proxy.
 # Set it to ** and reverse proxies work just fine.
 firefly_trusted_proxies: ''
 

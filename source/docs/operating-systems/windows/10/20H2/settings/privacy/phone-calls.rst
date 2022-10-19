@@ -13,9 +13,10 @@ grained control of app access.
 Allow phone calls on this device
 ********************************
 .. dropdown:: Disable Allow phone calls on this device
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable Allow phone calls on this device
     :path:    Computer Configuration -->
@@ -44,9 +45,10 @@ Allow phone calls on this device
 Allow apps to make phone calls
 ******************************
 .. dropdown:: Disable Allow apps to make phone calls
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable Allow apps to make phone calls
     :path:    Computer Configuration -->
@@ -62,7 +64,7 @@ Allow apps to make phone calls
     :open:
 
   .. regedit:: Disable Allow apps to make phone calls
-    :path:i    HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
+    :path:     HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppPrivacy
     :value0:   LetAppsAccessPhone, {DWORD}, 2
     :ref:      https://docs.microsoft.com/en-us/windows/privacy/manage-connections-from-windows-operating-system-components-to-microsoft-services#1813-phone-calls
     :update:   2021-02-19

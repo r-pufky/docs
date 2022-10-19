@@ -10,9 +10,10 @@ grained control of app access.
 Allow access to contacts on this device
 ***************************************
 .. dropdown:: Disable Allow access to contacts on this device
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   This disables all contacts options.
 

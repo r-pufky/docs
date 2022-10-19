@@ -16,6 +16,7 @@ Self-hosted financial manager.
   :galaxy:      https://galaxy.ansible.com/r_pufky/firefly
   :source:      https://github.com/r-pufky/ansible_firefly
   :service_doc: https://www.firefly-iii.org/
+  :blocking:    git/php source; confirm php dependency changes.
   :update:      2022-10-09
   :open:
 

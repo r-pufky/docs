@@ -9,9 +9,10 @@ Offline maps
   :update:   2021-02-19
 
 .. dropdown:: Disable Automatically update maps
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable Automatically update maps
     :path:    Computer Configuration -->

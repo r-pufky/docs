@@ -9,9 +9,10 @@ Change privacy options
 .. dropdown:: Disable Let apps use advertising ID to make ads more interesting
               to you based on your app usage (turning this off will reset your
               ID.)
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable Let apps use advertising ID to make ads more
               interesting to you based on your app usage (turning this off
@@ -56,9 +57,10 @@ Change privacy options
 
 .. dropdown:: Disable Let Windows track app launches to improve Start and search
               results
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   See :ref:`Disable Show most used apps
   <w10-20h2-settings-personalization-start-most-used-apps>` for additional app

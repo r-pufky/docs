@@ -15,6 +15,7 @@ Block nefarious websites & Ads.
   :galaxy:      https://galaxy.ansible.com/r_pufky/pihole
   :source:      https://github.com/r-pufky/ansible_pihole
   :service_doc: https://wiki.servarr.com/radarr
+  :blocking:    git/php source; confirm php dependency changes.
   :update:      2022-10-08
   :open:
 

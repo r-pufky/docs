@@ -11,9 +11,10 @@ Custom templates are saved to ``%appdata%\Sony\Render Templates``.
 Templates below work well with shadowplay videos and youtube uploads.
 
 .. dropdown:: AVC/135mbps/cuda/60
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: browser
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gui::    Create a new template
     :path:    Project --> Make Movie --> Save it to my Hard Drive --> MP4 -->
@@ -78,9 +79,10 @@ Templates below work well with shadowplay videos and youtube uploads.
     :open:
 
 .. dropdown:: AVC/135mbps/cuda
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: browser
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gui::    Create a new template
     :path:    Project --> Make Movie --> Save it to my Hard Drive --> MP4 -->
@@ -145,9 +147,10 @@ Templates below work well with shadowplay videos and youtube uploads.
     :open:
 
 .. dropdown:: AVC/50mbps/cuda
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: browser
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gui::    Create a new template
     :path:    Project --> Make Movie --> Save it to my Hard Drive --> MP4 -->
@@ -212,9 +215,10 @@ Templates below work well with shadowplay videos and youtube uploads.
     :open:
 
 .. dropdown:: AVC/50mbps
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: browser
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gui::    Create a new template
     :path:    Project --> Make Movie --> Save it to my Hard Drive --> MP4 -->
@@ -279,9 +283,10 @@ Templates below work well with shadowplay videos and youtube uploads.
     :open:
 
 .. dropdown:: AVC
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: browser
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gui::    Create a new template
     :path:    Project --> Make Movie --> Save it to my Hard Drive --> MP4 -->

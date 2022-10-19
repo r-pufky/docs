@@ -6,9 +6,10 @@ All system changes trigger a backup of affect files before changes are applied;
 this creeate a drastic performance hit. Disable restore points.
 
 .. dropdown:: Disable restore points for each drive
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gui::    Disable restore points for each drive
     :path:    ⌘ + r -->
@@ -26,7 +27,7 @@ this creeate a drastic performance hit. Disable restore points.
     Be sure to set this for each drive explicitly.
 
   .. dropdown:: Powershell
-    :title: font-weight-bold
+    :icon: shield-lock
     :animate: fade-in
     :open:
 
@@ -39,9 +40,10 @@ this creeate a drastic performance hit. Disable restore points.
   `Reference <https://github.com/adolfintel/Windows10-Privacy#system-restore>`__
 
 .. dropdown:: Disable system restore
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable system restore
     :path:    Computer Configuration -->
@@ -67,9 +69,10 @@ this creeate a drastic performance hit. Disable restore points.
     :open:
 
 .. dropdown:: Disable system restore configuration
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. note::
     Windows updates can re-enable restore points, leave enabled to disable if

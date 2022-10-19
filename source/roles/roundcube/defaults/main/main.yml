@@ -33,7 +33,7 @@ roundcube_username_domain: 'example.com'
 # RFC1766 language name. (e.g. en_US, de_DE).
 roundcube_language: 'en_US'
 
-# Skin to use: classic, elastic, larry.
+# Skin to use: classic, elastic, larry. Default: 'elastic'.
 roundcube_skin: 'elastic'
 
 # Timezone to use. (e.g. America/Log_Angeles). This should be set to the

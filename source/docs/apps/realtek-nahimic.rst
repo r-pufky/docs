@@ -20,9 +20,10 @@ prevent Microsoft from re-installing the software everytime windows update
 runs.
 
 .. dropdown:: Disable Nahimic Virtual Devices
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: browser
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gui::   Disable A-Volute Nh3 Audio Effects Component
     :label:  Service
@@ -49,9 +50,10 @@ runs.
     :update: 2022-01-22
 
 .. dropdown:: Disable Nahimic Services
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: browser
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gui::   Disable Nahimic Service
     :label:  Service
@@ -64,9 +66,10 @@ runs.
     :update: 2022-01-22
 
 .. dropdown:: Prevent Nahimic Executables from Starting
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: browser
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Prevent Nahimic Executables from Starting
     :path:    User Configuration -->
@@ -87,9 +90,10 @@ runs.
     :open:
 
 .. dropdown:: Disable Nahimic Scheduled Tasks
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: browser
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Scheduled tasks may not all exist.
 

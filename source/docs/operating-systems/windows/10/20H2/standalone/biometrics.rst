@@ -9,13 +9,14 @@ unlock your computer with your camera/fingerprint reader. Disable this.
   After every major windows update, verify these settings.
 
 .. dropdown:: Disable Biometrics
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: terminal
   :animate: fade-in
+  :class-container: sd-shadow-sm
   :open:
 
   .. dropdown:: Delete Hello-Face
-    :title: font-weight-bold
+    :icon: terminal
     :animate: fade-in
     :open:
 

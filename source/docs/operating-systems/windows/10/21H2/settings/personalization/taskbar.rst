@@ -3,9 +3,10 @@
 Taskbar
 #######
 .. dropdown:: Lock the taskbar
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Lock the taskbar
     :path:    User Configuration -->
@@ -35,9 +36,10 @@ Taskbar
 Notification Area
 *****************
 .. dropdown:: Always show all icons in the notification area
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Select which icons appear on the taskbar
     :path:    User Configuration -->
@@ -51,9 +53,10 @@ Notification Area
     :open:
 
 .. dropdown:: Turn system icons on or off
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. regedit:: Disable Input Indicator Icon
     :path:     HKEY_CURRENT_USER\Software\Microsoft\CTF\LangBar
@@ -102,9 +105,10 @@ Notification Area
 People
 ******
 .. dropdown:: Disable Show contacts on the taskbar
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable Show contacts on the taskbar
     :path:    User Configuration -->

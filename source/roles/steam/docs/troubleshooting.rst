@@ -13,14 +13,13 @@ ignore it.
 
 .. code-block::
 
-  sudo zfs set quota=2T zpool1/docker
+  sudo zfs set quota=2T zpool1/games
 
 .. _service-steam-troubleshooting-disk:
 
 ``0x0`` or disk write errors
 ****************************
-The docker container does not have permissions to write updates to the data
-mount.
+No permissions to write updates to the data mount.
 
 .. code-block:: bash
   :caption: Explicitly set permissions for Conan Exiles files.

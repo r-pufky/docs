@@ -15,9 +15,10 @@ settings. :ref:`w10-20h2-standalone-telemetry` for telemetry services.
 Cloud-delivered protection
 **************************
 .. dropdown:: Disable Cloud-delivered protection
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Previous versions labeled this as 'Microsoft Antimalware Protection Service'
   (MAPS). Uploads files and file hashes to Microsoft for any suspect file.
@@ -50,9 +51,10 @@ Cloud-delivered protection
 Automatic sample submission
 ***************************
 .. dropdown:: Disable Automatic sample submission
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable Automatic sample submission
     :path:    Computer Configuration -->
@@ -80,9 +82,10 @@ Automatic sample submission
 Exclusions
 **********
 .. dropdown:: Add hosts file exclusion
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   ``20H2`` always notifies on host file changes, even if they are valid DNS
   blackholes for telemetry. Do *not* add this exlcusion if you are not managing
@@ -118,9 +121,10 @@ Notifications
 Virus & threat protection notifications
 =======================================
 .. dropdown:: Disable Get informational notifications
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: stack
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. regedit:: Disable Get informational notifications
     :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\
@@ -131,9 +135,10 @@ Virus & threat protection notifications
     :open:
 
 .. dropdown:: Disable Recent activity and scan results
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: stack
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. regedit:: Disable Recent activity and scan results
     :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\
@@ -144,9 +149,10 @@ Virus & threat protection notifications
     :open:
 
 .. dropdown:: Disable Threats found but no immediate action is needed
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: stack
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. regedit:: Disable Threats found but no immediate action is needed
     :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\
@@ -157,9 +163,10 @@ Virus & threat protection notifications
     :open:
 
 .. dropdown:: Disable Files or activities are blocked
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: stack
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. regedit:: Disable Files or activities are blocked
     :path:     HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\
@@ -172,9 +179,10 @@ Virus & threat protection notifications
 Get account protection notifications
 ====================================
 .. dropdown:: Disable Get account protection notifications
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: stack
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. regedit:: Disable Get account protection notifications
     :path:     HKEY_USERS\{SID}\SOFTWARE\Microsoft\
@@ -186,9 +194,10 @@ Get account protection notifications
     :open:
 
 .. dropdown:: Disable Problems with Windows Hello
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: stack
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. regedit:: Disable Problems with Windows Hello
     :path:     HKEY_USERS\{SID}\SOFTWARE\Microsoft\
@@ -200,9 +209,10 @@ Get account protection notifications
     :open:
 
 .. dropdown:: Disable Problems with Dynamic lock
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: stack
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. regedit:: Disable Problems with Dynamic lock
     :path:     HKEY_USERS\{SID}\SOFTWARE\Microsoft\
@@ -223,9 +233,10 @@ changed. See references for additional documentation.
   :ref:`service-pihole` and :ref:`networking-dnat-for-captive-dns`.
 
 .. dropdown:: Connected User Experiences and Telemetry endpoints
-  :container: + shadow
-  :title: bg-info text-white font-weight-bold
+  :color: primary
+  :icon: table
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Microsoft Defender Advanced Threat Protection is country specific and the
   prefix changes by country, e.g.: **de**.vortex-win.data.microsoft.com
@@ -241,9 +252,10 @@ changed. See references for additional documentation.
   +----------------------------------------+------------------------------------+-----------------------------------+---------------------------------+
 
 .. dropdown:: Diagnostic data services endpoints
-  :container: + shadow
-  :title: bg-info text-white font-weight-bold
+  :color: primary
+  :icon: table
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   +-----------------------------------------------+-------------------------------+
   | Service                                       | Endpoint                      |

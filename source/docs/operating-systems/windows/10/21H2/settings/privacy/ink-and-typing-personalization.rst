@@ -10,9 +10,10 @@ Getting to know you
               dictionary will be cleared, but the standard dictionary will
               continue to provide typing suggestions and handwriting
               recognition.
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
   :open:
 
   This disables backend analytics services for recognition. The toggle option

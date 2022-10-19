@@ -19,7 +19,7 @@ six==1.16.0
 snowballstemmer==2.2.0
 Sphinx==4.5.0
 sphinx-copybutton==0.5.0
-sphinx-panels==0.6.0
+sphinx-design==0.3.0
 sphinx-rtd-theme==1.0.0
 sphinx_collapse==0.1.2
 sphinxcontrib-aafig2==1.2

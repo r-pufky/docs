@@ -10,9 +10,10 @@ grained control of app access.
 Communicate with unpaired devices
 *********************************
 .. dropdown:: Disable Communicate with unpaired devices
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   value0 is worded poorly. This prevents apps from sending data
   **automatically** to unpaired / other devices. It does not prevent all
@@ -34,9 +35,10 @@ Communicate with unpaired devices
 Use trusted devices
 *******************
 .. dropdown:: Use trusted devices
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo:: Disable communication with unpaired devices
     :path: Computer Configuration -->

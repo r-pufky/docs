@@ -18,11 +18,11 @@ openVPN.
    troubleshooting
 
 .. role:: wireguard
-  :galaxy:      https://galaxy.ansible.com/r_pufky/wireguard
-  :source:      https://github.com/r-pufky/ansible_wireguard
-  :service_doc: https://www.wireguard.com/
-  :ref:         https://www.wireguard.com/papers/wireguard.pdf
-  :update:      2022-10-08
+  :galaxy:       https://galaxy.ansible.com/r_pufky/wireguard
+  :source:       https://github.com/r-pufky/ansible_wireguard
+  :service_doc:  https://www.wireguard.com/
+  :ref:          https://www.wireguard.com/papers/wireguard.pdf
+  :update:       2022-10-08
   :open:
 
   Only the server endpoint needs to be exposed publically. Clients can globally

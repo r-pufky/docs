@@ -17,8 +17,8 @@ Secure Shell Daemon.
 
 .. role:: sshd
   :service_doc: https://www.openssh.com/
-  :update:      2022-10-09
   :private:
+  :update:      2022-10-09
 
   Manage SSH.
 

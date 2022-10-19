@@ -186,7 +186,7 @@ File Listings
     :lines: 2-25
 
 * Always inline all headers, and settings.
-* always add TOC section to bottom below links, hidden.
+* always add TOC section to bottom below links, hidden; except for **roles**.
 
 GUI
 ***

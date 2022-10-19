@@ -8,9 +8,10 @@ Clipboard history
 .. dropdown:: Disable save multiple items to the clipboard to use later. Press
               the Windows Logo Key + V to view your clipboard history and paste
               from it.
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Long term multi-item storage of clipboard will likely contain passwords or
   confidential material.
@@ -33,9 +34,10 @@ Sync across devices
 *******************
 .. dropdown:: Disable paste text on your other devices when you sign in with a
               Microsoft account or work account.
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Sync of clipboard data will likely contain passwords or confidential material,
   and should **not** be transmitted to MS services even if encrypted.

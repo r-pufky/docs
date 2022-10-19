@@ -7,9 +7,10 @@ Speech
 Online speech recognition
 *************************
 .. dropdown:: Disable Online speech recognition
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
   :open:
 
   .. gpo::    Disable Online Speech Recognition

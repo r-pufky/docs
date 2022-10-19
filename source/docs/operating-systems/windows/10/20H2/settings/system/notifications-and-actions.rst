@@ -12,9 +12,10 @@ Notifications
 .. _w10-20h2-settings-system-get-notifications-from-apps:
 
 .. dropdown:: Disable get notifications from apps and other windows
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Global toggle for notifications.
 
@@ -40,9 +41,10 @@ Notifications
     :open:
 
 .. dropdown:: Disable show notifications on lock screen
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Broken. Will enforce if it is already disabled, but will not force disable.
   Use registry keys to force disable.
@@ -88,9 +90,10 @@ Notifications
 
 .. dropdown:: Disable show me the windows welcome experience after updates and
               occasionally when I sign in to highlight what's new and suggested
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable show me the windows welcome experience after updates
               and occasionally when I sign in to highlight what's new and
@@ -126,9 +129,10 @@ Notifications
   :update:   2021-02-19
 
 .. dropdown:: Disable get tips, tricks, and suggestions as you use Windows
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable get tips, tricks, and suggestions as you use Windows
     :path:    Computer Configuration -->

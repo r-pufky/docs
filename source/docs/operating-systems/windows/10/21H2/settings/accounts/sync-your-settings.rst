@@ -9,9 +9,10 @@ data to their servers. Disable this.
   After every major windows update, verify these settings.
 
 .. dropdown:: Sync Your Settings
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
   :open:
 
   Disable account sync and prevent users from turning it on.

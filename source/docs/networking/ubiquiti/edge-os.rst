@@ -31,9 +31,10 @@ Create `DHCP Static`_ Entries
 *****************************
 
 .. dropdown:: Add static DHCP mapping via CLI.
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: terminal
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   This will map ``computer`` to ``10.0.0.2`` on ``Test`` DHCP server using the
   MAC address AA:BB:CC:11:22:33.
@@ -62,9 +63,10 @@ for a given DNS request.
   upgrades and restores.
 
 .. dropdown:: Add static host mapping via CLI.
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: terminal
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   This will map ``computer`` and ``computer.example.com`` to ``10.0.0.2``.
   Changes are reflected in the GUI. It will appear in ``/etc/hosts`` as:
@@ -83,9 +85,10 @@ for a given DNS request.
     save
 
 .. dropdown:: Add static host mapping via GUI.
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: browser
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gui::    Add Static Host
     :label:   Ubiquiti
@@ -122,9 +125,10 @@ for a given DNS request.
       * The hostname will resolve to ``127.0.1.1``.
 
 .. dropdown:: Add static host mapping via ``/etc/hosts``.
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: terminal
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. danger::
     Provided only in case of need. Do not use this method as changes are not

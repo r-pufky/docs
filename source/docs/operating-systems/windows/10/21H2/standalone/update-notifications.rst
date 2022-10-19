@@ -6,9 +6,10 @@ Taskbar is very noisy by default. Remove spurious alerts and information that
 is not needed.
 
 .. dropdown:: Disable Taskbar Update Notifications
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
   :open:
 
   .. gui::    Disable Taskbar Update Notifications

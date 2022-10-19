@@ -3,9 +3,10 @@
 Xbox Game Bar
 #############
 .. dropdown:: Disable Xbox Game Bar
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
   :open:
 
   .. gpo::    Disable game broadcasting suite

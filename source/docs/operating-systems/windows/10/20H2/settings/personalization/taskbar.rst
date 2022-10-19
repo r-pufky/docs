@@ -3,9 +3,10 @@
 Taskbar
 #######
 .. dropdown:: Lock the taskbar
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo:: Lock the taskbar
     :path: User Configuration -->
@@ -46,9 +47,10 @@ Taskbar
 Notification Area
 *****************
 .. dropdown:: Always show all icons in the notification area
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Lock the taskbar
     :path:    User Configuration -->
@@ -121,9 +123,10 @@ Notification Area
   :update: 2021-02-19
 
 .. dropdown:: Disable Meet Now Icon
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable Meet Now Icon
     :path:    User Configuration -->
@@ -148,9 +151,10 @@ Notification Area
 People
 ******
 .. dropdown:: Disable Show contacts on the taskbar
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable Show contacts on the taskbar
     :path:    User Configuration -->

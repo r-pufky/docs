@@ -18,9 +18,10 @@ grained control of app access.
 Let apps run in the background
 ******************************
 .. dropdown:: Enable Let apps run in the background
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
   :open:
 
   .. gpo::    Enable Let apps run in the background

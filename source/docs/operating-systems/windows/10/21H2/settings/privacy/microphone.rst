@@ -12,9 +12,10 @@ grained control of app access.
 Allow apps to access your microphone
 ************************************
 .. dropdown:: Allow apps to access your microphone
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   GPO policy allow defines desktop and store app access.
 

@@ -3,9 +3,10 @@
 Delivery Optimization
 #####################
 .. dropdown:: Disable Allow downloads from other PCs
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
   :open:
 
   .. gpo::    Disable delivery optimization

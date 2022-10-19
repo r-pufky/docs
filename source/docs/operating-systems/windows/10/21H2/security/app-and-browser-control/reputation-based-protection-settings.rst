@@ -5,9 +5,10 @@ Reputation-based protection settings
 Check apps and files
 *********************
 .. dropdown:: Disable Check apps and files
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable Check apps and files
     :path:    Computer Configuration -->
@@ -30,9 +31,10 @@ Edge will eventually be removed; until then, leave enabled for Edge browser.
 Potentially unwanted app blocking
 *********************************
 .. dropdown:: Disable Potentially unwanted app blocking
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Blocking downloads cannot be managed. Leave download blocking enabled.
 

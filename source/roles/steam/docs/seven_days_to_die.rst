@@ -8,8 +8,8 @@
   :service_doc: https://7daystodie.gamepedia.com/System_Requirements
   :ref:         https://developer.valvesoftware.com/wiki/7_Days_to_Die_Dedicated_Server#Installation,
                 https://www.gameserverkings.com/knowledge-base/7-days-to-die/7d2d-new-user-guide/
-  :update:      2022-10-10
   :private:
+  :update:      2022-10-10
   :open:
 
   7 Days to Die dedicated server.

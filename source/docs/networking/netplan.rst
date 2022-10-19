@@ -38,10 +38,10 @@ configuration options.
 
 Bridging
 ********
-This is useful for providing a network interface to be used for VM's / Docker
+This is useful for providing a network interface to be used for VM's /
 containers. The bridged network can be assigned an IP address directly and used
-as well; however there seems to be an issue with using a bridge network with KVM
-as well as the host network. See `reference`_ and `general bridging help`_.
+as well; however there seems to be an issue with using a bridge network with
+KVM as well as the host network. See `reference`_ and `general bridging help`_.
 
 In most cases for advanced configuration the base adapter *should not* be
 configured for an IP address, the resulting bonded or bridged device should.

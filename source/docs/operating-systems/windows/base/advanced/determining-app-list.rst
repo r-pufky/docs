@@ -9,9 +9,10 @@ If the apps have been properly identified and denied, you will not be able to
 re-enable them from the GUI.
 
 .. dropdown:: Get App package family names
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: terminal
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Searching with the GUI name and ``AppPackage name`` usually returns the
   related package name. Use `AppPackage Names list <https://com-puterworks.com/remove_apps.html>`__
@@ -26,9 +27,10 @@ re-enable them from the GUI.
 
 
 .. dropdown:: Setting App List
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: stack
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Read the description for the :term:`GPO` in question for all options.
   :term:`GPO` policy settings can be found in the registry at

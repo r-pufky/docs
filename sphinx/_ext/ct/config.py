@@ -5,6 +5,7 @@ import re
 DEFAULT_SEPARATOR = r'\N{TRIANULAR_BULLET}'
 DEFAULT_REPLACE = '-->'
 DEFAULT_DELIM = ','
+DEFAULT_VALUE_LIMIT = 35
 AMP_RE = re.compile(r'(?<!&)&(?![&\s])')
 
 def _determine_preference(default, custom=None, config=None):

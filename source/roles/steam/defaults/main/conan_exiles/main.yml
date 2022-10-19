@@ -60,8 +60,6 @@ steam_conan_mods: []
 #
 #   * state: must be 'present' or 'absent'.
 #   * empty values may be used for value, creation or deletion.
-#   * Duplicate keys are **NOT** supported (e.g. Engine.ini has valid
-#     duplicate 'Paths'. This violates INI standard, but is used within Conan.)
 #   * Use vault for passwords.
 #
 # Reference:
@@ -87,8 +85,6 @@ steam_conan_settings_game:
 #
 #   * state: must be 'present' or 'absent'.
 #   * empty values may be used for value, creation or deletion.
-#   * Duplicate keys are **NOT** supported (e.g. Engine.ini has valid
-#     duplicate 'Paths'. This violates INI standard, but is used within Conan.)
 #   * Use vault for passwords.
 #
 # To enable the Isle of Siptah expansion, set the default map. this enables
@@ -123,8 +119,6 @@ steam_conan_settings_engine:
 #
 #   * state: must be 'present' or 'absent'.
 #   * empty values may be used for value, creation or deletion.
-#   * Duplicate keys are **NOT** supported (e.g. Engine.ini has valid
-#     duplicate 'Paths'. This violates INI standard, but is used within Conan.)
 #   * Use vault for passwords.
 #
 # Updated defaults may be found in Config/DefaultServerSettings.ini

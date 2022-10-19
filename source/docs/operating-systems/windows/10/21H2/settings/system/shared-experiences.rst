@@ -6,9 +6,10 @@ Shared Experiences
 Nearby Sharing
 **************
 .. dropdown:: Disable share content with a nearby device by using Bluetooth and Wi-Fi
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Applying the :ref:`w10-21h2-settings-system-shared-experiences-share-across-devices`
   GPO policy will also disable this. Only apply these settings if you want to
@@ -44,9 +45,10 @@ Share across devices
 ********************
 .. dropdown:: Disable let apps on other devices (including linked phones and
               tablets) open and message apps on this device, and vice versa
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Automatically accepts connections for sharing files.
 

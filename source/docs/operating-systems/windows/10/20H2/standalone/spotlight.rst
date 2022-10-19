@@ -9,9 +9,10 @@ this.
   After every major windows update, verify these settings.
 
 .. dropdown:: Disable all spotlight features
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable all spotlight features
     :path:    User Configuration -->
@@ -34,9 +35,10 @@ this.
     :open:
 
 .. dropdown:: Disable third-party content in spotlight
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable third-party content in spotlight
     :path:    User Configuration -->
@@ -59,9 +61,10 @@ this.
     :open:
 
 .. dropdown:: Disable all spotlight features on lock screen
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable all spotlight features on lock screen
     :path:    User Configuration -->
@@ -84,9 +87,10 @@ this.
     :open:
 
 .. dropdown:: Disable spotlight action center notifications
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable spotlight action center notifications
     :path:    User Configuration -->
@@ -109,9 +113,10 @@ this.
     :open:
 
 .. dropdown:: Disable spotlight settings notifications
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable spotlight notifications for settings via user GPO
     :path:    User Configuration -->

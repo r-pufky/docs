@@ -9,9 +9,10 @@ including related metadata. Disable this.
   After every major windows update, verify these settings.
 
 .. dropdown:: Disable error reporting
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
   :open:
 
   .. gpo::    Disable Windows Error Reporting

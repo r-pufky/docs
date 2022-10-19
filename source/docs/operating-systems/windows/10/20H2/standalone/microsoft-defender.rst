@@ -21,9 +21,10 @@ services.
   `Reference <https://docs.microsoft.com/en-us/windows-hardware/customize/desktop/unattend/security-malware-windows-defender-disableantispyware>`__
 
 .. dropdown:: Disable tamper protection
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: browser
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. note::
     ``Tamper Protection`` can no longer be disabled (registry settings not
@@ -53,7 +54,7 @@ services.
     There is no :term:`GPO` for this. ``5`` enables protection.
 
   .. dropdown:: PS Exec
-    :title: font-weight-bold
+    :icon: terminal
     :animate: fade-in
     :open:
 
@@ -79,9 +80,10 @@ services.
   :update: 2021-02-19
 
 .. dropdown:: Disable Microsoft Defender Enhanced Notifications
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable Microsoft Defender Enhanced Notifications
     :path:    Computer Configuration -->
@@ -104,9 +106,10 @@ services.
     :open:
 
 .. dropdown:: Disable Microsoft Defender Updates
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Stop downloading updates for Microsoft Defender
     :path:    Computer Configuration -->
@@ -138,9 +141,10 @@ services.
     :open:
 
 .. dropdown:: Disable Malicious Software Reporting Tool
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   This reports file information to Microsoft.
 
@@ -164,9 +168,10 @@ services.
     :open:
 
 .. dropdown:: Disable Microsoft Defender Smart Screen
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable Microsoft Defender Smart Screen for system
     :path:    Computer Configuration -->
@@ -231,9 +236,10 @@ services.
   :update:  2021-02-19
 
 .. dropdown:: Disable windows defender notification icon
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable windows defender notification icon
     :path:    Computer Configuration -->
@@ -258,9 +264,10 @@ services.
     :open:
 
 .. dropdown:: Disable Microsoft Defender
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   As of Windows ``1903`` this setting only disables Microsoft Defender for
   Windows Server. Other settings still apply.
@@ -295,9 +302,10 @@ changed. See references for additional documentation.
   :ref:`service-pihole` and :ref:`networking-dnat-for-captive-dns`.
 
 .. dropdown:: Connected User Experiences and Telemetry endpoints
-  :container: + shadow
-  :title: bg-info text-white font-weight-bold
+  :color: info
+  :icon: table
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Microsoft Defender Advanced Threat Protection is country specific and the
   prefix changes by country, e.g.: **de**.vortex-win.data.microsoft.com
@@ -313,9 +321,10 @@ changed. See references for additional documentation.
   +----------------------------------------+------------------------------------+-----------------------------------+---------------------------------+
 
 .. dropdown:: Diagnostic data services endpoints
-  :container: + shadow
-  :title: bg-info text-white font-weight-bold
+  :color: info
+  :icon: table
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   +-----------------------------------------------+-------------------------------+
   | Service                                       | Endpoint                      |

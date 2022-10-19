@@ -29,9 +29,10 @@ enabled by default. It is the default location for all files; disabled this.
   OneDrive is integrated with Windows Explorer by default.
 
 .. dropdown:: Disable OneDrive from storing files
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Windows updates may re-enable this task.
 
@@ -58,9 +59,10 @@ enabled by default. It is the default location for all files; disabled this.
     :open:
 
 .. dropdown:: Remove OneDrive
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   OneDrive may be removed manually via the GUI once disabled.
 
@@ -85,9 +87,10 @@ changed. See references for additional documentation.
   :ref:`service-pihole` and :ref:`networking-dnat-for-captive-dns`.
 
 .. dropdown:: Diagnostic data services endpoints
-  :container: + shadow
-  :title: bg-info text-white font-weight-bold
+  :color: info
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   +-----------------------------+----------------------------------------------+
   | Service                     | Endpoint                                     |

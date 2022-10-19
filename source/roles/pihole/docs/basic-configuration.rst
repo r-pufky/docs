@@ -81,15 +81,15 @@ hostnames resolving to the same IP.
 
 Static Host IP Resolution
 *************************
-Useful for hosts with multiple hostnames per IP (e.g. docker containers); or
-static hosts that the router cannot resolve (e.g. the static address is not
-defined in the router itself).
+Useful for hosts with multiple hostnames per IP (e.g. containers); or static
+hosts that the router cannot resolve (e.g. the static address is not defined in
+the router itself).
 
 .. code-block:: bash
   :caption: **0644 root root** ``/etc/hosts``
 
-  1.2.3.4    app1.host.com app1  # docker app 1
-  1.2.3.4    app2.host.com app2  # docker app 2
+  1.2.3.4    app1.host.com app1  # app 1 comment
+  1.2.3.4    app2.host.com app2  # app 2 comment
 
 Restarting Pi-Hole may be required.
 

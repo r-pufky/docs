@@ -10,9 +10,10 @@ grained control of app access.
 Allow access to location on this device
 ***************************************
 .. dropdown:: Disable Allow access to location on this device
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   This disables all location privacy (hardware) options. See
   :ref:`Allow apps to access your location <w10-21h2-settings-privacy-location-access>`
@@ -35,9 +36,10 @@ Allow access to location on this device
 Allow apps to access your location
 **********************************
 .. dropdown:: Disable Allow apps to access your location
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Disable apps access to location.
 

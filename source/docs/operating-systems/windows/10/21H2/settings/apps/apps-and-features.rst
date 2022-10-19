@@ -3,9 +3,10 @@
 Apps & features
 ###############
 .. dropdown:: Choose where to get apps
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
   :open:
 
   Allow install from anywhere.

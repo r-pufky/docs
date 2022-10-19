@@ -2,10 +2,10 @@
 
 Example Unifi VLAN
 ##################
-Edgerouter using Docker Unifi Controller with VLAN Setup.
+Edgerouter using Unifi Controller container with VLAN Setup.
 
-Example walkthorugh of creating a VLAN based network using an edgerouter as a
-router/firewall with a Docker Unifi Controller managing Unifi Switch/APs.
+Example walkthrough of creating a VLAN based network using an edgerouter as a
+router/firewall with a Unifi Controller container managing Unifi Switch/APs.
 
 .. danger::
   The most recent firmware update (~2019-10) has added `telemetry`_ to ubiquity
@@ -55,7 +55,7 @@ Read through :ref:`network-overview` and prep these things before starting:
    wired-switch
    unifi-controller-wifi
    unifi-ap
-   migrate-controller-to-docker
+   migrate-controller-to-container
    unifi-device-troubleshooting
    network-overview
    example-network-diagram

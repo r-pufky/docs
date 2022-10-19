@@ -12,9 +12,10 @@ Let Windows and your apps use your motion data and collect motion history
 *************************************************************************
 .. dropdown:: Disable Let Windows and your apps use your motion data and collect
               motion history
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
   :open:
 
   Disable access to motion data.

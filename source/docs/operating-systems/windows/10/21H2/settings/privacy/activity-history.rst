@@ -5,9 +5,10 @@ Activity History
 :cmdmenu:`⌘ + r --> ms-settings:privacy-activityhistory`
 
 .. dropdown:: Disable Store my activity history on this device
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Disable storing activity history.
 
@@ -24,9 +25,10 @@ Activity History
     :open:
 
 .. dropdown:: Disable Send my activity history to Microsoft
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Disable sending activity to Microsoft. Apply timeline changes as well
   :ref:`w10-21h2-settings-system-timeline-suggestions`.

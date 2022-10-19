@@ -7,9 +7,10 @@ Voice Activation
 Allow apps to use voice activation
 **********************************
 .. dropdown:: Disable Allow apps to use voice activation
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable apps using voice activation
     :path:    Computer Configuration -->
@@ -27,9 +28,10 @@ Allow apps to use voice activation
 Allow apps to use voice activation when this device is locked
 *************************************************************
 .. dropdown:: Disable Allow apps to use voice activation when this device is locked
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable app using voice activation when device locked
     :path:    Computer Configuration -->

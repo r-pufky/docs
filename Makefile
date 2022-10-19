@@ -1,77 +1,90 @@
 # Minimal makefile for Sphinx documentation
 #
+# Override options by using {VAR}={VALUE} on the CLI.
+#
+#   make html SPXBUILDDIR=/tmp/other
+#
 
-# You can set these variables from the command line, and also
-# from the environment for the first two.
-SPHINXOPTS    ?=
-SPHINXBUILD   ?= sphinx-build
-SOURCEDIR     = source
-CONFDIR       = sphinx
-VENVDIR       = $(CONFDIR)/.sphinx
-VENV          = $(VENVDIR)/bin/activate
-BUILDDIR      = /tmp/docs
-TARGETDIR     = docs
+# Sphinx settings
+SPXOPTS	     ?=
+SPXBUILD     ?= sphinx-build
+SPXSRCDIR    = source
+SPXDIR	     = sphinx
+SPXVENVDIR   = /opt/venvs/sphinx-docs
+SPXVENV	     = $(SPXVENVDIR)/bin/activate
+SPXBUILDDIR  = /tmp/docs
+SPXTARGETDIR = docs
 
-# Put it first so that "make" without argument is like "make help".
 help:
-	@echo "USAGE:"
-	@echo "  make docs"
-	@echo "        Build site documentation in $(BUILDDIR), trim extraneous"
-	@echo "        output and copy to $(TARGETDIR)."
+	@echo "  make deps"
+	@echo "      Install required package dependencies for doc generation."
 	@echo
-	@echo "  make html"
-	@echo "        Build site documentation in $(BUILDDIR)."
+	@echo "  make install"
+	@echo "      Install virtual environment for sphinx doc generation."
+	@echo
+	@echo "  make purge_cache"
+	@echo "      Purges docs Python cache, build cache."
 	@echo
 	@echo "  make clean"
-	@echo "        Removes all build artifacts on filesystem."
+	@echo "      Removes all doc build artifacts & virtual environment."
 	@echo
-	@echo "  make head"
-	@echo "        Reverts ALL changes to head in generated documentation: $(TARGETDIR)."
+	@echo "  make html"
+	@echo "      Build non-optimized docs in $(SPXBUILDDIR). Used for testing."
 	@echo
 	@echo "  make linkcheck"
-	@echo "        Verifies documentation links resolve properly."
+	@echo "      Verifies docs links resolve properly."
 	@echo
-	@echo "REQUIREMENTS:"
-	@echo "  python3-pip, python3-venv"
+	@echo "  make copy"
+	@echo "      Copies optimized docs in $(SPXBUILDDIR) to $(SPXTARGETDIR)."
+	@echo "      Use 'make docs' or 'make docs_html'."
+	@echo
+	@echo "  make docs"
+	@echo "      Build optimized docs in $(SPXBUILDDIR) to $(SPXTARGETDIR)."
+	@echo "      COMMON COMMAND."
 
 .PHONY: help Makefile
 
-# Catch-all target: route all unknown targets to Sphinx using the new
-# "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
-#%: Makefile copy
-#	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
-
-docs: html copy
-
-clean: head
-	@echo 'Cleaning build directories ...'
-	-@rm -rfv "$(VENVDIR)"
-	-@rm -rfv "$(BUILDDIR)"
-	-@find "$(CONFDIR)" -type d -name '__pycache__' -exec rm -rfv {} \;
+deps:
+	@echo 'Verifying sphinx dependencies ...'
+ifeq ($(OS_ID),debian)
+	@sudo apt install python3-pip python3-venv
+endif
+ifeq ($(OS_ID),manjaro)
+	@sudo pacman -Syu python-pip python-virtualenv
+endif
 	@echo 'Done.'
 
-head:
-	@echo 'Setting html docs output to HEAD ...'
-	-@rm -rf "$(TARGETDIR)"/*
-	@git checkout -- $(TARGETDIR)
-	@echo 'Done.'
-
-sphinx-venv-setup:
+install:
 	@echo 'Setting up sphinx python virtual environment ...'
-	@test -d $(VENVDIR) || python3 -m venv $(VENVDIR)
-	@. $(VENV); python3 -m pip install --quiet --requirement $(CONFDIR)/requirements.txt
+	@sudo mkdir -p $(SPXVENVDIR)
+	@sudo chown $(USER):$(USER) $(SPXVENVDIR)
+	@python3 -m venv $(SPXVENVDIR)
+	@. $(SPXVENV); python3 -m pip install --quiet --requirement $(SPXDIR)/requirements.txt
 	@echo 'Done.'
 
-html: sphinx-venv-setup
-	@. $(VENV); $(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" -j auto -c "$(CONFDIR)" $(SPHINXOPTS) $(O)
+purge_cache:
+	@echo 'Cleaning sphinx cache ...'
+	-@rm -rfv "$(SPXBUILDDIR)"
+	-@find "$(SPXDIR)" -type d -name '__pycache__' -exec rm -rfv {} \;
+	@echo 'Done.'
 
-linkcheck: sphinx-venv-setup
-	@. $(VENV); $(SPHINXBUILD) -M linkcheck "$(SOURCEDIR)" "$(BUILDDIR)" -j auto -c "$(CONFDIR)" $(SPHINXOPTS) $(O)
+clean: purge_cache
+	@echo 'Cleaning sphinx directories ...'
+	-@rm -rfv "$(SPXVENVDIR)"
+	@echo 'Done.'
+
+html:
+	@. $(SPXVENV); $(SPXBUILD) -M html "$(SPXSRCDIR)" "$(SPXBUILDDIR)" -j auto -c "$(SPXDIR)" $(SPXOPTS) $(O)
+
+linkcheck:
+	@. $(SPXVENV); $(SPXBUILD) -M linkcheck "$(SPXSRCDIR)" "$(SPXBUILDDIR)" -j auto -c "$(SPXDIR)" $(SPXOPTS) $(O)
 
 copy:
-	@mkdir -p $(TARGETDIR)
-	@touch $(TARGETDIR)/.nojekyll
-	@cp -av $(BUILDDIR)/html/* "$(TARGETDIR)"
-	@rm -v "$(TARGETDIR)/objects.inv"
-	@rm -v "$(TARGETDIR)/genindex.html"
-	@rm -rfv "$(TARGETDIR)/_sources"
+	@mkdir -p $(SPXTARGETDIR)
+	@touch $(SPXTARGETDIR)/.nojekyll
+	@cp -av $(SPXBUILDDIR)/html/* "$(SPXTARGETDIR)"
+	@rm -v "$(SPXTARGETDIR)/objects.inv"
+	@rm -v "$(SPXTARGETDIR)/genindex.html"
+	@rm -rfv "$(SPXTARGETDIR)/_sources"
+
+docs: html copy

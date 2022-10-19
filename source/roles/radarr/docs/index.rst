@@ -13,10 +13,10 @@ Movie Management.
    troubleshooting
 
 .. role:: radarr
-  :galaxy:      https://galaxy.ansible.com/r_pufky/radarr
-  :source:      https://github.com/r-pufky/ansible_radarr
-  :service_doc: https://wiki.servarr.com/radarr
-  :update:      2022-10-08
+  :galaxy:       https://galaxy.ansible.com/r_pufky/radarr
+  :source:       https://github.com/r-pufky/ansible_radarr
+  :service_doc:  https://wiki.servarr.com/radarr
+  :update:       2022-10-08
   :open:
 
   You can copy your existing configuration to ``radarr_config`` directory

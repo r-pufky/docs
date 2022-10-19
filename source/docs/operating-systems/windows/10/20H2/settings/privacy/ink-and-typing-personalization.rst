@@ -10,9 +10,10 @@ Getting to know you
               dictionary will be cleared, but the standard dictionary will
               continue to provide typing suggestions and handwriting
               recognition.
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
   :open:
 
   .. gpo::    Disable Getting to know you inking and typing recognition

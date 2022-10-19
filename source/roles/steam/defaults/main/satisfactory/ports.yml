@@ -1,0 +1,13 @@
+---
+###############################################################################
+# Ports Configuration
+###############################################################################
+# Ports should be managed externally via an OS role.
+#
+# Reference:
+# * https://satisfactory.fandom.com/wiki/Dedicated_servers#Port_forwarding_and_firewall_settings
+
+ports:
+  - {proto: 'udp', from_ip: 'any', to_port: 15777, direction: 'in', comment: 'satisfactory server query port'}
+  - {proto: 'udp', from_ip: 'any', to_port: 15000, direction: 'in', comment: 'satisfactory server beacon port'}
+  - {proto: 'udp', from_ip: 'any', to_port: 7777,  direction: 'in', comment: 'satisfactory server game port'}

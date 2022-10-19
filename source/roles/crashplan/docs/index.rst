@@ -14,10 +14,10 @@ crashplan.
    troubleshooting
 
 .. role:: crashplan
-  :galaxy:      https://galaxy.ansible.com/r_pufky/crashplan
-  :source:      https://github.com/r-pufky/ansible_crashplan
-  :service_doc: https://support.code42.com/Small_Business/Get_Started/CrashPlan_for_Small_Business_requirements
-  :update:      2022-10-08
+  :galaxy:       https://galaxy.ansible.com/r_pufky/crashplan
+  :source:       https://github.com/r-pufky/ansible_crashplan
+  :service_doc:  https://support.code42.com/Small_Business/Get_Started/CrashPlan_for_Small_Business_requirements
+  :update:       2022-10-08
   :open:
 
   Pay attention to basic configuration steps to correctly adopt existing backup

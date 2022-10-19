@@ -14,6 +14,7 @@ MariaDB is an opensource relational database based on MySQL.
   :galaxy:      https://galaxy.ansible.com/r_pufky/db
   :source:      https://github.com/r-pufky/ansible_db
   :service_doc: https://mariadb.org/
+  :blocking:    Requires upstream source repo update.
   :update:      2022-10-09
   :open:
 

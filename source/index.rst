@@ -129,7 +129,7 @@ git hub, or submit a CL :)
   roles/firefly/docs/index
   roles/git_wrapper/docs/index
   docs/services/imapsync/index
-  docs/services/lidarr/index
+  roles/lidarr/docs/index
   roles/db/docs/mariadb/index
   docs/services/mumble/index
   roles/nginx/docs/index

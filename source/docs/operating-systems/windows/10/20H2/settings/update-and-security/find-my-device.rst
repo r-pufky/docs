@@ -3,9 +3,10 @@
 Find my device
 ##############
 .. dropdown:: Disable Find my device
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
   :open:
 
   GPS information is uploaded to Microsoft if enabled.

@@ -10,9 +10,10 @@ grained control of app access.
 Allow access to calendar on this device
 ***************************************
 .. dropdown:: Disable Allow access to calendar on this device
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   This disables all calendar options. See
   :ref:`w10-20h2-settings-privacy-calendar-apps` to manage access on a per app
@@ -47,9 +48,10 @@ Allow access to calendar on this device
 Allow apps to access your contacts
 **********************************
 .. dropdown:: Disable Allow apps to access your contacts
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable apps access your contacts
     :path:    Computer Configuration -->

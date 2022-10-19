@@ -6,7 +6,7 @@ Sign-in options
 Manage how you sign into your device
 ************************************
 .. dropdown:: Disable Windows Hello Face, Fingerprint, PIN
-  :title: font-weight-bold
+  :icon: shield-lock
   :animate: fade-in
 
   Facial recognition (Hello-Face) and Fingerprint ID are used to automatically
@@ -57,7 +57,7 @@ Manage how you sign into your device
     :open:
 
 .. dropdown:: Disable Picture Password
-  :title: font-weight-bold
+  :icon: shield-lock
   :animate: fade-in
 
   .. gpo::    Disable the use of Biometrics
@@ -74,9 +74,10 @@ Manage how you sign into your device
 Require Sign-in
 ***************
 .. dropdown:: If you've been away, should Windows require you to sign-in again?
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Require sign-in when PC wakes from sleep.
 
@@ -132,9 +133,10 @@ Require Sign-in
 Privacy
 *******
 .. dropdown:: Disable Show account details such as my email address on the sign-in screen.
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable Show account details such as my email address on the
               sign-in screen

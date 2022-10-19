@@ -51,9 +51,10 @@ See :ref:`scheduled-tasks-powershell-create-event` for a powershell script that
 does this for you.
 
 .. dropdown:: Manaually add event triggered scheduled task
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: browser
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gui::   Manually add general section schedule
     :label:  Task Scheduler

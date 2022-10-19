@@ -82,9 +82,10 @@ the device on the local subnet to install correctly. WebServices must be
 enabled.
 
 .. dropdown:: Full Install
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: terminal
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. danger::
     Enabling SNMP on the printer exposes vulnerabilites which must be mitigated.
@@ -133,9 +134,10 @@ Advanced post-scanning options. Generally this can be done by other
 applications. **Not** recommended.
 
 .. dropdown:: ControlCenter4 Install
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: terminal
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Download and extract **Full Driver & Software Package** and **controlcenter4
   updater tool** from the `Support Site`_. Cancel the installations.
@@ -179,9 +181,10 @@ Use the following to clean a system if brother utilities were installed and
 need to be removed.
 
 .. dropdown:: Full Uninstall
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: terminal
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   * :cmdmenu:`⌘ --> {RMB} --> device manager` (remove driver with uninstall):
 

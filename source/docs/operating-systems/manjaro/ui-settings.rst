@@ -8,14 +8,21 @@ import the fonts manually in ``font management`` after setup.
 Themes
 ******
 .. code-block:: bash
-  :caption: Install Arc and Papirus themes
+  :caption: (Re)install Arc and Papirus themes
 
   pacman -Syu papirus-icon-theme arc-gtk-theme
+  wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install.sh | env uninstall=true sh
   wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install.sh | sh
+  sudo find /usr/share/{plasma,aurorae,color-schemes,konsole,konversation,Kvantum,plasma,wallpapers,yakuake} -type d -exec chmod o+rx {} \;
+  sudo find /usr/share/{plasma,aurorae,color-schemes,konsole,konversation,Kvantum,plasma,wallpapers,yakuake} -type f -exec chmod o+r {} \;
 
 .. attention::
   **Login** required. KDE will not display themes correctly until logging off
   and logging back in.
+
+`Reference <https://github.com/PapirusDevelopmentTeam/arc-kde/issues/140>`__
+
+`Reference <https://github.com/PapirusDevelopmentTeam/arc-kde/issues/140>`__
 
 Global Theme
 ************
@@ -117,7 +124,7 @@ Workspace Behavior
 .. gui:: General Behavior
   :nav:    ⌘ --> system settings --> workspace behavior
   :path:   general behavior
-  :value0: clicking in scrollbar track: scrolls to clicked location
+  :value0: clicking in scrollbar track: scrolls to clicked location,  
   :update: 2021-12-20
 
 .. gui:: Desktop Effects
@@ -439,13 +446,13 @@ System Tray
 .. gui:: Remove Key Lock Status
   :nav:    system tray
   :path:   key lock status
-  :value0: {DELETE}
+  :value0: {DELETE},  
   :update: 2021-12-20
 
 .. gui:: Remove Shortcuts
   :nav:    system tray
   :path:   shortcuts
-  :value0: {DELETE}
+  :value0: {DELETE},  
   :update: 2021-12-20
 
 Rename Terminals

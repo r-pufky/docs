@@ -48,8 +48,8 @@ that site.
 
 .. _service-nginx-basic-auth:
 
-Password Authencation (`Basic Auth`_)
-*************************************
+Password Authencation (Basic Auth)
+**********************************
 Basic auth uses a file to authenticate users for NGINX locations.
 
 .. code-block:: bash
@@ -84,6 +84,9 @@ Basic auth uses a file to authenticate users for NGINX locations.
 
   See :ref:`service-nginx-site-auth` for applying auth to subnets.
 
+
+`Reference <https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/#pass>`__
+
 .. _service-nginx-site-auth:
 
 Site-wide Auth File
@@ -91,7 +94,7 @@ Site-wide Auth File
 Keep authentication definitions for different services to one file to maintain
 authentication consistency across multiple sites.
 
-Create an authentication `block and store in a file`_.
+Create an authentication block, and store in a file.
 
 .. code-block:: nginx
   :caption: **0644 root root** ``/etc/nginx/conf.d/site-auth.conf``
@@ -113,20 +116,15 @@ Include authentication block where authentication would be required:
     proxy_pass ...
   }
 
-Remove Auth Requirement for Docker Containers
-*********************************************
-For docker containers running with NGINX, the docker network or specific IP
-would need to be whitelisted. This allows dashboards and services to communicate
-using FQDNs without needing basic auth.
+`Reference <https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/>`__
 
-`Whitelist All Containers`_
-===========================
-.. code-block:: bash
-  :caption: Determine network that containers are on.
+Remove Auth Requirement for Proxies
+***********************************
+NGINX may be whitelisted to allow dashboards and services to communicate with
+each other using FQDNs without needing basic auth.
 
-  docker network ls
-  docker network inspect docker_default
-
+Whitelist All Containers
+========================
 Add IP range to the authorization file:
 
 .. code-block:: nginx
@@ -134,24 +132,18 @@ Add IP range to the authorization file:
 
   allow 172.18.0.0/16;
 
-`Whitelist Single Container`_
-=============================
-Set static IP for docker container (otherwise it is random).
+`Reference <https://docs.docker.com/network/bridge/#differences-between-user-defined-bridges-and-the-default-bridge>`__
 
-.. code-block:: yaml
-  :caption: **0640 root root** ``docker-compose.yml``
-
-  container_name:
-    networks:
-    agent:
-      ipv4_address: 172.18.0.101
-
+Whitelist Single Container
+==========================
 Whitelist specific IP in auth file:
 
 .. code-block:: nginx
   :caption: **0644 root root** ``/etc/nginx/conf.d/site-auth.conf``
 
   allow 172.18.0.101;
+
+`Reference <https://stackoverflow.com/questions/45358188/restrict-access-to-nginx-server-location-to-a-specific-docker-container-with-al>`__
 
 Disable Auth for a specific location
 ************************************
@@ -171,29 +163,6 @@ configuration carried over from the default site.
     proxy_pass ...
   }
 
-Accessing Networks from Other Compose Containers
-************************************************
-Custom networks may be explicitly accessed by other containers (e.g. a
-reverse-proxy) by explicitly defining them within the compose definition.
-
-.. code-block:: yaml
-  :caption: **0640 root root** ``{SERVICE}/docker-compose.yml``
-
-  networks:
-    custom_net_name:
-      external: true
-
-  services:
-    my_proxy:
-      networks:
-        my_proxy_network:
-        custom_net_name:
-
-.. note::
-  ``custom_net_name`` is a network defined in another container. Once this is
-  added, the proxy container will be able to do DNS resolution of container
-  names as usual, including proxying traffic to that network.
-
 Classify Networks to Variables
 ******************************
 Determine remote address subnet / IP and set variable specifically for match.
@@ -210,8 +179,8 @@ Enables use of logic within NGINX to make decisions based on remote IP address.
 
 * ``$client`` will store a value based on the most specific match and can be
   checked in other sections.
-* There is essentially no cost for a large list of matches; `only evaluated when
-  used`_.
+* There is essentially no cost for a large list of matches; only evaluated when
+  used.
 
 .. code-block:: nginx
 
@@ -224,11 +193,13 @@ Enables use of logic within NGINX to make decisions based on remote IP address.
     }
   }
 
+`Reference <http://nginx.org/en/docs/http/ngx_http_geo_module.html>`__
+
 Rate Limiting
 *************
 Restrict the amount of requests a user can simultaneously issue to the NGINX
 proxy and determine how to throttle or drop requests over that limit. Read
-`in-depth documentation`_ to fully understand rate limiting.
+in-depth documentation reference to fully understand rate limiting.
 
 .. code-block:: nginx
 
@@ -255,9 +226,4 @@ proxy and determine how to throttle or drop requests over that limit. Read
   any request amount over 10 until the queue is cleared. Excessive queries will
   be dropped.
 
-.. _block and store in a file: https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/
-.. _Whitelist All Containers: https://docs.docker.com/network/bridge/#differences-between-user-defined-bridges-and-the-default-bridge
-.. _Whitelist Single Container: https://stackoverflow.com/questions/45358188/restrict-access-to-nginx-server-location-to-a-specific-docker-container-with-al
-.. _only evaluated when used: http://nginx.org/en/docs/http/ngx_http_geo_module.html
-.. _in-depth documentation: https://www.nginx.com/blog/rate-limiting-nginx/
-.. _Basic Auth: https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/#pass
+`Reference <https://www.nginx.com/blog/rate-limiting-nginx/>`

@@ -31,7 +31,7 @@ extensions = [
   'ct',
   'sphinx.ext.todo',
   'sphinx.ext.viewcode',
-  'sphinx_panels',
+  'sphinx_design',
   'sphinx_copybutton',
   'sphinx_collapse',
   'sphinx_rtd_theme',

@@ -8,9 +8,10 @@ These location values are not in the GUI. See
 :ref:`w10-21h2-settings-privacy-location` for GUI value0s.
 
 .. dropdown:: Allow access to location on this device
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
   :open:
 
   This disables all location privacy (hardware) options. See

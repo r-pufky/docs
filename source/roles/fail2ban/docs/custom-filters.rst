@@ -76,8 +76,7 @@ Restart fail2ban.
 
 System Setup
 ************
-Enable `fail2ban for sshd <https://github.com/crazy-max/docker-fail2ban/tree/master/examples/jails/sshd>`_
-system service.
+Enable fail2ban for sshd system service.
 
 .. code-block:: ini
   :caption: **0644 root root** ``/data/jail.d/sshd.conf``

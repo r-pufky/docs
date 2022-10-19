@@ -20,9 +20,10 @@ grained control of app access.
 Allow apps to access your microphone
 ************************************
 .. dropdown:: Allow apps to access your microphone
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Enable apps access to your microphone
     :path:    Computer Configuration -->

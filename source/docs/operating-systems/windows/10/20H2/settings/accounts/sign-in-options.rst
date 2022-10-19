@@ -6,9 +6,10 @@ Sign-in options
 Require Sign-in
 ***************
 .. dropdown:: If you've been away, should Windows require you to sign-in again?
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Require sign-in whenever PC wakes from sleep.
 
@@ -51,9 +52,10 @@ Require Sign-in
 Privacy
 *******
 .. dropdown:: Disable Show account details such as my email address on the sign-in screen.
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable Show account details such as my email address on the
               sign-in screen

@@ -8,8 +8,8 @@ Encrypt and ACME protocol with **DNS-01** verification.
 .. role:: acme
   :service_doc: https://dnsrobocert.readthedocs.io/en/latest/index.html
   :ref:         https://letsencrypt.org
-  :update:      2022-10-09
   :private:
+  :update:      2022-10-09
   :open:
 
   This is for personal use only, and doesn't account for specific nation-state

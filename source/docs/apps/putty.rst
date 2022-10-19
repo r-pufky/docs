@@ -21,7 +21,7 @@ Create a `putty shortcut that launches a profile`.
 Changing Escape Characters
 **************************
 Sometimes the terminal escape sequences that are sent are changed if you are
-running through multiple screen sessions into docker, etc.
+running through multiple screen sessions.
 
 .. code-block:: bash
   :caption: Determine the current escape sequences.

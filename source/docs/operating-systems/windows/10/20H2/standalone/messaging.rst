@@ -8,9 +8,10 @@ These messaging value0s are not available in the GUI. See
 :ref:`Messaging <w10-20h2-settings-privacy-messaging>` for GUI value0s.
 
 .. dropdown:: Turn off message sync
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
   :open:
 
   .. gpo::    Disable message sync

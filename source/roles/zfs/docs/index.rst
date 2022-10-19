@@ -18,8 +18,8 @@ concepts).
 
 .. role:: zfs
   :service_doc: https://openzfs.org/wiki/Main_Page
-  :update:      2022-10-09
   :private:
+  :update:      2022-10-09
 
   Import ZFS datasets and setup ZFS incremental snapshots on system.
 

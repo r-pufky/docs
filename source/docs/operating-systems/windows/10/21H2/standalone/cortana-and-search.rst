@@ -9,9 +9,10 @@ including location, browsing, voice, and search data. Disable.
   After every major windows update, verify these settings.
 
 .. dropdown:: Manually disable Cortana
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: terminal
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Most settings are managed via GPO; not needed if applying Registry/GPO
   policies.
@@ -22,9 +23,10 @@ including location, browsing, voice, and search data. Disable.
      * Clear all data.
 
 .. dropdown:: Disable Cortana
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable Cortana
     :path:    Computer Configuration -->
@@ -39,9 +41,10 @@ including location, browsing, voice, and search data. Disable.
     :open:
 
 .. dropdown:: Disable Cortana & Search access to location
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::     Disable Cortana and Search access to location
     :path:     Computer Configuration -->
@@ -55,9 +58,10 @@ including location, browsing, voice, and search data. Disable.
     :open:
 
 .. dropdown:: Disable web search from windows desktop & Cortana
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable web search from windows desktop
     :path:    Computer Configuration -->
@@ -100,9 +104,10 @@ including location, browsing, voice, and search data. Disable.
   :update:  2021-02-19
 
 .. dropdown:: Disable Cortana on lock screen
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable Cortana on lock screen
     :path:    Computer Configuration -->
@@ -143,9 +148,10 @@ have not changed. See references for additional documentation.
   :ref:`service-pihole` and :ref:`networking-dnat-for-captive-dns`.
 
 .. dropdown:: Block outbound Cortana Connections
-  :container: + shadow
-  :title: bg-info text-white font-weight-bold
+  :color: info
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Block outbound Cortana connections
     :path:    Computer Configuration -->
@@ -172,9 +178,10 @@ have not changed. See references for additional documentation.
     :open:
 
 .. dropdown:: Cortana and Search endpoints
-  :container: + shadow
-  :title: bg-info text-white font-weight-bold
+  :color: info
+  :icon: table
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   +--------------------------------------+-----------------------------------------+
   | Service                              | Endpoint                                |

@@ -10,9 +10,10 @@ grained control of app access.
 Allow access to user notifications on this device
 *************************************************
 .. dropdown:: Disable Allow access to user notifications on this device
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   This disables all notification options. See
   :ref:`w10-21h2-settings-privacy-notifications-apps` to manage access on a
@@ -35,9 +36,10 @@ Allow access to user notifications on this device
 Allow apps to access your notifications
 ***************************************
 .. dropdown:: Disable Allow apps to access your notifications
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable apps to access your notifications
     :path:    Computer Configuration -->

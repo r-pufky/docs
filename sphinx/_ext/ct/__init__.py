@@ -5,13 +5,13 @@
 import re
 from . import config
 
-from .v2 import cmdmenu
-from .v2 import files
-from .v2 import gpo
-from .v2 import gui
-from .v2 import ports
-from .v2 import regedit
-from .v2 import role
+from .tables import cmdmenu
+from .tables import files
+from .tables import gpo
+from .tables import gui
+from .tables import ports
+from .tables import regedit
+from .tables import role
 
 def setup(app):
   app.add_config_value('ct_separator', config.DEFAULT_SEPARATOR, '')
@@ -26,7 +26,7 @@ def setup(app):
   role.setup(app)
 
   return {
-    'version': '0.1',
+    'version': '1.0',
     'parallel_read_safe': True,
     'parallel_write_safe': True,
   }

@@ -7,9 +7,10 @@ Diagnostics & Feedback
 Diagnostic data
 ***************
 .. dropdown:: Required Diagnostic data
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Only ``Enterprise`` editions of Windows can disable diagnostic data entirely.
   ``Required`` is the most restricted otherwise. See `diagnostic data levels`_.
@@ -64,9 +65,10 @@ Diagnostic data
 Improve inking and typing
 *************************
 .. dropdown:: Disable Improve inking and typing
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: stack
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Disable sending inking and typing data to Microsoft. Apply
   :ref:`w10-20h2-settings-privacy-ink-and-typing-personalization`.
@@ -93,9 +95,10 @@ Improve inking and typing
 Tailored experiences
 ********************
 .. dropdown:: Disable Tailored experiences
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Disable Microsoft consumer experiences. GPO's are only applied in
   ``Enterprise`` and ``Education`` editions, but should be set regardless.
@@ -145,9 +148,10 @@ Tailored experiences
 View diagnostic data
 ********************
 .. dropdown:: Disable View diagnostic data
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Disable viewing of diagnostic data.
 
@@ -175,9 +179,10 @@ View diagnostic data
 Delete diagnostic data
 **********************
 .. dropdown:: Enable Delete diagnostic data
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Enable user deletion of diagnostic data.
 
@@ -205,9 +210,10 @@ Delete diagnostic data
 Feedback frequency
 ******************
 .. dropdown:: Disable Windows should ask for my feedback
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Disable Windows feedback requests.
 

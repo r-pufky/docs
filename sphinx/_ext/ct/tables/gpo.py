@@ -18,7 +18,6 @@ class Gpo(ct.AbstractConfigTable):
     :path:         String registry key path. Required.
     :value{0..30}: List of Option, Setting strings for policy.
     :ref:          List of reference URI's.
-    :version:      List of supported windows versions - see self._text_badges.
     :update:       String datetime last time references/settings were checked.
     :delim:        Custom delimeter to use instead of config.DEFAULT_DELIM.
     :generic:      Use generic 'Registry' dropdown label, in light-grey.
@@ -47,7 +46,6 @@ class Gpo(ct.AbstractConfigTable):
       :value1:  ☑, Success
       :value2:  ☑, Failure
       :update:  2021-01-01
-      :version: {PRO}, {ENTERPRISE}, {EDU}
       :open:
 
       Dropdown opened by default, using commas as delim.
@@ -94,7 +92,6 @@ class Gpo(ct.AbstractConfigTable):
     'value29': directives.unchanged,
     'value30': directives.unchanged,
     'ref': directives.unchanged,
-    'version': directives.unchanged,
     'update': directives.unchanged,
     'delim': directives.unchanged,
     'open': directives.flag,
@@ -110,106 +107,22 @@ class Gpo(ct.AbstractConfigTable):
       self.state.document.settings.env.config.ct_gpo_separator_replace,
       self.state.document.settings.env.config.ct_separator_replace)
 
-  def _sanitize_version(self):
-    """Returned sanitized List of supported versions."""
-    if 'version' in self.options:
-      return self._parse_list('version')
-    return None
-
-  def _add_value_row(self, data):
-    """Add RST row for :value: directive.
-
-    Args:
-      data: List of strings to render to row.
-    """
-    for x in data:
-      self._rst.append("    ---", self.c)
-      self._rst.append("    :column: col-md-6", self.c)
-      self._rst.append("    %s" % repr(x)[1:-1], self.c)
-
-  def _add_dropdown_header(self):
-    if 'generic' in self.options:
-      self._rst.append(".. dropdown:: GPO", self.c)
-      self._rst.append("  :title: font-weight-bold", self.c)
-      self._rst.append("  :animate: fade-in", self.c)
-    else:
-      self._rst.append(".. dropdown:: %s" % self.title.astext(), self.c)
-      self._rst.append("  :container: + shadow", self.c)
-      self._rst.append("  :title: bg-primary text-white font-weight-bold", self.c)
-      self._rst.append("  :animate: fade-in", self.c)
-
-    if 'open' in self.options:
-      self._rst.append("  :open:", self.c)
-
-  def _add_panel_template(self):
-    self._rst.append("", self.c)
-    self._rst.append("  .. panels::", self.c)
-    self._rst.append("    :container: container-lg pb-3", self.c)
-    self._rst.append("    :column: col-lg-4 col-md-4 col-sm-6 col-xs-12 p-0 m-0", self.c)
-    self._rst.append("    :card: border-0", self.c)
-    self._rst.append("", self.c)
-    self._rst.append("    :column: col-lg-12 p-0 m-0", self.c)
-    for line in self.content:
-      self._rst.append("    %s" % line, self.c)
-
-  def _add_path(self, path):
-    """Add RST row for :path: directive.
-
-    Args:
-      path: String to render to row.
-    """
-    self._rst.append("    ---", self.c)
-    self._rst.append("    :column: col-lg-12 p-0 m-0 font-weight-bold", self.c)
-    self._rst.append("    :body: bg-light", self.c)
-    # repr is used to auto-escape strings for rendering in sudo-rst (e.g. \\)
-    # returns quoted, so strip quotes to ensure render correctly.
-    self._rst.append("    %s" % repr(path)[1:-1], self.c)
-
-  def _add_update(self, update):
-    """Add RST row for :update: directive.
-
-    Args:
-      update: String update time to render to row.
-    """
-    self._rst.append("    ---", self.c)
-    self._rst.append("    :column: col-lg-12 p-0 m-0", self.c)
-    self._rst.append("    :body: text-right", self.c)
-    self._rst.append("    %s" % badges.update(update), self.c)
-
-  def _add_version(self, version):
-    """Add RST row for :version: directive.
-
-    Args:
-      version: String version to render to row.
-    """
-    self._rst.append('    %s' % self._convert_to_badge(version), self.c)
-
-  def _add_reference(self, ref):
-    """Add RST row for :ref: directive.
-
-    Args:
-      ref: String reference to render to row.
-    """
-    self._rst.append('    %s' % badges.ref(ref), self.c)
-
   def run(self):
     """Generated rendered rst.
 
     Data is processed to a in-memory rst list, then rendered directly to the
     current document.
     """
-    self._add_dropdown_header()
-    self._add_panel_template()
-    self._add_path(self.gen_label(self._sanitize_path()))
-    for row in self._sanitize_data(30):
-      self._add_value_row(row)
-    self._add_update(self._sanitize_update())
-    if 'version' in self.options:
-      for v in self._sanitize_version():
-        self._add_version(v)
-    if 'ref' in self.options:
-      for r in self._sanitize_ref():
-        self._add_reference(r)
+    if 'generic' in self.options:
+      self._dropdown('GPO', icon='note', color='light')
+    else:
+      self._dropdown(self.title.astext(), icon='note')
+
+    self._grid_item_card_horizontal_container_path()
+    for row in self._sanitize_data():
+      self._grid_item_card_horizontal_two_column_row(row)
+    self._grid_item_card_horizontal_content()
+    self._grid_item_card_horizontal_update_footer(*self._generate_references())
 
     node = nodes.section()
     node.document = self.state.document

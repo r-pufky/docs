@@ -13,9 +13,10 @@ grained control of app access.
 Allow access to radios on this device
 *************************************
 .. dropdown:: Disable Allow access to radios on this device
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable Allow access to radios on this device
     :path:    Computer Configuration -->

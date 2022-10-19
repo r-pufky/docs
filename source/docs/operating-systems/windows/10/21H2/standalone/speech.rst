@@ -8,9 +8,10 @@ These speech value0s are not available in the GUI. See
 :ref:`w10-21h2-settings-privacy-speech` for GUI value0s.
 
 .. dropdown:: Disable Automatic updates of speech data
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: shield-lock
   :animate: fade-in
+  :class-container: sd-shadow-sm
   :open:
 
   .. gpo::   Disable automatic updates of speech data

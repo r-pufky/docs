@@ -1,0 +1,48 @@
+---
+###############################################################################
+# Lidarr Role Configuration
+###############################################################################
+# User that lidarr will run under. Assumes externally managed.
+lidarr_user:  'media'
+lidarr_group: 'media'
+
+# Create 'media' user if not detected? See: vars/main.yml.
+lidarr_create_user: false
+
+# Generic architecture for platform: x64, arm, arm64
+lidarr_arch_generic: 'x64'
+
+# C architecture for platform: linux, linuxmusl. Defualt: linux.
+lidarr_arch_c: 'linux'
+
+# Installation directory
+lidarr_dir: '/var/lib/lidarr'
+
+# Configuration directory
+lidarr_config: '/var/lib/lidarr-config'
+
+# Staging directory for backups
+lidarr_staging: '/var/lib/lidarr-staging'
+
+# Target location of backup file on ansible host.
+lidarr_local_backup: 'host_vars/data/lidarr-config.tar.gz'
+
+###############################################################################
+# Lidarr config.xml Configuration
+###############################################################################
+
+lidarr_port:                  '8686' # http port
+lidarr_bind_address:          '*'
+# Lidarr requires ssl port to be defined even if unused
+lidarr_ssl_port:              '6868' # https port
+lidarr_enable_ssl:            false
+lidarr_api_key:               ''
+lidarr_authentication_method: 'None'
+lidarr_log_level:             'info'
+lidarr_launch_browser:        false # Default: undefined
+lidarr_branch:                'master'
+lidarr_ssl_cert_hash:         ''
+lidarr_update_mechanism:      'BuiltIn'
+lidarr_analytics_enabled:     false # Default: undefined
+lidarr_update_automatically:  false # Default: undefined
+lidarr_url_base:              ''

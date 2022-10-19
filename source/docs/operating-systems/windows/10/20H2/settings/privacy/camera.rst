@@ -10,9 +10,10 @@ grained control of app access.
 Allow access to the camera on this device
 *****************************************
 .. dropdown:: Allow access to the camera on this device
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   This disables hardware access. See
   :ref:`w10-20h2-settings-privacy-camera-apps` to manage access on a per app
@@ -45,9 +46,10 @@ Allow access to the camera on this device
 Allow apps to access your camera
 ********************************
 .. dropdown:: Allow apps to access your camera
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   .. gpo::    Disable apps access to your camera
     :path:    Computer Configuration -->

@@ -13,10 +13,10 @@ TV Management.
    troubleshooting
 
 .. role:: sonarr
-  :galaxy:      https://galaxy.ansible.com/r_pufky/sonarr
-  :source:      https://github.com/r-pufky/ansible_sonarr
-  :service_doc: https://wiki.servarr.com/sonarr
-  :update:      2022-10-08
+  :galaxy:       https://galaxy.ansible.com/r_pufky/sonarr
+  :source:       https://github.com/r-pufky/ansible_sonarr
+  :service_doc:  https://wiki.servarr.com/sonarr
+  :update:       2022-10-08
   :open:
 
   You can copy your existing configuration to ``sonarr_config`` directory

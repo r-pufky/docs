@@ -12,12 +12,12 @@ a secure mail server with the latest security options.
    manual-testing
 
 .. role:: mail
-  :galaxy:      https://galaxy.ansible.com/r_pufky/mail
-  :source:      https://github.com/r-pufky/ansible_mail
-  :service_doc: https://github.com/r-pufky/ansible_mail
-  :ref:         http://www.postfix.org/,
-                https://hub.docker.com/r/tvial/docker-mailserver/
-  :update:      2022-10-09
+  :galaxy:       https://galaxy.ansible.com/r_pufky/mail
+  :source:       https://github.com/r-pufky/ansible_mail
+  :service_doc:  https://github.com/r-pufky/ansible_mail
+  :ref:          http://www.postfix.org/,
+                 https://hub.docker.com/r/tvial/docker-mailserver/
+  :update:       2022-10-09
   :open:
 
   Role handles all steps that are provided in this documentation.

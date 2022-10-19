@@ -3,30 +3,30 @@
 Adding Reverse Proxies
 ######################
 This will cover the basic usage of NGINX as a reverse proxy; covering services
-on the URI path, not as a custom subdomain. See `subdomain reverse proxy`_ for
+on the URI path, not as a custom subdomain. See subdomain reverse proxy for
 setting up subdomains.
 
-Use `reference documentation`_ and `location block`_ references for additional
+Use reference documentation and location block references for additional
 information.
 
 ``location`` blocks should be placed in the ``server`` block.
+
+`Reference <https://community.home-assistant.io/t/nginx-reverse-proxy-set-up-guide-docker/54802>`__
+
+`Reference <https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/>`__
+
+`Reference <https://www.digitalocean.com/community/tutorials/understanding-nginx-server-and-location-block-selection-algorithms>`__
 
 Service Gotchas
 ***************
 Ensure the services running behind the proxy are in a known configuration:
 
-* Running on expected protocols (http or https).
-* Externally accessible ports (e.g. non-proxied external requests) are setup as
-  ``ports``.
-* Internally accessible ports (e.g. proxied external requests) are setup as
-  ``expose`` ports.
+* Running on expected protocols (http or https) and ports.
+* Have firewalls setup to only allow traffic in/out of those ports to and from
+  the proxy.
 
-See `expose versus ports`_.
-
-`Trailing Slash Gotchas`_
-=========================
-See `proxy_pass reference documentation`_.
-
+Trailing Slash Gotchas
+======================
 In Short:
 
 * Services already using URI paths for the services should leave **off**
@@ -68,10 +68,14 @@ changed URI*:
 * ``http://app/remote/`` sees request as ``https://app/remote/name/path?params=1``.
 * Essentially the URI path is **concatenated** to the end of the remote path.
 
+`Reference <http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass>`__
+
+`Reference <https://stackoverflow.com/questions/22759345/nginx-trailing-slash-in-proxy-pass-url>`__
+
 Regex Versus Trailing Slashes
 =============================
-Most examples on the web use regex, but regex is generally `slow, error prone
-and hard to read`_. In NGINX most regexes may be replaced with trailing slash to
+Most examples on the web use regex, but regex is generally slow, error prone
+and hard to read. In NGINX most regexes may be replaced with trailing slash to
 replace the matched URI path instead. It's cleaner and easier to read, and
 usually covers the regex case.
 
@@ -88,11 +92,11 @@ usually covers the regex case.
     proxy_set_header Host $host;
   }
 
-* First rule regex matches ``nzbget`` and returns a **302** to the same URI with
-  a trailing slash.
+* First rule regex matches ``nzbget`` and returns a **302** to the same URI
+  with a trailing slash.
 * Second rule accepts ``/nzbget`` with parameters and proxies to the service.
-* This results in two proxy hits and two regex comprehensions; it's also hard to
-  understand what the regex is doing immediately.
+* This results in two proxy hits and two regex comprehensions; it's also hard
+  to understand what the regex is doing immediately.
 
 .. code-block:: nginx
   :caption: Using trailing slashes (**good**) proxies ``/nzbget`` to ``https://nzbget:6791/``.
@@ -102,6 +106,8 @@ usually covers the regex case.
     include               /etc/nginx/conf.d/proxy.conf;
     proxy_set_header Host $host;
   }
+
+`Reference <https://stackoverflow.com/questions/764247/why-are-regular-expressions-so-controversial>`__
 
 Redirect Path to Base URI
 *************************
@@ -168,9 +174,9 @@ Enable Websockets
 
 Rewrite Reponses with Subpath
 *****************************
-Some applications are not `URI Path aware`_ and will re-write all responses
-behind the proxy using a static relative path or hostname; which will cause 404
-errors and the app to break. Partially fixed using `http_sub_module`_.
+Some applications are not URI Path aware and will re-write all responses behind
+the proxy using a static relative path or hostname; which will cause 404 errors
+and the app to break. Partially fixed using http_sub_module.
 
 .. note::
   Re-writing the proxy respones generally won't fix a complicated application as
@@ -188,28 +194,31 @@ errors and the app to break. Partially fixed using `http_sub_module`_.
 * Second rules rewrites relative responses ``href="/other-page.html"`` to
   ``href="https://reverse-proxy-server/subpath/other-page.html"``.
 
+`Reference <https://stackoverflow.com/questions/32542282/how-do-i-rewrite-urls-in-a-proxy-response-in-nginx>`__
+
+`Reference <http://nginx.org/en/docs/http/ngx_http_sub_module.html>`__
+
 .. _service-nginx-reverse-proxy-backends:
 
 Enable NGINX Start/Running with Backends Down
 *********************************************
-`By design NGINX`_ will prevent startup or running if upstream backends are down
+By design NGINX will prevent startup or running if upstream backends are down
 as it is intepreted to be a configuration error.
 
-Docker services which are down do not resolve via Docker's DNS, and therefore
-will trigger this condition, requiring all Docker services to be up for NGINX to
-function.
+Services which are down may not resolve via DNS, and therefore will trigger
+this condition, requiring all services to be up for NGINX to function.
 
 Another expression is a long running NGINX server where a backend has been
 restarted. This will mark the backend as bad and NGINX will no longer serve it
 even though the service may be running now.
 
-By `specifying an explicit IP`_ no DNS lookup is required which prevents the
+By specifying an explicit IP no DNS lookup is required which prevents the
 service health check, allowing NGINX to start or run with backends down. This
 will show ``502`` errors when the service is down. Does not affect
 cert-based authentication setups.
 
 .. code-block:: nginx
-  :caption: Static IP for upstream docker service.
+  :caption: Static IP for upstream service.
 
   upstream my-backend {
     server {IP}:{PORT};
@@ -224,14 +233,6 @@ cert-based authentication setups.
     }
   }
 
-.. _subdomain reverse proxy: https://community.home-assistant.io/t/nginx-reverse-proxy-set-up-guide-docker/54802
-.. _reference documentation: https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/
-.. _location block: https://www.digitalocean.com/community/tutorials/understanding-nginx-server-and-location-block-selection-algorithms
-.. _expose versus ports: https://www.freecodecamp.org/news/a-beginners-guide-to-docker-how-to-create-a-client-server-side-with-docker-compose-12c8cf0ae0aa/
-.. _Trailing Slash Gotchas: https://stackoverflow.com/questions/22759345/nginx-trailing-slash-in-proxy-pass-url
-.. _proxy_pass reference documentation: http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass
-.. _slow, error prone and hard to read: https://stackoverflow.com/questions/764247/why-are-regular-expressions-so-controversial
-.. _URI Path aware: https://stackoverflow.com/questions/32542282/how-do-i-rewrite-urls-in-a-proxy-response-in-nginx
-.. _http_sub_module: http://nginx.org/en/docs/http/ngx_http_sub_module.html
-.. _specifying an explicit IP: https://stackoverflow.com/questions/32845674/setup-nginx-not-to-crash-if-host-in-upstream-is-not-found
-.. _By design NGINX: https://trac.nginx.org/nginx/ticket/1040
+`Reference <https://trac.nginx.org/nginx/ticket/1040>`__
+
+`Reference <https://stackoverflow.com/questions/32845674/setup-nginx-not-to-crash-if-host-in-upstream-is-not-found>`__

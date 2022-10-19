@@ -56,9 +56,10 @@ hit. See `Telemetry Info`_.
   via customer experience improvement program.
 
 .. dropdown:: Disable sending browser history for Edge
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: note
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Edge browser automatically reports browser history to Microsoft.
 
@@ -138,9 +139,10 @@ changed. See references for additional documentation.
   :ref:`service-pihole` and :ref:`networking-dnat-for-captive-dns`.
 
 .. dropdown:: Connected User Experiences and Telemetry endpoints
-  :container: + shadow
-  :title: bg-info text-white font-weight-bold
+  :color: info
+  :icon: table
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   Microsoft Defender Advanced Threat Protection is country specific and the
   prefix changes by country, e.g.: **de**.vortex-win.data.microsoft.com
@@ -156,9 +158,10 @@ changed. See references for additional documentation.
   +----------------------------------------+------------------------------------+-----------------------------------+---------------------------------+
 
 .. dropdown:: Diagnostic data services endpoints
-  :container: + shadow
-  :title: bg-info text-white font-weight-bold
+  :color: info
+  :icon: table
   :animate: fade-in
+  :class-container: sd-shadow-sm
 
   +-----------------------------------------------+----------------------------------------------+
   | Service                                       | Endpoint                                     |

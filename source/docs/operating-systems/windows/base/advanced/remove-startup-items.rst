@@ -7,9 +7,10 @@ GUI; such as Microsoft OneDrive which will leave a setup startup service on
 removal.
 
 .. dropdown:: Force remove startup items
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: stack
   :animate: fade-in
+  :class-container: sd-shadow-sm
   :open:
 
   Delete entries that should not appear (or can't be removed from startup by

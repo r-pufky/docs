@@ -6,9 +6,10 @@ Taskbar is very noisey by default. Remore spurious alerts and information that
 is not needed.
 
 .. dropdown:: Disable customer experience improvment program
-  :container: + shadow
-  :title: bg-primary text-white font-weight-bold
+  :color: primary
+  :icon: browser
   :animate: fade-in
+  :class-container: sd-shadow-sm
   :open:
 
   .. gui::    Disable Taskbar Update Notifications
