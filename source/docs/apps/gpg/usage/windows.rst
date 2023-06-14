@@ -79,7 +79,7 @@ Configure a host in putty and ensure the following options are set:
 .. gui::   Use pageant for Putty Auth
   :path:   Putty --> Connection --> SSH --> Auth
   :value0: ☑, Attempt authentication using Pageant
-  :value1: ›, Private key file for authentication
+  :value1: › {EMPTY}, Private key file for authentication
 
 Be sure to **save** your configuration changes.
 
@@ -168,6 +168,42 @@ for remote SSH targets.
   * The exported GPG SSH RSA public key should be added to
     ``~/.ssh/authorized_keys`` file for the connecting user. See:
     :ref:`gpg-export-keys`.
+
+WinSCP Transfer File Through a Bastion
+**************************************
+Import a working GPG Putty configuration into WinSCP. Create a copy of the
+working configuration and edit it.
+
+.. gui::   Define Internal Site Connection
+  :path:   WinSCP --> Site
+  :value0:        Host name, {Internal IP}
+  :value2:      Port number, {Internal Port}
+  :value3:        User name, {USER}
+  :value4:         Password, {EMPTY}
+  :value5: Private key file, {EMPTY}
+  :ref: https://winscp.net/eng/docs/ui_login_tunnel
+  :update: 2023-06-14
+
+.. gui::   Define Bastion Tunnel
+  :path:   WinSCP --> Site --> Advanced Site Settings --> Connection --> Tunnel
+  :value0:                ☑, Connect through SSH Tunnel
+  :value1:        Host name, {Bastion External Address}
+  :value2:      Port number, {Bastion External Port}
+  :value3:        User name, {USER}
+  :value4:         Password, {EMPTY}
+  :value5: Private key file, {EMPTY}
+  :ref: https://winscp.net/eng/docs/ui_login_tunnel
+  :update: 2023-06-14
+
+.. gui::   Enable SSH Agent Forwarding
+  :path:   WinSCP --> Site --> Advanced Site Settings --> SSH --> Authentication
+  :value0:                ☑, Attempt authentication using Pageant
+  :value1:                ☑, Allow agent forwarding
+  :ref: https://winscp.net/eng/docs/ui_login_tunnel
+  :update: 2023-06-14
+
+Save the configuration and connect. May be prompted for GPG authentication
+twice (once for the bastion, and once for the internal IP).
 
 .. rubric:: References
 

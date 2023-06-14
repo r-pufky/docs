@@ -153,6 +153,7 @@ git hub, or submit a CL :)
   :includehidden:
   :maxdepth: -1
 
+  roles/steam/docs/satisfactory
   roles/steam/docs/seven_days_to_die
   roles/steam/docs/conan_exiles
   roles/steam/docs/left_4_dead
