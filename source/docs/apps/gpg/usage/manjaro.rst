@@ -71,3 +71,46 @@ Ensure Yubikey is readable by GPG. This assumes you already setup:
   * Your key will blink when waiting for password or touch.
 
 `Reference <https://github.com/drduh/YubiKey-Guide>`__
+
+SSH Through a Bastion
+*********************
+All latest versions of SCP and SSH support multiple jump proxies for transfers.
+GPG agent will be forwarded automatically (two authentication touches) if agent
+forwarding is enabled.
+
+.. code-block:: bash
+  :caption: SSH through a bastion
+
+  ssh -J {USER}@{BASTION} {STANDARD SSH COMMAND}
+
+This may also be setup to auto proxy via the config file; enabling autoproxy
+SSH and SCP transfers.
+
+.. code-block:: bash
+  :caption: **0644 {USER} {USER}** ``~/.ssh/config``
+
+  Host {HOST}
+  User {USER}
+  HostName {HOST}
+  ProxyJump {USER}@{BASTION}
+
+`Reference: <https://superuser.com/questions/456438/how-do-i-scp-a-file-through-an-intermediate-server>`__
+
+`Reference: <https://superuser.com/questions/174160/scp-over-a-proxy-with-one-command-from-local-machine>`__
+
+SCP Transfer File Through a Bastion
+***********************************
+All latest versions of SCP and SSH support multiple jump proxies for transfers.
+GPG agent will be forwarded automatically (two authentication touches) if agent
+forwarding is enabled.
+
+.. code-block:: bash
+  :caption: SCP through bastion
+
+  scp -o ProxyJump={USER}@{BASTION} {STANDARD SCP COMMAND}
+
+  scp -J {USER}@{BASTION} {STANDARD SCP COMMAND}
+
+`Reference: <https://superuser.com/questions/456438/how-do-i-scp-a-file-through-an-intermediate-server>`__
+
+`Reference: <https://superuser.com/questions/174160/scp-over-a-proxy-with-one-command-from-local-machine>`__
