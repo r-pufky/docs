@@ -1,6 +1,9 @@
 # [Release Changelog](https://keepachangelog.com/en/1.0.0/)
 
 ## 2.0.0
+A large number of outdated documentations has been removed. See 2022-10-19.0
+release to find it.
+
 Added:
 * mkdoc-material support with minimal plugins and extensions.
 

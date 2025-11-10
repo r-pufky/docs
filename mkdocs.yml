@@ -236,7 +236,7 @@ markdown_extensions:
   - 'tables'  # Sortable tables (theme/init.js).
   - 'pymdownx.betterem'  # Github flavored emphasis handling.
   - 'pymdownx.magiclink'  # Autolink URI's.
-  - pymdownx.superfences:  # HTML block nesting.
+  - 'pymdownx.superfences'  # HTML block nesting.
 
   # Admonitions.
   - 'admonition'
