@@ -1,0 +1,296 @@
+---
+###############################################################################
+# MKDocs Material
+###############################################################################
+# MKDocs with material theme using minimal extensions to maintain as close to
+# vanilla markdown as possible. Other MKDoc vanilla formats may be used if
+# material-specific options are removed.
+#
+# Development:
+#   python3 -m venv /var/venv/docs
+#   source /var/venv/docs/bin/activate
+#   pip install --upgrade pip
+#   pip install mkdocs mkdocs-material mkdocs-glightbox
+#   pip install mkdocs-git-revision-date-localized-plugin
+#   mkdocs serve --livereload
+#
+# All warnings and errors must be resolved before committing.
+#
+# Reference:
+# * https://www.mkdocs.org/
+
+###############################################################################
+# Page Configuration
+###############################################################################
+site_name: 'Docs: A Collection of Setup Notes'
+repo_url: 'https://github.com/r-pufky/docs'
+site_url: 'https://github.com/r-pufky/docs'
+edit_uri: 'edit/main/docs'
+site_author: 'r-pufky'
+copyright: '©2025'
+remote_branch: 'gh-pages'
+remote_name: 'origin'
+
+nav:
+  - 'README.md'
+  - 'Applications':
+    - 'app/authy.md'
+    - 'app/bash.md'
+    - 'app/chrome.md'
+    - 'app/git.md'
+    - 'GPG with Yubikey':
+      - 'app/gpg/README.md'
+      - 'Setup':
+        - 'app/gpg/setup/README.md'
+        - 'app/gpg/setup/master.md'
+        - 'app/gpg/setup/subkey.md'
+        - 'app/gpg/setup/backup.md'
+        - 'app/gpg/setup/export_to_yubikey.md'
+        - 'app/gpg/setup/cleanup.md'
+        - 'app/gpg/setup/import.md'
+      - 'OS':
+        - 'app/gpg/os/linux.md'
+        - 'app/gpg/os/windows.md'
+      - 'app/gpg/operations.md'
+      - 'app/gpg/troubleshooting.md'
+    - 'app/movie_studio.md'
+    - 'app/mutt.md'
+    - 'app/putty.md'
+    - 'app/vscodium.md'
+    - 'Vim':
+      - 'app/vim/README.md'
+      - 'app/vim/troubleshooting.md'
+  - 'Networking':
+    - 'Edge OS':
+      - 'networking/edge_os/README.md'
+      - 'networking/edge_os/troubleshooting.md'
+    - 'UniFi':
+      - 'networking/unifi/README.md'
+      - 'networking/unifi/troubleshooting.md'
+    - 'networking/vlan.md'
+  - 'Operating Systems':
+    - 'Firmware':
+      - 'os/firmware/README.md'
+    - 'Debian':
+      - 'os/debian/README.md'
+      - 'os/debian/troubleshooting.md'
+    - 'Manjaro':
+      - 'os/manjaro/README.md'
+      - 'os/manjaro/preferences.md'
+      - 'os/manjaro/troubleshooting.md'
+    - 'Proxmox (PVE)':
+      - 'os/pve/README.md'
+      - 'os/pve/troubleshooting.md'
+    - 'Windows':
+      - 'os/windows/README.md'
+      - 'os/windows/reinstall.md'
+      - 'os/windows/crashes.md'
+      - 'os/windows/troubleshooting.md'
+  - 'Printing':
+    - 'printing/linux.md'
+    - 'printing/windows.md'
+    - 'printing/brother_mfcl2750dw.md'
+  - 'Scripts':
+    - 'scripts/ansible.md'
+    - 'scripts/copying_data.md'
+    - 'scripts/steam.md'
+    - 'scripts/video_tools.md'
+    - 'scripts/wiping_data.md'
+    - 'scripts/youtube.md'
+  - 'Services':
+    - 'service/README.md'
+    - 'Certificate Authority':
+      - 'service/ca/README.md'
+      - 'service/ca/setup.md'
+      - 'service/ca/certificates.md'
+      - 'service/ca/certificate_revocation_list.md'
+    - 'service/deluge.md'
+    - 'Firefly III':
+      - 'service/firefly/README.md'
+      - 'service/firefly/troubleshooting.md'
+    - 'Forgejo (GIT)':
+      - 'service/forgejo/README.md'
+      - 'service/forgejo/troubleshooting.md'
+    - 'service/imapsync.md'
+    - 'service/lidarr.md'
+    - 'service/mail.md'
+    - 'service/mariadb.md'
+    - 'service/mumble/README.md'
+    - 'service/pihole.md'
+    - 'service/playon.md'
+    - 'Plex':
+      - 'service/plex/README.md'
+      - 'service/plex/troubleshooting.md'
+    - 'service/postgres/README.md'
+    - 'NGINX':
+      - 'service/nginx/README.md'
+      - 'Manual Configuration':
+        - 'service/nginx/manual/README.md'
+        - 'service/nginx/manual/setup.md'
+        - 'service/nginx/manual/custom_error_pages.md'
+        - 'service/nginx/manual/cert_based_authentication.md'
+        - 'service/nginx/manual/best_practices.md'
+      - 'service/nginx/troubleshooting.md'
+    - 'service/nzbget.md'
+    - 'Radarr':
+      - 'service/radarr/README.md'
+      - 'service/radarr/troubleshooting.md'
+    - 'service/roundcube.md'
+    - 'Sonarr':
+      - 'service/sonarr/README.md'
+      - 'service/sonarr/troubleshooting.md'
+    - 'SSH':
+      - 'service/ssh/README.md'
+      - 'SSHD':
+        - 'service/ssh/sshd/linux.md'
+        - 'service/ssh/sshd/windows.md'
+      - 'service/ssh/troubleshooting.md'
+    - 'Steam':
+      - 'service/steam/README.md'
+      - 'service/steam/troubleshooting.md'
+    - 'Wireguard':
+      - 'service/wireguard/README.md'
+      - 'OS':
+        - 'service/wireguard/os/linux.md'
+        - 'service/wireguard/os/windows.md'
+      - 'service/wireguard/troubleshooting.md'
+    - 'ZFS':
+      - 'service/zfs/README.md'
+      - 'service/zfs/sync_backup.md'
+      - 'service/zfs/replacing_disks.md'
+      - 'service/zfs/encryption.md'
+  - 'Glossary':
+    - 'glossary/README.md'
+    - 'glossary/admonitions.md'
+    - 'glossary/gpg.md'
+    - 'glossary/mail.md'
+    - 'glossary/os.md'
+    - 'glossary/unicode.md'
+    - 'glossary/vlan.md'
+    - 'glossary/yubikey.md'
+
+extra:
+  social:
+    - icon: 'fontawesome/brands/github'
+      link: 'https://github.com/r-pufky'
+    - icon: 'simple/gnuprivacyguard'
+      link: 'https://keys.openpgp.org/vks/v1/by-fingerprint/466EEC2B67516C7117C85CE3A0BC35D16698BAB9'
+
+###############################################################################
+# Theme Configuration
+###############################################################################
+# MKDocs with material theme using minimal extensions to maintain as close to
+# vanilla markdown as possible. Other MKDoc vanilla formats may be used if
+# material-specific options are removed.
+#
+# Reference:
+# * https://squidfunk.github.io/mkdocs-material
+# * https://squidfunk.github.io/mkdocs-material/reference/
+
+theme:
+  name: 'material'
+  palette:  # Material theme (auto, light, dark).
+    - media: '(prefers-color-scheme)'
+      toggle:
+        icon: 'material/link'
+        name: 'Switch to light mode'
+    - media: '(prefers-color-scheme: light)'
+      scheme: 'default'
+      primary: 'indigo'
+      accent: 'indigo'
+      toggle:
+        icon: 'material/toggle-switch'
+        name: 'Switch to dark mode'
+    - media: '(prefers-color-scheme: dark)'
+      scheme: 'slate'
+      primary: 'black'
+      accent: 'indigo'
+      toggle:
+        icon: 'material/toggle-switch-off'
+        name: 'Switch to system preference'
+  icon:
+    annotation: 'material/chevron-right-circle'
+  features:
+    - 'navigation.instant'  # Requires site_url.
+    - 'navigation.instant.prefetch'
+    - 'navigation.instant.progress'
+    - 'navigation.tracking'  # URL shows anchor tags.
+    - 'navigation.path'
+    - 'navigation.indexes'
+    - 'navigation.top'
+    - 'search.suggest'
+    - 'search.highlight'
+    - 'toc.follow'
+    - 'header.autohide'
+    - 'content.action.edit'  # Requires edit_uri.
+    - 'content.footnote.tooltips'
+  navigation_depth: 5
+  locale: 'en'
+  language: 'en'
+
+markdown_extensions:
+  - 'attr_list'  # HTML Attribute lists.
+  - 'def_list'  # HTML Definition lists.
+  - 'footnotes'  # Footnotes.
+  - 'md_in_html'  # Markdown in HTML.
+  - 'tables'  # Sortable tables (theme/init.js).
+  - 'pymdownx.betterem'  # Github flavored emphasis handling.
+  - 'pymdownx.magiclink'  # Autolink URI's.
+  - pymdownx.superfences:  # HTML block nesting.
+
+  # Admonitions.
+  - 'admonition'
+  - 'pymdownx.details'
+
+  # Emoji
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+  # Linkable tabbed blocks.
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: 'lower'
+
+  # Github flavored checklists.
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+  # Syntax Highlighting.
+  - pymdownx.highlight:
+      use_pygments: false  # Use highlight.js for Material.
+  - 'pymdownx.inlinehilite'
+
+plugins:
+  - 'glightbox' # Inline images.
+
+  # Created, last update footers.
+  - git-revision-date-localized:
+      enable_creation_date: true
+
+  - 'search'  # Search
+
+###############################################################################
+# Material Code Highlighting
+###############################################################################
+# Material use Python Pygments - highlight.js provides better highlights for
+# non-python code.
+#
+# Disable Python Pygments and use highlight.js. Code highlight theme is set
+# with extra_css, not integration hljs.* options.
+#
+# Reference:
+# * https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#highlight-mkdocsyml
+# * https://github.com/squidfunk/mkdocs-material/issues/1004
+# * https://github.com/highlightjs/highlight.js/tree/main/src/styles
+# * https://highlightjs.org/demo
+
+extra_javascript:
+  - 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js'
+  - 'https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js'
+  - '_material/init.js'
+
+extra_css:
+  - 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/vs2015.min.css'

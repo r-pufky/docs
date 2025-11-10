@@ -1,9 +1,0 @@
----
-###############################################################################
-# Ports Configuration
-###############################################################################
-# Ports should be managed externally via an OS role.
-
-ports:
-  - {proto: 'tcp', from_ip: 'any', to_port: 3000, direction: 'in', comment: 'gitea http'}
-  - {proto: 'tcp', from_ip: 'any', to_port: 22,   direction: 'in', comment: 'gitea ssh'}

@@ -1,4 +1,0 @@
----
-- ansible.builtin.include_tasks: packages.yml
-- ansible.builtin.include_tasks: virtualenv.yml
-- ansible.builtin.include_tasks: build.yml

@@ -1,4 +1,20 @@
-# [Changelog][3g]
+# [Release Changelog](https://keepachangelog.com/en/1.0.0/)
+
+## 2.0.0
+Added:
+* mkdoc-material support with minimal plugins and extensions.
+
+Changed:
+* Updated documentation to markdown.
+* Switch to Schematic versioning.
+
+Removed:
+* Sphinx and all related sphinx code.
+* Windows documentation removed in lieu of utilities that provide
+  similar benefits with much less maintenance work.
+
+Added:
+* mkdocs-material implementation.
 
 ## 2022-10-19.0
 Changed:
@@ -382,5 +398,3 @@ Documentation no longer in use has been removed.
 * Removed: servies/ombi
 * Removed: services/pxe
 * Removed: virtualization/vm-templates/unifi-controller.md
-
-[3g]: https://keepachangelog.com/en/1.0.0/

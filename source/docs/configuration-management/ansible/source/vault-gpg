@@ -1,8 +1,0 @@
-#!/bin/sh
-#
-# See: https://disjoint.ca/til/2016/12/14/encrypting-the-ansible-vault-passphrase-using-gpg/
-#      https://www.cloudsavvyit.com/3902/how-to-use-ansible-vault-to-store-secret-keys/
-#
-# pwgen -n 71 -C | head -n1 | gpg --armor --recipient {GPG ID} -e -o ansible.gpg
-#
-gpg --batch --use-agent --decrypt ../cfg/ansible/ansible.gpg

@@ -1,8 +1,0 @@
----
-###############################################################################
-# Ports Configuration
-###############################################################################
-# Ports should be managed externally via an OS role.
-
-ports:
-  - {proto: 'tcp', from_ip: 'any',       to_port: 80, direction: 'in', comment: 'roundcube http'}
