@@ -68,6 +68,11 @@ nav:
     - 'Vim':
       - 'app/vim/README.md'
       - 'app/vim/troubleshooting.md'
+  - 'Games':
+    - 'games/elden_ring.md'
+    - 'Escape from Tarkov':
+      - 'games/escape_from_tarkov/README.md'
+      - 'games/escape_from_tarkov/server.md'
   - 'Networking':
     - 'Edge OS':
       - 'networking/edge_os/README.md'
