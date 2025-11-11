@@ -18,6 +18,23 @@ Reference
 * https://spin.atomicobject.com/2020/05/05/git-configurations-default
 
 
+## Use GPG keys for Commit Signing
+``` bash
+# Get keys to use
+gpg --list-keys
+
+git config --global commit.gpgsign true
+git config --global gpg.program /usr/bin/gpg
+git config --global user.signingkey {KEY}
+
+# Manually sign without settings above.
+git tag -s {TAG}{COMMIT}
+```
+
+Reference:
+
+* https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits
+
 ## Revert Changes and Keep Commit History
 ``` bash
 git revert --no-edit {LAST GOOD COMMIT}..{LAST BAD COMMIT}

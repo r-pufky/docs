@@ -267,9 +267,9 @@ pamac remove openconnect  # Cisco VPNs.
 pamac remove networkmanager-openconnect  # Cisco VPNs.
 ```
 
-[Install Chrome](../../app/chrome.md#manjaro).
+[Install Chrome](../../app/chrome.md).
 
-[Install VSCodium](../../app/vscodium.md#manjaro).
+[Install VSCodium](../../app/vscodium.md).
 
 ## Remove MSN (Manjaro Settings Notifier)
 Remove if you are an advanced user.
