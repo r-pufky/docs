@@ -16,6 +16,14 @@
 #
 # All warnings and errors must be resolved before committing.
 #
+# Publish:
+# * Configure Github Pages (one time)
+#   * github ➔ Settings ➔ Pages:
+#     * Source: Deploy from branch
+#     * Branch: gh-pages ➔ / (root)
+# * Create a tagged commit and push.
+# * mkdocs gh-deploy
+#
 # Reference:
 # * https://www.mkdocs.org/
 
