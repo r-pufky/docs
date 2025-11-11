@@ -17,7 +17,6 @@ Reference
 
 * https://spin.atomicobject.com/2020/05/05/git-configurations-default
 
-
 ## Use GPG keys for Commit Signing
 ``` bash
 # Get keys to use
@@ -152,83 +151,10 @@ git rm --cached {FILE1} {FILEN}  # Multiple files.
 git rm -r --cached {DIR}  # All contents of a directory.
 ```
 
-## Branches
-Multiple branches can be made to focus changes on specific efforts. These are
-cut from the current branch; most cases this should be **master**.
-
-### Create a Branch
+## Highlight Changes in Long Single Lines
 ``` bash
-# List, create, and move to new branch.
-git branch -a
-git checkout -b {NEW BRANCH}
+git diff --word-diff {FILE} {FILE}
 ```
-Use git normally.
-
-Reference:
-
-* https://thenewstack.io/dont-mess-with-the-master-working-with-branches-in-git-and-github/
-
-### Merging Branches
-Completed branches can be merged back into any branch, typically **master**.
-
-``` bash
-# List branches, switch to master, and merge.
-git branch -a
-git checkout master
-git merge {BRANCH} --no-ff
-```
-
-!!! note
-    **--no-ff** retains all commit messages from the branch. Leave this off to
-    squish the commit (it may be helpful to get branch log for merge message
-    **git --no-pager log > /tmp/git.log**).
-
-    You may reset the merge before committing with no data loss with
-    **get merge --abort*.
-
-    Reference:
-
-    * https://nvie.com/posts/a-successful-git-branching-model
-
-### Deleting Branches
-!!! tip
-    Git will throw an error if deleting a branch with commits that has not been
-    merged.
-
-``` bash
-# Delete merged branch.
-git branch -a
-git branch -d {BRANCH}
-```
-
-### Create Worktree
-Allows the use of multiple branches simultaneously.
-
-``` bash
-# Create a new worktree from a branch
-git branch -a
-git checkout -b {NEW BRANCH}
-git checkout master
-git worktree add ../{WORKTREE NAME} {BRANCH}
-```
-
-Reference:
-
-* https://stackoverflow.com/questions/2048470/git-working-on-two-branches-simultaneously
-
-### Merge Worktree
-Works like normal branch merging. Execute merge from master worktree.
-
-### Removing Worktree
-After the branch is merged worktree can be removed.
-
-``` bash
-# Remove worktree.
-cd {MASTER WORKTREE}
-git worktree remove {WORKTREE}
-```
-
-Then delete branch as normal. [See Deleting Branches](#deleting-branches).
 
 ## Migrate git stash to another machine
 Export a stash as a patch to import in another git client.

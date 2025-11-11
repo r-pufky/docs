@@ -45,7 +45,10 @@ nav:
     - 'app/authy.md'
     - 'app/bash.md'
     - 'app/chrome.md'
-    - 'app/git.md'
+    - 'GIT':
+      - 'app/git/README.md'
+      - 'app/git/branches.md'
+      - 'app/git/troubleshooting.md'
     - 'GPG with Yubikey':
       - 'app/gpg/README.md'
       - 'Setup':

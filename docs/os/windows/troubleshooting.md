@@ -196,3 +196,48 @@ Disable Nahimic Scheduled Tasks (tasks may not exist)
 
 Delete files that have been placed in
 **C:\Users\{USER}\AppData\Local\NhNotifSys**.
+
+## EA Updater (or other apps) showing in search results
+
+!!! example "⌘ + i ➔ Privacy & Security ➔ Searching Windows"
+    * Classic: ✔
+    * Exclude **all** drives
+
+## Disable USB Selective Suspend
+Prevents external drives from being disconnected while in use.
+
+!!! example "⌘ + x ➔ Device Manager ➔ Universal Serial Bus controllers"
+    * Right click on each USB Root Hub:
+        * Power Management:
+            * Allow the computer to turn off this device to save power: ✘
+
+!!! example "⌘ + i ➔ System ➔ Power & Battery"
+    Verify current power plan isn't set to aggressively manage USB power.
+
+Reference:
+
+* https://forum.sienci.com/t/usb-selective-suspend-in-windows-11/10345
+
+## Prevent Disk Check on Every Boot
+Dual booting systems encounter this.
+
+!!! example "Disable hybrid boot"
+    `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Power`
+
+    Key: **HiberbootEnabled**
+
+    Type: **DWORD**
+
+    Value: **0**
+
+Reference:
+
+* https://www.prime-expert.com/articles/b26/stop-disk-check-from-running-on-every-boot
+
+## Astro A40's Not Consistently Working
+Windows 11 requires DAC to be directly connected to a motherboard USB port and
+not a hub.
+
+Reference:
+
+* https://old.reddit.com/r/AstroGaming/comments/1h9t8mp/windows_11_a40s_combined_output_channel_audio_fix/

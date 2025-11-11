@@ -60,7 +60,22 @@ $_
 ```
 
 ## Switch to a User with no login shell
-
 ``` bash
 su - -s /bin/bash {USER}
 ```
+
+## Parse INI value from file
+``` bash
+#!/bin/sh
+if [ "$1" != "${1#*[0-9].[0-9]}" ]; then
+  echo IPv4
+elif [ "$1" != "${1#*:[0-9a-fA-F]}" ]; then
+  echo IPv6
+else
+  echo "Unrecognized IP format '$1'"
+fi
+```
+
+Reference:
+
+* https://stackoverflow.com/questions/6318809/how-do-i-grab-an-ini-value-within-a-shell-script#6318837
