@@ -1,7 +1,5 @@
 # VSCodium (VSCode)
-VSCodium is VSCode without telemetry; gnome-keyring is needed to store github
-clearsync credentials. If prompted for keyring password use login password.
-https://github.com/microsoft/vscode/issues/104319
+VSCodium is VSCode without telemetry.
 
 === "Manjaro"
     !!! example "⌘ ➔ Add/Remove Software ➔ Search ➔ AUR"
@@ -33,6 +31,28 @@ https://github.com/microsoft/vscode/issues/104319
 Reference:
 
 * https://dev.to/devmount/signed-git-commits-in-vs-code-36do
+
+## Use VSCodium as Commit Editor
+
+!!! example "ctrl + , ➔ User ➔ Extensions ➔ Git"
+    * Terminal Authentication: ✔
+    * Use Editor As Commit Input: ✔
+
+Reference:
+
+* https://code.visualstudio.com/docs/sourcecontrol/overview#:~:text=To%20cancel%20the%20commit%20operation,toggling%20the%20git.useEditorAsCommitInput%20setting.
+
+
+## Use Terminal for Github Authentication
+
+!!! example "ctrl + , ➔ User ➔ Extensions ➔ Git ➔ Terminal Authentication: ✔"
+
+!!! example "ctrl + , ➔ User ➔ Extensions ➔ GitHub ➔ Git Authentication: ✔"
+
+Reference:
+
+* https://stackoverflow.com/questions/62772525/vscode-how-to-ask-for-password-in-terminal-instead-of-pop-up-tab
+
 
 ## Exclude Files in File Explorer
 !!! example "ctrl + , ➔ User ➔ Explorer ➔ Auto Reveal Exclude"
@@ -102,3 +122,47 @@ Restart.
 Reference:
 
 * https://stackoverflow.com/questions/51820921/vscode-integrated-terminal-doesnt-load-bashrc-or-bash-profile
+
+## Suggested Extensions
+
+* Ansible
+* Better Align
+* Code Runner
+* Code Spell Checker
+* ES7+ React/Redux/React-Native snippets
+* Even Better TOML
+* Git Blame
+* GitHub Markdown Preview
+* Go
+* Go Coverage Viewer
+* Go Doc
+* Go Extension Pack
+* Go Test Explorer
+* Gremlins tracker for Visual Studio Code
+* isort
+* jinja
+* Markdown Checkboxes
+* Markdown Emoji
+* Markdown Footnotes
+* Markdown Preview Github Styling
+* Markdown Preview Mermaid Support
+* Markdown Table Formatter
+* Markdown yaml Preamble
+* NGINX Configuration Language Support
+* PascalCase/camelCase to snake_case
+* Paste JSON as Code
+* Pylance
+* Pylint
+* Python
+* Python Debugger
+* Python Environments
+* REG
+* reStructuredText Syntax Highlighting
+* Rewrap
+* Scientific Terms - Code Spell Checker
+* Sort lines
+* Trailing Spaces
+* vscode-go-syntax
+* vscode-proto3
+* YAML
+* YAML to JSON

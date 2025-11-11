@@ -64,7 +64,9 @@ nav:
     - 'app/movie_studio.md'
     - 'app/mutt.md'
     - 'app/putty.md'
-    - 'app/vscodium.md'
+    - 'VSCodium (VSCode)':
+      - 'app/vscodium/README.md'
+      - 'app/vscodium/troubleshooting.md'
     - 'Vim':
       - 'app/vim/README.md'
       - 'app/vim/troubleshooting.md'

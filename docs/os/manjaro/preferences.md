@@ -197,6 +197,9 @@ Reference:
         * Lock after waking from sleep: ✔
         * Delay before password required: **Require password immediately**
         * Keyboard shortcut: **Meta+L**
+    * KDE Wallet:
+        * Enable the KDE Wallet Subsystem: ✔
+        * Use KDE Wallet for the Secret Service interface: ✔
     * Recent Files:
         * Keep history: **For 1 month**
         * Remember opened documents: **Only for specific applications**
@@ -269,7 +272,7 @@ pamac remove networkmanager-openconnect  # Cisco VPNs.
 
 [Install Chrome](../../app/chrome.md).
 
-[Install VSCodium](../../app/vscodium.md).
+[Install VSCodium](../../app/vscodium/README.md).
 
 ## Remove MSN (Manjaro Settings Notifier)
 Remove if you are an advanced user.

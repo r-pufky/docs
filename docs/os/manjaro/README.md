@@ -83,7 +83,7 @@ pacman-mirrors --country United_States && pacman -Syyu
 
 ## Optional Packages
 ``` bash
-pamac install iptable-nft  # Modern IPTables.
+pamac install iptable-nft  # More performant IPTable drop-in.
 
 # Steam client
 pamac install steam  # Do not install steam-native-runtime unless issues.

@@ -64,6 +64,24 @@ ZFS can be tweaked per dataset based on the data being used. ZFS only applies
 new settings on newly written data; changing options for pre-existing data
 requires export/re-import of that data to the dataset.
 
+### Increase Write Throughput
+Especially effective for NFSv4 mounts backed by ZFS.
+
+``` bash
+zpool add {POOL} log {DEV}
+```
+
+ZFS cache drives are mis-understood and are **only** useful if you run out of
+memory. Use **SLOG** (synchronous flush based log for ZIL writes) caching drive
+backed by an NVME (or any other SSD). This works with NFSv4 to massively
+improve read and write performance by more that **12x**.
+
+Reference:
+
+* https://kcore.org/2021/11/15/adding-slog-zfs/
+* https://old.reddit.com/r/zfs/comments/rbu8zc/tuning_zfs_over_nfsv4_ssd_slog_yields_a_12x/
+* https://www.truenas.com/community/threads/cache-vs-slog.100799/
+
 ### Mounting Existing ZFS Pool
 !!! tip
     Set mountpoint to immutable without the ZFS dataset mounted. This prevents
@@ -86,6 +104,14 @@ zfs set compression=lz4 {POOL}/{DATASET}
 ### Enable high compression for backup datasets.
 ``` bash
 zfs set compression=gzip {POOL}/{DATASET}
+```
+
+### Check Deduplication Savings
+Determine how much space would be saved if enabling de-duplication. This is
+also a good indicator of how much duplicated data there is.
+
+```
+zfs -S {POOL}
 ```
 
 ### Setup Monthly ZFS Scrub
