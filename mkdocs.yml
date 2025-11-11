@@ -87,6 +87,7 @@ nav:
     - 'Debian':
       - 'os/debian/README.md'
       - 'os/debian/troubleshooting.md'
+    - 'os/kindle.md'
     - 'Manjaro':
       - 'os/manjaro/README.md'
       - 'os/manjaro/preferences.md'
