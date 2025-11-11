@@ -58,3 +58,9 @@ $_
 
 # Alternatively 'alt + .' will copy the string.
 ```
+
+## Switch to a User with no login shell
+
+``` bash
+su - -s /bin/bash {USER}
+```

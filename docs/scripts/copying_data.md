@@ -11,6 +11,7 @@ apt install md5deep rsync
 # -H preserve hard links.
 # -A preserve ACL's.
 # -X preserve extended attributes.
+# --progress optionally.
 rsync -avxhHAX {DIR} /Y
 ```
 

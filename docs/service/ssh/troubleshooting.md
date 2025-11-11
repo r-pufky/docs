@@ -56,3 +56,23 @@ privileges to the user when logging in and the user cannot access the keyfile.
 
 1. Directory containing keyfile is **readable** and **executable** by the user.
 2. Keyfile is **0600**.
+
+## GPG pinentry not redirecting to correct terminal
+GPG connect agent must be informed when on a new terminal.
+
+Manually
+``` bash
+gpg-connect-agent updatestartuptty /bye
+```
+
+**~/.ssh/config** (1)
+{ .annotate }
+
+1. 0640 {USER}:{USER}
+``` bash
+Match host * exec "gpg-connect-agent updatestartuptty /bye"
+```
+
+Reference:
+
+* https://unix.stackexchange.com/questions/280879/how-to-get-pinentry-curses-to-start-on-the-correct-tty

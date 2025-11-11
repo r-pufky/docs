@@ -1,5 +1,21 @@
 # [Release Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## 2.0.2
+Update and add additional configuration notes.
+
+Added:
+* ZFS SVOL configuration, de-duplicate saving check.
+* VSCodium configuration and preferences.
+* VSCodium troubleshooting section.
+* Add VSCodium customization and GIT signed commits.
+* Add Kindle Adbreak jailbreak notes.
+* KDE windows opening on wrong monitor fix.
+* Manjaro updates failing after 6+ months of no updates.
+* Manjaro settings notifier mutes.
+* Bash last CLI argument use.
+* GPG pinentry not redirecting to correct terminal
+* Switch to a User with no login shell
+
 ## 2.0.1
 Modern manjaro settings.
 

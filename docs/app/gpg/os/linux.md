@@ -145,8 +145,13 @@ throw-keyids
 export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
+# Detect correct terminal on login.
 gpg-connect-agent updatestartuptty /bye > /dev/null
 ```
+
+Reference:
+
+* https://unix.stackexchange.com/questions/280879/how-to-get-pinentry-curses-to-start-on-the-correct-tty
 
 ## Verify SSH Works
 1. Connect with SSH as normal.
