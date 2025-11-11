@@ -5,7 +5,7 @@
 === "Manjaro"
     ``` bash
     pamac install manjaro-printer xsane colord-sane
-    pamac install brother-mfcl2750dw brscan4 brscan-skey
+    pamac install brother-mfc-l2750dw brscan4 brscan-skey
     ```
 
 === "Debian"

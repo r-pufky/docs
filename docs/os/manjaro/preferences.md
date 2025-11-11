@@ -280,6 +280,13 @@ Comment out all contents:
 
 **/etc/xdg/autostart/pamac-tray-plasma.desktop**
 
+**/etc/xdg/autostart/org.fcitx.Fcitx5.desktop**
+
+Optionally set immutable to prevent upgrades reverting changes.
+``` bash
+chattr +i /etc/xdg/autostart/{msm_kde_notifier.desktop,pamac-tray-plasma.desktop,org.fcitx.Fcitx5.desktop}
+```
+
 Reboot to apply changes
 
 Reference:

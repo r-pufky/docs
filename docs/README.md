@@ -4,6 +4,9 @@ notes for services I run in my home. These notes have been made generic enough
 so that you can implement these services and setups with relative ease. Be sure
 to check the [glossary](glossary/README.md) if you see unknown symbols.
 
+This has expanded over the years to also include other setup and configuration
+for technology I have run into and needed to make notes for.
+
 ## Assumptions
 These notes make the following assumptions:
 

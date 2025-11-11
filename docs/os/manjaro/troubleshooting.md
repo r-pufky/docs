@@ -110,3 +110,46 @@ localectl set-x11-keymap us pc105 ,query ctrl:nocaps
 ```
 
 Reboot to apply.
+
+## Windows Opening on Wrong Monitor
+Some applications misbehave.
+
+!!! example "System Settings ➔ Apps & Windows ➔ Window Management"
+    * Window Behavior:
+        * Advanced:
+            * Window placement: **Centered**
+    * Window Rules:
+        * Add New:
+            * Description: **Fix windows starting on wrong screen**
+            * Window class (application): **Unimportant**
+            * Match whole window class: **No**
+            * Window types: **Normal Window**  # un-select all others.
+            * Add Property:
+                * Ignore requested geometry:
+                    * Apply Initially: **Yes**
+
+Reference:
+
+* https://old.reddit.com/r/kde/comments/gx8dch/programs_always_open_on_wrong_monitor/
+
+## Manjaro Updates Consistently Fail
+Last update was more than six months ago and keys are expired.
+
+**/etc/pacman.conf** (1)
+{ .annotate }
+
+1. 0644 root:root
+``` bash
+# Only for expired PGP keys -- DANGEROUS - always revert after updates.
+# SigLevel = Required DatabaseOptional
+SigLevel = Optional TrustAll
+```
+
+``` bash
+pamac update
+```
+
+Reference:
+
+* https://gitlab.archlinux.org/archlinux/archlinux-keyring/-/issues/286
+* https://old.reddit.com/r/ManjaroLinux/comments/1lr0sdz/having_trouble_updating_with_pacman_corrupted/

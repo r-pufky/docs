@@ -47,3 +47,14 @@ if [ "${READ_CONTINUE}" != 'Y' ]; then
   echo -e '\nAborting.'
   exit 1
 fi
+```
+
+## Last CLI Argument
+Use last argument in current command.
+
+``` bash
+!$
+$_
+
+# Alternatively 'alt + .' will copy the string.
+```

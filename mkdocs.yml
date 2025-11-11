@@ -30,7 +30,7 @@
 ###############################################################################
 # Page Configuration
 ###############################################################################
-site_name: 'Docs: A Collection of Setup Notes'
+site_name: 'Docs: A Collection of Notes'
 repo_url: 'https://github.com/r-pufky/docs'
 site_url: 'https://github.com/r-pufky/docs'
 edit_uri: 'edit/main/docs'
