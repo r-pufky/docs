@@ -91,6 +91,18 @@ sudo /media/user/IRONKEY/linux/linux64/ikd300_login
 !!! success "Safe for Secrete Key Material"
     The Ironkey is the only **safe** location to store secret key material.
 
+!!! tip
+    IronKey may mount readonly if it was previously unmounted dirty. Unlock
+    drive and run a filesystem check.
+
+    ``` bash
+    dosfsck -a {IRONKEY_DEVICE}
+    ```
+
+    Reference:
+
+    * https://askubuntu.com/questions/1004827/how-to-fix-read-only-usb-drive
+
 ## Prep Yubikey
 !!! note "Default Yubikey Passwords"
     * Default User Pin: **123456**
@@ -268,9 +280,9 @@ gpg/card> quit
 
 ## Require touch for each Authentication, Encryption, or Signing Request
 ``` bash
-ykman openpgp set-touch aut fixed
-ykman openpgp set-touch sig fixed
-ykman openpgp set-touch enc fixed
+ykman openpgp keys set-touch aut fixed
+ykman openpgp keys set-touch sig fixed
+ykman openpgp keys set-touch enc fixed
 ```
 !!! tip
     **Fixed** is the same as **on** but requires a new certificate to be loaded

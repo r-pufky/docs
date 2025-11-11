@@ -64,3 +64,14 @@ rm ~/.gnupg/private-keys-v1.d  # Linux.
 Reference:
 
 * https://security.stackexchange.com/questions/165286/how-to-use-multiple-smart-cards-with-gnupg
+
+## Hard Reset Locked Yubikey Devices
+This will **wipe** device and unlock it for use again.
+
+``` bash
+gpg-connect-agent --hex
+scd apdu 00 20 00 81 08 40 40 40 40 40 40 40 40
+scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40
+scd apdu 00 e6 00 00
+scd apdu 00 44 00 00
+```

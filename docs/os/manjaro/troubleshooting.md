@@ -153,3 +153,53 @@ Reference:
 
 * https://gitlab.archlinux.org/archlinux/archlinux-keyring/-/issues/286
 * https://old.reddit.com/r/ManjaroLinux/comments/1lr0sdz/having_trouble_updating_with_pacman_corrupted/
+
+## Recover from a Bad Upgrade with Encrypted Root Disk
+Generally when Windows decides it's the boot manager and is wrong.
+
+Boot from [USB Boot Disk](README.md#install).
+
+Mount LUKS Volume
+``` bash
+ls -l /dev/{nvme,sd}*
+
+# Mount LUKS encrypted partition.
+crypt setup -v luksOpen /dev/{PARTITION} crypt_drive
+
+# Mount and decrypt.
+mount /dev/mapper/crypt_drive /mnt
+
+# Switch to installed system root and update.
+manjato-chroot /mnt
+pacman-mirrors --fasttrack 5 && pacman -Syyu
+
+# Update EFI boot manager.
+efibootmgr -v
+grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=manjaro --recheck
+grub-mkconfig -o /boot/grub/grub.cfg
+mkinitcpio -P
+pacman -S linux
+efibootmgr -v
+```
+
+## List of User Installed Packages
+Only explicitly installed by user (no dependencies).
+
+``` bash
+pacman -Qqe | grep -v "$(awk '{print $1}' /desktopfs-pkgs.txt)"
+```
+
+Reference:
+
+* https://old.reddit.com/r/ManjaroLinux/comments/fzog8g/get_a_list_of_packages_you_installed_yourself/
+
+## List of Package by Install Date
+
+``` bash
+pacman -Syu expac
+expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort -n
+```
+
+Reference:
+
+* https://www.baeldung.com/linux/list-packages-by-install-date
