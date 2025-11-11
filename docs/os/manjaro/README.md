@@ -40,6 +40,14 @@ Use [USB Boot Disk](../windows/README.md#create-uefi-usb-boot-disk).
     chsh {USER} -s /bin/bash
     ```
 
+5. Disable root logins
+
+    ``` bash
+    passwd --lock root
+    ```
+
+6. [Secure SSH](../../service/ssh/sshd/linux.md).
+
 ## Configure Updates
 
 !!! note
@@ -72,6 +80,13 @@ pacman-mirrors --country United_States && pacman -Syyu
         * Keep built packages: ✔
         * Check for updates: ✔
         * Check for development package updates: ✔
+
+## Optional Packages
+``` bash
+pamac install iptable-nft  # Modern IPTables.
+
+# Steam client
+pamac install steam  # Do not install steam-native-runtime unless issues.
 
 ## Windows Dual-boot
 Dual booting requires Windows 10 to use [UTC instead of

@@ -4,7 +4,7 @@
 
 === "Manjaro"
     ``` bash
-    pacman -Syu manjaro-printer xsane colord-sane
+    pamac install manjaro-printer xsane colord-sane
     pamac install brother-mfcl2750dw brscan4 brscan-skey
     ```
 
@@ -47,7 +47,7 @@ GIMP can be used to scan and export images/PDF's as well. Preferred.
 
 === "Manjaro"
     ``` bash
-    pacman -Syu colord-sane xsane gimp
+    pamac install colord-sane xsane gimp
     ```
 
 === "Debian"
@@ -86,7 +86,7 @@ Windows uses.
 
 === "Manjaro"
     ``` bash
-    pacman -Syu sane-airscan
+    pamac install sane-airscan
     ```
 
 === "Debian"

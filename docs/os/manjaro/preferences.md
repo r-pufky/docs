@@ -3,7 +3,8 @@ These are personal configuration preferences.
 
 ## Install Arc and Papirus themes
 ``` bash
-pacman -Syu papirus-icon-theme arc-gtk-theme
+# Choose arc-icon-theme for recommended features.
+pamac install papirus-icon-theme arc-gtk-theme
 wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install.sh | env uninstall=true sh
 wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install.sh | sh
 sudo find /usr/share/{plasma,aurorae,color-schemes,konsole,konversation,Kvantum,plasma,wallpapers,yakuake} -type d -exec chmod o+rx {} \;
@@ -269,3 +270,19 @@ pamac remove networkmanager-openconnect  # Cisco VPNs.
 [Install Chrome](../../app/chrome.md#manjaro).
 
 [Install VSCodium](../../app/vscodium.md#manjaro).
+
+## Remove MSN (Manjaro Settings Notifier)
+Remove if you are an advanced user.
+
+Comment out all contents:
+
+**/etc/xdg/autostart/msm_kde_notifier.desktop**
+
+**/etc/xdg/autostart/pamac-tray-plasma.desktop**
+
+Reboot to apply changes
+
+Reference:
+
+* https://forum.manjaro.org/t/msm-notifier-access-error-when-saving-your-notification-settings/64671
+* https://forum.manjaro.org/t/how-to-disable-discovernotifier-without-uninstalling-discover/65449

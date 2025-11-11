@@ -1,9 +1,5 @@
 # Chrome
 
-##
-
-Chrome Configuration
-####################
 See [Auto Select Client Certificate](../service/nginx/manual/cert_based_authentication.md#auto-select-client-certificate)
 to auto select certificate for matched sites.
 
@@ -15,43 +11,43 @@ to auto select certificate for matched sites.
 !!! example "chrome://settings/content/notifications"
     * Ask before sending (Recommended): **Disabled**
 
-## Windows
+=== "Manjaro"
+    Install via GUI or CLI
 
-### Disable Software Reporting
+    !!! example "⌘ ➔ Add/Remove Software ➔ Search ➔ AUR ➔ google-chrome"
 
-!!! example "Disable Chrome running software reporting tool"
-    `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome`
+    CLI
+    ``` bash
+    pamac install google-chrome
+    ```
 
-    Key: **ChromeCleanupEnabled**
+    !!! example "chrome://settings/appearance"
+        * Use system title bar and borders: ✔
 
-    Type: **DWORD**
+=== "Windows"
+    ### Disable Software Reporting
 
-    Values: **0**
+    !!! example "Disable Chrome running software reporting tool"
+        `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome`
 
-    https://www.ghacks.net/2018/01/20/how-to-block-the-chrome-software-reporter-tool-software_reporter_tool-exe/
+        Key: **ChromeCleanupEnabled**
 
-!!! example "Disable reporting results to Google"
-    `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome`
+        Type: **DWORD**
 
-    Key: **ChromeCleanupReportingEnabled**
+        Values: **0**
 
-    Type: **DWORD**
+        https://www.ghacks.net/2018/01/20/how-to-block-the-chrome-software-reporter-tool-software_reporter_tool-exe/
 
-    Value: **0**
+    !!! example "Disable reporting results to Google"
+        `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome`
 
-    https://www.ghacks.net/2018/01/20/how-to-block-the-chrome-software-reporter-tool-software_reporter_tool-exe/
+        Key: **ChromeCleanupReportingEnabled**
 
-## Manjaro
-Install via GUI or CLI
+        Type: **DWORD**
 
-!!! example "⌘ ➔ Add/Remove Software ➔ Search ➔ AUR ➔ google-chrome"
+        Value: **0**
 
-CLI
-``` bash
-pacman -S --needed base-devel git  # Install all packages.
-pamac search Google Chrome
-pamac build google-chrome
-```
+        https://www.ghacks.net/2018/01/20/how-to-block-the-chrome-software-reporter-tool-software_reporter_tool-exe/
 
 ### Disable Background Services
 Chrome background services will cause "failed to restore properly" messages on

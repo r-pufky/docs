@@ -63,8 +63,12 @@ Restart.
 ## Manjaro
 
 !!! example "⌘ ➔ Add/Remove Software ➔ Search ➔ AUR ➔ vscodium-bin"
+!!! example "⌘ ➔ Add/Remove Software ➔ Search ➔ AUR ➔ vscodium-features"
 
 Install all packages.
+
+Settings are located in: **~/.vscode-oss** and **~/.config/VSCodium**.
+
 
 Reference:
 

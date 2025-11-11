@@ -1,5 +1,14 @@
 # [Release Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## 2.0.1
+Modern manjaro settings.
+
+Added:
+* Games section (Elden Ring, Escape from Tarkov).
+
+Changed:
+* Manjaro settings updated to current release.
+
 ## 2.0.0
 A large number of outdated documentations has been removed. See 2022-10-19.0
 release to find it.
