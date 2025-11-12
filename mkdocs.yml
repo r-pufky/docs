@@ -120,6 +120,7 @@ nav:
     - 'scripts/youtube.md'
   - 'Services':
     - 'service/README.md'
+    - 'service/bluebubbles.md'
     - 'Certificate Authority':
       - 'service/ca/README.md'
       - 'service/ca/setup.md'

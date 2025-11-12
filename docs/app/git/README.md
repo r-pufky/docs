@@ -33,6 +33,7 @@ git tag -s {TAG}{COMMIT}
 Reference:
 
 * https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits
+* https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work
 
 ## Revert Changes and Keep Commit History
 ``` bash
