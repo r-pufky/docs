@@ -97,9 +97,11 @@ nav:
       - 'os/manjaro/README.md'
       - 'os/manjaro/preferences.md'
       - 'os/manjaro/troubleshooting.md'
+    - 'os/pikvm.md'
     - 'Proxmox (PVE)':
       - 'os/pve/README.md'
       - 'os/pve/troubleshooting.md'
+    - 'os/shield.md'
     - 'Windows':
       - 'os/windows/README.md'
       - 'os/windows/reinstall.md'

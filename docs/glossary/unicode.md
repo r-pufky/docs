@@ -3,6 +3,8 @@
  Glyph | Code  | Use
 ------:|:------|------------------------------------------------------------------
      ➔ | 2794  | Menus, sub-items, links.
+     🡹 | 1F879 | Up arrow.
+     🢃 | 1F883 | Down arrow.
      ⚠ | 26a0  | Warning.
      ⓘ | 24be  | Informational.
     🗘 | 1f5d8 | Waiting / Working / Processing.

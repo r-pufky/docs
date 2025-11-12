@@ -14,6 +14,39 @@ Reference:
 
 * https://wiki.archlinux.org/title/GRUB#GRUB_rescue_and_encrypted_/boot
 
+## Remote Dropbear/Wireguard/CryptFS Rescue from Bad Upgrade
+System does not boot after a dist-upgrade but Dropbear connects over wireguard.
+
+### Connect via Dropbear and Manually Mount Drive
+``` bash
+# Remote unlock as normal.
+ssh -i ~/.ssh/dropbear root@172.31.255.11
+
+# Open LUKS encrypted disk.
+cryptsetup luksOpen /dev/nvme0n1p3 luks
+
+# Find mapped device.
+ls /dev/mapper
+> /dev/mapper/b--vg-root ../dm-1
+
+# Mount drive for changes.
+mkdir /mnt
+mount -t ext4 /dev/dm-1 /mnt
+
+# Make changes also chroot if needed.
+```
+
+### Umount and reboot
+``` bash
+umount /mnt
+rmdir /mnt
+cryptsetup luksClose /dev/mapper/b--vg-root
+cryptsetup luksClose /dev/mapper/b--vg-swap-1
+cryptsetup luksClose /dev/mapper/luks
+
+reboot -f
+```
+
 ## Grub OS Prober
 Grub will throw the following error on 4.9+ Kernels running VM's on block
 devices or ZFS during normal upgrades:
