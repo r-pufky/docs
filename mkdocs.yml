@@ -102,6 +102,7 @@ nav:
       - 'os/pve/README.md'
       - 'os/pve/troubleshooting.md'
     - 'os/shield.md'
+    - 'os/web_os.md'
     - 'Windows':
       - 'os/windows/README.md'
       - 'os/windows/reinstall.md'
