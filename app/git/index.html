@@ -13,7 +13,7 @@
         <link rel="prev" href="../chrome/">
       
       
-        <link rel="next" href="../gpg/">
+        <link rel="next" href="branches/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -439,16 +439,31 @@
   
   
   
-    <li class="md-nav__item md-nav__item--active">
+    
+    
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
+        
+          
+        
       
         
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        
           
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
   
   
   <span class="md-ellipsis">
@@ -457,225 +472,72 @@
   </span>
   
 
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            GIT
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="branches/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    GIT
+    Branches
     
   </span>
   
 
       </a>
-      
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+              
+            
+              
+                
   
   
   
+  
+    <li class="md-nav__item">
+      <a href="troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshooting
     
+  </span>
   
+
+      </a>
+    </li>
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#global-settings" class="md-nav__link">
-    <span class="md-ellipsis">
-      Global Settings
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#use-gpg-keys-for-commit-signing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Use GPG keys for Commit Signing
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#revert-changes-and-keep-commit-history" class="md-nav__link">
-    <span class="md-ellipsis">
-      Revert Changes and Keep Commit History
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#force-repository-to-previous-commit" class="md-nav__link">
-    <span class="md-ellipsis">
-      Force Repository to Previous Commit
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#force-pull-from-master-repository" class="md-nav__link">
-    <span class="md-ellipsis">
-      Force Pull from Master Repository
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#revert-entire-directory-to-head" class="md-nav__link">
-    <span class="md-ellipsis">
-      Revert Entire Directory to HEAD
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-tag-to-previous-commit" class="md-nav__link">
-    <span class="md-ellipsis">
-      Add Tag to Previous Commit
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#squash-commits-to-a-single-commit-rebase" class="md-nav__link">
-    <span class="md-ellipsis">
-      Squash Commits to a Single Commit (Rebase)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#modify-specific-historical-commit" class="md-nav__link">
-    <span class="md-ellipsis">
-      Modify Specific Historical Commit
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#remove-tracked-files-without-deleting-them" class="md-nav__link">
-    <span class="md-ellipsis">
-      Remove Tracked Files without Deleting Them
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#branches" class="md-nav__link">
-    <span class="md-ellipsis">
-      Branches
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Branches">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#create-a-branch" class="md-nav__link">
-    <span class="md-ellipsis">
-      Create a Branch
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#merging-branches" class="md-nav__link">
-    <span class="md-ellipsis">
-      Merging Branches
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deleting-branches" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deleting Branches
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-worktree" class="md-nav__link">
-    <span class="md-ellipsis">
-      Create Worktree
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#merge-worktree" class="md-nav__link">
-    <span class="md-ellipsis">
-      Merge Worktree
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#removing-worktree" class="md-nav__link">
-    <span class="md-ellipsis">
-      Removing Worktree
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#migrate-git-stash-to-another-machine" class="md-nav__link">
-    <span class="md-ellipsis">
-      Migrate git stash to another machine
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#repo-git-hooks" class="md-nav__link">
-    <span class="md-ellipsis">
-      Repo git hooks
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#list-all-repositories-for-an-organizationuser" class="md-nav__link">
-    <span class="md-ellipsis">
-      List All Repositories for An Organization/User
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -1783,6 +1645,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -2096,6 +1964,29 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../os/pikvm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PiKVM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
       
@@ -2113,7 +2004,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6">
         
           
           <div class="md-nav__link md-nav__container">
@@ -2130,14 +2021,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
             <span class="md-nav__icon md-icon"></span>
             Proxmox (PVE)
           </label>
@@ -2182,6 +2073,52 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../os/shield/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Shield TV
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../os/web_os/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    WebOS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
       
@@ -2203,7 +2140,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_9">
         
           
           <div class="md-nav__link md-nav__container">
@@ -2220,14 +2157,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_5_9" id="__nav_5_9_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_9">
             <span class="md-nav__icon md-icon"></span>
             Windows
           </label>
@@ -2695,6 +2632,8 @@
       
         
       
+        
+      
     
     
     
@@ -2741,6 +2680,29 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../service/bluebubbles/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    BlueBubbles
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
       
@@ -2762,7 +2724,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3">
         
           
           <div class="md-nav__link md-nav__container">
@@ -2779,14 +2741,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3">
             <span class="md-nav__icon md-icon"></span>
             Certificate Authority
           </label>
@@ -2917,7 +2879,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_4">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_5">
         
           
           <div class="md-nav__link md-nav__container">
@@ -2934,14 +2896,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_8_4" id="__nav_8_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_8_5" id="__nav_8_5_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_5">
             <span class="md-nav__icon md-icon"></span>
             Firefly III
           </label>
@@ -3003,7 +2965,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_5">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_6">
         
           
           <div class="md-nav__link md-nav__container">
@@ -3020,14 +2982,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_8_5" id="__nav_8_5_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_8_6" id="__nav_8_6_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_6">
             <span class="md-nav__icon md-icon"></span>
             Forgejo (GIT)
           </label>
@@ -3250,7 +3212,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_13">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_14">
         
           
           <div class="md-nav__link md-nav__container">
@@ -3267,14 +3229,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_8_13" id="__nav_8_13_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_8_14" id="__nav_8_14_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_13_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_13">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_14">
             <span class="md-nav__icon md-icon"></span>
             Plex
           </label>
@@ -3361,7 +3323,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_15">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_16">
         
           
           <div class="md-nav__link md-nav__container">
@@ -3378,14 +3340,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_8_15" id="__nav_8_15_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_8_16" id="__nav_8_16_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_15_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_15">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_16">
             <span class="md-nav__icon md-icon"></span>
             NGINX
           </label>
@@ -3422,7 +3384,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_15_2">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_16_2">
         
           
           <div class="md-nav__link md-nav__container">
@@ -3439,14 +3401,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_8_15_2" id="__nav_8_15_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_8_16_2" id="__nav_8_16_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_15_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_15_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_16_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_16_2">
             <span class="md-nav__icon md-icon"></span>
             Manual Configuration
           </label>
@@ -3631,7 +3593,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_17">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_18">
         
           
           <div class="md-nav__link md-nav__container">
@@ -3648,14 +3610,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_8_17" id="__nav_8_17_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_8_18" id="__nav_8_18_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_17_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_17">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_18">
             <span class="md-nav__icon md-icon"></span>
             Radarr
           </label>
@@ -3740,7 +3702,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_19">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_20">
         
           
           <div class="md-nav__link md-nav__container">
@@ -3757,14 +3719,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_8_19" id="__nav_8_19_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_8_20" id="__nav_8_20_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_19_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_19">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_20_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_20">
             <span class="md-nav__icon md-icon"></span>
             Sonarr
           </label>
@@ -3828,7 +3790,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_20">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_21">
         
           
           <div class="md-nav__link md-nav__container">
@@ -3845,14 +3807,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_8_20" id="__nav_8_20_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_8_21" id="__nav_8_21_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_20_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_20">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_21_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_21">
             <span class="md-nav__icon md-icon"></span>
             SSH
           </label>
@@ -3881,10 +3843,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_20_2">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_21_2">
         
           
-          <label class="md-nav__link" for="__nav_8_20_2" id="__nav_8_20_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8_21_2" id="__nav_8_21_2_label" tabindex="0">
             
   
   
@@ -3897,8 +3859,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_20_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_20_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_21_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_21_2">
             <span class="md-nav__icon md-icon"></span>
             SSHD
           </label>
@@ -4012,7 +3974,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_21">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_22">
         
           
           <div class="md-nav__link md-nav__container">
@@ -4029,14 +3991,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_8_21" id="__nav_8_21_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_8_22" id="__nav_8_22_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_21_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_21">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_22_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_22">
             <span class="md-nav__icon md-icon"></span>
             Steam
           </label>
@@ -4100,7 +4062,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_22">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_23">
         
           
           <div class="md-nav__link md-nav__container">
@@ -4117,14 +4079,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_8_22" id="__nav_8_22_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_8_23" id="__nav_8_23_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_22_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_22">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_23_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_23">
             <span class="md-nav__icon md-icon"></span>
             Wireguard
           </label>
@@ -4153,10 +4115,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_22_2">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_23_2">
         
           
-          <label class="md-nav__link" for="__nav_8_22_2" id="__nav_8_22_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_8_23_2" id="__nav_8_23_2_label" tabindex="0">
             
   
   
@@ -4169,8 +4131,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_22_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_22_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_23_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_23_2">
             <span class="md-nav__icon md-icon"></span>
             OS
           </label>
@@ -4288,7 +4250,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_23">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_24">
         
           
           <div class="md-nav__link md-nav__container">
@@ -4305,14 +4267,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_8_23" id="__nav_8_23_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_8_24" id="__nav_8_24_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_23_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_23">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_24_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_24">
             <span class="md-nav__icon md-icon"></span>
             ZFS
           </label>
@@ -4756,71 +4718,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#branches" class="md-nav__link">
+  <a href="#highlight-changes-in-long-single-lines" class="md-nav__link">
     <span class="md-ellipsis">
-      Branches
+      Highlight Changes in Long Single Lines
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Branches">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#create-a-branch" class="md-nav__link">
-    <span class="md-ellipsis">
-      Create a Branch
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#merging-branches" class="md-nav__link">
-    <span class="md-ellipsis">
-      Merging Branches
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deleting-branches" class="md-nav__link">
-    <span class="md-ellipsis">
-      Deleting Branches
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-worktree" class="md-nav__link">
-    <span class="md-ellipsis">
-      Create Worktree
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#merge-worktree" class="md-nav__link">
-    <span class="md-ellipsis">
-      Merge Worktree
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#removing-worktree" class="md-nav__link">
-    <span class="md-ellipsis">
-      Removing Worktree
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4867,7 +4769,7 @@
 
 
   
-    <a href="https://github.com/r-pufky/docs/edit/main/docs/app/git.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/r-pufky/docs/edit/main/docs/app/git/README.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
     </a>
@@ -4902,6 +4804,7 @@ git tag -s {TAG}{COMMIT}</code></pre>
 <p>Reference:</p>
 <ul>
 <li><a href="https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits">https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits</a></li>
+<li><a href="https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work">https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work</a></li>
 </ul>
 <h2 id="revert-changes-and-keep-commit-history">Revert Changes and Keep Commit History</h2>
 <pre class="highlight"><code class="language-bash">git revert --no-edit {LAST GOOD COMMIT}..{LAST BAD COMMIT}</code></pre>
@@ -4991,64 +4894,8 @@ git push --tags</code></pre>
 <pre class="highlight"><code class="language-bash">git rm --cached {FILE TO REMOVE FROM COMMIT}  # Single file.
 git rm --cached {FILE1} {FILEN}  # Multiple files.
 git rm -r --cached {DIR}  # All contents of a directory.</code></pre>
-<h2 id="branches">Branches</h2>
-<p>Multiple branches can be made to focus changes on specific efforts. These are
-cut from the current branch; most cases this should be <strong>master</strong>.</p>
-<h3 id="create-a-branch">Create a Branch</h3>
-<p></p><pre class="highlight"><code class="language-bash"># List, create, and move to new branch.
-git branch -a
-git checkout -b {NEW BRANCH}</code></pre>
-Use git normally.<p></p>
-<p>Reference:</p>
-<ul>
-<li><a href="https://thenewstack.io/dont-mess-with-the-master-working-with-branches-in-git-and-github/">https://thenewstack.io/dont-mess-with-the-master-working-with-branches-in-git-and-github/</a></li>
-</ul>
-<h3 id="merging-branches">Merging Branches</h3>
-<p>Completed branches can be merged back into any branch, typically <strong>master</strong>.</p>
-<pre class="highlight"><code class="language-bash"># List branches, switch to master, and merge.
-git branch -a
-git checkout master
-git merge {BRANCH} --no-ff</code></pre>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><strong>--no-ff</strong> retains all commit messages from the branch. Leave this off to
-squish the commit (it may be helpful to get branch log for merge message
-<strong>git --no-pager log &gt; /tmp/git.log</strong>).</p>
-<p>You may reset the merge before committing with no data loss with
-*<em>get merge --abort</em>.</p>
-<p>Reference:</p>
-<ul>
-<li><a href="https://nvie.com/posts/a-successful-git-branching-model">https://nvie.com/posts/a-successful-git-branching-model</a></li>
-</ul>
-</div>
-<h3 id="deleting-branches">Deleting Branches</h3>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Git will throw an error if deleting a branch with commits that has not been
-merged.</p>
-</div>
-<pre class="highlight"><code class="language-bash"># Delete merged branch.
-git branch -a
-git branch -d {BRANCH}</code></pre>
-<h3 id="create-worktree">Create Worktree</h3>
-<p>Allows the use of multiple branches simultaneously.</p>
-<pre class="highlight"><code class="language-bash"># Create a new worktree from a branch
-git branch -a
-git checkout -b {NEW BRANCH}
-git checkout master
-git worktree add ../{WORKTREE NAME} {BRANCH}</code></pre>
-<p>Reference:</p>
-<ul>
-<li><a href="https://stackoverflow.com/questions/2048470/git-working-on-two-branches-simultaneously">https://stackoverflow.com/questions/2048470/git-working-on-two-branches-simultaneously</a></li>
-</ul>
-<h3 id="merge-worktree">Merge Worktree</h3>
-<p>Works like normal branch merging. Execute merge from master worktree.</p>
-<h3 id="removing-worktree">Removing Worktree</h3>
-<p>After the branch is merged worktree can be removed.</p>
-<pre class="highlight"><code class="language-bash"># Remove worktree.
-cd {MASTER WORKTREE}
-git worktree remove {WORKTREE}</code></pre>
-<p>Then delete branch as normal. <a href="#deleting-branches">See Deleting Branches</a>.</p>
+<h2 id="highlight-changes-in-long-single-lines">Highlight Changes in Long Single Lines</h2>
+<pre class="highlight"><code class="language-bash">git diff --word-diff {FILE} {FILE}</code></pre>
 <h2 id="migrate-git-stash-to-another-machine">Migrate git stash to another machine</h2>
 <p>Export a stash as a patch to import in another git client.</p>
 <pre class="highlight"><code class="language-bash">git stash show "stash@{0}" -p &gt; changes.patch  # Export stash 0 to a patch.
@@ -5156,7 +5003,7 @@ curl "https://api.github.com/users/{USER}/repos?per_page=1000&amp;page=1" | jq -
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 11, 2025 19:29:13 UTC">November 11, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 12, 2025 18:23:53 UTC">November 12, 2025</span>
   </span>
 
     
