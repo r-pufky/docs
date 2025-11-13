@@ -82,6 +82,21 @@ Reference:
 * https://old.reddit.com/r/zfs/comments/rbu8zc/tuning_zfs_over_nfsv4_ssd_slog_yields_a_12x/
 * https://www.truenas.com/community/threads/cache-vs-slog.100799/
 
+### Enable Extended Attributes
+Reduces I/O requests and latency via enabling larger inode allocations for
+attributes. Enable large dynamic inode sizes (>512B) for all exported datasets.
+
+```bash
+# large_dnode is automatically enabled when dnodesize != legacy.
+zfs set xattr=sa dnodesize=auto {POOL}/{DATASET}
+```
+
+Reference:
+
+* https://wiki.debian.org/ZFS
+* https://openzfs.org/wiki/Features#SA_based_xattrs
+* https://openzfs.github.io/openzfs-docs/man/master/7/zfsprops.7.html
+
 ### Mounting Existing ZFS Pool
 !!! tip
     Set mountpoint to immutable without the ZFS dataset mounted. This prevents

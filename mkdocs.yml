@@ -145,6 +145,13 @@ nav:
       - 'service/plex/README.md'
       - 'service/plex/troubleshooting.md'
     - 'service/postgres/README.md'
+    - 'NFS':
+      - 'service/nfs/README.md'
+      - 'service/nfs/exports.md'
+      - 'service/nfs/mounts.md'
+      - 'service/nfs/optimizations.md'
+      - 'service/nfs/options.md'
+      - 'service/nfs/troubleshooting.md'
     - 'NGINX':
       - 'service/nginx/README.md'
       - 'Manual Configuration':

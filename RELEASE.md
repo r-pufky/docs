@@ -2,26 +2,26 @@
 
 ## 2.0.3:
 
-    Added:
-    * Add BlueBubbles server configuration.
-    * PiKVM: Added configuration.
-    * Debian: CryptFS remote rescue over dropbear and wireguard.
-    * Shield TV: Disable Ads, alternative launcher,
-    * GIT: Reduce Repository Size (Prune).
-    * Windows 11: EA Updater (or other apps) showing in search results
-    * Windows 11: Disable USB Selective Suspend
-    * Windows 11: Prevent Disk Check on Every Boot
-    * Windows 11: Astro A40's Not Consistently Working
-    * Windows 11 requires DAC to be directly connected.
-    * Hard Reset Locked Yubikey Devices.
-    * Fixing readonly IronKey devices.
-    * Recover from a Bad Upgrade with Encrypted Root Disk.
-    * List of User Installed Packages.
-    * List of Package by Install Date.
+Added:
+* Add BlueBubbles server configuration.
+* PiKVM: Added configuration.
+* Debian: CryptFS remote rescue over dropbear and wireguard.
+* Shield TV: Disable Ads, alternative launcher,
+* GIT: Reduce Repository Size (Prune).
+* Windows 11: EA Updater (or other apps) showing in search results
+* Windows 11: Disable USB Selective Suspend
+* Windows 11: Prevent Disk Check on Every Boot
+* Windows 11: Astro A40's Not Consistently Working
+* Windows 11 requires DAC to be directly connected.
+* Hard Reset Locked Yubikey Devices.
+* Fixing readonly IronKey devices.
+* Recover from a Bad Upgrade with Encrypted Root Disk.
+* List of User Installed Packages.
+* List of Package by Install Date.
 
-    Changed:
-    * Break GIT into multiple sections.
-    * Update ykman commands with modern CLI argument.
+Changed:
+* Break GIT into multiple sections.
+* Update ykman commands with modern CLI argument.
 
 ## 2.0.2
 Update and add additional configuration notes.
