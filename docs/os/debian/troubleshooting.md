@@ -70,5 +70,18 @@ apt update && apt upgrade
 reboot
 ```
 
+
+## Reducing Disk Writes
+Minimize disk writes to SSD devices to increase longevity.
+
+* [Debian SSD optimization guide][c].
+* [deferring disk writes][d].
+* [minimizing server disk writes][e].
+* [SD card optimizations][f].
+
 [a]: https://wiki.archlinux.org/title/GRUB#GRUB_rescue_and_encrypted_/boot
 [b]: https://unix.stackexchange.com/questions/347466/debian-new-error-message-upgrading-kernel-to-4-9-reload-ioctl-error
+[c]: https://wiki.debian.org/SSDOptimization
+[d]: https://unix.stackexchange.com/questions/275678/defer-all-disk-writes-keep-them-in-memory
+[e]: https://www.hydrogen18.com/blog/minimizing-disk-activity-on-linux-server.html
+[f]: https://www.dzombak.com/blog/2024/04/pi-reliability-reduce-writes-to-your-sd-card
