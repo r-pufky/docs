@@ -1,5 +1,6 @@
 # Windows
 
+
 ## Enable SSHD
 
 !!! example "⌘ + r ➔ ms-settings:optionalfeatures ➔ OpenSSH ➔ Install"
@@ -13,7 +14,7 @@ Allow SSH through Windows Firewall
 New-NetFirewallRule -Name sshd -DisplayName 'OpenSSH Server (sshd)' -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
 ```
 
-### Set up publickey authentication
+### [Set up publickey authentication][a]
 
 Grant SSHD service read permissions to **.ssh** directory.
 ``` powershell
@@ -22,6 +23,4 @@ mkdir c:\Users\{USER}\.ssh
 icacls c:\users\{USER}\.ssh /grant "NT Service\sshd:R" /T
 ```
 
-Reference:
-
-* https://winscp.net/eng/docs/guide_windows_openssh_server
+[a]: https://winscp.net/eng/docs/guide_windows_openssh_server

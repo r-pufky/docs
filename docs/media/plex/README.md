@@ -2,7 +2,8 @@
 Plex Media Server.
 
 !!! example "Migrated to ansible collection"
-    Use [r_pufky.media.plex](https://galaxy.ansible.com/ui/repo/published/r_pufky/media/docs/).
+    Use [r_pufky.media.plex][a].
+
 
 ## New Setup
 A new plex install (or one requiring a new access token after revocation)
@@ -20,7 +21,10 @@ steps.
 2. Sign-in on server: upper right ➔ sign-in.
 3. Select server and claim: claim now ➔ claim server.
 
+
 ## Enable Secure Server Connection
 1. Ensure **32400** is forwarded from the router.
-2. Enable [DNS Rebinding](https://support.plex.tv/articles/206225077-how-to-use-secure-server-connections/)
-   on router.
+2. Enable [DNS Rebinding][b] on router.
+
+[a]: https://galaxy.ansible.com/ui/repo/published/r_pufky/media/docs
+[b]: https://support.plex.tv/articles/206225077-how-to-use-secure-server-connections

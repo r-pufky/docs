@@ -1,5 +1,6 @@
 # Troubleshooting
 
+
 ## Migration Fails
 The initial migration ran past the default timeouts; or a previous migration or
 mirror of the same name failed during import.
@@ -8,8 +9,7 @@ mirror of the same name failed during import.
     pq: duplicate key value violates unique constraint "{DB TABLE}_pkey"
 
 The DB sequential IDs have a new ID but not created, so creating a new key
-results in a [duplicate unique
-key](https://github.com/go-gitea/gitea/issues/14692).
+results in a [duplicate unique key][a].
 
 ``` ini
 [git.timeout]
@@ -40,3 +40,5 @@ The source repository is no longer public or has been deleted.
   Err: <nil>
 
 Disable sync by setting Migration Interval to **0**.
+
+[a]: https://github.com/go-gitea/gitea/issues/14692

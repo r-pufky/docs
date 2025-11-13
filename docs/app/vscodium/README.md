@@ -14,55 +14,45 @@ VSCodium is VSCode without telemetry.
     winget install vscodium
     ```
 
+
 ## Window Style
 !!! example "ctrl + , ➔ Window"
     * Title bar style: **native**
     * Dialog style: **native**
 
+
 ## Disable Copilot
 !!! example "ctrl + , ➔ Features ➔ Chat ➔ Command Center: ✘"
+
 
 ## Allow No Verify Commits
 !!! example "ctrl + , ➔ User ➔ Extensions ➔ Git ➔ Allow No Verify Commit: ✔"
 
-## Enable Commit Signing
+
+## [Enable Commit Signing][a]
 !!! example "ctrl + , ➔ User ➔ Extensions ➔ Git ➔ Enable Commit Signing: ✔"
 
-Reference:
 
-* https://dev.to/devmount/signed-git-commits-in-vs-code-36do
-
-## Use VSCodium as Commit Editor
+## Use [VSCodium as Commit Editor][b]
 
 !!! example "ctrl + , ➔ User ➔ Extensions ➔ Git"
     * Terminal Authentication: ✔
     * Use Editor As Commit Input: ✔
 
-Reference:
 
-* https://code.visualstudio.com/docs/sourcecontrol/overview#:~:text=To%20cancel%20the%20commit%20operation,toggling%20the%20git.useEditorAsCommitInput%20setting.
-
-
-## Use Terminal for Github Authentication
+## Use [Terminal for Github Authentication][c]
 
 !!! example "ctrl + , ➔ User ➔ Extensions ➔ Git ➔ Terminal Authentication: ✔"
 
 !!! example "ctrl + , ➔ User ➔ Extensions ➔ GitHub ➔ Git Authentication: ✔"
 
-Reference:
 
-* https://stackoverflow.com/questions/62772525/vscode-how-to-ask-for-password-in-terminal-instead-of-pop-up-tab
-
-
-## Exclude Files in File Explorer
+## [Exclude Files in File Explorer][d]
 !!! example "ctrl + , ➔ User ➔ Explorer ➔ Auto Reveal Exclude"
     Add files with globbing to ignore.
 
-Reference:
 
-* https://stackoverflow.com/questions/30140112/how-to-hide-specified-files-directories-e-g-git-in-the-sidebar-vscode
-
-## Terminal Profiles
+## [Terminal Profiles][e]
 Set default shell and profile preferences.
 
 !!! example "ctrl+, ➔ Open Settings (JSON) (upper right)"
@@ -119,9 +109,6 @@ Set profile customization:
 
 Restart.
 
-Reference:
-
-* https://stackoverflow.com/questions/51820921/vscode-integrated-terminal-doesnt-load-bashrc-or-bash-profile
 
 ## Suggested Extensions
 
@@ -166,3 +153,9 @@ Reference:
 * vscode-proto3
 * YAML
 * YAML to JSON
+
+[a]: https://dev.to/devmount/signed-git-commits-in-vs-code-36do
+[b]: https://code.visualstudio.com/docs/sourcecontrol/overview#:~:text=To%20cancel%20the%20commit%20operation,toggling%20the%20git.useEditorAsCommitInput%20setting.
+[c]: https://stackoverflow.com/questions/62772525/vscode-how-to-ask-for-password-in-terminal-instead-of-pop-up-tab
+[d]: https://stackoverflow.com/questions/30140112/how-to-hide-specified-files-directories-e-g-git-in-the-sidebar-vscode
+[e]: https://stackoverflow.com/questions/51820921/vscode-integrated-terminal-doesnt-load-bashrc-or-bash-profile

@@ -5,6 +5,7 @@ https://r-pufky.github.io/ansible_collection_docs.
 Roles are self-documented:
 [https://github.com/r-pufky/ansible_*](https://github.com/r-pufky).
 
+
 ## Vault
 Vault is the built in encryption store for Ansible. GPG (and security key based
 GPG keys) can be used to encrypt ansible data, enabling ansible deployments with
@@ -19,36 +20,33 @@ grep -rl '^$ANSIBLE_VAULT.*' . | xargs -t ansible-vault rekey
 ```
 
 ### Create script to decrypt the password for use
-**vault-gpg** (1)
-{ .annotate }
+??? abstract "vault-gpg"
+    0755 {USER}:{USER}
 
-1. 0755 {USER}:{USER}
+    ``` bash
+    #!/bin/sh
+    #
+    # See: https://disjoint.ca/til/2016/12/14/encrypting-the-ansible-vault-passphrase-using-gpg/
+    #      https://www.cloudsavvyit.com/3902/how-to-use-ansible-vault-to-store-secret-keys/
+    #
+    # pwgen -n 71 -C | head -n1 | gpg --armor --recipient {GPG ID} -e -o ansible.gpg
+    #
+    gpg --batch --use-agent --decrypt ../cfg/ansible/ansible.gpg
+    ```
 
-``` bash
-#!/bin/sh
-#
-# See: https://disjoint.ca/til/2016/12/14/encrypting-the-ansible-vault-passphrase-using-gpg/
-#      https://www.cloudsavvyit.com/3902/how-to-use-ansible-vault-to-store-secret-keys/
-#
-# pwgen -n 71 -C | head -n1 | gpg --armor --recipient {GPG ID} -e -o ansible.gpg
-#
-gpg --batch --use-agent --decrypt ../cfg/ansible/ansible.gpg
-```
+??? abstract "ansible.cfg"
+    0644 {USER}:{USER}
 
-**ansible.cfg** (1)
-{ .annotate }
+    ``` bash
+    # If set, configures the path to the Vault password file as an alternative to
+    # specifying --vault-password-file on the command line. This can also be
+    # an executable script that returns the vault password to stdout.
+    #
+    vault_password_file = vault-gpg
+    ```
 
-1. 0644 {USER}:{USER}
 
-``` bash
-# If set, configures the path to the Vault password file as an alternative to
-# specifying --vault-password-file on the command line. This can also be
-# an executable script that returns the vault password to stdout.
-#
-vault_password_file = vault-gpg
-```
+## Reference[^1][^2]
 
-## Reference
-
-* https://www.cloudsavvyit.com/3902/how-to-use-ansible-vault-to-store-secret-keys
-* https://disjoint.ca/til/2016/12/14/encrypting-the-ansible-vault-passphrase-using-gpg
+[^1]: https://www.cloudsavvyit.com/3902/how-to-use-ansible-vault-to-store-secret-keys
+[^2]: https://disjoint.ca/til/2016/12/14/encrypting-the-ansible-vault-passphrase-using-gpg

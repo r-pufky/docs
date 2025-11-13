@@ -13,6 +13,7 @@ consistent across systems. This is in **/dev/disk/by-id/wwn-***.
     When issuing ZFS commands with devices **outside** the pool, you **must**
     use the full path, preferably with the WWN name.
 
+
 ## Offline Replacement Bad Disk
 For non-server grade hardware where the server must be shutdown and disks
 physically swapped. This also applies in cases where there is no additional
@@ -45,7 +46,6 @@ zdb
 >     com.delphix:vdev_zap_leaf: 131
 ```
 
-
 ### Offline the bad disk in the pool
 ``` bash
 zpool status {POOL}
@@ -54,7 +54,7 @@ shutdown -h now
 # Replace the physical disk with the new disk and boot.
 ```
 
-### Find the new disk to add to ZFS pool
+### [Find the new disk to add to ZFS pool][a]
 This will initiate a disk replacement, partitioning the new disk if needed and
 start the re-silvering process.
 
@@ -118,9 +118,6 @@ zpool status
 >             wwn-0xXXXXXXXXXXXXXXXX-part1    ONLINE       0     0     0
 ```
 
-Reference:
-
-* https://askubuntu.com/questions/305830/replacing-a-dead-disk-in-a-zpool
 
 ## Hot-swap Bad Disk
 Hot-swap disks if your hardware supports it.
@@ -148,7 +145,8 @@ zpool status {POOL}
 {REMOVE BAD DISK}
 ```
 
-## Upgrade with Larger Disks
+
+## [Upgrade with Larger Disks][b]
 Capacity will automatically be expanded (**autoexpand=on**) when minimum disk
 upgrade requirements have been met.
 
@@ -172,9 +170,6 @@ zpool offline {POOL} {OLD DISK}
 zpool replace {POOL} {NEW DISK}
 ```
 
-Reference:
-
-* http://www.itsacon.net/computers/unix/growing-a-zfs-pool
 
 ## Combination of Raw Disks and Partitions in Pool
 This is **normal**; though unnerving if used to traditional disk management.
@@ -212,3 +207,6 @@ ls -l /dev/disk/by-id/{DISK}*
 > lrwxrwxrwx 1 root:root 10 Sep 22 09:37 /dev/disk/by-id/wwn-0xXXXXXXXXXXXXXXXX-part1 -> ../../sde1
 > lrwxrwxrwx 1 root:root 10 Sep 22 09:37 /dev/disk/by-id/wwn-0xXXXXXXXXXXXXXXXX-part9 -> ../../sde9
 ```
+
+[a]: https://askubuntu.com/questions/305830/replacing-a-dead-disk-in-a-zpool
+[b]: http://www.itsacon.net/computers/unix/growing-a-zfs-pool

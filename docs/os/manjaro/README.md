@@ -1,14 +1,13 @@
 # Manjaro
 
-[Manjaro KDE](https://manjaro.org/downloads/official/kde/).
+[Manjaro KDE][a].
 
-!!! example "Disable Secure Boot"
-      Secure boot requires manual configuration and is not recommended.
+!!! warning "[Disable Secure Boot][b]"
+    Secure boot requires manual configuration and is not recommended.
 
-      https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#Implementing_Secure_Boot
 
 ## Install
-Use [USB Boot Disk](../windows/README.md#create-uefi-usb-boot-disk).
+Use [USB Boot Disk][c].
 
 1. Boot with Proprietary drivers.
 2. Click on **Install Manjaro Linux** on Desktop.
@@ -46,15 +45,15 @@ Use [USB Boot Disk](../windows/README.md#create-uefi-usb-boot-disk).
     passwd --lock root
     ```
 
-6. [Secure SSH](../../service/ssh/sshd/linux.md).
+6. [Secure SSH][d].
+
 
 ## Configure Updates
 
 !!! note
     Prefer **pamac** when executing commands excluding update configuration.
 
-    [**pacman**](https://wiki.archlinux.org/title/Pacman) is the Arch package
-    manager and [**pamac**](https://wiki.manjaro.org/index.php/Pamac) is the
+    [**pacman**][e] is the Arch package manager and [**pamac**][f] is the
     Manjaro package manager using pacman libraries.
 
 ``` bash
@@ -81,6 +80,7 @@ pacman-mirrors --country United_States && pacman -Syyu
         * Check for updates: ✔
         * Check for development package updates: ✔
 
+
 ## Optional Packages
 ``` bash
 pamac install iptable-nft  # More performant IPTable drop-in.
@@ -102,3 +102,10 @@ systemctl enable --now systemd-timesyncd
 ??? example "⌘ ➔ manjaro settings manager ➔ Time and Date"
     * Set time and date automatically: ✔
     * Hardware clock in local time: ✘
+
+[a]: https://manjaro.org/downloads/official/kde
+[b]: https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#Implementing_Secure_Boot
+[c]: ../windows/README.md#create-uefi-usb-boot-disk
+[d]: ../../service/ssh/sshd/linux.md
+[e]: https://wiki.archlinux.org/title/Pacman
+[f]: https://wiki.manjaro.org/index.php/Pamac

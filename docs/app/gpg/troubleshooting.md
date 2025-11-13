@@ -1,5 +1,6 @@
 # Troubleshooting
 
+
 ## No agent running error
 gpg-agent can sometimes die in the background, just restart it.
 
@@ -7,10 +8,11 @@ gpg-agent can sometimes die in the background, just restart it.
 gpg-agent --daemon
 ```
 
+
 ## agent_genkey failed: permission denied
-Security measure; this means that the terminal you are using is not owned by you
-and therefore GPG has aborted instead of continuing. Frequently happens if
-running over SSH.
+Security measure; this means that the terminal you are using is not owned by
+you and therefore [GPG has aborted instead of continuing][a]. Frequently
+happens if running over SSH.
 
 Set proper terminal ownership.
 ``` bash
@@ -20,9 +22,6 @@ ls -la $(tty)
 sudo chown {USER} /dev/pts/9
 ```
 
-Reference:
-
-* https://blog.ijun.org/2017/05/gpg-agentgenkey-failed-permission-denied.html
 
 ## Yubikey Not Appearing
 gpg-agent can lose the key if the daemon was restarted in the background or if
@@ -33,23 +32,25 @@ the Yubikey is not seated properly.
 gpg --card-status
 ```
 
+
 ## SSH connection failed, Server sent: publickey
 SSH public key not provided or was not matched on the server.
 
 1. SSH public key is not loaded on the SSH server. Confirm your GPG public SSH
-   key (see [GPG Export Keys](setup/export_to_yubikey.md)) is added to
-   **~/.ssh/authorized_keys** for the user you are attempting to login with.
+   key (see [GPG Export Keys][b]) is added to **~/.ssh/authorized_keys** for
+   the user you are attempting to login with.
 2. GPG agent configuration is not reloaded. Ensure SSH and Putty support in
    configuration is set, **gpg-agent**, and **gpg-connect-agent** are both
-   restarted. See [Configure GPG Agent](os/windows.md#configure-gpg-agent).
+   restarted. See [Configure GPG Agent][c].
+
 
 ## Please insert card with serial number
 Original key used for authentication is not the key being used now.
 
 ![Pinentry Wrong Key](pinentry_wrong_key.png)
 
-GPG Agent caches the serial number of the card for the KeyStub used. This just
-needs to be removed.
+[GPG Agent caches the serial number][d] of the card for the KeyStub used. This
+just needs to be removed.
 
 ``` bash
 # Show all keygrips in GPG, these will be used to match cache in private store.
@@ -61,9 +62,6 @@ rm %appdata%\gnupg\private-keys-v1.d\{KEY}  # Windows.
 rm ~/.gnupg/private-keys-v1.d  # Linux.
 ```
 
-Reference:
-
-* https://security.stackexchange.com/questions/165286/how-to-use-multiple-smart-cards-with-gnupg
 
 ## Hard Reset Locked Yubikey Devices
 This will **wipe** device and unlock it for use again.
@@ -75,3 +73,8 @@ scd apdu 00 20 00 83 08 40 40 40 40 40 40 40 40
 scd apdu 00 e6 00 00
 scd apdu 00 44 00 00
 ```
+
+[a]: https://blog.ijun.org/2017/05/gpg-agentgenkey-failed-permission-denied.html
+[b]: setup/export_to_yubikey.md
+[c]: os/windows.md#configure-gpg-agent
+[d]: https://security.stackexchange.com/questions/165286/how-to-use-multiple-smart-cards-with-gnupg

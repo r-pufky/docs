@@ -6,6 +6,7 @@ Only the server endpoint needs to be exposed publicly. Clients can globally
 roam as long as they have working Internet connections and can send UDP traffic
 to the given port.
 
+
 ## Key Generation
 !!! warning
     The private key will enable anyone to impersonate that client on the VPN.
@@ -13,27 +14,26 @@ to the given port.
 Public/Private keys need to be generated for each machine using wireguard. A
 bare bones utility is provided. Generated keys are not OS specific.
 
-**/usr/local/bin/wggen** (1)
-{ .annotate }
+??? abstract "/usr/local/bin/wggen"
+    0755 root:root
 
-1. 0755 root:root
+    ``` bash
+    #!/bin/bash
+    # Generate wireguard keys.
+    WG=/usr/bin/wg
+    TEE=/usr/bin/tee
 
-``` bash
-#!/bin/bash
-# Generate wireguard keys.
-WG=/usr/bin/wg
-TEE=/usr/bin/tee
+    if [ -z "$1" ]; then
+        echo "Requires name for output files."
+        exit 1
+    else
+        name=$1
+    fi
 
-if [ -z "$1" ]; then
-    echo "Requires name for output files."
-    exit 1
-else
-    name=$1
-fi
+    ${WG} genkey | ${TEE} ${1}.key | ${WG} pubkey > ${1}.pub
+    chmod 0400 ${1}.{key,pub}
+    ```
 
-${WG} genkey | ${TEE} ${1}.key | ${WG} pubkey > ${1}.pub
-chmod 0400 ${1}.{key,pub}
-```
 
 ## Examples
 
@@ -48,22 +48,21 @@ point communications from each client to the server.
 
 #### Server
 
-**/etc/wireguard/server.conf** (1)
-{ .annotate }
+??? abstract "/etc/wireguard/server.conf"
+    0600 root:root
 
-1. 0600 root:root
-``` bash
-[Interface]
-Address = 172.31.255.254/24
-SaveConfig = False
-ListenPort = 51820
-PrivateKey = {SERVER PRIVATE KEY}
+    ``` bash
+    [Interface]
+    Address = 172.31.255.254/24
+    SaveConfig = False
+    ListenPort = 51820
+    PrivateKey = {SERVER PRIVATE KEY}
 
-# Client #1
-[Peer]
-PublicKey = {CLIENT PUBLIC KEY}
-AllowedIPs = 172.31.255.250/32
-```
+    # Client #1
+    [Peer]
+    PublicKey = {CLIENT PUBLIC KEY}
+    AllowedIPs = 172.31.255.250/32
+    ```
 
 ``` bash
 # Bring up the tunnel for testing.
@@ -75,23 +74,21 @@ systemctl enable wg-quick@server
     Windows clients do **not** use the **SaveConfig** option. Remove this line
     if configuring a Windows client.
 
+??? abstract "/etc/wireguard/client.conf"
+    0600 root:root
 
-**/etc/wireguard/client.conf** (1)
-{ .annotate }
+    ``` bash
+    [Interface]
+    Address = 172.31.255.250/24
+    PrivateKey = {CLIENT PRIVATE KEY}
+    SaveConfig = False
 
-1. 0600 root:root
-``` bash
-[Interface]
-Address = 172.31.255.250/24
-PrivateKey = {CLIENT PRIVATE KEY}
-SaveConfig = False
-
-# Wireguard server
-[Peer]
-PublicKey = {SERVER PUBLIC KEY}
-EndPoint = {SERVER PUBLIC IP}:51820
-AllowedIPs = 172.31.255.254/32
-```
+    # Wireguard server
+    [Peer]
+    PublicKey = {SERVER PUBLIC KEY}
+    EndPoint = {SERVER PUBLIC IP}:51820
+    AllowedIPs = 172.31.255.254/32
+    ```
 
 ``` bash
 # Bring up the tunnel for testing.
@@ -110,7 +107,6 @@ ping 172.31.255.254
 ping 172.31.255.100
 ```
 
-.. _service-wireguard-network-vpn-example:
 
 ## VPN Example
 Behaves like a traditional VPN network. All traffic and DNS lookups are routed
@@ -123,34 +119,32 @@ echo 1 > /proc/sys/net/ipv4/ip_forward
 echo 1 > /proc/sys/net/ipv6/ip_forward
 ```
 
-**/etc/sysctl.conf** (1)
-{ .annotate }
+??? abstract "/etc/sysctl.conf"
+    0644 root:root
 
-1. 0644 root:root
-``` bash
-net.ipv4.ip_forward = 1
-net.ipv6.conf.all.forwarding = 1
-```
+    ``` bash
+    net.ipv4.ip_forward = 1
+    net.ipv6.conf.all.forwarding = 1
+    ```
 
-**/etc/wireguard/server.conf** (1)
-{ .annotate }
+??? abstract "/etc/wireguard/server.conf"
+    0600 root:root
 
-1. 0600 root:root
-``` bash
-[Interface]
-Address = 172.31.255.254/24
-SaveConfig = False
-ListenPort = 51820
-PrivateKey = {SERVER PRIVATE KEY}
-# Automatically adjust iptables rules to allow forwarded traffic when VPN up.
-PostUp = iptables -A FORWARD -i {WIREGUARD TUNNEL} -j ACCEPT; iptables -t nat -A POSTROUTING -o {INTERFACE} -j MASQUERADE; ip6tables -A FORWARD -i {WIREGUARD TUNNEL} -j ACCEPT; ip6tables -t nat -A POSTROUTING -o {INTERFACE} -j MASQUERADE
-PostDown = iptables -D FORWARD -i {WIREGUARD TUNNEL} -j ACCEPT; iptables -t nat -D POSTROUTING -o {INTERFACE} -j MASQUERADE; ip6tables -D FORWARD -i {WIREGUARD TUNNEL} -j ACCEPT; ip6tables -t nat -D POSTROUTING -o {INTERFACE} -j MASQUERADE
+    ``` bash
+    [Interface]
+    Address = 172.31.255.254/24
+    SaveConfig = False
+    ListenPort = 51820
+    PrivateKey = {SERVER PRIVATE KEY}
+    # Automatically adjust iptables rules to allow forwarded traffic when VPN up.
+    PostUp = iptables -A FORWARD -i {WIREGUARD TUNNEL} -j ACCEPT; iptables -t nat -A POSTROUTING -o {INTERFACE} -j MASQUERADE; ip6tables -A FORWARD -i {WIREGUARD TUNNEL} -j ACCEPT; ip6tables -t nat -A POSTROUTING -o {INTERFACE} -j MASQUERADE
+    PostDown = iptables -D FORWARD -i {WIREGUARD TUNNEL} -j ACCEPT; iptables -t nat -D POSTROUTING -o {INTERFACE} -j MASQUERADE; ip6tables -D FORWARD -i {WIREGUARD TUNNEL} -j ACCEPT; ip6tables -t nat -D POSTROUTING -o {INTERFACE} -j MASQUERADE
 
-# Client #1
-[Peer]
-PublicKey = {CLIENT PUBLIC KEY}
-AllowedIPs = 172.31.255.250/32
-```
+    # Client #1
+    [Peer]
+    PublicKey = {CLIENT PUBLIC KEY}
+    AllowedIPs = 172.31.255.250/32
+    ```
 
 ``` bash
 # Bring up the tunnel for testing.
@@ -161,42 +155,39 @@ systemctl enable wg-quick@server
 !!! tip
     Set a custom DNS server if needed. DNS is resolved at the VPN server.
 
-**/etc/wireguard/client.conf** (1)
-{ .annotate }
+??? abstract "/etc/wireguard/client.conf"
+    0600 root:root
 
-1. 0600 root:root
-``` bash
-# Route all traffic through VPN connection.
-[Interface]
-Address = 172.31.255.250/24
-PrivateKey = {CLIENT PRIVATE KEY}
-DNS = 1.1.1.1,1.1.2.2
-SaveConfig = False
+    ``` bash
+    # Route all traffic through VPN connection.
+    [Interface]
+    Address = 172.31.255.250/24
+    PrivateKey = {CLIENT PRIVATE KEY}
+    DNS = 1.1.1.1,1.1.2.2
+    SaveConfig = False
 
-# Wireguard server
-[Peer]
-PublicKey = {SERVER PUBLIC KEY}
-EndPoint = {SERVER PUBLIC IP}:51820
-AllowedIPs = 0.0.0.0/0
-```
+    # Wireguard server
+    [Peer]
+    PublicKey = {SERVER PUBLIC KEY}
+    EndPoint = {SERVER PUBLIC IP}:51820
+    AllowedIPs = 0.0.0.0/0
+    ```
 
 ``` bash
 # Bring up the tunnel for testing.
 systemctl enable wg-quick@vpn-client
 ```
 
-### Testing
+### [Testing][a]
 From the client access the Internet and verify that your data is routed through
 the VPN server.
 
 A quick test can be verifying different IP's from https://www.whatismyip.com.
 
-Reference:
 
-* Reference <https://www.ckn.io/blog/2017/11/14/wireguard-vpn-typical-setup
-
-## InitRAMFS
+## [InitRAMFS][b]
 Enable wireguard during boot process allowing for remote unlocks anywhere in
 the world.
 
-https://github.com/r-pufky/wireguard-initramfs
+[a]: https://www.ckn.io/blog/2017/11/14/wireguard-vpn-typical-setup
+[b]: https://github.com/r-pufky/wireguard-initramfs

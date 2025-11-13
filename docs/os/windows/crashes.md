@@ -3,6 +3,7 @@ I'm asked this all the time, so I put together a list of all the common things
 to look for when a PC is flaky and crashing. Even if you *know what you're
 doing*, you should run through these steps. You'd be surprised.
 
+
 ## General Maintenance
 Required typically yearly. If you are using a new build, skip to [Random
 Crashes](#random-crashes).
@@ -35,11 +36,11 @@ Crashes](#random-crashes).
 7. Ensure all connections are tight, and you haven't knocked anything out of
    whack.
 
+
 ## Random Crashes
 In most cases I've seen, this is due to hardware not connected properly, or
-actual defective hardware. Most [BSOD's](../../glossary/os.md#bsod) I've seen
-in Windows 10 are actually hardware related and not due to funky Windows
-installs.
+actual defective hardware. Most [BSOD's][a] I've seen in Windows 10 are
+actually hardware related and not due to funky Windows installs.
 
 First, make sure when you run tests, you **log everything**. When you crash you
 will probably not be paying attention to specific values. This also helps you
@@ -47,20 +48,18 @@ to verify faulty hardware with manufacturers later on.
 
 Additionally, pay attention to what you are doing when you crash. It can give
 you a good jump-off point for quickly debugging the issue. Gaming? Maybe start
-with power/connections/airflow. [BSOD's](../../glossary/os.md#bsod)? What does
+with power/connections/airflow. [BSOD's][a]? What does
 the screen infer?
 
-Basic utilities to monitor system include
-[HWinfo](https://www.hwinfo.com/download/) and
-[HWmonitor](https://www.cpuid.com/softwares/hwmonitor.html). Both of these
-provide monitoring and logging for many computer components.
+Basic utilities to monitor system include [HWinfo][b] and [HWmonitor][c]. Both
+of these provide monitoring and logging for many computer components.
+
 
 ## Memory
-Setup [memtest86](https://www.memtest86.com) on a USB drive and set it to run
-the standard tests. Faulty memory will be apparent either immediately, or
-within a few minutes. In most cases I've seen, running the test for 24 hours
-works as a good 'burn in' test, but won't actually detect any additional memory
-issues.
+Setup [memtest86][d] on a USB drive and set it to run the standard tests.
+Faulty memory will be apparent either immediately, or within a few minutes. In
+most cases I've seen, running the test for 24 hours works as a good 'burn in'
+test, but won't actually detect any additional memory issues.
 
 If you get errors, walk through each of these steps, retesting on each change:
 
@@ -73,12 +72,13 @@ If you get errors, walk through each of these steps, retesting on each change:
    additional memory stick after each test.
 7. Always verify your suspected 'defective' stick independently.
 
-## CPU's
-Setup [CPUZ](https://www.cpuid.com/softwares/cpu-z.html) and run it. It should
-display your CPU as well as current frequency and voltages. Check your voltages
-to make sure your CPU is getting at least the minimum required to work.
 
-Setup [prime95](https://www.mersenne.org/download) to stress test CPU.
+## CPU's
+Setup [CPUZ][e] and run it. It should display your CPU as well as current
+frequency and voltages. Check your voltages to make sure your CPU is getting at
+least the minimum required to work.
+
+Setup [prime95][f] to stress test CPU.
 
 !!! example "Options ➔ Torture Test ➔ In-place large FFT's"
 
@@ -98,19 +98,16 @@ This will allow you to test your CPU under load.
 4. Is your BIOS configured to shutdown automatically when a temperature limit is
    hit? By default this is for extreme cases, but you may be hitting it.
 
+
 ## GPU's
-Setup [GPUZ](https://www.techpowerup.com/gpuz) and
-[Furmark](https://geeks3d.com/furmark/). Use GPUZ to get information on the
-GPU, and run a stress test on your video card with Furmark. A stable system
-should be able to run this at max settings for your PC without crashing
-*indefinitely*.
+Setup [GPUZ][g] and [Furmark][h]. Use GPUZ to get information on the GPU, and
+run a stress test on your video card with Furmark. A stable system should be
+able to run this at max settings for your PC without crashing *indefinitely*.
 
 1. Ensure Windows drivers for the video card are the most recent version.
-   [Clean install](https://forums.tomshardware.com/faq/how-to-perform-a-clean-install-of-your-video-card-drivers.2402269/)
-   your drivers if you crash.
+   [Clean install][i] your drivers if you crash.
 2. If you just started crashing and you recently updated drivers,
-   [Clean install](https://forums.tomshardware.com/faq/how-to-perform-a-clean-install-of-your-video-card-drivers.2402269/)
-   older versions of your drivers.
+   [Clean install][j] older versions of your drivers.
 3. Re-seat GPU, ensure you are locking the card into the slot.
 4. Ensure that Power cables are connected to the GPU if they have connections
    for it.
@@ -122,27 +119,23 @@ should be able to run this at max settings for your PC without crashing
 7. Is the GPU running hot at idle/load?
     * Generally, *85c* is the limit on GPU heat -- if it is, ensure that
       fans/heatsink are clean and connected.
-    * Some drivers will [BSOD](../../glossary/os.md#bsod) if the GPU
-      temperature remains too hot.
+    * Some drivers will [BSOD][a] if the GPU temperature remains too hot.
 f8. Use a different PCIe slot. Your 16x might be borked.
 9. SLI Configurations
     * Test each card independently, in each slot.
     * Verify that both cards and slots are functioning properly.
 
-## HDD's
-Setup [CrystalDiskInfo](https://crystalmark.info/en/software/crystaldiskinfo/)
-and run it. It should detect all of your HDD's and SSD's. It will report a
-general 'SMART' status (e.g. *GOOD*) for each disk and the temperature.
 
-Setup [CrystalDiskMark](https://crystalmark.info/en/software/crystaldiskmark).
-After analyzing
-[CrystalDiskInfo](https://crystalmark.info/en/software/crystaldiskinfo/)
-results, if you believe your crashes related to disk, run the
-[CrystalDiskMark](https://crystalmark.info/en/software/crystaldiskmark) bench
-on your disks -- this will prematurely wear your SSD's. A
-[BSOD](../../glossary/os.md#bsod) crash running this software usually means the
-disk in question is bad (test a different disk) or the motherboard SATA/chipset
-drivers need to be installed or updated.
+## HDD's
+Setup [CrystalDiskInfo][k] and run it. It should detect all of your HDD's and
+SSD's. It will report a general 'SMART' status (e.g. *GOOD*) for each disk and
+the temperature.
+
+Setup [CrystalDiskMark][l]. After analyzing [CrystalDiskInfo][k] results, if
+you believe your crashes related to disk, run the [CrystalDiskMark][l] bench on
+your disks -- this will prematurely wear your SSD's. A [BSOD][a] crash running
+this software usually means the disk in question is bad (test a different disk)
+or the motherboard SATA/chipset drivers need to be installed or updated.
 
 Sound isn't necessarily a signal of failure. Some drives (like Western Digitals)
 are notorious for being loud on spin-up and seeking. This is normal. You need to
@@ -150,13 +143,12 @@ make a determination if the sound you are hearing is normal or not. Check
 youtube for videos of your specific drive / manufacturer. Bad sounds generally
 entail loud 'clicking' or 'clacking' and are obvious.
 
-1. Generally, HDD's should be [pretty tolerant](https://static.googleusercontent.com/media/research.google.com/en//archive/disk_failures.pdf)
-   to high temperatures, though excessive temperatures for prolonged periods of
-   time *(>~55c)* could cause premature failure. Fix this by re-locating drives
-   or adding some cooling.
+1. Generally, HDD's should be [pretty tolerant][l] to high temperatures, though
+   excessive temperatures for prolonged periods of time **(>~55c)** could cause
+   premature failure. Fix this by re-locating drives or adding some cooling.
 2. SSD drives (especially M.2 NVME) perform better at higher temperatures and
    have internal throttling mechanisms. It's generally OK to see them operating
-   [around ~60c](https://forums.guru3d.com/threads/what-should-normal-safe-operating-temperature-be-for-a-m-2-nvme-drive.418369/).
+   [around ~60c][m].
 3. Check on the drive in question. In the detailed SMART report, look for
    indicators of failing drives.
     * Raw Read Error Rate.
@@ -179,6 +171,7 @@ entail loud 'clicking' or 'clacking' and are obvious.
 4. If SATA: replace cables. Throw the old ones out. Check power connections.
 5. If M.2 NVME: ensure slot isn't shared or disabled. Move to another slot if
    possible.
+
 
 ## Motherboards
 This is very specific to each motherboard you own. however general concepts
@@ -211,3 +204,22 @@ remain the same. Get your motherboard model in the BIOS, usually by pressing
    qualification lists*. In recent years, I've noticed that motherboards are
    *much more sensitive* to RAM and SSD's used, even though they are based on a
    standard.
+
+
+## Reference[^1]
+
+[^1]: https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer
+
+[a]: ../../glossary/os.md#bsod
+[b]: https://www.hwinfo.com/download
+[c]: https://www.cpuid.com/softwares/hwmonitor.html
+[d]: https://www.memtest86.com
+[e]: https://www.cpuid.com/softwares/cpu-z.html
+[f]: https://www.mersenne.org/download
+[g]: https://www.techpowerup.com/gpuz
+[h]: https://geeks3d.com/furmark
+[i]: https://forums.tomshardware.com/faq/how-to-perform-a-clean-install-of-your-video-card-drivers.2402269
+[j]: https://crystalmark.info/en/software/crystaldiskinfo
+[k]: https://crystalmark.info/en/software/crystaldiskmark
+[l]: https://static.googleusercontent.com/media/research.google.com/en//archive/disk_failures.pdf
+[m]: https://forums.guru3d.com/threads/what-should-normal-safe-operating-temperature-be-for-a-m-2-nvme-drive.418369

@@ -5,21 +5,14 @@ you have other TOTP solutions that already work for you.
 
 This will guide you how to remove dependence on Authy.
 
-`Original step-by-step here`_. `Github repo with Script`_.
+[Original step-by-step here][a]. [Github repo with Script][b].
 
-This is [*not* my work](),
-just abbreviated notes with sources to remove Authy dependence.
-
-Reference:
-
-* https://medium.com/@dubistkomisch/set-up-2fa-two-factor-authentication-for-twitch-with-google-authenticator-or-other-totp-client-f19af32df68a
-* https://gist.github.com/gboudreau/94bb0c11a6209c82418d01a59d958c93
 
 ## Setup
 Ensure Two Factor is setup for those sites which require Authy.
 
-* Install [Authy App](https://play.google.com/store/apps/details?id=com.authy.authy).
-* Install [Authy Chrome Extension](https://chrome.google.com/webstore/detail/authy/gaedmjdfmmahhbjefcbgaolhhanlaolb).
+* Install [Authy App][c].
+* Install [Authy Chrome Extension][d].
 
 !!! warning
     A phone number is needed. Set a master password as well, in case you ever
@@ -31,13 +24,14 @@ Authy uses a **7 digit**, **10 second** period for TOTP.
 
 This is know to work with the following authenticators:
 
-* [Google Authenticator](https://gist.github.com/gboudreau/94bb0c11a6209c82418d01a59d958c93?source=post_page---------------------------#gistcomment-2176972).
-* [Lastpass Authenticator](https://gist.github.com/gboudreau/94bb0c11a6209c82418d01a59d958c93?source=post_page---------------------------#gistcomment-2875862).
-* [1Password](https://gist.github.com/gboudreau/94bb0c11a6209c82418d01a59d958c93?source=post_page---------------------------#gistcomment-2318490).
+* [Google Authenticator][e].
+* [Lastpass Authenticator][f].
+* [1Password][g].
 * KeePassXC.
-* [Bitwarden](https://gist.github.com/gboudreau/94bb0c11a6209c82418d01a59d958c93?source=post_page---------------------------#gistcomment-2176972).
+* [Bitwarden][h].
 
-## Export TOTP from Authy
+
+## [Export TOTP from Authy][i]
 Open chrome authy extension, navigate to Two Factor site to extract.
 
 * chrome ➔ more tools ➔ extensions
@@ -92,15 +86,22 @@ Open chrome authy extension, navigate to Two Factor site to extract.
   the correct number of digits and period. The **TOTP secret** QR is the
   hash for manually entering data.
 
-Reference:
-
-* https://gist.github.com/DuBistKomisch/a12160a0d1d6c31499497e15263c3db3#file-authy-extract-js
-
 Confirm Two Factor works with a token from the new Two Factor device. It is
 **OK** if tokens for Authy and new device do not line up. Confirm login works.
+
 
 ## Cleanup
 * Remove Authy app.
 * Remove Authy Extension.
 * Chrome ➔ more tools ➔ extensions
     * Disable Developer Mode.
+
+[a]: https://medium.com/@dubistkomisch/set-up-2fa-two-factor-authentication-for-twitch-with-google-authenticator-or-other-totp-client-f19af32df68a
+[b]: https://gist.github.com/gboudreau/94bb0c11a6209c82418d01a59d958c93
+[c]: https://play.google.com/store/apps/details?id=com.authy.authy
+[d]: https://chrome.google.com/webstore/detail/authy/gaedmjdfmmahhbjefcbgaolhhanlaolb
+[e]: https://gist.github.com/gboudreau/94bb0c11a6209c82418d01a59d958c93?source=post_page---------------------------#gistcomment-2176972
+[f]: https://gist.github.com/gboudreau/94bb0c11a6209c82418d01a59d958c93?source=post_page---------------------------#gistcomment-2875862
+[g]: https://gist.github.com/gboudreau/94bb0c11a6209c82418d01a59d958c93?source=post_page---------------------------#gistcomment-2318490
+[h]: https://gist.github.com/gboudreau/94bb0c11a6209c82418d01a59d958c93?source=post_page---------------------------#gistcomment-2176972
+[i]: https://gist.github.com/DuBistKomisch/a12160a0d1d6c31499497e15263c3db3#file-authy-extract-js

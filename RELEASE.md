@@ -1,5 +1,13 @@
 # [Release Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## 2.1.0:
+Restructure organization.
+
+Changed:
+* Enforce 80 character limits where possible for markdown source.
+* Use reference links for any links that interrupt markdown reading flow.
+* Use Footnote references for general page links.
+
 ## 2.0.3:
 
 Added:

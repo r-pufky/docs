@@ -1,16 +1,11 @@
 # Options
 Commonly used NFS options.
 
-See [man page](https://man7.org/linux/man-pages/man5/nfs.5.html) for all
-options.
+See [man page][a] for all options.
 
 !!! tip
-    **async** increases write speed only - do not use for RO mounts as it will
+    **async** [increases write speed only][b] - do not use for RO mounts as it will
     have no effect.
-
-    Reference:
-
-    * https://hardforum.com/threads/nfs-and-async.1893929
 
 Option                      | Purpose
 ---------------------------:|------------------------------------------------------------------
@@ -36,12 +31,15 @@ root_squash[no_root_squash] | Map UID/GID 0 to anonymous user; this is **nobody*
                         cto | close-to-open consistency (default) - ensures that on open the most recent data for a file is always presented to the application.
                      actimo | Sets **acregmin**, **acregmax**, **acdirmin**, **acdirmax**. **actimo=600** additionally reduces getattr access calls **~20-25%** with **nocto**.
 
-Reference:
+## Reference:[^1][^2][^3][^4][^5][^6][^7]
 
-* https://man7.org/linux/man-pages/man5/nfs.5.html
-* https://www.thegeekdiary.com/common-nfs-mount-options-in-linux/
-* https://learn.microsoft.com/en-us/azure/azure-netapp-files/performance-linux-mount-options
-* https://www.admin-magazine.com/HPC/Articles/Useful-NFS-Options-for-Tuning-and-Management
-* https://wiki.archlinux.org/title/NFS
-* https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/4/html/reference_guide/s2-nfs-client-config-options#s2-nfs-client-config-options
-* https://unix.stackexchange.com/questions/427597/implications-of-using-nfsv4-fsid-0-and-exporting-the-nfs-root-to-entire-lan-or
+[^1]: https://man7.org/linux/man-pages/man5/nfs.5.html
+[^2]: https://www.thegeekdiary.com/common-nfs-mount-options-in-linux/
+[^3]: https://learn.microsoft.com/en-us/azure/azure-netapp-files/performance-linux-mount-options
+[^4]: https://www.admin-magazine.com/HPC/Articles/Useful-NFS-Options-for-Tuning-and-Management
+[^5]: https://wiki.archlinux.org/title/NFS
+[^6]: https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/4/html/reference_guide/s2-nfs-client-config-options#s2-nfs-client-config-options
+[^7]: https://unix.stackexchange.com/questions/427597/implications-of-using-nfsv4-fsid-0-and-exporting-the-nfs-root-to-entire-lan-or
+
+[a]: https://man7.org/linux/man-pages/man5/nfs.5.html
+[b]: https://hardforum.com/threads/nfs-and-async.1893929

@@ -15,7 +15,8 @@ All modern linux distributions support wireguard with 5.6+ Kernels.
     apt install wireguard
     ```
 
-## Autostart Tunnel as Service
+
+## [Autostart Tunnel as Service][a]
   :caption: Start tunnel on boot.
 ``` bash
 systemctl enable wg-quick@{TUNNEL}
@@ -24,6 +25,4 @@ systemctl enable wg-quick@{TUNNEL}
 systemctl status/stop/start/restart wg-quick@{TUNNEL}
 ```
 
-Reference:
-
-* https://community.hetzner.com/tutorials/install-and-configure-wireguard-vpn-debian
+[a]: https://community.hetzner.com/tutorials/install-and-configure-wireguard-vpn-debian

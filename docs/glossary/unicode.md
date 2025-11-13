@@ -18,6 +18,7 @@
    RMB | RMB   | Middle click (Middle mouse button).
      ✋ | 270B  | Hover the mouse over the indicated location next to this symbol.
 
+
 ## Alert Window Glyphs
 
  Glyph | Code | Use

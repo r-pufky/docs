@@ -1,6 +1,6 @@
 # Windows
-Minimal installation to prevent software bloat. [Driver
-Downloads](https://support.brother.com/g/b/downloadtop.aspx?c=us&lang=en&prod=mfcl2750dw_us_eu_as).
+Minimal installation to prevent software bloat. [Driver Downloads][a].
+
 
 ## Manual Install
 Recommended. This will install the printer/scanner via the print management
@@ -23,13 +23,9 @@ printer across subnets. Requires **SNMP** and **WebServices** to be enabled.
 !!! example "⌘ ➔ run ➔ PrintManagement.msc ➔ Print Servers ➔ (local) ➔ Printers ➔ Brother ➔ RMB ➔ Properties ➔ Advanced ➔ New Driver"
     * Driver: **Have Disk**
 
-
-### Remove Generic Driver
+### [Remove Generic Driver][b]
 !!! example "⌘ ➔ run ➔ PrintManagement.msc ➔ Print Servers ➔ (local) ➔ Drivers ➔ Brother Laser Type1 Class Driver ➔ RMB ➔ Delete"
 
-Reference:
-
-* https://docs.microsoft.com/en-us/troubleshoot/windows-client/printing/cannot-install-secure-web-services-on-devices
 
 ## iPrint & Scan
 Enables all scanning options when using the scanning feature.
@@ -49,6 +45,7 @@ Enables all scanning options when using the scanning feature.
 
     Read the disable wording carefully.
 
+
 ## Full Install
 !!! danger
     **Not** Recommended. Installs all additional software and requires SNMP
@@ -61,7 +58,7 @@ Enables all scanning options when using the scanning feature.
 !!! info
     Requires **Full Driver & Software Package**.
 
-### Configure Printer
+### [Configure Printer][c]
 !!! example "Printer WebUI ➔ Network ➔ Protocol ➔ SNMP ➔ Advanced Settings"
     * SNMPv3 read-write access and v1/v2c read-only access: ✔
     * User Name: **{RANDOM HASH}**
@@ -70,10 +67,6 @@ Enables all scanning options when using the scanning feature.
     * Authentication Password: **{16 CHARACTERS}**
     * Privacy Password: **{16 CHARACTERS}**
     * Context Name: **authNoPriv**
-
-    Reference:
-
-    * https://www.webnms.com/simulator/help/sim_network/netsim_conf_snmpv3.html
 
 ### Install Software
 * Full software/driver package.
@@ -134,6 +127,7 @@ Disable Auto launch Services
     Properly installed scanner will allow > 300dpi scanning and show **all
     settings**.
 
+
 ## Complete Uninstall
 Use the following to clean a system if brother utilities were installed and
 need to be removed.
@@ -192,3 +186,7 @@ need to be removed.
    Brother* ➔ RMB ➔ Delete
 
 Reboot to ensure memory is unloaded.
+
+[a]: https://support.brother.com/g/b/downloadtop.aspx?c=us&lang=en&prod=mfcl2750dw_us_eu_as
+[b]: https://docs.microsoft.com/en-us/troubleshoot/windows-client/printing/cannot-install-secure-web-services-on-devices
+[c]: https://www.webnms.com/simulator/help/sim_network/netsim_conf_snmpv3.html

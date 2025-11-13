@@ -1,50 +1,45 @@
 # Windows
 
 !!! tip
-    See [Trust GPG Key
-    Locally](../setup/import.md#trust-gpg-public-key-locally)
-    for importing your public key and assigning ultimate trust for use.
+    See [Trust GPG Key Locally][a]for importing your public key and assigning
+    ultimate trust for use.
 
     Requires **~/.ssh/authorized_keys** on target machine with your exported
-    GPG SSH RSA Public Key. See [GPG Export
-    Keys](../setup/backup.md#export-gpg-keys). See
-    [SSH](../../../service/ssh/README.md) for remote SSH configuration.
+    GPG SSH RSA Public Key. See [GPG Export Keys][b]. See [SSH][c] for remote
+    SSH configuration.
+
 
 ## Configure GPG4win
-GPG4Win provides middleware to enable Yubikey GPG use. Download
-[gpg4win](https://www.gpg4win.org/package-integrity.html) and verify integrity.
+GPG4Win provides middleware to enable Yubikey GPG use. Download [gpg4win][d]
+and verify integrity.
 
 !!! example "⌘ ➔ sysdm.cpl ➔ Advanced ➔ Environment Variables ➔ User variables for {USER} ➔ Path ➔ Edit ➔ New"
     * Path: **c:\Program Files (x86)\GnuPG\bin**
 
     Add GPG path to end of list for global user profile access.
 
-### Configure GPG Agent
+### Configure [GPG Agent][e]
 !!! example "⌘ ➔ Device Manager ➔ Software Devices"
     Get Yubico device name as listed. **Show Hidden Devices** may be necessary.
 
     Use the **full name** in **scdaemon.conf**.
 
-**%appdata%\gnupg\scdaemon.conf** (1)
-{ .annotate }
+??? abstract "%appdata%\gnupg\scdaemon.conf"
 
-1. scdaemon.conf
-``` bash
-# Prevent Windows Hello from acting as an pagent device.
-# Results in no key found errors.
+    ``` bash
+    # Prevent Windows Hello from acting as an pagent device.
+    # Results in no key found errors.
 
-# Device Manager Yubico full name.
-reader-port Yubico YubiKey OTP+FIDO+CCID 0
-```
+    # Device Manager Yubico full name.
+    reader-port Yubico YubiKey OTP+FIDO+CCID 0
+    ```
 
-**%appdata%\gnupg\gpg-agent.conf** (1)
-{ .annotate }
+??? abstract "%appdata%\gnupg\gpg-agent.conf"
 
-1. gpg-agent.conf
-``` bash
-enable-ssh-support
-enable-putty-support
-```
+    ``` bash
+    enable-ssh-support
+    enable-putty-support
+    ```
 
 Restart GPG Agent and Connect Agent to apply changes.
 ``` bash
@@ -54,12 +49,8 @@ gpgconf --kill gpg-agent
 "c:\Program Files (x86)\GnuPG\bin\gpg-connect-agent.exe" /bye
 ```
 
-Reference:
-
-* https://superuser.com/questions/1075404/how-can-i-restart-gpg-agent
-
 ### Configure Putty
-Download [Putty](https://www.putty.org).
+Download [Putty][f].
 
 !!! example "Putty ➔ Connection ➔ SSH ➔ Auth"
     * Attempt authentication using Pageant: ✔
@@ -70,7 +61,7 @@ Save host changes.
 #### Verify Putty Works
 1. Connect with Putty as normal.
 2. A **Pin Entry** pop-up window should appear. It may not be in focus. Enter
-   your **user** [PIN](../../../glossary/yubikey.md#yubikey-passwordpin).
+   your **user** [PIN][g].
 
     ![Pin Entry](pin_entry.png)
 
@@ -80,7 +71,7 @@ Save host changes.
 Import a working GPG Putty configuration into WinSCP. Create a copy of the
 working configuration and edit it.
 
-### Enable GPG Agent Forwarding in Putty
+### Enable [GPG Agent Forwarding in Putty][h]
 !!! example "WinSCP ➔ Site"
     * Host name: {Internal IP}
     * Port number: {Internal Port}
@@ -88,11 +79,7 @@ working configuration and edit it.
     * Password: **Empty**
     * Private key file: **Empty**
 
-Reference:
-
-* https://winscp.net/eng/docs/ui_login_tunnel
-
-### Define Bastion Tunnel
+### Define [Bastion Tunnel][h]
 !!! example "WinSCP ➔ Site ➔ Advanced Site Settings ➔ Connection ➔ Tunnel"
     * Connect through SSH Tunnel: ✔
     * Host name: **{Bastion External Address}**
@@ -101,18 +88,10 @@ Reference:
     * Password: **{EMPTY}**
     * Private key file: **{EMPTY}**
 
-Reference:
-
-* https://winscp.net/eng/docs/ui_login_tunnel
-
-### Enable SSH Agent Forwarding
+### Enable [SSH Agent Forwarding][h]
 !!! example "WinSCP ➔ Site ➔ Advanced Site Settings ➔ SSH ➔ Authentication"
     * Attempt authentication using Pageant: ✔
     * Allow agent forwarding: ✔
-
-Reference:
-
-* https://winscp.net/eng/docs/ui_login_tunnel
 
 Save the configuration and connect. May be prompted for two authentication
 touches, one for each system.
@@ -161,15 +140,11 @@ events, ensuring that the agent is always ready.
         * Stop the task if it runs longer than: **3 days**
         * All Remaining: ✘
 
-## Forward GPG Agent Through Multiple Servers
+## Forward GPG Agent [Through Multiple Servers][i]
 !!! warning
     While the connection is active it is possible for others to use them as you
     while you are connected even though your private credential are on your
     local machine.
-
-    Reference:
-
-    * http://www.unixwiz.net/techtips/ssh-agent-forwarding.html
 
 Machines are referred to as **putty** for your client machine, **bastion** for
 the machine you will be SSH'ing through and **target** for remote SSH targets.
@@ -181,38 +156,49 @@ the machine you will be SSH'ing through and **target** for remote SSH targets.
     * Allow agent forwarding: ✔
 
 ### Bastion Configuration
-**/etc/ssh/sshd_config** (1)
-{ .annotate }
+??? abstract "/etc/ssh/sshd_config"
+    0644 root:root
 
-1. 0644 root:root
-``` bash
-# Remove current socket file for forwarding before creating a new one.
-StreamLocalBindUnlink yes
+    ``` bash
+    # Remove current socket file for forwarding before creating a new one.
+    StreamLocalBindUnlink yes
 
-# Enable forwarding your credentials again to the next server.
-AllowAgentForwarding yes
-```
+    # Enable forwarding your credentials again to the next server.
+    AllowAgentForwarding yes
+    ```
 
 Confirm new settings are loaded on Bastion.
 ``` bash
 sshd -T | grep -i allowagent
+```
 
 ### Target Configuration
 Target does not need to enable outbound agent forwarding.
 
-**/etc/ssh/sshd_config** (1)
-{ .annotate }
 
-1. 0644 root:root
-``` bash
-AllowAgentForwarding no
-```
+??? abstract "/etc/ssh/sshd_config"
+    0644 root:root
 
-## Reference
+    ``` bash
+    AllowAgentForwarding no
+    ```
 
-* https://developers.yubico.com/PGP/SSH_authentication/Windows.html
-* https://www.linode.com/docs/guides/gpg-key-for-ssh-authentication/
-* https://codingnest.com/how-to-use-gpg-with-yubikey-wsl/
-* https://ttmm.io/tech/yubikey/
-* https://occamy.chemistry.jhu.edu/references/pubsoft/YubikeySSH/index.php
-* https://superuser.com/questions/161973/how-can-i-forward-a-gpg-key-via-ssh-agent
+
+## Reference[^1][^2][^3][^4][^5][^6]
+
+[^1]: https://developers.yubico.com/PGP/SSH_authentication/Windows.html
+[^2]: https://www.linode.com/docs/guides/gpg-key-for-ssh-authentication/
+[^3]: https://codingnest.com/how-to-use-gpg-with-yubikey-wsl/
+[^4]: https://ttmm.io/tech/yubikey/
+[^5]: https://occamy.chemistry.jhu.edu/references/pubsoft/YubikeySSH/index.php
+[^6]: https://superuser.com/questions/161973/how-can-i-forward-a-gpg-key-via-ssh-agent
+
+[a]: ../setup/import.md#trust-gpg-public-key-locally
+[b]: ../setup/backup.md#export-gpg-keys
+[c]: ../../../service/ssh/README.md
+[d]: https://www.gpg4win.org/package-integrity.html
+[e]: https://superuser.com/questions/1075404/how-can-i-restart-gpg-agent
+[f]: https://www.putty.org
+[g]: ../../../glossary/yubikey.md#yubikey-passwordpin
+[h]: https://winscp.net/eng/docs/ui_login_tunnel
+[i]: http://www.unixwiz.net/techtips/ssh-agent-forwarding.html

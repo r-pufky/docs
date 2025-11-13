@@ -1,5 +1,6 @@
 # Troubleshooting
 
+
 ## Increase Failed auth Lockout Attempts
 Manjaro will lockout a user for 10 minutes on 3 failed password attempts over
 15 minutes.
@@ -8,15 +9,15 @@ Manjaro will lockout a user for 10 minutes on 3 failed password attempts over
     Expressed as sudo not working with valid password or unable to login to the
     system.
 
-**/etc/security/faillock.conf** (1)
-{ .annotate }
+??? abstract "/etc/security/faillock.conf"
+    0644 root:root
 
-1. 0644 root:root
     ``` bash
     deny = 5
     fail_interval = 300
     unlock_time = 600
     ```
+
 
 ## Application Scaling
 High DPI monitors require custom scaling settings.
@@ -25,7 +26,8 @@ High DPI monitors require custom scaling settings.
     * Global scale: **150%**
     * Legacy applications (X11): **Apply scaling themselves**
 
-## Fonts look fuzzy
+
+## [Fonts look fuzzy][a]
 Fonts may not support subpixel hints or it may be disabled.
 
 Copy custom fonts to system.
@@ -37,11 +39,10 @@ systemsettings kcm_fontinst  # Font Manager in GUI.
 
 Tweak font display for LCD's if display is still not clean.
 
-**/etc/fonts/local.conf** (1)
-{ .annotate }
+??? abstract "/etc/fonts/local.conf"
+    0644 root:root
 
-1. 0644 root:root
-    ``` bash
+    ``` xml
     <?xml version="1.0"?>
     <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
     <fontconfig>
@@ -68,10 +69,9 @@ Tweak font display for LCD's if display is still not clean.
     </fontconfig>
     ```
 
-**~/.Xresources** (1)
-{ .annotate }
+??? abstract "~/.Xresources"
+    0644 {USER}:{USER}
 
-1. 0644 {USER}:{USER}
     ``` bash
     Xft.antialias: 1
     Xft.hinting: 1
@@ -89,17 +89,13 @@ ln -s /usr/share/fontconfig/conf.avail/11-lcdfilter-default.conf /etc/fonts/conf
 fc-cache -f -v
 ```
 
-Reference:
-
-* https://wiki.manjaro.org/index.php/Improve_Font_Rendering
 
 ## Caps lock as Control
 Override caps lock for keyboards that do not remap caps lock key.
 
-**/etc/default/keyboard** (1)
-{ .annotate }
+??? abstract "/etc/default/keyboard"
+    0644 root:root
 
-1. 0644 root:root
     ``` bash
     XKBOPTIONS="ctrl:nocaps"
     ```
@@ -111,7 +107,8 @@ localectl set-x11-keymap us pc105 ,query ctrl:nocaps
 
 Reboot to apply.
 
-## Windows Opening on Wrong Monitor
+
+## [Windows Opening on Wrong Monitor][b]
 Some applications misbehave.
 
 !!! example "System Settings ➔ Apps & Windows ➔ Window Management"
@@ -128,31 +125,23 @@ Some applications misbehave.
                 * Ignore requested geometry:
                     * Apply Initially: **Yes**
 
-Reference:
 
-* https://old.reddit.com/r/kde/comments/gx8dch/programs_always_open_on_wrong_monitor/
+## [Manjaro Updates Consistently Fail][c]
+Last update was more than six months ago and [keys are expired][d].
 
-## Manjaro Updates Consistently Fail
-Last update was more than six months ago and keys are expired.
+??? abstract "/etc/pacman.conf"
+    0644 root:root
 
-**/etc/pacman.conf** (1)
-{ .annotate }
-
-1. 0644 root:root
-``` bash
-# Only for expired PGP keys -- DANGEROUS - always revert after updates.
-# SigLevel = Required DatabaseOptional
-SigLevel = Optional TrustAll
-```
+    ``` bash
+    # Only for expired PGP keys -- DANGEROUS - always revert after updates.
+    # SigLevel = Required DatabaseOptional
+    SigLevel = Optional TrustAll
+    ```
 
 ``` bash
 pamac update
 ```
 
-Reference:
-
-* https://gitlab.archlinux.org/archlinux/archlinux-keyring/-/issues/286
-* https://old.reddit.com/r/ManjaroLinux/comments/1lr0sdz/having_trouble_updating_with_pacman_corrupted/
 
 ## Recover from a Bad Upgrade with Encrypted Root Disk
 Generally when Windows decides it's the boot manager and is wrong.
@@ -182,7 +171,8 @@ pacman -S linux
 efibootmgr -v
 ```
 
-## List of User Installed Packages
+
+## [List of User Installed Packages][e]
 Only explicitly installed by user (no dependencies).
 
 ``` bash
@@ -191,15 +181,17 @@ pacman -Qqe | grep -v "$(awk '{print $1}' /desktopfs-pkgs.txt)"
 
 Reference:
 
-* https://old.reddit.com/r/ManjaroLinux/comments/fzog8g/get_a_list_of_packages_you_installed_yourself/
 
-## List of Package by Install Date
+## [List of Package by Install Date][f]
 
 ``` bash
 pacman -Syu expac
 expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort -n
 ```
 
-Reference:
-
-* https://www.baeldung.com/linux/list-packages-by-install-date
+[a]: https://wiki.manjaro.org/index.php/Improve_Font_Rendering
+[b]: https://old.reddit.com/r/kde/comments/gx8dch/programs_always_open_on_wrong_monitor
+[c]: https://gitlab.archlinux.org/archlinux/archlinux-keyring/-/issues/286
+[d]: https://old.reddit.com/r/ManjaroLinux/comments/1lr0sdz/having_trouble_updating_with_pacman_corrupted
+[e]: https://old.reddit.com/r/ManjaroLinux/comments/fzog8g/get_a_list_of_packages_you_installed_yourself
+[f]: https://www.baeldung.com/linux/list-packages-by-install-date

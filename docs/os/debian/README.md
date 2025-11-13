@@ -1,7 +1,8 @@
 # Debian
 
 !!! example "Migrated to ansible collection"
-    Use [r_pufky.deb](https://galaxy.ansible.com/ui/repo/published/r_pufky/deb/docs/).
+    Use [r_pufky.deb][a].
+
 
 ## Install TCP BBR Kernel Patches
 TCP BBR is a new congestion controlling algorithm that is designed to respond
@@ -17,45 +18,41 @@ uname -r
 egrep 'CONFIG_TCP_CONG_BBR|CONFIG_NET_SCH_FQ' /boot/config-$(uname -r)
 ```
 
-### Enable BBR Support
-**/etc/sysctl.d/10_custom_kernel_bbr.conf** (1)
-{ .annotate }
+### [Enable BBR Support][b]
+??? abstract "/etc/sysctl.d/10_custom_kernel_bbr.conf"
+    0644 root:root
 
-1. 0644 root:root
-``` bash
-net.core.default_qdisc=fq
-net.ipv4.tcp_congestion_control=bbr
-```
+    ``` bash
+    net.core.default_qdisc=fq
+    net.ipv4.tcp_congestion_control=bbr
+    ```
 
 ``` bash
 sysctl -p  # Or reboot.
 ```
 
-Reference:
-
-* https://cloud.google.com/blog/products/gcp/tcp-bbr-congestion-control-comes-to-gcp-your-internet-just-got-faster
 
 ## Disable IPv6
 Disable if IPv6 is not being actively used to prevent any IPv6 misconfiguration
 attacks.
 
-**/etc/sysctl.d/10_disable_ipv6.conf** (1)
-{ .annotate }
+??? abstract "/etc/sysctl.d/10_disable_ipv6.conf"
+    0644 root:root
 
-1. 0644 root:root
-``` bash
-net.ipv6.conf.all.disable_ipv6 = 1
-net.ipv6.conf.default.disable_ipv6 = 1
-net.ipv6.conf.lo.disable_ipv6 = 1
-```
+    ``` bash
+    net.ipv6.conf.all.disable_ipv6 = 1
+    net.ipv6.conf.default.disable_ipv6 = 1
+    net.ipv6.conf.lo.disable_ipv6 = 1
+    ```
 
 ``` bash
 sysctl -p  # Or reboot.
 ```
 
+
 ## Operations
 
-### Make RAW Disk Image of Physical Disk
+### Make [RAW Disk Image of Physical Disk][c]
 DD can be used to make a RAW image of a disk, and can be mounted in other linux
 systems for use.
 
@@ -70,11 +67,6 @@ mount /dev/loop0p1 /mnt/test/
 umount /dev/loop0p1
 losetup -d /dev/loop0
 ```
-
-Reference:
-
-* https://blog.tinned-software.net/mount-raw-image-of-entire-disc/
-* https://blog.tinned-software.net/mount-raw-image-of-entire-disc/
 
 ### Apt Auto Selection
 Automatically select user-required options during package install.
@@ -92,7 +84,7 @@ apt install {PACKAGE}
 debconf-get-selections | grep {PACKAGE}
 ```
 
-#### Set debconf Options
+#### [Set debconf Options][d]
 On target machines, set options before installing the package. This will remove
 the prompts from apt.
 
@@ -124,6 +116,7 @@ echo "mysql-server-5.5        mysql-server-5.5/start_on_boot  boolean true"  | d
 apt install mysql-server-5.5
 ```
 
-Reference:
-
-* https://serverfault.com/questions/407317/passing-default-answers-to-apt-get-package-install-questions
+[a]: https://galaxy.ansible.com/ui/repo/published/r_pufky/deb/docs
+[b]: https://cloud.google.com/blog/products/gcp/tcp-bbr-congestion-control-comes-to-gcp-your-internet-just-got-faster
+[c]: https://blog.tinned-software.net/mount-raw-image-of-entire-disc
+[d]: https://serverfault.com/questions/407317/passing-default-answers-to-apt-get-package-install-questions

@@ -1,15 +1,13 @@
 # Import Public Key
-This will set ultimate trust for the [GPG Master Public
-Key](https://stackoverflow.com/questions/31784368/how-to-give-highest-trust-level-to-an-openpgp-certificate-in-kleopatra)
-certificate you created when backing up GPG state. Any of one these options
-below can be used.
+This will set ultimate trust for the [GPG Master Public Key][a] certificate you
+created when backing up GPG state. Any of one these options below can be used.
 
 !!! tip
     Besides the locally exported public key file option, both other options
     assume that the public key has been published to key servers. Yubikey can
-    [automatically import](https://withinboredom.info/blog/2017/11/18/signing-commits-ssh-with-yubikey-and-windows/)
-    the correct certificate assuming the key was setup correctly. See [GPG
-    Publish Key](backup.md#publish-public-key).
+    [automatically import][b] the correct certificate assuming the key was
+    setup correctly. See [GPG Publish Key][c].
+
 
 ## GPG Public Key from File
 ``` bash
@@ -30,6 +28,7 @@ gpg --receive-keys $KEYID  --keyserver hkps://keys.openpgp.org
 > gpg:               imported: 1
 ```
 
+
 ## GPG Public Key from Yubikey URL
 ``` bash
 gpg --card-edit
@@ -40,6 +39,7 @@ gpg/card> fetch
 > gpg: Total number processed: 1
 > gpg:               imported: 1
 ```
+
 
 ## Trust GPG Public Key Locally
 Each machine on which the signing, encryption and authentication certificates
@@ -99,3 +99,7 @@ gpg --list-secret-keys
 > ssb>  rsa4096 2019-01-01 [E]
 > ssb>  rsa4096 2019-01-01 [A]
 ```
+
+[a]: https://stackoverflow.com/questions/31784368/how-to-give-highest-trust-level-to-an-openpgp-certificate-in-kleopatra
+[b]: https://withinboredom.info/blog/2017/11/18/signing-commits-ssh-with-yubikey-and-windows
+[c]: backup.md#publish-public-key

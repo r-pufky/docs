@@ -3,29 +3,23 @@ Carefully follow these instructions before setting up GPG and Yubikeys to
 remain in a secure state. Failure to follow these instructions may expose
 private key material to bad actors.
 
+
 ## Required Materials
 
 1. Live USB OS, with persistent storage to setup additional packages. Tails
-   Live USB [setup
-   instructions](https://tails.boum.org/install/win/usb-download/index.en.html)
-   is preferred (most secure), other [live USB](https://ubuntu.com/#download)
-   will work but be less secure. Instructions assume Debian-based system.
-2. Hardware-backed Encrypted USB drive [Ironkey](https://www.kingston.com/unitedstates/us/usb-flash-drives/ironkey-d300-encrypted-usb-flash-drive)
-   (most secure), or USB drive with software encryption [using VeraCrypt](https://github.com/drduh/YubiKey-Guide#backup)
-   (less secure).
-3. [Yubikey 5](https://www.yubico.com/products/yubikey-5-overview/) (or other
-   hardware security key support 4096bit RSA certificates).
+   Live USB [setup instructions][a] is preferred (most secure), other
+   [live USB][b] will work but be less secure. Instructions assume Debian-based
+   system.
+2. Hardware-backed Encrypted USB drive [Ironkey][c] (most secure), or USB drive
+   with software encryption [using VeraCrypt][d] (less secure).
+3. [Yubikey 5][e] (or other hardware security key support 4096bit RSA
+   certificates).
 4. A complete copy of these instructions or secondary device Internet access.
 5. A photo to associate with your GPG master key.
 
 This assumes usage of an Ironkey with Yubikeys on a Debian-base system for
 configuration.
 
-Reference:
-
-* https://developers.yubico.com/PIV/Guides/Device_setup.html
-* https://zeos.ca/post/2018/gpg-yubikey5/
-* https://www.gnupg.org/howtos/card-howto/en/ch03.html
 
 ## Prep Live USB
 GPG generation should be done on a air-gapped, temporal, encrypted OS to
@@ -55,6 +49,7 @@ apt install yubikey-manager yubikey-manager-qt
     **yubikey-manager-qt** is a GUI frontend which has limited functionality
     but does provide easy ways to ensure specific applets are enabled.
     **scdaemon** enables smartcard support for GPG.
+
 
 ## Prep Ironkey
 !!! tip
@@ -92,24 +87,20 @@ sudo /media/user/IRONKEY/linux/linux64/ikd300_login
     The Ironkey is the only **safe** location to store secret key material.
 
 !!! tip
-    IronKey may mount readonly if it was previously unmounted dirty. Unlock
-    drive and run a filesystem check.
+    [IronKey may mount readonly][f] if it was previously unmounted dirty.
+    Unlock drive and run a filesystem check.
 
     ``` bash
     dosfsck -a {IRONKEY_DEVICE}
     ```
 
-    Reference:
-
-    * https://askubuntu.com/questions/1004827/how-to-fix-read-only-usb-drive
 
 ## Prep Yubikey
 !!! note "Default Yubikey Passwords"
     * Default User Pin: **123456**
     * Default Admin Pin: **12345678**
 
-    [Yubikey Password/PINs](../../../glossary/yubikey.md#yubikey-passwordpin)
-    may be up to **127 ASCII characters** long.
+    [Yubikey Password/PINs][h] may be up to **127 ASCII characters** long.
 
 ### Verify Genuine Yubikey
 Ensure Yubikey is genuine and has not been tampered with during any step of the
@@ -128,8 +119,8 @@ potential compromise and should be thrown out after it is confirmed to fail
 again.
 
 ### Reset Yubikey
-This will [destroy any openpgp material](https://support.yubico.com/hc/en-us/articles/360013761339-Resetting-the-OpenPGP-Applet-on-the-YubiKey)
-on the key and reset to the default key state.
+This will [destroy any openpgp material][i] on the key and reset to the default
+key state.
 
 !!! warning "Do this even if the Yubikey is new"
     ``` bash
@@ -138,8 +129,8 @@ on the key and reset to the default key state.
 
     Existing 2FA configurations will be deleted.
 
-Alternatively using the [Yubikey Personalization Tool](https://www.yubico.com/products/services-software/download/yubikey-personalization-tools/)
-will provide options to do this via a GUI.
+Alternatively using the [Yubikey Personalization Tool][j] will provide options
+to do this via a GUI.
 
 ``` bash
 ### Show current Yubikey card shows with default values.
@@ -148,10 +139,8 @@ gpg --card-status
 
 * If not found, re-insert the key. There is a known race condition that may
   occur with older GPG libraries.
-* Ensure latest firmware version using [Yubikey
-  Manager](../../../glossary/yubikey.md#yubikey-manager).
-* Ensure device has **CCID** mode enabled using [Yubikey
-  Manager](../../../glossary/yubikey.md#yubikey-manager). Most
+* Ensure latest firmware version using [Yubikey Manager][k].
+* Ensure device has **CCID** mode enabled using [Yubikey Manager][k]. Most
   firmware past **3.1.8** will have this permanently enabled and not listed.
 
 ### Configure Yubikey
@@ -178,6 +167,7 @@ to use key.
 
 !!! tip
     All NFC options are disabled to require physical presence.
+
 
 ## Setup OpenPGP on Yubikey
 Prepare Yubikey to load GPG key material.
@@ -278,17 +268,34 @@ gpg/card> {PRESS ENTER}
 gpg/card> quit
 ```
 
-## Require touch for each Authentication, Encryption, or Signing Request
+
+## [Require touch for each Authentication, Encryption, or Signing Request][l]
 ``` bash
 ykman openpgp keys set-touch aut fixed
 ykman openpgp keys set-touch sig fixed
 ykman openpgp keys set-touch enc fixed
 ```
+
 !!! tip
     **Fixed** is the same as **on** but requires a new certificate to be loaded
     if this option is ever disabled.
 
-Reference:
 
-* https://developers.yubico.com/PGP/Card_edit.html
-* https://suchsecurity.com/gpg-and-ssh-with-yubikey-on-windows.html
+## Reference[^1][^2][^3][^4]
+
+[^1]: https://developers.yubico.com/PIV/Guides/Device_setup.html
+[^2]: https://zeos.ca/post/2018/gpg-yubikey5/
+[^3]: https://www.gnupg.org/howtos/card-howto/en/ch03.html
+[^4]: https://suchsecurity.com/gpg-and-ssh-with-yubikey-on-windows.html
+
+[a]: https://tails.boum.org/install/win/usb-download/index.en.html
+[b]: https://ubuntu.com/#download
+[c]: https://www.kingston.com/unitedstates/us/usb-flash-drives/ironkey-d300-encrypted-usb-flash-drive
+[d]: https://github.com/drduh/YubiKey-Guide#backup
+[e]: https://www.yubico.com/products/yubikey-5-overview/
+[f]: https://askubuntu.com/questions/1004827/how-to-fix-read-only-usb-drive
+[h]: ../../../glossary/yubikey.md#yubikey-passwordpin
+[i]: https://support.yubico.com/hc/en-us/articles/360013761339-Resetting-the-OpenPGP-Applet-on-the-YubiKey
+[j]: https://www.yubico.com/products/services-software/download/yubikey-personalization-tools
+[k]: ../../../glossary/yubikey.md#yubikey-manager
+[l]: https://developers.yubico.com/PGP/Card_edit.html

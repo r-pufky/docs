@@ -14,6 +14,7 @@ snapshots essentially being 'free' until more data is written to the dataset.
 Syncing snapshot remotely requires a reference snapshot and the snapshot to
 sync to.
 
+
 ## Syncing Datasets
 Dataset may be synced to remote ZFS pools as a method for backup. These are
 basic tools for sync'ing datasets. See [Automation](#automation) to backup and
@@ -36,12 +37,14 @@ zfs snapshot tank/example@YYYYMMDD
 zfs send -R -w -I tank/example@YYYYMMDD | ssh remote_host sudo zfs receive -F -u -v tank2/example
 ```
 
+
 ## Automation
 !!! example "Migrated to ansible collection"
-    Use [r_pufky.deb.zfs](https://galaxy.ansible.com/ui/repo/published/r_pufky/deb/docs/).
+    Use [r_pufky.deb.zfs][a].
 
     Or clone the repository: https://github.com/r-pufky/zincrsend. Read
     comments in the script to setup correct sync.
+
 
 ## Removing Old Snapshots
 Snapshots can be sorted by creation time and deleted based on the number to
@@ -62,8 +65,10 @@ for snap in ${zfs_delete[@]}; do
 done
 ```
 
-## References
+## References[^1][^2][^3]
 
-* https://ubuntu.com/tutorials/using-zfs-snapshots-clones#2-using-snapshots
-* https://askubuntu.com/questions/764416/send-zfs-snapshot-to-remote-machine
-* https://docs.oracle.com/cd/E19253-01/819-5461/gbchx/index.html
+[^1]: https://ubuntu.com/tutorials/using-zfs-snapshots-clones#2-using-snapshots
+[^2]: https://askubuntu.com/questions/764416/send-zfs-snapshot-to-remote-machine
+[^3]: https://docs.oracle.com/cd/E19253-01/819-5461/gbchx/index.html
+
+[a]: https://galaxy.ansible.com/ui/repo/published/r_pufky/deb/docs

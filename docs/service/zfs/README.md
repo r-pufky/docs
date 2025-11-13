@@ -1,6 +1,6 @@
 # ZFS
-ZFS (Zettabyte FileSystem) storage pool. See
-[ZFS Tutorial](http://kbdone.com/zfs-basics).
+ZFS (Zettabyte FileSystem) storage pool. See [ZFS Tutorial][a].
+
 
 ## Install
 ``` bash
@@ -9,6 +9,7 @@ apt install zfsutils-linux
 # Install RAM FS tools if ZFS is to be used for root filesystem.
 apt install zfs-initramfs
 ```
+
 
 ## Creating New ZFS Pool
 !!! warning
@@ -32,7 +33,7 @@ lsblk
 ls -l /dev/disk/by-id
 ```
 
-### Create ZFS pool
+### [Create ZFS pool][b]
 ``` bash
 # ZFS will handle the partitioning of raw disks automatically. There is no need
 # to explicitly partition your disks beforehand.
@@ -55,47 +56,33 @@ zdb -C {POOL}
   multiple block devices explicitly.
 * Ensure **ashift=12** is enabled with **-C** option.
 
-Reference:
-
-* https://forums.freebsd.org/threads/zfs-replacing-512b-drives-by-4k-drives.29539
 
 ## ZFS Operations
 ZFS can be tweaked per dataset based on the data being used. ZFS only applies
 new settings on newly written data; changing options for pre-existing data
 requires export/re-import of that data to the dataset.
 
-### Increase Write Throughput
-Especially effective for NFSv4 mounts backed by ZFS.
+### [Increase Write Throughput][c]
+Especially effective for [NFSv4 mounts backed by ZFS][d].
 
 ``` bash
 zpool add {POOL} log {DEV}
 ```
 
-ZFS cache drives are mis-understood and are **only** useful if you run out of
+ZFS [cache drives are mis-understood][e] and are **only** useful if you run out of
 memory. Use **SLOG** (synchronous flush based log for ZIL writes) caching drive
 backed by an NVME (or any other SSD). This works with NFSv4 to massively
 improve read and write performance by more that **12x**.
 
-Reference:
-
-* https://kcore.org/2021/11/15/adding-slog-zfs/
-* https://old.reddit.com/r/zfs/comments/rbu8zc/tuning_zfs_over_nfsv4_ssd_slog_yields_a_12x/
-* https://www.truenas.com/community/threads/cache-vs-slog.100799/
-
-### Enable Extended Attributes
+### [Enable Extended Attributes][f]
 Reduces I/O requests and latency via enabling larger inode allocations for
-attributes. Enable large dynamic inode sizes (>512B) for all exported datasets.
+[attributes][g]. Enable large dynamic inode sizes (>512B) for all exported
+datasets.
 
 ```bash
 # large_dnode is automatically enabled when dnodesize != legacy.
 zfs set xattr=sa dnodesize=auto {POOL}/{DATASET}
 ```
-
-Reference:
-
-* https://wiki.debian.org/ZFS
-* https://openzfs.org/wiki/Features#SA_based_xattrs
-* https://openzfs.github.io/openzfs-docs/man/master/7/zfsprops.7.html
 
 ### Mounting Existing ZFS Pool
 !!! tip
@@ -129,20 +116,19 @@ also a good indicator of how much duplicated data there is.
 zfs -S {POOL}
 ```
 
-### Setup Monthly ZFS Scrub
+### [Setup Monthly ZFS Scrub][h]
 Scrubbing verifies all blocks can be read, and marks then bad if not. This is
 done while the filesystem is online, but may slightly impact performance.
 
-**/root/bin/scrub-zpool-monthly** (1)
-{ .annotate }
+??? abstract "/root/bin/scrub-zpool-monthly"
+    0750 root:root
 
-1. 0750 root:root
-``` bash
-#!/bin/bash
-#
-# Scrubs zpool monthly.
-/sbin/zpool scrub {POOL}
-```
+    ``` bash
+    #!/bin/bash
+    #
+    # Scrubs zpool monthly.
+    /sbin/zpool scrub {POOL}
+    ```
 
 ``` bash
 # Add scrub to crontab.
@@ -151,6 +137,11 @@ sudo crontab -e
 @weekly /root/bin/scrub-zpool-monthly
 ```
 
-Reference:
-
-* https://docs.oracle.com/cd/E23823_01/html/819-5461/gbbwa.html
+[a]: http://kbdone.com/zfs-basics
+[b]: https://forums.freebsd.org/threads/zfs-replacing-512b-drives-by-4k-drives.29539
+[c]: https://kcore.org/2021/11/15/adding-slog-zfs/
+[d]: https://old.reddit.com/r/zfs/comments/rbu8zc/tuning_zfs_over_nfsv4_ssd_slog_yields_a_12x
+[e]: https://www.truenas.com/community/threads/cache-vs-slog.100799/
+[f]: https://openzfs.org/wiki/Features#SA_based_xattrs
+[g]: https://openzfs.github.io/openzfs-docs/man/master/7/zfsprops.7.html
+[h]: https://docs.oracle.com/cd/E23823_01/html/819-5461/gbbwa.html

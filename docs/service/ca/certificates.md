@@ -1,5 +1,6 @@
 # Certificates
 
+
 ## Server Certificates
 Used for providing SSL connections with services / servers. The Root CA must be
 in the trusted Root CAs or the ca-chain deployed with clients for servers
@@ -42,6 +43,7 @@ openssl x509 -noout -text -in /root/ca/inter/certs/{SERVER}.cert.pem
 openssl verify -CAfile /root/ca/inter/certs/ca-chain.cert.pem /root/ca/inter/certs/{SERVER}.cert.pem
 ```
 
+
 ## Machine Certificates
 Special type of client certificate used to validate a machine hardware
 identity. These are tied to a specific machine and only have **clientAuth**
@@ -83,6 +85,7 @@ openssl x509 -noout -text -in /root/ca/inter/certs/{MACHINE}.cert.pem
 openssl verify -CAfile /root/ca/inter/certs/ca-chain.cert.pem /root/ca/inter/certs/{MACHINE}.cert.pem
 ```
 
+
 ## Client Certificates
 Client certificate to validate client identity. These are tied to a specific
 user and only have **clientAuth** and **emailProtection** extensions added.
@@ -121,8 +124,9 @@ openssl x509 -noout -text -in /root/ca/inter/certs/{USER EMAIL}.cert.pem
 openssl verify -CAfile /root/ca/inter/certs/ca-chain.cert.pem /root/ca/inter/certs/{USER EMAIL}.cert.pem
 ```
 
-See [Cert Based Authentication](../nginx/manual/cert_based_authentication.md)
+See [Cert Based Authentication][a]
 to setup auto selection of client certificate for matched sites.
+
 
 ## Exporting Certificates
 PKCS #12 PFX (Personal Information Exchange Certificate) is an encrypted
@@ -141,7 +145,7 @@ openssl pkcs12 -legacy -export -out /root/ca/pfx/{CLIENT}.pfx -inkey /root/ca/in
   certificate and validate the server.
 * **-legacy** is required for SSLv3.
 
-See [Cert Based Authentication](../nginx/manual/cert_based_authentication.md)
+See [Cert Based Authentication][a]
 to setup auto selection of client certificate for matched sites.
 
 ### Extract Public/Private Keys from PFX
@@ -155,6 +159,8 @@ openssl pkcs12 -in {CLIENT}.pfx -nocerts -nodes | openssl rsa -out rsa.key
 openssl pkcs12 -in {CLIENT}.pfx -clcerts -nokeys | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > rsa.pub
 ```
 
-## Reference
+## Reference[^1]
 
-* https://jamielinux.com/docs/openssl-certificate-authority/sign-server-and-client-certificates.html
+[^1]: https://jamielinux.com/docs/openssl-certificate-authority/sign-server-and-client-certificates.html
+
+[a]: ../nginx/manual/cert_based_authentication.md

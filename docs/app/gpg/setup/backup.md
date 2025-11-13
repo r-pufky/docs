@@ -9,6 +9,7 @@ determination on if this security practice is acceptable to you.
 
     Store on a (hardware) encrypted device.
 
+
 ## Confirm Key State
 Ensure master and subkeys are created and locally stored before exporting.
 
@@ -22,6 +23,7 @@ gpg --list-keys
 # > - indicates a key is exported to card already (ssb>).
 # sec# - indicates only stubs created (a private cert on different machine).
 ```
+
 
 ## Export GPG Keys
 Master and Subkeys will be encrypted with your passphrase when exported.
@@ -37,26 +39,23 @@ gpg --armor --export $KEYID > $GPGBACKUP/public/$KEYID.asc
 cp $GNUPGHOME/openpgp-revocs.d/* $GPGBACKUP/private
 ```
 
-Export SSH RSA public key.
+Export [SSH RSA public key.][a]
 ``` bash
 gpg --export-ssh-key $KEYID > $GPGBACKUP/public/$KEYID.ssh.pub
 ```
 
 !!! note
     The SSH RSA Public Key comment will use the authentication short key ID
-    (**openpgp:0xXXXXXXXX**). See [Linux](../os/linux.md) or
-    [Windows](../os/windows.md) for importing keys.
-
-    Reference:
-
-    * https://lists.gnupg.org/pipermail/gnupg-devel/2016-January/030682.html
+    (**openpgp:0xXXXXXXXX**). See [Linux][b] or [Windows][c] for importing
+    keys.
 
 Backup GNUPG state for multiple Yubikey initializations.
 ``` bash
 sudo cp -avi $GNUPGHOME $GPGBACKUP
 ```
 
-## Publish Public Key
+
+## [Publish Public Key][d]
 Export the public key to public key servers for GPG encrypt/decrypt/signing.
 Without publishing you can still use SSH.
 
@@ -68,6 +67,7 @@ Export public key to https://keys.openpgp.org.
 gpg --keyserver hkps://keys.openpgp.org --send-key $KEYID
 ```
 
-Reference:
-
-* https://superuser.com/questions/227991/where-to-upload-pgp-public-key-are-keyservers-still-surviving
+[a]: https://lists.gnupg.org/pipermail/gnupg-devel/2016-January/030682.html
+[b]: ../os/linux.md
+[c]: ../os/windows.md
+[d]: https://superuser.com/questions/227991/where-to-upload-pgp-public-key-are-keyservers-still-surviving

@@ -1,6 +1,7 @@
 # Linux
 
-## Require Certificate and disable root logins
+
+## [Require Certificate and disable root logins][a]
 This will provide a default configuration which only allows non-root public key
 authenticated users to login.
 
@@ -20,17 +21,15 @@ StreamLocalBindUnlink yes
 UsePrivilegeSeparation yes
 ```
 
+
 ## Add Users to Access Group
 ``` bash
 addgroup {USER} _ssh
 systemctl restart ssh
 ```
 
-Reference:
 
-* https://www.cyberciti.biz/tips/openssh-deny-or-restrict-access-to-users-and-groups.html
-
-## Allow SSH Connections Through UFW
+## [Allow SSH Connections Through UFW][b]
 UFW may be configured by default to block connections, verify this is not the
 case. The general default is to deny incoming connections, allow outgoing, and
 enable SSH.
@@ -44,9 +43,6 @@ ufw default allow outgoing
 ufw allow ssh
 ```
 
-Reference:
-
-* https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-18-04
 
 ## Create a Port Forwarding Only User
 Useful to forward services without providing shell a login.
@@ -71,3 +67,6 @@ ssh -vvv -N -L 5901:{SERVER}:5900 -i ~/.ssh/port-forwards-only port-forwards-onl
 ssh -vvv -i ~/.ssh/port-forwarding-only port-forwards-only@{SERVER}
 ssh -vvv -i port-forwards-only@{SERVER}
 ```
+
+[a]: https://www.cyberciti.biz/tips/openssh-deny-or-restrict-access-to-users-and-groups.html
+[b]: https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-18-04

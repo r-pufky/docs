@@ -1,6 +1,7 @@
 # BASH
 Bourne Again Shell snippets.
 
+
 ## Require PIP to use Virtual Environment
 
 **~/.bashrc**
@@ -14,7 +15,8 @@ python3 -m venv /var/venv/{ENV}
 source /var/venv/{ENV}/bin/activate  # 'deactivate' will exit.
 ```
 
-## Rename All File Extensions to Lowercase
+
+## [Rename All File Extensions to Lowercase][a]
 ``` bash
 find . -type d -execdir rename 's/(\.[A-Z]+$)/lc($1)/ge' *.*[A-Z]* \;
 
@@ -22,9 +24,6 @@ find . -type d -execdir rename 's/(\.[A-Z]+$)/lc($1)/ge' *.*[A-Z]* \;
 rename 'y/A-Z/a-z/' *
 ```
 
-Reference:
-
-* https://askubuntu.com/questions/546426/how-to-rename-file-extension-to-lowercase
 
 ## Find Binary in All Files
 ``` bash
@@ -38,6 +37,7 @@ find . -name "*.txt" -exec sed -n 's/.*[+,"\[>[:space:]]\(.*\.exe\).*/\1/p' {} \
 grep -iroh "\(.*\.exe\)" . | tee result-list
 ```
 
+
 ## Prompt to require a specific keypress or die
 ``` bash
 echo 'This will cut a production release by overwriting prod with dev.'
@@ -49,6 +49,7 @@ if [ "${READ_CONTINUE}" != 'Y' ]; then
 fi
 ```
 
+
 ## Last CLI Argument
 Use last argument in current command.
 
@@ -59,12 +60,14 @@ $_
 # Alternatively 'alt + .' will copy the string.
 ```
 
+
 ## Switch to a User with no login shell
 ``` bash
 su - -s /bin/bash {USER}
 ```
 
-## Parse INI value from file
+
+## [Parse INI value from file][b]
 ``` bash
 #!/bin/sh
 if [ "$1" != "${1#*[0-9].[0-9]}" ]; then
@@ -76,6 +79,5 @@ else
 fi
 ```
 
-Reference:
-
-* https://stackoverflow.com/questions/6318809/how-do-i-grab-an-ini-value-within-a-shell-script#6318837
+[a]: https://askubuntu.com/questions/546426/how-to-rename-file-extension-to-lowercase
+[b]: https://stackoverflow.com/questions/6318809/how-do-i-grab-an-ini-value-within-a-shell-script#6318837

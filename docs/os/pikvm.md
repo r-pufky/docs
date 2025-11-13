@@ -1,5 +1,6 @@
 # PiKVM
-Rasberry Pi KVM with multi-port extenders based on Arch linux.
+Raspberry Pi KVM with multi-port extenders based on Arch linux.
+
 
 ## Setup
 !!! tip
@@ -66,6 +67,7 @@ systemctl disable --now kvmd-webterm
 !!! example "Switch ➔ Color scheme"
     Drag all sliders to the left.
 
-## Reference
 
-* https://docs.pikvm.org/v4/
+## Reference[^1]
+
+[^1]: https://docs.pikvm.org/v4

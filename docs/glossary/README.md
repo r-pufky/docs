@@ -1,6 +1,6 @@
 # Glossary
 
-### 2FA
+## [2FA][a]
 Two Factor Authentication Combines two different factors to provide strong
 authentication:
 
@@ -8,6 +8,4 @@ authentication:
 2. Something you have.
 3. Something you are.
 
-Reference:
-
-* https://en.wikipedia.org/wiki/Multi-factor_authentication
+[a]: https://en.wikipedia.org/wiki/Multi-factor_authentication

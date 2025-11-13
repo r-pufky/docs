@@ -8,7 +8,8 @@ invalidate all subkeys at once.
     If subkeys are not stored on a self-destructing device when attacked (e.g.
     a Yubikey), then **set an expiry date**.
 
-## Create [Signing Key](../../../glossary/gpg.md#signing-key)
+
+## Create [Signing Key][a]
 ``` bash
 gpg --expert --edit-key $KEYID
 gpg> addkey
@@ -61,7 +62,8 @@ Really create? (y/N) y
 gpg> save
 ```
 
-## Create [Encryption Key](../../../glossary/gpg.md#encryption-key)
+
+## Create [Encryption Key][b]
 ``` bash
 gpg --expert --edit-key $KEYID
 gpg> addkey
@@ -110,7 +112,8 @@ Really create? (y/N) y
 gpg> save
 ```
 
-## Create [Authentication Key](../../../glossary/gpg.md#authentication-key)
+
+## Create [Authentication Key][c]
 ``` bash
 gpg --expert --edit-key $KEYID
 gpg> addkey
@@ -177,6 +180,7 @@ Really create? (y/N) y
 gpg> save
 ```
 
+
 ## Verify Keys Are Secure
 Highlight any potential concern areas with generated keys. These should appear
 **green** with **exceptions for the authentication** subkey.
@@ -194,6 +198,7 @@ Highlight any potential concern areas with generated keys. These should appear
 gpg --export $KEYID | hokey lint
 ```
 
+
 ## Verify GPG Password
 There is no built in method to confirm a GPG password is correct. Verification
 of password happens by checking the exit code and printing **Correct** if the
@@ -202,3 +207,7 @@ command succeeded.
 ``` bash
 echo '{GPG PASSWORD}' | gpg --batch --passphrase-fd 1 -o /dev/null --local-user $KEYID -as - && echo 'Correct.'
 ```
+
+[a]: ../../../glossary/gpg.md#signing-key
+[b]: ../../../glossary/gpg.md#encryption-key
+[c]: ../../../glossary/gpg.md#authentication-key

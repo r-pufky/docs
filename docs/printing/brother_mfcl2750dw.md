@@ -1,5 +1,5 @@
 # Brother MFC-L2750DW
-[Driver Downloads](https://support.brother.com/g/b/downloadtop.aspx?c=us&lang=en&prod=mfcl2750dw_us_eu_as).
+[Driver Downloads][a].
 
 !!! danger "Use Defense in Depth"
     Disable any printing services not being used. **Always** set non-default
@@ -7,6 +7,7 @@
 
     It is assumed that the printer is on an isolated VLAN with all Wifi
     disabled.
+
 
 ## Common Endpoints
 Commonly used endpoints for networking printing.
@@ -18,6 +19,7 @@ Commonly used endpoints for networking printing.
  IPP/IPPS    | **https://{IP}/ipp/port1/** (jetdirect compatibility)
 
 Additional enabled endpoints found at: network ➔ network ➔ service.
+
 
 ## Printer Configuration
 !!! tip
@@ -48,12 +50,9 @@ Common default passwords are **initpass** or **access**.
 
         !!! warning
             Do not update unless there are actual issues printing. Recent
-            Brother firmware updates have disabled printers with third-party
-            cartridges.
+            Brother [firmware updates have disabled printers][b] with
+            third-party cartridges.
 
-            Reference:
-
-            * https://consumerrights.wiki/w/Brother_printers_causing_issues_with_third_party_inks
     * Stored Print Jobs:
         * Auto Delete: ✔
         * Day: **0 days**
@@ -173,7 +172,7 @@ Common default passwords are **initpass** or **access**.
         * Pull Scan: ✔
 
 !!! warning
-    SNMP v1/2 must be enabled for scanner to be detected across
+    [SNMP v1/2 must be enabled][c] for scanner to be detected across
     subnets. Password limit is **16** characters.
 
     Password     | Context
@@ -182,6 +181,6 @@ Common default passwords are **initpass** or **access**.
      privacy      | authPriv
      context name | authNoPriv
 
-    Reference:
-
-    * https://www.webnms.com/simulator/help/sim_network/netsim_conf_snmpv3.html
+[a]: https://support.brother.com/g/b/downloadtop.aspx?c=us&lang=en&prod=mfcl2750dw_us_eu_as
+[b]: https://consumerrights.wiki/w/Brother_printers_causing_issues_with_third_party_inks
+[c]: https://www.webnms.com/simulator/help/sim_network/netsim_conf_snmpv3.html

@@ -1,7 +1,8 @@
 # Preferences
 These are personal configuration preferences.
 
-## Install Arc and Papirus themes
+
+## Install [Arc and Papirus themes][a]
 ``` bash
 # Choose arc-icon-theme for recommended features.
 pamac install papirus-icon-theme arc-gtk-theme
@@ -15,9 +16,6 @@ sudo find /usr/share/{plasma,aurorae,color-schemes,konsole,konversation,Kvantum,
     **Login** required. KDE will not display themes correctly until logging off
     and logging back in.
 
-Reference:
-
-* https://github.com/PapirusDevelopmentTeam/arc-kde/issues/140
 
 ## System Settings
 
@@ -209,6 +207,7 @@ Reference:
 ??? example "⌘ ➔ System Settings ➔ System ➔ Autostart"
     * Delete all.
 
+
 ## Taskbar
 
 ??? example "Clock ➔ MMB ➔ Configure Digital Clock"
@@ -245,6 +244,7 @@ Reference:
         * Check missing language packs: ✘
         * Manually quit.
 
+
 ## Applications
 
 !!! example "⌘ ➔ add/remove software ➔ ⋮ ➔ preferences ➔ third party"
@@ -274,7 +274,8 @@ pamac remove networkmanager-openconnect  # Cisco VPNs.
 
 [Install VSCodium](../../app/vscodium/README.md).
 
-## Remove MSN (Manjaro Settings Notifier)
+
+## [Remove MSN (Manjaro Settings Notifier)][b]
 Remove if you are an advanced user.
 
 Comment out all contents:
@@ -285,14 +286,13 @@ Comment out all contents:
 
 **/etc/xdg/autostart/org.fcitx.Fcitx5.desktop**
 
-Optionally set immutable to prevent upgrades reverting changes.
+Optionally set immutable to [prevent upgrades reverting changes.][c]
 ``` bash
 chattr +i /etc/xdg/autostart/{msm_kde_notifier.desktop,pamac-tray-plasma.desktop,org.fcitx.Fcitx5.desktop}
 ```
 
 Reboot to apply changes
 
-Reference:
-
-* https://forum.manjaro.org/t/msm-notifier-access-error-when-saving-your-notification-settings/64671
-* https://forum.manjaro.org/t/how-to-disable-discovernotifier-without-uninstalling-discover/65449
+[a]: https://github.com/PapirusDevelopmentTeam/arc-kde/issues/140
+[b]: https://forum.manjaro.org/t/msm-notifier-access-error-when-saving-your-notification-settings/64671
+[c]: https://forum.manjaro.org/t/how-to-disable-discovernotifier-without-uninstalling-discover/65449

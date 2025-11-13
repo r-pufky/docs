@@ -3,10 +3,11 @@
 !!! info
     See [export options](options.md) for export option details.
 
-## Systemd Automount
+
+## [Systemd Automount][a]
 Preferred as these will automatically mount when needed and unmount after idle.
 
-The mount unit defines how to mount the remote filesystem, automount unit
+The [mount unit][b] defines how to mount the remote filesystem, automount unit
 triggers the mount unit.
 
 !!! tip
@@ -15,39 +16,37 @@ triggers the mount unit.
 
     /mnt/path ➔ mnt-path
 
-**/etc/systemd/system/mnt-client_test.mount** (1)
-{ .annotate }
+??? abstract "/etc/systemd/system/mnt-client_test.mount"
+    0644 root:root
 
-1. 0644 root:root
-``` ini
-[Unit]
-Description=NFS mount 127.0.0.1:/home/vagrant
+    ``` ini
+    [Unit]
+    Description=NFS mount 127.0.0.1:/home/vagrant
 
-[Mount]
-What=127.0.0.1:/home/vagrant
-Where=/mnt/client_test
-Type=nfs
-Options=nfsvers=4,minorversion=2,proto=tcp,fsc,noauto,nofail
-TimeoutSec=30
+    [Mount]
+    What=127.0.0.1:/home/vagrant
+    Where=/mnt/client_test
+    Type=nfs
+    Options=nfsvers=4,minorversion=2,proto=tcp,fsc,noauto,nofail
+    TimeoutSec=30
 
-[Install]
-WantedBy=multi-user.target
-```
+    [Install]
+    WantedBy=multi-user.target
+    ```
 
-**/etc/systemd/system/mnt-client_test.automount** (1)
-{ .annotate }
+??? abstract "/etc/systemd/system/mnt-client_test.automount"
+    0644 root:root
 
-1. 0644 root:root
-``` ini
-[Unit]
-Description=Automount NFS 127.0.0.1:/home/vagrant
+    ``` ini
+    [Unit]
+    Description=Automount NFS 127.0.0.1:/home/vagrant
 
-[Automount]
-Where=/mnt/client_test
+    [Automount]
+    Where=/mnt/client_test
 
-[Install]
-WantedBy=multi-user.target
-```
+    [Install]
+    WantedBy=multi-user.target
+    ```
 
 Enable.
 ``` bash
@@ -55,10 +54,6 @@ systemctl daemon-reload
 sysctmctl enable mnt-client_test.mount mnt-client_test.automount
 ```
 
-Reference:
-
-* https://wiki.archlinux.org/title/NFS
-* https://www.freedesktop.org/software/systemd/man/latest/systemd.unit.html
 
 ## FSTab
 Traditional NFS share mounting.
@@ -78,16 +73,15 @@ chattr +i /autofs/{EXPORT}
 mount -t nfs -o nfsvers=4,minorversion=2,proto=tcp,fsc,rsize=1048576,wsize=1048576,nocto 10.10.10.8:/home/vagrant /autofs/home/vagrant
 ```
 
-**/etc/fstab** (1)
-{ .annotate }
+??? abstract "/etc/fstab"
+    0644 root:root
 
-1. 0644 root:root
-```bash
-# nfs4 enables automounting.
-# _netdev specifies mount is a network device and forces fstab to delay
-# mounting until after required networks are up.
-10.10.10.8:/home/vagrant /autofs/home/vagrant nfs4 rw,nfsvers=4,minorversion=2,proto=tcp,fsc,rsize=1048576,wsize=1048576,nocto,_netdev 0 0
-```
+    ```bash
+    # nfs4 enables automounting.
+    # _netdev specifies mount is a network device and forces fstab to delay
+    # mounting until after required networks are up.
+    10.10.10.8:/home/vagrant /autofs/home/vagrant nfs4 rw,nfsvers=4,minorversion=2,proto=tcp,fsc,rsize=1048576,wsize=1048576,nocto,_netdev 0 0
+    ```
 
 Mount all exports.
 ```bash
@@ -95,6 +89,5 @@ systemctl daemon-reload
 mount -a
 ```
 
-Reference:
-
-* https://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html
+[a]: https://wiki.archlinux.org/title/NFS
+[b]: https://www.freedesktop.org/software/systemd/man/latest/systemd.unit.html

@@ -1,5 +1,6 @@
 # Troubleshooting
 
+
 ## Add Pre-existing Series to Sonarr
 
 1. Existing files should be in a folder for each movie.
@@ -9,6 +10,7 @@
 5. Add all existing shows (even no longer aired), these are all scanned when
    adding shows and will be crufty if not set.
 
+
 ## Changing Media Location in Series
 If series were imported under a different directory initially, these can be
 updated.
@@ -17,6 +19,7 @@ updated.
 2. Select all series that had location changes.
 3. Root Folder (lower right) and enter new folder location.
 4. Save.
+
 
 ## Ensure no Duplicate Plex Updates
 Plex will trigger updates on **inotify** events if configured to do so. If that

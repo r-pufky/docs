@@ -1,5 +1,6 @@
 # Copying Data
 
+
 ## Copy data with verification
 ``` bash
 apt install md5deep rsync
@@ -15,6 +16,7 @@ apt install md5deep rsync
 rsync -avxhHAX {DIR} /Y
 ```
 
+
 ## Create Hashfile of All Original Files and Sort
 ``` bash
 # -l use relative file paths.
@@ -23,6 +25,7 @@ rsync -avxhHAX {DIR} /Y
 md5deep -l -r -e {DIR} | sort > /tmp/{DIR}.md5
 ```
 
+
 ## Verify copied files with rsync
 ``` bash
 # Use MD5 sums to detect file differences.
@@ -30,6 +33,7 @@ md5deep -l -r -e {DIR} | sort > /tmp/{DIR}2.md5
 md5sum /tmp/{DIR}.md5 /tmp/{DIR}2.md5
 diff /tmp/{DIR}.md5 /tmp/{DIR}2.md5
 ```
+
 
 ## Verifying Copied Files Across OS’s are Accurate
 ``` bash
@@ -40,9 +44,10 @@ cut -f 1 -d ‘ ‘ {SOURCE}.md5 > {SOURCE}-hash-only.md5
 grep -v -f {SOURCE}-hash-only.md5 {TARGET}.md5
 ```
 
-## Reference
 
-* http://md5deep.sourceforge.net/start-md5deep.html#basic
-* https://stackoverflow.com/questions/606739/comparison-between-two-big-directories
-* https://superuser.com/questions/307541/copy-entire-file-system-hierarchy-from-one-drive-to-another
-* https://www.evbackup.com/support/rsync-arguments
+## Reference[^1][^2][^3][^4]
+
+[^1]: http://md5deep.sourceforge.net/start-md5deep.html#basic
+[^2]: https://stackoverflow.com/questions/606739/comparison-between-two-big-directories
+[^3]: https://superuser.com/questions/307541/copy-entire-file-system-hierarchy-from-one-drive-to-another
+[^4]: https://www.evbackup.com/support/rsync-arguments

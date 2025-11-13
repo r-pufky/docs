@@ -2,6 +2,7 @@
 Manually verify this information to ensure you do not accidentally lose data or
 access/control to your GPG identity.
 
+
 ## Verify
 
 1. Encrypted Media has the following:

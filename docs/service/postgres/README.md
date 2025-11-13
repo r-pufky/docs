@@ -2,7 +2,8 @@
 Postgres is an opensource object-relational database.
 
 !!! example "Migrated to ansible collection"
-    Use [r_pufky.srv.postgres](https://galaxy.ansible.com/ui/repo/published/r_pufky/srv/docs/).
+    Use [r_pufky.srv.postgres][a].
+
 
 ## Creating a Database
 
@@ -17,7 +18,7 @@ ALTER DATABASE {DB USER} OWNER TO {DB USER};
 GRANT ALL PRIVILEGES ON DATABASE {DB USER} TO {DB USER};
 ```
 
-## Import a Database
+## [Import a Database][b]
 Database dumps may be imported, but explicit table permissions need to be set
 for the DB user to access the data.
 
@@ -39,9 +40,6 @@ for tbl in `psql -U {DB ADMIN} -qAt -c "select sequence_name from information_sc
 for tbl in `psql -U {DB ADMIN} -qAt -c "select table_name from information_schema.views where table_schema = 'public';" {DB}`; do psql -U {DB ADMIN} -c "alter view \"$tbl\" owner to {DB USER}" {DB}; done
 ```
 
-Reference:
-
-* https://stackoverflow.com/questions/1348126/postgresql-modify-owner-on-all-tables-simultaneously-in-postgresql
 
 ## Database Backup
 
@@ -55,6 +53,7 @@ Backup a specific database. Permissions will need to be restored with database.
 ``` bash
 pg_dump -U {DB ADMIN} --no-owner {DB} > {DUMP FILE}.sql
 ```
+
 
 ## Query Active Connections
 Display client sessions that are currently connected to database.
@@ -70,3 +69,6 @@ select pid as process_id,
      state_change
 from pg_stat_activity;
 ```
+
+[a]: https://galaxy.ansible.com/ui/repo/published/r_pufky/srv/docs
+[b]: https://stackoverflow.com/questions/1348126/postgresql-modify-owner-on-all-tables-simultaneously-in-postgresql

@@ -1,5 +1,6 @@
 # Troubleshooting
 
+
 ## VIM Frozen
 Generally happens when stopping terminal output with control flow.
 
@@ -7,4 +8,3 @@ Generally happens when stopping terminal output with control flow.
 ctrl+s  # stops terminal output (causes freeze) (XON).
 ctrl+q  # starts terminal output (XOFF).
 ```
-

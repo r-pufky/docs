@@ -1,5 +1,6 @@
-# [imapsync](https://github.com/imapsync/imapsync)
+# [imapsync][a]
 Sync gmail to local imap server.
+
 
 ## Setup
 ``` bash
@@ -23,6 +24,7 @@ chmod 0400 .ssh/imapsync_gmail
 chmod 0400 .ssh/imapsync_personal
 ```
 
+
 ## Test Sync
 ``` bash
 ./imapsync --dry \
@@ -40,28 +42,28 @@ chmod 0400 .ssh/imapsync_personal
 * Ensure connections work, folders are identified, and local folder is set
   properly.
 
+
 ## Install Service
 ``` bash
 sudo git checkout-index -a -f --prefix=/opt/imapsync/
 chmod +x /opt/imapsync/imapsync
 ```
 
-**~/bin/gmail_to_imap_sync** (1)
-{ .annotate }
+??? abstract "~/bin/gmail_to_imap_sync"
+    0755 {USER}:{USER}
 
-1. 0755 {USER}:{USER}
-``` bash
-#!/bin/bash
+    ``` bash
+    #!/bin/bash
 
-/opt/imapsync/imapsync \
---host1 imap.gmail.com --port1 993 --user1 {GMAIL EMAIL USER} \
-  --passfile1 ~/.ssh/imapsync_gmail --ssl1 \
---host2 {YOUR IMAP SERVER} --port2 993 --user2 {YOUR IMAP USER} \
-  --passfile2 ~/.ssh/imapsync_personal --ssl2 \
---subfolder2 gmail-archive --minage 30 --exitwhenover 2500000000 \
---delete --expunge1 \
---nolog &>/dev/null
-```
+    /opt/imapsync/imapsync \
+    --host1 imap.gmail.com --port1 993 --user1 {GMAIL EMAIL USER} \
+      --passfile1 ~/.ssh/imapsync_gmail --ssl1 \
+    --host2 {YOUR IMAP SERVER} --port2 993 --user2 {YOUR IMAP USER} \
+      --passfile2 ~/.ssh/imapsync_personal --ssl2 \
+    --subfolder2 gmail-archive --minage 30 --exitwhenover 2500000000 \
+    --delete --expunge1 \
+    --nolog &>/dev/null
+    ```
 
 ``` bash
 # Add to local crontab to run nightly.
@@ -69,8 +71,11 @@ crontab -e
 > * 3 * * * ~/bin/gmail_to_imap_sync
 ```
 
-## Reference
 
-* https://askubuntu.com/questions/539102/error-install-imapsync
-* https://en.wikipedia.org/wiki/Cron
-* https://blog.christosoft.de/2015/03/maildir-remove-duplicates
+## Reference[^1][^2][^3]
+
+[^1]: https://askubuntu.com/questions/539102/error-install-imapsync
+[^2]: https://en.wikipedia.org/wiki/Cron
+[^3]: https://blog.christosoft.de/2015/03/maildir-remove-duplicates
+
+[a]: https://github.com/imapsync/imapsync

@@ -1,12 +1,12 @@
 # UniFi
 
-### Security
+## Security
 
-#### [Telemetry](https://community.ui.com/questions/Update-UniFi-Phone-Home-Performance-Data-Collection/f84a71c9-0b81-4d69-a3b3-45640aba1c8b)
-Options exists but are disable by default. Block or blackhole:
+### [Telemetry][a]
+Options exists but are disable by default. Block or black hole:
 **trace.svc.ui.com**.
 
-#### Default Login
+### Default Login
 
  Username | Password
 ----------|----------
@@ -14,20 +14,22 @@ Options exists but are disable by default. Block or blackhole:
  root     | ubnt
  root     | ui
 
+
 ## Best Practices
 * Always enable Layer 2 discovery (⚙ ➔ System ➔ Network Discovery: ✔) on
   controller. L2 device discovery will help to adopt controllers which are not
-  receiving a [UniFi controller DHCP option](../edge_os/README.md#add-dhcp-server).
-* Set a spare port on switches for [Management VLAN](../../glossary/vlan.md#management-vlan-default)
-  or [ALL](../../glossary/vlan.md#all-all-networks) access so you can locally
-  manage devices if something goes wrong.
+  receiving a [UniFi controller DHCP option][b].
+* Set a spare port on switches for [Management VLAN][c] or [ALL][d] access so
+  you can locally manage devices if something goes wrong.
 * Always **factory-reset** equipment before configuring. This guarantees fresh
   state.
 * Always physically label your switch ports so you can easily remember them
   when you come back in a year.
-* Switches/APs/Routers should always have [static IP information](#set-static-ip-on-management-vlan)
-  set, so they are at a known address if they ever get mis-configured. Plan and
-  document static IPs for these devices before implementation.
+* Switches/APs/Routers should always have
+  [static IP information](#set-static-ip-on-management-vlan) set, so they are
+  at a known address if they ever get mis-configured. Plan and document static
+  IPs for these devices before implementation.
+
 
 ## Configure Controller
 
@@ -68,10 +70,10 @@ defining trunking profiles and port profiles which are easy to understand:
         * Native: **iot(3)**
         * Tagged VLAN Management: **Block All**
 
-## Set Static IP on [Management VLAN](../../glossary/vlan.md#management-vlan-default)
-All managed devices should be set with a static IP on the
-[Management VLAN](../../glossary/vlan.md#management-vlan-default) to ensure
-they are at known locations in case the controller fails.
+
+## Set Static IP on [Management VLAN][c]
+All managed devices should be set with a static IP on the [Management VLAN][c]
+to ensure they are at known locations in case the controller fails.
 
 !!! example "Devices ➔ Switch ➔ Properties ➔ Config ➔ Network"
     * Network Override: ✔
@@ -82,6 +84,7 @@ they are at known locations in case the controller fails.
         * Subnet Mask: **{VLAN1_SUBNET}**
         * Gateway: **{ROUTER_IP}**
         * DNS Suffix: **{DOMAIN}**
+
 
 ## Migrating Controllers
 The easiest migration path is to replace the controller with the same IP. This
@@ -102,7 +105,7 @@ requires no additional setup other than replacing the controller.
 
     At least settings need to be downloaded. **Shutdown** original Controller.
 
-#### Update [DHCP Inform Addresses](../edge_os/README.md#add-dhcp-server).
+#### Update [DHCP Inform Addresses][b].
 
 #### Start New Controller
 !!! example "⚙ ➔ System ➔ Backups ➔ Restore"
@@ -124,14 +127,20 @@ info
 set-inform http://{IP}:8080/inform
 ```
 
-## References
 
-* https://dl.ubnt.com/guides/UniFi/UniFi_Controller_V5_UG.pdf
-* https://www.youtube.com/watch?v=b2w1Ywt081o
-* https://www.youtube.com/watch?v=HcfIpTso_Ys
-* https://www.youtube.com/watch?v=SKeFqFhBwJY&t=
-* https://www.youtube.com/watch?v=L9gZQh1rAMc
-* https://www.handymanhowto.com/ubiquiti-edgerouter-lite-soho-network-design/
-* https://arstechnica.com/information-technology/2018/07/enterprise-wi-fi-at-home-part-two-reflecting-on-almost-three-years-with-pro-gear/5/
-* https://help.ui.com/hc/en-us/articles/204962144#1
-* https://help.ui.com/hc/en-us/articles/219654087-UniFi-Using-VLANs-with-UniFi-Wireless-Routing-Switching-Hardware
+## Reference[^1][^2][^3][^4][^5][^6][^7][^8][^9]
+
+[^1]: https://dl.ubnt.com/guides/UniFi/UniFi_Controller_V5_UG.pdf
+[^2]: https://www.youtube.com/watch?v=b2w1Ywt081o
+[^3]: https://www.youtube.com/watch?v=HcfIpTso_Ys
+[^4]: https://www.youtube.com/watch?v=SKeFqFhBwJY&t=
+[^5]: https://www.youtube.com/watch?v=L9gZQh1rAMc
+[^6]: https://www.handymanhowto.com/ubiquiti-edgerouter-lite-soho-network-design/
+[^7]: https://arstechnica.com/information-technology/2018/07/enterprise-wi-fi-at-home-part-two-reflecting-on-almost-three-years-with-pro-gear/5/
+[^8]: https://help.ui.com/hc/en-us/articles/204962144#1
+[^9]: https://help.ui.com/hc/en-us/articles/219654087-UniFi-Using-VLANs-with-UniFi-Wireless-Routing-Switching-Hardware
+
+[a]: https://community.ui.com/questions/Update-UniFi-Phone-Home-Performance-Data-Collection/f84a71c9-0b81-4d69-a3b3-45640aba1c8b
+[b]: ../edge_os/README.md#add-dhcp-server
+[c]: ../../glossary/vlan.md#management-vlan-default
+[d]: ../../glossary/vlan.md#all-all-networks

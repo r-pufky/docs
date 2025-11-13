@@ -1,7 +1,8 @@
 # Troubleshooting
 
-## GRUB CryptFS Password Typo
-Unlocked CryptFS on GRUB boot will stall if typoing the password. Restart the
+
+## [GRUB CryptFS Password Typo][a]
+Unlocked CryptFS on GRUB boot will stall if mistyping the password. Restart the
 unlock and boot process without restarting:
 
 ``` bash
@@ -10,9 +11,6 @@ insmod normal
 normal
 ```
 
-Reference:
-
-* https://wiki.archlinux.org/title/GRUB#GRUB_rescue_and_encrypted_/boot
 
 ## Remote Dropbear/Wireguard/CryptFS Rescue from Bad Upgrade
 System does not boot after a dist-upgrade but Dropbear connects over wireguard.
@@ -47,7 +45,8 @@ cryptsetup luksClose /dev/mapper/luks
 reboot -f
 ```
 
-## Grub OS Prober
+
+## [Grub OS Prober][b]
 Grub will throw the following error on 4.9+ Kernels running VM's on block
 devices or ZFS during normal upgrades:
 
@@ -58,13 +57,12 @@ These devices are attempted to be unmounted while in use to detect other OS's
 on those partitions. This may be safely disabled if you are only running one
 OS.
 
-**/etc/default/grub** (1)
-{ .annotate }
+??? abstract "/etc/default/grub"
+    0644 root:root
 
-1. 0644 root:root
-``` bash
-GRUB_DISABLE_OS_PROBER=true
-```
+    ``` bash
+    GRUB_DISABLE_OS_PROBER=true
+    ```
 
 ``` bash
 update-grub
@@ -72,6 +70,5 @@ apt update && apt upgrade
 reboot
 ```
 
-Reference:
-
-* https://unix.stackexchange.com/questions/347466/debian-new-error-message-upgrading-kernel-to-4-9-reload-ioctl-error
+[a]: https://wiki.archlinux.org/title/GRUB#GRUB_rescue_and_encrypted_/boot
+[b]: https://unix.stackexchange.com/questions/347466/debian-new-error-message-upgrading-kernel-to-4-9-reload-ioctl-error

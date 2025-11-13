@@ -1,10 +1,11 @@
-# GPG Master Key
+# Master Key
 The GPG Master Key is your digital identity and should be kept **offline** and
 **encrypted** per [setup](README.md).
 
 !!! danger
     Ensure machine is **air-gapped** (no transmission devices on) during this
     setup.
+
 
 ## Prepare Environment
 Setup GPG to store configuration on encrypted storage and setup secure
@@ -24,28 +25,27 @@ export GNUPGHOME=/media/user/KINGSTON/gnupghome
 export GPGBACKUP=/media/user/KINGSTON/backup
 ```
 
-**/media/user/KINGSTON/gnupghome/gpg.conf** (1)
-{ .annotate }
+??? abstract "/media/user/KINGSTON/gnupghome/gpg.conf"
+    0600 {USER}:{USER}
 
-1. 0600 {USER}:{USER}
-  ``` gpg
-  personal-cipher-preferences AES256 AES192 AES
-  personal-digest-preferences SHA512 SHA384 SHA256
-  default-preference-list SHA512 SHA384 SHA256 AES256 AES192 AES ZLIB BZIP2 ZIP Uncompressed
-  cert-digest-algo SHA512
-  s2k-digest-algo SHA512
-  s2k-cipher-algo AES256
-  charset utf-8
-  fixed-list-mode
-  no-comments
-  no-emit-version
-  keyid-format 0xlong
-  list-options show-uid-validity
-  verify-options show-uid-validity
-  with-fingerprint
-  require-cross-certification
-  use-agent
-  ```
+    ``` bash
+    personal-cipher-preferences AES256 AES192 AES
+    personal-digest-preferences SHA512 SHA384 SHA256
+    default-preference-list SHA512 SHA384 SHA256 AES256 AES192 AES ZLIB BZIP2 ZIP Uncompressed
+    cert-digest-algo SHA512
+    s2k-digest-algo SHA512
+    s2k-cipher-algo AES256
+    charset utf-8
+    fixed-list-mode
+    no-comments
+    no-emit-version
+    keyid-format 0xlong
+    list-options show-uid-validity
+    verify-options show-uid-validity
+    with-fingerprint
+    require-cross-certification
+    use-agent
+    ```
 
 ??? info "gpg.conf explanation"
     * Require cipher AES 256, 192, 128.
@@ -65,6 +65,7 @@ export GPGBACKUP=/media/user/KINGSTON/backup
       attack).
     * Enable smartcard use.
 
+
 ## Generate Strong Password
 Generate a strong random password for use with the GPG master key. Doing
 actions on the system will slowly increase the entropy pool.
@@ -82,6 +83,7 @@ cat /proc/sys/kernel/random/entropy_avail
 gpg --gen-random --armor 0 64
 ```
 
+
 ## Create Master Key
 Master key will **only** certify subkeys - it is **not** used directly to deal
 with encryption material. This enables subkeys to be replaced when compromised
@@ -93,16 +95,12 @@ use.
     **$GNUPGHOME/openpgp-revocs.d**.
 
     Using the revocation certificate is better mechanism than an expiry date
-    for [protecting the master key](https://security.stackexchange.com/questions/14718/does-openpgp-key-expiration-add-to-security/79386).
+    for [protecting the master key][a].
 
 !!! warning "Comments are considered harmful"
-    Explicitly leave key comments blank. All required information is included
-    within the key itself and muddles the human readability of the key.
-
-    Reference:
-
-    * https://web.archive.org/web/20130730162915/https://debian-administration.org/users/dkg/weblog/97
-
+    [Explicitly leave key comments blank][b]. All required information is
+    included within the key itself and muddles the human readability of the
+    key.
 
 Generate a 4096bit RSA with authenticate (**certify**) abilities only.
 ``` bash
@@ -193,7 +191,8 @@ Export master key ID to bash environment for easy reference later.
 export KEYID=################
 ```
 
-## Add Photo to Master Key (Optional)
+
+## Add [Photo to Master Key (Optional)][c]
 A photo to help confirm your identity (typically a head shot); this is added to
 your GPG key for additional verification in person.
 
@@ -215,9 +214,6 @@ Is this correct? (y/N) y
 gpg> save
 ```
 
-Reference:
-
-* https://blog.josefsson.org/2014/06/19/creating-a-small-jpeg-photo-for-your-openpgp-key
 
 ## Add Additional Identities (Optional)
 Associate additional metadata to GPG key, useful if you have multiple emails,
@@ -225,12 +221,8 @@ etc. The **primary** ID is the main identity used for the GPG key. This can be
 any identity that has been configured, in this case **1**.
 
 !!! warning "Comments are considered harmful"
-    Explicitly leave key comments blank. All required information is included
+    [Explicitly leave key comments blank][b]. All required information is included
     within the key itself and muddles the human readability of the key.
-
-    Reference:
-
-    * https://web.archive.org/web/20130730162915/https://debian-administration.org/users/dkg/weblog/97
 
 ``` bash
 $ gpg --edit-key $KEYID
@@ -250,6 +242,7 @@ gpg> primary
 gpg> save
 ```
 
+
 ## Sign New Key with Existing Key (Optional)
 This will extend the chain of trust and prove that the new key is controlled by
 your original key (you). Useful for when the master key is compromised or
@@ -260,3 +253,7 @@ The new key is exported and signed by the old key, then published.
 gpg --export-secret-keys --armor --output /tmp/new-gpg-key.asc
 gpg --default-key $OLDKEY --sign-key $KEYID
 ```
+
+[a]: https://security.stackexchange.com/questions/14718/does-openpgp-key-expiration-add-to-security/79386
+[b]: https://web.archive.org/web/20130730162915/https://debian-administration.org/users/dkg/weblog/97
+[c]: https://blog.josefsson.org/2014/06/19/creating-a-small-jpeg-photo-for-your-openpgp-key

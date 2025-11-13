@@ -1,7 +1,8 @@
 # Windows
 
-## Setup
-Download latest [Windows Installer](https://download.wireguard.com/windows-client).
+
+## [Setup][a]
+Download latest [Windows Installer][b].
 
 ``` powershell
 # Install
@@ -12,11 +13,8 @@ Start-Process msiexec.exe -ArgumentList '/q', '/I', 'wireguard-amd64-0.1.0.msi' 
 Start-Process 'C:\Program Files\WireGuard\wireguard.exe' -ArgumentList '/uninstallmanagerservice' -Wait -NoNewWindow -PassThru | Out-Null
 ```
 
-Reference:
 
-* https://superuser.com/questions/1026496/automatic-services-doesnt-start-automatically-after-windows-restart
-
-## Add Pre-configured Tunnel
+## [Add Pre-configured Tunnel][c]
 Pre-configured tunnels may be added as a separate service.
 
 The service is set to **automatic (delayed)** as this will guarantee the
@@ -32,6 +30,6 @@ Start-Process sc.exe -ArgumentList 'config', 'WireGuardTunnel$my-tunnel', 'start
 Start-Service -Name WireGuardTunnel$my-tunnel -ErrorAction SilentlyContinue
 ```
 
-Reference:
-
-* https://superuser.com/questions/1026496/automatic-services-doesnt-start-automatically-after-windows-restart
+[a]: https://superuser.com/questions/1026496/automatic-services-doesnt-start-automatically-after-windows-restart
+[b]: https://download.wireguard.com/windows-client
+[c]: https://superuser.com/questions/1026496/automatic-services-doesnt-start-automatically-after-windows-restart

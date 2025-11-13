@@ -1,24 +1,24 @@
 # Steam
 
+
 ## Install Old Game Version
 All games on steam are versioned and stored in a repository - this provides a
 mechanism to install an old version for a game.
 
-1. Find your game on [the Steam DB](https://steamdb.info/).
+1. Find your game on [the Steam DB][a].
 2. Locate the manifests for all versions of a game by navigating to a specific
     game version manifest:
 
     !!! example "Game ➔ APPID ➔ Packages ➔ SUBID ➔ Depots ➔ Depot ID ➔ Manifests"
 
-    Example [manifest list](https://steamdb.info/depot/335819/manifests).
+    Example [manifest list][b].
 
 3. Determine the **MANIFESTID** to use.
 
-    Example [manifest](https://steamdb.info/depot/335819/history/?changeid=M:6929390125920150286).
+    Example [manifest][c].
 
 4. Open the Steam console from browser:
-    [steam://nav/console](steam://nav/console). Steam Client Boot strapper
-    should launch.
+    [steam://nav/console][d]. Steam Client Boot strapper should launch.
 5. Download old version:
 
     ``` bash
@@ -38,6 +38,12 @@ mechanism to install an old version for a game.
    typically force-update on launch. After launching the Internet connection
    can be restored.
 
-## References
 
-* https://steamcommunity.com/sharedfiles/filedetails/?id=889624474
+## References[^1]
+
+[^1]: https://steamcommunity.com/sharedfiles/filedetails/?id=889624474
+
+[a]: https://steamdb.info
+[b]: https://steamdb.info/depot/335819/manifests
+[c]: https://steamdb.info/depot/335819/history/?changeid=M:6929390125920150286
+[d]: steam://nav/console

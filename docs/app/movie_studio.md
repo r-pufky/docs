@@ -1,5 +1,6 @@
 # Movie Studio
-[Steam Movie Studio 13 Platinum Release](https://store.steampowered.com/sub/53361/).
+[Steam Movie Studio 13 Platinum Release][a].
+
 
 ## Encoding Templates
 Templates below work well with shadowplay videos and youtube uploads.
@@ -97,3 +98,5 @@ All profiles use these settings.
     * Video rendering quality: **Best**
     * Sterescopic 3D mode: **Use Project Settings**
     * Swap Left/Right: ✘
+
+[a]: https://store.steampowered.com/sub/53361

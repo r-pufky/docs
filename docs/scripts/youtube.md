@@ -2,6 +2,7 @@
 Download and extract data from youtube videos. **yt-dlp** is an actively
 maintained fork of the defunct **yt-dl**.
 
+
 ## Install
 
 === "Linux"
@@ -16,22 +17,23 @@ maintained fork of the defunct **yt-dl**.
     ``` powershell
     # libav-tools may be required: Copy all dll/exe files from
     # libav-tools/win64/usr/bin to location of yt-dlp.exe.
+    #
+    #   http://builds.libav.org/windows/release-gpl
     winget install yt-dlp
     ```
 
-    Reference:
-
-    * http://builds.libav.org/windows/release-gpl
 
 ## Extract 320kbps MP3 Audio From Video
 ``` bash
 yt-dlp --extract-audio --audio-format mp3 --audio-quality 320K --keep-video --add-metadata {URL}
 ```
 
+
 ## Extract FLAC Audio From Video.
 ``` bash
 yt-dlp --extract-audio --audio-format flac --audio-quality 0 --add-metadata {URL}
 ```
+
 
 ## List all formats for a video and select the best ones.
 ``` bash
@@ -39,15 +41,18 @@ yt-dlp -F {URL}
 yt-dlp -f ###+### {URL}
 ```
 
+
 ## Download only the 1080p video/audio stream from a video.
 ``` bash
 yt-dlp -f "bestvideo[height<=1080]+bestaudio/best[height<=1080]" {URL}
 ```
 
+
 ## Download a playlist.
 ``` bash
 yt-dlp https://youtube.com/playlist?list={PLAYLIST ID} --yes-playlist
 ```
+
 
 ## Track Downloaded Videos for Archiving.
 ``` bash
@@ -55,6 +60,7 @@ yt-dlp https://youtube.com/playlist?list={PLAYLIST ID} --yes-playlist
 # to the given file.
 yt-dlp --download-archive {FILE}
 ```
+
 
 ## Azure Media Services
 These can be downloaded by forcing a **m3u8** stream and downloading. This
@@ -68,11 +74,12 @@ backends.
 5. Use with **yt-dlp** changing manifest portion of the URI to
    **manifest(format=m3u8-aapl-v3)**
 
-## References
 
-* https://github.com/ytdl-org/yt-dlp/releases
-* https://rg3.github.io/yt-dlp/download.html
-* http://linuxaria.com/recensioni/how-to-download-youtube-video-or-audio-tracks-from-the-linux-terminal
-* https://www.linuxjournal.com/content/grabbing-your-music-youtube-do-it-your-way
-* https://askubuntu.com/questions/323944/convert-webm-to-other-formats
-* https://anduin.aiursoft.com/post/2020/5/15/download-any-azure-media-service-video-or-live-stream-with-ffmpeg
+## References[^1][^2][^3][^4][^5][^6]
+
+[^1]: https://github.com/ytdl-org/yt-dlp/releases
+[^2]: https://rg3.github.io/yt-dlp/download.html
+[^3]: http://linuxaria.com/recensioni/how-to-download-youtube-video-or-audio-tracks-from-the-linux-terminal
+[^4]: https://www.linuxjournal.com/content/grabbing-your-music-youtube-do-it-your-way
+[^5]: https://askubuntu.com/questions/323944/convert-webm-to-other-formats
+[^6]: https://anduin.aiursoft.com/post/2020/5/15/download-any-azure-media-service-video-or-live-stream-with-ffmpeg

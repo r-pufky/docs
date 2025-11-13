@@ -1,5 +1,6 @@
 # Promox (PVE)
 
+
 ## Setup
 
 ### Prep
@@ -15,7 +16,7 @@ cp -av /root /autofs/pve/{DATE}-upgrade-8-to-9/{NODE}
 * Only upgrade one cluster node at a time.
 
 ### Base Install
-Create [Live USB Install](https://www.proxmox.com/en/downloads/proxmox-virtual-environment/iso).
+Create [Live USB Install][a].
 
 Install Options
 
@@ -43,15 +44,14 @@ Remaining configuration may be done vis SSH (easier for copying). Leave console
 open for easy rescue if networking get mis-configured.
 
 ### Enable IOMMU and Passthrough Virtualization
-**/etc/default/grub** (1)
-{ .annotate }
+??? abstract "/etc/default/grub"
+    0644 root:root
 
-1. 0644 root:root
-``` ini
-# AMD: IOMMU & SVM enabled in BIOS. Use amd_iommu for grub.
-# Intel: IOMMU & VT-d enabled in BIOS. Use intel_iommu for grub.
-GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt"
-```
+    ``` ini
+    # AMD: IOMMU & SVM enabled in BIOS. Use amd_iommu for grub.
+    # Intel: IOMMU & VT-d enabled in BIOS. Use intel_iommu for grub.
+    GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt"
+    ```
 
 ``` bash
 update-grub
@@ -59,43 +59,46 @@ reboot
 ```
 
 ### Update Sources
-[Source list here](https://pve.proxmox.com/wiki/Package_Repositories).
+[Source list here][b].
 
 !!! warning
     Always update Proxmox with **dist-upgrade**. Never use **upgrade**.
 
-##### /etc/apt/sources.list.d/debian.sources
-``` yaml
-Types: deb
-URIs: http://deb.debian.org/debian/
-Suites: trixie trixie-updates
-Components: main contrib non-free-firmware
-Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+!!! abstract "/etc/apt/sources.list.d/debian.sources"
 
-Types: deb
-URIs: http://security.debian.org/debian-security/
-Suites: trixie-security
-Components: main contrib non-free-firmware
-Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
-```
+    ``` yaml
+    Types: deb
+    URIs: http://deb.debian.org/debian/
+    Suites: trixie trixie-updates
+    Components: main contrib non-free-firmware
+    Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
 
-##### /etc/apt/sources.list.d/ceph.sources
-``` yaml
-Types: deb
-URIs: http://download.proxmox.com/debian/ceph-squid  # NOTE: URL, HTTP.
-Suites: trixie
-Components: no-subscription
-Signed-By: /usr/share/keyrings/proxmox-archive-keyring.gpg
-```
+    Types: deb
+    URIs: http://security.debian.org/debian-security/
+    Suites: trixie-security
+    Components: main contrib non-free-firmware
+    Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+    ```
 
-##### /etc/apt/sources.list.d/pve-enterprise.sources
-``` yaml
-Types: deb
-URIs: http://download.proxmox.com/debian/pve  # NOTE: URL, HTTP.
-Suites: trixie
-Components: pve-no-subscription
-Signed-By: /usr/share/keyrings/proxmox-archive-keyring.gpg
-```
+!!! abstract "/etc/apt/sources.list.d/ceph.sources"
+
+    ``` yaml
+    Types: deb
+    URIs: http://download.proxmox.com/debian/ceph-squid  # NOTE: URL, HTTP.
+    Suites: trixie
+    Components: no-subscription
+    Signed-By: /usr/share/keyrings/proxmox-archive-keyring.gpg
+    ```
+
+!!! abstract "/etc/apt/sources.list.d/pve-enterprise.sources"
+
+    ``` yaml
+    Types: deb
+    URIs: http://download.proxmox.com/debian/pve  # NOTE: URL, HTTP.
+    Suites: trixie
+    Components: pve-no-subscription
+    Signed-By: /usr/share/keyrings/proxmox-archive-keyring.gpg
+    ```
 
 Upgrade distribution
 ``` bash
@@ -133,14 +136,10 @@ cp /etc/network/interfaces /etc/network/interfaces.orig
 * **Remove** `post-up /usr/bin/systemctl restart frr.service`.
 * Update host_vars.
 
-#### Direct mesh networking (routed, simple).
+#### [Direct mesh networking (routed, simple).][c]
 Ensure network is not an existing routed VLAN on router/switches or requests
 will be routed instead of sent via links (VLAN may be defined and exist but
 no interfaces should be defined to use them or serve DHCP/DNS).
-
-Reference:
-
-* https://pve.proxmox.com/wiki/Full_Mesh_Network_for_Ceph_Server#Routed_Setup_(Simple)
 
 ### PVE9+ default enables FRR.
 
@@ -161,21 +160,17 @@ lspci -nn
 lspci -k
 ```
 
-**/etc/frr/daemons** (1)
-{ .annotate }
+??? abstract "/etc/frr/daemons"
+    0640 frr:frr
 
-1. 0640 frr:frr
-``` ini
-  fabricd=yes  # Other FRR daemons already enabled in PVE9+.
-```
-
-* Update host_vars.
+    ``` ini
+      fabricd=yes  # Other FRR daemons already enabled in PVE9+.
+    ```
 
 **/etc/frr/frr.conf** (1)
 { .annotate }
 
 1. 0640 frr:frr
-
 
 Copy from backup or source from host_vars (verify interface names):
 
@@ -184,7 +179,7 @@ Copy from backup or source from host_vars (verify interface names):
 * IP address with padding for system identifier.
 * Update host_vars.
 
-#### Confirm FRR configured correctly.
+#### [Confirm FRR configured correctly.][d]
 ``` bash
 systemctl restart frr.service  # FRR non-root. Config must be owned by FRR.
 systemctl enable frr.service
@@ -198,14 +193,7 @@ reboot
 * Alternatively use console.
 * Reboot and confirm node networking working.
 
-Reference:
-
-* https://pve.proxmox.com/wiki/Full_Mesh_Network_for_Ceph_Server
-* https://www.juniper.net/documentation/us/en/software/junos/is-is/topics/concept/is-is-routing-overview.html#routing-is-is-overview__id-11020505
-* https://gist.github.com/scyto/4c664734535da122f4ab2951b22b2085
-* https://www.baeldung.com/linux/ethernet-dual-cards-increase-throughput
-
-### Create Cluster (First Node)
+### [Create Cluster (First Node)][e]
 Only use on first first node.
 
 ``` bash
@@ -213,11 +201,7 @@ pvecm create hv --link0 10.11.11.10 --nodeid 1
 pvecm status
 ```
 
-Reference:
-
-* https://pve.proxmox.com/wiki/Cluster_Manager
-
-### Add Node to Cluster (All Other Nodes)
+### [Add Node to Cluster (All Other Nodes)][e]
 ``` bash
 # Node2: Add node 2 to node 1.
 pvecm add 10.11.11.10 --link0 10.11.11.20 --use_ssh
@@ -227,11 +211,7 @@ pvecm add 10.11.11.10 --link0 10.11.11.30 --use_ssh
 pvecm status
 ```
 
-Reference:
-
-*https://pve.proxmox.com/wiki/Cluster_Manager
-
-### Backup Initial SSH Config
+### [Backup Initial SSH Config][f]
 !!! warning
     Proxmox uses host keys and root user for intra-cluster traffic. Changing
     SSH settings may break this.
@@ -244,23 +224,18 @@ cp -av /root /autofs/pve/{DATE}-upgrade-8-to-9/{NODE}/complete
 cp -av /etc /autofs/pve/{DATE}-upgrade-8-to-9/{NODE}/complete
 ```
 
-Reference:
-
-* https://forum.proxmox.com/threads/2025-pve9-x-warning-remote-host-identification-has-changed-analysis-resolution.174262/
 
 ## GPU Passthrough
 Configure for all nodes.
 
-**/etc/default/grub** (1)
-{ .annotate }
+??? abstract "/etc/default/grub"
+    0644 root:root
 
-1. 0644 root:root
-``` ini
-GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt i915.enable_gvt=1"
-```
+    ``` ini
+    GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt i915.enable_gvt=1"
+    ```
 
-See [IMMOU and Passthrough Virtualization](#enable-iommu-and-passthrough-virtualization)
-for other GRUB options.
+See [IMMOU and Passthrough Virtualization][g] for other GRUB options.
 
 Remove legacy module configs (future Debian release will remove these).
 ``` bash
@@ -268,30 +243,28 @@ rm /etc/modules-load.d/modules.conf  # Remove symlink to /etc/modules.
 rm /etc/modules
 ```
 
-**/etc/modules-load.d/video.conf** (1)
-{ .annotate }
+??? abstract "/etc/modules-load.d/video.conf"
+    0644 root:root
 
-1. 0644 root:root
-``` ini
-# /etc/modules is obsolete and has been replaced by /etc/modules-load.d/.
-# Please see modules-load.d(5) and modprobe.d(5) for details.
-vfio
-vfio_iommu_type1
-vfio_pci
-kvmgt
-```
+    ``` ini
+    # /etc/modules is obsolete and has been replaced by /etc/modules-load.d/.
+    # Please see modules-load.d(5) and modprobe.d(5) for details.
+    vfio
+    vfio_iommu_type1
+    vfio_pci
+    kvmgt
+    ```
 
 ### Map non-root users to GPU
 Unmapped containers require **other** R/W permissions on GPU.
 
-**/etc/udev/rules.d/59-igpu-passthrough.rules** (1)
-{ .annotate }
+??? abstract "/etc/udev/rules.d/59-igpu-passthrough.rules"
+    0644 root:root
 
-1. 0644 root:root
-``` bash
-KERNEL=="renderD128", MODE="0666"
-KERNEL=="card1", MODE="0666"
-```
+    ``` bash
+    KERNEL=="renderD128", MODE="0666"
+    KERNEL=="card1", MODE="0666"
+    ```
 
 Update grub.
 ``` bash
@@ -319,38 +292,31 @@ ls -l /dev/dri
 > crw-rw---- 1 root render 226, 128 May 12 21:54 renderD128
 ```
 
-**/etc/pve/lxc/{ID}.conf** (1)
-{ .annotate }
+??? abstract "/etc/pve/lxc/{ID}.conf"
+    0644 root:root
 
-1. 0644 root:root
-``` yaml
-# Map major device ID to LXC container.
-lxc.cgroup2.devices.allow: c 226:* rwm
-lxc.mount.entry: /dev/dri/card1 dev/dri/card1 none bind,optional,create=file,mode=0666
-lxc.mount.entry: /dev/dri/renderD128 dev/dri/renderD128 none bind,optional,create=file,mode=0666
-```
+    ``` yaml
+    # Map major device ID to LXC container.
+    lxc.cgroup2.devices.allow: c 226:* rwm
+    lxc.mount.entry: /dev/dri/card1 dev/dri/card1 none bind,optional,create=file,mode=0666
+    lxc.mount.entry: /dev/dri/renderD128 dev/dri/renderD128 none bind,optional,create=file,mode=0666
+    ```
 
-**/etc/subgid** (1)
-{ .annotate }
+??? abstract "/etc/subgid"
+    0644 root:root
 
-1. 0644 root:root
-``` bash
-# Map render, video groups for unprivileged containers.
-# ALWAYS confirm group ID's as they may change between major OS versions.
-root:44:1
-root:993:1  # 108 in Bookworm.
-```
+    ``` bash
+    # Map render, video groups for unprivileged containers.
+    # ALWAYS confirm group ID's as they may change between major OS versions.
+    root:44:1
+    root:993:1  # 108 in Bookworm.
+    ```
 
 ``` bash
 # Host dev/dri permissions do not require containers to set groups with
 usermod -aG render,video root
 ```
 
-Reference:
-
-* https://bookstack.swigg.net/books/linux/page/lxc-gpu-access
-* https://forum.proxmox.com/threads/proxmox-lxc-igpu-passthrough.141381/
-* https://www.youtube.com/watch?v=0ZDr5h52OOE
 
 ## Add NFS mounted volumes
 
@@ -379,13 +345,12 @@ cd /autofs
 chattr +i *
 ```
 
-**/etc/fstab** (1)
-{ .annotate }
+??? abstract "/etc/fstab"
+    0644 root:root
 
-1. 0644 root:root
-``` conf
-{SERVER}:/d/pve /autofs/pve nfs4 rw,nfsvers=4,minorversion=2,proto=tcp,fsc,rsize=1048576,wsize=1048576,nocto,_netdev 0 0
-```
+    ``` conf
+    {SERVER}:/d/pve /autofs/pve nfs4 rw,nfsvers=4,minorversion=2,proto=tcp,fsc,rsize=1048576,wsize=1048576,nocto,_netdev 0 0
+    ```
 
 ``` bash
 systemctl daemon-reload
@@ -400,3 +365,21 @@ Cluster data storage over NFS.
 pvesm add dir pve --path /autofs/pve --content images,vztmpl,backup,snippets,rootdir,iso
 reboot  # NFS should be mounted on boot.
 ```
+
+
+## Reference[^1][^2][^3][^4][^5][^6]
+
+[^1]: https://www.juniper.net/documentation/us/en/software/junos/is-is/topics/concept/is-is-routing-overview.html#routing-is-is-overview__id-11020505
+[^2]: https://gist.github.com/scyto/4c664734535da122f4ab2951b22b2085
+[^3]: https://www.baeldung.com/linux/ethernet-dual-cards-increase-throughput
+[^4]: https://bookstack.swigg.net/books/linux/page/lxc-gpu-access
+[^5]: https://forum.proxmox.com/threads/proxmox-lxc-igpu-passthrough.141381/
+[^6]: https://www.youtube.com/watch?v=0ZDr5h52OOE
+
+[a]: https://www.proxmox.com/en/downloads/proxmox-virtual-environment/iso
+[b]: https://pve.proxmox.com/wiki/Package_Repositories
+[c]: https://pve.proxmox.com/wiki/Full_Mesh_Network_for_Ceph_Server#Routed_Setup_(Simple)
+[d]: https://pve.proxmox.com/wiki/Full_Mesh_Network_for_Ceph_Server
+[e]: https://pve.proxmox.com/wiki/Cluster_Manager
+[f]: https://forum.proxmox.com/threads/2025-pve9-x-warning-remote-host-identification-has-changed-analysis-resolution.174262
+[g]: #enable-iommu-and-passthrough-virtualization

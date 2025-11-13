@@ -4,9 +4,9 @@
     instructions remain the same though specifics may now be incorrect.
 
 Run your own Certificate Authority which provides authentication and
-authorization for services you own. An excellent reference for [basic CA setup
-and usage](https://jamielinux.com/docs/openssl-certificate-authority/introduction.html)
-is here and should be well understood before proceeding.
+authorization for services you own. An excellent reference for
+[basic CA setup and usage][a] is here and should be well understood before
+proceeding.
 
 This will setup a functional root CA, intermediate CA and client/server
 certificate signing.
@@ -16,6 +16,8 @@ certificate signing.
     provide all fields.
 
 
-## Reference
+## Reference[^1]
 
-* https://www.openssl.org
+[^1]: https://www.openssl.org
+
+[a]: https://jamielinux.com/docs/openssl-certificate-authority/introduction.html

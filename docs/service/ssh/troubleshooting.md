@@ -1,6 +1,7 @@
 # Troubleshooting
 
-## SSH pubkey authentication with locked accounts does not work
+
+## [SSH pubkey authentication with locked accounts does not work][a]
 Locked accounts cannot SSH pubkey auth.  SSH now distinguishes between ! and *
 password locking.
 
@@ -11,44 +12,33 @@ password locking.
 Any other means to lock the password will result in SSH pubkey failures.
 
 !!! danger
-    Do NOT **UsePam=yes** as this leads to security vulnerabilities.
+    [Do NOT **UsePam=yes**][b] as this leads to security vulnerabilities.
 
-    Reference:
-
-    * https://arlimus.github.io/articles/usepam
-
-Reference:
-
-* https://unix.stackexchange.com/questions/193066/how-to-unlock-account-for-public-key-ssh-authorization-but-not-for-password-aut
 
 ## Debian ssh group no longer works
 
-### ssh group now _ssh
+### [ssh group now _ssh][c]
 **ssh** group migrated to **_ssh** in Trixie.
 
 **ssh** group must be manually managed if used with existing users and groups,
 or migrate users to **_ssh**.
 
-Reference:
-
-* https://salsa.debian.org/ssh-team/openssh/-/commit/18da782ebe789d0cf107a550e474ba6352e68911
 
 ## Enable Debug Mode
 Print verbose messages to **/var/log/syslog** to help in debugging issues.
 
-**/etc/default/ssh** (1)
-{ .annotate }
+??? abstract "/etc/default/ssh"
+    0644 root:root
 
-1. 0644 root:root
-
-``` bash
-SSHD_OPTS=-ddd
-```
+    ``` bash
+    SSHD_OPTS=-ddd
+    ```
 
 ``` bash
 systemctl daemon-reload
 service ssh restart
 ```
+
 
 ## Could not open authorized keys: Permission denied
 The keyfile could not be accessed. This generally happens when SSHD drops
@@ -57,7 +47,8 @@ privileges to the user when logging in and the user cannot access the keyfile.
 1. Directory containing keyfile is **readable** and **executable** by the user.
 2. Keyfile is **0600**.
 
-## GPG pinentry not redirecting to correct terminal
+
+## [GPG pinentry not redirecting to correct terminal][d]
 GPG connect agent must be informed when on a new terminal.
 
 Manually
@@ -73,6 +64,7 @@ gpg-connect-agent updatestartuptty /bye
 Match host * exec "gpg-connect-agent updatestartuptty /bye"
 ```
 
-Reference:
-
-* https://unix.stackexchange.com/questions/280879/how-to-get-pinentry-curses-to-start-on-the-correct-tty
+[a]: https://unix.stackexchange.com/questions/193066/how-to-unlock-account-for-public-key-ssh-authorization-but-not-for-password-aut
+[b]: https://arlimus.github.io/articles/usepam
+[c]: https://salsa.debian.org/ssh-team/openssh/-/commit/18da782ebe789d0cf107a550e474ba6352e68911
+[d]: https://unix.stackexchange.com/questions/280879/how-to-get-pinentry-curses-to-start-on-the-correct-tty

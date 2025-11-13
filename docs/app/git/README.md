@@ -1,7 +1,8 @@
 # GIT
 GIT version management snippets.
 
-## Global Settings
+
+## [Global Settings][a]
 Rebasing when pulling makes the branch history cleaner, avoiding pull merge
 commits. Prune on fetch automatically clean Git objects in your repository
 locally whenever you fetch changes from remote, minimizes the number of
@@ -13,11 +14,8 @@ git config --global fetch.prune true
 git config --global diff.colorMoved zebra
 ```
 
-Reference
 
-* https://spin.atomicobject.com/2020/05/05/git-configurations-default
-
-## Use GPG keys for Commit Signing
+## Use GPG keys with [GIT tools][b] for [Commit Signing][c]
 ``` bash
 # Get keys to use
 gpg --list-keys
@@ -30,15 +28,12 @@ git config --global user.signingkey {KEY}
 git tag -s {TAG}{COMMIT}
 ```
 
-Reference:
-
-* https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits
-* https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work
 
 ## Revert Changes and Keep Commit History
 ``` bash
 git revert --no-edit {LAST GOOD COMMIT}..{LAST BAD COMMIT}
 ```
+
 
 ## Force Repository to Previous Commit
 !!! danger
@@ -52,7 +47,8 @@ git revert --no-edit {LAST GOOD COMMIT}..{LAST BAD COMMIT}
 
     Currently checked out versions of this repository will break.
 
-## Force Pull from Master Repository
+
+## [Force Pull from Master Repository][d]
 Forces local repository to be in sync with master, discarding all local changes
 and un-pushed commits.
 
@@ -67,15 +63,13 @@ git branch {BRANCH}-backup
 git reset --hard origin/{BRANCH}
 ```
 
-Reference:
-
-* https://stackoverflow.com/questions/1125968/how-do-i-force-git-pull-to-overwrite-local-files
 
 ## Revert Entire Directory to HEAD
 ``` bash
 git checkout -- {DIR}  # {DIR}/.. target everything in directory.
 git clean -fd {DIR}  # {DIR}/.. target everything in directory.
 ```
+
 
 ## Add Tag to Previous Commit
 ``` bash
@@ -84,7 +78,8 @@ git tag {TAG} {COMMIT}
 git push --tags
 ```
 
-## Squash Commits to a Single Commit (Rebase)
+
+## [Squash Commits to a Single Commit (Rebase)][e]
 This will squash a series of commits into a single commit, which is useful to
 cleanup multiple commits before pushing upstream.
 
@@ -108,11 +103,8 @@ cleanup multiple commits before pushing upstream.
     If done correctly, this will show all commit messages that were rolled up.
     Update as needed and commit as normal.
 
-Reference:
 
-* https://www.internalpointers.com/post/squash-commits-into-one-git
-
-## Modify Specific Historical Commit
+## [Modify Specific Historical Commit][f]
 !!! warning
     This will re-write commit history from the changed commit. Tags and
     releases will need to be deleted and re-created. Existing clones will
@@ -141,9 +133,6 @@ git push --tags
 !!! warning
     Ensure affected releases, tags are removed before pushing the changed repo.
 
-Reference:
-
-* https://stackoverflow.com/questions/1186535/how-to-modify-a-specified-commit
 
 ## Remove Tracked Files without Deleting Them
 ``` bash
@@ -152,10 +141,12 @@ git rm --cached {FILE1} {FILEN}  # Multiple files.
 git rm -r --cached {DIR}  # All contents of a directory.
 ```
 
+
 ## Highlight Changes in Long Single Lines
 ``` bash
 git diff --word-diff {FILE} {FILE}
 ```
+
 
 ## Migrate git stash to another machine
 Export a stash as a patch to import in another git client.
@@ -166,12 +157,15 @@ git apply changes.patch  # Import patch to client.
 git apply changes.patch --reverse  # Patch can be reverted if there are issues.
 ```
 
-## Repo git hooks
+
+## [Repo git hooks][g]
 Hooks are located in **.git/hooks** but are not versioned. This enables
 repository tracked hooks. See **.git/hooks** for examples. Hooks must have
 exact names.
 
-Example **.githooks** (1)
+Ensure ansible vault files are [encrypted on commit.][h]
+
+**.githooks** (1)
 { .annotate }
 
 1. 0644 {USER}:{USER}
@@ -240,10 +234,6 @@ git config --local include.path ../.gitconfig
     Command executes from **.git** directory, hence going up a directory to
     read the config.
 
-Reference:
-
-* https://pilot34.medium.com/store-your-git-hooks-in-a-repository-2de1d319848c
-* https://selivan.github.io/2017/04/08/ansible-check-on-commit-vault-files-are-encrypted.html
 
 ## List All Repositories for An Organization/User
 Useful for determining if there are new repositories to sync.
@@ -255,3 +245,12 @@ curl "https://api.github.com/orgs/{ORGANIZATION NAME}/repos?per_page=1000&page=1
 # List all repositories for a user.
 curl "https://api.github.com/users/{USER}/repos?per_page=1000&page=1" | jq -r '.[] | .name' | sort
 ```
+
+[a]: https://spin.atomicobject.com/2020/05/05/git-configurations-default
+[b]: https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work
+[c]: https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits
+[d]: https://stackoverflow.com/questions/1125968/how-do-i-force-git-pull-to-overwrite-local-files
+[e]: https://www.internalpointers.com/post/squash-commits-into-one-git
+[f]: https://stackoverflow.com/questions/1186535/how-to-modify-a-specified-commit
+[g]: https://pilot34.medium.com/store-your-git-hooks-in-a-repository-2de1d319848c
+[h]: https://selivan.github.io/2017/04/08/ansible-check-on-commit-vault-files-are-encrypted.html

@@ -9,11 +9,6 @@ information.
 
 **Location** blocks should be placed in the **server** block.
 
-Reference:
-
-* https://community.home-assistant.io/t/nginx-reverse-proxy-set-up-guide-docker/54802
-* https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/
-* https://www.digitalocean.com/community/tutorials/understanding-nginx-server-and-location-block-selection-algorithms
 
 ## Service Gotchas
 Ensure the services running behind the proxy are in a known configuration:
@@ -22,58 +17,59 @@ Ensure the services running behind the proxy are in a known configuration:
 * Have firewalls setup to only allow traffic in/out of those ports to and from
   the proxy.
 
-## Trailing Slash Gotchas
+
+## [Trailing Slash Gotchas][a]
 * Services already using URI paths for the services should leave **off**
   trailing slashes in **location** and **proxy_pass**.
 * Services using **no** additional URI paths for services should use trailing
   slashes in **location** and **proxy_pass**.
 
-If the **proxy_pass** directive is specified with a URI, then when a request is
-passed to the server, the part of a *normalized request URI matching the
-location is replaced by a URI specified in the directive*:
+If the [**proxy_pass** directive][b] is specified with a URI, then when a
+request is passed to the server, the part of a *normalized request URI matching
+the location is replaced by a URI specified in the directive*:
 
-Trailing slash example.
-**` nginx
-location /name/ {
-  proxy_pass http://app/remote/;
-}
-**`
+=== "Trailing slash"
+    ``` nginx
+    location /name/ {
+      proxy_pass http://app/remote/;
+    }
+    ```
 
-* Assume request: **http://proxy/name/path?params=1**.
-* **http://app/remote/** sees request as **https://app/remote/path?params=1**.
-* Essentially the matched URI path is **removed** and the rest is passed as
-  though it was called from app's page.
+    * Assume request: **http://proxy/name/path?params=1**.
+    * **http://app/remote/** sees request as
+      **https://app/remote/path?params=1**.
+    * Essentially the matched URI path is **removed** and the rest is passed as
+      though it was called from app's page.
 
-If **proxy_pass** is specified without a URI, the request URI is passed to the
-server *in the same form* as sent by a client when the original request is
-processed, or the *full normalized request URI is passed when processing the
-changed URI*:
+    If **proxy_pass** is specified without a URI, the request URI is passed to
+    the server **in the same form** as sent by a client when the original
+    request is processed, or the **full normalized request** URI is passed when
+    processing the changed URI.
 
-No trailing slash example.
-**` nginx
-location /name/ {
-    proxy_pass http://app/remote;
-}
-**`
+=== "No trailing slash"
+    ``` nginx
+    location /name/ {
+        proxy_pass http://app/remote;
+    }
+    ```
 
-* Assume request: **http://proxy/name/path?params=1**.
-* **http://app/remote/** sees request as
-  **https://app/remote/name/path?params=1**.
-* Essentially the URI path is **concatenated** to the end of the remote path.
+    * Assume request: **http://proxy/name/path?params=1**.
+    * **http://app/remote/** sees request as
+      **https://app/remote/name/path?params=1**.
+    * Essentially the URI path is **concatenated** to the end of the remote
+      path.
 
-Reference:
 
-* http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass
-* https://stackoverflow.com/questions/22759345/nginx-trailing-slash-in-proxy-pass-url
-
-## Regex Versus Trailing Slashes
+## [Regex Versus Trailing Slashes][c]
 Most examples on the web use regex, but regex is generally slow, error prone
 and hard to read. In NGINX most regexes may be replaced with trailing slash to
 replace the matched URI path instead. It's cleaner and easier to read, and
 usually covers the regex case.
 
 !!! success "Do this"
-    Using trailing slashes (**good**) proxies **/nzbget** to **https://nzbget:6791/**.
+    Using trailing slashes (**good**) proxies **/nzbget** to
+    **https://nzbget:6791/**.
+
     ``` nginx
     location /nzbget/ {
       proxy_pass            https://nzbget:6791/;
@@ -102,9 +98,6 @@ usually covers the regex case.
 * This results in two proxy hits and two regex comprehensions; it's also hard
   to understand what the regex is doing immediately.
 
-Reference:
-
-* https://stackoverflow.com/questions/764247/why-are-regular-expressions-so-controversial
 
 ## Redirect Path to Base URI
 
@@ -118,6 +111,7 @@ location /gogs/ {
 !!! note
     Note trailing slashes.
 
+
 ## Redirect Path to Service URI Path
 
 For applications that serve **https://app/path**.
@@ -126,9 +120,11 @@ location /sonarr {
   proxy_pass http://sonarr:8989/sonarr;
   include /etc/nginx/conf.d/proxy_control.conf;
 }
+```
 
 !!! note
     Note **no** trailing slashes.
+
 
 ## Custom Path for Service
 
@@ -146,9 +142,8 @@ location /sonarr {
 !!! note
     **tv** will automatically redirect to **sonarr**.
 
+
 ## Enable Websockets
-
-
 Allow for apps requiring websockets to be used.
 ``` nginx
 location /crashplan/ {
@@ -169,10 +164,11 @@ location /crashplan/ {
 * **proxy_http_version 1.1** is required, but included in
   **proxy_control.conf**.
 
-## Rewrite Responses with Subpath
+
+## [Rewrite Responses with Subpath][d]
 Some applications are not URI Path aware and will re-write all responses behind
 the proxy using a static relative path or hostname; which will cause 404 errors
-and the app to break. Partially fixed using http_sub_module.
+and the app to break. Partially fixed using [http_sub_module][e].
 
 !!! note
   Re-writing the proxy response generally won't fix a complicated application
@@ -190,14 +186,10 @@ sub_filter_once off;
 * Second rules rewrites relative responses **href="/other-page.html"** to
   **href="https://reverse-proxy-server/subpath/other-page.html"**.
 
-Reference:
 
-* https://stackoverflow.com/questions/32542282/how-do-i-rewrite-urls-in-a-proxy-response-in-nginx
-* http://nginx.org/en/docs/http/ngx_http_sub_module.html
-
-## Enable NGINX Start/Running with Backends Down
-By design NGINX will prevent startup or running if upstream backends are down
-as it is interpreted to be a configuration error.
+## [Enable NGINX Start/Running with Backends Down][f]
+[By design NGINX][g] will prevent startup or running if upstream backends are
+down as it is interpreted to be a configuration error.
 
 Services which are down may not resolve via DNS, and therefore will trigger
 this condition, requiring all services to be up for NGINX to function.
@@ -227,7 +219,17 @@ server {
 }
 ```
 
-Reference:
 
-* https://trac.nginx.org/nginx/ticket/1040
-* https://stackoverflow.com/questions/32845674/setup-nginx-not-to-crash-if-host-in-upstream-is-not-found
+## Reference[^1][^2][^3]
+
+[^1]: https://community.home-assistant.io/t/nginx-reverse-proxy-set-up-guide-docker/54802
+[^2]: https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/
+[^3]: https://www.digitalocean.com/community/tutorials/understanding-nginx-server-and-location-block-selection-algorithms
+
+[a]: https://stackoverflow.com/questions/22759345/nginx-trailing-slash-in-proxy-pass-url
+[b]: http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass
+[c]: https://stackoverflow.com/questions/764247/why-are-regular-expressions-so-controversial
+[d]: https://stackoverflow.com/questions/32542282/how-do-i-rewrite-urls-in-a-proxy-response-in-nginx
+[e]: http://nginx.org/en/docs/http/ngx_http_sub_module.html
+[f]: https://stackoverflow.com/questions/32845674/setup-nginx-not-to-crash-if-host-in-upstream-is-not-found
+[g]: https://trac.nginx.org/nginx/ticket/1040

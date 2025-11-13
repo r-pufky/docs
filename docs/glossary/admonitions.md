@@ -13,7 +13,7 @@
     Contextual information.
 
 !!! abstract
-    Long for contextual information.
+    Long for contextual information. Used for file listings.
 
 !!! tip
     Best practices.

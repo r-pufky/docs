@@ -4,10 +4,11 @@ generating a master encryption key for the dataset (which the user does not
 access). Password or keyfiles are used to unlock the master encryption key.
 
 By isolating data to smaller datasets, exposure of the master key is
-constrained. See [ZFS Native Encryption](https://wiki.archlinux.org/title/ZFS#Native_encryption)
-for detailed CLI usage with examples.
+constrained. See [ZFS Native Encryption][a] for detailed CLI usage with
+examples.
 
-## Do NOT Encrypt ZFS Pool
+
+## [Do NOT Encrypt ZFS Pool][b]
 Do not encrypt root ZFS pool
 Encrypting the pool will result in difficulty later on when migrating and
 managing the pool:
@@ -26,9 +27,6 @@ managing the pool:
   datasets (and not encrypting the entire pool), a different underlying master
   key is used for each, limiting breach scope.
 
-Reference:
-
-* https://old.reddit.com/r/zfs/comments/bnvdco/zol_080_encryption_dont_encrypt_the_pool_root
 
 ## Encrypt a Dataset
 !!! warning
@@ -54,6 +52,7 @@ Reference:
 zfs create -o encryption=aes-256-gcm -o keyformat=passphrase -o keylocation=prompt -o pbkdf2iters=1000000 -o mountpoint=/d/media {POOL}/media
 ```
 
+
 ## Mount Encrypted Dataset
 !!! tip
     Set mountpoint to immutable without the ZFS dataset mounted. This prevents
@@ -67,11 +66,13 @@ zfs mount -l -a
 Once a key is loaded unmounting and remounting will not require re-entry of
 the password or file.
 
+
 ## Unload Encryption KEy
 ``` bash
 # Use after unmounting to remove the key from memory.
 zfs unload-key {POOL}/{DATASET}
 ```
+
 
 ## Preload Dataset Encryption Key
 ``` bash
@@ -79,7 +80,8 @@ zfs load-key {POOL/DATASET}  # Preload one key.
 zfs load-key -a  # Preload all keys.
 ```
 
-## Change Encryption Keys/Method
+
+## [Change Encryption Keys/Method][c]
 !!! danger
     Always **confirm** key works before loading data. Do not overwrite or
     delete the old key until the new key is in place.
@@ -106,11 +108,12 @@ dd if=/dev/urandom of=/root/zfs.key bs=1 count=32
 zfs change-key -l -o keyformat=raw -o keylocation=file:///root/zfs.key {POOL}/{DATASET}
 ```
 
-Reference:
 
-* http://manpages.ubuntu.com/manpages/impish/man8/zfs-change-key.8.html
+## Reference[^1][^2]
 
-## Reference
+[^1]: https://arstechnica.com/gadgets/2021/06/a-quick-start-guide-to-openzfs-native-encryption
+[^2]: https://blog.heckel.io/2017/01/08/zfs-encryption-openzfs-zfs-on-linux
 
-* https://arstechnica.com/gadgets/2021/06/a-quick-start-guide-to-openzfs-native-encryption
-* https://blog.heckel.io/2017/01/08/zfs-encryption-openzfs-zfs-on-linux
+[a]: https://wiki.archlinux.org/title/ZFS#Native_encryption
+[b]: https://old.reddit.com/r/zfs/comments/bnvdco/zol_080_encryption_dont_encrypt_the_pool_root
+[c]: http://manpages.ubuntu.com/manpages/impish/man8/zfs-change-key.8.html

@@ -1,5 +1,6 @@
 # Linux
 
+
 ## Install Packages
 
 === "Manjaro"
@@ -9,7 +10,7 @@
     ```
 
 === "Debian"
-    Debian [packages are here](https://support.brother.com/g/b/downloadtop.aspx?c=us&lang=en&prod=mfcl2750dw_us_eu_as).
+    Debian [packages are here][a].
 
 
 ## Enable CUPS
@@ -17,6 +18,7 @@
 sudo systemctl enable cups
 sudo systemctl restart --now cups
 ```
+
 
 ## Add Printer
 !!! tip
@@ -30,7 +32,8 @@ sudo systemctl restart --now cups
             * Name: **{PRINTER DESCRIPTION}**
             * Share this printer: ✘
 
-## Add Scanner
+
+## [Add Scanner][b]
 Scanner device is added using the brother utility through xsane.
 
 ``` bash
@@ -38,9 +41,6 @@ Scanner device is added using the brother utility through xsane.
 brsaneconfig4 -a name=scany model=MFC-L2750DW ip={IP}
 ```
 
-Reference:
-
-* https://support.brother.com/g/b/faqend.aspx?c=us&lang=en&prod=ads2700w_us_eu_as&faqid=faq00100466_500
 
 ## GIMP
 GIMP can be used to scan and export images/PDF's as well. Preferred.
@@ -59,6 +59,7 @@ GIMP can be used to scan and export images/PDF's as well. Preferred.
     Verify scanning by acquiring a preview from the main xsane window that
     opens. This may pop under other windows or on different monitors based on
     GIMP configuration.
+
 
 ## gscan2pdf
 Utility for processing scans alternative to GIMP.
@@ -80,7 +81,8 @@ the PDF, it will be saved correctly.
 !!! example "ctrl + g"
     Verify scanning by refreshing devices, running a scan, and saving it.
 
-## Web Services Device (Scanner)
+
+## [Web Services Device (Scanner)][c]
 Web services may be used to connect the scanner, which is the same method that
 Windows uses.
 
@@ -94,14 +96,13 @@ Windows uses.
     apt install sane-airscan
     ```
 
-**/etc/sane.d/airscan.conf** (1)
-{ .annotate }
+??? abstract "/etc/sane.d/airscan.conf"
+    0644 root:root
 
-1. 0644 root:root
-``` conf
-'Brother MFC-L2750DW' = http://{IP}/WebServices/Device
-```
+    ``` conf
+    'Brother MFC-L2750DW' = http://{IP}/WebServices/Device
+    ```
 
-Reference:
-
-* https://github.com/alexpevzner/sane-airscan
+[a]: https://support.brother.com/g/b/downloadtop.aspx?c=us&lang=en&prod=mfcl2750dw_us_eu_as
+[b]: https://support.brother.com/g/b/faqend.aspx?c=us&lang=en&prod=ads2700w_us_eu_as&faqid=faq00100466_500
+[c]: https://github.com/alexpevzner/sane-airscan

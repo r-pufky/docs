@@ -1,6 +1,5 @@
 # Custom Error Pages
-Setup a custom [error page](https://stackoverflow.com/questions/27610979/nginx-custom-error-page-502-with-css-and-image-files)
-to serve [all errors](https://blog.adriaan.io/one-nginx-error-page-to-rule-them-all.html).
+Setup a custom [error page][a] to serve [all errors][b].
 
 !!! warning
     The **root** for web serving must be set for both the **http** and
@@ -39,42 +38,43 @@ server {
   pages do not need this, but a root should be defined regardless for
   predictable behavior.
 
-source/error.html (1)
-{ .annotate }
+??? abstract "source/error.html"
+    0644 root:root
 
-1. 0644 root:root
-
-``` html
-<html>
-<head>
-<style type=text/css>
-div {
-  text-align: center;
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 3em;
-  position: absolute;
-  top: 410px;
-  width: 100%;
-}
-body {
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-image: 1.png;
-}
-</style>
-<script type='text/javascript'>
-function background(){
-  var BG = Math.ceil(Math.random() * 12);
-  document.body.background = 'https://example.com/img/' + BG + '.png';
-}
-</script>
-</head>
-</html>
-<body onload='background();'>
-<div>Whoops.</div>
-</html>
-```
+    ``` html
+    <html>
+    <head>
+    <style type=text/css>
+    div {
+      text-align: center;
+      font-family: sans-serif;
+      font-weight: bold;
+      font-size: 3em;
+      position: absolute;
+      top: 410px;
+      width: 100%;
+    }
+    body {
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-image: 1.png;
+    }
+    </style>
+    <script type='text/javascript'>
+    function background(){
+      var BG = Math.ceil(Math.random() * 12);
+      document.body.background = 'https://example.com/img/' + BG + '.png';
+    }
+    </script>
+    </head>
+    </html>
+    <body onload='background();'>
+    <div>Whoops.</div>
+    </html>
+    ```
 
 !!! note
     This example randomly loads a background image when the page is loaded.
+
+[a]: https://stackoverflow.com/questions/27610979/nginx-custom-error-page-502-with-css-and-image-files
+[b]: https://blog.adriaan.io/one-nginx-error-page-to-rule-them-all.html

@@ -1,5 +1,6 @@
 # Troubleshooting
 
+
 ## Fixing Playback Issues
 
 ### Playback Fails / App Crashes
@@ -17,7 +18,7 @@ transcoding directory.
 2. Ensure **/tmp/Transcode** is owned by the right user. Changing the running
    user without re-creating this directory will cause this to happen.
 
-### Spinning playback icon, no playback
+### [Spinning playback icon, no playback][a]
 Generally if transcoding is setup right, then this is related to the **audio
 transcoding** failing. Turn on debug logging on the server and look for:
 
@@ -30,17 +31,14 @@ into separate locations. Video transcodes in **/transcode** while audio
 transcodes in **/tmp**. Mapping **/tmp** to the transcoding directory fixes
 this.
 
-Reference:
-
-* https://forums.plex.tv/t/transcoder-fails-when-transcode-is-on-a-network-share/186681
 
 ## Managing Duplicates
 
 ### Duplicate Files for Single Files
 This happens when two refreshes for a new file happen at the same time.
-Generally this occurs because inotify detection is turned on in Plex, and Sonarr
-is set to push a manual **update library** command to plex on completion. Only
-**one** of these things should be enabled at once.
+Generally this occurs because inotify detection is turned on in Plex, and
+Sonarr is set to push a manual **update library** command to plex on
+completion. Only **one** of these things should be enabled at once.
 
 1. Move duplicate file out of Plex library.
 2. Wait for episode refresh trigger / trigger manually (episode should be
@@ -48,6 +46,7 @@ is set to push a manual **update library** command to plex on completion. Only
 3. Move duplicate file into Plex library.
 4. Wait for episode refresh trigger / trigger manually (episode should be
    removed). Dupe should be removed.
+
 
 ## Finding Duplicates
 To show all detected duplicates in plex:
@@ -58,10 +57,11 @@ To show all detected duplicates in plex:
 
 From there you can Inspect all shows.
 
+
 ## Legacy Plex Fixes
 Fixes for early Plex servers. These generally do not appear anymore.
 
-### Backup State Configuration
+### [Backup State Configuration][b]
 ``` bash
 cd /var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/Plugin\ Support/Databases
 echo ".dump metadata_item_settings" | sudo sqlite3 com.plexapp.plugins.library.db | grep -v TABLE | grep -v INDEX > viewstate-information-settings.sql
@@ -69,10 +69,6 @@ cd /var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server
 sudo cp -av Media /tmp/media-backup
 sudo cp -av Metadata /tmp/metadata-backup
 ```
-
-Reference:
-
-* https://plexapp.zendesk.com/hc/en-us/articles/201154527-Move-Viewstate-Ratings-from-One-Install-to-Another
 
 ### Restoring Plex State Configuration
 ``` bash
@@ -94,3 +90,6 @@ rm -f Service.bundle Framwork.bundle
 sudo service plexmediaserver start
 sudo reboot
 ```
+
+[a]: https://forums.plex.tv/t/transcoder-fails-when-transcode-is-on-a-network-share/186681
+[b]: https://plexapp.zendesk.com/hc/en-us/articles/201154527-Move-Viewstate-Ratings-from-One-Install-to-Another

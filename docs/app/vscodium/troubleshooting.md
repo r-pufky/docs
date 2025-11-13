@@ -1,6 +1,7 @@
 # Troubleshooting
 
-## Repository does not automatically open all submodules.
+
+## [Repository does not automatically open all submodules][a]
 Default submodule load limit is low.
 
 !!! danger "Error"
@@ -11,11 +12,8 @@ Default submodule load limit is low.
     * Detect Submodules Limit: **50**
     * Repository Scan Max Dept: **-1**
 
-Reference:
 
-* https://stackoverflow.com/questions/60917209/disable-vs-code-warning-submodules-which-wont-be-opened-automatically/61178091
-
-## Unlock Login Keyring Always Prompted
+## [Unlock Login Keyring Always Prompted][b]
 KDE Wallet is used to securely store GitHub credentials.
 
 May be prompted on every open if KDE Wallet is not enabled.
@@ -24,6 +22,5 @@ May be prompted on every open if KDE Wallet is not enabled.
     * Enable the KDE Wallet Subsystem: ✔
     * Use KDE Wallet for the Secret Service interface: ✔
 
-Reference:
-
-* https://github.com/microsoft/vscode/issues/104319
+[a]: https://stackoverflow.com/questions/60917209/disable-vs-code-warning-submodules-which-wont-be-opened-automatically/61178091
+[b]: https://github.com/microsoft/vscode/issues/104319

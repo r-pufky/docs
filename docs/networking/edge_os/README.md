@@ -1,18 +1,19 @@
 # Edge OS
 Advanced routing, high performance, and long support lifetime Ubiquiti devices.
 
-### Security
 
-#### [Telemetry](https://community.ui.com/questions/Update-UniFi-Phone-Home-Performance-Data-Collection/f84a71c9-0b81-4d69-a3b3-45640aba1c8b)
-Options exists but are disable by default. Block or blackhole:
+## Security
+
+### [Telemetry][a]
+Options exists but are disable by default. Block or black hole
 **trace.svc.ui.com**.
 
-#### [Disable UBNT Discovery Service](https://help.ui.com/hc/en-us/articles/204976244-EdgeRouter-UBNT-Device-Discovery)
-UBNT Discovery Service enables other UBNT devices the ability to discover
-this device.
+### [Disable UBNT Discovery Service][b]
+UBNT Discovery Service enables other UBNT devices the ability to discover this
+device.
 
 !!! danger
-    This is exposed externally and [exploitable](https://www.zdnet.com/google-amp/article/over-485000-ubiquiti-devices-vulnerable-to-new-attack/).
+    This is exposed externally and [exploitable][c].
     Disable this service.
 
     ``` bash
@@ -23,12 +24,13 @@ this device.
     save
     ```
 
-#### Default Login
+### Default Login
 Common default username and password is **ubnt**.
+
 
 ## CLI
 
-### Create [Static DHCP Mapping](https://help.ui.com/hc/en-us/articles/360044494093-EdgeRouter-DHCP-Server-Static-Mapping)
+### Create [Static DHCP Mapping][d]
 Maps computer to 10.0.0.2 on Test DHCP server using MAC address
 AA:BB:CC:11:22:33.
 
@@ -40,7 +42,7 @@ commit
 save
 ```
 
-### Create [Static Host Mapping](https://community.ui.com/questions/Create-DNS-enteries/ab712740-d579-4c89-824a-cda582a6bdd4)
+### Create [Static Host Mapping][e]
 CNAME for IP lookups without DNS - static **/etc/hosts** mapping.
 
 Simulates NAT Reflection by statically adding multiple host names to hosts
@@ -53,7 +55,7 @@ for a given DNS request.
     across upgrades and restores.
 
     With later versions of debian based systems, entries in the local host file
-    for the system will resolve to **127.0.1.1**. [This is by design](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=316099).
+    for the system will resolve to **127.0.1.1**. [This is by design][f].
 
     * The alias will resolve to network IP.
     * The hostname will resolve to **127.0.1.1**.
@@ -64,24 +66,23 @@ Map computer and computer.example.com to 10.0.0.2. Appear in **/etc/hosts** as:
 ```
 
 #### CLI
-**create_host** (1)
-{ .annotate }
+??? abstract "create_host"
+    0755 root:root
 
-1. 0755 root:root
-```
-#!/bin/vbash
-#
-# create_host {HOST} {IP}
-#
-source /opt/vyatta/etc/functions/script-template
+    ``` bash
+    #!/bin/vbash
+    #
+    # create_host {HOST} {IP}
+    #
+    source /opt/vyatta/etc/functions/script-template
 
-configure
-set system static-host-mapping host-name ${1}.example.com inet ${2}
-set system static-host-mapping host-name ${1}.example.com alias ${1}
-commit
-save
-exit
-```
+    configure
+    set system static-host-mapping host-name ${1}.example.com inet ${2}
+    set system static-host-mapping host-name ${1}.example.com alias ${1}
+    commit
+    save
+    exit
+    ```
 
 ``` bash
 configure
@@ -110,13 +111,14 @@ save
         Aliases should all resolve to the same IP (base host). Verify by
         resolving both names on your network.
 
+
 ## Hairpin NAT
 Internal Only NAT Reflection. This may be used for **faking** subdomains,
 assuming there is a wildcard DNS setup on your Registrar and it resolves to
 your public IP.
 
 !!! info
-    Split DNS is better to use than [Hairpin NAT](https://help.ui.com/hc/en-us/articles/204952134-EdgeRouter-Hairpin-NAT)
+    Split DNS is better to use than [Hairpin NAT][g]
     as it allows more control. This will enable you to redirect internal
     requests destined for your external IP to another internal destination
     based on selected criteria. You will need to do this for every subnet on
@@ -127,7 +129,8 @@ your public IP.
     * Hairpin NAT: ✔ Enable hairpin NAT (also known as 'NAT loopback' or 'NAT reflection')
     * LAN Interface: **{ALL LAN INTERFACES}**
 
-## Restrict Subnet Traffic to [Internet Only Access](https://help.ui.com/hc/en-us/articles/218889067-EdgeRouter-How-to-Create-a-Guest-LAN-Firewall-Rule)
+
+## Restrict Subnet Traffic to [Internet Only Access][h]
 
 ### Define RFC1918 Private Address Group
 !!! example "Firewall/NAT ➔ Firewall/NAT Groups ➔ Add Group"
@@ -140,6 +143,7 @@ your public IP.
     * Network: **192.168.0.0/16**
     * Network: **172.16.0.0/12**
     * Network: **10.0.0.0/8**
+
 
 ## Restrict Subnet Traffic from Reaching Internal Networks
 
@@ -163,6 +167,7 @@ your public IP.
     * Interface: **{NET}**
     * Direction: **{IN}**
 
+
 ## Only Allow DNS Traffic to Router
 
 !!! example "Firewall/NAT ➔ Firewall Policies ➔ Add Ruleset"
@@ -180,14 +185,15 @@ your public IP.
         * Interface: **{NET}**
         * Direction: **{LOCAL}**
 
-## Destination NAT (DNAT) for [Captive DNS](https://old.reddit.com/r/pihole/comments/ahmg14/finally_set_up_a_dnat_for_hardcoded_dns/eeg114d/)
-Force [all unencrypted DNS](https://community.ui.com/questions/cd0a248d-ca54-4d16-84c6-a5ade3dc3272)
-queries regardless of destination server to a specific DNS server.
+
+## Destination NAT (DNAT) for [Captive DNS][i]
+Force [all unencrypted DNS][j] queries regardless of destination server to a
+specific DNS server.
 
 !!! danger
     Do **not** enable this for internal DNS servers!
 
-### Add a Destination NAT Rule
+### [Add a Destination NAT Rule][k]
 For each interface serving internal networks.
 
 !!! example "Firewall/NAT ➔ NAT ➔ Add Destination NAT Rule"
@@ -205,11 +211,7 @@ For each interface serving internal networks.
 
     **!** negates matching for address.
 
-Reference:
-
-* https://old.reddit.com/r/Ubiquiti/comments/6lndq4/question_redirect_port_53_to_internal_dns_server/
-
-### Add [Masquerade NAT Rule](https://i.imgur.com/IFYUX2T.png)
+### Add [Masquerade NAT Rule][l]
 For each interface serving internal networks.
 
 !!! note
@@ -256,7 +258,8 @@ Add additional Destination NAT Rule for each interface on internal networks
     Set rule above the captive DNS rule for the specific network for the
     exception to apply. IP is router.
 
-## Custom SSL Certificate for WebUI
+
+## [Custom SSL Certificate for WebUI][m]
 Use custom SSL certificates to serve HTTPS router traffic. Turn on SSH.
 
 Combine private key and certificate into one file and copy to EdgeOS.
@@ -270,11 +273,8 @@ kill -SIGINT $(cat /var/run/lighttpd.pid)
 /usr/sbin/lighttpd -f /etc/lighttpd/lighttpd.conf
 ```
 
-Reference:
 
-* https://www.stevejenkins.com/blog/2015/10/install-an-ssl-certificate-on-a-ubiquiti-edgemax-edgerouter/
-
-## Export Config (CLI)
+## [Export Config (CLI)][n]
 Export the list of CLI commands to manually re-create the current configuration
 of the router.
 
@@ -285,16 +285,13 @@ show configuration commands
 show configuration all
 ```
 
-Reference:
-
-* https://community.ui.com/questions/66768622-c0a9-4c79-9dfa-331bd0a90e90
 
 ## VLAN Setup
 See [VLANs](../vlan.md) for concepts.
 
 !!! tip
     Set an spare port on your router with a static management address without
-    VLANS or use a [console cable](https://www.amazon.com/dp/B078PVJ5ZQ).
+    VLANS or use a [console cable][o].
 
 ### Add VLAN
 !!! example "Dashboard ➔ Add Interface ➔ Add VLAN"
@@ -329,8 +326,25 @@ See [VLANs](../vlan.md) for concepts.
 !!! example "Services ➔ DNS ➔ Interface ➔ Add Listen Interface"
     Add for all networks and VLANS. VLANS will appear as **eth0.{VLAN_ID}**.
 
-## References
 
-* https://community.ui.com/questions/ab712740-d579-4c89-824a-cda582a6bdd4
-* https://help.ui.com/hc/en-us/articles/218889067-EdgeMAX-How-to-Protect-a-Guest-Network-on-EdgeRouter
-* https://help.ui.com/hc/en-us/articles/204959444-EdgeRouter-Router-on-a-Stick
+## Reference[^1][^2][^3]
+
+[^1]: https://community.ui.com/questions/ab712740-d579-4c89-824a-cda582a6bdd4
+[^2]: https://help.ui.com/hc/en-us/articles/218889067-EdgeMAX-How-to-Protect-a-Guest-Network-on-EdgeRouter
+[^3]: https://help.ui.com/hc/en-us/articles/204959444-EdgeRouter-Router-on-a-Stick
+
+[a]: https://community.ui.com/questions/Update-UniFi-Phone-Home-Performance-Data-Collection/f84a71c9-0b81-4d69-a3b3-45640aba1c8b
+[b]: https://help.ui.com/hc/en-us/articles/204976244-EdgeRouter-UBNT-Device-Discovery
+[c]: https://www.zdnet.com/google-amp/article/over-485000-ubiquiti-devices-vulnerable-to-new-attack
+[d]: https://help.ui.com/hc/en-us/articles/360044494093-EdgeRouter-DHCP-Server-Static-Mapping
+[e]: https://community.ui.com/questions/Create-DNS-enteries/ab712740-d579-4c89-824a-cda582a6bdd4
+[f]: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=316099
+[g]: https://help.ui.com/hc/en-us/articles/204952134-EdgeRouter-Hairpin-NAT
+[h]: https://help.ui.com/hc/en-us/articles/218889067-EdgeRouter-How-to-Create-a-Guest-LAN-Firewall-Rule
+[i]: https://old.reddit.com/r/pihole/comments/ahmg14/finally_set_up_a_dnat_for_hardcoded_dns/eeg114d
+[j]: https://community.ui.com/questions/cd0a248d-ca54-4d16-84c6-a5ade3dc3272
+[k]: https://old.reddit.com/r/Ubiquiti/comments/6lndq4/question_redirect_port_53_to_internal_dns_server/
+[l]: https://i.imgur.com/IFYUX2T.png
+[m]: https://www.stevejenkins.com/blog/2015/10/install-an-ssl-certificate-on-a-ubiquiti-edgemax-edgerouter/
+[n]: https://community.ui.com/questions/66768622-c0a9-4c79-9dfa-331bd0a90e90
+[o]: https://www.amazon.com/dp/B078PVJ5ZQ

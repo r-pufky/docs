@@ -1,7 +1,9 @@
 # Troubleshooting
 
-## Reduce Repository Size (Prune)
-Prune repository and reduce size or remove sensitive material.
+
+## [Reduce Repository Size (Prune)][a]
+Prune repository and reduce size or remove sensitive material. More complicated
+clean ups may require [git-filter-repo tool][b].
 
 !!! warning
     All branches will need to be force pushed to clear entire history. Any
@@ -32,8 +34,5 @@ git push --all --force
 git push --tags --force
 ```
 
-Reference:
-
-* https://stackoverflow.com/questions/2116778/reduce-git-repository-size
-* https://github.com/newren/git-filter-repo/blob/main/Documentation/converting-from-bfg-repo-cleaner.md#cheat-sheet-conversion-of-examples-from-bfg
-* https://github.com/newren/git-filter-repo
+[a]: https://stackoverflow.com/questions/2116778/reduce-git-repository-size
+[b]: https://github.com/newren/git-filter-repo

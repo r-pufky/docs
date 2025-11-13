@@ -5,14 +5,14 @@ Steaming service recorder.
     Port **57331** is only used if you use PlayOn to stream recordings /
     provide a media library; by default this can be safely disabled.
 
+
 ## Setup
-[Minimum requirements](https://www.playon.tv/support/minreqs).
+[Minimum requirements][a].
 
 !!! note
     Any option not listed is left on default setting.
 
-1. Install [PlayOn Desktop](https://www.playon.tv/getplayon) but do not launch
-   immediately.
+1. Install [PlayOn Desktop][b] but do not launch immediately.
 2. Launch and skip through helper setup screens.
 
 !!! example "PlayOn ➔ ⚙"
@@ -26,6 +26,7 @@ Steaming service recorder.
     * Channels:
         * Disable all channels not used.
         * Login to used channels.
+
 
 ## Convert PlayOn Recording to MKV Containers
 ``` bash
@@ -96,8 +97,12 @@ chown ${USER}:${USER} "${basename}.mkv"
 chmod 0640 "${basename}.mkv"
 ```
 
-## References
 
-* https://www.playon.tv/support/minreqs
-* https://www.playon.tv/user-guide/intro
-* https://forums.webosnation.com/webos-apps-games/297294-port-forwarding-playon.html
+## References[^1][^2][^3]
+
+[^1]: https://www.playon.tv/support/minreqs
+[^2]: https://www.playon.tv/user-guide/intro
+[^3]: https://forums.webosnation.com/webos-apps-games/297294-port-forwarding-playon.html
+
+[a]: https://www.playon.tv/support/minreqs
+[b]: https://www.playon.tv/getplayon

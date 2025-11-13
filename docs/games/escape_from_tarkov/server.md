@@ -1,6 +1,7 @@
 # FIKA Server
 FIKA is a locally hosted multiplayer serve for Escape from Tarkov.
 
+
 ## Requirements
 
  Type | Minimum Requirement
@@ -9,7 +10,8 @@ FIKA is a locally hosted multiplayer serve for Escape from Tarkov.
  DISK | ~500MB (~8GB during build process)
   CPU | ~1 core
 
-## Dedicated Server Ports
+
+## Dedicated [Server Ports][a]
 
 1. 'Dedicated server' syncs state, profiles, and enforces settings.
     This is the linux server.
@@ -27,9 +29,6 @@ FIKA is a locally hosted multiplayer serve for Escape from Tarkov.
     server will redirect clients automatically (clients specify the dedicated
     server to connect to):
 
-Reference:
-
-* https://old.reddit.com/r/SPTarkov/comments/1ckuwmv/project_fika_on_a_dedicated_machine/
 
 ## Setup
 Add packages, users, and directories.
@@ -98,57 +97,56 @@ sed -i 's/127.0.0.1/0.0.0.0/g' /opt/eft/SPT_Data/Server/configs/http.json
 
 Set FIKA server settings to preferred options.
 
-**/opt/eft/user/mods/fika-server/assets/configs/fika.jsonc** (1)
-{ .annotate }
+??? abstract "/opt/eft/user/mods/fika-server/assets/configs/fika.jsonc"
+    0644 eft:eft
 
-1. 0644 eft:eft
-```json
-{
-  "client": {
-    "useBtr": true,
-    "friendlyFire": true,
-    "dynamicVExfils": false,
-    "allowFreeCam": false,
-    "allowSpectateFreeCam": true,
-    "allowItemSending": true,
-    "blacklistedItems": [],
-    "forceSaveOnDeath": false,
-    "mods": {
-      "required": [],
-      "optional": []
-    },
-    "useInertia": true,
-    "sharedQuestProgression": true
-  },
-  "server": {
-    "giftedItemsLoseFIR": false,
-    "launcherListAllProfiles": false,
-    "sessionTimeout": 5,
-    "showDevProfile": false,
-    "showNonStandardProfile": false
-  },
-  "natPunchServer": {
-    "enable": false,
-    "port": 6790,
-    "natIntroduceAmount": 1
-  }
-  "dedicated": {
-    "profiles": {
-      "amount": 0
-    },
-    "scripts": {
-      "generate": true,
-      "forceIp": ""
+    ```json
+    {
+      "client": {
+        "useBtr": true,
+        "friendlyFire": true,
+        "dynamicVExfils": false,
+        "allowFreeCam": false,
+        "allowSpectateFreeCam": true,
+        "allowItemSending": true,
+        "blacklistedItems": [],
+        "forceSaveOnDeath": false,
+        "mods": {
+          "required": [],
+          "optional": []
+        },
+        "useInertia": true,
+        "sharedQuestProgression": true
+      },
+      "server": {
+        "giftedItemsLoseFIR": false,
+        "launcherListAllProfiles": false,
+        "sessionTimeout": 5,
+        "showDevProfile": false,
+        "showNonStandardProfile": false
+      },
+      "natPunchServer": {
+        "enable": false,
+        "port": 6790,
+        "natIntroduceAmount": 1
+      }
+      "dedicated": {
+        "profiles": {
+          "amount": 0
+        },
+        "scripts": {
+          "generate": true,
+          "forceIp": ""
+        }
+      },
+      "background": {
+        "enable": true,
+        "easteregg": false
+      }
     }
-  },
-  "background": {
-    "enable": true,
-    "easteregg": false
-  }
-}
-```
+    ```
 
-### Enable Open flea market for all items.
+### Enable [Open flea market for all items][b]
 Allows traditional flea market usage and quest progression for items that
 cannot be obtained otherwise.
 
@@ -157,39 +155,30 @@ sed -i 's/CanRequireOnRagfair\":\ false/CanRequireOnRagfair\":\ true/g' /opt/eft
 sed -i 's/CanSellOnRagfair\":\ false/CanSellOnRagfair\":\ true/g' /opt/eft/SPT_Data/Server/database/templates/items.json
 ```
 
-Reference:
-
-* https://old.reddit.com/r/SPTarkov/comments/sibdoz/how_to_enable_all_items_on_the_flea/
-
-### Migrate from SIT to FIKA (optional)
+### Migrate from [SIT to FIKA (optional)][c]
 * Copy `/opt/eft/user/profiles` from SIT to FIKA (same location)
 * Remove `password` line in each profile, under `info` section
 
-Reference:
-
-* https://old.reddit.com/r/SPTarkov/comments/1chnvrs/guide_how_to_port_your_spt_profile_to_fika_or_sit/
-
 ### Create and start systemd service
 
-**/etc/systemd/system/eft.service** (1)
-{ .annotate }
+??? abstract "/etc/systemd/system/eft.service"
+    0644 root:root
 
-1. 0644 root:root
-```bash
-[Unit]
-Description=Escape from Tarkov (Coop) SPT/FIKA Server.
+    ```bash
+    [Unit]
+    Description=Escape from Tarkov (Coop) SPT/FIKA Server.
 
-[Service]
-Type=exec
-WorkingDirectory=/opt/eft
-ExecStart=/opt/eft/SPT.Server.exe
-Restart=on-failure
-User=eft
-Group=eft
+    [Service]
+    Type=exec
+    WorkingDirectory=/opt/eft
+    ExecStart=/opt/eft/SPT.Server.exe
+    Restart=on-failure
+    User=eft
+    Group=eft
 
-[Install]
-WantedBy=default.target
-```
+    [Install]
+    WantedBy=default.target
+    ```
 
 ``` bash
 # Enable and start FIKA server.
@@ -197,6 +186,7 @@ systemctl daemon-reload
 systemctl enable eft
 systemctl start eft
 ```
+
 
 ## Upgrading
 Just repeat the process above to rebuild from head and update server binaries
@@ -215,15 +205,12 @@ cp -av /opt/{OLD SPT}-eft/user/profiles/* /opt/eft/user/profiles/
 systemctl start eft
 ```
 
-## Profile Conversions
+
+## [Profile Conversions][d]
 User profiles may need to be converted. Always double check profiles load
 correctly after upgrades. Some upgrades cannot convert profiles.
 
-3.8.3 to 3.9.0:
-
-* https://github.com/MadBender/spt-profile-converter
-* https://github.com/ArchangelWTF/SPT.ProfileConverter
-
-## Reference
-
-* https://gist.github.com/OnniSaarni/a3f840cef63335212ae085a3c6c10d5c
+[a]: https://old.reddit.com/r/SPTarkov/comments/1ckuwmv/project_fika_on_a_dedicated_machine
+[b]: https://old.reddit.com/r/SPTarkov/comments/sibdoz/how_to_enable_all_items_on_the_flea
+[c]: https://old.reddit.com/r/SPTarkov/comments/1chnvrs/guide_how_to_port_your_spt_profile_to_fika_or_sit
+[d]: https://github.com/ArchangelWTF/SPT.ProfileConverter

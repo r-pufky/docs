@@ -1,5 +1,6 @@
 # Best Practices
 
+
 ## One Proxy File Per Site
 Minimizes errors by keeping proxy configuration in one location. Useful when
 needing the same proxy config multiple times in a site.
@@ -12,16 +13,15 @@ mkdir /etc/nginx/conf.d/include/proxy
 Add each site proxy config to **/etc/nginx/conf.d/include/proxy/{SITE}**. These
 can be imported in server/location blocks as needed.
 
-/etc/nginx/conf.d/include/server/{SITE} (1)
-{ .annotate }
+??? abstract "/etc/nginx/conf.d/include/server/{SITE}"
+    0644 root:root
 
-1. 0644 root:root
+    ``` nginx
+    server {
+      include /etc/nginx/conf.d/include/proxy/{SITE};
+    }
+    ```
 
-``` nginx
-server {
-  include /etc/nginx/conf.d/include/proxy/{SITE};
-}
-```
 
 ## One Server Site Per Config File
 Keep one site per configuration file to focus only on that site. This will help
@@ -35,19 +35,17 @@ mkdir /etc/nginx/conf.d/include/server
 Add each site to **/etc/nginx/conf.d/include/server/{SITE}**. Then modify
 default config to auto import sites / services.
 
-/etc/nginx/conf.d/default.conf (1)
-{ .annotate }
+??? abstract "/etc/nginx/conf.d/default.conf"
+    0644 root:root
 
-1. 0644 root:root
-
-``` nginx
-include /etc/nginx/conf.d/include/server/*;
-```
+    ``` nginx
+    include /etc/nginx/conf.d/include/server/*;
+    ```
 
 Adding a site in services and restarting NGINX will now automatically pickup
 that site.
 
-## Password Authentication (Basic Auth)
+## [Password Authentication (Basic Auth)][a]
 Basic auth uses a file to authenticate users for NGINX locations.
 
 Install password utilities and generate a user/password.
@@ -56,83 +54,69 @@ apt install apache2-utils
 sudo htpasswd -c /etc/nginx/{SITE}.pass {USER}
 ```
 
-nginx/conf.d/reverse_proxy.conf (1)
-{ .annotate }
+??? abstract "nginx/conf.d/reverse_proxy.conf"
+    0644 root:root
 
-1. 0644 root:root
+    ``` nginx
+    server {
+      listen 443 ssl http2;
+      server_name {SITE}.{DOMAIN} {SITE};
 
-``` nginx
-server {
-  listen 443 ssl http2;
-  server_name {SITE}.{DOMAIN} {SITE};
+      location / {
+        allow {TRUSTED NETWORK}/{TRUSTED NETWORK MASK};
+        allow {TRUSTED IP};
+        deny all;
+        auth_basic '{SITE}';
+        auth_basic_user_file /etc/nginx/{SITE}.pass;
 
-  location / {
-    allow {TRUSTED NETWORK}/{TRUSTED NETWORK MASK};
-    allow {TRUSTED IP};
-    deny all;
-    auth_basic '{SITE}';
-    auth_basic_user_file /etc/nginx/{SITE}.pass;
-
-    proxy_pass https://{SITE}/;
-    include /etc/nginx/conf.d/proxy-control.conf;
-  }
-}
-```
+        proxy_pass https://{SITE}/;
+        include /etc/nginx/conf.d/proxy-control.conf;
+      }
+    }
+    ```
 
 !!! note
     This will allow specific subnets and trusted IP's to access location
     without authentication, and force all others to authenticate, prompting
     with **{SITE}**.
 
-  [See Site-wide Auth File](#site-wide-auth-file) for applying auth to subnets.
 
-Reference:
-
-* https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/#pass
-
-## Site-wide Auth File
+## [Site-wide Auth File][b]
 Keep authentication definitions for different services to one file to maintain
 authentication consistency across multiple sites.
 
 Create an authentication block, and store in a file.
 
-/etc/nginx/conf.d/site_auth.conf (1)
-{ .annotate }
+??? abstract "/etc/nginx/conf.d/site_auth.conf"
+    0644 root:root
 
-1. 0644 root:root
-
-``` nginx
-# Allow all on 10.1.1.0/24 through, and force auth for everyone else.
-satisfy              any;
-allow                10.1.1.0/24;
-deny                 all;
-auth_basic           'Your Site';
-auth_basic_user_file /etc/nginx/conf.d/your_site.pass
-```
+    ``` nginx
+    # Allow all on 10.1.1.0/24 through, and force auth for everyone else.
+    satisfy              any;
+    allow                10.1.1.0/24;
+    deny                 all;
+    auth_basic           'Your Site';
+    auth_basic_user_file /etc/nginx/conf.d/your_site.pass
+    ```
 
 Include authentication block where authentication would be required.
 
-/etc/nginx/conf.d/service/my_site.conf (1)
-{ .annotate }
+??? abstract "/etc/nginx/conf.d/service/my_site.conf"
+    0644 root:root
 
-1. 0644 root:root
+    ``` nginx
+    location / {
+      include    /etc/nginx/conf.d/site_auth.conf;
+      proxy_pass ...
+    }
+    ```
 
-``` nginx
-location / {
-  include    /etc/nginx/conf.d/site_auth.conf;
-  proxy_pass ...
-}
-```
-
-Reference:
-
-* https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/
 
 ## Remove Auth Requirement for Proxies
 NGINX may be whitelisted to allow dashboards and services to communicate with
 each other using FQDNs without needing basic auth.
 
-### Whitelist All Containers
+### [Whitelist All Containers][c]
 Add IP range to the authorization file.
 
 /etc/nginx/conf.d/site_auth.conf (1)
@@ -144,11 +128,7 @@ Add IP range to the authorization file.
 allow 172.18.0.0/16;
 ```
 
-Reference:
-
-* https://docs.docker.com/network/bridge/#differences-between-user-defined-bridges-and-the-default-bridge
-
-### Whitelist Single Container
+### [Whitelist Single Container][d]
 Whitelist specific IP in the authorization file.
 
 /etc/nginx/conf.d/site_auth.conf (1)
@@ -160,9 +140,6 @@ Whitelist specific IP in the authorization file.
 allow 172.18.0.101;
 ```
 
-Reference:
-
-* https://stackoverflow.com/questions/45358188/restrict-access-to-nginx-server-location-to-a-specific-docker-container-with-al
 
 ## Disable Auth for a specific location
 Explicitly disable auth and allow all to remove any auth enforcement for a
@@ -172,20 +149,19 @@ specific location. This is for proxied sites that do their own authentication
 Explicitly set **no** authentication and **allow all** to prevent any
 configuration carried over from the default site.
 
-/etc/nginx/conf.d/service/my_site.conf (1)
-{ .annotate }
+??? abstract "/etc/nginx/conf.d/service/my_site.conf"
+    0644 root:root
 
-1. 0644 root:root
+    ``` nginx
+    location / {
+      auth_basic off;
+      allow      all;
+      proxy_pass ...
+    }
+    ```
 
-``` nginx
-location / {
-  auth_basic off;
-  allow      all;
-  proxy_pass ...
-}
-```
 
-## Classify Networks to Variables
+## [Classify Networks to Variables][e]
 Determine remote address subnet / IP and set variable specifically for match.
 Enables use of logic within NGINX to make decisions based on remote IP address.
 
@@ -214,11 +190,8 @@ server {
 }
 ```
 
-Reference:
 
-* http://nginx.org/en/docs/http/ngx_http_geo_module.html
-
-## Rate Limiting
+## [Rate Limiting][f]
 Restrict the amount of requests a user can simultaneously issue to the NGINX
 proxy and determine how to throttle or drop requests over that limit. Read
 in-depth documentation reference to fully understand rate limiting.
@@ -248,6 +221,9 @@ location / {
   any request amount over 10 until the queue is cleared. Excessive queries will
   be dropped.
 
-Reference:
-
-* https://www.nginx.com/blog/rate-limiting-nginx
+[a]: https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/#pass
+[b]: https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source
+[c]: https://docs.docker.com/network/bridge/#differences-between-user-defined-bridges-and-the-default-bridge
+[d]: https://stackoverflow.com/questions/45358188/restrict-access-to-nginx-server-location-to-a-specific-docker-container-with-al
+[e]: http://nginx.org/en/docs/http/ngx_http_geo_module.html
+[f]: https://www.nginx.com/blog/rate-limiting-nginx

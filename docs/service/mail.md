@@ -2,10 +2,11 @@
 Email testing for classic postfix stack.
 
 !!! example "Migrated to ansible collection"
-    Use [r_pufky.srv.mox](https://galaxy.ansible.com/ui/repo/published/r_pufky/srv/docs/).
+    Use [r_pufky.srv.mox][a].
 
     The classic postfix stack has been archived:
     https://github.com/r-pufky/ansible_mail
+
 
 ## Verify Services Locked Down
 ``` bash
@@ -19,7 +20,7 @@ ehlo localhost
 # Press 'ctrl + ]' to quit.
 ```
 
-### Verify non-encrypted connections fail.
+### Verify non-encrypted connections fail
 ``` bash
 telnet localhost 143  # IMAP
 telnet localhost 110  # POP
@@ -38,7 +39,7 @@ openssl s_client -connect localhost:993
 # 'C logout {ENTER}' to quit.
 ```
 
-### Verify encrypted SMTP connections succeed.
+### Verify encrypted SMTP connections succeed
 ``` bash
 openssl s_client -starttls smtp -crlf -connect localhost:587
 
@@ -48,13 +49,14 @@ openssl s_client -starttls smtp -crlf -connect localhost:587
 # 'crtl + c' to quit.
 ```
 
+
 ## Test Email Delivery
 Ensure that users can receive mail. Test for users and alias cases.
 
 !!! tip
     **{USER}** and **{PASS}** should be base64 encoded.
 
-### Telnet SMTP and send test emails.
+### Telnet SMTP and send test emails
 ``` bash
 telnet localhost 25
 ehlo localhost
@@ -72,7 +74,7 @@ testing mail from postfix
 quit
 ```
 
-### Verify SSL/TLS SMTP can send.
+### [Verify SSL/TLS SMTP can send][b]
 ``` bash
 openssl s_client -starttls smtp -crlf -connect mail.{DOMAIN}:587
 ehlo mail.{DOMAIN}
@@ -90,9 +92,6 @@ testing mail from SSL/TLS SMTP
 quit
 ```
 
-Reference:
-
-* https://support.sugarcrm.com/Knowledge_Base/Email/Testing_Outbound_Email_Using_Command_Line
 
 ## Verify Proper Mail Configuration
 Tests must be green or the mail server will be blacklisted by major email
@@ -114,10 +113,10 @@ exposed for testing.
     email.
 
     This **must** be green if there is **any** intent to send mail to other
-    services. Your ISP generally controls this, which implies that you have
-    your ISP set this up for you or setup a hosted solution where you control
-    the IP space.
+    services. Your [ISP generally controls this][c], which implies that you
+    have your ISP set this up for you or setup a hosted solution where you
+    control the IP space.
 
-    Reference:
-
-    * https://community.spiceworks.com/topic/405534-dns-ptr-record-issues
+[a]: https://galaxy.ansible.com/ui/repo/published/r_pufky/srv/docs
+[b]: https://support.sugarcrm.com/Knowledge_Base/Email/Testing_Outbound_Email_Using_Command_Line
+[c]: https://community.spiceworks.com/topic/405534-dns-ptr-record-issues

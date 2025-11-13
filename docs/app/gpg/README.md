@@ -11,10 +11,10 @@ master key should be kept offline and encrypted and **only** the subkeys used in
 day to day usage.
 
 
-## Reference
+## Reference[^1][^2][^3][^4][^5]
 
-* https://github.com/drduh/YubiKey-Guide
-* https://zacharyvoase.com/2009/08/20/openpgp/
-* https://zeos.ca/post/2015/gpg-smartcard/
-* https://support.yubico.com/hc/en-us/articles/360013790259-Using-Your-YubiKey-with-OpenPGP
-* https://www.linode.com/docs/guides/gpg-key-for-ssh-authentication/
+[^1]: https://github.com/drduh/YubiKey-Guide
+[^2]: https://zacharyvoase.com/2009/08/20/openpgp/
+[^3]: https://zeos.ca/post/2015/gpg-smartcard/
+[^4]: https://support.yubico.com/hc/en-us/articles/360013790259-Using-Your-YubiKey-with-OpenPGP
+[^5]: https://www.linode.com/docs/guides/gpg-key-for-ssh-authentication/

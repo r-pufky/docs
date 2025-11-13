@@ -1,5 +1,6 @@
 # Troubleshooting
 
+
 ## Applications Not Appearing in Start Menu Searches
 Background Tasks need to be enabled for the application index to be updated when
 new programs are installed.
@@ -7,18 +8,15 @@ new programs are installed.
 !!! example "⌘ + r ➔ ms-settings:privacy-backgroundapps"
     Let apps run in the background: ✔
 
-By disabling all background tasks (global toggle) this index is never updated,
-and therefore apps will stop appearing in start menu searches. You can still
-disable all apps in the background, however the service still needs to be
+By [disabling all background tasks (global toggle)][a] this index is never
+updated, and therefore apps will stop appearing in start menu searches. You can
+still disable all apps in the background, however the service still needs to be
 enabled.
 
-Reference
 
-* https://superuser.com/questions/947392/windows-10-search-cant-find-any-applications-even-calculator
-
-## NTFS File Ownership Access Denied
-Default well known SIDs were removed from file permissions and replaced with a
-specific user SID that no longer exists.
+## [NTFS File Ownership Access Denied][b]
+[Default well known SIDs][c] were removed from file permissions and replaced
+with a specific user SID that no longer exists.
 
 Replace old SID with current system SID. (1)
 { .annotate }
@@ -33,10 +31,6 @@ setacl.exe -on c:\ -ot file -actn trustee -trst "n1:S-old-501;n2:S-new-501;ta:re
 
 Affected NTFS partition should be nuked and re-formatted.
 
-Reference:
-
-* https://superuser.com/questions/439675/how-to-bind-old-users-sid-to-new-user-to-remain-ntfs-file-ownership-and-permiss
-* https://docs.microsoft.com/en-us/troubleshoot/windows-server/identity/security-identifiers-in-windows
 
 ## Undeletable System Volumes
 System Volume information copied from another system which no longer exists.
@@ -49,7 +43,7 @@ icacls ".\System Volume Information" /t /c /grant administrators:F System:F ever
 rd ".\System Volume Information"
 ```
 
-## Application or game refuses to start (Hyper-V Virtualization detected)
+## Application or game refuses to start [(Hyper-V Virtualization detected)][d]
 Some applications and games detect Hyper-V virtualization and refuse to start.
 
 Disable Hyper-V on Windows boot instead of through the BIOS. This removes the
@@ -64,17 +58,14 @@ bcdedit --%  /set {GUID} hypervisorlaunchtype off
 
 Restart holding **shift** to show boot options. Select **No Hyper-V**.
 
-Reference:
 
-* https://www.hanselman.com/blog/switch-easily-between-virtualbox-and-hyperv-with-a-bcdedit-boot-entry-in-windows-81
-
-## Locked out after Update (Password Reset)
+## Locked out after [Update (Password Reset)][g]
 Updates may cause users to be locked out after rebooting.
 
 No Alternative Account.
 
-1. Download [Hiren BootCD ISO](https://www.hirensbootcd.org/download/).
-2. Create [Bootable USB Disk](README.md#create-uefi-usb-boot-disk).
+1. Download [Hiren BootCD ISO][e].
+2. Create [Bootable USB Disk][f].
 
     !!! example "Utilities ➔ Security ➔ Passwords ➔ Lazesoft Password Security"
 
@@ -83,7 +74,7 @@ No Alternative Account.
         set in this tool without a license. Resetting the account will also clear
         saved tokens, such as chrome auto login.
 
-Alternative Account (no admin required).
+Alternative Account [(no admin required).][h]
 
 1. Reboot and hold **shift** until the troubleshooting options appear.
 
@@ -98,12 +89,8 @@ Alternative Account (no admin required).
     net user {USER} {PASS}
     ```
 
-Reference:
 
-* https://www.passfab.com/windows-tips/windows-10-password-incorrect-after-update.html
-* https://www.wimware.com/how-to/reset-windows-10-password-command-prompt.html
-
-## UTC Realtime Clock
+## [UTC Realtime Clock][i]
 Only required if dual booting requires Windows 10.
 
 Set BIOS clock to UTC and update windows to interpret the Realtime Clock (RTC)
@@ -119,8 +106,6 @@ handle clock updates.
 
     Value: **1**
 
-    https://forum.manjaro.org/t/root-tip-get-your-time-timezone-right-using-manjaro-windows-dual-boot/1167
-
 !!! example "Disable NTP sync"
     `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\W32Time\TimeProviders\NtpClient`
 
@@ -130,7 +115,6 @@ handle clock updates.
 
     Value: **0**
 
-    https://forum.manjaro.org/t/root-tip-get-your-time-timezone-right-using-manjaro-windows-dual-boot/1167
 
 ## Realtek A-Volute (Nahimic)
 Realtek has added A-Volute(Nahimic) services to the install package. These
@@ -144,7 +128,7 @@ Nahimic behaves very much like a virus, automatically reinstalling itself and
 running two processes to ensure it is always loaded; providing no value to the
 end user.
 
-###  Disabling
+### [Disabling][j]
 If the realtek device is not being used, **disable it** in the BIOS. This will
 prevent Microsoft from re-installing the software every time windows update
 runs.
@@ -155,19 +139,11 @@ Disable Nahimic Virtual Devices
     * Nahimic Mirroring Device: ✘
     * Sonic Studio Virtual Mixer: ✘
 
-Reference:
-
-* https://old.reddit.com/r/MSI_Gaming/comments/ilys2o/nahimic_is_literal_malware_no_matter_how_you/
-
-Disable Nahimic Services
+Disable [Nahimic Services][k]
 !!! example "⌘ ➔ services.msc ➔ Nahimic service ➔ General ➔ Disabled"
     Stop service.
 
-    Reference:
-
-    * https://old.reddit.com/r/Amd/comments/koh9ca/turning_offdisabling_my_rgb_g_skill_trident_z_neo/
-
-Prevent Nahimic Executables from Starting
+Prevent [Nahimic Executables from Starting][l]
 !!! example "User Configuration ➔ Administrative Templates ➔ System ➔ Don't run specified Windows applications"
     * Enabled: ✔
     * List of disallowed applications
@@ -178,11 +154,6 @@ Prevent Nahimic Executables from Starting
         * c:\Users\{USER}\AppData\Local\NhNotifSys\NhNotifSys.exe
         * c:\Users\{USER}\AppData\Local\NhNotifSys\sonicstudio\NhNotifSys.exe
 
-    Reference:
-
-    * https://old.reddit.com/r/MSI_Gaming/comments/ilys2o/nahimic_is_literal_malware_no_matter_how_you/
-    * https://appuals.com/how-to-remove-windows-defender-icon-on-windows-10/
-
 Disable Nahimic Scheduled Tasks (tasks may not exist)
 !!! example "⌘ ➔ Task Scheduler ➔ Task Scheduler Library"
     * NahimicSvc32Run: ✘
@@ -190,12 +161,9 @@ Disable Nahimic Scheduled Tasks (tasks may not exist)
     * NahimicTask32: ✘
     * NahimicTask64: ✘
 
-    Reference:
-
-    * https://old.reddit.com/r/MSI_Gaming/comments/ilys2o/nahimic_is_literal_malware_no_matter_how_you/
-
 Delete files that have been placed in
 **C:\Users\{USER}\AppData\Local\NhNotifSys**.
+
 
 ## EA Updater (or other apps) showing in search results
 
@@ -203,7 +171,8 @@ Delete files that have been placed in
     * Classic: ✔
     * Exclude **all** drives
 
-## Disable USB Selective Suspend
+
+## [Disable USB Selective Suspend][m]
 Prevents external drives from being disconnected while in use.
 
 !!! example "⌘ + x ➔ Device Manager ➔ Universal Serial Bus controllers"
@@ -214,11 +183,8 @@ Prevents external drives from being disconnected while in use.
 !!! example "⌘ + i ➔ System ➔ Power & Battery"
     Verify current power plan isn't set to aggressively manage USB power.
 
-Reference:
 
-* https://forum.sienci.com/t/usb-selective-suspend-in-windows-11/10345
-
-## Prevent Disk Check on Every Boot
+## [Prevent Disk Check on Every Boot][n]
 Dual booting systems encounter this.
 
 !!! example "Disable hybrid boot"
@@ -230,14 +196,23 @@ Dual booting systems encounter this.
 
     Value: **0**
 
-Reference:
 
-* https://www.prime-expert.com/articles/b26/stop-disk-check-from-running-on-every-boot
-
-## Astro A40's Not Consistently Working
+## [Astro A40's Not Consistently Working][o]
 Windows 11 requires DAC to be directly connected to a motherboard USB port and
 not a hub.
 
-Reference:
-
-* https://old.reddit.com/r/AstroGaming/comments/1h9t8mp/windows_11_a40s_combined_output_channel_audio_fix/
+[a]: https://superuser.com/questions/947392/windows-10-search-cant-find-any-applications-even-calculator
+[b]: https://superuser.com/questions/439675/how-to-bind-old-users-sid-to-new-user-to-remain-ntfs-file-ownership-and-permiss
+[c]: https://docs.microsoft.com/en-us/troubleshoot/windows-server/identity/security-identifiers-in-windows
+[d]: https://www.hanselman.com/blog/switch-easily-between-virtualbox-and-hyperv-with-a-bcdedit-boot-entry-in-windows-81
+[e]: https://www.hirensbootcd.org/download
+[f]: README.md#create-uefi-usb-boot-disk
+[g]: https://www.passfab.com/windows-tips/windows-10-password-incorrect-after-update.html
+[h]: https://www.wimware.com/how-to/reset-windows-10-password-command-prompt.html
+[i]: https://forum.manjaro.org/t/root-tip-get-your-time-timezone-right-using-manjaro-windows-dual-boot/1167
+[j]: https://old.reddit.com/r/MSI_Gaming/comments/ilys2o/nahimic_is_literal_malware_no_matter_how_you/
+[k]: https://old.reddit.com/r/Amd/comments/koh9ca/turning_offdisabling_my_rgb_g_skill_trident_z_neo/
+[l]: https://appuals.com/how-to-remove-windows-defender-icon-on-windows-10/
+[m]: https://forum.sienci.com/t/usb-selective-suspend-in-windows-11/10345
+[n]: https://www.prime-expert.com/articles/b26/stop-disk-check-from-running-on-every-boot
+[o]: https://old.reddit.com/r/AstroGaming/comments/1h9t8mp/windows_11_a40s_combined_output_channel_audio_fix/

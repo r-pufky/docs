@@ -73,11 +73,33 @@ nav:
     - 'Vim':
       - 'app/vim/README.md'
       - 'app/vim/troubleshooting.md'
+  - 'Arr':
+    - 'arr/deluge.md'
+    - 'arr/lidarr.md'
+    - 'arr/nzbget.md'
+    - 'arr/playon.md'
+    - 'Radarr':
+      - 'arr/radarr/README.md'
+      - 'arr/radarr/troubleshooting.md'
+    - 'Sonarr':
+      - 'arr/sonarr/README.md'
+      - 'arr/sonarr/troubleshooting.md'
   - 'Games':
     - 'games/elden_ring.md'
     - 'Escape from Tarkov':
       - 'games/escape_from_tarkov/README.md'
       - 'games/escape_from_tarkov/server.md'
+    - 'games/mumble/mumble.md'
+    - 'Steam':
+      - 'games/steam/README.md'
+      - 'games/steam/troubleshooting.md'
+  - 'Media Management':
+    - 'Plex':
+      - 'media/plex/README.md'
+      - 'media/plex/troubleshooting.md'
+    - 'Firefly III':
+      - 'media/firefly/README.md'
+      - 'media/firefly/troubleshooting.md'
   - 'Networking':
     - 'Edge OS':
       - 'networking/edge_os/README.md'
@@ -127,23 +149,13 @@ nav:
       - 'service/ca/setup.md'
       - 'service/ca/certificates.md'
       - 'service/ca/certificate_revocation_list.md'
-    - 'service/deluge.md'
-    - 'Firefly III':
-      - 'service/firefly/README.md'
-      - 'service/firefly/troubleshooting.md'
     - 'Forgejo (GIT)':
       - 'service/forgejo/README.md'
       - 'service/forgejo/troubleshooting.md'
     - 'service/imapsync.md'
-    - 'service/lidarr.md'
     - 'service/mail.md'
     - 'service/mariadb.md'
-    - 'service/mumble/README.md'
     - 'service/pihole.md'
-    - 'service/playon.md'
-    - 'Plex':
-      - 'service/plex/README.md'
-      - 'service/plex/troubleshooting.md'
     - 'service/postgres/README.md'
     - 'NFS':
       - 'service/nfs/README.md'
@@ -161,23 +173,14 @@ nav:
         - 'service/nginx/manual/cert_based_authentication.md'
         - 'service/nginx/manual/best_practices.md'
       - 'service/nginx/troubleshooting.md'
-    - 'service/nzbget.md'
-    - 'Radarr':
-      - 'service/radarr/README.md'
-      - 'service/radarr/troubleshooting.md'
     - 'service/roundcube.md'
-    - 'Sonarr':
-      - 'service/sonarr/README.md'
-      - 'service/sonarr/troubleshooting.md'
+    - 'service/secure_boot.md'
     - 'SSH':
       - 'service/ssh/README.md'
       - 'SSHD':
         - 'service/ssh/sshd/linux.md'
         - 'service/ssh/sshd/windows.md'
       - 'service/ssh/troubleshooting.md'
-    - 'Steam':
-      - 'service/steam/README.md'
-      - 'service/steam/troubleshooting.md'
     - 'Wireguard':
       - 'service/wireguard/README.md'
       - 'OS':
@@ -261,7 +264,7 @@ theme:
 markdown_extensions:
   - 'attr_list'  # HTML Attribute lists.
   - 'def_list'  # HTML Definition lists.
-  - 'footnotes'  # Footnotes.
+  - 'footnotes':  # Footnotes.
   - 'md_in_html'  # Markdown in HTML.
   - 'tables'  # Sortable tables (theme/init.js).
   - 'pymdownx.betterem'  # Github flavored emphasis handling.
