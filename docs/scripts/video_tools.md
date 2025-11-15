@@ -12,6 +12,12 @@ ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:no
 ```
 
 
+## Remove first X seconds from video file
+``` bash
+ffmpeg -i example.mp4 -ss 00:00:04.000 -acodec copy -vcodec copy -map_metadata -1 example.mp4
+```
+
+
 ## Split MKV into Smaller MKV’s Based on Timestamps
 ``` bash
 mkvmerge -o out.file --split timecodes:00:42:06.000,01:22:20.000 in.file

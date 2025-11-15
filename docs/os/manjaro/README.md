@@ -88,6 +88,9 @@ pamac install iptable-nft  # More performant IPTable drop-in.
 # Steam client
 pamac install steam  # Do not install steam-native-runtime unless issues.
 
+# Remove Manjaro branding / default homepage for browsers.
+pacman -R manjaro-browser-settings
+
 ## Windows Dual-boot
 Dual booting requires Windows 10 to use [UTC instead of
 RTC](../windows/troubleshooting.md#utc-realtime-clock).

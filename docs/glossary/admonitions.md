@@ -1,4 +1,6 @@
 # Admonitions
+!!! danger ""
+    Use "" to just create a no context box highlight. Add title when needed.
 
 !!! danger
     "Error" logs and user alerts requiring consideration.

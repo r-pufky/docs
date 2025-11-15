@@ -45,6 +45,7 @@ nav:
     - 'app/authy.md'
     - 'app/bash.md'
     - 'app/chrome.md'
+    - 'app/freecad.md'
     - 'GIT':
       - 'app/git/README.md'
       - 'app/git/branches.md'
@@ -94,6 +95,7 @@ nav:
       - 'games/steam/README.md'
       - 'games/steam/troubleshooting.md'
   - 'Media Management':
+    - 'media/music.md'
     - 'Plex':
       - 'media/plex/README.md'
       - 'media/plex/troubleshooting.md'
