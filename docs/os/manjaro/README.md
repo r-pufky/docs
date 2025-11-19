@@ -90,10 +90,11 @@ pamac install steam  # Do not install steam-native-runtime unless issues.
 
 # Remove Manjaro branding / default homepage for browsers.
 pacman -R manjaro-browser-settings
+```
+
 
 ## Windows Dual-boot
-Dual booting requires Windows 10 to use [UTC instead of
-RTC](../windows/troubleshooting.md#utc-realtime-clock).
+Dual booting requires Windows 10 to use [UTC instead of RTC][h].
 
 Set RTC (realtime clock) to UTC and use NTP with timezone.
 ``` bash
@@ -112,3 +113,4 @@ systemctl enable --now systemd-timesyncd
 [d]: ../../service/ssh/sshd/linux.md
 [e]: https://wiki.archlinux.org/title/Pacman
 [f]: https://wiki.manjaro.org/index.php/Pamac
+[h]: ../windows/troubleshooting.md#utc-realtime-clock

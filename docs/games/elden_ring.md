@@ -124,7 +124,7 @@ cp -av /mnt/win/Users/{USER}/AppData/Roaming/EldenRing/ \
 
 # Copy to Proton Profile.
 cp -av /mnt/win/Users/{USER}/AppData/Roaming/EldenRing/ \
-  ~/.local/share/Steam/steamapps/compatdata/1245620/pfx/drive_c/users/steamuser/AppData/Roaming/EldenRing/{STEAMID64}
+  ~/.local/share/Steam/steamapps/compatdata/{VERY_LARGE_NUMBER}/pfx/drive_c/users/steamuser/AppData/Roaming/EldenRing/{STEAMID64}
 ```
 
 !!! info
