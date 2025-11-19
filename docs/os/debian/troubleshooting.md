@@ -50,7 +50,7 @@ reboot -f
 Grub will throw the following error on 4.9+ Kernels running VM's on block
 devices or ZFS during normal upgrades:
 
-!!! danger "Error"
+!!! danger ""
     device-mapper reload ioctl on osprober-linux
 
 These devices are attempted to be unmounted while in use to detect other OS's

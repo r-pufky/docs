@@ -33,7 +33,7 @@ Add a standard container mountpoint directed at the NFS mount.
 ## [blocklayout failed][b]
 Message [may be ignored][c].
 
-!!! danger "Error"
+!!! danger ""
     open pipe file /run/rpc_pipefs/nfs/blocklayout failed: No such file or directory
 
 Loading the **blocklayoutdriver** resolves the message but creates another one.

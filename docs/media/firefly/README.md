@@ -4,6 +4,7 @@ Self-hosted financial manager.
 !!! example "Migrated to ansible collection"
     Use [r_pufky.srv.firefly][a].
 
+Read [tutorials][d] to configure running application.
 
 ## Reverse Proxy
 Firefly should be run via a Reverse Proxy, allowing you to isolate and wrap
@@ -64,3 +65,4 @@ affect proxied or non-proxied connections.
 [a]: https://jamielinux.com/docs/openssl-certificate-authority/create-the-intermediate-pair.html
 [b]: ../../service/nginx/README.md
 [c]: ../../service/nginx/manual/setup.md#setup-base-reverse-proxy
+[d]: https://docs.firefly-iii.org/tutorials

@@ -8,7 +8,7 @@ Generally this happens when you are playing media on Plex Home Theater or Plex
 app, where **transcoding** is being used. The app will crash generally with a
 message:
 
-!!! danger "Error"
+!!! danger ""
     Conversation failed. Transcoder crashed or failed to start up
 
 This usually happens because the transcoder was not able to write to the
@@ -22,7 +22,7 @@ transcoding directory.
 Generally if transcoding is setup right, then this is related to the **audio
 transcoding** failing. Turn on debug logging on the server and look for:
 
-!!! danger "Error"
+!!! danger ""
     EAE timeout! EAE not running, or wrong folder? Could not read
 
 This means you need to remap the **/tmp** directory to your transcoding

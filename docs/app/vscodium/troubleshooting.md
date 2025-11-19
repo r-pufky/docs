@@ -4,7 +4,7 @@
 ## [Repository does not automatically open all submodules][a]
 Default submodule load limit is low.
 
-!!! danger "Error"
+!!! danger ""
     repository has XX submodules which won't be opened automatically. You can still open each one individually by opening a file within.
 
 !!! example "ctrl + , ➔ User ➔ Extensions ➔ Git"

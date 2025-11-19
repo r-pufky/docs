@@ -5,7 +5,7 @@
 Manjaro will lockout a user for 10 minutes on 3 failed password attempts over
 15 minutes.
 
-!!! danger "Error"
+!!! danger ""
     Expressed as sudo not working with valid password or unable to login to the
     system.
 
@@ -143,6 +143,16 @@ pamac update
 ```
 
 
+## [Mouse Acceleration Seems Wonky][g]
+Adaptive refresh seems to cause mouse acceleration issues in KDE Plasma Wayland.
+
+??? example "⌘ ➔ System Settings ➔ Input & Output"
+    * Mouse & Touchpad (All devices)
+        * Pointer Acceleration: **None**
+    * Display & Monitor
+        * Adaptive sync:  **Never**
+
+
 ## Recover from a Bad Upgrade with Encrypted Root Disk
 Generally when Windows decides it's the boot manager and is wrong.
 
@@ -195,3 +205,4 @@ expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort -n
 [d]: https://old.reddit.com/r/ManjaroLinux/comments/1lr0sdz/having_trouble_updating_with_pacman_corrupted
 [e]: https://old.reddit.com/r/ManjaroLinux/comments/fzog8g/get_a_list_of_packages_you_installed_yourself
 [f]: https://www.baeldung.com/linux/list-packages-by-install-date
+[g]: https://discuss.kde.org/t/weird-mouse-anomalies-after-update-to-kde-plasma-6-1/17414

@@ -1,5 +1,24 @@
 # [Release Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## 2.2.0:
+Migrate remaining docs from ansible roles.
+
+Added:
+* Traefik documentation.
+* FeedCAD notes.
+* Music notes.
+* Headerless admonitions for docs.
+* Manjaro remove manjaro custom browser homepage.
+* Add SSD / SD disk write minimization.
+
+Changed:
+* Migrated all remaining documentation from ansible roles to this site.
+* scripts/video tools - Add start trim for video files.
+* scripts/steam -> games/steam
+
+Removed:
+* Authy - desktop app no longer exists.
+
 ## 2.1.0:
 Restructure organization.
 

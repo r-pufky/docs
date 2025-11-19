@@ -42,7 +42,6 @@ remote_name: 'origin'
 nav:
   - 'README.md'
   - 'Applications':
-    - 'app/authy.md'
     - 'app/bash.md'
     - 'app/chrome.md'
     - 'app/freecad.md'
@@ -86,11 +85,13 @@ nav:
       - 'arr/sonarr/README.md'
       - 'arr/sonarr/troubleshooting.md'
   - 'Games':
+    - 'games/conan_exiles.md'
     - 'games/elden_ring.md'
     - 'Escape from Tarkov':
       - 'games/escape_from_tarkov/README.md'
       - 'games/escape_from_tarkov/server.md'
     - 'games/mumble/mumble.md'
+    - 'games/seven_days_to_die.md'
     - 'Steam':
       - 'games/steam/README.md'
       - 'games/steam/troubleshooting.md'
@@ -146,6 +147,7 @@ nav:
   - 'Services':
     - 'service/README.md'
     - 'service/bluebubbles.md'
+    - 'service/dropbear.md'
     - 'Certificate Authority':
       - 'service/ca/README.md'
       - 'service/ca/setup.md'
@@ -176,6 +178,9 @@ nav:
         - 'service/nginx/manual/best_practices.md'
       - 'service/nginx/troubleshooting.md'
     - 'service/roundcube.md'
+    - 'Secure Boot':
+      - 'service/secure_boot/README.md'
+      - 'service/secure_boot/troubleshooting.md'
     - 'service/secure_boot.md'
     - 'SSH':
       - 'service/ssh/README.md'
@@ -183,6 +188,15 @@ nav:
         - 'service/ssh/sshd/linux.md'
         - 'service/ssh/sshd/windows.md'
       - 'service/ssh/troubleshooting.md'
+    - 'Traefik':
+      - 'service/traefik/README.md'
+      - 'service/traefik/basic_auth_dashboard.md'
+      - 'service/traefik/error_pages.md'
+      - 'service/traefik/rate_limiting.md'
+      - 'service/traefik/plugins.md'
+      - 'service/traefik/lets_encrypt.md'
+      - 'service/traefik/odic.md'
+      - 'service/traefik/troubleshooting.md'
     - 'Wireguard':
       - 'service/wireguard/README.md'
       - 'OS':

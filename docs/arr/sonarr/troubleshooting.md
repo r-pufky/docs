@@ -28,3 +28,14 @@ is the case:
 Connect ➔ Plex ➔ Update Library ➔ Disable.
 
 Otherwise duplicate items will appear on single files.
+
+
+## Failures with Searches
+These are DNS resolution failures. Generally these happened because of rate
+limiting due to large number of changes at one time. Upgrade system packages or
+re-apply role to ensure the latest mono project certificates are installed as
+well.
+
+``` bash
+apt update && apt upgrade
+```

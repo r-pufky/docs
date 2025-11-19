@@ -5,7 +5,7 @@
 The initial migration ran past the default timeouts; or a previous migration or
 mirror of the same name failed during import.
 
-!!! danger "Error"
+!!! danger ""
     pq: duplicate key value violates unique constraint "{DB TABLE}_pkey"
 
 The DB sequential IDs have a new ID but not created, so creating a new key
@@ -30,7 +30,7 @@ forgejo doctor recreate-table -c /etc/forgejo/forgejo.ini
 ## Mirror Fails with could not read Username
 The source repository is no longer public or has been deleted.
 
-!!! danger "Error"
+!!! danger ""
   [E] Failed to update mirror repository &{272 10 {USER} <nil> {REPO} {REPO} Mirror of https://github.com/{USER}/{REPO}.  2 https://github.com/{USER}/{REPO} master 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 true false false true <nil> 0 map[] map[] [] <nil> false 0 <nil> false 0 <nil> 35674663 <nil> <nil> false false [] default  1582936274 1573978478}:
   Stdout: Fetching origin
 

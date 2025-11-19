@@ -24,7 +24,7 @@ chown -R conan:conan /data/server/ConanSandbox
 **winehq** may potentially take ~5 minutes on first boot to launch, due to
 blocking on boot events.
 
-!!! danger "Error"
+!!! danger ""
     0014:err:ole:get_local_server_stream Failed: 80004002
     __wine_kernel_init boot event wait timed out
 

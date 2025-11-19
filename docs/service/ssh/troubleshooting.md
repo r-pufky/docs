@@ -12,7 +12,7 @@ password locking.
 Any other means to lock the password will result in SSH pubkey failures.
 
 !!! danger
-    [Do NOT **UsePam=yes**][b] as this leads to security vulnerabilities.
+    [Do NOT set **UsePam=yes**][b] as this leads to security vulnerabilities.
 
 
 ## Debian ssh group no longer works
@@ -38,6 +38,11 @@ Print verbose messages to **/var/log/syslog** to help in debugging issues.
 systemctl daemon-reload
 service ssh restart
 ```
+
+!!! note
+    After a login attempt, the service may need to be restarted to test again.
+
+    Check `**/var/log/syslog** for debug information.
 
 
 ## Could not open authorized keys: Permission denied

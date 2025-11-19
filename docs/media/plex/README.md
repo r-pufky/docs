@@ -4,6 +4,12 @@ Plex Media Server.
 !!! example "Migrated to ansible collection"
     Use [r_pufky.media.plex][a].
 
+!!! tip
+    * The UID/GID should be set to a user/group that have access to your media.
+      All media clients should run under the same user to run correctly.
+    * Map your media directly to where it was before to prevent needing to
+      modify any libraries. This should be **read-only**.
+
 
 ## New Setup
 A new plex install (or one requiring a new access token after revocation)
@@ -20,6 +26,8 @@ steps.
 1. Select media libraries to use.
 2. Sign-in on server: upper right ➔ sign-in.
 3. Select server and claim: claim now ➔ claim server.
+4. Update **plex_cfg_online_token** with new token in found in
+   **plexmediaserver.xml** located in **plex_srv_application_support_dir**.
 
 
 ## Enable Secure Server Connection

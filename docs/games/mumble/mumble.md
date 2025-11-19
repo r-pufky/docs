@@ -2,6 +2,14 @@
 High quality VOIP server with public certificate authentication, encryption,
 and ACLs.
 
+## Ports
+64738: UDP - Encrypted Voice Data.
+
+64738: UDP - Encrypted Control Data.
+
+/var/lib/mumble-server/mumble-server.sqlite, Server user/channel data.
+
+/etc/mumble-server.ini, Server configuration.
 
 ## Setup
 !!! warning
@@ -91,6 +99,11 @@ systemctl start mumble-server
 3. All permissions are inherited from the root channel, so as long as the user
    is added to the group, they have access to all channels created in that
    channel.
+
+### Reset superuser password
+``` bash
+dpkg-reconfigure mumble-server
+```
 
 
 ## References[^1][^2][^3]

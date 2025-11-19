@@ -4,6 +4,13 @@ NZBGet Server.
 !!! example "Migrated to ansible collection"
     Use [r_pufky.arr.nzbget][a].
 
+!!! tip
+    * The UID/GID should be set to a user/group that has access to your media.
+      All media clients should run under the same user to run correctly.
+    * Your downloader will report the download path **mapped in the downloader
+      service**. You need to map this exact path in NZBGet for it to be able to
+      post-process downloads properly.
+
 
 ## Reverse Proxy
 NZBGet should be run via a Reverse Proxy, allowing you to isolate and wrap

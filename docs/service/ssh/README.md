@@ -8,6 +8,7 @@ Alternatively use a strong password on keys that is not your login password.
 
 ### [Generate 4096 bit RSA certificates & add user to SSH group][c]
 ``` bash
+# Always use a strong password that is not a login password.
 ssh-keygen -b 4096 -t rsa -f /home/{USER}/.ssh/{KEY_NAME}
 
 # Add public key to any authorized_keys on any host to enable login.
@@ -18,6 +19,11 @@ chmod 0600 /home/{USER}/.ssh/*
 chmod 0640 /home/{USER}/.ssh/*.pub
 addgroup {USER} _ssh
 ```
+
+!!! note
+    The private key **{KEY_NAME}** needs to be used to SSH into this host. Copy
+    the public key **{KEY_NAME}.pub** to the **authorized_keys** on other hosts
+    to be able to login to those hosts.
 
 ### Importing RSA Keys for Putty/WinSCP (Windows)
 
