@@ -13,7 +13,7 @@
         <link rel="prev" href="../imapsync/">
       
       
-        <link rel="next" href="../mariadb/">
+        <link rel="next" href="postfix/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -2726,6 +2726,8 @@
       
         
       
+        
+      
     
     
     
@@ -2764,6 +2766,29 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../os/pve/acme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ACME
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -3354,8 +3379,6 @@
       
         
       
-        
-      
     
     
     
@@ -3695,16 +3718,31 @@
   
   
   
-    <li class="md-nav__item md-nav__item--active">
+    
+    
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
+        
+          
+        
       
         
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_7" checked>
+        
           
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
   
   
   <span class="md-ellipsis">
@@ -3713,114 +3751,72 @@
   </span>
   
 
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+            </a>
+            
+              
+              <label class="md-nav__link md-nav__link--active" for="__nav_10_7" id="__nav_10_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_7">
+            <span class="md-nav__icon md-icon"></span>
+            Mail
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="postfix/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Mail
+    Postfix
     
   </span>
   
 
       </a>
-      
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+              
+            
+              
+                
   
   
   
+  
+    <li class="md-nav__item">
+      <a href="troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshooting
     
+  </span>
   
+
+      </a>
+    </li>
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#verify-services-locked-down" class="md-nav__link">
-    <span class="md-ellipsis">
-      Verify Services Locked Down
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Verify Services Locked Down">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#verify-non-encrypted-connections-fail" class="md-nav__link">
-    <span class="md-ellipsis">
-      Verify non-encrypted connections fail
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#verify-encrypted-smtp-connections-succeed" class="md-nav__link">
-    <span class="md-ellipsis">
-      Verify encrypted SMTP connections succeed
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#test-email-delivery" class="md-nav__link">
-    <span class="md-ellipsis">
-      Test Email Delivery
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Test Email Delivery">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#telnet-smtp-and-send-test-emails" class="md-nav__link">
-    <span class="md-ellipsis">
-      Telnet SMTP and send test emails
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#verify-ssltls-smtp-can-send" class="md-nav__link">
-    <span class="md-ellipsis">
-      Verify SSL/TLS SMTP can send
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verify-proper-mail-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Verify Proper Mail Configuration
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -3879,9 +3875,29 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../postgres/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_10">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../postgres/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -3890,7 +3906,50 @@
   </span>
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10_10" id="__nav_10_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_10">
+            <span class="md-nav__icon md-icon"></span>
+            PostgresQL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../postgres/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+    
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -4446,29 +4505,6 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../secure_boot.md" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    None
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
       
@@ -4488,7 +4524,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_16">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_15">
         
           
           <div class="md-nav__link md-nav__container">
@@ -4505,14 +4541,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_10_16" id="__nav_10_16_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_10_15" id="__nav_10_15_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_16_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10_16">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_15">
             <span class="md-nav__icon md-icon"></span>
             SSH
           </label>
@@ -4541,10 +4577,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_16_2">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_15_2">
         
           
-          <label class="md-nav__link" for="__nav_10_16_2" id="__nav_10_16_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10_15_2" id="__nav_10_15_2_label" tabindex="0">
             
   
   
@@ -4557,8 +4593,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_16_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10_16_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_15_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_15_2">
             <span class="md-nav__icon md-icon"></span>
             SSHD
           </label>
@@ -4684,7 +4720,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_17">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_16">
         
           
           <div class="md-nav__link md-nav__container">
@@ -4701,14 +4737,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_10_17" id="__nav_10_17_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_10_16" id="__nav_10_16_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_17_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10_17">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_16">
             <span class="md-nav__icon md-icon"></span>
             Traefik
           </label>
@@ -4814,18 +4850,81 @@
   
   
   
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_16_6">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../traefik/acme/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    ACME Certificates
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10_16_6" id="__nav_10_16_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_16_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_16_6">
+            <span class="md-nav__icon md-icon"></span>
+            ACME Certificates
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../traefik/lets_encrypt/" class="md-nav__link">
+      <a href="../traefik/acme/behind_traefik/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Let's Encrypt DNS-01
+    Behind Traefik
     
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -4910,7 +5009,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_18">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_17">
         
           
           <div class="md-nav__link md-nav__container">
@@ -4927,14 +5026,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_10_18" id="__nav_10_18_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_10_17" id="__nav_10_17_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_18_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10_18">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_17">
             <span class="md-nav__icon md-icon"></span>
             Wireguard
           </label>
@@ -4963,10 +5062,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_18_2">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_17_2">
         
           
-          <label class="md-nav__link" for="__nav_10_18_2" id="__nav_10_18_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10_17_2" id="__nav_10_17_2_label" tabindex="0">
             
   
   
@@ -4979,8 +5078,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_18_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10_18_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_17_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_17_2">
             <span class="md-nav__icon md-icon"></span>
             OS
           </label>
@@ -5098,7 +5197,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_19">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_18">
         
           
           <div class="md-nav__link md-nav__container">
@@ -5115,14 +5214,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_10_19" id="__nav_10_19_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_10_18" id="__nav_10_18_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_19_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10_19">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_18">
             <span class="md-nav__icon md-icon"></span>
             ZFS
           </label>
@@ -5476,28 +5575,28 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#verify-services-locked-down" class="md-nav__link">
+  <a href="#dns" class="md-nav__link">
     <span class="md-ellipsis">
-      Verify Services Locked Down
+      DNS
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Verify Services Locked Down">
+    <nav class="md-nav" aria-label="DNS">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#verify-non-encrypted-connections-fail" class="md-nav__link">
+  <a href="#static-dns-resolvers" class="md-nav__link">
     <span class="md-ellipsis">
-      Verify non-encrypted connections fail
+      Static DNS Resolvers
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#verify-encrypted-smtp-connections-succeed" class="md-nav__link">
+  <a href="#set-mail-hostname" class="md-nav__link">
     <span class="md-ellipsis">
-      Verify encrypted SMTP connections succeed
+      Set Mail Hostname
     </span>
   </a>
   
@@ -5509,28 +5608,169 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#test-email-delivery" class="md-nav__link">
+  <a href="#traefik" class="md-nav__link">
     <span class="md-ellipsis">
-      Test Email Delivery
+      Traefik
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Test Email Delivery">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mox" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mox
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mox">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#telnet-smtp-and-send-test-emails" class="md-nav__link">
+  <a href="#generate-mail-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Telnet SMTP and send test emails
+      Generate mail configuration
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#verify-ssltls-smtp-can-send" class="md-nav__link">
+  <a href="#update-dns-records" class="md-nav__link">
     <span class="md-ellipsis">
-      Verify SSL/TLS SMTP can send
+      Update DNS Records
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Update DNS Records">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dane-tls-associations" class="md-nav__link">
+    <span class="md-ellipsis">
+      DANE TLS Associations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relax-dmarc-spf-for-postmaster-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relax DMARC SPF for postmaster messages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-tls-failure-reporting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enable TLS Failure Reporting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#email-delivery-host-this-mail-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Email delivery host (this mail server)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dkim-outgoing-message-signing-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      DKIM outgoing message signing keys
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spf-softfail" class="md-nav__link">
+    <span class="md-ellipsis">
+      SPF Softfail
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reject-dmarc-failures-and-request-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reject DMARC failures and Request Reports
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-mta-sts-tls-certificate-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enable MTA-STS TLS Certificate Validation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-client-autodiscovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enable Client Autodiscovery
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-imap-autodiscovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enable IMAP Autodiscovery
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disable-unencrypted-submission-discovery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disable Unencrypted Submission Discovery
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#require-lets-encrypt-certificates-for-tls-signatures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Require Let's Encrypt Certificates for TLS Signatures
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-dns-records" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verify DNS Records
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confirm-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Confirm Configuration
     </span>
   </a>
   
@@ -5542,9 +5782,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#verify-proper-mail-configuration" class="md-nav__link">
+  <a href="#reference" class="md-nav__link">
     <span class="md-ellipsis">
-      Verify Proper Mail Configuration
+      Reference
     </span>
   </a>
   
@@ -5566,7 +5806,7 @@
 
 
   
-    <a href="https://github.com/r-pufky/docs/edit/main/docs/service/mail.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/r-pufky/docs/edit/main/docs/service/mail/README.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
     </a>
@@ -5575,110 +5815,568 @@
 
 
 <h1 id="mail">Mail</h1>
-<p>Email testing for classic postfix stack.</p>
-<div class="admonition example">
-<p class="admonition-title">Migrated to ansible collection</p>
-<p>Use <a href="https://galaxy.ansible.com/ui/repo/published/r_pufky/srv/docs">r_pufky.srv.mox</a>.</p>
-<p>The classic postfix stack has been archived:
-<a href="https://github.com/r-pufky/ansible_mail">https://github.com/r-pufky/ansible_mail</a></p>
-</div>
-<h2 id="verify-services-locked-down">Verify Services Locked Down</h2>
-<pre class="highlight"><code class="language-bash"># Test SASL service.
-telnet localhost 25
-ehlo localhost
-
-# Should see '250 auth plain login' after issuing command. This means that SASL
-# dovecot is setup correctly.
-
-# Press 'ctrl + ]' to quit.</code></pre>
-<h3 id="verify-non-encrypted-connections-fail">Verify non-encrypted connections fail</h3>
-<pre class="highlight"><code class="language-bash">telnet localhost 143  # IMAP
-telnet localhost 110  # POP
-telnet localhost 995  # POP
-
-# All unencrypted connections should fail with: Unable to connect to remote
-# host: Connection refused.
-
-# Verify IMAPS connections succeed.
-``` bash
-openssl s_client -connect localhost:993
-
-# Should get '* OK [{CAPABILITY LIST}] Dovecot ready'. Verify the certificate
-# listed is the correct Let's Encrypt certificate for the domain used.
-
-# 'C logout {ENTER}' to quit.</code></pre>
-<h3 id="verify-encrypted-smtp-connections-succeed">Verify encrypted SMTP connections succeed</h3>
-<pre class="highlight"><code class="language-bash">openssl s_client -starttls smtp -crlf -connect localhost:587
-
-# Verify the certificate listed is the correct Let's Encrypt certificate for
-# domain used.
-
-# 'crtl + c' to quit.</code></pre>
-<h2 id="test-email-delivery">Test Email Delivery</h2>
-<p>Ensure that users can receive mail. Test for users and alias cases.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p><strong>{USER}</strong> and <strong>{PASS}</strong> should be base64 encoded.</p>
-</div>
-<h3 id="telnet-smtp-and-send-test-emails">Telnet SMTP and send test emails</h3>
-<pre class="highlight"><code class="language-bash">telnet localhost 25
-ehlo localhost
-auth login  # Should recieve 220.
-VXNlcm5hbWU6
-{USER}
-UGFzc3dvcmQ6
-{PASS}
-mail from: root@localhost
-rcpt to: {USER}@{DOMAIN}
-data
-Subject: postfix text
-testing mail from postfix
-.
-quit</code></pre>
-<h3 id="verify-ssltls-smtp-can-send"><a href="https://support.sugarcrm.com/Knowledge_Base/Email/Testing_Outbound_Email_Using_Command_Line">Verify SSL/TLS SMTP can send</a></h3>
-<pre class="highlight"><code class="language-bash">openssl s_client -starttls smtp -crlf -connect mail.{DOMAIN}:587
-ehlo mail.{DOMAIN}
-auth login  # Should recieve 220.
-VXNlcm5hbWU6
-{USER}
-UGFzc3dvcmQ6
-{PASS}
-mail from: root@localhost
-rcpt to: {USER}@{DOMAIN}
-data
-Subject: postfix text
-testing mail from SSL/TLS SMTP
-.
-quit</code></pre>
-<h2 id="verify-proper-mail-configuration">Verify Proper Mail Configuration</h2>
-<p>Tests must be green or the mail server will be blacklisted by major email
-services.</p>
-<p>Use <a href="https://mxtoolbox.com">https://mxtoolbox.com</a> to validate settings and ensure ports (25,587) are
-exposed for testing.</p>
-<ol>
-<li>
-<p>Test <strong>{DOMAIN}</strong> and <strong>`mail.{DOMAIN}</strong> MX records.</p>
-<ul>
-<li>All results <strong>must</strong> be green.</li>
-<li>The correct IP must be shown.</li>
-</ul>
-</li>
-<li>
-<p><strong>SMTP Test</strong> after looking up the MX record.</p>
-<ul>
-<li>All results <strong>must</strong> be green, except <strong>PTR</strong> lookup.</li>
-</ul>
-</li>
-</ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The <strong>PTR</strong> record maps an IP address to a DNS name. This is used by
-<strong>other</strong> mail servers to verify mail received from your server is a valid
-email.</p>
-<p>This <strong>must</strong> be green if there is <strong>any</strong> intent to send mail to other
-services. Your <a href="https://community.spiceworks.com/topic/405534-dns-ptr-record-issues">ISP generally controls this</a>, which implies that you
-have your ISP set this up for you or setup a hosted solution where you
-control the IP space.</p>
+<p>All examples use <strong>example.com</strong> replace with your DNS domain name.</p>
+</div>
+<h2 id="dns">DNS</h2>
+<p>Setup DNS with <a href="https://datatracker.ietf.org/doc/html/rfc7671">DNSSEC/DANE</a> using Google Cloud DNS.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Captive DNS services must be configured to handle DNSSEC verification or
+validation will break.</p>
+<p><strong>Disable</strong> captive DNS for mail server to test DNSSEC verification works.</p>
+</div>
+<h3 id="static-dns-resolvers">Static DNS Resolvers</h3>
+<div class="admonition abstract">
+<p class="admonition-title">/etc/resolv.conf</p>
+<p>0644 root:root
+</p><pre class="highlight"><code class="language-bash">search example.com.
+
+# Use cloudflare - does not sell user data.
+nameserver 1.1.1.1
+nameserver 1.0.0.1
+
+# Enable extended DNS attributes and propagate authenticated domain trust.
+options edns0 trust-ad</code></pre><p></p>
+</div>
+<h3 id="set-mail-hostname">Set Mail Hostname</h3>
+<p>Mail servers are generally hosted on a <strong>mail</strong> subdomain to enable transparent
+backend changes as well as main domain separation. A mail hostname does <strong>not</strong>
+need to match the machine hostname to server mail.</p>
+<div class="admonition example">
+<p class="admonition-title">console.cloud.google.com ➔ ctrl + o ➔ {DNS} ➔ Network Services ➔ Cloud DNS ➔ {DOMAIN} ➔ Edit</p>
+<ul>
+<li>DNSSEC: <strong>On</strong></li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">console.cloud.google.com ➔ ctrl + o ➔ {DNS} ➔ Network Services ➔ Cloud DNS ➔ {DOMAIN}</p>
+<ul>
+<li>Add standard:<ul>
+<li>DNS name: <strong>mail.example.com</strong></li>
+<li>Resource control type: <strong>A</strong></li>
+<li>TTL: <strong>5</strong></li>
+<li>TTL Unit: <strong>minutes</strong></li>
+<li>IPv4 Address: <strong>{PUBLIC_IP}</strong></li>
+</ul>
+</li>
+</ul>
+<p>See <a href="https://galaxy.ansible.com/ui/repo/published/r_pufky/srv">r_pufky.srv.gcp_ddns</a> for automatically updating your public IP.</p>
+</div>
+<pre class="highlight"><code class="language-bash"># Verify DNSSEC from mail server.
+
+# RRSIG must appear for DNSSEC/DANE mail configuration.
+delv mail.example.com.
+&gt; ; fully validated
+&gt; mail.example.com.     300 IN  A   50.39.134.131
+&gt; mail.example.com.     300 IN  RRSIG   A 8 3 300 20251210160823 20251118160823 59571 example.com. {HASH}/c {HASH}/fb k4w=
+
+# AD (authenticated domain) must appear for DNS entry.
+dig mail.example.com
+
+# Additionally test local DNS resolver if running.
+dig @127.0.0.1 mail.example.com
+
+# ad must appear in flags.
+&gt; ; &lt;&lt;&gt;&gt; DiG 9.20.15-1~deb13u1-Debian &lt;&lt;&gt;&gt; mail.example.com
+&gt; ;; global options: +cmd
+&gt; ;; Got answer:
+&gt; ;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 53402
+&gt; ;; flags: qr rd ra ad; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+&gt;
+&gt; ;; OPT PSEUDOSECTION:
+&gt; ; EDNS: version: 0, flags:; udp: 512
+&gt; ;; QUESTION SECTION:
+&gt; ;mail.example.com.            IN  A
+&gt;
+&gt; ;; ANSWER SECTION:
+&gt; mail.example.com.     300 IN  A   50.39.134.131
+&gt;
+&gt; ;; Query time: 88 msec
+&gt; ;; SERVER: 1.1.1.1#53(1.1.1.1) (UDP)
+&gt; ;; WHEN: Thu Nov 20 21:09:44 UTC 2025
+&gt; ;; MSG SIZE  rcvd: 59</code></pre>
+<p>Verify Mox resolves the same.
+</p><pre class="highlight"><code class="language-bash">mox -loglevel debug dns lookup a mail.example.com
+
+# authentic=true and 'with dnssec' must be returned to validate.
+&gt; debug: dns lookup result; pkg=dns; type=ip; network=ip4; host=mail.example.com.; resp=[X.X.X.X]; authentic=true; duration=81.866448ms
+&gt; records (1, with dnssec):
+&gt; - X.X.X.X</code></pre><p></p>
+<h2 id="traefik">Traefik</h2>
+<p>Pass traffic through proxy without modification. This allows the mail server to
+change on the backend without needing to changing firewall rules on the router.
+See <a href="../traefik/acme/behind_traefik/#http-01">ACME Behind Traefik</a> for detailed information.</p>
+<p>Forward ports to traefik TCP: 25, 465, 587, 143, 993</p>
+<div class="admonition abstract">
+<p class="admonition-title">/etc/traefik/traefik.yml</p>
+<p>0644 root:root
+</p><pre class="highlight"><code class="language-yaml">entryPoints:
+  # Defer TLS requirements to routers.
+  web:
+    address: ':80'
+  webs:
+    address: ':443'
+    asDefault: true
+  # Passthrough mail routing.
+  smtp:
+    address: ':25'
+  smtps:
+    address: ':465'
+  submission:
+    address: ':587'
+  imap:
+    address: ':143'
+  imaps:
+    address: ':993'</code></pre><p></p>
+</div>
+<details class="abstract">
+<summary>/etc/traefik/dynamic/mail.yml</summary>
+<p>0644 root:root
+</p><pre class="highlight"><code class="language-yaml">http:
+  routers:
+    mail_http01:
+      rule: 'PathPrefix(`/.well-known/acme-challenge/`) &amp;&amp; (Host(`mail.example.com`) || Host(`autoconfig.example.com`) || Host(`mta-sts.example.com`))'
+      entryPoints:
+        - 'web'
+      priority: 1000
+      service: 'mail_http01_service'
+
+    mail_webmail:
+      rule: 'ClientIP(`10.2.2.80`) &amp;&amp; Host(`mail.example.com`) &amp;&amp; PathPrefix(`/webmail`)'
+      entryPoints:
+        - 'webs'
+      tls:
+        certResolver: 'lets_encrypt'
+        domains:
+          - main: 'example.com'
+            sans: '*.example.com'
+      middlewares:
+        - 'redirect_to_https'
+      service: 'mail_webmail_service'
+
+    mail_admin:
+      rule: 'ClientIP(`10.2.2.80`) &amp;&amp; Host(`mail.example.com`) &amp;&amp; PathPrefix(`/admin`)'
+      entryPoints:
+        - 'webs'
+      tls:
+        certResolver: 'lets_encrypt'
+        domains:
+          - main: 'example.com'
+            sans: '*.example.com'
+      middlewares:
+        - 'redirect_to_https'
+      service: 'mail_admin_service'
+
+  middlewares:
+    redirect_to_https:
+      redirectScheme:
+        scheme: 'https'
+        permanent: true
+
+  services:
+    mail_http01_service:
+      loadBalancer:
+        servers:
+          - url: 'http://10.5.5.240:80'
+
+    mail_webmail_service:
+      loadbalancer:
+        servers:
+          - url: 'https://10.5.5.240/webmail'
+
+    mail_admin_service:
+      loadbalancer:
+        servers:
+          - url: 'https://10.5.5.240/admin'
+
+tcp:
+  routers:
+    mail_smtp:
+      rule: 'HostSNI(`*`)'
+      entryPoints:
+        - 'smtp'
+      service: 'mail_smtp_service'
+
+    mail_smtps:
+      rule: 'HostSNI(`*`)'
+      entryPoints:
+        - 'smtps'
+      service: 'mail_smtps_service'
+
+    mail_submission:
+      rule: 'HostSNI(`*`)'
+      entryPoints:
+        - 'submission'
+      service: 'mail_submission_service'
+
+    mail_imap:
+      rule: 'HostSNI(`*`)'
+      entryPoints:
+        - 'imap'
+      service: 'mail_imap_service'
+
+    mail_imaps:
+      rule: 'HostSNI(`*`)'
+      entryPoints:
+        - 'imaps'
+      service: 'mail_imaps_service'
+
+  services:
+    mail_smtp_service:
+      loadbalancer:
+        servers:
+          - address: '10.5.5.240:25'
+
+    mail_smtps_service:
+      loadbalancer:
+        servers:
+          - address: '10.5.5.240:465'
+
+    mail_submission_service:
+      loadbalancer:
+        servers:
+          - address: '10.5.5.240:587'
+
+    mail_imap_service:
+      loadbalancer:
+        servers:
+          - address: '10.5.5.240:143'
+
+    mail_imaps_service:
+      loadbalancer:
+        servers:
+          - address: '10.5.5.240:993'</code></pre><p></p>
+</details>
+<h2 id="mox">Mox</h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Increase <strong>TTL</strong> for configured entries after mail service is confirmed to
+work.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Mox quickstart will not overwrite existing directories and files. If
+regenerating a quickstart configuration all directories and files must be
+deleted.</p>
+</div>
+<h3 id="generate-mail-configuration">Generate mail configuration</h3>
+<p>Configuration and certificates are generated in quickstart. Initial passwords
+are logged in <strong>quickstart.log</strong>.
+</p><pre class="highlight"><code class="language-bash">mox quickstart -hostname mail.example.com postmaster@example.com</code></pre>
+See <a href="troubleshooting/">troubleshooting</a> to resolve quickstart issues.<p></p>
+<h3 id="update-dns-records">Update DNS Records</h3>
+<p>Use the generated mox certificates to configure DNS.</p>
+<h4 id="dane-tls-associations">DANE TLS Associations</h4>
+<p>These only need to be created for the first hosted domain (machine based).</p>
+<div class="admonition example">
+<p class="admonition-title">console.cloud.google.com ➔ ctrl + o ➔ {DNS} ➔ Network Services ➔ Cloud DNS ➔ {DOMAIN}</p>
+<ul>
+<li>Add standard:<ul>
+<li>DNS name: <strong>_25._tcp.mail.example.com.</strong></li>
+<li>Resource control type: <strong>TLSA</strong></li>
+<li>TTL: <strong>5</strong></li>
+<li>TTL Unit: <strong>minutes</strong></li>
+<li>DANE TLS Association 1: <strong>3 1 1 {HASH}</strong></li>
+<li>DANE TLS Association 2: <strong>3 1 1 {HASH}</strong></li>
+</ul>
+</li>
+</ul>
+</div>
+<h4 id="relax-dmarc-spf-for-postmaster-messages">Relax DMARC SPF for postmaster messages</h4>
+<p>These only need to be created for the first hosted domain (machine based).</p>
+<div class="admonition example">
+<p class="admonition-title">console.cloud.google.com ➔ ctrl + o ➔ {DNS} ➔ Network Services ➔ Cloud DNS ➔ {DOMAIN}</p>
+<ul>
+<li>Add standard:<ul>
+<li>DNS name: <strong>mail.example.com.</strong></li>
+<li>Resource control type: <strong>TXT</strong></li>
+<li>TTL: <strong>5</strong></li>
+<li>TTL Unit: <strong>minutes</strong></li>
+<li>TXT data: <strong>"v=spf1 a -all"</strong></li>
+</ul>
+</li>
+</ul>
+<p><strong>Must</strong> use double quotes for TXT data.</p>
+</div>
+<h4 id="enable-tls-failure-reporting">Enable TLS Failure Reporting</h4>
+<p>These only need to be created for the first hosted domain (machine based).</p>
+<div class="admonition example">
+<p class="admonition-title">console.cloud.google.com ➔ ctrl + o ➔ {DNS} ➔ Network Services ➔ Cloud DNS ➔ {DOMAIN}</p>
+<ul>
+<li>Add standard:<ul>
+<li>DNS name: <strong>_smtp._tls.mail.example.com.</strong></li>
+<li>Resource control type: <strong>TXT</strong></li>
+<li>TTL: <strong>5</strong></li>
+<li>TTL Unit: <strong>minutes</strong></li>
+<li>TXT data: <strong>"v=TLSRPTv1; rua=mailto:<a href="mailto:tlsreports@mail.example.com">tlsreports@mail.example.com</a>"</strong></li>
+</ul>
+</li>
+</ul>
+<p><strong>Must</strong> use double quotes for TXT data.</p>
+</div>
+<h4 id="email-delivery-host-this-mail-server">Email delivery host (this mail server)</h4>
+<div class="admonition example">
+<p class="admonition-title">console.cloud.google.com ➔ ctrl + o ➔ {DNS} ➔ Network Services ➔ Cloud DNS ➔ {DOMAIN}</p>
+<ul>
+<li>Add standard:<ul>
+<li>DNS name: <strong>example.com.</strong></li>
+<li>Resource control type: <strong>MX</strong></li>
+<li>TTL: <strong>5</strong></li>
+<li>TTL Unit: <strong>minutes</strong></li>
+<li>Preference and mail server 1: <strong>10 mail.example.com.</strong></li>
+</ul>
+</li>
+</ul>
+<p>Additional secondary mail servers may be added (e.g.
+<strong>aspmx.l.google.com.</strong>) to continue to accept mail on Google hosted mail
+until service is setup.</p>
+</div>
+<h4 id="dkim-outgoing-message-signing-keys">DKIM outgoing message signing keys</h4>
+<div class="admonition example">
+<p class="admonition-title">console.cloud.google.com ➔ ctrl + o ➔ {DNS} ➔ Network Services ➔ Cloud DNS ➔ {DOMAIN}</p>
+<ul>
+<li>
+<p>Add standard:</p>
+<ul>
+<li>DNS name: <strong>2025a._domainkey.example.com.</strong></li>
+<li>Resource control type: <strong>TXT</strong></li>
+<li>TTL: <strong>5</strong></li>
+<li>TTL Unit: <strong>minutes</strong></li>
+<li>TXT data: <strong>"{2025A_KEY}"</strong></li>
+</ul>
+</li>
+<li>
+<p>Add standard:</p>
+<ul>
+<li>DNS name: <strong>2025a._domainkey.example.com.</strong></li>
+<li>Resource control type: <strong>TXT</strong></li>
+<li>TTL: <strong>5</strong></li>
+<li>TTL Unit: <strong>minutes</strong></li>
+<li>TXT data: <strong>"{2025B_KEY}"</strong></li>
+</ul>
+</li>
+</ul>
+<p>Add all quoted lines to TXT field.</p>
+</div>
+<p>TODO - this record MUST be updated when IP changes.</p>
+<h4 id="spf-softfail"><a href="https://en.wikipedia.org/wiki/Sender_Policy_Framework">SPF Softfail</a></h4>
+<p>Tag any email failing SPF checks (accept mail from old mail servers).</p>
+<div class="admonition example">
+<p class="admonition-title">console.cloud.google.com ➔ ctrl + o ➔ {DNS} ➔ Network Services ➔ Cloud DNS ➔ {DOMAIN}</p>
+<ul>
+<li>Add standard:<ul>
+<li>DNS name: <strong>example.com.</strong></li>
+<li>Resource control type: <strong>TXT</strong></li>
+<li>TTL: <strong>5</strong></li>
+<li>TTL Unit: <strong>minutes</strong></li>
+<li>TXT data: <strong>"v=spf1 ip4:{IP} mx ~all"</strong></li>
+</ul>
+</li>
+</ul>
+</div>
+<h4 id="reject-dmarc-failures-and-request-reports">Reject DMARC failures and Request Reports</h4>
+<div class="admonition example">
+<p class="admonition-title">console.cloud.google.com ➔ ctrl + o ➔ {DNS} ➔ Network Services ➔ Cloud DNS ➔ {DOMAIN}</p>
+<ul>
+<li>Add standard:<ul>
+<li>DNS name: <strong>_dmarc.example.com.</strong></li>
+<li>Resource control type: <strong>TXT</strong></li>
+<li>TTL: <strong>5</strong></li>
+<li>TTL Unit: <strong>minutes</strong></li>
+<li>TXT data: <strong>"v=DMARC1;p=reject;rua=mailto:<a href="mailto:dmarcreports@example.com">dmarcreports@example.com</a>!10m"</strong></li>
+</ul>
+</li>
+</ul>
+</div>
+<h4 id="enable-mta-sts-tls-certificate-validation">Enable MTA-STS TLS Certificate Validation</h4>
+<div class="admonition example">
+<p class="admonition-title">console.cloud.google.com ➔ ctrl + o ➔ {DNS} ➔ Network Services ➔ Cloud DNS ➔ {DOMAIN}</p>
+<ul>
+<li>Add standard:<ul>
+<li>DNS name: <strong>mta-sts.example.com.</strong></li>
+<li>Resource control type: <strong>CNAME</strong></li>
+<li>TTL: <strong>5</strong></li>
+<li>TTL Unit: <strong>minutes</strong></li>
+<li>Canonical name: <strong>mail.example.com.</strong></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition example">
+<p class="admonition-title">console.cloud.google.com ➔ ctrl + o ➔ {DNS} ➔ Network Services ➔ Cloud DNS ➔ {DOMAIN}</p>
+<ul>
+<li>Add standard:<ul>
+<li>DNS name: <strong>_mta-sts.example.com.</strong></li>
+<li>Resource control type: <strong>TXT</strong></li>
+<li>TTL: <strong>5</strong></li>
+<li>TTL Unit: <strong>minutes</strong></li>
+<li>TXT data: <strong>"v=STSv1; id=20251120T223212"</strong></li>
+</ul>
+</li>
+</ul>
+</div>
+<h4 id="enable-client-autodiscovery">Enable Client Autodiscovery</h4>
+<div class="admonition example">
+<p class="admonition-title">console.cloud.google.com ➔ ctrl + o ➔ {DNS} ➔ Network Services ➔ Cloud DNS ➔ {DOMAIN}</p>
+<ul>
+<li>
+<p>Add standard:</p>
+<ul>
+<li>DNS name: <strong>autoconfig.example.com.</strong></li>
+<li>Resource control type: <strong>CNAME</strong></li>
+<li>TTL: <strong>5</strong></li>
+<li>TTL Unit: <strong>minutes</strong></li>
+<li>Canonical name: <strong>mail.example.com.</strong></li>
+</ul>
+</li>
+<li>
+<p>Add standard:</p>
+<ul>
+<li>DNS name: <strong>_autodiscover._tcp.example.com.</strong></li>
+<li>Resource control type: <strong>SRV</strong></li>
+<li>TTL: <strong>5</strong></li>
+<li>TTL Unit: <strong>minutes</strong></li>
+<li>SRV data 1: <strong>0 1 443 mail.example.com.</strong></li>
+</ul>
+</li>
+</ul>
+</div>
+<h4 id="enable-imap-autodiscovery">Enable IMAP Autodiscovery</h4>
+<div class="admonition example">
+<p class="admonition-title">console.cloud.google.com ➔ ctrl + o ➔ {DNS} ➔ Network Services ➔ Cloud DNS ➔ {DOMAIN}</p>
+<ul>
+<li>
+<p>Add standard:</p>
+<ul>
+<li>DNS name: <strong>_imaps._tcp.example.com.</strong></li>
+<li>Resource control type: <strong>SRV</strong></li>
+<li>TTL: <strong>5</strong></li>
+<li>TTL Unit: <strong>minutes</strong></li>
+<li>SRV data 1: <strong>0 1 993 mail.example.com.</strong></li>
+</ul>
+</li>
+<li>
+<p>Add standard:</p>
+<ul>
+<li>DNS name: <strong>_submissions._tcp.example.com.</strong></li>
+<li>Resource control type: <strong>SRV</strong></li>
+<li>TTL: <strong>5</strong></li>
+<li>TTL Unit: <strong>minutes</strong></li>
+<li>SRV data 1: <strong>0 1 465 mail.example.com.</strong></li>
+</ul>
+</li>
+</ul>
+<p>Note trailing <strong>S</strong> signifies encryption.</p>
+</div>
+<h4 id="disable-unencrypted-submission-discovery">Disable Unencrypted Submission Discovery</h4>
+<p>Extend DNS lifetimes as these services should never be enabled again.</p>
+<div class="admonition example">
+<p class="admonition-title">console.cloud.google.com ➔ ctrl + o ➔ {DNS} ➔ Network Services ➔ Cloud DNS ➔ {DOMAIN}</p>
+<ul>
+<li>
+<p>Add standard:</p>
+<ul>
+<li>DNS name: <strong>_imap._tcp.example.com.</strong></li>
+<li>Resource control type: <strong>SRV</strong></li>
+<li>TTL: <strong>1</strong></li>
+<li>TTL Unit: <strong>weeks</strong></li>
+<li>SRV data 1: <strong>0 0 0 .</strong></li>
+</ul>
+</li>
+<li>
+<p>Add standard:</p>
+<ul>
+<li>DNS name: <strong>_submission._tcp.example.com.</strong></li>
+<li>Resource control type: <strong>SRV</strong></li>
+<li>TTL: <strong>1</strong></li>
+<li>TTL Unit: <strong>weeks</strong></li>
+<li>SRV data 1: <strong>0 0 0 .</strong></li>
+</ul>
+</li>
+<li>Add standard:<ul>
+<li>DNS name: <strong>_pop3._tcp.example.com.</strong></li>
+<li>Resource control type: <strong>SRV</strong></li>
+<li>TTL: <strong>1</strong></li>
+<li>TTL Unit: <strong>weeks</strong></li>
+<li>SRV data 1: <strong>0 0 0 .</strong></li>
+</ul>
+</li>
+<li>Add standard:<ul>
+<li>DNS name: <strong>_pop3s._tcp.example.com.</strong></li>
+<li>Resource control type: <strong>SRV</strong></li>
+<li>TTL: <strong>1</strong></li>
+<li>TTL Unit: <strong>weeks</strong></li>
+<li>SRV data 1: <strong>0 0 0 .</strong></li>
+</ul>
+</li>
+</ul>
+</div>
+<h4 id="require-lets-encrypt-certificates-for-tls-signatures">Require Let's Encrypt Certificates for TLS Signatures</h4>
+<div class="admonition example">
+<p class="admonition-title">console.cloud.google.com ➔ ctrl + o ➔ {DNS} ➔ Network Services ➔ Cloud DNS ➔ {DOMAIN}</p>
+<ul>
+<li>Add standard:<ul>
+<li>DNS name: <strong>example.com.</strong></li>
+<li>Resource control type: <strong>CAA</strong></li>
+<li>TTL: <strong>5</strong></li>
+<li>TTL Unit: <strong>minutes</strong></li>
+<li>Certificate Authority Authorization 1: <strong>0 issue "letsencrypt.org"</strong></li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="verify-dns-records">Verify DNS Records</h3>
+<pre class="highlight"><code class="language-bash"># Confirm DNS propagated for DNSSEC/DANE.
+dig +dnssec +noall +answer +multi _25._tcp.mail.example.com. TLSA
+_25._tcp.mail.example.com. 300 IN   TLSA 3 1 1 (
+                {HASH}
+        )
+_25._tcp.mail.example.com. 300 IN   TLSA 3 1 1 (
+                {HASH}
+        )
+_25._tcp.mail.example.com. 300 IN   RRSIG TLSA 8 5 300 (
+                20251210160823 20251118160823 59571 example.com.
+                {HASH}
+        )</code></pre>
+<h3 id="confirm-configuration">Confirm Configuration</h3>
+<p>TODO - setup letsencrypt</p>
+<p>!!! abstract <strong>/data/mail/mox/config/mox.config</strong>
+    0660 mox:mox
+    ``` yaml
+    Listeners:
+        internal:
+        # Internal/Private IP's only.
+            IPs:
+                - 127.0.0.1
+                - ::1
+public:
+    IPs:
+      # Use 0.0.0.0 and :: for all IPv4/IPv6 addresses.
+      #
+      # This should be your host IP.
+      - {IP}</p>
+<pre class="highlight"><code># Update whenever public IP changes.
+    NATIPs:
+        - {EXTERNAL_IP}
+
+    # Use HTTP
+    WebserverHTTP:
+        Enabled: true
+
+    # Use HTTPS
+    WebserverHTTPS:
+        Enabled: true</code></pre>
+<p>TODO: /data/mail/mox/mox.config NEEDS TO BE UPDATED WHEN PUBLIC IP CHANGES!.</p>
+<h2 id="reference">Reference<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></h2>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://community.hetzner.com/tutorials/install-and-configure-mailserver-mox-on-debian">https://community.hetzner.com/tutorials/install-and-configure-mailserver-mox-on-debian</a>&nbsp;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+</ol>
 </div>
 
 
@@ -5702,7 +6400,7 @@ control the IP space.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 13, 2025 21:28:57 UTC">November 13, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="December 4, 2025 03:19:36 UTC">December 4, 2025</span>
   </span>
 
     
@@ -5712,7 +6410,7 @@ control the IP space.</p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 10, 2025 21:43:03 UTC">November 10, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="December 4, 2025 03:19:36 UTC">December 4, 2025</span>
   </span>
 
     

@@ -7,13 +7,13 @@
         <meta name="author" content="r-pufky">
       
       
-        <link rel="canonical" href="https://github.com/r-pufky/docs/service/traefik/lets_encrypt/">
+        <link rel="canonical" href="https://github.com/r-pufky/docs/service/mail/postfix/">
       
       
-        <link rel="prev" href="../plugins/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../odic/">
+        <link rel="next" href="../troubleshooting/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -21,7 +21,7 @@
     
     
       
-        <title>Let's Encrypt DNS-01 - Docs: A Collection of Notes</title>
+        <title>Postfix - Docs: A Collection of Notes</title>
       
     
     
@@ -91,7 +91,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lets-encrypt-dns-01" class="md-skip">
+        <a href="#postfix" class="md-skip">
           Skip to content
         </a>
       
@@ -127,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Let's Encrypt DNS-01
+              Postfix
             
           </span>
         </div>
@@ -2726,6 +2726,8 @@
       
         
       
+        
+      
     
     
     
@@ -2764,6 +2766,29 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../os/pve/acme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ACME
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
               
@@ -3354,8 +3379,6 @@
       
         
       
-        
-      
     
     
     
@@ -3691,11 +3714,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../mail/" class="md-nav__link">
+  
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_7" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -3704,7 +3751,190 @@
   </span>
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10_7" id="__nav_10_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_7">
+            <span class="md-nav__icon md-icon"></span>
+            Mail
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Postfix
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Postfix
+    
+  </span>
+  
+
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#verify-services-locked-down" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verify Services Locked Down
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verify Services Locked Down">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verify-non-encrypted-connections-fail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verify non-encrypted connections fail
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-encrypted-smtp-connections-succeed" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verify encrypted SMTP connections succeed
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-email-delivery" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Email Delivery
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Email Delivery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#telnet-smtp-and-send-test-emails" class="md-nav__link">
+    <span class="md-ellipsis">
+      Telnet SMTP and send test emails
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-ssltls-smtp-can-send" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verify SSL/TLS SMTP can send
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verify-proper-mail-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verify Proper Mail Configuration
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -3762,9 +3992,29 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../postgres/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_10">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../postgres/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -3773,7 +4023,50 @@
   </span>
   
 
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10_10" id="__nav_10_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_10">
+            <span class="md-nav__icon md-icon"></span>
+            PostgresQL
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../postgres/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+    
+  </span>
+  
+
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -4329,29 +4622,6 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../secure_boot.md" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    None
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
     
     
       
@@ -4371,7 +4641,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_16">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_15">
         
           
           <div class="md-nav__link md-nav__container">
@@ -4388,14 +4658,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_10_16" id="__nav_10_16_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_10_15" id="__nav_10_15_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_16_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10_16">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_15">
             <span class="md-nav__icon md-icon"></span>
             SSH
           </label>
@@ -4424,10 +4694,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_16_2">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_15_2">
         
           
-          <label class="md-nav__link" for="__nav_10_16_2" id="__nav_10_16_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10_15_2" id="__nav_10_15_2_label" tabindex="0">
             
   
   
@@ -4440,8 +4710,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_16_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10_16_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_15_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_15_2">
             <span class="md-nav__icon md-icon"></span>
             SSHD
           </label>
@@ -4536,8 +4806,6 @@
                 
   
   
-    
-  
   
   
     
@@ -4565,15 +4833,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_17" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_16">
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../traefik/" class="md-nav__link ">
               
   
   
@@ -4586,14 +4854,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_10_17" id="__nav_10_17_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_10_16" id="__nav_10_16_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_17_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_10_17">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_16">
             <span class="md-nav__icon md-icon"></span>
             Traefik
           </label>
@@ -4608,7 +4876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../basic_auth_dashboard/" class="md-nav__link">
+      <a href="../../traefik/basic_auth_dashboard/" class="md-nav__link">
         
   
   
@@ -4631,7 +4899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../error_pages/" class="md-nav__link">
+      <a href="../../traefik/error_pages/" class="md-nav__link">
         
   
   
@@ -4654,7 +4922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rate_limiting/" class="md-nav__link">
+      <a href="../../traefik/rate_limiting/" class="md-nav__link">
         
   
   
@@ -4677,7 +4945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../plugins/" class="md-nav__link">
+      <a href="../../traefik/plugins/" class="md-nav__link">
         
   
   
@@ -4697,115 +4965,82 @@
                 
   
   
+  
+  
     
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
+    
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
+        
+          
+        
       
         
       
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_16_6">
+        
           
+          <div class="md-nav__link md-nav__container">
+            <a href="../../traefik/acme/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
-    Let's Encrypt DNS-01
+    ACME Certificates
     
   </span>
   
 
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10_16_6" id="__nav_10_16_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_16_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_16_6">
+            <span class="md-nav__icon md-icon"></span>
+            ACME Certificates
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../traefik/acme/behind_traefik/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Let's Encrypt DNS-01
+    Behind Traefik
     
   </span>
   
 
       </a>
-      
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#create-google-cloud-service-account" class="md-nav__link">
-    <span class="md-ellipsis">
-      Create Google Cloud Service Account
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-lego-environment-variables-to-service" class="md-nav__link">
-    <span class="md-ellipsis">
-      Add LEGO environment variables to service
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configure-dns-01-certificate-challenge-with-google-cloud-dns" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configure DNS-01 Certificate challenge with Google Cloud DNS
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#validate-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Validate Configuration.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#set-live-certificates" class="md-nav__link">
-    <span class="md-ellipsis">
-      Set Live Certificates
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      Reference
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -4819,7 +5054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../odic/" class="md-nav__link">
+      <a href="../../traefik/odic/" class="md-nav__link">
         
   
   
@@ -4842,7 +5077,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../troubleshooting/" class="md-nav__link">
+      <a href="../../traefik/troubleshooting/" class="md-nav__link">
         
   
   
@@ -4891,7 +5126,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_18">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_17">
         
           
           <div class="md-nav__link md-nav__container">
@@ -4908,14 +5143,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_10_18" id="__nav_10_18_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_10_17" id="__nav_10_17_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_18_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10_18">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_17">
             <span class="md-nav__icon md-icon"></span>
             Wireguard
           </label>
@@ -4944,10 +5179,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_18_2">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_17_2">
         
           
-          <label class="md-nav__link" for="__nav_10_18_2" id="__nav_10_18_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10_17_2" id="__nav_10_17_2_label" tabindex="0">
             
   
   
@@ -4960,8 +5195,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_18_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10_18_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_17_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_17_2">
             <span class="md-nav__icon md-icon"></span>
             OS
           </label>
@@ -5079,7 +5314,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_19">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_18">
         
           
           <div class="md-nav__link md-nav__container">
@@ -5096,14 +5331,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_10_19" id="__nav_10_19_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_10_18" id="__nav_10_18_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_19_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10_19">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_18">
             <span class="md-nav__icon md-icon"></span>
             ZFS
           </label>
@@ -5457,54 +5692,75 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-google-cloud-service-account" class="md-nav__link">
+  <a href="#verify-services-locked-down" class="md-nav__link">
     <span class="md-ellipsis">
-      Create Google Cloud Service Account
+      Verify Services Locked Down
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verify Services Locked Down">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verify-non-encrypted-connections-fail" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verify non-encrypted connections fail
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#add-lego-environment-variables-to-service" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#verify-encrypted-smtp-connections-succeed" class="md-nav__link">
     <span class="md-ellipsis">
-      Add LEGO environment variables to service
+      Verify encrypted SMTP connections succeed
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#configure-dns-01-certificate-challenge-with-google-cloud-dns" class="md-nav__link">
-    <span class="md-ellipsis">
-      Configure DNS-01 Certificate challenge with Google Cloud DNS
-    </span>
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#validate-configuration" class="md-nav__link">
+  <a href="#test-email-delivery" class="md-nav__link">
     <span class="md-ellipsis">
-      Validate Configuration.
+      Test Email Delivery
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Email Delivery">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#telnet-smtp-and-send-test-emails" class="md-nav__link">
+    <span class="md-ellipsis">
+      Telnet SMTP and send test emails
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#set-live-certificates" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#verify-ssltls-smtp-can-send" class="md-nav__link">
     <span class="md-ellipsis">
-      Set Live Certificates
+      Verify SSL/TLS SMTP can send
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
+  <a href="#verify-proper-mail-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Reference
+      Verify Proper Mail Configuration
     </span>
   </a>
   
@@ -5526,7 +5782,7 @@
 
 
   
-    <a href="https://github.com/r-pufky/docs/edit/main/docs/service/traefik/lets_encrypt.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/r-pufky/docs/edit/main/docs/service/mail/postfix.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
     </a>
@@ -5534,197 +5790,111 @@
   
 
 
-<h1 id="lets-encrypt-dns-01">Let's Encrypt DNS-01</h1>
-<p>DNS-01 Challenge with Google Cloud DNS and Traefik.</p>
-<p>Traefik uses <a href="https://go-acme.github.io/lego/dns/gcloud/index.html">LEGO</a> internally to configure certificates. Certificates will
-be auto provisioned based on configured routers and base domains.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Traefik <strong>must</strong> be able to directly query authoritative DNS servers to
-validate record change <strong>before</strong> issuing a ACME certificate request.
-Otherwise "Waiting for DNS record propagation" will run until it times out.</p>
-<p>Disable <strong>destination/source/captive DNS</strong> for proxy host <strong>or</strong> disable
-propagation check and delay the required SLA time for DNS record update.</p>
+<h1 id="postfix">Postfix</h1>
+<p>Email testing for classic postfix stack.</p>
+<div class="admonition example">
+<p class="admonition-title">Migrated to ansible collection</p>
+<p>Use <a href="https://galaxy.ansible.com/ui/repo/published/r_pufky/srv/docs">r_pufky.srv.mox</a>.</p>
+<p>The classic postfix stack has been archived:
+<a href="https://github.com/r-pufky/ansible_mail">https://github.com/r-pufky/ansible_mail</a></p>
 </div>
-<h2 id="create-google-cloud-service-account">Create Google Cloud Service Account</h2>
-<p>Create service account with DNS administrator privileges.</p>
-<div class="admonition abstract">
-<p class="admonition-title">console.cloud.google.com ➔ ctrl + o ➔ {PROJECT} ➔ APIs &amp; Services ➔ Credentials ➔ Create credentials ➔ Service account</p>
-<ul>
-<li>Create service account:<ul>
-<li>Service account name: <strong>traefik acme</strong></li>
-<li>Service account ID: <strong>{AUTO_GENERATED}</strong></li>
-<li>Service account description: <strong>Traefik DNS-01 ACME Challenges</strong></li>
-</ul>
-</li>
-<li>Permissions: <strong>DNS Administrator</strong></li>
-<li>Principals with access: <strong>None</strong></li>
-</ul>
-</div>
-<p>Generate JSON keys</p>
-<div class="admonition abstract">
-<p class="admonition-title">console.cloud.google.com ➔ ctrl + o ➔ {PROJECT} ➔ IAM &amp; Admin ➔ Service accounts ➔ traefik acme ➔ ⋮ ➔ Manage keys</p>
-<ul>
-<li>Add key ➔ Create new key: JSON</li>
-</ul>
-<p>Download JSON key as <strong>traefik_acme.json</strong>.</p>
-</div>
-<h2 id="add-lego-environment-variables-to-service">Add LEGO environment variables to service</h2>
+<h2 id="verify-services-locked-down">Verify Services Locked Down</h2>
+<pre class="highlight"><code class="language-bash"># Test SASL service.
+telnet localhost 25
+ehlo localhost
+
+# Should see '250 auth plain login' after issuing command. This means that SASL
+# dovecot is setup correctly.
+
+# Press 'ctrl + ]' to quit.</code></pre>
+<h3 id="verify-non-encrypted-connections-fail">Verify non-encrypted connections fail</h3>
+<pre class="highlight"><code class="language-bash">telnet localhost 143  # IMAP
+telnet localhost 110  # POP
+telnet localhost 995  # POP
+
+# All unencrypted connections should fail with: Unable to connect to remote
+# host: Connection refused.
+
+# Verify IMAPS connections succeed.
+``` bash
+openssl s_client -connect localhost:993
+
+# Should get '* OK [{CAPABILITY LIST}] Dovecot ready'. Verify the certificate
+# listed is the correct Let's Encrypt certificate for the domain used.
+
+# 'C logout {ENTER}' to quit.</code></pre>
+<h3 id="verify-encrypted-smtp-connections-succeed">Verify encrypted SMTP connections succeed</h3>
+<pre class="highlight"><code class="language-bash">openssl s_client -starttls smtp -crlf -connect localhost:587
+
+# Verify the certificate listed is the correct Let's Encrypt certificate for
+# domain used.
+
+# 'crtl + c' to quit.</code></pre>
+<h2 id="test-email-delivery">Test Email Delivery</h2>
+<p>Ensure that users can receive mail. Test for users and alias cases.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>This can be done through <strong>r_pufky.srv.traefik</strong> with:</p>
-<pre class="highlight"><code class="language-bash">traefik_srv_env:
-  - var: 'GCE_PROJECT'
-    value: '{PROJECT_ID}'
-  - var: 'GCE_SERVICE_ACCOUNT_FILE'
-    value: '/etc/traefik/traefik_acme.json'</code></pre>
+<p><strong>{USER}</strong> and <strong>{PASS}</strong> should be base64 encoded.</p>
 </div>
-<div class="admonition abstract">
-<p class="admonition-title">/etc/systemd/system/traefik.service</p>
-<p>0644 root:root
-</p><pre class="highlight"><code class="language-bash">[service]
-...
-Environment="GCE_PROJECT={PROJECT_ID}"
-Environment="GCE_SERVICE_ACCOUNT_FILE=/etc/traefik/traefik_acme.json"
-...</code></pre><p></p>
-</div>
-<h2 id="configure-dns-01-certificate-challenge-with-google-cloud-dns">Configure DNS-01 Certificate challenge with Google Cloud DNS</h2>
-<div class="admonition abstract">
-<p class="admonition-title">/etc/traefik/traefik.yml</p>
-<p>0640 traefik:traefik
-</p><pre class="highlight"><code class="language-yaml">---
-log:
-  level: 'DEBUG'
-  format: 'json'
-accessLog:
-  format: 'json'
-api:
-  dashboard: true
-  disableDashboardAd: true
-  insecure: false
-  debug: true
-serversTransport:
-  insecureSkipVerify: true
-entryPoints:
-  web:
-    address: ':80'
-    http:
-      redirections:
-        entryPoint:
-          to: 'webs'
-          scheme: 'https'
-          permanent: true
-  webs:
-    address: ':443'
-    asDefault: true
-    http:
-      # Use Let's Encrypt with DNS-01 Challenges.
-      tls:
-        certResolver: 'lets_encrypt'
-      domains:
-      - main: 'example.com'  # Main domain.
-        sans: '*.example.com'  # Wildcard certificates.
-      middlewares:
-        - 'global_rate_limit@file'
-        - 'basic_auth_users@file'
-        - 'default_error_page@file'
-providers:
-  file:
-    directory: '/etc/traefik/dynamic'
-    watch: true
-
-# Use gcloud DNS with LEGO for ACME certificates.
-certificatesResolvers:
-  lets_encrypt:
-    acme:
-      email: 'contact@example.com'
-      storage: '/var/lib/traefik/acme_staging.json'  # For staging certs.
-      # Initial configuration with staging server.
-      # Only 50 certificates may be issued in a week.
-      # caServer: 'https://acme-v02.api.letsencrypt.org/directory'
-      caServer: 'https://acme-staging-v02.api.letsencrypt.org/directory'
-      # LEGO environment configured in traefik_srv_env.
-      dnsChallenge:
-        provider: 'gcloud'
-        # Set to DNS authoritative name servers for your domain.
-        # Found in Cloud DNS ➔ Registrar Setup
-        resolvers:
-          - 'ns-cloud-e1.googledomains.com.'
-          - 'ns-cloud-e2.googledomains.com.'
-          - 'ns-cloud-e3.googledomains.com.'
-          - 'ns-cloud-e4.googledomains.com.'
-        propagation:
-          delayBeforeChecks: '120s'  # 120 is SLA for gcloud DNS update.
-          # Only disable if caching or captive DNS upstream servers
-          # interfere with proxy host resolving DNS updates for ACME
-          # challenges.
-          disableChecks: true</code></pre><p></p>
-</div>
-<h2 id="validate-configuration">Validate Configuration.</h2>
-<p>Start Traefik and search logs.</p>
-<p>Google cloud DNS console may be checked for <strong>_acme-challenge.{DOMAIN}</strong> change
-which indicates that the service account works correctly.</p>
-<div class="admonition abstract">
-<p class="admonition-title">journalctl -u traefik</p>
-<pre class="highlight"><code class="language-bash">[INFO] acme: Registering account for contact@example.com"}
-"message":"Using DNS Challenge provider: gcloud"}
-[INFO] [example.com, *.example.com] acme: Obtaining bundled SAN certificate"}
-[INFO] [*.example.com] AuthURL: https://acme-staging-v02.api.letsencrypt.org/acme/authz/243572763/20286930863"}
-[INFO] [example.com] AuthURL: https://acme-staging-v02.api.letsencrypt.org/acme/authz/243572763/20286930873"}
-[INFO] [*.example.com] acme: use dns-01 solver"}
-[INFO] [example.com] acme: Could not find solver for: tls-alpn-01"}
-[INFO] [example.com] acme: Could not find solver for: http-01"}
-[INFO] [example.com] acme: use dns-01 solver"}
-[INFO] [*.example.com] acme: Preparing to solve DNS-01"}
-[INFO] [*.example.com] acme: Trying to solve DNS-01"}
-[INFO] [*.example.com] acme: Checking DNS record propagation. [nameservers=ns-cloud-e1.googledomains.com.:53,ns-cloud-e2.googledomains.com.:53,ns-cloud-e3.googledomains.com.:53,ns-cloud-e4.googledomains.com.:53]"}
-[INFO] Wait for propagation [timeout: 3m0s, interval: 5s]"}
-[INFO] [*.example.com] The server validated our request"}</code></pre>
-</div>
-<h2 id="set-live-certificates">Set Live Certificates</h2>
-<p>Once confirmed swap to the live certificate server.</p>
-<div class="admonition abstract">
-<p class="admonition-title">/etc/traefik/traefik.yml</p>
-<p>0640 traefik:traefik
-</p><pre class="highlight"><code class="language-yaml">certificatesResolvers:
-  lets_encrypt:
-    acme:
-      email: 'contact@example.com'
-      storage: '/var/lib/traefik/acme.json'  # For live certs.
-      # Live cert server.
-      caServer: 'https://acme-v02.api.letsencrypt.org/directory'
-      dnsChallenge:
-        provider: 'gcloud'
-        resolvers:
-          - 'ns-cloud-e1.googledomains.com.'
-          - 'ns-cloud-e2.googledomains.com.'
-          - 'ns-cloud-e3.googledomains.com.'
-          - 'ns-cloud-e4.googledomains.com.'
-        propagation:
-          delayBeforeChecks: '120s'
-          disableChecks: true</code></pre><p></p>
-</div>
-<pre class="highlight"><code class="language-bash">systemctl restart traefik</code></pre>
-<h2 id="reference">Reference<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup><sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup></h2>
-<div class="footnote">
-<hr>
+<h3 id="telnet-smtp-and-send-test-emails">Telnet SMTP and send test emails</h3>
+<pre class="highlight"><code class="language-bash">telnet localhost 25
+ehlo localhost
+auth login  # Should recieve 220.
+VXNlcm5hbWU6
+{USER}
+UGFzc3dvcmQ6
+{PASS}
+mail from: root@localhost
+rcpt to: {USER}@{DOMAIN}
+data
+Subject: postfix text
+testing mail from postfix
+.
+quit</code></pre>
+<h3 id="verify-ssltls-smtp-can-send"><a href="https://support.sugarcrm.com/Knowledge_Base/Email/Testing_Outbound_Email_Using_Command_Line">Verify SSL/TLS SMTP can send</a></h3>
+<pre class="highlight"><code class="language-bash">openssl s_client -starttls smtp -crlf -connect mail.{DOMAIN}:587
+ehlo mail.{DOMAIN}
+auth login  # Should recieve 220.
+VXNlcm5hbWU6
+{USER}
+UGFzc3dvcmQ6
+{PASS}
+mail from: root@localhost
+rcpt to: {USER}@{DOMAIN}
+data
+Subject: postfix text
+testing mail from SSL/TLS SMTP
+.
+quit</code></pre>
+<h2 id="verify-proper-mail-configuration">Verify Proper Mail Configuration</h2>
+<p>Tests must be green or the mail server will be blacklisted by major email
+services.</p>
+<p>Use <a href="https://mxtoolbox.com">https://mxtoolbox.com</a> to validate settings and ensure ports (25,587) are
+exposed for testing.</p>
 <ol>
-<li id="fn:1">
-<p><a href="https://doc.traefik.io/traefik/reference/install-configuration/tls/certificate-resolvers/acme">https://doc.traefik.io/traefik/reference/install-configuration/tls/certificate-resolvers/acme</a>&nbsp;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+<li>
+<p>Test <strong>{DOMAIN}</strong> and <strong>`mail.{DOMAIN}</strong> MX records.</p>
+<ul>
+<li>All results <strong>must</strong> be green.</li>
+<li>The correct IP must be shown.</li>
+</ul>
 </li>
-<li id="fn:2">
-<p><a href="https://old.reddit.com/r/Actualfixes/comments/wgdd1n/fix_traefik_dns_certificate_time_limit_exceeded">https://old.reddit.com/r/Actualfixes/comments/wgdd1n/fix_traefik_dns_certificate_time_limit_exceeded</a>&nbsp;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
-</li>
-<li id="fn:3">
-<p><a href="https://medium.com/@svenvanginkel/traefik-letsencrypt-dns01-challenge-with-ovhcloud-52f2a2c6d08a">https://medium.com/@svenvanginkel/traefik-letsencrypt-dns01-challenge-with-ovhcloud-52f2a2c6d08a</a>&nbsp;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a></p>
-</li>
-<li id="fn:4">
-<p><a href="https://betatim.github.io/posts/traefik-config-bare-metal">https://betatim.github.io/posts/traefik-config-bare-metal</a>&nbsp;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">↩</a></p>
-</li>
-<li id="fn:5">
-<p><a href="https://old.reddit.com/user/germanpickles/comments/1i07bw9/enable_mtls_for_traefik">https://old.reddit.com/user/germanpickles/comments/1i07bw9/enable_mtls_for_traefik</a>&nbsp;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">↩</a></p>
+<li>
+<p><strong>SMTP Test</strong> after looking up the MX record.</p>
+<ul>
+<li>All results <strong>must</strong> be green, except <strong>PTR</strong> lookup.</li>
+</ul>
 </li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <strong>PTR</strong> record maps an IP address to a DNS name. This is used by
+<strong>other</strong> mail servers to verify mail received from your server is a valid
+email.</p>
+<p>This <strong>must</strong> be green if there is <strong>any</strong> intent to send mail to other
+services. Your <a href="https://community.spiceworks.com/topic/405534-dns-ptr-record-issues">ISP generally controls this</a>, which implies that you
+have your ISP set this up for you or setup a hosted solution where you
+control the IP space.</p>
 </div>
 
 
@@ -5748,7 +5918,7 @@ which indicates that the service account works correctly.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 19, 2025 06:24:21 UTC">November 19, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 13, 2025 21:28:57 UTC">November 13, 2025</span>
   </span>
 
     
@@ -5758,7 +5928,7 @@ which indicates that the service account works correctly.</p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 19, 2025 06:24:21 UTC">November 19, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 10, 2025 21:43:03 UTC">November 10, 2025</span>
   </span>
 
     
