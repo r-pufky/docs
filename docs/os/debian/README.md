@@ -19,7 +19,7 @@ egrep 'CONFIG_TCP_CONG_BBR|CONFIG_NET_SCH_FQ' /boot/config-$(uname -r)
 ```
 
 ### [Enable BBR Support][b]
-??? abstract "/etc/sysctl.d/10_custom_kernel_bbr.conf"
+!!! abstract "/etc/sysctl.d/10_custom_kernel_bbr.conf"
     0644 root:root
 
     ``` bash
@@ -36,13 +36,13 @@ sysctl -p  # Or reboot.
 Disable if IPv6 is not being actively used to prevent any IPv6 misconfiguration
 attacks.
 
-??? abstract "/etc/sysctl.d/10_disable_ipv6.conf"
+!!! abstract "/etc/sysctl.d/10_disable_ipv6.conf"
     0644 root:root
 
     ``` bash
-    net.ipv6.conf.all.disable_ipv6 = 1
-    net.ipv6.conf.default.disable_ipv6 = 1
-    net.ipv6.conf.lo.disable_ipv6 = 1
+    net.ipv6.conf.all.disable_ipv6=1
+    net.ipv6.conf.default.disable_ipv6=1
+    net.ipv6.conf.lo.disable_ipv6=1
     ```
 
 ``` bash

@@ -25,45 +25,27 @@ export GNUPGHOME=/media/user/KINGSTON/gnupghome
 export GPGBACKUP=/media/user/KINGSTON/backup
 ```
 
-??? abstract "/media/user/KINGSTON/gnupghome/gpg.conf"
+!!! abstract "/media/user/KINGSTON/gnupghome/gpg.conf"
     0600 {USER}:{USER}
 
     ``` bash
-    personal-cipher-preferences AES256 AES192 AES
-    personal-digest-preferences SHA512 SHA384 SHA256
-    default-preference-list SHA512 SHA384 SHA256 AES256 AES192 AES ZLIB BZIP2 ZIP Uncompressed
-    cert-digest-algo SHA512
-    s2k-digest-algo SHA512
-    s2k-cipher-algo AES256
+    personal-cipher-preferences AES256 AES192 AES  # Require cipher AES 256, 192, 128.
+    personal-digest-preferences SHA512 SHA384 SHA256  # Require digest SHA 512, 384, 256.
+    default-preference-list SHA512 SHA384 SHA256 AES256 AES192 AES ZLIB BZIP2 ZIP Uncompressed  # Public preferences for cipher/digest, compression.
+    cert-digest-algo SHA512  # Force our digest creation to SHA512.
+    s2k-digest-algo SHA512  # Force our cipher to AES256.
+    s2k-cipher-algo AES256  # Enable UTF-8 support (for cross platform usage).
     charset utf-8
-    fixed-list-mode
-    no-comments
-    no-emit-version
-    keyid-format 0xlong
-    list-options show-uid-validity
-    verify-options show-uid-validity
+    fixed-list-mode  # Fixed list - use unixtimestamps for all timestamps and do not merge id/key.
+    no-comments  # Do not include comments in signature.
+    no-emit-version  # Do not include version in signature.
+    keyid-format 0xlong  # Require long hexidecimal keys.
+    list-options show-uid-validity  # Show UID validity for listing and verification options.
+    verify-options show-uid-validity  # List fingerprints with keys.
     with-fingerprint
-    require-cross-certification
-    use-agent
+    require-cross-certification  # Ensure cross certification on subkey is present and valid (prevents attack).
+    use-agent  # Enable smartcard use.
     ```
-
-??? info "gpg.conf explanation"
-    * Require cipher AES 256, 192, 128.
-    * Require digest SHA 512, 384, 256.
-    * Public preferences for cipher/digest, compression.
-    * Force our digest creation to SHA512.
-    * Force our cipher to AES256.
-    * Enable UTF-8 support (for cross platform usage).
-    * Fixed list - use unixtimestamps for all timestamps and do not merge
-      id/key.
-    * Do not include comments in signature.
-    * Do not include version in signature.
-    * Require long hexidecimal keys.
-    * Show UID validity for listing and verification options.
-    * List fingerprints with keys.
-    * Ensure cross certification on subkey is present and valid (prevents
-      attack).
-    * Enable smartcard use.
 
 
 ## Generate Strong Password

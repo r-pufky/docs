@@ -49,7 +49,7 @@ sudo git checkout-index -a -f --prefix=/opt/imapsync/
 chmod +x /opt/imapsync/imapsync
 ```
 
-??? abstract "~/bin/gmail_to_imap_sync"
+!!! abstract "~/bin/gmail_to_imap_sync"
     0755 {USER}:{USER}
 
     ``` bash

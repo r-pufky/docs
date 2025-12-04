@@ -12,7 +12,7 @@ which generally leads to container mounting failures due to timeouts on the PVE
 host.
 
 ### PVE (All Nodes)
-??? abstract "/etc/fstab"
+!!! abstract "/etc/fstab"
     0644 root:root
 
     ``` bash
@@ -22,7 +22,7 @@ host.
 ### [LXC Container][a]
 Add a standard container mountpoint directed at the NFS mount.
 
-??? abstract "/etc/pve/lxc/{ID}.conf"
+!!! abstract "/etc/pve/lxc/{ID}.conf"
     0644 root:root
 
     ``` ini

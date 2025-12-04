@@ -49,7 +49,7 @@ Install GPG and security card agents on machine.
 ## Configure [SSH/GPG Agent][d]
 This will enable SSH usage with the gpg-agent.
 
-??? abstract "~/.gnupg/gpg-agent.conf"
+!!! abstract "~/.gnupg/gpg-agent.conf"
     0600 {USER}:{USER}
 
     ``` bash
@@ -68,7 +68,7 @@ This will enable SSH usage with the gpg-agent.
     #pinentry-program /usr/local/bin/pinentry-mac
     ```
 
-??? abstract "~/.gnupg/gpg.conf"
+!!! abstract "~/.gnupg/gpg.conf"
     0600 {USER}:{USER}
 
     ``` bash
@@ -135,7 +135,7 @@ This will enable SSH usage with the gpg-agent.
     #list-options show-unusable-subkeys
     ```
 
-??? abstract "~/.bashrc"
+!!! abstract "~/.bashrc"
     0644 {USER}:{USER}
 
     ``` bash
@@ -170,7 +170,7 @@ ssh -o ProxyJump={USER}@{BASTION} {STANDARD SCP COMMAND}
 
 This may also be setup to auto proxy via the config file.
 
-??? abstract "~/.ssh/config"
+!!! abstract "~/.ssh/config"
     0644 {USER}:{USER}
 
     ``` bash

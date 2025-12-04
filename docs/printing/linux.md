@@ -96,7 +96,7 @@ Windows uses.
     apt install sane-airscan
     ```
 
-??? abstract "/etc/sane.d/airscan.conf"
+!!! abstract "/etc/sane.d/airscan.conf"
     0644 root:root
 
     ``` conf

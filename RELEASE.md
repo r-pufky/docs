@@ -1,5 +1,20 @@
 # [Release Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## 2.2.1:
+Unfold file listings if reasonably sized.
+
+Added:
+* PVE ACME certificate setup.
+* Mox mail setup.
+* PostgresQL collation mismatch troubleshooting.
+
+Changed:
+* Unfold file listings if reasonably sized.
+* ZFS create dataset.
+* ZFS atime options.
+* Updated Elden Ring linux path to use variable.
+* Manjaro UTC realtime clock link fixed.
+
 ## 2.2.0:
 Migrate remaining docs from ansible roles.
 

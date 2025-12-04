@@ -10,19 +10,19 @@ See [man page][a] for all options.
 Option                      | Purpose
 ---------------------------:|------------------------------------------------------------------
   all_squash[no_all_squash] | Map all UID/GIDs to anonymous user; this is **nobody** for Debian.
-                    anonuid | Anonymous user id
-                    anongid | Anonymous group id
-                      async | Violate NFS protocol and reply before changes committed (**unsafe**)
-                       sync | Reply after changes are committed to disk (**safe**)
-                   crossmnt | Enable traversing of directories below exported root
+                    anonuid | Anonymous user ID.
+                    anongid | Anonymous group ID.
+                      async | Violate NFS protocol and reply before changes committed (**unsafe**).
+                       sync | Reply after changes are committed to disk (**safe**).
+                   crossmnt | Enable traversing of directories below exported root.
                         fsc | Use filesystem cache. NFS will not use cache unless explicitly set.
                        fsid | **root** or **0** has special meaning in which all other exports are mounted underneath it. Root should only be used if the filesystem does not have a **UUID**. Modern systems shouldn't use this.
-                 mountpoint | Only export if successfully mounted first (ZFS only)
-                    no_subtree_check | Disable checking if file is in exported subtree (slow) this is disabled by default.
-                     nohide | Do not hide sub-exports on same filesystems
-                         rw | Read/write
-                         ro | Readonly
-root_squash[no_root_squash] | Map UID/GID 0 to anonymous user; this is **nobody** for debian.
+                 mountpoint | Only export if successfully mounted first (ZFS only).
+           no_subtree_check | Disable checking if file is in exported subtree (slow) this is disabled by default.
+                     nohide | Do not hide sub-exports on same filesystems.
+                         rw | Read/write.
+                         ro | Readonly.
+root_squash[no_root_squash] | Map UID/GID 0 to anonymous user; this is **nobody (65534)** for debian.
                     sec=sys | Use local UIDs/GIDs authentication.
                    sec=krb5 | Kerberos authentication only.
                   sec=krb5i | Kerberos authentication and secure checksums.
@@ -30,6 +30,8 @@ root_squash[no_root_squash] | Map UID/GID 0 to anonymous user; this is **nobody*
                       nocto | lose-to-open consistency - client trusts freshness of its view of the file and directory until cache attribute timers (**actimo**) elapses. Improves performance for read-only mounts only if ata changes occasionally. Reduces getattr access calls **~65-70%**.
                         cto | close-to-open consistency (default) - ensures that on open the most recent data for a file is always presented to the application.
                      actimo | Sets **acregmin**, **acregmax**, **acdirmin**, **acdirmax**. **actimo=600** additionally reduces getattr access calls **~20-25%** with **nocto**.
+                    noatime | Disable inode access time update on read. Implies **nodiratime**.
+                 nodiratime | Disable directory inode access time update on read.
 
 ## Reference:[^1][^2][^3][^4][^5][^6][^7]
 

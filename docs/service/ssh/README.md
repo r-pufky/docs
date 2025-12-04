@@ -39,7 +39,7 @@ addgroup {USER} _ssh
 ## Restricting SSH Tunneling
 Restrict what local ports and IP's can be accessed via SSH tunneling.
 
-??? abstract "~/.ssh/authorized_keys"
+!!! abstract "~/.ssh/authorized_keys"
     0600 {USER}:{USER}
 
     ``` bash
@@ -67,7 +67,7 @@ ssl -L {LOCAL_PORT}:{INTERNAL_HOST}:{INTERNAL_PORT} user@example -p {PORT}
 ## [SSH Host Configuration][e]
 Setup SSH to automatically select correct options when using hosts/shortcuts.
 
-??? abstract "~/.ssh/config"
+!!! abstract "~/.ssh/config"
     0600 {USER}:{USER}
 
     ``` bash

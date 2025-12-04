@@ -38,7 +38,7 @@ stty erase ^H
 Use [VcXsrv][c] instead of xming. This is fully functional and does not have
 copy/paste or resizing disabled. Install as normal.
 
-??? abstract "c:\Program Files\VcXsrv\config.xlaunch"
+!!! abstract "c:\Program Files\VcXsrv\config.xlaunch"
     ``` xml
     <?xml version="1.0" encoding="UTF-8"?>
     <XLaunch WindowMode="MultiWindow" ClientMode="NoClient" LocalClient="False" Display="-1" LocalProgram="xcalc" RemoteProgram="xterm" RemotePassword="" PrivateKey="" RemoteHost="" RemoteUser="" XDMCPHost="" XDMCPBroadcast="False" XDMCPIndirect="False" Clipboard="True" ClipboardPrimary="True" ExtraParams="" Wgl="True" DisableAC="False" XDMCPTerminate="False"/>

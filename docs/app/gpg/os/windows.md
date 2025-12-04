@@ -24,7 +24,7 @@ and verify integrity.
 
     Use the **full name** in **scdaemon.conf**.
 
-??? abstract "%appdata%\gnupg\scdaemon.conf"
+!!! abstract "%appdata%\gnupg\scdaemon.conf"
 
     ``` bash
     # Prevent Windows Hello from acting as an pagent device.
@@ -34,7 +34,7 @@ and verify integrity.
     reader-port Yubico YubiKey OTP+FIDO+CCID 0
     ```
 
-??? abstract "%appdata%\gnupg\gpg-agent.conf"
+!!! abstract "%appdata%\gnupg\gpg-agent.conf"
 
     ``` bash
     enable-ssh-support
@@ -156,7 +156,7 @@ the machine you will be SSH'ing through and **target** for remote SSH targets.
     * Allow agent forwarding: ✔
 
 ### Bastion Configuration
-??? abstract "/etc/ssh/sshd_config"
+!!! abstract "/etc/ssh/sshd_config"
     0644 root:root
 
     ``` bash
@@ -175,8 +175,7 @@ sshd -T | grep -i allowagent
 ### Target Configuration
 Target does not need to enable outbound agent forwarding.
 
-
-??? abstract "/etc/ssh/sshd_config"
+!!! abstract "/etc/ssh/sshd_config"
     0644 root:root
 
     ``` bash

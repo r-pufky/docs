@@ -16,7 +16,7 @@ triggers the mount unit.
 
     /mnt/path ➔ mnt-path
 
-??? abstract "/etc/systemd/system/mnt-client_test.mount"
+!!! abstract "/etc/systemd/system/mnt-client_test.mount"
     0644 root:root
 
     ``` ini
@@ -34,7 +34,7 @@ triggers the mount unit.
     WantedBy=multi-user.target
     ```
 
-??? abstract "/etc/systemd/system/mnt-client_test.automount"
+!!! abstract "/etc/systemd/system/mnt-client_test.automount"
     0644 root:root
 
     ``` ini
@@ -73,7 +73,7 @@ chattr +i /autofs/{EXPORT}
 mount -t nfs -o nfsvers=4,minorversion=2,proto=tcp,fsc,rsize=1048576,wsize=1048576,nocto 10.10.10.8:/home/vagrant /autofs/home/vagrant
 ```
 
-??? abstract "/etc/fstab"
+!!! abstract "/etc/fstab"
     0644 root:root
 
     ```bash

@@ -1,4 +1,4 @@
-# Mail
+# Postfix
 Email testing for classic postfix stack.
 
 !!! example "Migrated to ansible collection"

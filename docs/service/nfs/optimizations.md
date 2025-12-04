@@ -16,7 +16,7 @@ for ZIL writes. See [ZFS increase write throughput][a].
 ### Set large chunk size
 A large chunk size will minimize network traffic.
 
-??? abstract "/etc/nfs.conf.d/local.conf"
+!!! abstract "/etc/nfs.conf.d/local.conf"
     0644 root:root
 
     ``` bash
@@ -27,7 +27,7 @@ A large chunk size will minimize network traffic.
 
 ### Allow More Threads
 
-??? abstract "/etc/nfs.conf.d/local.conf"
+!!! abstract "/etc/nfs.conf.d/local.conf"
     0644 root:root
 
     ``` bash

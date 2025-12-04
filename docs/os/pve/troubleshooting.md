@@ -37,7 +37,7 @@ timedatectl set-timezone America/Los_Angeles
 Containers do not have locals set by default. Specify default locales for the
 container to use.
 
-??? abstract "/etc/default/locale"
+!!! abstract "/etc/default/locale"
     0644 root:root
 
     ``` bash
@@ -46,9 +46,9 @@ container to use.
     LC_CTYPE="en_US.UTF-8"
     LC_NUMERIC="en_US.UTF-8"
     LC_TIME="en_US.UTF-8"
-    LC_COLLATE=en_US.UTF-8
+    LC_COLLATE="en_US.UTF-8"
     LC_MONETARY="en_US.UTF-8"
-    LC_MESSAGES=en_US.UTF-8
+    LC_MESSAGES="en_US.UTF-8"
     LC_PAPER="en_US.UTF-8"
     LC_NAME="en_US.UTF-8"
     LC_ADDRESS="en_US.UTF-8"

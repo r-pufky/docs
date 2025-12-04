@@ -27,7 +27,7 @@ or migrate users to **_ssh**.
 ## Enable Debug Mode
 Print verbose messages to **/var/log/syslog** to help in debugging issues.
 
-??? abstract "/etc/default/ssh"
+!!! abstract "/etc/default/ssh"
     0644 root:root
 
     ``` bash
@@ -61,13 +61,12 @@ Manually
 gpg-connect-agent updatestartuptty /bye
 ```
 
-**~/.ssh/config** (1)
-{ .annotate }
+!!! abstract "~/.ssh/config"
+    0640 {USER}:{USER}
 
-1. 0640 {USER}:{USER}
-``` bash
-Match host * exec "gpg-connect-agent updatestartuptty /bye"
-```
+    ``` bash
+    Match host * exec "gpg-connect-agent updatestartuptty /bye"
+    ```
 
 [a]: https://unix.stackexchange.com/questions/193066/how-to-unlock-account-for-public-key-ssh-authorization-but-not-for-password-aut
 [b]: https://arlimus.github.io/articles/usepam

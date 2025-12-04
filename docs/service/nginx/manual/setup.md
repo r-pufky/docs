@@ -13,7 +13,7 @@
 
 
 ## [Setup Base Reverse Proxy][b]
-??? abstract "/etc/nginx/conf.d/reverse_proxy.conf"
+!!! abstract "/etc/nginx/conf.d/reverse_proxy.conf"
     0644 root:root
 
     ``` nginx
@@ -63,7 +63,7 @@
 A proxy control template will enable complex proxy configurations to be
 consistently applied to multiple proxy sites.
 
-??? abstract "/etc/nginx/conf.d/proxy_control.conf"
+!!! abstract "/etc/nginx/conf.d/proxy_control.conf"
     0644 root:root
 
     ``` nginx

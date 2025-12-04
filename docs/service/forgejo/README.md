@@ -30,7 +30,7 @@ database metadata for the project.
 Forgejo mirrors can automatically manage upstream mirror syncs if setup to do
 so. This will also allow for local forking of those mirrors for individual use.
 
-!!! tip "Create Mirror ➔ + ➔ New Migration"
+!!! example "Create Mirror ➔ + ➔ New Migration"
     * Migrate / Clone from URL: **{REMOTE REPOSITORY URL}**
     * Owner: **{ORGANIZATION OWNER}**
     * Repository Name: **{SAME REPO NAME}**

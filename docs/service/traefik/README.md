@@ -68,7 +68,7 @@ services are load-balanced, even if there is only one backend.
 [UDP Service][j]
 
 
-## Reference[^1]
+## Reference[^1][^2]
 
 [^1]: https://traefik.io/traefik
 [^2]: https://github.com/Haxxnet/Compose-Examples/blob/main/examples/traefik/traefik.yml

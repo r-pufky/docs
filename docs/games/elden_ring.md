@@ -22,7 +22,7 @@ Ring ➔ RMB ➔ Manage ➔ Browse Local Files).
 
 Modify settings to taste.
 
-??? abstract "Game/SeamlessCoop/ersc_settings.ini"
+!!! abstract "Game/SeamlessCoop/ersc_settings.ini"
     0644 {USER}:{USER}
 
     ``` ini

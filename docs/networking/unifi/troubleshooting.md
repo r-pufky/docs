@@ -21,6 +21,7 @@ Adoption device **must** be connected to [Management VLAN][a] for adoption.
 
 * Ensure controller is on port that allows same VLAN traffic as the set in the
   hardware.
+* **Restart** switch if port profiles were changed.
 * Ensure controller is listening on the correct IP.
 * Ensure the hardware is set to inform to the correct controller IP.
 * Alternatively directly connect the UniFi controller to switch with the device

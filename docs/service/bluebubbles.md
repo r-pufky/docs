@@ -37,7 +37,7 @@ Follow the [instructions on the site][d] and [Disable SIP][e].
         * Allow full disk access for remote users: ✔
         * Allow access for: **{USER}**
 
-??? abstract "/etc/ssh/sshd_config"
+!!! abstract "/etc/ssh/sshd_config"
     0644 root:root
 
     ``` bash

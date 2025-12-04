@@ -1,4 +1,7 @@
 # Admonitions
+Prefer open (!!!) admonitions and only collapse (???) for excessively large
+listings to taste.
+
 !!! danger ""
     Use "" to just create a no context box highlight. Add title when needed.
 

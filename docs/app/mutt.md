@@ -8,7 +8,7 @@ Local terminal texted based email client.
 apt install mutt
 ```
 
-??? abstract "~/.muttrc"
+!!! abstract "~/.muttrc"
     0600 {USER}:{USER}
 
     ``` bash

@@ -9,7 +9,7 @@ Manjaro will lockout a user for 10 minutes on 3 failed password attempts over
     Expressed as sudo not working with valid password or unable to login to the
     system.
 
-??? abstract "/etc/security/faillock.conf"
+!!! abstract "/etc/security/faillock.conf"
     0644 root:root
 
     ``` bash
@@ -39,7 +39,7 @@ systemsettings kcm_fontinst  # Font Manager in GUI.
 
 Tweak font display for LCD's if display is still not clean.
 
-??? abstract "/etc/fonts/local.conf"
+!!! abstract "/etc/fonts/local.conf"
     0644 root:root
 
     ``` xml
@@ -69,7 +69,7 @@ Tweak font display for LCD's if display is still not clean.
     </fontconfig>
     ```
 
-??? abstract "~/.Xresources"
+!!! abstract "~/.Xresources"
     0644 {USER}:{USER}
 
     ``` bash
@@ -93,7 +93,7 @@ fc-cache -f -v
 ## Caps lock as Control
 Override caps lock for keyboards that do not remap caps lock key.
 
-??? abstract "/etc/default/keyboard"
+!!! abstract "/etc/default/keyboard"
     0644 root:root
 
     ``` bash
@@ -129,7 +129,7 @@ Some applications misbehave.
 ## [Manjaro Updates Consistently Fail][c]
 Last update was more than six months ago and [keys are expired][d].
 
-??? abstract "/etc/pacman.conf"
+!!! abstract "/etc/pacman.conf"
     0644 root:root
 
     ``` bash
@@ -146,7 +146,7 @@ pamac update
 ## [Mouse Acceleration Seems Wonky][g]
 Adaptive refresh seems to cause mouse acceleration issues in KDE Plasma Wayland.
 
-??? example "⌘ ➔ System Settings ➔ Input & Output"
+!!! example "⌘ ➔ System Settings ➔ Input & Output"
     * Mouse & Touchpad (All devices)
         * Pointer Acceleration: **None**
     * Display & Monitor

@@ -31,13 +31,11 @@ See [SSHD](../service/ssh/README.md).
 cp {SSH KEYS} /root/.ssh/authorized_keys
 ```
 
-**/etc/ssh/sshd_config** (1)
-{ .annotate }
-
-1. 0644 root:root
-``` bash
-PasswordAuthentication no
-```
+!!! abstract "/etc/ssh/sshd_config"
+    0644 root:root
+    ``` bash
+    PasswordAuthentication no
+    ```
 
 ``` bash
 systemctl restart ssh

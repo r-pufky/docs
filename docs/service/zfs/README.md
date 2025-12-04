@@ -57,6 +57,17 @@ zdb -C {POOL}
 * Ensure **ashift=12** is enabled with **-C** option.
 
 
+### Create ZFS Dataset
+Encryption [must be enabled at creation][i]
+
+``` bash
+# Create dataset with pool defaults.
+zfs create {POOL}/{NAME}
+
+# Enable non-default options during creation.
+zfs create -o xattr=sa -o dnodesize=auto {POOL}/{NAME}
+```
+
 ## ZFS Operations
 ZFS can be tweaked per dataset based on the data being used. ZFS only applies
 new settings on newly written data; changing options for pre-existing data
@@ -120,7 +131,7 @@ zfs -S {POOL}
 Scrubbing verifies all blocks can be read, and marks then bad if not. This is
 done while the filesystem is online, but may slightly impact performance.
 
-??? abstract "/root/bin/scrub-zpool-monthly"
+!!! abstract "/root/bin/scrub-zpool-monthly"
     0750 root:root
 
     ``` bash
@@ -145,3 +156,4 @@ sudo crontab -e
 [f]: https://openzfs.org/wiki/Features#SA_based_xattrs
 [g]: https://openzfs.github.io/openzfs-docs/man/master/7/zfsprops.7.html
 [h]: https://docs.oracle.com/cd/E23823_01/html/819-5461/gbbwa.html
+[i]: encryption.md#encrypt-a-dataset

@@ -42,7 +42,7 @@ systemctl stop rpc-statd rpc-statd-notify
 
 ### Disable NFSv3 support
 
-??? abstract "/etc/systemd/system/nfs-server.service.d/override.conf"
+!!! abstract "/etc/systemd/system/nfs-server.service.d/override.conf"
     0644 root:root
 
     ``` bash
@@ -57,7 +57,7 @@ systemctl stop rpc-statd rpc-statd-notify
 
 ### Disable NFSv2 support on mounts
 
-??? abstract "/etc/systemd/system/nfs-mountd.service.d/override.conf"
+!!! abstract "/etc/systemd/system/nfs-mountd.service.d/override.conf"
     0644 root:root
 
     ``` bash
@@ -72,7 +72,7 @@ systemctl stop rpc-statd rpc-statd-notify
 cp /etc/nfs.conf /etc/nfs.conf.d/local.conf
 ```
 
-??? abstract "/etc/nfs.conf.d/local.conf"
+!!! abstract "/etc/nfs.conf.d/local.conf"
     0644 root:root
 
     ``` conf

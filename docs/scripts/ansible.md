@@ -20,7 +20,7 @@ grep -rl '^$ANSIBLE_VAULT.*' . | xargs -t ansible-vault rekey
 ```
 
 ### Create script to decrypt the password for use
-??? abstract "vault-gpg"
+!!! abstract "vault-gpg"
     0755 {USER}:{USER}
 
     ``` bash
@@ -34,7 +34,7 @@ grep -rl '^$ANSIBLE_VAULT.*' . | xargs -t ansible-vault rekey
     gpg --batch --use-agent --decrypt ../cfg/ansible/ansible.gpg
     ```
 
-??? abstract "ansible.cfg"
+!!! abstract "ansible.cfg"
     0644 {USER}:{USER}
 
     ``` bash

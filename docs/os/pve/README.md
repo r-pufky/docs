@@ -44,7 +44,7 @@ Remaining configuration may be done vis SSH (easier for copying). Leave console
 open for easy rescue if networking get mis-configured.
 
 ### Enable IOMMU and Passthrough Virtualization
-??? abstract "/etc/default/grub"
+!!! abstract "/etc/default/grub"
     0644 root:root
 
     ``` ini
@@ -160,24 +160,22 @@ lspci -nn
 lspci -k
 ```
 
-??? abstract "/etc/frr/daemons"
+!!! abstract "/etc/frr/daemons"
     0640 frr:frr
 
     ``` ini
       fabricd=yes  # Other FRR daemons already enabled in PVE9+.
     ```
 
-**/etc/frr/frr.conf** (1)
-{ .annotate }
+!!! abstract "/etc/frr/frr.conf"
+    0640 frr:frr
 
-1. 0640 frr:frr
+    Copy from backup or source from host_vars (verify interface names):
 
-Copy from backup or source from host_vars (verify interface names):
-
-* See **is-is** routing for net definition.
-* Use subnet for area ID.
-* IP address with padding for system identifier.
-* Update host_vars.
+    * See **is-is** routing for net definition.
+    * Use subnet for area ID.
+    * IP address with padding for system identifier.
+    * Update host_vars.
 
 #### [Confirm FRR configured correctly.][d]
 ``` bash
@@ -211,6 +209,8 @@ pvecm add 10.11.11.10 --link0 10.11.11.30 --use_ssh
 pvecm status
 ```
 
+### [Enable ACME Cluster Node Certificates][h]
+
 ### [Backup Initial SSH Config][f]
 !!! warning
     Proxmox uses host keys and root user for intra-cluster traffic. Changing
@@ -228,7 +228,7 @@ cp -av /etc /autofs/pve/{DATE}-upgrade-8-to-9/{NODE}/complete
 ## GPU Passthrough
 Configure for all nodes.
 
-??? abstract "/etc/default/grub"
+!!! abstract "/etc/default/grub"
     0644 root:root
 
     ``` ini
@@ -243,7 +243,7 @@ rm /etc/modules-load.d/modules.conf  # Remove symlink to /etc/modules.
 rm /etc/modules
 ```
 
-??? abstract "/etc/modules-load.d/video.conf"
+!!! abstract "/etc/modules-load.d/video.conf"
     0644 root:root
 
     ``` ini
@@ -258,7 +258,7 @@ rm /etc/modules
 ### Map non-root users to GPU
 Unmapped containers require **other** R/W permissions on GPU.
 
-??? abstract "/etc/udev/rules.d/59-igpu-passthrough.rules"
+!!! abstract "/etc/udev/rules.d/59-igpu-passthrough.rules"
     0644 root:root
 
     ``` bash
@@ -292,7 +292,7 @@ ls -l /dev/dri
 > crw-rw---- 1 root render 226, 128 May 12 21:54 renderD128
 ```
 
-??? abstract "/etc/pve/lxc/{ID}.conf"
+!!! abstract "/etc/pve/lxc/{ID}.conf"
     0644 root:root
 
     ``` yaml
@@ -302,7 +302,7 @@ ls -l /dev/dri
     lxc.mount.entry: /dev/dri/renderD128 dev/dri/renderD128 none bind,optional,create=file,mode=0666
     ```
 
-??? abstract "/etc/subgid"
+!!! abstract "/etc/subgid"
     0644 root:root
 
     ``` bash
@@ -313,7 +313,7 @@ ls -l /dev/dri
     ```
 
 ``` bash
-# Host dev/dri permissions do not require containers to set groups with
+# Host dev/dri permissions do not require containers to set groups with.
 usermod -aG render,video root
 ```
 
@@ -324,15 +324,11 @@ usermod -aG render,video root
 Use https://github.com/ddimick/proxmox-lxc-idmapper to generate mappings or
 copy existing mappings from backups.
 
-**/etc/subuid** (1)
-{ .annotate }
+!!! abstract "/etc/subuid"
+    0644 root:root
 
-1. 0644 root:root
-
-**/etc/subgid** (1)
-{ .annotate }
-
-1. 0644 root:root
+!!! abstract "/etc/subgid"
+    0644 root:root
 
 ### Create NFS mount locations
 Set mounts immutable to prevent writes when not mounted.
@@ -345,7 +341,7 @@ cd /autofs
 chattr +i *
 ```
 
-??? abstract "/etc/fstab"
+!!! abstract "/etc/fstab"
     0644 root:root
 
     ``` conf
@@ -383,3 +379,4 @@ reboot  # NFS should be mounted on boot.
 [e]: https://pve.proxmox.com/wiki/Cluster_Manager
 [f]: https://forum.proxmox.com/threads/2025-pve9-x-warning-remote-host-identification-has-changed-analysis-resolution.174262
 [g]: #enable-iommu-and-passthrough-virtualization
+[h]: acme.md

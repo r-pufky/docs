@@ -49,7 +49,7 @@ managing the pool:
 
 ``` bash
 # Create encrypted dataset on ZFS pool using 1 million pbkdf2 iterations.
-zfs create -o encryption=aes-256-gcm -o keyformat=passphrase -o keylocation=prompt -o pbkdf2iters=1000000 -o mountpoint=/d/media {POOL}/media
+zfs create -o encryption=aes-256-gcm -o keyformat=passphrase -o atime=off -o keylocation=prompt -o pbkdf2iters=1000000 -o xattr=sa -o dnodesize=auto  -o mountpoint=/d/media {POOL}/media
 ```
 
 

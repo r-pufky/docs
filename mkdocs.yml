@@ -125,6 +125,7 @@ nav:
     - 'os/pikvm.md'
     - 'Proxmox (PVE)':
       - 'os/pve/README.md'
+      - 'os/pve/acme.md'
       - 'os/pve/troubleshooting.md'
     - 'os/shield.md'
     - 'os/web_os.md'
@@ -157,10 +158,15 @@ nav:
       - 'service/forgejo/README.md'
       - 'service/forgejo/troubleshooting.md'
     - 'service/imapsync.md'
-    - 'service/mail.md'
+    - 'Mail':
+      - 'service/mail/README.md'
+      - 'service/mail/postfix.md'
+      - 'service/mail/troubleshooting.md'
     - 'service/mariadb.md'
     - 'service/pihole.md'
-    - 'service/postgres/README.md'
+    - 'PostgresQL':
+      - 'service/postgres/README.md'
+      - 'service/postgres/troubleshooting.md'
     - 'NFS':
       - 'service/nfs/README.md'
       - 'service/nfs/exports.md'
@@ -181,7 +187,6 @@ nav:
     - 'Secure Boot':
       - 'service/secure_boot/README.md'
       - 'service/secure_boot/troubleshooting.md'
-    - 'service/secure_boot.md'
     - 'SSH':
       - 'service/ssh/README.md'
       - 'SSHD':
@@ -194,7 +199,9 @@ nav:
       - 'service/traefik/error_pages.md'
       - 'service/traefik/rate_limiting.md'
       - 'service/traefik/plugins.md'
-      - 'service/traefik/lets_encrypt.md'
+      - 'ACME Certificates':
+        - 'service/traefik/acme/README.md'
+        - 'service/traefik/acme/behind_traefik.md'
       - 'service/traefik/odic.md'
       - 'service/traefik/troubleshooting.md'
     - 'Wireguard':

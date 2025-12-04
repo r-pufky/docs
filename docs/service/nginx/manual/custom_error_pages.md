@@ -38,7 +38,7 @@ server {
   pages do not need this, but a root should be defined regardless for
   predictable behavior.
 
-??? abstract "source/error.html"
+!!! abstract "source/error.html"
     0644 root:root
 
     ``` html

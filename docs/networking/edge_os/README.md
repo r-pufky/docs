@@ -66,7 +66,7 @@ Map computer and computer.example.com to 10.0.0.2. Appear in **/etc/hosts** as:
 ```
 
 #### CLI
-??? abstract "create_host"
+!!! abstract "create_host"
     0755 root:root
 
     ``` bash

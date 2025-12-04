@@ -13,7 +13,7 @@ DHCP server on the edgerouter needs to update the hosts file when new IP's are
 issued.
 
 Enable Dynamic DNS Updates
-!!! tip "Config Tree ➔ Service ➔ dhcp-server ➔ dynamic-dns-update"
+!!! example "Config Tree ➔ Service ➔ dhcp-server ➔ dynamic-dns-update"
     * Enable: ✔
 
 [a]: https://community.ui.com/questions/DNS-resolution-of-local-hosts/3b0a70d6-aefb-44a2-872e-e3703e757cd2

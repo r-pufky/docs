@@ -64,7 +64,7 @@ pacman-mirrors --fasttrack 10 && pacman -Syyu
 pacman-mirrors --country United_States && pacman -Syyu
 ```
 
-??? example "⌘ ➔ add/remove software ➔ ⋮ ➔ preferences"
+!!! example "⌘ ➔ add/remove software ➔ ⋮ ➔ preferences"
     * General:
         * Check for updates: ✔
         * Update check frequency: **every day**
@@ -103,7 +103,7 @@ sudo ln -sf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
 systemctl enable --now systemd-timesyncd
 ```
 
-??? example "⌘ ➔ manjaro settings manager ➔ Time and Date"
+!!! example "⌘ ➔ manjaro settings manager ➔ Time and Date"
     * Set time and date automatically: ✔
     * Hardware clock in local time: ✘
 

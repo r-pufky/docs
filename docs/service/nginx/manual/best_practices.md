@@ -13,7 +13,7 @@ mkdir /etc/nginx/conf.d/include/proxy
 Add each site proxy config to **/etc/nginx/conf.d/include/proxy/{SITE}**. These
 can be imported in server/location blocks as needed.
 
-??? abstract "/etc/nginx/conf.d/include/server/{SITE}"
+!!! abstract "/etc/nginx/conf.d/include/server/{SITE}"
     0644 root:root
 
     ``` nginx
@@ -35,7 +35,7 @@ mkdir /etc/nginx/conf.d/include/server
 Add each site to **/etc/nginx/conf.d/include/server/{SITE}**. Then modify
 default config to auto import sites / services.
 
-??? abstract "/etc/nginx/conf.d/default.conf"
+!!! abstract "/etc/nginx/conf.d/default.conf"
     0644 root:root
 
     ``` nginx
@@ -54,7 +54,7 @@ apt install apache2-utils
 sudo htpasswd -c /etc/nginx/{SITE}.pass {USER}
 ```
 
-??? abstract "nginx/conf.d/reverse_proxy.conf"
+!!! abstract "nginx/conf.d/reverse_proxy.conf"
     0644 root:root
 
     ``` nginx
@@ -87,7 +87,7 @@ authentication consistency across multiple sites.
 
 Create an authentication block, and store in a file.
 
-??? abstract "/etc/nginx/conf.d/site_auth.conf"
+!!! abstract "/etc/nginx/conf.d/site_auth.conf"
     0644 root:root
 
     ``` nginx
@@ -101,7 +101,7 @@ Create an authentication block, and store in a file.
 
 Include authentication block where authentication would be required.
 
-??? abstract "/etc/nginx/conf.d/service/my_site.conf"
+!!! abstract "/etc/nginx/conf.d/service/my_site.conf"
     0644 root:root
 
     ``` nginx
@@ -119,26 +119,22 @@ each other using FQDNs without needing basic auth.
 ### [Whitelist All Containers][c]
 Add IP range to the authorization file.
 
-/etc/nginx/conf.d/site_auth.conf (1)
-{ .annotate }
+!!! abstract "/etc/nginx/conf.d/site_auth.conf"
+    0644 root:root
 
-1. 0644 root:root
-
-``` nginx
-allow 172.18.0.0/16;
-```
+    ``` nginx
+    allow 172.18.0.0/16;
+    ```
 
 ### [Whitelist Single Container][d]
 Whitelist specific IP in the authorization file.
 
-/etc/nginx/conf.d/site_auth.conf (1)
-{ .annotate }
+!!! abstract "/etc/nginx/conf.d/site_auth.conf"
+    0644 root:root
 
-1. 0644 root:root
-
-``` nginx
-allow 172.18.0.101;
-```
+    ``` nginx
+    allow 172.18.0.101;
+    ```
 
 
 ## Disable Auth for a specific location
@@ -149,7 +145,7 @@ specific location. This is for proxied sites that do their own authentication
 Explicitly set **no** authentication and **allow all** to prevent any
 configuration carried over from the default site.
 
-??? abstract "/etc/nginx/conf.d/service/my_site.conf"
+!!! abstract "/etc/nginx/conf.d/service/my_site.conf"
     0644 root:root
 
     ``` nginx

@@ -1,4 +1,4 @@
-# Let's Encrypt DNS-01
+# ACME Certificates
 DNS-01 Challenge with Google Cloud DNS and Traefik.
 
 Traefik uses [LEGO][a] internally to configure certificates. Certificates will
@@ -127,7 +127,7 @@ Generate JSON keys
               disableChecks: true
     ```
 
-## Validate Configuration.
+## Validate Configuration
 Start Traefik and search logs.
 
 Google cloud DNS console may be checked for **_acme-challenge.{DOMAIN}** change
@@ -181,7 +181,8 @@ Once confirmed swap to the live certificate server.
 systemctl restart traefik
 ```
 
-## Reference[^1][^2][^3][^4]
+
+## Reference[^1][^2][^3][^4][^5][^6]
 
 [a]: https://go-acme.github.io/lego/dns/gcloud/index.html
 
@@ -190,3 +191,4 @@ systemctl restart traefik
 [^3]: https://medium.com/@svenvanginkel/traefik-letsencrypt-dns01-challenge-with-ovhcloud-52f2a2c6d08a
 [^4]: https://betatim.github.io/posts/traefik-config-bare-metal
 [^5]: https://old.reddit.com/user/germanpickles/comments/1i07bw9/enable_mtls_for_traefik
+[^6]: https://github.com/traefik/traefik/pull/10981

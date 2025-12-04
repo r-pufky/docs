@@ -19,7 +19,7 @@ and ACLs.
 apt install mumble-server
 ```
 
-??? abstract "/etc/mumble-server.ini"
+!!! abstract "/etc/mumble-server.ini"
     0600 mumble-server:mumble-server
 
     ``` bash

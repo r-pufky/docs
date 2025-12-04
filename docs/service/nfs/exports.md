@@ -7,8 +7,13 @@
 
 
 ## [ZFS NFS Exports][a]
+!!! tip
+    Recommend keeping all NFS operations in NFS to minimize confusion.
+
 ZFS will [export datasets directly to **nfs-kernel-server**][b] on the host
-enabling portable NFS configurations with the respective datasets.
+enabling portable NFS configurations with the respective datasets. This has no
+performance benefits in linux as ZFS just auto exports basic configurations to
+**/etc/exportfs.d/zfs.exports**.
 
 Each ZFS dataset has it's own unique **FSID**, so it does not need to be
 specified unless there are sub-directories inside that dataset that are shared
@@ -31,7 +36,7 @@ automatically export based on the dataset mount point.
 !!! tip
     Commas (**,**) should be used to separate multiple **rw=**, **ro=** host
     definitions. These will be auto-exported as separate lines in
-    **/etc/exportfs.d/zfs.exports**.
+    **/etc/exports.d/zfs.exports**.
 
 ``` bash
 # ZFS mount point required.
@@ -56,14 +61,13 @@ exportfs  # Show currently exported filesystems.
 ## Exports via /etc/exports
 Traditional NFS exports. Prefer [ZFS Exports](#zfs-nfs-exports).
 
-**/etc/exports** (1)
-{ .annotate}
+!!! abstract "/etc/exports"
+    0644 root:root
 
-1. 0644 root:root
-``` bash
-# {EXPORT} {HOST}({OPTIONS}) ... {HOST_N}({OPTIONS})
-/exported 10.10.10.0/24(sec=sys,fsc,no_all_squash,crossmnt,nohide,no_subtree_check,anonuid=65534,anongid=65534)
-```
+    ``` bash
+    # {EXPORT} {HOST}({OPTIONS}) ... {HOST_N}({OPTIONS})
+    /exported 10.10.10.0/24(sec=sys,fsc,no_all_squash,crossmnt,nohide,no_subtree_check,anonuid=65534,anongid=65534)
+    ```
 
 Refresh exports.
 ``` bash

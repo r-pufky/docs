@@ -17,7 +17,7 @@ to the given port.
 Public/Private keys need to be generated for each machine using wireguard. A
 bare bones utility is provided. Generated keys are not OS specific.
 
-??? abstract "/usr/local/bin/wggen"
+!!! abstract "/usr/local/bin/wggen"
     0755 root:root
 
     ``` bash
@@ -51,7 +51,7 @@ bare bones utility is provided. Generated keys are not OS specific.
 
     **Server**
 
-    ??? abstract "/etc/wireguard/server.conf"
+    !!! abstract "/etc/wireguard/server.conf"
         0600 root:root
 
         ``` bash
@@ -77,7 +77,7 @@ bare bones utility is provided. Generated keys are not OS specific.
         Windows clients do **not** use the **SaveConfig** option. Remove this line
         if configuring a Windows client.
 
-    ??? abstract "/etc/wireguard/client.conf"
+    !!! abstract "/etc/wireguard/client.conf"
         0600 root:root
 
         ``` bash
@@ -122,7 +122,7 @@ bare bones utility is provided. Generated keys are not OS specific.
     echo 1 > /proc/sys/net/ipv6/ip_forward
     ```
 
-    ??? abstract "/etc/sysctl.conf"
+    !!! abstract "/etc/sysctl.conf"
         0644 root:root
 
         ``` bash
@@ -130,7 +130,7 @@ bare bones utility is provided. Generated keys are not OS specific.
         net.ipv6.conf.all.forwarding = 1
         ```
 
-    ??? abstract "/etc/wireguard/server.conf"
+    !!! abstract "/etc/wireguard/server.conf"
         0600 root:root
 
         ``` bash
@@ -158,7 +158,7 @@ bare bones utility is provided. Generated keys are not OS specific.
     !!! tip
         Set a custom DNS server if needed. DNS is resolved at the VPN server.
 
-    ??? abstract "/etc/wireguard/client.conf"
+    !!! abstract "/etc/wireguard/client.conf"
         0600 root:root
 
         ``` bash
@@ -211,7 +211,7 @@ make install
 ```
 
 ### Configure
-??? abstract "/etc/wireguard/initramfs.conf"
+!!! abstract "/etc/wireguard/initramfs.conf"
     0600 root:root
     ``` bash
     [Interface]
@@ -226,7 +226,7 @@ make install
     Endpoint = {SERVER INTERFACE IP}:51820
     ```
 
-??? abstract "/etc/wireguard/initramfs"
+!!! abstract "/etc/wireguard/initramfs"
     0644 root:root
     ``` bash
     ADAPTER=/etc/wireguard/initramfs.conf
@@ -267,7 +267,7 @@ Unlock an encrypted root filesystem remotely on boot over wireguard.
 Ensure that both Dropbear and Wireguard are setup and working correctly. Then
 set dropbear to only listen over wireguard network:
 
-??? abstract "/etc/dropbear-initramfs/config"
+!!! abstract "/etc/dropbear-initramfs/config"
     0644 root:root
     ``` bash
     DROPBEAR_OPTIONS='... -p 172.31.255.10:22 ...'

@@ -97,7 +97,7 @@ sed -i 's/127.0.0.1/0.0.0.0/g' /opt/eft/SPT_Data/Server/configs/http.json
 
 Set FIKA server settings to preferred options.
 
-??? abstract "/opt/eft/user/mods/fika-server/assets/configs/fika.jsonc"
+!!! abstract "/opt/eft/user/mods/fika-server/assets/configs/fika.jsonc"
     0644 eft:eft
 
     ```json
@@ -161,7 +161,7 @@ sed -i 's/CanSellOnRagfair\":\ false/CanSellOnRagfair\":\ true/g' /opt/eft/SPT_D
 
 ### Create and start systemd service
 
-??? abstract "/etc/systemd/system/eft.service"
+!!! abstract "/etc/systemd/system/eft.service"
     0644 root:root
 
     ```bash

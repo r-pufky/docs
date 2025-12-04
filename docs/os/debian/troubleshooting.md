@@ -57,7 +57,7 @@ These devices are attempted to be unmounted while in use to detect other OS's
 on those partitions. This may be safely disabled if you are only running one
 OS.
 
-??? abstract "/etc/default/grub"
+!!! abstract "/etc/default/grub"
     0644 root:root
 
     ``` bash

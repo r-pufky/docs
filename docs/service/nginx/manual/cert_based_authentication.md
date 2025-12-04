@@ -128,7 +128,7 @@ server {
 ## Certificate Authorization (authz)
 Enable [specific site access to client certificates][g].
 
-??? abstract "/etc/nginx/conf.d/default.conf"
+!!! abstract "/etc/nginx/conf.d/default.conf"
     0644 root:root
 
     ``` nginx
@@ -136,7 +136,7 @@ Enable [specific site access to client certificates][g].
     include /etc/nginx/conf.d/include/context/map-client-blacklist;
     ```
 
-??? abstract "/etc/nginx/conf.d/include/context/map-hash-size-optimal"
+!!! abstract "/etc/nginx/conf.d/include/context/map-hash-size-optimal"
     0644 root:root
 
     ``` nginx
@@ -145,7 +145,7 @@ Enable [specific site access to client certificates][g].
     map_hash_bucket_size 128;
     ```
 
-??? abstract "/etc/nginx/conf.d/include/context/map-client-blacklist"
+!!! abstract "/etc/nginx/conf.d/include/context/map-client-blacklist"
     0644 root:root
 
     ``` nginx
@@ -165,7 +165,7 @@ Enable [specific site access to client certificates][g].
     Order of **Subject DN** can be found by inspecting the response headers.
     See [Debug Headers][h].
 
-??? abstract "/etc/nginx/conf.d/include/authz/enforce-blacklist"
+!!! abstract "/etc/nginx/conf.d/include/authz/enforce-blacklist"
     0644 root:root
 
     ``` nginx
@@ -176,7 +176,7 @@ Enable [specific site access to client certificates][g].
     }
     ```
 
-??? abstract "/etc/nginx/conf.d/include/proxy/site"
+!!! abstract "/etc/nginx/conf.d/include/proxy/site"
     0644 root:root
 
     ``` nginx
@@ -195,16 +195,14 @@ certificate authentication is supported both locally and via URI matching.
 
 ### [Git Cert Auth for Repo Site][i]
 
-~/.gitconfig (1)
-{ .annotate }
+!!! abstract "~/.gitconfig"
+    0400 {USER}:{USER}
 
-1. 0400 {USER}:{USER}
-
-``` ini
-[http "https://git.example.com"]
-sslCert = /home/user/{MACHINE}.crt.pem
-sslKey = /home/user/{MACHINE}.key.pem
-```
+    ``` ini
+    [http "https://git.example.com"]
+    sslCert = /home/user/{MACHINE}.crt.pem
+    sslKey = /home/user/{MACHINE}.key.pem
+    ```
 
 ### [Git Cert Auth for Specific Repo][j]
 ``` bash

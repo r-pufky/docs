@@ -12,7 +12,7 @@ psql -U roundcube -f SQL/postgres.initial.sql roundcube
 Custom filter to match roundcube log messages in syslog, with roundcube
 operating behind a proxy.
 
-??? abstract "/data/filter.d/mail_roundcube.conf"
+!!! abstract "/data/filter.d/mail_roundcube.conf"
     0644 root:root
 
     ``` ini
@@ -32,7 +32,7 @@ operating behind a proxy.
     journalmatch = SYSLOG_IDENTIFIER=roundcube
     ```
 
-??? abstract "/data/filter.d/mail_roundcube.conf"
+!!! abstract "/data/filter.d/mail_roundcube.conf"
     0644 root:root
 
     ``` ini
