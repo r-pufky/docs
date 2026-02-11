@@ -9,9 +9,9 @@
 
 For all cluster nodes
 ``` bash
-mkdir -p /autofs/pve/{DATE}-upgrade-8-to-9/{NODE}
-cp -av /etc /autofs/pve/{DATE}-upgrade-8-to-9/{NODE}
-cp -av /root /autofs/pve/{DATE}-upgrade-8-to-9/{NODE}
+mkdir -p /autofs/pve/{DATE}-upgrade/{NODE}
+cp -av /etc /autofs/pve/{DATE}-upgrade/{NODE}
+cp -av /root /autofs/pve/{DATE}-upgrade/{NODE}
 ```
 * Only upgrade one cluster node at a time.
 

@@ -74,6 +74,17 @@ Debian based systems will pause for up to **5** minutes on boot waiting for
 **SLAAC** IPv6 configuration information; appearing to have no console. Disable
 IPv6 if not actively used.
 
+
+## CephFS Read-only Cannot Run Backups
+In cases of individual node backups after a cluster is 'broken'.
+
+!!! danger ""
+    **Never** set this if the cluster is going to be re-connected
+
+``` bash
+pvecm expect 1
+```
+
 [a]: https://forum.proxmox.com/threads/task-error-failed-to-run-vncproxy.49954
 [b]: https://old.reddit.com/r/Proxmox/comments/dhgez0/console_utf8
 [c]: https://forum.proxmox.com/threads/no-console-with-proxmox-5-0-beta-2-and-debian-9-containers.35313

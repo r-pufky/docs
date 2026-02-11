@@ -96,9 +96,11 @@ nav:
       - 'games/steam/README.md'
       - 'games/steam/troubleshooting.md'
   - 'Media Management':
+    #- 'media/folders.md'
     - 'media/music.md'
     - 'Plex':
       - 'media/plex/README.md'
+      - 'media/plex/config.md'
       - 'media/plex/troubleshooting.md'
     - 'Firefly III':
       - 'media/firefly/README.md'
