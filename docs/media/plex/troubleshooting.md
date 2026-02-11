@@ -1,7 +1,22 @@
 # Troubleshooting
 
-
 ## Fixing Playback Issues
+
+### Crash During Library Scanning
+Deep media analysis and scrubbing image generation will cause the plex service
+to stall and crash during library scans.
+
+1. Disable [GenerateBIFBehavior](config.md#generatebifbehavior). Scrubbing image
+   generation are generated every 2 seconds for the entire length of each
+   video. Not required for use.
+2. Increase [GenerateBIFFrameInterval](config.md#generatebifframeinterval). If
+   scrubbing must be kept on set the interval to the player scrub time
+   (typically 10-15 seconds) which will exponentially reduce system load.
+3. Use scheduled intervals with notifications from download clients. [Network
+   mounted filesystems][d] cannot use iNotify for Plex library scans.
+   Enable [ScheduledLibraryUpdatesEnabled](config.md#scheduledlibraryupdatesenabled),
+   disable [FSEventLibraryUpdatesEnabled](config.md#fseventlibraryupdatesenabled),
+   [FSEventLibraryPartialScanEnabled](config.md#fseventlibrarypartialscanenabled).
 
 ### Playback Fails / App Crashes
 Generally this happens when you are playing media on Plex Home Theater or Plex
@@ -17,6 +32,32 @@ transcoding directory.
 1. Ensure **Transcoding** directory is setup properly on Plex Server.
 2. Ensure **/tmp/Transcode** is owned by the right user. Changing the running
    user without re-creating this directory will cause this to happen.
+
+### Playback, transcoding, and Plex are Slow
+Many Plex issues are from [long-running databases][c] that need pruning.
+
+``` bash
+wget -O /tmp/DBRepair.sh https://github.com/ChuckPa/PlexDBRepair/releases/latest/download/DBRepair.sh
+
+# By default the script requires root which may interfere with squashed NFS
+# mounts. Set no root user required only if needed.
+sed -i 's/RootRequired=1/RootRequired=0/' /tmp/DBRepair.sh
+
+chmod +x /tmp/DBRepair.sh
+
+# Shutdown plex and copy database files (if needed). Always make backups.
+systemctl stop plexmediaserver
+cp /var/lib/plexmediaserver/Library/Application\ Support/Plex\ Media\ Server/Plug-in\ Support/Databases/* /root/
+
+# Set paging size to filesystem blocksize for optimum performance.
+export DBREPAIR_PAGESIZE=4096
+/tmp/DBRepair.sh --sqlite /usr/lib/plexmediaserver/Plex\ SQLite --databases /root
+
+# Use automatic repair, then deflate databases
+auto  # Check, repair, optimize, set paging size, vacuum, re-index.
+deflate  # Clean orphaned data (statistics data).
+exit
+```
 
 ### [Spinning playback icon, no playback][a]
 Generally if transcoding is setup right, then this is related to the **audio
@@ -93,3 +134,5 @@ sudo reboot
 
 [a]: https://forums.plex.tv/t/transcoder-fails-when-transcode-is-on-a-network-share/186681
 [b]: https://plexapp.zendesk.com/hc/en-us/articles/201154527-Move-Viewstate-Ratings-from-One-Install-to-Another
+[c]: https://github.com/ChuckPa/PlexDBRepair
+[d]: https://community.synology.com/enu/forum/17/post/115743

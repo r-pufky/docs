@@ -6,6 +6,16 @@ stored, last changed setting last).
 
 Options here reflect file analysis.
 
+!!! abstract "Preferences.xml"
+    0755 {USER}:{USER}
+
+    ``` xml
+    <!-- An empty preferences file will be auto-populated on service start. -->
+    <!-- All preferences are stored in the Preferences element. -->
+    <?xml version="1.0" encoding="utf-8"?>
+    <Preferences />
+    ```
+
 ## General
 
 ### FriendlyName
@@ -901,9 +911,8 @@ only.
  DvrIncrementalEpgLoader | bool | false
 
 ## Identifiers
-Auto-generated Plex options to uniquely identifier a Plex server.
-
-TODO
+Auto-generated Plex options to uniquely identifier a Plex server. Carry these
+settings over to new installations to retain Plex server identification.
 
 ### MachineIdentifier
 
@@ -924,10 +933,6 @@ TODO
  AnonymousMachineIdentifier | str  | {AUTO}
 
 ## Stateful
-Options stored in Plex preferences which carry program state.
-
-TODO
-
 Not user configurable.
 
 Configuration options here are not found directly in the server UI. These are
