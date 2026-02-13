@@ -1071,14 +1071,13 @@ to access the server-side configuration page.
 ssh -L 32400:localhost:32400 {plex_host}
 ```
 
-Then connect to http://localhost:32400/web and run through the configuration
-steps.
+Then connect to http://localhost:32400/web and obtain token:
 
 1. Select media libraries to use.
 2. Sign-in on server: upper right ➔ sign-in.
 3. Select server and claim: claim now ➔ claim server.
-4. Update **plex_cfg_online_token** with new token in found in
-   **plexmediaserver.xml** located in **plex_srv_application_support_dir**.
+4. Update **PlexOnlineToken** with new token in found in
+   **/var/lib/plexmediaserver/Library/Application Support/Plex Media Server/Preferences.xml**.
 
 Enable Secure Server Connection
 
