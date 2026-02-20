@@ -100,8 +100,8 @@ nav:
     - 'Sonarr':
       - 'arr/sonarr/README.md'
       - 'arr/sonarr/troubleshooting.md'
-  #- 'Hardware':
-  #    - 'hardware/crush_80_reboot_pro.md'
+  - 'Hardware':
+    - 'hardware/crush_80_reboot_pro.md'
   - 'Games':
     - 'games/conan_exiles.md'
     - 'games/elden_ring.md'
