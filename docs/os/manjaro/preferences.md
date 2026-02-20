@@ -91,7 +91,7 @@ sudo find /usr/share/{plasma,aurorae,color-schemes,konsole,konversation,Kvantum,
         * Email client: **Firefox**
         * Image viewer: **Gwenview**
         * Music player: **Elisa**
-        * Video player: **VLX media player**
+        * Video player: **VLC media player**
         * Text editor: **VSCodium**
         * PDF Viewer: **Okular**
         * File manager: **Dolphin**
@@ -145,8 +145,8 @@ sudo find /usr/share/{plasma,aurorae,color-schemes,konsole,konversation,Kvantum,
         * Virtual Desktops:
             * Delete all extra desktops.
     * Notifications:
-        * Do Not Distrub Mode: ✔ **when screens are mirrored **
-        * Do Not Distrub Mode: ✔ **During screen sharing**
+        * Do Not Disturb Mode: ✔ **when screens are mirrored**
+        * Do Not Disturb Mode: ✔ **During screen sharing**
         * Critical Notifications: ✔ **Show in Do Not Disturb mode**
         * Normal Notifications: ✘
         * Low priority notifications: ✔ **Show popup**
@@ -210,11 +210,11 @@ sudo find /usr/share/{plasma,aurorae,color-schemes,konsole,konversation,Kvantum,
 
 ## Taskbar
 
-??? example "Clock ➔ MMB ➔ Configure Digital Clock"
-    * Show date: ✔ **Awlays below**
+??? example "Clock ➔ RMB ➔ Configure Digital Clock"
+    * Show date: ✔ **Always below**
     * Show seconds: **Only in tooltip**
     * Show time zone: **Only when different from local time zone**
-    * Display timezone as: **Code*
+    * Display timezone as: **Code**
     * Time display: **24 hour**
     * Date format: **ISO date**
     * Text display: **Automatic**

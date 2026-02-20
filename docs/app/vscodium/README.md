@@ -1,5 +1,11 @@
-# VSCodium (VSCode)
-VSCodium is VSCode without telemetry.
+# VSCodium (VSCode / Code)
+VSCodium / Code is VSCode without telemetry.
+
+=== "CachyOS"
+    ``` bash
+    pacman -S code  # Optimized VScodium (preferred).
+    pacman -S vscodium  # or use the git source release.
+    ```
 
 === "Manjaro"
     !!! example "⌘ ➔ Add/Remove Software ➔ Search ➔ AUR"
@@ -7,12 +13,49 @@ VSCodium is VSCode without telemetry.
         * vscodium-bin-marketplace
         * vscodium-features
 
-    Settings are located in: **~/.vscode-oss** and **~/.config/VSCodium**.
-
 === "Windows"
     ``` powershell
     winget install vscodium
     ```
+
+## Locations
+Existing configurations can be dropped into respective location to transfer
+settings.
+
+=== "Code"
+      Option                | Location
+     ----------------------:|----------
+                   Settings | **~/.vscode-oss**
+                     Config | **~/.config/Code - OSS**
+                      State | **~/.local/state/Code - OSS**
+      product.json (system) | **/usr/lib/code/product.json**
+        product.json (user) | **~/.config/Code - OSS/product.json**
+
+    !!! warning "MS Marketplace configuration required"
+        Code uses opensource marketplace which will result in existing
+        extensions not detected on launch. [Switching to MS Marketplace][f]
+        resolves issue (or installing the opensource equivalent).
+
+    !!! abstract "/.config/Code - OSS/product.json"
+        ``` json
+        {
+          "extensionsGallery": {
+            "serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
+            "itemUrl": "https://marketplace.visualstudio.com/items",
+            "cacheUrl": "https://vscode.blob.core.windows.net/gallery/index",
+            "controlUrl": ""
+          }
+        }
+        ```
+
+=== "VSCodium"
+      Option                | Location
+     ----------------------:|----------
+                   Settings | **~/.vscode-oss**
+                     Config | **~/.config/VSCodium**
+                      State | **~/.local/state/VSCodium**
+      product.json (system) | **/usr/share/vscodium/resources/app/product.json**
+        product.json (user) | **~/.config/VSCodium/product.json**
 
 
 ## Window Style
@@ -22,7 +65,10 @@ VSCodium is VSCode without telemetry.
 
 
 ## Disable Copilot
+
 !!! example "ctrl + , ➔ Features ➔ Chat ➔ Command Center: ✘"
+
+!!! example "ctrl + , ➔ Features ➔ Chat ➔ Disable AI Features: ✔"
 
 
 ## Allow No Verify Commits
@@ -159,3 +205,4 @@ Restart.
 [c]: https://stackoverflow.com/questions/62772525/vscode-how-to-ask-for-password-in-terminal-instead-of-pop-up-tab
 [d]: https://stackoverflow.com/questions/30140112/how-to-hide-specified-files-directories-e-g-git-in-the-sidebar-vscode
 [e]: https://stackoverflow.com/questions/51820921/vscode-integrated-terminal-doesnt-load-bashrc-or-bash-profile
+[f]: https://gist.github.com/anxkhn/9ae7b2248999168b73f303dec5851460

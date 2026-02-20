@@ -3,21 +3,19 @@
 See [Auto Select Client Certificate][a] to auto select certificate for matched
 sites.
 
+=== "CachyOS"
+    Install via AUR helper.
 
-## Block location tracking
+    ``` bash
+    paru -S google-chrome
+    ```
 
-!!! example "chrome://settings/content/location"
-    * Ask before accessing (Recommended): **Disabled**
-
-!!! example "chrome://settings/content/notifications"
-    * Ask before sending (Recommended): **Disabled**
+    !!! example "chrome://settings/appearance"
+        * Use system title bar and borders: ✔
 
 === "Manjaro"
-    Install via GUI or CLI
+    Install via AUR helper.
 
-    !!! example "⌘ ➔ Add/Remove Software ➔ Search ➔ AUR ➔ google-chrome"
-
-    CLI
     ``` bash
     pamac install google-chrome
     ```
@@ -26,7 +24,9 @@ sites.
         * Use system title bar and borders: ✔
 
 === "Windows"
-    ### [Disable Software Reporting][b]
+    [Download][f] and install.
+
+    [Disable Software Reporting][b]
 
     !!! example "Disable Chrome running software reporting tool"
         `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome`
@@ -46,7 +46,17 @@ sites.
 
         Value: **0**
 
-### Disable Background Services
+
+## Block location tracking
+
+!!! example "chrome://settings/content/location"
+    * Ask before accessing (Recommended): **Disabled**
+
+!!! example "chrome://settings/content/notifications"
+    * Ask before sending (Recommended): **Disabled**
+
+
+## Disable Background Services
 Chrome background services will cause "failed to restore properly" messages on
 startup.
 
@@ -98,3 +108,4 @@ session.
 [c]: https://remotedesktop.google.com
 [d]: https://support.google.com/chrome/a/answer/2799701?hl=en&vid=0-243350879834-1495198101821
 [e]: https://superuser.com/questions/723832/windows-firewall-blocks-remote-desktop-with-custom-port
+[f]: https://www.google.com/chrome

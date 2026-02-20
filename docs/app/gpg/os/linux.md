@@ -13,6 +13,14 @@
 
 Install GPG and security card agents on machine.
 
+=== "CachyOS"
+    ``` bash
+    pacman -S --needed pinentry pcsclite ccid hopenpgp-tools stoken gnupg
+    pacman -S --needed yubikey-personalization-gui
+    systemctl enable pcscd.service
+    systemctl start pcscd.service
+    ```
+
 === "Manjaro"
     ``` bash
     pamac install gnupg pcsclite ccid hopenpgp-tools stoken
@@ -49,6 +57,7 @@ Install GPG and security card agents on machine.
 ## Configure [SSH/GPG Agent][d]
 This will enable SSH usage with the gpg-agent.
 
+
 !!! abstract "~/.gnupg/gpg-agent.conf"
     0600 {USER}:{USER}
 
@@ -59,14 +68,32 @@ This will enable SSH usage with the gpg-agent.
     ttyname $GPG_TTY
     default-cache-ttl 60
     max-cache-ttl 120
-    pinentry-program /usr/bin/pinentry-curses
-    #pinentry-program /usr/bin/pinentry-tty
-    #pinentry-program /usr/bin/pinentry-gtk-2
-    #pinentry-program /usr/bin/pinentry-x11
-    #pinentry-program /usr/bin/pinentry-gnome3
-    #pinentry-program /usr/local/bin/pinentry-curses
-    #pinentry-program /usr/local/bin/pinentry-mac
+    # Debian Systems (preferred order):
+    # pinentry-program /usr/bin/pinentry-curses  # Ncurses terminal.
+    # pinentry-program /usr/bin/pinentry-tty  # Text only terminal.
+    # pinentry-program /usr/bin/pinentry-gtk-2  # GTK, terminal fallback.
+    # pinentry-program /usr/bin/pinentry-x11  # X11, terminal fallback.
+    # pinentry-program /usr/bin/pinentry-gnome3  # Gnome, terminal fallback.
+
+    # Arch Systems (preferred order):
+    # pinentry-program /usr/bin/pinentry  # Auto GUI, terminal fallback.
+    # pinentry-program /usr/bin/pinentry-curses  # Ncurses terminal.
+    # pinentry-program /usr/bin/pinentry-tty  # Text only terminal.
+    # pinentry-program /usr/bin/pinentry-qt  # QT5/6, terminal fallback.
+    # pinentry-program /usr/bin/pinentry-gnome3  # Gnome, terminal fallback.
+    # pinentry-program /usr/bin/pinentry-qt5  # QT5, terminal fallback.
+    # pinentry-program /usr/bin/pinentry-emacs  # EMACS only.
+
+    # OSX (preferred order):
+    # pinentry-program /usr/local/bin/pinentry-mac  # OSX, terminal fallback.
+    # pinentry-program /usr/local/bin/pinentry-curses  # Ncurses terminal.
     ```
+
+!!! warning "Alway restart gpg-agent after changes"
+
+``` bash
+gpgconf --kill gpg-agent
+```
 
 !!! abstract "~/.gnupg/gpg.conf"
     0600 {USER}:{USER}
@@ -145,8 +172,21 @@ This will enable SSH usage with the gpg-agent.
     gpgconf --launch gpg-agent
     # Detect correct terminal on login.
     gpg-connect-agent updatestartuptty /bye > /dev/null
+    # Use 'ssh-add -L' to list key when attached.
     ```
 
+!!! abstract "[~/.config/fish/config.fish][i]"
+    0644 {USER}:{USER}
+
+    ``` bash
+    # Direct SSH to use GPG for authentication.
+    set -e SSH_AUTH_SOCK
+    set -U -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+    set -x GPG_TTY (tty)
+    gpgconf --launch gpg-agent
+    gpg-connect-agent updatestartuptty /bye > /dev/null
+    # Use 'ssh-add -L' to list key when attached.
+    ```
 
 ## [Verify SSH Works][e]
 1. Connect with SSH as normal.
@@ -202,3 +242,4 @@ scp -o ProxyJump={USER}@{BASTION} {STANDARD SCP COMMAND}
 [f]: ../../../glossary/yubikey.md#yubikey-passwordpin
 [g]: https://superuser.com/questions/456438/how-do-i-scp-a-file-through-an-intermediate-server
 [h]: https://superuser.com/questions/174160/scp-over-a-proxy-with-one-command-from-local-machine
+[i]: https://www.foxk.it/blog/gpg-ssh-agent-fish

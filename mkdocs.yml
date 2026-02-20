@@ -24,10 +24,15 @@
 #     uv run mkdocs serve --livereload
 #
 #
-# Zensical (not ready yet):
-#   uv init
-#   uv add zensical
-#   uv run zensical serve
+# TODO: mkdocs is deprecated and moving to 2.0 with breaking changes. Consider
+#     replacing with zeniscal:
+#
+#     https://squidfunk.github.io/mkdocs-material/blog/2026/02/18/mkdocs-2.0/
+#
+#     Zensical:
+#       uv init
+#       uv add zensical
+#       uv run zensical serve
 #
 # All warnings and errors must be resolved before committing.
 #
@@ -83,7 +88,7 @@ nav:
     - 'app/movie_studio.md'
     - 'app/mutt.md'
     - 'app/putty.md'
-    - 'VSCodium (VSCode)':
+    - 'VSCodium (VSCode/Code)':
       - 'app/vscodium/README.md'
       - 'app/vscodium/troubleshooting.md'
     - 'Vim':
@@ -132,6 +137,10 @@ nav:
       - 'networking/unifi/troubleshooting.md'
     - 'networking/vlan.md'
   - 'Operating Systems':
+    - 'CachyOS':
+      - 'os/cachyos/README.md'
+      - 'os/cachyos/preferences.md'
+      - 'os/cachyos/troubleshooting.md'
     - 'Firmware':
       - 'os/firmware/README.md'
     - 'Debian':

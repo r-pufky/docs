@@ -169,7 +169,7 @@ crypt setup -v luksOpen /dev/{PARTITION} crypt_drive
 mount /dev/mapper/crypt_drive /mnt
 
 # Switch to installed system root and update.
-manjato-chroot /mnt
+manjaro-chroot /mnt
 pacman-mirrors --fasttrack 5 && pacman -Syyu
 
 # Update EFI boot manager.
