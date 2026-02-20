@@ -13,12 +13,14 @@
 #     pip install --upgrade pip
 #     pip install mkdocs mkdocs-material mkdocs-glightbox
 #     pip install mkdocs-git-revision-date-localized-plugin
+#     pip install click==8.2.1  # (until 4014 is resolved).
 #     mkdocs serve --livereload
 #
 #   uv:
 #     uv init
 #     uv add mkdocs mkdocs-material mkdocs-glightbox
 #     uv add mkdocs-git-revision-date-localized-plugin
+#     uv pip install click==8.2.1  # (until 4014 is resolved).
 #     uv run mkdocs serve --livereload
 #
 #
@@ -39,6 +41,7 @@
 #
 # Reference:
 # * https://www.mkdocs.org/
+# * https://github.com/mkdocs/mkdocs/issues/4014
 
 ###############################################################################
 # Page Configuration
@@ -97,6 +100,8 @@ nav:
     - 'Sonarr':
       - 'arr/sonarr/README.md'
       - 'arr/sonarr/troubleshooting.md'
+  #- 'Hardware':
+  #    - 'hardware/crush_80_reboot_pro.md'
   - 'Games':
     - 'games/conan_exiles.md'
     - 'games/elden_ring.md'
