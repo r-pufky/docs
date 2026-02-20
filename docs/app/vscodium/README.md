@@ -4,6 +4,7 @@ VSCodium / Code is VSCode without telemetry.
 === "CachyOS"
     ``` bash
     pacman -S code  # Optimized VScodium (preferred).
+    paru -S code-marketplace  # Auto patch MS Marketplace.
     pacman -S vscodium  # or use the git source release.
     ```
 
