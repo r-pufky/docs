@@ -7,24 +7,31 @@
         <meta name="author" content="r-pufky">
       
       
-        <link rel="canonical" href="https://github.com/r-pufky/docs/media/folders/">
+        <link rel="canonical" href="https://github.com/r-pufky/docs/os/cachyos/troubleshooting/">
       
       
+        <link rel="prev" href="../preferences/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
-    
-    
+        <link rel="next" href="../../firmware/">
       
-        <title>Folder Structures - Docs: A Collection of Notes</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
+    
+    
+      
+        <title>Troubleshooting - Docs: A Collection of Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -51,14 +58,13 @@
     
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/vs2015.min.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
-    
-  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -87,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#folder-structures" class="md-skip">
+        <a href="#troubleshooting" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +109,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Docs: A Collection of Notes" class="md-header__button md-logo" aria-label="Docs: A Collection of Notes" data-md-component="logo">
+    <a href="../../.." title="Docs: A Collection of Notes" class="md-header__button md-logo" aria-label="Docs: A Collection of Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
@@ -123,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Folder Structures
+              Troubleshooting
             
           </span>
         </div>
@@ -251,7 +257,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Docs: A Collection of Notes" class="md-nav__button md-logo" aria-label="Docs: A Collection of Notes" data-md-component="logo">
+    <a href="../../.." title="Docs: A Collection of Notes" class="md-nav__button md-logo" aria-label="Docs: A Collection of Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
@@ -281,14 +287,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Background
+  
+
     
   </span>
+  
   
 
       </a>
@@ -304,6 +315,8 @@
   
     
     
+      
+        
       
         
       
@@ -341,9 +354,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Applications
+  
+
     
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -352,7 +370,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Applications
+            
+  
+    Applications
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -363,14 +385,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../app/bash/" class="md-nav__link">
+      <a href="../../../app/bash/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     BASH
+  
+
     
   </span>
+  
   
 
       </a>
@@ -386,14 +413,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../app/chrome/" class="md-nav__link">
+      <a href="../../../app/chrome/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Chrome
+  
+
     
   </span>
+  
   
 
       </a>
@@ -409,94 +441,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../app/freecad/" class="md-nav__link">
+      <a href="../../../app/freecad/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     FreeCAD
+  
+
     
   </span>
   
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4">
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../app/git/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    GIT
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_4">
-            <span class="md-nav__icon md-icon"></span>
-            GIT
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../app/git/branches/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Branches
-    
-  </span>
   
 
       </a>
@@ -512,25 +469,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../app/git/troubleshooting/" class="md-nav__link">
+      <a href="../../../app/firefox/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Troubleshooting
+    
+  
+    Firefox
+  
+
     
   </span>
   
-
-      </a>
-    </li>
   
 
-              
-            
-          </ul>
-        </nav>
-      
+      </a>
     </li>
   
 
@@ -547,10 +501,6 @@
       
         
           
-        
-      
-        
-      
         
       
         
@@ -569,14 +519,19 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../app/gpg/" class="md-nav__link ">
+            <a href="../../../app/git/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
-    GPG with Yubikey
+    
+  
+    GIT
+  
+
     
   </span>
+  
   
 
             </a>
@@ -591,7 +546,145 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
-            GPG with Yubikey
+            
+  
+    GIT
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../app/git/branches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Branches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../app/git/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../app/gpg/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPG with Yubikey
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    GPG with Yubikey
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -630,33 +723,42 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_2">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_2">
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../app/gpg/setup/" class="md-nav__link ">
+            <a href="../../../app/gpg/setup/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
+    
+  
     Setup
+  
+
     
   </span>
+  
   
 
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2_5_2" id="__nav_2_5_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2_6_2" id="__nav_2_6_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_5_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_2">
             <span class="md-nav__icon md-icon"></span>
-            Setup
+            
+  
+    Setup
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -669,14 +771,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../app/gpg/setup/master/" class="md-nav__link">
+      <a href="../../../app/gpg/setup/master/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Master Key
+  
+
     
   </span>
+  
   
 
       </a>
@@ -692,14 +799,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../app/gpg/setup/subkey/" class="md-nav__link">
+      <a href="../../../app/gpg/setup/subkey/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Subkeys
+  
+
     
   </span>
+  
   
 
       </a>
@@ -715,14 +827,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../app/gpg/setup/backup/" class="md-nav__link">
+      <a href="../../../app/gpg/setup/backup/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Backup
+  
+
     
   </span>
+  
   
 
       </a>
@@ -738,14 +855,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../app/gpg/setup/export_to_yubikey/" class="md-nav__link">
+      <a href="../../../app/gpg/setup/export_to_yubikey/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Export to Yubikey
+  
+
     
   </span>
+  
   
 
       </a>
@@ -761,14 +883,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../app/gpg/setup/cleanup/" class="md-nav__link">
+      <a href="../../../app/gpg/setup/cleanup/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Cleanup
+  
+
     
   </span>
+  
   
 
       </a>
@@ -784,14 +911,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../app/gpg/setup/import/" class="md-nav__link">
+      <a href="../../../app/gpg/setup/import/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Import Public Key
+  
+
     
   </span>
+  
   
 
       </a>
@@ -829,26 +961,35 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_3">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_3">
         
           
-          <label class="md-nav__link" for="__nav_2_5_3" id="__nav_2_5_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_6_3" id="__nav_2_6_3_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
+    
+  
     OS
+  
+
     
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_5_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_3">
             <span class="md-nav__icon md-icon"></span>
-            OS
+            
+  
+    OS
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -859,14 +1000,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../app/gpg/os/linux/" class="md-nav__link">
+      <a href="../../../app/gpg/os/linux/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Linux
+  
+
     
   </span>
+  
   
 
       </a>
@@ -882,14 +1028,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../app/gpg/os/windows/" class="md-nav__link">
+      <a href="../../../app/gpg/os/windows/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Windows
+  
+
     
   </span>
+  
   
 
       </a>
@@ -913,14 +1064,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../app/gpg/operations/" class="md-nav__link">
+      <a href="../../../app/gpg/operations/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Operations
+  
+
     
   </span>
+  
   
 
       </a>
@@ -936,14 +1092,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../app/gpg/troubleshooting/" class="md-nav__link">
+      <a href="../../../app/gpg/troubleshooting/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Troubleshooting
+  
+
     
   </span>
+  
   
 
       </a>
@@ -967,14 +1128,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../app/movie_studio/" class="md-nav__link">
+      <a href="../../../app/movie_studio/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Movie Studio
+  
+
     
   </span>
+  
   
 
       </a>
@@ -990,14 +1156,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../app/mutt/" class="md-nav__link">
+      <a href="../../../app/mutt/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Mutt
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1013,103 +1184,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../app/putty/" class="md-nav__link">
+      <a href="../../../app/putty/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Putty
+  
+
     
   </span>
+  
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9">
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../app/vscodium/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    VSCodium (VSCode)
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_9">
-            <span class="md-nav__icon md-icon"></span>
-            VSCodium (VSCode)
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../app/vscodium/troubleshooting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Troubleshooting
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -1142,14 +1232,19 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../app/vim/" class="md-nav__link ">
+            <a href="../../../app/vscodium/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
-    Vim
+    
+  
+    VSCodium (VSCode/Code)
+  
+
     
   </span>
+  
   
 
             </a>
@@ -1164,7 +1259,11 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_10">
             <span class="md-nav__icon md-icon"></span>
-            Vim
+            
+  
+    VSCodium (VSCode/Code)
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1177,14 +1276,119 @@
   
   
     <li class="md-nav__item">
-      <a href="../../app/vim/troubleshooting/" class="md-nav__link">
+      <a href="../../../app/vscodium/troubleshooting/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Troubleshooting
+  
+
     
   </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../app/vim/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vim
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vim
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../app/vim/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
   
 
       </a>
@@ -1245,9 +1449,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Arr
+  
+
     
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -1256,7 +1465,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Arr
+            
+  
+    Arr
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1267,14 +1480,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../arr/deluge/" class="md-nav__link">
+      <a href="../../../arr/deluge/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Deluge
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1290,14 +1508,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../arr/lidarr/" class="md-nav__link">
+      <a href="../../../arr/lidarr/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Lidarr
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1313,14 +1536,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../arr/nzbget/" class="md-nav__link">
+      <a href="../../../arr/nzbget/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     NZBGet
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1336,14 +1564,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../arr/playon/" class="md-nav__link">
+      <a href="../../../arr/playon/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     PlayOn
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1379,14 +1612,19 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../arr/radarr/" class="md-nav__link ">
+            <a href="../../../arr/radarr/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
+    
+  
     Radarr
+  
+
     
   </span>
+  
   
 
             </a>
@@ -1401,7 +1639,11 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
-            Radarr
+            
+  
+    Radarr
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1414,14 +1656,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../arr/radarr/troubleshooting/" class="md-nav__link">
+      <a href="../../../arr/radarr/troubleshooting/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Troubleshooting
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1465,14 +1712,19 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../arr/sonarr/" class="md-nav__link ">
+            <a href="../../../arr/sonarr/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
+    
+  
     Sonarr
+  
+
     
   </span>
+  
   
 
             </a>
@@ -1487,7 +1739,11 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
-            Sonarr
+            
+  
+    Sonarr
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1500,14 +1756,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../arr/sonarr/troubleshooting/" class="md-nav__link">
+      <a href="../../../arr/sonarr/troubleshooting/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Troubleshooting
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1539,16 +1800,6 @@
   
     
     
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
       
         
       
@@ -1568,9 +1819,14 @@
   
   
   <span class="md-ellipsis">
-    Games
+    
+  
+    Hardware
+  
+
     
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -1579,7 +1835,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            Games
+            
+  
+    Hardware
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1590,258 +1850,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../games/conan_exiles/" class="md-nav__link">
+      <a href="../../../hardware/crush_80_reboot_pro/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Conan Exiles
+    
+  
+    Crush 80 Reboot Pro
+  
+
     
   </span>
+  
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../games/elden_ring/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Elden Ring
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3">
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../games/escape_from_tarkov/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    Escape from Tarkov
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
-            <span class="md-nav__icon md-icon"></span>
-            Escape from Tarkov
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../games/escape_from_tarkov/server/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    FIKA Server
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../games/mumble/mumble/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Mumble
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../games/seven_days_to_die/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Seven Days to Die
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6">
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../games/steam/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    Steam
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_6">
-            <span class="md-nav__icon md-icon"></span>
-            Steam
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../games/steam/troubleshooting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Troubleshooting
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -1862,6 +1886,12 @@
   
     
     
+      
+        
+      
+        
+      
+        
       
         
       
@@ -1885,9 +1915,14 @@
   
   
   <span class="md-ellipsis">
-    Media Management
+    
+  
+    Games
+  
+
     
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -1896,7 +1931,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            Media Management
+            
+  
+    Games
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1907,94 +1946,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../music/" class="md-nav__link">
+      <a href="../../../games/conan_exiles/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Music Processing
+    
+  
+    Conan Exiles
+  
+
     
   </span>
   
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2">
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../plex/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    Plex
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2">
-            <span class="md-nav__icon md-icon"></span>
-            Plex
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../plex/config/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Configuration
-    
-  </span>
   
 
       </a>
@@ -2010,25 +1974,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../plex/troubleshooting/" class="md-nav__link">
+      <a href="../../../games/elden_ring/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Troubleshooting
+    
+  
+    Elden Ring
+  
+
     
   </span>
   
-
-      </a>
-    </li>
   
 
-              
-            
-          </ul>
-        </nav>
-      
+      </a>
     </li>
   
 
@@ -2061,14 +2022,19 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../firefly/" class="md-nav__link ">
+            <a href="../../../games/escape_from_tarkov/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
-    Firefly III
+    
+  
+    Escape from Tarkov
+  
+
     
   </span>
+  
   
 
             </a>
@@ -2083,7 +2049,11 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
-            Firefly III
+            
+  
+    Escape from Tarkov
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2096,14 +2066,175 @@
   
   
     <li class="md-nav__item">
-      <a href="../firefly/troubleshooting/" class="md-nav__link">
+      <a href="../../../games/escape_from_tarkov/server/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Troubleshooting
+    
+  
+    FIKA Server
+  
+
     
   </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../games/mumble/mumble/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mumble
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../games/seven_days_to_die/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Seven Days to Die
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../games/steam/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Steam
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Steam
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../games/steam/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
   
 
       </a>
@@ -2158,9 +2289,14 @@
   
   
   <span class="md-ellipsis">
-    Networking
+    
+  
+    Media Management
+  
+
     
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -2169,64 +2305,13 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            Networking
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
             
-              
-                
   
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1">
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../networking/edge_os/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    Edge OS
-    
-  </span>
+    Media Management
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_1">
-            <span class="md-nav__icon md-icon"></span>
-            Edge OS
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
             
               
                 
@@ -2235,25 +2320,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../networking/edge_os/troubleshooting/" class="md-nav__link">
+      <a href="../../../media/music/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Troubleshooting
+    
+  
+    Music Processing
+  
+
     
   </span>
   
-
-      </a>
-    </li>
   
 
-              
-            
-          </ul>
-        </nav>
-      
+      </a>
     </li>
   
 
@@ -2270,6 +2352,8 @@
       
         
           
+        
+      
         
       
         
@@ -2286,14 +2370,19 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../networking/unifi/" class="md-nav__link ">
+            <a href="../../../media/plex/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
-    UniFi
+    
+  
+    Plex
+  
+
     
   </span>
+  
   
 
             </a>
@@ -2308,7 +2397,11 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6_2">
             <span class="md-nav__icon md-icon"></span>
-            UniFi
+            
+  
+    Plex
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2321,14 +2414,47 @@
   
   
     <li class="md-nav__item">
-      <a href="../../networking/unifi/troubleshooting/" class="md-nav__link">
+      <a href="../../../media/plex/config/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Troubleshooting
+    
+  
+    Configuration
+  
+
     
   </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../media/plex/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
   
 
       </a>
@@ -2351,18 +2477,95 @@
   
   
   
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../media/firefly/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firefly III
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Firefly III
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../networking/vlan/" class="md-nav__link">
+      <a href="../../../media/firefly/troubleshooting/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    VLANs
+    
+  
+    Troubleshooting
+  
+
     
   </span>
   
+  
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2383,18 +2586,6 @@
   
     
     
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
       
         
       
@@ -2418,9 +2609,14 @@
   
   
   <span class="md-ellipsis">
-    Operating Systems
+    
+  
+    Networking
+  
+
     
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -2429,7 +2625,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
-            Operating Systems
+            
+  
+    Networking
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2446,6 +2646,8 @@
           
         
       
+        
+      
     
     
     
@@ -2458,27 +2660,69 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../os/firmware/" class="md-nav__link ">
+            <a href="../../../networking/edge_os/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
-    Firmware
+    
+  
+    Edge OS
+  
+
     
   </span>
   
+  
 
             </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
             
           </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7_1">
             <span class="md-nav__icon md-icon"></span>
-            Firmware
+            
+  
+    Edge OS
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../networking/edge_os/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -2516,14 +2760,19 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../os/debian/" class="md-nav__link ">
+            <a href="../../../networking/unifi/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
-    Debian
+    
+  
+    UniFi
+  
+
     
   </span>
+  
   
 
             </a>
@@ -2538,7 +2787,11 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7_2">
             <span class="md-nav__icon md-icon"></span>
-            Debian
+            
+  
+    UniFi
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2551,14 +2804,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../os/debian/troubleshooting/" class="md-nav__link">
+      <a href="../../../networking/unifi/troubleshooting/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Troubleshooting
+  
+
     
   </span>
+  
   
 
       </a>
@@ -2582,117 +2840,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../os/kindle/" class="md-nav__link">
+      <a href="../../../networking/vlan/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Kindle
+    
+  
+    VLANs
+  
+
     
   </span>
   
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4">
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../os/manjaro/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    Manjaro
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_4">
-            <span class="md-nav__icon md-icon"></span>
-            Manjaro
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../os/manjaro/preferences/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Preferences
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../os/manjaro/troubleshooting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Troubleshooting
-    
-  </span>
   
 
       </a>
@@ -2707,334 +2867,12 @@
     </li>
   
 
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../os/pikvm/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    PiKVM
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_6">
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../os/pve/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    Proxmox (PVE)
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_7_6" id="__nav_7_6_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_6">
-            <span class="md-nav__icon md-icon"></span>
-            Proxmox (PVE)
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../os/pve/acme/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    ACME
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../os/pve/troubleshooting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Troubleshooting
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../os/shield/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Shield TV
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../os/web_os/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    WebOS
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_9">
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../os/windows/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    Windows
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_7_9" id="__nav_7_9_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_9">
-            <span class="md-nav__icon md-icon"></span>
-            Windows
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../os/windows/reinstall/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Reinstall
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../os/windows/crashes/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Crashes
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../os/windows/troubleshooting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Troubleshooting
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
     
       
       
   
+  
+    
   
   
   
@@ -3047,15 +2885,29 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
         
           
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
@@ -3063,18 +2915,27 @@
   
   
   <span class="md-ellipsis">
-    Printing
+    
+  
+    Operating Systems
+  
+
     
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_8">
             <span class="md-nav__icon md-icon"></span>
-            Printing
+            
+  
+    Operating Systems
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3082,17 +2943,515 @@
                 
   
   
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CachyOS
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    CachyOS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
   
   
     <li class="md-nav__item">
-      <a href="../../printing/linux/" class="md-nav__link">
+      <a href="../preferences/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Linux
+    
+  
+    Preferences
+  
+
     
   </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#increase-failed-auth-lockout-attempts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Increase Failed auth Lockout Attempts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#caps-lock-as-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Caps lock as Control
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mouse-acceleration-seems-wonky" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mouse Acceleration Seems Wonky
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-user-installed-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List of User Installed Packages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-package-by-install-date" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List of Package by Install Date
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../firmware/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Firmware
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Firmware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_3">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../debian/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Debian
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Debian
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../debian/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kindle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kindle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_5">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../manjaro/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manjaro
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_5" id="__nav_8_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Manjaro
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../manjaro/preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preferences
+  
+
+    
+  </span>
+  
   
 
       </a>
@@ -3108,14 +3467,337 @@
   
   
     <li class="md-nav__item">
-      <a href="../../printing/windows/" class="md-nav__link">
+      <a href="../../manjaro/troubleshooting/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pikvm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PiKVM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_7">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../pve/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proxmox (PVE)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_7" id="__nav_8_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Proxmox (PVE)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pve/acme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ACME
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pve/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../shield/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shield TV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web_os/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WebOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_10">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../windows/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
     Windows
+  
+
     
   </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8_10" id="__nav_8_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Windows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../windows/reinstall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reinstall
+  
+
+    
+  </span>
+  
   
 
       </a>
@@ -3131,17 +3813,58 @@
   
   
     <li class="md-nav__item">
-      <a href="../../printing/brother_mfcl2750dw/" class="md-nav__link">
+      <a href="../../windows/crashes/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Brother MFC-L2750DW
+    
+  
+    Crashes
+  
+
     
   </span>
   
+  
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../windows/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -3162,12 +3885,6 @@
   
     
     
-      
-        
-      
-        
-      
-        
       
         
       
@@ -3191,9 +3908,14 @@
   
   
   <span class="md-ellipsis">
-    Scripts
+    
+  
+    Printing
+  
+
     
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -3202,7 +3924,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
-            Scripts
+            
+  
+    Printing
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -3213,14 +3939,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scripts/ansible/" class="md-nav__link">
+      <a href="../../../printing/linux/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Ansible
+    
+  
+    Linux
+  
+
     
   </span>
+  
   
 
       </a>
@@ -3236,14 +3967,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scripts/copying_data/" class="md-nav__link">
+      <a href="../../../printing/windows/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Copying Data
+    
+  
+    Windows
+  
+
     
   </span>
+  
   
 
       </a>
@@ -3259,83 +3995,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../scripts/steam/" class="md-nav__link">
+      <a href="../../../printing/brother_mfcl2750dw/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Steam
+    
+  
+    Brother MFC-L2750DW
+  
+
     
   </span>
   
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../scripts/video_tools/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Video Tools
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../scripts/wiping_data/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Wiping Data
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../scripts/youtube/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Youtube
-    
-  </span>
   
 
       </a>
@@ -3359,32 +4031,6 @@
   
     
     
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
       
         
       
@@ -3409,1211 +4055,32 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10">
         
           
-          <div class="md-nav__link md-nav__container">
-            <a href="../../service/" class="md-nav__link ">
-              
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
-    Services
+    
+  
+    Scripts
+  
+
     
   </span>
   
+  
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
-            Services
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
             
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/bluebubbles/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    BlueBubbles
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/dropbear/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Dropbear
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4">
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../service/ca/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    Certificate Authority
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_10_4" id="__nav_10_4_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10_4">
-            <span class="md-nav__icon md-icon"></span>
-            Certificate Authority
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/ca/setup/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Setup
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/ca/certificates/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Certificates
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/ca/certificate_revocation_list/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Certificate Revocation Lists
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_5">
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../service/forgejo/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    Forgejo (GIT)
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_10_5" id="__nav_10_5_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10_5">
-            <span class="md-nav__icon md-icon"></span>
-            Forgejo (GIT)
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/forgejo/troubleshooting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Troubleshooting
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/imapsync/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    imapsync
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_7">
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../service/mail/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    Mail
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_10_7" id="__nav_10_7_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10_7">
-            <span class="md-nav__icon md-icon"></span>
-            Mail
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/mail/postfix/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Postfix
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/mail/troubleshooting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Troubleshooting
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/mariadb/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    MariaDB
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/pihole/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Pi-Hole
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_10">
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../service/postgres/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    PostgresQL
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_10_10" id="__nav_10_10_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10_10">
-            <span class="md-nav__icon md-icon"></span>
-            PostgresQL
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/postgres/troubleshooting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Troubleshooting
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_11">
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../service/nfs/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    NFS
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_10_11" id="__nav_10_11_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10_11">
-            <span class="md-nav__icon md-icon"></span>
-            NFS
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/nfs/exports/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Exports (Shares)
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/nfs/mounts/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Mounts
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/nfs/optimizations/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Optimizations
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/nfs/options/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Options
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/nfs/troubleshooting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Troubleshooting
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_12">
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../service/nginx/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    NGINX
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_10_12" id="__nav_10_12_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10_12">
-            <span class="md-nav__icon md-icon"></span>
-            NGINX
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_12_2">
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../service/nginx/manual/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    Manual Configuration
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_10_12_2" id="__nav_10_12_2_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_12_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10_12_2">
-            <span class="md-nav__icon md-icon"></span>
-            Manual Configuration
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/nginx/manual/setup/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Setup
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/nginx/manual/custom_error_pages/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Custom Error Pages
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/nginx/manual/cert_based_authentication/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Cert Based Authentication
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/nginx/manual/best_practices/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Best Practices
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/nginx/troubleshooting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Troubleshooting
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/roundcube/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Roundcube
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_14">
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../service/secure_boot/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    Secure Boot
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_10_14" id="__nav_10_14_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_14_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10_14">
-            <span class="md-nav__icon md-icon"></span>
-            Secure Boot
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/secure_boot/troubleshooting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Troubleshooting
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_15">
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../service/ssh/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    SSH
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_10_15" id="__nav_10_15_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_15_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10_15">
-            <span class="md-nav__icon md-icon"></span>
-            SSH
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_15_2">
-        
-          
-          <label class="md-nav__link" for="__nav_10_15_2" id="__nav_10_15_2_label" tabindex="0">
-            
-  
   
-  <span class="md-ellipsis">
-    SSHD
-    
-  </span>
+    Scripts
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_15_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10_15_2">
-            <span class="md-nav__icon md-icon"></span>
-            SSHD
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -4624,14 +4091,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../service/ssh/sshd/linux/" class="md-nav__link">
+      <a href="../../../scripts/ansible/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Linux
+    
+  
+    Ansible
+  
+
     
   </span>
+  
   
 
       </a>
@@ -4647,143 +4119,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../service/ssh/sshd/windows/" class="md-nav__link">
+      <a href="../../../scripts/copying_data/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Windows
+    
+  
+    Copying Data
+  
+
     
   </span>
   
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/ssh/troubleshooting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Troubleshooting
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_16">
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../service/traefik/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    Traefik
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_10_16" id="__nav_10_16_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_16_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10_16">
-            <span class="md-nav__icon md-icon"></span>
-            Traefik
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/traefik/basic_auth_dashboard/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Basic Auth Dashboard
-    
-  </span>
   
 
       </a>
@@ -4799,14 +4147,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../service/traefik/error_pages/" class="md-nav__link">
+      <a href="../../../scripts/steam/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Error Pages
+    
+  
+    Steam
+  
+
     
   </span>
+  
   
 
       </a>
@@ -4822,14 +4175,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../service/traefik/rate_limiting/" class="md-nav__link">
+      <a href="../../../scripts/video_tools/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Rate Limiting
+    
+  
+    Video Tools
+  
+
     
   </span>
+  
   
 
       </a>
@@ -4845,123 +4203,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../service/traefik/plugins/" class="md-nav__link">
+      <a href="../../../scripts/wiping_data/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Plugins
+    
+  
+    Wiping Data
+  
+
     
   </span>
   
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_16_6">
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../service/traefik/acme/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    ACME Certificates
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_10_16_6" id="__nav_10_16_6_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_16_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10_16_6">
-            <span class="md-nav__icon md-icon"></span>
-            ACME Certificates
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/traefik/acme/behind_traefik/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Behind Traefik
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/traefik/odic/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    OIDC
-    
-  </span>
   
 
       </a>
@@ -4977,347 +4231,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../service/traefik/troubleshooting/" class="md-nav__link">
+      <a href="../../../scripts/youtube/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Troubleshooting
+    
+  
+    Youtube
+  
+
     
   </span>
+  
   
 
       </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_17">
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../service/wireguard/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    Wireguard
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_10_17" id="__nav_10_17_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_17_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10_17">
-            <span class="md-nav__icon md-icon"></span>
-            Wireguard
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_17_2">
-        
-          
-          <label class="md-nav__link" for="__nav_10_17_2" id="__nav_10_17_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    OS
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_17_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10_17_2">
-            <span class="md-nav__icon md-icon"></span>
-            OS
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/wireguard/os/linux/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Linux
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/wireguard/os/windows/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Windows
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/wireguard/troubleshooting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Troubleshooting
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_18">
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../../service/zfs/" class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
-    ZFS
-    
-  </span>
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_10_18" id="__nav_10_18_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_18_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10_18">
-            <span class="md-nav__icon md-icon"></span>
-            ZFS
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/zfs/sync_backup/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Sync / Backup
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/zfs/replacing_disks/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Replacing Disks
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../service/zfs/encryption/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Encryption
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -5341,6 +4270,26 @@
       
         
           
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
         
       
         
@@ -5369,14 +4318,19 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../glossary/" class="md-nav__link ">
+            <a href="../../../service/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
-    Glossary
+    
+  
+    Services
+  
+
     
   </span>
+  
   
 
             </a>
@@ -5391,7 +4345,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
-            Glossary
+            
+  
+    Services
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -5404,14 +4362,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../glossary/admonitions/" class="md-nav__link">
+      <a href="../../../service/bluebubbles/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Admonitions
+    
+  
+    BlueBubbles
+  
+
     
   </span>
+  
   
 
       </a>
@@ -5427,14 +4390,115 @@
   
   
     <li class="md-nav__item">
-      <a href="../../glossary/gpg/" class="md-nav__link">
+      <a href="../../../service/dropbear/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    GPG/Encryption
+    
+  
+    Dropbear
+  
+
     
   </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_4">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../service/ca/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Authority
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_11_4" id="__nav_11_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Certificate Authority
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/ca/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
   
 
       </a>
@@ -5450,14 +4514,277 @@
   
   
     <li class="md-nav__item">
-      <a href="../../glossary/mail/" class="md-nav__link">
+      <a href="../../../service/ca/certificates/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
+    Certificates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/ca/certificate_revocation_list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Certificate Revocation Lists
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_5">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../service/forgejo/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Forgejo (GIT)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_11_5" id="__nav_11_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Forgejo (GIT)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/forgejo/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/imapsync/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    imapsync
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_7">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../service/mail/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
     Mail
+  
+
     
   </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_11_7" id="__nav_11_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mail
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/mail/postfix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Postfix
+  
+
+    
+  </span>
+  
   
 
       </a>
@@ -5473,14 +4800,1968 @@
   
   
     <li class="md-nav__item">
-      <a href="../../glossary/os/" class="md-nav__link">
+      <a href="../../../service/mail/troubleshooting/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/mariadb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MariaDB
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/pihole/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pi-Hole
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_10">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../service/postgres/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PostgresQL
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_11_10" id="__nav_11_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    PostgresQL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/postgres/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_11">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../service/nfs/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NFS
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_11_11" id="__nav_11_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NFS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/nfs/exports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exports (Shares)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/nfs/mounts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mounts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/nfs/optimizations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Optimizations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/nfs/options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Options
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/nfs/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_12">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../service/nginx/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NGINX
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_11_12" id="__nav_11_12_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NGINX
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_12_2">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../service/nginx/manual/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manual Configuration
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_11_12_2" id="__nav_11_12_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_11_12_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_12_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Manual Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/nginx/manual/setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/nginx/manual/custom_error_pages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Error Pages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/nginx/manual/cert_based_authentication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cert Based Authentication
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/nginx/manual/best_practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Best Practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/nginx/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/roundcube/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roundcube
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_14">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../service/secure_boot/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Secure Boot
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_11_14" id="__nav_11_14_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Secure Boot
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/secure_boot/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_15">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../service/ssh/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSH
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_11_15" id="__nav_11_15_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SSH
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_15_2">
+        
+          
+          <label class="md-nav__link" for="__nav_11_15_2" id="__nav_11_15_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSHD
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_11_15_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_15_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SSHD
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/ssh/sshd/linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/ssh/sshd/windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/ssh/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_16">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../service/traefik/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Traefik
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_11_16" id="__nav_11_16_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Traefik
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/traefik/basic_auth_dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Basic Auth Dashboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/traefik/error_pages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Error Pages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/traefik/rate_limiting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rate Limiting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/traefik/plugins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plugins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_16_6">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../service/traefik/acme/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ACME Certificates
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_11_16_6" id="__nav_11_16_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_11_16_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_16_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ACME Certificates
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/traefik/acme/behind_traefik/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Behind Traefik
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/traefik/odic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OIDC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/traefik/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_17">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../service/wireguard/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wireguard
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_11_17" id="__nav_11_17_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_17">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Wireguard
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_17_2">
+        
+          
+          <label class="md-nav__link" for="__nav_11_17_2" id="__nav_11_17_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_11_17_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_17_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/wireguard/os/linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/wireguard/os/windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/wireguard/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_18">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../service/zfs/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ZFS
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_11_18" id="__nav_11_18_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_18">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ZFS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/zfs/sync_backup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sync / Backup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/zfs/replacing_disks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Replacing Disks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../service/zfs/encryption/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encryption
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../glossary/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12" id="__nav_12_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Glossary
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../glossary/admonitions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Admonitions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../glossary/gpg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GPG/Encryption
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../glossary/mail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../glossary/os/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
     Operating Systems
+  
+
     
   </span>
+  
   
 
       </a>
@@ -5496,14 +6777,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../glossary/unicode/" class="md-nav__link">
+      <a href="../../../glossary/unicode/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Unicode Glyphs
+  
+
     
   </span>
+  
   
 
       </a>
@@ -5519,14 +6805,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../glossary/vlan/" class="md-nav__link">
+      <a href="../../../glossary/vlan/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     VLAN
+  
+
     
   </span>
+  
   
 
       </a>
@@ -5542,14 +6833,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../glossary/yubikey/" class="md-nav__link">
+      <a href="../../../glossary/yubikey/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Yubikey
+  
+
     
   </span>
+  
   
 
       </a>
@@ -5592,44 +6888,57 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#goals" class="md-nav__link">
+  <a href="#increase-failed-auth-lockout-attempts" class="md-nav__link">
     <span class="md-ellipsis">
-      Goals
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Goals">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dart" class="md-nav__link">
-    <span class="md-ellipsis">
-      /d/art
+      
+        Increase Failed auth Lockout Attempts
+      
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#darchive" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#caps-lock-as-control" class="md-nav__link">
     <span class="md-ellipsis">
-      /d/archive
+      
+        Caps lock as Control
+      
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#delete-datasets" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#mouse-acceleration-seems-wonky" class="md-nav__link">
     <span class="md-ellipsis">
-      Delete datasets
+      
+        Mouse Acceleration Seems Wonky
+      
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-user-installed-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List of User Installed Packages
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-package-by-install-date" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List of Package by Install Date
+      
+    </span>
+  </a>
   
 </li>
       
@@ -5643,13 +6952,88 @@
           
           
             <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation">
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Background
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Operating Systems
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    CachyOS
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
               <article class="md-content__inner md-typeset">
                 
                   
 
 
   
-    <a href="https://github.com/r-pufky/docs/edit/main/docs/media/folders.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/r-pufky/docs/edit/main/docs/os/cachyos/troubleshooting.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
     </a>
@@ -5657,118 +7041,53 @@
   
 
 
-<h1 id="folder-structures">Folder Structures</h1>
-<p>Organizing and structuring data storage for information retrieval.</p>
-<p>Based on research from <a href="https://karl-voit.at/folder-hierarchy/">Karl Voit</a></p>
-<h2 id="goals">Goals</h2>
-<ol>
-<li>
-<p>Exportable via NFS to PVE and subseqent LXC mounts.</p>
+<h1 id="troubleshooting">Troubleshooting</h1>
+<h2 id="increase-failed-auth-lockout-attempts">Increase Failed auth Lockout Attempts</h2>
+<p>CachyOS will lockout a user for 10 minutes on 3 failed password attempts over
+15 minutes.</p>
+<div class="admonition danger">
+<p>Expressed as sudo not working with valid password or unable to login to the
+system.</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">/etc/security/faillock.conf</p>
+<p>0644 root:root</p>
+<pre class="highlight"><code class="language-bash">deny = 5
+fail_interval = 300
+unlock_time = 600</code></pre>
+</div>
+<h2 id="caps-lock-as-control">Caps lock as Control</h2>
+<p>Override caps lock for keyboards that do not remap caps lock key.</p>
+<div class="admonition abstract">
+<p class="admonition-title">/etc/default/keyboard</p>
+<p>0644 root:root</p>
+<pre class="highlight"><code class="language-bash">XKBOPTIONS="ctrl:nocaps"</code></pre>
+</div>
+<p>For current session.
+</p><pre class="highlight"><code class="language-bash">localectl set-x11-keymap us pc105 ,query ctrl:nocaps</code></pre><p></p>
+<p>Reboot to apply.</p>
+<h2 id="mouse-acceleration-seems-wonky"><a href="https://discuss.kde.org/t/weird-mouse-anomalies-after-update-to-kde-plasma-6-1/17414">Mouse Acceleration Seems Wonky</a></h2>
+<p>Adaptive refresh seems to cause mouse acceleration issues in KDE Plasma Wayland.</p>
+<div class="admonition example">
+<p class="admonition-title">⌘ ➔ System Settings ➔ Input &amp; Output</p>
+<ul>
+<li>Mouse &amp; Touchpad (All devices)<ul>
+<li>Pointer Acceleration: <strong>None</strong></li>
+</ul>
 </li>
-<li>
-<p>Primary mount MUST be 0755 root:root for mounting NFS</p>
+<li>Display &amp; Monitor<ul>
+<li>Adaptive sync:  <strong>Never</strong></li>
+</ul>
 </li>
-<li>PVE - set immutable for mount point</li>
-<li>
-<p>PVE - investigate autofs? (or rename /autofs to something else)</p>
-</li>
-<li>
-<p>Least privilege.</p>
-</li>
-<li>
-<p>Separation of broad data capabilities</p>
-</li>
-<li>
-<p>Data: Any user-generated or consumable media (docs, files, media, mail, etc)</p>
-</li>
-<li>
-<p>App: Application related data - "stateful" configuration data that CANNOT
-     be re-created via roles.</p>
-</li>
-<li>
-<p>Naming</p>
-</li>
-<li>
-<p>ISO8601 YYYY-MM-DDTHH.MM.SS</p>
-</li>
-<li>hyphens only (-). Spaces allowed.</li>
-<li>rating: numeric, 1-5</li>
-</ol>
-<p>2025-10-11</p>
-<p><strong>0755 root:root</strong> unless otherwise noted</p>
-<p>zfs create -o encryption=aes-256-gcm -o keyformat=passphrase -o keylocation=prompt -o pbkdf2iters=1000000 -o atime=off -o xattr=sa -o dnodesize=auto hundo/edu</p>
-<p>zfs set mountpoint=/myspecialfolder mypool
-zfs rename tank/home/maybee tank/ws/maybee</p>
-<p>ALL ROOT ZFS MOUNTPOINTS SET:</p>
-<p>0755 root:root
-chattr +i /d/{MOUNT}</p>
-<p>TODO:</p>
-<h3 id="dart">/d/art</h3>
-<p>All public produced artwork (no concerns about PII/SPII personal data).
-chmod +i /d/art/* /d/art
-   - all sub dirs should be mounted datasets with correct permissions.
-* All exported under the same NFS share with same permissisons.</p>
-<p>/d/art/ (all subdirectories are 0755 media:media - control with LXC mounts)
-  movies - produced media.
-  tv - produced media. 0755 media:media
-  music - produced media. 0755 media:media
-    * Original format music should be stored side-by-side and noted.
-  books - produced media. 0755 media:media
-  edu - produced educational media (courses, yt channels, videos, papers, etc not in above)
-      *</p>
-<h3 id="darchive">/d/archive</h3>
-<p>Archival data (personal data which is unlikely to change; PII/SPII).
-chmod +i /d/archive/* /d/archive
-   - all sub dirs should be mounted datasets with correct permissions.</p>
-<p>/d/archive - User CREATED data that is in final state (or unlikely to change).
-  docs - documents (scanned, legal, etc) - paperless.
-    * Current 950:950 (open permissions - TODO - once migration complete update and restrict permissions?)
-  memories/{YYYY}/ - generated pictures, videos, events.
-    * use flat files or dir for grouped media.
-    * 0755 media:media
-  mail - 0750 mox:mox
-  src - 0750 forgeo:forgeo - hosted sources
-  backup - 0755 root:root - mounted backup locations for services.</p>
-<p>/d/work/ - all temporary data (no long term storage - 'inbox 0')
-  * diskimages -&gt; process incoming to work and sort into directories below.
-     * xcp -&gt; move to PVE and parse down as needed.
-  * Aggressively remove files which are unknown (if cannot be determined) or move
-    to work for additional context and resolution.
-  * Should copyparty only WRITE to here?</p>
-<p>/d/srv/ - Application 'stateful' data (cannot be re-created via roles)
-chmod +i /d/srv/* /d/srv
-   - all sub dirs should be mounted datasets with correct permissions.</p>
-<p>mail - mox mail data. 0750 mox:mox (check mox permissions)
-  radarr - these may just be local now with postgres support.
-  sonarr - these may just be local now with postgres support.
-  lidarr - these may just be local now with postgres support.
-  * pve - PVE remote mount (backups, images, containers, etc).
-  * plex - Plex disk metadata (see if this should be local disk instead) check size on D.
-  * db - database backed services 0755 root:root
-    * 0755 by maria, postgres
-  * user - user configuration state (home directories, etc - MUST BE PROCESSED to archive/art/porn)
-    * Jaime migrated to user, confirmed ZFS snapshot backup and remove hundo/jaime.
-  * cache - large cached data (downloads, etc. deleting is NO LOSS - move to archive/art/etc when done).</p>
-<p>TODO:
-  * paperless - remove old directory in srv2/paperless.</p>
-<p>/d/porn/
-  memories/{NAME} - personal generated by main person (other person, self)
-  art - produced media (professional or third-party generated)
-    * XXX / NC-17 (per taste) that should not appear in PLEX.</p>
-<p>/d/software/
-  os/ - operating system images (breakout by OS if needed)
-  app/{NAME}/ - application packages (zip, exe, images, etc)
-  games/{NAME}/ - game packages (zip, exec, hacking, saves, etc)</p>
-<h3 id="delete-datasets">Delete datasets</h3>
-<ol>
-<li>Copy data to other datasets (confirm data is correct)</li>
-<li>Set mountpoint=none to signify data is ready to be deleted.</li>
-<li>Confirm NEW DATASET snapshot is successful on remote system.</li>
-<li>Delete old dataset (ALWAYS CONFIRM DATA IS MIGRATED BEFORE DELETING).</li>
-</ol>
-<p>Ready:
-* hundo/jaime
-* hundo/refsi</p>
+</ul>
+</div>
+<h2 id="list-of-user-installed-packages"><a href="https://old.reddit.com/r/ManjaroLinux/comments/fzog8g/get_a_list_of_packages_you_installed_yourself">List of User Installed Packages</a></h2>
+<p>Only explicitly installed by user (no dependencies).</p>
+<pre class="highlight"><code class="language-bash">pacman -Qqe | grep -v "$(awk '{print $1}' /desktopfs-pkgs.txt)"</code></pre>
+<p>Reference:</p>
+<h2 id="list-of-package-by-install-date"><a href="https://www.baeldung.com/linux/list-packages-by-install-date">List of Package by Install Date</a></h2>
+<pre class="highlight"><code class="language-bash">pacman -Syu expac
+expac --timefmt='%Y-%m-%d %T' '%l\t%n' | sort -n</code></pre>
 
 
 
@@ -5791,7 +7110,7 @@ chmod +i /d/srv/* /d/srv
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 13, 2026 22:25:25 UTC">February 13, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 20, 2026 07:19:46 UTC">February 20, 2026</span>
   </span>
 
     
@@ -5801,7 +7120,7 @@ chmod +i /d/srv/* /d/srv
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 13, 2026 22:25:25 UTC">February 13, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 20, 2026 07:19:46 UTC">February 20, 2026</span>
   </span>
 
     
@@ -5888,16 +7207,17 @@ chmod +i /d/srv/* /d/srv
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.tracking", "navigation.path", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "toc.follow", "header.autohide", "content.action.edit", "content.footnote.tooltips"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.tracking", "navigation.path", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "toc.follow", "header.autohide", "content.action.edit", "content.footnote.tooltips"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       
-        <script src="../../_material/init.js"></script>
+        <script src="../../../_material/init.js"></script>
       
     
   
