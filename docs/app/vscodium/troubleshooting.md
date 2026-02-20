@@ -1,6 +1,17 @@
 # Troubleshooting
 
 
+## GIT Push immediate fails for GPG SSH Connections
+GPG agent must be defined in **SSH_AUTH_SOCK** for keys to be detected on push.
+
+!!! danger "GIT push fail, GPG key not authorized"
+
+``` bash
+# Launch from a terminal with keys already setup.
+ssh-add -L
+code  # vscodium, vscode
+```
+
 ## [Repository does not automatically open all submodules][a]
 Default submodule load limit is low.
 
