@@ -1,6 +1,15 @@
 # GIT
 GIT version management snippets.
 
+!!! tip "{REPO} vs. {REPO}.git"
+    A **.git** suffix on a repository URI indicates a bare repository (e.g. a
+    repository without a working directory - effectively the revision history
+    in .git/ without any HEAD files in the main directory). This is convention
+    but not required by git itself.
+
+    Hosting providers transparently remap {REPO} to {REPO}.git. Local-only
+    repositories *may* require using {REPO}.git.
+
 
 ## [Global Settings][a]
 Rebasing when pulling makes the branch history cleaner, avoiding pull merge
@@ -28,6 +37,52 @@ git config --global user.signingkey {KEY}
 git tag -s {TAG}{COMMIT}
 ```
 
+## Use GPG keys for [GIT Push][i]
+Use SSH with GPG keys to push commits without requiring manual authentication
+or tokens.
+
+Setup [GPG key with SSH](../gpg/README.md) then open
+[github key settings](https://github.com/settings/keys).
+
+!!! abstract "~/.ssh/config"
+    0644 {USER}:{USER}
+
+    ``` bash
+    # SSH forwarding is required.
+    Host github.com
+      ForwardAgent yes
+    ```
+
+``` bash
+# Find GPG signing key
+gpg --list-secret-keys --keyid-format=long
+
+> sec 3AA5C34371567BD2 YYYY-MM-DD ...
+# Export security key and upload entire PGP block to github GPG keys.
+gpg --armor --export 3AA5C34371567BD2
+
+# Find SSH public key
+ssh-add -L
+
+# Upload entire public key to github SSH keys - comments are not required.
+ssh-rsa AAAA...== {COMMENT}
+
+# Confirm SSH works.
+ssh -T git@github.com
+
+> Hi {USER}! You successfully authenticated, but GitHub does not provide shell access.
+
+# Update remote URLs to use SSH.
+git remote -v
+
+# Personal repositories.
+git remote set-url origin git@github.com:username/your-repository
+# Organizational repositories.
+git remote set-url origin git@github.com:organization/your-repo
+
+# Push as normal.
+git push
+```
 
 ## Revert Changes and Keep Commit History
 ``` bash
@@ -253,3 +308,4 @@ curl "https://api.github.com/users/{USER}/repos?per_page=1000&page=1" | jq -r '.
 [f]: https://stackoverflow.com/questions/1186535/how-to-modify-a-specified-commit
 [g]: https://pilot34.medium.com/store-your-git-hooks-in-a-repository-2de1d319848c
 [h]: https://selivan.github.io/2017/04/08/ansible-check-on-commit-vault-files-are-encrypted.html
+[i]: https://docs.github.com/en/authentication/connecting-to-github-with-ssh
