@@ -10,7 +10,7 @@ Arc-KDE is arc-dark for Plasma 6.
     until logging off and logging back in.
 
 ``` bash
-# Choose arc-icon-theme for recommended features. TODO FIX.
+# Choose arc-icon-theme for recommended features.
 pacman -S ---needed papirus-icon-theme
 # Uninstall with 'env uninstall=true sh'.
 wget -qO- https://raw.githubusercontent.com/PapirusDevelopmentTeam/arc-kde/master/install.sh | sh
