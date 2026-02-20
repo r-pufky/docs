@@ -109,6 +109,8 @@ nav:
   - 'Hardware':
     - 'hardware/crush_80_reboot_pro.md'
   - 'Games':
+    - 'Ludusavi':
+      - 'games/ludusavi/README.md'
     - 'games/conan_exiles.md'
     - 'games/elden_ring.md'
     - 'Escape from Tarkov':
