@@ -2,15 +2,34 @@
 Download and extract data from youtube videos. **yt-dlp** is an actively
 maintained fork of the defunct **yt-dl**.
 
+!!! warning "Deno Required"
+    Recent updates to youtube require a complete javascript environment (Deno).
+    Downloads **will** fail without it.
 
 ## Install
 
+=== "CachyOS"
+    ``` bash
+    pacman -Ss yt-dlp yt-dkp-ejs
+    ```
+
 === "Linux"
     ``` bash
-    curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp
-    chmod a+rx /usr/local/bin/yt-dlp
+    # Install yt-dlp
+    curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o ~/.local/bin/yt-dlp
+    chmod a+rx ~/.local/bin/yt-dlp
 
+    # Install deno
+    curl -fsSL https://deno.land/install.sh | sh
+    echo 'export DENO_INSTALL="$HOME/.deno"' >> ~/.bashrc
+    source ~/.bashrc
+
+    # Confirm Deno is loaded
+    yt-dlp --verbose 2>&1 | grep "deno"
+
+    # Update releases
     yt-dlp --update
+    sudo deno upgrade
     ```
 
 === "Windows"
