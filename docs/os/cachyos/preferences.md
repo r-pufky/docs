@@ -70,6 +70,14 @@ enabled for all channels to allow for splitting recording and playback devices.
             * Profile: **Game Output + Chat Output + Chat Input**
     * Recording Devices: Mute all that are not used.
     * Notification Sounds: ✘
+    * Configure Volume Controls:
+        * Volume change step: **5%**
+        * Play audio feedback for change to audio volume: ✘
+        * OSD Popups for audio volume: ✔
+        * OSD Popups for microphone sensitivity: ✘
+        * OSD Popups for mute state: ✔
+        * OSD Popups for applications start using muted microphone: ✘
+        * OSD Popups for default output device: ✔
 
 ### Display & Monitor
 
@@ -404,7 +412,7 @@ Target below up arrow for menu or near the bottom edge under icons.
         * Clipboard: **Show when relevant**
             * Clipboard history: ✘
             * History size: **1**
-            * Keep the selection and clipboard the same: ✔
+            * Keep the selection and clipboard the same: ✘
             * Text selection: **only when explicitly copied**
             * Non-text selection: **never save in history**
         * Media Player: **Show when relevant**
@@ -417,6 +425,11 @@ Target below up arrow for menu or near the bottom edge under icons.
     * Style: **Disable floating**
     * Panel Height: **32**
     * Peek at Desktop: **Remove**
+
+!!! example "⌘ ➔ RMB ➔ Configure Application Launcher"
+    * Icon: **{PREFERENCE}**
+    * General sort applications alphabetically: ✔
+    * Highlight newly installed applications: ✔
 
 
 ## Packages
