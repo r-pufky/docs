@@ -67,6 +67,7 @@ nav:
     - 'app/chrome.md'
     - 'app/freecad.md'
     - 'app/firefox.md'
+    - 'app/fish.md'
     - 'GIT':
       - 'app/git/README.md'
       - 'app/git/branches.md'
