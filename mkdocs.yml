@@ -7,12 +7,25 @@
 # material-specific options are removed.
 #
 # Development:
-#   python3 -m venv /var/venv/docs
-#   source /var/venv/docs/bin/activate
-#   pip install --upgrade pip
-#   pip install mkdocs mkdocs-material mkdocs-glightbox
-#   pip install mkdocs-git-revision-date-localized-plugin
-#   mkdocs serve --livereload
+#   venv:
+#     python3 -m venv /var/venv/docs
+#     source /var/venv/docs/bin/activate
+#     pip install --upgrade pip
+#     pip install mkdocs mkdocs-material mkdocs-glightbox
+#     pip install mkdocs-git-revision-date-localized-plugin
+#     mkdocs serve --livereload
+#
+#   uv:
+#     uv init
+#     uv add mkdocs mkdocs-material mkdocs-glightbox
+#     uv add mkdocs-git-revision-date-localized-plugin
+#     uv run mkdocs serve --livereload
+#
+#
+# Zensical (not ready yet):
+#   uv init
+#   uv add zensical
+#   uv run zensical serve
 #
 # All warnings and errors must be resolved before committing.
 #
@@ -96,7 +109,7 @@ nav:
       - 'games/steam/README.md'
       - 'games/steam/troubleshooting.md'
   - 'Media Management':
-    #- 'media/folders.md'
+    # - 'media/folders.md'
     - 'media/music.md'
     - 'Plex':
       - 'media/plex/README.md'
