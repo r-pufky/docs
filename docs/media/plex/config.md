@@ -577,8 +577,8 @@ complete processing.
 ### TranscoderToneMapping
 Enable HDR tone mapping? Transcoded HDR content will appear highly dimmed and
 desaturated with this disabled. Additional driver components may be needed to
-support hardware transcoding with this feature enabled; see our support
-articles for further details.
+support hardware transcoding with this feature enabled; see our [support
+articles][g] for further details.
 
 [AMD iGPU's will pass encoding frames][b] back and forth between iGPU and CPU
 drastically reducing performance. Recommend disabling for AMD iGPU.
@@ -1256,3 +1256,4 @@ transcoded (in mebibytes).
 [d]: https://www.plex.tv/about/privacy-legal/privacy-preferences-deprecated-june-2024/
 [e]: https://support.plex.tv/articles/206225077-how-to-use-secure-server-connections
 [f]: https://support.plex.tv/articles/201105343-advanced-hidden-server-settings
+[g]: https://forums.plex.tv/t/hw-transcoding-with-hdr-tone-mapping-not-working-hw-works-without-tone-mapping-enabled/852524/204
