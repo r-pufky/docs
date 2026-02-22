@@ -201,7 +201,7 @@ setup in [Window Management](#window-management).
     * Do Not Disturb mode during screen sharing: ✔
     * Do Not Disturb mode while a fullscreen application is focused: ✔
     * Critical Notifications show in Do Not Disturb mode: ✔
-    * Low priority notifications show popup: ✔
+    * Low priority notifications show popup: ✘
     * Low priority notifications show in history: ✘
     * Popups location near notification icon: ✔
     * Popups hide after: **5 seconds**
@@ -220,6 +220,7 @@ setup in [Window Management](#window-management).
         * Device Notifier: **defaults**
         * KDE Wallet: **defaults**
         * Network Management: **defaults**
+        * Power Management: **defaults** (laptops)
 
 ### Window Management
 
@@ -444,6 +445,18 @@ pacman -S --needed mpv mpv-mpris
 [Install Chrome](../../app/chrome.md).
 
 [Install VSCodium](../../app/vscodium/README.md).
+
+
+## Fonts
+
+``` bash
+# For user only fonts: ~/.local/share/fonts
+# System wide fonts: /usr/local/share/fonts
+mkdir -p /usr/local/share/fonts/{otf,ttf}/{FONT}
+find /usr/local/share/fonts -type d -exec chmod 0555 {} \;
+find /usr/local/share/fonts -type f -exec chmod 0444 {} \;
+fc-cache
+```
 
 [a]: https://github.com/PapirusDevelopmentTeam
 

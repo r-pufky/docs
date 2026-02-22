@@ -330,6 +330,17 @@ pamac remove networkmanager-openconnect  # Cisco VPNs.
 [Install VSCodium](../../app/vscodium/README.md).
 
 
+## Fonts
+
+``` bash
+# For user only fonts: ~/.local/share/fonts
+# System wide fonts: /usr/local/share/fonts
+mkdir -p /usr/local/share/fonts/{otf,ttf}/{FONT}
+find /usr/local/share/fonts -type d -exec chmod 0555 {} \;
+find /usr/local/share/fonts -type f -exec chmod 0444 {} \;
+fc-cache
+```
+
 ## [Remove MSN (Manjaro Settings Notifier)][b]
 Remove if you are an advanced user.
 
