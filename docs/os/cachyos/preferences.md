@@ -51,16 +51,19 @@ sudo find /usr/share/{plasma,aurorae,color-schemes,konsole,konversation,Kvantum,
         * Key Bindings:
             * Configure keyboard options: ✔
                 * Function keys use F13-F24 as usual function keys: ✔
-    * Shortcuts:
-        * Plasma Workspace:
-            * Activate Application Launcher: **Alt+F1, Meta**
-            * Activate Application Launcher Widget: **Meta+Space**
-        * Window Management:
-            * Make window fullscreen: **Meta+Return**
-            * Maximize Window: **Meta+PgUp**
-            * Minimize Window: **Meta+PgDown**
-        * Krunner:
-            * Launch: **Alt+Space, Search, Alt+F2**
+
+!!! example "Shortcuts"
+    * Audio Volume:
+        * Mute Microphone: **F24, Microphone Mute, Meta+Microphone Mute**
+    * Plasma Workspace:
+        * Activate Application Launcher: **Alt+F1, Meta**
+        * Activate Application Launcher Widget: **Meta+Space**
+    * Window Management:
+        * Make window fullscreen: **Meta+Return**
+        * Maximize Window: **Meta+PgUp**
+        * Minimize Window: **Meta+PgDown**
+    * Krunner:
+        * Launch: **Alt+Space, Search, Alt+F2**
 
 ### Sound
 Disable any unused device and name devices for sanity. Headset should be
