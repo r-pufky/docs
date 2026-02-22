@@ -19,7 +19,7 @@
     MMB | MMB   | Right click (Right mouse button).
     RMB | RMB   | Middle click (Middle mouse button).
       ✋ | 270B  | Hover the mouse over the indicated location next to this symbol.
-
+    🔇 | 1F507 | Mute.
 
 ## Alert Window Glyphs
 
