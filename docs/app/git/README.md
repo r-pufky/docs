@@ -84,6 +84,9 @@ git remote set-url origin git@github.com:organization/your-repo
 git push
 ```
 
+Pushes [may required multiple touches][k] for each stage of the push process.
+
+
 ## Revert Changes and Keep Commit History
 ``` bash
 git revert --no-edit {LAST GOOD COMMIT}..{LAST BAD COMMIT}
@@ -309,3 +312,4 @@ curl "https://api.github.com/users/{USER}/repos?per_page=1000&page=1" | jq -r '.
 [g]: https://pilot34.medium.com/store-your-git-hooks-in-a-repository-2de1d319848c
 [h]: https://selivan.github.io/2017/04/08/ansible-check-on-commit-vault-files-are-encrypted.html
 [i]: https://docs.github.com/en/authentication/connecting-to-github-with-ssh
+[k]: https://github.com/git-lfs/git-lfs/issues/5784
