@@ -108,6 +108,7 @@ nav:
       - 'arr/sonarr/README.md'
       - 'arr/sonarr/troubleshooting.md'
   - 'Hardware':
+    - 'hardware/bnk9.md'
     - 'hardware/crush_80_reboot_pro.md'
   - 'Games':
     - 'Ludusavi':

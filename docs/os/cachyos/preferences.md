@@ -47,6 +47,10 @@ sudo find /usr/share/{plasma,aurorae,color-schemes,konsole,konversation,Kvantum,
 ### Keyboard
 
 !!! example "Keyboard"
+    * Keyboard:
+        * Key Bindings:
+            * Configure keyboard options: ✔
+                * Function keys use F13-F24 as usual function keys: ✔
     * Shortcuts:
         * Plasma Workspace:
             * Activate Application Launcher: **Alt+F1, Meta**
@@ -463,3 +467,4 @@ fc-cache
 ## Reference[^1]
 
 [^1]: https://github.com/PapirusDevelopmentTeam/arc-kde/issues/140
+[^2]: https://bbs.archlinux.org/viewtopic.php?id=303293

@@ -11,7 +11,7 @@ If you like this launcher please support the author.
 !!! example "Projectivity ➔ Accessibility ➔ Settings ➔ [Override Launcher][b]: ✔"
 
 Change [category orders][c] by moving all the way left in the desired row and
-using 🡹 🢃 arrows.
+using ↑ ↓ arrows.
 
 ### Enable Developer Mode
 !!! example "⚙ ➔ Device Preferences ➔ About ➔ Build"

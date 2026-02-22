@@ -39,6 +39,11 @@ sudo find /usr/share/{plasma,aurorae,color-schemes,konsole,konversation,Kvantum,
 
 ### Keyboard
 
+!!! example "Keyboard"
+    * Key Bindings:
+        * Configure keyboard options: ✔
+            * Function keys use F13-F24 as usual function keys: ✔
+
 !!! example "Shortcuts"
     * KWin:
         * Make window fullscreen: **alt+return**
