@@ -12,7 +12,6 @@
 ## Specific Keymaps
 After remapping remove the duplicate shortcuts.
 
-
 ### Layer 0
 
   Key           | Map             | Name | Purpose
@@ -24,18 +23,19 @@ After remapping remove the duplicate shortcuts.
   Middle Center | **KC_P5**       | 5    | 5
   Middle Left   | **KC_P6**       | 6    | 6
   Lower Right   | **LT(1,KC_P1)** | 1    | 1, long press for layer 1.
-  Lower Center  | **LT(1,KC_P2)** | 2    | 2, long press for layer 2.
-  Lower Left    | **LT(1,KC_P3)** | 3    | 3, long press for layer 3.
-
+  Lower Center  | **LT(2,KC_P2)** | 2    | 2, long press for layer 2.
+  Lower Left    | **LT(3,KC_P3)** | 3    | 3, long press for layer 3.
 
 ### Layer 2
 
   Key           | Map         | Name | Purpose
  ---------------|-------------|------|---------
+  Upper Right   | **F21**     | F21  | User key with no window manager interaction.
+  Upper Center  | **F22**     | F22  | User key with no window manager interaction.
+  Upper Left    | **F23**     | F23  | User key with no window manager interaction.
   Middle Right  | **KC_MPRV** | Prvs | Previous media.
   Middle Center | **KC_MPLY** | Play | Play/pause media.
   Middle Left   | **KC_MNXT** | Next | Next media.
-
 
 ### Layer 3
 
