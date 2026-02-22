@@ -18,6 +18,11 @@ to stall and crash during library scans.
    disable [FSEventLibraryUpdatesEnabled](config.md#fseventlibraryupdatesenabled),
    [FSEventLibraryPartialScanEnabled](config.md#fseventlibrarypartialscanenabled).
 
+!!! tip "Keep DB cache at default (40MB)"
+    Increasing the cache size [does not resolve library][e] freezes during
+    updates or preview generation. It only increases the likelyhood of data
+    loss during a Plex crash.
+
 ### Playback Fails / App Crashes
 Generally this happens when you are playing media on Plex Home Theater or Plex
 app, where **transcoding** is being used. The app will crash generally with a
@@ -89,7 +94,7 @@ completion. Only **one** of these things should be enabled at once.
    removed). Dupe should be removed.
 
 
-## Finding Duplicates
+### Finding Duplicates
 To show all detected duplicates in plex:
 
 !!!tip "Plex ➔ TV Shows ➔ {TV Shows Dropdown in main window} ➔ Episodes"
@@ -98,6 +103,27 @@ To show all detected duplicates in plex:
 
 From there you can Inspect all shows.
 
+
+## Optimizations
+
+### [PlexCleaner][i]
+Re-encode existing media to focus on direct-play. Useful to attempt to preserve
+media quality while focusing on reducing server load and playback issues.
+
+### [Maintainerr][j]
+Maintain Plex server by automatically pruning unwatched and watched media as
+well as Overseerr requests [Janitorr][k] is a command line only inspired
+version.
+
+### [Plex Generate Previews][f]
+Offload thumbnail generation to parallel GPU threads on a schedule outside of
+Plex butler updates. Reduces Plex load and allows for custom BIF intervals.
+
+1. Disable [GenerateBIFBehavior](config.md#generatebifbehavior).
+2. Configure service.
+
+[imgc][g] may be used to further compress existing (and newly generated) images
+to reduce Plex [metadata directory size][h].
 
 ## Legacy Plex Fixes
 Fixes for early Plex servers. These generally do not appear anymore.
@@ -136,3 +162,10 @@ sudo reboot
 [b]: https://plexapp.zendesk.com/hc/en-us/articles/201154527-Move-Viewstate-Ratings-from-One-Install-to-Another
 [c]: https://github.com/ChuckPa/PlexDBRepair
 [d]: https://community.synology.com/enu/forum/17/post/115743
+[e]: https://forums.plex.tv/t/library-scan-causing-playback-issues/931608/12
+[f]: https://github.com/stevezau/plex_generate_vid_previews
+[g]: https://github.com/cvele/imgc
+[h]: https://old.reddit.com/r/PleX/comments/1nk5p6u/small_tool_to_shrink_plex_and_other_image_caches/
+[i]: https://github.com/ptr727/PlexCleaner
+[j]: https://github.com/jorenn92/Maintainerr
+[k]: https://github.com/Schaka/janitorr
