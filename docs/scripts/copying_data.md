@@ -5,6 +5,10 @@
 ``` bash
 apt install md5deep rsync
 
+# Preferred (also useful for SSH).
+rsync -a --info=progress2 {DIR} /Y
+rsync -a --info=progress2 {DIR} {USER}@{HOST}:/Y
+
 # -a archive (-rlptgoD).
 # -v verbose.
 # -x don't cross FS boundaries.

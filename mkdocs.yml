@@ -90,6 +90,7 @@ nav:
     - 'app/movie_studio.md'
     - 'app/mutt.md'
     - 'app/putty.md'
+    - 'app/systemd.md'
     - 'VSCodium (VSCode/Code)':
       - 'app/vscodium/README.md'
       - 'app/vscodium/troubleshooting.md'
