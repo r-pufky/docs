@@ -98,7 +98,7 @@ chmod 0640 "${basename}.mkv"
 ```
 
 
-## References[^1][^2][^3]
+## Reference[^1][^2][^3]
 
 [^1]: https://www.playon.tv/support/minreqs
 [^2]: https://www.playon.tv/user-guide/intro

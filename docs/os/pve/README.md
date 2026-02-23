@@ -3,35 +3,41 @@
 
 ## Setup
 
-### Prep
-* Make full **stop** backup of containers/vms to **pve/backups**.
-* Shutdown containers.
+!!! warning "Make full **stop** backup of containers/vms to **pve/backups**"
 
-For all cluster nodes
+
+Only install/upgrade one cluster node at a time. Configure all nodes
+homogeneously.
+
 ``` bash
+# Backup each node.
 mkdir -p /autofs/pve/{DATE}-upgrade/{NODE}
 cp -av /etc /autofs/pve/{DATE}-upgrade/{NODE}
 cp -av /root /autofs/pve/{DATE}-upgrade/{NODE}
 ```
-* Only upgrade one cluster node at a time.
 
-### Base Install
-Create [Live USB Install][a].
+### Install
+Create [Live USB Install][a] and [boot](../pikvm.md#remote-iso-mount).
 
-Install Options
+!!! example "Install Options"
+    * **Graphical install**
+    * License: **agree**
+    * Default HD Setup (EXT4): **next**
+    * Country: **United States**
+    * Timezone: **UTC**
+    * Keyboard Layout: **U.S. English**
+    * Email: **root@localhost**
+    * Management Network Configuration:
+        * [Pin network interface names][i]: **enabled**
+        * Options: Align all **interface names** to **same hardware** for all nodes.
+    * Reboot when complete
 
-* **Graphical install**
-* License: **agree**
-* Default HD Setup (EXT4): **next**
-* Country: **United States**
-* Timezone: **UTC**
-* Keyboard Layout: **U.S. English**
-* Email: **root@localhost**
-* Reboot when complete
+!!! tip "Always use name pinning"
+    Prevents sudden interface name changes between updates and Major OS
+    releases.
 
 ### Base Networking
-Use bonded interface (only the first adapter) for management IP. Always confirm
-device names as they **may** change between major OS releases.
+Use bonded interface (only the first adapter) for management IP.
 
 ``` bash
 nano /etc/network/interfaces  # No network - vim not installed.
@@ -44,27 +50,45 @@ Remaining configuration may be done vis SSH (easier for copying). Leave console
 open for easy rescue if networking get mis-configured.
 
 ### Enable IOMMU and Passthrough Virtualization
-!!! abstract "/etc/default/grub"
-    0644 root:root
 
-    ``` ini
-    # AMD: IOMMU & SVM enabled in BIOS. Use amd_iommu for grub.
-    # Intel: IOMMU & VT-d enabled in BIOS. Use intel_iommu for grub.
-    GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt"
-    ```
+=== "AMD"
+
+    !!! abstract "/etc/default/grub"
+        0644 root:root
+
+        ``` ini
+        # IOMMU & SVM enabled in BIOS.
+        GRUB_CMDLINE_LINUX_DEFAULT="quiet amd_iommu=on iommu=pt"
+        ```
+
+
+=== "Intel"
+
+    !!! abstract "/etc/default/grub"
+        0644 root:root
+
+        ``` ini
+        # IOMMU & VT-d enabled in BIOS.
+        GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt"
+        ```
 
 ``` bash
+# Remove legacy module configs (future Debian releases will remove these).
+rm /etc/modules-load.d/modules.conf  # Remove symlink to /etc/modules.
+rm /etc/modules
+
 update-grub
 reboot
 ```
 
-### Update Sources
-[Source list here][b].
+### [Packages][b]
+Comment out original sources as needed.
 
 !!! warning
     Always update Proxmox with **dist-upgrade**. Never use **upgrade**.
 
 !!! abstract "/etc/apt/sources.list.d/debian.sources"
+    0644 root:root
 
     ``` yaml
     Types: deb
@@ -81,6 +105,7 @@ reboot
     ```
 
 !!! abstract "/etc/apt/sources.list.d/ceph.sources"
+    0644 root:root
 
     ``` yaml
     Types: deb
@@ -91,6 +116,7 @@ reboot
     ```
 
 !!! abstract "/etc/apt/sources.list.d/pve-enterprise.sources"
+    0644 root:root
 
     ``` yaml
     Types: deb
@@ -100,22 +126,32 @@ reboot
     Signed-By: /usr/share/keyrings/proxmox-archive-keyring.gpg
     ```
 
-Upgrade distribution
 ``` bash
+apt modernize-sources
 apt update
 apt dist-upgrade
 ```
 
-### Update Microcode
+#### Update Microcode
 Trixie+ base should now include firmware by default.
 
-Confirm update applied (Current patch for i9-13900H is **0x4128**).
-``` bash
-apt install intel-microcode
-grep microcode /proc/cpuinfo
-```
+=== "AMD"
 
-### Install Fake Subscription
+    ``` bash
+    apt install amd64-microcode
+    grep microcode /proc/cpuinfo
+    ```
+
+=== "Intel"
+
+    ``` bash
+    apt install intel-microcode
+    grep microcode /proc/cpuinfo
+    ```
+
+#### Install Fake Subscription
+Disables subscription notification for servers not using enterprise support.
+
 ```bash
 wget https://github.com/Jamesits/pve-fake-subscription/releases/download/v0.0.11/pve-fake-subscription_0.0.11+git-1_all.deb
 dpkg -i pve-fake-subscription_*.deb
@@ -123,25 +159,29 @@ echo "127.0.0.1 shop.maurer-it.com" | tee -a /etc/hosts
 reboot
 ```
 
-### Setup interfaces
-Always confirm device names as they *may* change between major OS releases.
 
-Make a backup of interfaces (this also has the detected interface names).
+## Networking
+Update interfaces definitions as needed for new/upgrade installs, including
+ansible inventory.
+
+### /etc/network/interfaces
+
 ``` bash
 cp /etc/network/interfaces /etc/network/interfaces.orig
+
+# Previous config may be transferred and updated.
+vim /etc/network/interfaces
 ```
 
-#### /etc/network/interfaces
-* Copy from backup or source from host_vars (verify interface names).
-* **Remove** `post-up /usr/bin/systemctl restart frr.service`.
-* Update host_vars.
+!!! info "post-up restart for FRR service not needed in PVE9+"
+    Bug has been resolved and service is automatically trigger on refresh.
 
-#### [Direct mesh networking (routed, simple).][c]
-Ensure network is not an existing routed VLAN on router/switches or requests
-will be routed instead of sent via links (VLAN may be defined and exist but
-no interfaces should be defined to use them or serve DHCP/DNS).
+### FRR
 
-### PVE9+ default enables FRR.
+#### [Fabricd][c]
+Cluster traffic setup with simple routed direct mech networking using fabricd.
+PVE9+ enables FRR by default.
+
 
 !!! warning
     FRR does **not** need `post-up /usr/bin/systemctl restart frr.service` as
@@ -152,13 +192,24 @@ no interfaces should be defined to use them or serve DHCP/DNS).
     configuration **must** be done on CLI and node additions via SSH.
 
 ```bash
-# Get Interface Addresses
+# Get Interface Addresses.
 apt install frr pciutils  # lspci now in pciutils.
 ls -l /sys/class/net
 lspci
 lspci -nn
 lspci -k
 ```
+
+!!! info "Example Cluster Network"
+    Do **NOT** blindly copy FRR configuration. Network configuration provided
+    for a anonymized working example that uses **is-is** routing, subnet for
+    area ID, and IP address with padding for system identifier.
+
+    Ensure network is not an existing routed VLAN on router/switches or
+    requests will be routed instead of sent via links (VLAN may be defined and
+    exist but no interfaces should be defined to use them or serve DHCP/DNS).
+
+    See references for detailed FRR configuration.
 
 !!! abstract "/etc/frr/daemons"
     0640 frr:frr
@@ -167,199 +218,137 @@ lspci -k
       fabricd=yes  # Other FRR daemons already enabled in PVE9+.
     ```
 
-!!! abstract "/etc/frr/frr.conf"
-    0640 frr:frr
+=== "Node 1"
 
-    Copy from backup or source from host_vars (verify interface names):
+    !!! abstract "/etc/frr/frr.conf"
+        0640 frr:frr
 
-    * See **is-is** routing for net definition.
-    * Use subnet for area ID.
-    * IP address with padding for system identifier.
-    * Update host_vars.
+        ``` ini
+        # Or copy from existing backup.
+        network_frr_config: |
+          frr defaults traditional
+          hostname node1
+          log syslog warning
+          ip forwarding
+          no ipv6 forwarding
+          service integrated-vtysh-config
+          !
+          interface lo
+           ip address 10.11.11.10/32
+           ip router openfabric 1
+           openfabric passive
+          !
+          interface nic4
+           ip router openfabric 1
+           openfabric csnp-interval 2
+           openfabric hello-interval 1
+           openfabric hello-multiplier 2
+          !
+          interface nic5
+           ip router openfabric 1
+           openfabric csnp-interval 2
+           openfabric hello-interval 1
+           openfabric hello-multiplier 2
+          !
+          line vty
+          !
+          router openfabric 1
+           net 49.0011.0010.1111.0010.00
+           lsp-gen-interval 1
+           max-lsp-lifetime 600
+           lsp-refresh-interval 180
+        ```
 
-#### [Confirm FRR configured correctly.][d]
+=== "Node 2"
+
+    !!! abstract "/etc/frr/frr.conf"
+        0640 frr:frr
+
+        ``` ini
+        # Or copy from existing backup.
+        network_frr_config: |
+          frr defaults traditional
+          hostname node2
+          log syslog warning
+          ip forwarding
+          no ipv6 forwarding
+          service integrated-vtysh-config
+          !
+          interface lo
+           ip address 10.11.11.20/32
+           ip router openfabric 1
+           openfabric passive
+          !
+          interface nic4
+           ip router openfabric 1
+           openfabric csnp-interval 2
+           openfabric hello-interval 1
+           openfabric hello-multiplier 2
+          !
+          interface nic5
+           ip router openfabric 1
+           openfabric csnp-interval 2
+           openfabric hello-interval 1
+           openfabric hello-multiplier 2
+          !
+          line vty
+          !
+          router openfabric 1
+           net 49.0011.0010.1111.0020.00
+           lsp-gen-interval 1
+           max-lsp-lifetime 600
+           lsp-refresh-interval 180
+        ```
+
 ``` bash
+# Confirm FRR configured correctly.
 systemctl restart frr.service  # FRR non-root. Config must be owned by FRR.
 systemctl enable frr.service
 vtysh -c "show openfabric topology"
 
-# Restart Networking
-systemctl restart networking  # May take up to 1 minute over SSH.
+# Restart Networking; may take up to 1 minute over SSH.
+systemctl restart networking
 reboot
 ```
 
-* Alternatively use console.
-* Reboot and confirm node networking working.
 
-### [Create Cluster (First Node)][e]
-Only use on first first node.
+## Create Cluster
+
+### [First Node][e]
+The first node will create the cluster configuration used for other cluster
+nodes to join. Only apply these commands on the first node.
 
 ``` bash
+# Use FRR Fabricd address for cluster network.
 pvecm create hv --link0 10.11.11.10 --nodeid 1
 pvecm status
 ```
 
-### [Add Node to Cluster (All Other Nodes)][e]
+### [All Other Nodes][e]
+
 ``` bash
 # Node2: Add node 2 to node 1.
+ssh node2
 pvecm add 10.11.11.10 --link0 10.11.11.20 --use_ssh
 # Node3: Add node 3 to node 1.
+ssh node3
 pvecm add 10.11.11.10 --link0 10.11.11.30 --use_ssh
 
 pvecm status
 ```
 
-### [Enable ACME Cluster Node Certificates][h]
-
 ### [Backup Initial SSH Config][f]
+
 !!! warning
     Proxmox uses host keys and root user for intra-cluster traffic. Changing
     SSH settings may break this.
 
     Create a backup to ensure a default working state can be restored.
 
-Backup each node.
 ``` bash
-cp -av /root /autofs/pve/{DATE}-upgrade-8-to-9/{NODE}/complete
-cp -av /etc /autofs/pve/{DATE}-upgrade-8-to-9/{NODE}/complete
-```
-
-
-## GPU Passthrough
-Configure for all nodes.
-
-!!! abstract "/etc/default/grub"
-    0644 root:root
-
-    ``` ini
-    GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt i915.enable_gvt=1"
-    ```
-
-See [IMMOU and Passthrough Virtualization][g] for other GRUB options.
-
-Remove legacy module configs (future Debian release will remove these).
-``` bash
-rm /etc/modules-load.d/modules.conf  # Remove symlink to /etc/modules.
-rm /etc/modules
-```
-
-!!! abstract "/etc/modules-load.d/video.conf"
-    0644 root:root
-
-    ``` ini
-    # /etc/modules is obsolete and has been replaced by /etc/modules-load.d/.
-    # Please see modules-load.d(5) and modprobe.d(5) for details.
-    vfio
-    vfio_iommu_type1
-    vfio_pci
-    kvmgt
-    ```
-
-### Map non-root users to GPU
-Unmapped containers require **other** R/W permissions on GPU.
-
-!!! abstract "/etc/udev/rules.d/59-igpu-passthrough.rules"
-    0644 root:root
-
-    ``` bash
-    KERNEL=="renderD128", MODE="0666"
-    KERNEL=="card1", MODE="0666"
-    ```
-
-Update grub.
-``` bash
-update-grub
-reboot
-
-# Confirm card reported.
-dmesg | grep -e DMAR -e IOMMU  # IOMMU enabled w. graphics passthrough.
-lspci -nnv | grep -i vga  # PCI device reported.
-```
-
-### Container configuration
-
-#### Get GPU major device ID
-``` bash
-getent group video
-> video:x:44:root  # GID: 44
-getent group render
-> render:x:993:root  # GID: 993
-
-id -g render
-ls -l /dev/dri
-# Major ID is 226.
-> crw-rw---- 1 root video  226,   0 May 12 21:54 card1
-> crw-rw---- 1 root render 226, 128 May 12 21:54 renderD128
-```
-
-!!! abstract "/etc/pve/lxc/{ID}.conf"
-    0644 root:root
-
-    ``` yaml
-    # Map major device ID to LXC container.
-    lxc.cgroup2.devices.allow: c 226:* rwm
-    lxc.mount.entry: /dev/dri/card1 dev/dri/card1 none bind,optional,create=file,mode=0666
-    lxc.mount.entry: /dev/dri/renderD128 dev/dri/renderD128 none bind,optional,create=file,mode=0666
-    ```
-
-!!! abstract "/etc/subgid"
-    0644 root:root
-
-    ``` bash
-    # Map render, video groups for unprivileged containers.
-    # ALWAYS confirm group ID's as they may change between major OS versions.
-    root:44:1
-    root:993:1  # 108 in Bookworm.
-    ```
-
-``` bash
-# Host dev/dri permissions do not require containers to set groups with.
-usermod -aG render,video root
-```
-
-
-## Add NFS mounted volumes
-
-### Add UID/GID mappings for NFS mounts.
-Use https://github.com/ddimick/proxmox-lxc-idmapper to generate mappings or
-copy existing mappings from backups.
-
-!!! abstract "/etc/subuid"
-    0644 root:root
-
-!!! abstract "/etc/subgid"
-    0644 root:root
-
-### Create NFS mount locations
-Set mounts immutable to prevent writes when not mounted.
-
-``` bash
-mkdir /autofs
-mkdir {MOUNT}
-chattr +i /autofs
-cd /autofs
-chattr +i *
-```
-
-!!! abstract "/etc/fstab"
-    0644 root:root
-
-    ``` conf
-    {SERVER}:/d/pve /autofs/pve nfs4 rw,nfsvers=4,minorversion=2,proto=tcp,fsc,rsize=1048576,wsize=1048576,nocto,_netdev 0 0
-    ```
-
-``` bash
-systemctl daemon-reload
-mount -a
-ls -l /autofs  # Mounted R/W with NFS squashed permissions.
-```
-
-### Mount PVE Storage
-Cluster data storage over NFS.
-
-``` bash
-pvesm add dir pve --path /autofs/pve --content images,vztmpl,backup,snippets,rootdir,iso
-reboot  # NFS should be mounted on boot.
+# Backup each node.
+cp -av /root /autofs/pve/{DATE}-upgrade/{NODE}/complete
+cp -av /etc /autofs/pve/{DATE}-upgrade/{NODE}/complete
 ```
 
 
@@ -375,8 +364,6 @@ reboot  # NFS should be mounted on boot.
 [a]: https://www.proxmox.com/en/downloads/proxmox-virtual-environment/iso
 [b]: https://pve.proxmox.com/wiki/Package_Repositories
 [c]: https://pve.proxmox.com/wiki/Full_Mesh_Network_for_Ceph_Server#Routed_Setup_(Simple)
-[d]: https://pve.proxmox.com/wiki/Full_Mesh_Network_for_Ceph_Server
 [e]: https://pve.proxmox.com/wiki/Cluster_Manager
 [f]: https://forum.proxmox.com/threads/2025-pve9-x-warning-remote-host-identification-has-changed-analysis-resolution.174262
-[g]: #enable-iommu-and-passthrough-virtualization
-[h]: acme.md
+[i]: https://pve.proxmox.com/pve-docs/pve-admin-guide.html#_using_the_pve_network_interface_pinning_tool

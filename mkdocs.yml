@@ -161,6 +161,8 @@ nav:
     - 'Proxmox (PVE)':
       - 'os/pve/README.md'
       - 'os/pve/acme.md'
+      - 'os/pve/gpu.md'
+      - 'os/pve/nfs.md'
       - 'os/pve/troubleshooting.md'
     - 'os/shield.md'
     - 'os/web_os.md'

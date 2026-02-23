@@ -33,7 +33,8 @@ root_squash[no_root_squash] | Map UID/GID 0 to anonymous user; this is **nobody 
                     noatime | Disable inode access time update on read. Implies **nodiratime**.
                  nodiratime | Disable directory inode access time update on read.
 
-## Reference:[^1][^2][^3][^4][^5][^6][^7]
+
+## Reference[^1][^2][^3][^4][^5][^6][^7]
 
 [^1]: https://man7.org/linux/man-pages/man5/nfs.5.html
 [^2]: https://www.thegeekdiary.com/common-nfs-mount-options-in-linux/

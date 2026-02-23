@@ -65,7 +65,7 @@ for snap in ${zfs_delete[@]}; do
 done
 ```
 
-## References[^1][^2][^3]
+## Reference[^1][^2][^3]
 
 [^1]: https://ubuntu.com/tutorials/using-zfs-snapshots-clones#2-using-snapshots
 [^2]: https://askubuntu.com/questions/764416/send-zfs-snapshot-to-remote-machine

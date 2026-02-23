@@ -42,7 +42,7 @@ mechanism to install an old version for a game.
    can be restored.
 
 
-## References[^1]
+## Reference[^1]
 
 [^1]: https://steamcommunity.com/sharedfiles/filedetails/?id=889624474
 
@@ -51,7 +51,3 @@ mechanism to install an old version for a game.
 [c]: https://steamdb.info/depot/335819/manifests
 [d]: https://steamdb.info/depot/335819/history/?changeid=M:6929390125920150286
 [e]: steam://nav/console
-
-
-
-

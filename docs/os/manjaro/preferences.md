@@ -313,7 +313,7 @@ Target below up arrow for menu or near the bottom edge under icons.
     * Check for development packages updates: ✔
 
 ``` bash
-pamac install alacritty git git-lfs vim tmux meld steam
+pamac install alacritty git git-lfs vim tmux meld steam ncdu
 #  extra/bind
 pamac install signal-desktop discord
 ```

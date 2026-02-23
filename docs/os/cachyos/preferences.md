@@ -465,9 +465,10 @@ find /usr/local/share/fonts -type f -exec chmod 0444 {} \;
 fc-cache
 ```
 
-[a]: https://github.com/PapirusDevelopmentTeam
 
 ## Reference[^1][^2]
 
 [^1]: https://github.com/PapirusDevelopmentTeam/arc-kde/issues/140
 [^2]: https://bbs.archlinux.org/viewtopic.php?id=303293
+
+[a]: https://github.com/PapirusDevelopmentTeam

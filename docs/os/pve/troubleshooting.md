@@ -85,6 +85,29 @@ In cases of individual node backups after a cluster is 'broken'.
 pvecm expect 1
 ```
 
+
+# [Proxmox hard locks][d] or LXC/VM's crash consistently.
+Temporarily use 6.14 Kernel for 9.1.4 PVE release until stability issues are
+resolved. Test again in 9.2 release.
+
+``` bash
+# Install kernel.
+apt search proxmox-kernel-
+apt install proxmox-kernel-6.14
+
+# List installed kernels.
+proxmox-boot-tool kernel list
+
+# Pin installed kernel
+proxmox-boot-tool kernel pin 6.14.{VERSION}-pve
+
+# Update bootloader
+proxmox-boot-tool refresh
+
+reboot
+```
+
 [a]: https://forum.proxmox.com/threads/task-error-failed-to-run-vncproxy.49954
 [b]: https://old.reddit.com/r/Proxmox/comments/dhgez0/console_utf8
 [c]: https://forum.proxmox.com/threads/no-console-with-proxmox-5-0-beta-2-and-debian-9-containers.35313
+[d]: https://www.youtube.com/watch?v=g0BEPRJtDnc

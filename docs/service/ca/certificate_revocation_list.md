@@ -36,6 +36,7 @@ cat /root/ca/root/crl/root.crl.pem /root/ca/inter/crl/inter.crl.pem > /root/ca/c
 * This can also be applied at the Root CA level to revoke intermediate CA's.
 * The combined CRL needs to be re-created as well.
 
+
 ## Reference[^1]
 
 [^1]: https://jamielinux.com/docs/openssl-certificate-authority/certificate-revocation-lists.html

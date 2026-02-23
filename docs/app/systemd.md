@@ -15,8 +15,9 @@ Generate exposure threat ratings for current system services.
 systemd-analyze security
 ```
 
-[a]: https://wiki.archlinux.org/title/Systemd
 
 ## Reference[^1]
 
 [^1]: https://www.freedesktop.org/software/systemd/man/latest/index.html
+
+[a]: https://wiki.archlinux.org/title/Systemd

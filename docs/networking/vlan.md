@@ -209,7 +209,6 @@ UniFi APs transmit both **tagged** and **untagged** data at the same time.
   [Untagged][c] traffic will be sent on.
 
 
-
 ## Reference[^1][^2][^3][^4]
 
 [^1]: https://help.ui.com/hc/en-us/articles/222183968-Intro-to-Networking-Introduction-to-Virtual-LANs-VLANs-and-Tagging#3

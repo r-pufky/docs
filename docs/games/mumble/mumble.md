@@ -3,13 +3,15 @@ High quality VOIP server with public certificate authentication, encryption,
 and ACLs.
 
 ## Ports
-64738: UDP - Encrypted Voice Data.
 
-64738: UDP - Encrypted Control Data.
+  Port  | Purpose
+ -------|---------
+  64738 | UDP - Encrypted Voice Data.
+  64738 | UDP - Encrypted Control Data.
 
-/var/lib/mumble-server/mumble-server.sqlite, Server user/channel data.
+Server user/channel data: **/var/lib/mumble-server/mumble-server.sqlite**
 
-/etc/mumble-server.ini, Server configuration.
+Server configuration: **/etc/mumble-server.ini**
 
 ## Setup
 !!! warning
@@ -106,7 +108,7 @@ dpkg-reconfigure mumble-server
 ```
 
 
-## References[^1][^2][^3]
+## Reference[^1][^2][^3]
 
 [^1]: https://wiki.mumble.info/wiki/Running_Murmur#Setting_the_SuperUser_Password
 [^2]: https://www.typefrag.com/mumble/tutorials/advanced-user-settings/

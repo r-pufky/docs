@@ -66,6 +66,17 @@ systemctl disable --now kvmd-webterm
     Drag all sliders to the left.
 
 
+## Remote ISO Mount
+Mount ISO image remotely for connected machine to use.
+
+1. Obtain ISO to use
+2. Drive ➔ Select image to upload
+3. Drive ➔ Image select
+4. Drive ➔ Drive mode: Flash
+5. Drive ➔ Connect drive to server
+6. Connect to local console and reboot
+
+
 ## Reference[^1]
 
 [^1]: https://docs.pikvm.org/v4

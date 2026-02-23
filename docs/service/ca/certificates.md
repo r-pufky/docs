@@ -159,6 +159,7 @@ openssl pkcs12 -in {CLIENT}.pfx -nocerts -nodes | openssl rsa -out rsa.key
 openssl pkcs12 -in {CLIENT}.pfx -clcerts -nokeys | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > rsa.pub
 ```
 
+
 ## Reference[^1]
 
 [^1]: https://jamielinux.com/docs/openssl-certificate-authority/sign-server-and-client-certificates.html

@@ -39,7 +39,7 @@ mechanism to install an old version for a game.
    can be restored.
 
 
-## References[^1]
+## Reference[^1]
 
 [^1]: https://steamcommunity.com/sharedfiles/filedetails/?id=889624474
 

@@ -94,7 +94,7 @@ backends.
    **manifest(format=m3u8-aapl-v3)**
 
 
-## References[^1][^2][^3][^4][^5][^6]
+## Reference[^1][^2][^3][^4][^5][^6]
 
 [^1]: https://github.com/ytdl-org/yt-dlp/releases
 [^2]: https://rg3.github.io/yt-dlp/download.html
