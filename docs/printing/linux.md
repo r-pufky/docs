@@ -3,10 +3,38 @@
 
 ## Install Packages
 
-=== "Manjaro"
+=== "CachyOS"
+
     ``` bash
-    pamac install manjaro-printer xsane colord-sane
-    pamac install brother-mfc-l2750dw brscan4 brscan-skey
+    # Printer
+    pacman -S cups system-config-printer
+    paru -S brother-mfc-l2750dw
+    systemctl enable cups
+    systemctl restart --now cups
+    # Scanner
+    paru -S brscan4 brscan-skey
+    pacman -S sane colord-sane
+    ```
+
+    !!! example "⌘ ➔ Print Settings"
+        * Add ➔ Enter URI:
+            * Enter Device URI: **https://{HOST}/ipp/port1**
+        * Select printer from database: **Brother** ➔ **MFCL2750DW for CUPS**
+        * Describe Printer:
+            * Short name: **{PRINTER NAME}**
+            * Description: **{LONG NAME}**
+
+=== "Manjaro"
+
+    ``` bash
+    # Printer
+    pamac install manjaro-printer
+    pamac install brother-mfc-l2750dw
+    systemctl enable cups
+    systemctl restart --now cups
+    # Scanner
+    pamac install  brscan4 brscan-skey
+    pamac install xsane colord-sane
     ```
 
 === "Debian"

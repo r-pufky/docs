@@ -95,8 +95,20 @@ settings.
 
 
 ## [Exclude Files in File Explorer][d]
+
 !!! example "ctrl + , ➔ User ➔ Explorer ➔ Auto Reveal Exclude"
     Add files with globbing to ignore.
+
+
+## Disable Extensions Recommendations
+
+!!! example "Extensions ➔ ⋮ ➔ Views ➔ Recommended: ✘"
+
+!!! example "ctrl + shift + p ➔ Open User Settings (JSON)"
+
+    ``` json
+    "extensions.ignoreRecommendations": true
+    ```
 
 
 ## [Terminal Profiles][e]

@@ -84,6 +84,9 @@ nav:
   - 'Media Management':
     # - 'media/folders.md'
     - 'media/music.md'
+    - 'Paperless':
+      - 'media/paperless/README.md'
+      - 'media/paperless/troubleshooting.md'
     - 'Plex':
       - 'media/plex/README.md'
       - 'media/plex/config.md'
@@ -271,7 +274,7 @@ theme:
 markdown_extensions:
   - 'attr_list'
   - 'def_list'
-  - 'footnotes':
+  - 'footnotes'
   - 'md_in_html'
   - 'tables'
   - 'pymdownx.betterem'

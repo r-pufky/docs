@@ -307,7 +307,7 @@ setup in [Window Management](#window-management).
         * Unit Converter: ✔
     * Configure KRunner:
         * Position on screen: **Center**
-        * Activation: **Activate when pressing any key on the desktop**
+        * Activate when pressing any key on the desktop: ✘
         * History: **Disabled**
 
 
