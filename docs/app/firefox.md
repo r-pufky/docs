@@ -20,6 +20,11 @@
 
 ## [Disable AI][b]
 
+!!! example "🗘 ➔ AI Controls"
+    * Block AI Enhancments: ✔
+
+    Only available on Firefox 148+
+
 !!! example "about:config"
     * browser.ml.chat.enabled: **false**
     * sidebar.revamp: **false**

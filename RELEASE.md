@@ -1,5 +1,21 @@
 # [Release Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## 2.3.1:
+Resolve bad merge.
+
+A bad merge caused some files to be excluded on latest release. Added files
+as-is.
+
+Changed:
+* app/firefox.md
+* app/fish.md
+* app/vscodium/README.md
+* media/paperless/README.md
+* media/paperless/troubleshooting.md
+* os/cachyos/preferences.md
+* printing/linux.md
+* mkdocs.yml
+
 ## 2.3.0:
 Add auto configure mkdocs environments.
 
