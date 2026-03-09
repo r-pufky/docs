@@ -1,52 +1,8 @@
 ---
-###############################################################################
-# MKDocs Material
-###############################################################################
-# MKDocs with material theme using minimal extensions to maintain as close to
-# vanilla markdown as possible. Other MKDoc vanilla formats may be used if
-# material-specific options are removed.
+# Configuration: https://r-pufky.github.io/docs/service/mkdocs
 #
-# Development:
-#   venv:
-#     python3 -m venv /var/venv/docs
-#     source /var/venv/docs/bin/activate
-#     pip install --upgrade pip
-#     pip install mkdocs mkdocs-material mkdocs-glightbox
-#     pip install mkdocs-git-revision-date-localized-plugin
-#     pip install click==8.2.1  # (until 4014 is resolved).
-#     mkdocs serve --livereload
-#
-#   uv:
-#     uv init
-#     uv add mkdocs mkdocs-material mkdocs-glightbox
-#     uv add mkdocs-git-revision-date-localized-plugin
-#     uv pip install click==8.2.1  # (until 4014 is resolved).
-#     uv run mkdocs serve --livereload
-#
-#
-# TODO: mkdocs is deprecated and moving to 2.0 with breaking changes. Consider
-#     replacing with zeniscal:
-#
-#     https://squidfunk.github.io/mkdocs-material/blog/2026/02/18/mkdocs-2.0/
-#
-#     Zensical:
-#       uv init
-#       uv add zensical
-#       uv run zensical serve
-#
-# All warnings and errors must be resolved before committing.
-#
-# Publish:
-# * Configure Github Pages (one time)
-#   * github ➔ Settings ➔ Pages:
-#     * Source: Deploy from branch
-#     * Branch: gh-pages ➔ / (root)
-# * Create a tagged commit and push.
-# * mkdocs gh-deploy
-#
-# Reference:
-# * https://www.mkdocs.org/
-# * https://github.com/mkdocs/mkdocs/issues/4014
+# uv run mkdocs serve --livereload
+# uv run mkdocs gh-deploy
 
 ###############################################################################
 # Page Configuration
@@ -65,6 +21,7 @@ nav:
   - 'Applications':
     - 'app/bash.md'
     - 'app/chrome.md'
+    - 'app/direnv.md'
     - 'app/freecad.md'
     - 'app/firefox.md'
     - 'app/fish.md'
@@ -195,6 +152,7 @@ nav:
       - 'service/forgejo/README.md'
       - 'service/forgejo/troubleshooting.md'
     - 'service/imapsync.md'
+    - 'service/mkdocs.md'
     - 'Mail':
       - 'service/mail/README.md'
       - 'service/mail/postfix.md'
@@ -269,20 +227,9 @@ extra:
     - icon: 'simple/gnuprivacyguard'
       link: 'https://keys.openpgp.org/vks/v1/by-fingerprint/466EEC2B67516C7117C85CE3A0BC35D16698BAB9'
 
-###############################################################################
-# Theme Configuration
-###############################################################################
-# MKDocs with material theme using minimal extensions to maintain as close to
-# vanilla markdown as possible. Other MKDoc vanilla formats may be used if
-# material-specific options are removed.
-#
-# Reference:
-# * https://squidfunk.github.io/mkdocs-material
-# * https://squidfunk.github.io/mkdocs-material/reference/
-
 theme:
   name: 'material'
-  palette:  # Material theme (auto, light, dark).
+  palette:
     - media: '(prefers-color-scheme)'
       toggle:
         icon: 'material/link'
@@ -304,10 +251,10 @@ theme:
   icon:
     annotation: 'material/chevron-right-circle'
   features:
-    - 'navigation.instant'  # Requires site_url.
+    - 'navigation.instant'
     - 'navigation.instant.prefetch'
     - 'navigation.instant.progress'
-    - 'navigation.tracking'  # URL shows anchor tags.
+    - 'navigation.tracking'
     - 'navigation.path'
     - 'navigation.indexes'
     - 'navigation.top'
@@ -315,70 +262,42 @@ theme:
     - 'search.highlight'
     - 'toc.follow'
     - 'header.autohide'
-    - 'content.action.edit'  # Requires edit_uri.
+    - 'content.action.edit'
     - 'content.footnote.tooltips'
   navigation_depth: 5
   locale: 'en'
   language: 'en'
 
 markdown_extensions:
-  - 'attr_list'  # HTML Attribute lists.
-  - 'def_list'  # HTML Definition lists.
-  - 'footnotes':  # Footnotes.
-  - 'md_in_html'  # Markdown in HTML.
-  - 'tables'  # Sortable tables (theme/init.js).
-  - 'pymdownx.betterem'  # Github flavored emphasis handling.
-  - 'pymdownx.magiclink'  # Autolink URI's.
-  - 'pymdownx.superfences'  # HTML block nesting.
-
-  # Admonitions.
+  - 'attr_list'
+  - 'def_list'
+  - 'footnotes':
+  - 'md_in_html'
+  - 'tables'
+  - 'pymdownx.betterem'
+  - 'pymdownx.magiclink'
+  - 'pymdownx.superfences'
   - 'admonition'
   - 'pymdownx.details'
-
-  # Emoji
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-
-  # Linkable tabbed blocks.
   - pymdownx.tabbed:
       alternate_style: true
       slugify: !!python/object/apply:pymdownx.slugs.slugify
         kwds:
           case: 'lower'
-
-  # Github flavored checklists.
   - pymdownx.tasklist:
       custom_checkbox: true
-
-  # Syntax Highlighting.
   - pymdownx.highlight:
-      use_pygments: false  # Use highlight.js for Material.
+      use_pygments: false
   - 'pymdownx.inlinehilite'
 
 plugins:
-  - 'glightbox' # Inline images.
-
-  # Created, last update footers.
+  - 'glightbox'
   - git-revision-date-localized:
       enable_creation_date: true
-
-  - 'search'  # Search
-
-###############################################################################
-# Material Code Highlighting
-###############################################################################
-# Material use Python Pygments - highlight.js provides better highlights for
-# non-python code.
-#
-# Disable Python Pygments and use highlight.js. Code highlight theme is set
-# with extra_css, not integration hljs.* options.
-#
-# Reference:
-# * https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#highlight-mkdocsyml
-# * https://github.com/squidfunk/mkdocs-material/issues/1004
-# * https://github.com/highlightjs/highlight.js/tree/main/src/styles
-# * https://highlightjs.org/demo
+  - 'search'
 
 extra_javascript:
   - 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js'

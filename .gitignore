@@ -6,7 +6,5 @@ COMMIT.md
 TODO.md
 # UV environment
 .venv/
-uv.lock
 .python-version
 main.py
-pyproject.toml

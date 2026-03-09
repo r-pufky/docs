@@ -1,5 +1,97 @@
 # [Release Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## 2.3.0:
+Add auto configure mkdocs environments.
+
+Use auto configured virtual environment for docs generation; moving
+mkdocs setup documentation to site.
+
+Added:
+* app/direnv.md - direnv documentation.
+* service/mkdocs.yml - mkdocs documentation.
+* .envrc - direnv auto configuration.
+* pyproject.toml - UV environment.
+* uv.lock - UV environment.
+* PVE9 cluster creation, GPU, NFS configuration.
+* app/systemd.md - systemd analysis tips.
+* web_os.md - Hidden configuration menu to disable LG logo.
+
+Changed:
+* .gitignore - auto configured environment files.
+* mkdocs.yml - removed documentation in favor of using documented site.
+* Standard reference section format.
+* games/mumble/mumble.md - update formatting.
+* copying_data.md - rsync usage updated to reflect new --info=progress2
+  features.
+* GIT GPG SSH push requires multiple touches in certain cases. Issue
+  linked.
+* Plex - added tools for managing metadata and media.
+* Plex - add tone mapping support article reference.
+* BNK9 - Add F21-F23 layers and clean-up source markdown.
+
+Removed:
+* requirements.txt - UV environment is first class citizen for builds, pip
+  environments are not stored anymore.
+
+## 2.2.4:
+Update and add additional configuration notes.
+
+Added:
+* hardware/bnk9.md - BNK9 keypad configuration.
+* app/fish.md - Base fish shell configuration.
+* Fix SSH GPG GIT push via VSCodium UI.
+* ludusavi - Cross platform game save management.
+* cachyos/preferences.md - volume, launcher configuration.
+* applications/git.md - SSH with GPG keys, clarification on .git
+  repository extension in remote URI's.
+
+Changed:
+* cachyos/preferences.md - Mute microphone settings.
+* hardware/crush_80_reboot_pro.md - Add keymap configuration.
+* os/shield.md - Update glyphs.
+* cachyos/preferences.md - Add F13-F24 passthrough.
+* manjaro/preferences.md - Add F13-F24 passthrough.
+* firefox.md - Add speech synthesizer disable.
+* cachyos/preferences.md - Add font management.
+* manjaro/preferences.md - Add font management.
+* scripts/youtube.md - configuration for deno enabling latest
+  youtube downloads.
+
+## 2.2.3:
+Add base CachyOS configuration, click > 8.2.1 workaround.
+
+mkdocs breaks with click > 8.2.1, affecting --livereload and github
+builds. Statically set dependencies and document issue until resolved.
+See: https://github.com/mkdocs/mkdocs/issues/4014
+
+Added:
+* vscodium.md - added MS Marketplace CachyOS package.
+* firfox.md - Disable AI background use.
+* os/cachyos - configuration instructions.
+* Crush 80 Reboot Pro firmware/keymapping configuration.
+* requirements.txt - static dependencies to address click library.
+* UV virtual environment support.
+* vensical replacement for mkdocs for testing until feature complete for
+  drop-in replacement.
+
+Changed:
+* manjaro/preferences.md - update format to match CachyOS.
+* chrome.md - update for CachyOS.
+* gpg/ - update for CachyOS.
+* vscodium/ - update for CachyOS.
+* manjaro/ - correct typos.
+* mkdocs.yml - added documentation for click issue, uv setup.
+
+## 2.2.2:
+Migrate Plex user configuration to docs.
+
+Added:
+* media/plex/config.md - User configuration for Plex.
+* Library scanning crash fixes.
+* Database repair instructions.
+* Plex Preferences.xml config values.
+* CephFS read-only backup execution.
+
 ## 2.2.1:
 Unfold file listings if reasonably sized.
 
