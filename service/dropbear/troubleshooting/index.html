@@ -7,31 +7,31 @@
         <meta name="author" content="r-pufky">
       
       
-        <link rel="canonical" href="https://github.com/r-pufky/docs/service/wireguard/os/windows/">
+        <link rel="canonical" href="https://github.com/r-pufky/docs/service/dropbear/troubleshooting/">
       
       
-        <link rel="prev" href="../linux/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="../../troubleshooting/">
+        <link rel="next" href="../../ca/">
       
       
         
       
       
-      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
-        <title>Windows - Docs: A Collection of Notes</title>
+        <title>Troubleshooting - Docs: A Collection of Notes</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -58,13 +58,13 @@
     
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/vs2015.min.css">
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
-  <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#windows" class="md-skip">
+        <a href="#troubleshooting" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="Docs: A Collection of Notes" class="md-header__button md-logo" aria-label="Docs: A Collection of Notes" data-md-component="logo">
+    <a href="../../.." title="Docs: A Collection of Notes" class="md-header__button md-logo" aria-label="Docs: A Collection of Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Windows
+              Troubleshooting
             
           </span>
         </div>
@@ -257,7 +257,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="Docs: A Collection of Notes" class="md-nav__button md-logo" aria-label="Docs: A Collection of Notes" data-md-component="logo">
+    <a href="../../.." title="Docs: A Collection of Notes" class="md-nav__button md-logo" aria-label="Docs: A Collection of Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
@@ -287,7 +287,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -391,7 +391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../app/bash/" class="md-nav__link">
+      <a href="../../../app/bash/" class="md-nav__link">
         
   
   
@@ -419,7 +419,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../app/chrome/" class="md-nav__link">
+      <a href="../../../app/chrome/" class="md-nav__link">
         
   
   
@@ -447,7 +447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../app/direnv/" class="md-nav__link">
+      <a href="../../../app/direnv/" class="md-nav__link">
         
   
   
@@ -475,7 +475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../app/freecad/" class="md-nav__link">
+      <a href="../../../app/freecad/" class="md-nav__link">
         
   
   
@@ -503,7 +503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../app/firefox/" class="md-nav__link">
+      <a href="../../../app/firefox/" class="md-nav__link">
         
   
   
@@ -531,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../app/fish/" class="md-nav__link">
+      <a href="../../../app/fish/" class="md-nav__link">
         
   
   
@@ -581,7 +581,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../app/git/" class="md-nav__link ">
+            <a href="../../../app/git/" class="md-nav__link ">
               
   
   
@@ -625,7 +625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../app/git/branches/" class="md-nav__link">
+      <a href="../../../app/git/branches/" class="md-nav__link">
         
   
   
@@ -653,7 +653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../app/git/troubleshooting/" class="md-nav__link">
+      <a href="../../../app/git/troubleshooting/" class="md-nav__link">
         
   
   
@@ -715,7 +715,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../app/gpg/" class="md-nav__link ">
+            <a href="../../../app/gpg/" class="md-nav__link ">
               
   
   
@@ -789,7 +789,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../app/gpg/setup/" class="md-nav__link ">
+            <a href="../../../app/gpg/setup/" class="md-nav__link ">
               
   
   
@@ -833,7 +833,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../app/gpg/setup/master/" class="md-nav__link">
+      <a href="../../../app/gpg/setup/master/" class="md-nav__link">
         
   
   
@@ -861,7 +861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../app/gpg/setup/subkey/" class="md-nav__link">
+      <a href="../../../app/gpg/setup/subkey/" class="md-nav__link">
         
   
   
@@ -889,7 +889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../app/gpg/setup/backup/" class="md-nav__link">
+      <a href="../../../app/gpg/setup/backup/" class="md-nav__link">
         
   
   
@@ -917,7 +917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../app/gpg/setup/export_to_yubikey/" class="md-nav__link">
+      <a href="../../../app/gpg/setup/export_to_yubikey/" class="md-nav__link">
         
   
   
@@ -945,7 +945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../app/gpg/setup/cleanup/" class="md-nav__link">
+      <a href="../../../app/gpg/setup/cleanup/" class="md-nav__link">
         
   
   
@@ -973,7 +973,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../app/gpg/setup/import/" class="md-nav__link">
+      <a href="../../../app/gpg/setup/import/" class="md-nav__link">
         
   
   
@@ -1062,7 +1062,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../app/gpg/os/linux/" class="md-nav__link">
+      <a href="../../../app/gpg/os/linux/" class="md-nav__link">
         
   
   
@@ -1090,7 +1090,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../app/gpg/os/windows/" class="md-nav__link">
+      <a href="../../../app/gpg/os/windows/" class="md-nav__link">
         
   
   
@@ -1126,7 +1126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../app/gpg/operations/" class="md-nav__link">
+      <a href="../../../app/gpg/operations/" class="md-nav__link">
         
   
   
@@ -1154,7 +1154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../app/gpg/troubleshooting/" class="md-nav__link">
+      <a href="../../../app/gpg/troubleshooting/" class="md-nav__link">
         
   
   
@@ -1190,7 +1190,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../app/movie_studio/" class="md-nav__link">
+      <a href="../../../app/movie_studio/" class="md-nav__link">
         
   
   
@@ -1218,7 +1218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../app/mutt/" class="md-nav__link">
+      <a href="../../../app/mutt/" class="md-nav__link">
         
   
   
@@ -1246,7 +1246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../app/putty/" class="md-nav__link">
+      <a href="../../../app/putty/" class="md-nav__link">
         
   
   
@@ -1274,7 +1274,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../app/systemd/" class="md-nav__link">
+      <a href="../../../app/systemd/" class="md-nav__link">
         
   
   
@@ -1322,7 +1322,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../app/vscodium/" class="md-nav__link ">
+            <a href="../../../app/vscodium/" class="md-nav__link ">
               
   
   
@@ -1366,7 +1366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../app/vscodium/troubleshooting/" class="md-nav__link">
+      <a href="../../../app/vscodium/troubleshooting/" class="md-nav__link">
         
   
   
@@ -1422,7 +1422,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../app/vim/" class="md-nav__link ">
+            <a href="../../../app/vim/" class="md-nav__link ">
               
   
   
@@ -1466,7 +1466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../app/vim/troubleshooting/" class="md-nav__link">
+      <a href="../../../app/vim/troubleshooting/" class="md-nav__link">
         
   
   
@@ -1570,7 +1570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../arr/deluge/" class="md-nav__link">
+      <a href="../../../arr/deluge/" class="md-nav__link">
         
   
   
@@ -1598,7 +1598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../arr/lidarr/" class="md-nav__link">
+      <a href="../../../arr/lidarr/" class="md-nav__link">
         
   
   
@@ -1626,7 +1626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../arr/nzbget/" class="md-nav__link">
+      <a href="../../../arr/nzbget/" class="md-nav__link">
         
   
   
@@ -1654,7 +1654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../arr/playon/" class="md-nav__link">
+      <a href="../../../arr/playon/" class="md-nav__link">
         
   
   
@@ -1702,7 +1702,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../arr/radarr/" class="md-nav__link ">
+            <a href="../../../arr/radarr/" class="md-nav__link ">
               
   
   
@@ -1746,7 +1746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../arr/radarr/troubleshooting/" class="md-nav__link">
+      <a href="../../../arr/radarr/troubleshooting/" class="md-nav__link">
         
   
   
@@ -1802,7 +1802,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../arr/sonarr/" class="md-nav__link ">
+            <a href="../../../arr/sonarr/" class="md-nav__link ">
               
   
   
@@ -1846,7 +1846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../arr/sonarr/troubleshooting/" class="md-nav__link">
+      <a href="../../../arr/sonarr/troubleshooting/" class="md-nav__link">
         
   
   
@@ -1942,7 +1942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../hardware/bnk9/" class="md-nav__link">
+      <a href="../../../hardware/bnk9/" class="md-nav__link">
         
   
   
@@ -1970,7 +1970,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../hardware/crush_80_reboot_pro/" class="md-nav__link">
+      <a href="../../../hardware/crush_80_reboot_pro/" class="md-nav__link">
         
   
   
@@ -2086,7 +2086,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../games/ludusavi/" class="md-nav__link ">
+            <a href="../../../games/ludusavi/" class="md-nav__link ">
               
   
   
@@ -2133,7 +2133,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../games/conan_exiles/" class="md-nav__link">
+      <a href="../../../games/conan_exiles/" class="md-nav__link">
         
   
   
@@ -2161,7 +2161,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../games/elden_ring/" class="md-nav__link">
+      <a href="../../../games/elden_ring/" class="md-nav__link">
         
   
   
@@ -2209,7 +2209,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../games/escape_from_tarkov/" class="md-nav__link ">
+            <a href="../../../games/escape_from_tarkov/" class="md-nav__link ">
               
   
   
@@ -2253,7 +2253,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../games/escape_from_tarkov/server/" class="md-nav__link">
+      <a href="../../../games/escape_from_tarkov/server/" class="md-nav__link">
         
   
   
@@ -2289,7 +2289,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../games/mumble/mumble/" class="md-nav__link">
+      <a href="../../../games/mumble/mumble/" class="md-nav__link">
         
   
   
@@ -2339,7 +2339,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../games/seven_days_to_die/" class="md-nav__link ">
+            <a href="../../../games/seven_days_to_die/" class="md-nav__link ">
               
   
   
@@ -2383,7 +2383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../games/seven_days_to_die/serverconfig/" class="md-nav__link">
+      <a href="../../../games/seven_days_to_die/serverconfig/" class="md-nav__link">
         
   
   
@@ -2411,7 +2411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../games/seven_days_to_die/serveradmin/" class="md-nav__link">
+      <a href="../../../games/seven_days_to_die/serveradmin/" class="md-nav__link">
         
   
   
@@ -2467,7 +2467,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../games/steam/" class="md-nav__link ">
+            <a href="../../../games/steam/" class="md-nav__link ">
               
   
   
@@ -2511,7 +2511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../games/steam/troubleshooting/" class="md-nav__link">
+      <a href="../../../games/steam/troubleshooting/" class="md-nav__link">
         
   
   
@@ -2611,7 +2611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../media/music/" class="md-nav__link">
+      <a href="../../../media/music/" class="md-nav__link">
         
   
   
@@ -2659,7 +2659,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../media/paperless/" class="md-nav__link ">
+            <a href="../../../media/paperless/" class="md-nav__link ">
               
   
   
@@ -2703,7 +2703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../media/paperless/troubleshooting/" class="md-nav__link">
+      <a href="../../../media/paperless/troubleshooting/" class="md-nav__link">
         
   
   
@@ -2761,7 +2761,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../media/plex/" class="md-nav__link ">
+            <a href="../../../media/plex/" class="md-nav__link ">
               
   
   
@@ -2805,7 +2805,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../media/plex/config/" class="md-nav__link">
+      <a href="../../../media/plex/config/" class="md-nav__link">
         
   
   
@@ -2833,7 +2833,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../media/plex/troubleshooting/" class="md-nav__link">
+      <a href="../../../media/plex/troubleshooting/" class="md-nav__link">
         
   
   
@@ -2889,7 +2889,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../media/firefly/" class="md-nav__link ">
+            <a href="../../../media/firefly/" class="md-nav__link ">
               
   
   
@@ -2933,7 +2933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../media/firefly/troubleshooting/" class="md-nav__link">
+      <a href="../../../media/firefly/troubleshooting/" class="md-nav__link">
         
   
   
@@ -3051,7 +3051,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../networking/edge_os/" class="md-nav__link ">
+            <a href="../../../networking/edge_os/" class="md-nav__link ">
               
   
   
@@ -3095,7 +3095,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../networking/edge_os/troubleshooting/" class="md-nav__link">
+      <a href="../../../networking/edge_os/troubleshooting/" class="md-nav__link">
         
   
   
@@ -3151,7 +3151,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../networking/unifi/" class="md-nav__link ">
+            <a href="../../../networking/unifi/" class="md-nav__link ">
               
   
   
@@ -3195,7 +3195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../networking/unifi/troubleshooting/" class="md-nav__link">
+      <a href="../../../networking/unifi/troubleshooting/" class="md-nav__link">
         
   
   
@@ -3231,7 +3231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../networking/vlan/" class="md-nav__link">
+      <a href="../../../networking/vlan/" class="md-nav__link">
         
   
   
@@ -3357,7 +3357,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../os/cachyos/" class="md-nav__link ">
+            <a href="../../../os/cachyos/" class="md-nav__link ">
               
   
   
@@ -3401,7 +3401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../os/cachyos/preferences/" class="md-nav__link">
+      <a href="../../../os/cachyos/preferences/" class="md-nav__link">
         
   
   
@@ -3429,7 +3429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../os/cachyos/troubleshooting/" class="md-nav__link">
+      <a href="../../../os/cachyos/troubleshooting/" class="md-nav__link">
         
   
   
@@ -3483,7 +3483,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../os/firmware/" class="md-nav__link ">
+            <a href="../../../os/firmware/" class="md-nav__link ">
               
   
   
@@ -3550,7 +3550,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../os/debian/" class="md-nav__link ">
+            <a href="../../../os/debian/" class="md-nav__link ">
               
   
   
@@ -3594,7 +3594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../os/debian/troubleshooting/" class="md-nav__link">
+      <a href="../../../os/debian/troubleshooting/" class="md-nav__link">
         
   
   
@@ -3630,7 +3630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../os/kindle/" class="md-nav__link">
+      <a href="../../../os/kindle/" class="md-nav__link">
         
   
   
@@ -3680,7 +3680,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../os/manjaro/" class="md-nav__link ">
+            <a href="../../../os/manjaro/" class="md-nav__link ">
               
   
   
@@ -3724,7 +3724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../os/manjaro/preferences/" class="md-nav__link">
+      <a href="../../../os/manjaro/preferences/" class="md-nav__link">
         
   
   
@@ -3752,7 +3752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../os/manjaro/troubleshooting/" class="md-nav__link">
+      <a href="../../../os/manjaro/troubleshooting/" class="md-nav__link">
         
   
   
@@ -3788,7 +3788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../os/pikvm/" class="md-nav__link">
+      <a href="../../../os/pikvm/" class="md-nav__link">
         
   
   
@@ -3842,7 +3842,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../os/pve/" class="md-nav__link ">
+            <a href="../../../os/pve/" class="md-nav__link ">
               
   
   
@@ -3886,7 +3886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../os/pve/acme/" class="md-nav__link">
+      <a href="../../../os/pve/acme/" class="md-nav__link">
         
   
   
@@ -3914,7 +3914,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../os/pve/gpu/" class="md-nav__link">
+      <a href="../../../os/pve/gpu/" class="md-nav__link">
         
   
   
@@ -3942,7 +3942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../os/pve/nfs/" class="md-nav__link">
+      <a href="../../../os/pve/nfs/" class="md-nav__link">
         
   
   
@@ -3970,7 +3970,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../os/pve/troubleshooting/" class="md-nav__link">
+      <a href="../../../os/pve/troubleshooting/" class="md-nav__link">
         
   
   
@@ -4006,7 +4006,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../os/shield/" class="md-nav__link">
+      <a href="../../../os/shield/" class="md-nav__link">
         
   
   
@@ -4034,7 +4034,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../os/web_os/" class="md-nav__link">
+      <a href="../../../os/web_os/" class="md-nav__link">
         
   
   
@@ -4086,7 +4086,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../os/windows/" class="md-nav__link ">
+            <a href="../../../os/windows/" class="md-nav__link ">
               
   
   
@@ -4130,7 +4130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../os/windows/reinstall/" class="md-nav__link">
+      <a href="../../../os/windows/reinstall/" class="md-nav__link">
         
   
   
@@ -4158,7 +4158,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../os/windows/crashes/" class="md-nav__link">
+      <a href="../../../os/windows/crashes/" class="md-nav__link">
         
   
   
@@ -4186,7 +4186,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../os/windows/troubleshooting/" class="md-nav__link">
+      <a href="../../../os/windows/troubleshooting/" class="md-nav__link">
         
   
   
@@ -4284,7 +4284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../printing/linux/" class="md-nav__link">
+      <a href="../../../printing/linux/" class="md-nav__link">
         
   
   
@@ -4312,7 +4312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../printing/windows/" class="md-nav__link">
+      <a href="../../../printing/windows/" class="md-nav__link">
         
   
   
@@ -4340,7 +4340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../printing/brother_mfcl2750dw/" class="md-nav__link">
+      <a href="../../../printing/brother_mfcl2750dw/" class="md-nav__link">
         
   
   
@@ -4436,7 +4436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../scripts/ansible/" class="md-nav__link">
+      <a href="../../../scripts/ansible/" class="md-nav__link">
         
   
   
@@ -4464,7 +4464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../scripts/copying_data/" class="md-nav__link">
+      <a href="../../../scripts/copying_data/" class="md-nav__link">
         
   
   
@@ -4492,7 +4492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../scripts/steam/" class="md-nav__link">
+      <a href="../../../scripts/steam/" class="md-nav__link">
         
   
   
@@ -4520,7 +4520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../scripts/video_tools/" class="md-nav__link">
+      <a href="../../../scripts/video_tools/" class="md-nav__link">
         
   
   
@@ -4548,7 +4548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../scripts/wiping_data/" class="md-nav__link">
+      <a href="../../../scripts/wiping_data/" class="md-nav__link">
         
   
   
@@ -4576,7 +4576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../scripts/youtube/" class="md-nav__link">
+      <a href="../../../scripts/youtube/" class="md-nav__link">
         
   
   
@@ -4667,7 +4667,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -4711,7 +4711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../bluebubbles/" class="md-nav__link">
+      <a href="../../bluebubbles/" class="md-nav__link">
         
   
   
@@ -4736,6 +4736,8 @@
                 
   
   
+    
+  
   
   
     
@@ -4751,15 +4753,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_3">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_3" checked="">
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../dropbear/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -4783,7 +4785,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_11_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -4800,10 +4802,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../dropbear/troubleshooting/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -4819,6 +4848,37 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#utf-8-codec-cant-encode-characters-surrogates-not-allowed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UTF-8 codec can't encode characters ... surrogates not allowed
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4863,7 +4923,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../ca/" class="md-nav__link ">
+            <a href="../../ca/" class="md-nav__link ">
               
   
   
@@ -4907,7 +4967,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ca/setup/" class="md-nav__link">
+      <a href="../../ca/setup/" class="md-nav__link">
         
   
   
@@ -4935,7 +4995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ca/certificates/" class="md-nav__link">
+      <a href="../../ca/certificates/" class="md-nav__link">
         
   
   
@@ -4963,7 +5023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ca/certificate_revocation_list/" class="md-nav__link">
+      <a href="../../ca/certificate_revocation_list/" class="md-nav__link">
         
   
   
@@ -5019,7 +5079,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../forgejo/" class="md-nav__link ">
+            <a href="../../forgejo/" class="md-nav__link ">
               
   
   
@@ -5063,7 +5123,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../forgejo/troubleshooting/" class="md-nav__link">
+      <a href="../../forgejo/troubleshooting/" class="md-nav__link">
         
   
   
@@ -5099,7 +5159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../imapsync/" class="md-nav__link">
+      <a href="../../imapsync/" class="md-nav__link">
         
   
   
@@ -5127,7 +5187,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mkdocs/" class="md-nav__link">
+      <a href="../../mkdocs/" class="md-nav__link">
         
   
   
@@ -5177,7 +5237,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../mail/" class="md-nav__link ">
+            <a href="../../mail/" class="md-nav__link ">
               
   
   
@@ -5221,7 +5281,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mail/postfix/" class="md-nav__link">
+      <a href="../../mail/postfix/" class="md-nav__link">
         
   
   
@@ -5249,7 +5309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mail/troubleshooting/" class="md-nav__link">
+      <a href="../../mail/troubleshooting/" class="md-nav__link">
         
   
   
@@ -5285,7 +5345,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mariadb/" class="md-nav__link">
+      <a href="../../mariadb/" class="md-nav__link">
         
   
   
@@ -5313,7 +5373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../pihole/" class="md-nav__link">
+      <a href="../../pihole/" class="md-nav__link">
         
   
   
@@ -5361,7 +5421,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../postgres/" class="md-nav__link ">
+            <a href="../../postgres/" class="md-nav__link ">
               
   
   
@@ -5405,7 +5465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../postgres/troubleshooting/" class="md-nav__link">
+      <a href="../../postgres/troubleshooting/" class="md-nav__link">
         
   
   
@@ -5469,7 +5529,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../nfs/" class="md-nav__link ">
+            <a href="../../nfs/" class="md-nav__link ">
               
   
   
@@ -5513,7 +5573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nfs/exports/" class="md-nav__link">
+      <a href="../../nfs/exports/" class="md-nav__link">
         
   
   
@@ -5541,7 +5601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nfs/mounts/" class="md-nav__link">
+      <a href="../../nfs/mounts/" class="md-nav__link">
         
   
   
@@ -5569,7 +5629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nfs/optimizations/" class="md-nav__link">
+      <a href="../../nfs/optimizations/" class="md-nav__link">
         
   
   
@@ -5597,7 +5657,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nfs/options/" class="md-nav__link">
+      <a href="../../nfs/options/" class="md-nav__link">
         
   
   
@@ -5625,7 +5685,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nfs/troubleshooting/" class="md-nav__link">
+      <a href="../../nfs/troubleshooting/" class="md-nav__link">
         
   
   
@@ -5683,7 +5743,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../nginx/" class="md-nav__link ">
+            <a href="../../nginx/" class="md-nav__link ">
               
   
   
@@ -5753,7 +5813,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../nginx/manual/" class="md-nav__link ">
+            <a href="../../nginx/manual/" class="md-nav__link ">
               
   
   
@@ -5797,7 +5857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nginx/manual/setup/" class="md-nav__link">
+      <a href="../../nginx/manual/setup/" class="md-nav__link">
         
   
   
@@ -5825,7 +5885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nginx/manual/custom_error_pages/" class="md-nav__link">
+      <a href="../../nginx/manual/custom_error_pages/" class="md-nav__link">
         
   
   
@@ -5853,7 +5913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nginx/manual/cert_based_authentication/" class="md-nav__link">
+      <a href="../../nginx/manual/cert_based_authentication/" class="md-nav__link">
         
   
   
@@ -5881,7 +5941,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nginx/manual/best_practices/" class="md-nav__link">
+      <a href="../../nginx/manual/best_practices/" class="md-nav__link">
         
   
   
@@ -5917,7 +5977,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../nginx/troubleshooting/" class="md-nav__link">
+      <a href="../../nginx/troubleshooting/" class="md-nav__link">
         
   
   
@@ -5953,7 +6013,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../roundcube/" class="md-nav__link">
+      <a href="../../roundcube/" class="md-nav__link">
         
   
   
@@ -6001,7 +6061,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../secure_boot/" class="md-nav__link ">
+            <a href="../../secure_boot/" class="md-nav__link ">
               
   
   
@@ -6045,7 +6105,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../secure_boot/troubleshooting/" class="md-nav__link">
+      <a href="../../secure_boot/troubleshooting/" class="md-nav__link">
         
   
   
@@ -6103,7 +6163,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../ssh/" class="md-nav__link ">
+            <a href="../../ssh/" class="md-nav__link ">
               
   
   
@@ -6200,7 +6260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ssh/sshd/linux/" class="md-nav__link">
+      <a href="../../ssh/sshd/linux/" class="md-nav__link">
         
   
   
@@ -6228,7 +6288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ssh/sshd/windows/" class="md-nav__link">
+      <a href="../../ssh/sshd/windows/" class="md-nav__link">
         
   
   
@@ -6264,7 +6324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ssh/troubleshooting/" class="md-nav__link">
+      <a href="../../ssh/troubleshooting/" class="md-nav__link">
         
   
   
@@ -6332,7 +6392,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../traefik/" class="md-nav__link ">
+            <a href="../../traefik/" class="md-nav__link ">
               
   
   
@@ -6376,7 +6436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../traefik/basic_auth_dashboard/" class="md-nav__link">
+      <a href="../../traefik/basic_auth_dashboard/" class="md-nav__link">
         
   
   
@@ -6404,7 +6464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../traefik/error_pages/" class="md-nav__link">
+      <a href="../../traefik/error_pages/" class="md-nav__link">
         
   
   
@@ -6432,7 +6492,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../traefik/rate_limiting/" class="md-nav__link">
+      <a href="../../traefik/rate_limiting/" class="md-nav__link">
         
   
   
@@ -6460,7 +6520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../traefik/plugins/" class="md-nav__link">
+      <a href="../../traefik/plugins/" class="md-nav__link">
         
   
   
@@ -6508,7 +6568,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../traefik/acme/" class="md-nav__link ">
+            <a href="../../traefik/acme/" class="md-nav__link ">
               
   
   
@@ -6552,7 +6612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../traefik/acme/behind_traefik/" class="md-nav__link">
+      <a href="../../traefik/acme/behind_traefik/" class="md-nav__link">
         
   
   
@@ -6588,7 +6648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../traefik/odic/" class="md-nav__link">
+      <a href="../../traefik/odic/" class="md-nav__link">
         
   
   
@@ -6616,7 +6676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../traefik/troubleshooting/" class="md-nav__link">
+      <a href="../../traefik/troubleshooting/" class="md-nav__link">
         
   
   
@@ -6649,8 +6709,6 @@
                 
   
   
-    
-  
   
   
     
@@ -6668,15 +6726,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_18" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_18">
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../../wireguard/" class="md-nav__link ">
               
   
   
@@ -6700,7 +6758,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_18_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_18_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_11_18">
             <span class="md-nav__icon md-icon"></span>
             
@@ -6717,10 +6775,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -6732,11 +6788,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_18_2" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_18_2">
         
           
           <label class="md-nav__link" for="__nav_11_18_2" id="__nav_11_18_2_label" tabindex="0">
@@ -6757,7 +6813,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_11_18_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_11_18_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_11_18_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -6775,7 +6831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../linux/" class="md-nav__link">
+      <a href="../../wireguard/os/linux/" class="md-nav__link">
         
   
   
@@ -6800,37 +6856,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Windows
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../wireguard/os/windows/" class="md-nav__link">
         
   
   
@@ -6846,48 +6875,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Setup
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-pre-configured-tunnel" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Add Pre-configured Tunnel
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -6908,7 +6895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../troubleshooting/" class="md-nav__link">
+      <a href="../../wireguard/troubleshooting/" class="md-nav__link">
         
   
   
@@ -6968,7 +6955,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../zfs/" class="md-nav__link ">
+            <a href="../../zfs/" class="md-nav__link ">
               
   
   
@@ -7012,7 +6999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../zfs/sync_backup/" class="md-nav__link">
+      <a href="../../zfs/sync_backup/" class="md-nav__link">
         
   
   
@@ -7040,7 +7027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../zfs/replacing_disks/" class="md-nav__link">
+      <a href="../../zfs/replacing_disks/" class="md-nav__link">
         
   
   
@@ -7068,7 +7055,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../zfs/encryption/" class="md-nav__link">
+      <a href="../../zfs/encryption/" class="md-nav__link">
         
   
   
@@ -7143,7 +7130,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../glossary/" class="md-nav__link ">
+            <a href="../../../glossary/" class="md-nav__link ">
               
   
   
@@ -7187,7 +7174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../glossary/admonitions/" class="md-nav__link">
+      <a href="../../../glossary/admonitions/" class="md-nav__link">
         
   
   
@@ -7215,7 +7202,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../glossary/gpg/" class="md-nav__link">
+      <a href="../../../glossary/gpg/" class="md-nav__link">
         
   
   
@@ -7243,7 +7230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../glossary/mail/" class="md-nav__link">
+      <a href="../../../glossary/mail/" class="md-nav__link">
         
   
   
@@ -7271,7 +7258,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../glossary/os/" class="md-nav__link">
+      <a href="../../../glossary/os/" class="md-nav__link">
         
   
   
@@ -7299,7 +7286,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../glossary/unicode/" class="md-nav__link">
+      <a href="../../../glossary/unicode/" class="md-nav__link">
         
   
   
@@ -7327,7 +7314,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../glossary/vlan/" class="md-nav__link">
+      <a href="../../../glossary/vlan/" class="md-nav__link">
         
   
   
@@ -7355,7 +7342,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../glossary/yubikey/" class="md-nav__link">
+      <a href="../../../glossary/yubikey/" class="md-nav__link">
         
   
   
@@ -7410,21 +7397,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
+  <a href="#utf-8-codec-cant-encode-characters-surrogates-not-allowed" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Setup
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-pre-configured-tunnel" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Add Pre-configured Tunnel
+        UTF-8 codec can't encode characters ... surrogates not allowed
       
     </span>
   </a>
@@ -7456,7 +7432,7 @@
   
   
     <li class="md-path__item">
-      <a href="../../../.." class="md-path__link">
+      <a href="../../.." class="md-path__link">
         
   <span class="md-ellipsis">
     Background
@@ -7474,7 +7450,7 @@
     
     
       <li class="md-path__item">
-        <a href="../../../" class="md-path__link">
+        <a href="../../" class="md-path__link">
           
   <span class="md-ellipsis">
     Services
@@ -7492,28 +7468,10 @@
     
     
       <li class="md-path__item">
-        <a href="../../" class="md-path__link">
+        <a href="../" class="md-path__link">
           
   <span class="md-ellipsis">
-    Wireguard
-  </span>
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-    
-    
-      <li class="md-path__item">
-        <a href="../linux/" class="md-path__link">
-          
-  <span class="md-ellipsis">
-    OS
+    Dropbear
   </span>
 
         </a>
@@ -7532,7 +7490,7 @@
 
 
   
-    <a href="https://github.com/r-pufky/docs/edit/main/docs/service/wireguard/os/windows.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/r-pufky/docs/edit/main/docs/service/dropbear/troubleshooting.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
     </a>
@@ -7540,26 +7498,25 @@
   
 
 
-<h1 id="windows">Windows</h1>
-<h2 id="setup"><a href="https://superuser.com/questions/1026496/automatic-services-doesnt-start-automatically-after-windows-restart">Setup</a></h2>
-<p>Download latest <a href="https://download.wireguard.com/windows-client">Windows Installer</a>.</p>
-<pre class="highlight"><code class="language-powershell"># Install
-winget install --id=WireGuard.WireGuard -e
-
-# Silent install
-Start-Process msiexec.exe -ArgumentList '/q', '/I', 'wireguard-amd64-0.1.0.msi' -Wait -NoNewWindow -PassThru | Out-Null
-Start-Process 'C:\Program Files\WireGuard\wireguard.exe' -ArgumentList '/uninstallmanagerservice' -Wait -NoNewWindow -PassThru | Out-Null</code></pre>
-<h2 id="add-pre-configured-tunnel"><a href="https://superuser.com/questions/1026496/automatic-services-doesnt-start-automatically-after-windows-restart">Add Pre-configured Tunnel</a></h2>
-<p>Pre-configured tunnels may be added as a separate service.</p>
-<p>The service is set to <strong>automatic (delayed)</strong> as this will guarantee the
-service starting if the network is not available when the service first starts.
-This mainly happens due to a very large hosts file or network being unavailable
-at boot.</p>
-<pre class="highlight"><code class="language-powershell"># Install my-tunnel.conf as a startup tunnel (powershell as admin).
-
-Start-Process 'C:\Program Files\WireGuard\wireguard.exe' -ArgumentList '/installtunnelservice', 'my-tunnel.conf' -Wait -NoNewWindow -PassThru | Out-Null
-Start-Process sc.exe -ArgumentList 'config', 'WireGuardTunnel$my-tunnel', 'start= delayed-auto' -Wait -NoNewWindow -PassThru | Out-Null
-Start-Service -Name WireGuardTunnel$my-tunnel -ErrorAction SilentlyContinue</code></pre>
+<h1 id="troubleshooting">Troubleshooting</h1>
+<h2 id="utf-8-codec-cant-encode-characters-surrogates-not-allowed">UTF-8 codec can't encode characters ... surrogates not allowed</h2>
+<p>Dropbear host keys are binary files and not standard OpenSSH keypairs. Older
+Python/Ansible versions cannot handle these key correctly.</p>
+<div class="admonition danger">
+<p>ERROR! 'utf-8' codec can't encode characters in position 23-24: surrogates
+       not allowed</p>
+</div>
+<p>Upgrade to Ansible 2.20 and a recent Python version. Ansible 2.19 is considered
+a breaking change therefore if you are upgrading one, upgrade the other.</p>
+<div class="admonition tip">
+<p class="admonition-title">I must use Ansible &lt;2.18 or older Python versions</p>
+<p>Dropbear keys cannot be stored encrypted in {host,group}_vars directory.
+Ansible will try to <a href="https://github.com/ansible/ansible/issues/79053">automatically decrypt</a> this file and fail due to
+UTF-8 encoding issues on older versions.</p>
+<p>Storing within ansible but outside of {host,group}_vars to prevent
+decryption until the binary file is copied, wherein the decryption happens
+correctly.</p>
+</div>
 
 
 
@@ -7582,7 +7539,7 @@ Start-Service -Name WireGuardTunnel$my-tunnel -ErrorAction SilentlyContinue</cod
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 13, 2025 21:28:57 UTC">November 13, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 20, 2026 23:53:17 UTC">March 20, 2026</span>
   </span>
 
     
@@ -7592,7 +7549,7 @@ Start-Service -Name WireGuardTunnel$my-tunnel -ErrorAction SilentlyContinue</cod
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 10, 2025 21:43:03 UTC">November 10, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 20, 2026 23:53:17 UTC">March 20, 2026</span>
   </span>
 
     
@@ -7680,16 +7637,16 @@ Start-Service -Name WireGuardTunnel$my-tunnel -ErrorAction SilentlyContinue</cod
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.tracking", "navigation.path", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "toc.follow", "header.autohide", "content.action.edit", "content.footnote.tooltips"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.tracking", "navigation.path", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "toc.follow", "header.autohide", "content.action.edit", "content.footnote.tooltips"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       
-        <script src="../../../../_material/init.js"></script>
+        <script src="../../../_material/init.js"></script>
       
     
   
