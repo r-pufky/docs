@@ -7,6 +7,7 @@
     * If connecting on local network, use the private IP of the server, not the
       public IP address.
     * Control Panel and Telnet are insecure. **Disable** and **block** ports.
-    * **seven_days_to_die_srv_root**/saves contains server state information.
+    * **/home/steam/.local/share/7DaysToDie/Saves** contains server state
+      information.
 
 [a]: https://galaxy.ansible.com/ui/repo/published/r_pufky/game/docs

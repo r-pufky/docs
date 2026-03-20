@@ -1,4 +1,4 @@
-# Wireguard
+# [Wireguard][d]
 Modern state-of-the-art VPN designed to be simpler and faster that IPsec and
 openVPN.
 
@@ -285,6 +285,15 @@ reboot
 * The boot and running wireguard networks should have different keys.
 * Set UFW on the host as well for further protection.
 
+
+## Reference[^1][^2][^3][^4]
+
+[^2]: https://github.com/pirate/wireguard-docs
+[^3]: https://www.procustodibus.com/blog/2021/05/wireguard-ufw/
+[^4]: https://www.procustodibus.com/blog/2021/11/wireguard-nftables/
+
+
 [a]: https://www.ckn.io/blog/2017/11/14/wireguard-vpn-typical-setup
 [b]: https://github.com/r-pufky/wireguard-initramfs
 [c]: https://galaxy.ansible.com/ui/repo/published/r_pufky/deb/docs
+[d]: https://wireguard.com

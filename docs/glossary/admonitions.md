@@ -25,3 +25,9 @@ listings to taste.
 
 !!! example
     User input and UI navigation.
+
+!!! success
+    Correct decisions.
+
+!!! failure
+    Incorrect decisions.

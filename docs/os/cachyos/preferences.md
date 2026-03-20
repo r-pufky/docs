@@ -349,7 +349,7 @@ setup in [Window Management](#window-management).
     * Enable the KDE Wallet Subsystem: ✔
     * Close wallet when last application stops using it: ✔
     * Close wallet when screensaver starts: ✔
-    * Close wallet when unused for: **10 minutes**
+    * Close wallet when unused for: ✘
     * Use KDE Wallet for the Secret Service interface: ✔
 
 ### Recent Files

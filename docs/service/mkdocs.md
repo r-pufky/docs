@@ -6,7 +6,8 @@ Project documentation with Markdown.
 
 
 ## Setup
-An [auto configured environment](#auto-configuring) direnv is highly recommended.
+An [auto configured environment](#auto-configured-environment) direnv is highly
+recommended.
 
 !!! warning "Pin click==8.2.1 until resolved"
     Click 8.2.2 breaks all URL's resulting in 404 errors.

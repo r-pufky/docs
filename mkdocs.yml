@@ -77,7 +77,10 @@ nav:
       - 'games/escape_from_tarkov/README.md'
       - 'games/escape_from_tarkov/server.md'
     - 'games/mumble/mumble.md'
-    - 'games/seven_days_to_die.md'
+    - 'Seven Days to Die':
+      - 'games/seven_days_to_die/README.md'
+      - 'games/seven_days_to_die/serverconfig.md'
+      - 'games/seven_days_to_die/serveradmin.md'
     - 'Steam':
       - 'games/steam/README.md'
       - 'games/steam/troubleshooting.md'
@@ -145,7 +148,9 @@ nav:
   - 'Services':
     - 'service/README.md'
     - 'service/bluebubbles.md'
-    - 'service/dropbear.md'
+    - 'Dropbear':
+      - 'service/dropbear/README.md'
+      - 'service/dropbear/troubleshooting.md'
     - 'Certificate Authority':
       - 'service/ca/README.md'
       - 'service/ca/setup.md'
