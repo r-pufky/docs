@@ -46,6 +46,15 @@ Modify settings to taste.
     ; Whether to skip the intro logos when booting the game. 0 = FALSE 1 = TRUE
     skip_splash_screens = 1
 
+    ; 0 = No change | 1 = Will add the player's unique Steam ID to the end of
+    ; their overhead display. Can be useful for identifying and blocking
+    ; cheaters.
+    append_steam_id_to_players = 0
+
+    ; 0 = Spectate only during boss fights and invasion encounters | 1 = Always
+    ; spectate other players on death until party wipeout or bonfire rest.
+    always_spectate_on_death = 0
+
     ; Game volume before initial save load. 0 = MUTE 10 = MAX
     default_boot_master_volume = 2
 
@@ -78,7 +87,7 @@ Modify settings to taste.
     [PASSWORD]
 
     ; Session password
-    cooppassword = {SESSION_PASSED}
+    cooppassword = {SESSION_PASS}
 
     [SAVE]
 
@@ -90,7 +99,7 @@ Modify settings to taste.
 
     ;Leave this blank unless you want to load a custom locale file. The mod
     ; will default to your game language.
-    mod_language_override = (docs)
+    mod_language_override =
     ```
 
 ### Create Co-Op Shortcut

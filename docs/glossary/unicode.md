@@ -8,7 +8,7 @@
       → | 2192  | Right arrow.
       ↓ | 2193  | Down arrow.
       ⚠ | 26a0  | Warning.
-      ⓘ | 24be  | Informational.
+      🛈 | 1f6c8 | Informational.
      🗘 | 1f5d8 | Waiting / Working / Processing.
       ✔ | 2714  | Success / Enabled / On.
       ✘ | 2718  | Failure / Disabled / Off.
