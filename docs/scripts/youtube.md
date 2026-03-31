@@ -73,11 +73,16 @@ yt-dlp https://youtube.com/playlist?list={PLAYLIST ID} --yes-playlist
 ```
 
 
-## Track Downloaded Videos for Archiving.
+## [Track Downloaded Videos for Archiving.][a]
 ``` bash
 # This downloads only videos not listed in file and adds any downloaded videos
 # to the given file.
-yt-dlp --download-archive {FILE}
+#
+# File can be manually created after initial download by using naked site and
+# id:
+#
+#   redgifs 1234567890abcef
+yt-dlp {URL} --download-archive archive.md
 ```
 
 
@@ -102,3 +107,6 @@ backends.
 [^4]: https://www.linuxjournal.com/content/grabbing-your-music-youtube-do-it-your-way
 [^5]: https://askubuntu.com/questions/323944/convert-webm-to-other-formats
 [^6]: https://anduin.aiursoft.com/post/2020/5/15/download-any-azure-media-service-video-or-live-stream-with-ffmpeg
+
+
+[a]: https://old.reddit.com/r/DataHoarder/comments/x5ey30/is_there_a_way_using_ytdlp_to_only_download_the

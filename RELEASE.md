@@ -1,5 +1,41 @@
 # [Release Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## 2.4.0:
+Remove Manjaro documentation.
+
+Added:
+* nzbget.md - NZB import process, InterDir guidance.
+* lidarr.md - Migration to PostgreSQL.
+* radarr/README.md - Migration to PostgreSQL.
+* sonarr/README.md - Migration to PostgreSQL.
+* Add encryption documentation for MariaDB.
+* Add PostgreSQL *arr migrations, guidance.
+
+Changed:
+* Update yt-dlp archive instructions.
+* elden_ring.md - Updated config options.
+* unicode.md - Swapped to better informational glyph 🛈.
+
+Removed:
+* All manjaro documentation and instructions.
+
+Fixed:
+* #27 - Requests dependency updated.
+* #28 - Pygments dependency updated.
+
+## 2.3.2:
+Update game configuration.
+
+Added:
+* app/fish.md - vagrant instance ID shell autocompletion.
+* glossary/admonitions.md - Added success, failure.
+
+Changed:
+* service/dropbear.md ➔ service/dropbear/* - Add troubleshooting.
+* games/seven_days_to_die.md ➔ games/seven_days_to_die/* - add serverconfig and
+  serveradmin configuration.
+* games/conan_exiles.md - Isle of Siptah map configuration and mod list.
+
 ## 2.3.1:
 Resolve bad merge.
 
