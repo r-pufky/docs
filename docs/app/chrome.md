@@ -13,16 +13,6 @@ sites.
     !!! example "chrome://settings/appearance"
         * Use system title bar and borders: ✔
 
-=== "Manjaro"
-    Install via AUR helper.
-
-    ``` bash
-    pamac install google-chrome
-    ```
-
-    !!! example "chrome://settings/appearance"
-        * Use system title bar and borders: ✔
-
 === "Windows"
     [Download][f] and install.
 

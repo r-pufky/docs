@@ -7,13 +7,6 @@
     pacman -S firefox
     ```
 
-=== "Manjaro"
-    Install via AUR helper.
-
-    ``` bash
-    pacman -S firefox
-    ```
-
 === "Windows"
     [Download][a] and install.
 

@@ -66,7 +66,7 @@ Execute the downloaded binary:
     nightmare that is [non-AD][h] connected Windows machines, any modern
     distribution will meet your needs.
 
-    Recommend [Manjaro (Arch stable)][i] or [Mint (Debian testing)][j].
+    Recommend [CachyOS][i] or [Mint (Debian testing)][j].
 
 ### Create UEFI USB Boot Disk
 Using the Windows Media Creation Tool will create a USB boot disk, however
@@ -131,7 +131,7 @@ Continue through install until **Sign in** appears.
 [f]: https://www.microsoft.com/en-us/software-download/windows11
 [g]: https://www.microsoft.com/en-us/software-download/windows10
 [h]: ../../glossary/os.md#ad
-[i]: https://manjaro.org
+[i]: https://cachyos.org
 [j]: https://https://linuxmint.com
 [k]: https://www.ventoy.net
 [l]: #create-uefi-usb-boot-disk

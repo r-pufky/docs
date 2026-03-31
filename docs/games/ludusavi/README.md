@@ -10,11 +10,6 @@ To convert existing Gamesave Manager saves use
     paru -S ludusavi-bin
     ```
 
-=== "Manjaro"
-    ``` bash
-    pamac install ludusavi-bin
-    ```
-
 === "Windows"
     ``` powershell
     winget install -e --id mtkennerly.ludusavi

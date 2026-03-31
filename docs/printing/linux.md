@@ -24,19 +24,6 @@
             * Short name: **{PRINTER NAME}**
             * Description: **{LONG NAME}**
 
-=== "Manjaro"
-
-    ``` bash
-    # Printer
-    pamac install manjaro-printer
-    pamac install brother-mfc-l2750dw
-    systemctl enable cups
-    systemctl restart --now cups
-    # Scanner
-    pamac install  brscan4 brscan-skey
-    pamac install xsane colord-sane
-    ```
-
 === "Debian"
     Debian [packages are here][a].
 
@@ -73,9 +60,9 @@ brsaneconfig4 -a name=scany model=MFC-L2750DW ip={IP}
 ## GIMP
 GIMP can be used to scan and export images/PDF's as well. Preferred.
 
-=== "Manjaro"
+=== "CachyOS"
     ``` bash
-    pamac install colord-sane xsane gimp
+    paru -S xsane gimp
     ```
 
 === "Debian"
@@ -95,10 +82,10 @@ Utility for processing scans alternative to GIMP.
 gscan will scan but sometimes it will appear 'black' in the preview. Just save
 the PDF, it will be saved correctly.
 
-=== "Manjaro"
+=== "CachyOS"
     ``` bash
     # Install all dependencies.
-    pamac install gscan2pdf tesseract-data-eng
+    paru -S gscan2pdf tesseract-data-eng
     ```
 
 === "Debian"
@@ -114,9 +101,9 @@ the PDF, it will be saved correctly.
 Web services may be used to connect the scanner, which is the same method that
 Windows uses.
 
-=== "Manjaro"
+=== "CachyOS"
     ``` bash
-    pamac install sane-airscan
+    paru -S sane-airscan
     ```
 
 === "Debian"

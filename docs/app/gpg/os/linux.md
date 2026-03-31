@@ -21,14 +21,6 @@ Install GPG and security card agents on machine.
     systemctl start pcscd.service
     ```
 
-=== "Manjaro"
-    ``` bash
-    pamac install gnupg pcsclite ccid hopenpgp-tools stoken
-    pamac install yubikey-personalization
-    systemctl enable pcscd.service
-    systemctl start pcscd.service
-    ```
-
 === "Debian"
     ``` bash
     apt update && apt upgrade

@@ -1,15 +1,16 @@
 # Linux
 All modern linux distributions support wireguard with 5.6+ Kernels.
 
-=== "Manjaro"
+=== "CachyOS"
     ``` bash
-    pamac install wireguard-dkms wireguard-tools wireguard-ui
+    paru -S wireguard-tools wireguard-tray
     ```
 
 === "Debian"
     ``` bash
     apt install wireguard
     ```
+
 === "Ubuntu"
     ``` bash
     apt install wireguard

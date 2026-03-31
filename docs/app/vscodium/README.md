@@ -8,12 +8,6 @@ VSCodium / Code is VSCode without telemetry.
     pacman -S vscodium  # or use the git source release.
     ```
 
-=== "Manjaro"
-    !!! example "⌘ ➔ Add/Remove Software ➔ Search ➔ AUR"
-        * vscodium-bin
-        * vscodium-bin-marketplace
-        * vscodium-features
-
 === "Windows"
     ``` powershell
     winget install vscodium
