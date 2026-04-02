@@ -9,6 +9,7 @@
       ↓ | 2193  | Down arrow.
       ⚠ | 26a0  | Warning.
       🛈 | 1f6c8 | Informational.
+      ⛑ | 26d1 | Rescue.
      🗘 | 1f5d8 | Waiting / Working / Processing.
       ✔ | 2714  | Success / Enabled / On.
       ✘ | 2718  | Failure / Disabled / Off.
