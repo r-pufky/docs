@@ -15,8 +15,8 @@ Install GPG and security card agents on machine.
 
 === "CachyOS"
     ``` bash
-    pacman -S --needed pinentry pcsclite ccid hopenpgp-tools stoken gnupg
-    pacman -S --needed yubikey-personalization-gui
+    pacman -S --needed pinentry pcsclite pcsc-tools ccid hopenpgp-tools stoken gnupg
+    pacman -S --needed yubikey-personalization-gui yubikey-manager
     systemctl enable pcscd.service
     systemctl start pcscd.service
     ```

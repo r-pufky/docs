@@ -1,6 +1,52 @@
 # Troubleshooting
 
 
+## Ironkey commands fail with KTGetDeviceInfo ERROR!!
+[SCSI device driver][e] must be loaded for the device to be recognized. Load
+the Kernel module and retry.
+
+!!! danger ""
+   KTGetDeviceInfo ERROR!!
+   return code = 0x13
+
+``` bash
+# Just modprobe the driver and re-execute the command
+sudo modprobe sg
+```
+
+
+## Yubikey only [appears for root user][f].
+Add a custom udev rule to enable non-root user access to yubikey devices.
+
+!!! danger ""
+   gpg --card-status
+   > gpg: selecting card failed: No such device
+   > gpg: OpenPGP card not available: No such device
+
+!!! abstract "/usr/lib/udev/rules.d/99-yubikey.rules
+   0644 root:root
+
+   ``` udev
+   # Allow non-root user access to device.
+   SUBSYSTEMS=="usb", ATTRS{idVendor}=="1050", ATTRS{idProduct}=="0116", TAG+="uaccess"
+   ```
+
+Reconnect Yubikey device for it to be found.
+
+## No Devices Found
+Running background daemons have likely locked the CCID interface preventing
+ykman access. Stop service and retur commands.
+
+!!! danger ""
+   ykman openpgp reset
+   > No devices found.
+
+``` bash
+sudo killall gpg-agent scdaemon pcscd
+# Any ykman command.
+ykman openpgp reset
+```
+
 ## No agent running error
 gpg-agent can sometimes die in the background, just restart it.
 
@@ -78,3 +124,5 @@ scd apdu 00 44 00 00
 [b]: setup/export_to_yubikey.md
 [c]: os/windows.md#configure-gpg-agent
 [d]: https://security.stackexchange.com/questions/165286/how-to-use-multiple-smart-cards-with-gnupg
+[e]: https://sebtombs.com/computing/hardware/kingston-d300-ktgetdeviceinfo-error
+[f]: https://www.preining.info/blog/2016/05/yubikey-neo
