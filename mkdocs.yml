@@ -50,6 +50,7 @@ nav:
     - 'app/systemd.md'
     - 'VSCodium (VSCode/Code)':
       - 'app/vscodium/README.md'
+      - 'app/vscodium/code_server.md'
       - 'app/vscodium/troubleshooting.md'
     - 'Vim':
       - 'app/vim/README.md'
