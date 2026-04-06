@@ -96,7 +96,7 @@ systemctl --user edit --full arch-update.timer
 ``` bash
 pacman -S paru  # AUR repository helper (install non-arch AUR packages).
 
-pacman -S iptables-nft  # More performant IPTables drop-in.
+pacman -S iptables  # Original iptables now at iptables-legacy.
 ```
 
 [a]: https://cachyos.org/
