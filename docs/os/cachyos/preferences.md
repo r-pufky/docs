@@ -447,6 +447,9 @@ pacman -S --needed alacritty git git-lfs vim tmux meld ncdu htop
 pacman -S --needed signal-desktop steam mumble
 # MPV with remove API (hotkey control)
 pacman -S --needed mpv mpv-mpris
+
+# Enable HEIC/HEIV format support for applications
+pacman -S libheif
 ```
 
 [Install Chrome](../../app/chrome.md).
