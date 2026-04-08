@@ -1,6 +1,11 @@
 # [Code Server][a]
 VSCodium via WebUI over forwarded SSH connection.
 
+!!! tip "Use Chrome"
+    Chrome correct interprets complex key combinations. When navigating to
+    code-server, install the offered PWA (progessive web app). This will open
+    the code-serve page in a separate window and allow native-like app usage.
+
 === "CachyOS"
     ``` bash
     paru -S code-server
@@ -41,6 +46,30 @@ Changes require service restart.
 
 ``` bash
 systemctl --user start code-server
+```
+
+### Configure SSH Host
+Create a pre-defined host to automatically configure forwarded ports.
+
+!!! abstract "~/.ssh/confg"
+    0644 {USER}:{USER}
+
+    ``` bash
+    Host remote_dev
+      HostName {IP}
+      # code-server, mkdocs
+      LocalForward 2222 localhost:2222
+      LocalForward 8000 localhost:8000
+      # GPG Agent forwarding (local yubikey taps for remote).
+      #RemoteForward /run/user/1000/gnupg/S.gpg-agent /run/user/1000/gnupg/S.gpg-agent
+      #RemoteForward /run/user/1000/gnupg/S.gpg-agent.ssh /run/user/1000/gnupg/S.gpg-agent.ssh
+      ForwardAgent yes
+      Port 51821
+      LogLevel error
+    ```
+
+``` bash
+ssh remote_dev
 ```
 
 ## Locations
