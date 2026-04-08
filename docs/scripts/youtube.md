@@ -76,13 +76,13 @@ yt-dlp https://youtube.com/playlist?list={PLAYLIST ID} --yes-playlist
 ## [Track Downloaded Videos for Archiving.][a]
 ``` bash
 # This downloads only videos not listed in file and adds any downloaded videos
-# to the given file.
+# to the given file. Space downloads randomly to prevent blocking.
 #
 # File can be manually created after initial download by using naked site and
 # id:
 #
 #   redgifs 1234567890abcef
-yt-dlp {URL} --download-archive archive.md
+yt-dlp {URL} --sleep-interval 10 --max-sleep-interval 30 --download-archive archive.md
 ```
 
 
