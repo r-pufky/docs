@@ -4,7 +4,6 @@ access/control to your GPG identity.
 
 
 ## Verify
-
 1. Encrypted Media has the following:
     * **$GPGBACKUP/private/$KEYID.master.asc**
     * **$GPGBACKUP/private/$KEYID.subkeys.asc**

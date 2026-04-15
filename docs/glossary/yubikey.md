@@ -1,10 +1,8 @@
 # Yubikey
 
-
 ## Yubikey Manager
 Application that will manage Yubikey configuration. There is a
 [GUI Yubikey Manager][a] and a [CLI Yubikey Manager][b].
-
 
 ## Yubikey Password/PIN
 Password for **user** and **admin** accounts for a Yubikey. Can be up to

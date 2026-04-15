@@ -1,7 +1,6 @@
 # PiKVM
 Raspberry Pi KVM with multi-port extenders based on Arch linux.
 
-
 ## Setup
 !!! tip
     All commands are executed from an SSH session or launching Terminal after
@@ -25,7 +24,7 @@ kvmd-htpasswd set admin  # Update WebUI admin password.
 ```
 
 ### Enable Certificate Authentication
-See [SSHD](../service/ssh/README.md).
+See [SSHD](../network/ssh/README.md).
 
 ``` bash
 cp {SSH KEYS} /root/.ssh/authorized_keys
@@ -42,29 +41,24 @@ systemctl restart ssh
 ```
 
 ### Update
-
 ``` bash
 pikvm-update
 ```
 
 ### Enable Two-Factor Authentication (2FA)
-
 ``` bash
 kvmd-totp init
 ```
 
 ### Disable Web Terminal
-
 ``` bash
 # Be sure SSH connections work.
 systemctl disable --now kvmd-webterm
 ```
 
 ### Disable Switch Lights
-
 !!! example "Switch ➔ Color scheme"
     Drag all sliders to the left.
-
 
 ## Remote ISO Mount
 Mount ISO image remotely for connected machine to use.
@@ -76,7 +70,5 @@ Mount ISO image remotely for connected machine to use.
 5. Drive ➔ Connect drive to server
 6. Connect to local console and reboot
 
-
 ## Reference[^1]
-
 [^1]: https://docs.pikvm.org/v4

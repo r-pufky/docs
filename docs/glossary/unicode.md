@@ -1,5 +1,4 @@
 # Unicode Glyphs
-
   Glyph | Code  | Use
  ------:|:------|-----
       ➔ | 2794  | Menus, sub-items, links.
@@ -7,7 +6,8 @@
       ↑ | 2191  | Up arrow.
       → | 2192  | Right arrow.
       ↓ | 2193  | Down arrow.
-      ⚠ | 26a0  | Warning.
+      🛆 | 1f6c6  | Warning.
+      🛇 | 1f6c7 | Danger. Stop.
       🛈 | 1f6c8 | Informational.
       ⛑ | 26d1 | Rescue.
      🗘 | 1f5d8 | Waiting / Working / Processing.
@@ -23,7 +23,6 @@
     🔇 | 1F507 | Mute.
 
 ## Alert Window Glyphs
-
   Glyph | Code | Use
  ------:|:-----|-----
       ─ | 2500 | horizontal line.

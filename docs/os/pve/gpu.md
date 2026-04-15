@@ -1,11 +1,9 @@
 # GPU Passthrough
 All PVE nodes must be configured for LXC/VM migration support.
 
-
 ## Host (PVE)
 
 ### Kernel Options
-
 === "AMD"
 
     !!! abstract "/etc/default/grub"
@@ -63,7 +61,6 @@ lspci -k | grep -A 3 -i "VGA"
 ```
 
 ### Map non-root users to GPU
-
 !!! tip "Unprivileged containers require **other** R/W permissions on GPU."
 
 ``` bash
@@ -98,9 +95,7 @@ ls -l /dev/dri
     KERNEL=="card1", MODE="0666"
     ```
 
-
 ## Container configuration
-
 ``` bash
 # Add root user to render, video groups.
 usermod -aG render,video root
@@ -143,8 +138,7 @@ On PVE Host
 ls -l /dev/dri
 ```
 
-Reference[^1][^2][^3]
-
+## Reference[^1][^2][^3]
 [^1]: https://bookstack.swigg.net/books/linux/page/lxc-gpu-access
 [^2]: https://forum.proxmox.com/threads/proxmox-lxc-igpu-passthrough.141381/
 [^3]: https://www.youtube.com/watch?v=0ZDr5h52OOE

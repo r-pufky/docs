@@ -1,8 +1,6 @@
 # Linux
 
-
 ## Install Packages
-
 === "CachyOS"
 
     ``` bash
@@ -27,13 +25,11 @@
 === "Debian"
     Debian [packages are here][a].
 
-
 ## Enable CUPS
 ``` bash
 sudo systemctl enable cups
 sudo systemctl restart --now cups
 ```
-
 
 ## Add Printer
 !!! tip
@@ -47,7 +43,6 @@ sudo systemctl restart --now cups
             * Name: **{PRINTER DESCRIPTION}**
             * Share this printer: ✘
 
-
 ## [Add Scanner][b]
 Scanner device is added using the brother utility through xsane.
 
@@ -55,7 +50,6 @@ Scanner device is added using the brother utility through xsane.
 # Scanning uses TCP port 54921. Max scanning resolution is 1200x1200dpi.
 brsaneconfig4 -a name=scany model=MFC-L2750DW ip={IP}
 ```
-
 
 ## GIMP
 GIMP can be used to scan and export images/PDF's as well. Preferred.
@@ -74,7 +68,6 @@ GIMP can be used to scan and export images/PDF's as well. Preferred.
     Verify scanning by acquiring a preview from the main xsane window that
     opens. This may pop under other windows or on different monitors based on
     GIMP configuration.
-
 
 ## gscan2pdf
 Utility for processing scans alternative to GIMP.
@@ -95,7 +88,6 @@ the PDF, it will be saved correctly.
 
 !!! example "ctrl + g"
     Verify scanning by refreshing devices, running a scan, and saving it.
-
 
 ## [Web Services Device (Scanner)][c]
 Web services may be used to connect the scanner, which is the same method that

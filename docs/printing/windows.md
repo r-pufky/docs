@@ -1,7 +1,6 @@
 # Windows
 Minimal installation to prevent software bloat. [Driver Downloads][a].
 
-
 ## Manual Install
 Recommended. This will install the printer/scanner via the print management
 console using only drivers and basic scanning software. Also applies to adding
@@ -26,7 +25,6 @@ printer across subnets. Requires **SNMP** and **WebServices** to be enabled.
 ### [Remove Generic Driver][b]
 !!! example "⌘ ➔ run ➔ PrintManagement.msc ➔ Print Servers ➔ (local) ➔ Drivers ➔ Brother Laser Type1 Class Driver ➔ RMB ➔ Delete"
 
-
 ## iPrint & Scan
 Enables all scanning options when using the scanning feature.
 !!! info
@@ -44,7 +42,6 @@ Enables all scanning options when using the scanning feature.
     * Configure: ✘
 
     Read the disable wording carefully.
-
 
 ## Full Install
 !!! danger
@@ -126,7 +123,6 @@ Disable Auto launch Services
 !!! example "⌘ ➔ iPrint & Scan ➔ Scan ➔ 1200dpi"
     Properly installed scanner will allow > 300dpi scanning and show **all
     settings**.
-
 
 ## Complete Uninstall
 Use the following to clean a system if brother utilities were installed and

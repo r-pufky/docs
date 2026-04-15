@@ -2,7 +2,6 @@
 Exports GPG subkeys to Yubikey so master key can remain offline while still
 using GPG keys.
 
-
 ## Understanding How Yubikeys Work
 Read the [technical manual][a] to understand how Yubikeys work. This will setup
 the Yubikey to use the **CCID** interface to setup **openpgp** on the key.
@@ -18,7 +17,6 @@ case **GPG**.
 touch preferences.
 
 **gpg --edit-card** will set openpgp configuration, like PGP name, login, url.
-
 
 ## Export Subkeys to Yubikeys
 !!! danger
@@ -122,14 +120,12 @@ Your selection? 3
 gpg> save
 ```
 
-
 ## Verify subkeys are Offloaded
 ``` bash
 gpg --list-secret-keys
 
 # > - Offloaded keys will have > next to the key (key is on card).
 ```
-
 
 ## Restore Original GPG State
 The original GPG state needs to be reloaded to export Subkeys to additional

@@ -1,8 +1,6 @@
 # [Crush 80 Reboot Pro][a]
 
-
 ## Update Firmware
-
 1. Download and extract [firmware][b]
 2. Unplug.
 3. Hold **Fn+Esc** for **3** seconds to put in factory default state.
@@ -12,9 +10,7 @@
 5. Run firmware update wait until **success** message.
 6. Unplug keyboard, wait a few seconds, then plug it in. Ready for usevia.app.
 
-
-## Keymapping
-
+## Keymap
 1. Download and extract [VIA keymap JSON configs][b].
 2. Open VIA:
     * Windows: [usevia.app](https://usevia.app) with Chrome.
@@ -25,12 +21,10 @@
 5. Keymapper (Device should now appear).
 6. Change settings and apply.
 
-
 ## [Specific Keymaps][c]
 After remapping remove the duplicate shortcuts.
 
 ### Layer 0
-
   Key       | Map         | Name      | Purpose
  -----------|-------------|-----------|---------
   Caps Lock | **KC_LCTL** | Left Ctrl | Capslock as control.
@@ -65,13 +59,11 @@ Momentary toggle with **Fn** key.
   ←             | **RGB_SPD**    | EFFECT SPEED -   | Decrease RGB effect speed.
 
 ### Layer 3
-
   Key       | Map         | Name      | Purpose
  -----------|-------------|-----------|---------
   *         | **F24**     | F24       | User key with no window manager interaction.
 
 ### Layer 4
-
   Key       | Map         | Name      | Purpose
  -----------|-------------|-----------|---------
   *         | **F24**     | F24       | User key with no window manager interaction.

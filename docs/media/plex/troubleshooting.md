@@ -1,5 +1,15 @@
 # Troubleshooting
 
+## [Plex Repository Breaks Updates][l]
+Plex signing keys were recently changed multiple times to get to a modern
+signing key. This may leave Plex packaging in a broken state and prevent APT
+updates due to bad keys.
+
+``` bash
+# Execute fix script from Plex to resolve.
+curl -LsSf https://repo.plex.tv/scripts/setupRepo.sh | sudo bash
+```
+
 ## Fixing Playback Issues
 
 ### Crash During Library Scanning
@@ -169,3 +179,4 @@ sudo reboot
 [i]: https://github.com/ptr727/PlexCleaner
 [j]: https://github.com/jorenn92/Maintainerr
 [k]: https://github.com/Schaka/janitorr
+[l]: https://support.plex.tv/articles/235974187-enable-repository-updating-for-supported-linux-server-distributions

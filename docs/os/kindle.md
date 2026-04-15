@@ -70,7 +70,6 @@ Uses [CVE-2012-3748][d] to jailbreak recent Kindle updates.
 
 
 ## [Hotfix][f]
-
 1. **Enable** airplane mode.
 2. Download [hotfix][g].
 3. Connect kindle and extract **Update_hotfix_universal.bin** to the root of
@@ -85,7 +84,6 @@ Uses [CVE-2012-3748][d] to jailbreak recent Kindle updates.
     !!! warning
         This **must** be run after every Kindle update to ensure jailbreak
         persistence.
-
 
 ## [Install KUAL and MRPI][h]
 Kindle Unified Application Launcher (KUAL) and MobileRead Package Installer
@@ -118,7 +116,6 @@ Download [MRPI][j].
 
         KUAL should appear as a book on your Kindle once rebooted.
 
-
 ## [Disable OTA Updates][k]
 Install mod that disables updates.
 
@@ -134,7 +131,6 @@ Download [renametobin][l]
         Kindle will automatically reboot.
 
         Selecting 'Restore' will re-enable OTA updates.
-
 
 ## [KOReader][m]
 Opensource ebook reader that supports a massive amount of formats.
@@ -152,7 +148,6 @@ Download [koreader-kindlehf-*.zip][n].
 !!! tip
     See https://koreader.rocks/user_guide for a helpful user guide.
 
-
 ## [KindleForge][o]
 Opensource Kindle App Store. Allows for easy installation of packages without
 manually connecting to a computer each time.
@@ -163,15 +158,12 @@ Download [KindleForge][o].
 2. Extract **KindleForge** and **.sh script** to **Kindle/documents**.
 3. Unplug Kindle.
 
-
 ## Disable Ads
 Remove Ads and tracking information after jailbreak.
 
 !!! example "amazon.com ➔ Account ✋ ➔ Kindle ➔ Details ➔ Special Offers: ✘"
 
-
 ## Reference[^1][^2][^3][^4][^5][^6]
-
 [^1]: https://kindlemodding.org/jailbreaking
 [^2]: https://github.com/koreader/koreader
 [^3]: https://github.com/iiroak/Kindle-Filler-Disk

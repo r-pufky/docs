@@ -1,6 +1,5 @@
 # Troubleshooting
 
-
 ## [GRUB CryptFS Password Typo][a]
 Unlocked CryptFS on GRUB boot will stall if mistyping the password. Restart the
 unlock and boot process without restarting:
@@ -10,7 +9,6 @@ cryptomount -a
 insmod normal
 normal
 ```
-
 
 ## Remote Dropbear/Wireguard/CryptFS Rescue from Bad Upgrade
 System does not boot after a dist-upgrade but Dropbear connects over wireguard.
@@ -45,7 +43,6 @@ cryptsetup luksClose /dev/mapper/luks
 reboot -f
 ```
 
-
 ## [Grub OS Prober][b]
 Grub will throw the following error on 4.9+ Kernels running VM's on block
 devices or ZFS during normal upgrades:
@@ -69,7 +66,6 @@ update-grub
 apt update && apt upgrade
 reboot
 ```
-
 
 ## Reducing Disk Writes
 Minimize disk writes to SSD devices to increase longevity.

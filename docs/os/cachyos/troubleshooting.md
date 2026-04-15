@@ -1,6 +1,5 @@
 # Troubleshooting
 
-
 ## Increase Failed auth Lockout Attempts
 CachyOS will lockout a user for 10 minutes on 3 failed password attempts over
 15 minutes.
@@ -35,7 +34,6 @@ localectl set-x11-keymap us pc105 ,query ctrl:nocaps
 
 Reboot to apply.
 
-
 ## [Mouse Acceleration Seems Wonky][g]
 Adaptive refresh seems to cause mouse acceleration issues in KDE Plasma Wayland.
 
@@ -45,7 +43,6 @@ Adaptive refresh seems to cause mouse acceleration issues in KDE Plasma Wayland.
     * Display & Monitor
         * Adaptive sync:  **Never**
 
-
 ## [List of User Installed Packages][e]
 Only explicitly installed by user (no dependencies).
 
@@ -54,7 +51,6 @@ pacman -Qqe | grep -v "$(awk '{print $1}' /desktopfs-pkgs.txt)"
 ```
 
 Reference:
-
 
 ## [List of Package by Install Date][f]
 

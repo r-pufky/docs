@@ -915,19 +915,16 @@ Auto-generated Plex options to uniquely identifier a Plex server. Carry these
 settings over to new installations to retain Plex server identification.
 
 ### MachineIdentifier
-
  Variable          | Type | Default
  ------------------|------|---------
  MachineIdentifier | str  | {AUTO}
 
 ### ProcessedMachineIdentifier
-
  Variable                   | Type | Default
  ---------------------------|------|---------
  ProcessedMachineIdentifier | str  | {AUTO}
 
 ### AnonymousMachineIdentifier
-
  Variable                   | Type | Default
  ---------------------------|------|---------
  AnonymousMachineIdentifier | str  | {AUTO}

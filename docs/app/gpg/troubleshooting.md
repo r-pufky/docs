@@ -1,35 +1,33 @@
 # Troubleshooting
 
-
 ## Ironkey commands fail with KTGetDeviceInfo ERROR!!
 [SCSI device driver][e] must be loaded for the device to be recognized. Load
 the Kernel module and retry.
 
 !!! danger ""
-   KTGetDeviceInfo ERROR!!
-   return code = 0x13
+      KTGetDeviceInfo ERROR!!
+      return code = 0x13
 
 ``` bash
 # Just modprobe the driver and re-execute the command
 sudo modprobe sg
 ```
 
-
 ## Yubikey only [appears for root user][f].
 Add a custom udev rule to enable non-root user access to yubikey devices.
 
 !!! danger ""
-   gpg --card-status
-   > gpg: selecting card failed: No such device
-   > gpg: OpenPGP card not available: No such device
+      gpg --card-status
+      > gpg: selecting card failed: No such device
+      > gpg: OpenPGP card not available: No such device
 
 !!! abstract "/usr/lib/udev/rules.d/99-yubikey.rules
-   0644 root:root
+      0644 root:root
 
-   ``` udev
-   # Allow non-root user access to device.
-   SUBSYSTEMS=="usb", ATTRS{idVendor}=="1050", ATTRS{idProduct}=="0116", TAG+="uaccess"
-   ```
+      ``` udev
+      # Allow non-root user access to device.
+      SUBSYSTEMS=="usb", ATTRS{idVendor}=="1050", ATTRS{idProduct}=="0116", TAG+="uaccess"
+      ```
 
 Reconnect Yubikey device for it to be found.
 
@@ -38,8 +36,8 @@ Running background daemons have likely locked the CCID interface preventing
 ykman access. Stop service and retur commands.
 
 !!! danger ""
-   ykman openpgp reset
-   > No devices found.
+      ykman openpgp reset
+      > No devices found.
 
 ``` bash
 sudo killall gpg-agent scdaemon pcscd
@@ -54,7 +52,6 @@ gpg-agent can sometimes die in the background, just restart it.
 gpg-agent --daemon
 ```
 
-
 ## agent_genkey failed: permission denied
 Security measure; this means that the terminal you are using is not owned by
 you and therefore [GPG has aborted instead of continuing][a]. Frequently
@@ -68,7 +65,6 @@ ls -la $(tty)
 sudo chown {USER} /dev/pts/9
 ```
 
-
 ## Yubikey Not Appearing
 gpg-agent can lose the key if the daemon was restarted in the background or if
 the Yubikey is not seated properly.
@@ -77,7 +73,6 @@ the Yubikey is not seated properly.
 # Re-insert the Yubikey, then run command to verify key returns data.
 gpg --card-status
 ```
-
 
 ## SSH connection failed, Server sent: publickey
 SSH public key not provided or was not matched on the server.
@@ -88,7 +83,6 @@ SSH public key not provided or was not matched on the server.
 2. GPG agent configuration is not reloaded. Ensure SSH and Putty support in
    configuration is set, **gpg-agent**, and **gpg-connect-agent** are both
    restarted. See [Configure GPG Agent][c].
-
 
 ## Please insert card with serial number
 Original key used for authentication is not the key being used now.
@@ -107,7 +101,6 @@ gpg --with-keygrip --list-keys
 rm %appdata%\gnupg\private-keys-v1.d\{KEY}  # Windows.
 rm ~/.gnupg/private-keys-v1.d  # Linux.
 ```
-
 
 ## Hard Reset Locked Yubikey Devices
 This will **wipe** device and unlock it for use again.

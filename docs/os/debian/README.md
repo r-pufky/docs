@@ -3,7 +3,6 @@
 !!! example "Migrated to ansible collection"
     Use [r_pufky.deb][a].
 
-
 ## Install TCP BBR Kernel Patches
 TCP BBR is a new congestion controlling algorithm that is designed to respond
 to actual congestion instead of packet loss. This results in a dramatic
@@ -31,7 +30,6 @@ egrep 'CONFIG_TCP_CONG_BBR|CONFIG_NET_SCH_FQ' /boot/config-$(uname -r)
 sysctl -p  # Or reboot.
 ```
 
-
 ## Disable IPv6
 Disable if IPv6 is not being actively used to prevent any IPv6 misconfiguration
 attacks.
@@ -48,7 +46,6 @@ attacks.
 ``` bash
 sysctl -p  # Or reboot.
 ```
-
 
 ## Operations
 

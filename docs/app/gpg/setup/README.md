@@ -5,7 +5,6 @@ private key material to bad actors.
 
 
 ## Required Materials
-
 1. Live USB OS, with persistent storage to setup additional packages. Tails
    Live USB [setup instructions][a] is preferred (most secure), other
    [live USB][b] will work but be less secure. Instructions assume Debian-based
@@ -19,7 +18,6 @@ private key material to bad actors.
 
 This assumes usage of an Ironkey with Yubikeys on a Debian-base system for
 configuration.
-
 
 ## Prep Live USB
 GPG generation should be done on a air-gapped, temporal, encrypted OS to
@@ -49,7 +47,6 @@ apt install yubikey-manager yubikey-manager-qt
     **yubikey-manager-qt** is a GUI frontend which has limited functionality
     but does provide easy ways to ensure specific applets are enabled.
     **scdaemon** enables smartcard support for GPG.
-
 
 ## Prep Ironkey
 !!! tip
@@ -93,7 +90,6 @@ sudo /media/user/IRONKEY/linux/linux64/ikd300_login
     ``` bash
     dosfsck -a {IRONKEY_DEVICE}
     ```
-
 
 ## Prep Yubikey
 !!! note "Default Yubikey Passwords"
@@ -167,7 +163,6 @@ to use key.
 
 !!! tip
     All NFC options are disabled to require physical presence.
-
 
 ## Setup OpenPGP on Yubikey
 Prepare Yubikey to load GPG key material.
@@ -268,7 +263,6 @@ gpg/card> {PRESS ENTER}
 gpg/card> quit
 ```
 
-
 ## [Require touch for each Authentication, Encryption, or Signing Request][l]
 ``` bash
 ykman openpgp keys set-touch aut fixed
@@ -280,9 +274,7 @@ ykman openpgp keys set-touch enc fixed
     **Fixed** is the same as **on** but requires a new certificate to be loaded
     if this option is ever disabled.
 
-
 ## Reference[^1][^2][^3][^4]
-
 [^1]: https://developers.yubico.com/PIV/Guides/Device_setup.html
 [^2]: https://zeos.ca/post/2018/gpg-yubikey5/
 [^3]: https://www.gnupg.org/howtos/card-howto/en/ch03.html

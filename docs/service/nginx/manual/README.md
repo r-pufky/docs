@@ -108,9 +108,7 @@ location /gogs/ {
 }
 ```
 
-!!! note
-    Note trailing slashes.
-
+!!! note "Note trailing slashes."
 
 ## Redirect Path to Service URI Path
 
@@ -122,9 +120,7 @@ location /sonarr {
 }
 ```
 
-!!! note
-    Note **no** trailing slashes.
-
+!!! note "Note **no** trailing slashes."
 
 ## Custom Path for Service
 
@@ -139,9 +135,7 @@ location /sonarr {
 }
 ```
 
-!!! note
-    **tv** will automatically redirect to **sonarr**.
-
+!!! note "Note **tv** will automatically redirect to **sonarr**."
 
 ## Enable Websockets
 Allow for apps requiring websockets to be used.
@@ -164,16 +158,15 @@ location /crashplan/ {
 * **proxy_http_version 1.1** is required, but included in
   **proxy_control.conf**.
 
-
 ## [Rewrite Responses with Subpath][d]
 Some applications are not URI Path aware and will re-write all responses behind
 the proxy using a static relative path or hostname; which will cause 404 errors
 and the app to break. Partially fixed using [http_sub_module][e].
 
-!!! note
-  Re-writing the proxy response generally won't fix a complicated application
-  as there will be a large number of unknown responses that need to be
-  re-written. Usually this is resolved using a sub-domain instead.
+!!! note "Note"
+    Re-writing the proxy response generally won't fix a complicated application
+    as there will be a large number of unknown responses that need to be
+    re-written. Usually this is resolved using a sub-domain instead.
 
 ``` nginx
 sub_filter      https://app:port/ https://reverse-proxy-server/subpath/;
@@ -185,7 +178,6 @@ sub_filter_once off;
   **https://reverse-proxy-server/subpath/page.html**.
 * Second rules rewrites relative responses **href="/other-page.html"** to
   **href="https://reverse-proxy-server/subpath/other-page.html"**.
-
 
 ## [Enable NGINX Start/Running with Backends Down][f]
 [By design NGINX][g] will prevent startup or running if upstream backends are
@@ -219,9 +211,7 @@ server {
 }
 ```
 
-
 ## Reference[^1][^2][^3]
-
 [^1]: https://community.home-assistant.io/t/nginx-reverse-proxy-set-up-guide-docker/54802
 [^2]: https://docs.nginx.com/nginx/admin-guide/installing-nginx/installing-nginx-open-source/
 [^3]: https://www.digitalocean.com/community/tutorials/understanding-nginx-server-and-location-block-selection-algorithms

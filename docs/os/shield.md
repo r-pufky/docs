@@ -1,6 +1,5 @@
 # Shield TV
 
-
 ## Fix Black Screen & Launcher Crashes
 The default launcher crashes, black screens consistently, and injects Ads to
 the home screen. Use an alternative launcher to resolve these issues.
@@ -38,7 +37,6 @@ adb shell pm disable-user --user 0 com.google.android.tvlauncher
 !!! example "⚙ ➔ Developer Options ➔ Remote Debugging: ✘"
     This may also be called 'wireless debugging'.
 
-
 ## [Disable Google Voice Button][e]
 !!! example "⚙ ➔ Settings ➔ Apps ➔ App Permissions ➔ Microphone ➔ Show System Apps"
     * Google: **Don't Allow**
@@ -48,9 +46,7 @@ adb shell pm disable-user --user 0 com.google.android.tvlauncher
 
 Button may be remapped to other functions with [Button Mapper][f].
 
-
 ## Reference[^1][^2]
-
 [^1]: https://www.reddit.com/r/ShieldAndroidTV/comments/ssbtmi/a_short_guide_on_how_to_get_rid_of_ads_while
 [^2]: https://www.nvidia.com/en-us/geforce/forums/legacy-products/12/173396/rooting-your-shield-the-why-and-how
 

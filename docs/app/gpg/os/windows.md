@@ -8,7 +8,6 @@
     GPG SSH RSA Public Key. See [GPG Export Keys][b]. See [SSH][c] for remote
     SSH configuration.
 
-
 ## Configure GPG4win
 GPG4Win provides middleware to enable Yubikey GPG use. Download [gpg4win][d]
 and verify integrity.
@@ -182,9 +181,7 @@ Target does not need to enable outbound agent forwarding.
     AllowAgentForwarding no
     ```
 
-
 ## Reference[^1][^2][^3][^4][^5][^6]
-
 [^1]: https://developers.yubico.com/PGP/SSH_authentication/Windows.html
 [^2]: https://www.linode.com/docs/guides/gpg-key-for-ssh-authentication/
 [^3]: https://codingnest.com/how-to-use-gpg-with-yubikey-wsl/
@@ -194,7 +191,7 @@ Target does not need to enable outbound agent forwarding.
 
 [a]: ../setup/import.md#trust-gpg-public-key-locally
 [b]: ../setup/backup.md#export-gpg-keys
-[c]: ../../../service/ssh/README.md
+[c]: ../../../network/ssh/README.md
 [d]: https://www.gpg4win.org/package-integrity.html
 [e]: https://superuser.com/questions/1075404/how-can-i-restart-gpg-agent
 [f]: https://www.putty.org

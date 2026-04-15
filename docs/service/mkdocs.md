@@ -4,7 +4,6 @@ Project documentation with Markdown.
 !!! warning "MkDocs 2.0 [Introduces Breaking Changes][b]"
     Continue with 1.x until [zeniscal is a suitable replacement][c].
 
-
 ## Setup
 An [auto configured environment](#auto-configured-environment) direnv is highly
 recommended.
@@ -51,7 +50,7 @@ recommended.
 Preferred as entering docs directory will automatically setup virtual
 environment and activate.
 
-[Install direnv](../app/direnv.md#setup) and [create initial venv](#manual).
+[Install direnv](../app/cli/direnv.md#setup) and [create initial venv](#manual).
 
 !!! abstract ".envrc"
     0644 {USER}:{USER}
@@ -92,7 +91,6 @@ One-time configuration per repository.
     * Source: Deploy from branch
     * Branch: gh-pages ➔ / (root)
 
-
 ## Local Live Testing
 Changes will automatically be detected and re-rendered for local browser
 testing.
@@ -114,7 +112,6 @@ git push && git push --tags
 # Deploy docs to live site.
 uv run mkdocs gh-deploy
 ```
-
 
 ## Material Theme
 Use MkDocs with material theme using minimal extensions to maintain as close to

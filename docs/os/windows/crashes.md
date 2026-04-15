@@ -3,7 +3,6 @@ I'm asked this all the time, so I put together a list of all the common things
 to look for when a PC is flaky and crashing. Even if you *know what you're
 doing*, you should run through these steps. You'd be surprised.
 
-
 ## General Maintenance
 Required typically yearly. If you are using a new build, skip to [Random
 Crashes](#random-crashes).
@@ -36,7 +35,6 @@ Crashes](#random-crashes).
 7. Ensure all connections are tight, and you haven't knocked anything out of
    whack.
 
-
 ## Random Crashes
 In most cases I've seen, this is due to hardware not connected properly, or
 actual defective hardware. Most [BSOD's][a] I've seen in Windows 10 are
@@ -54,7 +52,6 @@ the screen infer?
 Basic utilities to monitor system include [HWinfo][b] and [HWmonitor][c]. Both
 of these provide monitoring and logging for many computer components.
 
-
 ## Memory
 Setup [memtest86][d] on a USB drive and set it to run the standard tests.
 Faulty memory will be apparent either immediately, or within a few minutes. In
@@ -71,7 +68,6 @@ If you get errors, walk through each of these steps, retesting on each change:
 6. Iterate through the minimum number of sticks to boot; test and add an
    additional memory stick after each test.
 7. Always verify your suspected 'defective' stick independently.
-
 
 ## CPU's
 Setup [CPUZ][e] and run it. It should display your CPU as well as current
@@ -98,7 +94,6 @@ This will allow you to test your CPU under load.
 4. Is your BIOS configured to shutdown automatically when a temperature limit is
    hit? By default this is for extreme cases, but you may be hitting it.
 
-
 ## GPU's
 Setup [GPUZ][g] and [Furmark][h]. Use GPUZ to get information on the GPU, and
 run a stress test on your video card with Furmark. A stable system should be
@@ -124,7 +119,6 @@ f8. Use a different PCIe slot. Your 16x might be borked.
 9. SLI Configurations
     * Test each card independently, in each slot.
     * Verify that both cards and slots are functioning properly.
-
 
 ## HDD's
 Setup [CrystalDiskInfo][k] and run it. It should detect all of your HDD's and
@@ -172,7 +166,6 @@ entail loud 'clicking' or 'clacking' and are obvious.
 5. If M.2 NVME: ensure slot isn't shared or disabled. Move to another slot if
    possible.
 
-
 ## Motherboards
 This is very specific to each motherboard you own. however general concepts
 remain the same. Get your motherboard model in the BIOS, usually by pressing
@@ -205,9 +198,7 @@ remain the same. Get your motherboard model in the BIOS, usually by pressing
    *much more sensitive* to RAM and SSD's used, even though they are based on a
    standard.
 
-
 ## Reference[^1]
-
 [^1]: https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer
 
 [a]: ../../glossary/os.md#bsod

@@ -4,7 +4,6 @@
     Secure boot and CSM must be disabled during UEFI installations. It can be
     configured afterwards.
 
-
 ## Install
 Use [USB Boot Disk][c].
 
@@ -80,7 +79,6 @@ sysyetctl start sshd
 ```
 
 ## Configure Updates
-
 ``` bash
 pacman -S cachy-update
 cachy-update --gen-config
@@ -90,7 +88,6 @@ systemctl --user enable --now arch-update.timer
 # OnUnitActiveSec=1d
 systemctl --user edit --full arch-update.timer
 ```
-
 
 ## Optional Packages
 ``` bash
@@ -103,4 +100,4 @@ pacman -S iptables  # Original iptables now at iptables-legacy.
 [b]: https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#Implementing_Secure_Boot
 [c]: ../windows/README.md#create-uefi-usb-boot-disk
 [d]: https://wiki.archlinux.org/title/Security#Restricting_root
-[e]: ../../service/ssh/sshd/linux.md
+[e]: ../../network/ssh/sshd/linux.md

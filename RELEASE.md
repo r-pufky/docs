@@ -1,5 +1,32 @@
 # [Release Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## 3.0.0:
+Restructure and prune documentation.
+
+Added:
+* HEIC/HEIV format support in CachyOS preferences.
+* random sleep interval for yt-dlp archiving.
+* code-server for VSCode (VSCode over WebUI).
+* Chrome PWA (progressive web app) for code-server.
+* SSH host configuration for automatic forwarding with code-server.
+* Rescue ⛑ unicode glyph.
+* Danger 🛇 unicode glyph.
+* Postgres configuration debugging commands.
+
+Changed:
+* URI's for most locations have changed due to restructuring. Please check
+  links.
+* Standardized markdown formats across all repositories.
+* scripts - moved to respective locations for applications (generally CLI).
+* Update Yubikey/GPG instructions for modern commands.
+* CachyOS switched iptables-nft to standard dependency.
+* Changed ⚠ glyph to 🛆 - improved readability in small fonts.
+
+Removed:
+* firefly - removed, no longer used.
+* EdgeOS - removed, no longer used.
+* ansible - moved to https://r-pufky.github.io/ansible_docs
+
 ## 2.4.0:
 Remove Manjaro documentation.
 

@@ -1,10 +1,7 @@
 # Promox (PVE)
 
-
 ## Setup
-
 !!! warning "Make full **stop** backup of containers/vms to **pve/backups**"
-
 
 Only install/upgrade one cluster node at a time. Configure all nodes
 homogeneously.
@@ -50,7 +47,6 @@ Remaining configuration may be done vis SSH (easier for copying). Leave console
 open for easy rescue if networking get mis-configured.
 
 ### Enable IOMMU and Passthrough Virtualization
-
 === "AMD"
 
     !!! abstract "/etc/default/grub"
@@ -60,7 +56,6 @@ open for easy rescue if networking get mis-configured.
         # IOMMU & SVM enabled in BIOS.
         GRUB_CMDLINE_LINUX_DEFAULT="quiet amd_iommu=on iommu=pt"
         ```
-
 
 === "Intel"
 
@@ -158,7 +153,6 @@ dpkg -i pve-fake-subscription_*.deb
 echo "127.0.0.1 shop.maurer-it.com" | tee -a /etc/hosts
 reboot
 ```
-
 
 ## Networking
 Update interfaces definitions as needed for new/upgrade installs, including
@@ -311,7 +305,6 @@ systemctl restart networking
 reboot
 ```
 
-
 ## Create Cluster
 
 ### [First Node][e]
@@ -325,7 +318,6 @@ pvecm status
 ```
 
 ### [All Other Nodes][e]
-
 ``` bash
 # Node2: Add node 2 to node 1.
 ssh node2
@@ -338,7 +330,6 @@ pvecm status
 ```
 
 ### [Backup Initial SSH Config][f]
-
 !!! warning
     Proxmox uses host keys and root user for intra-cluster traffic. Changing
     SSH settings may break this.
@@ -351,9 +342,7 @@ cp -av /root /autofs/pve/{DATE}-upgrade/{NODE}/complete
 cp -av /etc /autofs/pve/{DATE}-upgrade/{NODE}/complete
 ```
 
-
 ## Reference[^1][^2][^3][^4][^5][^6]
-
 [^1]: https://www.juniper.net/documentation/us/en/software/junos/is-is/topics/concept/is-is-routing-overview.html#routing-is-is-overview__id-11020505
 [^2]: https://gist.github.com/scyto/4c664734535da122f4ab2951b22b2085
 [^3]: https://www.baeldung.com/linux/ethernet-dual-cards-increase-throughput

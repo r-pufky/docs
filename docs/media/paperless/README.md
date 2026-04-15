@@ -102,7 +102,6 @@ gs -dNOPAUSE -sDEVICE=pdfwrite -dBATCH -sOutputFile={OUTPUT}.pdf -dFirstPage=1
 -dLastPage=3 {INPUT}.pdf
 ```
 
-
 ## Reverse Proxy
 Reverse proxy configuration has drastically changed resulting in multiple
 reported issues ([674][g], [817][h], [712][i]). Be sure to set the following
@@ -129,9 +128,7 @@ add_header Referrer-Policy 'strict-origin-when-cross-origin';
 
 Restart both NGINX and Paperless and try again.
 
-
 ## Reference[^1]
-
 [^1]: https://docs.paperless-ngx.com/administration
 
 [a]: https://galaxy.ansible.com/ui/repo/published/r_pufky/media/docs

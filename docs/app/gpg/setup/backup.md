@@ -9,7 +9,6 @@ determination on if this security practice is acceptable to you.
 
     Store on a (hardware) encrypted device.
 
-
 ## Confirm Key State
 Ensure master and subkeys are created and locally stored before exporting.
 
@@ -23,7 +22,6 @@ gpg --list-keys
 # > - indicates a key is exported to card already (ssb>).
 # sec# - indicates only stubs created (a private cert on different machine).
 ```
-
 
 ## Export GPG Keys
 Master and Subkeys will be encrypted with your passphrase when exported.
@@ -53,7 +51,6 @@ Backup GNUPG state for multiple Yubikey initializations.
 ``` bash
 sudo cp -avi $GNUPGHOME $GPGBACKUP
 ```
-
 
 ## [Publish Public Key][d]
 Export the public key to public key servers for GPG encrypt/decrypt/signing.

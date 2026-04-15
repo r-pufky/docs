@@ -1,9 +1,7 @@
 # Troubleshooting
 
-
 ## Ascii codec can't decode byte 0xe2 in position
 See [Failed to run vncproxy](#failed-to-run-vncproxy).
-
 
 ## [Failed to run vncproxy][a]
 SSH vncproxy proxy tunnel between pve nodes are not auto-accepted.
@@ -22,7 +20,6 @@ rm /etc/ssh/ssh_known_hosts
 pvecm updatecerts
 ```
 
-
 ## Wrong Timezone
 Containers assume UTC. Explicitly set timezone.
 
@@ -31,7 +28,6 @@ timedatectl
 timedatectl list-timezones
 timedatectl set-timezone America/Los_Angeles
 ```
-
 
 ## [Corrupted Terminal Characters or No UTF-8 Support][b]
 Containers do not have locals set by default. Specify default locales for the
@@ -68,12 +64,10 @@ Reference:
 
 * https://old.reddit.com/r/Proxmox/comments/dhgez0/console_utf8
 
-
 ## [LXC Long Boot Times or No Console][c]
 Debian based systems will pause for up to **5** minutes on boot waiting for
 **SLAAC** IPv6 configuration information; appearing to have no console. Disable
 IPv6 if not actively used.
-
 
 ## CephFS Read-only Cannot Run Backups
 In cases of individual node backups after a cluster is 'broken'.
@@ -85,8 +79,7 @@ In cases of individual node backups after a cluster is 'broken'.
 pvecm expect 1
 ```
 
-
-# [Proxmox hard locks][d] or LXC/VM's crash consistently.
+## [Proxmox hard locks][d] or LXC/VM's crash consistently.
 Temporarily use 6.14 Kernel for 9.1.4 PVE release until stability issues are
 resolved. Test again in 9.2 release.
 

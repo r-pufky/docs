@@ -8,7 +8,6 @@
     It is assumed that the printer is on an isolated VLAN with all Wifi
     disabled.
 
-
 ## Common Endpoints
 Commonly used endpoints for networking printing.
 
@@ -19,7 +18,6 @@ Commonly used endpoints for networking printing.
  IPP/IPPS    | **https://{IP}/ipp/port1/** (jetdirect compatibility)
 
 Additional enabled endpoints found at: network ➔ network ➔ service.
-
 
 ## Printer Configuration
 !!! tip

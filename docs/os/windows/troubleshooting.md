@@ -1,6 +1,5 @@
 # Troubleshooting
 
-
 ## Applications Not Appearing in Start Menu Searches
 Background Tasks need to be enabled for the application index to be updated when
 new programs are installed.
@@ -12,7 +11,6 @@ By [disabling all background tasks (global toggle)][a] this index is never
 updated, and therefore apps will stop appearing in start menu searches. You can
 still disable all apps in the background, however the service still needs to be
 enabled.
-
 
 ## [NTFS File Ownership Access Denied][b]
 [Default well known SIDs][c] were removed from file permissions and replaced
@@ -30,7 +28,6 @@ setacl.exe -on c:\ -ot file -actn trustee -trst "n1:S-old-501;n2:S-new-501;ta:re
 ```
 
 Affected NTFS partition should be nuked and re-formatted.
-
 
 ## Undeletable System Volumes
 System Volume information copied from another system which no longer exists.
@@ -57,7 +54,6 @@ bcdedit --%  /set {GUID} hypervisorlaunchtype off
 ```
 
 Restart holding **shift** to show boot options. Select **No Hyper-V**.
-
 
 ## Locked out after [Update (Password Reset)][g]
 Updates may cause users to be locked out after rebooting.
@@ -89,7 +85,6 @@ Alternative Account [(no admin required).][h]
     net user {USER} {PASS}
     ```
 
-
 ## [UTC Realtime Clock][i]
 Only required if dual booting requires Windows 10.
 
@@ -114,7 +109,6 @@ handle clock updates.
     Type: **DWORD**
 
     Value: **0**
-
 
 ## Realtek A-Volute (Nahimic)
 Realtek has added A-Volute(Nahimic) services to the install package. These
@@ -164,13 +158,10 @@ Disable Nahimic Scheduled Tasks (tasks may not exist)
 Delete files that have been placed in
 **C:\Users\{USER}\AppData\Local\NhNotifSys**.
 
-
 ## EA Updater (or other apps) showing in search results
-
 !!! example "⌘ + i ➔ Privacy & Security ➔ Searching Windows"
     * Classic: ✔
     * Exclude **all** drives
-
 
 ## [Disable USB Selective Suspend][m]
 Prevents external drives from being disconnected while in use.
@@ -183,7 +174,6 @@ Prevents external drives from being disconnected while in use.
 !!! example "⌘ + i ➔ System ➔ Power & Battery"
     Verify current power plan isn't set to aggressively manage USB power.
 
-
 ## [Prevent Disk Check on Every Boot][n]
 Dual booting systems encounter this.
 
@@ -195,7 +185,6 @@ Dual booting systems encounter this.
     Type: **DWORD**
 
     Value: **0**
-
 
 ## [Astro A40's Not Consistently Working][o]
 Windows 11 requires DAC to be directly connected to a motherboard USB port and

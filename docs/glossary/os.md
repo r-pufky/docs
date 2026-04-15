@@ -1,12 +1,10 @@
 # Operating Systems
 
-
 ## LDAP
 Lightweight Directory Access Protocol. Directory service that offers dedicated
 data storage and APIs for accessing stored information. It functions
 independently of Active Directory and can function as a standalone data store
 or can replicate data.
-
 
 ## IRM
 Information Rights Management. Form of IT security technology used to protect
@@ -15,7 +13,6 @@ traditional Digital Rights Management (DRM) that applies to mass-produced media
 like songs and movies, IRM applies to documents, spreadsheets, and
 presentations created by individuals. IRM protects files from unauthorized
 copying, viewing, printing, forwarding, deleting, and editing.
-
 
 ## Windows
 

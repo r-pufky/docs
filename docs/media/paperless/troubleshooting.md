@@ -1,6 +1,5 @@
 # [Troubleshooting][a]
 
-
 ## HTTP 500 Error During Import
 Typically due to Paperless updating classification models and not rebuilding
 the **classification_model.pickle** object:
@@ -16,7 +15,6 @@ rm paperless_ngx_cfg_data_dir/classification_model.pickle
 systemctl restart paperless_*
 ```
 
-
 ## PDF's fail to ingest with older ICC profiles.
 Some PDF's with [older ICC profiles][b] may fail to be ingested. Though rare,
 these can be manually pre-processed to fix the ICC profiles:
@@ -24,7 +22,6 @@ these can be manually pre-processed to fix the ICC profiles:
 ``` bash
 gs -o output.pdf -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress input.pdf
 ```
-
 
 ## PDF failed import from consumption directory.
 Paperless does not clean cache aggressively and TMPFS is typically cleared only

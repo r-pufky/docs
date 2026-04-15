@@ -6,7 +6,6 @@ The GPG Master Key is your digital identity and should be kept **offline** and
     Ensure machine is **air-gapped** (no transmission devices on) during this
     setup.
 
-
 ## Prepare Environment
 Setup GPG to store configuration on encrypted storage and setup secure
 cross-platform preferences.
@@ -47,7 +46,6 @@ export GPGBACKUP=/media/user/KINGSTON/backup
     use-agent  # Enable smartcard use.
     ```
 
-
 ## Generate Strong Password
 Generate a strong random password for use with the GPG master key. Doing
 actions on the system will slowly increase the entropy pool.
@@ -64,7 +62,6 @@ cat /proc/sys/kernel/random/entropy_avail
 # Generate a random 64 bit ACSII safe sequence for GPG password.
 gpg --gen-random --armor 0 64
 ```
-
 
 ## Create Master Key
 Master key will **only** certify subkeys - it is **not** used directly to deal
@@ -173,7 +170,6 @@ Export master key ID to bash environment for easy reference later.
 export KEYID=################
 ```
 
-
 ## Add [Photo to Master Key (Optional)][c]
 A photo to help confirm your identity (typically a head shot); this is added to
 your GPG key for additional verification in person.
@@ -195,7 +191,6 @@ Is this correct? (y/N) y
 
 gpg> save
 ```
-
 
 ## Add Additional Identities (Optional)
 Associate additional metadata to GPG key, useful if you have multiple emails,
@@ -223,7 +218,6 @@ gpg> uid 1
 gpg> primary
 gpg> save
 ```
-
 
 ## Sign New Key with Existing Key (Optional)
 This will extend the chain of trust and prove that the new key is controlled by

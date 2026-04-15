@@ -10,7 +10,6 @@ Plex Media Server.
     * Map your media directly to where it was before to prevent needing to
       modify any libraries. This should be **read-only**.
 
-
 ## New Setup
 A new plex install (or one requiring a new access token after revocation)
 requires the initial manual setup process to be run locally. Use a SSH tunnel

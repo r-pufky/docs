@@ -1,5 +1,4 @@
 # Windows
-
 !!! warning "Registry & GPO Tweaks Removed"
     [See 2022-10.19.0][a] for Registry and GPO settings before they were
     removed.
@@ -15,7 +14,6 @@
 
 !!! tip
     See [run commands for launching all settings windows from run command][t].
-
 
 ## [Setting Execution Policy][d]
 Powershell scripts require unrestricted execution policy to be set to execute.
@@ -45,7 +43,6 @@ Execute script without setting ExecutionPolicy.
 ``` powershell
 PowerShell.exe -ExecutionPolicy Bypass -File {SCRIPT}.ps1
 ```
-
 
 ## ISO Downloads
 Microsoft provides ISO images of Windows for users to install, which require a

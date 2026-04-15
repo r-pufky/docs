@@ -4,7 +4,6 @@ starts if mapped drives are not mounted.
 
 Automatically mount NFS via FSTAB on boot.
 
-
 ## Create NFS mount locations
 [See NFS][a] for mounting options.
 
@@ -49,5 +48,5 @@ pvesm add dir pve --path /d/pve --content images,vztmpl,backup,snippets,rootdir,
 reboot  # NFS should be mounted on boot.
 ```
 
-[a]: ../../service/nfs/README.md
+[a]: ../../filesystem/nfs/README.md
 [b]: https://github.com/ddimick/proxmox-lxc-idmapper

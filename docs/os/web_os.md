@@ -2,7 +2,7 @@
 Smart TV Asshattery.
 
 !!! danger
-    **Always** hard block WebOS with firewall rules and [Destination NAT][a].
+    **Always** hard block WebOS with firewall rules and Destination NAT (DNAT).
 
     Track MAC addresses and block on all network devices even if not configured
     for use (e.g. Wifi and Ethernet).
@@ -32,10 +32,8 @@ Smart TV Asshattery.
     Disable all. Option sometimes re-enables during network state changes.
 
 ## [Disable LG shutdown logo][c]
-
 !!! example "🔇 ➔ 🔇 ➔ 🔇 ➔ 🔇 ➔ 🔇"
     * Show LG logo when turning off: ✘
 
-[a]: ../networking/edge_os/README.md#add-a-destination-nat-rule
 [b]: https://old.reddit.com/r/LGOLED/comments/11m88an/disable_voice_recognition_for_good/?share_id=-JMhWX4cvVxMRoHjl9aN9
 [c]: https://youtu.be/kA3_X1Zl2FI?si=hkFPX2q6hjfY6AbX&t=240

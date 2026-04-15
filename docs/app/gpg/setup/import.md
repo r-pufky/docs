@@ -8,7 +8,6 @@ created when backing up GPG state. Any of one these options below can be used.
     [automatically import][b] the correct certificate assuming the key was
     setup correctly. See [GPG Publish Key][c].
 
-
 ## GPG Public Key from File
 ``` bash
 gpg --import YOUR_PUBLIC_GPG_KEY.asc
@@ -28,7 +27,6 @@ gpg --receive-keys $KEYID  --keyserver hkps://keys.openpgp.org
 > gpg:               imported: 1
 ```
 
-
 ## GPG Public Key from Yubikey URL
 ``` bash
 gpg --card-edit
@@ -39,7 +37,6 @@ gpg/card> fetch
 > gpg: Total number processed: 1
 > gpg:               imported: 1
 ```
-
 
 ## Trust GPG Public Key Locally
 Each machine on which the signing, encryption and authentication certificates

@@ -1,8 +1,6 @@
 # [BNK9][a]
 
-
-## Keymapping
-
+## Keymap
 1. Open VIA:
     * Windows: [usevia.app](https://usevia.app) with Chrome.
     * Linux: `paru -S via-bin`
@@ -13,7 +11,6 @@
 After remapping remove the duplicate shortcuts.
 
 ### Layer 0
-
   Key           | Map             | Name | Purpose
  ---------------|-----------------|------|---------
   Upper Right   | **KC_P7**       | 7    | 7
@@ -27,7 +24,6 @@ After remapping remove the duplicate shortcuts.
   Lower Left    | **LT(3,KC_P3)** | 3    | 3, long press for layer 3.
 
 ### Layer 2
-
   Key           | Map         | Name | Purpose
  ---------------|-------------|------|---------
   Upper Right   | **F21**     | F21  | User key with no window manager interaction.
@@ -38,7 +34,6 @@ After remapping remove the duplicate shortcuts.
   Middle Left   | **KC_MNXT** | Next | Next media.
 
 ### Layer 3
-
   Key           | Map          | Name        | Purpose
  ---------------|--------------|-------------|---------
   Upper Right   | **RGB_HUI**  | HUE +       | Increase hue.

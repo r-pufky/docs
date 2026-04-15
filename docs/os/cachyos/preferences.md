@@ -1,7 +1,6 @@
 # Preferences
 These are personal configuration preferences.
 
-
 ## Install [Arc and Papirus themes][a]
 Arc-KDE is arc-dark for Plasma 6.
 
@@ -19,13 +18,10 @@ sudo find /usr/share/{plasma,aurorae,color-schemes,konsole,konversation,Kvantum,
 sudo find /usr/share/{plasma,aurorae,color-schemes,konsole,konversation,Kvantum,plasma,wallpapers,yakuake} -type f -exec chmod o+r {} \;
 ```
 
-
 ## Input & Output
-
 !!! example "⌘ ➔ System Settings ➔ Input & Output"
 
 ### Mouse & Touchpad
-
 !!! example "Mouse & Touchpad"
     * Mouse:
         * Device: **Select Mouse** (each mouse must be configured)
@@ -43,9 +39,7 @@ sudo find /usr/share/{plasma,aurorae,color-schemes,konsole,konversation,Kvantum,
         * Allow briefly lifting finger during tap-and-drag: ✔
         * Two-finger tap right-click (three finger for middle): ✔
 
-
 ### Keyboard
-
 !!! example "Keyboard"
     * Keyboard:
         * Key Bindings:
@@ -87,7 +81,6 @@ enabled for all channels to allow for splitting recording and playback devices.
         * OSD Popups for default output device: ✔
 
 ### Display & Monitor
-
 !!! example "Display & Monitor"
     * Display Configuration:
         * Identify & arrange to taste
@@ -110,7 +103,6 @@ enabled for all channels to allow for splitting recording and playback devices.
         * Edge Barrier: **None**
 
 ### Accessibility
-
 !!! example "Accessibility"
     * System Bell:
         * Audible Bell: ✘
@@ -124,7 +116,6 @@ enabled for all channels to allow for splitting recording and playback devices.
         * Ring the system bell: ✘
     * Shake Pointer:
         * Shake pointer to find it: ✘
-
 
 ## Appearance & Style
 Apply the base global theme to have a consistent starting point. Window menu is
@@ -182,13 +173,10 @@ setup in [Window Management](#window-management).
     * Login fade: ✔
     * Logout fade: ✔
 
-
 ## Apps & Windows
-
 !!! example "⌘ ➔ System Settings ➔ Apps & Windows"
 
 ### Default Applications
-
 !!! example "Default Applications"
     * Web browser: **Firefox**
     * Email client: **Firefox**
@@ -202,7 +190,6 @@ setup in [Window Management](#window-management).
     * Archive manager: **Ark**
 
 ### Notifications
-
 !!! example "Notifications"
     * Do Not Disturb mode when screens are mirrored: ✔
     * Do Not Disturb mode during screen sharing: ✔
@@ -230,7 +217,6 @@ setup in [Window Management](#window-management).
         * Power Management: **defaults** (laptops)
 
 ### Window Management
-
 !!! example "Window Management"
     * Window Behavior:
         * Focus:
@@ -271,13 +257,10 @@ setup in [Window Management](#window-management).
         * Virtual Desktop Switching Animation: **Slide**
         * Delete all extra desktops.
 
-
 ## Workspace
-
 !!! example "⌘ ➔ System Settings ➔ Workspace"
 
 ### General Behavior
-
 !!! example "General Behavior"
     * Allow Plasma to show panel and widget tooltips: ✔
     * Allow Plasma to show OSD popups for status changes: ✔
@@ -289,7 +272,6 @@ setup in [Window Management](#window-management).
     * Touch Mode: **Automatically enable as needed**
 
 ### Search
-
 !!! example "Search"
     * File Search:
         * Data to index: **Nothing (disable indexing entirely)**
@@ -310,13 +292,10 @@ setup in [Window Management](#window-management).
         * Activate when pressing any key on the desktop: ✘
         * History: **Disabled**
 
-
 ## Security & Privacy
-
 !!! example "⌘ ➔ System Settings ➔ Security & Privacy"
 
 ### Login Screen
-
 !!! note
     **Apply plasma settings** after setting background and any other theme UI
     settings. This will apply the current UI settings to the login screen; this
@@ -331,7 +310,6 @@ setup in [Window Management](#window-management).
         * Add: **/usr/share/wallpapers/Arc-Mountains/contents/images/8000x4500.png**
 
 ### Screen Locking
-
 !!! example "Screen Locking"
     * Lock screen automatically: **5 minutes**
     * Lock after waking from sleep: ✔
@@ -344,7 +322,6 @@ setup in [Window Management](#window-management).
     * Images: **8000x4500.png**
 
 ### KDE Wallet
-
 !!! example "KDE Wallet"
     * Enable the KDE Wallet Subsystem: ✔
     * Close wallet when last application stops using it: ✔
@@ -353,20 +330,16 @@ setup in [Window Management](#window-management).
     * Use KDE Wallet for the Secret Service interface: ✔
 
 ### Recent Files
-
 !!! example "Recent Files"
     * Keep history: **For 1 month**
     * Remember opened documents: **Only for specific applications**
     * Exclude applications not on the list: ✔ (remove all applications)
 
 ### User Feedback
-
 !!! example "User Feedback"
     * Plasma: **Disabled**
 
-
 ## System
-
 !!! example "⌘ ➔ System Settings ➔ System"
 
 ### Power Management
@@ -380,21 +353,17 @@ mainly to Desktops. Laptops should leave power management enabled.
     * When inactive run after: **5 minutes**
 
 ### Autostart
-
 !!! example "Autostart"
     * Delete all.
 
 ### Session
-
 !!! example "Session"
     * Ask for confirmation on shutdown, restart, and logout: ✔
     * On login launch apps that were open: **Start with an empty session**
 
-
 ## Taskbar
 
 ### Digital Clock
-
 !!! example "Clock ➔ RMB ➔ Configure Digital Clock"
     * Show date: ✔ **Always below**
     * Show seconds: **Only in tooltip**
@@ -428,7 +397,6 @@ Target below up arrow for menu or near the bottom edge under icons.
         * Always show all entries: ✔ (enable after setting above entries)
 
 ### Taskbar
-
 !!! example "Taskbar ➔ RMB ➔ Show Panel Configuration"
     * Style: **Disable floating**
     * Panel Height: **32**
@@ -439,9 +407,7 @@ Target below up arrow for menu or near the bottom edge under icons.
     * General sort applications alphabetically: ✔
     * Highlight newly installed applications: ✔
 
-
 ## Packages
-
 ``` bash
 pacman -S --needed alacritty git git-lfs vim tmux meld ncdu htop
 pacman -S --needed signal-desktop steam mumble
@@ -452,13 +418,11 @@ pacman -S --needed mpv mpv-mpris
 pacman -S libheif
 ```
 
-[Install Chrome](../../app/chrome.md).
+[Install Chrome](../../app/gui/chrome.md).
 
-[Install VSCodium](../../app/vscodium/README.md).
-
+[Install VSCode](../../app/gui/vscode/README.md).
 
 ## Fonts
-
 ``` bash
 # For user only fonts: ~/.local/share/fonts
 # System wide fonts: /usr/local/share/fonts
@@ -468,9 +432,7 @@ find /usr/local/share/fonts -type f -exec chmod 0444 {} \;
 fc-cache
 ```
 
-
 ## Reference[^1][^2]
-
 [^1]: https://github.com/PapirusDevelopmentTeam/arc-kde/issues/140
 [^2]: https://bbs.archlinux.org/viewtopic.php?id=303293
 

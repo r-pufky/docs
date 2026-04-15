@@ -12,7 +12,6 @@ day to day usage.
 
 
 ## Reference[^1][^2][^3][^4][^5]
-
 [^1]: https://github.com/drduh/YubiKey-Guide
 [^2]: https://zacharyvoase.com/2009/08/20/openpgp/
 [^3]: https://zeos.ca/post/2015/gpg-smartcard/

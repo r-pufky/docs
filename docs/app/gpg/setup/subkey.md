@@ -8,7 +8,6 @@ invalidate all subkeys at once.
     If subkeys are not stored on a self-destructing device when attacked (e.g.
     a Yubikey), then **set an expiry date**.
 
-
 ## Create [Signing Key][a]
 ``` bash
 gpg --expert --edit-key $KEYID
@@ -62,7 +61,6 @@ Really create? (y/N) y
 gpg> save
 ```
 
-
 ## Create [Encryption Key][b]
 ``` bash
 gpg --expert --edit-key $KEYID
@@ -111,7 +109,6 @@ Really create? (y/N) y
 
 gpg> save
 ```
-
 
 ## Create [Authentication Key][c]
 ``` bash
@@ -180,7 +177,6 @@ Really create? (y/N) y
 gpg> save
 ```
 
-
 ## Verify Keys Are Secure
 Highlight any potential concern areas with generated keys. These should appear
 **green** with **exceptions for the authentication** subkey.
@@ -197,7 +193,6 @@ Highlight any potential concern areas with generated keys. These should appear
 ```bash
 gpg --export $KEYID | hokey lint
 ```
-
 
 ## Verify GPG Password
 There is no built in method to confirm a GPG password is correct. Verification

@@ -8,9 +8,7 @@
     GPG SSH RSA Public Key. See [GPG Export Keys][b]. See [SSH][c] for remote
     SSH configuration.
 
-
 ## Install Packages
-
 Install GPG and security card agents on machine.
 
 === "CachyOS"
@@ -45,10 +43,8 @@ Install GPG and security card agents on machine.
     apt install libssl-dev swig libpcsclite-dev
     ```
 
-
 ## Configure [SSH/GPG Agent][d]
 This will enable SSH usage with the gpg-agent.
-
 
 !!! abstract "~/.gnupg/gpg-agent.conf"
     0600 {USER}:{USER}
@@ -186,7 +182,6 @@ gpgconf --kill gpg-agent
    your **user** [PIN][f].
 3. Touch key to confirm (key will blink during wait for password).
 
-
 ## SSH [Through a Bastion][g]
 All latest versions of SCP and SSH support multiple jump proxies for transfers.
 GPG agent will be forwarded automatically (two authentication touches) if agent
@@ -212,7 +207,6 @@ This may also be setup to auto proxy via the config file.
     ProxyJump {USER}@{BASTION}
     ```
 
-
 ## SCP Transfer File [Through a Bastion][h]
 All latest versions of SCP and SSH support multiple jump proxies for transfers.
 GPG agent will be forwarded automatically (two authentication touches) if agent
@@ -228,7 +222,7 @@ scp -o ProxyJump={USER}@{BASTION} {STANDARD SCP COMMAND}
 
 [a]: ../setup/import.md#trust-gpg-public-key-locally
 [b]: ../setup/backup.md#export-gpg-keys
-[c]: ../../../service/ssh/README.md
+[c]: ../../../network/ssh/README.md
 [d]: https://unix.stackexchange.com/questions/280879/how-to-get-pinentry-curses-to-start-on-the-correct-tty
 [e]: https://github.com/drduh/YubiKey-Guide
 [f]: ../../../glossary/yubikey.md#yubikey-passwordpin

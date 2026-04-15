@@ -1,7 +1,6 @@
 # ACME
 Use Let's Encrypt certificates for PVE cluster nodes with Google Cloud DNS.
 
-
 ## Setup ACME in PVE Datacenter
 Applies to **all** nodes.
 
@@ -27,7 +26,6 @@ Applies to **all** nodes.
         CLOUDSDK_AUTH_CREDENTIAL_FILE_OVERRIDE=/home/nobody/pve_acme.json
         CLOUDSDK_CORE_PROJECT={PROJECT_ID}
         ```
-
 
 ## Add Google Cloud SDK
 Add for **all** cluster nodes.
@@ -94,7 +92,6 @@ chmod 0600 /home/nobody/pve_acme.json
 chown -R nobody:nogroup /home/nobody
 ```
 
-
 ## Add ACME Certificates
 Add for **all** cluster nodes.
 
@@ -111,8 +108,6 @@ Add for **all** cluster nodes.
 
     Staging certificate will automatically be removed.
 
-
 ## Reference[^1][^2]
-
 [^1]: https://forum.proxmox.com/threads/google-domains-and-lets-encrypt-certificates-using-dns-validation-for-local-proxmox-servers.70337/
 [^2]: https://pve.proxmox.com/wiki/Certificate_Management
