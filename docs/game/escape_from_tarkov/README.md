@@ -46,6 +46,67 @@ Preferred.
 5. Download the [SPT installer][e] and extract to **c:\Battlestate Games\SPT**.
 6. [Run installer][f] (ignore virus warnings - these rewrite signed binaries).
 
+#### [Install FIKA Mod][g]
+
+1. Extract inlcuded `Fika.Release.*.zip` to `c:/tarkov-coop-fika`
+2. `Fika.Core.dll` should be in `c:/tarkov-coop-fika/BepInEx/plugins`
+
+!!! abstract "c:/tarkov-coop-fika/BepInEx/config/com.bepis.bepinex.configurationmanager.cfg"
+    0644 {USER}:{USER}
+
+    ``` bash
+    # There are two locations to set.
+    Show config manager = F11
+    Show config manager = F11
+    ```
+
+3. Copy settings to SPT: **user** ➔ **c:/tarkov-coop-fika/user**
+4. Setup Steam Shortcut
+    * steam ➔ games ➔ add non-steam game to library
+    * Target: `c:/tarkov-coop-fika/SPT.Launcher.exe`
+    * Icon (click it): select `EscapeFromTarkov.exe`
+    * Name: 'Escape from Tarkov (Coop)'
+    * Start In: `c:/tarkov-coop-fika`
+    * Enable steam overlay while in game
+    * controller ➔ disable steam input
+    * controller ➔ use desktop configruation in launcher
+5. Launch 'Escape from Tarkov (Coop)'
+    Ignore 'copy game settings' dialogs and any errors on inital launch (these
+    are because the default server is not running).
+
+    * settings ➔ Developer Mode ➔ Enable
+    * settings ➔ URL➔ `http://{IP}:6969`
+    * settings ➔ On Game Start ➔ Close Launcher
+    * settings ➔ SPT Game Path ➔ `c:/tarkov-coop-fika`
+    * click `➔` to launch
+
+    Your previous account (if migrated) will be available with no password.
+
+    On first run, YOU MUST WAIT 30 SECONDS FOR THE TOS ACCEPTANCE OR GAME WILL
+    EXIT.
+6. Set FIKA Options
+    Press **F11** During game to pull up mod overlay; click on **FIKA Core** to
+    expand mod options. Note: The UI is confusing. The verbiage next to the
+    checkbox represents the current state, **NOT** what ticking it does.
+
+    * Show Feed: Enabled (checked)
+    * Auto Extract: Enabled (checked)
+    * Show Extract Message: Enabled (checked)
+    * Extract Key: F8
+    * Ping System: Enabled (checked)
+    * Ping Button: {SET}
+    * Free Camera Button: F9
+    * Show Player Name Plates: Enabled (checked)
+    * Show Player Faction Icon: Disabled (unchecked)
+    * Hide Name Plate In Optic: Enabled (checked)
+    * Dynamic AI: Enabled (checked)
+    * Dynamic AI Range: 150.0m (double check if sniping and AI not moving)
+    * Culling System: Enabled (checked)
+    * Culling Range: 30m
+    * Enforced Spawn Limits: Disabled (unchecked)
+
+You are ready to play.
+
 #### Launching Game
 Must be launched in the following order to run properly.
 
@@ -57,6 +118,61 @@ Must be launched in the following order to run properly.
     * Launcher ➔ Make a new account
       * Select whatever entitlements you wish (starting items).
     * Launcher ➔ Start game
+
+## Creating Host Server
+Certain game options will be enforce server side. Host server actually hosts
+the game using game assets. This is the client with the most powerful machine.
+
+* pick raid map to play
+* pick the same SLOT number (1 or 2)
+* player with the strongest machine should HOST the raid
+* **COOP** mode and **Practice Mode** will be force enabled with FIKA
+* after insurance click **host raid**
+  * Pick number of players; game will NOT start until everyone has joined
+* start
+
+## Moving Install Location
+Registry keys must be updated to point to new binary locations.
+
+1. Find EFT Uninstall registry keys (regedit)
+
+!!! example "⌘ ➔ regedit ➔ Computer"
+
+    ``` regedit
+    Computer\HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{B0FDA062-7581-4D67-B085-C4E7C358037F}_is1
+    ```
+
+2. Upload binary locations for each key (do not change additional options)
+
+    * DisplayIcon
+    * Inno Setup: App Path
+    * InstallLocation
+    * QuietUninstallString
+    * UninstallString
+
+3. Update BsgLauncher Paths
+
+    ``` regedit
+    %appdata%/Roaming/Battlestate Games/BsgLauncher/settings
+    ```
+
+## Upgrading SPT Minor Releases
+Minor releases only require in-place replace of existing SPT files.
+
+1. Download the specified version from `versions.md`
+2. Backup replaced files (prepend with date `YYYY-MM-DD.{FILE}`)
+
+    * BepInEx
+    * SPT_Data
+    * SPT.Server.exe
+    * SPT.Launcher.exe
+    * doorstop_config.ini
+    * winhttp.dll
+
+3. Extract archive into `c:/tarkov-coop-fika`
+4. Update plugin configuration files
+
+   `c:/tarkov-coop-fika/BepInEx/config`
 
 ## Settings
 Game settings that balance colors and rendering quality.
@@ -102,3 +218,4 @@ Game settings that balance colors and rendering quality.
 [d]: https://hub.sp-tarkov.com/files/file/142-aki-patcher/#versions
 [e]: https://hub.sp-tarkov.com/files/file/601-spt-aki-installer/#overview
 [f]: https://hub.sp-tarkov.com/files/file/6-spt-aki/
+[g]: https://github.com/project-fika/Fika-Plugin/releases/latest

@@ -203,6 +203,12 @@ systemctl start eft
 User profiles may need to be converted. Always double check profiles load
 correctly after upgrades. Some upgrades cannot convert profiles.
 
+## Reference[^1][^2][^3][^4]
+[^1]: https://hub.sp-tarkov.com/files/file/672-spt-installer
+[^2]: https://spt-releases.modd.in/SPT-3.9.8-30626-a0c79ac.7z
+[^3]: https://github.com/project-fika/Fika-Plugin/releases/download/v0.9.8995.14684/Fika.Release.0.9.8995.14684.zip
+[^4]: https://gist.github.com/OnniSaarni/a3f840cef63335212ae085a3c6c10d5c
+
 [a]: https://old.reddit.com/r/SPTarkov/comments/1ckuwmv/project_fika_on_a_dedicated_machine
 [b]: https://old.reddit.com/r/SPTarkov/comments/sibdoz/how_to_enable_all_items_on_the_flea
 [c]: https://old.reddit.com/r/SPTarkov/comments/1chnvrs/guide_how_to_port_your_spt_profile_to_fika_or_sit
