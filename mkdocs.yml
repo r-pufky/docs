@@ -94,6 +94,7 @@ nav:
       - 'game/seven_days_to_die/README.md'
       - 'game/seven_days_to_die/serverconfig.md'
       - 'game/seven_days_to_die/serveradmin.md'
+    - 'game/star_rupture.md'
     - 'Steam':
       - 'game/steam/README.md'
       - 'game/steam/troubleshooting.md'

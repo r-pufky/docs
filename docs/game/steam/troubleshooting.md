@@ -1,5 +1,48 @@
 # Troubleshooting
 
+## Please confirm your network connection and try again.
+Steam uses **client-download.steampowered.com** to detect internet connectivity
+through **public/steambootstrapper_english.txt**. DNS updates or failure to
+resolve those DNS names will cause Steam to fail.
+
+!!! danger ""
+    ILocalize::AddFile() failed to load file "public/steambootstrapper_english.txt".
+    [  0%] Checking for available update...
+    KeyValues Error: LoadFromBuffer: missing {   (current key: '<!doctype') in file manifest [offset: 20]
+
+    ../tier1/KeyValues.cpp (2925) : Assertion Failed: Error while parsing text KeyValues for resource manifest
+    [----] Verifying installation...
+    [  0%] Downloading Update...
+    [  0%] Checking for available update...
+    KeyValues Error: LoadFromBuffer: missing {   (current key: '<!doctype') in file manifest [offset: 20]
+
+    ../tier1/KeyValues.cpp (2925) : Assertion Failed: Error while parsing text KeyValues for resource manifest
+    [----] !!! Fatal Error: Steamcmd needs to be online to update.	 Please confirm your network connection and try again.
+    threadtools.cpp (3294) : Assertion Failed: Illegal termination of worker thread 'Thread(0x0x670f5380/0x0xf051db'
+
+### Statically map DNS name
+Allows for immediate use of Steam but will break when IP's change. Set, run
+Steam commands, then unset.
+
+``` bash
+# Resolve first usable IP address for media.steampowered.com.
+dig +short media.steampowered.com | grep -m 1 '^[0-9.]*$'
+dig +short media.steampowered.com | grep -E -o '([0-9]{1,3}\.){3}[0-9]{1,3}'
+> 23.214.22.163
+```
+
+!!! abstract "/etc/hosts"
+    0644 {USER}{USER}
+
+    ``` bash
+    # Always remove after running steamcmd!
+    23.214.22.163  client-download.steampowered.com
+    ```
+
+### Wait for propagation
+Alternatively waiting for DNS propagation will resolve this issue, but may take
+up to 72 hours for global propagation.
+
 ## Failed to determine free disk space for ... error 75
 This happens when steamcmd cannot query the underlying data store remaining
 quota. Common with ZFS backed data stores. Either set an explicit quota or
