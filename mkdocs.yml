@@ -39,6 +39,8 @@ nav:
         - 'app/gui/vscode/README.md'
         - 'app/gui/vscode/code_server.md'
         - 'app/gui/vscode/troubleshooting.md'
+    - 'WebUI':
+      - 'app/webui/selkies.md'
     - 'GPG with Yubikey':
       - 'app/gpg/README.md'
       - 'Setup':
