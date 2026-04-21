@@ -1,15 +1,5 @@
 # Troubleshooting
 
-## Mounting NFS shares in LXC containers
-Mounting NFS shares require elevated privileges. A better pattern is to mount
-the NFS shares on the cluster node and map the mount point directly in the
-container. These should be mapped with minimum permissions.
-
-On the proxmox node mount NFS shares using [FSTab](mounts.md#fstab) instead
-of the WebGUI. Mounts created using the WebGUI are only mounted on first use,
-which generally leads to container mounting failures due to timeouts on the PVE
-host.
-
 ### PVE (All Nodes)
 !!! abstract "/etc/fstab"
     0644 root:root

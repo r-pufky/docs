@@ -87,5 +87,17 @@ systemctl daemon-reload
 mount -a
 ```
 
+## Mounting NFS shares in LXC containers
+Mounting NFS shares require elevated privileges. A better pattern is to mount
+the NFS shares on the cluster node and map the mount point directly in the
+container. These should be mapped with minimum permissions.
+
+On the proxmox node mount NFS shares using [FSTab](mounts.md#fstab) instead
+of the WebGUI. Mounts created using the WebGUI are only mounted on first use,
+which generally leads to container mounting failures due to timeouts on the PVE
+host.
+
+See [Access Control](../../os/pve/nfs.md#access-control).
+
 [a]: https://wiki.archlinux.org/title/NFS
 [b]: https://www.freedesktop.org/software/systemd/man/latest/systemd.unit.html

@@ -60,7 +60,6 @@ nav:
       - 'db/postgres/README.md'
       - 'db/postgres/troubleshooting.md'
   - 'Filesystems':
-    - 'filesystem/copying_data.md'
     - 'NFS':
       - 'filesystem/nfs/README.md'
       - 'filesystem/nfs/exports.md'
@@ -68,12 +67,13 @@ nav:
       - 'filesystem/nfs/optimizations.md'
       - 'filesystem/nfs/options.md'
       - 'filesystem/nfs/troubleshooting.md'
-    - 'filesystem/wiping_data.md'
     - 'ZFS':
       - 'filesystem/zfs/README.md'
       - 'filesystem/zfs/sync_backup.md'
       - 'filesystem/zfs/replacing_disks.md'
       - 'filesystem/zfs/encryption.md'
+    - 'filesystem/copying_data.md'
+    - 'filesystem/wiping_data.md'
   - 'Hardware':
     - 'hardware/amt.md'
     - 'hardware/bnk9.md'
