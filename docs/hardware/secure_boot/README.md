@@ -16,10 +16,12 @@ mokutil --import /var/lib/dkms/mok.pub
 mokutil --list-new
 mokutil --enable-validation
 mokutil --timeout -1
+# MokManager will appear on boot - use secure boot password.
 reboot
 ```
-On reboot enter the same password and confirm the new keys to be loaded. The
-system will reboot again with the new keys.
+
+!!! abstract "Enroll MOK ➔ Continue ➔ Enroll the keys(s)? ➔ Yes"
+    System will reboot again with the new keys.
 
 DKMS will automatically use keys from **/var/lib/dkms/mok.*** with the default
 Debian configuration **/etc/dkms/framework.conf**.
