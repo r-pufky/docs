@@ -21,6 +21,7 @@ nav:
   # General apps place native spot. Combined apps go in root app.
   - 'Applications':
     - 'CLI':
+      - 'app/cli/app_bundles.md'
       - 'app/cli/bash.md'
       - 'app/cli/direnv.md'
       - 'app/cli/fish.md'

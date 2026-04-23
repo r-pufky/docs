@@ -47,7 +47,7 @@ curl -fsSL "https://github.com/selkies-project/selkies-gstreamer/releases/downlo
 ```
 
 ## Streaming
-Start stream from an unprivileged user on unprivileged containers.
+Start UDP stream from an unprivileged user on unprivileged containers.
 
 !!! warning "Setup assumes encrypted tunnels"
     Scripts below assume encrypted tunnels. If Directly exposing to the
@@ -57,7 +57,7 @@ Start stream from an unprivileged user on unprivileged containers.
 !!! tip "Encrypted Connections Preferred"
     Most features such as clipboard and microphones will be disabled
     automatically if encrypted transports are not used. Basic auth default
-    values are the running user and **mypasswd**.
+    values are the running **user** and **mypasswd**. Selkies uses **UDP**.
 
 ## Stream KDE Desktop
 !!! abstract "~/.local/bin/stream_kde"
@@ -66,7 +66,7 @@ Start stream from an unprivileged user on unprivileged containers.
     ```
     #!/bin/bash
     #
-    # Launch KDE and stream the desktop session over port 8080.
+    # Launch a user KDE desktop session and stream 8080/UDP.
 
     export DISPLAY_ID=":99"
     export RESOLUTION="2560x1440x24"
