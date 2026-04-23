@@ -174,6 +174,7 @@ nav:
     - 'Proxmox (PVE)':
       - 'os/pve/README.md'
       - 'os/pve/acme.md'
+      - 'os/pve/audio.md'
       - 'os/pve/gpu.md'
       - 'os/pve/nfs.md'
       - 'os/pve/troubleshooting.md'
