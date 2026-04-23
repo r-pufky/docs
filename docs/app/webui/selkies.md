@@ -30,7 +30,7 @@ Google Stadia, GeForce NOW, Moonlight, and other platforms use this to stream
 === "Debian"
 
     ``` bash
-    # Base depedencies.
+    # Base dependencies.
     apt install jq tar gzip ca-certificates curl libpulse0 wayland-protocols
     apt install xserver-xorg-core libwayland-dev libwayland-egl1 xvfb
     apt install x11-utils x11-xkb-utils x11-xserver-utils
@@ -60,59 +60,94 @@ Start UDP stream from an unprivileged user on unprivileged containers.
     values are the running **user** and **mypasswd**. Selkies uses **UDP**.
 
 ## Stream KDE Desktop
+KDE with Audio desktop session requires a shared DBUS so the process can
+communicate. See [PVE Audio Passthrough](../../os/pve/audio.md).
+
+!!! tip "Audio Should Appear Un-muted"
+    Audio will be un-muted, and audio settings will display 'Virtual-Speaker'.
+
+    Audio device in KDE will report no audio devices found as these are not
+    mapped. Audio will still work through streaming.
+
+!!! abstract "~/.local/bin/start_plasma_session"
+    0755 {USER}:{USER}
+
+    ``` bash
+    #!/bin/bash
+    #
+    # Launch KDE, pipewire, wireplumber using the same DBUS, and create an virtual
+    # audio device.
+
+    pipewire & sleep 1
+    wireplumber & sleep 1
+    pipewire-pulse & sleep 2
+
+    pactl load-module module-null-sink \
+        sink_name=remote \
+        sink_properties=device.description="Virtual-Speaker"
+    pactl set-default-sink remote
+
+    startplasma-x11
+    ```
+
 !!! abstract "~/.local/bin/stream_kde"
     0755 {USER}:{USER}
 
     ```
     #!/bin/bash
     #
-    # Launch a user KDE desktop session and stream 8080/UDP.
+    # Launch KDE and stream the desktop session.
 
     export DISPLAY_ID=":99"
     export RESOLUTION="2560x1440x24"
     export SELKIES_ADDR='0.0.0.0'
-    export SELKIES_PORT=8080
+    export SELKIES_PORT=5555
     export SELKIES_ENCODER="x264enc" # Nvidia: nvh264enc, AMD/Intel: vhap264enc
     export SELKIES_PATH="/opt/selkies/selkies-gstreamer"
 
-    # Cleanup existing XVFB displays otherwise may result in black-screen.
-    pkill -x "Xvfb"
-    echo "Cleaning up display locks..." && rm -f /tmp/.X${DISPLAY_ID#*:}-lock
-    echo "Starting Virtual Display on $DISPLAY_ID..."
-    Xvfb ${DISPLAY_ID} -screen 0 ${RESOLUTION} +extension RANDR +extension GLX +extension MIT-SHM & sleep 2
+    unset DBUS_SESSION_BUS_ADDRESS
+    unset DBUS_SESSION_BUS_PID
+    export XDG_RUNTIME_DIR="/tmp/runtime-$(whoami)"
+    mkdir -p $XDG_RUNTIME_DIR
+    chmod 700 $XDG_RUNTIME_DIR
 
+    pkill -x "Xvfb"
+    pkill -u $(whoami) pipewire
+    pkill -u $(whoami) wireplumber
+    pkill -u $(whoami) dbus-daemon
+    rm -f /tmp/.X${DISPLAY_ID#*:}-lock
+
+    Xvfb ${DISPLAY_ID} -screen 0 ${RESOLUTION} +extension RANDR +extension GLX +extension MIT-SHM &
+    sleep 2
     export DISPLAY=${DISPLAY_ID}
 
-    # Start dbus-run-session to ensure KDE has its own message bus.
-    if pgrep -f "startplasma-x11" > /dev/null; then
-        echo "KDE Plasma is already running. Skipping launch."
-    else
-        echo "Starting KDE Plasma..."
-        dbus-run-session startplasma-x11 > /dev/null 2>&1 &
-        sleep 5
-    fi
+    echo "Starting Plasma & DBUS session..."
+    dbus-run-session $(dirname $(realpath -s $0))/start_plasma_session > /dev/null 2>&1 &
+    sleep 10
 
-    # Stream the exported display over selkies
     if pgrep -f "selkies-gstreamer-run" > /dev/null; then
         echo "Selkies is already running. Skipping launch."
     else
-       if [ -d "${SELKIES_PATH}" ]; then
-           echo "Launching Selkies on port ${SELKIES_PORT}..."
-           ${SELKIES_PATH}/selkies-gstreamer-run \
-               --addr=${SELKIES_ADDR} \
-               --port=${SELKIES_PORT} \
-               --encoder=${SELKIES_ENCODER} \
-               --enable_basic_auth=false \
-               --enable_clipboard=true \
-               --enable_resize=true
-       else
-           echo "Error: Selkies directory not found at ${SELKIES_PATH}"
-           exit 1
-       fi
+        if [ -d "${SELKIES_PATH}" ]; then
+            echo "Launching Selkies on port ${SELKIES_PORT}..."
+    	    export PULSE_SERVER="unix:${XDG_RUNTIME_DIR}/pulse/native"
+            ${SELKIES_PATH}/selkies-gstreamer-run \
+                --addr=${SELKIES_ADDR} \
+                --port=${SELKIES_PORT} \
+                --encoder=${SELKIES_ENCODER} \
+    	    --enable_basic_auth=false \
+    	    --enable_clipboard=true \
+                --enable_resize=true
+        else
+            echo "Error: Selkies directory not found at ${SELKIES_PATH}"
+            exit 1
+        fi
     fi
     ```
 
 ## Stream Specific Application
+Quick and dirty for just streaming a specific application. Prefer
+[Stream KDE Desktop](#stream-kde-desktop).
 
 !!! abstract "~/.local/bin/stream_digikam"
     0755 {USER}:{USER}
