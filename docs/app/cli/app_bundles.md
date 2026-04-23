@@ -11,7 +11,8 @@ Platform agnostic application distribution.
     required to be used.
 
 ## [AppImage][b]
-AppImage is preferred but requires special setup for containers.
+AppImage is highly preferred over all other bundles. These tend to be the
+smallest, and allow extraction to run directly in limited environments.
 
 ``` bash
 # AppImages just need to be downloaded and set executable.
@@ -26,6 +27,11 @@ Image.AppImage --appimage-extract
 ## [Flatpak][a]
 Originally created by RedHat developers to simplify application deployment
 across multiple distributions.
+
+!!! warning "Only for Desktops"
+    Heavy space bloat and most apps are heavily restricted, resulting in many
+    issues in virtualized environments. Most will require **flatseal** to relax
+    permissions for actual use.
 
 === "[Debian][d]"
 
@@ -52,6 +58,10 @@ across multiple distributions.
     ```
 
 ``` bash
+# Flatseal is used to modify sandbox permissions for flatpaks. Most flatpaks
+# require additional access to function correctly.
+flatpak install flathub flatseal
+
 # Packages are install via flatpak
 flatpak install flathub org.kde.digikam
 flatpak install flathub org.musicbrainz.Picard
