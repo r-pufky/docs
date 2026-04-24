@@ -1,5 +1,19 @@
 # [Release Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## 3.0.1:
+
+Added:
+* Add Star Rupture game configuration.
+* Add PVE Subordinate UID/GID mappings for NFS.
+* Add Selkies documentation.
+* Add systemd cronjob replacement example for systemd.
+* Add App bundles.
+* Add PVE9 audio passthrough.
+* Add PVE9 method for GPU Passthrough.
+
+Changed:
+* Update Tarkov setup documentation.
+
 ## 3.0.0:
 Restructure and prune documentation.
 
