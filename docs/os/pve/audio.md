@@ -49,12 +49,12 @@ $ ls -la /dev/snd
 
 ### Container configuration
 ``` bash
-# Determine audio group.
-grep audio /etc/group
-> audio:x:29:
-
 # Add any user to audio group to enable access.
 usermod -aG audio {USER}
+
+# Determine audio group ID.
+getent group audio
+> audio:x:29:media
 ```
 
 ### Map Audio device to PVE
