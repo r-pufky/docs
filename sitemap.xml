@@ -2,606 +2,622 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://github.com/r-pufky/docs/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
+    </url>
+    <url>
+         <loc>https://github.com/r-pufky/docs/app/cli/app_bundles/</loc>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/app/cli/bash/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/app/cli/direnv/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/app/cli/fish/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/app/cli/video_tools/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/app/cli/yt_dlp/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/app/cli/vim/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/app/cli/vim/troubleshooting/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/app/gpg/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/app/gpg/operations/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/app/gpg/troubleshooting/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/app/gpg/os/linux/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/app/gpg/os/windows/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/app/gpg/setup/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/app/gpg/setup/backup/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/app/gpg/setup/cleanup/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/app/gpg/setup/export_to_yubikey/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/app/gpg/setup/import/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/app/gpg/setup/master/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/app/gpg/setup/subkey/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/app/gui/chrome/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/app/gui/firefox/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/app/gui/freecad/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/app/gui/movie_studio/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/app/gui/putty/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/app/gui/vscode/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/app/gui/vscode/code_server/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/app/gui/vscode/troubleshooting/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
+    </url>
+    <url>
+         <loc>https://github.com/r-pufky/docs/app/webui/selkies/</loc>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/db/mariadb/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/db/postgres/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/db/postgres/troubleshooting/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/filesystem/copying_data/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/filesystem/wiping_data/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/filesystem/nfs/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/filesystem/nfs/exports/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/filesystem/nfs/mounts/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/filesystem/nfs/optimizations/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/filesystem/nfs/options/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/filesystem/nfs/troubleshooting/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/filesystem/zfs/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/filesystem/zfs/encryption/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/filesystem/zfs/replacing_disks/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/filesystem/zfs/sync_backup/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/game/conan_exiles/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/game/elden_ring/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
+    </url>
+    <url>
+         <loc>https://github.com/r-pufky/docs/game/star_rupture/</loc>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/game/escape_from_tarkov/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/game/escape_from_tarkov/server/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/game/ludusavi/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/game/mumble/mumble/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/game/seven_days_to_die/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/game/seven_days_to_die/serveradmin/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/game/seven_days_to_die/serverconfig/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/game/steam/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/game/steam/troubleshooting/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/glossary/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/glossary/admonitions/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/glossary/gpg/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/glossary/mail/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/glossary/os/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/glossary/unicode/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/glossary/vlan/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/glossary/yubikey/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/hardware/amt/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/hardware/bnk9/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/hardware/crush_80_reboot_pro/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/hardware/secure_boot/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/hardware/secure_boot/troubleshooting/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/mail/imapsync/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/mail/mutt/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/mail/postfix/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/mail/roundcube/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/mail/mox/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/mail/mox/troubleshooting/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/media/deluge/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/media/lidarr/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/media/music/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/media/nzbget/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/media/playon/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/media/paperless/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/media/paperless/troubleshooting/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/media/plex/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/media/plex/config/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/media/plex/troubleshooting/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/media/radarr/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/media/radarr/troubleshooting/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/media/sonarr/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/media/sonarr/troubleshooting/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/network/pihole/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/network/vlan/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/network/dropbear/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/network/dropbear/troubleshooting/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/network/ssh/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/network/ssh/troubleshooting/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/network/ssh/sshd/linux/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/network/ssh/sshd/windows/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/network/traefik/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/network/traefik/basic_auth_dashboard/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/network/traefik/error_pages/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/network/traefik/odic/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/network/traefik/plugins/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/network/traefik/rate_limiting/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/network/traefik/troubleshooting/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/network/traefik/acme/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/network/traefik/acme/behind_traefik/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/network/unifi/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/network/unifi/troubleshooting/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/network/wireguard/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/network/wireguard/troubleshooting/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/network/wireguard/os/linux/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/network/wireguard/os/windows/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/os/kindle/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/os/pikvm/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/os/shield/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/os/web_os/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/os/cachyos/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/os/cachyos/preferences/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/os/cachyos/troubleshooting/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/os/debian/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/os/debian/troubleshooting/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/os/pve/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/os/pve/acme/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
+    </url>
+    <url>
+         <loc>https://github.com/r-pufky/docs/os/pve/audio/</loc>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/os/pve/gpu/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/os/pve/nfs/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/os/pve/troubleshooting/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/os/windows/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/os/windows/crashes/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/os/windows/reinstall/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/os/windows/troubleshooting/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/printing/brother_mfcl2750dw/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/printing/linux/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/printing/windows/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/service/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/service/bluebubbles/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/service/mkdocs/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/service/systemd/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/service/ca/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/service/ca/certificate_revocation_list/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/service/ca/certificates/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/service/ca/setup/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/service/nginx/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/service/nginx/troubleshooting/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/service/nginx/manual/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/service/nginx/manual/best_practices/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/service/nginx/manual/cert_based_authentication/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/service/nginx/manual/custom_error_pages/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/service/nginx/manual/setup/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/vcs/forgejo/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/vcs/forgejo/troubleshooting/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/vcs/git/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/vcs/git/branches/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
     <url>
          <loc>https://github.com/r-pufky/docs/vcs/git/troubleshooting/</loc>
-         <lastmod>2026-04-15</lastmod>
+         <lastmod>2026-04-24</lastmod>
     </url>
 </urlset>
