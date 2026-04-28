@@ -207,7 +207,9 @@ nav:
         - 'service/nginx/manual/cert_based_authentication.md'
         - 'service/nginx/manual/best_practices.md'
       - 'service/nginx/troubleshooting.md'
-    - 'service/systemd.md'
+    - 'Systemd':
+      - 'service/systemd/README.md'
+      - 'service/systemd/troubleshooting.md'
   - 'Version Control':
     - 'Forgejo':
       - 'vcs/forgejo/README.md'
