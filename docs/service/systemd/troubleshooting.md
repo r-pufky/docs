@@ -13,7 +13,7 @@ present. This typically happens with **SSH** and **sudo** commands.
     ```
 
 ``` bash
-# Export required environment for remainder of session and re-run commands.
+# Export required user systemd unit environment variables.
 export XDG_RUNTIME_DIR="/run/user/$(id -u)"
 export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus"
 
@@ -21,23 +21,7 @@ export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus"
 loginctl enable-linger {USER}
 ```
 
-!!! abstract "~./bashrc"
-    0644 {USER}:{USER}
-
-    ``` bash
-    # Add at end of .bashrc to always setup environment even if SSH'ed.
-    if [ -z "$XDG_RUNTIME_DIR" ]; then
-        export XDG_RUNTIME_DIR="/run/user/$(id -u)"
-        export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus"
-    fi
-    ```
-
-!!! tip "Alternatively use machinectl"
-    machinectl spawns a fully isolated (systemd/dbus session) interactive shell
-    inside a given machine.
-
-    ``` bash
-    sudo machinectl shell {USER}@.host
-    ```
+Setup [Systemd User Environment](README.md#systemd-user-environment) to prevent
+errors in the future.
 
 Re-run command.

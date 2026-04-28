@@ -1,5 +1,34 @@
 # [systemd][a]
 
+## Systemd User Environment
+User-based systemd units may fail over **SSH** or **sudo** as generally a full
+systemd environment is not configured automatically with a non-local login.
+
+``` bash
+# Export required user systemd unit environment variables.
+export XDG_RUNTIME_DIR="/run/user/$(id -u)"
+export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus"
+
+# Enable service lingering for user.
+loginctl enable-linger {USER}
+```
+
+!!! abstract "~/.profile"
+    0644 {USER}:{USER}
+
+    ``` bash
+    if [ -z "$XDG_RUNTIME_DIR" ]; then
+        export XDG_RUNTIME_DIR="/run/user/$(id -u)"
+        export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus"
+    fi
+    ```
+
+``` bash
+# Alternatively use machinectl to spawn a fully isolated (systemd/dbus session)
+# interactive shell on a given machine. Use this after SSH/sudo.
+sudo machinectl shell {USER}@.host
+```
+
 ## Cron Replacement
 Actively migrate cronjobs to systemd timers. They are much more flexible and
 provide consistency on systemd systems. These may also be deployed per-user.

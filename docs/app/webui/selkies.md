@@ -50,8 +50,6 @@ Start **UDP** stream from an unprivileged user on unprivileged containers.
 There are many configuration options not included here, including [hardware
 encoder support for GPU's and Audio][b].
 
-
-
 !!! warning "Use Encryption & Authentication"
     Most features such as clipboard and microphones are disabled if encrypted
     transports are not used. **Only** directly expose to Internet when both
@@ -60,34 +58,9 @@ encoder support for GPU's and Audio][b].
 !!! tip "Basic Auth Defaults"
     Default basic auth options are **{USER}**:**mypasswd**.
 
-### Stream Specific Application
-Quick and dirty for just streaming a specific application. Prefer
-[Stream KDE Desktop](#stream-kde-desktop).
-
-!!! abstract "~/.local/bin/stream_digikam"
-    0755 {USER}:{USER}
-
-    ``` bash
-    #!/bin/bash
-    #
-    # Stream Digikam on port 8080.
-    export DISPLAY=:99
-    Xvfb :99 -screen 0 1920x1080x24 & sleep 2
-
-    digikam &
-
-    # Stream the exported display over selkies.
-    /opt/selkies/selkies-gstreamer-run \
-        --addr=0.0.0.0 \
-        --port=8080 \
-        --enable_https=false \
-        --enable_basic_auth=false \
-        --enable_clipboard=true \
-        --encoder=x264enc  #  Nvidia should use nvh264enc.
-    ```
-
-### Stream KDE Desktop
-KDE with Audio desktop session requires a shared DBUS so the process can
+### Headless KDE Desktop Stream with Audio
+Use a user systemd unit to manage private DBUS for KDE and Audio devices during
+the process lifecycle. A shared DBUS is required for the processes to
 communicate. See [PVE Audio Passthrough](../../os/pve/audio.md).
 
 !!! tip "Audio Should Appear Un-muted"
@@ -96,45 +69,25 @@ communicate. See [PVE Audio Passthrough](../../os/pve/audio.md).
     Audio device in KDE will report no audio devices found as these are not
     mapped. Audio will still work through streaming.
 
-## Systemd Service
-Setup per-user selkies streaming isolating DBUS to allow local KDE use as well
-as remote streaming on system boot.
-
-### User Configuration
-User must be configured to run lingering systemd processes as well as defining
-default **XDG_RUNTIME_DIR** and **DBUS** environment variables for user systemd
-to be configured.
+#### User Configuration
+User must be configured for [Systemd User Environments][c].
 
 ``` bash
+# Enable service lingering for user.
+sudo loginctl enable-linger {USER}
+
+# Export required user systemd unit environment for configuration.
 export XDG_RUNTIME_DIR="/run/user/$(id -u)"
 export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus"
 
-# Enable service lingering for user.
-loginctl enable-linger {USER}
+# Disable auto-start of user services, manage in systemd unit.
+systemctl --user stop pulseaudio.socket pulseaudio.service pipewire-pulse.socket pipewire-pulse.service
+systemctl --user disable pulseaudio.socket pulseaudio.service pipewire-pulse.socket pipewire-pulse.service
+systemctl --user mask pulseaudio.socket pulseaudio.service pipewire-pulse.socket pipewire-pulse.service
 ```
 
-!!! abstract "~./bashrc"
-    0644 {USER}:{USER}
-
-    ``` bash
-    # Add at end of .bashrc to always setup environment even if SSH'ed.
-    if [ -z "$XDG_RUNTIME_DIR" ]; then
-        export XDG_RUNTIME_DIR="/run/user/$(id -u)"
-        export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus"
-    fi
-    ```
-
-!!! tip "Alternatively use machinectl"
-    machinectl spawns a fully isolated (systemd/dbus session) interactive shell
-    inside a given machine.
-
-    ``` bash
-    sudo machinectl shell {USER}@.host
-    ```
-
-### Service
-Create a private DBUS session allowing the user to also login locally and not
-affect a running Selkies instance.
+#### Service
+Service is isolated per-user enabling a KDE session for each user configured.
 
 !!! abstract "~/.local/bin/stream_kde"
     0755 {USER}:{USER}
@@ -157,8 +110,18 @@ affect a running Selkies instance.
     export XDG_RUNTIME_DIR="/run/user/$(id -u)"
     export PULSE_SERVER="unix:${XDG_RUNTIME_DIR}/pulse/native"
 
+    SESSION_PROCS='pipewire|pipewire-pulse|wireplumber|Xvfb|startplasma-x11'
+
+    pkill -u $(whoami) -x "${SESSION_PROCS}"
+    rm -f ${XDG_RUNTIME_DIR}/pipewire-0*
+    rm -rf ${XDG_RUNTIME_DIR}/pulse
     rm -f /tmp/.X${DISPLAY#*:}-lock
-    Xvfb ${DISPLAY} -screen 0 ${RESOLUTION} +extension RANDR +extension GLX +extension MIT-SHM &
+
+    mkdir -p ${XDG_RUNTIME_DIR}/pulse
+    Xvfb ${DISPLAY} -screen 0 ${RESOLUTION} \
+        +extension RANDR \
+        +extension GLX \
+        +extension MIT-SHM &
     sleep 2
 
     # Create background private DBUS and use systemd control group to stop.
@@ -166,7 +129,8 @@ affect a running Selkies instance.
         pipewire & sleep 1;
         wireplumber & sleep 1;
         pipewire-pulse & sleep 2;
-        pactl load-module module-null-sink sink_name=remote sink_properties=device.description='Virtual-Speaker';
+        pactl load-module module-null-sink sink_name=remote \
+            sink_properties=device.description='Virtual-Speaker';
         pactl set-default-sink remote;
         startplasma-x11
     " &
@@ -217,5 +181,38 @@ affect a running Selkies instance.
     WantedBy=default.target
     ```
 
+``` bash
+systemctl --user daemon-reload
+systemctl --user enable stream_kde
+systemctl --user start stream_kde
+```
+
+### Stream Specific Application
+Quick and dirty for just streaming a specific application. Prefer
+[Stream KDE Desktop](#stream-kde-desktop).
+
+!!! abstract "~/.local/bin/stream_digikam"
+    0755 {USER}:{USER}
+
+    ``` bash
+    #!/bin/bash
+    #
+    # Stream Digikam on port 8080.
+    export DISPLAY=:99
+    Xvfb :99 -screen 0 1920x1080x24 & sleep 2
+
+    digikam &
+
+    # Stream the exported display over selkies.
+    /opt/selkies/selkies-gstreamer-run \
+        --addr=0.0.0.0 \
+        --port=8080 \
+        --enable_https=false \
+        --enable_basic_auth=false \
+        --enable_clipboard=true \
+        --encoder=x264enc  #  Nvidia should use nvh264enc.
+    ```
+
 [a]: https://github.com/selkies-project/selkies
 [b]: https://github.com/selkies-project/selkies/blob/main/docs/component.md#encoders
+[c]: ../../service/systemd/README.md
