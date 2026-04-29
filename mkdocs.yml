@@ -32,6 +32,7 @@ nav:
       - 'app/cli/yt_dlp.md'
     - 'GUI':
       - 'app/gui/chrome.md'
+      - 'app/gui/digikam.md'
       - 'app/gui/firefox.md'
       - 'app/gui/freecad.md'
       - 'app/gui/movie_studio.md'

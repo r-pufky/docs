@@ -32,10 +32,13 @@ over HTML5.
     # Base dependencies.
     apt install jq tar gzip ca-certificates curl libpulse0 wayland-protocols
     apt install xserver-xorg-core libwayland-dev libwayland-egl1 xvfb
-    apt install x11-utils x11-xkb-utils x11-xserver-utils
+    apt install x11-utils x11-xkb-utils x11-xserver-utils ssl-cert
 
     # If using full KDE Desktop.
     apt install kde-plasma-desktop
+
+    # If using snakeoil certs.
+    usermod -a -G ssl-cert $(whoami)
     ```
 
 ``` bash
@@ -53,7 +56,12 @@ encoder support for GPU's and Audio][b].
 !!! warning "Use Encryption & Authentication"
     Most features such as clipboard and microphones are disabled if encrypted
     transports are not used. **Only** directly expose to Internet when both
-    encryption and authentication are enabled.
+    encryption and authentication are enabled. It does [not incur][e]
+    additional overhead.
+
+    Use **Chrome** if clipboard is required. Firefox has not implemented the
+    permissions API and [enabling async clipboard][d] is a massive security
+    risk.
 
 !!! tip "Basic Auth Defaults"
     Default basic auth options are **{USER}**:**mypasswd**.
@@ -96,12 +104,18 @@ Service is isolated per-user enabling a KDE session for each user configured.
     #!/bin/bash
     #
     # Create a streaming KDE desktop instance with a private DBUS.
+    #
+    # Additional Selkies options:
+    # * https://github.com/selkies-project/selkies/tree/main/src
 
     export DISPLAY=':99'
     export RESOLUTION='2560x1440x24'
     export SELKIES_ADDR='0.0.0.0'
     export SELKIES_PORT=5555
     export SELKIES_ENCODER='x264enc'
+    export SELKIES_ENABLE_HTTPS='true'
+    export SELKIES_HTTPS_CERT='/etc/ssl/certs/ssl-cert-snakeoil.pem'
+    export SELKIES_HTTPS_KEY='/etc/ssl/private/ssl-cert-snakeoil.key'
     export SELKIES_BASIC_AUTH='false'
     export SELKIES_CLIPBOARD='true'
     export SELKIES_RESIZE='true'
@@ -142,6 +156,9 @@ Service is isolated per-user enabling a KDE session for each user configured.
             --addr=${SELKIES_ADDR} \
             --port=${SELKIES_PORT} \
             --encoder=${SELKIES_ENCODER} \
+	        --enable_https=${SELKIES_ENABLE_HTTPS} \
+	        --https_cert=${SELKIES_HTTPS_CERT} \
+ 	        --https_key=${SELKIES_HTTPS_KEY} \
             --enable_basic_auth=${SELKIES_BASIC_AUTH} \
             --enable_clipboard=${SELKIES_CLIPBOARD} \
             --enable_resize=${SELKIES_RESIZE}
@@ -160,15 +177,6 @@ Service is isolated per-user enabling a KDE session for each user configured.
     After=network.target
 
     [Service]
-    Environment="DISPLAY=:99"
-    Environment="RESOLUTION=2560x1440x24"
-    Environment="SELKIES_ADDR=0.0.0.0"
-    Environment="SELKIES_PORT=5555"
-    Environment="SELKIES_ENCODER=x264enc"
-    Environment="SELKIES_BASIC_AUTH=false"
-    Environment="SELKIES_CLIPBOARD=true"
-    Environment="SELKIES_RESIZE=true"
-
     Type=simple
     ExecStart=%h/.local/bin/stream_kde
     Restart=always
@@ -216,3 +224,5 @@ Quick and dirty for just streaming a specific application. Prefer
 [a]: https://github.com/selkies-project/selkies
 [b]: https://github.com/selkies-project/selkies/blob/main/docs/component.md#encoders
 [c]: ../../service/systemd/README.md
+[d]: ../gui/firefox.md#enable-async-clipboard
+[e]: https://www.imperialviolet.org/2010/06/25/overclocking-ssl.html

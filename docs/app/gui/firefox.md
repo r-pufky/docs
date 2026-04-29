@@ -35,6 +35,22 @@ not setup. Create as needed.
     * media.webspeech.recognition.enable: **false**
     * media.webspeech.synth.enabled: **false**
 
+## [Enable Async Clipboard][d]
+Enable sites to read/write to clipboard.
+
+!!! danger "Use Chrome"
+    Chrome uses the Permissions API which will prompt when a website requests
+    access to read/write the clipboard. Firefox has not implemented the
+    Permissions API and enabling this option will enable it for **ALL** sites
+    regardless of intent.
+
+    This is almost certainly **not** what you want to do.
+
+!!! example "about:config"
+    * dom.events.testing.asyncClipboard: **true**
+    * dom.events.asyncClipboard.readText: **true**
+
 [a]: https://www.firefox.com/en-US/browsers/desktop/windows/
 [b]: https://connect.mozilla.org/t5/discussions/remove-ai-garbage/m-p/96009
 [c]: https://discuss.cachyos.org/t/speech-dispatcher-error-in-firefox/21131
+[d]: https://github.com/selkies-project/selkies/issues/202
