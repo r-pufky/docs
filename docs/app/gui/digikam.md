@@ -102,30 +102,12 @@ Set static date not aligning to current metadata.
 [file]{replace:"^.*? - ","2021-08-19T00.00.00.000 - ",r} -- [meta:Xmp.digiKam.TagsList]{lower}.[ext]{lower}
 ```
 
-#### Convert Signal Format
+#### Generic
 
 ``` css
-# signal-YYYY-MM-DD-HHMMSS.ext
-[file]{replace:"signal-(\d{4}-\d{2}-\d{2})-(\d{2})(\d{2})(\d{2})","\1T\2.\3.\4.000 -",r} [file]{lower} -- [meta:Xmp.digiKam.TagsList]{lower}.[ext]{lower}
-```
-
+# [anytext][-_]YYYY[-_]MM[-_]DD[-_]HH[-_]MM[-_]SS[-_]SSS[-_](.*).ext
+# Autopad MS with 000's even when not present, handle -,_,'' between separators.
+[file]{replace:"^.*[-_](\d{4})[-_\s]?(\d{2})[-_\s]?(\d{2})[-_\s]?(\d{2})[-_\s]?(\d{2})[-_\s]?(\d{2})[-_\s]?(\d+)?.*","\1-\2-\3T\4.\5.\6.\7000",r}{replace:"\.(\d{3})\d*",".\1",r} - [file]{lower} -- [meta:Xmp.digiKam.TagsList]{lower}.[ext]{lower}
 ``` css
-# signal-YYYY-MM-DD-HH-MM-SS-SSS.ext
-[file]{replace:"signal-(\d{4}-\d{2}-\d{2})-(\d{2})-(\d{2})-(\d{2})-(\d{2})","\1T\2.\3.\4.\5 -",r} [file]{lower} -- [meta:Xmp.digiKam.TagsList]{lower}.[ext]{lower}
-```
-
-#### Screenshot
-Update for .* at end
-``` css
-Screenshot_YYYYMMDD-HHMMSS.ext
-[file]{replace:"Screenshot_(\d{4})(\d{2})(\d{2})-(\d{2})(\d{2})(\d{2})","\1-\2-\3T\4.\5.\6.000 -",r} [file]{lower} -- [meta:Xmp.digiKam.TagsList]{lower}.[ext]{lower}
-```
-
-#### Pixel
-
-``` css
-PXL_YYYYMMDD_HHMMSSSSS(.*).ext
-[file]{replace:"PXL_(\d{4})(\d{2})(\d{2})_(\d{2})(\d{2})(\d{2})(\d{2})","\1-\2-\3T\4.\5.\6.\7 -",r} [file]{lower} -- [meta:Xmp.digiKam.TagsList]{lower}.[ext]{lower}
-```
 
 [a]: https://karl-voit.at/managing-digital-photographs

@@ -221,6 +221,14 @@ Quick and dirty for just streaming a specific application. Prefer
         --encoder=x264enc  #  Nvidia should use nvh264enc.
     ```
 
+## Troubleshooting
+
+### Window appears with scrollbar or two pages
+Canvas size is not properly detected. Typically this occurs when the bookmarks
+bar is visible and the canvas size is not adjusted (common for chrome).
+
+Hide bookmarks bar and refresh.
+
 [a]: https://github.com/selkies-project/selkies
 [b]: https://github.com/selkies-project/selkies/blob/main/docs/component.md#encoders
 [c]: ../../service/systemd/README.md
