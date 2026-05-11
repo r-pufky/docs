@@ -76,6 +76,7 @@ nav:
       - 'filesystem/zfs/sync_backup.md'
       - 'filesystem/zfs/replacing_disks.md'
       - 'filesystem/zfs/encryption.md'
+      - 'filesystem/zfs/troubleshooting.md'
     - 'filesystem/copying_data.md'
     - 'filesystem/wiping_data.md'
   - 'Hardware':
