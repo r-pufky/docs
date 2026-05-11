@@ -41,7 +41,6 @@ Enable XMP sidecars to prevent future application lock-in.
     breaks any file with multiple extensions. Leaving this disabled will create
     a sidecar for each extension.
 
-
 !!! example "Tools ➔ Maintenance ➔ Sync Metadata and Database"
     * All Albums: ✔
     * Sync Direction: **From Database to image metadata**
@@ -57,9 +56,20 @@ Required for duplicate and similarity matching.
     After the initial processing run enabling scan will only re-processed
     modified files.
 
+### Scan at Startup
+Rescan all current, new, and changed files on startup. Massive libraries will
+take a long time to finish, blocking other digikam processing actions behind
+it.
+
+Instead use **F5** to re-scan current album or "Tools ➔ Scan for new items" instead.
+
+!!! example "Settings ➔ Configure Digikam ➔ Miscellaneous"
+    * Scan for new items at startup: ✘
+    * Fast scan: ✔
+
 ## Files
 Use [Karl Voit's Naming System][a] for sane future and application proof
-processing.
+processing. [Utility here][b].
 
 !!! success ""
     **YYYY-MM-DDTHH.MM.SS.SSS - {ORIGINAL NAME} -- {TAGS}.ext**
@@ -85,6 +95,16 @@ Additional Rules:
     * original parent directory.
 
 ### Rename
+
+!!! tip "Use External Utility"
+    Digikam internal rename utility works but falls over when trying to handle
+    multiple input formats; leading to a list of massive regex expressions
+    without a clear indication of what any do; including mis-typed regexs.
+
+    Use an [external utility][b] to rename files and press **F5** in the album
+    to refresh and re-match the updated file names.
+
+
 Access renaming by highlighting files and pressing **F2** or using batch
 processing.
 
@@ -102,12 +122,5 @@ Set static date not aligning to current metadata.
 [file]{replace:"^.*? - ","2021-08-19T00.00.00.000 - ",r} -- [meta:Xmp.digiKam.TagsList]{lower}.[ext]{lower}
 ```
 
-#### Generic
-
-``` css
-# [anytext][-_]YYYY[-_]MM[-_]DD[-_]HH[-_]MM[-_]SS[-_]SSS[-_](.*).ext
-# Autopad MS with 000's even when not present, handle -,_,'' between separators.
-[file]{replace:"^.*[-_](\d{4})[-_\s]?(\d{2})[-_\s]?(\d{2})[-_\s]?(\d{2})[-_\s]?(\d{2})[-_\s]?(\d{2})[-_\s]?(\d+)?.*","\1-\2-\3T\4.\5.\6.\7000",r}{replace:"\.(\d{3})\d*",".\1",r} - [file]{lower} -- [meta:Xmp.digiKam.TagsList]{lower}.[ext]{lower}
-``` css
-
 [a]: https://karl-voit.at/managing-digital-photographs
+[b]: https://github.com/r-pufky/voit
