@@ -90,6 +90,8 @@ dependencies = [
     { name = "mkdocs-git-revision-date-localized-plugin" },
     { name = "mkdocs-glightbox" },
     { name = "mkdocs-material" },
+    { name = "pygments" },
+    { name = "requests" },
 ]
 
 [package.metadata]
@@ -99,6 +101,8 @@ requires-dist = [
     { name = "mkdocs-git-revision-date-localized-plugin", specifier = ">=1.5.1" },
     { name = "mkdocs-glightbox", specifier = ">=0.5.2" },
     { name = "mkdocs-material", specifier = ">=9.7.4" },
+    { name = "pygments", specifier = "==2.20.0" },
+    { name = "requests", specifier = "==2.33.1" },
 ]
 
 [[package]]
