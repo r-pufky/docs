@@ -6,6 +6,8 @@ Added:
 * Add Star Rupture game configuration.
 * Add PVE Subordinate UID/GID mappings for NFS.
 * Add Selkies documentation.
+* Add Digikam documentation.
+* Add ZFS troubleshooting documentation.
 * Add systemd cronjob replacement example for systemd.
 * Add App bundles.
 * Add PVE9 audio passthrough.

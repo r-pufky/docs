@@ -61,5 +61,25 @@ sometimes detects both the admin and standard user connection.
 Setup the server with **Manage Server** and **restart** the client; join game
 will now work correctly.
 
+### Error! state is 0x226 after update job
+Not enough disk space to download and install update.
+
+!!! danger ""
+    Error! state is 0x226 after update job.
+
+Free up disk space or remove installed files (backing up saves in 
+StarRupture/Saved/SaveGames) and update.
+
+### Server fails to start after update
+Star Rupture dedicated server is in BETA. Updates have broken install as well
+as save files in the past.
+
+Remove installed files (backing up saves in StarRupture/Saved/SaveGames) and
+update with provided script.
+
+``` bash
+/home/steam/star_rupture/update_server
+```
+
 [a]: https://minestrator.com/en/blog/article/star-rupture-dedicated-server-mybox-setup-2026
 [b]: https://wiki.starrupture-utilities.com/en/dedicated-server/Vulnerability-Announcement

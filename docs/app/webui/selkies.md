@@ -197,7 +197,7 @@ systemctl --user start stream_kde
 
 ### Stream Specific Application
 Quick and dirty for just streaming a specific application. Prefer
-[Stream KDE Desktop](#stream-kde-desktop).
+[Service](#service).
 
 !!! abstract "~/.local/bin/stream_digikam"
     0755 {USER}:{USER}
