@@ -10,7 +10,7 @@
         <link rel="canonical" href="https://github.com/r-pufky/docs/app/gui/firefox/">
       
       
-        <link rel="prev" href="../chrome/">
+        <link rel="prev" href="../digikam/">
       
       
         <link rel="next" href="../freecad/">
@@ -728,6 +728,8 @@
       
         
       
+        
+      
     
     
     
@@ -783,6 +785,34 @@
     
   
     Chrome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../digikam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Digikam
   
 
     
@@ -878,6 +908,17 @@
     <span class="md-ellipsis">
       
         Disable Speech Dispatcher
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-async-clipboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable Async Clipboard
       
     </span>
   </a>
@@ -1002,7 +1043,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_6">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_7">
         
           
           <div class="md-nav__link md-nav__container">
@@ -1024,14 +1065,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2_2_6" id="__nav_2_2_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2_2_7" id="__nav_2_2_7_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_2_6">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2194,6 +2235,8 @@
       
         
       
+        
+      
     
     
     
@@ -2314,6 +2357,34 @@
     
   
     Encryption
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../filesystem/zfs/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
   
 
     
@@ -6789,15 +6860,79 @@
   
   
   
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_6">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../service/systemd/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Systemd
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_12_6" id="__nav_12_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Systemd
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
     <li class="md-nav__item">
-      <a href="../../../service/systemd/" class="md-nav__link">
+      <a href="../../../service/systemd/troubleshooting/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    systemd
+    Troubleshooting
   
 
     
@@ -6806,6 +6941,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -7435,6 +7578,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#enable-async-clipboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable Async Clipboard
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -7578,6 +7732,23 @@ not setup. Create as needed.</p>
 <li>media.webspeech.synth.enabled: <strong>false</strong></li>
 </ul>
 </div>
+<h2 id="enable-async-clipboard"><a href="https://github.com/selkies-project/selkies/issues/202">Enable Async Clipboard</a></h2>
+<p>Enable sites to read/write to clipboard.</p>
+<div class="admonition danger">
+<p class="admonition-title">Use Chrome</p>
+<p>Chrome uses the Permissions API which will prompt when a website requests
+access to read/write the clipboard. Firefox has not implemented the
+Permissions API and enabling this option will enable it for <strong>ALL</strong> sites
+regardless of intent.</p>
+<p>This is almost certainly <strong>not</strong> what you want to do.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">about:config</p>
+<ul>
+<li>dom.events.testing.asyncClipboard: <strong>true</strong></li>
+<li>dom.events.asyncClipboard.readText: <strong>true</strong></li>
+</ul>
+</div>
 
 
 
@@ -7600,7 +7771,7 @@ not setup. Create as needed.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 31, 2026 04:21:11 UTC">March 31, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 29, 2026 21:56:28 UTC">April 29, 2026</span>
   </span>
 
     
