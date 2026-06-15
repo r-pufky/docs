@@ -13,3 +13,7 @@ dependencies = [
     "pygments==2.20.0",
     "requests==2.33.1",
 ]
+
+# Mitigate 0-day supply chain attacks.
+[tool.uv]
+exclude-newer = "7 days"
