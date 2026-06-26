@@ -1,5 +1,11 @@
 # [Release Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## 3.0.2:
+
+Added:
+* Add LSI 9300 IT mode flash.
+* WebOS HDR brightness fixes.
+
 ## 3.0.1:
 
 Added:

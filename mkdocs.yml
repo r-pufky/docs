@@ -83,6 +83,7 @@ nav:
     - 'hardware/amt.md'
     - 'hardware/bnk9.md'
     - 'hardware/crush_80_reboot_pro.md'
+    - 'hardware/lsi_9300.md'
     - 'Secure Boot':
       - 'hardware/secure_boot/README.md'
       - 'hardware/secure_boot/troubleshooting.md'
