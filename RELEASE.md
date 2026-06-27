@@ -3,7 +3,8 @@
 ## 3.0.2:
 
 Added:
-* Add LSI 9300 IT mode flash.
+* LSI 9300 IT mode flash.
+* NFS nconnect options for simultaneous TCP connections per server.
 * WebOS HDR brightness fixes.
 
 ## 3.0.1:

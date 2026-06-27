@@ -5,7 +5,7 @@ starts if mapped drives are not mounted.
 Automatically mount NFS via FSTAB on boot.
 
 ## Create NFS mount locations
-[See NFS][a] for mounting options.
+[See NFS][a] for mounting options [and optimizations][c].
 
 ``` bash
 # Set mount immutable to prevent writes when not mounted.
@@ -20,7 +20,7 @@ chattr +i *  # Changes required unsetting.
     0644 root:root
 
     ``` conf
-    {SERVER}:/d/pve /d/pve nfs4 rw,nfsvers=4,minorversion=2,proto=tcp,fsc,rsize=1048576,wsize=1048576,nocto,_netdev 0 0
+    {SERVER}:/d/pve /d/pve nfs4 rw,nfsvers=4,minorversion=2,proto=tcp,fsc,rsize=1048576,wsize=1048576,nocto,_netdev,nconnect=4 0 0
     ```
 
 !!! info "Map NFS UID/GID for LXC containers"
@@ -43,8 +43,23 @@ ls -l /d  # Mounted R/W with NFS squashed permissions.
 Cluster data storage over NFS. NFS must be mounted on all cluster nodes before
 adding storage.
 
+!!! warning "PVE Storage must be mounted as **no_root_squash**"
+    PVE writes to storage as root. With **root_squash** PVE will be able to
+    read but not write to this storage.
+
+    Always consider the threat model before enabling **no_root_squash**:
+
+    * NFS server is only accessed through direct fiber links.
+    * Exported directory is not a sub-directory of other exports.
+    * Exported directory is explicitly set to 0700 root:root.
+    * Mounted directory is immutable with 0700 root:root.
+
 ``` bash
-pvesm add dir pve --path /d/pve --content images,vztmpl,backup,snippets,rootdir,iso
+# Existing storage mount can be removed without data loss.
+pvesm remove pve
+
+# is_mountpoint prevents PVE using storage if backing mount fails.
+pvesm add dir pve --path /d/pve --content images,vztmpl,backup,snippets,rootdir,iso --is_mountpoint yes
 reboot  # NFS should be mounted on boot.
 ```
 
@@ -76,3 +91,4 @@ Files have permissions themselves.
 
 [a]: ../../filesystem/nfs/README.md
 [b]: https://github.com/ddimick/proxmox-lxc-idmapper
+[c]: ../../filesystem/nfs/optimizations.md
