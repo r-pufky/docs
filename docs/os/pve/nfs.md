@@ -51,8 +51,12 @@ adding storage.
 
     * NFS server is only accessed through direct fiber links.
     * Exported directory is not a sub-directory of other exports.
-    * Exported directory is explicitly set to 0700 root:root.
-    * Mounted directory is immutable with 0700 root:root.
+    * Exported directory is explicitly set to **0700 root:root**.
+    * Mounted directory is immutable with **0700 root:root**.
+
+!!! info "Use discard for LXC/VM's"
+    Enable **discard** on disks used from this storage. It will prevent bloat
+    over time.
 
 ``` bash
 # Existing storage mount can be removed without data loss.

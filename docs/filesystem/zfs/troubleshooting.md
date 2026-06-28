@@ -98,6 +98,21 @@ zpool scrub hundo
 zfs mount -a -l
 ```
 
+## Cannot destroy snapshots
+Snapshot user does not have **mount,destroy** permissions on the dataset to
+manage snapshots.
+
+!!! danger ""
+    cannot destroy snapshots: permission denied
+
+``` bash
+# Check current permissions for a dataset.
+zfs allow tank/example
+
+# Add mount,destroy permissions
+zfs allow -d zfs_snapshot mount,destroy tank/example
+```
+
 [a]: https://www.memtest86.com
 [b]: https://www.mersenne.org/download
 [c]: https://github.com/valleyofdoom/StresKit

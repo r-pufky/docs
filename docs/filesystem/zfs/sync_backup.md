@@ -14,6 +14,18 @@ snapshots essentially being 'free' until more data is written to the dataset.
 Syncing snapshot remotely requires a reference snapshot and the snapshot to
 sync to.
 
+## Permissions
+A separate account with **mount,destroy** on ZFS datasets is required for
+snapshot management.
+
+``` bash
+# Check current permissions for a dataset.
+zfs allow tank/example
+
+# Add delegation of mount,destroy permissions.
+zfs allow -d zfs_snapshot mount,destroy tank/example
+```
+
 ## Syncing Datasets
 Dataset may be synced to remote ZFS pools as a method for backup. These are
 basic tools for sync'ing datasets. See [Automation](#automation) to backup and

@@ -5,6 +5,8 @@
 Added:
 * LSI 9300 IT mode flash.
 * NFS nconnect options for simultaneous TCP connections per server.
+* PVE discard option for LXC/VM's over NFS backed by ZFS.
+* ZFS cannot delete snapshot troubleshooting.
 * WebOS HDR brightness fixes.
 
 ## 3.0.1:
