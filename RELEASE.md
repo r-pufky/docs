@@ -1,6 +1,6 @@
 # [Release Changelog](https://keepachangelog.com/en/1.0.0/)
 
-## 3.0.2:
+## 3.1.0:
 
 Added:
 * LSI 9300 IT mode flash.
