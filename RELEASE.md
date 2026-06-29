@@ -1,5 +1,25 @@
 # [Release Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## 4.0.0:
+Migrate to zensical. No documentation changes.
+
+All settings migrated and updated as needed. Remaining features currently not
+implemented are marked as TODO's in zensical.toml.
+
+Added:
+* .github/workflows/docs.yml - Automated deployment action for site push; use
+  instead of uv mkdocs gh-deploy.
+* _extra/widescreen.css - enable widescreen width support.
+* zensical.toml.
+
+Changed:
+* uv.lock - cleared and updated for zensical only builds.
+* pyproject.toml - cleared and updated for zensical only builds.
+* _material ➔ _extra
+
+Removed:
+* mkdocs.yml
+
 ## 3.1.0:
 
 Added:

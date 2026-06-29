@@ -1,0 +1,409 @@
+# Configuration: https://r-pufky.github.io/docs/service/mkdocs
+#
+# uv run zensical serve
+# uv run zensical build --strict
+#
+# Deployment is automatic via github workflow: .github/workflow/docs.yml
+#
+# Reference:
+# * https://zensical.org/docs/setup/extensions/about/#zensical-extensions
+# * https://zensical.org/docs/setup/extensions/python-markdown-extensions
+
+[project]
+# Manually generate nav for format and casing.
+nav = [
+  "README.md",
+  # General apps place native spot. Combined apps go in root app.
+  { Applications = [
+    { CLI = [
+      "app/cli/app_bundles.md",
+      "app/cli/bash.md",
+      "app/cli/direnv.md",
+      "app/cli/fish.md",
+      "app/cli/video_tools.md",
+      { Vim = [
+        "app/cli/vim/README.md",
+        "app/cli/vim/troubleshooting.md",
+      ] },
+      "app/cli/yt_dlp.md",
+    ] },
+    { GUI = [
+      "app/gui/chrome.md",
+      "app/gui/digikam.md",
+      "app/gui/firefox.md",
+      "app/gui/freecad.md",
+      "app/gui/movie_studio.md",
+      "app/gui/putty.md",
+      { VSCode = [
+        "app/gui/vscode/README.md",
+        "app/gui/vscode/code_server.md",
+        "app/gui/vscode/troubleshooting.md",
+      ] },
+    ] },
+    { WebUI = [
+      "app/webui/selkies.md",
+    ] },
+    { "GPG with Yubikey" = [
+      "app/gpg/README.md",
+      { Setup = [
+        "app/gpg/setup/README.md",
+        "app/gpg/setup/master.md",
+        "app/gpg/setup/subkey.md",
+        "app/gpg/setup/backup.md",
+        "app/gpg/setup/export_to_yubikey.md",
+        "app/gpg/setup/cleanup.md",
+        "app/gpg/setup/import.md",
+      ] },
+      { OS = [
+        "app/gpg/os/linux.md",
+        "app/gpg/os/windows.md",
+      ] },
+      "app/gpg/operations.md",
+      "app/gpg/troubleshooting.md",
+    ] },
+  ] },
+  { Databases = [
+    "db/mariadb.md",
+    { PostgresQL = [
+      "db/postgres/README.md",
+      "db/postgres/troubleshooting.md",
+    ] },
+  ] },
+  { Filesystems = [
+    { NFS = [
+      "filesystem/nfs/README.md",
+      "filesystem/nfs/exports.md",
+      "filesystem/nfs/mounts.md",
+      "filesystem/nfs/optimizations.md",
+      "filesystem/nfs/options.md",
+      "filesystem/nfs/troubleshooting.md",
+    ] },
+    { ZFS = [
+      "filesystem/zfs/README.md",
+      "filesystem/zfs/sync_backup.md",
+      "filesystem/zfs/replacing_disks.md",
+      "filesystem/zfs/encryption.md",
+      "filesystem/zfs/troubleshooting.md",
+    ] },
+    "filesystem/copying_data.md",
+    "filesystem/wiping_data.md",
+  ] },
+  { Hardware = [
+    "hardware/amt.md",
+    "hardware/bnk9.md",
+    "hardware/crush_80_reboot_pro.md",
+    "hardware/lsi_9300.md",
+    { "Secure Boot" = [
+      "hardware/secure_boot/README.md",
+      "hardware/secure_boot/troubleshooting.md",
+    ] },
+  ] },
+  { Games = [
+    { Ludusavi = [
+      "game/ludusavi/README.md",
+    ] },
+    "game/conan_exiles.md",
+    "game/elden_ring.md",
+    { "Escape from Tarkov" = [
+      "game/escape_from_tarkov/README.md",
+      "game/escape_from_tarkov/server.md",
+    ] },
+    "game/mumble/mumble.md",
+    { "Seven Days to Die" = [
+      "game/seven_days_to_die/README.md",
+      "game/seven_days_to_die/serverconfig.md",
+      "game/seven_days_to_die/serveradmin.md",
+    ] },
+    "game/star_rupture.md",
+    { Steam = [
+      "game/steam/README.md",
+      "game/steam/troubleshooting.md",
+    ] },
+  ] },
+  { Mail = [
+    "mail/imapsync.md",
+    { Mox = [
+      "mail/mox/README.md",
+      "mail/mox/troubleshooting.md",
+    ] },
+    "mail/mutt.md",
+    "mail/postfix.md",
+    "mail/roundcube.md",
+  ] },
+  { "Media Management" = [
+    # "media/folders.md",
+    "media/deluge.md",
+    "media/lidarr.md",
+    "media/music.md",
+    "media/nzbget.md",
+    { Paperless = [
+      "media/paperless/README.md",
+      "media/paperless/troubleshooting.md",
+    ] },
+    "media/playon.md",
+    { Plex = [
+      "media/plex/README.md",
+      "media/plex/config.md",
+      "media/plex/troubleshooting.md",
+    ] },
+    { Radarr = [
+      "media/radarr/README.md",
+      "media/radarr/troubleshooting.md",
+    ] },
+    { Sonarr = [
+      "media/sonarr/README.md",
+      "media/sonarr/troubleshooting.md",
+    ] },
+  ] },
+  { Networking = [
+    { Dropbear = [
+      "network/dropbear/README.md",
+      "network/dropbear/troubleshooting.md",
+    ] },
+    "network/pihole.md",
+    { Traefik = [
+      "network/traefik/README.md",
+      "network/traefik/basic_auth_dashboard.md",
+      "network/traefik/error_pages.md",
+      "network/traefik/rate_limiting.md",
+      "network/traefik/plugins.md",
+      { "ACME Certificates" = [
+        "network/traefik/acme/README.md",
+        "network/traefik/acme/behind_traefik.md",
+      ] },
+      "network/traefik/odic.md",
+      "network/traefik/troubleshooting.md",
+    ] },
+    { UniFi = [
+      "network/unifi/README.md",
+      "network/unifi/wireguard.md",
+      "network/unifi/troubleshooting.md",
+    ] },
+    "network/vlan.md",
+    { SSH = [
+      "network/ssh/README.md",
+      { SSHD = [
+        "network/ssh/sshd/linux.md",
+        "network/ssh/sshd/windows.md",
+      ] },
+      "network/ssh/troubleshooting.md",
+    ] },
+    { Wireguard = [
+      "network/wireguard/README.md",
+      { OS = [
+        "network/wireguard/os/linux.md",
+        "network/wireguard/os/windows.md",
+      ] },
+      "network/wireguard/troubleshooting.md",
+    ] },
+  ] },
+  { "Operating Systems" = [
+    { CachyOS = [
+      "os/cachyos/README.md",
+      "os/cachyos/preferences.md",
+      "os/cachyos/troubleshooting.md",
+    ] },
+    { Debian = [
+      "os/debian/README.md",
+      "os/debian/troubleshooting.md",
+    ] },
+    "os/kindle.md",
+    "os/pikvm.md",
+    { "Proxmox (PVE)" = [
+      "os/pve/README.md",
+      "os/pve/acme.md",
+      "os/pve/audio.md",
+      "os/pve/gpu.md",
+      "os/pve/nfs.md",
+      "os/pve/troubleshooting.md",
+    ] },
+    "os/shield.md",
+    "os/web_os.md",
+    { Windows = [
+      "os/windows/README.md",
+      "os/windows/reinstall.md",
+      "os/windows/crashes.md",
+      "os/windows/troubleshooting.md",
+    ] },
+  ] },
+  { Printing = [
+    "printing/linux.md",
+    "printing/windows.md",
+    "printing/brother_mfcl2750dw.md",
+  ] },
+  { Services = [
+    "service/README.md",
+    "service/bluebubbles.md",
+    { "Certificate Authority" = [
+      "service/ca/README.md",
+      "service/ca/setup.md",
+      "service/ca/certificates.md",
+      "service/ca/certificate_revocation_list.md",
+    ] },
+    "service/mkdocs.md",
+    { NGINX = [
+      "service/nginx/README.md",
+      { "Manual Configuration" = [
+        "service/nginx/manual/README.md",
+        "service/nginx/manual/setup.md",
+        "service/nginx/manual/custom_error_pages.md",
+        "service/nginx/manual/cert_based_authentication.md",
+        "service/nginx/manual/best_practices.md",
+      ] },
+      "service/nginx/troubleshooting.md",
+    ] },
+    { Systemd = [
+      "service/systemd/README.md",
+      "service/systemd/troubleshooting.md",
+    ] },
+  ] },
+  { "Version Control" = [
+    { Forgejo = [
+      "vcs/forgejo/README.md",
+      "vcs/forgejo/troubleshooting.md",
+    ] },
+    { GIT = [
+      "vcs/git/README.md",
+      "vcs/git/branches.md",
+      "vcs/git/troubleshooting.md",
+    ] },
+  ] },
+  { Glossary = [
+    "glossary/README.md",
+    "glossary/admonitions.md",
+    "glossary/gpg.md",
+    "glossary/mail.md",
+    "glossary/os.md",
+    "glossary/unicode.md",
+    "glossary/vlan.md",
+    "glossary/yubikey.md",
+  ] },
+]
+
+site_name = "Docs: A Collection of Notes"
+site_url = "https://github.com/r-pufky/docs"
+repo_url = "https://github.com/r-pufky/docs"
+site_author = "r-pufky"
+copyright = "©2026"
+docs_dir = "docs"
+site_dir = "site"
+use_directory_urls = true
+dev_addr = "localhost:8000"
+extra_css = [
+  "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/vs2015.min.css",
+  "_extra/widescreen.css",
+]
+extra_javascript = [
+  "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js",
+  "https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js",
+  "_extra/init.js",
+]
+
+[project.theme]
+variant = "classic"  # "modern" is updated look for zensical.
+language = "en"
+features = [
+  "header.autohide",
+  "content.action.edit",
+  "content.footnote.tooltips",
+  "navigation.instant",
+  "navigation.instant.prefetch",
+  "navigation.instant.progress",
+  "navigation.tracking",
+  "navigation.path",
+  "navigation.indexes",
+  "navigation.top",
+  "toc.follow",
+  "search.highlight",
+]
+icon.annotation = "material/chevron-right-circle"
+navigation_depth = 5
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle.icon = "lucide/sun-moon"
+toggle.name = "Switch to light mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+primary = "black"
+accent = "indigo"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to light mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+primary = "indigo"
+accent = "indigo"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to dark mode"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/r-pufky"
+
+[[project.extra.social]]
+icon = "simple/gnuprivacyguard"
+link = "https://keys.openpgp.org/vks/v1/by-fingerprint/466EEC2B67516C7117C85CE3A0BC35D16698BAB9"
+
+[project.markdown_extensions.admonition]
+[project.markdown_extensions.attr_list]
+[project.markdown_extensions.def_list]
+[project.markdown_extensions.footnotes]
+[project.markdown_extensions.md_in_html]
+[project.markdown_extensions.pymdownx.arithmatex]
+generic = true
+
+[project.markdown_extensions.pymdownx.betterem]
+[project.markdown_extensions.pymdownx.caret]
+[project.markdown_extensions.pymdownx.details]
+[project.markdown_extensions.pymdownx.emoji]
+emoji_generator = "zensical.extensions.emoji.to_svg"
+emoji_index = "zensical.extensions.emoji.twemoji"
+
+[project.markdown_extensions.pymdownx.highlight]
+anchor_linenums = true
+line_spans = "__span"
+use_pygments = false
+
+[project.markdown_extensions.pymdownx.inlinehilite]
+[project.markdown_extensions.pymdownx.magiclink]
+[project.markdown_extensions.pymdownx.superfences]
+[project.markdown_extensions.pymdownx.tabbed]
+alternate_style = true
+slugify = { object = "pymdownx.slugs.slugify", kwds = { case = "lower" } }
+
+[project.markdown_extensions.pymdownx.tasklist]
+custom_checkbox = true
+
+[project.markdown_extensions.pymdownx.tilde]
+[project.markdown_extensions.pymdownx.mark]
+[project.markdown_extensions.tables]
+[project.markdown_extensions.zensical.extensions.glightbox]
+auto = true
+auto_themed = true
+auto_caption = true
+caption_position = "bottom"
+width = "auto"
+height = "auto"
+
+# TODO(zensical): Currently being implemented.
+#     plugins:
+#       - git-revision-date-localized:
+#           enable_creation_date: true
+#
+#     https://github.com/zensical/backlog/issues/18
+
+# TODO(zensical): Currently being migrated and therefore disabled.
+# Use with: zensical build --strict
+# [project.validation]
+# invalid_links = true
+# invalid_link_anchors = true
+# unresolved_references = false
+# unresolved_footnotes = false
+# unused_definitions = false
+# unused_footnotes = false
+# shadowed_definitions = false
+# shadowed_footnotes = false

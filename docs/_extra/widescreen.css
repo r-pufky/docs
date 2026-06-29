@@ -1,0 +1,4 @@
+/* Enable width adjustments to window width. */
+.md-grid {
+  max-width: initial;
+}

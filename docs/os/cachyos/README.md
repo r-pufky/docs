@@ -1,4 +1,4 @@
-# [CachyOS][a].
+# [CachyOS][a]
 
 !!! warning "[Disable Secure Boot and CSM][b]"
     Secure boot and CSM must be disabled during UEFI installations. It can be
