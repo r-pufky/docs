@@ -150,6 +150,7 @@ nav:
       - 'network/traefik/troubleshooting.md'
     - 'UniFi':
       - 'network/unifi/README.md'
+      - 'network/unifi/wireguard.md'
       - 'network/unifi/troubleshooting.md'
     - 'network/vlan.md'
     - 'SSH':

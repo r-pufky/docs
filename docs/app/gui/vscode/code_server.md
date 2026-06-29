@@ -3,7 +3,7 @@ VSCode via WebUI over forwarded SSH connection.
 
 !!! tip "Use Chrome"
     Chrome correct interprets complex key combinations. When navigating to
-    code-server, install the offered PWA (progessive web app). This will open
+    code-server, install the offered PWA (progressive web app). This will open
     the code-serve page in a separate window and allow native-like app usage.
 
 === "CachyOS"
@@ -40,6 +40,9 @@ Changes require service restart.
     ``` yaml
     # Only serve on localhost requiring access via SSH port forwarding.
     # ssh -L 2222:localhost:2222 {IP} -p {PORT}
+    #
+    # Use a wireguard tunnel, ssh to machine to forward localhost. Copy/paste
+    # will not work over non-https connections.
     bind-addr: 127.0.0.1:2222
     auth: none
     ```

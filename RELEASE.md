@@ -7,6 +7,7 @@ Added:
 * NFS nconnect options for simultaneous TCP connections per server.
 * PVE discard option for LXC/VM's over NFS backed by ZFS.
 * ZFS cannot delete snapshot troubleshooting.
+* UniFi Wireguard configuration.
 * WebOS HDR brightness fixes.
 
 ## 3.0.1:
