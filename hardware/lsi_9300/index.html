@@ -7,31 +7,31 @@
         <meta name="author" content="r-pufky">
       
       
-        <link rel="canonical" href="https://github.com/r-pufky/docs/filesystem/zfs/replacing_disks/">
+        <link rel="canonical" href="https://github.com/r-pufky/docs/hardware/lsi_9300/">
       
       
-        <link rel="prev" href="../sync_backup/">
+        <link rel="prev" href="../crush_80_reboot_pro/">
       
       
-        <link rel="next" href="../encryption/">
+        <link rel="next" href="../secure_boot/">
       
       
         
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
-        <title>Replacing Disks - Docs: A Collection of Notes</title>
+        <title>LSI 9300 - Docs: A Collection of Notes</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -58,13 +58,13 @@
     
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/vs2015.min.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
-  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#replacing-disks" class="md-skip">
+        <a href="#lsi-9300" class="md-skip">
           Skip to content
         </a>
       
@@ -109,7 +109,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Docs: A Collection of Notes" class="md-header__button md-logo" aria-label="Docs: A Collection of Notes" data-md-component="logo">
+    <a href="../.." title="Docs: A Collection of Notes" class="md-header__button md-logo" aria-label="Docs: A Collection of Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Replacing Disks
+              LSI 9300
             
           </span>
         </div>
@@ -257,7 +257,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Docs: A Collection of Notes" class="md-nav__button md-logo" aria-label="Docs: A Collection of Notes" data-md-component="logo">
+    <a href="../.." title="Docs: A Collection of Notes" class="md-nav__button md-logo" aria-label="Docs: A Collection of Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
@@ -287,7 +287,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -434,7 +434,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../app/cli/app_bundles/" class="md-nav__link">
+      <a href="../../app/cli/app_bundles/" class="md-nav__link">
         
   
   
@@ -462,7 +462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../app/cli/bash/" class="md-nav__link">
+      <a href="../../app/cli/bash/" class="md-nav__link">
         
   
   
@@ -490,7 +490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../app/cli/direnv/" class="md-nav__link">
+      <a href="../../app/cli/direnv/" class="md-nav__link">
         
   
   
@@ -518,7 +518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../app/cli/fish/" class="md-nav__link">
+      <a href="../../app/cli/fish/" class="md-nav__link">
         
   
   
@@ -546,7 +546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../app/cli/video_tools/" class="md-nav__link">
+      <a href="../../app/cli/video_tools/" class="md-nav__link">
         
   
   
@@ -594,7 +594,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../app/cli/vim/" class="md-nav__link ">
+            <a href="../../app/cli/vim/" class="md-nav__link ">
               
   
   
@@ -638,7 +638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../app/cli/vim/troubleshooting/" class="md-nav__link">
+      <a href="../../app/cli/vim/troubleshooting/" class="md-nav__link">
         
   
   
@@ -674,7 +674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../app/cli/yt_dlp/" class="md-nav__link">
+      <a href="../../app/cli/yt_dlp/" class="md-nav__link">
         
   
   
@@ -773,7 +773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../app/gui/chrome/" class="md-nav__link">
+      <a href="../../app/gui/chrome/" class="md-nav__link">
         
   
   
@@ -801,7 +801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../app/gui/digikam/" class="md-nav__link">
+      <a href="../../app/gui/digikam/" class="md-nav__link">
         
   
   
@@ -829,7 +829,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../app/gui/firefox/" class="md-nav__link">
+      <a href="../../app/gui/firefox/" class="md-nav__link">
         
   
   
@@ -857,7 +857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../app/gui/freecad/" class="md-nav__link">
+      <a href="../../app/gui/freecad/" class="md-nav__link">
         
   
   
@@ -885,7 +885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../app/gui/movie_studio/" class="md-nav__link">
+      <a href="../../app/gui/movie_studio/" class="md-nav__link">
         
   
   
@@ -913,7 +913,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../app/gui/putty/" class="md-nav__link">
+      <a href="../../app/gui/putty/" class="md-nav__link">
         
   
   
@@ -963,7 +963,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../app/gui/vscode/" class="md-nav__link ">
+            <a href="../../app/gui/vscode/" class="md-nav__link ">
               
   
   
@@ -1007,7 +1007,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../app/gui/vscode/code_server/" class="md-nav__link">
+      <a href="../../app/gui/vscode/code_server/" class="md-nav__link">
         
   
   
@@ -1035,7 +1035,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../app/gui/vscode/troubleshooting/" class="md-nav__link">
+      <a href="../../app/gui/vscode/troubleshooting/" class="md-nav__link">
         
   
   
@@ -1130,7 +1130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../app/webui/selkies/" class="md-nav__link">
+      <a href="../../app/webui/selkies/" class="md-nav__link">
         
   
   
@@ -1192,7 +1192,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../app/gpg/" class="md-nav__link ">
+            <a href="../../app/gpg/" class="md-nav__link ">
               
   
   
@@ -1266,7 +1266,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../app/gpg/setup/" class="md-nav__link ">
+            <a href="../../app/gpg/setup/" class="md-nav__link ">
               
   
   
@@ -1310,7 +1310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../app/gpg/setup/master/" class="md-nav__link">
+      <a href="../../app/gpg/setup/master/" class="md-nav__link">
         
   
   
@@ -1338,7 +1338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../app/gpg/setup/subkey/" class="md-nav__link">
+      <a href="../../app/gpg/setup/subkey/" class="md-nav__link">
         
   
   
@@ -1366,7 +1366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../app/gpg/setup/backup/" class="md-nav__link">
+      <a href="../../app/gpg/setup/backup/" class="md-nav__link">
         
   
   
@@ -1394,7 +1394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../app/gpg/setup/export_to_yubikey/" class="md-nav__link">
+      <a href="../../app/gpg/setup/export_to_yubikey/" class="md-nav__link">
         
   
   
@@ -1422,7 +1422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../app/gpg/setup/cleanup/" class="md-nav__link">
+      <a href="../../app/gpg/setup/cleanup/" class="md-nav__link">
         
   
   
@@ -1450,7 +1450,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../app/gpg/setup/import/" class="md-nav__link">
+      <a href="../../app/gpg/setup/import/" class="md-nav__link">
         
   
   
@@ -1539,7 +1539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../app/gpg/os/linux/" class="md-nav__link">
+      <a href="../../app/gpg/os/linux/" class="md-nav__link">
         
   
   
@@ -1567,7 +1567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../app/gpg/os/windows/" class="md-nav__link">
+      <a href="../../app/gpg/os/windows/" class="md-nav__link">
         
   
   
@@ -1603,7 +1603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../app/gpg/operations/" class="md-nav__link">
+      <a href="../../app/gpg/operations/" class="md-nav__link">
         
   
   
@@ -1631,7 +1631,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../app/gpg/troubleshooting/" class="md-nav__link">
+      <a href="../../app/gpg/troubleshooting/" class="md-nav__link">
         
   
   
@@ -1727,7 +1727,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../db/mariadb/" class="md-nav__link">
+      <a href="../../db/mariadb/" class="md-nav__link">
         
   
   
@@ -1775,7 +1775,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../db/postgres/" class="md-nav__link ">
+            <a href="../../db/postgres/" class="md-nav__link ">
               
   
   
@@ -1819,7 +1819,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../db/postgres/troubleshooting/" class="md-nav__link">
+      <a href="../../db/postgres/troubleshooting/" class="md-nav__link">
         
   
   
@@ -1859,10 +1859,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -1878,11 +1876,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -1903,7 +1901,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1949,7 +1947,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../nfs/" class="md-nav__link ">
+            <a href="../../filesystem/nfs/" class="md-nav__link ">
               
   
   
@@ -1993,7 +1991,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nfs/exports/" class="md-nav__link">
+      <a href="../../filesystem/nfs/exports/" class="md-nav__link">
         
   
   
@@ -2021,7 +2019,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nfs/mounts/" class="md-nav__link">
+      <a href="../../filesystem/nfs/mounts/" class="md-nav__link">
         
   
   
@@ -2049,7 +2047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nfs/optimizations/" class="md-nav__link">
+      <a href="../../filesystem/nfs/optimizations/" class="md-nav__link">
         
   
   
@@ -2077,7 +2075,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nfs/options/" class="md-nav__link">
+      <a href="../../filesystem/nfs/options/" class="md-nav__link">
         
   
   
@@ -2105,7 +2103,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../nfs/troubleshooting/" class="md-nav__link">
+      <a href="../../filesystem/nfs/troubleshooting/" class="md-nav__link">
         
   
   
@@ -2138,8 +2136,6 @@
                 
   
   
-    
-  
   
   
     
@@ -2161,15 +2157,15 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2">
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../filesystem/zfs/" class="md-nav__link ">
               
   
   
@@ -2193,7 +2189,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2213,7 +2209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sync_backup/" class="md-nav__link">
+      <a href="../../filesystem/zfs/sync_backup/" class="md-nav__link">
         
   
   
@@ -2221,6 +2217,306 @@
     
   
     Sync / Backup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../filesystem/zfs/replacing_disks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Replacing Disks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../filesystem/zfs/encryption/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encryption
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../filesystem/zfs/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../filesystem/copying_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Copying Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../filesystem/wiping_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wiping Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hardware
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../amt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AMT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bnk9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BNK9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crush_80_reboot_pro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Crush 80 Reboot Pro
   
 
     
@@ -2257,7 +2553,7 @@
   <span class="md-ellipsis">
     
   
-    Replacing Disks
+    LSI 9300
   
 
     
@@ -2275,7 +2571,7 @@
   <span class="md-ellipsis">
     
   
-    Replacing Disks
+    LSI 9300
   
 
     
@@ -2301,22 +2597,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#offline-replacement-bad-disk" class="md-nav__link">
+  <a href="#flashing-it-mode" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Offline Replacement Bad Disk
+        Flashing IT Mode
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Offline Replacement Bad Disk">
+    <nav class="md-nav" aria-label="Flashing IT Mode">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#identify-block-devices-to-minimize-downtime" class="md-nav__link">
+  <a href="#create-freedos-boot-usb" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Identify block devices to minimize downtime
+        Create FreeDOS boot USB
       
     </span>
   </a>
@@ -2324,10 +2620,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#offline-the-bad-disk-in-the-pool" class="md-nav__link">
+  <a href="#prep-hardware" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Offline the bad disk in the pool
+        Prep Hardware
       
     </span>
   </a>
@@ -2335,10 +2631,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#find-the-new-disk-to-add-to-zfs-pool" class="md-nav__link">
+  <a href="#reset-to-factory-defaults" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Find the new disk to add to ZFS pool
+        Reset to Factory Defaults
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flash-new-firmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flash New Firmware
       
     </span>
   </a>
@@ -2351,10 +2658,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hot-swap-bad-disk" class="md-nav__link">
+  <a href="#use-active-cooling" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Hot-swap Bad Disk
+        Use Active Cooling
       
     </span>
   </a>
@@ -2362,21 +2669,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#upgrade-with-larger-disks" class="md-nav__link">
+  <a href="#reference" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Upgrade with Larger Disks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#combination-of-raw-disks-and-partitions-in-pool" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Combination of Raw Disks and Partitions in Pool
+        Reference
       
     </span>
   </a>
@@ -2387,304 +2683,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../encryption/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Encryption
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../troubleshooting/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Troubleshooting
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../copying_data/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Copying Data
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../wiping_data/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Wiping Data
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Hardware
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Hardware
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix="">
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../hardware/amt/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    AMT
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../hardware/bnk9/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    BNK9
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../hardware/crush_80_reboot_pro/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Crush 80 Reboot Pro
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../hardware/lsi_9300/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    LSI 9300
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -2717,7 +2715,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../hardware/secure_boot/" class="md-nav__link ">
+            <a href="../secure_boot/" class="md-nav__link ">
               
   
   
@@ -2761,7 +2759,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hardware/secure_boot/troubleshooting/" class="md-nav__link">
+      <a href="../secure_boot/troubleshooting/" class="md-nav__link">
         
   
   
@@ -2887,7 +2885,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../game/ludusavi/" class="md-nav__link ">
+            <a href="../../game/ludusavi/" class="md-nav__link ">
               
   
   
@@ -2934,7 +2932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../game/conan_exiles/" class="md-nav__link">
+      <a href="../../game/conan_exiles/" class="md-nav__link">
         
   
   
@@ -2962,7 +2960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../game/elden_ring/" class="md-nav__link">
+      <a href="../../game/elden_ring/" class="md-nav__link">
         
   
   
@@ -3010,7 +3008,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../game/escape_from_tarkov/" class="md-nav__link ">
+            <a href="../../game/escape_from_tarkov/" class="md-nav__link ">
               
   
   
@@ -3054,7 +3052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../game/escape_from_tarkov/server/" class="md-nav__link">
+      <a href="../../game/escape_from_tarkov/server/" class="md-nav__link">
         
   
   
@@ -3090,7 +3088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../game/mumble/mumble/" class="md-nav__link">
+      <a href="../../game/mumble/mumble/" class="md-nav__link">
         
   
   
@@ -3140,7 +3138,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../game/seven_days_to_die/" class="md-nav__link ">
+            <a href="../../game/seven_days_to_die/" class="md-nav__link ">
               
   
   
@@ -3184,7 +3182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../game/seven_days_to_die/serverconfig/" class="md-nav__link">
+      <a href="../../game/seven_days_to_die/serverconfig/" class="md-nav__link">
         
   
   
@@ -3212,7 +3210,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../game/seven_days_to_die/serveradmin/" class="md-nav__link">
+      <a href="../../game/seven_days_to_die/serveradmin/" class="md-nav__link">
         
   
   
@@ -3248,7 +3246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../game/star_rupture/" class="md-nav__link">
+      <a href="../../game/star_rupture/" class="md-nav__link">
         
   
   
@@ -3296,7 +3294,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../game/steam/" class="md-nav__link ">
+            <a href="../../game/steam/" class="md-nav__link ">
               
   
   
@@ -3340,7 +3338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../game/steam/troubleshooting/" class="md-nav__link">
+      <a href="../../game/steam/troubleshooting/" class="md-nav__link">
         
   
   
@@ -3442,7 +3440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mail/imapsync/" class="md-nav__link">
+      <a href="../../mail/imapsync/" class="md-nav__link">
         
   
   
@@ -3490,7 +3488,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../mail/mox/" class="md-nav__link ">
+            <a href="../../mail/mox/" class="md-nav__link ">
               
   
   
@@ -3534,7 +3532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mail/mox/troubleshooting/" class="md-nav__link">
+      <a href="../../mail/mox/troubleshooting/" class="md-nav__link">
         
   
   
@@ -3570,7 +3568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mail/mutt/" class="md-nav__link">
+      <a href="../../mail/mutt/" class="md-nav__link">
         
   
   
@@ -3598,7 +3596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mail/postfix/" class="md-nav__link">
+      <a href="../../mail/postfix/" class="md-nav__link">
         
   
   
@@ -3626,7 +3624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../mail/roundcube/" class="md-nav__link">
+      <a href="../../mail/roundcube/" class="md-nav__link">
         
   
   
@@ -3728,7 +3726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../media/deluge/" class="md-nav__link">
+      <a href="../../media/deluge/" class="md-nav__link">
         
   
   
@@ -3756,7 +3754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../media/lidarr/" class="md-nav__link">
+      <a href="../../media/lidarr/" class="md-nav__link">
         
   
   
@@ -3784,7 +3782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../media/music/" class="md-nav__link">
+      <a href="../../media/music/" class="md-nav__link">
         
   
   
@@ -3812,7 +3810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../media/nzbget/" class="md-nav__link">
+      <a href="../../media/nzbget/" class="md-nav__link">
         
   
   
@@ -3860,7 +3858,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../media/paperless/" class="md-nav__link ">
+            <a href="../../media/paperless/" class="md-nav__link ">
               
   
   
@@ -3904,7 +3902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../media/paperless/troubleshooting/" class="md-nav__link">
+      <a href="../../media/paperless/troubleshooting/" class="md-nav__link">
         
   
   
@@ -3940,7 +3938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../media/playon/" class="md-nav__link">
+      <a href="../../media/playon/" class="md-nav__link">
         
   
   
@@ -3990,7 +3988,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../media/plex/" class="md-nav__link ">
+            <a href="../../media/plex/" class="md-nav__link ">
               
   
   
@@ -4034,7 +4032,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../media/plex/config/" class="md-nav__link">
+      <a href="../../media/plex/config/" class="md-nav__link">
         
   
   
@@ -4062,7 +4060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../media/plex/troubleshooting/" class="md-nav__link">
+      <a href="../../media/plex/troubleshooting/" class="md-nav__link">
         
   
   
@@ -4118,7 +4116,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../media/radarr/" class="md-nav__link ">
+            <a href="../../media/radarr/" class="md-nav__link ">
               
   
   
@@ -4162,7 +4160,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../media/radarr/troubleshooting/" class="md-nav__link">
+      <a href="../../media/radarr/troubleshooting/" class="md-nav__link">
         
   
   
@@ -4218,7 +4216,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../media/sonarr/" class="md-nav__link ">
+            <a href="../../media/sonarr/" class="md-nav__link ">
               
   
   
@@ -4262,7 +4260,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../media/sonarr/troubleshooting/" class="md-nav__link">
+      <a href="../../media/sonarr/troubleshooting/" class="md-nav__link">
         
   
   
@@ -4388,7 +4386,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../network/dropbear/" class="md-nav__link ">
+            <a href="../../network/dropbear/" class="md-nav__link ">
               
   
   
@@ -4432,7 +4430,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../network/dropbear/troubleshooting/" class="md-nav__link">
+      <a href="../../network/dropbear/troubleshooting/" class="md-nav__link">
         
   
   
@@ -4468,7 +4466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../network/pihole/" class="md-nav__link">
+      <a href="../../network/pihole/" class="md-nav__link">
         
   
   
@@ -4528,7 +4526,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../network/traefik/" class="md-nav__link ">
+            <a href="../../network/traefik/" class="md-nav__link ">
               
   
   
@@ -4572,7 +4570,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../network/traefik/basic_auth_dashboard/" class="md-nav__link">
+      <a href="../../network/traefik/basic_auth_dashboard/" class="md-nav__link">
         
   
   
@@ -4600,7 +4598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../network/traefik/error_pages/" class="md-nav__link">
+      <a href="../../network/traefik/error_pages/" class="md-nav__link">
         
   
   
@@ -4628,7 +4626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../network/traefik/rate_limiting/" class="md-nav__link">
+      <a href="../../network/traefik/rate_limiting/" class="md-nav__link">
         
   
   
@@ -4656,7 +4654,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../network/traefik/plugins/" class="md-nav__link">
+      <a href="../../network/traefik/plugins/" class="md-nav__link">
         
   
   
@@ -4704,7 +4702,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../network/traefik/acme/" class="md-nav__link ">
+            <a href="../../network/traefik/acme/" class="md-nav__link ">
               
   
   
@@ -4748,7 +4746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../network/traefik/acme/behind_traefik/" class="md-nav__link">
+      <a href="../../network/traefik/acme/behind_traefik/" class="md-nav__link">
         
   
   
@@ -4784,7 +4782,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../network/traefik/odic/" class="md-nav__link">
+      <a href="../../network/traefik/odic/" class="md-nav__link">
         
   
   
@@ -4812,7 +4810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../network/traefik/troubleshooting/" class="md-nav__link">
+      <a href="../../network/traefik/troubleshooting/" class="md-nav__link">
         
   
   
@@ -4870,7 +4868,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../network/unifi/" class="md-nav__link ">
+            <a href="../../network/unifi/" class="md-nav__link ">
               
   
   
@@ -4914,7 +4912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../network/unifi/wireguard/" class="md-nav__link">
+      <a href="../../network/unifi/wireguard/" class="md-nav__link">
         
   
   
@@ -4942,7 +4940,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../network/unifi/troubleshooting/" class="md-nav__link">
+      <a href="../../network/unifi/troubleshooting/" class="md-nav__link">
         
   
   
@@ -4978,7 +4976,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../network/vlan/" class="md-nav__link">
+      <a href="../../network/vlan/" class="md-nav__link">
         
   
   
@@ -5028,7 +5026,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../network/ssh/" class="md-nav__link ">
+            <a href="../../network/ssh/" class="md-nav__link ">
               
   
   
@@ -5125,7 +5123,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../network/ssh/sshd/linux/" class="md-nav__link">
+      <a href="../../network/ssh/sshd/linux/" class="md-nav__link">
         
   
   
@@ -5153,7 +5151,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../network/ssh/sshd/windows/" class="md-nav__link">
+      <a href="../../network/ssh/sshd/windows/" class="md-nav__link">
         
   
   
@@ -5189,7 +5187,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../network/ssh/troubleshooting/" class="md-nav__link">
+      <a href="../../network/ssh/troubleshooting/" class="md-nav__link">
         
   
   
@@ -5247,7 +5245,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../network/wireguard/" class="md-nav__link ">
+            <a href="../../network/wireguard/" class="md-nav__link ">
               
   
   
@@ -5344,7 +5342,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../network/wireguard/os/linux/" class="md-nav__link">
+      <a href="../../network/wireguard/os/linux/" class="md-nav__link">
         
   
   
@@ -5372,7 +5370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../network/wireguard/os/windows/" class="md-nav__link">
+      <a href="../../network/wireguard/os/windows/" class="md-nav__link">
         
   
   
@@ -5408,7 +5406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../network/wireguard/troubleshooting/" class="md-nav__link">
+      <a href="../../network/wireguard/troubleshooting/" class="md-nav__link">
         
   
   
@@ -5538,7 +5536,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../os/cachyos/" class="md-nav__link ">
+            <a href="../../os/cachyos/" class="md-nav__link ">
               
   
   
@@ -5582,7 +5580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../os/cachyos/preferences/" class="md-nav__link">
+      <a href="../../os/cachyos/preferences/" class="md-nav__link">
         
   
   
@@ -5610,7 +5608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../os/cachyos/troubleshooting/" class="md-nav__link">
+      <a href="../../os/cachyos/troubleshooting/" class="md-nav__link">
         
   
   
@@ -5666,7 +5664,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../os/debian/" class="md-nav__link ">
+            <a href="../../os/debian/" class="md-nav__link ">
               
   
   
@@ -5710,7 +5708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../os/debian/troubleshooting/" class="md-nav__link">
+      <a href="../../os/debian/troubleshooting/" class="md-nav__link">
         
   
   
@@ -5746,7 +5744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../os/kindle/" class="md-nav__link">
+      <a href="../../os/kindle/" class="md-nav__link">
         
   
   
@@ -5774,7 +5772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../os/pikvm/" class="md-nav__link">
+      <a href="../../os/pikvm/" class="md-nav__link">
         
   
   
@@ -5830,7 +5828,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../os/pve/" class="md-nav__link ">
+            <a href="../../os/pve/" class="md-nav__link ">
               
   
   
@@ -5874,7 +5872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../os/pve/acme/" class="md-nav__link">
+      <a href="../../os/pve/acme/" class="md-nav__link">
         
   
   
@@ -5902,7 +5900,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../os/pve/audio/" class="md-nav__link">
+      <a href="../../os/pve/audio/" class="md-nav__link">
         
   
   
@@ -5930,7 +5928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../os/pve/gpu/" class="md-nav__link">
+      <a href="../../os/pve/gpu/" class="md-nav__link">
         
   
   
@@ -5958,7 +5956,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../os/pve/nfs/" class="md-nav__link">
+      <a href="../../os/pve/nfs/" class="md-nav__link">
         
   
   
@@ -5986,7 +5984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../os/pve/troubleshooting/" class="md-nav__link">
+      <a href="../../os/pve/troubleshooting/" class="md-nav__link">
         
   
   
@@ -6022,7 +6020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../os/shield/" class="md-nav__link">
+      <a href="../../os/shield/" class="md-nav__link">
         
   
   
@@ -6050,7 +6048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../os/web_os/" class="md-nav__link">
+      <a href="../../os/web_os/" class="md-nav__link">
         
   
   
@@ -6102,7 +6100,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../os/windows/" class="md-nav__link ">
+            <a href="../../os/windows/" class="md-nav__link ">
               
   
   
@@ -6146,7 +6144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../os/windows/reinstall/" class="md-nav__link">
+      <a href="../../os/windows/reinstall/" class="md-nav__link">
         
   
   
@@ -6174,7 +6172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../os/windows/crashes/" class="md-nav__link">
+      <a href="../../os/windows/crashes/" class="md-nav__link">
         
   
   
@@ -6202,7 +6200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../os/windows/troubleshooting/" class="md-nav__link">
+      <a href="../../os/windows/troubleshooting/" class="md-nav__link">
         
   
   
@@ -6300,7 +6298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../printing/linux/" class="md-nav__link">
+      <a href="../../printing/linux/" class="md-nav__link">
         
   
   
@@ -6328,7 +6326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../printing/windows/" class="md-nav__link">
+      <a href="../../printing/windows/" class="md-nav__link">
         
   
   
@@ -6356,7 +6354,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../printing/brother_mfcl2750dw/" class="md-nav__link">
+      <a href="../../printing/brother_mfcl2750dw/" class="md-nav__link">
         
   
   
@@ -6419,7 +6417,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../service/" class="md-nav__link ">
+            <a href="../../service/" class="md-nav__link ">
               
   
   
@@ -6463,7 +6461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../service/bluebubbles/" class="md-nav__link">
+      <a href="../../service/bluebubbles/" class="md-nav__link">
         
   
   
@@ -6515,7 +6513,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../service/ca/" class="md-nav__link ">
+            <a href="../../service/ca/" class="md-nav__link ">
               
   
   
@@ -6559,7 +6557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../service/ca/setup/" class="md-nav__link">
+      <a href="../../service/ca/setup/" class="md-nav__link">
         
   
   
@@ -6587,7 +6585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../service/ca/certificates/" class="md-nav__link">
+      <a href="../../service/ca/certificates/" class="md-nav__link">
         
   
   
@@ -6615,7 +6613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../service/ca/certificate_revocation_list/" class="md-nav__link">
+      <a href="../../service/ca/certificate_revocation_list/" class="md-nav__link">
         
   
   
@@ -6651,7 +6649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../service/mkdocs/" class="md-nav__link">
+      <a href="../../service/mkdocs/" class="md-nav__link">
         
   
   
@@ -6701,7 +6699,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../service/nginx/" class="md-nav__link ">
+            <a href="../../service/nginx/" class="md-nav__link ">
               
   
   
@@ -6771,7 +6769,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../service/nginx/manual/" class="md-nav__link ">
+            <a href="../../service/nginx/manual/" class="md-nav__link ">
               
   
   
@@ -6815,7 +6813,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../service/nginx/manual/setup/" class="md-nav__link">
+      <a href="../../service/nginx/manual/setup/" class="md-nav__link">
         
   
   
@@ -6843,7 +6841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../service/nginx/manual/custom_error_pages/" class="md-nav__link">
+      <a href="../../service/nginx/manual/custom_error_pages/" class="md-nav__link">
         
   
   
@@ -6871,7 +6869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../service/nginx/manual/cert_based_authentication/" class="md-nav__link">
+      <a href="../../service/nginx/manual/cert_based_authentication/" class="md-nav__link">
         
   
   
@@ -6899,7 +6897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../service/nginx/manual/best_practices/" class="md-nav__link">
+      <a href="../../service/nginx/manual/best_practices/" class="md-nav__link">
         
   
   
@@ -6935,7 +6933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../service/nginx/troubleshooting/" class="md-nav__link">
+      <a href="../../service/nginx/troubleshooting/" class="md-nav__link">
         
   
   
@@ -6991,7 +6989,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../service/systemd/" class="md-nav__link ">
+            <a href="../../service/systemd/" class="md-nav__link ">
               
   
   
@@ -7035,7 +7033,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../service/systemd/troubleshooting/" class="md-nav__link">
+      <a href="../../service/systemd/troubleshooting/" class="md-nav__link">
         
   
   
@@ -7151,7 +7149,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../vcs/forgejo/" class="md-nav__link ">
+            <a href="../../vcs/forgejo/" class="md-nav__link ">
               
   
   
@@ -7195,7 +7193,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../vcs/forgejo/troubleshooting/" class="md-nav__link">
+      <a href="../../vcs/forgejo/troubleshooting/" class="md-nav__link">
         
   
   
@@ -7253,7 +7251,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../vcs/git/" class="md-nav__link ">
+            <a href="../../vcs/git/" class="md-nav__link ">
               
   
   
@@ -7297,7 +7295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../vcs/git/branches/" class="md-nav__link">
+      <a href="../../vcs/git/branches/" class="md-nav__link">
         
   
   
@@ -7325,7 +7323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../vcs/git/troubleshooting/" class="md-nav__link">
+      <a href="../../vcs/git/troubleshooting/" class="md-nav__link">
         
   
   
@@ -7400,7 +7398,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../glossary/" class="md-nav__link ">
+            <a href="../../glossary/" class="md-nav__link ">
               
   
   
@@ -7444,7 +7442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../glossary/admonitions/" class="md-nav__link">
+      <a href="../../glossary/admonitions/" class="md-nav__link">
         
   
   
@@ -7472,7 +7470,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../glossary/gpg/" class="md-nav__link">
+      <a href="../../glossary/gpg/" class="md-nav__link">
         
   
   
@@ -7500,7 +7498,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../glossary/mail/" class="md-nav__link">
+      <a href="../../glossary/mail/" class="md-nav__link">
         
   
   
@@ -7528,7 +7526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../glossary/os/" class="md-nav__link">
+      <a href="../../glossary/os/" class="md-nav__link">
         
   
   
@@ -7556,7 +7554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../glossary/unicode/" class="md-nav__link">
+      <a href="../../glossary/unicode/" class="md-nav__link">
         
   
   
@@ -7584,7 +7582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../glossary/vlan/" class="md-nav__link">
+      <a href="../../glossary/vlan/" class="md-nav__link">
         
   
   
@@ -7612,7 +7610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../glossary/yubikey/" class="md-nav__link">
+      <a href="../../glossary/yubikey/" class="md-nav__link">
         
   
   
@@ -7667,22 +7665,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#offline-replacement-bad-disk" class="md-nav__link">
+  <a href="#flashing-it-mode" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Offline Replacement Bad Disk
+        Flashing IT Mode
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Offline Replacement Bad Disk">
+    <nav class="md-nav" aria-label="Flashing IT Mode">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#identify-block-devices-to-minimize-downtime" class="md-nav__link">
+  <a href="#create-freedos-boot-usb" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Identify block devices to minimize downtime
+        Create FreeDOS boot USB
       
     </span>
   </a>
@@ -7690,10 +7688,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#offline-the-bad-disk-in-the-pool" class="md-nav__link">
+  <a href="#prep-hardware" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Offline the bad disk in the pool
+        Prep Hardware
       
     </span>
   </a>
@@ -7701,10 +7699,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#find-the-new-disk-to-add-to-zfs-pool" class="md-nav__link">
+  <a href="#reset-to-factory-defaults" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Find the new disk to add to ZFS pool
+        Reset to Factory Defaults
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flash-new-firmware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flash New Firmware
       
     </span>
   </a>
@@ -7717,10 +7726,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hot-swap-bad-disk" class="md-nav__link">
+  <a href="#use-active-cooling" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Hot-swap Bad Disk
+        Use Active Cooling
       
     </span>
   </a>
@@ -7728,21 +7737,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#upgrade-with-larger-disks" class="md-nav__link">
+  <a href="#reference" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Upgrade with Larger Disks
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#combination-of-raw-disks-and-partitions-in-pool" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Combination of Raw Disks and Partitions in Pool
+        Reference
       
     </span>
   </a>
@@ -7774,7 +7772,7 @@
   
   
     <li class="md-path__item">
-      <a href="../../.." class="md-path__link">
+      <a href="../.." class="md-path__link">
         
   <span class="md-ellipsis">
     Background
@@ -7791,37 +7789,11 @@
   
     
     
-      
-  
-  
-    
-    
       <li class="md-path__item">
-        <a href="../../nfs/" class="md-path__link">
+        <a href="../amt/" class="md-path__link">
           
   <span class="md-ellipsis">
-    Filesystems
-  </span>
-
-        </a>
-      </li>
-    
-  
-
-    
-  
-
-      
-        
-  
-  
-    
-    
-      <li class="md-path__item">
-        <a href="../" class="md-path__link">
-          
-  <span class="md-ellipsis">
-    ZFS
+    Hardware
   </span>
 
         </a>
@@ -7840,7 +7812,7 @@
 
 
   
-    <a href="https://github.com/r-pufky/docs/edit/main/docs/filesystem/zfs/replacing_disks.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/r-pufky/docs/edit/main/docs/hardware/lsi_9300.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
     </a>
@@ -7848,171 +7820,258 @@
   
 
 
-<h1 id="replacing-disks">Replacing Disks</h1>
-<p>Management of underlying block devices for ZFS.</p>
-<p>ZFS will automatically partition the raw disk if it is not currently
-partitioned. Only the root block device for disk needs to be known. Preference
-is to use the WWN name (world-wide unique name) for the disk, which will be
-consistent across systems. This is in <strong>/dev/disk/by-id/wwn-</strong>*.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>When issuing ZFS commands against devices in the pool, you <strong>must</strong> use
-those ID's.</p>
-<p>When issuing ZFS commands with devices <strong>outside</strong> the pool, you <strong>must</strong>
-use the full path, preferably with the WWN name.</p>
+<h1 id="lsi-9300">LSI 9300</h1>
+<p>LSI 9300-XX SAS/SATA Host Bus Adaptor (HBA).</p>
+<div class="admonition info">
+<p class="admonition-title">IT Mode</p>
+<p>Initiator Target (IT) mode disables hardware RAID and passes individual
+drives directly to the OS.</p>
+<p>Performance differences between <a href="https://serverfault.com/questions/685289/software-vs-hardware-raid-performance-and-cache-usage">Hardware RAID and IT mode</a> are
+negligible except for very specific circumstances on high-end cards. Never
+use <a href="https://www.raid-recovery-guide.com/raid5-write-hole.aspx">RAID 5</a> because of write hole issues.</p>
 </div>
-<h2 id="offline-replacement-bad-disk">Offline Replacement Bad Disk</h2>
-<p>For non-server grade hardware where the server must be shutdown and disks
-physically swapped. This also applies in cases where there is no additional
-space and a drive must be removed to be replaced.</p>
-<p>Determine the bad disk based on the status returned. This disk ID may be the
-WWN or the full path to the disk. If it is the WWN, determine the block device.
-Identify the drive serial number for easy hardware swapping when off.</p>
-<h3 id="identify-block-devices-to-minimize-downtime">Identify block devices to minimize downtime</h3>
-<pre class="highlight"><code class="language-bash">zpool status {POOL}
-ls -l /dev/disk/by-id/{BAD DISK}
-smartctl -i /dev/disk/by-id/{BAD DISK}
-
-# Identify the ZFS GUID for the bad disk
-zdb
-
-# The ZFS GUID would be 13942365352362146142
-zdb
-&gt; ...
-&gt; children[1]:
-&gt;     type: 'disk'
-&gt;     id: 1
-&gt;     guid: 13942365352362146142
-&gt;     path: '/dev/disk/by-id/wwn-0xXXXXXXXXXXXXXXXX-part1'
-&gt;     whole_disk: 0
-&gt;     DTL: 403
-&gt;     create_txg: 4
-&gt;     com.delphix:vdev_zap_leaf: 131</code></pre>
-<h3 id="offline-the-bad-disk-in-the-pool">Offline the bad disk in the pool</h3>
-<pre class="highlight"><code class="language-bash">zpool status {POOL}
-zpool offline {POOL} {BAD DISK}
-shutdown -h now
-# Replace the physical disk with the new disk and boot.</code></pre>
-<h3 id="find-the-new-disk-to-add-to-zfs-pool"><a href="https://askubuntu.com/questions/305830/replacing-a-dead-disk-in-a-zpool">Find the new disk to add to ZFS pool</a></h3>
-<p>This will initiate a disk replacement, partitioning the new disk if needed and
-start the re-silvering process.</p>
-<pre class="highlight"><code class="language-bash">lsblk
-smartctl -i /dev/disk/by-id/{NEW DISK}
-
-# Replace the old disk using the ZFS GUID and the new disk WWN name
-zpool replace {POOL} {BAD DISK GUID} /dev/disk/by-id/{NEW DISK WWN}</code></pre>
-<p>Immediately after this command ZFS will scan the pool.
-</p><pre class="highlight"><code class="language-bash">zpool status
-&gt;   pool: tank
-&gt;  state: DEGRADED
-&gt; status: One or more devices is currently being resilvered.  The pool will
-&gt;         continue to function, possibly in a degraded state.
-&gt; action: Wait for the resilver to complete.
-&gt;   scan: resilver in progress since Tue Sep 21 11:08:12 2021
-&gt;         4.15T scanned at 26.4G/s, 3.55G issued at 22.6M/s, 45.7T total
-&gt;         0B resilvered, 0.01% done, 24 days 13:33:50 to go
-&gt; config:
-&gt;
-&gt;         NAME                                STATE     READ WRITE CKSUM
-&gt;         hundo                               DEGRADED     0     0     0
-&gt;           raidz2-0                          DEGRADED     0     0     0
-&gt;             wwn-0xXXXXXXXXXXXXXXXX-part1    ONLINE       0     0     0
-&gt;             wwn-0xXXXXXXXXXXXXXXXX-part1    ONLINE       0     0     0
-&gt;             replacing-2                     DEGRADED     0     0     0
-&gt;               wwn-0xXXXXXXXXXXXXXXXX-part1  OFFLINE      0     0     0
-&gt;               wwn-0xXXXXXXXXXXXXXXXX        ONLINE       0     0     0
-&gt;             wwn-0xXXXXXXXXXXXXXXXX-part1    ONLINE       0     0     0
-&gt;             wwn-0xXXXXXXXXXXXXXXXX-part1    ONLINE       0     0     0
-&gt;             wwn-0xXXXXXXXXXXXXXXXX-part1    ONLINE       0     0     0</code></pre><p></p>
-<p>After the initial scan, re-silvering should kickoff.
-</p><pre class="highlight"><code class="language-bash">zpool status
-&gt;   pool: tank
-&gt;  state: DEGRADED
-&gt; status: One or more devices is currently being resilvered.  The pool will
-&gt;         continue to function, possibly in a degraded state.
-&gt; action: Wait for the resilver to complete.
-&gt;   scan: resilver in progress since Tue Sep 21 11:08:12 2021
-&gt;         9.07T scanned at 10.1G/s, 570G issued at 636M/s, 45.7T total
-&gt;         93.7G resilvered, 1.22% done, 20:40:40 to go
-&gt; config:
-&gt;
-&gt;         NAME                                STATE     READ WRITE CKSUM
-&gt;         hundo                               DEGRADED     0     0     0
-&gt;           raidz2-0                          DEGRADED     0     0     0
-&gt;             wwn-0xXXXXXXXXXXXXXXXX-part1    ONLINE       0     0     0
-&gt;             wwn-0xXXXXXXXXXXXXXXXX-part1    ONLINE       0     0     0
-&gt;             replacing-2                     DEGRADED     0     0     0
-&gt;               wwn-0xXXXXXXXXXXXXXXXX-part1  OFFLINE      0     0     0
-&gt;               wwn-0xXXXXXXXXXXXXXXXX        ONLINE       0     0     0  (resilvering)
-&gt;             wwn-0xXXXXXXXXXXXXXXXX-part1    ONLINE       0     0     0
-&gt;             wwn-0xXXXXXXXXXXXXXXXX-part1    ONLINE       0     0     0
-&gt;             wwn-0xXXXXXXXXXXXXXXXX-part1    ONLINE       0     0     0</code></pre><p></p>
-<h2 id="hot-swap-bad-disk">Hot-swap Bad Disk</h2>
-<p>Hot-swap disks if your hardware supports it.</p>
-<p>In-place replacement with no disk device ID change.
-</p><pre class="highlight"><code class="language-bash">zpool scrub {POOL}
-zpool status {POOL}
-lsblk
-zpool offline {POOL} {BAD DISK}
-{REPLACE DISK}  # Physically hot-swap disk.
-zpool online {POOL} {NEW DISK}
-zpool replace {POOL} {NEW DISK}
-zpool status {POOL}</code></pre><p></p>
-<p>Replacement with new disk device ID.
-</p><pre class="highlight"><code class="language-bash">{ADD NEW DISK}
-zpool scrub {POOL}
-zpool status {POOL}
-lsblk
-zpool replace {POOL} {BAD DISK} {NEW DISK}
-zpool status {POOL}
-{REMOVE BAD DISK}</code></pre><p></p>
-<h2 id="upgrade-with-larger-disks"><a href="http://www.itsacon.net/computers/unix/growing-a-zfs-pool">Upgrade with Larger Disks</a></h2>
-<p>Capacity will automatically be expanded (<strong>autoexpand=on</strong>) when minimum disk
-upgrade requirements have been met.</p>
+<h2 id="flashing-it-mode">Flashing IT Mode</h2>
+<p>See reference documentation for in depth explanations.</p>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p><strong>Data destructive</strong>. Verify the correct drive is selected.</p>
+<p class="admonition-title">Use 16.00.12.00+</p>
+<p>SATA drives may experience performance issues due to controller resets on
+older firmware versions. Always use the latest version available.</p>
 </div>
-<p>Upgrade process for each disk in pool.
-</p><pre class="highlight"><code class="language-bash">zpool scrub {POOL}
-zpool status {POOL}
-lsblk
-zpool replace {POOL} {OLD DISK} {BIGGER DISK}
-zpool status {POOL}</code></pre><p></p>
-<p>Repeat for each disk. If constrained by hardware the old disk can be off-lined
-the new disk physically changed, and then replaced.
-</p><pre class="highlight"><code class="language-bash">zpool offline {POOL} {OLD DISK}
-{REPLACE DISK}
-zpool replace {POOL} {NEW DISK}</code></pre><p></p>
-<h2 id="combination-of-raw-disks-and-partitions-in-pool">Combination of Raw Disks and Partitions in Pool</h2>
-<p>This is <strong>normal</strong>; though unnerving if used to traditional disk management.
-ZFS manages all disk hardware and - depending on how the pool was created, when
-disks were added, removed, or replaced - you may end up with some devices
-showing partitions versus raw disks. This is <strong>OK</strong>. The zpool listing is just
-the ID used to represent the disk.</p>
-<p>Using <strong>zdb</strong> on the pool will show the details of the underlying hardware. Raw
-disks will show a mapping to <strong>-part1</strong> if automatically created as well as a
-reference to the underlying block device.</p>
-<p>Show the underlying hardware configuration for a ZFS pool.
-</p><pre class="highlight"><code class="language-bash">zdb
-&gt;   ...
-&gt; children[2]:
-&gt;     type: 'disk'
-&gt;     id: 2
-&gt;     guid: 149i73844241267554311
-&gt;     path: '/dev/disk/by-id/wwn-0xXXXXXXXXXXXXXXXX-part1'
-&gt;     devid: 'ata-WDC_XXXXXXXXX-XXXXXXX_XXXXXXXX-part1'
-&gt;     phys_path: 'pci-0000:01:00.1-ata-5.0'
-&gt;     whole_disk: 1
-&gt;     DTL: 272
-&gt;     create_txg: 4
-&gt;     com.delphix:vdev_zap_leaf: 262</code></pre><p></p>
-<p>This may also be confirmed by checking the block device itself. ZFS formatted
-drives will have two partitions (part1, part9).
-</p><pre class="highlight"><code class="language-bash">ls -l /dev/disk/by-id/{DISK}*
-&gt; lrwxrwxrwx 1 root:root  9 Sep 22 09:37 /dev/disk/by-id/wwn-0xXXXXXXXXXXXXXXXX -&gt; ../../sde
-&gt; lrwxrwxrwx 1 root:root 10 Sep 22 09:37 /dev/disk/by-id/wwn-0xXXXXXXXXXXXXXXXX-part1 -&gt; ../../sde1
-&gt; lrwxrwxrwx 1 root:root 10 Sep 22 09:37 /dev/disk/by-id/wwn-0xXXXXXXXXXXXXXXXX-part9 -&gt; ../../sde9</code></pre><p></p>
+<div class="admonition warning">
+<p class="admonition-title">Detach Disks</p>
+<p>Always detach drives until flashing is completed. This will prevent any
+issue during the flashing process.</p>
+</div>
+<h3 id="create-freedos-boot-usb">Create FreeDOS boot USB</h3>
+<p>Use <a href="https://rufus.ie/en/">Rufus</a> to create a bootable FreeDOS USB drive. This may be done in
+Linux but is easier to accomplish with Rufus.</p>
+<ol>
+<li>
+<p>Download Binaries</p>
+</li>
+<li>
+<p><a href="https://github.com/EverLand1/9300-8i_IT-Mode/raw/refs/heads/main/Files/bootx64.efi">bootx64.efi</a>: UEFI Shell Boot File</p>
+</li>
+<li><a href="https://github.com/EverLand1/9300-8i_IT-Mode/raw/refs/heads/main/Files/mptsas3.rom">mptsas3.rom</a>: Legacy BIOS ROM</li>
+<li><a href="https://github.com/EverLand1/9300-8i_IT-Mode/raw/refs/heads/main/Files/mpt3x64.rom">mpt3x64.rom</a>: UEFI BIOS ROM</li>
+<li><a href="https://github.com/EverLand1/9300-8i_IT-Mode/raw/refs/heads/main/Files/sas3flash.efi">sas3flash.efi</a>: Flashing tool</li>
+<li>
+<p><a href="https://github.com/EverLand1/9300-8i_IT-Mode/tree/main/Files/Firmware/v16.00.12.00">SAS9300_8i_IT.bin</a>: 16.00.12.00 IT mode firmware</p>
+</li>
+<li>
+<p>Rufus</p>
+<ul>
+<li>Device: <strong>USB Device</strong></li>
+<li>Boot Selection: <strong>Free-DOS</strong></li>
+<li><strong>Start</strong></li>
+</ul>
+</li>
+<li>
+<p>Copy files and create directories as needed:</p>
+<ul>
+<li>EFI/Boot/<strong>bootx64.efi</strong></li>
+<li><strong>mptsas3.rom</strong></li>
+<li><strong>mpt3x64.rom</strong></li>
+<li><strong>sas3flash.efi</strong></li>
+<li><strong>SAS9300_8i_IT.bin</strong></li>
+</ul>
+</li>
+</ol>
+<h3 id="prep-hardware">Prep Hardware</h3>
+<p>Record the SAS address on the card. This is <strong>required</strong> to set the address
+after flashing the firmware. It will look something like
+<code>SAS Address: 500605B 00A6776D0</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Locate Flashing Jumper</p>
+<p>Removing the jumper will place the card in flashing mode and will be
+displayed on boot. Run through the suspected jumpers until this is found.</p>
+<p>Jumper should be <strong>inserted</strong> before continuing.</p>
+</div>
+<h3 id="reset-to-factory-defaults">Reset to Factory Defaults</h3>
+<div class="admonition warning">
+<p class="admonition-title">Flashing jumper must be inserted</p>
+</div>
+<p>Boot the USB drive. You will be placed in a UEFI shell.</p>
+<pre class="highlight"><code class="language-bash"># Find the correct filesystem to mount; this is typically FS0.
+Shell&gt; map -r
+Shell&gt; fs0:
+fs0:\&gt;
+
+# list files and verify they are the files above. If not, mount another
+# filesystem and try again.
+fs0:\&gt; dir
+&gt; EFI
+&gt; sas3flash.efi
+&gt; SAS9300_8i_IT.bin
+&gt; ...
+
+# List HBA adaptors; SAS addresses will be listed, ensure a correct match.
+fs0:\&gt; sas3flash.efi -list
+&gt; Avago Technologies SAS3 Flash Utility
+&gt; Version 11.00.00.00 (2015.08.04)
+&gt; Copyright 2008-2015 Avago Technologies. All rights reserved.
+&gt;
+&gt; Adapter Selected is a Avago SAS: SAS3008(C0)
+&gt;
+&gt; Controller Number           : 0
+&gt; Controller                  : SAS3008(C0)
+&gt; PCI Address                 : 00:81:00:00
+&gt; SAS Address                 : 5003048-0-14A2-7B00
+&gt; NVDATA Version (Default)    : 02.06.00.12
+&gt; NVDATA Version (Persistent) : 02.06.00.12
+&gt; Firmware Product ID         : 0x2721 (IR)
+&gt; Firmware Version            : 02.00.02.00
+&gt; NVDATA Vendor               : LSI
+&gt; NVDATA Product ID           : LSI3008-IR
+&gt; BIOS Version                : 08.05.00.00
+&gt; UEFI BSD Version            : 03.00.00.00
+&gt; FCODE Version               : N/A
+&gt; Board Name                  : LSI3008-IR
+&gt; Board Assembly              : N/A
+&gt; Board Tracer Number         : N/A
+&gt;
+&gt; Finished Processing Commands Successfully.
+&gt; Exiting SAS3Flesh.
+
+# A "Controller is not operational. A firmware download is required." message
+# may appear. This just means a firmware update (which you are about to do) is
+# required. Type "quit" to return to the prompt.
+
+# Reset device to factory defaults. This will validate the firmware and reset
+# to factory defaults in preparation for updates. Use the correct model.
+fs0:\&gt; sas3flash.efi -f SAS9300_8i_IT.bin -noreset
+&gt; Avago Technologies SAS3 Flash Utility
+&gt; Version 14.00.00.00 (2016.07.21)
+&gt; Copyright 2008-2016 Avago Technologies. All rights reserved.
+&gt;
+&gt; Adapter Selected is a Avago SAS: SAS3008(C0)
+&gt;
+&gt; Executing Operation: Flash Firmware Image
+&gt;
+&gt;     Firmware Image has a Valid Checksum.
+&gt;     Firmware Version 13.00.00.00
+&gt;     Firmware Image compatible with Controller.
+&gt;
+&gt;     Valid NVDATA Image found.
+&gt;     NVDATA Major Version 0B.02
+&gt;     Checking for a compatible NVData image...
+&gt;
+&gt;     NVDATA Device ID and Chip Revision match verified.
+&gt;     Valid Initialization Image verified.
+&gt;     Valid BootLoader Image verified.
+&gt;
+&gt; Chip is in RESET state. Attempting Host Boot...
+&gt; Firmware Host Boot Successful.
+&gt;
+&gt; Mfg Page 2 Mismatch Detected.
+&gt; Writing Current Mfg Page 2 Settings to NVRAM.
+&gt; Updated Mfg Page 2.
+&gt;
+&gt; Resetting Adapter...
+
+# Power down the system and REMOVE the flashing jumper. Removing the jumper
+# will enable erasing NVRAM firmware on the device.</code></pre>
+<h3 id="flash-new-firmware">Flash New Firmware</h3>
+<p>Replace the card with the jumper <strong>removed</strong> and boot into the same USB UEFI
+shell again.</p>
+<pre class="highlight"><code class="language-bash"># Erase the current firmware.
+fs0:\&gt; sas3flash.efi -o -e 7
+&gt; Avago Technologies SAS3 Flash Utility
+&gt; Version 14.00.00.00 (2016.07.21)
+&gt; Copyright 2008-2016 Avago Technologies. All rights reserved.
+&gt;
+&gt; Advanced Mode Set
+&gt;
+&gt; Adapter Selected is a Avago SAS: SAS3008(C0)
+&gt;
+&gt; Executing Operation: Erase Flash
+&gt;
+&gt; Erasing Entire Flash Region (including MPB)...
+&gt;
+&gt; Erase Flash Operation Successful!
+&gt;
+&gt; Resetting Adapter...
+&gt; Reset Successful!
+&gt;
+&gt; Finished Processing Commands Successfully.
+&gt; Exiting SAS3Flash.
+
+# Flash the IT mode firmware and ROM's to the device. Use the correct model.
+fs0:\&gt; sas3flash.efi -f SAS9300_8i_IT.bin -b mptsas3.rom -b mpt3x64.rom
+&gt; Avago Technologies SAS3 Flash Utility
+&gt; Version 14.00.00.00 (2016.07.21)
+&gt; Copyright 2008-2016 Avago Technologies. All rights reserved.
+&gt;
+&gt; Adapter Selected is a Avago SAS: SAS3008(C0)
+&gt;
+&gt; Executing Operation: Flash Firmware Image
+&gt;
+&gt;     Firmware Image has a Valid Checksum.
+&gt;     Firmware Version 13.00.00.00
+&gt;     Firmware Image compatible with Controller.
+&gt;
+&gt;     Valid NVDATA Image found.
+&gt;     NVDATA Major Version 0B.02
+&gt;     Checking for a compatible NVData image...
+&gt;
+&gt;     NVDATA Device ID and Chip Revision match verified.
+&gt;     NVDATA SubSystem Vendor and SubSystem Device ID match verified.
+&gt;     Valid Initialization Image verified.
+&gt;     Valid BootLoader Image verified.
+&gt;
+&gt; Chip is in RESET state. Attempting Host Boot...
+&gt; Firmware Host Boot Successful.
+&gt;
+&gt; Mfg Page 2 Mismatch Detected.
+&gt; Writing Current Mfg Page 2 Settings to NVRAM.
+&gt; Updated Mfg Page 2.
+&gt;
+&gt; Resetting Adapter...
+
+# Set the SAS address recorded previously. Do NOT use spaces or hyphens.
+fs0:\&gt; sas3flash.efi -o -sasadd 500605B00A6776D0
+&gt; Avago Technologies SAS3 Flash Utility
+&gt; Version 14.00.00.00 (2016.07.21)
+&gt; Copyright 2008-2016 Avago Technologies. All rights reserved.
+&gt;
+&gt; Advanced Mode Set
+&gt;
+&gt; Adapter Selected is a Avago SAS: SAS3008(C0)
+&gt;
+&gt; Executing Operation: Program SAS Address
+&gt;
+&gt; SAS Address Successfully Programmed!
+&gt;
+&gt; Resetting Adapter...
+&gt; Adapter Successfully Reset
+&gt;
+&gt; Finished Processing Commands Successfully.
+&gt; Exiting SAS3Flash.
+
+# Confirm SAS address is correct. This should list the updated firmware.
+fs0:\&gt; sas3flash.efi -list
+
+# Power down the system and REPLACE the flashing jumper.</code></pre>
+<h2 id="use-active-cooling">Use Active Cooling</h2>
+<p>LSI cards are designed to have active airflow over the device. Home systems
+must mount a fan to ensure adequate cooling.</p>
+<p>Buy a <a href="https://www.noctua.at/en/products/nf-a4x10-pwm">40x10mm fan</a> fan and <a href="https://www.printables.com/model/776851-lsi-9300-8i-noctua-nf-a4x10-fan-shroud">3D print a mount in PETG</a> to mount active
+cooling on the device for home systems.</p>
+<h2 id="reference">Reference<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup><sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></h2>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://github.com/EverLand1/9300-8i_IT-Mode">https://github.com/EverLand1/9300-8i_IT-Mode</a>&nbsp;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://www.broadcom.com/support/download-search?pg=Storage%20Adapters%2C%20Controllers%2C%20and%20ICs&amp;pf=Legacy%20Host%20Bus%20Adapters&amp;pn=SAS%209300-8i%20Host%20Bus%20Adapter&amp;pa&amp;po&amp;dk&amp;pl&amp;l=true">https://www.broadcom.com/support/download-search?pg=Storage%20Adapters%2C%20Controllers%2C%20and%20ICs&amp;pf=Legacy%20Host%20Bus%20Adapters&amp;pn=SAS%209300-8i%20Host%20Bus%20Adapter&amp;pa&amp;po&amp;dk&amp;pl&amp;l=true</a>&nbsp;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">↩</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://www.truenas.com/community/resources/lsi-9300-xx-firmware-update.145/">https://www.truenas.com/community/resources/lsi-9300-xx-firmware-update.145/</a>&nbsp;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">↩</a></p>
+</li>
+</ol>
+</div>
 
 
 
@@ -8035,7 +8094,7 @@ drives will have two partitions (part1, part9).
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 13, 2025 21:28:57 UTC">November 13, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 27, 2026 08:47:26 UTC">June 27, 2026</span>
   </span>
 
     
@@ -8045,7 +8104,7 @@ drives will have two partitions (part1, part9).
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="November 10, 2025 21:43:03 UTC">November 10, 2025</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 26, 2026 03:02:43 UTC">June 26, 2026</span>
   </span>
 
     
@@ -8133,16 +8192,16 @@ drives will have two partitions (part1, part9).
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.tracking", "navigation.path", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "toc.follow", "header.autohide", "content.action.edit", "content.footnote.tooltips"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.tracking", "navigation.path", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "toc.follow", "header.autohide", "content.action.edit", "content.footnote.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
       
         <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       
-        <script src="../../../_material/init.js"></script>
+        <script src="../../_material/init.js"></script>
       
     
   
