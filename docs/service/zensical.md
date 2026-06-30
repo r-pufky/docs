@@ -60,6 +60,7 @@ One-time configuration per repository.
 !!! example "github ➔ Settings ➔ Environments ➔ github-pages"
     * Deployment branches and tags:
         * branch: **master**
+        * tags: __*__
 
     Create new environment if needed. This seems to be hardcoded in Zensical
     currently.
