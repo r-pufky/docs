@@ -3,12 +3,7 @@
 # uv run zensical serve
 # uv run zensical build --strict
 #
-# Update branch and push changes; automatic deployment: .github/workflow/docs.yml
-# git checkout master
-# git pull origin master
-# git checkout gh-pages
-# git rebase master
-# git push origin gh-pages
+# Automatic deploy when pushed to master with tag: .github/workflow/docs.yml
 #
 # Reference:
 # * https://zensical.org/docs/setup/extensions/about/#zensical-extensions

@@ -121,12 +121,8 @@ Generate and push new Zensical site base on current repository.
 git commit
 git push && git push --tags
 
-# Rebase branch with current master; pushing will automatically run workflow.
-git checkout master
-git pull origin master
-git checkout gh-pages
-git rebase master
-git push origin gh-pages
+# Automatic deploy when pushed to master with tag: .github/workflow/docs.yml
+git push && git push --tags
 ```
 
 ## Material Theme
