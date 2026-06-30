@@ -3,7 +3,12 @@
 # uv run zensical serve
 # uv run zensical build --strict
 #
-# Deployment is automatic via github workflow: .github/workflow/docs.yml
+# Update branch and push changes; automatic deployment: .github/workflow/docs.yml
+# git checkout master
+# git pull origin master
+# git checkout gh-pages
+# git rebase master
+# git push origin gh-pages
 #
 # Reference:
 # * https://zensical.org/docs/setup/extensions/about/#zensical-extensions
@@ -240,7 +245,7 @@ nav = [
       "service/ca/certificates.md",
       "service/ca/certificate_revocation_list.md",
     ] },
-    "service/mkdocs.md",
+    "service/zensical.md",
     { NGINX = [
       "service/nginx/README.md",
       { "Manual Configuration" = [

@@ -3,15 +3,17 @@ name: 'Documentation'
 on:
   push:
     branches:
-      - 'gh-pages'
+      - 'master'
 permissions:
   contents: 'read'
   pages: 'write'
   id-token: 'write'
 jobs:
   deploy:
+    # Only run when tag is pushed to master branch.
+    if: startsWith(github.ref, 'refs/tags/')
     environment:
-      name: 'github-pages'
+      name: 'gh-pages'
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: 'ubuntu-latest'
     steps:
