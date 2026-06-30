@@ -10,8 +10,8 @@ permissions:
   id-token: 'write'
 jobs:
   deploy:
-    # Only run when tag is pushed to master branch.
-    if: github.ref == 'refs/heads/master'
+    # Only run when push event is tag creation.
+    if: startsWith(github.ref, 'refs/tags/')
     environment:
       name: 'github-pages'
       url: ${{ steps.deployment.outputs.page_url }}

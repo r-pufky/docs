@@ -68,6 +68,7 @@ One-time configuration per repository.
     0644 {USER}:{USER}
 
     ``` yaml
+    # Alternative setup: https://zensical.org/docs/publish-your-site
     ---
     name: 'Documentation'
     on:
@@ -80,10 +81,10 @@ One-time configuration per repository.
       id-token: 'write'
     jobs:
       deploy:
-        # Only run when tagged and on master branch.
-        if: github.ref == 'refs/heads/master'
+        # Only run when push event is tag creation.
+        if: startsWith(github.ref, 'refs/tags/')
         environment:
-          name: 'github-pages'  # Environment to use.
+          name: 'github-pages'  # Environment to use (hardcoded).
           url: ${{ steps.deployment.outputs.page_url }}
         runs-on: 'ubuntu-latest'
         steps:
