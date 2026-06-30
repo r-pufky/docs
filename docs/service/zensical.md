@@ -88,6 +88,9 @@ One-time configuration per repository.
         steps:
           - uses: 'actions/configure-pages@v5'
           - uses: 'actions/checkout@v5'
+            with:
+              fetch-depth: 0
+              fetch-tags: true
           - uses: 'actions/setup-python@v5'
             with:
               python-version: '3.x'
