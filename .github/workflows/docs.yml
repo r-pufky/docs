@@ -2,8 +2,8 @@
 name: 'Documentation'
 on:
   push:
-    branches:
-      - 'master'
+    tags:
+      - '*'
 permissions:
   contents: 'read'
   pages: 'write'
@@ -11,7 +11,7 @@ permissions:
 jobs:
   deploy:
     # Only run when tag is pushed to master branch.
-    if: startsWith(github.ref, 'refs/tags/')
+    if: github.ref == 'refs/heads/master'
     environment:
       name: 'github-pages'
       url: ${{ steps.deployment.outputs.page_url }}
@@ -19,9 +19,6 @@ jobs:
     steps:
       - uses: 'actions/configure-pages@v5'
       - uses: 'actions/checkout@v5'
-        with:
-          fetch-depth: 0
-          fetch-tags: true
       - uses: 'actions/setup-python@v5'
         with:
           python-version: '3.x'

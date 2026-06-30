@@ -57,11 +57,12 @@ One-time configuration per repository.
     * Source: Deploy from branch
     * Branch: gh-pages ➔ / (root)
 
-!!! example "github ➔ Settings ➔ Environments ➔ gh-pages"
+!!! example "github ➔ Settings ➔ Environments ➔ github-pages"
     * Deployment branches and tags:
         * branch: **master**
 
-    Create new environment if needed.
+    Create new environment if needed. This seems to be hardcoded in Zensical
+    currently.
 
 !!! abstract ".github/workflows/docs.yml"
     0644 {USER}:{USER}
@@ -71,26 +72,23 @@ One-time configuration per repository.
     name: 'Documentation'
     on:
       push:
-        branches:
-          - 'master'  # Trigger workflow on these branch changes.
+        tags:
+          - '*'  # Trigger workflow on tag creation.
     permissions:
       contents: 'read'
       pages: 'write'
       id-token: 'write'
     jobs:
       deploy:
-        # Only run when tag is pushed to master branch.
-        if: startsWith(github.ref, 'refs/tags/')
+        # Only run when tagged and on master branch.
+        if: github.ref == 'refs/heads/master'
         environment:
-          name: 'gh-pages'  # Environment to use.
+          name: 'github-pages'  # Environment to use.
           url: ${{ steps.deployment.outputs.page_url }}
         runs-on: 'ubuntu-latest'
         steps:
           - uses: 'actions/configure-pages@v5'
           - uses: 'actions/checkout@v5'
-            with:
-              fetch-depth: 0
-              fetch-tags: true
           - uses: 'actions/setup-python@v5'
             with:
               python-version: '3.x'
