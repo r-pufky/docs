@@ -60,7 +60,6 @@ One-time configuration per repository.
 !!! example "github ➔ Settings ➔ Environments ➔ gh-pages"
     * Deployment branches and tags:
         * branch: **master**
-        * tags: __*__
 
     Create new environment if needed.
 
