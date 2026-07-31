@@ -12,7 +12,7 @@ ssh-keygen -b 4096 -t rsa -f /home/{USER}/.ssh/{KEY_NAME}
 
 # Add public key to any authorized_keys on any host to enable login.
 # This is the published GPG identity for Yubikeys.
-cat /home/{USER}/.ssh/{KEY_NAME}.pub >> home/{USER}/.ssh/authorized_keys
+cat /home/{USER}/.ssh/{KEY_NAME}.pub >> /home/{USER}/.ssh/authorized_keys
 
 chmod 0600 /home/{USER}/.ssh/*
 chmod 0640 /home/{USER}/.ssh/*.pub

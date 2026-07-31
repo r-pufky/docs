@@ -12,6 +12,13 @@ curl -LsSf https://repo.plex.tv/scripts/setupRepo.sh | sudo bash
 
 ## Fixing Playback Issues
 
+### Playback freezes when scrubbing (seeking)
+Original streaming protocol does not handle scrubbing (seeking) well. Use
+[alternative protocol][m] for clients.
+
+!!! example "Plex Settings ➔ Debug"
+    * Use alternate streaming protocol for video playback: ✔
+
 ### Crash During Library Scanning
 Deep media analysis and scrubbing image generation will cause the plex service
 to stall and crash during library scans.
@@ -180,3 +187,4 @@ sudo reboot
 [j]: https://github.com/jorenn92/Maintainerr
 [k]: https://github.com/Schaka/janitorr
 [l]: https://support.plex.tv/articles/235974187-enable-repository-updating-for-supported-linux-server-distributions
+[m]: https://old.reddit.com/r/PleX/comments/lxns0n/why_does_seek_suck/gpo9nj4
