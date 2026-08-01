@@ -73,7 +73,7 @@ lspci -k | grep -A 3 -i "VGA"
 
 ## Container configuration
 ``` bash
-# Add root user to render, video groups.
+# Add root user to render, video groups in container.
 usermod -aG render,video root
 
 # Get LXC GPU groups and major device ID
@@ -82,8 +82,6 @@ getent group video
 getent group render
 > render:x:992:root  # LXC GID: 992
 ```
-
-
 
 === "New Method"
     Requires PVE9+. Preferred.
