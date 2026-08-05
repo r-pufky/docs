@@ -92,7 +92,34 @@ Generate exposure threat ratings for current system services.
 systemd-analyze security
 ```
 
+## .NET / Mono applications
+Applications based on .NET and Mono require special handling for restarting
+services.
+
+!!! warning "Use [KillMode=control-group][b]"
+    **KillMode=none** is explicitly deprecated and will eventually be removed.
+
+    **KillMode=process** allows child forks to escape control group (cgroup)
+    and remain running even while their service is considered stopped and
+    assumed to not consume any resources.
+
+    For .NET / Mono apps that spawn sub-processes or handle in-app updates,
+    using **mixed** or **control-group** keeps systemd's state machine tracking
+    things correctly.
+
+!!! warning "Use [Restart=always][b]"
+    Combine with **RestartSec** and **TimeoutStopSec** to gracefully shutdown a
+    running application, killing sub-processes after the timeout.
+
+``` ini
+KillMode=control-group
+Restart=always
+RestartSec=5
+TimeoutStopSec=20
+```
+
 ## Reference[^1]
 [^1]: https://www.freedesktop.org/software/systemd/man/latest/index.html
 
 [a]: https://wiki.archlinux.org/title/Systemd
+[b]: https://www.freedesktop.org/software/systemd/man/latest/systemd.kill.html

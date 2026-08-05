@@ -78,6 +78,6 @@ connections in SSL. [See NGINX][b] for more details.
     ```
 
 [a]: https://galaxy.ansible.com/ui/repo/published/r_pufky/arr/docs
-[b]: ../service/nginx/README.md
-[c]: ../service/nginx/manual/setup.md#setup-base-reverse-proxy
+[b]: ../../service/nginx/README.md
+[c]: ../../service/nginx/manual/setup.md#setup-base-reverse-proxy
 [d]: https://nzbget.com/documentation/nzbget-path-and-folder-structure-guide

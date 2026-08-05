@@ -94,6 +94,27 @@ Additional Rules:
     * original directory.
     * original parent directory.
 
+### Use Archival Formats
+
+!!! success "DNG containers for images and animated pictures"
+    Images should be actively converted to JPEGXL and placed with DNG.
+
+    [DNG][c] is a container format that stores archival image data,
+    modifications, originals, and metadata. It supports [JPEGXL][d].
+
+    [JPEGXL][d] is an extension to JPEG. It supports wide colour gamut as well
+    as high dynamic range and high bit depth images. JPEG XL further includes
+    features such as animation, alpha channels, layers, thumbnails, lossless
+    and progressive coding. Existing JPEG files can be losslessly transcoded to
+    JPEG XL, significantly reducing their size. These can be restored into the
+    exact same JPEG file, ensuring backward compatibility with existing
+    JPEG-based applications.
+
+!!! success "MKV containers for videos"
+    Videos should be placed unmodified into [MKV][e] containers; optionally
+    converting videos with rarely used codecs to more common modern ones
+    (**AV1, h265, h264**) to ensure future compatibility.
+
 ### Rename
 
 !!! tip "Use External Utility"
@@ -124,3 +145,6 @@ Set static date not aligning to current metadata.
 
 [a]: https://karl-voit.at/managing-digital-photographs
 [b]: https://github.com/r-pufky/voit
+[c]: https://en.wikipedia.org/wiki/Digital_Negative
+[d]: https://jpeg.org/jpegxl
+[e]: https://en.wikipedia.org/wiki/Matroska

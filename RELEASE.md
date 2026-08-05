@@ -1,5 +1,47 @@
 # [Release Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## 4.1.0:
+Add PVE High Availability configuration.
+
+Added:
+* pve/ha.md - High Availability configuration.
+* filesystem/deduplicating_data.md - De-duplicating data utilities.
+* nzbget/troubleshooting.md - Add slow speed debugging.
+* Add plex scrubbing freeze fix.
+
+Changed:
+* yt_dkp.md - Add standalone yt-dlp instructions.
+* gpg/operationsmd - Add Yubikey GPG forwarding instructions.
+* digikam.md - Add archival format suggestions.
+* pve/nfs.md - Add HA migrations.
+* pve/README.md - Add IMMOU enable by default bug/todo.
+* windows/README.md - Add gaming tweak reference for Windows 11.
+* nginx/troubleshooting.md - Add CRL update for ERROR_INVALID_RESPONSE.
+* systemd/README.md - Add .NET/Mono application requirements.
+* Clarify PVE GPU LXC passthrough steps.
+* Update instructions for deployment.
+* Update environment configuration to reflect use.
+
+## 4.0.5:
+
+Changed:
+* Scope deployments to tagging events on push.
+
+## 4.0.4:
+
+Changed:
+* Swap tag/branch logic to simplify workflow.
+
+## 4.0.3:
+
+Changed:
+* Add tag fetching to checkout runner.
+
+## 4.0.2:
+
+Changed:
+* Relax environment deployment requirements.
+
 ## 4.0.1:
 
 Changed:

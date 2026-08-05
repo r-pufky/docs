@@ -92,7 +92,12 @@ Files have permissions themselves.
 * Deny LXC **root** write to NFS mount: set **root:root** on NFS server.
 * Anonymous UID/GID not matched in SubUID/SubGID or root mapping is mapped
   to **nobody:nobody (65534:65534)**.
+* [HA migrations][e] require [shared=1][d] on NFS mountpoints manually
+  guaranteeing those mounts will exist on the target node, otherwise migrations
+  will fail.
 
 [a]: ../../filesystem/nfs/README.md
 [b]: https://github.com/ddimick/proxmox-lxc-idmapper
 [c]: ../../filesystem/nfs/optimizations.md
+[d]: https://pve.proxmox.com/pve-docs/chapter-pvesm.html
+[e]: ha.md#nfs-mountpoints

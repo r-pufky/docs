@@ -7,9 +7,21 @@ maintained fork of the defunct **yt-dl**.
     Downloads **will** fail without it.
 
 ## Install
+=== "Standalone"
+    Standalone binary is highly recommended as it can be updated inline as well
+    as use direct git patching for fixes not released yet.
+
+    ``` bash
+    cd ~/.local/bin
+    wget -q0 yt-dlp https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_linux
+
+    yt-dlp --update  # Update to latest release.
+    yt-dlp --update-to 0xvd/yt-dlp-exp@generic-kvs  # Update to specific patch.
+    ```
+
 === "CachyOS"
     ``` bash
-    pacman -Ss yt-dlp yt-dkp-ejs
+    pacman -Ss yt-dlp yt-dlp-ejs
     ```
 
 === "Linux"

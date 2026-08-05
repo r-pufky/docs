@@ -50,4 +50,9 @@ gpg --import {PUBLIC KEY}
 gpg --verify {FILE}.sig
 ```
 
+## Forward Yubikey GPG over SSH
+[Yubikey GPG authentication may be passed over SSH][b] to a remote machine,
+assuming no Yubikey is attached to the remote machine.
+
 [a]: https://gnupg.org/documentation/manpage.html
+[b]: https://thedarktrumpet.com/security/2023/07/08/gpg-ssh-forwarding

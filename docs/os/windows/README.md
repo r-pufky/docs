@@ -12,6 +12,9 @@
     irm "https://christitus.com/win" | iex
     ```
 
+    Additionally [specific gaming tweaks][w] should be considered and done to
+    taste.
+
 !!! tip
     See [run commands for launching all settings windows from run command][t].
 
@@ -142,3 +145,4 @@ Continue through install until **Sign in** appears.
 [t]: https://ss64.com/nt/run.html
 [u]: https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer
 [v]: https://docs.microsoft.com/en-us/sysinternals/downloads/sdelete
+[w]: https://www.patreon.com/techoptimized/posts/pc-gaming-guide-88124101

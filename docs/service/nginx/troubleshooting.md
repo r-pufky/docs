@@ -55,6 +55,12 @@ location / {
 }
 ```
 
+## ERR_INVALID_RESPONSE
+NGINX will refuse to respond if the CRL list has expired.
+
+[Regenerate CRL list for the CA](../ca/certificate_revocation_list.md) and push
+to NGINX.
+
 [a]: https://serverfault.com/questions/404626/how-to-output-variable-in-nginx-log-for-debugging
 [b]: https://www.nginx.com/resources/wiki/start/topics/depth/ifisevil
 [c]: https://agentzh.blogspot.com/2011/03/how-nginx-location-if-works.html

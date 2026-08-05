@@ -47,6 +47,15 @@ Remaining configuration may be done vis SSH (easier for copying). Leave console
 open for easy rescue if networking get mis-configured.
 
 ### Enable IOMMU and Passthrough Virtualization
+
+!!! bug "IMMOU is enabled by default"
+    [AMD automatically enables IMMOU, Intel CPU's are automatically enabled on
+    Kernels 6.8+][j].
+
+    **amd_iommu=on** and **intel_iommu=on** are no longer needed.
+
+    Confirm this is the case on next major PVE release and update instructions.
+
 === "AMD"
 
     !!! abstract "/etc/default/grub"
@@ -356,3 +365,4 @@ cp -av /etc /autofs/pve/{DATE}-upgrade/{NODE}/complete
 [e]: https://pve.proxmox.com/wiki/Cluster_Manager
 [f]: https://forum.proxmox.com/threads/2025-pve9-x-warning-remote-host-identification-has-changed-analysis-resolution.174262
 [i]: https://pve.proxmox.com/pve-docs/pve-admin-guide.html#_using_the_pve_network_interface_pinning_tool
+[j]: https://pve.proxmox.com/pve-docs/pve-admin-guide.html#qm_pci_passthrough
