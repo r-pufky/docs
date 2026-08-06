@@ -205,6 +205,13 @@ Game settings that balance colors and rendering quality.
         * Digital vibrance: **+80%**
         * Hue: **0**
 
+## Mods
+[SPT][m] used for modding. Development [environment setup.][l]
+
+* [Tarkov task tracker][h]
+* [Rat scanner (identify items for tasks)][i]
+* [SPT Dynamic Maps (no enemies)][j] [(original with enemy markers)][k]
+
 ## Reference[^1][^2][^3][^4][^5]
 [^1]: https://github.com/sp-tarkov/patcher
 [^2]: https://www.sp-tarkov.com/#download
@@ -219,3 +226,9 @@ Game settings that balance colors and rendering quality.
 [e]: https://hub.sp-tarkov.com/files/file/601-spt-aki-installer/#overview
 [f]: https://hub.sp-tarkov.com/files/file/6-spt-aki/
 [g]: https://github.com/project-fika/Fika-Plugin/releases/latest
+[h]: https://tarkovtracker.io/tasks
+[i]: https://ratscanner.com/#tarkovtracker
+[j]: https://github.com/r-pufky/SPT-DynamicMaps
+[k]: https://github.com/mpstark/SPT-DynamicMaps
+[l]: https://docs.bepinex.dev/articles/dev_guide/plugin_tutorial/1_setup.html
+[m]: https://github.com/sp-tarkov

@@ -120,6 +120,7 @@ nav = [
       "game/steam/README.md",
       "game/steam/troubleshooting.md",
     ] },
+    "game/snow_runner.md",
   ] },
   { Mail = [
     "mail/imapsync.md",

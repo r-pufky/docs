@@ -3,6 +3,8 @@
 !!! example "Migrated to ansible collection"
     Use [r_pufky.game][a].
 
+[Suggested CO-OP games.][f]
+
 ## Install Old Game Version
 All games on steam are versioned and stored in a repository - this provides a
 mechanism to install an old version for a game.
@@ -49,3 +51,4 @@ mechanism to install an old version for a game.
 [c]: https://steamdb.info/depot/335819/manifests
 [d]: https://steamdb.info/depot/335819/history/?changeid=M:6929390125920150286
 [e]: steam://nav/console
+[f]: https://old.reddit.com/r/linux_gaming/comments/1gfowdi/coop_games_to_play_with_my_partner/

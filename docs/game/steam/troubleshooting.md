@@ -1,5 +1,11 @@
 # Troubleshooting
 
+## Games Not Working
+Many old games may need fixes for modern operating systems. See
+[PC Gaming Wiki][c] for manual fixes and [steam-superheater][d] for potentially
+automatic fixes.
+
+
 ## Please confirm your network connection and try again.
 Steam uses **client-download.steampowered.com** to detect internet connectivity
 through **public/steambootstrapper_english.txt**. DNS updates or failure to
@@ -79,3 +85,5 @@ xvfb-run --autoservernum wineboot --update
 
 [a]: https://bugs.winehq.org/show_bug.cgi?id=38653
 [b]: https://ubuntuforums.org/archive/index.php/t-1499348.html
+[c]: https://github.com/fgsfds/Steam-Superheater
+[d]: https://www.pcgamingwiki.com
