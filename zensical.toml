@@ -136,6 +136,7 @@ nav = [
     # "media/folders.md",
     "media/deluge.md",
     "media/lidarr.md",
+    "media/maintainerr.md",
     "media/music.md",
     { NZBGet = [
       "media/nzbget/README.md",
