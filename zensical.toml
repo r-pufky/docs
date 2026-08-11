@@ -151,6 +151,9 @@ nav = [
       "media/plex/config.md",
       "media/plex/troubleshooting.md",
     ] },
+    { Porn = [
+      "media/porn/README.md",
+    ] },
     { Radarr = [
       "media/radarr/README.md",
       "media/radarr/troubleshooting.md",

@@ -13,7 +13,7 @@ maintained fork of the defunct **yt-dl**.
 
     ``` bash
     cd ~/.local/bin
-    wget -q0 yt-dlp https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_linux
+    wget -qO yt-dlp https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_linux
 
     yt-dlp --update  # Update to latest release.
     yt-dlp --update-to 0xvd/yt-dlp-exp@generic-kvs  # Update to specific patch.
