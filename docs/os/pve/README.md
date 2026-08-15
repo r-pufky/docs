@@ -351,6 +351,17 @@ cp -av /root /autofs/pve/{DATE}-upgrade/{NODE}/complete
 cp -av /etc /autofs/pve/{DATE}-upgrade/{NODE}/complete
 ```
 
+### Set [Migration Network][k]
+FRR networks do not appear in the GUI and must be configured manually.
+
+!!! abstract "/etc/pve/datacenter.conf"
+    0640 root:www-data
+
+    ``` bash
+    # FRR defined IP's (/32), use a /24.
+    migration: secure,10.11.11.10/24
+    ```
+
 ## Reference[^1][^2][^3][^4][^5][^6]
 [^1]: https://www.juniper.net/documentation/us/en/software/junos/is-is/topics/concept/is-is-routing-overview.html#routing-is-is-overview__id-11020505
 [^2]: https://gist.github.com/scyto/4c664734535da122f4ab2951b22b2085
@@ -366,3 +377,4 @@ cp -av /etc /autofs/pve/{DATE}-upgrade/{NODE}/complete
 [f]: https://forum.proxmox.com/threads/2025-pve9-x-warning-remote-host-identification-has-changed-analysis-resolution.174262
 [i]: https://pve.proxmox.com/pve-docs/pve-admin-guide.html#_using_the_pve_network_interface_pinning_tool
 [j]: https://pve.proxmox.com/pve-docs/pve-admin-guide.html#qm_pci_passthrough
+[k]: https://pve.proxmox.com/pve-docs/pve-admin-guide.html#_guest_migration

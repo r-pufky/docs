@@ -1,5 +1,20 @@
 # Troubleshooting
 
+## [Reading RAW disks][e]
+RAW disks may be read via mounting a loopback block device.
+
+``` bash
+# Use container id
+/d/pve/images/106/*.raw
+$ losetup --find --show  --partscan /d/pve/images/106/vm-106-disk-0.raw
+/dev/loop8
+$ mount /dev/loop8 /mnt/test
+
+# Umount and detach after complete
+umount /mnt/test
+losetup --detach /dev/{DEVICE}
+```
+
 ## Ascii codec can't decode byte 0xe2 in position
 See [Failed to run vncproxy](#failed-to-run-vncproxy).
 
@@ -104,3 +119,4 @@ reboot
 [b]: https://old.reddit.com/r/Proxmox/comments/dhgez0/console_utf8
 [c]: https://forum.proxmox.com/threads/no-console-with-proxmox-5-0-beta-2-and-debian-9-containers.35313
 [d]: https://www.youtube.com/watch?v=g0BEPRJtDnc
+[e]: https://forum.proxmox.com/threads/how-do-i-mount-a-raw-image.43186

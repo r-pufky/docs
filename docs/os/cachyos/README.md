@@ -78,7 +78,7 @@ systemctl enable sshd
 sysyetctl start sshd
 ```
 
-## Configure Updates
+## [Configure Updates][f]
 ``` bash
 pacman -S cachy-update
 cachy-update --gen-config
@@ -87,6 +87,10 @@ systemctl --user enable --now arch-update.timer
 # Check on boot and every day
 # OnUnitActiveSec=1d
 systemctl --user edit --full arch-update.timer
+
+# Alternatively disable systray and manually run cachy-update
+systemctl --user mask arch-update.service
+systemctl --user disable arch-update.timer
 ```
 
 ## Optional Packages
@@ -101,3 +105,4 @@ pacman -S iptables  # Original iptables now at iptables-legacy.
 [c]: ../windows/README.md#create-uefi-usb-boot-disk
 [d]: https://wiki.archlinux.org/title/Security#Restricting_root
 [e]: ../../network/ssh/sshd/linux.md
+[f]: https://github.com/CachyOS/CachyOS-Welcome/issues/190

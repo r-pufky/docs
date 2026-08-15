@@ -16,8 +16,9 @@ Maintainerr configuration is non-intuitive.
 
 !!! warning "Watched status"
     Plex treats **marked as watched** and **viewed** (fully view by a user) as
-    two separate states. See [remove on user viewed](#remove-on-user-viewed)
-    for an example that appropriately handles this.
+    two separate states. See
+    [Maintenance: Reality Shows](#maintenance-reality-shows) for an example
+    that appropriately handles this.
 
 ### [Rules][c]
 Evaluate media on server based on parameters set. If a media item matches a
@@ -38,21 +39,18 @@ the rule). Collections are visible to all Plex users on the collections tab.
 
 ## Examples
 
-### Remove on user viewed
-Cleanup reality shows (All shows that match 'The Real Housewives', 'Love
-Island', 'Below Deck') that are only watched once by a single user. An episode
-will be marked for deletion after it has at least one full view and is marked
-watched by Plex owner. Deletion occurs every 30 days.
-
-Remove monitored status from Sonarr and delete matched episode.
-
 !!! warning "Only enable Sonarr/Plex actions after validation"
     Run the rule and check the auto-populated collection to ensure the correct
     episodes appear before enabling deletion!
 
+### Maintenance: Reality Shows
+Cleanup reality shows that are watched at least one time. An episode will be
+marked for deletion after it has at least one full view and is marked watched
+by the Plex owner. Deletion occurs after 30 days.
+
 !!! example "Rules ➔ New Rule ➔ General"
     * Name: **Maintenance: Shows**
-    * Description: **Cleanup shows watched by only one person**
+    * Description: **{DESCRIPTION ABOVE}**
     * Library: **TV Shows**
     * Media Type: **Episodes**
     * Sonarr Server: **{SONARR}**
@@ -63,7 +61,8 @@ Remove monitored status from Sonarr and delete matched episode.
     * Active: ✔  # Disable to run tests.
     * Show on Plex library recommended: ✘
     * Show on Plex home: ✘
-    * Enable Overlays: ✘
+    * Enable Overlays: ✔
+    * Overlay template: **Default titlecard item**
     * Use Rules: ✔
     * Custom Collection: ✘
     * Notifications: ✘
@@ -78,7 +77,7 @@ Remove monitored status from Sonarr and delete matched episode.
         * First Value: **Sonarr - Series title**
         * Action: **Contains (Exact list match)**
         * Second Value: **Text**
-        * Custom Value: **["The Real Housewives", "Love Island", "Below Deck"]**  # JSON list.
+        * Custom Value: **["The Real Housewives", "Love Island", "Below Deck", "The Valley", "The Great American Baking Show", "The Great British Bake Off", "America's Sweethearts", "1000-lb Sisters", "Vanderpump Rules", "Sister Wives", "Selling the OC", "The Proof is Out There", "Project Runway"]**  # JSON list.
     * Rule 2:
         * First Value: **Plex - Total views**
         * Action: **Bigger**
@@ -90,6 +89,81 @@ Remove monitored status from Sonarr and delete matched episode.
         * Action: **Equals**
         * Second Value: **Boolean**
         * Custom Value: **True**
+
+### Shows Leaving Soon
+Shows added to the **tv-culling** playlist are added to this collection and are
+slated to be deleted after 90 days.
+
+!!! example "Rules ➔ New Rule ➔ General"
+    * Name: **Shows Leaving Soon**
+    * Description: **Shows in this collection are slated to be deleted after 90 days.**
+    * Library: **TV Shows**
+    * Media type: **Seasons**
+    * Radarr Server: **{SONARR}**
+    * Radarr Action: **Unmonitor and delete files**  # 'Do nothing' for testing.
+    * Take action after days: **90**
+
+!!! example "Rules ➔ New Rule ➔ Options"
+    * Active: ✔  # Disable to run tests.
+    * Show on Plex library recommended: ✔
+    * Show on Plex home: ✔
+    * Enable Overlays: ✔
+    * Overlay template: **Default poster template**
+    * Clean up leftover folders: ✘
+    * Force delete Seerr request: ✔
+    * Use Rules: ✔
+    * Custom Collection: ✘
+    * Notifications: ✘
+    * Keep logs for months: **6**
+    * Sort title: **{DEFAULT}**
+    * Collection items sort: **Default**
+    * Rule handler schedule override: ✘
+    * Custom Collection Poster: ✘
+
+!!! example "Rules ➔ New Rule ➔ Rules"
+    * Rule 1:
+        * First Value: **Plex - [list] Playlists media is present in (titles)**
+        * Action: **Equals**
+        * Second Value: **Text**
+        * Custom Value: **tv-culling**
+
+### Movies Leaving Soon
+Movies added to the **movie-culling** playlist are added to this collection and
+are slated to be deleted after 90 days.
+
+!!! example "Rules ➔ New Rule ➔ General"
+    * Name: **Movies Leaving Soon**
+    * Description: **Movies in this collection are slated to be deleted after 90 days.**
+    * Library: **Movies**
+    * Radarr Server: **{RADARR}**
+    * Radarr Action: **Unmonitor and delete files**  # 'Do nothing' for testing.
+    * Take action after days: **90**
+
+!!! example "Rules ➔ New Rule ➔ Options"
+    * Active: ✔  # Disable to run tests.
+    * Show on Plex library recommended: ✔
+    * Show on Plex home: ✔
+    * Enable Overlays: ✔
+    * Overlay template: **Default poster template**
+    * Add import list exclusions: ✔
+    * Clean up leftover folders: ✘
+    * Tag this content in Radarr: ✘
+    * Force delete Seerr request: ✔
+    * Use Rules: ✔
+    * Custom Collection: ✘
+    * Notifications: ✘
+    * Keep logs for months: **6**
+    * Sort title: **{DEFAULT}**
+    * Collection items sort: **Default**
+    * Rule handler schedule override: ✘
+    * Custom Collection Poster: ✘
+
+!!! example "Rules ➔ New Rule ➔ Rules"
+    * Rule 1:
+        * First Value: **Plex - [list] Playlists media is present in (titles)**
+        * Action: **Equals**
+        * Second Value: **Text**
+        * Custom Value: **movie-culling**
 
 [a]: https://maintainerr.info/
 [b]: https://docs.maintainerr.info/
