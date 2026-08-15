@@ -1,5 +1,23 @@
 # [Release Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## 4.2.0:
+Add PVE FRR migration network, CachyOS Update, Maintainerr.
+
+Added:
+ * maintainerr.md - Documentation with common generic rules.
+ * cachyos - Ways to disable cachy-updater service.
+ * pve - Configure migration network to use FRR network.
+ * game/snow_runner.md - SnowRunner configuration and resources.
+
+Changed:
+* game/escape_from_tarkov.md - Mod list.
+* steam/README.md - CO-OP game list.
+* steam/troubleshooting.md - Old game fix resources.
+* Correct yt-dlp wget links.
+
+Removed:
+* Escape from Tarkov - both SPT and FIKA have been taken down. Use PVE.
+
 ## 4.1.0:
 Add PVE High Availability configuration.
 
