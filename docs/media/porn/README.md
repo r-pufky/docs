@@ -18,9 +18,9 @@ require [specific branches until rolled into mainline][d].
 [ero.me][e] requires a [specific download tool][f].
 
 ## [Healthy Porn][b]
-Don't be a [prude][b]. Everyone watches porn and should not be a cause for
+Don't be a [prude][c]. Everyone watches porn and should not be a cause for
 taboo, shame, or embarrassment. It is healthy to talk about, watch, and include
-in the modern lexicon. [Research acknowledges][c] a prohibitive approach to
+in the modern lexicon. [Research acknowledges][b] a prohibitive approach to
 porn, much like the war on drugs, will fail too.
 
 Healthy porn consists of:

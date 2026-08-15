@@ -105,6 +105,7 @@ nav = [
     ] },
     "game/conan_exiles.md",
     "game/elden_ring.md",
+    "game/escape_from_tarkov.md",
     "game/mumble/mumble.md",
     { "Seven Days to Die" = [
       "game/seven_days_to_die/README.md",
