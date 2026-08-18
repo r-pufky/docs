@@ -100,7 +100,7 @@ slated to be deleted after 90 days.
     * Library: **TV Shows**
     * Media type: **Seasons**
     * Radarr Server: **{SONARR}**
-    * Radarr Action: **Unmonitor and delete files**  # 'Do nothing' for testing.
+    * Radarr Action: **Unmonitor and delete existing episodes**  # 'Do nothing' for testing.
     * Take action after days: **90**
 
 !!! example "Rules ➔ New Rule ➔ Options"

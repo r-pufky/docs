@@ -222,6 +222,7 @@ nav = [
       "os/pve/ha.md",
       "os/pve/gpu.md",
       "os/pve/nfs.md",
+      "os/pve/oci.md",
       "os/pve/troubleshooting.md",
     ] },
     "os/shield.md",

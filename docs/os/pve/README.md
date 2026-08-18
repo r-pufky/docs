@@ -359,7 +359,7 @@ FRR networks do not appear in the GUI and must be configured manually.
 
     ``` bash
     # FRR defined IP's (/32), use a /24.
-    migration: secure,10.11.11.10/24
+    migration: secure,network=10.11.11.10/24
     ```
 
 ## Reference[^1][^2][^3][^4][^5][^6]
