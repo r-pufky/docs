@@ -28,14 +28,125 @@ Define constraints around items placed in a collection. Items are operated on
 in bulk at the scale of the item placed (e.g. episodes will be per-episode,
 season is per-season, series is per-series).
 
-!!! warning "Changing the item type will remove all items from the collection"
+!!! info "Changing the item type will remove all items from the collection"
 
 ### [Collections][d]
 A collection container will be auto-generated when a rule is initially created.
 Items in this collection will be deleted (or whatever action is specified by
 the rule). Collections are visible to all Plex users on the collections tab.
 
-!!! warning "Changing rule item type will remove all items from the collection"
+!!! info "Changing rule item type will remove all items from the collection"
+
+## Overlay
+Enable overlays and match with Plex style.
+
+!!! example "Overlays ➔ Settings"
+    * Enable Overlay: ✔
+
+    Must be enable and saved before any other actions. Explicitly save.
+
+!!! example "Settings ➔ Jobs"
+    * Overlay Handler: __15 0-23/8 * * *__
+
+    Explicitly save.
+
+!!! example "Overlays ➔ Existing Templates ➔ Classic Pill ➔ Edit"
+    * Rectangle:
+        * X: **30**
+        * Y: **60**
+        * W: **450**
+        * H: **100**
+        * Rotation: **0**
+        * Opacity: **1**
+        * Shape: **Rectangle**
+        * Fill: **#E5A00D**
+        * Stroke: **#00000000**
+        * Stroke Width: **0**
+        * Corner Radius: **35**
+    * Leaving {date}:
+        * Position:
+            * X: **30**
+            * Y: **60**
+            * W: **450**
+            * H: **100**
+        * Transform:
+            * Rotation: **0**
+            * Opacity: **1**
+        * Segments:
+            * **Leaving**
+            * **{date}**
+        * Font:
+            * Font: **Inter-Bold.ttf**
+            * Size: **55**
+            * Color: **#1C1C1C**
+            * Weight: **bold**
+            * Align: **center**
+            * V-Align: **middle**
+        * Background:
+            * Color: **#00000000**
+            * Radius: **0**
+            * Padding: **0**
+        * Date / Days Config:
+            * Date Format: **MMM d**
+            * Language: **en-US**
+            * Today text: **today**
+            * 1 day text: **in 1 day**
+            * N days text: **in {0} days**
+            * Day Suffix: ✘
+            * Shadow: ✔
+            * Uppercase: ✘
+    * Save As: **Classic Pill (Plex)**
+
+    Set as default.
+
+!!! example "Overlays ➔ Existing Templates ➔ Title Card Pill ➔ Edit"
+    * Rectangle:
+        * X: **40**
+        * Y: **40**
+        * W: **500**
+        * H: **100**
+        * Rotation: **0**
+        * Opacity: **1**
+        * Shape: **Rectangle**
+        * Fill: **#E5A00D**
+        * Stroke: **#00000000**
+        * Stroke Width: **0**
+        * Corner Radius: **35**
+    * Leaving {date}:
+        * Position:
+            * X: **40**
+            * Y: **40**
+            * W: **500**
+            * H: **100**
+        * Transform:
+            * Rotation: **0**
+            * Opacity: **1**
+        * Segments:
+            * **Leaving**
+            * **{date}**
+        * Font:
+            * Font: **Inter-Bold.ttf**
+            * Size: **55**
+            * Color: **#1C1C1C**
+            * Weight: **bold**
+            * Align: **center**
+            * V-Align: **middle**
+        * Background:
+            * Color: **#00000000**
+            * Radius: **0**
+            * Padding: **0**
+        * Date / Days Config:
+            * Date Format: **MMM d**
+            * Language: **en-US**
+            * Today text: **today**
+            * 1 day text: **in 1 day**
+            * N days text: **in {0} days**
+            * Day Suffix: ✘
+            * Shadow: ✔
+            * Uppercase: ✘
+    * Save As: **Title Card Pill (Plex)**
+
+    Set as default.
 
 ## Examples
 
@@ -48,13 +159,15 @@ Cleanup reality shows that are watched at least one time. An episode will be
 marked for deletion after it has at least one full view and is marked watched
 by the Plex owner. Deletion occurs after 30 days.
 
-!!! example "Rules ➔ New Rule ➔ General"
-    * Name: **Maintenance: Shows**
+This is not surfaced to users home screens.
+
+!!! example "Rules ➔ New Rule ➔ General:
+    * Name: **Maintenance: Reality Shows**
     * Description: **{DESCRIPTION ABOVE}**
     * Library: **TV Shows**
     * Media Type: **Episodes**
     * Sonarr Server: **{SONARR}**
-    * Sonarr Action: **Unmonitor and delete episode**  # 'Do nothing' for testing.
+    * Sonarr Action: **Unmonitor and delete episode**
     * Take action after days: **30**
 
 !!! example "Rules ➔ New Rule ➔ Options"
@@ -62,13 +175,13 @@ by the Plex owner. Deletion occurs after 30 days.
     * Show on Plex library recommended: ✘
     * Show on Plex home: ✘
     * Enable Overlays: ✔
-    * Overlay template: **Default titlecard item**
+    * Overlay template: **Default titlecard template**
     * Use Rules: ✔
     * Custom Collection: ✘
     * Notifications: ✘
     * Keep logs for months: **6**
     * Sort title: **{DEFAULT}**
-    * Collection items sort: **Default**
+    * Collection items sort: **Delete Soonest**
     * Rule handler schedule override: ✘
     * Custom Collection Poster: ✘
 
@@ -77,13 +190,14 @@ by the Plex owner. Deletion occurs after 30 days.
         * First Value: **Sonarr - Series title**
         * Action: **Contains (Exact list match)**
         * Second Value: **Text**
-        * Custom Value: **["The Real Housewives", "Love Island", "Below Deck", "The Valley", "The Great American Baking Show", "The Great British Bake Off", "America's Sweethearts", "1000-lb Sisters", "Vanderpump Rules", "Sister Wives", "Selling the OC", "The Proof is Out There", "Project Runway"]**  # JSON list.
-    * Rule 2:
+        * Custom Value: **["The Real Housewives", "Love Island", "Below Deck", "The Valley", "The Great American Baking Show", "The Great British Bake Off", "America's Sweethearts", "1000-lb Sisters", "Vanderpump Rules", "Sister Wives", "Selling the OC", "The Proof is Out There", "Project Runway", "The Amazing Race"]**  # JSON list.
+        TODO: Add Amazing race.
+    * Rule 2 (AND):
         * First Value: **Plex - Total views**
         * Action: **Bigger**
         * Second Value: **Number**
         * Custom Value: **0**
-    * Rule 3:
+    * Rule 3 (AND):
         * Operator: **AND**
         * First Value: **Plex - Is Watched**
         * Action: **Equals**
@@ -100,7 +214,7 @@ slated to be deleted after 90 days.
     * Library: **TV Shows**
     * Media type: **Seasons**
     * Radarr Server: **{SONARR}**
-    * Radarr Action: **Unmonitor and delete existing episodes**  # 'Do nothing' for testing.
+    * Radarr Action: **Unmonitor and delete existing episodes**
     * Take action after days: **90**
 
 !!! example "Rules ➔ New Rule ➔ Options"
@@ -116,7 +230,7 @@ slated to be deleted after 90 days.
     * Notifications: ✘
     * Keep logs for months: **6**
     * Sort title: **{DEFAULT}**
-    * Collection items sort: **Default**
+    * Collection items sort: **Delete Soonest**
     * Rule handler schedule override: ✘
     * Custom Collection Poster: ✘
 
@@ -136,7 +250,7 @@ are slated to be deleted after 90 days.
     * Description: **Movies in this collection are slated to be deleted after 90 days.**
     * Library: **Movies**
     * Radarr Server: **{RADARR}**
-    * Radarr Action: **Unmonitor and delete files**  # 'Do nothing' for testing.
+    * Radarr Action: **Unmonitor and delete files**
     * Take action after days: **90**
 
 !!! example "Rules ➔ New Rule ➔ Options"
@@ -154,7 +268,7 @@ are slated to be deleted after 90 days.
     * Notifications: ✘
     * Keep logs for months: **6**
     * Sort title: **{DEFAULT}**
-    * Collection items sort: **Default**
+    * Collection items sort: **Delete Soonest**
     * Rule handler schedule override: ✘
     * Custom Collection Poster: ✘
 

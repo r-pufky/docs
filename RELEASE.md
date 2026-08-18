@@ -1,5 +1,16 @@
 # [Release Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## 4.2.1:
+Add PVE OCI container image documentation.
+
+Added:
+* oci.md - PVE OCI container image use.
+* pve/README.md - fixed incorrect migration line.
+* Add Escape from Tarkov 1.0 reference.
+
+Changed:
+* maintainerr.md - add overlay configuration.
+
 ## 4.2.0:
 Add PVE FRR migration network, CachyOS Update, Maintainerr.
 
