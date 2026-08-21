@@ -161,7 +161,7 @@ by the Plex owner. Deletion occurs after 30 days.
 
 This is not surfaced to users home screens.
 
-!!! example "Rules ➔ New Rule ➔ General:
+!!! example "Rules ➔ New Rule ➔ General"
     * Name: **Maintenance: Reality Shows**
     * Description: **{DESCRIPTION ABOVE}**
     * Library: **TV Shows**

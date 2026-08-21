@@ -71,7 +71,23 @@ Move disk to another container temporarily during upgrade.
 
 !!! example "{LXC} ➔ Resources ➔ MP{#} ➔ Volume Action ➔ Reassign Owner"
     * Target Guest: **{UPGRADE HOST}**
-    * Add as: **Mount point 1**
+    * Add as: **Unused 1**
+
+    Manually edit LXC config to set mountpoint.
+
+## Troubleshooting
+
+### Error: unable to get PID for CT {VID} (not running?)
+!!! bug "Currently being investigated, best guess below"
+
+OCI container created without config disk, existing disk mounted post-create.
+Suspicion is that a special process happens in the OCI conversion process that
+is not handled if manually adding a mountpoint.
+
+!!! danger "unable to get PID for CT 106 (not running?)"
+
+Create OCI container with a new mounted config disk. Replace config disk after
+container is spun up with one that has existing data.
 
 [a]: https://pve.proxmox.com/wiki/Linux_Container#pct_container_images
 [b]: https://forum.proxmox.com/threads/pve-9-2-oci-data-disk-always-deleted-bug-or-working-as-intended.185778/#post-866221
