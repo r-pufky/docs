@@ -1,10 +1,8 @@
 # Escape from Tarkov
 
-!!! tip "Both [SPT][a] and [FIKA][b] are officially moth balleP."
-
-* [Maps][c]
-* [Loot Tiers][d]
-* [Ammo Tiers][e]
+!!! tip "[SPT][f] is now known as **[Slide Papa Tushonka][g]**"
+    [FIKA][b] should be in-place compatible with Tushonka. Both only currently
+    support pre 1.0 releases. Use PVE. Original [SPT][a] is mothballed.
 
 ## Settings
 
@@ -17,9 +15,9 @@
     * Priority window: **Auto**
     * Double click item quick use: **In raid only**
     * Vaulting over medium obstacles: **Hotkey**
-    * Continuous medkit healing: **Enabled**
+    * Continuous medkit healing: **Disabled**
     * Wishlist item notifications: **Enabled**
-    * Auto add to Wishlist: **Favorite receipts + zone upgrades**
+    * Auto add to Wishlist: **Disable**
     * Task item warning: **Enabled**
     * Task item search assistance: **Enabled**
     * Head bobbing: **0.2**
@@ -60,6 +58,5 @@
 
 [a]: https://github.com/sp-tarkov
 [b]: https://github.com/project-fika
-[c]: https://tarkov.dev/map/interchange
-[d]: https://tarkov.dev/loot-tier
-[e]: https://www.eft-ammo.com/ammo-graph
+[f]: https://sp-tushonka.com
+[g]: https://github.com/SP-Tushonka
