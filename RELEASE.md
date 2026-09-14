@@ -1,5 +1,11 @@
 # [Release Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## 4.2.3:
+Include LFS files in deployment workflow.
+
+Added:
+* LFS enabled for github deployment workflow.
+
 ## 4.2.2:
 Add Escape from Tarkov looting guidance.
 
