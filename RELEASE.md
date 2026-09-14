@@ -1,5 +1,15 @@
 # [Release Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## 4.2.2:
+Add Escape from Tarkov looting guidance.
+
+Added:
+* G502 Lightspeed configuration.
+* Escape from Tarkov looting guidance.
+
+Changed:
+* Disable maintainerr telemetry.
+
 ## 4.2.1:
 Add PVE OCI container image documentation.
 
