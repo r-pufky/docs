@@ -1,5 +1,11 @@
 # [Release Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## 4.2.4:
+Add vertical ammo layouts.
+
+Changed:
+* Add vertical tables for ammo to make visual parsing easier.
+
 ## 4.2.3:
 Include LFS files in deployment workflow.
 
