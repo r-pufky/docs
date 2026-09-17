@@ -63,6 +63,17 @@ gpg-connect-agent updatestartuptty /bye
     Match host * exec "gpg-connect-agent updatestartuptty /bye"
     ```
 
+## Locale not set correctly
+Force SSH client to specify the locale to use.
+
+!!! abstract "~/.ssh/config"
+    0640 {USER}:{USER}
+
+    ``` bash
+    Host *
+        SendEnv LANG en_US.utf8
+    ```
+
 [a]: https://unix.stackexchange.com/questions/193066/how-to-unlock-account-for-public-key-ssh-authorization-but-not-for-password-aut
 [b]: https://arlimus.github.io/articles/usepam
 [c]: https://salsa.debian.org/ssh-team/openssh/-/commit/18da782ebe789d0cf107a550e474ba6352e68911
