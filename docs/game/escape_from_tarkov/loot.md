@@ -11,9 +11,9 @@ Use [mapgenie][b], [tarkov.dev][c] for maps and target **15000** or greater
     **[BP][54539c]**   | **[M855A1][55645c]** | **[M61][76251c]**        | **[SNB][76254rc]**   |  **[PP][76239c]**     | **[PAB-9][939c]**
     **[7N40][54539d]** | [M856A1][55645d]     | **[M80A1][76251d]**      | **[BT][76254rd]**    |  **[PS][76239d]**     | [SPP][939d]
     [BT][54539e]       | [SOST][55645e]       | **[M80][76251e]**        | **[PS][76254re]**    |                       |
-    [PP][54539f]       | *[M855][55645f]*     | **[M62][76251f]**        | **[LPS][76254rf]**   |                       |
+    [PP][54539f]       | ~[M855][55645f]~     | **[M62][76251f]**        | **[LPS][76254rf]**   |                       |
                        |                      | [BCP FMJ][76251g]        | **[T-46M][76254rg]** |                       |
-                       |                      | *[TCW SP][76251h]*       | [FMJ][76254rh]       |                       |
+                       |                      | ~[TCW SP][76251h]~       | [FMJ][76254rh]       |                       |
                        |                      |                          | [SP BT][76254ri]     |                       |
 
 === "Shotgun"
@@ -31,19 +31,19 @@ Use [mapgenie][b], [tarkov.dev][c] for maps and target **15000** or greater
     -----------------|----------------|------
      **[PBP][919a]** | **[FMJ][50a]** | **[AP][45a]**
      [AP 6.3][919b]  | [Copper][50b]  |
-     *[Pst][919c]*   |                |
-     *[M882][919d]*  |                |
+     ~[Pst][919c]~   |                |
+     ~[M882][919d]~  |                |
 
-=== "2 Guns"
-     .300 blk        | .338 Lapua Magnum | 4.6x30              | 7.62x25
-    -----------------|-------------------|---------------------|---------
-     **[AP][300a]**  | **[AP][338lma]**  | **[AP SX][4630a]**  | **[TT M995][76225a]**
-     **[CBJ][300b]** | **[FMJ][338lmb]** | **[FMJ SX][4630b]** |
-     **[M62][300c]** | [UCW][338lmc]     | [JSP SX][4630c]     |
-     *[FMJ][300d]*   |                   |                     |
-     *[V-Max][300e]* |                   |                     |
+=== "2 Weapons"
+     .300 blk          | .338 Lapua Magnum | 4.6x30              | 7.62x25
+    -------------------|-------------------|---------------------|---------
+     **[AP][300a]**    | **[AP][338lma]**  | **[AP SX][4630a]**  | **[TT 995][76225a]**
+     **[CBJ][300b]**   | **[FMJ][338lmb]** | **[FMJ SX][4630b]** |
+     **[M62][300c]**   | [UCW][338lmc]     | [JSP SX][4630c]     |
+     ~[BCP FMJ][300d]~ |                   |                     |
+     ~[V-Max][300e]~   |                   |                     |
 
-=== "1 Gun"
+=== "Single Weapon"
      .308 Marlin Express | .366 TKM         | .50 BMG            | 5.7x28             | 5.8x42              | 6.8x51              | 9x21         | 9.3x64              | 12.7x55             | 20 Gauge             | 23x75
     ---------------------|------------------|--------------------|--------------------|---------------------|---------------------|--------------|---------------------|---------------------|----------------------|------------------------
      **[ME][308mea]**    | **[AP-M][366a]** | **[M903][50bmga]** | **[SS190][5728a]** | **[DVC12][5842a]**  | **[Hybrid][6851a]** | [7N42][921a] | **[7N33][9364a]**   | **[PS12B][12755a]** | **[Flechette][20a]** | **[Shrap-25][2375a]**
@@ -52,46 +52,14 @@ Use [mapgenie][b], [tarkov.dev][c] for maps and target **15000** or greater
                          |                  | [HP][50bmgd]       |                    | [DBX95][5842d]      |                     |              |                     |                     | **[6.2mm][20d]**     |
                          |                  |                    |                    |                     |                     |              |                     |                     | **[5.6mm][20e]**     |
 
-=== "All"
-     Type                | Item Label
-    --------------------:|------------
-     12 Gauge Shot       | **[Flechette][12ta]** > **[Piranha][12tb]** > [7mm][12tc] > [Express][12td] > [Magnum][12te] > [5.25mm][12tf]
-     12 Gauge Slugs      | **[AP-20][12sa]**
-     20 Gauge            | **[Flechette][20a]** > **[7.3mm][20b]** > **[7.5mm][20c]** > **[6.2mm][20d]** > **[5.6mm][20e]**
-     23x75               | **[Shrap-25][2375a]** > **[Shrap-10][2375b]** > **[Barrikada][2375c]**
-     7.62x25             | **[TT M995][76225a]**
-     9x19                | **[PBP][919a]** > [AP 6.3][919b] > *[Pst][919c]* > *[M882][919d]*
-     .45                 | **[AP][45a]**
-     .50                 | **[FMJ][50a]** > [Copper][50b]
-     9x21                | [7N42][921a] > [BT][921b]
-     5.7x28              | **[SS190][5728a]** > [L191][5728b]
-     4.6x30              | **[AP SX][4630a]** > **[FMJ SX][4630b]** > [JSP SX][4630c]
-     9x39                | **[BP][939a]** > **[SP6][939b]** > **[PAB-9][939c]** > [SPP][939d]
-     .366                | **[AP-M][366a]**
-     5.45x39             | **[PPBS][54539a]** > **[BS][54539b]** > **[BP][54539c]** > **[7N40][54539d]** > [BT][54539e] > [PP][54539f]
-     5.56x45             | **[SSA AP][55645a]** > **[M995][55645b]** > **[M855A1][55645c]** > [M856A1][55645d] > [SOST][55645e] > *[M855][55645f]*
-     5.8x42              | **[DVC12][5842a]** > **[DVX12][5842b]** > [DBP191][5842c] > [DBX95][5842d]
-     7.62x39             | **[MAI AP][76239a]** > **[BP][76239b]** > **[PP][76239c]** > **[PS][76239d]**
-     .300 blk            | **[AP][300a]** > **[CBJ][300b]** > **[M62][300c]** > *[FMJ][300d]* > *[V-Max][300e]*
-     6.8x51              | **[Hybrid][6851a]** > **[FMJ][6851b]**
-     7.62x51             | **[Ball 11 LR][76251a]** > **[M993][76251b]** > **[M61][76251c]** > **[M80A1][76251d]** > **[M80][76251e]** > **[M62][76251f]** > [BCP FMJ][76251g] > *[TCW SP][76251h]*
-     7.62x54R            | **[TC AP][76254ra]** > **[BS][76254rb]** > **[SNB][76254rc]** > **[BT][76254rd]** > **[PS][76254re]** > **[LPS][76254rf]** > **[T-46M][76254rg]** > [FMJ][76254rh] > [SP BT][76254ri]
-     12.7x55             | **[PS12B][12755a]**
-     .50 BMG             | **[M903][50bmga]** > **[M33][50bmgb]** > **[M21][50bmgc]** > [HP][50bmgd]
-     .308 Marlin Express | **[ME][308mea]**
-     .338 Lapua Magnum   | **[AP][338lma]** >**[FMJ][338lmb]** > [UCW][338lmc]
-     9.3x64              | **[7N33][9364a]** > **[FMJ][9364b]** > [SP][9364c]
-
 Avoid 1/2 gun ammo unless specifically running those guns.
 
 ## [Headsets][e][^2]
-
  Range | Item Label (all variants the same)
 ------:|------------------------------------
  67    | [ComTac VI][hsa] > [ComTac V][hsb]
  66    | [Liberator][hsc] > [ComTac IV][hsd] > [RAC][hse]
  63    | [XCEL][hsf] > [Sordin][hsg] > [Tactical Sport][hsh]
-
 
 ## Hideout / Inventory Management
 General guidelines for managing inventory without requiring additional space.
@@ -104,7 +72,7 @@ General guidelines for managing inventory without requiring additional space.
   quest items. Pack larger items into containers to allow most flexibility.
 * Lock items not containers.
 
-[^1]: **Bold >2 pen**, Normal >0 pen, *Italic Low level kits or not on flea*.
+[^1]: **Bold >2 pen**, Normal >0 pen, ~subscript~ Low level kits or not on flea.
 [^2]: Minimum **63** hearing distance.
 
 [a]: https://www.eft-ammo.com

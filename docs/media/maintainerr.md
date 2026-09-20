@@ -196,7 +196,6 @@ This is not surfaced to users home screens.
         * Action: **Contains (Exact list match)**
         * Second Value: **Text**
         * Custom Value: **["The Real Housewives", "Love Island", "Below Deck", "The Valley", "The Great American Baking Show", "The Great British Bake Off", "America's Sweethearts", "1000-lb Sisters", "Vanderpump Rules", "Sister Wives", "Selling the OC", "The Proof is Out There", "Project Runway", "The Amazing Race", "Married at First Sight"]**  # JSON list.
-        TODO: Add Amazing race.
     * Rule 2 (AND):
         * First Value: **Plex - Total views**
         * Action: **Bigger**
