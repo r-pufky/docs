@@ -1,5 +1,22 @@
 # [Release Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## 4.2.6:
+Update Tarkov ammo tables with colors.
+
+Changed:
+* Tarkov ammo tables now show visual identification colors.
+
+## 4.2.5:
+Update Tarkov ammo looting table.
+
+Added:
+* Troubleshooting SSH client locale.
+
+Changed:
+* Remove 'all' column.
+* Use subscript instead of italics for low tier.
+* Correct ammo labels.
+
 ## 4.2.4:
 Add vertical ammo layouts.
 

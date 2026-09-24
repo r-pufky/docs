@@ -306,6 +306,7 @@ dev_addr = "localhost:8000"
 extra_css = [
   "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/vs2015.min.css",
   "_extra/widescreen.css",
+  "_extra/tarkov.css",
 ]
 extra_javascript = [
   "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js",
