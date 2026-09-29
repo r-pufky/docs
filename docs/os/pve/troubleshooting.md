@@ -1,5 +1,37 @@
 # Troubleshooting
 
+## [Resize VM disks][f]
+Disk may be resized online however VM must unmount the disk to expand the
+partition.
+
+``` bash
+# On PVE: Use VM ID, and disk mount point.
+qm resize 113 scsi1 +5G
+
+# On VM: Stop any service and unmount disk.
+systemctl stop mox
+umount /var/opt/mox
+lsblk
+parted /dev/sdb
+> Warning: Not all of the space available to /dev/sdb appears to be used, you
+> can fix the GPT to use all of the space (an extra 10485760 blocks) or
+> continue with the current setting?
+> Fix/Ignore? F
+F
+print
+resizepart 1 100%
+print
+quit
+
+# Resize filesystem in partition.
+e2fsck -f /dev/sdb1
+resize2fs /dev/sdb1
+
+# Remount and restart services
+mount -a
+systemctl start mox
+```
+
 ## [Reading RAW disks][e]
 RAW disks may be read via mounting a loopback block device.
 
@@ -120,3 +152,4 @@ reboot
 [c]: https://forum.proxmox.com/threads/no-console-with-proxmox-5-0-beta-2-and-debian-9-containers.35313
 [d]: https://www.youtube.com/watch?v=g0BEPRJtDnc
 [e]: https://forum.proxmox.com/threads/how-do-i-mount-a-raw-image.43186
+[f]: https://pve.proxmox.com/wiki/Resize_disks#1._Resizing_guest_disk

@@ -1,5 +1,20 @@
 # [Release Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## 4.3.0:
+Remove legacy mail configuration.
+
+Added:
+* mail/mox - Mox mail configuration.
+* Release notes footer and documentation link.
+
+Changed:
+* os/pve/troubleshooting.md - updated to include VM disk resizing.
+
+Removed:
+* mail/postfix.md configuration.
+* mail/roundcube.md configuration.
+* mail/mutt.md configuration.
+
 ## 4.2.6:
 Update Tarkov ammo tables with colors.
 

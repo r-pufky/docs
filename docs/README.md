@@ -2,10 +2,12 @@
 I created this repository as a response to people requesting I share my setup
 notes for services I run in my home. These notes have been made generic enough
 so that you can implement these services and setups with relative ease. Be sure
-to check the [glossary](glossary/README.md) if you see unknown symbols.
+to check the [glossary][a] if you see unknown symbols.
 
 This has expanded over the years to also include other setup and configuration
 for technology I have run into and needed to make notes for.
+
+Use [Release Notes][b] to find removed documentation.
 
 ## Assumptions
 These notes make the following assumptions:
@@ -31,9 +33,12 @@ Although I haven't done anything malicious, you should never blindly run
 scripts & commands from the internet.
 
 ## Bugs & Security Concerns
-Use [Let's Encrypt](https://letsencrypt.org) for free SSL/TLS certs. There's
-**NO REASON** to run self-signed certs anymore for hosting anything. Don't do
-it. Get a Let's Encrypt Cert.
+Use [Let's Encrypt][c] for free SSL/TLS certs. There's **NO REASON** to run
+self-signed certs anymore for hosting anything.
 
 If you find any bugs or security concerns, file a bug against this project on
 git hub, or submit a CL 🙃
+
+[a]: glossary/README.md
+[b]: https://github.com/r-pufky/docs/blob/master/RELEASE.md
+[c]: https://letsencrypt.org

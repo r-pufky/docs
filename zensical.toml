@@ -129,11 +129,9 @@ nav = [
     "mail/imapsync.md",
     { Mox = [
       "mail/mox/README.md",
+      "mail/mox/dns.md",
       "mail/mox/troubleshooting.md",
     ] },
-    "mail/mutt.md",
-    "mail/postfix.md",
-    "mail/roundcube.md",
   ] },
   { "Media Management" = [
     # "media/folders.md",
@@ -183,6 +181,7 @@ nav = [
         "network/traefik/acme/README.md",
         "network/traefik/acme/behind_traefik.md",
       ] },
+      "network/traefik/mox.md",
       "network/traefik/odic.md",
       "network/traefik/troubleshooting.md",
     ] },
@@ -356,12 +355,19 @@ toggle.icon = "lucide/moon"
 toggle.name = "Switch to dark mode"
 
 [[project.extra.social]]
+icon = "fontawesome/regular/clipboard"
+link = "https://github.com/r-pufky/docs/blob/master/RELEASE.md"
+name = "Release Notes"
+
+[[project.extra.social]]
 icon = "fontawesome/brands/github"
 link = "https://github.com/r-pufky"
+name = "Repository"
 
 [[project.extra.social]]
 icon = "simple/gnuprivacyguard"
 link = "https://keys.openpgp.org/vks/v1/by-fingerprint/466EEC2B67516C7117C85CE3A0BC35D16698BAB9"
+name = "GPG Key"
 
 [project.markdown_extensions.admonition]
 [project.markdown_extensions.attr_list]
