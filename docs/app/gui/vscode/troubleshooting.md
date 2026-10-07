@@ -22,7 +22,6 @@ Default submodule load limit is low.
     * Detect Submodules Limit: **50**
     * Repository Scan Max Dept: **-1**
 
-
 ## [Unlock Login Keyring Always Prompted][b]
 KDE Wallet is used to securely store GitHub credentials.
 
@@ -32,5 +31,15 @@ May be prompted on every open if KDE Wallet is not enabled.
     * Enable the KDE Wallet Subsystem: ✔
     * Use KDE Wallet for the Secret Service interface: ✔
 
+## [Remote Extension host terminated unexpectedly][c]
+Telemetry endpoints are down and additional telemetry is enabled. Disable all
+additional telemetry.
+
+!!! danger ""
+    Remote Extension host terminated unexpectedly 3 times within the last 5 minutes.
+
+!!! example "ctrl + , ➔ Telemetry ➔ Telemetry Level: off"
+
 [a]: https://stackoverflow.com/questions/60917209/disable-vs-code-warning-submodules-which-wont-be-opened-automatically/61178091
 [b]: https://github.com/microsoft/vscode/issues/104319
+[c]: https://github.com/microsoft/vscode-remote-release/issues/10804

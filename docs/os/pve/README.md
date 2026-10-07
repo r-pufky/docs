@@ -351,6 +351,17 @@ cp -av /root /autofs/pve/{DATE}-upgrade/{NODE}/complete
 cp -av /etc /autofs/pve/{DATE}-upgrade/{NODE}/complete
 ```
 
+### Enable TOTP Two-Factor
+Require two-factor for root WebUI.
+
+!!! example "Datacenter ➔ Permissions ➔ Two-Factor ➔ Add ➔ TOTP"
+    * User: **root@pam**
+    * Description: **{USER_LABEL}**
+    * Secret: **Randomize**
+    * Issuer Name: **{CLUSTER_LABEL}**
+
+    Save TOTP secret and generate code to enable. Logout and login.
+
 ### Set [Migration Network][k]
 FRR networks do not appear in the GUI and must be configured manually.
 

@@ -59,6 +59,9 @@ settings.
     * Title bar style: **native**
     * Dialog style: **native**
 
+## Disable Addition Telemetry
+!!! example "ctrl + , ➔ Telemetry ➔ Telemetry Level: off"
+
 ## Disable Copilot
 !!! example "ctrl + , ➔ Features ➔ Chat ➔ Command Center: ✘"
 

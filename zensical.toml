@@ -28,6 +28,7 @@ nav = [
       "app/cli/yt_dlp.md",
     ] },
     { GUI = [
+      "app/gui/betterbird.md",
       "app/gui/chrome.md",
       "app/gui/digikam.md",
       "app/gui/firefox.md",
