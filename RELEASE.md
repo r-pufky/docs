@@ -1,5 +1,16 @@
 # [Release Changelog](https://keepachangelog.com/en/1.0.0/)
 
+## 4.3.1.:
+Add betterbird documentation.
+
+Added:
+* app/gui/betterbird.md - Thunderbird alternative.
+* os/pve/README.md - Enable two-factor authentication during install.
+
+Changed:
+* app/gui/vscode - Disable extra telemetry and troubleshooting.
+* mail/imapsync.md - Update imapsync documentation.
+
 ## 4.3.0:
 Remove legacy mail configuration.
 
